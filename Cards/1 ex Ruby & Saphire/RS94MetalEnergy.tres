@@ -1,0 +1,61 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=9 format=3 uid="uid://bpyb5rd3indje"]
+
+[ext_resource type="Script" path="res://Code/Resource Makers/AskMaker.gd" id="1_ib77u"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CardMaker.gd" id="1_rtwx6"]
+[ext_resource type="Script" path="res://Code/Resource Makers/EnergyMaker.gd" id="2_0l4v5"]
+[ext_resource type="Script" path="res://Code/Resource Makers/EffectMaker.gd" id="3_cee2m"]
+[ext_resource type="Texture2D" uid="uid://dkudhyw32ve0s" path="res://Art Assets/1 ex Ruby & Saphire/94.jpg" id="4_28rxm"]
+
+[sub_resource type="Resource" id="Resource_ap56e"]
+script = ExtResource("1_ib77u")
+target = 0
+location = 4
+bench_size = -1
+type = 640
+type_size = 1
+
+[sub_resource type="Resource" id="Resource_p6g6r"]
+script = ExtResource("3_cee2m")
+poison = 0
+burn = 0
+addable_effects = 0
+mutually_exclusive_conditions = 0
+knockOut = false
+instead_of_damage = false
+do_nothing = false
+retreat = false
+attack = 0
+buff_target = 2
+attack_damage = 0
+defense = 10
+after_weak_res = true
+switch_type = 0
+search = Array[Resource("res://Code/Resource Makers/SearchMaker.gd")]([])
+disrupt_target = 0
+disrupting = 0
+card_ammount = 0
+energy_ammount = 0
+mimic = 0
+
+[sub_resource type="Resource" id="Resource_tde1h"]
+script = ExtResource("2_0l4v5")
+considered = "Special Energy"
+asks = SubResource("Resource_ap56e")
+fail_provide = false
+success_effect = SubResource("Resource_p6g6r")
+turns = -1
+number = 1
+type = 128
+fail_type = 1
+
+[resource]
+script = ExtResource("1_rtwx6")
+name = "Metal energy"
+image = ExtResource("4_28rxm")
+illustrator = "Milky Isobe"
+number = 94
+rarity = 2
+expansion = 0
+categories = 4
+energy_properties = SubResource("Resource_tde1h")
+fossil = false

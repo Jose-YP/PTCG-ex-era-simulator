@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Card" load_steps=17 format=3 uid="uid://cxvfc0rggllux"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=17 format=3 uid="uid://cxvfc0rggllux"]
 
 [ext_resource type="Texture2D" uid="uid://8v21sphmsmhb" path="res://Art Assets/1 ex Ruby & Saphire/2.jpg" id="1_xe8fg"]
 [ext_resource type="Script" path="res://Code/Resource Makers/AttackMaker.gd" id="2_w5spi"]
@@ -11,26 +11,62 @@
 [sub_resource type="Resource" id="Resource_o5830"]
 script = ExtResource("3_fjwe8")
 heads = true
-flip_times = 1
+const_flip_times = 1
+varying_flip_times = 0
+until = false
 
 [sub_resource type="Resource" id="Resource_n2xaf"]
 script = ExtResource("4_p6cej")
-coin_flip = true
 coin_flip_num = SubResource("Resource_o5830")
 for_what = null
 cap = 0
+return_num = 0
 
 [sub_resource type="Resource" id="Resource_dirjo"]
 script = ExtResource("4_ct2pe")
-addable_effects = null
-mutually_exclusive_conditions = null
+poison = 0
+burn = 0
+addable_effects = 0
+mutually_exclusive_conditions = 0
+knockOut = false
+instead_of_damage = false
+do_nothing = false
+retreat = false
+attack = 0
+buff_target = 0
+attack_damage = 0
+defense = 0
+after_weak_res = true
+switch_type = 0
 search = Array[Resource("res://Code/Resource Makers/SearchMaker.gd")]([])
+disrupt_target = 0
+disrupting = 0
+card_ammount = 0
+energy_ammount = 0
+mimic = 0
 
 [sub_resource type="Resource" id="Resource_kqkbm"]
 script = ExtResource("4_ct2pe")
-addable_effects = null
-mutually_exclusive_conditions = null
+poison = 0
+burn = 0
+addable_effects = 0
+mutually_exclusive_conditions = 0
+knockOut = false
+instead_of_damage = false
+do_nothing = false
+retreat = false
+attack = 0
+buff_target = 0
+attack_damage = 0
+defense = 0
+after_weak_res = true
+switch_type = 0
 search = Array[Resource("res://Code/Resource Makers/SearchMaker.gd")]([])
+disrupt_target = 0
+disrupting = 0
+card_ammount = 0
+energy_ammount = 0
+mimic = 0
 
 [sub_resource type="Resource" id="Resource_xt6ne"]
 script = ExtResource("2_w5spi")
@@ -45,6 +81,8 @@ fighting_cost = 0
 darkness_cost = 0
 metal_cost = 0
 colorless_cost = 0
+defender_properties = 0
+ignore_condition = 0
 initial_main_DMG = 20
 modifier = 0
 counter = SubResource("Resource_n2xaf")
@@ -53,9 +91,26 @@ fail_effect = SubResource("Resource_kqkbm")
 
 [sub_resource type="Resource" id="Resource_dr7f6"]
 script = ExtResource("4_ct2pe")
-addable_effects = null
-mutually_exclusive_conditions = null
+poison = 0
+burn = 0
+addable_effects = 0
+mutually_exclusive_conditions = 0
+knockOut = false
+instead_of_damage = false
+do_nothing = false
+retreat = false
+attack = 0
+buff_target = 0
+attack_damage = 0
+defense = 0
+after_weak_res = true
+switch_type = 0
 search = Array[Resource("res://Code/Resource Makers/SearchMaker.gd")]([])
+disrupt_target = 0
+disrupting = 0
+card_ammount = 0
+energy_ammount = 0
+mimic = 0
 
 [sub_resource type="Resource" id="Resource_54iom"]
 script = ExtResource("2_w5spi")
@@ -70,27 +125,46 @@ fighting_cost = 0
 darkness_cost = 0
 metal_cost = 0
 colorless_cost = 2
+defender_properties = 0
+ignore_condition = 0
 initial_main_DMG = 50
 modifier = 0
 effect = SubResource("Resource_dr7f6")
 
 [sub_resource type="Resource" id="Resource_7m7eq"]
 script = ExtResource("4_ct2pe")
-addable_effects = null
-mutually_exclusive_conditions = null
+poison = 0
+burn = 0
+addable_effects = 0
+mutually_exclusive_conditions = 0
+knockOut = false
+instead_of_damage = false
+do_nothing = false
+retreat = false
+attack = 0
+buff_target = 0
+attack_damage = 0
+defense = 0
+after_weak_res = true
+switch_type = 0
 search = Array[Resource("res://Code/Resource Makers/SearchMaker.gd")]([])
+disrupt_target = 0
+disrupting = 0
+card_ammount = 0
+energy_ammount = 0
+mimic = 0
 
 [sub_resource type="Resource" id="Resource_rp1um"]
 script = ExtResource("5_wp2cw")
 HP = 80
 retreat = 0
-body_name = "Withering Dust"
 body = SubResource("Resource_7m7eq")
-power_name = ""
 attacks = Array[ExtResource("2_w5spi")]([SubResource("Resource_xt6ne"), SubResource("Resource_54iom")])
 evo_stage = "Basic"
 evolves_from = "Silcooon"
+delta = false
 considered = null
+owner = 0
 type = 1
 weak = 2
 resist = 0

@@ -6,6 +6,7 @@ class_name Energy
 
 @export_group("Prerequisites")
 @export var asks: Ask
+@export var fail_provide: bool = false
 @export var fail_effect: EffectCall
 @export var success_effect: EffectCall
 @export var always_effect: EffectCall
@@ -18,4 +19,6 @@ class_name Energy
 @export_flags("Grass","Fire","Water",
 "Lightning","Psychic","Fighting",
 "Darkness","Metal","Colorless") var type: int = 1
-
+@export_flags("Grass","Fire","Water",
+"Lightning","Psychic","Fighting",
+"Darkness","Metal","Colorless") var fail_type: int = 1

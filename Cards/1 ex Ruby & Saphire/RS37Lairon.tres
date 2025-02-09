@@ -1,0 +1,94 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=14 format=3 uid="uid://co4rk4hqixy8b"]
+
+[ext_resource type="Texture2D" uid="uid://bc5arw2wcqfke" path="res://Art Assets/1 ex Ruby & Saphire/37.jpg" id="1_6d7uy"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CardMaker.gd" id="1_gxobw"]
+[ext_resource type="Script" path="res://Code/Resource Makers/BenchAttackMaker.gd" id="2_rgjw0"]
+[ext_resource type="Script" path="res://Code/Resource Makers/PokemonMaker.gd" id="3_f5s6c"]
+[ext_resource type="Script" path="res://Code/Resource Makers/AttackMaker.gd" id="3_u1xp7"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CoinFlipNumMaker.gd" id="4_8e6q6"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CounterMaker.gd" id="5_juaoa"]
+
+[sub_resource type="Resource" id="Resource_thvlp"]
+script = ExtResource("2_rgjw0")
+how_many = -1
+which = 2
+initial_main_DMG = 10
+modifier = 0
+
+[sub_resource type="Resource" id="Resource_r1kb1"]
+script = ExtResource("3_u1xp7")
+name = "Magnitude"
+description = "Does 10 damage to each Benched Pokémon (both yours and your opponent's). (Don't apply Weakness and Resistance for Benched Pokémon.)"
+grass_cost = 0
+fire_cost = 0
+water_cost = 0
+lightning_cost = 0
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 1
+colorless_cost = 0
+defender_properties = 0
+ignore_condition = 0
+initial_main_DMG = 20
+modifier = 0
+bench_damage = SubResource("Resource_thvlp")
+
+[sub_resource type="Resource" id="Resource_rcnpx"]
+script = ExtResource("4_8e6q6")
+heads = true
+const_flip_times = 2
+varying_flip_times = 0
+until = false
+
+[sub_resource type="Resource" id="Resource_nrlq2"]
+script = ExtResource("5_juaoa")
+coin_flip_num = SubResource("Resource_rcnpx")
+for_what = 2
+cap = 0
+return_num = 20
+
+[sub_resource type="Resource" id="Resource_c3a7t"]
+script = ExtResource("3_u1xp7")
+name = "One-Two Strike"
+description = "Flip 2 coins. This attack does 30 damage plus 20 more damage for each heads."
+grass_cost = 0
+fire_cost = 0
+water_cost = 0
+lightning_cost = 0
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 4
+defender_properties = 0
+ignore_condition = 0
+initial_main_DMG = 30
+modifier = 1
+counter = SubResource("Resource_nrlq2")
+
+[sub_resource type="Resource" id="Resource_iq16m"]
+script = ExtResource("3_f5s6c")
+HP = 80
+retreat = 2
+attacks = Array[ExtResource("3_u1xp7")]([SubResource("Resource_r1kb1"), SubResource("Resource_c3a7t")])
+evo_stage = "Stage 1"
+evolves_from = "Aaron"
+delta = false
+considered = 0
+owner = 0
+type = 128
+weak = 2
+resist = 1
+
+[resource]
+script = ExtResource("1_gxobw")
+name = "Lairon"
+image = ExtResource("1_6d7uy")
+illustrator = "Mitsuhiro Arita"
+number = 37
+rarity = 1
+expansion = 0
+categories = 1
+pokemon_properties = SubResource("Resource_iq16m")
+fossil = false

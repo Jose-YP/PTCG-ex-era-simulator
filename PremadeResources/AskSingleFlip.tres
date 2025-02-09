@@ -12,5 +12,11 @@ until = false
 
 [resource]
 script = ExtResource("1_dbjgf")
+target = 0
+location = 0
 bench_size = -1
+type = 1023
+type_size = 1
 coin_flip = SubResource("Resource_q0esk")
+choose = 0
+choose_location = 0

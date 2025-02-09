@@ -5,6 +5,8 @@
 [resource]
 script = ExtResource("1_3mfhp")
 considered = "Basic Energy"
+fail_provide = false
 turns = -1
 number = 1
 type = 2
+fail_type = 1

@@ -23,7 +23,7 @@ class_name Attack
 @export_group("Damage")
 @export_range(0,200,10) var initial_main_DMG: int = 0
 @export_enum("None", "Add", "Multiply", "Subtract") var modifier: int = 0
-
+@export var bench_damage: BenchAttack
 @export var counter: Counter
 
 @export_group("Effects")

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Card" load_steps=13 format=3 uid="uid://yjages2tp857"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=14 format=3 uid="uid://yjages2tp857"]
 
 [ext_resource type="Texture2D" uid="uid://b817pn5octfv6" path="res://Art Assets/1 ex Ruby & Saphire/1.jpg" id="1_i5pwl"]
 [ext_resource type="Script" path="res://Code/Resource Makers/PokemonMaker.gd" id="2_5623o"]
@@ -6,6 +6,12 @@
 [ext_resource type="Script" path="res://Code/Resource Makers/CoinFlipNumMaker.gd" id="3_7dnqp"]
 [ext_resource type="Script" path="res://Code/Resource Makers/CardMaker.gd" id="3_q1vs7"]
 [ext_resource type="Script" path="res://Code/Resource Makers/CounterMaker.gd" id="4_pmwxs"]
+
+[sub_resource type="Resource" id="Resource_8kl4g"]
+script = ExtResource("4_pmwxs")
+for_what = 2
+cap = 0
+return_num = 10
 
 [sub_resource type="Resource" id="Resource_jpj5i"]
 script = ExtResource("2_cfam6")
@@ -20,8 +26,11 @@ fighting_cost = 0
 darkness_cost = 0
 metal_cost = 0
 colorless_cost = 1
+defender_properties = 0
+ignore_condition = 0
 initial_main_DMG = 10
 modifier = 2
+counter = SubResource("Resource_8kl4g")
 
 [sub_resource type="Resource" id="Resource_3cg3j"]
 script = ExtResource("2_cfam6")
@@ -36,20 +45,24 @@ fighting_cost = 0
 darkness_cost = 0
 metal_cost = 0
 colorless_cost = 3
+defender_properties = 0
+ignore_condition = 0
 initial_main_DMG = 40
 modifier = 0
 
 [sub_resource type="Resource" id="Resource_o5toi"]
 script = ExtResource("3_7dnqp")
 heads = true
-flip_times = 2
+const_flip_times = 2
+varying_flip_times = 0
+until = false
 
 [sub_resource type="Resource" id="Resource_8moq1"]
 script = ExtResource("4_pmwxs")
-coin_flip = true
 coin_flip_num = SubResource("Resource_o5toi")
 for_what = null
 cap = 0
+return_num = 70
 
 [sub_resource type="Resource" id="Resource_5nw4e"]
 script = ExtResource("2_cfam6")
@@ -64,6 +77,8 @@ fighting_cost = 0
 darkness_cost = 0
 metal_cost = 2
 colorless_cost = 3
+defender_properties = 0
+ignore_condition = 0
 initial_main_DMG = 70
 modifier = 2
 counter = SubResource("Resource_8moq1")
@@ -72,12 +87,12 @@ counter = SubResource("Resource_8moq1")
 script = ExtResource("2_5623o")
 HP = 110
 retreat = 4
-body_name = ""
-power_name = ""
 attacks = Array[ExtResource("2_cfam6")]([SubResource("Resource_jpj5i"), SubResource("Resource_3cg3j"), SubResource("Resource_5nw4e")])
 evo_stage = "Stage 2"
 evolves_from = "Lairon"
+delta = false
 considered = null
+owner = 0
 type = 128
 weak = 2
 resist = 1

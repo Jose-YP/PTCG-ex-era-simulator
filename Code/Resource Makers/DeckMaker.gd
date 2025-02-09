@@ -23,3 +23,11 @@ func is_legal() -> bool:
 	
 	status = DECK_STATUS.READY
 	return true
+
+func make_usable() -> Array:
+	var usable: Array = []
+	for card in cards:
+		for i in cards[card]:
+			usable.append(card)
+	
+	return usable

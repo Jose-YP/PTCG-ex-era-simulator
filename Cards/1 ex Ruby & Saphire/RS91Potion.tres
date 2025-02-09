@@ -1,0 +1,68 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=11 format=3 uid="uid://mfam4db5asvt"]
+
+[ext_resource type="Texture2D" uid="uid://dijfcrqt7pcs2" path="res://Art Assets/1 ex Ruby & Saphire/91.jpg" id="1_3jilh"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CardMaker.gd" id="1_qc40t"]
+[ext_resource type="Script" path="res://Code/Resource Makers/HealMaker.gd" id="3_6b8kr"]
+[ext_resource type="Script" path="res://Code/Resource Makers/EffectMaker.gd" id="4_wxyjs"]
+[ext_resource type="Script" path="res://Code/Resource Makers/AskMaker.gd" id="5_vmxaa"]
+[ext_resource type="Script" path="res://Code/Resource Makers/TrainerMaker.gd" id="6_r3808"]
+
+[sub_resource type="Resource" id="Resource_2i5j3"]
+script = ExtResource("3_6b8kr")
+how_many = 1
+which = 0
+initial_main_NUM = 20
+modifier = 0
+
+[sub_resource type="Resource" id="Resource_pkeu8"]
+script = ExtResource("4_wxyjs")
+poison = 0
+burn = 0
+addable_effects = 0
+mutually_exclusive_conditions = 0
+knockOut = false
+instead_of_damage = false
+do_nothing = false
+retreat = false
+attack = 0
+buff_target = 0
+attack_damage = 0
+defense = 0
+after_weak_res = true
+switch_type = 0
+search = Array[Resource("res://Code/Resource Makers/SearchMaker.gd")]([])
+disrupt_target = 0
+disrupting = 0
+card_ammount = 0
+energy_ammount = 0
+healing = SubResource("Resource_2i5j3")
+mimic = 0
+
+[sub_resource type="Resource" id="Resource_ci2bk"]
+script = ExtResource("5_vmxaa")
+target = 0
+location = 0
+bench_size = -1
+type = 1023
+type_size = 1
+choose = 1
+choose_location = 3
+
+[sub_resource type="Resource" id="Resource_cxmxu"]
+script = ExtResource("6_r3808")
+considered = "Item"
+description = "Remove up to 2 damage counters from 1 of your Pokémon (remove 1 damage counter if that Pokémon has only 1)."
+asks = SubResource("Resource_ci2bk")
+always_effect = SubResource("Resource_pkeu8")
+
+[resource]
+script = ExtResource("1_qc40t")
+name = "Potion"
+image = ExtResource("1_3jilh")
+illustrator = "Keiji Kinebuchi"
+number = 91
+rarity = 0
+expansion = 0
+categories = 2
+trainer_properties = SubResource("Resource_cxmxu")
+fossil = false

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Card" load_steps=5 format=3 uid="uid://bekwoaj06a44c"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=5 format=3 uid="uid://bekwoaj06a44c"]
 
 [ext_resource type="Script" path="res://Code/Resource Makers/EnergyMaker.gd" id="1_hh47m"]
 [ext_resource type="Texture2D" uid="uid://cufnu32r0miyy" path="res://Art Assets/1 ex Ruby & Saphire/95.jpg" id="2_hgff4"]
@@ -6,20 +6,21 @@
 
 [sub_resource type="Resource" id="Resource_10nfj"]
 script = ExtResource("1_hh47m")
-considered = 1
-prerequisite = 0
-asks = 0
-fail_effect = 0
-success_effect = 0
+considered = "Special Energy"
+fail_provide = false
+turns = -1
 number = 1
 type = 511
+fail_type = 1
 
 [resource]
 script = ExtResource("3_ilh5e")
 name = "Rainbow Energy"
 image = ExtResource("2_hgff4")
 illustrator = ""
+number = 0
 rarity = 2
+expansion = 0
 categories = 4
 energy_properties = SubResource("Resource_10nfj")
 fossil = false

@@ -10,14 +10,21 @@ class_name EffectCall
 @export var knockOut: bool = false
 
 @export_group("Disable")
+@export var instead_of_damage: bool = false
 @export var do_nothing: bool = false
 @export var retreat: bool = false
 @export_enum("Can", "Flip", "Can't") var attack: int = 0
 
-@export_group("Buff/Debuff")
-@export_enum("Player", "Opponent") var buff_target: int = 0
+@export_group("Buff & Debuff")
+@export_enum("PlayerAll", "OpponentAll", "Self",
+"Defender", "Both Active", "Both Defending") var buff_target: int = 0
+@export_range(-120, 120, 10) var attack_damage: int = 0
+@export_range(-120, 120, 10) var defense: int = 0
+@export var after_weak_res: bool = true
 
 @export_group("Utility")
+@export_enum("None", "P by P", "O by O",
+ "O by P", "Both") var switch_type: int = 0
 @export var search: Array[Search]
 
 @export_group("Disruption")
@@ -27,7 +34,7 @@ class_name EffectCall
 @export_subgroup("Energy")
 @export var energy_ammount: int = 0
 
-
 @export_group("Other")
+@export var healing: HealEffect
 #mimicry might be it's own resource
 @export_enum("No", "Pay Cost", "Any") var mimic: int = 0

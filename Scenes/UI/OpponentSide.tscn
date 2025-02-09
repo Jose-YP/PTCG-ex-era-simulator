@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cijlbc37pj4gd" path="res://icon.svg" id="3_je3ne"]
 [ext_resource type="Texture2D" uid="uid://c0lenryrao7ol" path="res://Art Assets/1 ex Ruby & Saphire/89.jpg" id="4_kle8c"]
 
-[node name="PlayerSide" type="Control"]
+[node name="OpponentSide" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,6 +14,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Main" type="VBoxContainer" parent="."]
+layout_mode = 0
 offset_left = 6.0
 offset_top = -6.0
 offset_right = 965.0
@@ -21,6 +22,7 @@ offset_bottom = 325.0
 theme_override_constants/separation = 172
 
 [node name="Bench" type="HBoxContainer" parent="Main"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/separation = 200
 metadata/_edit_lock_ = true
@@ -41,20 +43,22 @@ layout_mode = 2
 [node name="BenchPokemon5" parent="Main/Bench" instance=ExtResource("1_o88tv")]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Main"]
+[node name="Active" type="HBoxContainer" parent="Main"]
+unique_name_in_owner = true
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="Main/HBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Main/Active"]
 custom_minimum_size = Vector2(780, 0)
 layout_mode = 2
 
-[node name="Active" type="VBoxContainer" parent="Main/HBoxContainer"]
+[node name="Active" type="VBoxContainer" parent="Main/Active"]
 layout_mode = 2
 
-[node name="ActivePokemon" parent="Main/HBoxContainer/Active" instance=ExtResource("2_fs4jj")]
+[node name="ActivePokemon" parent="Main/Active/Active" instance=ExtResource("2_fs4jj")]
 layout_mode = 2
 
 [node name="Non_mon" type="HBoxContainer" parent="."]
+layout_mode = 0
 offset_left = 35.0
 offset_top = 163.0
 offset_right = 712.0
@@ -62,6 +66,7 @@ offset_bottom = 247.0
 metadata/_edit_group_ = true
 
 [node name="Discards" type="HBoxContainer" parent="Non_mon"]
+unique_name_in_owner = true
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="Non_mon/Discards"]
@@ -81,6 +86,7 @@ bbcode_enabled = true
 text = "[u]Discards[/u] num"
 
 [node name="Prizes" type="HBoxContainer" parent="Non_mon"]
+unique_name_in_owner = true
 layout_mode = 2
 
 [node name="TextureRect2" type="TextureRect" parent="Non_mon/Prizes"]
@@ -101,6 +107,7 @@ text = "[u]Prizes[/u]
 num"
 
 [node name="Deck" type="HBoxContainer" parent="Non_mon"]
+unique_name_in_owner = true
 layout_mode = 2
 
 [node name="TextureRect3" type="TextureRect" parent="Non_mon/Deck"]
@@ -121,6 +128,7 @@ text = "[u]Deck[/u]
 num"
 
 [node name="Hand" type="HBoxContainer" parent="Non_mon"]
+unique_name_in_owner = true
 layout_mode = 2
 
 [node name="TextureRect4" type="TextureRect" parent="Non_mon/Hand"]
@@ -141,6 +149,7 @@ text = "[u]Hand[/u]
 num"
 
 [node name="SupporterNPlay" type="TextureRect" parent="Non_mon"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(141, 43)
 layout_mode = 2
 size_flags_horizontal = 4

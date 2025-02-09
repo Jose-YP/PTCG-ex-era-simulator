@@ -5,6 +5,8 @@
 [resource]
 script = ExtResource("1_yqw56")
 considered = "Basic Energy"
+fail_provide = false
 turns = -1
 number = 1
 type = 16
+fail_type = 1
