@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="EffectCall" load_steps=2 format=3 uid="uid://bwo4bs5ddl6je"]
+
+[ext_resource type="Script" path="res://Code/Resource Makers/EffectMaker.gd" id="1_r71sb"]
+
+[resource]
+script = ExtResource("1_r71sb")
+poison = 0
+burn = 1
+addable_effects = 0
+mutually_exclusive_conditions = 0
+knockOut = false
+retreat = false
+attack = 0
+buff_target = 0
+search = Array[Resource("res://Code/Resource Makers/SearchMaker.gd")]([])
+disrupt_target = 0
+disrupting = 0
+card_ammount = 0
+energy_ammount = 0
+mimic = 0

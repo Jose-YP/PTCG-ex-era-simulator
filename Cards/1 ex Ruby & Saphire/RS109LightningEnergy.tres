@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=4 format=3 uid="uid://b5ukqf6xmn6vv"]
+
+[ext_resource type="Resource" uid="uid://c8rj67jkl6r7u" path="res://PremadeResources/Basic Energy/LightningEnergy.tres" id="1_o7rxk"]
+[ext_resource type="Texture2D" uid="uid://cj4eckcnktq41" path="res://Art Assets/1 ex Ruby & Saphire/109.jpg" id="2_hyeqn"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CardMaker.gd" id="3_dp1gt"]
+
+[resource]
+script = ExtResource("3_dp1gt")
+name = "Fighting Energy"
+image = ExtResource("2_hyeqn")
+illustrator = ""
+number = 109
+rarity = 0
+expansion = 0
+categories = 4
+energy_properties = ExtResource("1_o7rxk")
+fossil = false

@@ -1,0 +1,205 @@
+[gd_scene load_steps=6 format=3 uid="uid://df8x227c7a8q4"]
+
+[ext_resource type="Texture2D" uid="uid://b4uymubvo04qp" path="res://Art Assets/4 ex Team Magma vs Team Aqua/37.jpg" id="1_4esgp"]
+[ext_resource type="Texture2D" uid="uid://ct7oa74jhqcwq" path="res://Art Assets/4 ex Team Magma vs Team Aqua/74.jpg" id="2_m52es"]
+[ext_resource type="Texture2D" uid="uid://d3nrajtlwbvgh" path="res://Art Assets/4 ex Team Magma vs Team Aqua/84.jpg" id="3_pjvm0"]
+[ext_resource type="PackedScene" uid="uid://bs3ila6cpt8n1" path="res://Scenes/UI/types.tscn" id="4_nhrrd"]
+[ext_resource type="Texture2D" uid="uid://cijlbc37pj4gd" path="res://icon.svg" id="5_r3j25"]
+
+[node name="BenchPokemon" type="Control"]
+layout_mode = 3
+anchor_left = -0.029
+anchor_right = 0.208
+anchor_bottom = 0.226
+offset_left = 0.320002
+offset_right = 0.360001
+offset_bottom = 0.279999
+
+[node name="Main" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Main"]
+layout_mode = 2
+theme_override_constants/separation = -30
+
+[node name="Name" type="RichTextLabel" parent="Main/HBoxContainer"]
+custom_minimum_size = Vector2(130, 46)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 12
+text = "Team Magma's
+Mightyena"
+
+[node name="MaxHP" type="RichTextLabel" parent="Main/HBoxContainer"]
+custom_minimum_size = Vector2(47, 46)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 12
+bbcode_enabled = true
+text = "[u]HP[/u] 200/200"
+
+[node name="Art" type="TextureRect" parent="Main"]
+custom_minimum_size = Vector2(142, 87)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_4esgp")
+expand_mode = 2
+stretch_mode = 2
+
+[node name="TrainerAttached" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = -17.0
+offset_top = 68.0
+offset_right = 31.0
+offset_bottom = 128.0
+metadata/_edit_group_ = true
+
+[node name="Tool" type="TextureRect" parent="TrainerAttached"]
+custom_minimum_size = Vector2(48, 28)
+layout_mode = 2
+texture = ExtResource("2_m52es")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="TM" type="TextureRect" parent="TrainerAttached"]
+custom_minimum_size = Vector2(48, 28)
+layout_mode = 2
+texture = ExtResource("3_pjvm0")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="EnergyContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+offset_left = -8.0
+offset_top = 130.0
+offset_right = 156.0
+offset_bottom = 160.0
+theme_override_constants/separation = -13
+metadata/_edit_group_ = true
+
+[node name="EnergyTypes" type="HBoxContainer" parent="EnergyContainer"]
+layout_mode = 2
+
+[node name="Types" parent="EnergyContainer/EnergyTypes" instance=ExtResource("4_nhrrd")]
+layout_mode = 2
+tab_alignment = 1
+
+[node name="Types2" parent="EnergyContainer/EnergyTypes" instance=ExtResource("4_nhrrd")]
+layout_mode = 2
+current_tab = 1
+
+[node name="Types3" parent="EnergyContainer/EnergyTypes" instance=ExtResource("4_nhrrd")]
+layout_mode = 2
+current_tab = 2
+
+[node name="Types4" parent="EnergyContainer/EnergyTypes" instance=ExtResource("4_nhrrd")]
+layout_mode = 2
+current_tab = 3
+
+[node name="Types5" parent="EnergyContainer/EnergyTypes" instance=ExtResource("4_nhrrd")]
+layout_mode = 2
+current_tab = 4
+
+[node name="Types6" parent="EnergyContainer/EnergyTypes" instance=ExtResource("4_nhrrd")]
+layout_mode = 2
+current_tab = 5
+
+[node name="Types7" parent="EnergyContainer/EnergyTypes" instance=ExtResource("4_nhrrd")]
+layout_mode = 2
+current_tab = 6
+
+[node name="EnergyNumber" type="HBoxContainer" parent="EnergyContainer"]
+layout_mode = 2
+theme_override_constants/separation = 14
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="EnergyContainer/EnergyNumber"]
+layout_mode = 2
+text = "3"
+
+[node name="Label2" type="Label" parent="EnergyContainer/EnergyNumber"]
+layout_mode = 2
+text = "3"
+
+[node name="Label3" type="Label" parent="EnergyContainer/EnergyNumber"]
+layout_mode = 2
+text = "3"
+
+[node name="Label4" type="Label" parent="EnergyContainer/EnergyNumber"]
+layout_mode = 2
+text = "3"
+
+[node name="Label5" type="Label" parent="EnergyContainer/EnergyNumber"]
+layout_mode = 2
+text = "3"
+
+[node name="Label6" type="Label" parent="EnergyContainer/EnergyNumber"]
+layout_mode = 2
+text = "3"
+
+[node name="Label7" type="Label" parent="EnergyContainer/EnergyNumber"]
+layout_mode = 2
+text = "3"
+
+[node name="TypeContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 45.0
+offset_right = 137.0
+offset_bottom = 65.0
+metadata/_edit_group_ = true
+
+[node name="Types" parent="TypeContainer" instance=ExtResource("4_nhrrd")]
+layout_mode = 2
+current_tab = 6
+
+[node name="Types2" parent="TypeContainer" instance=ExtResource("4_nhrrd")]
+visible = false
+layout_mode = 2
+current_tab = 1
+
+[node name="Types3" parent="TypeContainer" instance=ExtResource("4_nhrrd")]
+visible = false
+layout_mode = 2
+current_tab = 1
+
+[node name="Types4" parent="TypeContainer" instance=ExtResource("4_nhrrd")]
+visible = false
+layout_mode = 2
+current_tab = 1
+
+[node name="Types5" parent="TypeContainer" instance=ExtResource("4_nhrrd")]
+visible = false
+layout_mode = 2
+current_tab = 1
+
+[node name="Types6" parent="TypeContainer" instance=ExtResource("4_nhrrd")]
+visible = false
+layout_mode = 2
+current_tab = 1
+
+[node name="Conditions" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 126.0
+offset_top = 55.0
+offset_right = 158.0
+offset_bottom = 123.0
+
+[node name="Imprison" type="TextureRect" parent="Conditions"]
+modulate = Color(0.984314, 0.498039, 0.745098, 1)
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_r3j25")
+expand_mode = 4
+
+[node name="Shockwave" type="TextureRect" parent="Conditions"]
+modulate = Color(0.921569, 0.384314, 0, 1)
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_r3j25")
+expand_mode = 4

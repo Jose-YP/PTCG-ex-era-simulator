@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Energy" load_steps=2 format=3 uid="uid://bs4pqrkmc8ool"]
+
+[ext_resource type="Script" path="res://Code/Resource Makers/EnergyMaker.gd" id="1_6cqwn"]
+
+[resource]
+script = ExtResource("1_6cqwn")
+considered = "Special Energy"
+turns = -1
+number = 1
+type = 256

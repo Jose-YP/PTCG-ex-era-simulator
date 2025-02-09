@@ -1,0 +1,70 @@
+[gd_resource type="Resource" script_class="Card" load_steps=10 format=3 uid="uid://b7ayufc1njjxh"]
+
+[ext_resource type="Texture2D" uid="uid://2l8ia23r5jfi" path="res://Art Assets/1 ex Ruby & Saphire/29.jpg" id="1_w1f65"]
+[ext_resource type="Script" path="res://Code/Resource Makers/AttackMaker.gd" id="2_esmbd"]
+[ext_resource type="Script" path="res://Code/Resource Makers/PokemonMaker.gd" id="2_g0mxb"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CardMaker.gd" id="3_2sgjv"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CounterMaker.gd" id="3_vnsga"]
+
+[sub_resource type="Resource" id="Resource_swpou"]
+script = ExtResource("2_esmbd")
+name = "Energy Call"
+description = "Attach 1 Energy card from your discard pile to your Active Pokémon."
+grass_cost = 0
+fire_cost = 0
+water_cost = 0
+lightning_cost = 0
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 1
+initial_main_DMG = 10
+modifier = 0
+
+[sub_resource type="Resource" id="Resource_0fqi7"]
+script = ExtResource("3_vnsga")
+coin_flip = false
+for_what = 1
+cap = 0
+
+[sub_resource type="Resource" id="Resource_370u8"]
+script = ExtResource("2_esmbd")
+name = "Cannonball"
+description = "Does 30 damage plus 10 more damage for each Energy attached to Delcatty but not used to pay for this attack's Energy cost."
+grass_cost = 0
+fire_cost = 0
+water_cost = 0
+lightning_cost = 0
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 2
+initial_main_DMG = 30
+modifier = 1
+counter = SubResource("Resource_0fqi7")
+
+[sub_resource type="Resource" id="Resource_wmjqw"]
+script = ExtResource("2_g0mxb")
+HP = 80
+retreat = 1
+attacks = Array[ExtResource("2_esmbd")]([SubResource("Resource_swpou"), SubResource("Resource_370u8")])
+evo_stage = "Stage 1"
+evolves_from = "Skitty"
+considered = null
+type = 256
+weak = 32
+resist = 0
+
+[resource]
+script = ExtResource("3_2sgjv")
+name = "Delcatty"
+image = ExtResource("1_w1f65")
+illustrator = "Ken Sugimori"
+number = 29
+rarity = 0
+expansion = 0
+categories = 1
+pokemon_properties = SubResource("Resource_wmjqw")
+fossil = false

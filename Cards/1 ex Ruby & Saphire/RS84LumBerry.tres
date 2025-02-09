@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="Card" load_steps=5 format=3 uid="uid://s0xeoyp6jtsa"]
+
+[ext_resource type="Texture2D" uid="uid://3tcerc2f5aw2" path="res://Art Assets/1 ex Ruby & Saphire/84.jpg" id="1_q5378"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CardMaker.gd" id="2_4baxb"]
+[ext_resource type="Script" path="res://Code/Resource Makers/TrainerMaker.gd" id="3_38oxe"]
+
+[sub_resource type="Resource" id="Resource_d0m0p"]
+script = ExtResource("3_38oxe")
+considered = "Tool"
+description = "At any time between turns, if the Pokémon this card is attached to is affected by any Special Conditions, remove all of them. Then discard Lum Berry. "
+prerequisite = 0
+asks = 0
+fail_effect = 0
+success_effect = 0
+
+[resource]
+script = ExtResource("2_4baxb")
+name = "Lady Outing"
+image = ExtResource("1_q5378")
+illustrator = "Kazo Yazawa"
+number = 84
+rarity = 1
+expansion = 0
+categories = 2
+trainer_properties = SubResource("Resource_d0m0p")
+fossil = false

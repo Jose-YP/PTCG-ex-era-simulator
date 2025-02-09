@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Ask" load_steps=4 format=3 uid="uid://depecxjmmfklq"]
+
+[ext_resource type="Script" path="res://Code/Resource Makers/AskMaker.gd" id="1_dbjgf"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CoinFlipNumMaker.gd" id="1_hd3dw"]
+
+[sub_resource type="Resource" id="Resource_q0esk"]
+script = ExtResource("1_hd3dw")
+heads = true
+const_flip_times = 1
+varying_flip_times = 0
+until = false
+
+[resource]
+script = ExtResource("1_dbjgf")
+bench_size = -1
+coin_flip = SubResource("Resource_q0esk")

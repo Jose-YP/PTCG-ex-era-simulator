@@ -1,0 +1,100 @@
+[gd_resource type="Resource" script_class="Card" load_steps=17 format=3 uid="uid://1ktns5k8q1q5"]
+
+[ext_resource type="Texture2D" uid="uid://br5xd7al737ds" path="res://Art Assets/1 ex Ruby & Saphire/44.jpg" id="1_eb64q"]
+[ext_resource type="Script" path="res://Code/Resource Makers/AttackMaker.gd" id="2_0ikc4"]
+[ext_resource type="Script" path="res://Code/Resource Makers/EffectMaker.gd" id="2_cvu24"]
+[ext_resource type="Script" path="res://Code/Resource Makers/PlacementMaker.gd" id="3_83yoy"]
+[ext_resource type="Resource" uid="uid://8enhr0kabavy" path="res://PremadeResources/Basic Conditions/BaiscAsleep.tres" id="3_k0ku6"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CardMaker.gd" id="3_m28c6"]
+[ext_resource type="Script" path="res://Code/Resource Makers/PokemonMaker.gd" id="4_156aa"]
+[ext_resource type="Script" path="res://Code/Resource Makers/SearchMaker.gd" id="4_ilxq2"]
+[ext_resource type="Script" path="res://Code/Resource Makers/IdentifierMaker.gd" id="4_xflah"]
+
+[sub_resource type="Resource" id="Resource_ivuc4"]
+script = ExtResource("3_83yoy")
+where = 0
+shuffle = true
+evolve = false
+
+[sub_resource type="Resource" id="Resource_ndvwq"]
+script = ExtResource("4_xflah")
+broad_class = 4
+contains = ""
+type = 511
+poke_class = null
+stage = null
+trainer_classes = null
+energy_class = 1
+
+[sub_resource type="Resource" id="Resource_4hb10"]
+script = ExtResource("4_ilxq2")
+side = 0
+where = 1
+how_many = 2
+of_this = Array[ExtResource("4_xflah")]([SubResource("Resource_ndvwq")])
+and_then = SubResource("Resource_ivuc4")
+reveal = true
+
+[sub_resource type="Resource" id="Resource_j8uv5"]
+script = ExtResource("2_cvu24")
+addable_effects = null
+mutually_exclusive_conditions = null
+search = Array[ExtResource("4_ilxq2")]([SubResource("Resource_4hb10")])
+
+[sub_resource type="Resource" id="Resource_pgb12"]
+script = ExtResource("2_0ikc4")
+name = "Minor Errand-Running"
+description = "Search your deck for 2 basic Energy cards, show them to your opponent, and put them into your hand. Shuffle your deck afterward."
+grass_cost = 0
+fire_cost = 0
+water_cost = 0
+lightning_cost = 0
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 1
+initial_main_DMG = 0
+modifier = 0
+effect = SubResource("Resource_j8uv5")
+
+[sub_resource type="Resource" id="Resource_04bbs"]
+script = ExtResource("2_0ikc4")
+name = "Lullaby"
+description = "The Defending Pokémon is now Asleep."
+grass_cost = 0
+fire_cost = 0
+water_cost = 0
+lightning_cost = 0
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 1
+initial_main_DMG = 10
+modifier = 0
+effect = ExtResource("3_k0ku6")
+
+[sub_resource type="Resource" id="Resource_wmjqw"]
+script = ExtResource("4_156aa")
+HP = 40
+retreat = 1
+attacks = Array[ExtResource("2_0ikc4")]([SubResource("Resource_pgb12"), SubResource("Resource_04bbs")])
+evo_stage = "Basic"
+evolves_from = ""
+considered = null
+type = 256
+weak = 32
+resist = 0
+
+[resource]
+script = ExtResource("3_m28c6")
+name = "Skitty"
+image = ExtResource("1_eb64q")
+illustrator = "Midori Harada"
+number = 44
+rarity = 0
+expansion = 0
+categories = 1
+pokemon_properties = SubResource("Resource_wmjqw")
+fossil = false

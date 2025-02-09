@@ -1,0 +1,308 @@
+[gd_scene load_steps=6 format=3 uid="uid://drg0sr7jdfiel"]
+
+[ext_resource type="Texture2D" uid="uid://b4uymubvo04qp" path="res://Art Assets/4 ex Team Magma vs Team Aqua/37.jpg" id="1_uesv2"]
+[ext_resource type="Texture2D" uid="uid://ct7oa74jhqcwq" path="res://Art Assets/4 ex Team Magma vs Team Aqua/74.jpg" id="2_4mrr5"]
+[ext_resource type="Texture2D" uid="uid://d3nrajtlwbvgh" path="res://Art Assets/4 ex Team Magma vs Team Aqua/84.jpg" id="3_bcik8"]
+[ext_resource type="PackedScene" uid="uid://bs3ila6cpt8n1" path="res://Scenes/UI/types.tscn" id="4_5yd0i"]
+[ext_resource type="Texture2D" uid="uid://cijlbc37pj4gd" path="res://icon.svg" id="5_12v7q"]
+
+[node name="ActivePokemon" type="Control"]
+layout_mode = 3
+anchor_left = -0.029
+anchor_right = 0.208
+anchor_bottom = 0.226
+offset_left = 0.320002
+offset_right = 0.360001
+offset_bottom = 0.279999
+
+[node name="Main" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Main"]
+layout_mode = 2
+
+[node name="Name" type="RichTextLabel" parent="Main/HBoxContainer"]
+custom_minimum_size = Vector2(130, 46)
+layout_mode = 2
+text = "Team Magma's
+Mightyena"
+
+[node name="MaxHP" type="RichTextLabel" parent="Main/HBoxContainer"]
+custom_minimum_size = Vector2(64, 46)
+layout_mode = 2
+bbcode_enabled = true
+text = "[u]HP[/u] 200/200"
+
+[node name="Art" type="TextureRect" parent="Main"]
+custom_minimum_size = Vector2(189, 114)
+layout_mode = 2
+texture = ExtResource("1_uesv2")
+
+[node name="TrainerAttached" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = -17.0
+offset_top = 73.0
+offset_right = 31.0
+offset_bottom = 133.0
+metadata/_edit_group_ = true
+
+[node name="Tool" type="TextureRect" parent="TrainerAttached"]
+visible = false
+custom_minimum_size = Vector2(48, 28)
+layout_mode = 2
+texture = ExtResource("2_4mrr5")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="TM" type="TextureRect" parent="TrainerAttached"]
+visible = false
+custom_minimum_size = Vector2(48, 28)
+layout_mode = 2
+texture = ExtResource("3_bcik8")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="EnergyContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+offset_left = -9.0
+offset_top = 142.0
+offset_right = 203.0
+offset_bottom = 172.0
+theme_override_constants/separation = -13
+
+[node name="EnergyTypes" type="HBoxContainer" parent="EnergyContainer"]
+layout_mode = 2
+
+[node name="Types" parent="EnergyContainer/EnergyTypes" instance=ExtResource("4_5yd0i")]
+visible = false
+layout_mode = 2
+tab_alignment = 1
+
+[node name="Types2" parent="EnergyContainer/EnergyTypes" instance=ExtResource("4_5yd0i")]
+visible = false
+layout_mode = 2
+current_tab = 1
+
+[node name="Types3" parent="EnergyContainer/EnergyTypes" instance=ExtResource("4_5yd0i")]
+visible = false
+layout_mode = 2
+current_tab = 2
+
+[node name="Types4" parent="EnergyContainer/EnergyTypes" instance=ExtResource("4_5yd0i")]
+visible = false
+layout_mode = 2
+current_tab = 3
+
+[node name="Types5" parent="EnergyContainer/EnergyTypes" instance=ExtResource("4_5yd0i")]
+visible = false
+layout_mode = 2
+current_tab = 4
+
+[node name="Types6" parent="EnergyContainer/EnergyTypes" instance=ExtResource("4_5yd0i")]
+visible = false
+layout_mode = 2
+current_tab = 5
+
+[node name="Types7" parent="EnergyContainer/EnergyTypes" instance=ExtResource("4_5yd0i")]
+visible = false
+layout_mode = 2
+current_tab = 6
+
+[node name="Types8" parent="EnergyContainer/EnergyTypes" instance=ExtResource("4_5yd0i")]
+visible = false
+layout_mode = 2
+current_tab = 7
+
+[node name="Types9" parent="EnergyContainer/EnergyTypes" instance=ExtResource("4_5yd0i")]
+visible = false
+layout_mode = 2
+current_tab = 8
+
+[node name="EnergyNumber" type="HBoxContainer" parent="EnergyContainer"]
+layout_mode = 2
+theme_override_constants/separation = 14
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="EnergyContainer/EnergyNumber"]
+visible = false
+layout_mode = 2
+text = "3"
+
+[node name="Label2" type="Label" parent="EnergyContainer/EnergyNumber"]
+visible = false
+layout_mode = 2
+text = "3"
+
+[node name="Label3" type="Label" parent="EnergyContainer/EnergyNumber"]
+visible = false
+layout_mode = 2
+text = "3"
+
+[node name="Label4" type="Label" parent="EnergyContainer/EnergyNumber"]
+visible = false
+layout_mode = 2
+text = "3"
+
+[node name="Label5" type="Label" parent="EnergyContainer/EnergyNumber"]
+visible = false
+layout_mode = 2
+text = "3"
+
+[node name="Label6" type="Label" parent="EnergyContainer/EnergyNumber"]
+visible = false
+layout_mode = 2
+text = "3"
+
+[node name="Label7" type="Label" parent="EnergyContainer/EnergyNumber"]
+visible = false
+layout_mode = 2
+text = "3"
+
+[node name="Label8" type="Label" parent="EnergyContainer/EnergyNumber"]
+visible = false
+layout_mode = 2
+text = "3"
+
+[node name="Label9" type="Label" parent="EnergyContainer/EnergyNumber"]
+visible = false
+layout_mode = 2
+text = "3"
+
+[node name="TypeContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 45.0
+offset_right = 137.0
+offset_bottom = 65.0
+metadata/_edit_group_ = true
+
+[node name="Types" parent="TypeContainer" instance=ExtResource("4_5yd0i")]
+layout_mode = 2
+current_tab = 6
+
+[node name="Types2" parent="TypeContainer" instance=ExtResource("4_5yd0i")]
+visible = false
+layout_mode = 2
+current_tab = 1
+
+[node name="Types3" parent="TypeContainer" instance=ExtResource("4_5yd0i")]
+visible = false
+layout_mode = 2
+current_tab = 2
+
+[node name="Types4" parent="TypeContainer" instance=ExtResource("4_5yd0i")]
+visible = false
+layout_mode = 2
+current_tab = 3
+
+[node name="Types5" parent="TypeContainer" instance=ExtResource("4_5yd0i")]
+visible = false
+layout_mode = 2
+current_tab = 4
+
+[node name="Types6" parent="TypeContainer" instance=ExtResource("4_5yd0i")]
+visible = false
+layout_mode = 2
+current_tab = 5
+
+[node name="Conditions" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 163.0
+offset_top = 48.0
+offset_right = 231.0
+offset_bottom = 152.0
+columns = 2
+
+[node name="Poison" type="TextureRect" parent="Conditions"]
+visible = false
+modulate = Color(0.415686, 0.00784314, 0.494118, 1)
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_12v7q")
+expand_mode = 4
+
+[node name="PEmpty" type="Control" parent="Conditions"]
+visible = false
+layout_mode = 2
+
+[node name="Burn" type="TextureRect" parent="Conditions"]
+visible = false
+modulate = Color(0.882353, 0.211765, 0.298039, 1)
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_12v7q")
+expand_mode = 4
+
+[node name="BEmpty" type="Control" parent="Conditions"]
+visible = false
+layout_mode = 2
+
+[node name="TurnConditions" type="TabContainer" parent="Conditions"]
+visible = false
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+current_tab = 2
+tabs_visible = false
+
+[node name="Sleep" type="TextureRect" parent="Conditions/TurnConditions"]
+visible = false
+modulate = Color(0, 1, 1, 1)
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("5_12v7q")
+expand_mode = 4
+
+[node name="Confusion" type="TextureRect" parent="Conditions/TurnConditions"]
+visible = false
+modulate = Color(0.196078, 0.529412, 0, 1)
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("5_12v7q")
+expand_mode = 4
+
+[node name="Paralysis" type="TextureRect" parent="Conditions/TurnConditions"]
+modulate = Color(1, 1, 0.0901961, 1)
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("5_12v7q")
+expand_mode = 4
+
+[node name="TEmpty" type="Control" parent="Conditions"]
+visible = false
+layout_mode = 2
+
+[node name="Imprison" type="TextureRect" parent="Conditions"]
+visible = false
+modulate = Color(0.984314, 0.498039, 0.745098, 1)
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_12v7q")
+expand_mode = 4
+
+[node name="IEmpty" type="Control" parent="Conditions"]
+visible = false
+layout_mode = 2
+
+[node name="Shockwave" type="TextureRect" parent="Conditions"]
+visible = false
+modulate = Color(0.921569, 0.384314, 0, 1)
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_12v7q")
+expand_mode = 4
+
+[node name="SEmpty" type="Control" parent="Conditions"]
+visible = false
+layout_mode = 2

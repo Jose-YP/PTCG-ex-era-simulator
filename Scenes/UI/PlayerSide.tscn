@@ -1,0 +1,154 @@
+[gd_scene load_steps=5 format=3 uid="uid://dognokjork36j"]
+
+[ext_resource type="PackedScene" uid="uid://df8x227c7a8q4" path="res://Scenes/UI/BenchMon.tscn" id="1_j2t4b"]
+[ext_resource type="PackedScene" uid="uid://drg0sr7jdfiel" path="res://Scenes/UI/ActiveMon.tscn" id="1_n754v"]
+[ext_resource type="Texture2D" uid="uid://c0lenryrao7ol" path="res://Art Assets/1 ex Ruby & Saphire/89.jpg" id="2_xoxrb"]
+[ext_resource type="Texture2D" uid="uid://cijlbc37pj4gd" path="res://icon.svg" id="3_v15xo"]
+
+[node name="PlayerSide" type="Control"]
+layout_mode = 3
+anchor_left = 0.031
+anchor_top = 0.504
+anchor_right = 0.924
+anchor_bottom = 0.981
+offset_left = 0.519997
+offset_top = 0.119995
+offset_right = 0.0799561
+offset_bottom = -0.320068
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Main" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 6.0
+offset_top = -6.0
+offset_right = 965.0
+offset_bottom = 325.0
+theme_override_constants/separation = 172
+metadata/_edit_group_ = true
+
+[node name="Active" type="VBoxContainer" parent="Main"]
+layout_mode = 2
+
+[node name="ActivePokemon" parent="Main/Active" instance=ExtResource("1_n754v")]
+layout_mode = 2
+
+[node name="Bench" type="HBoxContainer" parent="Main"]
+layout_mode = 2
+theme_override_constants/separation = 200
+
+[node name="BenchPokemon" parent="Main/Bench" instance=ExtResource("1_j2t4b")]
+layout_mode = 2
+
+[node name="BenchPokemon2" parent="Main/Bench" instance=ExtResource("1_j2t4b")]
+layout_mode = 2
+
+[node name="BenchPokemon3" parent="Main/Bench" instance=ExtResource("1_j2t4b")]
+layout_mode = 2
+
+[node name="BenchPokemon4" parent="Main/Bench" instance=ExtResource("1_j2t4b")]
+layout_mode = 2
+
+[node name="BenchPokemon5" parent="Main/Bench" instance=ExtResource("1_j2t4b")]
+layout_mode = 2
+
+[node name="Non_mon" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 322.0
+offset_top = 74.0
+offset_right = 952.0
+offset_bottom = 158.0
+alignment = 2
+metadata/_edit_group_ = true
+
+[node name="SupporterNPlay" type="TextureRect" parent="Non_mon"]
+custom_minimum_size = Vector2(141, 43)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_xoxrb")
+
+[node name="Discards" type="HBoxContainer" parent="Non_mon"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Non_mon/Discards"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_v15xo")
+expand_mode = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Non_mon/Discards"]
+custom_minimum_size = Vector2(82, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+bbcode_enabled = true
+text = "[u]Discards[/u] num"
+
+[node name="Prizes" type="HBoxContainer" parent="Non_mon"]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="Non_mon/Prizes"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_v15xo")
+expand_mode = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Non_mon/Prizes"]
+custom_minimum_size = Vector2(82, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+bbcode_enabled = true
+text = "[u]Prizes[/u]
+num"
+
+[node name="Deck" type="HBoxContainer" parent="Non_mon"]
+layout_mode = 2
+
+[node name="TextureRect3" type="TextureRect" parent="Non_mon/Deck"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_v15xo")
+expand_mode = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Non_mon/Deck"]
+custom_minimum_size = Vector2(82, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+bbcode_enabled = true
+text = "[u]Deck[/u]
+num"
+
+[node name="Hand" type="HBoxContainer" parent="Non_mon"]
+layout_mode = 2
+
+[node name="TextureRect4" type="TextureRect" parent="Non_mon/Hand"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_v15xo")
+expand_mode = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Non_mon/Hand"]
+custom_minimum_size = Vector2(82, 49)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+bbcode_enabled = true
+text = "[u]Hand[/u]
+num"
+
+[node name="Cards" type="GridContainer" parent="Non_mon"]
+visible = false
+layout_mode = 2
+columns = 4
+metadata/_edit_group_ = true

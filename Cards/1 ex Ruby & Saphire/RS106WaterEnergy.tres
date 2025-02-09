@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=4 format=3 uid="uid://d3wqsrtlqtlqm"]
+
+[ext_resource type="Resource" uid="uid://bd75vllngqbcc" path="res://PremadeResources/Basic Energy/WaterEnergy.tres" id="1_r4ttc"]
+[ext_resource type="Texture2D" uid="uid://bugdi7boq3ec0" path="res://Art Assets/1 ex Ruby & Saphire/106.jpg" id="2_3i0x7"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CardMaker.gd" id="3_osrqh"]
+
+[resource]
+script = ExtResource("3_osrqh")
+name = "Water Energy"
+image = ExtResource("2_3i0x7")
+illustrator = ""
+number = 106
+rarity = 0
+expansion = 0
+categories = 4
+energy_properties = ExtResource("1_r4ttc")
+fossil = false
