@@ -1,5 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://bs3ila6cpt8n1"]
+[gd_scene load_steps=12 format=3 uid="uid://bs3ila6cpt8n1"]
 
+[ext_resource type="Script" path="res://Code/Scenes/UI/types.gd" id="1_476s5"]
 [ext_resource type="Texture2D" uid="uid://bptkdabkts2i" path="res://Art Assets/Energy/grass.png" id="1_swp22"]
 [ext_resource type="Texture2D" uid="uid://bv3ytbkfhmq55" path="res://Art Assets/Energy/fire.png" id="2_avsjd"]
 [ext_resource type="Texture2D" uid="uid://dcso3o1r14yl3" path="res://Art Assets/Energy/water.png" id="3_7kys8"]
@@ -12,59 +13,74 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nsmgk"]
 
-[node name="Types" type="TabContainer"]
-anchors_preset = -1
-anchor_right = 0.019
-anchor_bottom = 0.028
-offset_left = 174.0
-offset_top = 45.0
-offset_right = 173.48
-offset_bottom = 44.84
+[node name="Types" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_476s5")
+
+[node name="Tabs" type="TabContainer" parent="."]
+layout_mode = 1
+offset_right = 20.0
+offset_bottom = 20.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxEmpty_nsmgk")
 tabs_visible = false
 
-[node name="Grass" type="TextureRect" parent="."]
+[node name="Grass" type="TextureRect" parent="Tabs"]
 layout_mode = 2
 texture = ExtResource("1_swp22")
 
-[node name="Fire" type="TextureRect" parent="."]
+[node name="Fire" type="TextureRect" parent="Tabs"]
 visible = false
 layout_mode = 2
 texture = ExtResource("2_avsjd")
 
-[node name="Water" type="TextureRect" parent="."]
+[node name="Water" type="TextureRect" parent="Tabs"]
 visible = false
 layout_mode = 2
 texture = ExtResource("3_7kys8")
 
-[node name="Lightning" type="TextureRect" parent="."]
+[node name="Lightning" type="TextureRect" parent="Tabs"]
 visible = false
 layout_mode = 2
 texture = ExtResource("4_gfsbt")
 
-[node name="Psychic" type="TextureRect" parent="."]
+[node name="Psychic" type="TextureRect" parent="Tabs"]
 visible = false
 layout_mode = 2
 texture = ExtResource("5_g02er")
 
-[node name="Fighting" type="TextureRect" parent="."]
+[node name="Fighting" type="TextureRect" parent="Tabs"]
 visible = false
 layout_mode = 2
 texture = ExtResource("6_lmevn")
 
-[node name="Darkness" type="TextureRect" parent="."]
+[node name="Darkness" type="TextureRect" parent="Tabs"]
 visible = false
 layout_mode = 2
 texture = ExtResource("7_gq2ku")
 
-[node name="Metal" type="TextureRect" parent="."]
+[node name="Metal" type="TextureRect" parent="Tabs"]
 visible = false
 layout_mode = 2
 texture = ExtResource("8_sjp68")
 
-[node name="Colorless" type="TextureRect" parent="."]
+[node name="Colorless" type="TextureRect" parent="Tabs"]
 visible = false
 layout_mode = 2
 texture = ExtResource("9_fv471")
+
+[node name="Number" type="RichTextLabel" parent="."]
+visible = false
+layout_mode = 1
+offset_left = -24.0
+offset_top = 4.0
+offset_right = 24.0
+offset_bottom = 28.0
+bbcode_enabled = true
+text = "num"
+fit_content = true
+scroll_active = false

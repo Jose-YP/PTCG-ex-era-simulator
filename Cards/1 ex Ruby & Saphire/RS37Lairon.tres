@@ -1,6 +1,5 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=14 format=3 uid="uid://co4rk4hqixy8b"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=13 format=3 uid="uid://co4rk4hqixy8b"]
 
-[ext_resource type="Texture2D" uid="uid://bc5arw2wcqfke" path="res://Art Assets/Cards/1 ex Ruby & Saphire/37.jpg" id="1_6d7uy"]
 [ext_resource type="Script" path="res://Code/Resource Makers/CardMaker.gd" id="1_gxobw"]
 [ext_resource type="Script" path="res://Code/Resource Makers/BenchAttackMaker.gd" id="2_rgjw0"]
 [ext_resource type="Script" path="res://Code/Resource Makers/PokemonMaker.gd" id="3_f5s6c"]
@@ -71,7 +70,7 @@ counter = SubResource("Resource_nrlq2")
 script = ExtResource("3_f5s6c")
 HP = 80
 retreat = 2
-attacks = Array[ExtResource("3_u1xp7")]([SubResource("Resource_r1kb1"), SubResource("Resource_c3a7t")])
+attacks = [SubResource("Resource_r1kb1"), SubResource("Resource_c3a7t")]
 evo_stage = "Stage 1"
 evolves_from = "Aaron"
 delta = false
@@ -84,7 +83,6 @@ resist = 1
 [resource]
 script = ExtResource("1_gxobw")
 name = "Lairon"
-image = ExtResource("1_6d7uy")
 illustrator = "Mitsuhiro Arita"
 number = 37
 rarity = 1

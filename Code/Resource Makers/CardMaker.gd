@@ -17,7 +17,7 @@ class_name Base_Card
 "POP Series 4", "POP Series 5") var expansion: int = 0
 
 @export_category("Type")
-@export_flags("Pokemon", "Trainer", "Energy") var categories
+@export_flags("Pokemon", "Trainer", "Energy") var categories: int = 0
 @export var pokemon_properties: Pokemon
 @export var trainer_properties: Trainer
 @export var energy_properties: Energy

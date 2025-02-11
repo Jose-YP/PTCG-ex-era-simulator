@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://drg0sr7jdfiel"]
+[gd_scene load_steps=7 format=3 uid="uid://drg0sr7jdfiel"]
 
+[ext_resource type="Script" path="res://Code/Scenes/UI/UISlot.gd" id="1_c5ua0"]
 [ext_resource type="Texture2D" uid="uid://b4uymubvo04qp" path="res://Art Assets/Cards/4 ex Team Magma vs Team Aqua/37.jpg" id="1_uesv2"]
 [ext_resource type="Texture2D" uid="uid://ct7oa74jhqcwq" path="res://Art Assets/Cards/4 ex Team Magma vs Team Aqua/74.jpg" id="2_4mrr5"]
 [ext_resource type="Texture2D" uid="uid://d3nrajtlwbvgh" path="res://Art Assets/Cards/4 ex Team Magma vs Team Aqua/84.jpg" id="3_bcik8"]
@@ -14,6 +15,8 @@ anchor_bottom = 0.226
 offset_left = 0.320002
 offset_right = 0.360001
 offset_bottom = 0.279999
+script = ExtResource("1_c5ua0")
+slot_type = 0
 
 [node name="Main" type="VBoxContainer" parent="."]
 layout_mode = 0
@@ -24,18 +27,21 @@ offset_bottom = 40.0
 layout_mode = 2
 
 [node name="Name" type="RichTextLabel" parent="Main/HBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(130, 46)
 layout_mode = 2
 text = "Team Magma's
 Mightyena"
 
 [node name="MaxHP" type="RichTextLabel" parent="Main/HBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(64, 46)
 layout_mode = 2
 bbcode_enabled = true
 text = "[u]HP[/u] 200/200"
 
 [node name="Art" type="TextureRect" parent="Main"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(189, 114)
 layout_mode = 2
 texture = ExtResource("1_uesv2")
@@ -49,6 +55,7 @@ offset_bottom = 133.0
 metadata/_edit_group_ = true
 
 [node name="Tool" type="TextureRect" parent="TrainerAttached"]
+unique_name_in_owner = true
 visible = false
 custom_minimum_size = Vector2(48, 28)
 layout_mode = 2
@@ -57,6 +64,7 @@ expand_mode = 5
 stretch_mode = 4
 
 [node name="TM" type="TextureRect" parent="TrainerAttached"]
+unique_name_in_owner = true
 visible = false
 custom_minimum_size = Vector2(48, 28)
 layout_mode = 2
@@ -73,104 +81,47 @@ offset_bottom = 172.0
 theme_override_constants/separation = -13
 
 [node name="EnergyTypes" type="HBoxContainer" parent="EnergyContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 
 [node name="Types" parent="EnergyContainer/EnergyTypes" instance=ExtResource("4_5yd0i")]
 visible = false
 layout_mode = 2
-tab_alignment = 1
 
 [node name="Types2" parent="EnergyContainer/EnergyTypes" instance=ExtResource("4_5yd0i")]
 visible = false
 layout_mode = 2
-current_tab = 1
 
 [node name="Types3" parent="EnergyContainer/EnergyTypes" instance=ExtResource("4_5yd0i")]
 visible = false
 layout_mode = 2
-current_tab = 2
 
 [node name="Types4" parent="EnergyContainer/EnergyTypes" instance=ExtResource("4_5yd0i")]
 visible = false
 layout_mode = 2
-current_tab = 3
 
 [node name="Types5" parent="EnergyContainer/EnergyTypes" instance=ExtResource("4_5yd0i")]
 visible = false
 layout_mode = 2
-current_tab = 4
 
 [node name="Types6" parent="EnergyContainer/EnergyTypes" instance=ExtResource("4_5yd0i")]
 visible = false
 layout_mode = 2
-current_tab = 5
 
 [node name="Types7" parent="EnergyContainer/EnergyTypes" instance=ExtResource("4_5yd0i")]
 visible = false
 layout_mode = 2
-current_tab = 6
 
 [node name="Types8" parent="EnergyContainer/EnergyTypes" instance=ExtResource("4_5yd0i")]
 visible = false
 layout_mode = 2
-current_tab = 7
 
 [node name="Types9" parent="EnergyContainer/EnergyTypes" instance=ExtResource("4_5yd0i")]
 visible = false
 layout_mode = 2
-current_tab = 8
-
-[node name="EnergyNumber" type="HBoxContainer" parent="EnergyContainer"]
-layout_mode = 2
-theme_override_constants/separation = 14
-metadata/_edit_group_ = true
-
-[node name="Label" type="Label" parent="EnergyContainer/EnergyNumber"]
-visible = false
-layout_mode = 2
-text = "3"
-
-[node name="Label2" type="Label" parent="EnergyContainer/EnergyNumber"]
-visible = false
-layout_mode = 2
-text = "3"
-
-[node name="Label3" type="Label" parent="EnergyContainer/EnergyNumber"]
-visible = false
-layout_mode = 2
-text = "3"
-
-[node name="Label4" type="Label" parent="EnergyContainer/EnergyNumber"]
-visible = false
-layout_mode = 2
-text = "3"
-
-[node name="Label5" type="Label" parent="EnergyContainer/EnergyNumber"]
-visible = false
-layout_mode = 2
-text = "3"
-
-[node name="Label6" type="Label" parent="EnergyContainer/EnergyNumber"]
-visible = false
-layout_mode = 2
-text = "3"
-
-[node name="Label7" type="Label" parent="EnergyContainer/EnergyNumber"]
-visible = false
-layout_mode = 2
-text = "3"
-
-[node name="Label8" type="Label" parent="EnergyContainer/EnergyNumber"]
-visible = false
-layout_mode = 2
-text = "3"
-
-[node name="Label9" type="Label" parent="EnergyContainer/EnergyNumber"]
-visible = false
-layout_mode = 2
-text = "3"
 
 [node name="TypeContainer" type="HBoxContainer" parent="."]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = -3.0
 offset_top = 45.0
@@ -180,32 +131,26 @@ metadata/_edit_group_ = true
 
 [node name="Types" parent="TypeContainer" instance=ExtResource("4_5yd0i")]
 layout_mode = 2
-current_tab = 6
 
 [node name="Types2" parent="TypeContainer" instance=ExtResource("4_5yd0i")]
 visible = false
 layout_mode = 2
-current_tab = 1
 
 [node name="Types3" parent="TypeContainer" instance=ExtResource("4_5yd0i")]
 visible = false
 layout_mode = 2
-current_tab = 2
 
 [node name="Types4" parent="TypeContainer" instance=ExtResource("4_5yd0i")]
 visible = false
 layout_mode = 2
-current_tab = 3
 
 [node name="Types5" parent="TypeContainer" instance=ExtResource("4_5yd0i")]
 visible = false
 layout_mode = 2
-current_tab = 4
 
 [node name="Types6" parent="TypeContainer" instance=ExtResource("4_5yd0i")]
 visible = false
 layout_mode = 2
-current_tab = 5
 
 [node name="Conditions" type="GridContainer" parent="."]
 layout_mode = 0
@@ -216,6 +161,7 @@ offset_bottom = 152.0
 columns = 2
 
 [node name="Poison" type="TextureRect" parent="Conditions"]
+unique_name_in_owner = true
 visible = false
 modulate = Color(0.415686, 0.00784314, 0.494118, 1)
 custom_minimum_size = Vector2(32, 32)
@@ -230,6 +176,7 @@ visible = false
 layout_mode = 2
 
 [node name="Burn" type="TextureRect" parent="Conditions"]
+unique_name_in_owner = true
 visible = false
 modulate = Color(0.882353, 0.211765, 0.298039, 1)
 custom_minimum_size = Vector2(32, 32)
@@ -244,6 +191,7 @@ visible = false
 layout_mode = 2
 
 [node name="TurnConditions" type="TabContainer" parent="Conditions"]
+unique_name_in_owner = true
 visible = false
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
@@ -280,6 +228,7 @@ visible = false
 layout_mode = 2
 
 [node name="Imprison" type="TextureRect" parent="Conditions"]
+unique_name_in_owner = true
 visible = false
 modulate = Color(0.984314, 0.498039, 0.745098, 1)
 custom_minimum_size = Vector2(32, 32)
@@ -294,6 +243,7 @@ visible = false
 layout_mode = 2
 
 [node name="Shockwave" type="TextureRect" parent="Conditions"]
+unique_name_in_owner = true
 visible = false
 modulate = Color(0.921569, 0.384314, 0, 1)
 custom_minimum_size = Vector2(32, 32)

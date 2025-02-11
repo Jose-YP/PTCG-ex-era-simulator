@@ -2,6 +2,8 @@ extends Node
 class_name PokeSlot
 
 @export var current_card: Base_Card
+@export var current_slot: UI_Slot
+
 @export_group("Temp Types")
 @export_flags("Grass","Fire","Water",
 "Lightning","Psychic","Fighting",
@@ -19,7 +21,7 @@ enum poison_type{NONE, NORMAL, HEAVY}
 enum burn_type{NONE, NORMAL, HEAVY}
 enum turn_type{NONE, PARALYSIS, ASLEEP, CONFUSION}
 
-signal refresh()
+#signal refresh()
 
 #--------------------------------------
 #region ATTATCHED VARIABLES
@@ -78,7 +80,7 @@ func add_poison(severity):
 			poison_condition = poison_type.NORMAL
 		"Heavy":
 			poison_condition = poison_type.HEAVY
-	refresh.emit()
+	#refresh.emit()
 
 func add_burn(severity):
 	match severity:
@@ -86,7 +88,7 @@ func add_burn(severity):
 			burn_condition = burn_type.NORMAL
 		"Heavy":
 			burn_condition = burn_type.HEAVY
-	refresh.emit()
+	#refresh.emit()
 
 func add_turn(which):
 	match which:
@@ -96,16 +98,27 @@ func add_turn(which):
 			turn_condition = turn_type.ASLEEP
 		"Confusion":
 			turn_condition = turn_type.CONFUSION
-	refresh.emit()
+	#refresh.emit()
 
 func heal_status():
 	poison_condition = poison_type.NONE
 	burn_condition = burn_type.NONE
 	turn_condition = turn_type.NONE
-	refresh.emit()
+	#refresh.emit()
 
 #endregion
 #--------------------------------------
 
-
+func refresh():
+	current_slot.art.texture = current_card.image
+	current_slot.name_section.clear()
+	current_slot.name_section.append_text(current_card.name)
+	current_slot.max_hp.clear()
+	current_slot.max_hp.append_text(str("MAX HP: ",pokedata.HP - damage_counters, "/", pokedata.HP))
+	current_slot.tool.texture = tool_card.image
+	current_slot.display_types(pokedata.type_flags_to_array(pokedata.type))
+	
+	if shockwave: current_slot.shockwave.show()
+	if imprison: current_slot.imprison.show()
+	
 

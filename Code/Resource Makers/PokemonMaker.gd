@@ -29,3 +29,27 @@ class_name Pokemon
 @export_flags("Grass","Fire","Water",
 "Lightning","Psychic","Fighting",
 "Darkness","Metal","Colorless") var resist: int = 0
+
+func type_flags_to_array(property:int) -> Array[String]:
+	var list: Array[String] = []
+	
+	if property & 1:
+		list.append("Grass")
+	if property & 2:
+		list.append("Fire")
+	if property & 4:
+		list.append("Water")
+	if property & 8:
+		list.append("Lightning")
+	if property & 16:
+		list.append("Psychic")
+	if property & 32:
+		list.append("Fighting")
+	if property & 64:
+		list.append("Darkness")
+	if property & 128:
+		list.append("Metal")
+	if property & 256:
+		list.append("Colorless")
+	
+	return list

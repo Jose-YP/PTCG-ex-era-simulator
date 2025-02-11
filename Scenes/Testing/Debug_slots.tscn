@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://bwwl40qrwrmkl"]
+
+[ext_resource type="PackedScene" uid="uid://b4tx6kmy763df" path="res://Scenes/Components/poke_slot.tscn" id="1_c8cvy"]
+[ext_resource type="Resource" uid="uid://c3tip8v6djvro" path="res://Cards/4 EX Team Magma VS Team Aqua/MA65MagmaPoochyena.tres" id="2_bpun7"]
+[ext_resource type="Resource" uid="uid://oa7r3igevgqi" path="res://Cards/1 ex Ruby & Saphire/RS49Aron.tres" id="3_sjxhg"]
+[ext_resource type="PackedScene" uid="uid://drg0sr7jdfiel" path="res://Scenes/UI/ActiveMon.tscn" id="4_a0nvo"]
+[ext_resource type="PackedScene" uid="uid://df8x227c7a8q4" path="res://Scenes/UI/BenchMon.tscn" id="6_t4mtj"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PokeSlot" parent="." node_paths=PackedStringArray("current_slot") instance=ExtResource("1_c8cvy")]
+current_card = ExtResource("2_bpun7")
+current_slot = NodePath("../ActivePokemon")
+
+[node name="PokeSlot2" parent="." node_paths=PackedStringArray("current_slot") instance=ExtResource("1_c8cvy")]
+current_card = ExtResource("3_sjxhg")
+current_slot = NodePath("../BenchPokemon")
+
+[node name="ActivePokemon" parent="." instance=ExtResource("4_a0nvo")]
+layout_mode = 1
+offset_left = 169.32
+offset_top = 107.0
+offset_right = 169.36
+offset_bottom = 107.28
+
+[node name="BenchPokemon" parent="." instance=ExtResource("6_t4mtj")]
+layout_mode = 1
+offset_left = 238.32
+offset_top = 390.0
+offset_right = 238.36
+offset_bottom = 390.28
