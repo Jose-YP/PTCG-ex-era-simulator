@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Base_Card" load_steps=7 format=3 uid="uid://dyqdhaov0ywxk"]
 
 [ext_resource type="Script" path="res://Code/Resource Makers/CardMaker.gd" id="1_23507"]
-[ext_resource type="Texture2D" uid="uid://bdcavopnxy17v" path="res://Art Assets/1 ex Ruby & Saphire/92.jpg" id="1_tns0u"]
+[ext_resource type="Texture2D" uid="uid://bdcavopnxy17v" path="res://Art Assets/Cards/1 ex Ruby & Saphire/92.jpg" id="1_tns0u"]
 [ext_resource type="Script" path="res://Code/Resource Makers/EffectMaker.gd" id="3_0242p"]
 [ext_resource type="Script" path="res://Code/Resource Makers/TrainerMaker.gd" id="4_2lvv6"]
 

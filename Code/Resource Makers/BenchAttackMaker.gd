@@ -1,5 +1,5 @@
 extends Resource
-class_name BenchAttack
+class_name BenchAttk
 
 @export_group("Damage")
 @export_range(-1,5) var how_many: int = 1

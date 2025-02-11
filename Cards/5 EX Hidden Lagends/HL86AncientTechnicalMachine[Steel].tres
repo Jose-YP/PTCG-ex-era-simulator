@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Base_Card" load_steps=5 format=3 uid="uid://day2wur81xum5"]
 
-[ext_resource type="Texture2D" uid="uid://bp4cvx4uqbwob" path="res://Art Assets/5 ex Hidden Legends/86.jpg" id="1_k3mof"]
+[ext_resource type="Texture2D" uid="uid://bp4cvx4uqbwob" path="res://Art Assets/Cards/5 ex Hidden Legends/86.jpg" id="1_k3mof"]
 [ext_resource type="Script" path="res://Code/Resource Makers/CardMaker.gd" id="3_80son"]
 [ext_resource type="Script" path="res://Code/Resource Makers/TrainerMaker.gd" id="3_mppew"]
 

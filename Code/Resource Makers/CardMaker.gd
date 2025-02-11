@@ -23,6 +23,9 @@ class_name Base_Card
 @export var energy_properties: Energy
 @export var fossil: bool = false
 
+func print_name():
+	print(name)
+
 func is_considered(considered: String):
 	if pokemon_properties:
 		#Holon's mons will be considered pokemon before looking at energy properties

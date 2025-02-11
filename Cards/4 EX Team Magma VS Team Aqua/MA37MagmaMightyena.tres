@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Base_Card" load_steps=19 format=3 uid="uid://22c17vtu70b3"]
 
-[ext_resource type="Texture2D" uid="uid://b4uymubvo04qp" path="res://Art Assets/4 ex Team Magma vs Team Aqua/37.jpg" id="1_s2ru1"]
+[ext_resource type="Texture2D" uid="uid://b4uymubvo04qp" path="res://Art Assets/Cards/4 ex Team Magma vs Team Aqua/37.jpg" id="1_s2ru1"]
 [ext_resource type="Script" path="res://Code/Resource Makers/PowerMaker.gd" id="2_2yu0c"]
 [ext_resource type="Resource" uid="uid://depecxjmmfklq" path="res://PremadeResources/AskSingleFlip.tres" id="2_jit5m"]
 [ext_resource type="Script" path="res://Code/Resource Makers/PokemonMaker.gd" id="2_jvjdg"]

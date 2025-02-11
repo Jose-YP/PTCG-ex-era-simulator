@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="Base_Card" load_steps=4 format=3 uid="uid://dxq22uwxelttj"]
 
 [ext_resource type="Resource" uid="uid://nrfa4a2piemj" path="res://PremadeResources/Basic Energy/PsychicEnergy.tres" id="1_vy2ut"]
-[ext_resource type="Texture2D" uid="uid://cad4aacf5jtpv" path="res://Art Assets/1 ex Ruby & Saphire/107.jpg" id="2_qrgex"]
+[ext_resource type="Texture2D" uid="uid://cad4aacf5jtpv" path="res://Art Assets/Cards/1 ex Ruby & Saphire/107.jpg" id="2_qrgex"]
 [ext_resource type="Script" path="res://Code/Resource Makers/CardMaker.gd" id="3_l8l8j"]
 
 [resource]
 script = ExtResource("3_l8l8j")
-name = "Fighting Energy"
+name = "Psychic Energy"
 image = ExtResource("2_qrgex")
 illustrator = ""
 number = 107

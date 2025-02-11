@@ -3,7 +3,7 @@ class_name Deck
 
 @export var cards: Dictionary
 enum DECK_STATUS {READY, INCOMPLETE, ILLEGAL, TOOBIG}
-var status: DECK_STATUS = 0
+var status: DECK_STATUS = DECK_STATUS.READY
 
 func is_legal() -> bool:
 	var count: int = 0
@@ -24,8 +24,8 @@ func is_legal() -> bool:
 	status = DECK_STATUS.READY
 	return true
 
-func make_usable() -> Array:
-	var usable: Array = []
+func make_usable() -> Array[Base_Card]:
+	var usable: Array[Base_Card] = []
 	for card in cards:
 		for i in cards[card]:
 			usable.append(card)

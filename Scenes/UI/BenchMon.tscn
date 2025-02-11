@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://df8x227c7a8q4"]
 
-[ext_resource type="Texture2D" uid="uid://b4uymubvo04qp" path="res://Art Assets/4 ex Team Magma vs Team Aqua/37.jpg" id="1_4esgp"]
-[ext_resource type="Texture2D" uid="uid://ct7oa74jhqcwq" path="res://Art Assets/4 ex Team Magma vs Team Aqua/74.jpg" id="2_m52es"]
-[ext_resource type="Texture2D" uid="uid://d3nrajtlwbvgh" path="res://Art Assets/4 ex Team Magma vs Team Aqua/84.jpg" id="3_pjvm0"]
+[ext_resource type="Texture2D" uid="uid://b4uymubvo04qp" path="res://Art Assets/Cards/4 ex Team Magma vs Team Aqua/37.jpg" id="1_4esgp"]
+[ext_resource type="Texture2D" uid="uid://ct7oa74jhqcwq" path="res://Art Assets/Cards/4 ex Team Magma vs Team Aqua/74.jpg" id="2_m52es"]
+[ext_resource type="Texture2D" uid="uid://d3nrajtlwbvgh" path="res://Art Assets/Cards/4 ex Team Magma vs Team Aqua/84.jpg" id="3_pjvm0"]
 [ext_resource type="PackedScene" uid="uid://bs3ila6cpt8n1" path="res://Scenes/UI/types.tscn" id="4_nhrrd"]
 [ext_resource type="Texture2D" uid="uid://cijlbc37pj4gd" path="res://icon.svg" id="5_r3j25"]
 

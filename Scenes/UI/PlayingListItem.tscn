@@ -1,0 +1,108 @@
+[gd_scene load_steps=8 format=3 uid="uid://dd56w2nt5mqow"]
+
+[ext_resource type="Script" path="res://Code/Scenes/UI/CardListItem.gd" id="1_bdgo5"]
+[ext_resource type="StyleBox" uid="uid://duhmik1loeema" path="res://Themes/GBABox.tres" id="1_mxeim"]
+[ext_resource type="Texture2D" uid="uid://ct7oa74jhqcwq" path="res://Art Assets/Cards/4 ex Team Magma vs Team Aqua/74.jpg" id="3_a5sxv"]
+[ext_resource type="Resource" uid="uid://cc3kjnmsj4pr3" path="res://Cards/1 ex Ruby & Saphire/RS80EnergyRemoval2.tres" id="3_cob8t"]
+[ext_resource type="Texture2D" uid="uid://cijlbc37pj4gd" path="res://icon.svg" id="5_0okov"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yloa2"]
+bg_color = Color(0.301961, 0.215686, 0.556863, 1)
+border_width_left = 1
+border_width_top = 2
+border_width_right = 1
+border_width_bottom = 2
+border_color = Color(0.286275, 0.00392157, 0.611765, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_auhmd"]
+bg_color = Color(0.129649, 0.0483941, 0.353005, 1)
+border_width_left = 1
+border_width_top = 2
+border_width_right = 1
+border_width_bottom = 2
+border_color = Color(0.286275, 0.00392157, 0.611765, 1)
+border_blend = true
+
+[node name="PlayingListItem" type="Button"]
+custom_minimum_size = Vector2(400, 60)
+anchors_preset = -1
+anchor_left = 0.314
+anchor_top = 0.458
+anchor_right = 0.686
+anchor_bottom = 0.542
+offset_left = -0.120026
+offset_top = 0.23999
+offset_right = 0.119934
+offset_bottom = -0.240051
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = ExtResource("1_mxeim")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yloa2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_auhmd")
+script = ExtResource("1_bdgo5")
+card = ExtResource("3_cob8t")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 406.0
+offset_bottom = 53.0
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_right = 15
+
+[node name="Class" type="RichTextLabel" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(65, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+bbcode_enabled = true
+text = "Stage 1"
+fit_content = true
+
+[node name="Art" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(90, 52)
+layout_mode = 2
+texture = ExtResource("3_a5sxv")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="Name" type="RichTextLabel" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(206, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+bbcode_enabled = true
+text = "Team Magma's Mightyena"
+fit_content = true
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_right = 15
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(378, -5)
+
+[node name="TextureRect" type="TextureRect" parent="Marker2D"]
+visible = false
+offset_left = -68.0
+offset_top = -70.0
+offset_right = 60.0
+offset_bottom = 58.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_0okov")

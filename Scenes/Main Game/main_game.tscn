@@ -1,13 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://cd0kolj2y1gct"]
+[gd_scene load_steps=8 format=3 uid="uid://cd0kolj2y1gct"]
 
 [ext_resource type="Script" path="res://Code/Scenes/main_game.gd" id="1_ooi03"]
 [ext_resource type="PackedScene" uid="uid://dognokjork36j" path="res://Scenes/UI/PlayerSide.tscn" id="1_qy1qb"]
+[ext_resource type="Resource" uid="uid://bleo7p56u5k1f" path="res://PremadeResources/TestDeck.tres" id="2_hqpv8"]
 [ext_resource type="PackedScene" uid="uid://dvpkx1fqkwvd7" path="res://Scenes/UI/OpponentSide.tscn" id="2_jt6ly"]
-[ext_resource type="Texture2D" uid="uid://d2ik003bv5hpu" path="res://Art Assets/5 ex Hidden Legends/87.jpg" id="3_gm44v"]
-[ext_resource type="PackedScene" uid="uid://cobenwsotye1q" path="res://Scenes/Components/resources.tscn" id="3_qutya"]
+[ext_resource type="Texture2D" uid="uid://d2ik003bv5hpu" path="res://Art Assets/Cards/5 ex Hidden Legends/87.jpg" id="3_gm44v"]
+[ext_resource type="PackedScene" uid="uid://cobenwsotye1q" path="res://Scenes/Components/PlayerResources.tscn" id="3_qutya"]
+[ext_resource type="PackedScene" uid="uid://b5csfp6jhpew3" path="res://Scenes/UI/playing_list.tscn" id="7_01i2w"]
 
 [node name="MainGame" type="Node2D"]
 script = ExtResource("1_ooi03")
+deck1 = ExtResource("2_hqpv8")
+deck2 = ExtResource("2_hqpv8")
 
 [node name="Player1" type="Node2D" parent="."]
 
@@ -18,6 +22,7 @@ offset_right = 36.0
 offset_bottom = 355.0
 
 [node name="ResourcesPlay" parent="Player1" instance=ExtResource("3_qutya")]
+unique_name_in_owner = true
 
 [node name="Player2" type="Node2D" parent="."]
 
@@ -28,6 +33,7 @@ offset_right = 37.0
 offset_bottom = 25.0
 
 [node name="ResourcesOpp" parent="Player2" instance=ExtResource("3_qutya")]
+unique_name_in_owner = true
 
 [node name="Neutral" type="Node2D" parent="."]
 
@@ -81,3 +87,10 @@ offset_bottom = 8.0
 layout_mode = 0
 offset_right = 8.0
 offset_bottom = 8.0
+
+[node name="PlayingList" parent="." instance=ExtResource("7_01i2w")]
+visible = false
+offset_right = 420.0
+offset_bottom = 600.0
+
+[connection signal="show_list" from="Player1/ResourcesPlay" to="PlayingList" method="_on_resources_show_list"]

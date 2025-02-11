@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Base_Card" load_steps=11 format=3 uid="uid://cc3kjnmsj4pr3"]
 
-[ext_resource type="Texture2D" uid="uid://ba8jbrbg2km5v" path="res://Art Assets/1 ex Ruby & Saphire/80.jpg" id="1_kvsan"]
+[ext_resource type="Texture2D" uid="uid://ba8jbrbg2km5v" path="res://Art Assets/Cards/1 ex Ruby & Saphire/80.jpg" id="1_kvsan"]
 [ext_resource type="Script" path="res://Code/Resource Makers/CardMaker.gd" id="3_8oe8a"]
 [ext_resource type="Script" path="res://Code/Resource Makers/TrainerMaker.gd" id="3_cxq63"]
 [ext_resource type="Script" path="res://Code/Resource Makers/CoinFlipNumMaker.gd" id="3_poe32"]

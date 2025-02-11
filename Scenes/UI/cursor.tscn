@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://74qmw8tg05dl"]
+
+[ext_resource type="Texture2D" uid="uid://blsb0qe1ebavp" path="res://9_black.png" id="1_htjjw"]
+[ext_resource type="Script" path="res://Code/Scenes/UI/cursor.gd" id="2_garxm"]
+
+[node name="Cursor" type="TextureRect"]
+custom_minimum_size = Vector2(62, 62)
+anchors_preset = -1
+anchor_right = 0.057
+anchor_bottom = 0.086
+offset_right = -2.56001
+offset_bottom = 0.079998
+pivot_offset = Vector2(32, 32)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_htjjw")
+expand_mode = 3
+stretch_mode = 5
+script = ExtResource("2_garxm")
