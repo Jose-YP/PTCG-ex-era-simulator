@@ -6,13 +6,21 @@ class_name Energy
 
 @export_group("Prerequisites")
 @export var asks: Ask
-@export var fail_provide: bool = false ##Should failure constitute providing different kinds of energy?
-@export var fail_effect: EffectCall ##What should happen if the ask isn't met
-@export var success_effect: EffectCall ##What should happen if the ask is met
-@export var always_effect: EffectCall ##What should happen no matter what?
+##Should failure constitute providing different kinds of energy?
+@export var fail_provide: bool = false
+##Failed asks mean the user can't attatch the energy
+@export var fail_prevent: bool = false
+##What should happen if the ask isn't met
+@export var fail_effect: EffectCall 
+##What should happen if the ask is met
+@export var success_effect: EffectCall
+##What should happen no matter what? 
+@export var always_effect: EffectCall 
 
 @export_group("Duration")
-@export var turns: int = -1 ##-1 means forever, otherwise it's how many turns it'll last
+##-1 means forever, otherwise it's how many turns it'll last 
+##0 means it'll be removed after turn end
+@export var turns: int = -1
 
 @export_group("Provides")
 @export var number: int = 1

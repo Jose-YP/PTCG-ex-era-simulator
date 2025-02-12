@@ -96,6 +96,7 @@ theme_override_constants/separation = -13
 [node name="EnergyTypes" type="HBoxContainer" parent="EnergyContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_constants/separation = 23
 
 [node name="Types" parent="EnergyContainer/EnergyTypes" instance=ExtResource("4_5yd0i")]
 visible = false
@@ -269,3 +270,5 @@ expand_mode = 4
 [node name="SEmpty" type="Control" parent="Conditions"]
 visible = false
 layout_mode = 2
+
+[connection signal="pressed" from="Main/ArtButton/Button" to="." method="pressed_a_slot"]

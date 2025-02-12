@@ -6,8 +6,9 @@ class_name Ask
 @export_flags("Bench", "Active", "Self", "Discard", "Hand") var location: int = 0 ##Self means the active pokemon using the effect
 
 @export_subgroup("Class")
-@export var inclusive: bool = true ##Include specified or not
-@export_flags("Baby", "ex", "Delta", "Star") var pokemon_class: int = 0
+@export var inclusive: bool = true ##Include specified or exclude
+@export_flags("Baby", "ex", "Delta", "Star",
+ "Magma", "Aqua", "Rocket") var pokemon_class: int = 0
 
 @export_subgroup("Bench")
 @export_range(-1,5) var bench_size: int = -1 ##Look for 

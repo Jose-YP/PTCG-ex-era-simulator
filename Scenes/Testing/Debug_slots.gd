@@ -5,7 +5,7 @@ const energy_cards: Array[String] = ["res://Cards/1 ex Ruby & Saphire/RS104Grass
 "res://Cards/1 ex Ruby & Saphire/RS109LightningEnergy.tres","res://Cards/1 ex Ruby & Saphire/RS107PsychicEnergy.tres",
 "res://Cards/1 ex Ruby & Saphire/RS105FightingEnergy.tres","res://Cards/1 ex Ruby & Saphire/RS93DarknessEnergy.tres",
 "res://Cards/1 ex Ruby & Saphire/RS94MetalEnergy.tres", "res://Cards/8 ex Deoxys/DX94HealEnergy.tres",
-"res://Cards/1 ex Ruby & Saphire/RS95RainbowEnergy.tres"]
+"res://Cards/1 ex Ruby & Saphire/RS95RainbowEnergy.tres", "res://Cards/4 ex Team Magma VS Team Aqua/MA87MagmaEnergy.tres"]
 const conditions: Array[String] = ["Poison", "Burn", "Asleep", 
 "Paralyze", "Confusion", "Shockwave", "Imprison"]
 const evolutions: Array[String] = ["res://Cards/4 ex Team Magma VS Team Aqua/MA37MagmaMightyena.tres",
@@ -31,8 +31,8 @@ func _on_energy_options_item_selected(index: int):
 	print(card.name, card.energy_properties.type)
 	print(card.energy_properties.how_display())
 
-func add_energy_to(_target: int):
-	pass # Replace with function body.
+func add_energy_to(target: int):
+	slots[target].add_energy(load(energy_cards[energy_type]))
 
 func remove_energy_from(_target: int):
 	pass

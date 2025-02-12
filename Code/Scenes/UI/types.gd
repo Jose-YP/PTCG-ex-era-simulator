@@ -4,16 +4,24 @@ extends Control
 
 var number: int = 0
 
-func add_type(type: String):
-	if visible and $Tabs.current_tab == Constants.find(type):
-		number += 1
-		$Number.clear()
-		$Number.append_text(number)
-		
-		if number > 1:
-			$Number.show()
-		else:
-			$Number.hide()
+func add_type(type: String, ammount: int = 1):
+	number = ammount
+	display_type(type)
+	
+	$Number.clear()
+	$Number.append_text(str(number))
+	
+	if number >= 1: show()
+	elif number > 1: $Number.show()
+	else: $Number.hide()
 
 func display_type(type: String):
 	$Tabs.current_tab = Constants.energy_types.find(type)
+
+func remove_type():
+	number -= 1
+	$Number.clear()
+	$Number.append_text(str(number))
+	
+	if number <= 1: $Number.hide()
+	if number < 1: hide()

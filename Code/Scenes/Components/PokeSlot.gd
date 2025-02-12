@@ -81,19 +81,31 @@ func bench_add_damage(_ammount) -> int:
 #region ENERGY HANDLERS
 func add_energy(energy_card: Base_Card): #VERY UNFINISHED
 	energy_cards.append(energy_card)
-	
-	
-	pass
+	print(count_energy())
 
-func energy_removal():
-	pass
+func energy_removal(type: String):
+	print("How to remove ", type)
+	count_energy()
 
-func count_energy():
+func count_energy() -> Dictionary:
 	#Count if energy cars provided give the right energy for each attack
 	#Each attackm will be treated differently
 	#EG: Double magma will provide two dark for one attack but two fighting for another
 	#It depends on which combination satisfies the cost
-	pass
+	print(current_card.name,"'s energy")
+	var attached_energy: Dictionary = {"Grass": 0, "Fire": 0, "Water": 0,
+ 	"Lightning": 0, "Psychic":0, "Darkness":0, "Metal":0, "Colorless":0,
+ 	"Rainbow":0, "Magma":0, "Aqua":0, "Dark Metal":0, "React": 0,
+ 	"Holon FF": 0, "Holon GL": 0, "Holon WP": 0}
+	var energy_array: Array[String] = []
+	for card in energy_cards:
+		var energy_string: String = card.energy_properties.how_display()
+		print(energy_string)
+		attached_energy[energy_string] += 1
+		energy_array.append(energy_string)
+	
+	current_slot.display_energy(energy_array, attached_energy)
+	return attached_energy
 
 #endregion
 #--------------------------------------
@@ -138,6 +150,7 @@ func heal_status():
 #endregion
 #--------------------------------------
 func refresh():
+	print(current_card.image, current_slot.art)
 	current_slot.art.texture = current_card.image
 	current_slot.name_section.clear()
 	current_slot.name_section.append_text(current_card.name)

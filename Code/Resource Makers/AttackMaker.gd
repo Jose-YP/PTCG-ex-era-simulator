@@ -30,3 +30,50 @@ class_name Attack
 @export var ask: Ask
 @export var effect: EffectCall
 @export var fail_effect: EffectCall
+
+func get_energy_cost() -> Array[String]:
+	var all_costs: Array[int] = [grass_cost, fire_cost, water_cost,
+	lightning_cost, psychic_cost, fighting_cost, darkness_cost,
+	metal_cost, colorless_cost]
+	var final_array: Array[String] = []
+	
+	for i in range(all_costs.size()):
+		var energy_type: String = Constants.energy_types[i]
+		for j in range(all_costs[i]):
+			final_array.append(energy_type)
+	
+	return final_array
+
+func can_pay(basic_energy: Array[int], special_energy: Array[int]) -> bool:
+	var all_costs: Array[int] = [grass_cost, fire_cost, water_cost,
+	lightning_cost, psychic_cost, fighting_cost, darkness_cost,
+	metal_cost, colorless_cost]
+	
+	#Edit costs depending on whatever factors
+	#Priotitize basic/single type first
+	print("ENERGY SORT ", basic_energy)
+	for card in basic_energy:
+		var index = int((log(float(card)) / log(2)))
+		print(index)
+		if all_costs[index] > 0: all_costs[index] -= 1
+		else: all_costs[8] -= 1
+	
+	#Maybe sort based on flag size
+	special_energy.sort_custom(func(a,b): a[0] < b[0])
+	print("SPECIAL SORT: ", special_energy)
+	for i in range(all_costs.size()):
+		for card in special_energy:
+			if i ** 2 & card:
+				print(card, " for ", i)
+				all_costs[i] -= 1
+				special_energy.erase(card)
+			if all_costs[i] == 0: 
+				print("Satisfied ", i)
+				break
+	#How to consider special energy later
+	for cost in all_costs:
+		if cost > 0:
+			print(cost, " LEFTOVER: ", all_costs.find(cost))
+			return false
+	
+	return true

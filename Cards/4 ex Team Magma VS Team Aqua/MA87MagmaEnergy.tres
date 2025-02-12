@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=7 format=3 uid="uid://nwmfrwp7fuwu"]
+
+[ext_resource type="Script" path="res://Code/Resource Makers/CardMaker.gd" id="1_prv0g"]
+[ext_resource type="Script" path="res://Code/Resource Makers/AskMaker.gd" id="1_t6ak2"]
+[ext_resource type="Script" path="res://Code/Resource Makers/EnergyMaker.gd" id="2_h52sn"]
+[ext_resource type="Texture2D" uid="uid://dcivaekw8m47c" path="res://Art Assets/Cards/4 ex Team Magma vs Team Aqua/87.jpg" id="3_b2ufc"]
+
+[sub_resource type="Resource" id="Resource_nwdmx"]
+script = ExtResource("1_t6ak2")
+target = 1
+location = 4
+inclusive = true
+pokemon_class = 16
+bench_size = -1
+type = 1023
+type_size = 1
+choose = 0
+choose_location = 0
+
+[sub_resource type="Resource" id="Resource_k37wq"]
+script = ExtResource("2_h52sn")
+considered = "Special Energy"
+asks = SubResource("Resource_nwdmx")
+fail_provide = false
+fail_prevent = true
+turns = 0
+number = 2
+react = false
+holon_type = "None"
+type = 96
+fail_type = 0
+
+[resource]
+script = ExtResource("1_prv0g")
+name = "Magma Energy"
+image = ExtResource("3_b2ufc")
+illustrator = "Takumi Akabane"
+number = 87
+rarity = 1
+expansion = 3
+categories = 4
+energy_properties = SubResource("Resource_k37wq")
+fossil = false

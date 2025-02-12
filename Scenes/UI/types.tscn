@@ -122,13 +122,12 @@ layout_mode = 2
 texture = ExtResource("9_fv471")
 
 [node name="Number" type="RichTextLabel" parent="."]
-visible = false
 layout_mode = 1
-offset_left = -24.0
-offset_top = 4.0
-offset_right = 24.0
-offset_bottom = 28.0
+offset_left = -8.0
+offset_top = 5.0
+offset_right = 22.0
+offset_bottom = 29.0
 bbcode_enabled = true
-text = "num"
+text = "99"
 fit_content = true
 scroll_active = false
