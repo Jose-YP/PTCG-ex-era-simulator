@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bwwl40qrwrmkl"]
+[gd_scene load_steps=29 format=3 uid="uid://bwwl40qrwrmkl"]
 
 [ext_resource type="PackedScene" uid="uid://b4tx6kmy763df" path="res://Scenes/Components/poke_slot.tscn" id="1_c8cvy"]
 [ext_resource type="Script" path="res://Scenes/Testing/Debug_slots.gd" id="1_jpmm1"]
@@ -22,6 +22,12 @@
 [ext_resource type="Texture2D" uid="uid://d3nrajtlwbvgh" path="res://Art Assets/Cards/4 ex Team Magma vs Team Aqua/84.jpg" id="19_x6mvh"]
 [ext_resource type="Texture2D" uid="uid://batwggrxck3rc" path="res://Art Assets/Cards/4 ex Team Magma vs Team Aqua/79.jpg" id="20_s88xg"]
 [ext_resource type="Texture2D" uid="uid://c5qq2y8rc8j0l" path="res://Art Assets/Cards/5 ex Hidden Legends/85.jpg" id="21_xywah"]
+[ext_resource type="Texture2D" uid="uid://b4uymubvo04qp" path="res://Art Assets/Cards/4 ex Team Magma vs Team Aqua/37.jpg" id="23_jvr5f"]
+[ext_resource type="Texture2D" uid="uid://dryoto85mwrxc" path="res://Art Assets/Cards/1 ex Ruby & Saphire/42.jpg" id="24_w2vj0"]
+[ext_resource type="Texture2D" uid="uid://bc5arw2wcqfke" path="res://Art Assets/Cards/1 ex Ruby & Saphire/37.jpg" id="25_mxefs"]
+[ext_resource type="Texture2D" uid="uid://b6qd05q5xmb33" path="res://Art Assets/Cards/1 ex Ruby & Saphire/33.jpg" id="26_w66ov"]
+[ext_resource type="Texture2D" uid="uid://2l8ia23r5jfi" path="res://Art Assets/Cards/1 ex Ruby & Saphire/29.jpg" id="27_466o8"]
+[ext_resource type="Texture2D" uid="uid://b817pn5octfv6" path="res://Art Assets/Cards/1 ex Ruby & Saphire/1.jpg" id="28_gcws8"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -43,17 +49,17 @@ current_slot = NodePath("../BenchPokemon")
 
 [node name="ActivePokemon" parent="." instance=ExtResource("4_a0nvo")]
 layout_mode = 1
-offset_left = 233.32
-offset_top = 131.0
-offset_right = 233.36
-offset_bottom = 131.28
+offset_left = 53.32
+offset_top = 14.0
+offset_right = 53.36
+offset_bottom = 14.28
 
 [node name="BenchPokemon" parent="." instance=ExtResource("6_t4mtj")]
 layout_mode = 1
-offset_left = 238.32
-offset_top = 390.0
-offset_right = 238.36
-offset_bottom = 390.28
+offset_left = 70.32
+offset_top = 200.0
+offset_right = 70.36
+offset_bottom = 200.28
 
 [node name="Conditions" type="GridContainer" parent="."]
 layout_mode = 0
@@ -83,25 +89,25 @@ popup/item_5/id = 5
 popup/item_6/text = "Imprison"
 popup/item_6/id = 6
 
-[node name="ApplyCondition" type="Button" parent="Conditions"]
-layout_mode = 2
-text = "Apply To Active"
-
-[node name="ClearActive" type="Button" parent="Conditions"]
-layout_mode = 2
-text = "Apply To Active"
-
 [node name="ShockwaveB" type="Button" parent="Conditions"]
 layout_mode = 2
 text = "Shockwave Bench"
+
+[node name="ApplyCondition" type="Button" parent="Conditions"]
+layout_mode = 2
+text = "Apply To Active"
 
 [node name="ImprisionB" type="Button" parent="Conditions"]
 layout_mode = 2
 text = "Imprision Bench"
 
+[node name="ClearActive" type="Button" parent="Conditions"]
+layout_mode = 2
+text = "Clear Active"
+
 [node name="ClearBench" type="Button" parent="Conditions"]
 layout_mode = 2
-text = "Imprision Bench"
+text = "Clear Bench"
 
 [node name="Energy" type="GridContainer" parent="."]
 layout_mode = 2
@@ -190,10 +196,10 @@ text = "Remove from Bench"
 
 [node name="Swap" type="Button" parent="."]
 layout_mode = 0
-offset_left = 884.0
-offset_top = 41.0
-offset_right = 975.0
-offset_bottom = 72.0
+offset_left = 927.0
+offset_top = 89.0
+offset_right = 1018.0
+offset_bottom = 120.0
 text = "Swap Slots"
 
 [node name="Attatchables" type="GridContainer" parent="."]
@@ -257,12 +263,56 @@ text = "Add TM Bench"
 layout_mode = 2
 text = "Remove TMs"
 
+[node name="Evolution" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 690.0
+offset_top = 314.0
+offset_right = 1025.0
+offset_bottom = 444.0
+metadata/_edit_group_ = true
+
+[node name="EvolutionOptions" type="OptionButton" parent="Evolution"]
+layout_mode = 2
+item_count = 6
+popup/item_0/text = "Magma Mightyena"
+popup/item_0/icon = ExtResource("23_jvr5f")
+popup/item_0/id = 0
+popup/item_1/text = "Reg Mightyena"
+popup/item_1/icon = ExtResource("24_w2vj0")
+popup/item_1/id = 1
+popup/item_2/text = "Lairon"
+popup/item_2/icon = ExtResource("25_mxefs")
+popup/item_2/id = 2
+popup/item_3/text = "Hariyama"
+popup/item_3/icon = ExtResource("26_w66ov")
+popup/item_3/id = 3
+popup/item_4/text = "Delcatty"
+popup/item_4/icon = ExtResource("27_466o8")
+popup/item_4/id = 4
+popup/item_5/text = "Aggron"
+popup/item_5/icon = ExtResource("28_gcws8")
+popup/item_5/id = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Evolution"]
+layout_mode = 2
+
+[node name="EvoActive" type="Button" parent="Evolution/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Evolve Active"
+
+[node name="EvoBench" type="Button" parent="Evolution/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Evolve Bench"
+
 [connection signal="item_selected" from="Conditions/OptionButton" to="." method="change_conditiion"]
-[connection signal="pressed" from="Conditions/ApplyCondition" to="." method="add_condition"]
 [connection signal="pressed" from="Conditions/ShockwaveB" to="." method="add_shockwave_to" binds= [1]]
+[connection signal="pressed" from="Conditions/ApplyCondition" to="." method="add_condition"]
 [connection signal="pressed" from="Conditions/ImprisionB" to="." method="add_imprision_to" binds= [1]]
 [connection signal="item_selected" from="Energy/EnergyOptions" to="." method="_on_energy_options_item_selected"]
 [connection signal="pressed" from="Energy/AddActive" to="." method="add_energy_to" binds= [0]]
 [connection signal="pressed" from="Energy/RemoveActive" to="." method="remove_energy_from" binds= [0]]
 [connection signal="pressed" from="Energy/AddBench" to="." method="add_energy_to" binds= [1]]
 [connection signal="pressed" from="Energy/Remove Bench" to="." method="remove_energy_from" binds= [1]]
+[connection signal="item_selected" from="Evolution/EvolutionOptions" to="." method="_on_evolution_options_item_selected"]

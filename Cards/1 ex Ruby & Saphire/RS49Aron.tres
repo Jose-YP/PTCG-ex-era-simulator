@@ -15,8 +15,9 @@ mutually_exclusive_conditions = 0
 knockOut = false
 instead_of_damage = false
 do_nothing = false
-retreat = false
 attack = 0
+retrat_duration = 1
+retreat = false
 buff_target = 1
 attack_damage = -10
 defense = 0
@@ -26,6 +27,7 @@ search = Array[Resource("res://Code/Resource Makers/SearchMaker.gd")]([])
 disrupt_target = 0
 disrupting = 0
 card_ammount = 0
+reveal = false
 energy_ammount = 0
 mimic = 0
 
@@ -82,7 +84,7 @@ resist = 1
 
 [resource]
 script = ExtResource("1_blsmh")
-name = "Aron "
+name = "Aron"
 image = ExtResource("1_ianho")
 illustrator = "Mitsuhiro Arita"
 number = 49

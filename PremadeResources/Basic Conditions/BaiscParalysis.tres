@@ -5,18 +5,24 @@
 [resource]
 script = ExtResource("1_r71sb")
 poison = 0
-burn = 1
+burn = 0
 addable_effects = 0
-mutually_exclusive_conditions = 0
+mutually_exclusive_conditions = 2
 knockOut = false
 instead_of_damage = false
 do_nothing = false
-retreat = false
 attack = 0
+retrat_duration = 1
+retreat = false
 buff_target = 0
+attack_damage = 0
+defense = 0
+after_weak_res = true
+switch_type = 0
 search = Array[Resource("res://Code/Resource Makers/SearchMaker.gd")]([])
 disrupt_target = 0
 disrupting = 0
 card_ammount = 0
+reveal = false
 energy_ammount = 0
 mimic = 0

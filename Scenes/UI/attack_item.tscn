@@ -1,0 +1,148 @@
+[gd_scene load_steps=6 format=3 uid="uid://dvvv8k1g6tgog"]
+
+[ext_resource type="Texture2D" uid="uid://cijlbc37pj4gd" path="res://icon.svg" id="1_fpj2i"]
+[ext_resource type="StyleBox" uid="uid://duhmik1loeema" path="res://Themes/GBABox.tres" id="2_ykf6u"]
+[ext_resource type="PackedScene" uid="uid://bs3ila6cpt8n1" path="res://Scenes/UI/types.tscn" id="3_tiejp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yloa2"]
+bg_color = Color(0.301961, 0.215686, 0.556863, 1)
+border_width_left = 1
+border_width_top = 2
+border_width_right = 1
+border_width_bottom = 2
+border_color = Color(0.286275, 0.00392157, 0.611765, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_auhmd"]
+bg_color = Color(0.129649, 0.0483941, 0.353005, 1)
+border_width_left = 1
+border_width_top = 2
+border_width_right = 1
+border_width_bottom = 2
+border_color = Color(0.286275, 0.00392157, 0.611765, 1)
+border_blend = true
+
+[node name="AttackItem" type="MarginContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(378, -5)
+
+[node name="TextureRect" type="TextureRect" parent="Marker2D"]
+visible = false
+offset_left = -68.0
+offset_top = -70.0
+offset_right = 60.0
+offset_bottom = 58.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_fpj2i")
+
+[node name="AttackButton" type="Button" parent="."]
+custom_minimum_size = Vector2(400, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("2_ykf6u")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yloa2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_auhmd")
+
+[node name="PanelContainer" type="PanelContainer" parent="AttackButton"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AllText" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 13
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="AllText"]
+layout_mode = 2
+
+[node name="Base Text" type="HBoxContainer" parent="AllText"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="AllText/Base Text"]
+layout_mode = 2
+theme_override_constants/margin_right = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AllText/Base Text"]
+layout_mode = 2
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="AllText/Base Text/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 24
+
+[node name="Types" parent="AllText/Base Text/VBoxContainer/HBoxContainer" instance=ExtResource("3_tiejp")]
+layout_mode = 2
+
+[node name="Types2" parent="AllText/Base Text/VBoxContainer/HBoxContainer" instance=ExtResource("3_tiejp")]
+layout_mode = 2
+
+[node name="Types3" parent="AllText/Base Text/VBoxContainer/HBoxContainer" instance=ExtResource("3_tiejp")]
+layout_mode = 2
+
+[node name="Types4" parent="AllText/Base Text/VBoxContainer/HBoxContainer" instance=ExtResource("3_tiejp")]
+layout_mode = 2
+
+[node name="Types5" parent="AllText/Base Text/VBoxContainer/HBoxContainer" instance=ExtResource("3_tiejp")]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="AllText/Base Text/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 17
+
+[node name="MarginContainer3" type="MarginContainer" parent="AllText/Base Text"]
+layout_mode = 2
+theme_override_constants/margin_right = 20
+
+[node name="Name" type="RichTextLabel" parent="AllText/Base Text"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(206, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+bbcode_enabled = true
+text = "Everyone Explode Now"
+fit_content = true
+
+[node name="Damage" type="RichTextLabel" parent="AllText/Base Text"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+bbcode_enabled = true
+text = "-200"
+fit_content = true
+
+[node name="MarginContainer2" type="MarginContainer" parent="AllText/Base Text"]
+layout_mode = 2
+theme_override_constants/margin_right = 15
+
+[node name="EffectText" type="HBoxContainer" parent="AllText"]
+visible = false
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="AllText/EffectText"]
+layout_mode = 2
+theme_override_constants/margin_right = 10
+
+[node name="RichTextLabel" type="RichTextLabel" parent="AllText/EffectText"]
+custom_minimum_size = Vector2(0, 118)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+text = "HUGE EFFECT TEX LIKE SUPER HUGE, JUST SAY EVERYTHING YOU EVER WANTED TO SAY, YOUR WILL YOUR DECLARATION. MAYBE THROW IN THAT 10 HOUR VIDEO ESSAY YOU LIKED SO MUCH. MAYBE NOT... SORRY"
+
+[node name="MarginContainer" type="MarginContainer" parent="AllText/EffectText"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+
+[node name="MarginContainer2" type="MarginContainer" parent="AllText"]
+layout_mode = 2
