@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bs3ila6cpt8n1"]
+[gd_scene load_steps=13 format=3 uid="uid://bs3ila6cpt8n1"]
 
 [ext_resource type="Script" path="res://Code/Scenes/UI/types.gd" id="1_476s5"]
 [ext_resource type="Texture2D" uid="uid://bptkdabkts2i" path="res://Art Assets/Energy/grass.png" id="1_swp22"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://b2qp1vqbhraln" path="res://Art Assets/Energy/darkness.png" id="7_gq2ku"]
 [ext_resource type="Texture2D" uid="uid://cjkmmmy8hyma2" path="res://Art Assets/Energy/metal.png" id="8_sjp68"]
 [ext_resource type="Texture2D" uid="uid://bbvdin5pvw8tb" path="res://Art Assets/Energy/colorless.png" id="9_fv471"]
+[ext_resource type="Texture2D" uid="uid://ino4wafvc8n8" path="res://Art Assets/Energy/rainbow energy.png" id="11_pl64g"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nsmgk"]
 
@@ -70,6 +71,53 @@ texture = ExtResource("8_sjp68")
 
 [node name="Colorless" type="TextureRect" parent="Tabs"]
 visible = false
+layout_mode = 2
+texture = ExtResource("9_fv471")
+
+[node name="Rainbow" type="TextureRect" parent="Tabs"]
+visible = false
+layout_mode = 2
+texture = ExtResource("11_pl64g")
+
+[node name="Magma" type="TextureRect" parent="Tabs"]
+visible = false
+modulate = Color(0.278431, 0.180392, 0.027451, 1)
+layout_mode = 2
+texture = ExtResource("6_lmevn")
+
+[node name="Aqua" type="TextureRect" parent="Tabs"]
+visible = false
+modulate = Color(0.356863, 0.0862745, 0.619608, 1)
+layout_mode = 2
+texture = ExtResource("3_7kys8")
+
+[node name="DarkMetal" type="TextureRect" parent="Tabs"]
+visible = false
+modulate = Color(0.305882, 0.27451, 0.266667, 1)
+layout_mode = 2
+texture = ExtResource("8_sjp68")
+
+[node name="FF" type="TextureRect" parent="Tabs"]
+visible = false
+modulate = Color(0.896539, 0.34515, 0.205209, 1)
+layout_mode = 2
+texture = ExtResource("9_fv471")
+
+[node name="GL" type="TextureRect" parent="Tabs"]
+visible = false
+modulate = Color(0.781345, 0.918655, 0.213073, 1)
+layout_mode = 2
+texture = ExtResource("9_fv471")
+
+[node name="WP" type="TextureRect" parent="Tabs"]
+visible = false
+modulate = Color(0.470566, 0.421497, 0.98024, 1)
+layout_mode = 2
+texture = ExtResource("9_fv471")
+
+[node name="React" type="TextureRect" parent="Tabs"]
+visible = false
+modulate = Color(0.301961, 1, 1, 1)
 layout_mode = 2
 texture = ExtResource("9_fv471")
 

@@ -12,14 +12,15 @@ class_name UI_Slot
 @onready var typeContainer: Array[Node] = %TypeContainer.get_children()
 @onready var energyContainer: Array[Node] = %EnergyTypes.get_children()
 
+#Unfinished, doesn't account for special energy
+var attached_energy: Dictionary = {"Grass": 0, "Fire": 0, "Water": 0,
+ "Lightning": 0, "Psychic":0, "Darkness":0, "Metal":0, "Colorless":0,
+ "Rainbow":0, "Magma":0, "Aqua":0, "Dark Metal":0, "React": 0,
+ "Holon FF": 0, "Holon GL": 0, "Holon WP": 0}
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
 
 func display_types(types: Array[String]):
 	for node in typeContainer:

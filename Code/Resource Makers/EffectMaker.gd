@@ -17,10 +17,10 @@ class_name EffectCall
 
 @export_group("Buff & Debuff")
 @export_enum("PlayerAll", "OpponentAll", "Self",
-"Defender", "Both Active", "Both Defending") var buff_target: int = 0
-@export_range(-120, 120, 10) var attack_damage: int = 0
-@export_range(-120, 120, 10) var defense: int = 0
-@export var after_weak_res: bool = true
+"Defender", "Both Active", "Both Defending") var buff_target: int = 0 ##Who recieves the buff?
+@export_range(-120, 120, 10) var attack_damage: int = 0 ##How much more damage to the active spot?
+@export_range(-120, 120, 10) var defense: int = 0 ##How much less damage should be taken from opponent
+@export var after_weak_res: bool = true ##Is it applied before or after weak/res
 
 @export_group("Utility")
 @export_enum("None", "P by P", "O by O",
@@ -37,4 +37,5 @@ class_name EffectCall
 @export_group("Other")
 @export var healing: HealEffect
 #mimicry might be it's own resource
-@export_enum("No", "Pay Cost", "Any") var mimic: int = 0
+@export_enum("No","AttatchedLimited", "Attatched",
+ "AnyLimited", "Any") var mimic: int = 0

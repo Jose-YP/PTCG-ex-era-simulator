@@ -8,5 +8,7 @@ considered = "Basic Energy"
 fail_provide = false
 turns = -1
 number = 1
+react = false
+holon_type = "None"
 type = 4
 fail_type = 1

@@ -10,6 +10,8 @@
 script = ExtResource("1_ib77u")
 target = 0
 location = 4
+inclusive = true
+pokemon_class = 0
 bench_size = -1
 type = 640
 type_size = 1
@@ -47,12 +49,14 @@ fail_provide = false
 success_effect = SubResource("Resource_p6g6r")
 turns = -1
 number = 1
+react = false
+holon_type = "None"
 type = 128
 fail_type = 1
 
 [resource]
 script = ExtResource("1_rtwx6")
-name = "Metal energy"
+name = "Metal Energy"
 image = ExtResource("4_28rxm")
 illustrator = "Milky Isobe"
 number = 94

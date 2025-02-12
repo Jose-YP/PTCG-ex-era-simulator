@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://df8x227c7a8q4"]
+[gd_scene load_steps=8 format=3 uid="uid://df8x227c7a8q4"]
 
 [ext_resource type="Texture2D" uid="uid://b4uymubvo04qp" path="res://Art Assets/Cards/4 ex Team Magma vs Team Aqua/37.jpg" id="1_4esgp"]
 [ext_resource type="Script" path="res://Code/Scenes/UI/UISlot.gd" id="1_ktjfi"]
 [ext_resource type="Texture2D" uid="uid://ct7oa74jhqcwq" path="res://Art Assets/Cards/4 ex Team Magma vs Team Aqua/74.jpg" id="2_m52es"]
+[ext_resource type="StyleBox" uid="uid://duhmik1loeema" path="res://Themes/GBABox.tres" id="2_vxll5"]
 [ext_resource type="Texture2D" uid="uid://d3nrajtlwbvgh" path="res://Art Assets/Cards/4 ex Team Magma vs Team Aqua/84.jpg" id="3_pjvm0"]
 [ext_resource type="PackedScene" uid="uid://bs3ila6cpt8n1" path="res://Scenes/UI/types.tscn" id="4_nhrrd"]
 [ext_resource type="Texture2D" uid="uid://cijlbc37pj4gd" path="res://icon.svg" id="5_r3j25"]
@@ -21,6 +22,7 @@ script = ExtResource("1_ktjfi")
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+theme_override_constants/separation = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Main"]
 layout_mode = 2
@@ -30,7 +32,9 @@ theme_override_constants/separation = -30
 unique_name_in_owner = true
 custom_minimum_size = Vector2(130, 46)
 layout_mode = 2
+size_flags_vertical = 8
 theme_override_font_sizes/normal_font_size = 12
+bbcode_enabled = true
 text = "Team Magma's
 Mightyena"
 
@@ -42,7 +46,19 @@ theme_override_font_sizes/normal_font_size = 12
 bbcode_enabled = true
 text = "[u]HP[/u] 200/200"
 
-[node name="Art" type="TextureRect" parent="Main"]
+[node name="ArtButton" type="CenterContainer" parent="Main"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Main/ArtButton"]
+custom_minimum_size = Vector2(148, 92)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("2_vxll5")
+
+[node name="PanelContainer" type="CenterContainer" parent="Main/ArtButton"]
+layout_mode = 2
+
+[node name="Art" type="TextureRect" parent="Main/ArtButton/PanelContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(142, 87)
 layout_mode = 2
@@ -62,6 +78,7 @@ metadata/_edit_group_ = true
 
 [node name="Tool" type="TextureRect" parent="TrainerAttached"]
 unique_name_in_owner = true
+visible = false
 custom_minimum_size = Vector2(48, 28)
 layout_mode = 2
 texture = ExtResource("2_m52es")
@@ -70,6 +87,7 @@ stretch_mode = 4
 
 [node name="TM" type="TextureRect" parent="TrainerAttached"]
 unique_name_in_owner = true
+visible = false
 custom_minimum_size = Vector2(48, 28)
 layout_mode = 2
 texture = ExtResource("3_pjvm0")
@@ -91,24 +109,31 @@ layout_mode = 2
 theme_override_constants/separation = 23
 
 [node name="Types" parent="EnergyContainer/EnergyTypes" instance=ExtResource("4_nhrrd")]
+visible = false
 layout_mode = 2
 
 [node name="Types2" parent="EnergyContainer/EnergyTypes" instance=ExtResource("4_nhrrd")]
+visible = false
 layout_mode = 2
 
 [node name="Types3" parent="EnergyContainer/EnergyTypes" instance=ExtResource("4_nhrrd")]
+visible = false
 layout_mode = 2
 
 [node name="Types4" parent="EnergyContainer/EnergyTypes" instance=ExtResource("4_nhrrd")]
+visible = false
 layout_mode = 2
 
 [node name="Types5" parent="EnergyContainer/EnergyTypes" instance=ExtResource("4_nhrrd")]
+visible = false
 layout_mode = 2
 
 [node name="Types6" parent="EnergyContainer/EnergyTypes" instance=ExtResource("4_nhrrd")]
+visible = false
 layout_mode = 2
 
 [node name="Types7" parent="EnergyContainer/EnergyTypes" instance=ExtResource("4_nhrrd")]
+visible = false
 layout_mode = 2
 
 [node name="TypeContainer" type="HBoxContainer" parent="."]
@@ -152,6 +177,7 @@ offset_bottom = 123.0
 
 [node name="Imprison" type="TextureRect" parent="Conditions"]
 unique_name_in_owner = true
+visible = false
 modulate = Color(0.984314, 0.498039, 0.745098, 1)
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
@@ -162,6 +188,7 @@ expand_mode = 4
 
 [node name="Shockwave" type="TextureRect" parent="Conditions"]
 unique_name_in_owner = true
+visible = false
 modulate = Color(0.921569, 0.384314, 0, 1)
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2

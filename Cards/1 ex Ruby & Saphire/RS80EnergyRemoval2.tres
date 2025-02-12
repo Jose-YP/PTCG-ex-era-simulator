@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://cc3kjnmsj4pr3"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=11 format=3 uid="uid://cc3kjnmsj4pr3"]
 
+[ext_resource type="Texture2D" uid="uid://ba8jbrbg2km5v" path="res://Art Assets/Cards/1 ex Ruby & Saphire/80.jpg" id="1_hj3wc"]
 [ext_resource type="Script" path="res://Code/Resource Makers/CardMaker.gd" id="3_8oe8a"]
 [ext_resource type="Script" path="res://Code/Resource Makers/TrainerMaker.gd" id="3_cxq63"]
 [ext_resource type="Script" path="res://Code/Resource Makers/CoinFlipNumMaker.gd" id="3_poe32"]
@@ -40,7 +41,7 @@ attack_damage = 0
 defense = 0
 after_weak_res = true
 switch_type = 0
-search = []
+search = Array[Resource("res://Code/Resource Makers/SearchMaker.gd")]([])
 disrupt_target = 1
 disrupting = 0
 card_ammount = 0
@@ -57,6 +58,7 @@ success_effect = SubResource("Resource_5tngi")
 [resource]
 script = ExtResource("3_8oe8a")
 name = "Energy Removal 2 "
+image = ExtResource("1_hj3wc")
 illustrator = "Keniji Kinebuchi"
 number = 80
 rarity = 1

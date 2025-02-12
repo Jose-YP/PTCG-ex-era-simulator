@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=9 format=3 uid="uid://oa7r3igevgqi"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://oa7r3igevgqi"]
 
 [ext_resource type="Script" path="res://Code/Resource Makers/CardMaker.gd" id="1_blsmh"]
+[ext_resource type="Texture2D" uid="uid://c2o5amlj16doj" path="res://Art Assets/Cards/1 ex Ruby & Saphire/49.jpg" id="1_ianho"]
 [ext_resource type="Script" path="res://Code/Resource Makers/EffectMaker.gd" id="2_kkx2p"]
 [ext_resource type="Script" path="res://Code/Resource Makers/AttackMaker.gd" id="3_3kb4g"]
 [ext_resource type="Script" path="res://Code/Resource Makers/PokemonMaker.gd" id="4_qigjx"]
@@ -21,7 +22,7 @@ attack_damage = -10
 defense = 0
 after_weak_res = true
 switch_type = 0
-search = []
+search = Array[Resource("res://Code/Resource Makers/SearchMaker.gd")]([])
 disrupt_target = 0
 disrupting = 0
 card_ammount = 0
@@ -69,7 +70,7 @@ modifier = 0
 script = ExtResource("4_qigjx")
 HP = 40
 retreat = 1
-attacks = [SubResource("Resource_iubtr"), SubResource("Resource_1g2nc")]
+attacks = Array[ExtResource("3_3kb4g")]([SubResource("Resource_iubtr"), SubResource("Resource_1g2nc")])
 evo_stage = "Basic"
 evolves_from = ""
 delta = false
@@ -82,6 +83,7 @@ resist = 1
 [resource]
 script = ExtResource("1_blsmh")
 name = "Aron "
+image = ExtResource("1_ianho")
 illustrator = "Mitsuhiro Arita"
 number = 49
 rarity = 0

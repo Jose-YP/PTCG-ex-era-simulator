@@ -55,6 +55,7 @@ var use_attack: bool = true
 #--------------------------------------
 #region CONDITION VARIABLES
 var damage_counters: int = 0
+var benched: bool = false
 var poison_condition: poison_type = poison_type.NONE
 var burn_condition: burn_type = burn_type.NONE
 var turn_condition: turn_type = turn_type.NONE
@@ -63,42 +64,70 @@ var shockwave: bool = false
 #endregion
 #--------------------------------------
 
+#--------------------------------------
+#region DAMAGE HANDLERS
 func should_ko() -> bool:
 	return (pokedata.HP - damage_counters) < 0
 
-func add_damage(ammount) -> int:
+func add_damage(_base_ammount) -> int:
 	return 0
 
-func bench_add_damage(ammount) -> int:
+func bench_add_damage(_ammount) -> int:
 	return 0
+#endregion
+#--------------------------------------
+
+#--------------------------------------
+#region ENERGY HANDLERS
+func add_energy(energy_card: Base_Card): #VERY UNFINISHED
+	energy_cards.append(energy_card)
+	
+	
+	pass
+
+func energy_removal():
+	pass
+
+func count_energy():
+	#Count if energy cars provided give the right energy for each attack
+	#Each attackm will be treated differently
+	#EG: Double magma will provide two dark for one attack but two fighting for another
+	#It depends on which combination satisfies the cost
+	pass
+
+#endregion
+#--------------------------------------
 
 #--------------------------------------
 #region CONDITION HANDLERS
 func add_poison(severity):
-	match severity:
-		"Normal":
-			poison_condition = poison_type.NORMAL
-		"Heavy":
-			poison_condition = poison_type.HEAVY
-	#refresh.emit()
+	if not benched:
+		match severity:
+			"Normal":
+				poison_condition = poison_type.NORMAL
+			"Heavy":
+				poison_condition = poison_type.HEAVY
+		#refresh.emit()
 
 func add_burn(severity):
-	match severity:
-		"Normal":
-			burn_condition = burn_type.NORMAL
-		"Heavy":
-			burn_condition = burn_type.HEAVY
-	#refresh.emit()
+	if not benched:
+		match severity:
+			"Normal":
+				burn_condition = burn_type.NORMAL
+			"Heavy":
+				burn_condition = burn_type.HEAVY
+		#refresh.emit()
 
 func add_turn(which):
-	match which:
-		"Paralysis":
-			turn_condition = turn_type.PARALYSIS
-		"Asleep":
-			turn_condition = turn_type.ASLEEP
-		"Confusion":
-			turn_condition = turn_type.CONFUSION
-	#refresh.emit()
+	if not benched:
+		match which:
+			"Paralysis":
+				turn_condition = turn_type.PARALYSIS
+			"Asleep":
+				turn_condition = turn_type.ASLEEP
+			"Confusion":
+				turn_condition = turn_type.CONFUSION
+		#refresh.emit()
 
 func heal_status():
 	poison_condition = poison_type.NONE
@@ -108,17 +137,15 @@ func heal_status():
 
 #endregion
 #--------------------------------------
-
 func refresh():
 	current_slot.art.texture = current_card.image
 	current_slot.name_section.clear()
 	current_slot.name_section.append_text(current_card.name)
 	current_slot.max_hp.clear()
-	current_slot.max_hp.append_text(str("MAX HP: ",pokedata.HP - damage_counters, "/", pokedata.HP))
-	current_slot.tool.texture = tool_card.image
+	current_slot.max_hp.append_text(str("HP: ",pokedata.HP - damage_counters, "/", pokedata.HP))
 	current_slot.display_types(pokedata.type_flags_to_array(pokedata.type))
+	benched = current_slot.slot_type == 1
 	
+	if tool_card: current_slot.tool.texture = tool_card.image
 	if shockwave: current_slot.shockwave.show()
 	if imprison: current_slot.imprison.show()
-	
-

@@ -16,4 +16,4 @@ func add_type(type: String):
 			$Number.hide()
 
 func display_type(type: String):
-	$Tabs.current_tab = Constants.find(type)
+	$Tabs.current_tab = Constants.energy_types.find(type)

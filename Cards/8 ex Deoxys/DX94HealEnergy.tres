@@ -1,0 +1,76 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=11 format=3 uid="uid://b1xaqtaovjo0b"]
+
+[ext_resource type="Script" path="res://Code/Resource Makers/AskMaker.gd" id="1_om5kj"]
+[ext_resource type="Script" path="res://Code/Resource Makers/EnergyMaker.gd" id="2_gb4dl"]
+[ext_resource type="Script" path="res://Code/Resource Makers/HealMaker.gd" id="3_vrhcx"]
+[ext_resource type="Script" path="res://Code/Resource Makers/EffectMaker.gd" id="4_xvjrm"]
+[ext_resource type="Texture2D" uid="uid://ckmtw4r1dh5es" path="res://Art Assets/Cards/8 ex Deoxys/94.jpg" id="5_mtuyk"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CardMaker.gd" id="6_24dry"]
+
+[sub_resource type="Resource" id="Resource_wkjkc"]
+script = ExtResource("1_om5kj")
+target = 1
+location = 4
+inclusive = false
+pokemon_class = 18
+bench_size = -1
+type = 1023
+type_size = 1
+choose = 0
+choose_location = 0
+
+[sub_resource type="Resource" id="Resource_l1tc5"]
+script = ExtResource("3_vrhcx")
+how_many = 1
+which = 0
+initial_main_NUM = 10
+modifier = 0
+
+[sub_resource type="Resource" id="Resource_bdwk5"]
+script = ExtResource("4_xvjrm")
+poison = 0
+burn = 0
+addable_effects = 0
+mutually_exclusive_conditions = 0
+knockOut = false
+instead_of_damage = false
+do_nothing = false
+retreat = false
+attack = 0
+buff_target = 0
+attack_damage = 0
+defense = 0
+after_weak_res = true
+switch_type = 0
+search = Array[Resource("res://Code/Resource Makers/SearchMaker.gd")]([])
+disrupt_target = 0
+disrupting = 0
+card_ammount = 0
+energy_ammount = 0
+healing = SubResource("Resource_l1tc5")
+mimic = 0
+
+[sub_resource type="Resource" id="Resource_xkhcd"]
+script = ExtResource("2_gb4dl")
+considered = "Special Energy"
+asks = SubResource("Resource_wkjkc")
+fail_provide = false
+success_effect = SubResource("Resource_bdwk5")
+turns = -1
+number = 1
+react = false
+holon_type = "None"
+type = 256
+fail_type = 256
+
+[resource]
+script = ExtResource("6_24dry")
+name = "Heal Energy"
+image = ExtResource("5_mtuyk")
+illustrator = "Takumi Akabane"
+number = 94
+rarity = 1
+expansion = 7
+categories = 4
+energy_properties = SubResource("Resource_xkhcd")
+fossil = false

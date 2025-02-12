@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=16 format=3 uid="uid://biwey6tlevx3y"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=17 format=3 uid="uid://biwey6tlevx3y"]
 
 [ext_resource type="Script" path="res://Code/Resource Makers/CardMaker.gd" id="1_ai46a"]
+[ext_resource type="Texture2D" uid="uid://cak3m200ubfwe" path="res://Art Assets/Cards/1 ex Ruby & Saphire/81.jpg" id="1_imayw"]
 [ext_resource type="Script" path="res://Code/Resource Makers/CoinFlipNumMaker.gd" id="2_kivo1"]
 [ext_resource type="Script" path="res://Code/Resource Makers/AskMaker.gd" id="3_02yqe"]
 [ext_resource type="Script" path="res://Code/Resource Makers/TrainerMaker.gd" id="4_8je75"]
@@ -86,6 +87,7 @@ success_effect = SubResource("Resource_tcpdw")
 [resource]
 script = ExtResource("1_ai46a")
 name = "Energy Restore "
+image = ExtResource("1_imayw")
 illustrator = "Hideyuki Nakajima"
 number = 81
 rarity = 0
