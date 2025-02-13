@@ -1,5 +1,6 @@
 extends Control
 
+@export var list_item: PackedScene
 @export var list: Array[Base_Card]
 
 var items: Array[Node] = []
@@ -16,9 +17,10 @@ func reset_items():
 
 func set_items(can_select):
 	for item in list:
-		var making = Constants.playing_list_item.instantiate()
+		var making = list_item.instantiate()
 		making.card = item
 		%CardList.add_child(making)
+		
 	
 	items = %CardList.get_children()
 	

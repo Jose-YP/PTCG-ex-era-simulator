@@ -13,4 +13,5 @@ Color.GRAY, Color.WHITE_SMOKE]
 
 const playing_list_item = preload("res://Scenes/UI/PlayingListItem.tscn")
 const playing_list = preload("res://Scenes/UI/playing_list.tscn")
+const attack_list = preload("res://Scenes/UI/attack_list.tscn")
 const cursor = preload("res://Scenes/UI/cursor.tscn")

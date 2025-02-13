@@ -163,7 +163,11 @@ func heal_status():
 
 #endregion
 #--------------------------------------
+
+#--------------------------------------
+#MANAGING DISPLAYS
 func refresh():
+	pokedata = current_card.pokemon_properties
 	print(current_card.image, current_slot.art)
 	current_slot.art.texture = current_card.image
 	current_slot.name_section.clear()
@@ -172,7 +176,10 @@ func refresh():
 	current_slot.max_hp.append_text(str("HP: ",pokedata.HP - damage_counters, "/", pokedata.HP))
 	current_slot.display_types(pokedata.type_flags_to_array(pokedata.type))
 	benched = current_slot.slot_type == 1
+	current_slot.connected_card = self
 	
 	if tool_card: current_slot.tool.texture = tool_card.image
 	if shockwave: current_slot.shockwave.show()
 	if imprison: current_slot.imprison.show()
+#endregion
+#--------------------------------------

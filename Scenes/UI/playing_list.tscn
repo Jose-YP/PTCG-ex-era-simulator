@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://b5csfp6jhpew3"]
+[gd_scene load_steps=12 format=3 uid="uid://b5csfp6jhpew3"]
 
 [ext_resource type="Script" path="res://Code/Scenes/UI/PlayingList.gd" id="1_6hj2b"]
 [ext_resource type="Resource" uid="uid://co4rk4hqixy8b" path="res://Cards/1 ex Ruby & Saphire/RS37Lairon.tres" id="2_emrxe"]
+[ext_resource type="PackedScene" uid="uid://dd56w2nt5mqow" path="res://Scenes/UI/PlayingListItem.tscn" id="2_wdv06"]
 [ext_resource type="Resource" uid="uid://cc3kjnmsj4pr3" path="res://Cards/1 ex Ruby & Saphire/RS80EnergyRemoval2.tres" id="3_58hke"]
 [ext_resource type="Resource" uid="uid://bekwoaj06a44c" path="res://Cards/1 ex Ruby & Saphire/RS95RainbowEnergy.tres" id="3_h2a8u"]
 [ext_resource type="Resource" uid="uid://dxq22uwxelttj" path="res://Cards/1 ex Ruby & Saphire/RS107PsychicEnergy.tres" id="4_qc2t2"]
@@ -27,6 +28,7 @@ offset_bottom = 0.239929
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_6hj2b")
+list_item = ExtResource("2_wdv06")
 list = Array[Resource("res://Code/Resource Makers/CardMaker.gd")]([ExtResource("2_emrxe"), ExtResource("3_h2a8u"), ExtResource("4_qc2t2"), ExtResource("3_58hke"), ExtResource("6_kcs2e"), ExtResource("7_mhouc"), ExtResource("8_oeuom"), ExtResource("9_c4i4j")])
 
 [node name="PanelContainer" type="PanelContainer" parent="."]

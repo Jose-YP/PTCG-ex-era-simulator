@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://drg0sr7jdfiel"]
+[gd_scene load_steps=9 format=3 uid="uid://drg0sr7jdfiel"]
 
 [ext_resource type="Script" path="res://Code/Scenes/UI/UISlot.gd" id="1_c5ua0"]
 [ext_resource type="Texture2D" uid="uid://b4uymubvo04qp" path="res://Art Assets/Cards/4 ex Team Magma vs Team Aqua/37.jpg" id="1_uesv2"]
 [ext_resource type="Texture2D" uid="uid://ct7oa74jhqcwq" path="res://Art Assets/Cards/4 ex Team Magma vs Team Aqua/74.jpg" id="2_4mrr5"]
+[ext_resource type="PackedScene" uid="uid://cvh086w8yapm0" path="res://Scenes/UI/attack_list.tscn" id="2_l63e3"]
 [ext_resource type="StyleBox" uid="uid://duhmik1loeema" path="res://Themes/GBABox.tres" id="2_sb64h"]
 [ext_resource type="Texture2D" uid="uid://d3nrajtlwbvgh" path="res://Art Assets/Cards/4 ex Team Magma vs Team Aqua/84.jpg" id="3_bcik8"]
 [ext_resource type="PackedScene" uid="uid://bs3ila6cpt8n1" path="res://Scenes/UI/types.tscn" id="4_5yd0i"]
@@ -18,6 +19,7 @@ offset_right = 0.360001
 offset_bottom = 0.279999
 script = ExtResource("1_c5ua0")
 slot_type = 0
+attack_list = ExtResource("2_l63e3")
 
 [node name="Main" type="VBoxContainer" parent="."]
 layout_mode = 0
@@ -44,16 +46,21 @@ text = "[u]HP[/u] 200/200"
 [node name="ArtButton" type="CenterContainer" parent="Main"]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="Main/ArtButton"]
+[node name="MarginContainer" type="MarginContainer" parent="Main/ArtButton"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Main/ArtButton/MarginContainer"]
 custom_minimum_size = Vector2(195, 120)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/normal = ExtResource("2_sb64h")
 
-[node name="PanelContainer" type="CenterContainer" parent="Main/ArtButton"]
+[node name="PanelContainer" type="CenterContainer" parent="Main/ArtButton/MarginContainer/Button"]
 layout_mode = 2
+offset_right = 195.0
+offset_bottom = 120.0
 
-[node name="Art" type="TextureRect" parent="Main/ArtButton/PanelContainer"]
+[node name="Art" type="TextureRect" parent="Main/ArtButton/MarginContainer/Button/PanelContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(189, 114)
 layout_mode = 2
@@ -280,4 +287,4 @@ expand_mode = 4
 visible = false
 layout_mode = 2
 
-[connection signal="pressed" from="Main/ArtButton/Button" to="." method="pressed_a_slot"]
+[connection signal="pressed" from="Main/ArtButton/MarginContainer/Button" to="." method="pressed_a_slot"]

@@ -1,6 +1,8 @@
 extends Control
 class_name UI_Slot
 @export_enum("Active", "Bench") var slot_type: int = 1
+@export_enum("Left","Right","Up","Down") var list_direction: int = 0
+@export var attack_list: PackedScene
 
 @onready var name_section: RichTextLabel = %Name
 @onready var max_hp: RichTextLabel = %MaxHP
@@ -11,10 +13,13 @@ class_name UI_Slot
 @onready var shockwave: TextureRect = %Shockwave
 @onready var typeContainer: Array[Node] = %TypeContainer.get_children()
 @onready var energyContainer: Array[Node] = %EnergyTypes.get_children()
+@onready var list_offsets: Array[Vector2] = [Vector2(-size.x / 2, 0),
+ Vector2(size.x / 2,0), Vector2(0,-size.y / 2), Vector2(0,size.y / 2)]
 
 signal pressed_slot
 
 #Unfinished, doesn't account for special energy
+var connected_card: PokeSlot
 var attached_energy: Dictionary = {"Grass": 0, "Fire": 0, "Water": 0,
  "Lightning": 0, "Psychic":0, "Darkness":0, "Metal":0, "Colorless":0,
  "Rainbow":0, "Magma":0, "Aqua":0, "Dark Metal":0, "React": 0,
@@ -23,6 +28,14 @@ var attached_energy: Dictionary = {"Grass": 0, "Fire": 0, "Water": 0,
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
+
+func spawn_attacks() -> Control:
+	var list = Constants.attack_list.instantiate()
+	list.card = connected_card.current_card
+	list.position = position + list_offsets[list_direction]
+	add_child(list)
+	
+	return list
 
 #--------------------------------------
 #region ATTATCH
@@ -79,6 +92,7 @@ func display_energy(energy_arr: Array, energy_dict: Dictionary):
 #--------------------------------------
 #region SIGNALS
 func pressed_a_slot():
+	print("OLDSCJANNJOKASILDCJNIKALDSNJASKDCLU")
 	pressed_slot.emit()
 #endregion
 #--------------------------------------

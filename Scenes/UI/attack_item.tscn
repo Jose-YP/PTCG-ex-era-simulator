@@ -31,7 +31,7 @@ script = ExtResource("1_cuu5a")
 attack = ExtResource("2_vqxkv")
 
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(378, -5)
+position = Vector2(305, 38)
 
 [node name="TextureRect" type="TextureRect" parent="Marker2D"]
 visible = false

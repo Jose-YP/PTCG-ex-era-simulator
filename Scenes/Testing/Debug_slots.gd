@@ -13,10 +13,16 @@ const evolutions: Array[String] = ["res://Cards/4 ex Team Magma VS Team Aqua/MA3
 "res://Cards/1 ex Ruby & Saphire/RS29Delcatty.tres","res://Cards/1 ex Ruby & Saphire/RS33Hariyama.tres",
 "res://Cards/1 ex Ruby & Saphire/RS1Aggron.tres"]
 
+enum doing {NOTHING, CHECKING, SWAPPING, CHOOSING}
+
+var what_are_you_doing: doing = doing.NOTHING
 var energy_type: int = 0
 var evo_type: int = 0
 var condition_type: int = 0
+var attack_box: Control
+
 @onready var slots: Array[PokeSlot] = [$PokeSlot, $PokeSlot2]
+@onready var evo_buttons: Array[Button] = [%EvoActive, %EvoBench]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -45,9 +51,10 @@ func _on_evolution_options_item_selected(index):
 	
 	print(card.name," evolves from: ", card.pokemon_properties.evolves_from)
 	
-	for slot in slots:
-		print("Can ",slot.current_card.name," evolve? ",slot.current_card.name == card.pokemon_properties.evolves_from)
-	
+	for i in range(slots.size()):
+		print("Can ",slots[i].current_card.name," evolve? ",slots[i].current_card.name == card.pokemon_properties.evolves_from)
+		if slots[i].can_evolve_into(card): evo_buttons[i].disabled = false
+		else: evo_buttons[i].disabled = true
 
 func _on_evolve_pressed(target: int):
 	var evo: Base_Card = load(evolutions[evo_type])
@@ -73,3 +80,26 @@ func clear_conditions_from(_target: int):
 	pass
 #endregion
 
+#region PRESSING SLOT BUTTON
+func what_on_button_press(target):
+	match what_are_you_doing:
+		doing.NOTHING:
+			attack_box = slots[target].current_slot.spawn_attacks()
+			what_are_you_doing = doing.CHECKING
+		doing.CHECKING:
+			#Always despawn the original attack box
+			var same_slot = attack_box.card == slots[target].current_card
+			attack_box.reset_items()
+			#Check if the pressed slot is different from the original
+			if attack_box.card != slots[target].current_card:
+				attack_box = slots[target].current_slot.spawn_attacks()
+				what_are_you_doing = doing.CHECKING
+			else:
+				what_are_you_doing = doing.NOTHING
+	
+	print(slots[target].current_card.name)
+
+func display_attack():
+	pass
+
+#endregion
