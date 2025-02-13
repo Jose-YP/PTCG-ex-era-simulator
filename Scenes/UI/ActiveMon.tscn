@@ -65,7 +65,6 @@ offset_left = -17.0
 offset_top = 73.0
 offset_right = 31.0
 offset_bottom = 133.0
-metadata/_edit_group_ = true
 
 [node name="Tool" type="TextureRect" parent="TrainerAttached"]
 unique_name_in_owner = true
@@ -84,6 +83,16 @@ layout_mode = 2
 texture = ExtResource("3_bcik8")
 expand_mode = 5
 stretch_mode = 4
+
+[node name="Plus" type="RichTextLabel" parent="TrainerAttached/TM"]
+visible = false
+layout_mode = 0
+offset_left = -6.0
+offset_top = 4.0
+offset_right = 34.0
+offset_bottom = 28.0
+bbcode_enabled = true
+text = "+"
 
 [node name="EnergyContainer" type="VBoxContainer" parent="."]
 layout_mode = 2

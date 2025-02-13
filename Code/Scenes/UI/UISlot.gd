@@ -24,6 +24,30 @@ var attached_energy: Dictionary = {"Grass": 0, "Fire": 0, "Water": 0,
 func _ready():
 	pass # Replace with function body.
 
+#--------------------------------------
+#region ATTATCH
+func attatch_tool(tool_card: Base_Card):
+	if tool_card:
+		tool.show()
+		tool.texture = tool_card.image
+
+func attatch_tms(tms: Array[Base_Card]):
+	tm.hide()
+	
+	if tms.size() > 0: #Show the latest attatched
+		tm.show()
+		tm.texture = tms[-1].image
+	
+	if tms.size() > 1:
+		tm.get_child(0).show()
+	else:
+		tm.get_child(0).hide()
+
+#endregion
+#--------------------------------------
+
+#--------------------------------------
+#region ENERGY DISPLAY
 func display_types(types: Array[String]):
 	for node in typeContainer:
 		node.hide()
@@ -49,7 +73,12 @@ func display_energy(energy_arr: Array, energy_dict: Dictionary):
 		for i in range(energy_arr.size()):
 			print("ADD", energy_arr[i])
 			energyContainer[i].add_type(energy_arr[i])
-	
+#endregion
+#--------------------------------------
 
+#--------------------------------------
+#region SIGNALS
 func pressed_a_slot():
 	pressed_slot.emit()
+#endregion
+#--------------------------------------

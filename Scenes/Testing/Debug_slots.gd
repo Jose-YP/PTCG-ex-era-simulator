@@ -49,8 +49,10 @@ func _on_evolution_options_item_selected(index):
 		print("Can ",slot.current_card.name," evolve? ",slot.current_card.name == card.pokemon_properties.evolves_from)
 	
 
-func _on_evolve_pressed(_target: int):
-	pass # Replace with function body.
+func _on_evolve_pressed(target: int):
+	var evo: Base_Card = load(evolutions[evo_type])
+	if slots[target].can_evolve_into(evo):
+		slots[target].evolve_card(evo)
 
 #endregion
 

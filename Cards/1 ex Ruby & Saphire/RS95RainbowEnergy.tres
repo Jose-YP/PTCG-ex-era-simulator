@@ -8,6 +8,7 @@
 script = ExtResource("1_hh47m")
 considered = "Special Energy"
 fail_provide = false
+fail_prevent = false
 turns = -1
 number = 1
 react = false

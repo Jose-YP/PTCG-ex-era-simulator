@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://b4tx6kmy763df" path="res://Scenes/Components/poke_slot.tscn" id="1_c8cvy"]
 [ext_resource type="Script" path="res://Scenes/Testing/Debug_slots.gd" id="1_jpmm1"]
-[ext_resource type="Resource" uid="uid://c3tip8v6djvro" path="res://Cards/4 ex Team Magma VS Team Aqua/MA65MagmaPoochyena.tres" id="2_bpun7"]
+[ext_resource type="Resource" uid="uid://c3tip8v6djvro" path="res://Cards/4 EX Team Magma VS Team Aqua/MA65MagmaPoochyena.tres" id="2_bpun7"]
 [ext_resource type="Resource" uid="uid://oa7r3igevgqi" path="res://Cards/1 ex Ruby & Saphire/RS49Aron.tres" id="3_sjxhg"]
 [ext_resource type="PackedScene" uid="uid://drg0sr7jdfiel" path="res://Scenes/UI/ActiveMon.tscn" id="4_a0nvo"]
 [ext_resource type="PackedScene" uid="uid://df8x227c7a8q4" path="res://Scenes/UI/BenchMon.tscn" id="6_t4mtj"]

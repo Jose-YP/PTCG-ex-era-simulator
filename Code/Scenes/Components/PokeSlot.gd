@@ -25,6 +25,7 @@ enum turn_type{NONE, PARALYSIS, ASLEEP, CONFUSION}
 
 #--------------------------------------
 #region ATTATCHED VARIABLES
+var evolution_ready: bool = false
 var evolved_from: Array[Base_Card] = [] #
 var energy_cards: Array[Base_Card] = []
 var tm_cards: Array[Base_Card] = []
@@ -106,6 +107,19 @@ func count_energy() -> Dictionary:
 	
 	current_slot.display_energy(energy_array, attached_energy)
 	return attached_energy
+
+#endregion
+#--------------------------------------
+
+#--------------------------------------
+#region OTHER ATTATCHMENTS
+func can_evolve_into(evolution: Base_Card) -> bool:
+	return current_card.name == evolution.pokemon_properties.evolves_from
+
+func evolve_card(evolution: Base_Card):
+	evolved_from.append(current_card)
+	current_card = evolution
+	refresh()
 
 #endregion
 #--------------------------------------
