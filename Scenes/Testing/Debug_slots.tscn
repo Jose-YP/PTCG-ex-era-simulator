@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bwwl40qrwrmkl"]
+[gd_scene load_steps=31 format=3 uid="uid://bwwl40qrwrmkl"]
 
 [ext_resource type="PackedScene" uid="uid://b4tx6kmy763df" path="res://Scenes/Components/poke_slot.tscn" id="1_c8cvy"]
 [ext_resource type="Script" path="res://Scenes/Testing/Debug_slots.gd" id="1_jpmm1"]
@@ -29,6 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://2l8ia23r5jfi" path="res://Art Assets/Cards/1 ex Ruby & Saphire/29.jpg" id="27_466o8"]
 [ext_resource type="Texture2D" uid="uid://b817pn5octfv6" path="res://Art Assets/Cards/1 ex Ruby & Saphire/1.jpg" id="28_gcws8"]
 [ext_resource type="PackedScene" uid="uid://cvh086w8yapm0" path="res://Scenes/UI/attack_list.tscn" id="29_lpnb5"]
+[ext_resource type="Script" path="res://Code/Scenes/Components/SlotUIActions.gd" id="30_o5qrh"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -318,6 +319,9 @@ offset_left = 223.0
 offset_top = 60.0
 offset_right = -857.0
 offset_bottom = -660.0
+
+[node name="SlotUIActions" type="Node" parent="."]
+script = ExtResource("30_o5qrh")
 
 [connection signal="pressed_slot" from="ActivePokemon" to="." method="what_on_button_press" binds= [0]]
 [connection signal="pressed_slot" from="BenchPokemon" to="." method="what_on_button_press" binds= [1]]

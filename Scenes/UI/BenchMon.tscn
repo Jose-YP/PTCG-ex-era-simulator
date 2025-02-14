@@ -148,7 +148,7 @@ layout_mode = 2
 [node name="TypeContainer" type="HBoxContainer" parent="."]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = -3.0
+offset_left = 3.0
 offset_top = 45.0
 offset_right = 137.0
 offset_bottom = 65.0

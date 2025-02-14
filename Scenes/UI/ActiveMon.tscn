@@ -21,10 +21,17 @@ script = ExtResource("1_c5ua0")
 slot_type = 0
 attack_list = ExtResource("2_l63e3")
 
+[node name="ArtButton" type="CenterContainer" parent="."]
+layout_mode = 2
+offset_right = 198.0
+
+[node name="MarginContainer" type="MarginContainer" parent="ArtButton"]
+layout_mode = 2
+
 [node name="Main" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 198.0
+offset_bottom = 164.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Main"]
 layout_mode = 2
@@ -43,25 +50,20 @@ layout_mode = 2
 bbcode_enabled = true
 text = "[u]HP[/u] 200/200"
 
-[node name="ArtButton" type="CenterContainer" parent="Main"]
-layout_mode = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="Main/ArtButton"]
-layout_mode = 2
-
-[node name="Button" type="Button" parent="Main/ArtButton/MarginContainer"]
+[node name="Button" type="Button" parent="Main"]
 custom_minimum_size = Vector2(195, 120)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/normal = ExtResource("2_sb64h")
 
-[node name="PanelContainer" type="CenterContainer" parent="Main/ArtButton/MarginContainer/Button"]
+[node name="PanelContainer" type="CenterContainer" parent="Main/Button"]
 layout_mode = 2
-offset_right = 195.0
+offset_right = 198.0
 offset_bottom = 120.0
 
-[node name="Art" type="TextureRect" parent="Main/ArtButton/MarginContainer/Button/PanelContainer"]
+[node name="Art" type="TextureRect" parent="Main/Button/PanelContainer"]
 unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.992157)
 custom_minimum_size = Vector2(189, 114)
 layout_mode = 2
 texture = ExtResource("1_uesv2")
@@ -153,7 +155,7 @@ layout_mode = 2
 [node name="TypeContainer" type="HBoxContainer" parent="."]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = -3.0
+offset_left = 3.0
 offset_top = 45.0
 offset_right = 137.0
 offset_bottom = 65.0
@@ -287,4 +289,4 @@ expand_mode = 4
 visible = false
 layout_mode = 2
 
-[connection signal="pressed" from="Main/ArtButton/MarginContainer/Button" to="." method="pressed_a_slot"]
+[connection signal="pressed" from="Main/Button" to="." method="pressed_a_slot"]

@@ -10,13 +10,15 @@ class_name EffectCall
 @export var knockOut: bool = false
 
 @export_group("Disable")
+@export_enum("None","PlayerAll", "OpponentAll", "Self",
+"Defender", "Both Active", "Both Defending") var disable_target: int = 0
 @export var instead_of_damage: bool = false
 @export var do_nothing: bool = false
 @export_enum("Can", "Flip", "Can't") var attack: int = 0
 @export_subgroup("Retrat")
 ##-1 means forever, otherwise it's turn duration
 @export var retrat_duration: int = 1
-@export var retreat: bool = false
+@export var disable_retreat: bool = false
 
 
 @export_group("Buff & Debuff")
@@ -41,9 +43,15 @@ class_name EffectCall
 @export var card_ammount: int = 0
 @export var reveal: bool = false
 @export_subgroup("Energy")
+@export_flags("Grass","Fire","Water",
+"Lightning","Psychic","Fighting",
+"Darkness","Metal","Colorless") var type: int = 0
 @export var energy_ammount: int = 0
 
 @export_group("Other")
+@export var remove_conditions: bool = false
+@export var remove_shockwave: bool = false
+@export var remove_imprison: bool = false
 @export var healing: HealEffect
 ##mimicry might be it's own resource
 @export_enum("No","AttatchedLimited", "Attatched",

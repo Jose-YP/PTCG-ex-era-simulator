@@ -1,15 +1,15 @@
 [gd_scene load_steps=13 format=3 uid="uid://bs3ila6cpt8n1"]
 
 [ext_resource type="Script" path="res://Code/Scenes/UI/types.gd" id="1_476s5"]
-[ext_resource type="Texture2D" uid="uid://bptkdabkts2i" path="res://Art Assets/Energy/grass.png" id="1_swp22"]
-[ext_resource type="Texture2D" uid="uid://bv3ytbkfhmq55" path="res://Art Assets/Energy/fire.png" id="2_avsjd"]
-[ext_resource type="Texture2D" uid="uid://dcso3o1r14yl3" path="res://Art Assets/Energy/water.png" id="3_7kys8"]
-[ext_resource type="Texture2D" uid="uid://cra2apmoe0t5u" path="res://Art Assets/Energy/electric.png" id="4_gfsbt"]
-[ext_resource type="Texture2D" uid="uid://brbptkqutnu3a" path="res://Art Assets/Energy/psychic.png" id="5_g02er"]
-[ext_resource type="Texture2D" uid="uid://c8wu5nqwka3hm" path="res://Art Assets/Energy/fighting.png" id="6_lmevn"]
-[ext_resource type="Texture2D" uid="uid://b2qp1vqbhraln" path="res://Art Assets/Energy/darkness.png" id="7_gq2ku"]
-[ext_resource type="Texture2D" uid="uid://cjkmmmy8hyma2" path="res://Art Assets/Energy/metal.png" id="8_sjp68"]
-[ext_resource type="Texture2D" uid="uid://bbvdin5pvw8tb" path="res://Art Assets/Energy/colorless.png" id="9_fv471"]
+[ext_resource type="Texture2D" uid="uid://cujjluirx6yyu" path="res://Art Assets/Energy/48px-Grass-attack.png" id="2_ibm8e"]
+[ext_resource type="Texture2D" uid="uid://dd1ywu5fsfsq1" path="res://Art Assets/Energy/48px-Fire-attack.png" id="3_4qb2s"]
+[ext_resource type="Texture2D" uid="uid://dj2lgcygk1ups" path="res://Art Assets/Energy/48px-Water-attack.png" id="4_mlhov"]
+[ext_resource type="Texture2D" uid="uid://bqqg7qjfq0wqb" path="res://Art Assets/Energy/48px-Lightning-attack.png" id="5_ikuoy"]
+[ext_resource type="Texture2D" uid="uid://bnpgukh0in14j" path="res://Art Assets/Energy/48px-Psychic-attack.png" id="6_mym1n"]
+[ext_resource type="Texture2D" uid="uid://chqgfpirjsldj" path="res://Art Assets/Energy/48px-Fighting-attack.png" id="7_sm1eo"]
+[ext_resource type="Texture2D" uid="uid://bkb5vi5elppq1" path="res://Art Assets/Energy/48px-Darkness-attack.png" id="8_kto7x"]
+[ext_resource type="Texture2D" uid="uid://gom7mkykamch" path="res://Art Assets/Energy/48px-Metal-attack.png" id="9_r1y5g"]
+[ext_resource type="Texture2D" uid="uid://dht4h5jns71o5" path="res://Art Assets/Energy/48px-Colorless-attack.png" id="10_6wlln"]
 [ext_resource type="Texture2D" uid="uid://ino4wafvc8n8" path="res://Art Assets/Energy/rainbow energy.png" id="11_pl64g"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nsmgk"]
@@ -19,12 +19,23 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
 script = ExtResource("1_476s5")
 
 [node name="Tabs" type="TabContainer" parent="."]
 layout_mode = 1
-offset_right = 20.0
-offset_bottom = 20.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -12.0
+offset_right = 12.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxEmpty_nsmgk")
@@ -32,47 +43,56 @@ tabs_visible = false
 
 [node name="Grass" type="TextureRect" parent="Tabs"]
 layout_mode = 2
-texture = ExtResource("1_swp22")
+texture = ExtResource("2_ibm8e")
+expand_mode = 2
 
 [node name="Fire" type="TextureRect" parent="Tabs"]
 visible = false
 layout_mode = 2
-texture = ExtResource("2_avsjd")
+texture = ExtResource("3_4qb2s")
+expand_mode = 2
 
 [node name="Water" type="TextureRect" parent="Tabs"]
 visible = false
 layout_mode = 2
-texture = ExtResource("3_7kys8")
+texture = ExtResource("4_mlhov")
+expand_mode = 2
 
 [node name="Lightning" type="TextureRect" parent="Tabs"]
 visible = false
 layout_mode = 2
-texture = ExtResource("4_gfsbt")
+texture = ExtResource("5_ikuoy")
+expand_mode = 2
 
 [node name="Psychic" type="TextureRect" parent="Tabs"]
 visible = false
 layout_mode = 2
-texture = ExtResource("5_g02er")
+texture = ExtResource("6_mym1n")
+expand_mode = 2
 
 [node name="Fighting" type="TextureRect" parent="Tabs"]
 visible = false
 layout_mode = 2
-texture = ExtResource("6_lmevn")
+texture = ExtResource("7_sm1eo")
+expand_mode = 2
 
 [node name="Darkness" type="TextureRect" parent="Tabs"]
 visible = false
 layout_mode = 2
-texture = ExtResource("7_gq2ku")
+texture = ExtResource("8_kto7x")
+expand_mode = 2
 
 [node name="Metal" type="TextureRect" parent="Tabs"]
 visible = false
 layout_mode = 2
-texture = ExtResource("8_sjp68")
+texture = ExtResource("9_r1y5g")
+expand_mode = 2
 
 [node name="Colorless" type="TextureRect" parent="Tabs"]
 visible = false
 layout_mode = 2
-texture = ExtResource("9_fv471")
+texture = ExtResource("10_6wlln")
+expand_mode = 2
 
 [node name="Rainbow" type="TextureRect" parent="Tabs"]
 visible = false
@@ -83,43 +103,50 @@ texture = ExtResource("11_pl64g")
 visible = false
 modulate = Color(0.278431, 0.180392, 0.027451, 1)
 layout_mode = 2
-texture = ExtResource("6_lmevn")
+texture = ExtResource("7_sm1eo")
+expand_mode = 2
 
 [node name="Aqua" type="TextureRect" parent="Tabs"]
 visible = false
 modulate = Color(0.356863, 0.0862745, 0.619608, 1)
 layout_mode = 2
-texture = ExtResource("3_7kys8")
+texture = ExtResource("4_mlhov")
+expand_mode = 2
 
 [node name="DarkMetal" type="TextureRect" parent="Tabs"]
 visible = false
 modulate = Color(0.305882, 0.27451, 0.266667, 1)
 layout_mode = 2
-texture = ExtResource("8_sjp68")
+texture = ExtResource("9_r1y5g")
+expand_mode = 3
 
 [node name="FF" type="TextureRect" parent="Tabs"]
 visible = false
 modulate = Color(0.896539, 0.34515, 0.205209, 1)
 layout_mode = 2
-texture = ExtResource("9_fv471")
+texture = ExtResource("10_6wlln")
+expand_mode = 3
 
 [node name="GL" type="TextureRect" parent="Tabs"]
 visible = false
 modulate = Color(0.781345, 0.918655, 0.213073, 1)
 layout_mode = 2
-texture = ExtResource("9_fv471")
+texture = ExtResource("10_6wlln")
+expand_mode = 2
 
 [node name="WP" type="TextureRect" parent="Tabs"]
 visible = false
 modulate = Color(0.470566, 0.421497, 0.98024, 1)
 layout_mode = 2
-texture = ExtResource("9_fv471")
+texture = ExtResource("10_6wlln")
+expand_mode = 2
 
 [node name="React" type="TextureRect" parent="Tabs"]
 visible = false
 modulate = Color(0.301961, 1, 1, 1)
 layout_mode = 2
-texture = ExtResource("9_fv471")
+texture = ExtResource("10_6wlln")
+expand_mode = 2
 
 [node name="Number" type="RichTextLabel" parent="."]
 visible = false
