@@ -21,6 +21,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
+mouse_filter = 2
 script = ExtResource("1_476s5")
 
 [node name="Tabs" type="TabContainer" parent="."]
@@ -38,71 +39,83 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_nsmgk")
 tabs_visible = false
 
 [node name="Grass" type="TextureRect" parent="Tabs"]
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("2_ibm8e")
 expand_mode = 2
 
 [node name="Fire" type="TextureRect" parent="Tabs"]
 visible = false
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("3_4qb2s")
 expand_mode = 2
 
 [node name="Water" type="TextureRect" parent="Tabs"]
 visible = false
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("4_mlhov")
 expand_mode = 2
 
 [node name="Lightning" type="TextureRect" parent="Tabs"]
 visible = false
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("5_ikuoy")
 expand_mode = 2
 
 [node name="Psychic" type="TextureRect" parent="Tabs"]
 visible = false
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("6_mym1n")
 expand_mode = 2
 
 [node name="Fighting" type="TextureRect" parent="Tabs"]
 visible = false
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("7_sm1eo")
 expand_mode = 2
 
 [node name="Darkness" type="TextureRect" parent="Tabs"]
 visible = false
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("8_kto7x")
 expand_mode = 2
 
 [node name="Metal" type="TextureRect" parent="Tabs"]
 visible = false
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("9_r1y5g")
 expand_mode = 2
 
 [node name="Colorless" type="TextureRect" parent="Tabs"]
 visible = false
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("10_6wlln")
 expand_mode = 2
 
 [node name="Rainbow" type="TextureRect" parent="Tabs"]
 visible = false
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("11_pl64g")
 
 [node name="Magma" type="TextureRect" parent="Tabs"]
 visible = false
 modulate = Color(0.278431, 0.180392, 0.027451, 1)
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("7_sm1eo")
 expand_mode = 2
 
@@ -110,6 +123,7 @@ expand_mode = 2
 visible = false
 modulate = Color(0.356863, 0.0862745, 0.619608, 1)
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("4_mlhov")
 expand_mode = 2
 
@@ -117,6 +131,7 @@ expand_mode = 2
 visible = false
 modulate = Color(0.305882, 0.27451, 0.266667, 1)
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("9_r1y5g")
 expand_mode = 3
 
@@ -124,6 +139,7 @@ expand_mode = 3
 visible = false
 modulate = Color(0.896539, 0.34515, 0.205209, 1)
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("10_6wlln")
 expand_mode = 3
 
@@ -131,6 +147,7 @@ expand_mode = 3
 visible = false
 modulate = Color(0.781345, 0.918655, 0.213073, 1)
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("10_6wlln")
 expand_mode = 2
 
@@ -138,6 +155,7 @@ expand_mode = 2
 visible = false
 modulate = Color(0.470566, 0.421497, 0.98024, 1)
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("10_6wlln")
 expand_mode = 2
 
@@ -145,6 +163,7 @@ expand_mode = 2
 visible = false
 modulate = Color(0.301961, 1, 1, 1)
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("10_6wlln")
 expand_mode = 2
 
@@ -155,6 +174,7 @@ offset_left = -8.0
 offset_top = 5.0
 offset_right = 22.0
 offset_bottom = 29.0
+mouse_filter = 2
 bbcode_enabled = true
 text = "99"
 fit_content = true

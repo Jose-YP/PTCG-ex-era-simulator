@@ -25,56 +25,63 @@ border_color = Color(0.286275, 0.00392157, 0.611765, 1)
 border_blend = true
 
 [node name="AttackItem" type="MarginContainer"]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 21.0
+offset_top = 11.0
+offset_right = 421.0
+offset_bottom = 71.0
+mouse_filter = 2
 script = ExtResource("1_cuu5a")
 attack = ExtResource("2_vqxkv")
 
-[node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(305, 38)
-
-[node name="TextureRect" type="TextureRect" parent="Marker2D"]
-visible = false
-offset_left = -68.0
-offset_top = -70.0
-offset_right = 60.0
-offset_bottom = 58.0
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("1_fpj2i")
-
 [node name="AttackButton" type="Button" parent="."]
-custom_minimum_size = Vector2(400, 60)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+mouse_default_cursor_shape = 2
 theme_override_styles/normal = ExtResource("2_ykf6u")
 theme_override_styles/hover = SubResource("StyleBoxFlat_yloa2")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_auhmd")
 
+[node name="Marker2D" type="Marker2D" parent="AttackButton"]
+position = Vector2(369, 28)
+
+[node name="TextureRect" type="Sprite2D" parent="AttackButton/Marker2D"]
+visible = false
+position = Vector2(-2.47359e-06, 4.76837e-07)
+scale = Vector2(0.203125, 0.34375)
+texture = ExtResource("1_fpj2i")
+
 [node name="AllText" type="VBoxContainer" parent="."]
 layout_mode = 2
-alignment = 1
+mouse_filter = 2
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
 
 [node name="MarginContainer" type="MarginContainer" parent="AllText"]
 layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_top = 11
 
 [node name="Base Text" type="HBoxContainer" parent="AllText"]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="AllText/Base Text"]
 layout_mode = 2
-theme_override_constants/margin_right = 15
+mouse_filter = 2
+theme_override_constants/margin_right = 20
 
 [node name="TypeContainer" type="VBoxContainer" parent="AllText/Base Text"]
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
+mouse_filter = 2
 alignment = 1
 
 [node name="Types" type="HBoxContainer" parent="AllText/Base Text/TypeContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 4
+mouse_filter = 2
 theme_override_constants/separation = 24
 
 [node name="Types" parent="AllText/Base Text/TypeContainer/Types" instance=ExtResource("3_tiejp")]
@@ -98,7 +105,9 @@ visible = false
 layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="AllText/Base Text/TypeContainer"]
+visible = false
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/margin_top = 17
 
 [node name="Name" type="RichTextLabel" parent="AllText/Base Text"]
@@ -107,6 +116,7 @@ custom_minimum_size = Vector2(190, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+mouse_filter = 2
 bbcode_enabled = true
 text = "[center]Everyone Explode Now"
 fit_content = true
@@ -117,19 +127,29 @@ custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+mouse_filter = 2
 bbcode_enabled = true
 text = "[center]-200"
 fit_content = true
 
 [node name="MarginContainer2" type="MarginContainer" parent="AllText/Base Text"]
+visible = false
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/margin_right = 15
+
+[node name="MarginContainer3" type="MarginContainer" parent="AllText"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_top = 1
 
 [node name="EffectContainer" type="HBoxContainer" parent="AllText"]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="MarginContainer2" type="MarginContainer" parent="AllText/EffectContainer"]
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/margin_right = 10
 
 [node name="EffectText" type="RichTextLabel" parent="AllText/EffectContainer"]
@@ -138,12 +158,17 @@ visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 2
+mouse_filter = 2
 text = "HUGE EFFECT TEX LIKE SUPER HUGE, JUST SAY EVERYTHING YOU EVER WANTED TO SAY, YOUR WILL YOUR DECLARATION. MAYBE THROW IN THAT 10 HOUR VIDEO ESSAY YOU LIKED SO MUCH. MAYBE NOT... SORRY"
 fit_content = true
 
 [node name="MarginContainer" type="MarginContainer" parent="AllText/EffectContainer"]
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/margin_left = 10
 
 [node name="MarginContainer2" type="MarginContainer" parent="AllText"]
 layout_mode = 2
+mouse_filter = 2
+
+[connection signal="focus_entered" from="." to="." method="_on_focus_entered"]

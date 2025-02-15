@@ -28,6 +28,7 @@ offset_bottom = 0.239929
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_6hj2b")
+debug = true
 list_item = ExtResource("2_wdv06")
 list = Array[Resource("res://Code/Resource Makers/CardMaker.gd")]([ExtResource("2_emrxe"), ExtResource("3_h2a8u"), ExtResource("4_qc2t2"), ExtResource("3_58hke"), ExtResource("6_kcs2e"), ExtResource("7_mhouc"), ExtResource("8_oeuom"), ExtResource("9_c4i4j")])
 

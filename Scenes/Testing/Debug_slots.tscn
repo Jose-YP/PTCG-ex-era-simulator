@@ -41,6 +41,10 @@ grow_vertical = 2
 script = ExtResource("1_jpmm1")
 metadata/_edit_lock_ = true
 
+[node name="SlotUIActions" type="Node" parent="." node_paths=PackedStringArray("connected_slots")]
+script = ExtResource("30_o5qrh")
+connected_slots = [NodePath("../PokeSlot"), NodePath("../PokeSlot2")]
+
 [node name="PokeSlot" parent="." node_paths=PackedStringArray("current_slot") instance=ExtResource("1_c8cvy")]
 current_card = ExtResource("2_bpun7")
 current_slot = NodePath("../ActivePokemon")
@@ -320,11 +324,8 @@ offset_top = 60.0
 offset_right = -857.0
 offset_bottom = -660.0
 
-[node name="SlotUIActions" type="Node" parent="."]
-script = ExtResource("30_o5qrh")
-
-[connection signal="pressed_slot" from="ActivePokemon" to="." method="what_on_button_press" binds= [0]]
-[connection signal="pressed_slot" from="BenchPokemon" to="." method="what_on_button_press" binds= [1]]
+[connection signal="pressed_slot" from="ActivePokemon" to="SlotUIActions" method="what_on_button_press" binds= [0]]
+[connection signal="pressed_slot" from="BenchPokemon" to="SlotUIActions" method="what_on_button_press" binds= [1]]
 [connection signal="item_selected" from="Conditions/OptionButton" to="." method="change_conditiion"]
 [connection signal="pressed" from="Conditions/ShockwaveB" to="." method="add_shockwave_to" binds= [1]]
 [connection signal="pressed" from="Conditions/ApplyCondition" to="." method="add_condition"]

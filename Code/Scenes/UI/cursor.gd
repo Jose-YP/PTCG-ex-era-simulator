@@ -104,10 +104,13 @@ func change_lists(movement: int) -> void:
 
 func set_arrow_position():
 	var anchor: Marker2D = pointing_at.get_node("Marker2D")
+	print(anchor.global_position, pointing_at.global_position)
 	global_position = anchor.global_position + pointer_offset[direction]
 	
 	#Grab the focus of any control item the cursor is on
-	if point_options[array_index][item_index] is Control:
+	if point_options[array_index][item_index] is Button:
+		print("A")
 		point_options[array_index][item_index].grab_focus()
+		print(get_viewport().gui_get_focus_owner())
 #endregion
 #--------------------------------------

@@ -4,6 +4,13 @@ extends MarginContainer
 
 @onready var final_cost:Array[String] = attack.get_energy_cost()
 @onready var energy_icons: Array[Node] = %Types.get_children()
+@onready var attackButton: Button = $AttackButton
+
+func _process(delta):
+	pass
+	
+	if attackButton.is_hovered(): print("AAA")
+	#else: print(get_viewport().get_mouse_position())
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -31,3 +38,8 @@ func _ready():
 			3:
 				%Damage.clear()
 				%Damage.append_text(str("-",attack.initial_main_DMG))
+	
+	$AttackButton/Marker2D.position.y = size.y/2
+
+func _on_focus_entered():
+	attackButton.grab_focus()

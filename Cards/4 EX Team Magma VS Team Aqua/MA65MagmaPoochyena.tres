@@ -14,11 +14,12 @@ burn = 0
 addable_effects = 0
 mutually_exclusive_conditions = 2
 knockOut = false
+disable_target = 0
 instead_of_damage = true
 do_nothing = false
 attack = 0
 retrat_duration = 1
-retreat = false
+disable_retreat = false
 buff_target = 0
 attack_damage = 0
 defense = 0
@@ -29,7 +30,11 @@ disrupt_target = 0
 disrupting = 0
 card_ammount = 0
 reveal = false
+type = 0
 energy_ammount = 0
+remove_conditions = false
+remove_shockwave = false
+remove_imprison = false
 mimic = 0
 
 [sub_resource type="Resource" id="Resource_1qf44"]
