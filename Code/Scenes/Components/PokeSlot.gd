@@ -128,6 +128,26 @@ func evolve_card(evolution: Base_Card) -> void:
 	current_card = evolution
 	refresh()
 
+func attatch_tool(new_tool: Base_Card):
+	if not tool_card:
+		tool_card = new_tool
+	else:
+		push_error(current_card.name, " already has tool attatched")
+	refresh()
+
+func remove_tool():
+	tool_card = null
+	refresh()
+
+func attatch_tm(new_tm: Base_Card):
+	tm_cards.push_front(new_tm)
+	print("TMS: ",tm_cards)
+	refresh()
+
+func remove_tms():
+	tm_cards.clear()
+	refresh()
+
 #endregion
 #--------------------------------------
 
@@ -222,7 +242,15 @@ func refresh() -> void:
 	current_slot.display_condition()
 	current_slot.display_imprision(imprison)
 	current_slot.display_shockwave(shockwave)
-	if tool_card: current_slot.tool.texture = tool_card.image
+	
+	if tm_cards.size():
+		current_slot.tm.texture = tm_cards[0].image
+		current_slot.tm.show()
+	else: current_slot.tm.hide()
+	if tool_card:
+		current_slot.tool.show()
+		current_slot.tool.texture = tool_card.image
+	else: current_slot.tool.hide()
 
 #endregion
 #--------------------------------------

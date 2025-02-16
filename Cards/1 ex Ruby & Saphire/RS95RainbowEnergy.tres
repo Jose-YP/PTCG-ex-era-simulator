@@ -7,6 +7,7 @@
 [sub_resource type="Resource" id="Resource_10nfj"]
 script = ExtResource("1_hh47m")
 considered = "Special Energy"
+description = ""
 fail_provide = false
 fail_prevent = false
 turns = -1

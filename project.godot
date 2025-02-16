@@ -14,7 +14,7 @@ config/name="Pokemon TCG"
 config/tags=PackedStringArray("made", "test")
 run/main_scene="res://Scenes/Main Game/main_game.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://Art Assets/Energy/metal.png"
+config/icon="res://Art Assets/Energy/48px-Metal-attack.png"
 
 [autoload]
 

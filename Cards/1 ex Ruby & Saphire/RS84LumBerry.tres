@@ -10,6 +10,7 @@
 script = ExtResource("3_wbaxj")
 target = 1
 damage_taken = -1
+energy_attatched = -1
 knocked_out = false
 condition = 0
 location = 4
@@ -25,6 +26,7 @@ choose_location = 0
 
 [sub_resource type="Resource" id="Resource_amkw8"]
 script = ExtResource("5_f3gvd")
+choose_condition = false
 poison = 0
 burn = 0
 addable_effects = 0
@@ -42,8 +44,12 @@ defense = 0
 after_weak_res = true
 switch_type = 0
 search = Array[Resource("res://Code/Resource Makers/SearchMaker.gd")]([])
+energy_move_type = 0
+move_ammount = -1
 disrupt_target = 0
 disrupting = 0
+send = 0
+send_to = null
 card_ammount = 0
 reveal = false
 type = 0
@@ -56,9 +62,11 @@ mimic = 0
 [sub_resource type="Resource" id="Resource_d0m0p"]
 script = ExtResource("3_38oxe")
 considered = "Tool"
+specific_requirement = ""
 description = "At any time between turns, if the Pokémon this card is attached to is affected by any Special Conditions, remove all of them. Then discard Lum Berry. "
 success_effect = SubResource("Resource_amkw8")
 activate_ask = SubResource("Resource_wdhp2")
+remove_after = true
 duration = -1
 
 [resource]

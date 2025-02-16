@@ -5,7 +5,8 @@ const energy_cards: Array[String] = ["res://Cards/1 ex Ruby & Saphire/RS104Grass
 "res://Cards/1 ex Ruby & Saphire/RS109LightningEnergy.tres","res://Cards/1 ex Ruby & Saphire/RS107PsychicEnergy.tres",
 "res://Cards/1 ex Ruby & Saphire/RS105FightingEnergy.tres","res://Cards/1 ex Ruby & Saphire/RS93DarknessEnergy.tres",
 "res://Cards/1 ex Ruby & Saphire/RS94MetalEnergy.tres", "res://Cards/8 ex Deoxys/DX94HealEnergy.tres",
-"res://Cards/1 ex Ruby & Saphire/RS95RainbowEnergy.tres", "res://Cards/4 ex Team Magma VS Team Aqua/MA87MagmaEnergy.tres"]
+"res://Cards/1 ex Ruby & Saphire/RS95RainbowEnergy.tres", "res://Cards/4 ex Team Magma VS Team Aqua/MA87MagmaEnergy.tres",
+"res://Cards/4 ex Team Magma VS Team Aqua/MA86AquaEnergy.tres"]
 const conditions: Array[String] = ["Poison", "Burn", "Asleep", 
 "Paralysis", "Confusion", "Shockwave", "Imprison"]
 const evolutions: Array[String] = ["res://Cards/4 ex Team Magma VS Team Aqua/MA37MagmaMightyena.tres",
@@ -14,11 +15,10 @@ const evolutions: Array[String] = ["res://Cards/4 ex Team Magma VS Team Aqua/MA3
 "res://Cards/1 ex Ruby & Saphire/RS1Aggron.tres"]
 const tools: Array[String] = ["res://Cards/1 ex Ruby & Saphire/RS84LumBerry.tres", 
 "res://Cards/1 ex Ruby & Saphire/RS85OranBerry.tres","res://Cards/4 ex Team Magma VS Team Aqua/MA81TeamMagmaBelt.tres"]
-const tms: Array[String] = []
+const tms: Array[String] = ["res://Cards/4 ex Team Magma VS Team Aqua/MA84TeamMagmaTechnicalMachine01.tres", 
+"res://Cards/4 ex Team Magma VS Team Aqua/MA79TeamAquaTechnicalMachine01.tres",
+"res://Cards/5 ex Hidden Lagends/HL86AncientTechnicalMachine[Rock].tres"]
 
-enum doing {NOTHING, CHECKING, SWAPPING, CHOOSING}
-
-var what_are_you_doing: doing = doing.NOTHING
 var energy_type: int = 0
 var evo_type: int = 0
 var condition_type: int = 0
@@ -66,15 +66,21 @@ func _on_evolve_pressed(target: int):
 #endregion
 
 #region ATTATCH
+func add_tool_to(target: int):
+	var current_index: int = $Attatchables/ToolOptions.selected
+	var current_tool: Base_Card = load(tools[current_index])
+	slots[target].attatch_tool(current_tool)
 
-func add_tool_to(target):
-	var current_index = $Attatchables/ToolOptions.selected
-	var current_tool = tools[current_index]
-	
+func remove_tool_from(target):
+	slots[target].remove_tool()
 
-func add_tm_to(target):
-	pass
+func add_tm_to(target: int):
+	var current_index: int = $Attatchables/TMOptions.selected
+	var current_tm: Base_Card = load(tms[current_index])
+	slots[target].attatch_tm(current_tm)
 
+func remove_tms_from(target):
+	slots[target].remove_tms()
 
 #endregion
 

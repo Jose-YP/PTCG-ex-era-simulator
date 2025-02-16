@@ -41,6 +41,14 @@ grow_vertical = 2
 script = ExtResource("1_jpmm1")
 metadata/_edit_lock_ = true
 
+[node name="PokeSlot2" parent="." node_paths=PackedStringArray("current_slot") instance=ExtResource("1_c8cvy")]
+current_card = ExtResource("3_sjxhg")
+current_slot = NodePath("../BenchPokemon")
+
+[node name="PokeSlot" parent="." node_paths=PackedStringArray("current_slot") instance=ExtResource("1_c8cvy")]
+current_card = ExtResource("2_bpun7")
+current_slot = NodePath("../ActivePokemon")
+
 [node name="SlotUIActions" type="Node" parent="." node_paths=PackedStringArray("connected_slots")]
 script = ExtResource("30_o5qrh")
 connected_slots = [NodePath("../PokeSlot"), NodePath("../PokeSlot2")]
@@ -155,10 +163,8 @@ popup/item_9/icon = ExtResource("16_h7sdw")
 popup/item_9/id = 9
 popup/item_10/text = "Magma"
 popup/item_10/id = 10
-popup/item_10/disabled = true
 popup/item_11/text = "Aqua"
 popup/item_11/id = 11
-popup/item_11/disabled = true
 popup/item_12/text = "Dark Metal"
 popup/item_12/id = 12
 popup/item_12/disabled = true
@@ -316,14 +322,6 @@ offset_top = 60.0
 offset_right = -857.0
 offset_bottom = -660.0
 
-[node name="PokeSlot" parent="." node_paths=PackedStringArray("current_slot") instance=ExtResource("1_c8cvy")]
-current_card = ExtResource("2_bpun7")
-current_slot = NodePath("../ActivePokemon")
-
-[node name="PokeSlot2" parent="." node_paths=PackedStringArray("current_slot") instance=ExtResource("1_c8cvy")]
-current_card = ExtResource("3_sjxhg")
-current_slot = NodePath("../BenchPokemon")
-
 [connection signal="pressed_slot" from="ActivePokemon" to="SlotUIActions" method="what_on_button_press" binds= [0]]
 [connection signal="pressed_slot" from="BenchPokemon" to="SlotUIActions" method="what_on_button_press" binds= [1]]
 [connection signal="item_selected" from="Conditions/OptionButton" to="." method="change_conditiion"]
@@ -338,6 +336,10 @@ current_slot = NodePath("../BenchPokemon")
 [connection signal="pressed" from="Energy/AddBench" to="." method="add_energy_to" binds= [1]]
 [connection signal="pressed" from="Energy/Remove Bench" to="." method="remove_energy_from" binds= [1]]
 [connection signal="pressed" from="Swap" to="." method="_on_swap_pressed"]
+[connection signal="pressed" from="Attatchables/AddToolA" to="." method="add_tool_to" binds= [0]]
+[connection signal="pressed" from="Attatchables/AddToolB" to="." method="add_tool_to" binds= [1]]
+[connection signal="pressed" from="Attatchables/AddTmA" to="." method="add_tm_to" binds= [0]]
+[connection signal="pressed" from="Attatchables/AddTmB" to="." method="add_tm_to" binds= [1]]
 [connection signal="item_selected" from="Evolution/EvolutionOptions" to="." method="_on_evolution_options_item_selected"]
 [connection signal="pressed" from="Evolution/HBoxContainer/EvoActive" to="." method="_on_evolve_pressed" binds= [0]]
 [connection signal="pressed" from="Evolution/HBoxContainer/EvoBench" to="." method="_on_evolve_pressed" binds= [1]]

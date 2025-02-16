@@ -17,18 +17,25 @@ until = false
 [sub_resource type="Resource" id="Resource_vp67e"]
 script = ExtResource("4_3mxbc")
 target = 0
+damage_taken = -10
+energy_attatched = -1
+knocked_out = false
+condition = 0
 location = 0
 inclusive = true
 pokemon_class = 0
 bench_size = -1
 type = 1023
 type_size = 1
+ask_string = ""
 coin_flip = SubResource("Resource_u70ah")
+formal_ask = false
 choose = 2
 choose_location = 3
 
 [sub_resource type="Resource" id="Resource_5tngi"]
 script = ExtResource("6_0ynvk")
+choose_condition = false
 poison = 0
 burn = 0
 addable_effects = 0
@@ -46,8 +53,12 @@ defense = 0
 after_weak_res = true
 switch_type = 0
 search = Array[Resource("res://Code/Resource Makers/SearchMaker.gd")]([])
+energy_move_type = 0
+move_ammount = -1
 disrupt_target = 1
 disrupting = 0
+send = 0
+send_to = null
 card_ammount = 0
 reveal = false
 type = 0
@@ -60,9 +71,12 @@ mimic = 0
 [sub_resource type="Resource" id="Resource_ldy6r"]
 script = ExtResource("3_cxq63")
 considered = "Item"
+specific_requirement = ""
 description = "Flip a coin. If heads, choose 1 Energy card attached to 1 of your opponent's Pokémon and discard it. "
 asks = SubResource("Resource_vp67e")
 success_effect = SubResource("Resource_5tngi")
+remove_after = true
+duration = -1
 
 [resource]
 script = ExtResource("3_8oe8a")

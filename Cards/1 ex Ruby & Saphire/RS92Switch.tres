@@ -7,6 +7,7 @@
 
 [sub_resource type="Resource" id="Resource_2hpdw"]
 script = ExtResource("3_0242p")
+choose_condition = false
 poison = 0
 burn = 0
 addable_effects = 0
@@ -24,8 +25,12 @@ defense = 0
 after_weak_res = true
 switch_type = 1
 search = Array[Resource("res://Code/Resource Makers/SearchMaker.gd")]([])
+energy_move_type = 0
+move_ammount = -1
 disrupt_target = 0
 disrupting = 0
+send = 0
+send_to = null
 card_ammount = 0
 reveal = false
 type = 0
@@ -38,8 +43,11 @@ mimic = 0
 [sub_resource type="Resource" id="Resource_s040e"]
 script = ExtResource("4_2lvv6")
 considered = "Item"
+specific_requirement = ""
 description = "Switch 1 of your Active Pokémon with 1 of your Benched Pokémon. "
 always_effect = SubResource("Resource_2hpdw")
+remove_after = true
+duration = -1
 
 [resource]
 script = ExtResource("1_23507")

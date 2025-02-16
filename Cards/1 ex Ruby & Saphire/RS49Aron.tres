@@ -8,6 +8,7 @@
 
 [sub_resource type="Resource" id="Resource_utovm"]
 script = ExtResource("2_kkx2p")
+choose_condition = false
 poison = 0
 burn = 0
 addable_effects = 0
@@ -25,8 +26,12 @@ defense = 0
 after_weak_res = true
 switch_type = 0
 search = Array[Resource("res://Code/Resource Makers/SearchMaker.gd")]([])
+energy_move_type = 0
+move_ammount = -1
 disrupt_target = 0
 disrupting = 0
+send = 0
+send_to = null
 card_ammount = 0
 reveal = false
 type = 0
