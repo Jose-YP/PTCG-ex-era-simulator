@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cvh086w8yapm0"]
+[gd_scene load_steps=4 format=3 uid="uid://cvh086w8yapm0"]
 
 [ext_resource type="Script" path="res://Code/Scenes/UI/AttackList.gd" id="1_oywep"]
 [ext_resource type="PackedScene" uid="uid://dvvv8k1g6tgog" path="res://Scenes/UI/attack_item.tscn" id="2_usqnq"]
-[ext_resource type="Resource" uid="uid://yjages2tp857" path="res://Cards/1 ex Ruby & Saphire/RS1Aggron.tres" id="3_w0e5g"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ud5dv"]
 bg_color = Color(0.12549, 0.109804, 0.117647, 0.780392)
@@ -28,7 +27,6 @@ grow_vertical = 2
 scale = Vector2(0.05, 0.05)
 script = ExtResource("1_oywep")
 attackItem = ExtResource("2_usqnq")
-card = ExtResource("3_w0e5g")
 metadata/_edit_group_ = true
 
 [node name="PanelContainer" type="PanelContainer" parent="."]

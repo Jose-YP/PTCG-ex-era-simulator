@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://bwwl40qrwrmkl"]
+[gd_scene load_steps=30 format=3 uid="uid://bwwl40qrwrmkl"]
 
 [ext_resource type="PackedScene" uid="uid://b4tx6kmy763df" path="res://Scenes/Components/poke_slot.tscn" id="1_c8cvy"]
 [ext_resource type="Script" path="res://Scenes/Testing/Debug_slots.gd" id="1_jpmm1"]
@@ -28,7 +28,6 @@
 [ext_resource type="Texture2D" uid="uid://b6qd05q5xmb33" path="res://Art Assets/Cards/1 ex Ruby & Saphire/33.jpg" id="26_w66ov"]
 [ext_resource type="Texture2D" uid="uid://2l8ia23r5jfi" path="res://Art Assets/Cards/1 ex Ruby & Saphire/29.jpg" id="27_466o8"]
 [ext_resource type="Texture2D" uid="uid://b817pn5octfv6" path="res://Art Assets/Cards/1 ex Ruby & Saphire/1.jpg" id="28_gcws8"]
-[ext_resource type="PackedScene" uid="uid://cvh086w8yapm0" path="res://Scenes/UI/attack_list.tscn" id="29_lpnb5"]
 [ext_resource type="Script" path="res://Code/Scenes/Components/SlotUIActions.gd" id="30_o5qrh"]
 
 [node name="Control" type="Control"]
@@ -49,10 +48,6 @@ current_slot = NodePath("../BenchPokemon")
 current_card = ExtResource("2_bpun7")
 current_slot = NodePath("../ActivePokemon")
 
-[node name="SlotUIActions" type="Node" parent="." node_paths=PackedStringArray("connected_slots")]
-script = ExtResource("30_o5qrh")
-connected_slots = [NodePath("../PokeSlot"), NodePath("../PokeSlot2")]
-
 [node name="ActivePokemon" parent="." instance=ExtResource("4_a0nvo")]
 layout_mode = 1
 offset_left = 53.32
@@ -68,6 +63,11 @@ offset_top = 200.0
 offset_right = 70.36
 offset_bottom = 200.28
 list_direction = 1
+
+[node name="SlotUIActions" type="Node" parent="." node_paths=PackedStringArray("poke_slots", "ui_slots")]
+script = ExtResource("30_o5qrh")
+poke_slots = [NodePath("../PokeSlot"), NodePath("../PokeSlot2")]
+ui_slots = [NodePath("../ActivePokemon"), NodePath("../BenchPokemon")]
 
 [node name="Conditions" type="GridContainer" parent="."]
 layout_mode = 0
@@ -299,8 +299,9 @@ popup/item_5/text = "Aggron"
 popup/item_5/icon = ExtResource("28_gcws8")
 popup/item_5/id = 5
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Evolution"]
+[node name="HBoxContainer" type="GridContainer" parent="Evolution"]
 layout_mode = 2
+columns = 2
 
 [node name="EvoActive" type="Button" parent="Evolution/HBoxContainer"]
 unique_name_in_owner = true
@@ -314,13 +315,17 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "Evolve Bench"
 
-[node name="AttackList" parent="." instance=ExtResource("29_lpnb5")]
-visible = false
-layout_mode = 1
-offset_left = 223.0
-offset_top = 60.0
-offset_right = -857.0
-offset_bottom = -660.0
+[node name="DevoActive" type="Button" parent="Evolution/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Devolve Active"
+
+[node name="DevoBench" type="Button" parent="Evolution/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Devolve Bench"
 
 [connection signal="pressed_slot" from="ActivePokemon" to="SlotUIActions" method="what_on_button_press" binds= [0]]
 [connection signal="pressed_slot" from="BenchPokemon" to="SlotUIActions" method="what_on_button_press" binds= [1]]
@@ -343,3 +348,5 @@ offset_bottom = -660.0
 [connection signal="item_selected" from="Evolution/EvolutionOptions" to="." method="_on_evolution_options_item_selected"]
 [connection signal="pressed" from="Evolution/HBoxContainer/EvoActive" to="." method="_on_evolve_pressed" binds= [0]]
 [connection signal="pressed" from="Evolution/HBoxContainer/EvoBench" to="." method="_on_evolve_pressed" binds= [1]]
+[connection signal="pressed" from="Evolution/HBoxContainer/DevoActive" to="." method="_on_devolve_pressed" binds= [0]]
+[connection signal="pressed" from="Evolution/HBoxContainer/DevoBench" to="." method="_on_devolve_pressed" binds= [1]]

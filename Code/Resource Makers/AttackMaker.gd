@@ -59,7 +59,7 @@ func can_pay(basic_energy: Array[int], special_energy: Array[int]) -> bool:
 		else: all_costs[8] -= 1
 	
 	#Maybe sort based on flag size
-	special_energy.sort_custom(func(a,b): a[0] < b[0])
+	special_energy.sort_custom(func(a,b): return a[0] < b[0])
 	print("SPECIAL SORT: ", special_energy)
 	for i in range(all_costs.size()):
 		for card in special_energy:

@@ -27,10 +27,6 @@ var attack_box: Control
 @onready var slots: Array[PokeSlot] = [$PokeSlot, $PokeSlot2]
 @onready var evo_buttons: Array[Button] = [%EvoActive, %EvoBench]
 
-func _ready():
-	slots[1].slot_into($ActivePokemon)
-	slots[0].slot_into($BenchPokemon)
-
 #region ENERGY
 func _on_energy_options_item_selected(index: int):
 	energy_type = index
@@ -40,10 +36,10 @@ func _on_energy_options_item_selected(index: int):
 	print(card.energy_properties.how_display())
 
 func add_energy_to(target: int):
-	slots[target].add_energy(load(energy_cards[energy_type]))
+	slots[target].change_energy(load(energy_cards[energy_type]))
 
-func remove_energy_from(_target: int):
-	pass
+func remove_energy_from(target: int):
+	slots[target].change_energy(load(energy_cards[energy_type]), -1)
 #endregion
 
 #region EVOLUTION
@@ -62,6 +58,10 @@ func _on_evolve_pressed(target: int):
 	var evo: Base_Card = load(evolutions[evo_type])
 	if slots[target].can_evolve_into(evo):
 		slots[target].evolve_card(evo)
+
+func _on_devolve_pressed(target: int):
+	if slots[target].can_devolve():
+		slots[target].devolve_card()
 
 #endregion
 

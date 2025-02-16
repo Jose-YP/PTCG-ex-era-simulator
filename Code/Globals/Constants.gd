@@ -6,7 +6,8 @@ const tm_text: String = "Attach this card to 1 of your Evolved Pokémon (excludi
 const stadium_text: String = "This card stays in play when you play it. Discard this card if another Stadium card comes into play."
 
 const energy_types: Array[String] = ["Grass", "Fire", "Water", "Lightning", "Psychic", 
-"Fighting", "Darkness", "Metal", "Colorless"]
+"Fighting", "Darkness", "Metal", "Colorless", "Rainbow", "Magma", "Aqua", "Dark Metal",
+ "FF", "GL", "WP", "React"]
 const energy_colors: Array[Color] = [Color.GREEN, Color.RED, Color.AQUA,
  Color.YELLOW, Color.PURPLE, Color.ORANGE_RED, Color.DARK_SLATE_GRAY,
 Color.GRAY, Color.WHITE_SMOKE]

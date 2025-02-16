@@ -31,10 +31,10 @@ func _ready():
 
 func spawn_attacks() -> Control:
 	var list = Constants.attack_list.instantiate()
-	list.card = connected_card.current_card
+	list.current_slot = connected_card
 	list.position = position + list_offsets[list_direction]
-	add_child(list)
-	
+	print(get_parent())
+	get_parent().add_child(list)
 	return list
 
 #--------------------------------------

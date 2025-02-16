@@ -1,0 +1,32 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://bfw6ylcttychc"]
+
+[ext_resource type="StyleBox" uid="uid://duhmik1loeema" path="res://Themes/GBABox.tres" id="1_jr2c4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vlqf8"]
+bg_color = Color(0.145098, 0.137255, 0.180392, 1)
+border_color = Color(0.286275, 0.00392157, 0.611765, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yloa2"]
+bg_color = Color(0.301961, 0.215686, 0.556863, 1)
+border_width_left = 1
+border_width_top = 2
+border_width_right = 1
+border_width_bottom = 2
+border_color = Color(0.286275, 0.00392157, 0.611765, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_auhmd"]
+bg_color = Color(0.129649, 0.0483941, 0.353005, 1)
+border_width_left = 1
+border_width_top = 2
+border_width_right = 1
+border_width_bottom = 2
+border_color = Color(0.286275, 0.00392157, 0.611765, 1)
+border_blend = true
+
+[resource]
+Button/styles/disabled = SubResource("StyleBoxFlat_vlqf8")
+Button/styles/hover = SubResource("StyleBoxFlat_yloa2")
+Button/styles/normal = ExtResource("1_jr2c4")
+Button/styles/pressed = SubResource("StyleBoxFlat_auhmd")

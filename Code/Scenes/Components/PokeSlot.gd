@@ -27,7 +27,11 @@ enum turn_type{NONE, PARALYSIS, ASLEEP, CONFUSION}
 #region ATTATCHED VARIABLES
 var evolution_ready: bool = false
 var evolved_from: Array[Base_Card] = [] #
-var energy_cards: Array[Base_Card] = []
+var energy_array: Array[String] = []
+var attached_energy: Dictionary = {"Grass": 0, "Fire": 0, "Water": 0,
+	"Lightning": 0, "Psychic":0, "Fighting":0 ,"Darkness":0, "Metal":0,
+	"Colorless":0, "Magma":0, "Aqua":0, "Dark Metal":0, "React": 0, 
+	"Holon FF": 0, "Holon GL": 0, "Holon WP": 0, "Rainbow":0}
 var tm_cards: Array[Base_Card] = []
 var tool_card: Base_Card
 #endregion
@@ -87,33 +91,33 @@ func bench_add_damage(_ammount) -> int:
 
 #--------------------------------------
 #region ENERGY HANDLERS
-func add_energy(energy_card: Base_Card) -> void: #VERY UNFINISHED
-	energy_cards.append(energy_card)
-	print(count_energy())
-
-func energy_removal(removing_type: String) -> void:
-	print("How to remove ", removing_type)
+func change_energy(energy_card: Base_Card, ammount: int = 1) -> void: #VERY UNFINISHED
+	#Count energy cards, count number later
+	var energy_string: String = energy_card.energy_properties.how_display()
+	attached_energy[energy_string] += ammount
+	if attached_energy[energy_string] < 0: attached_energy[energy_string] = 0
+	print(attached_energy, energy_array)
 	count_energy()
+	refresh()
 
-func count_energy() -> Dictionary:
+func count_energy() -> void:
 	#Count if energy cars provided give the right energy for each attack
 	#Each attackm will be treated differently
 	#EG: Double magma will provide two dark for one attack but two fighting for another
 	#It depends on which combination satisfies the cost
 	print(current_card.name,"'s energy")
-	var attached_energy: Dictionary = {"Grass": 0, "Fire": 0, "Water": 0,
- 	"Lightning": 0, "Psychic":0, "Darkness":0, "Metal":0, "Colorless":0,
- 	"Rainbow":0, "Magma":0, "Aqua":0, "Dark Metal":0, "React": 0,
- 	"Holon FF": 0, "Holon GL": 0, "Holon WP": 0}
-	var energy_array: Array[String] = []
-	for card in energy_cards:
-		var energy_string: String = card.energy_properties.how_display()
-		print(energy_string)
-		attached_energy[energy_string] += 1
-		energy_array.append(energy_string)
+	energy_array.clear()
+	for card in attached_energy:
+		if not attached_energy[card]:
+			continue
+		for i in range(attached_energy[card]):
+			energy_array.append(card)
 	
-	current_slot.display_energy(energy_array, attached_energy)
-	return attached_energy
+	print("BEFORE: ", energy_array)
+	
+	energy_array.sort_custom(func(a,b): #Basic + Darkness + Metal has highest priority
+		return Constants.energy_types.find(a) < Constants.energy_types.find(b))
+	print("AFTER: ", energy_array)
 
 #endregion
 #--------------------------------------
@@ -128,23 +132,32 @@ func evolve_card(evolution: Base_Card) -> void:
 	current_card = evolution
 	refresh()
 
-func attatch_tool(new_tool: Base_Card):
+func can_devolve() -> bool:
+	return evolved_from.size()
+
+func devolve_card() -> Base_Card:
+	var old_card: Base_Card = current_card
+	current_card = evolved_from.pop_back()
+	refresh()
+	return old_card
+
+func attatch_tool(new_tool: Base_Card) -> void:
 	if not tool_card:
 		tool_card = new_tool
 	else:
 		push_error(current_card.name, " already has tool attatched")
 	refresh()
 
-func remove_tool():
+func remove_tool() -> void:
 	tool_card = null
 	refresh()
 
-func attatch_tm(new_tm: Base_Card):
+func attatch_tm(new_tm: Base_Card) -> void:
 	tm_cards.push_front(new_tm)
 	print("TMS: ",tm_cards)
 	refresh()
 
-func remove_tms():
+func remove_tms() -> void:
 	tm_cards.clear()
 	refresh()
 
@@ -217,7 +230,7 @@ func heal_status() -> void:
 #--------------------------------------
 
 #--------------------------------------
-#MANAGING DISPLAYS
+#region MANAGING DISPLAYS
 func slot_into(destination: UI_Slot):
 	current_slot = destination
 	refresh()
@@ -239,6 +252,7 @@ func refresh() -> void:
 	current_slot.connected_card = self
 	
 	#check for any attatched cards/conditions
+	current_slot.display_energy(energy_array, attached_energy)
 	current_slot.display_condition()
 	current_slot.display_imprision(imprison)
 	current_slot.display_shockwave(shockwave)
