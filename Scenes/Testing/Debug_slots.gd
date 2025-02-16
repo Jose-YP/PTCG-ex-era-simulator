@@ -7,7 +7,7 @@ const energy_cards: Array[String] = ["res://Cards/1 ex Ruby & Saphire/RS104Grass
 "res://Cards/1 ex Ruby & Saphire/RS94MetalEnergy.tres", "res://Cards/8 ex Deoxys/DX94HealEnergy.tres",
 "res://Cards/1 ex Ruby & Saphire/RS95RainbowEnergy.tres", "res://Cards/4 ex Team Magma VS Team Aqua/MA87MagmaEnergy.tres"]
 const conditions: Array[String] = ["Poison", "Burn", "Asleep", 
-"Paralyze", "Confusion", "Shockwave", "Imprison"]
+"Paralysis", "Confusion", "Shockwave", "Imprison"]
 const evolutions: Array[String] = ["res://Cards/4 ex Team Magma VS Team Aqua/MA37MagmaMightyena.tres",
 "res://Cards/1 ex Ruby & Saphire/RS42Mightyena.tres","res://Cards/1 ex Ruby & Saphire/RS37Lairon.tres",
 "res://Cards/1 ex Ruby & Saphire/RS29Delcatty.tres","res://Cards/1 ex Ruby & Saphire/RS33Hariyama.tres",
@@ -24,10 +24,9 @@ var attack_box: Control
 @onready var slots: Array[PokeSlot] = [$PokeSlot, $PokeSlot2]
 @onready var evo_buttons: Array[Button] = [%EvoActive, %EvoBench]
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	slots[0].refresh()
-	slots[1].refresh()
+	slots[1].slot_into($ActivePokemon)
+	slots[0].slot_into($BenchPokemon)
 
 #region ENERGY
 func _on_energy_options_item_selected(index: int):
@@ -68,38 +67,21 @@ func change_conditiion(index: int):
 	condition_type = index
 
 func add_condition():
-	pass
+	slots[0].add_condition(conditions[condition_type])
 
-func add_imprision_to(_target: int):
-	pass
+func add_imprision_to(target: int):
+	slots[target].set_imprison(true)
 
-func add_shockwave_to(_target: int):
-	pass
+func add_shockwave_to(target: int):
+	slots[target].set_shockwave(true)
 
-func clear_conditions_from(_target: int):
-	pass
+func clear_conditions_from(target: int):
+	slots[target].heal_status()
+	slots[target].set_imprison(false)
+	slots[target].set_shockwave(false)
 #endregion
 
-#region PRESSING SLOT BUTTON
-func what_on_button_press(target):
-	match what_are_you_doing:
-		doing.NOTHING:
-			attack_box = slots[target].current_slot.spawn_attacks()
-			what_are_you_doing = doing.CHECKING
-		doing.CHECKING:
-			#Always despawn the original attack box
-			var same_slot = attack_box.card == slots[target].current_card
-			attack_box.reset_items()
-			#Check if the pressed slot is different from the original
-			if attack_box.card != slots[target].current_card:
-				attack_box = slots[target].current_slot.spawn_attacks()
-				what_are_you_doing = doing.CHECKING
-			else:
-				what_are_you_doing = doing.NOTHING
-	
-	print(slots[target].current_card.name)
-
-func display_attack():
-	pass
-
-#endregion
+func _on_swap_pressed():
+	var temp = slots[0].current_slot
+	slots[0].slot_into(slots[1].current_slot)
+	slots[1].slot_into(temp)

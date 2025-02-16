@@ -25,5 +25,11 @@ func what_on_button_press(target):
 	
 	print(connected_slots[target].current_card.name)
 
-func display_attack():
-	pass
+func get_slot_type(active: bool = true) -> Array[PokeSlot]:
+	var final: Array[PokeSlot] = []
+	
+	for slot in connected_slots:
+		if slot.current_slot.active == active:
+			final.append(slot)
+	
+	return final

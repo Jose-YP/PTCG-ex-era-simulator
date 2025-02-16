@@ -18,6 +18,7 @@ offset_left = 0.320002
 offset_right = 0.360001
 offset_bottom = 0.279999
 script = ExtResource("1_ktjfi")
+active = false
 attack_list = ExtResource("2_th8q4")
 
 [node name="Main" type="VBoxContainer" parent="."]

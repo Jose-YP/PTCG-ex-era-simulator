@@ -6,12 +6,6 @@ extends MarginContainer
 @onready var energy_icons: Array[Node] = %Types.get_children()
 @onready var attackButton: Button = $AttackButton
 
-func _process(delta):
-	pass
-	
-	if attackButton.is_hovered(): print("AAA")
-	#else: print(get_viewport().get_mouse_position())
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	%Name.clear()

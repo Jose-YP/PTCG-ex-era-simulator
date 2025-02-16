@@ -64,6 +64,13 @@ var imprison: bool = false
 var shockwave: bool = false
 #endregion
 #--------------------------------------
+var readied: bool = false
+
+func _ready():
+	type = pokedata.type
+	weak = pokedata.weak
+	resist = pokedata.resist
+	readied = true
 
 #--------------------------------------
 #region DAMAGE HANDLERS
@@ -80,12 +87,12 @@ func bench_add_damage(_ammount) -> int:
 
 #--------------------------------------
 #region ENERGY HANDLERS
-func add_energy(energy_card: Base_Card): #VERY UNFINISHED
+func add_energy(energy_card: Base_Card) -> void: #VERY UNFINISHED
 	energy_cards.append(energy_card)
 	print(count_energy())
 
-func energy_removal(type: String):
-	print("How to remove ", type)
+func energy_removal(removing_type: String) -> void:
+	print("How to remove ", removing_type)
 	count_energy()
 
 func count_energy() -> Dictionary:
@@ -116,7 +123,7 @@ func count_energy() -> Dictionary:
 func can_evolve_into(evolution: Base_Card) -> bool:
 	return current_card.name == evolution.pokemon_properties.evolves_from
 
-func evolve_card(evolution: Base_Card):
+func evolve_card(evolution: Base_Card) -> void:
 	evolved_from.append(current_card)
 	current_card = evolution
 	refresh()
@@ -126,25 +133,34 @@ func evolve_card(evolution: Base_Card):
 
 #--------------------------------------
 #region CONDITION HANDLERS
-func add_poison(severity):
-	if not benched:
-		match severity:
-			"Normal":
-				poison_condition = poison_type.NORMAL
-			"Heavy":
-				poison_condition = poison_type.HEAVY
-		#refresh.emit()
+func add_condition(condition: String, severe: bool = false) -> void:
+	match condition:
+		"Poison":
+			add_poison(severe)
+		"Burn":
+			add_burn(severe)
+		"Imprison":
+			set_imprison(true)
+		"Shockwave":
+			set_shockwave(true)
+		_:
+			add_turn(condition)
+	refresh()
 
-func add_burn(severity):
+func add_poison(severe: bool = false) -> void:
 	if not benched:
-		match severity:
-			"Normal":
-				burn_condition = burn_type.NORMAL
-			"Heavy":
-				burn_condition = burn_type.HEAVY
-		#refresh.emit()
+		poison_condition = poison_type.HEAVY if severe else poison_type.NORMAL
+	else:
+		print(current_card.name)
+		push_error("Adding Poision to a benched mon")
 
-func add_turn(which):
+func add_burn(severe: bool = false) -> void:
+	if not benched:
+		burn_condition = burn_type.HEAVY if severe else burn_type.NORMAL
+	else:
+		push_error("Adding Poision to a benched mon")
+
+func add_turn(which) -> void:
 	if not benched:
 		match which:
 			"Paralysis":
@@ -153,33 +169,60 @@ func add_turn(which):
 				turn_condition = turn_type.ASLEEP
 			"Confusion":
 				turn_condition = turn_type.CONFUSION
-		#refresh.emit()
+			_:
+				push_error("add_turn can't add ", which)
 
-func heal_status():
+func set_imprison(result: bool) -> void:
+	imprison = result
+	refresh()
+
+func set_shockwave(result: bool) -> void:
+	shockwave = result
+	refresh()
+
+func affected_by_condition() -> bool:
+	var poisioned: bool = poison_condition != poison_type.NONE
+	var burnt: bool = burn_condition != burn_type.NONE
+	var turnt: bool = turn_condition != turn_type.NONE
+	
+	return poisioned or burnt or turnt
+
+func heal_status() -> void:
 	poison_condition = poison_type.NONE
 	burn_condition = burn_type.NONE
 	turn_condition = turn_type.NONE
-	#refresh.emit()
+	refresh()
 
 #endregion
 #--------------------------------------
 
 #--------------------------------------
 #MANAGING DISPLAYS
-func refresh():
+func slot_into(destination: UI_Slot):
+	current_slot = destination
+	refresh()
+
+func refresh() -> void:
+	if not readied: return
+	
 	pokedata = current_card.pokemon_properties
 	print(current_card.image, current_slot.art)
+	#Change slot's card display
 	current_slot.art.texture = current_card.image
 	current_slot.name_section.clear()
 	current_slot.name_section.append_text(current_card.name)
 	current_slot.max_hp.clear()
 	current_slot.max_hp.append_text(str("HP: ",pokedata.HP - damage_counters, "/", pokedata.HP))
 	current_slot.display_types(pokedata.type_flags_to_array(pokedata.type))
-	benched = current_slot.slot_type == 1
+	#recognize position of slot
+	benched = not current_slot.active
 	current_slot.connected_card = self
 	
+	#check for any attatched cards/conditions
+	current_slot.display_condition()
+	current_slot.display_imprision(imprison)
+	current_slot.display_shockwave(shockwave)
 	if tool_card: current_slot.tool.texture = tool_card.image
-	if shockwave: current_slot.shockwave.show()
-	if imprison: current_slot.imprison.show()
+
 #endregion
 #--------------------------------------

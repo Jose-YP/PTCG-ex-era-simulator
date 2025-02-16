@@ -1,6 +1,6 @@
 extends Control
 class_name UI_Slot
-@export_enum("Active", "Bench") var slot_type: int = 1
+@export var active: bool = true
 @export_enum("Left","Right","Up","Down") var list_direction: int = 0
 @export var attack_list: PackedScene
 
@@ -27,7 +27,7 @@ var attached_energy: Dictionary = {"Grass": 0, "Fire": 0, "Water": 0,
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	pass
 
 func spawn_attacks() -> Control:
 	var list = Constants.attack_list.instantiate()
@@ -86,6 +86,34 @@ func display_energy(energy_arr: Array, energy_dict: Dictionary):
 		for i in range(energy_arr.size()):
 			print("ADD", energy_arr[i])
 			energyContainer[i].add_type(energy_arr[i])
+#endregion
+#--------------------------------------
+
+#--------------------------------------
+#region CONDITION DISPLAY
+func display_condition() -> void:
+	if connected_card.poison_condition != 0:
+		%Poison.show()
+	elif active: %Poison.hide()
+	
+	if connected_card.burn_condition != 0:
+		%Burn.show()
+	elif active: %Burn.hide()
+	
+	if connected_card.turn_condition != 0:
+		%TurnConditions.show()
+		%TurnConditions.current_tab = connected_card.turn_condition - 1
+
+	elif active: %TurnConditions.hide()
+
+func display_imprision(truth: bool = true) -> void:
+	if truth: %Imprison.show()
+	else: %Imprison.hide()
+
+func display_shockwave(truth: bool = true) -> void:
+	if truth: %Shockwave.show()
+	else: %Shockwave.hide()
+
 #endregion
 #--------------------------------------
 

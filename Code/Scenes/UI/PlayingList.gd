@@ -15,7 +15,7 @@ func reset_items():
 	for item in items:
 		item.queue_free()
 
-func set_items(can_select: bool = true):
+func set_items():
 	print(list)
 	for item in list:
 		var making = list_item.instantiate()
@@ -25,8 +25,7 @@ func set_items(can_select: bool = true):
 	
 	items = %CardList.get_children()
 
-func _on_resources_show_list(can_select: bool,
- message: String, looking_at: String, using: Array[Base_Card]):
+func _on_resources_show_list(message: String, looking_at: String, using: Array[Base_Card]):
 	reset_items()
 	
 	%Identifier.clear()
@@ -35,6 +34,6 @@ func _on_resources_show_list(can_select: bool,
 	%Instructions.append_text(str("[center]",message))
 	
 	list = using
-	set_items(can_select)
+	set_items()
 	
 	show()

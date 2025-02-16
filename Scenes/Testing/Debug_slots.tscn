@@ -45,14 +45,6 @@ metadata/_edit_lock_ = true
 script = ExtResource("30_o5qrh")
 connected_slots = [NodePath("../PokeSlot"), NodePath("../PokeSlot2")]
 
-[node name="PokeSlot" parent="." node_paths=PackedStringArray("current_slot") instance=ExtResource("1_c8cvy")]
-current_card = ExtResource("2_bpun7")
-current_slot = NodePath("../ActivePokemon")
-
-[node name="PokeSlot2" parent="." node_paths=PackedStringArray("current_slot") instance=ExtResource("1_c8cvy")]
-current_card = ExtResource("3_sjxhg")
-current_slot = NodePath("../BenchPokemon")
-
 [node name="ActivePokemon" parent="." instance=ExtResource("4_a0nvo")]
 layout_mode = 1
 offset_left = 53.32
@@ -324,17 +316,28 @@ offset_top = 60.0
 offset_right = -857.0
 offset_bottom = -660.0
 
+[node name="PokeSlot" parent="." node_paths=PackedStringArray("current_slot") instance=ExtResource("1_c8cvy")]
+current_card = ExtResource("2_bpun7")
+current_slot = NodePath("../ActivePokemon")
+
+[node name="PokeSlot2" parent="." node_paths=PackedStringArray("current_slot") instance=ExtResource("1_c8cvy")]
+current_card = ExtResource("3_sjxhg")
+current_slot = NodePath("../BenchPokemon")
+
 [connection signal="pressed_slot" from="ActivePokemon" to="SlotUIActions" method="what_on_button_press" binds= [0]]
 [connection signal="pressed_slot" from="BenchPokemon" to="SlotUIActions" method="what_on_button_press" binds= [1]]
 [connection signal="item_selected" from="Conditions/OptionButton" to="." method="change_conditiion"]
 [connection signal="pressed" from="Conditions/ShockwaveB" to="." method="add_shockwave_to" binds= [1]]
 [connection signal="pressed" from="Conditions/ApplyCondition" to="." method="add_condition"]
 [connection signal="pressed" from="Conditions/ImprisionB" to="." method="add_imprision_to" binds= [1]]
+[connection signal="pressed" from="Conditions/ClearActive" to="." method="clear_conditions_from" binds= [0]]
+[connection signal="pressed" from="Conditions/ClearBench" to="." method="clear_conditions_from" binds= [1]]
 [connection signal="item_selected" from="Energy/EnergyOptions" to="." method="_on_energy_options_item_selected"]
 [connection signal="pressed" from="Energy/AddActive" to="." method="add_energy_to" binds= [0]]
 [connection signal="pressed" from="Energy/RemoveActive" to="." method="remove_energy_from" binds= [0]]
 [connection signal="pressed" from="Energy/AddBench" to="." method="add_energy_to" binds= [1]]
 [connection signal="pressed" from="Energy/Remove Bench" to="." method="remove_energy_from" binds= [1]]
+[connection signal="pressed" from="Swap" to="." method="_on_swap_pressed"]
 [connection signal="item_selected" from="Evolution/EvolutionOptions" to="." method="_on_evolution_options_item_selected"]
 [connection signal="pressed" from="Evolution/HBoxContainer/EvoActive" to="." method="_on_evolve_pressed" binds= [0]]
 [connection signal="pressed" from="Evolution/HBoxContainer/EvoBench" to="." method="_on_evolve_pressed" binds= [1]]
