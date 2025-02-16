@@ -2,6 +2,7 @@ extends Resource
 class_name EffectCall
 
 @export_group("Conditions")
+@export var choose_condition: bool = false
 @export_enum("None", "Normal", "Heavy") var poison: int = 0
 @export_enum("None", "Normal", "Heavy") var burn: int = 0
 @export_flags("Imprision", "Shockwave") var addable_effects: int = 0
@@ -20,7 +21,6 @@ class_name EffectCall
 @export var retrat_duration: int = 1
 @export var disable_retreat: bool = false
 
-
 @export_group("Buff & Debuff")
 ##Who recieves the buff?
 @export_enum("PlayerAll", "OpponentAll", "Self",
@@ -36,10 +36,16 @@ class_name EffectCall
 @export_enum("None", "P by P", "O by O",
  "O by P", "Both") var switch_type: int = 0
 @export var search: Array[Search]
+@export_subgroup("Energy Movement")
+@export_enum("Basic", "Special", "Any") var energy_move_type: int = 0
+@export var move_ammount: int = -1
 
 @export_group("Disruption")
 @export_enum("Player", "Opponent") var disrupt_target: int = 0
-@export_enum("None","Hand", "Deck") var disrupting: int = 0
+@export_enum("None", "Hand", "Deck", "Active", "Bench", "Pokemon") var disrupting: int = 0
+##Card sends card and anything else attatched to it, Evolution just sends the evolution card back
+@export_enum("Card", "Evolution") var send: int = 0
+@export_enum("Top Deck", "Bottom Deck", "Discard", "Hand") var send_to
 @export var card_ammount: int = 0
 @export var reveal: bool = false
 @export_subgroup("Energy")

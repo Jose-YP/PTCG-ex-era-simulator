@@ -4,11 +4,13 @@ class_name Ask
 @export_group("To Activate")
 ##Which side to pay attention to
 @export_enum("None", "Player", "Opponent") var target: int = 0
-##10 means don't look at this var, 0 means must be undamaged, the rest mean x or more
-@export_range(-10,200,10) var damage_taken: int = -1
+##-10 means don't look at this var, 0 means must be undamaged, the rest mean x or more
+@export_range(-10,200,10) var damage_taken: int = -10
+##-1 means don't look at this var, 0 means must have no energy, the rest mean x or more
+@export var energy_attatched: int = -1
 @export var knocked_out: bool = false
 @export_flags("Poison", "Burn", "Paralysis", "Asleep", "Confusion") var condition: int = 0
-##Self means the active pokemon using the effect, Active is for doubles
+##Self means the attacking/defending pokemon, Active is for doubles
 @export_flags("Bench", "Active", "Self", "Discard", "Hand") var location: int = 0 
 @export_subgroup("Class")
 ##Only including specified or excluding specified

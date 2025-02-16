@@ -4,17 +4,35 @@
 
 [resource]
 script = ExtResource("1_fss7s")
+choose_condition = false
 poison = 0
 burn = 0
 addable_effects = 0
 mutually_exclusive_conditions = 3
 knockOut = false
-retreat = false
+disable_target = 0
+instead_of_damage = false
+do_nothing = false
 attack = 0
+retrat_duration = 1
+disable_retreat = false
 buff_target = 0
+attack_damage = 0
+defense = 0
+after_weak_res = true
+switch_type = 0
 search = Array[Resource("res://Code/Resource Makers/SearchMaker.gd")]([])
+energy_move_type = 0
+move_ammount = -1
 disrupt_target = 0
 disrupting = 0
+send = 0
+send_to = null
 card_ammount = 0
+reveal = false
+type = 0
 energy_ammount = 0
+remove_conditions = false
+remove_shockwave = false
+remove_imprison = false
 mimic = 0

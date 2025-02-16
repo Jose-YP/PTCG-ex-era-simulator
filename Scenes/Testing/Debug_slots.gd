@@ -12,8 +12,9 @@ const evolutions: Array[String] = ["res://Cards/4 ex Team Magma VS Team Aqua/MA3
 "res://Cards/1 ex Ruby & Saphire/RS42Mightyena.tres","res://Cards/1 ex Ruby & Saphire/RS37Lairon.tres",
 "res://Cards/1 ex Ruby & Saphire/RS29Delcatty.tres","res://Cards/1 ex Ruby & Saphire/RS33Hariyama.tres",
 "res://Cards/1 ex Ruby & Saphire/RS1Aggron.tres"]
-const tools: Array[String] = ["res://Cards/1 ex Ruby & Saphire/RS84LumBerry.tres", ]
-
+const tools: Array[String] = ["res://Cards/1 ex Ruby & Saphire/RS84LumBerry.tres", 
+"res://Cards/1 ex Ruby & Saphire/RS85OranBerry.tres","res://Cards/4 ex Team Magma VS Team Aqua/MA81TeamMagmaBelt.tres"]
+const tms: Array[String] = []
 
 enum doing {NOTHING, CHECKING, SWAPPING, CHOOSING}
 
@@ -68,7 +69,8 @@ func _on_evolve_pressed(target: int):
 
 func add_tool_to(target):
 	var current_index = $Attatchables/ToolOptions.selected
-	var current_tool = tool
+	var current_tool = tools[current_index]
+	
 
 func add_tm_to(target):
 	pass
