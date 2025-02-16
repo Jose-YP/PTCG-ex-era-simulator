@@ -9,6 +9,8 @@ class_name Identifier
 "Darkness","Metal","Colorless") var type: int = 0 #0 means search doesn't care about type
 
 @export_group("Pokemon Categories")
+##Search for a mon that evolves from the using mon
+@export var evolves_from: bool = false
 @export_flags("non-ex", "ex", "baby", "delta") var poke_class
 @export_flags("Aqua", "Magma", "Rocket", "Holon") var owner: int = 0
 @export_flags("Basic", "Stage 1", "Stage 2") var stage

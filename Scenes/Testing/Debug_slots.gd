@@ -12,6 +12,8 @@ const evolutions: Array[String] = ["res://Cards/4 ex Team Magma VS Team Aqua/MA3
 "res://Cards/1 ex Ruby & Saphire/RS42Mightyena.tres","res://Cards/1 ex Ruby & Saphire/RS37Lairon.tres",
 "res://Cards/1 ex Ruby & Saphire/RS29Delcatty.tres","res://Cards/1 ex Ruby & Saphire/RS33Hariyama.tres",
 "res://Cards/1 ex Ruby & Saphire/RS1Aggron.tres"]
+const tools: Array[String] = ["res://Cards/1 ex Ruby & Saphire/RS84LumBerry.tres", ]
+
 
 enum doing {NOTHING, CHECKING, SWAPPING, CHOOSING}
 
@@ -59,6 +61,18 @@ func _on_evolve_pressed(target: int):
 	var evo: Base_Card = load(evolutions[evo_type])
 	if slots[target].can_evolve_into(evo):
 		slots[target].evolve_card(evo)
+
+#endregion
+
+#region ATTATCH
+
+func add_tool_to(target):
+	var current_index = $Attatchables/ToolOptions.selected
+	var current_tool = tool
+
+func add_tm_to(target):
+	pass
+
 
 #endregion
 
