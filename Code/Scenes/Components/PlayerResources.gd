@@ -1,12 +1,15 @@
 extends Node
 
 @export var deck: Deck
+@export var first: bool = true
+@export_enum("Player1", "Player2", "CPU") var side: String = "Player1"
 
 signal show_list(can_select: bool, message: String, looking_at: String, list: Array[Base_Card])
 
 var usable_deck: Array[Base_Card] = []
 var hand: Array[Base_Card] = []
 var discard_pile: Array[Base_Card] = []
+var mulligans: int = 0
 var first_turn: bool = false
 
 #--------------------------------------
@@ -14,6 +17,11 @@ var first_turn: bool = false
 func assign_deck(assigned_deck):
 	usable_deck = assigned_deck.make_usable()
 	usable_deck.shuffle()
+
+func draw_starting():
+	draw(7)
+	print("----------",side,"---------")
+	check_starting()
 
 func check_starting():
 	var can_start: bool = false

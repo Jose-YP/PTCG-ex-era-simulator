@@ -1,0 +1,177 @@
+[gd_scene load_steps=6 format=3 uid="uid://crecmsup0hxcr"]
+
+[ext_resource type="PackedScene" uid="uid://bs3ila6cpt8n1" path="res://Scenes/UI/types.tscn" id="1_72idk"]
+[ext_resource type="Script" path="res://Code/Scenes/UI/Card.gd" id="1_n7rhp"]
+[ext_resource type="Texture2D" uid="uid://b4uymubvo04qp" path="res://Art Assets/Cards/4 ex Team Magma vs Team Aqua/37.jpg" id="2_piqv4"]
+[ext_resource type="PackedScene" uid="uid://cvh086w8yapm0" path="res://Scenes/UI/attack_list.tscn" id="4_nc1fv"]
+[ext_resource type="Texture2D" uid="uid://bq2t54jnbrdxo" path="res://Art Assets/Icons/SetSymbolTeam_Magma_vs_Team_Aqua.png" id="5_6h05s"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_n7rhp")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="MainInfromation" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Name" type="RichTextLabel" parent="PanelContainer/VBoxContainer/MainInfromation"]
+custom_minimum_size = Vector2(215, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Team Magma's Mightyena"
+fit_content = true
+
+[node name="Extra" type="RichTextLabel" parent="PanelContainer/VBoxContainer/MainInfromation"]
+custom_minimum_size = Vector2(38, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+text = "baby"
+fit_content = true
+
+[node name="HP" type="RichTextLabel" parent="PanelContainer/VBoxContainer/MainInfromation"]
+custom_minimum_size = Vector2(63, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+text = "HP: 200"
+fit_content = true
+
+[node name="Types" parent="PanelContainer/VBoxContainer/MainInfromation" instance=ExtResource("1_72idk")]
+layout_mode = 2
+
+[node name="Types2" parent="PanelContainer/VBoxContainer/MainInfromation" instance=ExtResource("1_72idk")]
+layout_mode = 2
+
+[node name="Arts" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Art" type="TextureRect" parent="PanelContainer/VBoxContainer/Arts"]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.992157)
+custom_minimum_size = Vector2(189, 114)
+layout_mode = 2
+texture = ExtResource("2_piqv4")
+
+[node name="Evo&Illus" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="EvoFrom" type="RichTextLabel" parent="PanelContainer/VBoxContainer/Evo&Illus"]
+layout_mode = 2
+text = "Evolves From"
+
+[node name="Illustrator" type="RichTextLabel" parent="PanelContainer/VBoxContainer/Evo&Illus"]
+layout_mode = 2
+text = "Illustrator:"
+
+[node name="Attacks" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="AttackList" parent="PanelContainer/VBoxContainer/Attacks" instance=ExtResource("4_nc1fv")]
+layout_mode = 2
+
+[node name="OtherProperties" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="Weakness" type="VBoxContainer" parent="PanelContainer/VBoxContainer/OtherProperties"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="PanelContainer/VBoxContainer/OtherProperties/Weakness"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+bbcode_enabled = true
+text = "[center]Weakness"
+fit_content = true
+
+[node name="WeaknessType" parent="PanelContainer/VBoxContainer/OtherProperties/Weakness" instance=ExtResource("1_72idk")]
+layout_mode = 2
+
+[node name="Reistance" type="VBoxContainer" parent="PanelContainer/VBoxContainer/OtherProperties"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="PanelContainer/VBoxContainer/OtherProperties/Reistance"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+bbcode_enabled = true
+text = "[center]Resist"
+fit_content = true
+
+[node name="ResistanceType" parent="PanelContainer/VBoxContainer/OtherProperties/Reistance" instance=ExtResource("1_72idk")]
+layout_mode = 2
+
+[node name="RetreatCost" type="VBoxContainer" parent="PanelContainer/VBoxContainer/OtherProperties"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="PanelContainer/VBoxContainer/OtherProperties/RetreatCost"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+bbcode_enabled = true
+text = "[center]Retreat"
+fit_content = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/OtherProperties/RetreatCost"]
+layout_mode = 2
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="Types" parent="PanelContainer/VBoxContainer/OtherProperties/RetreatCost/HBoxContainer" instance=ExtResource("1_72idk")]
+layout_mode = 2
+
+[node name="Types2" parent="PanelContainer/VBoxContainer/OtherProperties/RetreatCost/HBoxContainer" instance=ExtResource("1_72idk")]
+layout_mode = 2
+
+[node name="Types3" parent="PanelContainer/VBoxContainer/OtherProperties/RetreatCost/HBoxContainer" instance=ExtResource("1_72idk")]
+layout_mode = 2
+
+[node name="Types4" parent="PanelContainer/VBoxContainer/OtherProperties/RetreatCost/HBoxContainer" instance=ExtResource("1_72idk")]
+layout_mode = 2
+
+[node name="Number" type="RichTextLabel" parent="PanelContainer/VBoxContainer/OtherProperties"]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+size_flags_vertical = 8
+text = "100/100"
+fit_content = true
+
+[node name="Rarity" type="TextureRect" parent="PanelContainer/VBoxContainer/OtherProperties"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+size_flags_vertical = 8
+texture = ExtResource("5_6h05s")
+expand_mode = 5
+
+[node name="Set" type="TextureRect" parent="PanelContainer/VBoxContainer/OtherProperties"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+size_flags_vertical = 8
+texture = ExtResource("5_6h05s")
+expand_mode = 5

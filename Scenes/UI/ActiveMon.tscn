@@ -20,13 +20,6 @@ offset_bottom = 0.279999
 script = ExtResource("1_c5ua0")
 attack_list = ExtResource("2_l63e3")
 
-[node name="ArtButton" type="CenterContainer" parent="."]
-layout_mode = 2
-offset_right = 198.0
-
-[node name="MarginContainer" type="MarginContainer" parent="ArtButton"]
-layout_mode = 2
-
 [node name="Main" type="VBoxContainer" parent="."]
 layout_mode = 0
 offset_right = 198.0

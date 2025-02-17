@@ -2,11 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://b4tx6kmy763df" path="res://Scenes/Components/poke_slot.tscn" id="1_c8cvy"]
 [ext_resource type="Script" path="res://Scenes/Testing/Debug_slots.gd" id="1_jpmm1"]
-[ext_resource type="Resource" uid="uid://c3tip8v6djvro" path="res://Cards/4 ex Team Magma VS Team Aqua/MA65MagmaPoochyena.tres" id="2_bpun7"]
+[ext_resource type="Resource" uid="uid://c3tip8v6djvro" path="res://Cards/4 EX Team Magma VS Team Aqua/MA65MagmaPoochyena.tres" id="2_bpun7"]
 [ext_resource type="Resource" uid="uid://oa7r3igevgqi" path="res://Cards/1 ex Ruby & Saphire/RS49Aron.tres" id="3_sjxhg"]
 [ext_resource type="PackedScene" uid="uid://drg0sr7jdfiel" path="res://Scenes/UI/ActiveMon.tscn" id="4_a0nvo"]
 [ext_resource type="PackedScene" uid="uid://df8x227c7a8q4" path="res://Scenes/UI/BenchMon.tscn" id="6_t4mtj"]
 [ext_resource type="Texture2D" uid="uid://bptkdabkts2i" path="res://Art Assets/Energy/grass.png" id="7_btg8d"]
+[ext_resource type="PackedScene" uid="uid://c2dyutb22u6x8" path="res://Scenes/Components/slot_ui_actions.tscn" id="7_rrhvn"]
 [ext_resource type="Texture2D" uid="uid://bv3ytbkfhmq55" path="res://Art Assets/Energy/fire.png" id="8_v7mk2"]
 [ext_resource type="Texture2D" uid="uid://dcso3o1r14yl3" path="res://Art Assets/Energy/water.png" id="9_aq8yx"]
 [ext_resource type="Texture2D" uid="uid://cra2apmoe0t5u" path="res://Art Assets/Energy/electric.png" id="10_pmj2t"]
@@ -28,7 +29,6 @@
 [ext_resource type="Texture2D" uid="uid://b6qd05q5xmb33" path="res://Art Assets/Cards/1 ex Ruby & Saphire/33.jpg" id="26_w66ov"]
 [ext_resource type="Texture2D" uid="uid://2l8ia23r5jfi" path="res://Art Assets/Cards/1 ex Ruby & Saphire/29.jpg" id="27_466o8"]
 [ext_resource type="Texture2D" uid="uid://b817pn5octfv6" path="res://Art Assets/Cards/1 ex Ruby & Saphire/1.jpg" id="28_gcws8"]
-[ext_resource type="Script" path="res://Code/Scenes/Components/SlotUIActions.gd" id="30_o5qrh"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -64,10 +64,10 @@ offset_right = 70.36
 offset_bottom = 200.28
 list_direction = 1
 
-[node name="SlotUIActions" type="Node" parent="." node_paths=PackedStringArray("poke_slots", "ui_slots")]
-script = ExtResource("30_o5qrh")
-poke_slots = [NodePath("../PokeSlot"), NodePath("../PokeSlot2")]
-ui_slots = [NodePath("../ActivePokemon"), NodePath("../BenchPokemon")]
+[node name="SlotUIActions" parent="." node_paths=PackedStringArray("poke_slots", "ui_slots") instance=ExtResource("7_rrhvn")]
+preload_debug = true
+poke_slots = [null, null]
+ui_slots = [null, null]
 
 [node name="Conditions" type="GridContainer" parent="."]
 layout_mode = 0
@@ -327,8 +327,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "Devolve Bench"
 
-[connection signal="pressed_slot" from="ActivePokemon" to="SlotUIActions" method="what_on_button_press" binds= [0]]
-[connection signal="pressed_slot" from="BenchPokemon" to="SlotUIActions" method="what_on_button_press" binds= [1]]
 [connection signal="item_selected" from="Conditions/OptionButton" to="." method="change_conditiion"]
 [connection signal="pressed" from="Conditions/ShockwaveB" to="." method="add_shockwave_to" binds= [1]]
 [connection signal="pressed" from="Conditions/ApplyCondition" to="." method="add_condition"]

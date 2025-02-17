@@ -18,3 +18,6 @@ func _ready() -> void:
 	%Art.texture = card.image
 	%Name.clear()
 	%Name.append_text(card.name)
+
+func is_allowed() -> void:
+	pass

@@ -3,6 +3,8 @@ extends Control
 @export var debug: bool = false
 @export var list_item: PackedScene
 @export var list: Array[Base_Card]
+@export_flags("Basic", "Evolution", "Item",
+"Supporter", "Energy") var allowed: int = 1
 
 var items: Array[Node] = []
 var display_text: String = ""

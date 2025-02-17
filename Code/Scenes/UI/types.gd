@@ -1,8 +1,11 @@
 extends Control
 
+@export var retreat: bool = false
 @export var energy: bool = false
 
 var number: int = 0
+
+func _ready(): if retreat: $Tabs.current_tab = 8
 
 func add_type(type: String, ammount: int = 1):
 	number = ammount

@@ -7,7 +7,10 @@
 [sub_resource type="Resource" id="Resource_d0m0p"]
 script = ExtResource("4_pqa6p")
 considered = "Supporter"
+specific_requirement = ""
 description = "Search your deck for up to 3 different types of basic Energy cards, show them to your opponent, and put them into your hand. Shuffle your deck afterward. "
+remove_after = true
+duration = -1
 
 [resource]
 script = ExtResource("3_q2upj")

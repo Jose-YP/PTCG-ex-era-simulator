@@ -1,5 +1,6 @@
 extends Node
 
+@export var preload_debug: bool = false
 @export var poke_slots: Array[PokeSlot]
 @export var ui_slots: Array[UI_Slot]
 
@@ -10,8 +11,9 @@ var selected_slot: UI_Slot = null
 var attack_box
 
 func _ready():
-	for i in range(poke_slots.size()):
-		poke_slots[i].slot_into(ui_slots[i])
+	if preload_debug:
+		for i in range(poke_slots.size()):
+			poke_slots[i].slot_into(ui_slots[i])
 
 func what_on_button_press(target):
 	match what_doing:

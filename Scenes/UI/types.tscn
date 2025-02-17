@@ -41,9 +41,11 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_nsmgk")
+current_tab = 8
 tabs_visible = false
 
 [node name="Grass" type="TextureRect" parent="Tabs"]
+visible = false
 layout_mode = 2
 mouse_filter = 2
 texture = ExtResource("2_ibm8e")
@@ -99,7 +101,6 @@ texture = ExtResource("9_r1y5g")
 expand_mode = 2
 
 [node name="Colorless" type="TextureRect" parent="Tabs"]
-visible = false
 layout_mode = 2
 mouse_filter = 2
 texture = ExtResource("10_6wlln")

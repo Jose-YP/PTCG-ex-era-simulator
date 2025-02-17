@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2dyutb22u6x8"]
+
+[ext_resource type="Script" path="res://Code/Scenes/Components/SlotUIActions.gd" id="1_hjfor"]
+
+[node name="SlotUIActions" type="Node" node_paths=PackedStringArray("poke_slots", "ui_slots")]
+script = ExtResource("1_hjfor")
+poke_slots = [NodePath(""), NodePath("")]
+ui_slots = [NodePath(""), NodePath("")]
