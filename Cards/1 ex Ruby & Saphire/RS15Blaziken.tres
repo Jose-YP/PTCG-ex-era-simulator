@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="Base_Card" load_steps=11 format=3 uid="uid://bgvaiul2mfsxf"]
 
 [ext_resource type="Texture2D" uid="uid://x2sfdmhe2ojl" path="res://Art Assets/Cards/1 ex Ruby & Saphire/15.jpg" id="1_vwl4b"]
-[ext_resource type="Script" path="res://Code/Resource Makers/CardMaker.gd" id="1_x5maj"]
-[ext_resource type="Script" path="res://Code/Resource Makers/EffectMaker.gd" id="2_4pbv0"]
-[ext_resource type="Script" path="res://Code/Resource Makers/AttackMaker.gd" id="3_j3xow"]
-[ext_resource type="Script" path="res://Code/Resource Makers/PokemonMaker.gd" id="4_3bvi0"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_x5maj"]
+[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_4pbv0"]
+[ext_resource type="Script" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="3_j3xow"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="4_3bvi0"]
 
 [sub_resource type="Resource" id="Resource_u4atx"]
 script = ExtResource("2_4pbv0")

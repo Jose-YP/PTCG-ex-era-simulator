@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmxe8sf6hdnnc"
-path="res://.godot/imported/40px-SetSymbolPower_Keepers.png-a956934d2d8e6b2cedbf74b942c5a3a5.ctex"
+uid="uid://doaf0r45tfeuk"
+path="res://.godot/imported/40px-SetSymbolDeoxys.png-2def35bd1988ed983377a15244c5ebf8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art Assets/Icons/40px-SetSymbolPower_Keepers.png"
-dest_files=["res://.godot/imported/40px-SetSymbolPower_Keepers.png-a956934d2d8e6b2cedbf74b942c5a3a5.ctex"]
+source_file="res://Art Assets/SetIcons/40px-SetSymbolDeoxys.png"
+dest_files=["res://.godot/imported/40px-SetSymbolDeoxys.png-2def35bd1988ed983377a15244c5ebf8.ctex"]
 
 [params]
 

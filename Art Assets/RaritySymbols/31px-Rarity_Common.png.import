@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://j1nc5rmbmtof"
-path="res://.godot/imported/SetSymbolHidden_Legends.png-5d94392034b165ecaabcd92dd947bf74.ctex"
+uid="uid://ciyynt0iw46k5"
+path="res://.godot/imported/31px-Rarity_Common.png-fdaa519aebe6036e0880ad2175fbf685.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art Assets/Icons/SetSymbolHidden_Legends.png"
-dest_files=["res://.godot/imported/SetSymbolHidden_Legends.png-5d94392034b165ecaabcd92dd947bf74.ctex"]
+source_file="res://Art Assets/RaritySymbols/31px-Rarity_Common.png"
+dest_files=["res://.godot/imported/31px-Rarity_Common.png-fdaa519aebe6036e0880ad2175fbf685.ctex"]
 
 [params]
 

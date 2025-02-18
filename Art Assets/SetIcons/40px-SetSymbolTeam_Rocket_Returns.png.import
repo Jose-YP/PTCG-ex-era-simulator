@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6needgmeexy4"
-path="res://.godot/imported/40px-SetSymbolFireRed_and_LeafGreen.png-bfe1ebace5fdd9abb2adceb167cae854.ctex"
+uid="uid://cysbdsdk41l70"
+path="res://.godot/imported/40px-SetSymbolTeam_Rocket_Returns.png-fb66ff4e261ceeb592ea7f3d2b966a53.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art Assets/Icons/40px-SetSymbolFireRed_and_LeafGreen.png"
-dest_files=["res://.godot/imported/40px-SetSymbolFireRed_and_LeafGreen.png-bfe1ebace5fdd9abb2adceb167cae854.ctex"]
+source_file="res://Art Assets/SetIcons/40px-SetSymbolTeam_Rocket_Returns.png"
+dest_files=["res://.godot/imported/40px-SetSymbolTeam_Rocket_Returns.png-fb66ff4e261ceeb592ea7f3d2b966a53.ctex"]
 
 [params]
 

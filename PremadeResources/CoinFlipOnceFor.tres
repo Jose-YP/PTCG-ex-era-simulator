@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Counter" load_steps=4 format=3 uid="uid://1fixaj7evn2e"]
 
-[ext_resource type="Script" path="res://Code/Resource Makers/CoinFlipNumMaker.gd" id="1_8jhcm"]
-[ext_resource type="Script" path="res://Code/Resource Makers/CounterMaker.gd" id="1_kq1je"]
+[ext_resource type="Script" path="res://Code/Resource Makers/GeneralUse/CoinFlipNumMaker.gd" id="1_8jhcm"]
+[ext_resource type="Script" path="res://Code/Resource Makers/GeneralUse/CounterMaker.gd" id="1_kq1je"]
 
 [sub_resource type="Resource" id="Resource_btsl8"]
 script = ExtResource("1_8jhcm")

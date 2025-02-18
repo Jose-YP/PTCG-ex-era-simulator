@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://doaf0r45tfeuk"
-path="res://.godot/imported/40px-SetSymbolDeoxys.png-944738f6e84366aa440cadf74e5cbcc7.ctex"
+uid="uid://b6needgmeexy4"
+path="res://.godot/imported/40px-SetSymbolFireRed_and_LeafGreen.png-299721448179b6760e4c81121c25afa0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art Assets/Icons/40px-SetSymbolDeoxys.png"
-dest_files=["res://.godot/imported/40px-SetSymbolDeoxys.png-944738f6e84366aa440cadf74e5cbcc7.ctex"]
+source_file="res://Art Assets/SetIcons/40px-SetSymbolFireRed_and_LeafGreen.png"
+dest_files=["res://.godot/imported/40px-SetSymbolFireRed_and_LeafGreen.png-299721448179b6760e4c81121c25afa0.ctex"]
 
 [params]
 

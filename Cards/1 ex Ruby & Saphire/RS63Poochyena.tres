@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="Base_Card" load_steps=7 format=3 uid="uid://d3oqllkeh61wl"]
 
-[ext_resource type="Script" path="res://Code/Resource Makers/CardMaker.gd" id="1_dhwyu"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_dhwyu"]
 [ext_resource type="Texture2D" uid="uid://bihi1fpan0fl" path="res://Art Assets/Cards/1 ex Ruby & Saphire/63.jpg" id="1_iihip"]
-[ext_resource type="Script" path="res://Code/Resource Makers/AttackMaker.gd" id="2_mq2dl"]
-[ext_resource type="Script" path="res://Code/Resource Makers/PokemonMaker.gd" id="3_qauc4"]
+[ext_resource type="Script" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_mq2dl"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="3_qauc4"]
 
 [sub_resource type="Resource" id="Resource_2k3r2"]
 script = ExtResource("2_mq2dl")

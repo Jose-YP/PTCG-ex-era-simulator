@@ -1,17 +1,17 @@
 [gd_resource type="Resource" script_class="Ask" load_steps=4 format=3 uid="uid://depecxjmmfklq"]
 
-[ext_resource type="Script" path="res://Code/Resource Makers/AskMaker.gd" id="1_dbjgf"]
-[ext_resource type="Script" path="res://Code/Resource Makers/CoinFlipNumMaker.gd" id="1_hd3dw"]
+[ext_resource type="Script" path="res://Code/Resource Makers/GeneralUse/CoinFlipNumMaker.gd" id="1_ayymb"]
+[ext_resource type="Script" path="res://Code/Resource Makers/GeneralUse/AskMaker.gd" id="2_enfie"]
 
 [sub_resource type="Resource" id="Resource_q0esk"]
-script = ExtResource("1_hd3dw")
+script = ExtResource("1_ayymb")
 heads = true
 const_flip_times = 1
 varying_flip_times = 0
 until = false
 
 [resource]
-script = ExtResource("1_dbjgf")
+script = ExtResource("2_enfie")
 target = 0
 damage_taken = -10
 energy_attatched = -1

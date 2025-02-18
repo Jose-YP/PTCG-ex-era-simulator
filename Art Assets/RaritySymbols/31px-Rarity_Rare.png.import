@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpblqw53nvq1t"
-path="res://.godot/imported/40px-SetSymbolLegend_Maker.png-dcabc1f3a38cca8b28ad2a6a005ad4f7.ctex"
+uid="uid://bir0keyl58pst"
+path="res://.godot/imported/31px-Rarity_Rare.png-d410efbf4c25fe29b0d04040947cdfe0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art Assets/Icons/40px-SetSymbolLegend_Maker.png"
-dest_files=["res://.godot/imported/40px-SetSymbolLegend_Maker.png-dcabc1f3a38cca8b28ad2a6a005ad4f7.ctex"]
+source_file="res://Art Assets/RaritySymbols/31px-Rarity_Rare.png"
+dest_files=["res://.godot/imported/31px-Rarity_Rare.png-d410efbf4c25fe29b0d04040947cdfe0.ctex"]
 
 [params]
 

@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="Base_Card" load_steps=7 format=3 uid="uid://dyqdhaov0ywxk"]
 
-[ext_resource type="Script" path="res://Code/Resource Makers/CardMaker.gd" id="1_23507"]
 [ext_resource type="Texture2D" uid="uid://bdcavopnxy17v" path="res://Art Assets/Cards/1 ex Ruby & Saphire/92.jpg" id="1_byr1f"]
-[ext_resource type="Script" path="res://Code/Resource Makers/EffectMaker.gd" id="3_0242p"]
-[ext_resource type="Script" path="res://Code/Resource Makers/TrainerMaker.gd" id="4_2lvv6"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_y8vyh"]
+[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_7e3yq"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="4_kkmta"]
 
 [sub_resource type="Resource" id="Resource_2hpdw"]
-script = ExtResource("3_0242p")
+script = ExtResource("3_7e3yq")
 choose_condition = false
 poison = 0
 burn = 0
@@ -24,7 +24,7 @@ attack_damage = 0
 defense = 0
 after_weak_res = true
 switch_type = 1
-search = Array[Resource("res://Code/Resource Makers/SearchMaker.gd")]([])
+search = Array[Resource("res://Code/Resource Makers/EffectSpecific/SearchMaker.gd")]([])
 energy_move_type = 0
 move_ammount = -1
 disrupt_target = 0
@@ -41,7 +41,7 @@ remove_imprison = false
 mimic = 0
 
 [sub_resource type="Resource" id="Resource_s040e"]
-script = ExtResource("4_2lvv6")
+script = ExtResource("4_kkmta")
 considered = "Item"
 specific_requirement = ""
 description = "Switch 1 of your Active Pokémon with 1 of your Benched Pokémon. "
@@ -50,7 +50,7 @@ remove_after = true
 duration = -1
 
 [resource]
-script = ExtResource("1_23507")
+script = ExtResource("2_y8vyh")
 name = "Switch"
 image = ExtResource("1_byr1f")
 illustrator = "Hiromichi Sugiyama"

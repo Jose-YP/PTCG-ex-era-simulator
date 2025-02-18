@@ -1,15 +1,15 @@
 [gd_resource type="Resource" script_class="Base_Card" load_steps=19 format=3 uid="uid://2ps0sakw53cw"]
 
 [ext_resource type="Texture2D" uid="uid://bbdpkwr5sxe4f" path="res://Art Assets/Cards/4 ex Team Magma vs Team Aqua/27.jpg" id="1_l0n2v"]
-[ext_resource type="Script" path="res://Code/Resource Makers/CardMaker.gd" id="1_l4jxc"]
-[ext_resource type="Script" path="res://Code/Resource Makers/BenchAttackMaker.gd" id="2_ax6qi"]
-[ext_resource type="Script" path="res://Code/Resource Makers/AttackMaker.gd" id="3_dfgxb"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_l4jxc"]
+[ext_resource type="Script" path="res://Code/Resource Makers/PokemonSpecific/BenchAttackMaker.gd" id="2_ax6qi"]
+[ext_resource type="Script" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="3_dfgxb"]
 [ext_resource type="Resource" uid="uid://depecxjmmfklq" path="res://PremadeResources/AskSingleFlip.tres" id="4_f4njw"]
-[ext_resource type="Script" path="res://Code/Resource Makers/EffectMaker.gd" id="5_xpfcg"]
-[ext_resource type="Script" path="res://Code/Resource Makers/PlacementMaker.gd" id="6_d3asj"]
-[ext_resource type="Script" path="res://Code/Resource Makers/IdentifierMaker.gd" id="7_22rfo"]
-[ext_resource type="Script" path="res://Code/Resource Makers/SearchMaker.gd" id="8_qqky0"]
-[ext_resource type="Script" path="res://Code/Resource Makers/PokemonMaker.gd" id="9_vm2o3"]
+[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="5_xpfcg"]
+[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/PlacementMaker.gd" id="6_d3asj"]
+[ext_resource type="Script" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="7_22rfo"]
+[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="8_qqky0"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="9_vm2o3"]
 
 [sub_resource type="Resource" id="Resource_x6ign"]
 script = ExtResource("2_ax6qi")

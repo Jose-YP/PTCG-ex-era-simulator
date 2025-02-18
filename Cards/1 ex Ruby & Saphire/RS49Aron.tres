@@ -1,13 +1,13 @@
 [gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://oa7r3igevgqi"]
 
-[ext_resource type="Script" path="res://Code/Resource Makers/CardMaker.gd" id="1_blsmh"]
 [ext_resource type="Texture2D" uid="uid://c2o5amlj16doj" path="res://Art Assets/Cards/1 ex Ruby & Saphire/49.jpg" id="1_ianho"]
-[ext_resource type="Script" path="res://Code/Resource Makers/EffectMaker.gd" id="2_kkx2p"]
-[ext_resource type="Script" path="res://Code/Resource Makers/AttackMaker.gd" id="3_3kb4g"]
-[ext_resource type="Script" path="res://Code/Resource Makers/PokemonMaker.gd" id="4_qigjx"]
+[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_373tt"]
+[ext_resource type="Script" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="3_mit06"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="4_nbcu4"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="5_1yo3i"]
 
 [sub_resource type="Resource" id="Resource_utovm"]
-script = ExtResource("2_kkx2p")
+script = ExtResource("2_373tt")
 choose_condition = false
 poison = 0
 burn = 0
@@ -25,7 +25,7 @@ attack_damage = -10
 defense = 0
 after_weak_res = true
 switch_type = 0
-search = Array[Resource("res://Code/Resource Makers/SearchMaker.gd")]([])
+search = Array[Resource("res://Code/Resource Makers/EffectSpecific/SearchMaker.gd")]([])
 energy_move_type = 0
 move_ammount = -1
 disrupt_target = 0
@@ -42,7 +42,7 @@ remove_imprison = false
 mimic = 0
 
 [sub_resource type="Resource" id="Resource_iubtr"]
-script = ExtResource("3_3kb4g")
+script = ExtResource("3_mit06")
 name = "Teary Eyes"
 description = "During your opponent's next turn, any damage done to Aron by attacks is reduced by 10."
 grass_cost = 0
@@ -61,7 +61,7 @@ modifier = 0
 effect = SubResource("Resource_utovm")
 
 [sub_resource type="Resource" id="Resource_1g2nc"]
-script = ExtResource("3_3kb4g")
+script = ExtResource("3_mit06")
 name = "Ram"
 description = ""
 grass_cost = 0
@@ -79,10 +79,10 @@ initial_main_DMG = 20
 modifier = 0
 
 [sub_resource type="Resource" id="Resource_82lgu"]
-script = ExtResource("4_qigjx")
+script = ExtResource("4_nbcu4")
 HP = 40
 retreat = 1
-attacks = Array[ExtResource("3_3kb4g")]([SubResource("Resource_iubtr"), SubResource("Resource_1g2nc")])
+attacks = Array[ExtResource("3_mit06")]([SubResource("Resource_iubtr"), SubResource("Resource_1g2nc")])
 evo_stage = "Basic"
 evolves_from = ""
 delta = false
@@ -93,7 +93,7 @@ weak = 2
 resist = 1
 
 [resource]
-script = ExtResource("1_blsmh")
+script = ExtResource("5_1yo3i")
 name = "Aron"
 image = ExtResource("1_ianho")
 illustrator = "Mitsuhiro Arita"

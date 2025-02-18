@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="Base_Card" load_steps=5 format=3 uid="uid://cm0tjkff2o52"]
 
 [ext_resource type="Texture2D" uid="uid://bxd7otcg332kf" path="res://Art Assets/Cards/1 ex Ruby & Saphire/83.jpg" id="1_mp216"]
-[ext_resource type="Script" path="res://Code/Resource Makers/CardMaker.gd" id="3_q2upj"]
-[ext_resource type="Script" path="res://Code/Resource Makers/TrainerMaker.gd" id="4_pqa6p"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_77uu6"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="3_3shah"]
 
 [sub_resource type="Resource" id="Resource_d0m0p"]
-script = ExtResource("4_pqa6p")
+script = ExtResource("3_3shah")
 considered = "Supporter"
 specific_requirement = ""
 description = "Search your deck for up to 3 different types of basic Energy cards, show them to your opponent, and put them into your hand. Shuffle your deck afterward. "
@@ -13,7 +13,7 @@ remove_after = true
 duration = -1
 
 [resource]
-script = ExtResource("3_q2upj")
+script = ExtResource("2_77uu6")
 name = "Lady Outing"
 image = ExtResource("1_mp216")
 illustrator = "Ken Sugimori"

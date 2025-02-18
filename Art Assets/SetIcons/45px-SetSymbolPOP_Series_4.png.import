@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cysbdsdk41l70"
-path="res://.godot/imported/40px-SetSymbolTeam_Rocket_Returns.png-213d3fadb942b7d9716a69ca51ce0867.ctex"
+uid="uid://bfsbptu51xrnn"
+path="res://.godot/imported/45px-SetSymbolPOP_Series_4.png-f37669080da08b37ebeb7b83f6f0ab6d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art Assets/Icons/40px-SetSymbolTeam_Rocket_Returns.png"
-dest_files=["res://.godot/imported/40px-SetSymbolTeam_Rocket_Returns.png-213d3fadb942b7d9716a69ca51ce0867.ctex"]
+source_file="res://Art Assets/SetIcons/45px-SetSymbolPOP_Series_4.png"
+dest_files=["res://.godot/imported/45px-SetSymbolPOP_Series_4.png-f37669080da08b37ebeb7b83f6f0ab6d.ctex"]
 
 [params]
 

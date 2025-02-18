@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxp000m648ge8"
-path="res://.godot/imported/40px-SetSymbolDelta_Species.png-b7fdcd5384d27aa55ec4454d1b065e84.ctex"
+uid="uid://cnsmaebpgm086"
+path="res://.godot/imported/Rarity_Ultra-Rare_Rare.png-c26121df7ee2a190d1682deb5d09318e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art Assets/Icons/40px-SetSymbolDelta_Species.png"
-dest_files=["res://.godot/imported/40px-SetSymbolDelta_Species.png-b7fdcd5384d27aa55ec4454d1b065e84.ctex"]
+source_file="res://Art Assets/RaritySymbols/Rarity_Ultra-Rare_Rare.png"
+dest_files=["res://.godot/imported/Rarity_Ultra-Rare_Rare.png-c26121df7ee2a190d1682deb5d09318e.ctex"]
 
 [params]
 

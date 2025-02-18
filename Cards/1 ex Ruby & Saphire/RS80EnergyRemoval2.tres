@@ -1,21 +1,21 @@
 [gd_resource type="Resource" script_class="Base_Card" load_steps=11 format=3 uid="uid://cc3kjnmsj4pr3"]
 
 [ext_resource type="Texture2D" uid="uid://ba8jbrbg2km5v" path="res://Art Assets/Cards/1 ex Ruby & Saphire/80.jpg" id="1_hj3wc"]
-[ext_resource type="Script" path="res://Code/Resource Makers/CardMaker.gd" id="3_8oe8a"]
-[ext_resource type="Script" path="res://Code/Resource Makers/TrainerMaker.gd" id="3_cxq63"]
-[ext_resource type="Script" path="res://Code/Resource Makers/CoinFlipNumMaker.gd" id="3_poe32"]
-[ext_resource type="Script" path="res://Code/Resource Makers/AskMaker.gd" id="4_3mxbc"]
-[ext_resource type="Script" path="res://Code/Resource Makers/EffectMaker.gd" id="6_0ynvk"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_jy4os"]
+[ext_resource type="Script" path="res://Code/Resource Makers/GeneralUse/CoinFlipNumMaker.gd" id="3_rjxe7"]
+[ext_resource type="Script" path="res://Code/Resource Makers/GeneralUse/AskMaker.gd" id="4_4jpoe"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="5_lb0wg"]
+[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="6_mrx3j"]
 
 [sub_resource type="Resource" id="Resource_u70ah"]
-script = ExtResource("3_poe32")
+script = ExtResource("3_rjxe7")
 heads = true
 const_flip_times = 1
 varying_flip_times = 0
 until = false
 
 [sub_resource type="Resource" id="Resource_vp67e"]
-script = ExtResource("4_3mxbc")
+script = ExtResource("4_4jpoe")
 target = 0
 damage_taken = -10
 energy_attatched = -1
@@ -34,7 +34,7 @@ choose = 2
 choose_location = 3
 
 [sub_resource type="Resource" id="Resource_5tngi"]
-script = ExtResource("6_0ynvk")
+script = ExtResource("6_mrx3j")
 choose_condition = false
 poison = 0
 burn = 0
@@ -52,7 +52,7 @@ attack_damage = 0
 defense = 0
 after_weak_res = true
 switch_type = 0
-search = Array[Resource("res://Code/Resource Makers/SearchMaker.gd")]([])
+search = Array[Resource("res://Code/Resource Makers/EffectSpecific/SearchMaker.gd")]([])
 energy_move_type = 0
 move_ammount = -1
 disrupt_target = 1
@@ -69,7 +69,7 @@ remove_imprison = false
 mimic = 0
 
 [sub_resource type="Resource" id="Resource_ldy6r"]
-script = ExtResource("3_cxq63")
+script = ExtResource("5_lb0wg")
 considered = "Item"
 specific_requirement = ""
 description = "Flip a coin. If heads, choose 1 Energy card attached to 1 of your opponent's Pokémon and discard it. "
@@ -79,7 +79,7 @@ remove_after = true
 duration = -1
 
 [resource]
-script = ExtResource("3_8oe8a")
+script = ExtResource("2_jy4os")
 name = "Energy Removal 2 "
 image = ExtResource("1_hj3wc")
 illustrator = "Keniji Kinebuchi"

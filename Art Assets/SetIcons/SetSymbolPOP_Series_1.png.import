@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bq2t54jnbrdxo"
-path="res://.godot/imported/SetSymbolTeam_Magma_vs_Team_Aqua.png-caf03ff13d7d0dc74bef965810d1e59b.ctex"
+uid="uid://duuiqd63epsex"
+path="res://.godot/imported/SetSymbolPOP_Series_1.png-059c55a2ce8e48eb739d47b1ccdab938.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art Assets/Icons/SetSymbolTeam_Magma_vs_Team_Aqua.png"
-dest_files=["res://.godot/imported/SetSymbolTeam_Magma_vs_Team_Aqua.png-caf03ff13d7d0dc74bef965810d1e59b.ctex"]
+source_file="res://Art Assets/SetIcons/SetSymbolPOP_Series_1.png"
+dest_files=["res://.godot/imported/SetSymbolPOP_Series_1.png-059c55a2ce8e48eb739d47b1ccdab938.ctex"]
 
 [params]
 

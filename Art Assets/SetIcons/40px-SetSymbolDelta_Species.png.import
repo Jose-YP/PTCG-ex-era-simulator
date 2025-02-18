@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://db2fvownqtey"
-path="res://.godot/imported/40px-SetSymbolSandstorm.png-1d7e6c1558d121e0ff2669357fb50905.ctex"
+uid="uid://cxp000m648ge8"
+path="res://.godot/imported/40px-SetSymbolDelta_Species.png-7163d4a0cbe255e012e7df4955444bf3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art Assets/Icons/40px-SetSymbolSandstorm.png"
-dest_files=["res://.godot/imported/40px-SetSymbolSandstorm.png-1d7e6c1558d121e0ff2669357fb50905.ctex"]
+source_file="res://Art Assets/SetIcons/40px-SetSymbolDelta_Species.png"
+dest_files=["res://.godot/imported/40px-SetSymbolDelta_Species.png-7163d4a0cbe255e012e7df4955444bf3.ctex"]
 
 [params]
 

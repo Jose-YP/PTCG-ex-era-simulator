@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Energy" load_steps=2 format=3 uid="uid://bbpbby31t7cth"]
 
-[ext_resource type="Script" path="res://Code/Resource Makers/EnergyMaker.gd" id="1_3mfhp"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="1_3mfhp"]
 
 [resource]
 script = ExtResource("1_3mfhp")

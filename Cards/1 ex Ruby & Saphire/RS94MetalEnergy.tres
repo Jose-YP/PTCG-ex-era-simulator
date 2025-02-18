@@ -1,13 +1,13 @@
 [gd_resource type="Resource" script_class="Base_Card" load_steps=9 format=3 uid="uid://bpyb5rd3indje"]
 
-[ext_resource type="Script" path="res://Code/Resource Makers/AskMaker.gd" id="1_ib77u"]
-[ext_resource type="Script" path="res://Code/Resource Makers/CardMaker.gd" id="1_rtwx6"]
-[ext_resource type="Script" path="res://Code/Resource Makers/EnergyMaker.gd" id="2_0l4v5"]
-[ext_resource type="Script" path="res://Code/Resource Makers/EffectMaker.gd" id="3_cee2m"]
+[ext_resource type="Script" path="res://Code/Resource Makers/GeneralUse/AskMaker.gd" id="1_slj1x"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="2_353n6"]
+[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_fahq1"]
 [ext_resource type="Texture2D" uid="uid://dkudhyw32ve0s" path="res://Art Assets/Cards/1 ex Ruby & Saphire/94.jpg" id="4_28rxm"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="5_qyjo5"]
 
 [sub_resource type="Resource" id="Resource_ap56e"]
-script = ExtResource("1_ib77u")
+script = ExtResource("1_slj1x")
 target = 0
 damage_taken = -10
 energy_attatched = -1
@@ -25,7 +25,7 @@ choose = 0
 choose_location = 0
 
 [sub_resource type="Resource" id="Resource_p6g6r"]
-script = ExtResource("3_cee2m")
+script = ExtResource("3_fahq1")
 choose_condition = false
 poison = 0
 burn = 0
@@ -43,7 +43,7 @@ attack_damage = 0
 defense = 10
 after_weak_res = true
 switch_type = 0
-search = Array[Resource("res://Code/Resource Makers/SearchMaker.gd")]([])
+search = Array[Resource("res://Code/Resource Makers/EffectSpecific/SearchMaker.gd")]([])
 energy_move_type = 0
 move_ammount = -1
 disrupt_target = 0
@@ -60,7 +60,7 @@ remove_imprison = false
 mimic = 0
 
 [sub_resource type="Resource" id="Resource_tde1h"]
-script = ExtResource("2_0l4v5")
+script = ExtResource("2_353n6")
 considered = "Special Energy"
 description = ""
 asks = SubResource("Resource_ap56e")
@@ -75,7 +75,7 @@ type = 128
 fail_type = 1
 
 [resource]
-script = ExtResource("1_rtwx6")
+script = ExtResource("5_qyjo5")
 name = "Metal Energy"
 image = ExtResource("4_28rxm")
 illustrator = "Milky Isobe"

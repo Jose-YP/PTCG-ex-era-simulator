@@ -15,10 +15,12 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nsmgk"]
 
 [node name="Types" type="Control"]
+custom_minimum_size = Vector2(24, 24)
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchor_right = 0.037
+anchor_bottom = 0.056
+offset_right = 0.0400009
+offset_bottom = -0.32
 size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_filter = 2

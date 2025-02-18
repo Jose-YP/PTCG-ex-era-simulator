@@ -1,13 +1,13 @@
 [gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://b7ayufc1njjxh"]
 
 [ext_resource type="Texture2D" uid="uid://2l8ia23r5jfi" path="res://Art Assets/Cards/1 ex Ruby & Saphire/29.jpg" id="1_w1f65"]
-[ext_resource type="Script" path="res://Code/Resource Makers/AttackMaker.gd" id="2_esmbd"]
-[ext_resource type="Script" path="res://Code/Resource Makers/PokemonMaker.gd" id="2_g0mxb"]
-[ext_resource type="Script" path="res://Code/Resource Makers/CardMaker.gd" id="3_2sgjv"]
-[ext_resource type="Script" path="res://Code/Resource Makers/CounterMaker.gd" id="3_vnsga"]
+[ext_resource type="Script" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_u6xps"]
+[ext_resource type="Script" path="res://Code/Resource Makers/GeneralUse/CounterMaker.gd" id="3_vw8s6"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="4_uneix"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="5_fd7np"]
 
 [sub_resource type="Resource" id="Resource_swpou"]
-script = ExtResource("2_esmbd")
+script = ExtResource("2_u6xps")
 name = "Energy Call"
 description = "Attach 1 Energy card from your discard pile to your Active Pokémon."
 grass_cost = 0
@@ -25,13 +25,13 @@ initial_main_DMG = 10
 modifier = 0
 
 [sub_resource type="Resource" id="Resource_0fqi7"]
-script = ExtResource("3_vnsga")
+script = ExtResource("3_vw8s6")
 for_what = 1
 cap = 0
 return_num = 0
 
 [sub_resource type="Resource" id="Resource_370u8"]
-script = ExtResource("2_esmbd")
+script = ExtResource("2_u6xps")
 name = "Cannonball"
 description = "Does 30 damage plus 10 more damage for each Energy attached to Delcatty but not used to pay for this attack's Energy cost."
 grass_cost = 0
@@ -50,10 +50,10 @@ modifier = 1
 counter = SubResource("Resource_0fqi7")
 
 [sub_resource type="Resource" id="Resource_wmjqw"]
-script = ExtResource("2_g0mxb")
+script = ExtResource("4_uneix")
 HP = 80
 retreat = 1
-attacks = Array[ExtResource("2_esmbd")]([SubResource("Resource_swpou"), SubResource("Resource_370u8")])
+attacks = Array[ExtResource("2_u6xps")]([SubResource("Resource_swpou"), SubResource("Resource_370u8")])
 evo_stage = "Stage 1"
 evolves_from = "Skitty"
 delta = false
@@ -64,7 +64,7 @@ weak = 32
 resist = 0
 
 [resource]
-script = ExtResource("3_2sgjv")
+script = ExtResource("5_fd7np")
 name = "Delcatty"
 image = ExtResource("1_w1f65")
 illustrator = "Ken Sugimori"

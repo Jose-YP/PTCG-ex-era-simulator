@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2jvdeequ414n"
-path="res://.godot/imported/40px-SetSymbolDragon.png-de7393d2deca734f4d6198589282115d.ctex"
+uid="uid://bq2t54jnbrdxo"
+path="res://.godot/imported/SetSymbolTeam_Magma_vs_Team_Aqua.png-35cc9163e577f279c90f9fc66f4720ea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art Assets/Icons/40px-SetSymbolDragon.png"
-dest_files=["res://.godot/imported/40px-SetSymbolDragon.png-de7393d2deca734f4d6198589282115d.ctex"]
+source_file="res://Art Assets/SetIcons/SetSymbolTeam_Magma_vs_Team_Aqua.png"
+dest_files=["res://.godot/imported/SetSymbolTeam_Magma_vs_Team_Aqua.png-35cc9163e577f279c90f9fc66f4720ea.ctex"]
 
 [params]
 

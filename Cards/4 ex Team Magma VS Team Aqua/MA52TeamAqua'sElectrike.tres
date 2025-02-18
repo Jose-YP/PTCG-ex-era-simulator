@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://brmb7q2xs8h6v"]
 
-[ext_resource type="Script" path="res://Code/Resource Makers/CardMaker.gd" id="1_0kjtx"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_0kjtx"]
 [ext_resource type="Texture2D" uid="uid://b57c44oiusenv" path="res://Art Assets/Cards/4 ex Team Magma vs Team Aqua/52.jpg" id="1_eo51e"]
-[ext_resource type="Script" path="res://Code/Resource Makers/AttackMaker.gd" id="2_p4xuc"]
+[ext_resource type="Script" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_p4xuc"]
 [ext_resource type="Resource" uid="uid://depecxjmmfklq" path="res://PremadeResources/AskSingleFlip.tres" id="3_c256n"]
 [ext_resource type="Resource" uid="uid://bwo4bs5ddl6je" path="res://PremadeResources/Basic Conditions/BaiscParalysis.tres" id="4_xm84l"]
-[ext_resource type="Script" path="res://Code/Resource Makers/PokemonMaker.gd" id="5_6r61j"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_6r61j"]
 
 [sub_resource type="Resource" id="Resource_t5yb6"]
 script = ExtResource("2_p4xuc")

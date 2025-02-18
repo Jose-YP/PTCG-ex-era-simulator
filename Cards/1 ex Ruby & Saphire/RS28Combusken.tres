@@ -1,13 +1,13 @@
 [gd_resource type="Resource" script_class="Base_Card" load_steps=13 format=3 uid="uid://b6wtr1k76q024"]
 
-[ext_resource type="Script" path="res://Code/Resource Makers/CardMaker.gd" id="1_wj8ko"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_wj8ko"]
 [ext_resource type="Texture2D" uid="uid://dvov2mupd032f" path="res://Art Assets/Cards/1 ex Ruby & Saphire/28.jpg" id="1_yxbae"]
 [ext_resource type="Resource" uid="uid://depecxjmmfklq" path="res://PremadeResources/AskSingleFlip.tres" id="2_2lkjv"]
 [ext_resource type="Resource" uid="uid://dr0vmkppumfhq" path="res://PremadeResources/Nothing.tres" id="3_734vr"]
-[ext_resource type="Script" path="res://Code/Resource Makers/AttackMaker.gd" id="4_sospt"]
-[ext_resource type="Script" path="res://Code/Resource Makers/EffectMaker.gd" id="5_bbtir"]
-[ext_resource type="Script" path="res://Code/Resource Makers/BodyMaker.gd" id="6_qn500"]
-[ext_resource type="Script" path="res://Code/Resource Makers/PokemonMaker.gd" id="7_q5ase"]
+[ext_resource type="Script" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="4_sospt"]
+[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="5_bbtir"]
+[ext_resource type="Script" path="res://Code/Resource Makers/PokemonSpecific/BodyMaker.gd" id="6_qn500"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="7_q5ase"]
 
 [sub_resource type="Resource" id="Resource_oxvkb"]
 script = ExtResource("4_sospt")

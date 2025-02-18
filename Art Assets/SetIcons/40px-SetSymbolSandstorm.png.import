@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddc506ji0ciqq"
-path="res://.godot/imported/40px-SetSymbolRuby_and_Sapphire.png-339d05b6e847b6845ee335fc4d13dd06.ctex"
+uid="uid://db2fvownqtey"
+path="res://.godot/imported/40px-SetSymbolSandstorm.png-f9c2584ced5ab2c4cd811d97993cb779.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art Assets/Icons/40px-SetSymbolRuby_and_Sapphire.png"
-dest_files=["res://.godot/imported/40px-SetSymbolRuby_and_Sapphire.png-339d05b6e847b6845ee335fc4d13dd06.ctex"]
+source_file="res://Art Assets/SetIcons/40px-SetSymbolSandstorm.png"
+dest_files=["res://.godot/imported/40px-SetSymbolSandstorm.png-f9c2584ced5ab2c4cd811d97993cb779.ctex"]
 
 [params]
 

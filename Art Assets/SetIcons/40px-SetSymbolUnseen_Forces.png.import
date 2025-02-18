@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://87kxw7qy5xnf"
-path="res://.godot/imported/40px-SetSymbolEmerald.png-22e6195841cec7e21788a328bcb9595d.ctex"
+uid="uid://c7gf58mjxbggi"
+path="res://.godot/imported/40px-SetSymbolUnseen_Forces.png-68eff163689187cd3b3e40af4e72899b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art Assets/Icons/40px-SetSymbolEmerald.png"
-dest_files=["res://.godot/imported/40px-SetSymbolEmerald.png-22e6195841cec7e21788a328bcb9595d.ctex"]
+source_file="res://Art Assets/SetIcons/40px-SetSymbolUnseen_Forces.png"
+dest_files=["res://.godot/imported/40px-SetSymbolUnseen_Forces.png-68eff163689187cd3b3e40af4e72899b.ctex"]
 
 [params]
 

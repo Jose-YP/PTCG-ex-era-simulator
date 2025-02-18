@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Attack" load_steps=2 format=3 uid="uid://bfsj0nkq56jov"]
 
-[ext_resource type="Script" path="res://Code/Resource Makers/AttackMaker.gd" id="1_4aeyy"]
+[ext_resource type="Script" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_4aeyy"]
 
 [resource]
 script = ExtResource("1_4aeyy")

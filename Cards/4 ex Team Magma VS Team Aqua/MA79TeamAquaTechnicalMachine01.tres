@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="Base_Card" load_steps=11 format=3 uid="uid://f51ar25ws7av"]
 
 [ext_resource type="Texture2D" uid="uid://batwggrxck3rc" path="res://Art Assets/Cards/4 ex Team Magma vs Team Aqua/79.jpg" id="1_362yo"]
-[ext_resource type="Script" path="res://Code/Resource Makers/CardMaker.gd" id="1_i2j72"]
-[ext_resource type="Script" path="res://Code/Resource Makers/AskMaker.gd" id="3_xguno"]
-[ext_resource type="Script" path="res://Code/Resource Makers/EffectMaker.gd" id="4_7pouw"]
-[ext_resource type="Script" path="res://Code/Resource Makers/AttackMaker.gd" id="5_exr3x"]
-[ext_resource type="Script" path="res://Code/Resource Makers/TrainerMaker.gd" id="6_6xmn3"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_i2j72"]
+[ext_resource type="Script" path="res://Code/Resource Makers/GeneralUse/AskMaker.gd" id="3_xguno"]
+[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_7pouw"]
+[ext_resource type="Script" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="5_exr3x"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="6_6xmn3"]
 
 [sub_resource type="Resource" id="Resource_0rn63"]
 script = ExtResource("3_xguno")

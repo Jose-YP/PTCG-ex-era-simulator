@@ -2,13 +2,13 @@
 
 [ext_resource type="Texture2D" uid="uid://mj8t5qbg754t" path="res://Art Assets/Cards/4 ex Team Magma vs Team Aqua/65.jpg" id="1_dd51n"]
 [ext_resource type="Resource" uid="uid://depecxjmmfklq" path="res://PremadeResources/AskSingleFlip.tres" id="2_dicmi"]
-[ext_resource type="Script" path="res://Code/Resource Makers/EffectMaker.gd" id="3_lswkx"]
-[ext_resource type="Script" path="res://Code/Resource Makers/AttackMaker.gd" id="4_hybfv"]
-[ext_resource type="Script" path="res://Code/Resource Makers/PokemonMaker.gd" id="5_r4ysk"]
-[ext_resource type="Script" path="res://Code/Resource Makers/CardMaker.gd" id="6_ee7dn"]
+[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_pa20x"]
+[ext_resource type="Script" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="4_wmba0"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_358q3"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="6_7x5uj"]
 
 [sub_resource type="Resource" id="Resource_47mgm"]
-script = ExtResource("3_lswkx")
+script = ExtResource("3_pa20x")
 choose_condition = false
 poison = 0
 burn = 0
@@ -26,7 +26,7 @@ attack_damage = 0
 defense = 0
 after_weak_res = true
 switch_type = 0
-search = Array[Resource("res://Code/Resource Makers/SearchMaker.gd")]([])
+search = Array[Resource("res://Code/Resource Makers/EffectSpecific/SearchMaker.gd")]([])
 energy_move_type = 0
 move_ammount = -1
 disrupt_target = 0
@@ -43,7 +43,7 @@ remove_imprison = false
 mimic = 0
 
 [sub_resource type="Resource" id="Resource_1qf44"]
-script = ExtResource("4_hybfv")
+script = ExtResource("4_wmba0")
 name = "Snarl"
 description = "Flip a coin. If heads, this attack does 10 damage to the Defending Pokémon. If tails, the Defending Pokémon is now Paralyzed."
 grass_cost = null
@@ -63,10 +63,10 @@ ask = ExtResource("2_dicmi")
 fail_effect = SubResource("Resource_47mgm")
 
 [sub_resource type="Resource" id="Resource_vy1eo"]
-script = ExtResource("5_r4ysk")
+script = ExtResource("5_358q3")
 HP = 40
 retreat = 1
-attacks = Array[ExtResource("4_hybfv")]([SubResource("Resource_1qf44")])
+attacks = Array[ExtResource("4_wmba0")]([SubResource("Resource_1qf44")])
 evo_stage = "Basic"
 evolves_from = ""
 delta = false
@@ -77,7 +77,7 @@ weak = 32
 resist = 16
 
 [resource]
-script = ExtResource("6_ee7dn")
+script = ExtResource("6_7x5uj")
 name = "Team Magma's Poochyena"
 image = ExtResource("1_dd51n")
 illustrator = "Shin-ichi Yoshikawa"

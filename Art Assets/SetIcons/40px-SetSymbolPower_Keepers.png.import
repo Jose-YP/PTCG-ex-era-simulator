@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://by7tbpb4iejsd"
-path="res://.godot/imported/40px-SetSymbolHolon_Phantoms.png-c71968b42919bc4aa67b63fa3d9fe30c.ctex"
+uid="uid://dmxe8sf6hdnnc"
+path="res://.godot/imported/40px-SetSymbolPower_Keepers.png-5bb860d1a4f7b062d7b9637776dca2e0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art Assets/Icons/40px-SetSymbolHolon_Phantoms.png"
-dest_files=["res://.godot/imported/40px-SetSymbolHolon_Phantoms.png-c71968b42919bc4aa67b63fa3d9fe30c.ctex"]
+source_file="res://Art Assets/SetIcons/40px-SetSymbolPower_Keepers.png"
+dest_files=["res://.godot/imported/40px-SetSymbolPower_Keepers.png-5bb860d1a4f7b062d7b9637776dca2e0.ctex"]
 
 [params]
 

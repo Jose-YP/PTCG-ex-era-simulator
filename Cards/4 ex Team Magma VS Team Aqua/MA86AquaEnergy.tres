@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="Base_Card" load_steps=7 format=3 uid="uid://cerpssk67rwka"]
 
-[ext_resource type="Script" path="res://Code/Resource Makers/CardMaker.gd" id="1_5jdet"]
-[ext_resource type="Script" path="res://Code/Resource Makers/AskMaker.gd" id="1_j8lln"]
-[ext_resource type="Script" path="res://Code/Resource Makers/EnergyMaker.gd" id="2_cgfc1"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_5jdet"]
+[ext_resource type="Script" path="res://Code/Resource Makers/GeneralUse/AskMaker.gd" id="1_j8lln"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="2_cgfc1"]
 [ext_resource type="Texture2D" uid="uid://brtojfwkvc0s3" path="res://Art Assets/Cards/4 ex Team Magma vs Team Aqua/86.jpg" id="3_idr0n"]
 
 [sub_resource type="Resource" id="Resource_goekp"]

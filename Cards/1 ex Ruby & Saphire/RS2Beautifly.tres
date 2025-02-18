@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="Base_Card" load_steps=17 format=3 uid="uid://cxvfc0rggllux"]
 
 [ext_resource type="Texture2D" uid="uid://8v21sphmsmhb" path="res://Art Assets/Cards/1 ex Ruby & Saphire/2.jpg" id="1_xe8fg"]
-[ext_resource type="Script" path="res://Code/Resource Makers/AttackMaker.gd" id="2_w5spi"]
-[ext_resource type="Script" path="res://Code/Resource Makers/CoinFlipNumMaker.gd" id="3_fjwe8"]
-[ext_resource type="Script" path="res://Code/Resource Makers/EffectMaker.gd" id="4_ct2pe"]
-[ext_resource type="Script" path="res://Code/Resource Makers/CounterMaker.gd" id="4_p6cej"]
-[ext_resource type="Script" path="res://Code/Resource Makers/PokemonMaker.gd" id="5_wp2cw"]
-[ext_resource type="Script" path="res://Code/Resource Makers/CardMaker.gd" id="6_rlmba"]
+[ext_resource type="Script" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_w5spi"]
+[ext_resource type="Script" path="res://Code/Resource Makers/GeneralUse/CoinFlipNumMaker.gd" id="3_fjwe8"]
+[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_ct2pe"]
+[ext_resource type="Script" path="res://Code/Resource Makers/GeneralUse/CounterMaker.gd" id="4_p6cej"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_wp2cw"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="6_rlmba"]
 
 [sub_resource type="Resource" id="Resource_o5830"]
 script = ExtResource("3_fjwe8")

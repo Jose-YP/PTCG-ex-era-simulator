@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://buoaylg1cab2a"
-path="res://.godot/imported/40px-SetSymbolDragon_Frontiers.png-e8d24d86ea2fa72dd2c8ac375dae64d6.ctex"
+uid="uid://by7tbpb4iejsd"
+path="res://.godot/imported/40px-SetSymbolHolon_Phantoms.png-095958f096d5bc43525c747f117ed2ed.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art Assets/Icons/40px-SetSymbolDragon_Frontiers.png"
-dest_files=["res://.godot/imported/40px-SetSymbolDragon_Frontiers.png-e8d24d86ea2fa72dd2c8ac375dae64d6.ctex"]
+source_file="res://Art Assets/SetIcons/40px-SetSymbolHolon_Phantoms.png"
+dest_files=["res://.godot/imported/40px-SetSymbolHolon_Phantoms.png-095958f096d5bc43525c747f117ed2ed.ctex"]
 
 [params]
 

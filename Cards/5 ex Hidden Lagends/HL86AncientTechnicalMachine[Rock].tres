@@ -1,13 +1,13 @@
 [gd_resource type="Resource" script_class="Base_Card" load_steps=9 format=3 uid="uid://day2wur81xum5"]
 
 [ext_resource type="Texture2D" uid="uid://bp4cvx4uqbwob" path="res://Art Assets/Cards/5 ex Hidden Legends/86.jpg" id="1_d2mxl"]
-[ext_resource type="Script" path="res://Code/Resource Makers/CardMaker.gd" id="2_tvms2"]
-[ext_resource type="Script" path="res://Code/Resource Makers/EffectMaker.gd" id="3_colps"]
-[ext_resource type="Script" path="res://Code/Resource Makers/AttackMaker.gd" id="4_rlfo0"]
-[ext_resource type="Script" path="res://Code/Resource Makers/TrainerMaker.gd" id="5_5x8cv"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_0hcbm"]
+[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_p2812"]
+[ext_resource type="Script" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="4_y7np7"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="5_gqw42"]
 
 [sub_resource type="Resource" id="Resource_qux53"]
-script = ExtResource("3_colps")
+script = ExtResource("3_p2812")
 choose_condition = false
 poison = 0
 burn = 0
@@ -25,7 +25,7 @@ attack_damage = 0
 defense = 0
 after_weak_res = true
 switch_type = 0
-search = Array[Resource("res://Code/Resource Makers/SearchMaker.gd")]([])
+search = Array[Resource("res://Code/Resource Makers/EffectSpecific/SearchMaker.gd")]([])
 energy_move_type = 0
 move_ammount = -1
 disrupt_target = 0
@@ -42,7 +42,7 @@ remove_imprison = false
 mimic = 0
 
 [sub_resource type="Resource" id="Resource_s63jm"]
-script = ExtResource("4_rlfo0")
+script = ExtResource("4_y7np7")
 name = "Stone Generator"
 description = "If your opponent has any Evolved Pokémon in play, remove the highest Stage Evolution card from each of them and put those cards back into his or her hand."
 grass_cost = 0
@@ -61,7 +61,7 @@ modifier = 0
 effect = SubResource("Resource_qux53")
 
 [sub_resource type="Resource" id="Resource_ypso2"]
-script = ExtResource("5_5x8cv")
+script = ExtResource("5_gqw42")
 considered = "TM"
 specific_requirement = ""
 description = "Attach this card to 1 of your Evolved Pokémon (excluding Pokémon-ex and Pokémon that has an owner in its name) in play. That Pokémon may use this card's attack instead of its own. At the end of your turn, discard Ancient Technical Machine [Rock]."
@@ -70,7 +70,7 @@ duration = -1
 provided_attack = SubResource("Resource_s63jm")
 
 [resource]
-script = ExtResource("2_tvms2")
+script = ExtResource("2_0hcbm")
 name = "Ancient Technical Machine [Steel] "
 image = ExtResource("1_d2mxl")
 illustrator = "Mitsuhiro Arita"

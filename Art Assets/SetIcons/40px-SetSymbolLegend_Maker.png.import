@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://coghsgxhlxqmb"
-path="res://.godot/imported/40px-SetSymbolCrystal_Guardians.png-1442aef05d9d8f7b60dc6dc68f26aec0.ctex"
+uid="uid://dpblqw53nvq1t"
+path="res://.godot/imported/40px-SetSymbolLegend_Maker.png-f0f17dac513ab71e5bede7b8635e4851.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art Assets/Icons/40px-SetSymbolCrystal_Guardians.png"
-dest_files=["res://.godot/imported/40px-SetSymbolCrystal_Guardians.png-1442aef05d9d8f7b60dc6dc68f26aec0.ctex"]
+source_file="res://Art Assets/SetIcons/40px-SetSymbolLegend_Maker.png"
+dest_files=["res://.godot/imported/40px-SetSymbolLegend_Maker.png-f0f17dac513ab71e5bede7b8635e4851.ctex"]
 
 [params]
 
