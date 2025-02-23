@@ -2,8 +2,10 @@ extends Control
 
 @export var card: Base_Card
 
+@onready var pokedata: Pokemon = card.pokemon_properties
 @onready var display_name: RichTextLabel = %Name
 @onready var extra_identifier: RichTextLabel = %Extra
+@onready var max_hp: RichTextLabel = %HP
 @onready var default_types: Array[Control] = [%DefaultType, %DefaultType2]
 @onready var art: TextureRect = %Art
 @onready var evoFrom: RichTextLabel = %EvoFrom
@@ -18,5 +20,18 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	make_text(display_name, card.name)
+	make_text(max_hp, str("HP:",pokedata.HP))
+	
+	art.texture = card.image
+	
+	make_text(illustrator, str("Illus. ", card.illustrator))
+	
+	make_text(number, str(card.number, "/", Constants.expansion_counts))
+	rarity.current_tab = card.rarity
+	set_type.current_tab = card.expansion
+
+func make_text(node: RichTextLabel, text: String):
+	node.clear()
+	node.append_text(text)
 

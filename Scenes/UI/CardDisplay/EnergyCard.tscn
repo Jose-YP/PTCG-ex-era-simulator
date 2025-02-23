@@ -1,38 +1,37 @@
-[gd_scene load_steps=36 format=3 uid="uid://crecmsup0hxcr"]
+[gd_scene load_steps=35 format=3 uid="uid://ttnrn3dc8bsv"]
 
-[ext_resource type="PackedScene" uid="uid://bs3ila6cpt8n1" path="res://Scenes/UI/types.tscn" id="1_72idk"]
-[ext_resource type="Script" path="res://Code/Scenes/UI/Card.gd" id="1_n7rhp"]
-[ext_resource type="Texture2D" uid="uid://b4uymubvo04qp" path="res://Art Assets/Cards/4 ex Team Magma vs Team Aqua/37.jpg" id="2_piqv4"]
-[ext_resource type="PackedScene" uid="uid://cvh086w8yapm0" path="res://Scenes/UI/attack_list.tscn" id="4_nc1fv"]
-[ext_resource type="Texture2D" uid="uid://bq2t54jnbrdxo" path="res://Art Assets/SetIcons/SetSymbolTeam_Magma_vs_Team_Aqua.png" id="5_6h05s"]
-[ext_resource type="Texture2D" uid="uid://ciyynt0iw46k5" path="res://Art Assets/RaritySymbols/31px-Rarity_Common.png" id="5_q01mw"]
-[ext_resource type="Texture2D" uid="uid://blfwsqqtrqe8v" path="res://Art Assets/RaritySymbols/31px-Rarity_Uncommon.png" id="6_j1dot"]
-[ext_resource type="Texture2D" uid="uid://bir0keyl58pst" path="res://Art Assets/RaritySymbols/31px-Rarity_Rare.png" id="7_uaqbq"]
-[ext_resource type="Texture2D" uid="uid://be2sag665selj" path="res://Art Assets/RaritySymbols/Rarity_Rare_Holo.png" id="8_u3iro"]
-[ext_resource type="Texture2D" uid="uid://dldh83yhhvvs2" path="res://Art Assets/RaritySymbols/Rarity_Rare_Holo_ex.png" id="9_8aa57"]
-[ext_resource type="Texture2D" uid="uid://dfh4btp104a45" path="res://Art Assets/RaritySymbols/Rarity_Rare_Secret.png" id="10_vpbv5"]
-[ext_resource type="Texture2D" uid="uid://cnsmaebpgm086" path="res://Art Assets/RaritySymbols/Rarity_Ultra-Rare_Rare.png" id="11_a3hgn"]
-[ext_resource type="Texture2D" uid="uid://dx7wnthhhm80w" path="res://Art Assets/RaritySymbols/30px-SetSymbolPromo.png" id="12_dfmcn"]
-[ext_resource type="Texture2D" uid="uid://ddc506ji0ciqq" path="res://Art Assets/SetIcons/40px-SetSymbolRuby_and_Sapphire.png" id="13_84j71"]
-[ext_resource type="Texture2D" uid="uid://db2fvownqtey" path="res://Art Assets/SetIcons/40px-SetSymbolSandstorm.png" id="14_6q5p3"]
-[ext_resource type="Texture2D" uid="uid://c2jvdeequ414n" path="res://Art Assets/SetIcons/40px-SetSymbolDragon.png" id="15_uffuc"]
-[ext_resource type="Texture2D" uid="uid://j1nc5rmbmtof" path="res://Art Assets/SetIcons/SetSymbolHidden_Legends.png" id="17_1yhvd"]
-[ext_resource type="Texture2D" uid="uid://b6needgmeexy4" path="res://Art Assets/SetIcons/40px-SetSymbolFireRed_and_LeafGreen.png" id="18_girsp"]
-[ext_resource type="Texture2D" uid="uid://cysbdsdk41l70" path="res://Art Assets/SetIcons/40px-SetSymbolTeam_Rocket_Returns.png" id="19_66a1w"]
-[ext_resource type="Texture2D" uid="uid://doaf0r45tfeuk" path="res://Art Assets/SetIcons/40px-SetSymbolDeoxys.png" id="20_lg0ba"]
-[ext_resource type="Texture2D" uid="uid://87kxw7qy5xnf" path="res://Art Assets/SetIcons/40px-SetSymbolEmerald.png" id="21_pidmq"]
-[ext_resource type="Texture2D" uid="uid://c7gf58mjxbggi" path="res://Art Assets/SetIcons/40px-SetSymbolUnseen_Forces.png" id="22_o2plf"]
-[ext_resource type="Texture2D" uid="uid://cxp000m648ge8" path="res://Art Assets/SetIcons/40px-SetSymbolDelta_Species.png" id="23_uqa1v"]
-[ext_resource type="Texture2D" uid="uid://dpblqw53nvq1t" path="res://Art Assets/SetIcons/40px-SetSymbolLegend_Maker.png" id="24_wpdrx"]
-[ext_resource type="Texture2D" uid="uid://by7tbpb4iejsd" path="res://Art Assets/SetIcons/40px-SetSymbolHolon_Phantoms.png" id="25_j56u4"]
-[ext_resource type="Texture2D" uid="uid://coghsgxhlxqmb" path="res://Art Assets/SetIcons/40px-SetSymbolCrystal_Guardians.png" id="26_vhvj1"]
-[ext_resource type="Texture2D" uid="uid://buoaylg1cab2a" path="res://Art Assets/SetIcons/40px-SetSymbolDragon_Frontiers.png" id="27_u4ct5"]
-[ext_resource type="Texture2D" uid="uid://dmxe8sf6hdnnc" path="res://Art Assets/SetIcons/40px-SetSymbolPower_Keepers.png" id="28_jh181"]
-[ext_resource type="Texture2D" uid="uid://duuiqd63epsex" path="res://Art Assets/SetIcons/SetSymbolPOP_Series_1.png" id="29_q43mf"]
-[ext_resource type="Texture2D" uid="uid://edeej3yipdeo" path="res://Art Assets/SetIcons/SetSymbolPOP_Series_2.png" id="30_1uc2x"]
-[ext_resource type="Texture2D" uid="uid://be1nfp0g24sdm" path="res://Art Assets/SetIcons/SetSymbolPOP_Series_3.png" id="31_g4arr"]
-[ext_resource type="Texture2D" uid="uid://bfsbptu51xrnn" path="res://Art Assets/SetIcons/45px-SetSymbolPOP_Series_4.png" id="32_nfs2r"]
-[ext_resource type="Texture2D" uid="uid://cu8egxwxamvxw" path="res://Art Assets/SetIcons/45px-SetSymbolPOP_Series_5.png" id="33_mxo45"]
+[ext_resource type="Script" path="res://Code/Scenes/UI/Card.gd" id="1_jkxgv"]
+[ext_resource type="PackedScene" uid="uid://bs3ila6cpt8n1" path="res://Scenes/UI/UIComponents/types.tscn" id="2_b8dnl"]
+[ext_resource type="Texture2D" uid="uid://b4uymubvo04qp" path="res://Art Assets/Cards/4 ex Team Magma vs Team Aqua/37.jpg" id="3_ng8km"]
+[ext_resource type="Texture2D" uid="uid://ciyynt0iw46k5" path="res://Art Assets/RaritySymbols/31px-Rarity_Common.png" id="4_82dba"]
+[ext_resource type="Texture2D" uid="uid://blfwsqqtrqe8v" path="res://Art Assets/RaritySymbols/31px-Rarity_Uncommon.png" id="5_cima6"]
+[ext_resource type="Texture2D" uid="uid://bir0keyl58pst" path="res://Art Assets/RaritySymbols/31px-Rarity_Rare.png" id="6_mp27l"]
+[ext_resource type="Texture2D" uid="uid://be2sag665selj" path="res://Art Assets/RaritySymbols/Rarity_Rare_Holo.png" id="7_ettin"]
+[ext_resource type="Texture2D" uid="uid://dldh83yhhvvs2" path="res://Art Assets/RaritySymbols/Rarity_Rare_Holo_ex.png" id="8_pfb0r"]
+[ext_resource type="Texture2D" uid="uid://dfh4btp104a45" path="res://Art Assets/RaritySymbols/Rarity_Rare_Secret.png" id="9_30o5o"]
+[ext_resource type="Texture2D" uid="uid://cnsmaebpgm086" path="res://Art Assets/RaritySymbols/Rarity_Ultra-Rare_Rare.png" id="10_x2t5s"]
+[ext_resource type="Texture2D" uid="uid://dx7wnthhhm80w" path="res://Art Assets/RaritySymbols/30px-SetSymbolPromo.png" id="11_emod3"]
+[ext_resource type="Texture2D" uid="uid://ddc506ji0ciqq" path="res://Art Assets/SetIcons/40px-SetSymbolRuby_and_Sapphire.png" id="12_mq2b0"]
+[ext_resource type="Texture2D" uid="uid://db2fvownqtey" path="res://Art Assets/SetIcons/40px-SetSymbolSandstorm.png" id="13_aw5ye"]
+[ext_resource type="Texture2D" uid="uid://c2jvdeequ414n" path="res://Art Assets/SetIcons/40px-SetSymbolDragon.png" id="14_u6oew"]
+[ext_resource type="Texture2D" uid="uid://bq2t54jnbrdxo" path="res://Art Assets/SetIcons/SetSymbolTeam_Magma_vs_Team_Aqua.png" id="15_jf2v1"]
+[ext_resource type="Texture2D" uid="uid://j1nc5rmbmtof" path="res://Art Assets/SetIcons/SetSymbolHidden_Legends.png" id="16_dkck6"]
+[ext_resource type="Texture2D" uid="uid://b6needgmeexy4" path="res://Art Assets/SetIcons/40px-SetSymbolFireRed_and_LeafGreen.png" id="17_o5w7o"]
+[ext_resource type="Texture2D" uid="uid://cysbdsdk41l70" path="res://Art Assets/SetIcons/40px-SetSymbolTeam_Rocket_Returns.png" id="18_6vkx4"]
+[ext_resource type="Texture2D" uid="uid://doaf0r45tfeuk" path="res://Art Assets/SetIcons/40px-SetSymbolDeoxys.png" id="19_occu0"]
+[ext_resource type="Texture2D" uid="uid://87kxw7qy5xnf" path="res://Art Assets/SetIcons/40px-SetSymbolEmerald.png" id="20_sg2d3"]
+[ext_resource type="Texture2D" uid="uid://c7gf58mjxbggi" path="res://Art Assets/SetIcons/40px-SetSymbolUnseen_Forces.png" id="21_n7kni"]
+[ext_resource type="Texture2D" uid="uid://cxp000m648ge8" path="res://Art Assets/SetIcons/40px-SetSymbolDelta_Species.png" id="22_xtu47"]
+[ext_resource type="Texture2D" uid="uid://dpblqw53nvq1t" path="res://Art Assets/SetIcons/40px-SetSymbolLegend_Maker.png" id="23_p2q1r"]
+[ext_resource type="Texture2D" uid="uid://by7tbpb4iejsd" path="res://Art Assets/SetIcons/40px-SetSymbolHolon_Phantoms.png" id="24_toj5y"]
+[ext_resource type="Texture2D" uid="uid://coghsgxhlxqmb" path="res://Art Assets/SetIcons/40px-SetSymbolCrystal_Guardians.png" id="25_e1i55"]
+[ext_resource type="Texture2D" uid="uid://buoaylg1cab2a" path="res://Art Assets/SetIcons/40px-SetSymbolDragon_Frontiers.png" id="26_3hxk8"]
+[ext_resource type="Texture2D" uid="uid://dmxe8sf6hdnnc" path="res://Art Assets/SetIcons/40px-SetSymbolPower_Keepers.png" id="27_w5ljb"]
+[ext_resource type="Texture2D" uid="uid://duuiqd63epsex" path="res://Art Assets/SetIcons/SetSymbolPOP_Series_1.png" id="28_1nmkm"]
+[ext_resource type="Texture2D" uid="uid://edeej3yipdeo" path="res://Art Assets/SetIcons/SetSymbolPOP_Series_2.png" id="29_k4wyy"]
+[ext_resource type="Texture2D" uid="uid://be1nfp0g24sdm" path="res://Art Assets/SetIcons/SetSymbolPOP_Series_3.png" id="30_jhayt"]
+[ext_resource type="Texture2D" uid="uid://bfsbptu51xrnn" path="res://Art Assets/SetIcons/45px-SetSymbolPOP_Series_4.png" id="31_wnr1q"]
+[ext_resource type="Texture2D" uid="uid://cu8egxwxamvxw" path="res://Art Assets/SetIcons/45px-SetSymbolPOP_Series_5.png" id="32_b4033"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u7mkw"]
 
@@ -45,7 +44,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_n7rhp")
+script = ExtResource("1_jkxgv")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 custom_minimum_size = Vector2(400, 0)
@@ -78,20 +77,15 @@ size_flags_vertical = 0
 text = "baby"
 fit_content = true
 
-[node name="HP" type="RichTextLabel" parent="PanelContainer/VBoxContainer/MainInfromation"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(63, 0)
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 0
-text = "HP: 200"
-fit_content = true
-
-[node name="DefaultType" parent="PanelContainer/VBoxContainer/MainInfromation" instance=ExtResource("1_72idk")]
+[node name="DefaultType" parent="PanelContainer/VBoxContainer/MainInfromation" instance=ExtResource("2_b8dnl")]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="DefaultType2" parent="PanelContainer/VBoxContainer/MainInfromation" instance=ExtResource("1_72idk")]
+[node name="DefaultType3" parent="PanelContainer/VBoxContainer/MainInfromation" instance=ExtResource("2_b8dnl")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="DefaultType2" parent="PanelContainer/VBoxContainer/MainInfromation" instance=ExtResource("2_b8dnl")]
 unique_name_in_owner = true
 layout_mode = 2
 
@@ -104,117 +98,29 @@ unique_name_in_owner = true
 modulate = Color(1, 1, 1, 0.992157)
 custom_minimum_size = Vector2(189, 114)
 layout_mode = 2
-texture = ExtResource("2_piqv4")
+texture = ExtResource("3_ng8km")
 
-[node name="Evo&Illus" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="EvoFrom" type="RichTextLabel" parent="PanelContainer/VBoxContainer/Evo&Illus"]
-layout_mode = 2
-text = "Evolves From"
-
-[node name="Illustrator" type="RichTextLabel" parent="PanelContainer/VBoxContainer/Evo&Illus"]
+[node name="Illustrator" type="RichTextLabel" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 text = "Illustrator:"
 
-[node name="Attacks" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+[node name="EffectBox" type="PanelContainer" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="AttackList" parent="PanelContainer/VBoxContainer/Attacks" instance=ExtResource("4_nc1fv")]
-unique_name_in_owner = true
+[node name="Effect" type="RichTextLabel" parent="PanelContainer/VBoxContainer/EffectBox"]
 layout_mode = 2
+text = "Illustrator:"
 
 [node name="OtherProperties" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 5
 alignment = 2
 
-[node name="Weakness" type="VBoxContainer" parent="PanelContainer/VBoxContainer/OtherProperties"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/separation = 20
-alignment = 1
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="PanelContainer/VBoxContainer/OtherProperties/Weakness"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 8
-bbcode_enabled = true
-text = "[center]Weakness"
-fit_content = true
-
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/OtherProperties/Weakness"]
-layout_mode = 2
-alignment = 1
-
-[node name="WeaknessType" parent="PanelContainer/VBoxContainer/OtherProperties/Weakness/HBoxContainer" instance=ExtResource("1_72idk")]
-unique_name_in_owner = true
-layout_mode = 2
-
-[node name="WeaknessType2" parent="PanelContainer/VBoxContainer/OtherProperties/Weakness/HBoxContainer" instance=ExtResource("1_72idk")]
-unique_name_in_owner = true
-layout_mode = 2
-
-[node name="Reistance" type="VBoxContainer" parent="PanelContainer/VBoxContainer/OtherProperties"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/separation = 20
-alignment = 1
-
-[node name="RichTextLabel3" type="RichTextLabel" parent="PanelContainer/VBoxContainer/OtherProperties/Reistance"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 8
-bbcode_enabled = true
-text = "[center]Resist"
-fit_content = true
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/VBoxContainer/OtherProperties/Reistance"]
-layout_mode = 2
-alignment = 1
-
-[node name="ResistanceType" parent="PanelContainer/VBoxContainer/OtherProperties/Reistance/HBoxContainer2" instance=ExtResource("1_72idk")]
-unique_name_in_owner = true
-layout_mode = 2
-
-[node name="ResistanceType2" parent="PanelContainer/VBoxContainer/OtherProperties/Reistance/HBoxContainer2" instance=ExtResource("1_72idk")]
-unique_name_in_owner = true
-layout_mode = 2
-
 [node name="RetreatCost" type="VBoxContainer" parent="PanelContainer/VBoxContainer/OtherProperties"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 20
 alignment = 1
-
-[node name="RichTextLabel4" type="RichTextLabel" parent="PanelContainer/VBoxContainer/OtherProperties/RetreatCost"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 8
-bbcode_enabled = true
-text = "[center]Retreat"
-fit_content = true
-
-[node name="RetreatContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/OtherProperties/RetreatCost"]
-unique_name_in_owner = true
-layout_mode = 2
-alignment = 1
-
-[node name="Types" parent="PanelContainer/VBoxContainer/OtherProperties/RetreatCost/RetreatContainer" instance=ExtResource("1_72idk")]
-visible = false
-layout_mode = 2
-
-[node name="Types2" parent="PanelContainer/VBoxContainer/OtherProperties/RetreatCost/RetreatContainer" instance=ExtResource("1_72idk")]
-visible = false
-layout_mode = 2
-
-[node name="Types3" parent="PanelContainer/VBoxContainer/OtherProperties/RetreatCost/RetreatContainer" instance=ExtResource("1_72idk")]
-visible = false
-layout_mode = 2
-
-[node name="Types4" parent="PanelContainer/VBoxContainer/OtherProperties/RetreatCost/RetreatContainer" instance=ExtResource("1_72idk")]
-visible = false
-layout_mode = 2
 
 [node name="Number" type="RichTextLabel" parent="PanelContainer/VBoxContainer/OtherProperties"]
 unique_name_in_owner = true
@@ -237,7 +143,7 @@ metadata/_edit_group_ = true
 [node name="Common" type="TextureRect" parent="PanelContainer/VBoxContainer/OtherProperties/Rarity"]
 layout_mode = 2
 size_flags_vertical = 8
-texture = ExtResource("5_q01mw")
+texture = ExtResource("4_82dba")
 expand_mode = 2
 stretch_mode = 5
 
@@ -245,7 +151,7 @@ stretch_mode = 5
 visible = false
 layout_mode = 2
 size_flags_vertical = 8
-texture = ExtResource("6_j1dot")
+texture = ExtResource("5_cima6")
 expand_mode = 2
 stretch_mode = 5
 
@@ -254,7 +160,7 @@ visible = false
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 size_flags_vertical = 8
-texture = ExtResource("7_uaqbq")
+texture = ExtResource("6_mp27l")
 expand_mode = 2
 stretch_mode = 5
 
@@ -263,7 +169,7 @@ visible = false
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 size_flags_vertical = 8
-texture = ExtResource("8_u3iro")
+texture = ExtResource("7_ettin")
 expand_mode = 3
 stretch_mode = 5
 
@@ -272,7 +178,7 @@ visible = false
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 size_flags_vertical = 8
-texture = ExtResource("9_8aa57")
+texture = ExtResource("8_pfb0r")
 expand_mode = 3
 stretch_mode = 5
 
@@ -281,7 +187,7 @@ visible = false
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 size_flags_vertical = 8
-texture = ExtResource("10_vpbv5")
+texture = ExtResource("9_30o5o")
 expand_mode = 3
 stretch_mode = 5
 
@@ -290,7 +196,7 @@ visible = false
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 size_flags_vertical = 8
-texture = ExtResource("11_a3hgn")
+texture = ExtResource("10_x2t5s")
 expand_mode = 3
 stretch_mode = 5
 
@@ -299,7 +205,7 @@ visible = false
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 size_flags_vertical = 8
-texture = ExtResource("12_dfmcn")
+texture = ExtResource("11_emod3")
 expand_mode = 3
 stretch_mode = 5
 
@@ -317,7 +223,7 @@ metadata/_edit_group_ = true
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
 size_flags_vertical = 8
-texture = ExtResource("13_84j71")
+texture = ExtResource("12_mq2b0")
 expand_mode = 2
 stretch_mode = 4
 
@@ -326,7 +232,7 @@ visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
 size_flags_vertical = 8
-texture = ExtResource("14_6q5p3")
+texture = ExtResource("13_aw5ye")
 expand_mode = 2
 stretch_mode = 4
 
@@ -335,7 +241,7 @@ visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
 size_flags_vertical = 8
-texture = ExtResource("15_uffuc")
+texture = ExtResource("14_u6oew")
 expand_mode = 2
 stretch_mode = 4
 
@@ -343,7 +249,7 @@ stretch_mode = 4
 visible = false
 layout_mode = 2
 size_flags_vertical = 8
-texture = ExtResource("5_6h05s")
+texture = ExtResource("15_jf2v1")
 expand_mode = 3
 stretch_mode = 5
 
@@ -352,7 +258,7 @@ visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
 size_flags_vertical = 8
-texture = ExtResource("17_1yhvd")
+texture = ExtResource("16_dkck6")
 expand_mode = 2
 stretch_mode = 4
 
@@ -361,7 +267,7 @@ visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
 size_flags_vertical = 8
-texture = ExtResource("18_girsp")
+texture = ExtResource("17_o5w7o")
 expand_mode = 2
 stretch_mode = 4
 
@@ -370,7 +276,7 @@ visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
 size_flags_vertical = 8
-texture = ExtResource("19_66a1w")
+texture = ExtResource("18_6vkx4")
 expand_mode = 2
 stretch_mode = 4
 
@@ -379,7 +285,7 @@ visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
 size_flags_vertical = 8
-texture = ExtResource("20_lg0ba")
+texture = ExtResource("19_occu0")
 expand_mode = 2
 stretch_mode = 4
 
@@ -388,7 +294,7 @@ visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
 size_flags_vertical = 8
-texture = ExtResource("21_pidmq")
+texture = ExtResource("20_sg2d3")
 expand_mode = 2
 stretch_mode = 4
 
@@ -397,7 +303,7 @@ visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
 size_flags_vertical = 8
-texture = ExtResource("22_o2plf")
+texture = ExtResource("21_n7kni")
 expand_mode = 2
 stretch_mode = 4
 
@@ -406,7 +312,7 @@ visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
 size_flags_vertical = 8
-texture = ExtResource("23_uqa1v")
+texture = ExtResource("22_xtu47")
 expand_mode = 2
 stretch_mode = 4
 
@@ -415,7 +321,7 @@ visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
 size_flags_vertical = 8
-texture = ExtResource("24_wpdrx")
+texture = ExtResource("23_p2q1r")
 expand_mode = 2
 stretch_mode = 4
 
@@ -424,7 +330,7 @@ visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
 size_flags_vertical = 8
-texture = ExtResource("25_j56u4")
+texture = ExtResource("24_toj5y")
 expand_mode = 2
 stretch_mode = 4
 
@@ -433,7 +339,7 @@ visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
 size_flags_vertical = 8
-texture = ExtResource("26_vhvj1")
+texture = ExtResource("25_e1i55")
 expand_mode = 2
 stretch_mode = 4
 
@@ -442,7 +348,7 @@ visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
 size_flags_vertical = 8
-texture = ExtResource("27_u4ct5")
+texture = ExtResource("26_3hxk8")
 expand_mode = 2
 stretch_mode = 4
 
@@ -451,7 +357,7 @@ visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
 size_flags_vertical = 8
-texture = ExtResource("28_jh181")
+texture = ExtResource("27_w5ljb")
 expand_mode = 2
 stretch_mode = 4
 
@@ -460,7 +366,7 @@ visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
 size_flags_vertical = 8
-texture = ExtResource("29_q43mf")
+texture = ExtResource("28_1nmkm")
 expand_mode = 2
 stretch_mode = 5
 
@@ -469,7 +375,7 @@ visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
 size_flags_vertical = 8
-texture = ExtResource("30_1uc2x")
+texture = ExtResource("29_k4wyy")
 expand_mode = 2
 stretch_mode = 5
 
@@ -478,7 +384,7 @@ visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
 size_flags_vertical = 8
-texture = ExtResource("31_g4arr")
+texture = ExtResource("30_jhayt")
 expand_mode = 2
 stretch_mode = 5
 
@@ -487,7 +393,7 @@ visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
 size_flags_vertical = 8
-texture = ExtResource("32_nfs2r")
+texture = ExtResource("31_wnr1q")
 expand_mode = 2
 stretch_mode = 5
 
@@ -496,7 +402,7 @@ visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
 size_flags_vertical = 8
-texture = ExtResource("33_mxo45")
+texture = ExtResource("32_b4033")
 expand_mode = 2
 stretch_mode = 5
 

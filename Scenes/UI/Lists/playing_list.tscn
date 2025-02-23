@@ -1,23 +1,5 @@
 [gd_scene load_steps=12 format=3 uid="uid://b5csfp6jhpew3"]
 
-[ext_resource type="Script" path="res://Code/Scenes/UI/PlayingList.gd" id="1_6hj2b"]
-[ext_resource type="Resource" uid="uid://co4rk4hqixy8b" path="res://Cards/1 ex Ruby & Saphire/RS37Lairon.tres" id="2_emrxe"]
-[ext_resource type="PackedScene" uid="uid://dd56w2nt5mqow" path="res://Scenes/UI/PlayingListItem.tscn" id="2_wdv06"]
-[ext_resource type="Resource" uid="uid://cc3kjnmsj4pr3" path="res://Cards/1 ex Ruby & Saphire/RS80EnergyRemoval2.tres" id="3_58hke"]
-[ext_resource type="Resource" uid="uid://bekwoaj06a44c" path="res://Cards/1 ex Ruby & Saphire/RS95RainbowEnergy.tres" id="3_h2a8u"]
-[ext_resource type="Resource" uid="uid://dxq22uwxelttj" path="res://Cards/1 ex Ruby & Saphire/RS107PsychicEnergy.tres" id="4_qc2t2"]
-[ext_resource type="Resource" uid="uid://ybub8qpf0t81" path="res://Cards/5 ex Hidden Lagends/HL87AncientTomb.tres" id="6_kcs2e"]
-[ext_resource type="Resource" uid="uid://dyqdhaov0ywxk" path="res://Cards/1 ex Ruby & Saphire/RS92Switch.tres" id="7_mhouc"]
-[ext_resource type="Resource" uid="uid://s0xeoyp6jtsa" path="res://Cards/1 ex Ruby & Saphire/RS84LumBerry.tres" id="8_oeuom"]
-[ext_resource type="Resource" uid="uid://oa7r3igevgqi" path="res://Cards/1 ex Ruby & Saphire/RS49Aron.tres" id="9_c4i4j"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ok76o"]
-bg_color = Color(0.12549, 0.109804, 0.117647, 0.780392)
-corner_radius_top_left = 1
-corner_radius_top_right = 1
-corner_radius_bottom_right = 1
-corner_radius_bottom_left = 1
-
 [node name="PlayingList" type="Control"]
 custom_minimum_size = Vector2(420, 600)
 layout_mode = 3
@@ -27,10 +9,7 @@ offset_right = -0.120026
 offset_bottom = 0.239929
 size_flags_horizontal = 4
 size_flags_vertical = 4
-script = ExtResource("1_6hj2b")
 debug = true
-list_item = ExtResource("2_wdv06")
-list = Array[Resource("res://Code/Resource Makers/CardMaker.gd")]([ExtResource("2_emrxe"), ExtResource("3_h2a8u"), ExtResource("4_qc2t2"), ExtResource("3_58hke"), ExtResource("6_kcs2e"), ExtResource("7_mhouc"), ExtResource("8_oeuom"), ExtResource("9_c4i4j")])
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 custom_minimum_size = Vector2(420, 600)

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dvpkx1fqkwvd7"]
 
-[ext_resource type="PackedScene" uid="uid://df8x227c7a8q4" path="res://Scenes/UI/BenchMon.tscn" id="1_o88tv"]
-[ext_resource type="PackedScene" uid="uid://drg0sr7jdfiel" path="res://Scenes/UI/ActiveMon.tscn" id="2_fs4jj"]
+[ext_resource type="PackedScene" uid="uid://df8x227c7a8q4" path="res://Scenes/UI/UIComponents/BenchMon.tscn" id="1_o88tv"]
+[ext_resource type="PackedScene" uid="uid://drg0sr7jdfiel" path="res://Scenes/UI/UIComponents/ActiveMon.tscn" id="2_fs4jj"]
 [ext_resource type="Texture2D" uid="uid://cijlbc37pj4gd" path="res://icon.svg" id="3_je3ne"]
 [ext_resource type="Texture2D" uid="uid://c0lenryrao7ol" path="res://Art Assets/Cards/1 ex Ruby & Saphire/89.jpg" id="4_kle8c"]
 

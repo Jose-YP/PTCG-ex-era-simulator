@@ -1,0 +1,85 @@
+[gd_scene load_steps=12 format=3 uid="uid://f4m1ofpicse4"]
+
+[ext_resource type="Script" path="res://Code/Scenes/UI/PlayingList.gd" id="1_sw67d"]
+[ext_resource type="PackedScene" uid="uid://dd56w2nt5mqow" path="res://Scenes/UI/Lists/PlayingListItem.tscn" id="2_sjm4d"]
+[ext_resource type="Resource" uid="uid://bpyb5rd3indje" path="res://Cards/1 ex Ruby & Saphire/RS94MetalEnergy.tres" id="3_8qg0a"]
+[ext_resource type="Resource" uid="uid://bekwoaj06a44c" path="res://Cards/1 ex Ruby & Saphire/RS95RainbowEnergy.tres" id="4_skwv7"]
+[ext_resource type="Resource" uid="uid://b7ayufc1njjxh" path="res://Cards/1 ex Ruby & Saphire/RS29Delcatty.tres" id="5_ejmcu"]
+[ext_resource type="Resource" uid="uid://c3tip8v6djvro" path="res://Cards/4 EX Team Magma VS Team Aqua/MA65MagmaPoochyena.tres" id="6_nrd5y"]
+[ext_resource type="Resource" uid="uid://day2wur81xum5" path="res://Cards/5 EX Hidden Lagends/HL86AncientTechnicalMachine[Rock].tres" id="7_ri07e"]
+[ext_resource type="Resource" uid="uid://mfam4db5asvt" path="res://Cards/1 ex Ruby & Saphire/RS91Potion.tres" id="8_8ycve"]
+[ext_resource type="Resource" uid="uid://s0xeoyp6jtsa" path="res://Cards/1 ex Ruby & Saphire/RS84LumBerry.tres" id="9_4p7hh"]
+[ext_resource type="Resource" uid="uid://cc3kjnmsj4pr3" path="res://Cards/1 ex Ruby & Saphire/RS80EnergyRemoval2.tres" id="10_hgpe4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1dsg7"]
+bg_color = Color(0.12549, 0.109804, 0.117647, 0.780392)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+
+[node name="PlayingList" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sw67d")
+debug = true
+list_item = ExtResource("2_sjm4d")
+list = Array[Resource("res://Code/Resource Makers/CardResources/CardMaker.gd")]([ExtResource("3_8qg0a"), ExtResource("4_skwv7"), ExtResource("5_ejmcu"), ExtResource("6_nrd5y"), ExtResource("7_ri07e"), ExtResource("8_8ycve"), ExtResource("9_4p7hh"), ExtResource("10_hgpe4")])
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+offset_right = 400.0
+offset_bottom = 44.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+clip_contents = true
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="IdentifierPanel" type="PanelContainer" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(400, 40)
+layout_mode = 2
+
+[node name="Identifier" type="RichTextLabel" parent="PanelContainer/VBoxContainer/HBoxContainer/IdentifierPanel"]
+unique_name_in_owner = true
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]"
+fit_content = true
+
+[node name="ScrollBox" type="ScrollContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_1dsg7")
+follow_focus = true
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer/VBoxContainer/ScrollBox"]
+layout_mode = 2
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer/ScrollBox/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 15
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/ScrollBox/VBoxContainer2"]
+layout_mode = 2
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer/ScrollBox/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_right = 5
+
+[node name="CardList" type="VBoxContainer" parent="PanelContainer/VBoxContainer/ScrollBox/VBoxContainer2/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/VBoxContainer/ScrollBox/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 15

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://c536r2wosr3k0"]
 
-[ext_resource type="PackedScene" uid="uid://dognokjork36j" path="res://Scenes/UI/PlayerSide.tscn" id="1_yttrb"]
+[ext_resource type="PackedScene" uid="uid://dognokjork36j" path="res://Scenes/UI/UICollections/PlayerSide.tscn" id="1_yttrb"]
 [ext_resource type="PackedScene" uid="uid://c2dyutb22u6x8" path="res://Scenes/Components/slot_ui_actions.tscn" id="2_lv641"]
 [ext_resource type="PackedScene" uid="uid://b4tx6kmy763df" path="res://Scenes/Components/poke_slot.tscn" id="3_hovr6"]
 [ext_resource type="PackedScene" uid="uid://cobenwsotye1q" path="res://Scenes/Components/PlayerResources.tscn" id="4_hlkld"]

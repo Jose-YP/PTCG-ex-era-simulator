@@ -1,0 +1,513 @@
+[gd_scene load_steps=36 format=3 uid="uid://crecmsup0hxcr"]
+
+[ext_resource type="Script" path="res://Code/Scenes/UI/Card.gd" id="1_ao8mj"]
+[ext_resource type="PackedScene" uid="uid://bs3ila6cpt8n1" path="res://Scenes/UI/UIComponents/types.tscn" id="2_em05s"]
+[ext_resource type="Texture2D" uid="uid://b4uymubvo04qp" path="res://Art Assets/Cards/4 ex Team Magma vs Team Aqua/37.jpg" id="3_hm8dc"]
+[ext_resource type="PackedScene" uid="uid://cvh086w8yapm0" path="res://Scenes/UI/Lists/attack_list.tscn" id="4_7705s"]
+[ext_resource type="Texture2D" uid="uid://ciyynt0iw46k5" path="res://Art Assets/RaritySymbols/31px-Rarity_Common.png" id="5_hf6p2"]
+[ext_resource type="Texture2D" uid="uid://blfwsqqtrqe8v" path="res://Art Assets/RaritySymbols/31px-Rarity_Uncommon.png" id="6_d7dn7"]
+[ext_resource type="Texture2D" uid="uid://bir0keyl58pst" path="res://Art Assets/RaritySymbols/31px-Rarity_Rare.png" id="7_o84yx"]
+[ext_resource type="Texture2D" uid="uid://be2sag665selj" path="res://Art Assets/RaritySymbols/Rarity_Rare_Holo.png" id="8_n86qm"]
+[ext_resource type="Texture2D" uid="uid://dldh83yhhvvs2" path="res://Art Assets/RaritySymbols/Rarity_Rare_Holo_ex.png" id="9_ecgrl"]
+[ext_resource type="Texture2D" uid="uid://dfh4btp104a45" path="res://Art Assets/RaritySymbols/Rarity_Rare_Secret.png" id="10_t2lok"]
+[ext_resource type="Texture2D" uid="uid://cnsmaebpgm086" path="res://Art Assets/RaritySymbols/Rarity_Ultra-Rare_Rare.png" id="11_lmfjy"]
+[ext_resource type="Texture2D" uid="uid://dx7wnthhhm80w" path="res://Art Assets/RaritySymbols/30px-SetSymbolPromo.png" id="12_ggmab"]
+[ext_resource type="Texture2D" uid="uid://ddc506ji0ciqq" path="res://Art Assets/SetIcons/40px-SetSymbolRuby_and_Sapphire.png" id="13_s6k81"]
+[ext_resource type="Texture2D" uid="uid://db2fvownqtey" path="res://Art Assets/SetIcons/40px-SetSymbolSandstorm.png" id="14_ql1rd"]
+[ext_resource type="Texture2D" uid="uid://c2jvdeequ414n" path="res://Art Assets/SetIcons/40px-SetSymbolDragon.png" id="15_wtm2g"]
+[ext_resource type="Texture2D" uid="uid://bq2t54jnbrdxo" path="res://Art Assets/SetIcons/SetSymbolTeam_Magma_vs_Team_Aqua.png" id="16_b31gw"]
+[ext_resource type="Texture2D" uid="uid://j1nc5rmbmtof" path="res://Art Assets/SetIcons/SetSymbolHidden_Legends.png" id="17_r2oo1"]
+[ext_resource type="Texture2D" uid="uid://b6needgmeexy4" path="res://Art Assets/SetIcons/40px-SetSymbolFireRed_and_LeafGreen.png" id="18_f1ru5"]
+[ext_resource type="Texture2D" uid="uid://cysbdsdk41l70" path="res://Art Assets/SetIcons/40px-SetSymbolTeam_Rocket_Returns.png" id="19_fb32g"]
+[ext_resource type="Texture2D" uid="uid://doaf0r45tfeuk" path="res://Art Assets/SetIcons/40px-SetSymbolDeoxys.png" id="20_e4clt"]
+[ext_resource type="Texture2D" uid="uid://87kxw7qy5xnf" path="res://Art Assets/SetIcons/40px-SetSymbolEmerald.png" id="21_t5sh8"]
+[ext_resource type="Texture2D" uid="uid://c7gf58mjxbggi" path="res://Art Assets/SetIcons/40px-SetSymbolUnseen_Forces.png" id="22_nqldj"]
+[ext_resource type="Texture2D" uid="uid://cxp000m648ge8" path="res://Art Assets/SetIcons/40px-SetSymbolDelta_Species.png" id="23_41u5o"]
+[ext_resource type="Texture2D" uid="uid://dpblqw53nvq1t" path="res://Art Assets/SetIcons/40px-SetSymbolLegend_Maker.png" id="24_h6jvj"]
+[ext_resource type="Texture2D" uid="uid://by7tbpb4iejsd" path="res://Art Assets/SetIcons/40px-SetSymbolHolon_Phantoms.png" id="25_blmm3"]
+[ext_resource type="Texture2D" uid="uid://coghsgxhlxqmb" path="res://Art Assets/SetIcons/40px-SetSymbolCrystal_Guardians.png" id="26_mnjyc"]
+[ext_resource type="Texture2D" uid="uid://buoaylg1cab2a" path="res://Art Assets/SetIcons/40px-SetSymbolDragon_Frontiers.png" id="27_p2cxg"]
+[ext_resource type="Texture2D" uid="uid://dmxe8sf6hdnnc" path="res://Art Assets/SetIcons/40px-SetSymbolPower_Keepers.png" id="28_i4mpa"]
+[ext_resource type="Texture2D" uid="uid://duuiqd63epsex" path="res://Art Assets/SetIcons/SetSymbolPOP_Series_1.png" id="29_o4wjq"]
+[ext_resource type="Texture2D" uid="uid://edeej3yipdeo" path="res://Art Assets/SetIcons/SetSymbolPOP_Series_2.png" id="30_ag52d"]
+[ext_resource type="Texture2D" uid="uid://be1nfp0g24sdm" path="res://Art Assets/SetIcons/SetSymbolPOP_Series_3.png" id="31_mq4ov"]
+[ext_resource type="Texture2D" uid="uid://bfsbptu51xrnn" path="res://Art Assets/SetIcons/45px-SetSymbolPOP_Series_4.png" id="32_kpr5e"]
+[ext_resource type="Texture2D" uid="uid://cu8egxwxamvxw" path="res://Art Assets/SetIcons/45px-SetSymbolPOP_Series_5.png" id="33_yhq78"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u7mkw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ybxiu"]
+
+[node name="PokemonCard" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ao8mj")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+offset_top = 200.0
+offset_right = 416.0
+offset_bottom = 396.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="MainInfromation" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Name" type="RichTextLabel" parent="PanelContainer/VBoxContainer/MainInfromation"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(215, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Team Magma's Mightyena"
+fit_content = true
+
+[node name="Extra" type="RichTextLabel" parent="PanelContainer/VBoxContainer/MainInfromation"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(38, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+text = "baby"
+fit_content = true
+
+[node name="HP" type="RichTextLabel" parent="PanelContainer/VBoxContainer/MainInfromation"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(63, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+text = "HP: 200"
+fit_content = true
+
+[node name="DefaultType" parent="PanelContainer/VBoxContainer/MainInfromation" instance=ExtResource("2_em05s")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="DefaultType2" parent="PanelContainer/VBoxContainer/MainInfromation" instance=ExtResource("2_em05s")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Arts" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Art" type="TextureRect" parent="PanelContainer/VBoxContainer/Arts"]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.992157)
+custom_minimum_size = Vector2(189, 114)
+layout_mode = 2
+texture = ExtResource("3_hm8dc")
+
+[node name="Evo&Illus" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="EvoFrom" type="RichTextLabel" parent="PanelContainer/VBoxContainer/Evo&Illus"]
+layout_mode = 2
+text = "Evolves From"
+
+[node name="Illustrator" type="RichTextLabel" parent="PanelContainer/VBoxContainer/Evo&Illus"]
+layout_mode = 2
+text = "Illustrator:"
+
+[node name="Attacks" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="AttackList" parent="PanelContainer/VBoxContainer/Attacks" instance=ExtResource("4_7705s")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="OtherProperties" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+alignment = 2
+
+[node name="Weakness" type="VBoxContainer" parent="PanelContainer/VBoxContainer/OtherProperties"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="PanelContainer/VBoxContainer/OtherProperties/Weakness"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+bbcode_enabled = true
+text = "[center]Weakness"
+fit_content = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/OtherProperties/Weakness"]
+layout_mode = 2
+alignment = 1
+
+[node name="WeaknessType" parent="PanelContainer/VBoxContainer/OtherProperties/Weakness/HBoxContainer" instance=ExtResource("2_em05s")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="WeaknessType2" parent="PanelContainer/VBoxContainer/OtherProperties/Weakness/HBoxContainer" instance=ExtResource("2_em05s")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Reistance" type="VBoxContainer" parent="PanelContainer/VBoxContainer/OtherProperties"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="PanelContainer/VBoxContainer/OtherProperties/Reistance"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+bbcode_enabled = true
+text = "[center]Resist"
+fit_content = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/VBoxContainer/OtherProperties/Reistance"]
+layout_mode = 2
+alignment = 1
+
+[node name="ResistanceType" parent="PanelContainer/VBoxContainer/OtherProperties/Reistance/HBoxContainer2" instance=ExtResource("2_em05s")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="ResistanceType2" parent="PanelContainer/VBoxContainer/OtherProperties/Reistance/HBoxContainer2" instance=ExtResource("2_em05s")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="RetreatCost" type="VBoxContainer" parent="PanelContainer/VBoxContainer/OtherProperties"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="PanelContainer/VBoxContainer/OtherProperties/RetreatCost"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+bbcode_enabled = true
+text = "[center]Retreat"
+fit_content = true
+
+[node name="RetreatContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/OtherProperties/RetreatCost"]
+unique_name_in_owner = true
+layout_mode = 2
+alignment = 1
+
+[node name="Types" parent="PanelContainer/VBoxContainer/OtherProperties/RetreatCost/RetreatContainer" instance=ExtResource("2_em05s")]
+visible = false
+layout_mode = 2
+
+[node name="Types2" parent="PanelContainer/VBoxContainer/OtherProperties/RetreatCost/RetreatContainer" instance=ExtResource("2_em05s")]
+visible = false
+layout_mode = 2
+
+[node name="Types3" parent="PanelContainer/VBoxContainer/OtherProperties/RetreatCost/RetreatContainer" instance=ExtResource("2_em05s")]
+visible = false
+layout_mode = 2
+
+[node name="Types4" parent="PanelContainer/VBoxContainer/OtherProperties/RetreatCost/RetreatContainer" instance=ExtResource("2_em05s")]
+visible = false
+layout_mode = 2
+
+[node name="Number" type="RichTextLabel" parent="PanelContainer/VBoxContainer/OtherProperties"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+size_flags_vertical = 8
+text = "100/100"
+fit_content = true
+
+[node name="Rarity" type="TabContainer" parent="PanelContainer/VBoxContainer/OtherProperties"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_styles/panel = SubResource("StyleBoxEmpty_u7mkw")
+tabs_visible = false
+metadata/_edit_group_ = true
+
+[node name="Common" type="TextureRect" parent="PanelContainer/VBoxContainer/OtherProperties/Rarity"]
+layout_mode = 2
+size_flags_vertical = 8
+texture = ExtResource("5_hf6p2")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Uncommon" type="TextureRect" parent="PanelContainer/VBoxContainer/OtherProperties/Rarity"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 8
+texture = ExtResource("6_d7dn7")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Rare" type="TextureRect" parent="PanelContainer/VBoxContainer/OtherProperties/Rarity"]
+visible = false
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+size_flags_vertical = 8
+texture = ExtResource("7_o84yx")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Holo Rare" type="TextureRect" parent="PanelContainer/VBoxContainer/OtherProperties/Rarity"]
+visible = false
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+size_flags_vertical = 8
+texture = ExtResource("8_n86qm")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="ex Rare" type="TextureRect" parent="PanelContainer/VBoxContainer/OtherProperties/Rarity"]
+visible = false
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+size_flags_vertical = 8
+texture = ExtResource("9_ecgrl")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Secret Rare" type="TextureRect" parent="PanelContainer/VBoxContainer/OtherProperties/Rarity"]
+visible = false
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+size_flags_vertical = 8
+texture = ExtResource("10_t2lok")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Ultra Rare" type="TextureRect" parent="PanelContainer/VBoxContainer/OtherProperties/Rarity"]
+visible = false
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+size_flags_vertical = 8
+texture = ExtResource("11_lmfjy")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Promo" type="TextureRect" parent="PanelContainer/VBoxContainer/OtherProperties/Rarity"]
+visible = false
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+size_flags_vertical = 8
+texture = ExtResource("12_ggmab")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Set" type="TabContainer" parent="PanelContainer/VBoxContainer/OtherProperties"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ybxiu")
+tabs_visible = false
+metadata/_edit_group_ = true
+
+[node name="RS" type="TextureRect" parent="PanelContainer/VBoxContainer/OtherProperties/Set"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_vertical = 8
+texture = ExtResource("13_s6k81")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="SS" type="TextureRect" parent="PanelContainer/VBoxContainer/OtherProperties/Set"]
+visible = false
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_vertical = 8
+texture = ExtResource("14_ql1rd")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="DR" type="TextureRect" parent="PanelContainer/VBoxContainer/OtherProperties/Set"]
+visible = false
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_vertical = 8
+texture = ExtResource("15_wtm2g")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="MA" type="TextureRect" parent="PanelContainer/VBoxContainer/OtherProperties/Set"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 8
+texture = ExtResource("16_b31gw")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="HL" type="TextureRect" parent="PanelContainer/VBoxContainer/OtherProperties/Set"]
+visible = false
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_vertical = 8
+texture = ExtResource("17_r2oo1")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="RG" type="TextureRect" parent="PanelContainer/VBoxContainer/OtherProperties/Set"]
+visible = false
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_vertical = 8
+texture = ExtResource("18_f1ru5")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="TRR" type="TextureRect" parent="PanelContainer/VBoxContainer/OtherProperties/Set"]
+visible = false
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_vertical = 8
+texture = ExtResource("19_fb32g")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="DX" type="TextureRect" parent="PanelContainer/VBoxContainer/OtherProperties/Set"]
+visible = false
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_vertical = 8
+texture = ExtResource("20_e4clt")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="EM" type="TextureRect" parent="PanelContainer/VBoxContainer/OtherProperties/Set"]
+visible = false
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_vertical = 8
+texture = ExtResource("21_t5sh8")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="UF" type="TextureRect" parent="PanelContainer/VBoxContainer/OtherProperties/Set"]
+visible = false
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_vertical = 8
+texture = ExtResource("22_nqldj")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="DS" type="TextureRect" parent="PanelContainer/VBoxContainer/OtherProperties/Set"]
+visible = false
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_vertical = 8
+texture = ExtResource("23_41u5o")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="LM" type="TextureRect" parent="PanelContainer/VBoxContainer/OtherProperties/Set"]
+visible = false
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_vertical = 8
+texture = ExtResource("24_h6jvj")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="HP" type="TextureRect" parent="PanelContainer/VBoxContainer/OtherProperties/Set"]
+visible = false
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_vertical = 8
+texture = ExtResource("25_blmm3")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="CG" type="TextureRect" parent="PanelContainer/VBoxContainer/OtherProperties/Set"]
+visible = false
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_vertical = 8
+texture = ExtResource("26_mnjyc")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="DF" type="TextureRect" parent="PanelContainer/VBoxContainer/OtherProperties/Set"]
+visible = false
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_vertical = 8
+texture = ExtResource("27_p2cxg")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="PK" type="TextureRect" parent="PanelContainer/VBoxContainer/OtherProperties/Set"]
+visible = false
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_vertical = 8
+texture = ExtResource("28_i4mpa")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="POP1" type="TextureRect" parent="PanelContainer/VBoxContainer/OtherProperties/Set"]
+visible = false
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_vertical = 8
+texture = ExtResource("29_o4wjq")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="POP2" type="TextureRect" parent="PanelContainer/VBoxContainer/OtherProperties/Set"]
+visible = false
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_vertical = 8
+texture = ExtResource("30_ag52d")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="POP3" type="TextureRect" parent="PanelContainer/VBoxContainer/OtherProperties/Set"]
+visible = false
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_vertical = 8
+texture = ExtResource("31_mq4ov")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="POP4" type="TextureRect" parent="PanelContainer/VBoxContainer/OtherProperties/Set"]
+visible = false
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_vertical = 8
+texture = ExtResource("32_kpr5e")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="POP5" type="TextureRect" parent="PanelContainer/VBoxContainer/OtherProperties/Set"]
+visible = false
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_vertical = 8
+texture = ExtResource("33_yhq78")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Empty" type="TextureRect" parent="PanelContainer/VBoxContainer/OtherProperties/Set"]
+visible = false
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_vertical = 8
+expand_mode = 2
+stretch_mode = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 5
