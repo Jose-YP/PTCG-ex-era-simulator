@@ -31,6 +31,7 @@ list_item = ExtResource("2_sjm4d")
 list = Array[Resource("res://Code/Resource Makers/CardResources/CardMaker.gd")]([ExtResource("3_8qg0a"), ExtResource("4_skwv7"), ExtResource("5_ejmcu"), ExtResource("6_nrd5y"), ExtResource("7_ri07e"), ExtResource("8_8ycve"), ExtResource("9_4p7hh"), ExtResource("10_hgpe4")])
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(420, 600)
 offset_right = 400.0
 offset_bottom = 44.0
 
