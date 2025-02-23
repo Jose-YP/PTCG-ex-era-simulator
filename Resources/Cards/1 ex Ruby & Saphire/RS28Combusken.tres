@@ -1,0 +1,64 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=11 format=3 uid="uid://jq2ng1vyif34"]
+
+[ext_resource type="Texture2D" uid="uid://dvov2mupd032f" path="res://Art/Cards/1 ex Ruby & Saphire/28.jpg" id="1_pg45t"]
+[ext_resource type="Resource" uid="uid://depecxjmmfklq" path="res://Resources/Components/Asks/AskSingleFlip.tres" id="2_2lkjv"]
+[ext_resource type="Resource" uid="uid://dr0vmkppumfhq" path="res://Resources/Components/Nothing.tres" id="3_734vr"]
+[ext_resource type="Script" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="4_sospt"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_tmkht"]
+[ext_resource type="Script" path="res://Code/Resource Makers/PokemonSpecific/BodyMaker.gd" id="6_qn500"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="6_wxc5n"]
+
+[sub_resource type="Resource" id="Resource_60dvo"]
+script = ExtResource("4_sospt")
+name = "Lunge"
+description = "Flip a coin. If tails, this attack does nothing."
+grass_cost = 0
+fire_cost = 0
+water_cost = 0
+lightning_cost = 0
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 2
+defender_properties = 0
+ignore_condition = 0
+initial_main_DMG = 50
+modifier = 0
+ask = ExtResource("2_2lkjv")
+fail_effect = ExtResource("3_734vr")
+
+[sub_resource type="Resource" id="Resource_q28ps"]
+script = ExtResource("6_qn500")
+when_active = false
+name = "Natural Cure"
+description = "When you attach a Fire Energy card from your hand to Combusken, remove all Special Conditions from Combusken."
+affected_by_condition = false
+attatched_energy = 2
+
+[sub_resource type="Resource" id="Resource_b61eb"]
+script = ExtResource("5_tmkht")
+HP = 80
+retreat = 1
+body = SubResource("Resource_q28ps")
+attacks = Array[ExtResource("4_sospt")]([SubResource("Resource_60dvo")])
+evo_stage = "Stage 1"
+evolves_from = "Torchic"
+delta = false
+considered = 0
+owner = 0
+type = 2
+weak = 4
+resist = 0
+
+[resource]
+script = ExtResource("6_wxc5n")
+name = "Combusken"
+image = ExtResource("1_pg45t")
+illustrator = "Ken Sugimori"
+number = 28
+rarity = 1
+expansion = 0
+categories = 1
+pokemon_properties = SubResource("Resource_b61eb")
+fossil = false

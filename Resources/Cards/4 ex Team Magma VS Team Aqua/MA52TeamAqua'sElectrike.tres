@@ -1,0 +1,72 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://brmb7q2xs8h6v"]
+
+[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_0kjtx"]
+[ext_resource type="Texture2D" uid="uid://b57c44oiusenv" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/52.jpg" id="1_eo51e"]
+[ext_resource type="Script" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_p4xuc"]
+[ext_resource type="Resource" uid="uid://depecxjmmfklq" path="res://Resources/Components/Asks/AskSingleFlip.tres" id="3_c256n"]
+[ext_resource type="Resource" path="res://PremadeResources/Basic Conditions/BaiscParalysis.tres" id="4_xm84l"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_6r61j"]
+
+[sub_resource type="Resource" id="Resource_t5yb6"]
+script = ExtResource("2_p4xuc")
+name = "Scratch"
+description = ""
+grass_cost = 0
+fire_cost = 0
+water_cost = 0
+lightning_cost = 0
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 1
+defender_properties = 0
+ignore_condition = 0
+initial_main_DMG = 10
+modifier = 0
+
+[sub_resource type="Resource" id="Resource_fubfp"]
+script = ExtResource("2_p4xuc")
+name = "Thundershock"
+description = "Flip a coin. If heads, the Defending Pokémon is now Paralyzed."
+grass_cost = 0
+fire_cost = 0
+water_cost = 0
+lightning_cost = 1
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 1
+defender_properties = 0
+ignore_condition = 0
+initial_main_DMG = 10
+modifier = 0
+ask = ExtResource("3_c256n")
+effect = ExtResource("4_xm84l")
+
+[sub_resource type="Resource" id="Resource_hchw7"]
+script = ExtResource("5_6r61j")
+HP = 50
+retreat = 1
+attacks = Array[ExtResource("2_p4xuc")]([SubResource("Resource_t5yb6"), SubResource("Resource_fubfp")])
+evo_stage = "Basic"
+evolves_from = ""
+delta = false
+considered = 0
+owner = 1
+type = 8
+weak = 32
+resist = 128
+
+[resource]
+script = ExtResource("1_0kjtx")
+name = "Team Aqua's Electrike"
+image = ExtResource("1_eo51e")
+illustrator = "M. Akiyama"
+number = 57
+rarity = 0
+expansion = 3
+categories = 1
+pokemon_properties = SubResource("Resource_hchw7")
+fossil = false

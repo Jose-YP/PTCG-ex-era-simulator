@@ -1,0 +1,91 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://dipr5ie1kx7v8"]
+
+[ext_resource type="Script" path="res://Code/Resource Makers/GeneralUse/AskMaker.gd" id="1_4gfe4"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="2_yibkh"]
+[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_o2fbb"]
+[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/BuffMaker.gd" id="3_tgqf6"]
+[ext_resource type="Texture2D" uid="uid://bv6xxp7y5fdqj" path="res://Art/Cards/1 ex Ruby & Saphire/93.jpg" id="4_7n6vd"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="5_iyc3r"]
+
+[sub_resource type="Resource" id="Resource_qjl4g"]
+script = ExtResource("1_4gfe4")
+target = 1
+damage_taken = -10
+energy_attatched = -1
+knocked_out = false
+condition = 0
+location = 4
+inclusive = true
+pokemon_class = 128
+bench_size = -1
+type = 1023
+type_size = 1
+ask_string = ""
+formal_ask = false
+choose = 0
+choose_location = 0
+
+[sub_resource type="Resource" id="Resource_ap56e"]
+script = ExtResource("1_4gfe4")
+or_ask = SubResource("Resource_qjl4g")
+target = 0
+damage_taken = -10
+energy_attatched = -1
+knocked_out = false
+condition = 0
+location = 4
+inclusive = true
+pokemon_class = 0
+bench_size = -1
+type = 576
+type_size = 1
+ask_string = ""
+formal_ask = false
+choose = 0
+choose_location = 0
+
+[sub_resource type="Resource" id="Resource_067sb"]
+script = ExtResource("3_tgqf6")
+buff_target = 2
+attack_damage = 10
+defense = 0
+after_weak_res = false
+
+[sub_resource type="Resource" id="Resource_46o76"]
+script = ExtResource("3_o2fbb")
+order = Array[int]([])
+buff = SubResource("Resource_067sb")
+search = Array[Resource("res://Code/Resource Makers/EffectSpecific/SearchMaker.gd")]([])
+remove_conditions = false
+remove_shockwave = false
+remove_imprison = false
+choose_active = false
+switch_type = 0
+mimic = 0
+
+[sub_resource type="Resource" id="Resource_tde1h"]
+script = ExtResource("2_yibkh")
+considered = "Special Energy"
+description = " If the Pokémon Darkness Energy is attached to attacks, the attack does 10 more damage to the Active Pokémon (before applying Weakness and Resistance). Ignore this effect unless the Attacking Pokémon is Darkness or has Dark in its name. Darkness Energy provides Darkness Energy. (Doesn't count as a basic Energy card.)"
+asks = SubResource("Resource_ap56e")
+fail_provide = false
+fail_prevent = false
+success_effect = SubResource("Resource_46o76")
+turns = -1
+number = 1
+react = false
+holon_type = "None"
+type = 64
+fail_type = 64
+
+[resource]
+script = ExtResource("5_iyc3r")
+name = "Darkness Energy"
+image = ExtResource("4_7n6vd")
+illustrator = "Milky Isobe"
+number = 93
+rarity = 2
+expansion = 0
+categories = 4
+energy_properties = SubResource("Resource_tde1h")
+fossil = false

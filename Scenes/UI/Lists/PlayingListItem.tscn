@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://Code/Scenes/UI/CardListItem.gd" id="1_bdgo5"]
 [ext_resource type="StyleBox" uid="uid://duhmik1loeema" path="res://Themes/GBABox.tres" id="1_mxeim"]
-[ext_resource type="Resource" uid="uid://bekwoaj06a44c" path="res://Cards/1 ex Ruby & Saphire/RS95RainbowEnergy.tres" id="3_32eck"]
-[ext_resource type="Texture2D" uid="uid://cj4eckcnktq41" path="res://Art Assets/Cards/1 ex Ruby & Saphire/109.jpg" id="4_u63cq"]
+[ext_resource type="Resource" uid="uid://bekwoaj06a44c" path="res://Resources/Cards/1 ex Ruby & Saphire/RS95RainbowEnergy.tres" id="3_xnpqb"]
+[ext_resource type="Texture2D" uid="uid://cj4eckcnktq41" path="res://Art/Cards/1 ex Ruby & Saphire/109.jpg" id="4_f4ki5"]
 [ext_resource type="Texture2D" uid="uid://cijlbc37pj4gd" path="res://icon.svg" id="5_0okov"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yloa2"]
@@ -43,7 +43,7 @@ theme_override_styles/normal = ExtResource("1_mxeim")
 theme_override_styles/hover = SubResource("StyleBoxFlat_yloa2")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_auhmd")
 script = ExtResource("1_bdgo5")
-card = ExtResource("3_32eck")
+card = ExtResource("3_xnpqb")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
@@ -78,7 +78,7 @@ clip_contents = true
 custom_minimum_size = Vector2(90, 52)
 layout_mode = 2
 mouse_filter = 2
-texture = ExtResource("4_u63cq")
+texture = ExtResource("4_f4ki5")
 expand_mode = 2
 stretch_mode = 5
 

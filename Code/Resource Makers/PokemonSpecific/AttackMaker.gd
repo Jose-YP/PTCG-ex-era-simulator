@@ -1,7 +1,7 @@
 extends Resource
 class_name Attack
 
-@export_group("Information")
+#@export_group("Information")
 @export var name: String
 @export_multiline var description: String
 

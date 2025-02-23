@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Code/Scenes/UI/attack_item.gd" id="1_cuu5a"]
 [ext_resource type="Texture2D" uid="uid://cijlbc37pj4gd" path="res://icon.svg" id="1_fpj2i"]
-[ext_resource type="Resource" uid="uid://cydxe57j5nudo" path="res://PremadeResources/DoubleLariat.tres" id="2_vqxkv"]
+[ext_resource type="Resource" uid="uid://cydxe57j5nudo" path="res://Resources/Components/Attacks/DoubleLariat.tres" id="2_x0myb"]
 [ext_resource type="Theme" uid="uid://bfw6ylcttychc" path="res://Themes/AverageButton.tres" id="3_tgt8s"]
 [ext_resource type="PackedScene" uid="uid://bs3ila6cpt8n1" path="res://Scenes/UI/UIComponents/types.tscn" id="3_tiejp"]
 
@@ -13,7 +13,7 @@ offset_right = 421.0
 offset_bottom = 71.0
 mouse_filter = 2
 script = ExtResource("1_cuu5a")
-attack = ExtResource("2_vqxkv")
+attack = ExtResource("2_x0myb")
 
 [node name="AttackButton" type="Button" parent="."]
 layout_mode = 2

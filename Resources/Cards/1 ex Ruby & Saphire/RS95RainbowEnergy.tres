@@ -1,0 +1,53 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=9 format=3 uid="uid://bekwoaj06a44c"]
+
+[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="1_s231q"]
+[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/DmgManipMaker.gd" id="1_w8o02"]
+[ext_resource type="Texture2D" uid="uid://cufnu32r0miyy" path="res://Art/Cards/1 ex Ruby & Saphire/95.jpg" id="2_4kkrd"]
+[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_sn5e8"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_kg6gm"]
+
+[sub_resource type="Resource" id="Resource_4accq"]
+script = ExtResource("1_w8o02")
+remove = false
+how_many = 1
+choose_from = false
+which = 1
+plus = false
+
+[sub_resource type="Resource" id="Resource_mysds"]
+script = ExtResource("2_sn5e8")
+order = Array[int]([])
+dmgManip = SubResource("Resource_4accq")
+search = Array[Resource("res://Code/Resource Makers/EffectSpecific/SearchMaker.gd")]([])
+remove_conditions = false
+remove_shockwave = false
+remove_imprison = false
+choose_active = false
+switch_type = 0
+mimic = 0
+
+[sub_resource type="Resource" id="Resource_10nfj"]
+script = ExtResource("1_s231q")
+considered = "Special Energy"
+description = " Attach Rainbow Energy to 1 of your Pokémon. While in play, Rainbow Energy provides every type of Energy but provides only 1 Energy at a time. (Doesn't count as a basic Energy card when not in play.) When you attach this card from your hand to 1 of your Pokémon, put 1 damage counter on that Pokémon."
+fail_provide = false
+fail_prevent = false
+attatch_effect = SubResource("Resource_mysds")
+turns = -1
+number = 1
+react = false
+holon_type = "None"
+type = 511
+fail_type = 256
+
+[resource]
+script = ExtResource("3_kg6gm")
+name = "Rainbow Energy"
+image = ExtResource("2_4kkrd")
+illustrator = ""
+number = 95
+rarity = 2
+expansion = 0
+categories = 4
+energy_properties = SubResource("Resource_10nfj")
+fossil = false

@@ -11,12 +11,13 @@ class_name Energy
 @export var fail_provide: bool = false
 ##Failed asks mean the user can't attatch the energy
 @export var fail_prevent: bool = false
+@export_group("Effect")
 ##What should happen if the ask isn't met
 @export var fail_effect: EffectCall 
 ##What should happen if the ask is met
 @export var success_effect: EffectCall
-##What should happen no matter what? 
-@export var always_effect: EffectCall 
+##What should happen on attatch specifically
+@export var attatch_effect: EffectCall 
 
 @export_group("Duration")
 ##-1 means forever, otherwise it's how many turns it'll last 

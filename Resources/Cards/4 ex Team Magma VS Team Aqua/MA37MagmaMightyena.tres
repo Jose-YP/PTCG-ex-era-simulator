@@ -1,0 +1,131 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=19 format=3 uid="uid://22c17vtu70b3"]
+
+[ext_resource type="Texture2D" uid="uid://b4uymubvo04qp" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/37.jpg" id="1_s2ru1"]
+[ext_resource type="Script" path="res://Code/Resource Makers/PokemonSpecific/PowerMaker.gd" id="2_2yu0c"]
+[ext_resource type="Resource" uid="uid://depecxjmmfklq" path="res://Resources/Components/Asks/AskSingleFlip.tres" id="2_jit5m"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="2_jvjdg"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_i0jr0"]
+[ext_resource type="Resource" uid="uid://dr0vmkppumfhq" path="res://Resources/Components/Nothing.tres" id="4_it5rv"]
+[ext_resource type="Script" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="5_wxab5"]
+[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="6_xc0yb"]
+[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/PlacementMaker.gd" id="7_16yxa"]
+[ext_resource type="Script" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="8_kronk"]
+[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="9_84c2m"]
+
+[sub_resource type="Resource" id="Resource_kqy8h"]
+script = ExtResource("5_wxab5")
+name = "Lunge"
+description = "Flip a coin. If tails, this attack does nothing."
+grass_cost = 0
+fire_cost = 0
+water_cost = 0
+lightning_cost = 0
+psychic_cost = 0
+fighting_cost = 1
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 1
+defender_properties = 0
+ignore_condition = 0
+initial_main_DMG = 0
+modifier = 0
+ask = ExtResource("2_jit5m")
+fail_effect = ExtResource("4_it5rv")
+
+[sub_resource type="Resource" id="Resource_5c437"]
+script = ExtResource("7_16yxa")
+where = 0
+shuffle = true
+evolve = false
+
+[sub_resource type="Resource" id="Resource_tccqv"]
+script = ExtResource("8_kronk")
+broad_class = 1
+contains = ""
+type = 0
+evolves_from = false
+poke_class = null
+owner = 2
+stage = null
+trainer_classes = null
+energy_class = null
+
+[sub_resource type="Resource" id="Resource_0iir3"]
+script = ExtResource("9_84c2m")
+side = 0
+where = 1
+how_many = 1
+of_this = Array[ExtResource("8_kronk")]([SubResource("Resource_tccqv")])
+and_then = SubResource("Resource_5c437")
+reveal = true
+
+[sub_resource type="Resource" id="Resource_0a22m"]
+script = ExtResource("6_xc0yb")
+choose_condition = false
+poison = 0
+burn = 0
+addable_effects = 0
+mutually_exclusive_conditions = 0
+knockOut = false
+disable_target = 0
+instead_of_damage = false
+do_nothing = false
+attack = 0
+retrat_duration = 1
+disable_retreat = false
+buff_target = 0
+attack_damage = 0
+defense = 0
+after_weak_res = true
+switch_type = 0
+search = Array[ExtResource("9_84c2m")]([SubResource("Resource_0iir3")])
+energy_move_type = 0
+move_ammount = -1
+disrupt_target = 0
+disrupting = 0
+send = 0
+send_to = null
+card_ammount = 0
+reveal = false
+type = 0
+energy_ammount = 0
+remove_conditions = false
+remove_shockwave = false
+remove_imprison = false
+mimic = 0
+
+[sub_resource type="Resource" id="Resource_dc2e6"]
+script = ExtResource("2_2yu0c")
+name = "Call for Help"
+description = "Once during your turn (before your attack), if Team Magma's Mightyena is your Active Pokémon, you may search your deck for a Pokémon with Team Magma in its name, show it to your opponent, and put it into your hand. Shuffle your deck afterward. This power can't be used if Team Magma's Mightyena is affected by a Special Condition."
+affected_by_condition = true
+active = true
+how_often = 0
+effect = SubResource("Resource_0a22m")
+
+[sub_resource type="Resource" id="Resource_18syr"]
+script = ExtResource("2_jvjdg")
+HP = 80
+retreat = 1
+power = SubResource("Resource_dc2e6")
+attacks = Array[ExtResource("5_wxab5")]([SubResource("Resource_kqy8h")])
+evo_stage = "Stage 1"
+evolves_from = "Team Magma's Poochyena"
+delta = false
+considered = 0
+owner = 0
+type = 64
+weak = 32
+resist = 16
+
+[resource]
+script = ExtResource("3_i0jr0")
+name = "Team Magma's Mightyena"
+image = ExtResource("1_s2ru1")
+illustrator = "Shin-ichi Yoshikawa"
+number = 37
+rarity = 1
+expansion = 3
+categories = 1
+pokemon_properties = SubResource("Resource_18syr")
+fossil = false

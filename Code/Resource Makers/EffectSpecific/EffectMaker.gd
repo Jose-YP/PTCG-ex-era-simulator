@@ -3,13 +3,15 @@ class_name EffectCall
 
 
 enum effect_types{CONDITION, BUFF, DISRUPT, DISABLE, 
-ENMOV, DMGMANIP, SEARCH, SWAP, OTHER}
+ENMOV, DMGMANIP, SEARCH, SWAP, DRAW, OTHER}
 
 ##Determine the order in which the effects are called.
 ##It's best to fill this in, if you don't want the default enum order
 @export var order: Array[effect_types]
 ##Add a condition
 @export var condition: Condition
+##Draw an ammount of cards
+@export var draw_ammount: Counter
 ##Buff/Debuff a pokemon's stats or properties
 @export var buff: Buff
 ##Send cards elsewhere

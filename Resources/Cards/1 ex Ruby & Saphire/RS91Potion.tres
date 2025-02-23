@@ -1,0 +1,68 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=11 format=3 uid="uid://mfam4db5asvt"]
+
+[ext_resource type="Texture2D" uid="uid://dijfcrqt7pcs2" path="res://Art/Cards/1 ex Ruby & Saphire/91.jpg" id="1_3jilh"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_ckrje"]
+[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/DmgManipMaker.gd" id="3_wgpkt"]
+[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_uhqcy"]
+[ext_resource type="Script" path="res://Code/Resource Makers/GeneralUse/AskMaker.gd" id="5_exu8h"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="6_4fgms"]
+
+[sub_resource type="Resource" id="Resource_hfxfj"]
+script = ExtResource("3_wgpkt")
+remove = true
+how_many = 2
+choose_from = true
+which = 21
+plus = false
+
+[sub_resource type="Resource" id="Resource_pkeu8"]
+script = ExtResource("4_uhqcy")
+order = Array[int]([])
+dmgManip = SubResource("Resource_hfxfj")
+search = Array[Resource("res://Code/Resource Makers/EffectSpecific/SearchMaker.gd")]([])
+remove_conditions = false
+remove_shockwave = false
+remove_imprison = false
+choose_active = false
+switch_type = 0
+mimic = 0
+
+[sub_resource type="Resource" id="Resource_ci2bk"]
+script = ExtResource("5_exu8h")
+target = 0
+damage_taken = -10
+energy_attatched = -1
+knocked_out = false
+condition = 0
+location = 0
+inclusive = true
+pokemon_class = 0
+bench_size = -1
+type = 1023
+type_size = 1
+ask_string = ""
+formal_ask = false
+choose = 1
+choose_location = 3
+
+[sub_resource type="Resource" id="Resource_cxmxu"]
+script = ExtResource("6_4fgms")
+considered = "Item"
+specific_requirement = ""
+description = "Remove up to 2 damage counters from 1 of your Pokémon (remove 1 damage counter if that Pokémon has only 1)."
+asks = SubResource("Resource_ci2bk")
+always_effect = SubResource("Resource_pkeu8")
+remove_after = true
+duration = -1
+
+[resource]
+script = ExtResource("2_ckrje")
+name = "Potion"
+image = ExtResource("1_3jilh")
+illustrator = "Keiji Kinebuchi"
+number = 91
+rarity = 0
+expansion = 0
+categories = 2
+trainer_properties = SubResource("Resource_cxmxu")
+fossil = false

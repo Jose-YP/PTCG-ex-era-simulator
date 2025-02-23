@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=7 format=3 uid="uid://cc3kjnmsj4pr3"]
+
+[ext_resource type="Texture2D" uid="uid://ba8jbrbg2km5v" path="res://Art/Cards/1 ex Ruby & Saphire/80.jpg" id="1_hj3wc"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_jy4os"]
+[ext_resource type="Resource" uid="uid://depecxjmmfklq" path="res://Resources/Components/Asks/AskSingleFlip.tres" id="3_exx1m"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="5_lb0wg"]
+[ext_resource type="Resource" uid="uid://l48hjm27w6e6" path="res://Resources/Components/EnergyMovement/AnyDiscard.tres" id="5_lvbpc"]
+
+[sub_resource type="Resource" id="Resource_ldy6r"]
+script = ExtResource("5_lb0wg")
+considered = "Item"
+specific_requirement = ""
+description = "Flip a coin. If heads, choose 1 Energy card attached to 1 of your opponent's Pokémon and discard it. "
+asks = ExtResource("3_exx1m")
+success_effect = ExtResource("5_lvbpc")
+remove_after = true
+duration = -1
+
+[resource]
+script = ExtResource("2_jy4os")
+name = "Energy Removal 2 "
+image = ExtResource("1_hj3wc")
+illustrator = "Keniji Kinebuchi"
+number = 80
+rarity = 1
+expansion = 0
+categories = 2
+trainer_properties = SubResource("Resource_ldy6r")
+fossil = false

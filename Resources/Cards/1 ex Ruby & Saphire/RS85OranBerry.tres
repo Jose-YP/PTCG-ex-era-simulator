@@ -1,0 +1,74 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=13 format=3 uid="uid://cikspsque6rym"]
+
+[ext_resource type="Texture2D" uid="uid://diera1jn3813v" path="res://Art/Cards/1 ex Ruby & Saphire/85.jpg" id="1_2xwq7"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_hcmcm"]
+[ext_resource type="Script" path="res://Code/Resource Makers/GeneralUse/AskMaker.gd" id="3_05nyp"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="4_blq1p"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/ToolMaker.gd" id="5_85iqr"]
+[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/DmgManipMaker.gd" id="6_kl0j4"]
+[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="7_8s2co"]
+
+[sub_resource type="Resource" id="Resource_4klen"]
+script = ExtResource("3_05nyp")
+target = 1
+damage_taken = 20
+energy_attatched = -1
+knocked_out = false
+condition = 0
+location = 4
+inclusive = true
+pokemon_class = 0
+bench_size = -1
+type = 1023
+type_size = 1
+ask_string = ""
+formal_ask = false
+choose = 0
+choose_location = 0
+
+[sub_resource type="Resource" id="Resource_yweta"]
+script = ExtResource("6_kl0j4")
+remove = true
+how_many = 2
+choose_from = false
+which = 1
+plus = false
+
+[sub_resource type="Resource" id="Resource_40hbl"]
+script = ExtResource("7_8s2co")
+order = Array[int]([])
+dmgManip = SubResource("Resource_yweta")
+search = Array[Resource("res://Code/Resource Makers/EffectSpecific/SearchMaker.gd")]([])
+remove_conditions = false
+remove_shockwave = false
+remove_imprison = false
+choose_active = false
+switch_type = 0
+mimic = 0
+
+[sub_resource type="Resource" id="Resource_jvoai"]
+script = ExtResource("5_85iqr")
+when_to_check = 1
+activate_ask = SubResource("Resource_4klen")
+tool_effect = SubResource("Resource_40hbl")
+remove_after = true
+duration = -1
+
+[sub_resource type="Resource" id="Resource_5f3e6"]
+script = ExtResource("4_blq1p")
+considered = "Tool"
+specific_requirement = null
+description = "At any time between turns, if the Pokémon this card is attached to has at least 2 damage counters on it, remove 2 damage counters from it. Then, discard Oran Berry. "
+tool_properties = SubResource("Resource_jvoai")
+
+[resource]
+script = ExtResource("1_hcmcm")
+name = "Oran Berry"
+image = ExtResource("1_2xwq7")
+illustrator = ""
+number = 85
+rarity = 1
+expansion = 0
+categories = 2
+trainer_properties = SubResource("Resource_5f3e6")
+fossil = false

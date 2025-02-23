@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Ask" load_steps=2 format=3 uid="uid://b0lo8uly2lldp"]
+
+[ext_resource type="Script" path="res://Code/Resource Makers/GeneralUse/AskMaker.gd" id="1_o61qt"]
+
+[resource]
+script = ExtResource("1_o61qt")
+target = 1
+damage_taken = -10
+energy_attatched = -1
+knocked_out = false
+condition = 0
+location = 3
+stage = 7
+inclusive = true
+pokemon_class = 32
+bench_size = -1
+type = 1023
+type_size = 1
+ask_string = ""
+formal_ask = false
+choose = 0
+choose_location = 0

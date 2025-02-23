@@ -5,7 +5,7 @@ class_name Ask
 ##If this ask isn't met, look for the next ask
 @export var or_ask: Ask
 ##Which side to pay attention to
-@export_enum("None", "Player", "Opponent") var target: int = 0
+@export_enum("None", "Player", "Opponent", "Both") var target: int = 0
 ##-10 means don't look at this var, 0 means must be undamaged, the rest mean x or more
 @export_range(-10,200,10) var damage_taken: int = -10
 ##-1 means don't look at this var, 0 means must have no energy, the rest mean x or more
@@ -16,6 +16,7 @@ class_name Ask
 @export_flags("Bench", "Active", "Self", "Discard", "Hand") var location: int = 0 
 
 @export_subgroup("Class")
+@export_flags("Basic", "Stage 1", "Stage 2") var stage: int = 7
 ##Only including specified or excluding specified
 @export var inclusive: bool = true
 @export_flags("Baby", "ex", "Delta", "Star",

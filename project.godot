@@ -14,7 +14,7 @@ config/name="Pokemon TCG"
 config/tags=PackedStringArray("made", "test")
 run/main_scene="res://Scenes/Main Game/main_game.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://Art Assets/Energy/48px-Metal-attack.png"
+config/icon="res://Art/Energy/48px-Metal-attack.png"
 
 [autoload]
 
@@ -28,10 +28,13 @@ window/size/viewport_height=720
 [file_customization]
 
 folder_colors={
-"res://Art Assets/": "red",
-"res://Cards/": "blue",
+"res://Art/": "red",
+"res://Audio/": "red",
 "res://Code/": "blue",
-"res://PremadeResources/": "blue",
+"res://Resources/": "purple",
+"res://Resources/Cards/": "purple",
+"res://Resources/Components/": "purple",
+"res://Resources/Decks/": "purple",
 "res://Scenes/": "green",
 "res://Themes/": "pink"
 }

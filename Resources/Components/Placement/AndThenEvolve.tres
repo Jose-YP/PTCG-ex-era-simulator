@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Placement" load_steps=2 format=3 uid="uid://cygim4rxvdbp8"]
+
+[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/PlacementMaker.gd" id="1_nk1yb"]
+
+[resource]
+script = ExtResource("1_nk1yb")
+where = 4
+shuffle = true
+evolve = true

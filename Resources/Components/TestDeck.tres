@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="Deck" load_steps=16 format=3 uid="uid://bleo7p56u5k1f"]
+
+[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/DeckMaker.gd" id="1_2be2h"]
+[ext_resource type="Resource" uid="uid://b5ukqf6xmn6vv" path="res://Resources/Cards/1 ex Ruby & Saphire/RS109LightningEnergy.tres" id="1_067j5"]
+[ext_resource type="Resource" uid="uid://b7ayufc1njjxh" path="res://Resources/Cards/1 ex Ruby & Saphire/RS29Delcatty.tres" id="2_75y73"]
+[ext_resource type="Resource" uid="uid://s0xeoyp6jtsa" path="res://Resources/Cards/1 ex Ruby & Saphire/RS84LumBerry.tres" id="3_lumwr"]
+[ext_resource type="Resource" uid="uid://bekwoaj06a44c" path="res://Resources/Cards/1 ex Ruby & Saphire/RS95RainbowEnergy.tres" id="4_0uxdd"]
+[ext_resource type="Resource" uid="uid://cm0tjkff2o52" path="res://Resources/Cards/1 ex Ruby & Saphire/RS83LadyOuting.tres" id="5_h8nfu"]
+[ext_resource type="Resource" uid="uid://cc3kjnmsj4pr3" path="res://Resources/Cards/1 ex Ruby & Saphire/RS80EnergyRemoval2.tres" id="6_m1q22"]
+[ext_resource type="Resource" uid="uid://day2wur81xum5" path="res://Resources/Cards/5 ex Hidden Lagends/HL86AncientTechnicalMachine[Rock].tres" id="7_wvjiq"]
+[ext_resource type="Resource" uid="uid://ybub8qpf0t81" path="res://Resources/Cards/5 ex Hidden Lagends/HL87AncientTomb.tres" id="8_ska16"]
+[ext_resource type="Resource" uid="uid://c3tip8v6djvro" path="res://Resources/Cards/4 ex Team Magma VS Team Aqua/MA65MagmaPoochyena.tres" id="9_5ie2h"]
+[ext_resource type="Resource" uid="uid://oa7r3igevgqi" path="res://Resources/Cards/1 ex Ruby & Saphire/RS49Aron.tres" id="10_sq3h6"]
+[ext_resource type="Resource" uid="uid://co4rk4hqixy8b" path="res://Resources/Cards/1 ex Ruby & Saphire/RS37Lairon.tres" id="11_t0hlb"]
+[ext_resource type="Resource" uid="uid://bpyb5rd3indje" path="res://Resources/Cards/1 ex Ruby & Saphire/RS94MetalEnergy.tres" id="12_s1k1n"]
+[ext_resource type="Resource" uid="uid://mfam4db5asvt" path="res://Resources/Cards/1 ex Ruby & Saphire/RS91Potion.tres" id="13_cssjx"]
+[ext_resource type="Resource" uid="uid://dyqdhaov0ywxk" path="res://Resources/Cards/1 ex Ruby & Saphire/RS92Switch.tres" id="14_5nils"]
+
+[resource]
+script = ExtResource("1_2be2h")
+cards = {
+ExtResource("1_067j5"): 8,
+ExtResource("2_75y73"): 4,
+ExtResource("3_lumwr"): 4,
+ExtResource("4_0uxdd"): 4,
+ExtResource("5_h8nfu"): 4,
+ExtResource("6_m1q22"): 4,
+ExtResource("7_wvjiq"): 4,
+ExtResource("8_ska16"): 4,
+ExtResource("9_5ie2h"): 4,
+ExtResource("10_sq3h6"): 4,
+ExtResource("11_t0hlb"): 4,
+ExtResource("12_s1k1n"): 4,
+ExtResource("13_cssjx"): 4,
+ExtResource("14_5nils"): 4
+}

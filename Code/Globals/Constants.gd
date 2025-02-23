@@ -5,7 +5,11 @@ const tool_text: String = "to 1 of your Pokémon that doesn't already have a Pok
 const tm_text: String = "Attach this card to 1 of your Evolved Pokémon (excluding Pokémon-ex and Pokémon that has an owner in its name) in play. That Pokémon may use this card's attack instead of its own. At the end of your turn, discard "
 const stadium_text: String = "This card stays in play when you play it. Discard this card if another Stadium card comes into play."
 
-const expansion_counts: Array[int] = [109, -1, -1, 97, 102, -1, -1, 108]
+#Order goes from the 16 ex expansions, 5 POP Series expansions then Black star
+const expansion_counts: Array[int] = [109, 100, 97, 95, 101, 112, 109, 107,
+106, 115, 113, 92, 110, 110, 101, 108, 17, 17, 17, 17, 17, 40]
+const expansion_secrets: Array[int] = [0,0,3,2,1,4,2,1,1,2,1,1,1,0,0,0,0,0,0,0,0,0]
+const unknown_number: int = 28
 
 const energy_types: Array[String] = ["Grass", "Fire", "Water", "Lightning", "Psychic", 
 "Fighting", "Darkness", "Metal", "Colorless", "Rainbow", "Magma", "Aqua", "Dark Metal",

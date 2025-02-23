@@ -1,7 +1,7 @@
 extends Resource
 class_name Placement
 
-@export_enum("Hand", "Top Deck", "Bottom Deck", "Deck",
+@export_enum("Hand", "Top Deck", "Bottom Deck", "Deck", "Self",
 "Active Mon", "Bench Mon", "Any Mon") var where: int = 0
 
 @export var shuffle: bool = true
