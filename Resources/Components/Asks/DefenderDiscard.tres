@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EnMov" load_steps=2 format=3 uid="uid://crqyosanwd1v7"]
+
+[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/EnMovMaker.gd" id="1_3vv37"]
+
+[resource]
+script = ExtResource("1_3vv37")
+energy_move_type = 2
+action = 1
+which = 2
+energy_ammount = 1
+type = 511

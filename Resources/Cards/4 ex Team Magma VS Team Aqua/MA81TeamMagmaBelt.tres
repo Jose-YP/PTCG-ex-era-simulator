@@ -1,31 +1,14 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=15 format=3 uid="uid://bmvatu4cfwe4n"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=16 format=3 uid="uid://bmvatu4cfwe4n"]
 
 [ext_resource type="Texture2D" uid="uid://cxtgnqcw82jma" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/81.jpg" id="1_gqtrm"]
 [ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_t17au"]
-[ext_resource type="Script" path="res://Code/Resource Makers/GeneralUse/AskMaker.gd" id="3_rlbuf"]
+[ext_resource type="Resource" uid="uid://3fi6fc6lbj04" path="res://Resources/Components/Asks/IsTeamMagma.tres" id="3_h2887"]
 [ext_resource type="Script" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="4_j6xlk"]
 [ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="5_enkfx"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/ToolMaker.gd" id="5_uxx6v"]
 [ext_resource type="Script" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="6_g1wnk"]
 [ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/PlacementMaker.gd" id="6_jc7bv"]
 [ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="7_nxphs"]
-
-[sub_resource type="Resource" id="Resource_r2fcc"]
-script = ExtResource("3_rlbuf")
-target = 0
-damage_taken = -10
-energy_attatched = -1
-knocked_out = false
-condition = 0
-location = 0
-inclusive = true
-pokemon_class = 16
-bench_size = -1
-type = 1023
-type_size = 1
-ask_string = "Search an evolution card for the current pokemon?"
-formal_ask = false
-choose = 0
-choose_location = 0
 
 [sub_resource type="Resource" id="Resource_wvnpp"]
 script = ExtResource("6_jc7bv")
@@ -35,6 +18,7 @@ evolve = true
 
 [sub_resource type="Resource" id="Resource_qx35g"]
 script = ExtResource("6_g1wnk")
+must_be_different = false
 broad_class = 1
 contains = ""
 type = 0
@@ -56,48 +40,29 @@ reveal = true
 
 [sub_resource type="Resource" id="Resource_qa4uk"]
 script = ExtResource("5_enkfx")
-choose_condition = false
-poison = 0
-burn = 0
-addable_effects = 0
-mutually_exclusive_conditions = 0
-knockOut = false
-disable_target = 0
-instead_of_damage = false
-do_nothing = false
-attack = 0
-retrat_duration = 1
-disable_retreat = false
-buff_target = 0
-attack_damage = 0
-defense = 0
-after_weak_res = true
-switch_type = 0
+order = Array[int]([])
 search = Array[ExtResource("7_nxphs")]([SubResource("Resource_8vp0e")])
-energy_move_type = 0
-move_ammount = -1
-disrupt_target = 0
-disrupting = 0
-send = 0
-send_to = null
-card_ammount = 0
-reveal = false
-type = 0
-energy_ammount = 0
 remove_conditions = false
 remove_shockwave = false
 remove_imprison = false
+choose_active = false
+switch_type = 0
 mimic = 0
+
+[sub_resource type="Resource" id="Resource_i4xjs"]
+script = ExtResource("5_uxx6v")
+when_to_check = 1
+tool_effect = SubResource("Resource_qa4uk")
+remove_after = true
+duration = -1
 
 [sub_resource type="Resource" id="Resource_8lcjx"]
 script = ExtResource("4_j6xlk")
 considered = "Tool"
 specific_requirement = "Attach Team Magma Belt to 1 of your Pokémon with Team Magma in its name that doesn't already have a Pokémon Tool attached to it. If that Pokémon is Knocked Out, discard this card. "
 description = "At any time between turns, if the Pokémon Team Magma Belt is attached to is your Active Pokémon, search your deck for a card that evolves from that Pokémon and put it on that Pokémon. (This counts as evolving that Pokémon.) Shuffle your deck afterward, then discard Team Magma Belt. "
-asks = SubResource("Resource_r2fcc")
-success_effect = SubResource("Resource_qa4uk")
-remove_after = true
-duration = -1
+asks = ExtResource("3_h2887")
+tool_properties = SubResource("Resource_i4xjs")
 
 [resource]
 script = ExtResource("1_t17au")

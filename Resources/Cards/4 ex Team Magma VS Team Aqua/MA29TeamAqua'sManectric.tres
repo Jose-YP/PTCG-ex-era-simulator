@@ -1,11 +1,11 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=14 format=3 uid="uid://ov65eileuo4o"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=13 format=3 uid="uid://ov65eileuo4o"]
 
 [ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_dwtlt"]
 [ext_resource type="Texture2D" uid="uid://df02g0rwr5yl1" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/29.jpg" id="1_gl86o"]
 [ext_resource type="Script" path="res://Code/Resource Makers/GeneralUse/AskMaker.gd" id="2_auni2"]
-[ext_resource type="Resource" path="res://PremadeResources/Basic Conditions/BaiscConfusion.tres" id="3_62ivj"]
+[ext_resource type="Resource" uid="uid://nx1kc1vsm4ia" path="res://Resources/Components/Basic Conditions/BasicConfusion.tres" id="3_v7bs6"]
 [ext_resource type="Script" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="4_0g86g"]
-[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="5_rca44"]
+[ext_resource type="Resource" uid="uid://dnyqnjxvk4386" path="res://Resources/Components/EnergyMovement/DefenderDiscard.tres" id="5_ltl6m"]
 [ext_resource type="Script" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="6_ea6gi"]
 
 [sub_resource type="Resource" id="Resource_owb8s"]
@@ -16,6 +16,7 @@ energy_attatched = -1
 knocked_out = false
 condition = 0
 location = 4
+stage = 7
 inclusive = true
 pokemon_class = 16
 bench_size = -1
@@ -44,7 +45,7 @@ ignore_condition = 0
 initial_main_DMG = 20
 modifier = 0
 ask = SubResource("Resource_owb8s")
-effect = ExtResource("3_62ivj")
+effect = ExtResource("3_v7bs6")
 
 [sub_resource type="Resource" id="Resource_4v2wa"]
 script = ExtResource("2_auni2")
@@ -54,6 +55,7 @@ energy_attatched = -1
 knocked_out = false
 condition = 16
 location = 4
+stage = 7
 inclusive = true
 pokemon_class = 0
 bench_size = -1
@@ -63,41 +65,6 @@ ask_string = ""
 formal_ask = false
 choose = 0
 choose_location = 0
-
-[sub_resource type="Resource" id="Resource_pqjma"]
-script = ExtResource("5_rca44")
-choose_condition = false
-poison = 0
-burn = 0
-addable_effects = 0
-mutually_exclusive_conditions = 0
-knockOut = false
-disable_target = 0
-instead_of_damage = false
-do_nothing = false
-attack = 0
-retrat_duration = 1
-disable_retreat = false
-buff_target = 0
-attack_damage = 0
-defense = 0
-after_weak_res = true
-switch_type = 0
-search = Array[Resource("res://Code/Resource Makers/SearchMaker.gd")]([])
-energy_move_type = 0
-move_ammount = -1
-disrupt_target = 1
-disrupting = 3
-send = 0
-send_to = null
-card_ammount = 0
-reveal = false
-type = 511
-energy_ammount = 1
-remove_conditions = false
-remove_shockwave = false
-remove_imprison = false
-mimic = 0
 
 [sub_resource type="Resource" id="Resource_je666"]
 script = ExtResource("4_0g86g")
@@ -117,7 +84,7 @@ ignore_condition = 0
 initial_main_DMG = 50
 modifier = 0
 ask = SubResource("Resource_4v2wa")
-effect = SubResource("Resource_pqjma")
+effect = ExtResource("5_ltl6m")
 
 [sub_resource type="Resource" id="Resource_4k40m"]
 script = ExtResource("6_ea6gi")

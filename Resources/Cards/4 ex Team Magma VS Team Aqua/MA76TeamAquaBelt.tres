@@ -2,39 +2,17 @@
 
 [ext_resource type="Texture2D" uid="uid://c0cgwfbscwhft" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/76.jpg" id="1_0ag7c"]
 [ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_3gxca"]
-[ext_resource type="Script" path="res://Code/Resource Makers/GeneralUse/AskMaker.gd" id="3_6x8p4"]
+[ext_resource type="Resource" uid="uid://b0lo8uly2lldp" path="res://Resources/Components/Asks/IsTeamAqua.tres" id="3_sophl"]
 [ext_resource type="Script" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="4_je6w1"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/ToolMaker.gd" id="5_bowvr"]
 [ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="5_sd4fg"]
-[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/PlacementMaker.gd" id="6_vhbee"]
+[ext_resource type="Resource" uid="uid://cygim4rxvdbp8" path="res://Resources/Components/Placement/AndThenEvolve.tres" id="7_mr8x6"]
 [ext_resource type="Script" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="7_s6boh"]
 [ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="8_0b4j5"]
 
-[sub_resource type="Resource" id="Resource_xa30p"]
-script = ExtResource("3_6x8p4")
-target = 1
-damage_taken = -10
-energy_attatched = -1
-knocked_out = false
-condition = 0
-location = 4
-inclusive = true
-pokemon_class = 32
-bench_size = -1
-type = 1023
-type_size = 1
-ask_string = ""
-formal_ask = false
-choose = 0
-choose_location = 0
-
-[sub_resource type="Resource" id="Resource_q5mtw"]
-script = ExtResource("6_vhbee")
-where = 4
-shuffle = true
-evolve = true
-
 [sub_resource type="Resource" id="Resource_rg3ty"]
 script = ExtResource("7_s6boh")
+must_be_different = false
 broad_class = 1
 contains = ""
 type = 0
@@ -51,53 +29,34 @@ side = 0
 where = 1
 how_many = 1
 of_this = Array[ExtResource("7_s6boh")]([SubResource("Resource_rg3ty")])
-and_then = SubResource("Resource_q5mtw")
+and_then = ExtResource("7_mr8x6")
 reveal = true
 
 [sub_resource type="Resource" id="Resource_35j6p"]
 script = ExtResource("5_sd4fg")
-choose_condition = false
-poison = 0
-burn = 0
-addable_effects = 0
-mutually_exclusive_conditions = 0
-knockOut = false
-disable_target = 0
-instead_of_damage = false
-do_nothing = false
-attack = 0
-retrat_duration = 1
-disable_retreat = false
-buff_target = 0
-attack_damage = 0
-defense = 0
-after_weak_res = true
-switch_type = 0
+order = Array[int]([])
 search = Array[ExtResource("8_0b4j5")]([SubResource("Resource_sfgeh")])
-energy_move_type = 0
-move_ammount = -1
-disrupt_target = 0
-disrupting = 0
-send = 0
-send_to = null
-card_ammount = 0
-reveal = false
-type = 0
-energy_ammount = 0
 remove_conditions = false
 remove_shockwave = false
 remove_imprison = false
+choose_active = false
+switch_type = 0
 mimic = 0
+
+[sub_resource type="Resource" id="Resource_jnlar"]
+script = ExtResource("5_bowvr")
+when_to_check = 1
+tool_effect = SubResource("Resource_35j6p")
+remove_after = true
+duration = -1
 
 [sub_resource type="Resource" id="Resource_mm1xq"]
 script = ExtResource("4_je6w1")
 considered = "Tool"
 specific_requirement = "Attach Team Aqua Belt to 1 of your Pokémon with Team Aqua in its name that doesn't already have a Pokémon Tool attached to it. If that Pokémon is Knocked Out, discard this card. "
 description = "At any time between turns, if the Pokémon Team Aqua Belt is attached to is your Active Pokémon, search your deck for a card that evolves from that Pokémon and put it on that Pokémon. (This counts as evolving that Pokémon.) Shuffle your deck afterward, then discard Team Aqua Belt. "
-asks = SubResource("Resource_xa30p")
-success_effect = SubResource("Resource_35j6p")
-remove_after = true
-duration = -1
+asks = ExtResource("3_sophl")
+tool_properties = SubResource("Resource_jnlar")
 
 [resource]
 script = ExtResource("1_3gxca")

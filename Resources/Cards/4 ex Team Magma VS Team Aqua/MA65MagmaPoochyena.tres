@@ -1,47 +1,37 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://c3tip8v6djvro"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=9 format=3 uid="uid://c3tip8v6djvro"]
 
-[ext_resource type="Texture2D" uid="uid://mj8t5qbg754t" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/65.jpg" id="1_dd51n"]
-[ext_resource type="Resource" uid="uid://depecxjmmfklq" path="res://Resources/Components/Asks/AskSingleFlip.tres" id="2_dicmi"]
-[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_pa20x"]
-[ext_resource type="Script" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="4_wmba0"]
-[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_358q3"]
-[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="6_7x5uj"]
-
-[sub_resource type="Resource" id="Resource_47mgm"]
-script = ExtResource("3_pa20x")
-order = Array[int]([])
-search = Array[Resource("res://Code/Resource Makers/EffectSpecific/SearchMaker.gd")]([])
-remove_conditions = false
-remove_shockwave = false
-remove_imprison = false
-switch_type = 0
-mimic = 0
+[ext_resource type="Texture2D" uid="uid://mj8t5qbg754t" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/65.jpg" id="1_q07ti"]
+[ext_resource type="Resource" uid="uid://depecxjmmfklq" path="res://Resources/Components/Asks/AskSingleFlip.tres" id="2_85nvy"]
+[ext_resource type="Resource" uid="uid://6xmw13js5xd3" path="res://Resources/Components/Basic Conditions/BasicParalyze.tres" id="3_8nasl"]
+[ext_resource type="Script" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="4_fceeu"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_deetf"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="6_lxejy"]
 
 [sub_resource type="Resource" id="Resource_1qf44"]
-script = ExtResource("4_wmba0")
+script = ExtResource("4_fceeu")
 name = "Snarl"
 description = "Flip a coin. If heads, this attack does 10 damage to the Defending Pokémon. If tails, the Defending Pokémon is now Paralyzed."
-grass_cost = null
-fire_cost = null
-water_cost = null
-lightning_cost = null
-psychic_cost = null
-fighting_cost = null
-darkness_cost = null
-metal_cost = null
-colorless_cost = null
-defender_properties = null
-ignore_condition = null
+grass_cost = 0
+fire_cost = 0
+water_cost = 0
+lightning_cost = 0
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 1
+defender_properties = 0
+ignore_condition = 0
 initial_main_DMG = 10
-modifier = null
-ask = ExtResource("2_dicmi")
-fail_effect = SubResource("Resource_47mgm")
+modifier = 0
+ask = ExtResource("2_85nvy")
+fail_effect = ExtResource("3_8nasl")
 
 [sub_resource type="Resource" id="Resource_vy1eo"]
-script = ExtResource("5_358q3")
+script = ExtResource("5_deetf")
 HP = 40
 retreat = 1
-attacks = Array[ExtResource("4_wmba0")]([SubResource("Resource_1qf44")])
+attacks = Array[ExtResource("4_fceeu")]([SubResource("Resource_1qf44")])
 evo_stage = "Basic"
 evolves_from = ""
 delta = false
@@ -52,9 +42,9 @@ weak = 32
 resist = 16
 
 [resource]
-script = ExtResource("6_7x5uj")
+script = ExtResource("6_lxejy")
 name = "Team Magma's Poochyena"
-image = ExtResource("1_dd51n")
+image = ExtResource("1_q07ti")
 illustrator = "Shin-ichi Yoshikawa"
 number = 65
 rarity = 0

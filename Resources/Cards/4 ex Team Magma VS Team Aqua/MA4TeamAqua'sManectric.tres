@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=16 format=3 uid="uid://d3y3ggocst4r0"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=19 format=3 uid="uid://d3y3ggocst4r0"]
 
 [ext_resource type="Texture2D" uid="uid://kon0844bkmke" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/4.jpg" id="1_4ox76"]
 [ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_gh7dm"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Code/Resource Makers/PokemonSpecific/BenchAttackMaker.gd" id="3_bgqi1"]
 [ext_resource type="Script" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="4_5ptpl"]
 [ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="5_5fqb1"]
+[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/EnMovMaker.gd" id="5_no1xd"]
 [ext_resource type="Script" path="res://Code/Resource Makers/PokemonSpecific/PowerMaker.gd" id="6_0moyj"]
 [ext_resource type="Script" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="7_ur4yg"]
 
@@ -17,6 +18,7 @@ energy_attatched = 1
 knocked_out = false
 condition = 0
 location = 0
+stage = 7
 inclusive = true
 pokemon_class = 0
 bench_size = -1
@@ -54,39 +56,45 @@ initial_main_DMG = 50
 modifier = 0
 bench_damage = SubResource("Resource_8qhfr")
 
-[sub_resource type="Resource" id="Resource_h1qbr"]
-script = ExtResource("5_5fqb1")
-choose_condition = false
-poison = 0
-burn = 0
-addable_effects = 0
-mutually_exclusive_conditions = 0
-knockOut = false
-disable_target = 0
-instead_of_damage = false
-do_nothing = false
-attack = 0
-retrat_duration = 1
-disable_retreat = false
-buff_target = 0
-attack_damage = 0
-defense = 0
-after_weak_res = true
-switch_type = 0
-search = Array[Resource("res://Code/Resource Makers/SearchMaker.gd")]([])
+[sub_resource type="Resource" id="Resource_81wwo"]
+script = ExtResource("2_aml44")
+target = 0
+damage_taken = -10
+energy_attatched = -1
+knocked_out = false
+condition = 0
+location = 3
+stage = 7
+inclusive = true
+pokemon_class = 32
+bench_size = -1
+type = 1023
+type_size = 1
+ask_string = ""
+formal_ask = false
+choose = 0
+choose_location = 0
+
+[sub_resource type="Resource" id="Resource_xmkch"]
+script = ExtResource("5_no1xd")
 energy_move_type = 0
-move_ammount = -1
-disrupt_target = 0
-disrupting = 0
-send = 0
-send_to = null
-card_ammount = 0
-reveal = false
-type = 0
-energy_ammount = 0
+action = 0
+candidates = SubResource("Resource_81wwo")
+which = 21
+energy_ammount = -1
+swap_ammount = 1
+type = 511
+
+[sub_resource type="Resource" id="Resource_ys2ao"]
+script = ExtResource("5_5fqb1")
+order = Array[int]([])
+energy_movement = SubResource("Resource_xmkch")
+search = Array[Resource("res://Code/Resource Makers/EffectSpecific/SearchMaker.gd")]([])
 remove_conditions = false
 remove_shockwave = false
 remove_imprison = false
+choose_active = false
+switch_type = 0
 mimic = 0
 
 [sub_resource type="Resource" id="Resource_3kpah"]
@@ -97,6 +105,7 @@ energy_attatched = -1
 knocked_out = false
 condition = 0
 location = 3
+stage = 7
 inclusive = true
 pokemon_class = 32
 bench_size = -1
@@ -115,7 +124,7 @@ affected_by_condition = true
 active = false
 how_often = 0
 target_ask = SubResource("Resource_3kpah")
-effect = SubResource("Resource_h1qbr")
+effect = SubResource("Resource_ys2ao")
 
 [sub_resource type="Resource" id="Resource_c4oj5"]
 script = ExtResource("7_ur4yg")

@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_axeh8")
-target = 0
+target = 1
 damage_taken = -10
 energy_attatched = -1
 knocked_out = false

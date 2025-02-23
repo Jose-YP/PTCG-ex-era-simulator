@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=19 format=3 uid="uid://22c17vtu70b3"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=18 format=3 uid="uid://22c17vtu70b3"]
 
 [ext_resource type="Texture2D" uid="uid://b4uymubvo04qp" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/37.jpg" id="1_s2ru1"]
 [ext_resource type="Script" path="res://Code/Resource Makers/PokemonSpecific/PowerMaker.gd" id="2_2yu0c"]
@@ -7,8 +7,8 @@
 [ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_i0jr0"]
 [ext_resource type="Resource" uid="uid://dr0vmkppumfhq" path="res://Resources/Components/Nothing.tres" id="4_it5rv"]
 [ext_resource type="Script" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="5_wxab5"]
+[ext_resource type="Resource" uid="uid://bl4qnrkh3kxdl" path="res://Resources/Components/Placement/PutIntoHand.tres" id="6_mysfv"]
 [ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="6_xc0yb"]
-[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/PlacementMaker.gd" id="7_16yxa"]
 [ext_resource type="Script" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="8_kronk"]
 [ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="9_84c2m"]
 
@@ -32,14 +32,9 @@ modifier = 0
 ask = ExtResource("2_jit5m")
 fail_effect = ExtResource("4_it5rv")
 
-[sub_resource type="Resource" id="Resource_5c437"]
-script = ExtResource("7_16yxa")
-where = 0
-shuffle = true
-evolve = false
-
 [sub_resource type="Resource" id="Resource_tccqv"]
 script = ExtResource("8_kronk")
+must_be_different = false
 broad_class = 1
 contains = ""
 type = 0
@@ -56,42 +51,18 @@ side = 0
 where = 1
 how_many = 1
 of_this = Array[ExtResource("8_kronk")]([SubResource("Resource_tccqv")])
-and_then = SubResource("Resource_5c437")
+and_then = ExtResource("6_mysfv")
 reveal = true
 
 [sub_resource type="Resource" id="Resource_0a22m"]
 script = ExtResource("6_xc0yb")
-choose_condition = false
-poison = 0
-burn = 0
-addable_effects = 0
-mutually_exclusive_conditions = 0
-knockOut = false
-disable_target = 0
-instead_of_damage = false
-do_nothing = false
-attack = 0
-retrat_duration = 1
-disable_retreat = false
-buff_target = 0
-attack_damage = 0
-defense = 0
-after_weak_res = true
-switch_type = 0
+order = Array[int]([])
 search = Array[ExtResource("9_84c2m")]([SubResource("Resource_0iir3")])
-energy_move_type = 0
-move_ammount = -1
-disrupt_target = 0
-disrupting = 0
-send = 0
-send_to = null
-card_ammount = 0
-reveal = false
-type = 0
-energy_ammount = 0
 remove_conditions = false
 remove_shockwave = false
 remove_imprison = false
+choose_active = false
+switch_type = 0
 mimic = 0
 
 [sub_resource type="Resource" id="Resource_dc2e6"]
