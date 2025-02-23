@@ -20,11 +20,19 @@ until = false
 [sub_resource type="Resource" id="Resource_retmx"]
 script = ExtResource("3_02yqe")
 target = 0
+damage_taken = -10
+energy_attatched = -1
+knocked_out = false
+condition = 0
 location = 0
+inclusive = true
+pokemon_class = 0
 bench_size = -1
 type = 1023
 type_size = 1
+ask_string = ""
 coin_flip = SubResource("Resource_2vtkn")
+formal_ask = false
 choose = 0
 choose_location = 0
 
@@ -39,6 +47,7 @@ script = ExtResource("7_kp8hr")
 broad_class = 4
 contains = ""
 type = 0
+evolves_from = false
 poke_class = null
 owner = 0
 stage = null
@@ -56,33 +65,24 @@ reveal = false
 
 [sub_resource type="Resource" id="Resource_tcpdw"]
 script = ExtResource("5_253us")
-poison = 0
-burn = 0
-addable_effects = 0
-mutually_exclusive_conditions = 0
-knockOut = false
-instead_of_damage = false
-do_nothing = false
-retreat = false
-attack = 0
-buff_target = 0
-attack_damage = 0
-defense = 0
-after_weak_res = true
-switch_type = 0
+order = Array[int]([])
 search = Array[ExtResource("8_0udr8")]([SubResource("Resource_0wxsv")])
-disrupt_target = 0
-disrupting = 0
-card_ammount = 0
-energy_ammount = 0
+remove_conditions = false
+remove_shockwave = false
+remove_imprison = false
+choose_active = false
+switch_type = 0
 mimic = 0
 
 [sub_resource type="Resource" id="Resource_j6siw"]
 script = ExtResource("4_8je75")
 considered = "Item"
+specific_requirement = ""
 description = "Flip 3 coins. For each heads, put a Basic Energy card from your discard pile into your hand. If you don't have that many basic Energy cards in your discard pile, put all of them into your hand. "
 asks = SubResource("Resource_retmx")
 success_effect = SubResource("Resource_tcpdw")
+remove_after = true
+duration = -1
 
 [resource]
 script = ExtResource("1_ai46a")

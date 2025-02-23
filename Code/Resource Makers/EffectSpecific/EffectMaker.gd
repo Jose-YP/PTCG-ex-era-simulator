@@ -30,6 +30,7 @@ ENMOV, DMGMANIP, SEARCH, SWAP, OTHER}
 @export var remove_imprison: bool = false
 @export_subgroup("Switch")
 ##Does the target choose which active mon to switch out?
+##If not it's the defender
 @export var choose_active: bool = false
 ##Who switches according to who
 @export_enum("None", "P by P", "O by O",

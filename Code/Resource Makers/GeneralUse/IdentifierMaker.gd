@@ -2,6 +2,8 @@ extends Resource
 class_name Identifier
 
 @export_category("Specific Categories")
+##If this is true, remember what has been searched
+@export var must_be_different: bool = false
 @export_flags("Pokemon", "Trainer", "Energy") var broad_class
 @export var contains: String
 @export_flags("Grass","Fire","Water",

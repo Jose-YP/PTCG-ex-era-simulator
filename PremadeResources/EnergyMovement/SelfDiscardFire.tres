@@ -1,10 +1,20 @@
-[gd_resource type="Resource" script_class="EffectCall" load_steps=2 format=3 uid="uid://b86uut4qajrgg"]
+[gd_resource type="Resource" script_class="EffectCall" load_steps=4 format=3 uid="uid://b86uut4qajrgg"]
 
 [ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="1_a5rdg"]
+[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/EnMovMaker.gd" id="1_hhfhf"]
+
+[sub_resource type="Resource" id="Resource_lax7x"]
+script = ExtResource("1_hhfhf")
+energy_move_type = 2
+action = 1
+which = 1
+energy_ammount = 1
+type = 2
 
 [resource]
 script = ExtResource("1_a5rdg")
 order = Array[int]([])
+energy_movement = SubResource("Resource_lax7x")
 search = Array[Resource("res://Code/Resource Makers/EffectSpecific/SearchMaker.gd")]([])
 remove_conditions = false
 remove_shockwave = false

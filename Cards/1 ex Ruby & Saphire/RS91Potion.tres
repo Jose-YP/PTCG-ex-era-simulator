@@ -2,26 +2,28 @@
 
 [ext_resource type="Texture2D" uid="uid://dijfcrqt7pcs2" path="res://Art Assets/Cards/1 ex Ruby & Saphire/91.jpg" id="1_3jilh"]
 [ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_ckrje"]
-[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/HealMaker.gd" id="3_4xsfy"]
+[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/DmgManipMaker.gd" id="3_wgpkt"]
 [ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_uhqcy"]
 [ext_resource type="Script" path="res://Code/Resource Makers/GeneralUse/AskMaker.gd" id="5_exu8h"]
 [ext_resource type="Script" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="6_4fgms"]
 
-[sub_resource type="Resource" id="Resource_2i5j3"]
-script = ExtResource("3_4xsfy")
-how_many = 1
-which = 0
-initial_main_NUM = 20
-modifier = 0
+[sub_resource type="Resource" id="Resource_hfxfj"]
+script = ExtResource("3_wgpkt")
+remove = true
+how_many = 2
+choose_from = true
+which = 21
+plus = false
 
 [sub_resource type="Resource" id="Resource_pkeu8"]
 script = ExtResource("4_uhqcy")
 order = Array[int]([])
-healing = SubResource("Resource_2i5j3")
+dmgManip = SubResource("Resource_hfxfj")
 search = Array[Resource("res://Code/Resource Makers/EffectSpecific/SearchMaker.gd")]([])
 remove_conditions = false
 remove_shockwave = false
 remove_imprison = false
+choose_active = false
 switch_type = 0
 mimic = 0
 

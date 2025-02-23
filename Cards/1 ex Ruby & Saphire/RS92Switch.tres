@@ -12,6 +12,7 @@ search = Array[Resource("res://Code/Resource Makers/EffectSpecific/SearchMaker.g
 remove_conditions = false
 remove_shockwave = false
 remove_imprison = false
+choose_active = true
 switch_type = 1
 mimic = 0
 

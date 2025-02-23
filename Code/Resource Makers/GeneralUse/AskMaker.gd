@@ -2,6 +2,8 @@ extends Resource
 class_name Ask
 
 @export_group("To Activate")
+##If this ask isn't met, look for the next ask
+@export var or_ask: Ask
 ##Which side to pay attention to
 @export_enum("None", "Player", "Opponent") var target: int = 0
 ##-10 means don't look at this var, 0 means must be undamaged, the rest mean x or more
@@ -17,7 +19,7 @@ class_name Ask
 ##Only including specified or excluding specified
 @export var inclusive: bool = true
 @export_flags("Baby", "ex", "Delta", "Star",
- "Magma", "Aqua", "Rocket") var pokemon_class: int = 0
+ "Magma", "Aqua", "Rocket", "Dark") var pokemon_class: int = 0
 @export_subgroup("Bench")
 ##Look for 
 @export_range(-1,5) var bench_size: int = -1

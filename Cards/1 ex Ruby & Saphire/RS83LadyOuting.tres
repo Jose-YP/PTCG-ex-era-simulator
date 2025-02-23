@@ -1,14 +1,39 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=5 format=3 uid="uid://cm0tjkff2o52"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=11 format=3 uid="uid://cm0tjkff2o52"]
 
 [ext_resource type="Texture2D" uid="uid://bxd7otcg332kf" path="res://Art Assets/Cards/1 ex Ruby & Saphire/83.jpg" id="1_mp216"]
 [ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_77uu6"]
 [ext_resource type="Script" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="3_3shah"]
+[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_rjoqb"]
+[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="4_g62rc"]
+[ext_resource type="Resource" uid="uid://bl4qnrkh3kxdl" path="res://PremadeResources/Placement/PutIntoHand.tres" id="4_mlki2"]
+[ext_resource type="Resource" uid="uid://d2vm6chtedrum" path="res://PremadeResources/Identifiers/BasicEnergy.tres" id="5_7tl47"]
+
+[sub_resource type="Resource" id="Resource_wtgyq"]
+script = ExtResource("4_g62rc")
+side = null
+where = null
+how_many = 3
+of_this = Array[Resource("res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd")]([ExtResource("5_7tl47")])
+and_then = ExtResource("4_mlki2")
+reveal = true
+
+[sub_resource type="Resource" id="Resource_htv53"]
+script = ExtResource("3_rjoqb")
+order = Array[int]([])
+search = Array[ExtResource("4_g62rc")]([SubResource("Resource_wtgyq")])
+remove_conditions = false
+remove_shockwave = false
+remove_imprison = false
+choose_active = false
+switch_type = 0
+mimic = 0
 
 [sub_resource type="Resource" id="Resource_d0m0p"]
 script = ExtResource("3_3shah")
 considered = "Supporter"
 specific_requirement = ""
 description = "Search your deck for up to 3 different types of basic Energy cards, show them to your opponent, and put them into your hand. Shuffle your deck afterward. "
+always_effect = SubResource("Resource_htv53")
 remove_after = true
 duration = -1
 

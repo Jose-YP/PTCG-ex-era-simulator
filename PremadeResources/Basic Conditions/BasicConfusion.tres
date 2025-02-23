@@ -5,6 +5,7 @@
 
 [sub_resource type="Resource" id="Resource_enpgc"]
 script = ExtResource("1_2tkb2")
+which = 2
 choose_condition = false
 poison = 0
 burn = 0
@@ -20,5 +21,6 @@ search = Array[Resource("res://Code/Resource Makers/EffectSpecific/SearchMaker.g
 remove_conditions = false
 remove_shockwave = false
 remove_imprison = false
+choose_active = false
 switch_type = 0
 mimic = 0

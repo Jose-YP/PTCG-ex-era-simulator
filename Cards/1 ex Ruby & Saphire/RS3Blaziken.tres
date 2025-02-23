@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bcifwgplfoukb" path="res://Art Assets/Cards/1 ex Ruby & Saphire/3.jpg" id="1_x7apq"]
 [ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_xuny2"]
 [ext_resource type="Script" path="res://Code/Resource Makers/PokemonSpecific/BenchAttackMaker.gd" id="2_qspng"]
+[ext_resource type="Resource" uid="uid://b86uut4qajrgg" path="res://PremadeResources/EnergyMovement/SelfDiscardFire.tres" id="3_3toq5"]
 [ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_ebs65"]
 [ext_resource type="Script" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="4_oknns"]
 [ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/PlacementMaker.gd" id="5_x8w52"]
@@ -17,16 +18,6 @@ how_many = -1
 which = 1
 initial_main_DMG = 10
 modifier = 0
-
-[sub_resource type="Resource" id="Resource_yfw5d"]
-script = ExtResource("3_ebs65")
-order = Array[int]([])
-search = Array[ExtResource("7_wf0ge")]([])
-remove_conditions = false
-remove_shockwave = false
-remove_imprison = false
-switch_type = 0
-mimic = 0
 
 [sub_resource type="Resource" id="Resource_ld6ej"]
 script = ExtResource("4_oknns")
@@ -46,7 +37,7 @@ ignore_condition = 0
 initial_main_DMG = 50
 modifier = 0
 bench_damage = SubResource("Resource_c7gir")
-effect = SubResource("Resource_yfw5d")
+effect = ExtResource("3_3toq5")
 
 [sub_resource type="Resource" id="Resource_h0r4n"]
 script = ExtResource("5_x8w52")
@@ -82,6 +73,7 @@ search = Array[ExtResource("7_wf0ge")]([SubResource("Resource_t1h8r")])
 remove_conditions = false
 remove_shockwave = false
 remove_imprison = false
+choose_active = false
 switch_type = 0
 mimic = 0
 

@@ -1,14 +1,15 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=9 format=3 uid="uid://bpyb5rd3indje"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=11 format=3 uid="uid://bpyb5rd3indje"]
 
 [ext_resource type="Script" path="res://Code/Resource Makers/GeneralUse/AskMaker.gd" id="1_slj1x"]
 [ext_resource type="Script" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="2_353n6"]
+[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/BuffMaker.gd" id="3_35jve"]
 [ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_fahq1"]
 [ext_resource type="Texture2D" uid="uid://dkudhyw32ve0s" path="res://Art Assets/Cards/1 ex Ruby & Saphire/94.jpg" id="4_28rxm"]
 [ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="5_qyjo5"]
 
 [sub_resource type="Resource" id="Resource_ap56e"]
 script = ExtResource("1_slj1x")
-target = 0
+target = 1
 damage_taken = -10
 energy_attatched = -1
 knocked_out = false
@@ -24,20 +25,29 @@ formal_ask = false
 choose = 0
 choose_location = 0
 
+[sub_resource type="Resource" id="Resource_yxmx0"]
+script = ExtResource("3_35jve")
+buff_target = 0
+attack_damage = 0
+defense = 10
+after_weak_res = true
+
 [sub_resource type="Resource" id="Resource_p6g6r"]
 script = ExtResource("3_fahq1")
 order = Array[int]([])
+buff = SubResource("Resource_yxmx0")
 search = Array[Resource("res://Code/Resource Makers/EffectSpecific/SearchMaker.gd")]([])
 remove_conditions = false
 remove_shockwave = false
 remove_imprison = false
+choose_active = false
 switch_type = 0
 mimic = 0
 
 [sub_resource type="Resource" id="Resource_tde1h"]
 script = ExtResource("2_353n6")
 considered = "Special Energy"
-description = ""
+description = " Damage done by attacks to the Pokémon that Metal Energy is attached to is reduced by 10 (after applying Weakness and Resistance). Ignore this effect if the Pokémon that Metal Energy is attached to isn't Metal. Metal Energy provides Metal Energy. (Doesn't count as a basic Energy card.)"
 asks = SubResource("Resource_ap56e")
 fail_provide = false
 fail_prevent = false

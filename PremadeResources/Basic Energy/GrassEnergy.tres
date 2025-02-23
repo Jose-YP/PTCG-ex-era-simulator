@@ -5,7 +5,9 @@
 [resource]
 script = ExtResource("1_u2wto")
 considered = "Basic Energy"
+description = ""
 fail_provide = false
+fail_prevent = false
 turns = -1
 number = 1
 react = false

@@ -32,6 +32,7 @@ search = Array[ExtResource("4_ilxq2")]([SubResource("Resource_4hb10")])
 remove_conditions = false
 remove_shockwave = false
 remove_imprison = false
+choose_active = false
 switch_type = 0
 mimic = 0
 
