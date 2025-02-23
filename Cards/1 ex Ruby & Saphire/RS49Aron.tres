@@ -1,14 +1,23 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://oa7r3igevgqi"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://oa7r3igevgqi"]
 
 [ext_resource type="Texture2D" uid="uid://c2o5amlj16doj" path="res://Art Assets/Cards/1 ex Ruby & Saphire/49.jpg" id="1_ianho"]
+[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/BuffMaker.gd" id="2_2v2aq"]
 [ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_373tt"]
 [ext_resource type="Script" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="3_mit06"]
 [ext_resource type="Script" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="4_nbcu4"]
 [ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="5_1yo3i"]
 
+[sub_resource type="Resource" id="Resource_nsaqp"]
+script = ExtResource("2_2v2aq")
+buff_target = 0
+attack_damage = 0
+defense = 10
+after_weak_res = true
+
 [sub_resource type="Resource" id="Resource_utovm"]
 script = ExtResource("2_373tt")
 order = Array[int]([])
+buff = SubResource("Resource_nsaqp")
 search = Array[Resource("res://Code/Resource Makers/EffectSpecific/SearchMaker.gd")]([])
 remove_conditions = false
 remove_shockwave = false

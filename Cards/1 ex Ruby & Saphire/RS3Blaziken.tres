@@ -20,32 +20,12 @@ modifier = 0
 
 [sub_resource type="Resource" id="Resource_yfw5d"]
 script = ExtResource("3_ebs65")
-poison = 0
-burn = 0
-addable_effects = 0
-mutually_exclusive_conditions = 0
-knockOut = false
-disable_target = 0
-instead_of_damage = false
-do_nothing = false
-attack = 0
-retrat_duration = 1
-disable_retreat = false
-buff_target = 0
-attack_damage = 0
-defense = 0
-after_weak_res = true
-switch_type = 0
+order = Array[int]([])
 search = Array[ExtResource("7_wf0ge")]([])
-disrupt_target = 0
-disrupting = 0
-card_ammount = 0
-reveal = false
-type = 2
-energy_ammount = 1
 remove_conditions = false
 remove_shockwave = false
 remove_imprison = false
+switch_type = 0
 mimic = 0
 
 [sub_resource type="Resource" id="Resource_ld6ej"]
@@ -79,6 +59,7 @@ script = ExtResource("6_v8gw4")
 broad_class = 4
 contains = ""
 type = 2
+evolves_from = false
 poke_class = null
 owner = 0
 stage = null
@@ -96,32 +77,12 @@ reveal = true
 
 [sub_resource type="Resource" id="Resource_eu4bd"]
 script = ExtResource("3_ebs65")
-poison = 0
-burn = 0
-addable_effects = 0
-mutually_exclusive_conditions = 0
-knockOut = false
-disable_target = 0
-instead_of_damage = false
-do_nothing = false
-attack = 0
-retrat_duration = 1
-disable_retreat = false
-buff_target = 0
-attack_damage = 0
-defense = 0
-after_weak_res = true
-switch_type = 0
+order = Array[int]([])
 search = Array[ExtResource("7_wf0ge")]([SubResource("Resource_t1h8r")])
-disrupt_target = 0
-disrupting = 0
-card_ammount = 0
-reveal = false
-type = 0
-energy_ammount = 0
 remove_conditions = false
 remove_shockwave = false
 remove_imprison = false
+switch_type = 0
 mimic = 0
 
 [sub_resource type="Resource" id="Resource_03xgj"]

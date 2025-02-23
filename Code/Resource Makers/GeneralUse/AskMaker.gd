@@ -12,6 +12,7 @@ class_name Ask
 @export_flags("Poison", "Burn", "Paralysis", "Asleep", "Confusion") var condition: int = 0
 ##Self means the attacking/defending pokemon, Active is for doubles
 @export_flags("Bench", "Active", "Self", "Discard", "Hand") var location: int = 0 
+
 @export_subgroup("Class")
 ##Only including specified or excluding specified
 @export var inclusive: bool = true

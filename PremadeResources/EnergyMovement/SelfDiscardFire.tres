@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="EffectCall" load_steps=2 format=3 uid="uid://b86uut4qajrgg"]
+
+[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="1_a5rdg"]
+
+[resource]
+script = ExtResource("1_a5rdg")
+order = Array[int]([])
+search = Array[Resource("res://Code/Resource Makers/EffectSpecific/SearchMaker.gd")]([])
+remove_conditions = false
+remove_shockwave = false
+remove_imprison = false
+choose_active = false
+switch_type = 0
+mimic = 0

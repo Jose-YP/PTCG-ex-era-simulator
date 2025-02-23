@@ -1,39 +1,33 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=11 format=3 uid="uid://bgvaiul2mfsxf"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=15 format=3 uid="uid://bgvaiul2mfsxf"]
 
 [ext_resource type="Texture2D" uid="uid://x2sfdmhe2ojl" path="res://Art Assets/Cards/1 ex Ruby & Saphire/15.jpg" id="1_vwl4b"]
 [ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_x5maj"]
 [ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_4pbv0"]
+[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/DisableMaker.gd" id="2_7u3ve"]
 [ext_resource type="Script" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="3_j3xow"]
 [ext_resource type="Script" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="4_3bvi0"]
+[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/EnMovMaker.gd" id="5_1xrwo"]
 
-[sub_resource type="Resource" id="Resource_u4atx"]
-script = ExtResource("2_4pbv0")
-poison = 0
-burn = 0
-addable_effects = 0
-mutually_exclusive_conditions = 0
-knockOut = false
-disable_target = 4
+[sub_resource type="Resource" id="Resource_e08sc"]
+script = ExtResource("2_7u3ve")
+disable_target = 0
+no_weakness = false
+no_resistance = false
 instead_of_damage = false
 do_nothing = false
 attack = 0
 retrat_duration = 1
-disable_retreat = false
-buff_target = 0
-attack_damage = 0
-defense = 0
-after_weak_res = true
-switch_type = 0
-search = Array[Resource("res://Code/Resource Makers/SearchMaker.gd")]([])
-disrupt_target = 0
-disrupting = 0
-card_ammount = 0
-reveal = false
-type = 0
-energy_ammount = 0
+disable_retreat = true
+
+[sub_resource type="Resource" id="Resource_bu5hu"]
+script = ExtResource("2_4pbv0")
+order = Array[int]([])
+disable = SubResource("Resource_e08sc")
+search = Array[Resource("res://Code/Resource Makers/EffectSpecific/SearchMaker.gd")]([])
 remove_conditions = false
 remove_shockwave = false
 remove_imprison = false
+switch_type = 0
 mimic = 0
 
 [sub_resource type="Resource" id="Resource_sfxu2"]
@@ -53,36 +47,24 @@ defender_properties = 0
 ignore_condition = 0
 initial_main_DMG = 20
 modifier = 0
-effect = SubResource("Resource_u4atx")
+effect = SubResource("Resource_bu5hu")
 
-[sub_resource type="Resource" id="Resource_da1cr"]
-script = ExtResource("2_4pbv0")
-poison = 0
-burn = 0
-addable_effects = 0
-mutually_exclusive_conditions = 0
-knockOut = false
-disable_target = 0
-instead_of_damage = false
-do_nothing = false
-attack = 0
-retrat_duration = 1
-disable_retreat = false
-buff_target = 0
-attack_damage = 0
-defense = 0
-after_weak_res = true
-switch_type = 0
-search = Array[Resource("res://Code/Resource Makers/SearchMaker.gd")]([])
-disrupt_target = 0
-disrupting = 0
-card_ammount = 0
-reveal = false
-type = 2
+[sub_resource type="Resource" id="Resource_geuhf"]
+script = ExtResource("5_1xrwo")
+energy_move_type = 2
+action = 1
 energy_ammount = 1
+type = 2
+
+[sub_resource type="Resource" id="Resource_apq5b"]
+script = ExtResource("2_4pbv0")
+order = Array[int]([])
+energy_movement = SubResource("Resource_geuhf")
+search = Array[Resource("res://Code/Resource Makers/EffectSpecific/SearchMaker.gd")]([])
 remove_conditions = false
 remove_shockwave = false
 remove_imprison = false
+switch_type = 0
 mimic = 0
 
 [sub_resource type="Resource" id="Resource_qq3bc"]
@@ -102,7 +84,7 @@ defender_properties = 0
 ignore_condition = 0
 initial_main_DMG = 80
 modifier = 0
-effect = SubResource("Resource_da1cr")
+effect = SubResource("Resource_apq5b")
 
 [sub_resource type="Resource" id="Resource_sd3a8"]
 script = ExtResource("4_3bvi0")

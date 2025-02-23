@@ -1,34 +1,40 @@
 extends Resource
 class_name EffectCall
 
-enum effect_types{CONDITION, BUFF, DISRUPT, DISABLE, 
-ENMOV, HEAL, DMGMANIP, SEARCH, SWAP, OTHER}
 
-##Determine the order in which the effects are called
+enum effect_types{CONDITION, BUFF, DISRUPT, DISABLE, 
+ENMOV, DMGMANIP, SEARCH, SWAP, OTHER}
+
+##Determine the order in which the effects are called.
+##It's best to fill this in, if you don't want the default enum order
 @export var order: Array[effect_types]
 ##Add a condition
 @export var condition: Condition
 ##Buff/Debuff a pokemon's stats or properties
 @export var buff: Buff
 ##Send cards elsewhere
-@export var disruption: CardDisrupt
+@export var card_disrupt: CardDisrupt
 ##Disable the player/pokemon's possible moves
 @export var disable: Disable
 ##Move current energy in play
 @export var energy_movement: EnMov
-##Remove damage counters
-@export var healing: HealEffect
 ##Move/Add damage counters around
 @export var dmgManip: DamageManip
 ##Look for cards in deck/discard
 @export var search: Array[Search]
 
 @export_group("Minor Changes")
+@export_subgroup("Status Heal")
 @export var remove_conditions: bool = false
 @export var remove_shockwave: bool = false
 @export var remove_imprison: bool = false
+@export_subgroup("Switch")
+##Does the target choose which active mon to switch out?
+@export var choose_active: bool = false
+##Who switches according to who
 @export_enum("None", "P by P", "O by O",
  "O by P", "Both") var switch_type: int = 0
+@export_subgroup("Mimic")
 ##mimicry might be it's own resource
 @export_enum("No","AttatchedLimited", "Attatched",
  "AnyLimited", "Any") var mimic: int = 0

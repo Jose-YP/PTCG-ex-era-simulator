@@ -1,33 +1,26 @@
-[gd_resource type="Resource" script_class="EffectCall" load_steps=2 format=3 uid="uid://dr0vmkppumfhq"]
+[gd_resource type="Resource" script_class="EffectCall" load_steps=4 format=3 uid="uid://dr0vmkppumfhq"]
 
-[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="1_spb8w"]
+[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="1_iylti"]
+[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/DisableMaker.gd" id="1_p6kns"]
 
-[resource]
-script = ExtResource("1_spb8w")
-poison = 0
-burn = 0
-addable_effects = 0
-mutually_exclusive_conditions = 0
-knockOut = false
-disable_target = 0
+[sub_resource type="Resource" id="Resource_u5nvf"]
+script = ExtResource("1_p6kns")
+disable_target = 5
+no_weakness = false
+no_resistance = false
 instead_of_damage = false
 do_nothing = true
 attack = 0
 retrat_duration = 1
 disable_retreat = false
-buff_target = 0
-attack_damage = 0
-defense = 0
-after_weak_res = true
-switch_type = 0
-search = Array[Resource("res://Code/Resource Makers/SearchMaker.gd")]([])
-disrupt_target = 0
-disrupting = 0
-card_ammount = 0
-reveal = false
-type = 1
-energy_ammount = 0
+
+[resource]
+script = ExtResource("1_iylti")
+order = Array[int]([])
+disable = SubResource("Resource_u5nvf")
+search = Array[Resource("res://Code/Resource Makers/EffectSpecific/SearchMaker.gd")]([])
 remove_conditions = false
 remove_shockwave = false
 remove_imprison = false
+switch_type = 0
 mimic = 0
