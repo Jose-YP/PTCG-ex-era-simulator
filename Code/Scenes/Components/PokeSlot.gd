@@ -246,7 +246,7 @@ func refresh() -> void:
 	current_slot.name_section.append_text(current_card.name)
 	current_slot.max_hp.clear()
 	current_slot.max_hp.append_text(str("HP: ",pokedata.HP - damage_counters, "/", pokedata.HP))
-	current_slot.display_types(pokedata.type_flags_to_array(pokedata.type))
+	current_slot.display_types(Conversions.flags_to_type_array(pokedata.type)) 
 	#recognize position of slot
 	benched = not current_slot.active
 	current_slot.connected_card = self

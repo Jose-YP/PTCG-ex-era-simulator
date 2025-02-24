@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://crecmsup0hxcr"]
+[gd_scene load_steps=43 format=3 uid="uid://crecmsup0hxcr"]
 
 [ext_resource type="Script" path="res://Code/Scenes/UI/Card.gd" id="1_ao8mj"]
 [ext_resource type="Resource" uid="uid://yjages2tp857" path="res://Resources/Cards/1 ex Ruby & Saphire/RS1Aggron.tres" id="2_13uqe"]
@@ -9,7 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://cvh086w8yapm0" path="res://Scenes/UI/Lists/attack_list.tscn" id="4_7705s"]
 [ext_resource type="Texture2D" uid="uid://ciyynt0iw46k5" path="res://Art/Rarities/31px-Rarity_Common.png" id="5_hf6p2"]
 [ext_resource type="Texture2D" uid="uid://blfwsqqtrqe8v" path="res://Art/Rarities/31px-Rarity_Uncommon.png" id="6_d7dn7"]
+[ext_resource type="PackedScene" uid="uid://bf8e102afkwfh" path="res://Scenes/UI/UIComponents/ex_rulebox.tscn" id="7_87yqa"]
 [ext_resource type="Texture2D" uid="uid://bir0keyl58pst" path="res://Art/Rarities/31px-Rarity_Rare.png" id="7_o84yx"]
+[ext_resource type="PackedScene" uid="uid://br2xrv6p4e1lx" path="res://Scenes/UI/UIComponents/star_rulebox.tscn" id="8_8f7l3"]
 [ext_resource type="Texture2D" uid="uid://be2sag665selj" path="res://Art/Rarities/Rarity_Rare_Holo.png" id="8_n86qm"]
 [ext_resource type="Texture2D" uid="uid://dldh83yhhvvs2" path="res://Art/Rarities/Rarity_Rare_Holo_ex.png" id="9_ecgrl"]
 [ext_resource type="Texture2D" uid="uid://dfh4btp104a45" path="res://Art/Rarities/Rarity_Rare_Secret.png" id="10_t2lok"]
@@ -161,7 +163,19 @@ size_flags_vertical = 4
 text = "Illustrator:"
 fit_content = true
 
-[node name="Rulebox" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Ruleboxes" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="exRulebox" parent="PanelContainer/MarginContainer/VBoxContainer/Ruleboxes" instance=ExtResource("7_87yqa")]
+visible = false
+layout_mode = 2
+
+[node name="exRulebox2" parent="PanelContainer/MarginContainer/VBoxContainer/Ruleboxes" instance=ExtResource("8_8f7l3")]
+visible = false
 layout_mode = 2
 
 [node name="Attacks" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]

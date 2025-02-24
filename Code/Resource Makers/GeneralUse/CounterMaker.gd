@@ -1,14 +1,14 @@
 extends Resource
 class_name Counter
 
-@export var coin_flip_num: CoinFlip
-
 ##What is this counting for
 @export_enum("Damage Count", "Number Count") var count_for: int = 0 
 ##Ways to count current mons in play, might not be used in favor of meet_ask
 @export_enum("Including self", "Only like mons",
  "Excluding Self", "Everyone else", "Only Self") var filter: int = 4
 ##Which mons to count
+@export_group("Count Methods")
+@export var coin_flip_num: CoinFlip
 @export_flags("Player Bench", "Opponent Bench",
  "Player Active", "Opponent Active") var mon_count: int = 0
 ##Search for an aspect in the game
@@ -17,6 +17,7 @@ class_name Counter
 ##Search for the number of pokemon that meet this ask
 @export var meet_ask: Ask
 ##What is the max value if any
+@export_group("Returns")
 @export_range(-1,100) var cap: int = 0
 ##For each number counted, return what?
 @export_range(-10,100,10) var return_num: int = 0

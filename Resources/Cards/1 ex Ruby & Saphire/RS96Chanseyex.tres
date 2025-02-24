@@ -1,13 +1,93 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=2 format=3 uid="uid://vao0s41ukeix"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://vao0s41ukeix"]
 
 [ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_uuq4o"]
+[ext_resource type="Texture2D" uid="uid://dya0qtd6xlfpk" path="res://Art/Cards/1 ex Ruby & Saphire/96.jpg" id="1_yoln1"]
+[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/DmgManipMaker.gd" id="2_3unk6"]
+[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_1tajn"]
+[ext_resource type="Script" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="4_e8roy"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_8d2mj"]
+
+[sub_resource type="Resource" id="Resource_lxcue"]
+script = ExtResource("2_3unk6")
+remove = true
+how_many = 2
+choose_from = false
+which = 20
+plus = false
+
+[sub_resource type="Resource" id="Resource_f4kte"]
+script = ExtResource("3_1tajn")
+order = Array[int]([])
+dmgManip = SubResource("Resource_lxcue")
+search = Array[Resource("res://Code/Resource Makers/EffectSpecific/SearchMaker.gd")]([])
+remove_conditions = false
+remove_shockwave = false
+remove_imprison = false
+choose_active = false
+switch_type = 0
+mimic = 0
+
+[sub_resource type="Resource" id="Resource_fb5g2"]
+script = ExtResource("4_e8roy")
+name = "Healing Egg"
+description = "Remove 2 damage counters (1 if there is only 1) from each of your Pokémon. Remove no damage counters from Chansey ex."
+grass_cost = 0
+fire_cost = 0
+water_cost = 0
+lightning_cost = 0
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 1
+defender_properties = 0
+ignore_condition = 0
+initial_main_DMG = 0
+self_damage = 0
+modifier = 0
+effect = SubResource("Resource_f4kte")
+
+[sub_resource type="Resource" id="Resource_u7vp4"]
+script = ExtResource("4_e8roy")
+name = "Double-edge"
+description = "Chansey ex does 60 damage to itself."
+grass_cost = 0
+fire_cost = 0
+water_cost = 0
+lightning_cost = 0
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 1
+defender_properties = 0
+ignore_condition = 0
+initial_main_DMG = 80
+self_damage = 60
+modifier = 0
+
+[sub_resource type="Resource" id="Resource_kuod5"]
+script = ExtResource("5_8d2mj")
+HP = 120
+retreat = 3
+attacks = Array[ExtResource("4_e8roy")]([SubResource("Resource_fb5g2"), SubResource("Resource_u7vp4")])
+evo_stage = "Basic"
+evolves_from = ""
+delta = false
+considered = 1
+owner = 0
+type = 256
+weak = 32
+resist = 0
 
 [resource]
 script = ExtResource("1_uuq4o")
-name = ""
-illustrator = ""
-number = 0
-rarity = 0
+name = " Chansey ex"
+image = ExtResource("1_yoln1")
+illustrator = "Ryo Ueda"
+number = 96
+rarity = 4
 expansion = 0
-categories = 0
+categories = 1
+pokemon_properties = SubResource("Resource_kuod5")
 fossil = false

@@ -12,6 +12,7 @@ extends Control
 @onready var weakness_nodes: Array[Node] = %Weaknesses.get_children()
 @onready var resistance_nodes: Array[Node] = %Resistances.get_children()
 @onready var retreat_cost: Array[Node] = %RetreatContainer.get_children()
+@onready var ruleboxes: Array[Node] = %Ruleboxes.get_children()
 
 @onready var display_name: RichTextLabel = %Name
 @onready var extra_identifier: RichTextLabel = %Extra
@@ -68,9 +69,12 @@ func _ready():
 	make_text(display_name, card.name)
 	make_text(max_hp, str("HP: ",pokedata.HP))
 	if pokedata.considered & 1: make_text(extra_identifier, "Baby Pokemon")
-	if pokedata.considered & 2: pass
+	if pokedata.considered & 2: 
+		ruleboxes[0].show()
+		
 	if pokedata.considered & 4: make_text(extra_identifier, "Delta Species")
-	if pokedata.considered & 8: pass
+	if pokedata.considered & 8: 
+		ruleboxes[1].show()
 	
 	art.texture = card.image
 	

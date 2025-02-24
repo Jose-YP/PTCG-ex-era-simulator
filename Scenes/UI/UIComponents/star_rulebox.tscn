@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://br2xrv6p4e1lx"]
+
+[node name="starRulebox" type="Control"]
+custom_minimum_size = Vector2(140, 30)
+layout_mode = 3
+anchor_right = 0.131
+anchor_bottom = 0.042
+offset_right = 0.519989
+offset_bottom = -0.240002
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_right = 143.0
+offset_bottom = 30.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 10
+bbcode_enabled = true
+text = "You can't have more than 1 Pokémon [img]Art/ETCIcons/24px-Pokémon_Star.png[/img] in your deck."
+fit_content = true

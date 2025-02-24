@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="4_p1pt7"]
 [ext_resource type="Script" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_pr7l4"]
 
-[sub_resource type="Resource" id="Resource_pn2te"]
+[sub_resource type="Resource" id="Resource_nktju"]
 script = ExtResource("2_p50fd")
 heads = true
 const_flip_times = 2
@@ -15,9 +15,9 @@ until = false
 
 [sub_resource type="Resource" id="Resource_wl85h"]
 script = ExtResource("3_q5aky")
-coin_flip_num = SubResource("Resource_pn2te")
 count_for = 0
-filter = 0
+filter = 4
+coin_flip_num = SubResource("Resource_nktju")
 mon_count = 0
 for_what = null
 cap = 0
@@ -39,34 +39,35 @@ colorless_cost = 0
 defender_properties = 0
 ignore_condition = 0
 initial_main_DMG = 10
+self_damage = 0
 modifier = 2
 counter = SubResource("Resource_wl85h")
 
-[sub_resource type="Resource" id="Resource_64aps"]
+[sub_resource type="Resource" id="Resource_pcbyt"]
 script = ExtResource("3_q5aky")
-count_for = 1
+count_for = 0
 filter = 0
 mon_count = 5
 for_what = null
 cap = 0
 return_num = 0
 
-[sub_resource type="Resource" id="Resource_6pqjd"]
+[sub_resource type="Resource" id="Resource_gnwi8"]
 script = ExtResource("2_p50fd")
 heads = true
 const_flip_times = 1
-varying_flip_times = SubResource("Resource_64aps")
+varying_flip_times = SubResource("Resource_pcbyt")
 until = false
 
 [sub_resource type="Resource" id="Resource_vkhqv"]
 script = ExtResource("3_q5aky")
-coin_flip_num = SubResource("Resource_6pqjd")
 count_for = 0
-filter = 0
+filter = 4
+coin_flip_num = SubResource("Resource_gnwi8")
 mon_count = 0
 for_what = null
 cap = 0
-return_num = 0
+return_num = 20
 
 [sub_resource type="Resource" id="Resource_ju8be"]
 script = ExtResource("4_p1pt7")
@@ -84,6 +85,7 @@ colorless_cost = 1
 defender_properties = 0
 ignore_condition = 0
 initial_main_DMG = 20
+self_damage = 0
 modifier = 2
 counter = SubResource("Resource_vkhqv")
 
