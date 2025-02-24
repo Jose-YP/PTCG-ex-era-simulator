@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=19 format=3 uid="uid://d3y3ggocst4r0"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=20 format=3 uid="uid://d3y3ggocst4r0"]
 
 [ext_resource type="Texture2D" uid="uid://kon0844bkmke" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/4.jpg" id="1_4ox76"]
 [ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_gh7dm"]
@@ -29,10 +29,31 @@ formal_ask = false
 choose = 0
 choose_location = 0
 
+[sub_resource type="Resource" id="Resource_br7ny"]
+script = ExtResource("2_aml44")
+target = 3
+damage_taken = -10
+energy_attatched = 1
+knocked_out = false
+condition = 0
+location = 1
+stage = 7
+inclusive = true
+pokemon_class = 0
+bench_size = -1
+type = 1023
+type_size = 1
+ask_string = ""
+formal_ask = false
+choose = 0
+choose_location = 0
+
 [sub_resource type="Resource" id="Resource_8qhfr"]
 script = ExtResource("3_bgqi1")
 how_many = -1
+candidates = SubResource("Resource_br7ny")
 which = 2
+apply_weak_res = false
 initial_main_DMG = 10
 modifier = 0
 ask = SubResource("Resource_sxuxa")

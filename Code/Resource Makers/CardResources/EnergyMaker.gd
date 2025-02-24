@@ -1,7 +1,7 @@
 extends Resource
 class_name Energy
 
-@export_group("Properties")
+#@export_group("Properties")
 @export_enum("Basic Energy", "Special Energy") var considered: String = "Special Energy"
 @export_multiline var description: String = ""
 

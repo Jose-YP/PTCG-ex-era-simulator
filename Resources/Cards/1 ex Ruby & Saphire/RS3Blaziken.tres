@@ -1,21 +1,18 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=20 format=3 uid="uid://b8kt4i4jgosm8"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=11 format=3 uid="uid://b8kt4i4jgosm8"]
 
 [ext_resource type="Texture2D" uid="uid://bcifwgplfoukb" path="res://Art/Cards/1 ex Ruby & Saphire/3.jpg" id="1_x7apq"]
 [ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_xuny2"]
 [ext_resource type="Script" path="res://Code/Resource Makers/PokemonSpecific/BenchAttackMaker.gd" id="2_qspng"]
 [ext_resource type="Resource" uid="uid://b86uut4qajrgg" path="res://Resources/Components/EnergyMovement/SelfDiscardFire.tres" id="3_3toq5"]
-[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_ebs65"]
 [ext_resource type="Script" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="4_oknns"]
-[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/PlacementMaker.gd" id="5_x8w52"]
-[ext_resource type="Script" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="6_v8gw4"]
-[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="7_wf0ge"]
-[ext_resource type="Script" path="res://Code/Resource Makers/PokemonSpecific/PowerMaker.gd" id="8_kfqiq"]
+[ext_resource type="Resource" uid="uid://dpppa2iiky1ct" path="res://Resources/Components/Firestarter.tres" id="5_ybcb3"]
 [ext_resource type="Script" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="9_jxr8p"]
 
 [sub_resource type="Resource" id="Resource_c7gir"]
 script = ExtResource("2_qspng")
 how_many = -1
 which = 1
+apply_weak_res = false
 initial_main_DMG = 10
 modifier = 0
 
@@ -39,58 +36,11 @@ modifier = 0
 bench_damage = SubResource("Resource_c7gir")
 effect = ExtResource("3_3toq5")
 
-[sub_resource type="Resource" id="Resource_h0r4n"]
-script = ExtResource("5_x8w52")
-where = 5
-shuffle = false
-evolve = false
-
-[sub_resource type="Resource" id="Resource_y7il7"]
-script = ExtResource("6_v8gw4")
-broad_class = 4
-contains = ""
-type = 2
-evolves_from = false
-poke_class = null
-owner = 0
-stage = null
-trainer_classes = null
-energy_class = 3
-
-[sub_resource type="Resource" id="Resource_t1h8r"]
-script = ExtResource("7_wf0ge")
-side = 0
-where = 0
-how_many = 1
-of_this = Array[ExtResource("6_v8gw4")]([SubResource("Resource_y7il7")])
-and_then = SubResource("Resource_h0r4n")
-reveal = true
-
-[sub_resource type="Resource" id="Resource_eu4bd"]
-script = ExtResource("3_ebs65")
-order = Array[int]([])
-search = Array[ExtResource("7_wf0ge")]([SubResource("Resource_t1h8r")])
-remove_conditions = false
-remove_shockwave = false
-remove_imprison = false
-choose_active = false
-switch_type = 0
-mimic = 0
-
-[sub_resource type="Resource" id="Resource_03xgj"]
-script = ExtResource("8_kfqiq")
-name = "Firestarter"
-description = "Once during your turn (before your attack), you may attach a Fire Energy card from your discard pile to 1 of your Benched Pokémon. This power can't be used if Blaziken is affected by a Special Condition."
-affected_by_condition = true
-active = false
-how_often = 0
-effect = SubResource("Resource_eu4bd")
-
 [sub_resource type="Resource" id="Resource_pwfqk"]
 script = ExtResource("9_jxr8p")
 HP = 100
 retreat = 2
-power = SubResource("Resource_03xgj")
+power = ExtResource("5_ybcb3")
 attacks = Array[ExtResource("4_oknns")]([SubResource("Resource_ld6ej")])
 evo_stage = "Stage 2"
 evolves_from = "Combusken"

@@ -1,0 +1,106 @@
+[gd_scene load_steps=5 format=3 uid="uid://beymnk0kvpnut"]
+
+[ext_resource type="Script" path="res://Code/Scenes/UI/power_item.gd" id="1_y7yv4"]
+[ext_resource type="Resource" uid="uid://dpppa2iiky1ct" path="res://Resources/Components/Firestarter.tres" id="2_2mmmf"]
+[ext_resource type="Theme" uid="uid://bgn3jjlbvn1xq" path="res://Themes/PowerButton.tres" id="2_t1bre"]
+[ext_resource type="Texture2D" uid="uid://ct1rslwcfpy1y" path="res://Art/ETCIcons/Pokepower.png" id="3_of7gp"]
+
+[node name="AttackItem" type="MarginContainer"]
+offset_left = 21.0
+offset_top = 11.0
+offset_right = 421.0
+offset_bottom = 71.0
+mouse_filter = 2
+script = ExtResource("1_y7yv4")
+power = ExtResource("2_2mmmf")
+
+[node name="PowerButton" type="Button" parent="."]
+self_modulate = Color(0.895007, 0.582781, 0.624828, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_default_cursor_shape = 2
+theme = ExtResource("2_t1bre")
+
+[node name="AllText" type="VBoxContainer" parent="."]
+layout_mode = 2
+mouse_filter = 2
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="AllText"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_top = 11
+
+[node name="Base Text" type="HBoxContainer" parent="AllText"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="AllText/Base Text"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_right = 20
+
+[node name="Icon" type="TextureRect" parent="AllText/Base Text"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+texture = ExtResource("3_of7gp")
+
+[node name="Name" type="RichTextLabel" parent="AllText/Base Text"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+bbcode_enabled = true
+text = "[center]Everyone Explode Now"
+fit_content = true
+
+[node name="MarginContainer2" type="MarginContainer" parent="AllText/Base Text"]
+visible = false
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_right = 15
+
+[node name="MarginContainer3" type="MarginContainer" parent="AllText"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_top = 1
+
+[node name="EffectContainer" type="HBoxContainer" parent="AllText"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="AllText/EffectContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_right = 10
+
+[node name="EffectText" type="RichTextLabel" parent="AllText/EffectContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+mouse_filter = 2
+text = "HUGE EFFECT TEX LIKE SUPER HUGE, JUST SAY EVERYTHING YOU EVER WANTED TO SAY, YOUR WILL YOUR DECLARATION. MAYBE THROW IN THAT 10 HOUR VIDEO ESSAY YOU LIKED SO MUCH. MAYBE NOT... SORRY"
+fit_content = true
+
+[node name="MarginContainer" type="MarginContainer" parent="AllText/EffectContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 10
+
+[node name="MarginContainer2" type="MarginContainer" parent="AllText"]
+layout_mode = 2
+mouse_filter = 2
+
+[connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
+[connection signal="minimum_size_changed" from="PowerButton" to="." method="_on_attack_button_minimum_size_changed"]
+[connection signal="resized" from="PowerButton" to="." method="_on_attack_button_resized"]

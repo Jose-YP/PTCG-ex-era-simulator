@@ -1,7 +1,8 @@
 extends Control
 
-@export var card: Base_Card
+@export var card_slot: PokeSlot
 
+@onready var card: Base_Card = card_slot.current_card
 @onready var pokedata: Pokemon = card.pokemon_properties
 @onready var display_name: RichTextLabel = %Name
 @onready var extra_identifier: RichTextLabel = %Extra
@@ -20,6 +21,8 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	%AttackList.current_slot = card_slot
+	
 	make_text(display_name, card.name)
 	make_text(max_hp, str("HP:",pokedata.HP))
 	

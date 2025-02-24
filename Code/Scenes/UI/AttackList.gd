@@ -29,6 +29,10 @@ func reset_items():
 	queue_free()
 
 func set_items():
+	#Get PokeBody
+	
+	#Get Pokepower
+	
 	var list_tween: Tween = get_tree().create_tween().set_parallel()
 	var attacks: Array[Attack] = current_slot.pokedata.attacks
 	for item in attacks:

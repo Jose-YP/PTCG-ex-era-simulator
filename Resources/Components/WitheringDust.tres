@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="PokeBody" load_steps=6 format=3 uid="uid://2p0hc22v0g1o"]
+
+[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/DisableMaker.gd" id="1_anoia"]
+[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_qvpoo"]
+[ext_resource type="Script" path="res://Code/Resource Makers/PokemonSpecific/BodyMaker.gd" id="3_d48xh"]
+
+[sub_resource type="Resource" id="Resource_rd3xr"]
+script = ExtResource("1_anoia")
+disable_target = 0
+no_weakness = false
+no_resistance = true
+instead_of_damage = false
+do_nothing = false
+attack = 0
+retreat_duration = 1
+disable_retreat = false
+
+[sub_resource type="Resource" id="Resource_fbclb"]
+script = ExtResource("2_qvpoo")
+order = Array[int]([3])
+disable = SubResource("Resource_rd3xr")
+search = Array[Resource("res://Code/Resource Makers/EffectSpecific/SearchMaker.gd")]([])
+remove_conditions = false
+remove_shockwave = false
+remove_imprison = false
+choose_active = false
+switch_type = 0
+mimic = 0
+
+[resource]
+script = ExtResource("3_d48xh")
+when_active = false
+name = "Withering Dust"
+description = "As long as Beautifly is in play, do not apply Resistance for all Active Pokémon."
+affected_by_condition = false
+attatched_energy = 0
+effect = SubResource("Resource_fbclb")

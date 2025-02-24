@@ -1,0 +1,26 @@
+extends MarginContainer
+
+@export var power: PokePower
+
+@onready var bodyButton: Button = $PowerButton
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	%Name.clear()
+	%Name.append_text("[center]")
+	%Name.push_color(Color(0.895, 0.583, 0.625))
+	%Name.append_text(power.name)
+	
+	%EffectText.clear()
+	if power.description != "":
+		%EffectText.append_text(power.description)
+		%EffectText.show()
+
+func _on_focus_entered():
+	bodyButton.grab_focus()
+
+func _on_attack_button_minimum_size_changed():
+	print("VDESOUJBNBDVJASIJKDV")
+
+func _on_button_resized():
+	print("OH ", size.y)

@@ -14,6 +14,11 @@ const unknown_number: int = 28
 const energy_types: Array[String] = ["Grass", "Fire", "Water", "Lightning", "Psychic", 
 "Fighting", "Darkness", "Metal", "Colorless", "Rainbow", "Magma", "Aqua", "Dark Metal",
  "FF", "GL", "WP", "React"]
+const energy_icons = ["res://Art/Energy/48px-Grass-attack.png", "res://Art/Energy/48px-Fire-attack.png",
+"res://Art/Energy/48px-Water-attack.png","res://Art/Energy/48px-Lightning-attack.png", 
+"res://Art/Energy/48px-Psychic-attack.png", "res://Art/Energy/48px-Fighting-attack.png", 
+"res://Art/Energy/48px-Darkness-attack.png","res://Art/Energy/48px-Metal-attack.png",
+"res://Art/Energy/48px-Colorless-attack.png"]
 const energy_colors: Array[Color] = [Color.GREEN, Color.RED, Color.AQUA,
  Color.YELLOW, Color.PURPLE, Color.ORANGE_RED, Color.DARK_SLATE_GRAY,
 Color.GRAY, Color.WHITE_SMOKE]

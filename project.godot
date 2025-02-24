@@ -19,6 +19,8 @@ config/icon="res://Art/Energy/48px-Metal-attack.png"
 [autoload]
 
 Constants="*res://Code/Globals/Constants.gd"
+SignalBus="*res://Code/Globals/signal_bus.gd"
+Conversions="*res://Code/Globals/conversions.gd"
 
 [display]
 

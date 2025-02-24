@@ -1,0 +1,39 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://crahea8fl2d3s"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vlqf8"]
+bg_color = Color(0.0313987, 0.103271, 0.09502, 1)
+border_color = Color(0.286275, 0.00392157, 0.611765, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yloa2"]
+bg_color = Color(0.301961, 0.215686, 0.556863, 1)
+border_width_left = 1
+border_width_top = 2
+border_width_right = 1
+border_width_bottom = 2
+border_color = Color(0.286275, 0.00392157, 0.611765, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_751hu"]
+bg_color = Color(0.109804, 0.247059, 0.231373, 1)
+border_width_left = 1
+border_width_top = 2
+border_width_right = 1
+border_width_bottom = 2
+border_color = Color(0, 0.145098, 0.0431373, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_auhmd"]
+bg_color = Color(0.137255, 0.141176, 0.278431, 1)
+border_width_left = 1
+border_width_top = 2
+border_width_right = 1
+border_width_bottom = 2
+border_color = Color(0.286275, 0.00392157, 0.611765, 1)
+border_blend = true
+
+[resource]
+Button/styles/disabled = SubResource("StyleBoxFlat_vlqf8")
+Button/styles/hover = SubResource("StyleBoxFlat_yloa2")
+Button/styles/normal = SubResource("StyleBoxFlat_751hu")
+Button/styles/pressed = SubResource("StyleBoxFlat_auhmd")
