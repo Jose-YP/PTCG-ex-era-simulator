@@ -7,7 +7,6 @@
 script = ExtResource("1_ayymb")
 heads = true
 const_flip_times = 1
-varying_flip_times = 0
 until = false
 
 [resource]

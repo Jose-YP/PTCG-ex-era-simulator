@@ -62,7 +62,6 @@ retreat = 4
 attacks = Array[ExtResource("2_cfam6")]([SubResource("Resource_jpj5i"), SubResource("Resource_3cg3j"), ExtResource("4_3ho6v")])
 evo_stage = "Stage 2"
 evolves_from = "Lairon"
-delta = false
 considered = null
 owner = 0
 type = 128

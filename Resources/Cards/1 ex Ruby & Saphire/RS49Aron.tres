@@ -10,9 +10,12 @@
 [sub_resource type="Resource" id="Resource_nsaqp"]
 script = ExtResource("2_2v2aq")
 buff_target = 0
+duration = 1
 attack_damage = 0
 defense = 10
 after_weak_res = true
+immune_to_effects = false
+immune_to_damage = false
 
 [sub_resource type="Resource" id="Resource_utovm"]
 script = ExtResource("2_373tt")
@@ -42,6 +45,7 @@ colorless_cost = 1
 defender_properties = 0
 ignore_condition = 0
 initial_main_DMG = 0
+self_damage = 0
 modifier = 0
 effect = SubResource("Resource_utovm")
 
@@ -61,6 +65,7 @@ colorless_cost = 2
 defender_properties = 0
 ignore_condition = 0
 initial_main_DMG = 20
+self_damage = 0
 modifier = 0
 
 [sub_resource type="Resource" id="Resource_82lgu"]
@@ -70,7 +75,6 @@ retreat = 1
 attacks = Array[ExtResource("3_mit06")]([SubResource("Resource_iubtr"), SubResource("Resource_1g2nc")])
 evo_stage = "Basic"
 evolves_from = ""
-delta = false
 considered = 0
 owner = 0
 type = 128

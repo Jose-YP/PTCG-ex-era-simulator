@@ -27,9 +27,12 @@ choose_location = 0
 [sub_resource type="Resource" id="Resource_w1pwm"]
 script = ExtResource("3_b0id2")
 buff_target = 0
+duration = 1
 attack_damage = 0
 defense = 10
 after_weak_res = true
+immune_to_effects = false
+immune_to_damage = false
 
 [sub_resource type="Resource" id="Resource_rtiwi"]
 script = ExtResource("4_1lfkp")
