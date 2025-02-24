@@ -13,8 +13,6 @@ specific_requirement = ""
 description = "Flip a coin. If heads, choose 1 Energy card attached to 1 of your opponent's Pokémon and discard it. "
 asks = ExtResource("3_exx1m")
 success_effect = ExtResource("5_lvbpc")
-remove_after = true
-duration = -1
 
 [resource]
 script = ExtResource("2_jy4os")

@@ -4,6 +4,7 @@
 
 [resource]
 script = ExtResource("1_4xpar")
+must_be_different = false
 broad_class = 4
 contains = ""
 type = 511

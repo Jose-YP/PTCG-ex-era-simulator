@@ -1,8 +1,8 @@
 [gd_scene load_steps=41 format=3 uid="uid://crecmsup0hxcr"]
 
 [ext_resource type="Script" path="res://Code/Scenes/UI/Card.gd" id="1_ao8mj"]
+[ext_resource type="Resource" uid="uid://yjages2tp857" path="res://Resources/Cards/1 ex Ruby & Saphire/RS1Aggron.tres" id="2_13uqe"]
 [ext_resource type="PackedScene" uid="uid://bs3ila6cpt8n1" path="res://Scenes/UI/UIComponents/types.tscn" id="2_em05s"]
-[ext_resource type="Resource" uid="uid://dq5yc7aoltpwf" path="res://Resources/Cards/1 ex Ruby & Saphire/RS27Combusken.tres" id="2_fbgld"]
 [ext_resource type="StyleBox" uid="uid://duhmik1loeema" path="res://Themes/GBABox.tres" id="2_uf5nv"]
 [ext_resource type="Theme" uid="uid://bfw6ylcttychc" path="res://Themes/AverageButton.tres" id="3_1mjph"]
 [ext_resource type="Texture2D" uid="uid://b4uymubvo04qp" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/37.jpg" id="3_hm8dc"]
@@ -57,7 +57,7 @@ offset_bottom = -266.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ao8mj")
-card = ExtResource("2_fbgld")
+card = ExtResource("2_13uqe")
 metadata/_edit_group_ = true
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
@@ -100,7 +100,6 @@ custom_minimum_size = Vector2(38, 0)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
-text = "baby"
 fit_content = true
 
 [node name="HP" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/MainInfo/MainInfromation"]
@@ -114,14 +113,18 @@ fit_content = true
 
 [node name="DefaultType" parent="PanelContainer/MarginContainer/VBoxContainer/MainInfo/MainInfromation" instance=ExtResource("2_em05s")]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 
 [node name="DefaultType2" parent="PanelContainer/MarginContainer/VBoxContainer/MainInfo/MainInfromation" instance=ExtResource("2_em05s")]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 
 [node name="Art" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 125)
 layout_mode = 2
+size_flags_horizontal = 4
 
 [node name="Arts" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Art"]
 layout_mode = 2
@@ -133,6 +136,8 @@ modulate = Color(1, 1, 1, 0.992157)
 custom_minimum_size = Vector2(189, 114)
 layout_mode = 2
 texture = ExtResource("3_hm8dc")
+expand_mode = 5
+stretch_mode = 5
 
 [node name="Evo&Illus" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -143,12 +148,21 @@ layout_mode = 2
 [node name="EvoFrom" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/Evo&Illus/Evo&Illus"]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
 text = "Evolves From"
+fit_content = true
 
 [node name="Illustrator" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/Evo&Illus/Evo&Illus"]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
 text = "Illustrator:"
+fit_content = true
+
+[node name="Rulebox" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
 
 [node name="Attacks" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -189,7 +203,6 @@ alignment = 2
 [node name="Weakness" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Other/OtherProperties"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/separation = 20
 alignment = 1
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/Other/OtherProperties/Weakness"]
@@ -200,22 +213,24 @@ bbcode_enabled = true
 text = "[center]Weakness"
 fit_content = true
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Other/OtherProperties/Weakness"]
+[node name="Weaknesses" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Other/OtherProperties/Weakness"]
+unique_name_in_owner = true
 layout_mode = 2
 alignment = 1
 
-[node name="WeaknessType" parent="PanelContainer/MarginContainer/VBoxContainer/Other/OtherProperties/Weakness/HBoxContainer" instance=ExtResource("2_em05s")]
+[node name="WeaknessType" parent="PanelContainer/MarginContainer/VBoxContainer/Other/OtherProperties/Weakness/Weaknesses" instance=ExtResource("2_em05s")]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 
-[node name="WeaknessType2" parent="PanelContainer/MarginContainer/VBoxContainer/Other/OtherProperties/Weakness/HBoxContainer" instance=ExtResource("2_em05s")]
+[node name="WeaknessType2" parent="PanelContainer/MarginContainer/VBoxContainer/Other/OtherProperties/Weakness/Weaknesses" instance=ExtResource("2_em05s")]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 
 [node name="Reistance" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Other/OtherProperties"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/separation = 20
 alignment = 1
 
 [node name="RichTextLabel3" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/Other/OtherProperties/Reistance"]
@@ -226,22 +241,24 @@ bbcode_enabled = true
 text = "[center]Resist"
 fit_content = true
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Other/OtherProperties/Reistance"]
+[node name="Resistances" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Other/OtherProperties/Reistance"]
+unique_name_in_owner = true
 layout_mode = 2
 alignment = 1
 
-[node name="ResistanceType" parent="PanelContainer/MarginContainer/VBoxContainer/Other/OtherProperties/Reistance/HBoxContainer2" instance=ExtResource("2_em05s")]
+[node name="ResistanceType" parent="PanelContainer/MarginContainer/VBoxContainer/Other/OtherProperties/Reistance/Resistances" instance=ExtResource("2_em05s")]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 
-[node name="ResistanceType2" parent="PanelContainer/MarginContainer/VBoxContainer/Other/OtherProperties/Reistance/HBoxContainer2" instance=ExtResource("2_em05s")]
+[node name="ResistanceType2" parent="PanelContainer/MarginContainer/VBoxContainer/Other/OtherProperties/Reistance/Resistances" instance=ExtResource("2_em05s")]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 
 [node name="RetreatCost" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Other/OtherProperties"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/separation = 20
 alignment = 1
 
 [node name="RichTextLabel4" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/Other/OtherProperties/RetreatCost"]

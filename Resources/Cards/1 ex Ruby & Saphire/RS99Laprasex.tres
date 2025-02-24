@@ -1,0 +1,81 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=11 format=3 uid="uid://dxrduwpe540go"]
+
+[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_70xxw"]
+[ext_resource type="Texture2D" uid="uid://bf7b3we0s6a0p" path="res://Art/Cards/1 ex Ruby & Saphire/99.jpg" id="1_xkacn"]
+[ext_resource type="Script" path="res://Code/Resource Makers/GeneralUse/CounterMaker.gd" id="2_4i1dy"]
+[ext_resource type="Script" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="3_bb8ip"]
+[ext_resource type="Resource" uid="uid://nx1kc1vsm4ia" path="res://Resources/Components/Basic Conditions/BasicConfusion.tres" id="4_jwpb3"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_f5leu"]
+
+[sub_resource type="Resource" id="Resource_7x5hs"]
+script = ExtResource("2_4i1dy")
+count_for = 0
+filter = 4
+mon_count = 0
+for_what = null
+cap = 0
+return_num = 0
+
+[sub_resource type="Resource" id="Resource_8a8we"]
+script = ExtResource("3_bb8ip")
+name = "Energy Ball"
+description = "Does 10 damage plus 10 more damage for each Energy attached to Lapras ex but not used to pay for this attack's Energy cost. You can't add more than 20 damage in this way."
+grass_cost = 0
+fire_cost = 0
+water_cost = 1
+lightning_cost = 0
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 0
+defender_properties = 0
+ignore_condition = 0
+initial_main_DMG = 10
+modifier = 1
+counter = SubResource("Resource_7x5hs")
+
+[sub_resource type="Resource" id="Resource_kpk3t"]
+script = ExtResource("3_bb8ip")
+name = "Confuse Ray"
+description = "The Defending Pokémon is now Confused."
+grass_cost = 0
+fire_cost = 0
+water_cost = 2
+lightning_cost = 0
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 1
+defender_properties = 0
+ignore_condition = 0
+initial_main_DMG = 30
+modifier = 0
+effect = ExtResource("4_jwpb3")
+
+[sub_resource type="Resource" id="Resource_hnddy"]
+script = ExtResource("5_f5leu")
+HP = 30
+retreat = 0
+attacks = Array[ExtResource("3_bb8ip")]([SubResource("Resource_8a8we"), SubResource("Resource_kpk3t")])
+evo_stage = "Basic"
+evolves_from = ""
+delta = false
+considered = 1
+owner = 0
+type = 4
+weak = 8
+resist = 0
+
+[resource]
+script = ExtResource("1_70xxw")
+name = " Lapras ex"
+image = ExtResource("1_xkacn")
+illustrator = "Hikaru Koike"
+number = 99
+rarity = 4
+expansion = 0
+categories = 1
+pokemon_properties = SubResource("Resource_hnddy")
+fossil = false

@@ -1,0 +1,114 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=15 format=3 uid="uid://b45smf3ecldmx"]
+
+[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_awq2c"]
+[ext_resource type="Texture2D" uid="uid://4io7x213u2ui" path="res://Art/Cards/1 ex Ruby & Saphire/103.jpg" id="1_sakby"]
+[ext_resource type="Script" path="res://Code/Resource Makers/GeneralUse/CoinFlipNumMaker.gd" id="2_p50fd"]
+[ext_resource type="Script" path="res://Code/Resource Makers/GeneralUse/CounterMaker.gd" id="3_q5aky"]
+[ext_resource type="Script" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="4_p1pt7"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_pr7l4"]
+
+[sub_resource type="Resource" id="Resource_pn2te"]
+script = ExtResource("2_p50fd")
+heads = true
+const_flip_times = 2
+until = false
+
+[sub_resource type="Resource" id="Resource_wl85h"]
+script = ExtResource("3_q5aky")
+coin_flip_num = SubResource("Resource_pn2te")
+count_for = 0
+filter = 0
+mon_count = 0
+for_what = null
+cap = 0
+return_num = 10
+
+[sub_resource type="Resource" id="Resource_xrmox"]
+script = ExtResource("4_p1pt7")
+name = "Double Scratch"
+description = "Flip 2 coins. This attack does 10 damage times the number of heads."
+grass_cost = 0
+fire_cost = 0
+water_cost = 0
+lightning_cost = 0
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 1
+metal_cost = 0
+colorless_cost = 0
+defender_properties = 0
+ignore_condition = 0
+initial_main_DMG = 10
+modifier = 2
+counter = SubResource("Resource_wl85h")
+
+[sub_resource type="Resource" id="Resource_64aps"]
+script = ExtResource("3_q5aky")
+count_for = 1
+filter = 0
+mon_count = 5
+for_what = null
+cap = 0
+return_num = 0
+
+[sub_resource type="Resource" id="Resource_6pqjd"]
+script = ExtResource("2_p50fd")
+heads = true
+const_flip_times = 1
+varying_flip_times = SubResource("Resource_64aps")
+until = false
+
+[sub_resource type="Resource" id="Resource_vkhqv"]
+script = ExtResource("3_q5aky")
+coin_flip_num = SubResource("Resource_6pqjd")
+count_for = 0
+filter = 0
+mon_count = 0
+for_what = null
+cap = 0
+return_num = 0
+
+[sub_resource type="Resource" id="Resource_ju8be"]
+script = ExtResource("4_p1pt7")
+name = "Beat Up"
+description = "Flip a coin for each of your Pokémon in play (including Sneasel ex). This attack does 20 damage times the number of heads."
+grass_cost = 0
+fire_cost = 0
+water_cost = 0
+lightning_cost = 0
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 2
+metal_cost = 0
+colorless_cost = 1
+defender_properties = 0
+ignore_condition = 0
+initial_main_DMG = 20
+modifier = 2
+counter = SubResource("Resource_vkhqv")
+
+[sub_resource type="Resource" id="Resource_kh1cl"]
+script = ExtResource("5_pr7l4")
+HP = 80
+retreat = 1
+attacks = Array[ExtResource("4_p1pt7")]([SubResource("Resource_xrmox"), SubResource("Resource_ju8be")])
+evo_stage = "Basic"
+evolves_from = ""
+delta = false
+considered = 1
+owner = 0
+type = 64
+weak = 32
+resist = 16
+
+[resource]
+script = ExtResource("1_awq2c")
+name = " Sneasel ex"
+image = ExtResource("1_sakby")
+illustrator = "Ryo Ueda"
+number = 103
+rarity = 4
+expansion = 0
+categories = 1
+pokemon_properties = SubResource("Resource_kh1cl")
+fossil = false

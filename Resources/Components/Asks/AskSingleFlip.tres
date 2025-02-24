@@ -18,6 +18,7 @@ energy_attatched = -1
 knocked_out = false
 condition = 0
 location = 0
+stage = 7
 inclusive = true
 pokemon_class = 0
 bench_size = -1

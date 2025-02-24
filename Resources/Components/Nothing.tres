@@ -11,7 +11,7 @@ no_resistance = false
 instead_of_damage = false
 do_nothing = true
 attack = 0
-retrat_duration = 1
+retreat_duration = 1
 disable_retreat = false
 
 [resource]
@@ -22,5 +22,6 @@ search = Array[Resource("res://Code/Resource Makers/EffectSpecific/SearchMaker.g
 remove_conditions = false
 remove_shockwave = false
 remove_imprison = false
+choose_active = false
 switch_type = 0
 mimic = 0
