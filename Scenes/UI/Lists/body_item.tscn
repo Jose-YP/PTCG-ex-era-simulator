@@ -6,26 +6,30 @@
 [ext_resource type="Texture2D" uid="uid://dmlnngpyb3if" path="res://Art/ETCIcons/Pokebody.png" id="5_07ss0"]
 
 [node name="Body" type="MarginContainer"]
-offset_left = 21.0
-offset_top = 11.0
-offset_right = 421.0
-offset_bottom = 71.0
+offset_left = 1.0
+offset_top = -1.0
+offset_right = 401.0
+offset_bottom = 59.0
 mouse_filter = 2
 script = ExtResource("1_3ej87")
 body = ExtResource("2_loqau")
+metadata/_edit_group_ = true
 
 [node name="BodyButton" type="Button" parent="."]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+focus_mode = 0
 mouse_default_cursor_shape = 2
 theme = ExtResource("3_isp2w")
+disabled = true
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
 
 [node name="AllText" type="VBoxContainer" parent="."]
 layout_mode = 2
 mouse_filter = 2
 metadata/_edit_group_ = true
-metadata/_edit_lock_ = true
 
 [node name="MarginContainer" type="MarginContainer" parent="AllText"]
 layout_mode = 2

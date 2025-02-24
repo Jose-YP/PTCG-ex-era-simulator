@@ -30,4 +30,7 @@ Color.GRAY, Color.WHITE_SMOKE]
 const playing_list_item = preload("res://Scenes/UI/Lists/PlayingListItem.tscn")
 const playing_list = preload("res://Scenes/UI/Lists/NewPlayingList.tscn")
 const attack_list = preload("res://Scenes/UI/Lists/attack_list.tscn")
+const poke_card = preload("res://Scenes/UI/CardDisplay/PokemonCard.tscn")
+const trainer_card = preload("res://Scenes/UI/CardDisplay/TrainerCard.tscn")
+const energy_card = preload("res://Scenes/UI/CardDisplay/EnergyCard.tscn")
 const cursor = preload("res://Scenes/UI/UIComponents/cursor.tscn")

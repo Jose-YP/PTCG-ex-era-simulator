@@ -13,7 +13,8 @@ func _ready():
 	
 	%EffectText.clear()
 	if body.description != "":
-		%EffectText.append_text(body.description)
+		var final_text: String = Conversions.reformat(body.description)
+		%EffectText.append_text(final_text)
 		%EffectText.show()
 
 func _on_focus_entered():

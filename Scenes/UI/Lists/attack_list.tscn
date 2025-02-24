@@ -1,7 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://cvh086w8yapm0"]
+[gd_scene load_steps=7 format=3 uid="uid://cvh086w8yapm0"]
 
 [ext_resource type="Script" path="res://Code/Scenes/UI/AttackList.gd" id="1_oywep"]
 [ext_resource type="PackedScene" uid="uid://dvvv8k1g6tgog" path="res://Scenes/UI/Lists/attack_item.tscn" id="2_usqnq"]
+[ext_resource type="PackedScene" uid="uid://beymnk0kvpnut" path="res://Scenes/UI/Lists/power_item.tscn" id="3_iiork"]
+[ext_resource type="PackedScene" uid="uid://cidor8csiohus" path="res://Scenes/UI/Lists/body_item.tscn" id="4_yjwkq"]
+[ext_resource type="Resource" uid="uid://jq2ng1vyif34" path="res://Resources/Cards/1 ex Ruby & Saphire/RS28Combusken.tres" id="5_yee1y"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ud5dv"]
 bg_color = Color(0.12549, 0.109804, 0.117647, 0.780392)
@@ -15,21 +18,23 @@ modulate = Color(1, 1, 1, 0)
 top_level = true
 custom_minimum_size = Vector2(450, 0)
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 15.0
-offset_top = 16.0
-offset_right = -615.0
-offset_bottom = -704.0
+anchor_right = 0.053
+anchor_bottom = 0.5
+offset_top = 1.0
+offset_right = 1082.76
+offset_bottom = 6821.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.05, 0.05)
 script = ExtResource("1_oywep")
 attackItem = ExtResource("2_usqnq")
+powerItem = ExtResource("3_iiork")
+bodyItem = ExtResource("4_yjwkq")
+current_card = ExtResource("5_yee1y")
 metadata/_edit_group_ = true
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(390, 0)
 layout_mode = 0
 offset_right = 400.0
 offset_bottom = 44.0
@@ -79,6 +84,7 @@ theme_override_constants/margin_right = 5
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/separation = 8
+alignment = 1
 
 [node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/VBoxContainer/ScrollBox/VBoxContainer2"]
 layout_mode = 2

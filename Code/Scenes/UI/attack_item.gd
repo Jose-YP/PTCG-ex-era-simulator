@@ -13,7 +13,8 @@ func _ready():
 	
 	%EffectText.clear()
 	if attack.description != "":
-		%EffectText.append_text(attack.description)
+		var final_text: String = Conversions.reformat(attack.description)
+		%EffectText.append_text(final_text)
 		%EffectText.show()
 	
 	print("Current final Cost: ", final_cost)
