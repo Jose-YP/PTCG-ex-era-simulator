@@ -24,9 +24,10 @@ func _ready():
 	
 	art.texture = card.image
 	
-	make_text(illustrator, str("Illus. ", card.illustrator))
+	if card.illustrator != "":
+		make_text(illustrator, str("Illus. ", card.illustrator))
 	
-	var final_text: String = Conversions.insert_icons(engData.description)
+	var final_text: String = Conversions.reformat(engData.description)
 	make_text(effect_text, final_text)
 	
 	make_text(number, str(card.number, "/", Constants.expansion_counts[card.expansion]))

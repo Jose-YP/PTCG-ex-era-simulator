@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_3mfhp")
 considered = "Basic Energy"
-description = ""
+description = "Provide 1 {Fire} Energy"
 fail_provide = false
 fail_prevent = false
 turns = -1

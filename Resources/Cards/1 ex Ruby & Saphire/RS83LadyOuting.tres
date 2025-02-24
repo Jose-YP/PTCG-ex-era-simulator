@@ -47,8 +47,6 @@ considered = "Supporter"
 specific_requirement = ""
 description = "Search your deck for up to 3 different types of basic Energy cards, show them to your opponent, and put them into your hand. Shuffle your deck afterward. "
 always_effect = SubResource("Resource_htv53")
-remove_after = true
-duration = -1
 
 [resource]
 script = ExtResource("2_77uu6")

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Card" load_steps=4 format=3 uid="uid://y724htokdlrt"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=4 format=3 uid="uid://y724htokdlrt"]
 
 [ext_resource type="Resource" uid="uid://b6omjsm8a44qg" path="res://Resources/Components/Basic Energy/FightingEnergy.tres" id="1_88sqo"]
 [ext_resource type="Texture2D" uid="uid://b5mtbees3k08m" path="res://Art/Cards/1 ex Ruby & Saphire/105.jpg" id="2_at5om"]

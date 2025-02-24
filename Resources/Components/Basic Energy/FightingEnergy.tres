@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_xcprf")
 considered = "Basic Energy"
-description = ""
+description = "Provide 1 {Fighting} Energy"
 fail_provide = false
 fail_prevent = false
 turns = -1

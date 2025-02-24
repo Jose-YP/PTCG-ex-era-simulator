@@ -1,0 +1,59 @@
+[gd_resource type="Resource" script_class="Energy" load_steps=8 format=3 uid="uid://dn8da16sjen5f"]
+
+[ext_resource type="Script" path="res://Code/Resource Makers/GeneralUse/AskMaker.gd" id="1_e5j2r"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="2_8vyn0"]
+[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/BuffMaker.gd" id="3_b0id2"]
+[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_1lfkp"]
+
+[sub_resource type="Resource" id="Resource_cer21"]
+script = ExtResource("1_e5j2r")
+target = 1
+damage_taken = -10
+energy_attatched = -1
+knocked_out = false
+condition = 0
+location = 4
+stage = 7
+inclusive = true
+pokemon_class = 0
+bench_size = -1
+type = 640
+type_size = 1
+ask_string = ""
+formal_ask = false
+choose = 0
+choose_location = 0
+
+[sub_resource type="Resource" id="Resource_w1pwm"]
+script = ExtResource("3_b0id2")
+buff_target = 0
+attack_damage = 0
+defense = 10
+after_weak_res = true
+
+[sub_resource type="Resource" id="Resource_rtiwi"]
+script = ExtResource("4_1lfkp")
+order = Array[int]([])
+buff = SubResource("Resource_w1pwm")
+search = Array[Resource("res://Code/Resource Makers/EffectSpecific/SearchMaker.gd")]([])
+remove_conditions = false
+remove_shockwave = false
+remove_imprison = false
+choose_active = false
+switch_type = 0
+mimic = 0
+
+[resource]
+script = ExtResource("2_8vyn0")
+considered = "Special Energy"
+description = " Damage done by attacks to the Pokémon that Metal Energy is attached to is reduced by 10 (after applying Weakness and Resistance). Ignore this effect if the Pokémon that Metal Energy is attached to isn't {Metal}. Metal Energy provides {Metal} Energy. (Doesn't count as a basic Energy card.)"
+asks = SubResource("Resource_cer21")
+fail_provide = false
+fail_prevent = false
+success_effect = SubResource("Resource_rtiwi")
+turns = -1
+number = 1
+react = false
+holon_type = "None"
+type = 128
+fail_type = 1

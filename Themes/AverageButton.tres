@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=5 format=3 uid="uid://bfw6ylcttychc"]
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://bfw6ylcttychc"]
 
 [ext_resource type="StyleBox" uid="uid://duhmik1loeema" path="res://Themes/GBABox.tres" id="1_jr2c4"]
 
@@ -25,8 +25,13 @@ border_width_bottom = 2
 border_color = Color(0.286275, 0.00392157, 0.611765, 1)
 border_blend = true
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ptgho"]
+bg_color = Color(0.368627, 0.27451, 0.698039, 0.701961)
+shadow_size = 1
+
 [resource]
 Button/styles/disabled = SubResource("StyleBoxFlat_wcrro")
 Button/styles/hover = SubResource("StyleBoxFlat_mtcsg")
 Button/styles/normal = ExtResource("1_jr2c4")
 Button/styles/pressed = SubResource("StyleBoxFlat_auhmd")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_ptgho")

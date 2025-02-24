@@ -15,6 +15,7 @@
 script = ExtResource("2_ax6qi")
 how_many = 1
 which = 1
+apply_weak_res = false
 initial_main_DMG = 10
 modifier = 0
 
@@ -60,7 +61,7 @@ mimic = 0
 [sub_resource type="Resource" id="Resource_nvcnk"]
 script = ExtResource("3_dfgxb")
 name = "Plasma"
-description = "Fllip a coin. If heads, search your discard pile for a Lightning Energy card and attach it to Team Aqua's Electrike."
+description = "Fllip a coin. If heads, search your discard pile for a {Lightning} Energy card and attach it to Team Aqua's Electrike."
 grass_cost = 0
 fire_cost = 0
 water_cost = 0

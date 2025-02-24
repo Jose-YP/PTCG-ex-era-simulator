@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_u2wto")
 considered = "Basic Energy"
-description = ""
+description = "Provide 1 {Grass} Energy"
 fail_provide = false
 fail_prevent = false
 turns = -1

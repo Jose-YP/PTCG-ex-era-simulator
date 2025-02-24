@@ -1,7 +1,9 @@
-[gd_scene load_steps=36 format=3 uid="uid://crecmsup0hxcr"]
+[gd_scene load_steps=38 format=3 uid="uid://crecmsup0hxcr"]
 
 [ext_resource type="Script" path="res://Code/Scenes/UI/Card.gd" id="1_ao8mj"]
 [ext_resource type="PackedScene" uid="uid://bs3ila6cpt8n1" path="res://Scenes/UI/UIComponents/types.tscn" id="2_em05s"]
+[ext_resource type="StyleBox" uid="uid://duhmik1loeema" path="res://Themes/GBABox.tres" id="2_uf5nv"]
+[ext_resource type="Theme" uid="uid://bfw6ylcttychc" path="res://Themes/AverageButton.tres" id="3_1mjph"]
 [ext_resource type="Texture2D" uid="uid://b4uymubvo04qp" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/37.jpg" id="3_hm8dc"]
 [ext_resource type="PackedScene" uid="uid://cvh086w8yapm0" path="res://Scenes/UI/Lists/attack_list.tscn" id="4_7705s"]
 [ext_resource type="Texture2D" uid="uid://ciyynt0iw46k5" path="res://Art/Rarities/31px-Rarity_Common.png" id="5_hf6p2"]
@@ -53,14 +55,25 @@ layout_mode = 2
 offset_top = 200.0
 offset_right = 416.0
 offset_bottom = 396.0
+theme_override_styles/panel = ExtResource("2_uf5nv")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("3_1mjph")
+
+[node name="MainInfo" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="MainInfromation" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+[node name="MainInfromation" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MainInfo"]
 layout_mode = 2
 
-[node name="Name" type="RichTextLabel" parent="PanelContainer/VBoxContainer/MainInfromation"]
+[node name="Name" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/MainInfo/MainInfromation"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(215, 0)
 layout_mode = 2
@@ -69,7 +82,7 @@ size_flags_vertical = 0
 text = "Team Magma's Mightyena"
 fit_content = true
 
-[node name="Extra" type="RichTextLabel" parent="PanelContainer/VBoxContainer/MainInfromation"]
+[node name="Extra" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/MainInfo/MainInfromation"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(38, 0)
 layout_mode = 2
@@ -78,7 +91,7 @@ size_flags_vertical = 0
 text = "baby"
 fit_content = true
 
-[node name="HP" type="RichTextLabel" parent="PanelContainer/VBoxContainer/MainInfromation"]
+[node name="HP" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/MainInfo/MainInfromation"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(63, 0)
 layout_mode = 2
@@ -87,55 +100,67 @@ size_flags_vertical = 0
 text = "HP: 200"
 fit_content = true
 
-[node name="DefaultType" parent="PanelContainer/VBoxContainer/MainInfromation" instance=ExtResource("2_em05s")]
+[node name="DefaultType" parent="PanelContainer/MarginContainer/VBoxContainer/MainInfo/MainInfromation" instance=ExtResource("2_em05s")]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="DefaultType2" parent="PanelContainer/VBoxContainer/MainInfromation" instance=ExtResource("2_em05s")]
+[node name="DefaultType2" parent="PanelContainer/MarginContainer/VBoxContainer/MainInfo/MainInfromation" instance=ExtResource("2_em05s")]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Arts" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+[node name="Art" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Arts" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Art"]
 layout_mode = 2
 alignment = 1
 
-[node name="Art" type="TextureRect" parent="PanelContainer/VBoxContainer/Arts"]
+[node name="Art" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Art/Arts"]
 unique_name_in_owner = true
 modulate = Color(1, 1, 1, 0.992157)
 custom_minimum_size = Vector2(189, 114)
 layout_mode = 2
 texture = ExtResource("3_hm8dc")
 
-[node name="Evo&Illus" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+[node name="Evo&Illus" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="EvoFrom" type="RichTextLabel" parent="PanelContainer/VBoxContainer/Evo&Illus"]
+[node name="Evo&Illus" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Evo&Illus"]
+layout_mode = 2
+
+[node name="EvoFrom" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/Evo&Illus/Evo&Illus"]
 layout_mode = 2
 text = "Evolves From"
 
-[node name="Illustrator" type="RichTextLabel" parent="PanelContainer/VBoxContainer/Evo&Illus"]
+[node name="Illustrator" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/Evo&Illus/Evo&Illus"]
 layout_mode = 2
 text = "Illustrator:"
 
-[node name="Attacks" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+[node name="Attacks" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="AttackList" parent="PanelContainer/VBoxContainer/Attacks" instance=ExtResource("4_7705s")]
+[node name="Attacks" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Attacks"]
+layout_mode = 2
+
+[node name="AttackList" parent="PanelContainer/MarginContainer/VBoxContainer/Attacks/Attacks" instance=ExtResource("4_7705s")]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="OtherProperties" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+[node name="Other" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="OtherProperties" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Other"]
 layout_mode = 2
 theme_override_constants/separation = 5
 alignment = 2
 
-[node name="Weakness" type="VBoxContainer" parent="PanelContainer/VBoxContainer/OtherProperties"]
+[node name="Weakness" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Other/OtherProperties"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="PanelContainer/VBoxContainer/OtherProperties/Weakness"]
+[node name="RichTextLabel2" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/Other/OtherProperties/Weakness"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 8
@@ -143,25 +168,25 @@ bbcode_enabled = true
 text = "[center]Weakness"
 fit_content = true
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/OtherProperties/Weakness"]
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Other/OtherProperties/Weakness"]
 layout_mode = 2
 alignment = 1
 
-[node name="WeaknessType" parent="PanelContainer/VBoxContainer/OtherProperties/Weakness/HBoxContainer" instance=ExtResource("2_em05s")]
+[node name="WeaknessType" parent="PanelContainer/MarginContainer/VBoxContainer/Other/OtherProperties/Weakness/HBoxContainer" instance=ExtResource("2_em05s")]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="WeaknessType2" parent="PanelContainer/VBoxContainer/OtherProperties/Weakness/HBoxContainer" instance=ExtResource("2_em05s")]
+[node name="WeaknessType2" parent="PanelContainer/MarginContainer/VBoxContainer/Other/OtherProperties/Weakness/HBoxContainer" instance=ExtResource("2_em05s")]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Reistance" type="VBoxContainer" parent="PanelContainer/VBoxContainer/OtherProperties"]
+[node name="Reistance" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Other/OtherProperties"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="RichTextLabel3" type="RichTextLabel" parent="PanelContainer/VBoxContainer/OtherProperties/Reistance"]
+[node name="RichTextLabel3" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/Other/OtherProperties/Reistance"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 8
@@ -169,25 +194,25 @@ bbcode_enabled = true
 text = "[center]Resist"
 fit_content = true
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/VBoxContainer/OtherProperties/Reistance"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Other/OtherProperties/Reistance"]
 layout_mode = 2
 alignment = 1
 
-[node name="ResistanceType" parent="PanelContainer/VBoxContainer/OtherProperties/Reistance/HBoxContainer2" instance=ExtResource("2_em05s")]
+[node name="ResistanceType" parent="PanelContainer/MarginContainer/VBoxContainer/Other/OtherProperties/Reistance/HBoxContainer2" instance=ExtResource("2_em05s")]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="ResistanceType2" parent="PanelContainer/VBoxContainer/OtherProperties/Reistance/HBoxContainer2" instance=ExtResource("2_em05s")]
+[node name="ResistanceType2" parent="PanelContainer/MarginContainer/VBoxContainer/Other/OtherProperties/Reistance/HBoxContainer2" instance=ExtResource("2_em05s")]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="RetreatCost" type="VBoxContainer" parent="PanelContainer/VBoxContainer/OtherProperties"]
+[node name="RetreatCost" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Other/OtherProperties"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="RichTextLabel4" type="RichTextLabel" parent="PanelContainer/VBoxContainer/OtherProperties/RetreatCost"]
+[node name="RichTextLabel4" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/Other/OtherProperties/RetreatCost"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 8
@@ -195,28 +220,28 @@ bbcode_enabled = true
 text = "[center]Retreat"
 fit_content = true
 
-[node name="RetreatContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/OtherProperties/RetreatCost"]
+[node name="RetreatContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Other/OtherProperties/RetreatCost"]
 unique_name_in_owner = true
 layout_mode = 2
 alignment = 1
 
-[node name="Types" parent="PanelContainer/VBoxContainer/OtherProperties/RetreatCost/RetreatContainer" instance=ExtResource("2_em05s")]
+[node name="Types" parent="PanelContainer/MarginContainer/VBoxContainer/Other/OtherProperties/RetreatCost/RetreatContainer" instance=ExtResource("2_em05s")]
 visible = false
 layout_mode = 2
 
-[node name="Types2" parent="PanelContainer/VBoxContainer/OtherProperties/RetreatCost/RetreatContainer" instance=ExtResource("2_em05s")]
+[node name="Types2" parent="PanelContainer/MarginContainer/VBoxContainer/Other/OtherProperties/RetreatCost/RetreatContainer" instance=ExtResource("2_em05s")]
 visible = false
 layout_mode = 2
 
-[node name="Types3" parent="PanelContainer/VBoxContainer/OtherProperties/RetreatCost/RetreatContainer" instance=ExtResource("2_em05s")]
+[node name="Types3" parent="PanelContainer/MarginContainer/VBoxContainer/Other/OtherProperties/RetreatCost/RetreatContainer" instance=ExtResource("2_em05s")]
 visible = false
 layout_mode = 2
 
-[node name="Types4" parent="PanelContainer/VBoxContainer/OtherProperties/RetreatCost/RetreatContainer" instance=ExtResource("2_em05s")]
+[node name="Types4" parent="PanelContainer/MarginContainer/VBoxContainer/Other/OtherProperties/RetreatCost/RetreatContainer" instance=ExtResource("2_em05s")]
 visible = false
 layout_mode = 2
 
-[node name="Number" type="RichTextLabel" parent="PanelContainer/VBoxContainer/OtherProperties"]
+[node name="Number" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/Other/OtherProperties"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
@@ -224,7 +249,7 @@ size_flags_vertical = 8
 text = "100/100"
 fit_content = true
 
-[node name="Rarity" type="TabContainer" parent="PanelContainer/VBoxContainer/OtherProperties"]
+[node name="Rarity" type="TabContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Other/OtherProperties"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
@@ -234,14 +259,14 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_u7mkw")
 tabs_visible = false
 metadata/_edit_group_ = true
 
-[node name="Common" type="TextureRect" parent="PanelContainer/VBoxContainer/OtherProperties/Rarity"]
+[node name="Common" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Other/OtherProperties/Rarity"]
 layout_mode = 2
 size_flags_vertical = 8
 texture = ExtResource("5_hf6p2")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="Uncommon" type="TextureRect" parent="PanelContainer/VBoxContainer/OtherProperties/Rarity"]
+[node name="Uncommon" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Other/OtherProperties/Rarity"]
 visible = false
 layout_mode = 2
 size_flags_vertical = 8
@@ -249,7 +274,7 @@ texture = ExtResource("6_d7dn7")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="Rare" type="TextureRect" parent="PanelContainer/VBoxContainer/OtherProperties/Rarity"]
+[node name="Rare" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Other/OtherProperties/Rarity"]
 visible = false
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
@@ -258,7 +283,7 @@ texture = ExtResource("7_o84yx")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="Holo Rare" type="TextureRect" parent="PanelContainer/VBoxContainer/OtherProperties/Rarity"]
+[node name="Holo Rare" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Other/OtherProperties/Rarity"]
 visible = false
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
@@ -267,7 +292,7 @@ texture = ExtResource("8_n86qm")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="ex Rare" type="TextureRect" parent="PanelContainer/VBoxContainer/OtherProperties/Rarity"]
+[node name="ex Rare" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Other/OtherProperties/Rarity"]
 visible = false
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
@@ -276,7 +301,7 @@ texture = ExtResource("9_ecgrl")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="Secret Rare" type="TextureRect" parent="PanelContainer/VBoxContainer/OtherProperties/Rarity"]
+[node name="Secret Rare" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Other/OtherProperties/Rarity"]
 visible = false
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
@@ -285,7 +310,7 @@ texture = ExtResource("10_t2lok")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="Ultra Rare" type="TextureRect" parent="PanelContainer/VBoxContainer/OtherProperties/Rarity"]
+[node name="Ultra Rare" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Other/OtherProperties/Rarity"]
 visible = false
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
@@ -294,7 +319,7 @@ texture = ExtResource("11_lmfjy")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="Promo" type="TextureRect" parent="PanelContainer/VBoxContainer/OtherProperties/Rarity"]
+[node name="Promo" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Other/OtherProperties/Rarity"]
 visible = false
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
@@ -303,7 +328,7 @@ texture = ExtResource("12_ggmab")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="Set" type="TabContainer" parent="PanelContainer/VBoxContainer/OtherProperties"]
+[node name="Set" type="TabContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Other/OtherProperties"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
@@ -313,7 +338,7 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_ybxiu")
 tabs_visible = false
 metadata/_edit_group_ = true
 
-[node name="RS" type="TextureRect" parent="PanelContainer/VBoxContainer/OtherProperties/Set"]
+[node name="RS" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Other/OtherProperties/Set"]
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
 size_flags_vertical = 8
@@ -321,7 +346,7 @@ texture = ExtResource("13_s6k81")
 expand_mode = 2
 stretch_mode = 4
 
-[node name="SS" type="TextureRect" parent="PanelContainer/VBoxContainer/OtherProperties/Set"]
+[node name="SS" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Other/OtherProperties/Set"]
 visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
@@ -330,7 +355,7 @@ texture = ExtResource("14_ql1rd")
 expand_mode = 2
 stretch_mode = 4
 
-[node name="DR" type="TextureRect" parent="PanelContainer/VBoxContainer/OtherProperties/Set"]
+[node name="DR" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Other/OtherProperties/Set"]
 visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
@@ -339,7 +364,7 @@ texture = ExtResource("15_wtm2g")
 expand_mode = 2
 stretch_mode = 4
 
-[node name="MA" type="TextureRect" parent="PanelContainer/VBoxContainer/OtherProperties/Set"]
+[node name="MA" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Other/OtherProperties/Set"]
 visible = false
 layout_mode = 2
 size_flags_vertical = 8
@@ -347,7 +372,7 @@ texture = ExtResource("16_b31gw")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="HL" type="TextureRect" parent="PanelContainer/VBoxContainer/OtherProperties/Set"]
+[node name="HL" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Other/OtherProperties/Set"]
 visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
@@ -356,7 +381,7 @@ texture = ExtResource("17_r2oo1")
 expand_mode = 2
 stretch_mode = 4
 
-[node name="RG" type="TextureRect" parent="PanelContainer/VBoxContainer/OtherProperties/Set"]
+[node name="RG" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Other/OtherProperties/Set"]
 visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
@@ -365,7 +390,7 @@ texture = ExtResource("18_f1ru5")
 expand_mode = 2
 stretch_mode = 4
 
-[node name="TRR" type="TextureRect" parent="PanelContainer/VBoxContainer/OtherProperties/Set"]
+[node name="TRR" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Other/OtherProperties/Set"]
 visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
@@ -374,7 +399,7 @@ texture = ExtResource("19_fb32g")
 expand_mode = 2
 stretch_mode = 4
 
-[node name="DX" type="TextureRect" parent="PanelContainer/VBoxContainer/OtherProperties/Set"]
+[node name="DX" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Other/OtherProperties/Set"]
 visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
@@ -383,7 +408,7 @@ texture = ExtResource("20_e4clt")
 expand_mode = 2
 stretch_mode = 4
 
-[node name="EM" type="TextureRect" parent="PanelContainer/VBoxContainer/OtherProperties/Set"]
+[node name="EM" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Other/OtherProperties/Set"]
 visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
@@ -392,7 +417,7 @@ texture = ExtResource("21_t5sh8")
 expand_mode = 2
 stretch_mode = 4
 
-[node name="UF" type="TextureRect" parent="PanelContainer/VBoxContainer/OtherProperties/Set"]
+[node name="UF" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Other/OtherProperties/Set"]
 visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
@@ -401,7 +426,7 @@ texture = ExtResource("22_nqldj")
 expand_mode = 2
 stretch_mode = 4
 
-[node name="DS" type="TextureRect" parent="PanelContainer/VBoxContainer/OtherProperties/Set"]
+[node name="DS" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Other/OtherProperties/Set"]
 visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
@@ -410,7 +435,7 @@ texture = ExtResource("23_41u5o")
 expand_mode = 2
 stretch_mode = 4
 
-[node name="LM" type="TextureRect" parent="PanelContainer/VBoxContainer/OtherProperties/Set"]
+[node name="LM" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Other/OtherProperties/Set"]
 visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
@@ -419,7 +444,7 @@ texture = ExtResource("24_h6jvj")
 expand_mode = 2
 stretch_mode = 4
 
-[node name="HP" type="TextureRect" parent="PanelContainer/VBoxContainer/OtherProperties/Set"]
+[node name="HP" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Other/OtherProperties/Set"]
 visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
@@ -428,7 +453,7 @@ texture = ExtResource("25_blmm3")
 expand_mode = 2
 stretch_mode = 4
 
-[node name="CG" type="TextureRect" parent="PanelContainer/VBoxContainer/OtherProperties/Set"]
+[node name="CG" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Other/OtherProperties/Set"]
 visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
@@ -437,7 +462,7 @@ texture = ExtResource("26_mnjyc")
 expand_mode = 2
 stretch_mode = 4
 
-[node name="DF" type="TextureRect" parent="PanelContainer/VBoxContainer/OtherProperties/Set"]
+[node name="DF" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Other/OtherProperties/Set"]
 visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
@@ -446,7 +471,7 @@ texture = ExtResource("27_p2cxg")
 expand_mode = 2
 stretch_mode = 4
 
-[node name="PK" type="TextureRect" parent="PanelContainer/VBoxContainer/OtherProperties/Set"]
+[node name="PK" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Other/OtherProperties/Set"]
 visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
@@ -455,7 +480,7 @@ texture = ExtResource("28_i4mpa")
 expand_mode = 2
 stretch_mode = 4
 
-[node name="POP1" type="TextureRect" parent="PanelContainer/VBoxContainer/OtherProperties/Set"]
+[node name="POP1" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Other/OtherProperties/Set"]
 visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
@@ -464,7 +489,7 @@ texture = ExtResource("29_o4wjq")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="POP2" type="TextureRect" parent="PanelContainer/VBoxContainer/OtherProperties/Set"]
+[node name="POP2" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Other/OtherProperties/Set"]
 visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
@@ -473,7 +498,7 @@ texture = ExtResource("30_ag52d")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="POP3" type="TextureRect" parent="PanelContainer/VBoxContainer/OtherProperties/Set"]
+[node name="POP3" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Other/OtherProperties/Set"]
 visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
@@ -482,7 +507,7 @@ texture = ExtResource("31_mq4ov")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="POP4" type="TextureRect" parent="PanelContainer/VBoxContainer/OtherProperties/Set"]
+[node name="POP4" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Other/OtherProperties/Set"]
 visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
@@ -491,7 +516,7 @@ texture = ExtResource("32_kpr5e")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="POP5" type="TextureRect" parent="PanelContainer/VBoxContainer/OtherProperties/Set"]
+[node name="POP5" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Other/OtherProperties/Set"]
 visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
@@ -500,7 +525,7 @@ texture = ExtResource("33_yhq78")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="Empty" type="TextureRect" parent="PanelContainer/VBoxContainer/OtherProperties/Set"]
+[node name="Empty" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Other/OtherProperties/Set"]
 visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
@@ -508,6 +533,6 @@ size_flags_vertical = 8
 expand_mode = 2
 stretch_mode = 4
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_bottom = 5

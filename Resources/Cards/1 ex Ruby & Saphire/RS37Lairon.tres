@@ -12,6 +12,7 @@
 script = ExtResource("2_s3msg")
 how_many = -1
 which = 2
+apply_weak_res = false
 initial_main_DMG = 10
 modifier = 0
 

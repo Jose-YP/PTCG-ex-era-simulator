@@ -33,6 +33,7 @@ energy_move_type = 2
 action = 1
 which = 1
 energy_ammount = 1
+swap_ammount = 1
 type = 2
 
 [sub_resource type="Resource" id="Resource_apq5b"]
@@ -50,7 +51,7 @@ mimic = 0
 [sub_resource type="Resource" id="Resource_qq3bc"]
 script = ExtResource("3_j3xow")
 name = "Flamethrower"
-description = "Discard a Fire Energy card attached to Blaziken."
+description = "Discard a {Fire} Energy card attached to Blaziken."
 grass_cost = 0
 fire_cost = 1
 water_cost = 0
