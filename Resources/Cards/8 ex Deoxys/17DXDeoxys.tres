@@ -1,0 +1,63 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://e6y35wd23gkh"]
+
+[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_1gsj4"]
+[ext_resource type="Texture2D" uid="uid://cc7b4dc2yji7w" path="res://Art/Cards/8 ex Deoxys/17.jpg" id="1_363i5"]
+[ext_resource type="Script" path="res://Code/Resource Makers/GeneralUse/CounterMaker.gd" id="2_0cy0e"]
+[ext_resource type="Script" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="3_750iv"]
+[ext_resource type="Resource" uid="uid://6qr7q3qdfbsf" path="res://Resources/Components/Pokemon/Powers/FormChangeDeoxys.tres" id="4_w0n5n"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_mujcc"]
+
+[sub_resource type="Resource" id="Resource_susjm"]
+script = ExtResource("2_0cy0e")
+count_for = 0
+filter = 0
+mon_count = 10
+for_what = 0
+cap = 0
+return_num = 10
+
+[sub_resource type="Resource" id="Resource_21b2l"]
+script = ExtResource("3_750iv")
+name = "Energy Crush"
+description = "Does 10 damage plus 10 more damage for each Energy attached to all of your opponent's Pokémon."
+grass_cost = 0
+fire_cost = 0
+water_cost = 0
+lightning_cost = 0
+psychic_cost = 1
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 2
+defender_properties = 0
+ignore_condition = 0
+initial_main_DMG = 10
+self_damage = 0
+modifier = 1
+counter = SubResource("Resource_susjm")
+
+[sub_resource type="Resource" id="Resource_3aqid"]
+script = ExtResource("5_mujcc")
+HP = 70
+retreat = 1
+power = ExtResource("4_w0n5n")
+attacks = Array[ExtResource("3_750iv")]([SubResource("Resource_21b2l")])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 0
+owner = 0
+type = 16
+weak = 0
+resist = 16
+
+[resource]
+script = ExtResource("1_1gsj4")
+name = "Deoxys"
+image = ExtResource("1_363i5")
+illustrator = "Hironobu Yoshida"
+number = 17
+rarity = 2
+expansion = 7
+categories = 1
+pokemon_properties = SubResource("Resource_3aqid")
+fossil = false

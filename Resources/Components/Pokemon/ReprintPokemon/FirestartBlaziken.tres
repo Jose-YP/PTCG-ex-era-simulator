@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Pokemon" load_steps=17 format=3 uid="uid://dvteh4sj66jw4"]
 
 [ext_resource type="Script" path="res://Code/Resource Makers/PokemonSpecific/BenchAttackMaker.gd" id="1_npbj7"]
-[ext_resource type="Resource" uid="uid://b86uut4qajrgg" path="res://Resources/Components/EnergyMovement/SelfDiscardFire.tres" id="2_jrxgv"]
+[ext_resource type="Resource" uid="uid://b86uut4qajrgg" path="res://Resources/Components/Effects/EnergyMovement/SelfDiscardFire.tres" id="2_jrxgv"]
 [ext_resource type="Script" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="3_08wec"]
 [ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_gr0cy"]
 [ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/PlacementMaker.gd" id="5_7y8r4"]

@@ -5,7 +5,9 @@ class_name Identifier
 ##If this is true, remember what has been searched
 @export var must_be_different: bool = false
 @export_flags("Pokemon", "Trainer", "Energy") var broad_class
-@export var contains: String
+##Check for exactly contains or just has contains
+@export var exactly: bool = false
+@export var contains: String = ""
 @export_flags("Grass","Fire","Water",
 "Lightning","Psychic","Fighting",
 "Darkness","Metal","Colorless") var type: int = 0 #0 means search doesn't care about type

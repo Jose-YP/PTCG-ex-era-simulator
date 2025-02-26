@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Code/Scenes/main_game.gd" id="1_ooi03"]
 [ext_resource type="PackedScene" uid="uid://dognokjork36j" path="res://Scenes/UI/UICollections/PlayerSide.tscn" id="1_qy1qb"]
-[ext_resource type="Resource" uid="uid://bleo7p56u5k1f" path="res://Resources/Components/TestDeck.tres" id="2_hqpv8"]
+[ext_resource type="Resource" uid="uid://bleo7p56u5k1f" path="res://Resources/Decks/TestDeck.tres" id="2_hqpv8"]
 [ext_resource type="PackedScene" uid="uid://dvpkx1fqkwvd7" path="res://Scenes/UI/UICollections/OpponentSide.tscn" id="2_jt6ly"]
 [ext_resource type="Texture2D" uid="uid://d2ik003bv5hpu" path="res://Art/Cards/5 ex Hidden Legends/87.jpg" id="3_gm44v"]
 [ext_resource type="PackedScene" uid="uid://cobenwsotye1q" path="res://Scenes/Components/PlayerResources.tscn" id="3_qutya"]

@@ -14,7 +14,6 @@
 script = ExtResource("2_kivo1")
 heads = true
 const_flip_times = 3
-varying_flip_times = 0
 until = false
 
 [sub_resource type="Resource" id="Resource_retmx"]
@@ -25,6 +24,7 @@ energy_attatched = -1
 knocked_out = false
 condition = 0
 location = 0
+stage = 7
 inclusive = true
 pokemon_class = 0
 bench_size = -1
@@ -44,6 +44,7 @@ evolve = false
 
 [sub_resource type="Resource" id="Resource_yilc7"]
 script = ExtResource("7_kp8hr")
+must_be_different = false
 broad_class = 4
 contains = ""
 type = 0
@@ -81,8 +82,6 @@ specific_requirement = ""
 description = "Flip 3 coins. For each heads, put a Basic Energy card from your discard pile into your hand. If you don't have that many basic Energy cards in your discard pile, put all of them into your hand. "
 asks = SubResource("Resource_retmx")
 success_effect = SubResource("Resource_tcpdw")
-remove_after = true
-duration = -1
 
 [resource]
 script = ExtResource("1_ai46a")

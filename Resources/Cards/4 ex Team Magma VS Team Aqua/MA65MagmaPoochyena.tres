@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="Base_Card" load_steps=9 format=3 uid="uid://c3tip8v6djvro"]
 
 [ext_resource type="Texture2D" uid="uid://mj8t5qbg754t" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/65.jpg" id="1_q07ti"]
-[ext_resource type="Resource" uid="uid://depecxjmmfklq" path="res://Resources/Components/Asks/AskSingleFlip.tres" id="2_85nvy"]
-[ext_resource type="Resource" uid="uid://6xmw13js5xd3" path="res://Resources/Components/Basic Conditions/BasicParalyze.tres" id="3_8nasl"]
+[ext_resource type="Resource" uid="uid://depecxjmmfklq" path="res://Resources/Components/Effects/Asks/AskSingleFlip.tres" id="2_85nvy"]
+[ext_resource type="Resource" uid="uid://6xmw13js5xd3" path="res://Resources/Components/Effects/Basic Conditions/BasicParalyze.tres" id="3_8nasl"]
 [ext_resource type="Script" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="4_fceeu"]
 [ext_resource type="Script" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_deetf"]
 [ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="6_lxejy"]

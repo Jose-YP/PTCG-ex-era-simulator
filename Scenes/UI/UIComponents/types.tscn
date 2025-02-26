@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bkb5vi5elppq1" path="res://Art/Energy/48px-Darkness-attack.png" id="8_kto7x"]
 [ext_resource type="Texture2D" uid="uid://gom7mkykamch" path="res://Art/Energy/48px-Metal-attack.png" id="9_r1y5g"]
 [ext_resource type="Texture2D" uid="uid://dht4h5jns71o5" path="res://Art/Energy/48px-Colorless-attack.png" id="10_6wlln"]
-[ext_resource type="Texture2D" uid="uid://ino4wafvc8n8" path="res://Art/Energy/rainbow energy.png" id="11_pl64g"]
+[ext_resource type="Texture2D" uid="uid://l6f5mmmcjnyq" path="res://Art/Energy/35px-Rainbow-attack.png" id="11_x7hf6"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nsmgk"]
 
@@ -43,11 +43,9 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_nsmgk")
-current_tab = 8
 tabs_visible = false
 
 [node name="Grass" type="TextureRect" parent="Tabs"]
-visible = false
 layout_mode = 2
 mouse_filter = 2
 texture = ExtResource("2_ibm8e")
@@ -103,6 +101,7 @@ texture = ExtResource("9_r1y5g")
 expand_mode = 2
 
 [node name="Colorless" type="TextureRect" parent="Tabs"]
+visible = false
 layout_mode = 2
 mouse_filter = 2
 texture = ExtResource("10_6wlln")
@@ -112,7 +111,8 @@ expand_mode = 2
 visible = false
 layout_mode = 2
 mouse_filter = 2
-texture = ExtResource("11_pl64g")
+texture = ExtResource("11_x7hf6")
+expand_mode = 3
 
 [node name="Magma" type="TextureRect" parent="Tabs"]
 visible = false
@@ -156,7 +156,7 @@ expand_mode = 2
 
 [node name="WP" type="TextureRect" parent="Tabs"]
 visible = false
-modulate = Color(0.470566, 0.421497, 0.98024, 1)
+modulate = Color(0.54902, 0.376471, 0.988235, 1)
 layout_mode = 2
 mouse_filter = 2
 texture = ExtResource("10_6wlln")

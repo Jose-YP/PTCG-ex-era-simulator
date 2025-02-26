@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="3_3shah"]
 [ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_rjoqb"]
 [ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="4_g62rc"]
-[ext_resource type="Resource" uid="uid://bl4qnrkh3kxdl" path="res://Resources/Components/Placement/PutIntoHand.tres" id="4_mlki2"]
+[ext_resource type="Resource" uid="uid://bl4qnrkh3kxdl" path="res://Resources/Components/Effects/Placement/PutIntoHand.tres" id="4_mlki2"]
 [ext_resource type="Script" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="5_srr3u"]
 
 [sub_resource type="Resource" id="Resource_aqw3u"]

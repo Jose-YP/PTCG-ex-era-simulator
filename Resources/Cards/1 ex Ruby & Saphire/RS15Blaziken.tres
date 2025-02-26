@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://x2sfdmhe2ojl" path="res://Art/Cards/1 ex Ruby & Saphire/15.jpg" id="1_vwl4b"]
 [ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_x5maj"]
 [ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_4pbv0"]
-[ext_resource type="Resource" uid="uid://c8sjke0awg8n7" path="res://Resources/Components/Disable/NoRetreat.tres" id="2_80wmg"]
+[ext_resource type="Resource" uid="uid://c8sjke0awg8n7" path="res://Resources/Components/Effects/Disable/NoRetreat.tres" id="2_80wmg"]
 [ext_resource type="Script" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="3_j3xow"]
 [ext_resource type="Script" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="4_3bvi0"]
 [ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/EnMovMaker.gd" id="5_1xrwo"]
@@ -24,6 +24,7 @@ colorless_cost = 2
 defender_properties = 0
 ignore_condition = 0
 initial_main_DMG = 20
+self_damage = 0
 modifier = 0
 effect = ExtResource("2_80wmg")
 
@@ -64,6 +65,7 @@ colorless_cost = 3
 defender_properties = 0
 ignore_condition = 0
 initial_main_DMG = 80
+self_damage = 0
 modifier = 0
 effect = SubResource("Resource_apq5b")
 
@@ -74,7 +76,6 @@ retreat = 2
 attacks = Array[ExtResource("3_j3xow")]([SubResource("Resource_sfxu2"), SubResource("Resource_qq3bc")])
 evo_stage = "Stage 2"
 evolves_from = "Combusken"
-delta = false
 considered = 0
 owner = 0
 type = 2

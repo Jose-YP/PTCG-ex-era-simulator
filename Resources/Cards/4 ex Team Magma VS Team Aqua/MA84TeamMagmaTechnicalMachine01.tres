@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://d3nrajtlwbvgh" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/84.jpg" id="1_1h5tq"]
 [ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_a73xh"]
-[ext_resource type="Resource" uid="uid://3fi6fc6lbj04" path="res://Resources/Components/Asks/IsTeamMagma.tres" id="3_572u0"]
+[ext_resource type="Resource" uid="uid://3fi6fc6lbj04" path="res://Resources/Components/Effects/Asks/IsTeamMagma.tres" id="3_572u0"]
 [ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_1lnrb"]
 [ext_resource type="Script" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="5_38xhb"]
 [ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/EnMovMaker.gd" id="5_xchay"]

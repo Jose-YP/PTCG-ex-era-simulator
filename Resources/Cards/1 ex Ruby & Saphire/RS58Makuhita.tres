@@ -3,9 +3,9 @@
 [ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_gdqbo"]
 [ext_resource type="Texture2D" uid="uid://do8ca7e7cttul" path="res://Art/Cards/1 ex Ruby & Saphire/58.jpg" id="1_igxt4"]
 [ext_resource type="Script" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_02wef"]
-[ext_resource type="Resource" uid="uid://depecxjmmfklq" path="res://Resources/Components/Asks/AskSingleFlip.tres" id="2_vqbgp"]
+[ext_resource type="Resource" uid="uid://depecxjmmfklq" path="res://Resources/Components/Effects/Asks/AskSingleFlip.tres" id="2_vqbgp"]
 [ext_resource type="Script" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="3_e0cf7"]
-[ext_resource type="Resource" uid="uid://6xmw13js5xd3" path="res://Resources/Components/Basic Conditions/BasicParalyze.tres" id="3_qysnj"]
+[ext_resource type="Resource" uid="uid://6xmw13js5xd3" path="res://Resources/Components/Effects/Basic Conditions/BasicParalyze.tres" id="3_qysnj"]
 
 [sub_resource type="Resource" id="Resource_rekr0"]
 script = ExtResource("2_02wef")

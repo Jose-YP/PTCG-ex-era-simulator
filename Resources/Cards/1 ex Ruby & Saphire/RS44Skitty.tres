@@ -3,12 +3,12 @@
 [ext_resource type="Texture2D" uid="uid://br5xd7al737ds" path="res://Art/Cards/1 ex Ruby & Saphire/44.jpg" id="1_eb64q"]
 [ext_resource type="Script" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_0ikc4"]
 [ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_cvu24"]
-[ext_resource type="Resource" uid="uid://bl4qnrkh3kxdl" path="res://Resources/Components/Placement/PutIntoHand.tres" id="3_bjfwv"]
+[ext_resource type="Resource" uid="uid://bl4qnrkh3kxdl" path="res://Resources/Components/Effects/Placement/PutIntoHand.tres" id="3_bjfwv"]
 [ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_m28c6"]
 [ext_resource type="Script" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="4_156aa"]
-[ext_resource type="Resource" uid="uid://d2vm6chtedrum" path="res://Resources/Components/Identifiers/BasicEnergy.tres" id="4_fala0"]
+[ext_resource type="Resource" uid="uid://d2vm6chtedrum" path="res://Resources/Components/Effects/Identifiers/BasicEnergy.tres" id="4_fala0"]
 [ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="4_ilxq2"]
-[ext_resource type="Resource" uid="uid://cqw2kwbgcwgvb" path="res://Resources/Components/Basic Conditions/BasicSleep.tres" id="7_o25sa"]
+[ext_resource type="Resource" uid="uid://cqw2kwbgcwgvb" path="res://Resources/Components/Effects/Basic Conditions/BasicSleep.tres" id="7_o25sa"]
 
 [sub_resource type="Resource" id="Resource_4hb10"]
 script = ExtResource("4_ilxq2")

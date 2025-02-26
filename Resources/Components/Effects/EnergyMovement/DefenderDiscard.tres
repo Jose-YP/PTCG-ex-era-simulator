@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="EffectCall" load_steps=3 format=3 uid="uid://dnyqnjxvk4386"]
 
-[ext_resource type="Resource" uid="uid://crqyosanwd1v7" path="res://Resources/Components/Asks/DefenderDiscard.tres" id="1_el68y"]
+[ext_resource type="Resource" uid="uid://crqyosanwd1v7" path="res://Resources/Components/Effects/Asks/DefenderDiscard.tres" id="1_el68y"]
 [ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_a2qtw"]
 
 [resource]

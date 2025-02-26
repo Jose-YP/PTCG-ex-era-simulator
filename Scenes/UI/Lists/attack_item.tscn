@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Code/Scenes/UI/attack_item.gd" id="1_cuu5a"]
 [ext_resource type="Texture2D" uid="uid://cijlbc37pj4gd" path="res://icon.svg" id="1_fpj2i"]
-[ext_resource type="Resource" uid="uid://cydxe57j5nudo" path="res://Resources/Components/Attacks/DoubleLariat.tres" id="2_h1533"]
+[ext_resource type="Resource" uid="uid://cydxe57j5nudo" path="res://Resources/Components/Pokemon/Attacks/DoubleLariat.tres" id="2_h1533"]
 [ext_resource type="Theme" uid="uid://bfw6ylcttychc" path="res://Themes/AverageButton.tres" id="3_tgt8s"]
 [ext_resource type="PackedScene" uid="uid://bs3ila6cpt8n1" path="res://Scenes/UI/UIComponents/types.tscn" id="3_tiejp"]
 

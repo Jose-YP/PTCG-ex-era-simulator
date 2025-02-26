@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://dpkus6tgwiwt" path="res://Art/Cards/1 ex Ruby & Saphire/102.jpg" id="1_bpg55"]
 [ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_vv51n"]
-[ext_resource type="Resource" uid="uid://depecxjmmfklq" path="res://Resources/Components/Asks/AskSingleFlip.tres" id="2_j08b5"]
-[ext_resource type="Resource" uid="uid://dnr7ljin1eclj" path="res://Resources/Components/Buff/FullImmunity1Turn.tres" id="3_pja2x"]
+[ext_resource type="Resource" uid="uid://depecxjmmfklq" path="res://Resources/Components/Effects/Asks/AskSingleFlip.tres" id="2_j08b5"]
+[ext_resource type="Resource" uid="uid://dnr7ljin1eclj" path="res://Resources/Components/Effects/Buff/FullImmunity1Turn.tres" id="3_pja2x"]
 [ext_resource type="Script" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="4_h2ci7"]
 [ext_resource type="Script" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_58n71"]
 

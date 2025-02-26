@@ -1,0 +1,77 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://m4swjbtpd58w"]
+
+[ext_resource type="Texture2D" uid="uid://cyd63koguem6a" path="res://Art/Cards/8 ex Deoxys/18.jpg" id="1_0bgjh"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_c6rfu"]
+[ext_resource type="Resource" uid="uid://6qr7q3qdfbsf" path="res://Resources/Components/Pokemon/Powers/FormChangeDeoxys.tres" id="2_g2p84"]
+[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/BuffMaker.gd" id="2_ousds"]
+[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_lvm7k"]
+[ext_resource type="Script" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="3_rawb0"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="3_tnm6h"]
+
+[sub_resource type="Resource" id="Resource_k4dd2"]
+script = ExtResource("2_ousds")
+buff_target = 2
+duration = 1
+attack_damage = 0
+defense = 30
+after_weak_res = true
+immune_to_effects = false
+immune_to_damage = false
+
+[sub_resource type="Resource" id="Resource_0hu7e"]
+script = ExtResource("3_lvm7k")
+order = Array[int]([])
+buff = SubResource("Resource_k4dd2")
+search = Array[Resource("res://Code/Resource Makers/EffectSpecific/SearchMaker.gd")]([])
+remove_conditions = false
+remove_shockwave = false
+remove_imprison = false
+choose_active = false
+switch_type = 0
+mimic = 0
+
+[sub_resource type="Resource" id="Resource_qyf6n"]
+script = ExtResource("3_rawb0")
+name = "Barrier Attack"
+description = "During your opponent's next turn, any damage done to Deoxys by attacks is reduced by 30 (after applying Weakness and Resistance)."
+grass_cost = 0
+fire_cost = 0
+water_cost = 0
+lightning_cost = 0
+psychic_cost = 1
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 1
+defender_properties = 0
+ignore_condition = 0
+initial_main_DMG = 20
+self_damage = 0
+modifier = 0
+effect = SubResource("Resource_0hu7e")
+
+[sub_resource type="Resource" id="Resource_rp3gj"]
+script = ExtResource("3_tnm6h")
+HP = 70
+retreat = 1
+power = ExtResource("2_g2p84")
+attacks = Array[ExtResource("3_rawb0")]([SubResource("Resource_qyf6n")])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 0
+owner = 0
+type = 16
+weak = 16
+resist = 0
+
+[resource]
+script = ExtResource("1_c6rfu")
+name = "Deoxys"
+image = ExtResource("1_0bgjh")
+illustrator = "Hironobu Yoshida"
+number = 18
+rarity = 2
+expansion = 7
+categories = 1
+pokemon_properties = SubResource("Resource_rp3gj")
+fossil = false
