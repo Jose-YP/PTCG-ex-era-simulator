@@ -2,7 +2,7 @@ extends Node
 class_name PokeSlot
 
 @export var current_card: Base_Card
-@export var current_slot: UI_Slot
+@export var ui_slot: UI_Slot
 
 @export_group("Temp Types")
 @export_flags("Grass","Fire","Water",
@@ -232,39 +232,39 @@ func heal_status() -> void:
 #--------------------------------------
 #region MANAGING DISPLAYS
 func slot_into(destination: UI_Slot):
-	current_slot = destination
+	ui_slot = destination
 	refresh()
 
 func refresh() -> void:
 	if not readied: return
 	
 	pokedata = current_card.pokemon_properties
-	print(current_card.image, current_slot.art)
+	print(current_card.image, ui_slot.art)
 	#Change slot's card display
-	current_slot.art.texture = current_card.image
-	current_slot.name_section.clear()
-	current_slot.name_section.append_text(current_card.name)
-	current_slot.max_hp.clear()
-	current_slot.max_hp.append_text(str("HP: ",pokedata.HP - damage_counters, "/", pokedata.HP))
-	current_slot.display_types(Conversions.flags_to_type_array(pokedata.type)) 
+	ui_slot.art.texture = current_card.image
+	ui_slot.name_section.clear()
+	ui_slot.name_section.append_text(current_card.name)
+	ui_slot.max_hp.clear()
+	ui_slot.max_hp.append_text(str("HP: ",pokedata.HP - damage_counters, "/", pokedata.HP))
+	ui_slot.display_types(Conversions.flags_to_type_array(pokedata.type)) 
 	#recognize position of slot
-	benched = not current_slot.active
-	current_slot.connected_card = self
+	benched = not ui_slot.active
+	ui_slot.connected_card = self
 	
 	#check for any attatched cards/conditions
-	current_slot.display_energy(energy_array, attached_energy)
-	current_slot.display_condition()
-	current_slot.display_imprision(imprison)
-	current_slot.display_shockwave(shockwave)
+	ui_slot.display_energy(energy_array, attached_energy)
+	ui_slot.display_condition()
+	ui_slot.display_imprision(imprison)
+	ui_slot.display_shockwave(shockwave)
 	
 	if tm_cards.size():
-		current_slot.tm.texture = tm_cards[0].image
-		current_slot.tm.show()
-	else: current_slot.tm.hide()
+		ui_slot.tm.texture = tm_cards[0].image
+		ui_slot.tm.show()
+	else: ui_slot.tm.hide()
 	if tool_card:
-		current_slot.tool.show()
-		current_slot.tool.texture = tool_card.image
-	else: current_slot.tool.hide()
+		ui_slot.tool.show()
+		ui_slot.tool.texture = tool_card.image
+	else: ui_slot.tool.hide()
 
 #endregion
 #--------------------------------------

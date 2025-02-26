@@ -1,5 +1,7 @@
 extends Control
 
+#--------------------------------------
+#region VARIABLES
 const energy_cards: Array[String] = ["res://Cards/1 ex Ruby & Saphire/RS104GrassEnergy.tres",
 "res://Cards/1 ex Ruby & Saphire/RS108FireEnergy.tres","res://Cards/1 ex Ruby & Saphire/RS106WaterEnergy.tres",
 "res://Cards/1 ex Ruby & Saphire/RS109LightningEnergy.tres","res://Cards/1 ex Ruby & Saphire/RS107PsychicEnergy.tres",
@@ -26,7 +28,10 @@ var attack_box: Control
 
 @onready var slots: Array[PokeSlot] = [$PokeSlot, $PokeSlot2]
 @onready var evo_buttons: Array[Button] = [%EvoActive, %EvoBench]
+#endregion
+#--------------------------------------
 
+#--------------------------------------
 #region ENERGY
 func _on_energy_options_item_selected(index: int):
 	energy_type = index
@@ -41,7 +46,9 @@ func add_energy_to(target: int):
 func remove_energy_from(target: int):
 	slots[target].change_energy(load(energy_cards[energy_type]), -1)
 #endregion
+#--------------------------------------
 
+#--------------------------------------
 #region EVOLUTION
 func _on_evolution_options_item_selected(index):
 	evo_type = index
@@ -64,7 +71,9 @@ func _on_devolve_pressed(target: int):
 		slots[target].devolve_card()
 
 #endregion
+#--------------------------------------
 
+#--------------------------------------
 #region ATTATCH
 func add_tool_to(target: int):
 	var current_index: int = $Attatchables/ToolOptions.selected
@@ -83,7 +92,9 @@ func remove_tms_from(target):
 	slots[target].remove_tms()
 
 #endregion
+#--------------------------------------
 
+#--------------------------------------
 #region CONDITION
 func change_conditiion(index: int):
 	condition_type = index
@@ -102,8 +113,9 @@ func clear_conditions_from(target: int):
 	slots[target].set_imprison(false)
 	slots[target].set_shockwave(false)
 #endregion
+#--------------------------------------
 
 func _on_swap_pressed():
-	var temp = slots[0].current_slot
-	slots[0].slot_into(slots[1].current_slot)
+	var temp = slots[0].ui_slot
+	slots[0].slot_into(slots[1].ui_slot)
 	slots[1].slot_into(temp)

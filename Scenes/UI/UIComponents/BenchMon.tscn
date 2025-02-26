@@ -1,25 +1,25 @@
-[gd_scene load_steps=9 format=3 uid="uid://df8x227c7a8q4"]
+[gd_scene load_steps=8 format=3 uid="uid://df8x227c7a8q4"]
 
-[ext_resource type="Texture2D" uid="uid://b4uymubvo04qp" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/37.jpg" id="1_4esgp"]
 [ext_resource type="Script" path="res://Code/Scenes/UI/UISlot.gd" id="1_ktjfi"]
 [ext_resource type="Texture2D" uid="uid://ct7oa74jhqcwq" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/74.jpg" id="2_m52es"]
 [ext_resource type="PackedScene" uid="uid://cvh086w8yapm0" path="res://Scenes/UI/Lists/attack_list.tscn" id="2_th8q4"]
-[ext_resource type="StyleBox" uid="uid://duhmik1loeema" path="res://Themes/GBABox.tres" id="2_vxll5"]
+[ext_resource type="PackedScene" uid="uid://dp781vdb5kvc7" path="res://Scenes/UI/UIComponents/art_button.tscn" id="3_1osh3"]
 [ext_resource type="Texture2D" uid="uid://d3nrajtlwbvgh" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/84.jpg" id="3_pjvm0"]
 [ext_resource type="PackedScene" uid="uid://bs3ila6cpt8n1" path="res://Scenes/UI/UIComponents/types.tscn" id="4_nhrrd"]
 [ext_resource type="Texture2D" uid="uid://cijlbc37pj4gd" path="res://icon.svg" id="5_r3j25"]
 
 [node name="BenchPokemon" type="Control"]
 layout_mode = 3
-anchor_left = -0.029
-anchor_right = 0.208
+anchor_left = 0.001
+anchor_right = 0.238
 anchor_bottom = 0.226
-offset_left = 0.320002
-offset_right = 0.360001
+offset_left = -0.08
+offset_right = -0.0400085
 offset_bottom = 0.279999
 script = ExtResource("1_ktjfi")
 active = false
 attack_list = ExtResource("2_th8q4")
+metadata/_edit_group_ = true
 
 [node name="Main" type="VBoxContainer" parent="."]
 layout_mode = 0
@@ -55,28 +55,10 @@ layout_mode = 2
 [node name="MarginContainer" type="MarginContainer" parent="Main/ArtButton"]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="Main/ArtButton/MarginContainer"]
-custom_minimum_size = Vector2(148, 92)
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("2_vxll5")
-
-[node name="PanelContainer" type="CenterContainer" parent="Main/ArtButton/MarginContainer/Button"]
-layout_mode = 2
-offset_left = 3.0
-offset_top = 2.0
-offset_right = 145.0
-offset_bottom = 89.0
-
-[node name="Art" type="TextureRect" parent="Main/ArtButton/MarginContainer/Button/PanelContainer"]
+[node name="ArtButton" parent="Main/ArtButton/MarginContainer" instance=ExtResource("3_1osh3")]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(142, 87)
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("1_4esgp")
-expand_mode = 2
-stretch_mode = 2
+benched = true
 
 [node name="TrainerAttached" type="VBoxContainer" parent="."]
 layout_mode = 0
@@ -207,4 +189,5 @@ size_flags_vertical = 4
 texture = ExtResource("5_r3j25")
 expand_mode = 4
 
-[connection signal="pressed" from="Main/ArtButton/MarginContainer/Button" to="." method="pressed_a_slot"]
+[connection signal="show_attacks" from="Main/ArtButton/MarginContainer/ArtButton" to="." method="_on_art_button_show_attacks"]
+[connection signal="show_card" from="Main/ArtButton/MarginContainer/ArtButton" to="." method="_on_art_button_show_card"]

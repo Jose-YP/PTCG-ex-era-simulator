@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://dp781vdb5kvc7"]
+
+[ext_resource type="StyleBox" uid="uid://duhmik1loeema" path="res://Themes/GBABox.tres" id="1_gbnxf"]
+[ext_resource type="Texture2D" uid="uid://b4uymubvo04qp" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/37.jpg" id="2_rt8ma"]
+[ext_resource type="Script" path="res://Code/Scenes/UI/art_button.gd" id="2_vikux"]
+
+[node name="ArtButton" type="Button"]
+custom_minimum_size = Vector2(195, 120)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = ExtResource("1_gbnxf")
+button_mask = 3
+script = ExtResource("2_vikux")
+
+[node name="PanelContainer" type="CenterContainer" parent="."]
+layout_mode = 2
+offset_right = 198.0
+offset_bottom = 120.0
+
+[node name="Art" type="TextureRect" parent="PanelContainer"]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.992157)
+custom_minimum_size = Vector2(189, 114)
+layout_mode = 2
+texture = ExtResource("2_rt8ma")

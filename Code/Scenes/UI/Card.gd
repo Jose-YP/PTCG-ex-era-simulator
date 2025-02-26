@@ -1,6 +1,6 @@
 extends Control
 
-@export var current_slot: PokeSlot
+@export var poke_slot: PokeSlot
 @export var card: Base_Card
 
 #--------------------------------------
@@ -56,8 +56,8 @@ func _ready():
 	#--------------------------------------
 	#region ATTACK NODE
 	%AttackList.scale = Vector2(1,1)
-	if current_slot:
-		%AttackList.current_slot = current_slot
+	if poke_slot:
+		%AttackList.poke_slot = poke_slot
 	else:
 		%AttackList.current_card = card
 	%AttackList.custom_minimum_size.y = %AttackList.current_height - 25

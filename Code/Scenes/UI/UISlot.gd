@@ -1,12 +1,15 @@
 extends Control
 class_name UI_Slot
+
+#--------------------------------------
+#region VARIABLES
 @export var active: bool = true
 @export_enum("Left","Right","Up","Down") var list_direction: int = 0
 @export var attack_list: PackedScene
 
 @onready var name_section: RichTextLabel = %Name
 @onready var max_hp: RichTextLabel = %MaxHP
-@onready var art: TextureRect = %Art
+@onready var art: TextureRect = %ArtButton.art
 @onready var tool: TextureRect = %Tool
 @onready var tm: TextureRect = %TM
 @onready var imprison = %Imprison
@@ -16,8 +19,6 @@ class_name UI_Slot
 @onready var list_offsets: Array[Vector2] = [Vector2(-size.x / 2, 0),
  Vector2(size.x / 2,0), Vector2(0,-size.y / 2), Vector2(0,size.y / 2)]
 
-signal pressed_slot
-
 #Unfinished, doesn't account for special energy
 var connected_card: PokeSlot
 var attached_energy: Dictionary = {"Grass": 0, "Fire": 0, "Water": 0,
@@ -25,13 +26,16 @@ var attached_energy: Dictionary = {"Grass": 0, "Fire": 0, "Water": 0,
  "Rainbow":0, "Magma":0, "Aqua":0, "Dark Metal":0, "React": 0,
  "Holon FF": 0, "Holon GL": 0, "Holon WP": 0}
 
+#endregion
+#--------------------------------------
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	if %ArtButton.benched: %ArtButton/PanelContainer.size = Vector2(149, 96)
 
 func spawn_attacks() -> Control:
 	var list = Constants.attack_list.instantiate()
-	list.current_slot = connected_card
+	list.poke_slot = connected_card
 	list.position = position + list_offsets[list_direction]
 	print(get_parent())
 	get_parent().add_child(list)
@@ -119,8 +123,11 @@ func display_shockwave(truth: bool = true) -> void:
 
 #--------------------------------------
 #region SIGNALS
-func pressed_a_slot():
-	print("OLDSCJANNJOKASILDCJNIKALDSNJASKDCLU")
-	pressed_slot.emit()
+func _on_art_button_show_attacks():
+	SignalBus.pressed_pokemon_art.emit(connected_card)
+
+func _on_art_button_show_card():
+	SignalBus.show_pokemon_card.emit(connected_card)
+
 #endregion
 #--------------------------------------
