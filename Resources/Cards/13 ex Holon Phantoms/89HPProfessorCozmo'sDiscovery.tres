@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=2 format=3 uid="uid://dq6xc53v7w4sf"]
+
+[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_h2t15"]
+
+[resource]
+script = ExtResource("1_h2t15")
+name = ""
+illustrator = ""
+number = 0
+rarity = 0
+expansion = 0
+categories = 0
+fossil = false
