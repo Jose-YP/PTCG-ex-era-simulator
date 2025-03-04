@@ -1,4 +1,5 @@
 extends Node
+class_name Deck_Manipulator
 
 @export var deck: Deck
 @export var first: bool = true
@@ -6,6 +7,7 @@ extends Node
 
 signal show_list(can_select: bool, message: String, looking_at: String, list: Array[Base_Card])
 
+var reveal_stack: Array[Base_Card]
 var usable_deck: Array[Base_Card] = []
 var hand: Array[Base_Card] = []
 var discard_pile: Array[Base_Card] = []
@@ -14,6 +16,14 @@ var first_turn: bool = false
 
 #--------------------------------------
 #region INITALIZATION
+func _ready():
+	SignalBus.connect("show_hand", spawn_hand)
+	
+	
+	if deck: 
+		usable_deck = deck.make_usable()
+		usable_deck.shuffle()
+
 func assign_deck(assigned_deck):
 	usable_deck = assigned_deck.make_usable()
 	usable_deck.shuffle()
@@ -32,7 +42,8 @@ func check_starting():
 			start_string = "Select a Basic Pokemon"
 	
 	print(start_string)
-	show_list.emit(can_start, start_string, "HAND", hand)
+	print(hand)
+	spawn_hand(side)
 
 #endregion
 #--------------------------------------
@@ -59,3 +70,27 @@ func ontop_deck(_card: Base_Card): #From X to atop Deck
 	pass
 #endregion
 #--------------------------------------
+
+#--------------------------------------
+#region CARD DISPLAY
+func spawn_hand(monitor_side: String, allowed: String = "All"):
+	if monitor_side == side:
+		var hand_list: PackedScene = Constants.playing_list
+		var new_node = hand_list.instantiate()
+		
+		new_node.list = hand
+		new_node.top_level = true
+		if allowed == "All":
+			new_node.allowed = 2 ** 6 - 1
+		
+		add_sibling(new_node)
+
+func show_reveal_stack(reveal_slot):
+	if reveal_stack.size() != 0:
+		reveal_slot.art.texture = reveal_stack[-1]
+	else:
+		reveal_slot.art.texture = null
+
+#endregion
+#--------------------------------------
+

@@ -15,7 +15,7 @@ class_name PokeSlot
 "Lightning","Psychic","Fighting",
 "Darkness","Metal","Colorless") var resist: int = 0
 
-@onready var pokedata: Pokemon = current_card.pokemon_properties
+@onready var pokedata: Pokemon = current_card.pokemon_properties if current_card else null
 
 enum poison_type{NONE, NORMAL, HEAVY}
 enum burn_type{NONE, NORMAL, HEAVY}
@@ -71,9 +71,10 @@ var shockwave: bool = false
 var readied: bool = false
 
 func _ready():
-	type = pokedata.type
-	weak = pokedata.weak
-	resist = pokedata.resist
+	if current_card:
+		type = pokedata.type
+		weak = pokedata.weak
+		resist = pokedata.resist
 	readied = true
 
 #--------------------------------------
@@ -238,15 +239,21 @@ func slot_into(destination: UI_Slot):
 func refresh() -> void:
 	if not readied: return
 	
-	pokedata = current_card.pokemon_properties
-	print(current_card.image, ui_slot.art)
 	#Change slot's card display
-	ui_slot.art.texture = current_card.image
 	ui_slot.name_section.clear()
-	ui_slot.name_section.append_text(current_card.name)
 	ui_slot.max_hp.clear()
-	ui_slot.max_hp.append_text(str("HP: ",pokedata.HP - damage_counters, "/", pokedata.HP))
-	ui_slot.display_types(Conversions.flags_to_type_array(pokedata.type)) 
+	
+	if current_card:
+		pokedata = current_card.pokemon_properties
+		print(current_card.image, ui_slot.art)
+		ui_slot.art.texture = current_card.image
+		ui_slot.name_section.append_text(current_card.name)
+		ui_slot.max_hp.append_text(str("HP: ",pokedata.HP - damage_counters, "/", pokedata.HP))
+		ui_slot.display_types(Conversions.flags_to_type_array(pokedata.type))
+	else:
+		ui_slot.art.texture = null
+		ui_slot.display_types([])
+	
 	#recognize position of slot
 	benched = not ui_slot.active
 	ui_slot.connected_card = self

@@ -1,4 +1,5 @@
 extends Node
+class_name SlotUIActions
 
 #--------------------------------------
 #region VARIABLES
@@ -17,13 +18,18 @@ func _ready():
 	SignalBus.connect("pressed_pokemon_art", left_button_actions)
 	SignalBus.connect("show_pokemon_card", right_button_actions)
 	
-	if preload_debug:
-		for i in range(poke_slots.size()):
-			poke_slots[i].slot_into(ui_slots[i])
+	for i in range(poke_slots.size()):
+		poke_slots[i].slot_into(ui_slots[i])
+		poke_slots[i].refresh()
+
+func group_refresh():
+	for slot in poke_slots: slot.refresh()
 
 #--------------------------------------
 #region INPUTS
 func left_button_actions(target: PokeSlot):
+	if target.current_card == null: return
+	
 	match what_doing:
 		doing.NOTHING:
 			selected_slot = target.ui_slot

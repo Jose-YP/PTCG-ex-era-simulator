@@ -21,3 +21,7 @@ func _ready() -> void:
 
 func is_allowed() -> void:
 	pass
+
+
+func _on_pressed():
+	pass # Replace with function body.

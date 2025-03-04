@@ -169,3 +169,11 @@ text = "Add Condition"
 [node name="ClearConditions" type="Button" parent="DummyActions"]
 layout_mode = 2
 text = "Clear Conditions"
+
+[connection signal="pressed" from="DummyActions/SetType" to="." method="_on_set_type_pressed"]
+[connection signal="pressed" from="DummyActions/SetWeakness" to="." method="_on_set_weakness_pressed"]
+[connection signal="pressed" from="DummyActions/SetResistance" to="." method="_on_set_resistance_pressed"]
+[connection signal="pressed" from="DummyActions/AddEnergy" to="." method="_on_add_energy_pressed"]
+[connection signal="pressed" from="DummyActions/RemoveEnergy" to="." method="_on_remove_energy_pressed"]
+[connection signal="pressed" from="DummyActions/AddCondtion" to="." method="_on_add_condtion_pressed"]
+[connection signal="pressed" from="DummyActions/ClearConditions" to="." method="_on_clear_conditions_pressed"]

@@ -1,5 +1,9 @@
 extends Node
 
+signal show_starting(can_select: bool, message: String, looking_at: String, list: Array[Base_Card])
+signal show_hand(whose_hand: String, hand: Array[Base_Card])
+
+#Most of these feel redundant
 signal show_other_card(showing: Base_Card)
 signal show_pokemon_card(showing: PokeSlot)
 signal pressed_pokemon_art(showing: PokeSlot)

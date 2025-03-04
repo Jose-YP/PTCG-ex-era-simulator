@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dvpkx1fqkwvd7" path="res://Scenes/UI/UICollections/OpponentSide.tscn" id="2_jt6ly"]
 [ext_resource type="Texture2D" uid="uid://d2ik003bv5hpu" path="res://Art/Cards/5 ex Hidden Legends/87.jpg" id="3_gm44v"]
 [ext_resource type="PackedScene" uid="uid://cobenwsotye1q" path="res://Scenes/Components/PlayerResources.tscn" id="3_qutya"]
-[ext_resource type="PackedScene" path="res://Scenes/UI/Lists/playing_list.tscn" id="7_01i2w"]
+[ext_resource type="PackedScene" uid="uid://f4m1ofpicse4" path="res://Scenes/UI/Lists/NewPlayingList.tscn" id="7_01i2w"]
 
 [node name="MainGame" type="Node2D"]
 script = ExtResource("1_ooi03")
