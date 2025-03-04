@@ -5,7 +5,6 @@ class_name UI_Slot
 #region VARIABLES
 @export var active: bool = true
 @export_enum("Left","Right","Up","Down") var list_direction: int = 0
-@export var attack_list: PackedScene
 
 @onready var name_section: RichTextLabel = %Name
 @onready var max_hp: RichTextLabel = %MaxHP

@@ -1,0 +1,85 @@
+[gd_scene load_steps=8 format=3 uid="uid://c3qurrd5vl1ao"]
+
+[ext_resource type="Script" path="res://Scenes/Testing/debug_deck.gd" id="1_76cja"]
+[ext_resource type="PackedScene" uid="uid://b4tx6kmy763df" path="res://Scenes/Components/poke_slot.tscn" id="2_lr82k"]
+[ext_resource type="PackedScene" uid="uid://dognokjork36j" path="res://Scenes/UI/UICollections/PlayerSide.tscn" id="3_ibwmv"]
+[ext_resource type="PackedScene" uid="uid://bdpxdnxpe1f32" path="res://Scenes/Testing/dummy.tscn" id="4_463lc"]
+[ext_resource type="PackedScene" uid="uid://c2dyutb22u6x8" path="res://Scenes/Components/slot_ui_actions.tscn" id="5_fed5x"]
+[ext_resource type="PackedScene" uid="uid://bm07a7wgsaxxp" path="res://Scenes/Components/on_slot_actions.tscn" id="6_r7ykb"]
+[ext_resource type="PackedScene" uid="uid://cobenwsotye1q" path="res://Scenes/Components/PlayerResources.tscn" id="7_bhguv"]
+
+[node name="DebugDeck" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_76cja")
+
+[node name="Slots" type="Node" parent="."]
+
+[node name="PokeSlot" parent="Slots" instance=ExtResource("2_lr82k")]
+
+[node name="PokeSlot2" parent="Slots" instance=ExtResource("2_lr82k")]
+
+[node name="PokeSlot3" parent="Slots" instance=ExtResource("2_lr82k")]
+
+[node name="PokeSlot4" parent="Slots" instance=ExtResource("2_lr82k")]
+
+[node name="PokeSlot5" parent="Slots" instance=ExtResource("2_lr82k")]
+
+[node name="PokeSlot6" parent="Slots" instance=ExtResource("2_lr82k")]
+
+[node name="PlayerSide" parent="." instance=ExtResource("3_ibwmv")]
+layout_mode = 1
+offset_left = 29.0
+offset_top = 362.0
+offset_right = 29.0
+offset_bottom = 362.0
+
+[node name="Dummy" parent="." instance=ExtResource("4_463lc")]
+layout_mode = 1
+offset_left = 435.0
+offset_top = 13.0
+offset_right = 435.0
+offset_bottom = 13.0
+
+[node name="SlotUIActions" parent="." node_paths=PackedStringArray("poke_slots", "ui_slots") instance=ExtResource("5_fed5x")]
+poke_slots = [NodePath("../Slots/PokeSlot"), NodePath("../Slots/PokeSlot2"), NodePath("../Slots/PokeSlot3"), NodePath("../Slots/PokeSlot4"), NodePath("../Slots/PokeSlot5"), NodePath("../Slots/PokeSlot6")]
+ui_slots = [NodePath("../PlayerSide/Main/Active/ActivePokemon"), NodePath("../PlayerSide/Main/Bench/BenchPokemon"), NodePath("../PlayerSide/Main/Bench/BenchPokemon2"), NodePath("../PlayerSide/Main/Bench/BenchPokemon3"), NodePath("../PlayerSide/Main/Bench/BenchPokemon4"), NodePath("../PlayerSide/Main/Bench/BenchPokemon5")]
+
+[node name="OnSlotActions" parent="." node_paths=PackedStringArray("poke_slots") instance=ExtResource("6_r7ykb")]
+poke_slots = [null, null]
+
+[node name="PlayerResources" parent="." instance=ExtResource("7_bhguv")]
+
+[node name="CardActions" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 66.0
+offset_top = 66.0
+offset_right = 174.0
+offset_bottom = 157.0
+columns = 2
+
+[node name="Draw" type="Button" parent="CardActions"]
+layout_mode = 2
+text = "Draw Card"
+
+[node name="Discard" type="Button" parent="CardActions"]
+layout_mode = 2
+text = "Discard Card"
+
+[node name="SearchDeck" type="Button" parent="CardActions"]
+layout_mode = 2
+text = "Search Deck"
+
+[node name="Hand" type="Button" parent="CardActions"]
+layout_mode = 2
+text = "View Hand"
+
+[node name="SearchDiscard" type="Button" parent="CardActions"]
+layout_mode = 2
+text = "Search Discard"
+
+[node name="Shuffle2Deck" type="Button" parent="CardActions"]
+layout_mode = 2
+text = "Shuffle Hand to Deck"
+
+[editable path="PlayerSide"]

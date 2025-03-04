@@ -2,24 +2,24 @@ extends Control
 
 #--------------------------------------
 #region VARIABLES
-const energy_cards: Array[String] = ["res://Cards/1 ex Ruby & Saphire/RS104GrassEnergy.tres",
-"res://Cards/1 ex Ruby & Saphire/RS108FireEnergy.tres","res://Cards/1 ex Ruby & Saphire/RS106WaterEnergy.tres",
-"res://Cards/1 ex Ruby & Saphire/RS109LightningEnergy.tres","res://Cards/1 ex Ruby & Saphire/RS107PsychicEnergy.tres",
-"res://Cards/1 ex Ruby & Saphire/RS105FightingEnergy.tres","res://Cards/1 ex Ruby & Saphire/RS93DarknessEnergy.tres",
-"res://Cards/1 ex Ruby & Saphire/RS94MetalEnergy.tres", "res://Cards/8 ex Deoxys/DX94HealEnergy.tres",
-"res://Cards/1 ex Ruby & Saphire/RS95RainbowEnergy.tres", "res://Cards/4 ex Team Magma VS Team Aqua/MA87MagmaEnergy.tres",
-"res://Cards/4 ex Team Magma VS Team Aqua/MA86AquaEnergy.tres"]
+const energy_cards: Array[String] = ["res://Resources/Cards/1 ex Ruby & Saphire/RS104GrassEnergy.tres",
+"res://Resources/Cards/1 ex Ruby & Saphire/RS108FireEnergy.tres","res://Resources/Cards/1 ex Ruby & Saphire/RS106WaterEnergy.tres",
+"res://Resources/Cards/1 ex Ruby & Saphire/RS109LightningEnergy.tres","res://Resources/Cards/1 ex Ruby & Saphire/RS107PsychicEnergy.tres",
+"res://Resources/Cards/1 ex Ruby & Saphire/RS105FightingEnergy.tres","res://Resources/Cards/1 ex Ruby & Saphire/RS93DarknessEnergy.tres",
+"res://Resources/Cards/1 ex Ruby & Saphire/RS94MetalEnergy.tres", "res://Resources/Cards/8 ex Deoxys/DX94HealEnergy.tres",
+"res://Resources/Cards/1 ex Ruby & Saphire/RS95RainbowEnergy.tres", "res://Resources/Cards/4 ex Team Magma VS Team Aqua/MA87MagmaEnergy.tres",
+"res://Resources/Cards/4 ex Team Magma VS Team Aqua/MA86AquaEnergy.tres"]
 const conditions: Array[String] = ["Poison", "Burn", "Asleep", 
 "Paralysis", "Confusion", "Shockwave", "Imprison"]
-const evolutions: Array[String] = ["res://Cards/4 ex Team Magma VS Team Aqua/MA37MagmaMightyena.tres",
-"res://Cards/1 ex Ruby & Saphire/RS42Mightyena.tres","res://Cards/1 ex Ruby & Saphire/RS37Lairon.tres",
-"res://Cards/1 ex Ruby & Saphire/RS29Delcatty.tres","res://Cards/1 ex Ruby & Saphire/RS33Hariyama.tres",
-"res://Cards/1 ex Ruby & Saphire/RS1Aggron.tres"]
-const tools: Array[String] = ["res://Cards/1 ex Ruby & Saphire/RS84LumBerry.tres", 
-"res://Cards/1 ex Ruby & Saphire/RS85OranBerry.tres","res://Cards/4 ex Team Magma VS Team Aqua/MA81TeamMagmaBelt.tres"]
-const tms: Array[String] = ["res://Cards/4 ex Team Magma VS Team Aqua/MA84TeamMagmaTechnicalMachine01.tres", 
-"res://Cards/4 ex Team Magma VS Team Aqua/MA79TeamAquaTechnicalMachine01.tres",
-"res://Cards/5 ex Hidden Lagends/HL86AncientTechnicalMachine[Rock].tres"]
+const evolutions: Array[String] = ["res://Resources/Cards/4 ex Team Magma VS Team Aqua/MA37MagmaMightyena.tres",
+"res://Resources/Cards/1 ex Ruby & Saphire/RS42Mightyena.tres","res://Resources/Cards/1 ex Ruby & Saphire/RS37Lairon.tres",
+"res://Resources/Cards/1 ex Ruby & Saphire/RS29Delcatty.tres","res://Resources/Cards/1 ex Ruby & Saphire/RS33Hariyama.tres",
+"res://Resources/Cards/1 ex Ruby & Saphire/RS1Aggron.tres"]
+const tools: Array[String] = ["res://Resources/Cards/1 ex Ruby & Saphire/RS84LumBerry.tres", 
+"res://Resources/Cards/1 ex Ruby & Saphire/RS85OranBerry.tres","res://Resources/Cards/4 ex Team Magma VS Team Aqua/MA81TeamMagmaBelt.tres"]
+const tms: Array[String] = ["res://Resources/Cards/4 ex Team Magma VS Team Aqua/MA84TeamMagmaTechnicalMachine01.tres", 
+"res://Resources/Cards/4 ex Team Magma VS Team Aqua/MA79TeamAquaTechnicalMachine01.tres",
+"res://Resources/Cards/5 ex Hidden Lagends/HL86AncientTechnicalMachine[Rock].tres"]
 
 var energy_type: int = 0
 var evo_type: int = 0

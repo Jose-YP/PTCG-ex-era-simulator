@@ -12,6 +12,7 @@
 script = ExtResource("5_srr3u")
 must_be_different = true
 broad_class = 4
+exactly = false
 contains = ""
 type = 511
 evolves_from = false
