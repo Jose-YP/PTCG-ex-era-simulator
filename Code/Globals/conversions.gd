@@ -53,3 +53,13 @@ func flags_to_type_array(type_flags: int) -> Array[String]:
 		types.append("Colorless")
 	
 	return types
+
+func get_allowed_flags(allowed: String = "All") -> int:
+	match allowed:
+		"Starting":
+			return (2 ** Constants.allowed_list_flags.find("Basic")
+			 + 2 ** Constants.allowed_list_flags.rfind("Fossil"))
+		"All":
+			return 2 ** Constants.allowed_list_flags.size() - 1
+		_:
+			return 2 ** Constants.allowed_list_flags.find(allowed)

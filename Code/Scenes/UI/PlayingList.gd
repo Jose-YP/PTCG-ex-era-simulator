@@ -4,10 +4,13 @@ extends Control
 @export var list_item: PackedScene
 @export var list: Array[Base_Card]
 @export_flags("Basic", "Evolution", "Item",
-"Supporter", "Energy") var allowed: int = 1
+"Supporter","Stadium", "Tool", "TM", "RSM", "Fossil",
+ "Energy") var allowed: int = 1
 
 var items: Array[Node] = []
 var display_text: String = ""
+var black_list: Array[String] = []
+var white_list: Array[String] = []
 
 func _ready():
 	print(debug)
@@ -23,9 +26,16 @@ func set_items():
 		var making = list_item.instantiate()
 		making.card = item
 		%CardList.add_child(making)
-		
+		is_allowed(item)
 	
 	items = %CardList.get_children()
+
+func is_allowed(button) -> void:
+	var whitelisted: bool = white_list.find(button.card.name) != -1
+	var blacklisted: bool = black_list.find(button.card.name) != -1
+	
+	if button.card_flags && allowed or whitelisted and not blacklisted:
+		button.allow()
 
 func _on_resources_show_list(message: String, looking_at: String, using: Array[Base_Card]):
 	reset_items()

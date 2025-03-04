@@ -12,6 +12,7 @@ var usable_deck: Array[Base_Card] = []
 var hand: Array[Base_Card] = []
 var discard_pile: Array[Base_Card] = []
 var mulligans: int = 0
+var mulligan_array: Array[Array]
 var first_turn: bool = false
 
 #--------------------------------------
@@ -37,13 +38,22 @@ func check_starting():
 	var can_start: bool = false
 	var start_string: String = "There are no basic Pokemon in the starting hand"
 	for card in hand:
-		if card.categories & 1 or card.fossil:
+		if card.is_considered("Basic") or card.fossil:
 			can_start = true
 			start_string = "Select a Basic Pokemon"
 	
 	print(start_string)
 	print(hand)
-	spawn_hand(side)
+	if can_start:
+		spawn_hand(side, start_string, Conversions.get_allowed_flags("Start"))
+	else:
+		#If you can't start with current hand, mulligan
+		#record mulligans for later
+		mulligans += 1
+		mulligan_array.append(hand)
+		shuffle_hand_back()
+		draw_starting()
+		
 
 #endregion
 #--------------------------------------
@@ -68,20 +78,25 @@ func play_card(_card: Base_Card): #From hand to Y
 func ontop_deck(_card: Base_Card): #From X to atop Deck
 	
 	pass
+
+func shuffle_hand_back():
+	usable_deck.append_array(hand)
+	usable_deck.shuffle()
+
 #endregion
 #--------------------------------------
 
 #--------------------------------------
 #region CARD DISPLAY
-func spawn_hand(monitor_side: String, allowed: String = "All"):
+func spawn_hand(monitor_side: String, using_string: String, allowed: int = Conversions.get_allowed_flags()):
 	if monitor_side == side:
 		var hand_list: PackedScene = Constants.playing_list
 		var new_node = hand_list.instantiate()
 		
 		new_node.list = hand
 		new_node.top_level = true
-		if allowed == "All":
-			new_node.allowed = 2 ** 6 - 1
+		new_node.allowed = allowed
+		new_node.display_text = using_string
 		
 		add_sibling(new_node)
 
@@ -93,4 +108,3 @@ func show_reveal_stack(reveal_slot):
 
 #endregion
 #--------------------------------------
-

@@ -1,5 +1,7 @@
 extends Node
 
+#--------------------------------------
+#region TEXT
 const supporter_text: String = "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card."
 const tool_text: String = "to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it. If that Pokémon is Knocked Out, discard this card."
 const tm_text: String = "Attach this card to 1 of your Evolved Pokémon (excluding Pokémon-ex and Pokémon that has an owner in its name) in play. That Pokémon may use this card's attack instead of its own. At the end of your turn, discard "
@@ -8,13 +10,21 @@ const trainer_classes: Array[String] = ["Item", "Supporter", "Tool", "Stadium", 
 "Rocket's Secret Machine"]
 #Items and RSM don't have class text
 const class_texts: Array[String] = ["", supporter_text, tool_text, stadium_text, tm_text, ""]
+#endregion
+#--------------------------------------
 
+#--------------------------------------
+#region EXPANSIONS
 #Order goes from the 16 ex expansions, 5 POP Series expansions then Black star
 const expansion_counts: Array[int] = [109, 100, 97, 95, 101, 112, 109, 107,
 106, 115, 113, 92, 110, 110, 101, 108, 17, 17, 17, 17, 17, 40]
 const expansion_secrets: Array[int] = [0,0,3,2,1,4,2,1,1,2,1,1,1,0,0,0,0,0,0,0,0,0]
 const unknown_number: int = 28
+#endregion
+#--------------------------------------
 
+#--------------------------------------
+#region ENERGY
 const energy_types: Array[String] = ["Grass", "Fire", "Water", "Lightning", "Psychic", 
 "Fighting", "Darkness", "Metal", "Colorless", "Rainbow", "Magma", "Aqua", "Dark Metal",
  "FF", "GL", "WP", "React"]
@@ -26,7 +36,11 @@ const energy_icons = ["res://Art/Energy/48px-Grass-attack.png", "res://Art/Energ
 const energy_colors: Array[Color] = [Color.GREEN, Color.RED, Color.AQUA,
  Color.YELLOW, Color.PURPLE, Color.ORANGE_RED, Color.DARK_SLATE_GRAY,
 Color.GRAY, Color.WHITE_SMOKE]
+#endregion
+#--------------------------------------
 
+#--------------------------------------
+#region SCENES
 const playing_list_item = preload("res://Scenes/UI/Lists/PlayingListItem.tscn")
 const playing_list = preload("res://Scenes/UI/Lists/NewPlayingList.tscn")
 const attack_list_comp = preload("res://Scenes/UI/Lists/attack_scroll_box.tscn")
@@ -35,3 +49,12 @@ const poke_card = preload("res://Scenes/UI/CardDisplay/PokemonCard.tscn")
 const trainer_card = preload("res://Scenes/UI/CardDisplay/TrainerCard.tscn")
 const energy_card = preload("res://Scenes/UI/CardDisplay/EnergyCard.tscn")
 const cursor = preload("res://Scenes/UI/UIComponents/cursor.tscn")
+#endregion
+#--------------------------------------
+
+#--------------------------------------
+#region ETC
+const allowed_list_flags = ["Basic", "Evolution", "Item",
+ "Supporter","Stadium", "Tool", "TM", "RSM", "Fossil", "Energy"]
+#endregion
+#--------------------------------------
