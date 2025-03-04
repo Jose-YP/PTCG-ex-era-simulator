@@ -51,6 +51,7 @@ offset_left = -17.0
 offset_top = 73.0
 offset_right = 31.0
 offset_bottom = 133.0
+mouse_filter = 2
 
 [node name="Tool" type="TextureRect" parent="TrainerAttached"]
 unique_name_in_owner = true
@@ -80,53 +81,48 @@ offset_bottom = 28.0
 bbcode_enabled = true
 text = "+"
 
-[node name="EnergyContainer" type="VBoxContainer" parent="."]
+[node name="EnergyTypes" type="HBoxContainer" parent="."]
+unique_name_in_owner = true
 layout_mode = 2
 offset_left = -3.0
 offset_top = 167.0
 offset_right = 209.0
-offset_bottom = 197.0
-theme_override_constants/separation = -13
-metadata/_edit_lock_ = true
+offset_bottom = 167.0
+mouse_filter = 2
 
-[node name="EnergyTypes" type="HBoxContainer" parent="EnergyContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-theme_override_constants/separation = 23
-
-[node name="Types" parent="EnergyContainer/EnergyTypes" instance=ExtResource("4_5yd0i")]
+[node name="Types" parent="EnergyTypes" instance=ExtResource("4_5yd0i")]
 visible = false
 layout_mode = 2
 
-[node name="Types2" parent="EnergyContainer/EnergyTypes" instance=ExtResource("4_5yd0i")]
+[node name="Types2" parent="EnergyTypes" instance=ExtResource("4_5yd0i")]
 visible = false
 layout_mode = 2
 
-[node name="Types3" parent="EnergyContainer/EnergyTypes" instance=ExtResource("4_5yd0i")]
+[node name="Types3" parent="EnergyTypes" instance=ExtResource("4_5yd0i")]
 visible = false
 layout_mode = 2
 
-[node name="Types4" parent="EnergyContainer/EnergyTypes" instance=ExtResource("4_5yd0i")]
+[node name="Types4" parent="EnergyTypes" instance=ExtResource("4_5yd0i")]
 visible = false
 layout_mode = 2
 
-[node name="Types5" parent="EnergyContainer/EnergyTypes" instance=ExtResource("4_5yd0i")]
+[node name="Types5" parent="EnergyTypes" instance=ExtResource("4_5yd0i")]
 visible = false
 layout_mode = 2
 
-[node name="Types6" parent="EnergyContainer/EnergyTypes" instance=ExtResource("4_5yd0i")]
+[node name="Types6" parent="EnergyTypes" instance=ExtResource("4_5yd0i")]
 visible = false
 layout_mode = 2
 
-[node name="Types7" parent="EnergyContainer/EnergyTypes" instance=ExtResource("4_5yd0i")]
+[node name="Types7" parent="EnergyTypes" instance=ExtResource("4_5yd0i")]
 visible = false
 layout_mode = 2
 
-[node name="Types8" parent="EnergyContainer/EnergyTypes" instance=ExtResource("4_5yd0i")]
+[node name="Types8" parent="EnergyTypes" instance=ExtResource("4_5yd0i")]
 visible = false
 layout_mode = 2
 
-[node name="Types9" parent="EnergyContainer/EnergyTypes" instance=ExtResource("4_5yd0i")]
+[node name="Types9" parent="EnergyTypes" instance=ExtResource("4_5yd0i")]
 visible = false
 layout_mode = 2
 
@@ -137,7 +133,7 @@ offset_left = 3.0
 offset_top = 45.0
 offset_right = 137.0
 offset_bottom = 65.0
-theme_override_constants/separation = 24
+mouse_filter = 2
 metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
 
@@ -170,6 +166,7 @@ offset_left = 178.0
 offset_top = 45.0
 offset_right = 210.0
 offset_bottom = 149.0
+mouse_filter = 2
 metadata/_edit_group_ = true
 
 [node name="Poison" type="TextureRect" parent="Conditions"]
@@ -179,6 +176,7 @@ custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+mouse_filter = 2
 texture = ExtResource("5_12v7q")
 expand_mode = 4
 
@@ -189,6 +187,7 @@ custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+mouse_filter = 2
 texture = ExtResource("5_12v7q")
 expand_mode = 4
 
@@ -198,12 +197,14 @@ custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+mouse_filter = 2
 tabs_visible = false
 
 [node name="Paralysis" type="TextureRect" parent="Conditions/TurnConditions"]
 modulate = Color(1, 1, 0.0901961, 1)
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("5_12v7q")
 expand_mode = 4
 
@@ -212,6 +213,7 @@ visible = false
 modulate = Color(0, 1, 1, 1)
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("5_12v7q")
 expand_mode = 4
 
@@ -220,6 +222,7 @@ visible = false
 modulate = Color(0.196078, 0.529412, 0, 1)
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("5_12v7q")
 expand_mode = 4
 
@@ -229,6 +232,7 @@ offset_left = 145.0
 offset_top = 45.0
 offset_right = 177.0
 offset_bottom = 113.0
+mouse_filter = 2
 metadata/_edit_group_ = true
 
 [node name="Imprison" type="TextureRect" parent="SecondaryCondtions"]
@@ -238,6 +242,7 @@ custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+mouse_filter = 2
 texture = ExtResource("5_12v7q")
 expand_mode = 4
 
@@ -248,6 +253,7 @@ custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+mouse_filter = 2
 texture = ExtResource("5_12v7q")
 expand_mode = 4
 

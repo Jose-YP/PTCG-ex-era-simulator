@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bwwl40qrwrmkl"]
+[gd_scene load_steps=31 format=3 uid="uid://bwwl40qrwrmkl"]
 
 [ext_resource type="PackedScene" uid="uid://b4tx6kmy763df" path="res://Scenes/Components/poke_slot.tscn" id="1_c8cvy"]
 [ext_resource type="Script" path="res://Scenes/Testing/Debug_slots.gd" id="1_jpmm1"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://df8x227c7a8q4" path="res://Scenes/UI/UIComponents/BenchMon.tscn" id="6_t4mtj"]
 [ext_resource type="PackedScene" uid="uid://c2dyutb22u6x8" path="res://Scenes/Components/slot_ui_actions.tscn" id="7_rrhvn"]
 [ext_resource type="Texture2D" uid="uid://cujjluirx6yyu" path="res://Art/Energy/48px-Grass-attack.png" id="8_6nmkm"]
+[ext_resource type="PackedScene" uid="uid://bm07a7wgsaxxp" path="res://Scenes/Components/on_slot_actions.tscn" id="8_yhk6y"]
 [ext_resource type="Texture2D" uid="uid://dd1ywu5fsfsq1" path="res://Art/Energy/48px-Fire-attack.png" id="9_1mlkp"]
 [ext_resource type="Texture2D" uid="uid://dj2lgcygk1ups" path="res://Art/Energy/48px-Water-attack.png" id="10_afldb"]
 [ext_resource type="Texture2D" uid="uid://bqqg7qjfq0wqb" path="res://Art/Energy/48px-Lightning-attack.png" id="11_t0fwp"]
@@ -66,6 +67,9 @@ list_direction = 1
 preload_debug = true
 poke_slots = [NodePath("../PokeSlot"), NodePath("../PokeSlot2")]
 ui_slots = [NodePath("../ActivePokemon"), NodePath("../BenchPokemon")]
+
+[node name="OnSlotActions" parent="." node_paths=PackedStringArray("poke_slots") instance=ExtResource("8_yhk6y")]
+poke_slots = [NodePath("../PokeSlot"), NodePath("../PokeSlot2")]
 
 [node name="Conditions" type="GridContainer" parent="."]
 layout_mode = 0

@@ -66,6 +66,7 @@ offset_left = -17.0
 offset_top = 68.0
 offset_right = 31.0
 offset_bottom = 128.0
+mouse_filter = 2
 metadata/_edit_group_ = true
 
 [node name="Tool" type="TextureRect" parent="TrainerAttached"]
@@ -86,45 +87,40 @@ texture = ExtResource("3_pjvm0")
 expand_mode = 5
 stretch_mode = 4
 
-[node name="EnergyContainer" type="VBoxContainer" parent="."]
+[node name="EnergyTypes" type="HBoxContainer" parent="."]
+unique_name_in_owner = true
 layout_mode = 2
 offset_left = -8.0
 offset_top = 130.0
 offset_right = 156.0
-offset_bottom = 160.0
-theme_override_constants/separation = -13
-metadata/_edit_group_ = true
+offset_bottom = 130.0
+mouse_filter = 2
 
-[node name="EnergyTypes" type="HBoxContainer" parent="EnergyContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-theme_override_constants/separation = 23
-
-[node name="Types" parent="EnergyContainer/EnergyTypes" instance=ExtResource("4_nhrrd")]
+[node name="Types" parent="EnergyTypes" instance=ExtResource("4_nhrrd")]
 visible = false
 layout_mode = 2
 
-[node name="Types2" parent="EnergyContainer/EnergyTypes" instance=ExtResource("4_nhrrd")]
+[node name="Types2" parent="EnergyTypes" instance=ExtResource("4_nhrrd")]
 visible = false
 layout_mode = 2
 
-[node name="Types3" parent="EnergyContainer/EnergyTypes" instance=ExtResource("4_nhrrd")]
+[node name="Types3" parent="EnergyTypes" instance=ExtResource("4_nhrrd")]
 visible = false
 layout_mode = 2
 
-[node name="Types4" parent="EnergyContainer/EnergyTypes" instance=ExtResource("4_nhrrd")]
+[node name="Types4" parent="EnergyTypes" instance=ExtResource("4_nhrrd")]
 visible = false
 layout_mode = 2
 
-[node name="Types5" parent="EnergyContainer/EnergyTypes" instance=ExtResource("4_nhrrd")]
+[node name="Types5" parent="EnergyTypes" instance=ExtResource("4_nhrrd")]
 visible = false
 layout_mode = 2
 
-[node name="Types6" parent="EnergyContainer/EnergyTypes" instance=ExtResource("4_nhrrd")]
+[node name="Types6" parent="EnergyTypes" instance=ExtResource("4_nhrrd")]
 visible = false
 layout_mode = 2
 
-[node name="Types7" parent="EnergyContainer/EnergyTypes" instance=ExtResource("4_nhrrd")]
+[node name="Types7" parent="EnergyTypes" instance=ExtResource("4_nhrrd")]
 visible = false
 layout_mode = 2
 
@@ -135,6 +131,7 @@ offset_left = 3.0
 offset_top = 45.0
 offset_right = 137.0
 offset_bottom = 65.0
+mouse_filter = 2
 metadata/_edit_group_ = true
 
 [node name="Types" parent="TypeContainer" instance=ExtResource("4_nhrrd")]
@@ -166,6 +163,7 @@ offset_left = 126.0
 offset_top = 55.0
 offset_right = 158.0
 offset_bottom = 123.0
+mouse_filter = 2
 
 [node name="Imprison" type="TextureRect" parent="Conditions"]
 unique_name_in_owner = true
@@ -175,6 +173,7 @@ custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+mouse_filter = 2
 texture = ExtResource("5_r3j25")
 expand_mode = 4
 
@@ -186,6 +185,7 @@ custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+mouse_filter = 2
 texture = ExtResource("5_r3j25")
 expand_mode = 4
 

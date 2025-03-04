@@ -15,26 +15,25 @@ corner_radius_bottom_left = 1
 
 [node name="AttackList" type="Control"]
 modulate = Color(1, 1, 1, 0)
-top_level = true
-custom_minimum_size = Vector2(450, 0)
+custom_minimum_size = Vector2(420, 0)
 layout_mode = 3
 anchor_right = 0.053
 anchor_bottom = 0.5
 offset_top = 1.0
-offset_right = 1082.76
-offset_bottom = 6821.0
+offset_right = 392.76
+offset_bottom = -359.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.05, 0.05)
 script = ExtResource("1_oywep")
 attackItem = ExtResource("2_usqnq")
 powerItem = ExtResource("3_iiork")
 bodyItem = ExtResource("4_yjwkq")
 current_card = ExtResource("5_yee1y")
+show_speed = 0.075
 metadata/_edit_group_ = true
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
-custom_minimum_size = Vector2(390, 0)
+custom_minimum_size = Vector2(420, 0)
 layout_mode = 0
 offset_right = 400.0
 offset_bottom = 44.0

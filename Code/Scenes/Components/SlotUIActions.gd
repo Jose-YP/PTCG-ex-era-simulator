@@ -11,6 +11,7 @@ enum doing {NOTHING, CHECKING, ATTACKING, SWAPPING, CHOOSING}
 var what_doing: doing = doing.NOTHING
 var selected_slot: UI_Slot = null
 var attack_box
+var cheeck_box
 #endregion
 #--------------------------------------
 
@@ -47,7 +48,13 @@ func left_button_actions(target: PokeSlot):
 	print(attack_box)
 
 func right_button_actions(target: PokeSlot):
-	pass
+	match what_doing:
+		#If checking, check different card, or stop checking
+		doing.CHECKING:
+			pass
+		_:#If not checking, swap state to checking and check card
+			selected_slot = target.ui_slot
+
 #endregion
 #--------------------------------------
 
@@ -59,8 +66,4 @@ func get_slot_type(active: bool = true) -> Array[PokeSlot]:
 			final.append(slot)
 	
 	return final
-
-func attatch_tool():
-	pass
-
 

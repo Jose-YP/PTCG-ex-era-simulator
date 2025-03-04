@@ -6,7 +6,6 @@ extends Control
 #--------------------------------------
 #region ONREADY VARIABLES
 @onready var pokedata: Pokemon = card.pokemon_properties
-@onready var attackList: Node = %AttackList
 
 @onready var default_types: Array[Control] = [%DefaultType, %DefaultType2]
 @onready var weakness_nodes: Array[Node] = %Weaknesses.get_children()
@@ -24,6 +23,9 @@ extends Control
 @onready var set_type: TabContainer = %Set
 
 @onready var art: TextureRect = %Art
+
+var attack_size: int
+
 #endregion
 #--------------------------------------
 
@@ -55,12 +57,14 @@ func _ready():
 	
 	#--------------------------------------
 	#region ATTACK NODE
-	%AttackList.scale = Vector2(1,1)
+	var list = Constants.attack_list.instantiate()
 	if poke_slot:
-		%AttackList.poke_slot = poke_slot
+		list.poke_slot = poke_slot
 	else:
-		%AttackList.current_card = card
-	%AttackList.custom_minimum_size.y = %AttackList.current_height - 25
+		list.current_card = card
+	%Attacks.add_child(list)
+	list.readied.connect(resize_attack)
+	
 	#endregion
 	#--------------------------------------
 	
@@ -78,11 +82,11 @@ func _ready():
 	
 	art.texture = card.image
 	
-	make_text(illustrator, str("Illus. ", card.illustrator))
+	make_text(illustrator, str("[right]Illus. ", card.illustrator))
 	if pokedata.evolves_from != "":
 		make_text(evoFrom, str("Evolves from ", pokedata.evolves_from))
 	
-	make_text(number, str(card.number, "/", Constants.expansion_counts[card.expansion]))
+	make_text(number, str("[right]",card.number, "/", Constants.expansion_counts[card.expansion]))
 	rarity.current_tab = card.rarity
 	set_type.current_tab = card.expansion
 	#endregion
@@ -91,3 +95,7 @@ func _ready():
 func make_text(node: RichTextLabel, text: String):
 	node.clear()
 	node.append_text(text)
+
+func resize_attack(list_size) -> void:
+	print("ioefdjswvnsdvojnksdoin")
+	%Attacks.get_parent().custom_minimum_size = list_size

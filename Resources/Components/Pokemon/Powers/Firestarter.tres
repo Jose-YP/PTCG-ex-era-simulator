@@ -16,6 +16,7 @@ evolve = false
 script = ExtResource("3_bnqyx")
 must_be_different = false
 broad_class = 4
+exactly = false
 contains = ""
 type = 2
 evolves_from = false

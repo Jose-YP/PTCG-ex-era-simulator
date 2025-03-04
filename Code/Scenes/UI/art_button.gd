@@ -21,3 +21,18 @@ func _gui_input(event):
 		show_card.emit()
 		print('onf')
 	
+
+func spawn_card_display(card: Base_Card, considered):
+	var card_display: PackedScene
+	match considered:
+		0: #Pokemon
+			card_display = Constants.poke_card
+		1: #Trainers
+			card_display = Constants.trainer_card
+		2: #Energy
+			card_display = Constants.energy_card
+		_: #Fossils
+			push_error("Fossils not implemented yet")
+	
+	var node = card_display.instantiate()
+	

@@ -8,8 +8,10 @@ extends Control
 @export var max_size: Vector2 = Vector2(420, 400)
 @export var show_speed: float = .1
 
-@onready var current_height: float = %Identifier.size.y + 25
+@onready var current_height: float = %Identifier.size.y + 30
 @onready var panel_container: PanelContainer = $PanelContainer
+
+signal readied(ccurrent_size)
 
 var items: Array[Node] = []
 var display_text: String = ""
@@ -76,4 +78,9 @@ func set_items():
 	list_tween.tween_property(self, "scale", Vector2(1,1), show_speed)
 	list_tween.tween_property(panel_container, "size", Vector2(0, current_height), show_speed * 2)
 	
+	await list_tween.finished
+	
 	panel_container.size.y = current_height
+	size = panel_container.size
+	print(size)
+	readied.emit(size)

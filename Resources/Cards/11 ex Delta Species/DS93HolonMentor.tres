@@ -1,13 +1,13 @@
 [gd_resource type="Resource" script_class="Base_Card" load_steps=2 format=3 uid="uid://dpq83tgsde1lq"]
 
-[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_3x6u1"]
+[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_cqdsr"]
 
 [resource]
-script = ExtResource("1_3x6u1")
+script = ExtResource("1_cqdsr")
 name = ""
 illustrator = ""
 number = 0
 rarity = 0
 expansion = 0
-categories = 0
+categories = 2
 fossil = false
