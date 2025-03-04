@@ -10,8 +10,6 @@ enum doing {NOTHING, CHECKING, ATTACKING, SWAPPING, CHOOSING}
 
 var what_doing: doing = doing.NOTHING
 var selected_slot: UI_Slot = null
-var attack_box
-var cheeck_box
 #endregion
 #--------------------------------------
 
@@ -29,23 +27,22 @@ func left_button_actions(target: PokeSlot):
 	match what_doing:
 		doing.NOTHING:
 			selected_slot = target.ui_slot
-			attack_box = selected_slot.spawn_attacks()
-			what_doing = doing.ATTACKING
-		doing.ATTACKING:
+			selected_slot.spawn_card()
+			what_doing = doing.CHECKING
+		doing.CHECKING:
 			#Always despawn the original attack box
-			var current_slot = attack_box.poke_slot.ui_slot
+			var current_slot = selected_slot
+			selected_slot.despawn_card()
 			selected_slot = target.ui_slot
-			attack_box.reset_items()
 			#Check if the pressed slot is different from the original
 			print(current_slot != selected_slot, current_slot, selected_slot)
 			if current_slot != selected_slot:
-				attack_box = selected_slot.spawn_attacks()
-				what_doing = doing.ATTACKING
+				selected_slot.spawn_card()
+				what_doing = doing.CHECKING
 			else:
 				what_doing = doing.NOTHING
 	
 	print(target.current_card.name)
-	print(attack_box)
 
 func right_button_actions(target: PokeSlot):
 	match what_doing:

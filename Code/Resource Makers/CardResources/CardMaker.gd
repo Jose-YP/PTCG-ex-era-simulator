@@ -23,13 +23,33 @@ class_name Base_Card
 @export var energy_properties: Energy
 @export var fossil: bool = false
 
-func print_name():
-	print(name)
+func print_info():
+	print("-------------------------", name, "-------------------------")
+	if pokemon_properties:
+		print("-------------------------POKEMON-------------------------")
+	if pokemon_properties:
+		print("-------------------------TRAINER-------------------------")
+	if pokemon_properties:
+		print("-------------------------ENERGY-------------------------")
+	print("-------------------------------------------------------------")
+
+func card_display() -> String:
+	if fossil:
+		return "Fossil"
+	elif pokemon_properties:
+		return "Pokemon"
+	elif trainer_properties:
+		return "Trainer"
+	elif energy_properties:
+		return "Energy"
+	
+	push_error(name, " isn't considered anything")
+	return "NONE"
 
 func is_considered(considered: String):
 	if pokemon_properties:
 		#Holon's mons will be considered pokemon before looking at energy properties
-		pass #Pokemon need a function for this
+		return pokemon_properties.evo_stage == considered
 	if trainer_properties and trainer_properties.considered == considered:
 		return trainer_properties.considered == considered
 	if energy_properties and energy_properties.considered == considered:

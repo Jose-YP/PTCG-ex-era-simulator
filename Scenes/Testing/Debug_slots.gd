@@ -41,6 +41,7 @@ func _on_energy_options_item_selected(index: int):
 	print(card.energy_properties.how_display())
 
 func add_energy_to(target: int):
+	print()
 	slots[target].change_energy(load(energy_cards[energy_type]))
 
 func remove_energy_from(target: int):

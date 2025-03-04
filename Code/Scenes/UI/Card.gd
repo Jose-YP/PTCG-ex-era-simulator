@@ -31,6 +31,10 @@ var attack_scroll: ScrollContainer
 #--------------------------------------
 
 func _ready():
+	if poke_slot: 
+		card = poke_slot.current_card
+		pokedata = card.pokemon_properties
+	
 	#To fit multiple types in
 	#--------------------------------------
 	#region ENERGY SYMBOL MANAGEMENT
@@ -88,15 +92,22 @@ func _ready():
 	make_text(illustrator, str("[right]Illus. ", card.illustrator))
 	if pokedata.evolves_from != "":
 		make_text(evoFrom, str("Evolves from ", pokedata.evolves_from))
+	else:
+		evoFrom.clear()
 	
 	make_text(number, str("[right]",card.number, "/", Constants.expansion_counts[card.expansion]))
 	rarity.current_tab = card.rarity
 	set_type.current_tab = card.expansion
 	#endregion
 	#--------------------------------------
+
+#--------------------------------------
+#region HELPER FUNCTIONS
 func edit_attack_size(final_size: float) -> void:
 	%Attacks.get_parent().custom_minimum_size.y = final_size
 
 func make_text(node: RichTextLabel, text: String):
 	node.clear()
 	node.append_text(text)
+#endregion
+#--------------------------------------

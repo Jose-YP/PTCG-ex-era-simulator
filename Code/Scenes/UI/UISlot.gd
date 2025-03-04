@@ -31,6 +31,7 @@ var attached_energy: Dictionary = {"Grass": 0, "Fire": 0, "Water": 0,
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	%ArtButton.spawn_direction = list_direction
 	if %ArtButton.benched: %ArtButton/PanelContainer.size = Vector2(149, 96)
 
 func spawn_attacks() -> Control:
@@ -40,6 +41,12 @@ func spawn_attacks() -> Control:
 	print(get_parent())
 	get_parent().add_child(list)
 	return list
+
+func spawn_card() -> void:
+	%ArtButton.spawn_card_display(connected_card.current_card, connected_card)
+
+func despawn_card() -> void:
+	%ArtButton.despawn_card()
 
 #--------------------------------------
 #region ATTATCH

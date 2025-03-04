@@ -27,7 +27,6 @@ func check_starting():
 	var can_start: bool = false
 	var start_string: String = "There are no basic Pokemon in the starting hand"
 	for card in hand:
-		card.print_name()
 		if card.categories & 1 or card.fossil:
 			can_start = true
 			start_string = "Select a Basic Pokemon"

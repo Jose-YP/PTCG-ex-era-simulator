@@ -291,7 +291,7 @@ layout_mode = 2
 
 [node name="Number" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(33, 0)
+custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
