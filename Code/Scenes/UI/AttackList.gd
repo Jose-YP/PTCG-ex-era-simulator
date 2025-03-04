@@ -1,43 +1,30 @@
 extends Control
 
-@export var attackItem: PackedScene
-@export var powerItem: PackedScene
-@export var bodyItem: PackedScene
 @export var poke_slot: PokeSlot
 @export var current_card: Base_Card
-@export var max_size: Vector2 = Vector2(420, 400)
 @export var show_speed: float = .1
 
-@onready var current_height: float = %Identifier.size.y + 30
+@onready var current_height: float = %Identifier.size.y + 80
 @onready var panel_container: PanelContainer = $PanelContainer
-
-signal readied(ccurrent_size)
-
-var items: Array[Node] = []
-var display_text: String = ""
-var final_size: int = 0
-var attacks: Array[Attack] = []
-var power: PokePower
-var body: PokeBody
+@onready var attackScroll: ScrollContainer = %AttackScrollBox
 
 func _ready():
-	#So it can be sued on a poke slot or not
-	attacks = (poke_slot.pokedata.attacks if poke_slot 
-	else current_card.pokemon_properties.attacks)
+	if poke_slot: current_card = poke_slot.current_card
+	%AttackScrollBox.current_card = current_card
+
+func _draw():
+	await get_tree().process_frame
+	var list_tween: Tween = get_tree().create_tween().set_parallel()
+	current_height += %AttackScrollBox.current_height
 	
-	power = (poke_slot.pokedata.power if poke_slot 
-	else current_card.pokemon_properties.power)
-	
-	body = (poke_slot.pokedata.body if poke_slot 
-	else current_card.pokemon_properties.body)
-	
-	set_items()
+	current_height = clamp(current_height, current_height, 400)
+	list_tween.tween_property(self, "modulate", Color.WHITE, show_speed)
+	list_tween.tween_property(panel_container, "size", Vector2(0, current_height), show_speed * 1.5)
 
 # Called when the node enters the scene tree for the first time.
 func reset_items():
 	var list_tween: Tween = get_tree().create_tween().set_parallel()
-	for item in items:
-		item.queue_free()
+	%AttackScrollBox.reset_items()
 	
 	list_tween.tween_property(self, "modulate", Color.TRANSPARENT, show_speed)
 	list_tween.tween_property(self, "scale", Vector2(.1,.1), show_speed)
@@ -45,42 +32,3 @@ func reset_items():
 	
 	await list_tween.finished
 	queue_free()
-
-func set_items():
-	#Get PokeBody
-	if body:
-		var body_making = bodyItem.instantiate()
-		body_making.body = body
-		%CardList.add_child(body_making)
-		current_height += body_making.size.y
-	
-	#Get Pokepower
-	if power:
-		var power_making = powerItem.instantiate()
-		power_making.power = power
-		%CardList.add_child(power_making)
-		current_height += power_making.size.y
-	
-	var list_tween: Tween = get_tree().create_tween().set_parallel()
-	for item in attacks:
-		var making = attackItem.instantiate()
-		making.attack = item
-		%CardList.add_child(making)
-		if poke_slot: #only try this when attatched to a pokeslot
-			making.check_usability(poke_slot.energy_array)
-		print(item.name, making.size.y)
-		current_height += making.size.y
-	
-	items = %CardList.get_children()
-	
-	current_height = clamp(current_height, current_height, max_size.y)
-	list_tween.tween_property(self, "modulate", Color.WHITE, show_speed)
-	list_tween.tween_property(self, "scale", Vector2(1,1), show_speed)
-	list_tween.tween_property(panel_container, "size", Vector2(0, current_height), show_speed * 2)
-	
-	await list_tween.finished
-	
-	panel_container.size.y = current_height
-	size = panel_container.size
-	print(size)
-	readied.emit(size)

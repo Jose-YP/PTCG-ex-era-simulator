@@ -1,42 +1,32 @@
-[gd_scene load_steps=7 format=3 uid="uid://cvh086w8yapm0"]
+[gd_scene load_steps=4 format=3 uid="uid://cvh086w8yapm0"]
 
 [ext_resource type="Script" path="res://Code/Scenes/UI/AttackList.gd" id="1_oywep"]
-[ext_resource type="PackedScene" uid="uid://dvvv8k1g6tgog" path="res://Scenes/UI/Lists/attack_item.tscn" id="2_usqnq"]
-[ext_resource type="PackedScene" uid="uid://beymnk0kvpnut" path="res://Scenes/UI/Lists/power_item.tscn" id="3_iiork"]
-[ext_resource type="PackedScene" uid="uid://cidor8csiohus" path="res://Scenes/UI/Lists/body_item.tscn" id="4_yjwkq"]
 [ext_resource type="Resource" uid="uid://jq2ng1vyif34" path="res://Resources/Cards/1 ex Ruby & Saphire/RS28Combusken.tres" id="5_yee1y"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ud5dv"]
-bg_color = Color(0.12549, 0.109804, 0.117647, 0.780392)
-corner_radius_top_left = 1
-corner_radius_top_right = 1
-corner_radius_bottom_right = 1
-corner_radius_bottom_left = 1
+[ext_resource type="PackedScene" uid="uid://cj0k023dhlha" path="res://Scenes/UI/Lists/attack_scroll_box.tscn" id="6_ecc5w"]
 
 [node name="AttackList" type="Control"]
 modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(420, 0)
 layout_mode = 3
-anchor_right = 0.053
+anchor_right = 0.417
 anchor_bottom = 0.5
 offset_top = 1.0
-offset_right = 392.76
+offset_right = -30.36
 offset_bottom = -359.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
 script = ExtResource("1_oywep")
-attackItem = ExtResource("2_usqnq")
-powerItem = ExtResource("3_iiork")
-bodyItem = ExtResource("4_yjwkq")
 current_card = ExtResource("5_yee1y")
 show_speed = 0.075
 metadata/_edit_group_ = true
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
-custom_minimum_size = Vector2(420, 0)
+custom_minimum_size = Vector2(400, 0)
 layout_mode = 0
 offset_right = 400.0
-offset_bottom = 44.0
+offset_bottom = 288.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
 clip_contents = true
@@ -57,34 +47,6 @@ bbcode_enabled = true
 text = "[center]ATTACKS"
 fit_content = true
 
-[node name="ScrollBox" type="ScrollContainer" parent="PanelContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_ud5dv")
-follow_focus = true
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer/VBoxContainer/ScrollBox"]
-layout_mode = 2
-alignment = 1
-
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer/ScrollBox/VBoxContainer2"]
-layout_mode = 2
-theme_override_constants/margin_bottom = 15
-
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/ScrollBox/VBoxContainer2"]
-layout_mode = 2
-alignment = 1
-
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer/ScrollBox/VBoxContainer2/HBoxContainer"]
-layout_mode = 2
-theme_override_constants/margin_right = 5
-
-[node name="CardList" type="VBoxContainer" parent="PanelContainer/VBoxContainer/ScrollBox/VBoxContainer2/HBoxContainer"]
+[node name="AttackScrollBox" parent="PanelContainer/VBoxContainer" instance=ExtResource("6_ecc5w")]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_constants/separation = 8
-alignment = 1
-
-[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/VBoxContainer/ScrollBox/VBoxContainer2"]
-layout_mode = 2
-theme_override_constants/margin_bottom = 15

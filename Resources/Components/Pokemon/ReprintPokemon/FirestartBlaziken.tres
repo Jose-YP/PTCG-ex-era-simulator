@@ -49,6 +49,7 @@ evolve = false
 script = ExtResource("6_mefy8")
 must_be_different = false
 broad_class = 4
+exactly = false
 contains = ""
 type = 2
 evolves_from = false

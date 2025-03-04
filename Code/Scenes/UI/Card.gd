@@ -25,6 +25,7 @@ extends Control
 @onready var art: TextureRect = %Art
 
 var attack_size: int
+var attack_scroll: ScrollContainer
 
 #endregion
 #--------------------------------------
@@ -57,13 +58,15 @@ func _ready():
 	
 	#--------------------------------------
 	#region ATTACK NODE
-	var list = Constants.attack_list.instantiate()
+	var list = Constants.attack_list_comp.instantiate()
 	if poke_slot:
 		list.poke_slot = poke_slot
 	else:
 		list.current_card = card
 	%Attacks.add_child(list)
-	list.readied.connect(resize_attack)
+	list.readied.connect(edit_attack_size)
+	list.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	attack_scroll = list
 	
 	#endregion
 	#--------------------------------------
@@ -91,11 +94,9 @@ func _ready():
 	set_type.current_tab = card.expansion
 	#endregion
 	#--------------------------------------
+func edit_attack_size(final_size: float) -> void:
+	%Attacks.get_parent().custom_minimum_size.y = final_size
 
 func make_text(node: RichTextLabel, text: String):
 	node.clear()
 	node.append_text(text)
-
-func resize_attack(list_size) -> void:
-	print("ioefdjswvnsdvojnksdoin")
-	%Attacks.get_parent().custom_minimum_size = list_size
