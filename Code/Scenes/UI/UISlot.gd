@@ -130,7 +130,7 @@ func display_shockwave(truth: bool = true) -> void:
 #--------------------------------------
 #region SIGNALS
 func _on_art_button_show_attacks():
-	SignalBus.pressed_pokemon_art.emit(connected_card)
+	SignalBus.show_pokemon_card.emit(connected_card)
 
 func _on_art_button_show_card():
 	SignalBus.show_pokemon_card.emit(connected_card)

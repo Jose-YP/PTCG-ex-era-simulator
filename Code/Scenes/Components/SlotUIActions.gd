@@ -15,8 +15,7 @@ var selected_slot: UI_Slot = null
 #--------------------------------------
 
 func _ready():
-	SignalBus.connect("pressed_pokemon_art", left_button_actions)
-	SignalBus.connect("show_pokemon_card", right_button_actions)
+	SignalBus.connect("show_pokemon_card", left_button_actions)
 	
 	for i in range(poke_slots.size()):
 		poke_slots[i].slot_into(ui_slots[i])

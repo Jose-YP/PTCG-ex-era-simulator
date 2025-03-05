@@ -1,5 +1,7 @@
 extends Control
 
+#--------------------------------------
+#region VARIABLES
 @export var debug: bool = false
 @export var list_item: PackedScene
 @export var list: Array[Base_Card]
@@ -15,9 +17,11 @@ var display_text: String = ""
 var instruction_text: String = ""
 var black_list: Array[String] = []
 var white_list: Array[String] = []
+#endregion
+#--------------------------------------
 
 #--------------------------------------
-#region CARD DISPLAY
+#region INITALIZATION
 func _ready():
 	identifier.append_text(display_text)
 	instructions.append_text(instruction_text)
@@ -39,7 +43,7 @@ func is_allowed(button: Button) -> void:
 	var blacklisted: bool = black_list.find(button.card.name) != -1
 	#print(button.card_flags & allowed)
 	if (button.card_flags & allowed or whitelisted) and not blacklisted:
-		button.allow()
+		button.allow(allowed)
 	else:
 		button.not_allowed()
 #endregion

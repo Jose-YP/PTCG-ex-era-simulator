@@ -7,6 +7,8 @@ extends Button
 
 var allowed: bool = false
 
+#--------------------------------------
+#region INITALIZATION
 func _ready() -> void:
 	%Class.clear()
 	if card.categories & 1:
@@ -36,12 +38,31 @@ func _ready() -> void:
 	%Name.clear()
 	%Name.append_text(card.name)
 
-func allow():
+func allow(play_as: int):
 	allowed = true
+	card_flags = play_as
 	disabled = false
 
 func not_allowed():
 	pass
+#endregion
+#--------------------------------------
 
-func _on_pressed():
-	print(card.print_info())
+func show_options():
+	pass
+
+func show_card():
+	
+	if card.pokemon_properties:
+		pass
+	elif card.trainer_properties:
+		pass
+	elif card.energy_properties:
+		pass
+	pass
+
+func _gui_input(event):
+	if event.is_action_pressed("A"):
+		SignalBus.show_options.emit()
+	elif event.is_action_pressed("L"):
+		show_card()
