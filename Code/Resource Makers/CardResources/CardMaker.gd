@@ -25,12 +25,19 @@ class_name Base_Card
 
 func print_info():
 	print("-------------------------", name, "-------------------------")
+	print("Illustrator: ", illustrator, "
+	Expansion: ", Constants.expansion_abbreviations,"
+	Number: ", number, "/", Constants.expansion_counts[expansion],
+	"Rarity: ", Constants.rarity[rarity],"\n")
 	if pokemon_properties:
 		print("-------------------------POKEMON-------------------------")
-	if pokemon_properties:
+		pokemon_properties.print_pokemon()
+	elif trainer_properties:
 		print("-------------------------TRAINER-------------------------")
-	if pokemon_properties:
+		trainer_properties.print_trainer()
+	elif energy_properties:
 		print("-------------------------ENERGY-------------------------")
+		energy_properties.print_energy()
 	print("-------------------------------------------------------------")
 
 func card_display() -> String:

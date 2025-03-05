@@ -28,3 +28,12 @@ class_name Pokemon
 @export_flags("Grass","Fire","Water",
 "Lightning","Psychic","Fighting",
 "Darkness","Metal","Colorless") var resist: int = 0
+
+func print_pokemon() -> void:
+	print("HP: ", HP,"
+	Stage: ", evo_stage,"
+	Type: ", Conversions.flags_to_type_array(type),"
+	Weakness: ", Conversions.flags_to_type_array(weak),"
+	Reistance: ", Conversions.flags_to_type_array(resist))
+	
+	print("-------------------------------------------------------------")

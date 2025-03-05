@@ -56,7 +56,7 @@ func flags_to_type_array(type_flags: int) -> Array[String]:
 
 func get_allowed_flags(allowed: String = "All") -> int:
 	match allowed:
-		"Starting":
+		"Start":
 			return (2 ** Constants.allowed_list_flags.find("Basic")
 			 + 2 ** Constants.allowed_list_flags.rfind("Fossil"))
 		"All":

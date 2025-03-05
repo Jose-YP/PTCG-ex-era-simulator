@@ -35,6 +35,14 @@ class_name Energy
 "Lightning","Psychic","Fighting",
 "Darkness","Metal","Colorless") var fail_type: int = 1
 
+func print_energy() -> void:
+	print("Class: ", considered ,"
+	Types: ", Conversions.flags_to_type_array(type),"
+	Number Provided: ", number,"
+	Description: ", description)
+	
+	print("-------------------------------------------------------------")
+
 func how_display(passed: bool = true) -> String:
 	#Figure out how the energy will be displayed
 	var using: int = 0

@@ -13,7 +13,10 @@ func _ready() -> void:
 		%Class.append_text(card.pokemon_properties.evo_stage)
 		if card.pokemon_properties.evo_stage == "Basic":
 			card_flags += Conversions.get_allowed_flags("Basic")
-		else: card_flags += Conversions.get_allowed_flags("Fossil")
+		elif card.fossil: 
+			card_flags += Conversions.get_allowed_flags("Fossil")
+		else:
+			card_flags += Conversions.get_allowed_flags("Evolution")
 		
 	elif card.categories & 2:
 		var considered = card.trainer_properties.considered
@@ -24,6 +27,7 @@ func _ready() -> void:
 		if considered == "Supporter": considered = "Support"
 		
 		%Class.append_text(considered)
+	
 	else:
 		card_flags += Conversions.get_allowed_flags("Energy")
 		%Class.append_text(card.energy_properties.considered)
@@ -34,6 +38,10 @@ func _ready() -> void:
 
 func allow():
 	allowed = true
+	disabled = false
+
+func not_allowed():
+	pass
 
 func _on_pressed():
-	pass # Replace with function body.
+	print(card.print_info())

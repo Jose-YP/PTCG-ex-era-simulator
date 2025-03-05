@@ -42,6 +42,7 @@ mouse_default_cursor_shape = 2
 theme_override_styles/normal = ExtResource("1_mxeim")
 theme_override_styles/hover = SubResource("StyleBoxFlat_yloa2")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_auhmd")
+disabled = true
 script = ExtResource("1_bdgo5")
 card = ExtResource("3_xnpqb")
 

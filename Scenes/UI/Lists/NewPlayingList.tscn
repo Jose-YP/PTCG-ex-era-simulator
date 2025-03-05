@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://f4m1ofpicse4"]
+[gd_scene load_steps=13 format=3 uid="uid://f4m1ofpicse4"]
 
+[ext_resource type="Theme" uid="uid://bfw6ylcttychc" path="res://Themes/AverageButton.tres" id="1_j5ysj"]
 [ext_resource type="Script" path="res://Code/Scenes/UI/PlayingList.gd" id="1_sw67d"]
 [ext_resource type="PackedScene" uid="uid://dd56w2nt5mqow" path="res://Scenes/UI/Lists/PlayingListItem.tscn" id="2_sjm4d"]
 [ext_resource type="Resource" uid="uid://bpyb5rd3indje" path="res://Resources/Cards/1 ex Ruby & Saphire/RS94MetalEnergy.tres" id="3_vfbjj"]
@@ -25,6 +26,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_j5ysj")
 script = ExtResource("1_sw67d")
 debug = true
 list_item = ExtResource("2_sjm4d")

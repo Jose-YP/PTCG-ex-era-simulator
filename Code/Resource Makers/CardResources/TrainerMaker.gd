@@ -17,3 +17,8 @@ class_name Trainer
 @export var stadium_properties: Stadium
 @export var tool_properties: ToolCard
 @export var provided_attack: Attack
+
+func print_trainer() -> void:
+	print("Class: ", considered,"
+	Description: ", description)
+	print("-------------------------------------------------------------")

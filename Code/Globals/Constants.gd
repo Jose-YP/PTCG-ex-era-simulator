@@ -15,7 +15,10 @@ const class_texts: Array[String] = ["", supporter_text, tool_text, stadium_text,
 
 #--------------------------------------
 #region EXPANSIONS
-#Order goes from the 16 ex expansions, 5 POP Series expansions then Black star
+#Order goes from the 16 ex expansions, 5 POP Series then Black star
+const expansion_abbreviations: Array[String] = ["RS","SS","DR","MA","HL",
+"RG","TRR","DX","EM","UF","DS","LM","HP","CG","DF","PK",
+"POP1","POP2","POP3","POP4","POP5","NP"]
 const expansion_counts: Array[int] = [109, 100, 97, 95, 101, 112, 109, 107,
 106, 115, 113, 92, 110, 110, 101, 108, 17, 17, 17, 17, 17, 40]
 const expansion_secrets: Array[int] = [0,0,3,2,1,4,2,1,1,2,1,1,1,0,0,0,0,0,0,0,0,0]
@@ -44,7 +47,7 @@ Color.GRAY, Color.WHITE_SMOKE]
 const playing_list_item = preload("res://Scenes/UI/Lists/PlayingListItem.tscn")
 const playing_list = preload("res://Scenes/UI/Lists/NewPlayingList.tscn")
 const attack_list_comp = preload("res://Scenes/UI/Lists/attack_scroll_box.tscn")
-const attack_list = preload("res://Scenes/UI/Lists/attack_list.tscn")
+#const attack_list = preload("res://Scenes/UI/Lists/attack_list.tscn")
 const poke_card = preload("res://Scenes/UI/CardDisplay/PokemonCard.tscn")
 const trainer_card = preload("res://Scenes/UI/CardDisplay/TrainerCard.tscn")
 const energy_card = preload("res://Scenes/UI/CardDisplay/EnergyCard.tscn")
@@ -54,7 +57,9 @@ const cursor = preload("res://Scenes/UI/UIComponents/cursor.tscn")
 
 #--------------------------------------
 #region ETC
-const allowed_list_flags = ["Basic", "Evolution", "Item",
- "Supporter","Stadium", "Tool", "TM", "RSM", "Fossil", "Energy"]
+const rarity: Array[String] = ["Common", "Uncommon", "Rare",
+ "Holofoil Rare", "ex Rare", "Ultra Rare", "Star Rare", "Promo Rare"]
+const allowed_list_flags: Array[String] = ["Basic", "Evolution",
+ "Item", "Supporter","Stadium", "Tool", "TM", "RSM", "Fossil", "Energy"]
 #endregion
 #--------------------------------------

@@ -81,6 +81,7 @@ func ontop_deck(_card: Base_Card): #From X to atop Deck
 
 func shuffle_hand_back():
 	usable_deck.append_array(hand)
+	hand.clear()
 	usable_deck.shuffle()
 
 #endregion
@@ -96,9 +97,11 @@ func spawn_hand(monitor_side: String, using_string: String, allowed: int = Conve
 		new_node.list = hand
 		new_node.top_level = true
 		new_node.allowed = allowed
-		new_node.display_text = using_string
+		new_node.display_text = "HAND"
+		new_node.instruction_text = using_string
 		
 		add_sibling(new_node)
+		#new_node.set_items()
 
 func show_reveal_stack(reveal_slot):
 	if reveal_stack.size() != 0:

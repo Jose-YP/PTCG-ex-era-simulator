@@ -33,13 +33,13 @@ func _ready():
 	%ArtButton.spawn_direction = list_direction
 	if %ArtButton.benched: %ArtButton/PanelContainer.size = Vector2(149, 96)
 
-func spawn_attacks() -> Control:
-	var list = Constants.attack_list.instantiate()
-	list.poke_slot = connected_card
-	list.position = position + list_offsets[list_direction]
-	print(get_parent())
-	get_parent().add_child(list)
-	return list
+#func spawn_attacks() -> Control:
+	#var list = Constants.attack_list.instantiate()
+	#list.poke_slot = connected_card
+	#list.position = position + list_offsets[list_direction]
+	#print(get_parent())
+	#get_parent().add_child(list)
+	#return list
 
 func spawn_card() -> void:
 	%ArtButton.spawn_card_display(connected_card.current_card, connected_card)
