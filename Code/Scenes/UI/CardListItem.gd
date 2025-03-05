@@ -5,6 +5,7 @@ extends Button
 "Supporter", "Stadium", "Tool", "TM", "RSM", "Fossil",
  "Energy") var card_flags: int = 0
 
+var parent: Node
 var allowed: bool = false
 
 #--------------------------------------
@@ -40,7 +41,8 @@ func _ready() -> void:
 
 func allow(play_as: int):
 	allowed = true
-	card_flags = play_as
+	print(play_as & card_flags, play_as, card_flags)
+	card_flags = play_as & card_flags
 	disabled = false
 
 func not_allowed():
@@ -48,21 +50,55 @@ func not_allowed():
 #endregion
 #--------------------------------------
 
-func show_options():
-	pass
-
-func show_card():
+func show_options() -> Node:
+	var option_Display: Node = Constants.item_options.instantiate()
+	option_Display.card_flags = card_flags
+	option_Display.top_level = true
+	option_Display.position = global_position
+	option_Display.scale = Vector2(.05, .05)
+	option_Display.modulate = Color.TRANSPARENT
+	add_child(option_Display)
 	
-	if card.pokemon_properties:
-		pass
-	elif card.trainer_properties:
-		pass
-	elif card.energy_properties:
-		pass
-	pass
+	option_Display.bring_up()
+	
+	return option_Display
+
+#There's a function almost just like this in 
+#"res://Scenes/UI/UIComponents/art_button.tscn"
+#One day make a function that can do this kind of task globally from any node
+func show_card() -> Node:
+	var considered: String = card.card_display()
+	var node_tween: Tween = get_tree().create_tween().set_parallel(true)
+	var card_display: Node
+	match considered:
+		"Pokemon":
+			card_display = Constants.poke_card.instantiate()
+		"Trainer":
+			card_display = Constants.trainer_card.instantiate()
+		"Energy":
+			card_display = Constants.energy_card.instantiate()
+	
+	card_display.card = card
+	card_display.top_level = true
+	card_display.position = global_position
+	card_display.scale = Vector2(.05, .05)
+	card_display.modulate = Color.TRANSPARENT
+	add_child(card_display)
+	
+	node_tween.tween_property(card_display, "position", global_position + Vector2(50,0), .1)
+	node_tween.tween_property(card_display, "scale", Vector2.ONE, .1)
+	node_tween.tween_property(card_display, "modulate", Color.WHITE, .1)
+	
+	return card_display
 
 func _gui_input(event):
 	if event.is_action_pressed("A"):
-		SignalBus.show_options.emit()
+		if parent.options:
+			await parent.options.disapear()
+		
+		parent.options = show_options()
 	elif event.is_action_pressed("L"):
-		show_card()
+		if parent.display:
+			pass
+		
+		parent.display = show_card()

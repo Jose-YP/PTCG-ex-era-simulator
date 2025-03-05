@@ -27,23 +27,21 @@ func _gui_input(event):
 		show_card.emit()
 		print('onf')
 
-func spawn_card_display(card: Base_Card, slot: PokeSlot):
+func spawn_card_display(card: Base_Card, slot):
 	var considered: String = card.card_display()
-	var card_display: PackedScene
 	var node_tween: Tween = get_tree().create_tween().set_parallel(true)
 	match considered:
 		"Pokemon": #Pokemon
-			card_display = Constants.poke_card
+			current_display = Constants.poke_card.instantiate()
 		"Trainer": #Trainers
-			card_display = Constants.trainer_card
+			current_display = Constants.trainer_card.instantiate()
 		"Energy": #Energy
-			card_display = Constants.energy_card
+			current_display = Constants.energy_card.instantiate()
 		_: #Fossils
 			push_error("Fossils not implemented yet")
 	
-	current_display = card_display.instantiate()
+	current_display.card = slot.current_card
 	current_display.top_level = true
-	current_display.poke_slot = slot
 	current_display.position = global_position
 	current_display.scale = Vector2(.05, .05)
 	current_display.modulate = Color.TRANSPARENT

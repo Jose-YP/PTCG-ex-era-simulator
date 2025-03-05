@@ -17,6 +17,9 @@ var display_text: String = ""
 var instruction_text: String = ""
 var black_list: Array[String] = []
 var white_list: Array[String] = []
+
+var display: Node
+var options: Node
 #endregion
 #--------------------------------------
 
@@ -33,6 +36,7 @@ func set_items():
 	for item in list:
 		var making = list_item.instantiate()
 		making.card = item
+		making.parent = self
 		%CardList.add_child(making)
 		is_allowed(making)
 	

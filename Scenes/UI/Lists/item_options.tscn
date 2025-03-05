@@ -1,0 +1,67 @@
+[gd_scene load_steps=2 format=3 uid="uid://kejk3mwqasft"]
+
+[ext_resource type="Script" path="res://Code/Scenes/UI/ItemOptions.gd" id="1_ty0wb"]
+
+[node name="ItemOptions" type="Control"]
+layout_mode = 3
+anchor_right = 0.136
+anchor_bottom = 0.479
+offset_right = 0.119995
+offset_bottom = 0.119965
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ty0wb")
+
+[node name="PlayAs" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Items" type="VBoxContainer" parent="PlayAs"]
+layout_mode = 2
+
+[node name="Pokemon" type="Button" parent="PlayAs/Items"]
+layout_mode = 2
+text = "Play as Pokemon"
+
+[node name="Evolution" type="Button" parent="PlayAs/Items"]
+layout_mode = 2
+text = "Play as Evolution"
+
+[node name="Item" type="Button" parent="PlayAs/Items"]
+layout_mode = 2
+text = "Play as Trainer"
+
+[node name="Supporter" type="Button" parent="PlayAs/Items"]
+layout_mode = 2
+text = "Play as Supporter"
+
+[node name="Stadium" type="Button" parent="PlayAs/Items"]
+layout_mode = 2
+text = "Play as Stadium"
+
+[node name="Tool" type="Button" parent="PlayAs/Items"]
+layout_mode = 2
+text = "Play as Tool"
+
+[node name="TM" type="Button" parent="PlayAs/Items"]
+layout_mode = 2
+text = "Play as TM"
+
+[node name="RSM" type="Button" parent="PlayAs/Items"]
+layout_mode = 2
+text = "Play as R.S.M."
+
+[node name="Fossil" type="Button" parent="PlayAs/Items"]
+layout_mode = 2
+text = "Play as Fossil"
+
+[node name="Energy" type="Button" parent="PlayAs/Items"]
+layout_mode = 2
+text = "Play as Energy"
+
+[node name="Check" type="Button" parent="PlayAs/Items"]
+layout_mode = 2
+text = "Check"
+
+[connection signal="pressed" from="PlayAs/Items/Check" to="." method="_on_check_pressed"]

@@ -33,8 +33,7 @@ var attack_scroll: ScrollContainer
 func _ready():
 	if poke_slot: 
 		card = poke_slot.current_card
-		pokedata = card.pokemon_properties
-	
+	pokedata = card.pokemon_properties
 	#To fit multiple types in
 	#--------------------------------------
 	#region ENERGY SYMBOL MANAGEMENT
