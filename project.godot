@@ -24,6 +24,10 @@ Database="*res://Code/Globals/database.gd"
 SignalBus="*res://Code/Globals/signal_bus.gd"
 Conversions="*res://Code/Globals/conversions.gd"
 
+[debug]
+
+gdscript/warnings/unused_parameter=0
+
 [display]
 
 window/size/viewport_width=1080

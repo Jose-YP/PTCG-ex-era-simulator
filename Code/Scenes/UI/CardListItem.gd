@@ -6,6 +6,7 @@ extends Button
  "Energy") var card_flags: int = 0
 
 var parent: Node
+var checking_card: Node
 var allowed: bool = false
 
 #--------------------------------------
@@ -72,7 +73,7 @@ func show_options() -> Node:
 #There's a function almost just like this in 
 #"res://Scenes/UI/UIComponents/art_button.tscn"
 #One day make a function that can do this kind of task globally from any node
-func show_card() -> Node:
+func show_card() -> void:
 	var considered: String = card.card_display()
 	var node_tween: Tween = get_tree().create_tween().set_parallel(true)
 	var card_display: Node
@@ -92,6 +93,7 @@ func show_card() -> Node:
 	card_display.modulate = Color.TRANSPARENT
 	card_display.name = str(card.name, " Card")
 	add_child(card_display)
+	parent.display = card_display
 	
 	node_tween.tween_property(card_display, "position", get_viewport_rect().size / 2 - Vector2(100,150), .1)
 	node_tween.tween_property(card_display, "scale", Vector2.ONE, .1)
@@ -99,13 +101,10 @@ func show_card() -> Node:
 	
 	#Can't do anything outside of interact with the check display
 	Globals.checking_card()
-	
-	return card_display
 
 func _gui_input(event):
 	if allowed and not Globals.checking:
 		if event.is_action_pressed("A"):
-			print("AAA")
 			if parent.options:
 				await parent.options.disapear()
 			else:
@@ -114,7 +113,8 @@ func _gui_input(event):
 			if parent.display:
 				pass
 			
-			parent.display = show_card()
+			show_card()
+	
 
 #endregion
 #--------------------------------------

@@ -11,7 +11,6 @@ extends Control
 @onready var default_types: Array[Control] = [%DefaultType, %DefaultType2]
 @onready var weakness_nodes: Array[Node] = %Weaknesses.get_children()
 @onready var resistance_nodes: Array[Node] = %Resistances.get_children()
-@onready var retreat_cost: Array[Node] = %RetreatContainer.get_children()
 @onready var ruleboxes: Array[Node] = %Ruleboxes.get_children()
 
 @onready var display_name: RichTextLabel = %Name
@@ -22,13 +21,14 @@ extends Control
 @onready var number: RichTextLabel = %Number
 @onready var rarity: TabContainer = %Rarity
 @onready var set_type: TabContainer = %Set
-
+@onready var retreat_button: Control = %RetreatButton
 @onready var art: TextureRect = %Art
+
+@onready var movable: Button = %Movable
 
 var attack_size: int
 var attack_scroll: ScrollContainer
 var on_card: bool = false
-var drag_position: Vector2 = Vector2.ZERO
 
 #endregion
 #--------------------------------------
@@ -56,8 +56,7 @@ func _ready():
 		resistance_nodes[i].display_type(resistances[i])
 		resistance_nodes[i].show()
 	
-	for i in range(pokedata.retreat):
-		retreat_cost[i].show()
+	retreat_button.set_retreat(pokedata.retreat)
 	
 	#endregion
 	#--------------------------------------

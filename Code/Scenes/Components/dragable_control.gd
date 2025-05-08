@@ -10,7 +10,7 @@ func _ready() -> void:
 	set_process(false)
 
 func _process(delta: float) -> void:
-	dragging_node.position = get_global_mouse_position()
+	dragging_node.position = get_global_mouse_position() - size / 2
 
 func _on_drag_ended() -> void:
 	set_process(false)

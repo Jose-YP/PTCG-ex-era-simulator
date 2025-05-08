@@ -77,3 +77,10 @@ func _on_mouse_entered() -> void:
 func _on_mouse_exited() -> void:
 	on_card = false
 	print(on_card)
+
+func _input(event: InputEvent) -> void:
+	#Check if the user is pressing on the card or outside
+	if event.is_action_released("A"):
+		#FIf they're not presson on the card, erase the card
+		if not display.movable.is_processing():
+			print("BBBBB")

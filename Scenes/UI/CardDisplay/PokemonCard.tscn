@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://crecmsup0hxcr"]
+[gd_scene load_steps=43 format=3 uid="uid://crecmsup0hxcr"]
 
 [ext_resource type="Script" uid="uid://cvx5cmt78lek7" path="res://Code/Scenes/UI/Card.gd" id="1_ao8mj"]
 [ext_resource type="Resource" uid="uid://yjages2tp857" path="res://Resources/Cards/1 ex Ruby & Saphire/RS1Aggron.tres" id="2_13uqe"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://br2xrv6p4e1lx" path="res://Scenes/UI/UIComponents/star_rulebox.tscn" id="8_8f7l3"]
 [ext_resource type="Texture2D" uid="uid://be2sag665selj" path="res://Art/Rarities/Rarity_Rare_Holo.png" id="8_n86qm"]
 [ext_resource type="Texture2D" uid="uid://dldh83yhhvvs2" path="res://Art/Rarities/Rarity_Rare_Holo_ex.png" id="9_ecgrl"]
+[ext_resource type="PackedScene" uid="uid://dnqq8mwl0vpr3" path="res://Scenes/UI/UIComponents/retreat_button.tscn" id="9_uhkmw"]
 [ext_resource type="Texture2D" uid="uid://dfh4btp104a45" path="res://Art/Rarities/Rarity_Rare_Secret.png" id="10_t2lok"]
 [ext_resource type="Texture2D" uid="uid://cnsmaebpgm086" path="res://Art/Rarities/Rarity_Ultra-Rare_Rare.png" id="11_lmfjy"]
 [ext_resource type="Texture2D" uid="uid://dx7wnthhhm80w" path="res://Art/Rarities/30px-SetSymbolPromo.png" id="12_ggmab"]
@@ -37,8 +38,8 @@
 [ext_resource type="Texture2D" uid="uid://be1nfp0g24sdm" path="res://Art/ExpansionIcons/SetSymbolPOP_Series_3.png" id="31_mq4ov"]
 [ext_resource type="Texture2D" uid="uid://bfsbptu51xrnn" path="res://Art/ExpansionIcons/45px-SetSymbolPOP_Series_4.png" id="32_kpr5e"]
 [ext_resource type="Texture2D" uid="uid://cu8egxwxamvxw" path="res://Art/ExpansionIcons/45px-SetSymbolPOP_Series_5.png" id="33_yhq78"]
-[ext_resource type="Script" uid="uid://0k7eexcc7owt" path="res://Code/Scenes/Components/drag.gd" id="38_mgj1b"]
-[ext_resource type="Script" uid="uid://crxnymulvel2m" path="res://Code/Scenes/Components/dragable_control.gd" id="38_uhkmw"]
+[ext_resource type="PackedScene" uid="uid://cmmds4boaksl7" path="res://Scenes/UI/UIComponents/movable.tscn" id="38_mgj1b"]
+[ext_resource type="PackedScene" uid="uid://c5d081uywglg" path="res://Scenes/UI/UIComponents/close_button.tscn" id="40_r6caj"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u7mkw"]
 
@@ -56,9 +57,9 @@ offset_bottom = 3.67999
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
+theme = ExtResource("3_1mjph")
 script = ExtResource("1_ao8mj")
 card = ExtResource("2_13uqe")
-metadata/_edit_group_ = true
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 custom_minimum_size = Vector2(400, 0)
@@ -67,7 +68,7 @@ offset_top = -1.0
 offset_right = 430.0
 offset_bottom = 257.0
 theme_override_styles/panel = ExtResource("2_uf5nv")
-metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
 layout_mode = 2
@@ -258,12 +259,18 @@ unique_name_in_owner = true
 visible = false
 layout_mode = 2
 
+[node name="RetreatButton" parent="PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties" instance=ExtResource("9_uhkmw")]
+unique_name_in_owner = true
+layout_mode = 2
+
 [node name="RetreatCost" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 alignment = 1
 
 [node name="RichTextLabel4" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/RetreatCost"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 8
@@ -273,6 +280,7 @@ fit_content = true
 
 [node name="RetreatContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/RetreatCost"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 alignment = 1
 
@@ -294,7 +302,7 @@ layout_mode = 2
 
 [node name="Number" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(40, 0)
+custom_minimum_size = Vector2(47, 0)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
@@ -622,18 +630,16 @@ metadata/_tab_index = 21
 layout_mode = 2
 theme_override_constants/margin_bottom = 58
 
-[node name="Movable" type="Button" parent="PanelContainer" node_paths=PackedStringArray("dragging_node")]
+[node name="Movable" parent="PanelContainer" instance=ExtResource("38_mgj1b")]
 unique_name_in_owner = true
 layout_mode = 2
-script = ExtResource("38_uhkmw")
-dragging_node = NodePath("../..")
 
-[node name="Drag" type="Node" parent="PanelContainer/Movable"]
-unique_name_in_owner = true
-script = ExtResource("38_mgj1b")
+[node name="CloseButton" parent="." instance=ExtResource("40_r6caj")]
+layout_mode = 0
+offset_left = 428.0
+offset_top = -25.0
+offset_right = 456.0
+offset_bottom = 2.0
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
-[connection signal="gui_input" from="PanelContainer/Movable" to="PanelContainer/Movable" method="_on_gui_input"]
-[connection signal="ended" from="PanelContainer/Movable/Drag" to="PanelContainer/Movable" method="_on_drag_ended"]
-[connection signal="started" from="PanelContainer/Movable/Drag" to="PanelContainer/Movable" method="_on_drag_started"]
