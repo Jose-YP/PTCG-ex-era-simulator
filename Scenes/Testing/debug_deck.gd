@@ -1,9 +1,9 @@
 extends Control
 
-@onready var card_resources: Deck_Manipulator = $PlayerResources
-@onready var slotUI: SlotUIActions = $SlotUIActions
-@onready var playerSide: Control = $PlayerSide
-@onready var reveal_slot: Button = $PlayerSide/Non_mon/SideDisplay
+@onready var card_resources: Deck_Manipulator = $NodeComponents/PlayerResources
+@onready var slotUI: SlotUIActions = $NodeComponents/SlotUIActions
+@onready var playerSide: Control = $FullUI/PlayerSide
+@onready var reveal_slot: Button = $FullUI/PlayerSide/Non_mon/SideDisplay
 
 func _ready():
 	slotUI.group_refresh()

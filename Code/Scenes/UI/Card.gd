@@ -2,6 +2,7 @@ extends Control
 
 @export var poke_slot: PokeSlot
 @export var card: Base_Card
+@export var checking: bool = false
 
 #--------------------------------------
 #region ONREADY VARIABLES
@@ -26,6 +27,8 @@ extends Control
 
 var attack_size: int
 var attack_scroll: ScrollContainer
+var on_card: bool = false
+var drag_position: Vector2 = Vector2.ZERO
 
 #endregion
 #--------------------------------------
@@ -97,8 +100,14 @@ func _ready():
 	make_text(number, str("[right]",card.number, "/", Constants.expansion_counts[card.expansion]))
 	rarity.current_tab = card.rarity
 	set_type.current_tab = card.expansion
+	
+	if checking:
+		%Movable.show()
+	
 	#endregion
 	#--------------------------------------
+	
+	pivot_offset = size / 2
 
 #--------------------------------------
 #region HELPER FUNCTIONS

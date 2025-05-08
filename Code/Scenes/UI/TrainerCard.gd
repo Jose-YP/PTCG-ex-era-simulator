@@ -39,4 +39,3 @@ func _ready():
 func make_text(node: RichTextLabel, text: String):
 	node.clear()
 	node.append_text(text)
-

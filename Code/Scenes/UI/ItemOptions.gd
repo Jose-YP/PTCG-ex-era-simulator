@@ -20,12 +20,15 @@ func _ready():
 			items[i].pressed.connect(emit_play_as.bind(i))
 		
 		else : items[i].hide()
+	
+	%Check.pressed.connect(on_check_pressed)
+	Globals.enter_check.connect(on_entered_check)
 
 func bring_up():
 	var appear_tween: Tween = get_tree().create_tween().set_parallel() 
 	old_position = position
 	
-	appear_tween.tween_property(self, "position", position + Vector2(50,0), timing)
+	appear_tween.tween_property(self, "position", position - Vector2(50,50), timing)
 	appear_tween.tween_property(self, "modulate", Color.WHITE, timing)
 	appear_tween.tween_property(self, "scale", Vector2.ONE, timing)
 
@@ -41,5 +44,18 @@ func disapear():
 	queue_free()
 
 func emit_play_as(flag: int):
-	print("PLAY ", Constants.allowed_list_flags[flag])
-	play_as.emit(flag)
+	if not Globals.checking:
+		print("PLAY ", Constants.allowed_list_flags[flag])
+		play_as.emit(flag)
+
+func on_check_pressed():
+	if not Globals.checking:
+		get_parent().show_card()
+
+func on_entered_check():
+	for i in range($PlayAs/Items.get_child_count()):
+		items[i].disabled = true
+
+func on_exited_check():
+	for i in range($PlayAs/Items.get_child_count()):
+		items[i].disabled = false

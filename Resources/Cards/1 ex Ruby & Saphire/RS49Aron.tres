@@ -1,11 +1,12 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://oa7r3igevgqi"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=13 format=3 uid="uid://oa7r3igevgqi"]
 
 [ext_resource type="Texture2D" uid="uid://c2o5amlj16doj" path="res://Art/Cards/1 ex Ruby & Saphire/49.jpg" id="1_ianho"]
-[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/BuffMaker.gd" id="2_2v2aq"]
-[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_373tt"]
-[ext_resource type="Script" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="3_mit06"]
-[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="4_nbcu4"]
-[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="5_1yo3i"]
+[ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/BuffMaker.gd" id="2_2v2aq"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_373tt"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="3_mit06"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="4_nbcu4"]
+[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="5_1cqic"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="5_1yo3i"]
 
 [sub_resource type="Resource" id="Resource_nsaqp"]
 script = ExtResource("2_2v2aq")
@@ -21,7 +22,7 @@ immune_to_damage = false
 script = ExtResource("2_373tt")
 order = Array[int]([])
 buff = SubResource("Resource_nsaqp")
-search = Array[Resource("res://Code/Resource Makers/EffectSpecific/SearchMaker.gd")]([])
+search = Array[ExtResource("5_1cqic")]([])
 remove_conditions = false
 remove_shockwave = false
 remove_imprison = false

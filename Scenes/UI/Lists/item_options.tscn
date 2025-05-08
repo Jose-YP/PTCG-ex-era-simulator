@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://kejk3mwqasft"]
 
-[ext_resource type="Script" path="res://Code/Scenes/UI/ItemOptions.gd" id="1_ty0wb"]
+[ext_resource type="Script" uid="uid://bsgkxgrj5o5r1" path="res://Code/Scenes/UI/ItemOptions.gd" id="1_ty0wb"]
 
 [node name="ItemOptions" type="Control"]
 layout_mode = 3
@@ -61,6 +61,7 @@ layout_mode = 2
 text = "Play as Energy"
 
 [node name="Check" type="Button" parent="PlayAs/Items"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Check"
 

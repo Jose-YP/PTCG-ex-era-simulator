@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://crecmsup0hxcr"]
+[gd_scene load_steps=41 format=3 uid="uid://crecmsup0hxcr"]
 
 [ext_resource type="Script" uid="uid://cvx5cmt78lek7" path="res://Code/Scenes/UI/Card.gd" id="1_ao8mj"]
 [ext_resource type="Resource" uid="uid://yjages2tp857" path="res://Resources/Cards/1 ex Ruby & Saphire/RS1Aggron.tres" id="2_13uqe"]
@@ -38,7 +38,6 @@
 [ext_resource type="Texture2D" uid="uid://bfsbptu51xrnn" path="res://Art/ExpansionIcons/45px-SetSymbolPOP_Series_4.png" id="32_kpr5e"]
 [ext_resource type="Texture2D" uid="uid://cu8egxwxamvxw" path="res://Art/ExpansionIcons/45px-SetSymbolPOP_Series_5.png" id="33_yhq78"]
 [ext_resource type="Script" uid="uid://0k7eexcc7owt" path="res://Code/Scenes/Components/drag.gd" id="38_mgj1b"]
-[ext_resource type="Script" uid="uid://crxnymulvel2m" path="res://Code/Scenes/Components/dragable_control.gd" id="38_uhkmw"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u7mkw"]
 
@@ -622,18 +621,17 @@ metadata/_tab_index = 21
 layout_mode = 2
 theme_override_constants/margin_bottom = 58
 
-[node name="Movable" type="Button" parent="PanelContainer" node_paths=PackedStringArray("dragging_node")]
+[node name="Movable" type="Button" parent="PanelContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-script = ExtResource("38_uhkmw")
-dragging_node = NodePath("../..")
 
-[node name="Drag" type="Node" parent="PanelContainer/Movable"]
-unique_name_in_owner = true
+[node name="Drag" type="Node" parent="."]
 script = ExtResource("38_mgj1b")
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
-[connection signal="gui_input" from="PanelContainer/Movable" to="PanelContainer/Movable" method="_on_gui_input"]
-[connection signal="ended" from="PanelContainer/Movable/Drag" to="PanelContainer/Movable" method="_on_drag_ended"]
-[connection signal="started" from="PanelContainer/Movable/Drag" to="PanelContainer/Movable" method="_on_drag_started"]
+[connection signal="button_down" from="PanelContainer/Movable" to="." method="_on_movable_button_down"]
+[connection signal="button_up" from="PanelContainer/Movable" to="." method="_on_movable_button_up"]
+[connection signal="pressed" from="PanelContainer/Movable" to="." method="_on_movable_pressed"]
+[connection signal="ended" from="Drag" to="." method="_on_drag_ended"]
+[connection signal="started" from="Drag" to="." method="_on_drag_started"]

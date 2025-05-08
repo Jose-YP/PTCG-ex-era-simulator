@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=9 format=3 uid="uid://bekwoaj06a44c"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://bekwoaj06a44c"]
 
-[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="1_s231q"]
-[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/DmgManipMaker.gd" id="1_w8o02"]
+[ext_resource type="Script" uid="uid://caj1pm8erar2a" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="1_s231q"]
+[ext_resource type="Script" uid="uid://scca13hg4k1l" path="res://Code/Resource Makers/EffectSpecific/DmgManipMaker.gd" id="1_w8o02"]
 [ext_resource type="Texture2D" uid="uid://cufnu32r0miyy" path="res://Art/Cards/1 ex Ruby & Saphire/95.jpg" id="2_4kkrd"]
-[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_sn5e8"]
-[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_kg6gm"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_sn5e8"]
+[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="3_blhir"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_kg6gm"]
 
 [sub_resource type="Resource" id="Resource_4accq"]
 script = ExtResource("1_w8o02")
@@ -18,7 +19,7 @@ plus = false
 script = ExtResource("2_sn5e8")
 order = Array[int]([])
 dmgManip = SubResource("Resource_4accq")
-search = Array[Resource("res://Code/Resource Makers/EffectSpecific/SearchMaker.gd")]([])
+search = Array[ExtResource("3_blhir")]([])
 remove_conditions = false
 remove_shockwave = false
 remove_imprison = false

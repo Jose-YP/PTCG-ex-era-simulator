@@ -18,4 +18,3 @@ class_name EnMov
 @export_flags("Grass","Fire","Water",
 "Lightning","Psychic","Fighting",
 "Darkness","Metal","Colorless") var type: int = 2 ** 9 - 1
-

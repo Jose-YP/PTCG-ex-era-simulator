@@ -1,13 +1,14 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=16 format=3 uid="uid://b7ayufc1njjxh"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=17 format=3 uid="uid://b7ayufc1njjxh"]
 
 [ext_resource type="Texture2D" uid="uid://2l8ia23r5jfi" path="res://Art/Cards/1 ex Ruby & Saphire/29.jpg" id="1_ef6w3"]
-[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_0wjwj"]
-[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/PlacementMaker.gd" id="3_cmhhq"]
-[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="5_wf57h"]
-[ext_resource type="Script" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="6_xioq4"]
-[ext_resource type="Script" path="res://Code/Resource Makers/GeneralUse/CounterMaker.gd" id="7_8dcl4"]
-[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="8_gh4ul"]
-[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="9_q5nhk"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_0wjwj"]
+[ext_resource type="Script" uid="uid://cdyba0wadidwb" path="res://Code/Resource Makers/EffectSpecific/PlacementMaker.gd" id="3_cmhhq"]
+[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="5_wf57h"]
+[ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="6_rlkfd"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="6_xioq4"]
+[ext_resource type="Script" uid="uid://cml2jkc16tlva" path="res://Code/Resource Makers/GeneralUse/CounterMaker.gd" id="7_8dcl4"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="8_gh4ul"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="9_q5nhk"]
 
 [sub_resource type="Resource" id="Resource_8g4jw"]
 script = ExtResource("3_cmhhq")
@@ -20,7 +21,7 @@ script = ExtResource("5_wf57h")
 side = 0
 where = 0
 how_many = 1
-of_this = Array[Resource("res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd")]([null])
+of_this = Array[ExtResource("6_rlkfd")]([null])
 and_then = SubResource("Resource_8g4jw")
 reveal = false
 

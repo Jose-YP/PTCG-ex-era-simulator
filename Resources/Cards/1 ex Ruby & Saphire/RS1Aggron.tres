@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="Base_Card" load_steps=11 format=3 uid="uid://yjages2tp857"]
 
 [ext_resource type="Texture2D" uid="uid://b817pn5octfv6" path="res://Art/Cards/1 ex Ruby & Saphire/1.jpg" id="1_i5pwl"]
-[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="2_5623o"]
-[ext_resource type="Script" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_cfam6"]
-[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_q1vs7"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="2_5623o"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_cfam6"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_q1vs7"]
 [ext_resource type="Resource" uid="uid://cydxe57j5nudo" path="res://Resources/Components/Pokemon/Attacks/DoubleLariat.tres" id="4_7impx"]
-[ext_resource type="Script" path="res://Code/Resource Makers/GeneralUse/CounterMaker.gd" id="4_pmwxs"]
+[ext_resource type="Script" uid="uid://cml2jkc16tlva" path="res://Code/Resource Makers/GeneralUse/CounterMaker.gd" id="4_pmwxs"]
 
 [sub_resource type="Resource" id="Resource_8kl4g"]
 script = ExtResource("4_pmwxs")

@@ -38,6 +38,8 @@ func _ready() -> void:
 	%Art.texture = card.image
 	%Name.clear()
 	%Name.append_text(card.name)
+	
+	set_name(card.name)
 
 func allow(play_as: int):
 	allowed = true
@@ -46,15 +48,19 @@ func allow(play_as: int):
 	disabled = false
 
 func not_allowed():
-	pass
+	allowed = false
+	disabled = true
+
 #endregion
 #--------------------------------------
 
+#--------------------------------------
+#region ACTIONS
 func show_options() -> Node:
 	var option_Display: Node = Constants.item_options.instantiate()
 	option_Display.card_flags = card_flags
 	option_Display.top_level = true
-	option_Display.position = global_position
+	option_Display.position = global_position + Vector2(50,0)
 	option_Display.scale = Vector2(.05, .05)
 	option_Display.modulate = Color.TRANSPARENT
 	add_child(option_Display)
@@ -73,6 +79,7 @@ func show_card() -> Node:
 	match considered:
 		"Pokemon":
 			card_display = Constants.poke_card.instantiate()
+			card_display.checking = true
 		"Trainer":
 			card_display = Constants.trainer_card.instantiate()
 		"Energy":
@@ -80,25 +87,34 @@ func show_card() -> Node:
 	
 	card_display.card = card
 	card_display.top_level = true
-	card_display.position = global_position
+	card_display.position = global_position #Put on center of screen
 	card_display.scale = Vector2(.05, .05)
 	card_display.modulate = Color.TRANSPARENT
+	card_display.name = str(card.name, " Card")
 	add_child(card_display)
 	
-	node_tween.tween_property(card_display, "position", global_position + Vector2(50,0), .1)
+	node_tween.tween_property(card_display, "position", get_viewport_rect().size / 2 - Vector2(100,150), .1)
 	node_tween.tween_property(card_display, "scale", Vector2.ONE, .1)
 	node_tween.tween_property(card_display, "modulate", Color.WHITE, .1)
+	
+	#Can't do anything outside of interact with the check display
+	Globals.checking_card()
 	
 	return card_display
 
 func _gui_input(event):
-	if event.is_action_pressed("A"):
-		if parent.options:
-			await parent.options.disapear()
-		
-		parent.options = show_options()
-	elif event.is_action_pressed("L"):
-		if parent.display:
-			pass
-		
-		parent.display = show_card()
+	if allowed and not Globals.checking:
+		if event.is_action_pressed("A"):
+			print("AAA")
+			if parent.options:
+				await parent.options.disapear()
+			else:
+				parent.options = show_options()
+		elif event.is_action_pressed("L"):
+			if parent.display:
+				pass
+			
+			parent.display = show_card()
+
+#endregion
+#--------------------------------------

@@ -71,8 +71,8 @@ func move_card(card: Base_Card, from: Array, towards: Array): #From X to Y
 	if from == usable_deck:
 		usable_deck.shuffle()
 
-func play_card(_card: Base_Card): #From hand to Y
-	
+func play_card(card: Base_Card): #From hand to Y
+	print("PLAY ", card.print_info())
 	pass
 
 func ontop_deck(_card: Base_Card): #From X to atop Deck
@@ -101,6 +101,7 @@ func spawn_hand(monitor_side: String, using_string: String, allowed: int = Conve
 		new_node.instruction_text = using_string
 		
 		add_sibling(new_node)
+		
 		#new_node.set_items()
 
 func show_reveal_stack(reveal_slot):

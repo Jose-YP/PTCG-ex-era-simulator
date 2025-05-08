@@ -20,6 +20,7 @@ var white_list: Array[String] = []
 
 var display: Node
 var options: Node
+var on_card: bool = false
 #endregion
 #--------------------------------------
 
@@ -52,7 +53,6 @@ func is_allowed(button: Button) -> void:
 		button.not_allowed()
 #endregion
 #--------------------------------------
-
 func reset_items():
 	for item in items:
 		item.queue_free()
@@ -69,3 +69,11 @@ func _on_resources_show_list(message: String, looking_at: String, using: Array[B
 	set_items()
 	
 	show()
+
+func _on_mouse_entered() -> void:
+	on_card = true
+	print(on_card)
+
+func _on_mouse_exited() -> void:
+	on_card = false
+	print(on_card)

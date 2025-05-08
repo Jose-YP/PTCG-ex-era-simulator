@@ -68,4 +68,3 @@ func get_slot_type(active: bool = true) -> Array[PokeSlot]:
 			final.append(slot)
 	
 	return final
-

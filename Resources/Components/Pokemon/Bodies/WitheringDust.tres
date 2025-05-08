@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="PokeBody" load_steps=6 format=3 uid="uid://2p0hc22v0g1o"]
+[gd_resource type="Resource" script_class="PokeBody" load_steps=7 format=3 uid="uid://2p0hc22v0g1o"]
 
-[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/DisableMaker.gd" id="1_anoia"]
-[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_qvpoo"]
-[ext_resource type="Script" path="res://Code/Resource Makers/PokemonSpecific/BodyMaker.gd" id="3_d48xh"]
+[ext_resource type="Script" uid="uid://c0ishgbxk63dg" path="res://Code/Resource Makers/EffectSpecific/DisableMaker.gd" id="1_anoia"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_qvpoo"]
+[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="3_12j4y"]
+[ext_resource type="Script" uid="uid://b2tlqpng7fq25" path="res://Code/Resource Makers/PokemonSpecific/BodyMaker.gd" id="3_d48xh"]
 
 [sub_resource type="Resource" id="Resource_rd3xr"]
 script = ExtResource("1_anoia")
@@ -19,7 +20,7 @@ disable_retreat = false
 script = ExtResource("2_qvpoo")
 order = Array[int]([3])
 disable = SubResource("Resource_rd3xr")
-search = Array[Resource("res://Code/Resource Makers/EffectSpecific/SearchMaker.gd")]([])
+search = Array[ExtResource("3_12j4y")]([])
 remove_conditions = false
 remove_shockwave = false
 remove_imprison = false

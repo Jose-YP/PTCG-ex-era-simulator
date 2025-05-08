@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="Attack" load_steps=6 format=3 uid="uid://cydxe57j5nudo"]
 
-[ext_resource type="Script" path="res://Code/Resource Makers/GeneralUse/CoinFlipNumMaker.gd" id="1_ttlua"]
-[ext_resource type="Script" path="res://Code/Resource Makers/GeneralUse/CounterMaker.gd" id="2_bbqs7"]
-[ext_resource type="Script" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="3_jxbff"]
+[ext_resource type="Script" uid="uid://y0v42qaa35wt" path="res://Code/Resource Makers/GeneralUse/CoinFlipNumMaker.gd" id="1_ttlua"]
+[ext_resource type="Script" uid="uid://cml2jkc16tlva" path="res://Code/Resource Makers/GeneralUse/CounterMaker.gd" id="2_bbqs7"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="3_jxbff"]
 
 [sub_resource type="Resource" id="Resource_o5toi"]
 script = ExtResource("1_ttlua")

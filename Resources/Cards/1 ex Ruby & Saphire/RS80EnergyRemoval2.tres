@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="Base_Card" load_steps=5 format=3 uid="uid://cc3kjnmsj4pr3"]
 
 [ext_resource type="Texture2D" uid="uid://ba8jbrbg2km5v" path="res://Art/Cards/1 ex Ruby & Saphire/80.jpg" id="1_hj3wc"]
-[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_jy4os"]
-[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="5_lb0wg"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_jy4os"]
+[ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="5_lb0wg"]
 
 [sub_resource type="Resource" id="Resource_ldy6r"]
 script = ExtResource("5_lb0wg")

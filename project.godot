@@ -12,13 +12,15 @@ config_version=5
 
 config/name="Pokemon TCG"
 config/tags=PackedStringArray("made", "test")
-run/main_scene="res://Scenes/Main Game/main_game.tscn"
+run/main_scene="uid://c3qurrd5vl1ao"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://Art/Energy/48px-Metal-attack.png"
 
 [autoload]
 
 Constants="*res://Code/Globals/Constants.gd"
+Globals="*res://Code/Globals/globals.gd"
+Database="*res://Code/Globals/database.gd"
 SignalBus="*res://Code/Globals/signal_bus.gd"
 Conversions="*res://Code/Globals/conversions.gd"
 

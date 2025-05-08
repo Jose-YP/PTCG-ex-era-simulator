@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://df8x227c7a8q4"]
+[gd_scene load_steps=7 format=3 uid="uid://df8x227c7a8q4"]
 
-[ext_resource type="Script" path="res://Code/Scenes/UI/UISlot.gd" id="1_ktjfi"]
+[ext_resource type="Script" uid="uid://wt6o27vmhuas" path="res://Code/Scenes/UI/UISlot.gd" id="1_ktjfi"]
 [ext_resource type="Texture2D" uid="uid://ct7oa74jhqcwq" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/74.jpg" id="2_m52es"]
-[ext_resource type="PackedScene" uid="uid://cvh086w8yapm0" path="res://Scenes/UI/Lists/attack_list.tscn" id="2_th8q4"]
 [ext_resource type="PackedScene" uid="uid://dp781vdb5kvc7" path="res://Scenes/UI/UIComponents/art_button.tscn" id="3_1osh3"]
 [ext_resource type="Texture2D" uid="uid://d3nrajtlwbvgh" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/84.jpg" id="3_pjvm0"]
 [ext_resource type="PackedScene" uid="uid://bs3ila6cpt8n1" path="res://Scenes/UI/UIComponents/types.tscn" id="4_nhrrd"]
@@ -18,7 +17,6 @@ offset_right = -0.0400085
 offset_bottom = 0.279999
 script = ExtResource("1_ktjfi")
 active = false
-attack_list = ExtResource("2_th8q4")
 metadata/_edit_group_ = true
 
 [node name="Main" type="VBoxContainer" parent="."]

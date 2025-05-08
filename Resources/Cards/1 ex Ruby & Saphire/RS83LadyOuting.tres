@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://cm0tjkff2o52"]
 
 [ext_resource type="Texture2D" uid="uid://bxd7otcg332kf" path="res://Art/Cards/1 ex Ruby & Saphire/83.jpg" id="1_mp216"]
-[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_77uu6"]
-[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="3_3shah"]
-[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_rjoqb"]
-[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="4_g62rc"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_77uu6"]
+[ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="3_3shah"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_rjoqb"]
+[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="4_g62rc"]
 [ext_resource type="Resource" uid="uid://bl4qnrkh3kxdl" path="res://Resources/Components/Effects/Placement/PutIntoHand.tres" id="4_mlki2"]
-[ext_resource type="Script" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="5_srr3u"]
+[ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="5_srr3u"]
 
 [sub_resource type="Resource" id="Resource_aqw3u"]
 script = ExtResource("5_srr3u")

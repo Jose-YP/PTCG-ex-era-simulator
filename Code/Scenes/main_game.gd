@@ -25,4 +25,3 @@ func draw_starting(from: side):
 		print("----------OPPONENT---------")
 		%ResourcesOpp.check_starting()
 		#sides_ready[0] = true
-
