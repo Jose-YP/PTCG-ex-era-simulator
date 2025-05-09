@@ -16,7 +16,7 @@ signal ended
 
 ##This function will check if the user is left clicking anywhere.
 ##
-##Once it's pressed it will emit started(event_position) to tell it's parent where and how to move.
+##Once it's pressed it will emit [signal started] to tell it's parent where and how to move.
 ##
 ##Since this function checks for InputEventMouseButton it won't work during the drag process,
 ##It only checks if the drag should start or end

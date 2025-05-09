@@ -1,3 +1,4 @@
+@icon("res://Art/ProjectSpecific/alpha.png")
 extends Control
 
 @onready var card_resources: Deck_Manipulator = $NodeComponents/PlayerResources

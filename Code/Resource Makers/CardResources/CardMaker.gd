@@ -1,3 +1,4 @@
+##Holds data every card requires. Metadata and component slots for deeper resources
 extends Resource
 class_name Base_Card
 
@@ -17,13 +18,16 @@ class_name Base_Card
 "POP Series 4", "POP Series 5") var expansion: int = 0
 
 @export_category("Properties")
+##Allows a card to serve multiple functions, will be important for:
+##[br]* Fossil Cards[br]* Holon's Pokemon
 @export_flags("Pokemon", "Trainer", "Energy") var categories: int = 0
 @export var pokemon_properties: Pokemon
 @export var trainer_properties: Trainer
 @export var energy_properties: Energy
 @export var fossil: bool = false
 
-func print_info():
+##Debug funciton, useful for making sure the exact car is known
+func print_info() -> void:
 	print("-------------------------", name, "-------------------------")
 	print("Illustrator: ", illustrator, "
 	Expansion: ", Constants.expansion_abbreviations,"
@@ -40,6 +44,7 @@ func print_info():
 		energy_properties.print_energy()
 	print("-------------------------------------------------------------")
 
+##Debug funciton, useful for a quick way to find a card's distinct class
 func card_display() -> String:
 	if fossil:
 		return "Fossil"
@@ -53,6 +58,8 @@ func card_display() -> String:
 	push_error(name, " isn't considered anything")
 	return "NONE"
 
+##Function used to check what type of functions a card will use
+##Prioritizes pokemon properties, then trainer properties and lastly energy properties
 func is_considered(considered: String):
 	if pokemon_properties:
 		#Holon's mons will be considered pokemon before looking at energy properties

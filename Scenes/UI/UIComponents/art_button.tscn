@@ -2,7 +2,7 @@
 
 [ext_resource type="StyleBox" uid="uid://duhmik1loeema" path="res://Themes/GBABox.tres" id="1_gbnxf"]
 [ext_resource type="Texture2D" uid="uid://b4uymubvo04qp" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/37.jpg" id="2_rt8ma"]
-[ext_resource type="Script" path="res://Code/Scenes/UI/art_button.gd" id="2_vikux"]
+[ext_resource type="Script" uid="uid://dv2mf54udme7l" path="res://Code/Scenes/UI/art_button.gd" id="2_vikux"]
 
 [node name="ArtButton" type="Button"]
 custom_minimum_size = Vector2(195, 120)

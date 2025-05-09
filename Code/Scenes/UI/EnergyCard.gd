@@ -1,5 +1,5 @@
+@icon("res://Art/Energy/48px-Colorless-attack.png")
 extends Control
-
 @export var card: Base_Card
 
 @onready var engData: Energy = card.energy_properties

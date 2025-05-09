@@ -1,4 +1,6 @@
+@icon("res://Art/ExpansionIcons/SetSymbolTeam_Magma_vs_Team_Aqua.png")
 extends Button
+class_name Close_Button
 
 func _on_pressed() -> void:
 	await closing_animation()

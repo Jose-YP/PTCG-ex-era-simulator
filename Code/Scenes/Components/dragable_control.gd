@@ -1,3 +1,4 @@
+@icon("res://Art/ExpansionIcons/40px-SetSymbolUnseen_Forces.png")
 extends Button
 
 @onready var drag_component = $Drag as Draggable
@@ -10,7 +11,12 @@ func _ready() -> void:
 	set_process(false)
 
 func _process(delta: float) -> void:
-	dragging_node.position = get_global_mouse_position() - size / 2
+	var new_pos: Vector2 = get_global_mouse_position() - drag_position
+	
+	new_pos.x = clampf(new_pos.x, -size.x/2, get_viewport().size.x - size.x/2)
+	new_pos.y = clampf(new_pos.y, -get_viewport().size.y / 2, get_viewport().size.y / 2)
+	
+	dragging_node.position = new_pos
 
 func _on_drag_ended() -> void:
 	set_process(false)

@@ -1,3 +1,4 @@
+@icon("res://Art/Energy/48px-Fighting-attack.png")
 extends MarginContainer
 
 @export var power: PokePower

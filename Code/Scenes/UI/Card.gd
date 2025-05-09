@@ -1,3 +1,4 @@
+@icon("res://Art/ExpansionIcons/40px-SetSymbolFireRed_and_LeafGreen.png")
 extends Control
 
 @export var poke_slot: PokeSlot
@@ -116,5 +117,9 @@ func edit_attack_size(final_size: float) -> void:
 func make_text(node: RichTextLabel, text: String):
 	node.clear()
 	node.append_text(text)
+
+func die():
+	$CloseButton._on_pressed()
+
 #endregion
 #--------------------------------------

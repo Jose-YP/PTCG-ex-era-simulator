@@ -1,3 +1,4 @@
+@icon("res://Art/Rarities/31px-Rarity_Uncommon.png")
 extends Control
 
 @export var card: Base_Card

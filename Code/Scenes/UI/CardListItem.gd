@@ -94,6 +94,7 @@ func show_card() -> void:
 	card_display.name = str(card.name, " Card")
 	add_child(card_display)
 	parent.display = card_display
+	parent.connect_display()
 	
 	node_tween.tween_property(card_display, "position", get_viewport_rect().size / 2 - Vector2(100,150), .1)
 	node_tween.tween_property(card_display, "scale", Vector2.ONE, .1)

@@ -23,6 +23,7 @@ func _ready():
 	
 	%Check.pressed.connect(on_check_pressed)
 	Globals.enter_check.connect(on_entered_check)
+	Globals.exit_check.connect(on_exited_check)
 
 func bring_up():
 	var appear_tween: Tween = get_tree().create_tween().set_parallel() 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=37 format=3 uid="uid://b6b86gpw8bfpk"]
 
 [ext_resource type="Theme" uid="uid://bfw6ylcttychc" path="res://Themes/AverageButton.tres" id="1_av0ds"]
-[ext_resource type="Script" path="res://Code/Scenes/UI/TrainerCard.gd" id="1_lminl"]
+[ext_resource type="Script" uid="uid://djgnpgbny56rv" path="res://Code/Scenes/UI/TrainerCard.gd" id="1_lminl"]
 [ext_resource type="Resource" uid="uid://ybub8qpf0t81" path="res://Resources/Cards/5 ex Hidden Lagends/HL87AncientTomb.tres" id="2_oitn0"]
 [ext_resource type="StyleBox" uid="uid://duhmik1loeema" path="res://Themes/GBABox.tres" id="3_jrka3"]
 [ext_resource type="Texture2D" uid="uid://b4uymubvo04qp" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/37.jpg" id="3_ociyq"]
@@ -161,6 +161,7 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
 theme_override_styles/panel = SubResource("StyleBoxEmpty_wt4wi")
+current_tab = 0
 tabs_visible = false
 metadata/_edit_group_ = true
 
@@ -170,6 +171,7 @@ size_flags_vertical = 8
 texture = ExtResource("5_yaayd")
 expand_mode = 2
 stretch_mode = 5
+metadata/_tab_index = 0
 
 [node name="Uncommon" type="TextureRect" parent="PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Rarity"]
 visible = false
@@ -178,6 +180,7 @@ size_flags_vertical = 8
 texture = ExtResource("6_f4r3p")
 expand_mode = 2
 stretch_mode = 5
+metadata/_tab_index = 1
 
 [node name="Rare" type="TextureRect" parent="PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Rarity"]
 visible = false
@@ -187,6 +190,7 @@ size_flags_vertical = 8
 texture = ExtResource("7_qik87")
 expand_mode = 2
 stretch_mode = 5
+metadata/_tab_index = 2
 
 [node name="Holo Rare" type="TextureRect" parent="PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Rarity"]
 visible = false
@@ -196,6 +200,7 @@ size_flags_vertical = 8
 texture = ExtResource("8_u12sb")
 expand_mode = 3
 stretch_mode = 5
+metadata/_tab_index = 3
 
 [node name="ex Rare" type="TextureRect" parent="PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Rarity"]
 visible = false
@@ -205,6 +210,7 @@ size_flags_vertical = 8
 texture = ExtResource("9_vn6na")
 expand_mode = 3
 stretch_mode = 5
+metadata/_tab_index = 4
 
 [node name="Secret Rare" type="TextureRect" parent="PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Rarity"]
 visible = false
@@ -214,6 +220,7 @@ size_flags_vertical = 8
 texture = ExtResource("10_jpopr")
 expand_mode = 3
 stretch_mode = 5
+metadata/_tab_index = 5
 
 [node name="Ultra Rare" type="TextureRect" parent="PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Rarity"]
 visible = false
@@ -223,6 +230,7 @@ size_flags_vertical = 8
 texture = ExtResource("11_e61x5")
 expand_mode = 3
 stretch_mode = 5
+metadata/_tab_index = 6
 
 [node name="Promo" type="TextureRect" parent="PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Rarity"]
 visible = false
@@ -232,6 +240,7 @@ size_flags_vertical = 8
 texture = ExtResource("12_piynd")
 expand_mode = 3
 stretch_mode = 5
+metadata/_tab_index = 7
 
 [node name="Set" type="TabContainer" parent="PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties"]
 unique_name_in_owner = true
@@ -240,6 +249,7 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
 theme_override_styles/panel = SubResource("StyleBoxEmpty_x7o3x")
+current_tab = 0
 tabs_visible = false
 metadata/_edit_group_ = true
 
@@ -250,6 +260,7 @@ size_flags_vertical = 8
 texture = ExtResource("13_3jmdf")
 expand_mode = 2
 stretch_mode = 4
+metadata/_tab_index = 0
 
 [node name="SS" type="TextureRect" parent="PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Set"]
 visible = false
@@ -259,6 +270,7 @@ size_flags_vertical = 8
 texture = ExtResource("14_q8b0r")
 expand_mode = 2
 stretch_mode = 4
+metadata/_tab_index = 1
 
 [node name="DR" type="TextureRect" parent="PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Set"]
 visible = false
@@ -268,6 +280,7 @@ size_flags_vertical = 8
 texture = ExtResource("15_n8p0g")
 expand_mode = 2
 stretch_mode = 4
+metadata/_tab_index = 2
 
 [node name="MA" type="TextureRect" parent="PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Set"]
 visible = false
@@ -276,6 +289,7 @@ size_flags_vertical = 8
 texture = ExtResource("16_hbgt4")
 expand_mode = 3
 stretch_mode = 5
+metadata/_tab_index = 3
 
 [node name="HL" type="TextureRect" parent="PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Set"]
 visible = false
@@ -285,6 +299,7 @@ size_flags_vertical = 8
 texture = ExtResource("17_6twhk")
 expand_mode = 2
 stretch_mode = 4
+metadata/_tab_index = 4
 
 [node name="RG" type="TextureRect" parent="PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Set"]
 visible = false
@@ -294,6 +309,7 @@ size_flags_vertical = 8
 texture = ExtResource("18_c1dqk")
 expand_mode = 2
 stretch_mode = 4
+metadata/_tab_index = 5
 
 [node name="TRR" type="TextureRect" parent="PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Set"]
 visible = false
@@ -303,6 +319,7 @@ size_flags_vertical = 8
 texture = ExtResource("19_y7gsm")
 expand_mode = 2
 stretch_mode = 4
+metadata/_tab_index = 6
 
 [node name="DX" type="TextureRect" parent="PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Set"]
 visible = false
@@ -312,6 +329,7 @@ size_flags_vertical = 8
 texture = ExtResource("20_50o07")
 expand_mode = 2
 stretch_mode = 4
+metadata/_tab_index = 7
 
 [node name="EM" type="TextureRect" parent="PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Set"]
 visible = false
@@ -321,6 +339,7 @@ size_flags_vertical = 8
 texture = ExtResource("21_n3una")
 expand_mode = 2
 stretch_mode = 4
+metadata/_tab_index = 8
 
 [node name="UF" type="TextureRect" parent="PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Set"]
 visible = false
@@ -330,6 +349,7 @@ size_flags_vertical = 8
 texture = ExtResource("22_4npv2")
 expand_mode = 2
 stretch_mode = 4
+metadata/_tab_index = 9
 
 [node name="DS" type="TextureRect" parent="PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Set"]
 visible = false
@@ -339,6 +359,7 @@ size_flags_vertical = 8
 texture = ExtResource("23_wtdfa")
 expand_mode = 2
 stretch_mode = 4
+metadata/_tab_index = 10
 
 [node name="LM" type="TextureRect" parent="PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Set"]
 visible = false
@@ -348,6 +369,7 @@ size_flags_vertical = 8
 texture = ExtResource("24_tavhl")
 expand_mode = 2
 stretch_mode = 4
+metadata/_tab_index = 11
 
 [node name="HP" type="TextureRect" parent="PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Set"]
 visible = false
@@ -357,6 +379,7 @@ size_flags_vertical = 8
 texture = ExtResource("25_7ugkt")
 expand_mode = 2
 stretch_mode = 4
+metadata/_tab_index = 12
 
 [node name="CG" type="TextureRect" parent="PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Set"]
 visible = false
@@ -366,6 +389,7 @@ size_flags_vertical = 8
 texture = ExtResource("26_ssk8o")
 expand_mode = 2
 stretch_mode = 4
+metadata/_tab_index = 13
 
 [node name="DF" type="TextureRect" parent="PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Set"]
 visible = false
@@ -375,6 +399,7 @@ size_flags_vertical = 8
 texture = ExtResource("27_2id1v")
 expand_mode = 2
 stretch_mode = 4
+metadata/_tab_index = 14
 
 [node name="PK" type="TextureRect" parent="PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Set"]
 visible = false
@@ -384,6 +409,7 @@ size_flags_vertical = 8
 texture = ExtResource("28_onnp8")
 expand_mode = 2
 stretch_mode = 4
+metadata/_tab_index = 15
 
 [node name="POP1" type="TextureRect" parent="PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Set"]
 visible = false
@@ -393,6 +419,7 @@ size_flags_vertical = 8
 texture = ExtResource("29_rq2u4")
 expand_mode = 2
 stretch_mode = 5
+metadata/_tab_index = 16
 
 [node name="POP2" type="TextureRect" parent="PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Set"]
 visible = false
@@ -402,6 +429,7 @@ size_flags_vertical = 8
 texture = ExtResource("30_eqvsb")
 expand_mode = 2
 stretch_mode = 5
+metadata/_tab_index = 17
 
 [node name="POP3" type="TextureRect" parent="PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Set"]
 visible = false
@@ -411,6 +439,7 @@ size_flags_vertical = 8
 texture = ExtResource("31_4hilf")
 expand_mode = 2
 stretch_mode = 5
+metadata/_tab_index = 18
 
 [node name="POP4" type="TextureRect" parent="PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Set"]
 visible = false
@@ -420,6 +449,7 @@ size_flags_vertical = 8
 texture = ExtResource("32_w7flp")
 expand_mode = 2
 stretch_mode = 5
+metadata/_tab_index = 19
 
 [node name="POP5" type="TextureRect" parent="PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Set"]
 visible = false
@@ -429,6 +459,7 @@ size_flags_vertical = 8
 texture = ExtResource("33_26wna")
 expand_mode = 2
 stretch_mode = 5
+metadata/_tab_index = 20
 
 [node name="Empty" type="TextureRect" parent="PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Set"]
 visible = false
@@ -437,3 +468,4 @@ layout_mode = 2
 size_flags_vertical = 8
 expand_mode = 2
 stretch_mode = 4
+metadata/_tab_index = 21

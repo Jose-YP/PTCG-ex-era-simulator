@@ -1,3 +1,4 @@
+@icon("res://Art/Energy/48px-Darkness-attack.png")
 extends Control
 
 @export var poke_slot: PokeSlot

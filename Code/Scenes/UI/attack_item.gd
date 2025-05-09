@@ -1,3 +1,4 @@
+@icon("res://Art/Energy/48px-Fire-attack.png")
 extends MarginContainer
 
 @export var attack: Attack

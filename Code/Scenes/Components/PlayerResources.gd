@@ -72,7 +72,8 @@ func move_card(card: Base_Card, from: Array, towards: Array): #From X to Y
 		usable_deck.shuffle()
 
 func play_card(card: Base_Card): #From hand to Y
-	print("PLAY ", card.print_info())
+	print("PLAY ")
+	card.print_info()
 	pass
 
 func ontop_deck(_card: Base_Card): #From X to atop Deck

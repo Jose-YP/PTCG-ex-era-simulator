@@ -1,3 +1,4 @@
+@icon("res://Art/ProjectSpecific/list(1).png")
 extends Control
 
 #--------------------------------------
@@ -70,17 +71,14 @@ func _on_resources_show_list(message: String, looking_at: String, using: Array[B
 	
 	show()
 
-func _on_mouse_entered() -> void:
-	on_card = true
-	print(on_card)
-
-func _on_mouse_exited() -> void:
-	on_card = false
-	print(on_card)
+func connect_display():
+	display.tree_exited.connect(on_display_freed)
 
 func _input(event: InputEvent) -> void:
 	#Check if the user is pressing on the card or outside
-	if event.is_action_released("A"):
-		#FIf they're not presson on the card, erase the card
-		if not display.movable.is_processing():
-			print("BBBBB")
+	if event.is_action_released("A") and display:
+		#If they're not presson on the card, erase the card
+		display.die()
+
+func on_display_freed():
+	Globals.reset_check()

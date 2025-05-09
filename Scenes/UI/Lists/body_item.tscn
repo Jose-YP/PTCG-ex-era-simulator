@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cidor8csiohus"]
 
-[ext_resource type="Script" path="res://Code/Scenes/UI/body_item.gd" id="1_3ej87"]
+[ext_resource type="Script" uid="uid://baqpldf3atlrp" path="res://Code/Scenes/UI/body_item.gd" id="1_3ej87"]
 [ext_resource type="Resource" uid="uid://2p0hc22v0g1o" path="res://Resources/Components/Pokemon/Bodies/WitheringDust.tres" id="2_loqau"]
 [ext_resource type="Theme" uid="uid://crahea8fl2d3s" path="res://Themes/BodyButton.tres" id="3_isp2w"]
 [ext_resource type="Texture2D" uid="uid://dmlnngpyb3if" path="res://Art/ETCIcons/Pokebody.png" id="5_07ss0"]

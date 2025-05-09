@@ -1,3 +1,4 @@
+@icon("res://Art/ExpansionIcons/40px-SetSymbolFireRed_and_LeafGreen.png")
 extends Node
 class_name PokeSlot
 

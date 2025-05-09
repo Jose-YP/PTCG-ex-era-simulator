@@ -1,3 +1,4 @@
+@icon("res://Art/Energy/35px-Rainbow-attack.png")
 extends Control
 
 @export var retreat: bool = false

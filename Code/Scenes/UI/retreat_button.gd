@@ -1,3 +1,4 @@
+@icon("res://Art/Energy/48px-Colorless-attack.png")
 extends Control
 
 @onready var retreat_display: Array[Node] = %RetreatContainer.get_children()

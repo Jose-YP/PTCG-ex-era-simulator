@@ -1,3 +1,4 @@
+@icon("res://Art/Energy/48px-Psychic-attack.png")
 extends MarginContainer
 
 @export var body: PokeBody

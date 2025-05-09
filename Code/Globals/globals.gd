@@ -4,10 +4,12 @@ extends Node
 var checking: bool = false
 
 signal enter_check
+signal exit_check
 
 func checking_card():
 	checking = true
 	enter_check.emit()
 
-func reset():
+func reset_check():
 	checking = false
+	exit_check.emit()
