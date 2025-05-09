@@ -1,19 +1,62 @@
+@icon("res://Art/ProjectSpecific/drag-and-drop.png")
 extends Node
 
 @export var poke_slots: Array[PokeSlot]
+@onready var fundies: Fundies = $".."
+
+
+var play_functions: Array[Callable] = [play_basic_pokemon, play_evolution, 
+play_place_stadium, play_attatch_tool, play_attatch_tm, play_fossil, 
+play_energy, play_on_nothing]
+
+func _ready() -> void:
+	SignalBus.connect_to(play_functions)
+
+func determine_play() -> void:
+	pass
 
 #--------------------------------------
 #region MANAGING CARD PLAY
+#For basic mons & fossils
+func play_basic_pokemon(card: Base_Card):
+	#Remove the card from hand
+	fundies.player_resources.play_card(card)
+	
+	#Insert the card onto an active spot if there is one
+	for slot in fundies.active_slots:
+		if not slot.current_card:
+			slot.current_card = card
+			slot.refresh()
+			return
+	
+	#Otherwise tell sLot UI actions to prompt the user into placing the bench mon
+	print("Active slots full")
+	card.print_info()
+
 #For items, supporters, rsm
 func play_on_nothing():
 	pass
 
-#For evolutions, tools, tms and energy
-func play_attatch_to():
+#For evolutions on pokemon and fossils
+func play_evolution():
 	pass
 
-#For basic mons, fossils and stadiums
-func play_place_on():
+#For energy cards
+func play_energy():
+	pass
+
+#For tools
+func play_attatch_tool():
+	pass
+
+func play_attatch_tm():
+	pass
+
+func play_fossil():
+	pass
+
+#For stadiums
+func play_place_stadium():
 	pass
 #endregion
 #--------------------------------------

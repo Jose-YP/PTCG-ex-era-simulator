@@ -1,8 +1,8 @@
 @icon("res://Art/ProjectSpecific/alpha.png")
 extends Control
 
-@onready var card_resources: Deck_Manipulator = $NodeComponents/PlayerResources
-@onready var slotUI: SlotUIActions = $NodeComponents/SlotUIActions
+@onready var card_resources: Deck_Manipulator = $Fundies/PlayerResources
+@onready var slotUI: SlotUIActions = $Fundies/SlotUIActions
 @onready var playerSide: Control = $FullUI/PlayerSide
 @onready var reveal_slot: Button = $FullUI/PlayerSide/Non_mon/SideDisplay
 

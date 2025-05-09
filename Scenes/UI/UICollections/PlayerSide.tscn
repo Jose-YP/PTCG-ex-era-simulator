@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dognokjork36j"]
+[gd_scene load_steps=7 format=3 uid="uid://dognokjork36j"]
 
 [ext_resource type="PackedScene" uid="uid://df8x227c7a8q4" path="res://Scenes/UI/UIComponents/BenchMon.tscn" id="1_j2t4b"]
+[ext_resource type="Script" uid="uid://dx3o7ac7ius6k" path="res://Code/Scenes/UI/Side.gd" id="1_j016u"]
 [ext_resource type="PackedScene" uid="uid://drg0sr7jdfiel" path="res://Scenes/UI/UIComponents/ActiveMon.tscn" id="1_n754v"]
 [ext_resource type="Texture2D" uid="uid://c0lenryrao7ol" path="res://Art/Cards/1 ex Ruby & Saphire/89.jpg" id="2_xoxrb"]
 [ext_resource type="PackedScene" uid="uid://dp781vdb5kvc7" path="res://Scenes/UI/UIComponents/art_button.tscn" id="3_u8qkv"]
@@ -18,6 +19,7 @@ offset_right = 0.279907
 offset_bottom = 0.119995
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_j016u")
 
 [node name="Main" type="VBoxContainer" parent="."]
 layout_mode = 0

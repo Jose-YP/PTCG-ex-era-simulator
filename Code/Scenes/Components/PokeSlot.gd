@@ -23,7 +23,8 @@ enum burn_type{NONE, NORMAL, HEAVY}
 enum turn_type{NONE, PARALYSIS, ASLEEP, CONFUSION}
 
 #signal refresh()
-
+#--------------------------------------
+#region VARIABLES
 #--------------------------------------
 #region ATTATCHED VARIABLES
 var evolution_ready: bool = false
@@ -70,6 +71,8 @@ var shockwave: bool = false
 #endregion
 #--------------------------------------
 var readied: bool = false
+#endregion
+#--------------------------------------
 
 func _ready():
 	if current_card:

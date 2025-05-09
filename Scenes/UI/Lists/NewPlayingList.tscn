@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://f4m1ofpicse4"]
+[gd_scene load_steps=15 format=3 uid="uid://f4m1ofpicse4"]
 
 [ext_resource type="Theme" uid="uid://bfw6ylcttychc" path="res://Themes/AverageButton.tres" id="1_j5ysj"]
 [ext_resource type="Script" uid="uid://dkqmky7i7ibak" path="res://Code/Scenes/UI/PlayingList.gd" id="1_sw67d"]
@@ -12,6 +12,7 @@
 [ext_resource type="Resource" uid="uid://mfam4db5asvt" path="res://Resources/Cards/1 ex Ruby & Saphire/RS91Potion.tres" id="8_1kybj"]
 [ext_resource type="Resource" uid="uid://s0xeoyp6jtsa" path="res://Resources/Cards/1 ex Ruby & Saphire/RS84LumBerry.tres" id="9_mfn2x"]
 [ext_resource type="Resource" uid="uid://cc3kjnmsj4pr3" path="res://Resources/Cards/1 ex Ruby & Saphire/RS80EnergyRemoval2.tres" id="10_1jo4x"]
+[ext_resource type="PackedScene" uid="uid://c5d081uywglg" path="res://Scenes/UI/UIComponents/close_button.tscn" id="13_xvynf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1dsg7"]
 bg_color = Color(0.12549, 0.109804, 0.117647, 0.780392)
@@ -49,7 +50,7 @@ layout_mode = 2
 alignment = 1
 
 [node name="IdentifierPanel" type="PanelContainer" parent="PanelContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(400, 40)
+custom_minimum_size = Vector2(375, 40)
 layout_mode = 2
 
 [node name="Identifier" type="RichTextLabel" parent="PanelContainer/VBoxContainer/HBoxContainer/IdentifierPanel"]
@@ -58,6 +59,10 @@ layout_mode = 2
 bbcode_enabled = true
 text = "[center]"
 fit_content = true
+
+[node name="CloseButton" parent="PanelContainer/VBoxContainer/HBoxContainer" instance=ExtResource("13_xvynf")]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
 
 [node name="ScrollBox" type="ScrollContainer" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2

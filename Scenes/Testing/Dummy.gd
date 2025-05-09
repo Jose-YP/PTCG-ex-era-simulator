@@ -1,3 +1,4 @@
+@icon("res://Art/ProjectSpecific/icon.svg")
 extends Control
 
 func _ready():

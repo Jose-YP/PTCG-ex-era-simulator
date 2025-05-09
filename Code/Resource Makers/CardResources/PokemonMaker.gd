@@ -30,10 +30,14 @@ class_name Pokemon
 "Darkness","Metal","Colorless") var resist: int = 0
 
 func print_pokemon() -> void:
-	print("HP: ", HP,"
+	var type_color: String = str("[color=",Constants.energy_colors[log(type) / log(2)].to_html(),"]") 
+	var weak_color: String = str("[color=",Constants.energy_colors[log(weak) / log(2)].to_html(),"]") 
+	var resist_color: String = str("[color=",Constants.energy_colors[log(resist) / log(2)].to_html(),"]") 
+	
+	print_rich("HP: ", HP,"
 	Stage: ", evo_stage,"
-	Type: ", Conversions.flags_to_type_array(type),"
-	Weakness: ", Conversions.flags_to_type_array(weak),"
-	Reistance: ", Conversions.flags_to_type_array(resist))
+	Type: ",type_color,Conversions.flags_to_type_array(type),"[/color]","
+	Weakness: ",weak_color, Conversions.flags_to_type_array(weak),"[/color]","
+	Reistance: ",resist_color, Conversions.flags_to_type_array(resist),"[/color]")
 	
 	print("-------------------------------------------------------------")

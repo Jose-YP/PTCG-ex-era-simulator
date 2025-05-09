@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://cni7lmrv7r06c"]
+
+[ext_resource type="Script" uid="uid://xvfv7i868cvg" path="res://Code/Scenes/fundies.gd" id="1_fh4v4"]
+[ext_resource type="PackedScene" uid="uid://c2dyutb22u6x8" path="res://Scenes/Components/slot_ui_actions.tscn" id="1_xxoqv"]
+[ext_resource type="PackedScene" uid="uid://bm07a7wgsaxxp" path="res://Scenes/Components/on_slot_actions.tscn" id="2_fh4v4"]
+[ext_resource type="PackedScene" uid="uid://cobenwsotye1q" path="res://Scenes/Components/PlayerResources.tscn" id="3_eym7l"]
+[ext_resource type="PackedScene" uid="uid://b4tx6kmy763df" path="res://Scenes/Components/poke_slot.tscn" id="12_nss1j"]
+
+[node name="Fundies" type="Node"]
+script = ExtResource("1_fh4v4")
+
+[node name="SlotUIActions" parent="." node_paths=PackedStringArray("poke_slots", "ui_slots") instance=ExtResource("1_xxoqv")]
+poke_slots = [NodePath("../Slots/PokeSlot"), NodePath("../Slots/PokeSlot2"), NodePath("../Slots/PokeSlot3"), NodePath("../Slots/PokeSlot4"), NodePath("../Slots/PokeSlot5"), NodePath("../Slots/PokeSlot6")]
+ui_slots = [null, null, null, null, null, null]
+
+[node name="OnSlotActions" parent="." node_paths=PackedStringArray("poke_slots") instance=ExtResource("2_fh4v4")]
+poke_slots = [NodePath("../Slots/PokeSlot"), NodePath("../Slots/PokeSlot2"), NodePath("../Slots/PokeSlot3"), NodePath("../Slots/PokeSlot4"), NodePath("../Slots/PokeSlot5"), NodePath("../Slots/PokeSlot6")]
+
+[node name="PlayerResources" parent="." instance=ExtResource("3_eym7l")]
+deck = null
+
+[node name="Slots" type="Node" parent="."]
+
+[node name="PokeSlot" parent="Slots" instance=ExtResource("12_nss1j")]
+
+[node name="PokeSlot2" parent="Slots" instance=ExtResource("12_nss1j")]
+
+[node name="PokeSlot3" parent="Slots" instance=ExtResource("12_nss1j")]
+
+[node name="PokeSlot4" parent="Slots" instance=ExtResource("12_nss1j")]
+
+[node name="PokeSlot5" parent="Slots" instance=ExtResource("12_nss1j")]
+
+[node name="PokeSlot6" parent="Slots" instance=ExtResource("12_nss1j")]

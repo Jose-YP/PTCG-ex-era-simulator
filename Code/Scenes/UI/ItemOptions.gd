@@ -7,7 +7,7 @@ extends Control
 
 @onready var items: Array[Node] = $PlayAs/Items.get_children()
 
-signal play_as(card_flag: int)
+signal play_as(card_flag: int, card: Base_Card)
 
 var old_position: Vector2
 
@@ -24,6 +24,7 @@ func _ready():
 	%Check.pressed.connect(on_check_pressed)
 	Globals.enter_check.connect(on_entered_check)
 	Globals.exit_check.connect(on_exited_check)
+	play_as.connect(Callable(SignalBus, "call_action"))
 
 func bring_up():
 	var appear_tween: Tween = get_tree().create_tween().set_parallel() 
@@ -46,8 +47,7 @@ func disapear():
 
 func emit_play_as(flag: int):
 	if not Globals.checking:
-		print("PLAY ", Constants.allowed_list_flags[flag])
-		play_as.emit(flag)
+		play_as.emit(flag, get_parent().card)
 
 func on_check_pressed():
 	if not Globals.checking:

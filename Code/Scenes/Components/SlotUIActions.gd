@@ -1,3 +1,4 @@
+@icon("res://Art/ProjectSpecific/trading.png")
 extends Node
 class_name SlotUIActions
 
@@ -16,7 +17,7 @@ var selected_slot: UI_Slot = null
 
 func _ready():
 	SignalBus.connect("show_pokemon_card", left_button_actions)
-	
+	owner._ready()
 	for i in range(poke_slots.size()):
 		poke_slots[i].slot_into(ui_slots[i])
 		poke_slots[i].refresh()

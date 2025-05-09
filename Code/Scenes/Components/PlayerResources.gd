@@ -1,3 +1,4 @@
+@icon("res://Art/ProjectSpecific/cards.png")
 extends Node
 class_name Deck_Manipulator
 
@@ -19,7 +20,6 @@ var first_turn: bool = false
 #region INITALIZATION
 func _ready():
 	SignalBus.connect("show_hand", spawn_hand)
-	
 	
 	if deck: 
 		usable_deck = deck.make_usable()

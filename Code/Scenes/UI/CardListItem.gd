@@ -115,7 +115,6 @@ func _gui_input(event):
 				pass
 			
 			show_card()
-	
 
 #endregion
 #--------------------------------------

@@ -1,13 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://c3qurrd5vl1ao"]
+[gd_scene load_steps=7 format=3 uid="uid://c3qurrd5vl1ao"]
 
 [ext_resource type="Script" uid="uid://b3ki70ohjb21g" path="res://Scenes/Testing/debug_deck.gd" id="1_76cja"]
 [ext_resource type="Script" uid="uid://b6qi20o3p32gq" path="res://Code/Scenes/UI/full_ui.gd" id="2_iuq08"]
-[ext_resource type="PackedScene" uid="uid://b4tx6kmy763df" path="res://Scenes/Components/poke_slot.tscn" id="2_lr82k"]
 [ext_resource type="PackedScene" uid="uid://dognokjork36j" path="res://Scenes/UI/UICollections/PlayerSide.tscn" id="3_ibwmv"]
 [ext_resource type="PackedScene" uid="uid://bdpxdnxpe1f32" path="res://Scenes/Testing/dummy.tscn" id="4_463lc"]
-[ext_resource type="PackedScene" uid="uid://c2dyutb22u6x8" path="res://Scenes/Components/slot_ui_actions.tscn" id="5_fed5x"]
-[ext_resource type="PackedScene" uid="uid://bm07a7wgsaxxp" path="res://Scenes/Components/on_slot_actions.tscn" id="6_r7ykb"]
-[ext_resource type="PackedScene" uid="uid://cobenwsotye1q" path="res://Scenes/Components/PlayerResources.tscn" id="7_bhguv"]
+[ext_resource type="PackedScene" uid="uid://cni7lmrv7r06c" path="res://Scenes/Main Game/Fundies.tscn" id="5_k0qov"]
+[ext_resource type="Resource" uid="uid://bleo7p56u5k1f" path="res://Resources/Decks/TestDeck.tres" id="7_441s3"]
 
 [node name="DebugDeck" type="Control"]
 layout_mode = 3
@@ -77,30 +75,21 @@ text = "Shuffle Hand to Deck"
 layout_mode = 2
 text = "ViewAllDeck"
 
-[node name="NodeComponents" type="Node" parent="."]
+[node name="Fundies" parent="." node_paths=PackedStringArray("player_side") instance=ExtResource("5_k0qov")]
+player_side = NodePath("../FullUI/PlayerSide")
+deck = ExtResource("7_441s3")
 
-[node name="SlotUIActions" parent="NodeComponents" node_paths=PackedStringArray("poke_slots", "ui_slots") instance=ExtResource("5_fed5x")]
-poke_slots = [NodePath("../Slots/PokeSlot"), NodePath("../Slots/PokeSlot2"), NodePath("../Slots/PokeSlot3"), NodePath("../Slots/PokeSlot4"), NodePath("../Slots/PokeSlot5"), NodePath("../Slots/PokeSlot6")]
-ui_slots = [NodePath("../../FullUI/PlayerSide/Main/Active/ActivePokemon"), NodePath("../../FullUI/PlayerSide/Main/Bench/BenchPokemon"), NodePath("../../FullUI/PlayerSide/Main/Bench/BenchPokemon2"), NodePath("../../FullUI/PlayerSide/Main/Bench/BenchPokemon3"), NodePath("../../FullUI/PlayerSide/Main/Bench/BenchPokemon4"), NodePath("../../FullUI/PlayerSide/Main/Bench/BenchPokemon5")]
+[node name="PlayerResources" parent="Fundies" index="2"]
+deck = ExtResource("7_441s3")
 
-[node name="OnSlotActions" parent="NodeComponents" instance=ExtResource("6_r7ykb")]
-
-[node name="PlayerResources" parent="NodeComponents" instance=ExtResource("7_bhguv")]
-
-[node name="Slots" type="Node" parent="NodeComponents"]
-
-[node name="PokeSlot" parent="NodeComponents/Slots" node_paths=PackedStringArray("ui_slot") instance=ExtResource("2_lr82k")]
+[node name="PokeSlot" parent="Fundies/Slots" index="0" node_paths=PackedStringArray("ui_slot")]
 ui_slot = NodePath("../../../FullUI/PlayerSide/Main/Active/ActivePokemon")
 
-[node name="PokeSlot2" parent="NodeComponents/Slots" instance=ExtResource("2_lr82k")]
+[node name="PokeSlot2" parent="Fundies/Slots" index="1" node_paths=PackedStringArray("ui_slot")]
+ui_slot = NodePath("../../../FullUI/PlayerSide/Main/Bench/BenchPokemon")
 
-[node name="PokeSlot3" parent="NodeComponents/Slots" instance=ExtResource("2_lr82k")]
-
-[node name="PokeSlot4" parent="NodeComponents/Slots" instance=ExtResource("2_lr82k")]
-
-[node name="PokeSlot5" parent="NodeComponents/Slots" instance=ExtResource("2_lr82k")]
-
-[node name="PokeSlot6" parent="NodeComponents/Slots" instance=ExtResource("2_lr82k")]
+[node name="PokeSlot3" parent="Fundies/Slots" index="2" node_paths=PackedStringArray("ui_slot")]
+ui_slot = NodePath("../../../FullUI/PlayerSide/Main/Bench/BenchPokemon2")
 
 [connection signal="pressed" from="FullUI/CardActions/Draw" to="." method="_on_draw_pressed"]
 [connection signal="pressed" from="FullUI/CardActions/DrawStarting" to="." method="_on_draw_starting_pressed"]
@@ -112,3 +101,4 @@ ui_slot = NodePath("../../../FullUI/PlayerSide/Main/Active/ActivePokemon")
 [connection signal="pressed" from="FullUI/CardActions/ViewAllDeck" to="." method="_on_view_all_deck_pressed"]
 
 [editable path="FullUI/PlayerSide"]
+[editable path="Fundies"]
