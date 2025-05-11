@@ -4,7 +4,13 @@ extends Button
 @export var benched: bool = false
 @export_enum("Left","Right","Up","Down") var spawn_direction: int = 0
 
-@onready var art: TextureRect = %Art
+@onready var art: TextureRect = %Art:
+	set(value):
+		var art_tween: Tween = create_tween().set_parallel()
+		art = value
+		art.scale = Vector2.ZERO
+		art_tween.tween_property(%Art, "scale", Vector2.ONE, .1)
+		
 @onready var spawn_offsets: Array[Vector2] = [Vector2(-size.x / 2, 0),
  Vector2(size.x / 2,0), Vector2(0,-size.y / 2), Vector2(0,size.y / 2)]
 
@@ -27,7 +33,15 @@ func _gui_input(event):
 		show_card.emit()
 		print('onf')
 
+func handle_card_display(card: Base_Card, slot):
+	if current_display:
+		despawn_card()
+	else:
+		spawn_card_display(card, slot)
+
 func spawn_card_display(card: Base_Card, slot):
+	if current_display: return
+	
 	var considered: String = card.card_display()
 	var node_tween: Tween = get_tree().create_tween().set_parallel(true)
 	match considered:
@@ -52,6 +66,8 @@ func spawn_card_display(card: Base_Card, slot):
 	node_tween.tween_property(current_display, "modulate", Color.WHITE, .1)
 
 func despawn_card() -> void:
+	if not current_display: return
+	
 	var node_tween: Tween = get_tree().create_tween().set_parallel(true)
 	
 	node_tween.tween_property(current_display, "position", global_position, .1)

@@ -60,11 +60,11 @@ func not_allowed():
 func show_options() -> Node:
 	var option_Display: Node = Constants.item_options.instantiate()
 	option_Display.card_flags = card_flags
-	option_Display.top_level = true
 	option_Display.position = global_position + Vector2(50,0)
 	option_Display.scale = Vector2(.05, .05)
 	option_Display.modulate = Color.TRANSPARENT
-	add_child(option_Display)
+	parent.add_child(option_Display)
+	option_Display.card = card
 	
 	option_Display.bring_up()
 	

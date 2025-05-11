@@ -13,6 +13,7 @@ class_name Fundies
 
 var active_slots: Array[PokeSlot]
 var bench_slots: Array[PokeSlot]
+var current_list: Node
 
 func _get_configuration_warnings() -> PackedStringArray:
 	if player_side == null:
@@ -33,3 +34,6 @@ func _ready() -> void:
 		if player_side.ui_slots[i].active:
 			active_slots.append(poke_slots[i])
 		else: bench_slots.append(poke_slots[i])
+
+func hide_list():
+	pass

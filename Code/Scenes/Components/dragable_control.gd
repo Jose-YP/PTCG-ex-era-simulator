@@ -23,6 +23,7 @@ func _on_drag_ended() -> void:
 
 func _on_drag_started(event_position: Variant) -> void:
 	drag_position = event_position
+	Globals.dragging = true
 	set_process(true)
 
 func _on_gui_input(event: InputEvent) -> void:

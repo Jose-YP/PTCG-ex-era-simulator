@@ -77,8 +77,22 @@ func connect_display():
 func _input(event: InputEvent) -> void:
 	#Check if the user is pressing on the card or outside
 	if event.is_action_released("A") and display:
-		#If they're not presson on the card, erase the card
-		display.die()
+		if Globals.dragging:
+			Globals.dragging = false
+		#If they're not pressing on the card, erase the card
+		else:
+			display.die()
+	
 
 func on_display_freed():
 	Globals.reset_check()
+
+func disapear():
+	var disapear_tween: Tween = get_tree().create_tween().set_parallel()
+	
+	disapear_tween.tween_property(self, "modulate", Color.TRANSPARENT, .1)
+	disapear_tween.tween_property(self, "scale", Vector2(.1,.1), .1)
+	
+	await disapear_tween.finished
+	
+	queue_free()

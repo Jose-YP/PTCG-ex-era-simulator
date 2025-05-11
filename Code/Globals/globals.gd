@@ -2,6 +2,7 @@ extends Node
 
 #For any node that can bring up the check card display
 var checking: bool = false
+var dragging: bool = false
 
 signal enter_check
 signal exit_check

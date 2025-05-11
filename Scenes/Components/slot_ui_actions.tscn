@@ -1,8 +1,19 @@
 [gd_scene load_steps=2 format=3 uid="uid://c2dyutb22u6x8"]
 
-[ext_resource type="Script" path="res://Code/Scenes/Components/SlotUIActions.gd" id="1_hjfor"]
+[ext_resource type="Script" uid="uid://2hyltc7plhdl" path="res://Code/Scenes/Components/SlotUIActions.gd" id="1_hjfor"]
 
 [node name="SlotUIActions" type="Node" node_paths=PackedStringArray("poke_slots", "ui_slots")]
 script = ExtResource("1_hjfor")
-poke_slots = [NodePath(""), NodePath("")]
-ui_slots = [NodePath(""), NodePath("")]
+poke_slots = [null, null]
+ui_slots = [null, null]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = -1
+anchor_right = 1.003
+anchor_bottom = 1.015
+offset_left = -11.0
+offset_top = -10.0
+offset_right = 7.76001
+offset_bottom = 2.19995
+mouse_filter = 2
+color = Color(1, 1, 1, 0)

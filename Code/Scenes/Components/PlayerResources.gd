@@ -6,6 +6,8 @@ class_name Deck_Manipulator
 @export var first: bool = true
 @export_enum("Player1", "Player2", "CPU") var side: String = "Player1"
 
+@onready var fundies: Fundies = $Fundies
+
 signal show_list(can_select: bool, message: String, looking_at: String, list: Array[Base_Card])
 
 var reveal_stack: Array[Base_Card]
@@ -72,7 +74,8 @@ func move_card(card: Base_Card, from: Array, towards: Array): #From X to Y
 		usable_deck.shuffle()
 
 func play_card(card: Base_Card): #From hand to Y
-	print("PLAY ")
+	print("PLAY ", card.name)
+	hand.erase(card)
 	card.print_info()
 	pass
 
@@ -102,7 +105,7 @@ func spawn_hand(monitor_side: String, using_string: String, allowed: int = Conve
 		new_node.instruction_text = using_string
 		
 		add_sibling(new_node)
-		
+		fundies.current_list = new_node
 		#new_node.set_items()
 
 func show_reveal_stack(reveal_slot):

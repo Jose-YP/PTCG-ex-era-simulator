@@ -4,7 +4,6 @@ extends Node
 @export var poke_slots: Array[PokeSlot]
 @onready var fundies: Fundies = $".."
 
-
 var play_functions: Array[Callable] = [play_basic_pokemon, play_evolution, 
 play_place_stadium, play_attatch_tool, play_attatch_tm, play_fossil, 
 play_energy, play_on_nothing]
@@ -27,7 +26,11 @@ func play_basic_pokemon(card: Base_Card):
 		if not slot.current_card:
 			slot.current_card = card
 			slot.refresh()
+			fundies
 			return
+	
+	fundies.slot_ui_actions.get_allowed_slots(func(slot: PokeSlot): not slot.current_card)
+	
 	
 	#Otherwise tell sLot UI actions to prompt the user into placing the bench mon
 	print("Active slots full")

@@ -25,10 +25,10 @@ var attached_energy: Dictionary = {"Grass": 0, "Fire": 0, "Water": 0,
  "Lightning": 0, "Psychic":0, "Darkness":0, "Metal":0, "Colorless":0,
  "Rainbow":0, "Magma":0, "Aqua":0, "Dark Metal":0, "React": 0,
  "Holon FF": 0, "Holon GL": 0, "Holon WP": 0}
+var current_display: Node
 
 #endregion
 #--------------------------------------
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	%ArtButton.spawn_direction = list_direction
@@ -43,10 +43,13 @@ func _ready():
 	#return list
 
 func spawn_card() -> void:
+	#%ArtButton.handle_card_display(connected_card.current_card, connected_card)
 	%ArtButton.spawn_card_display(connected_card.current_card, connected_card)
+	current_display = %ArtButton.current_display
 
 func despawn_card() -> void:
 	%ArtButton.despawn_card()
+	current_display = null
 
 #--------------------------------------
 #region ATTATCH
