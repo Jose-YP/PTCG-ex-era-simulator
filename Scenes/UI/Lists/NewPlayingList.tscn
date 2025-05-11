@@ -101,6 +101,7 @@ theme_override_constants/margin_bottom = 15
 [node name="IdentifierPanel" type="PanelContainer" parent="PanelContainer/VBoxContainer"]
 custom_minimum_size = Vector2(400, 40)
 layout_mode = 2
+theme_override_styles/panel = ExtResource("13_8wubv")
 
 [node name="Instructions" type="RichTextLabel" parent="PanelContainer/VBoxContainer/IdentifierPanel"]
 unique_name_in_owner = true
@@ -109,11 +110,25 @@ bbcode_enabled = true
 text = "[center]"
 fit_content = true
 
-[node name="Movable" parent="." node_paths=PackedStringArray("dragging_node") instance=ExtResource("14_mnu8a")]
+[node name="Movable" parent="." node_paths=PackedStringArray("dragging_node", "based_on") instance=ExtResource("14_mnu8a")]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.908
 anchor_bottom = 0.071
-offset_right = -0.175995
-offset_bottom = 0.257999
+offset_right = -0.175964
+offset_bottom = 2.258
 dragging_node = NodePath("..")
+based_on = NodePath("../PanelContainer/VBoxContainer/HBoxContainer/IdentifierPanel")
+
+[node name="Movable2" parent="Movable" node_paths=PackedStringArray("dragging_node", "based_on") instance=ExtResource("14_mnu8a")]
+layout_mode = 2
+anchor_left = 0.003
+anchor_top = 12.356
+anchor_right = 1.097
+anchor_bottom = 13.422
+offset_left = -0.149
+offset_top = -0.0200195
+offset_right = -0.151001
+offset_bottom = 0.00994873
+dragging_node = NodePath("../..")
+based_on = NodePath("../../PanelContainer/VBoxContainer/IdentifierPanel")

@@ -6,7 +6,7 @@ class_name Deck_Manipulator
 @export var first: bool = true
 @export_enum("Player1", "Player2", "CPU") var side: String = "Player1"
 
-@onready var fundies: Fundies = $Fundies
+@onready var fundies: Fundies = $".."
 
 signal show_list(can_select: bool, message: String, looking_at: String, list: Array[Base_Card])
 

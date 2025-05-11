@@ -104,7 +104,7 @@ layout_mode = 2
 theme_override_constants/margin_top = 19
 
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(378, -5)
+position = Vector2(378, 32)
 
 [node name="TextureRect" type="TextureRect" parent="Marker2D"]
 visible = false

@@ -3,8 +3,12 @@ extends Button
 
 @onready var drag_component = $Drag as Draggable
 
+##Which node will this component drag around?
 @export var dragging_node: Control
+##If this is filled, it will use this node's position as the offset
+@export var based_on: Control
 
+@export var offset: Vector2 = Vector2.ZERO
 var drag_position: Vector2
 
 func _ready() -> void:
@@ -23,6 +27,8 @@ func _on_drag_ended() -> void:
 
 func _on_drag_started(event_position: Variant) -> void:
 	drag_position = event_position
+	if based_on:
+		drag_position.y += based_on.position.y
 	Globals.dragging = true
 	set_process(true)
 

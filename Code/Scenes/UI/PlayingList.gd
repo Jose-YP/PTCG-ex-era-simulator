@@ -82,7 +82,6 @@ func _input(event: InputEvent) -> void:
 		#If they're not pressing on the card, erase the card
 		else:
 			display.die()
-	
 
 func on_display_freed():
 	Globals.reset_check()

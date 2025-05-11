@@ -5,6 +5,8 @@ extends Button
 "Supporter", "Stadium", "Tool", "TM", "RSM", "Fossil",
  "Energy") var card_flags: int = 0
 
+@onready var marker_2d: Marker2D = $Marker2D
+
 var parent: Node
 var checking_card: Node
 var allowed: bool = false
@@ -60,12 +62,12 @@ func not_allowed():
 func show_options() -> Node:
 	var option_Display: Node = Constants.item_options.instantiate()
 	option_Display.card_flags = card_flags
-	option_Display.position = global_position + Vector2(50,0)
+	option_Display.position = marker_2d.position
 	option_Display.scale = Vector2(.05, .05)
 	option_Display.modulate = Color.TRANSPARENT
 	parent.add_child(option_Display)
 	option_Display.card = card
-	
+	print(global_position, marker_2d.global_position, marker_2d.position, marker_2d.global_position - marker_2d.position)
 	option_Display.bring_up()
 	
 	return option_Display
