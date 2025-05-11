@@ -36,4 +36,4 @@ func _ready() -> void:
 		else: bench_slots.append(poke_slots[i])
 
 func hide_list():
-	pass
+	if current_list: current_list.disapear()

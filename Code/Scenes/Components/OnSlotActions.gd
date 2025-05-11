@@ -26,7 +26,6 @@ func play_basic_pokemon(card: Base_Card):
 		if not slot.current_card:
 			slot.current_card = card
 			slot.refresh()
-			fundies
 			return
 	
 	fundies.slot_ui_actions.get_allowed_slots(func(slot: PokeSlot): not slot.current_card)

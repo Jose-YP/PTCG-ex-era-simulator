@@ -61,13 +61,19 @@ func not_allowed():
 #region ACTIONS
 func show_options() -> Node:
 	var option_Display: Node = Constants.item_options.instantiate()
+	var option_position = position + Vector2(80, 115)
+	print(option_position, option_Display.size.x * 2 + 10)
+	#Find a way to prevent it from going off screen
+	#option_position.x = clamp(option_position.x, 60, get_viewport().size.x - option_Display.size.x)
+	#option_position.y = clamp(option_position.y, 30, get_viewport().size.y - 30)
+	
+	print(option_position)
 	option_Display.card_flags = card_flags
-	option_Display.position = marker_2d.position
+	option_Display.position = option_position
 	option_Display.scale = Vector2(.05, .05)
 	option_Display.modulate = Color.TRANSPARENT
 	parent.add_child(option_Display)
 	option_Display.card = card
-	print(global_position, marker_2d.global_position, marker_2d.position, marker_2d.global_position - marker_2d.position)
 	option_Display.bring_up()
 	
 	return option_Display

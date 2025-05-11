@@ -1,7 +1,7 @@
 extends Resource
 class_name Deck
 
-@export var cards: Dictionary
+@export var cards: Dictionary[Base_Card, int]
 enum DECK_STATUS {READY, INCOMPLETE, ILLEGAL, TOOBIG}
 var status: DECK_STATUS = DECK_STATUS.READY
 

@@ -3,25 +3,28 @@ extends Node
 class_name Deck_Manipulator
 
 @export var deck: Deck
-@export var first: bool = true
+@export var first: bool = false
+@export_range(1,6) var prize_count: int = 6
 @export_enum("Player1", "Player2", "CPU") var side: String = "Player1"
 
 @onready var fundies: Fundies = $".."
 
 signal show_list(can_select: bool, message: String, looking_at: String, list: Array[Base_Card])
+signal update_resources()
 
 var reveal_stack: Array[Base_Card]
 var usable_deck: Array[Base_Card] = []
 var hand: Array[Base_Card] = []
 var discard_pile: Array[Base_Card] = []
+var prize_cards: Array[Base_Card] = []
 var mulligans: int = 0
 var mulligan_array: Array[Array]
-var first_turn: bool = false
+var supporter_used: bool = false
 
 #--------------------------------------
 #region INITALIZATION
 func _ready():
-	SignalBus.connect("show_hand", spawn_hand)
+	SignalBus.connect("show_list", spawn_list)
 	
 	if deck: 
 		usable_deck = deck.make_usable()
@@ -47,7 +50,7 @@ func check_starting():
 	print(start_string)
 	print(hand)
 	if can_start:
-		spawn_hand(side, start_string, Conversions.get_allowed_flags("Start"))
+		spawn_list(side, "Hand", start_string, Conversions.get_allowed_flags("Start"))
 	else:
 		#If you can't start with current hand, mulligan
 		#record mulligans for later
@@ -55,7 +58,10 @@ func check_starting():
 		mulligan_array.append(hand)
 		shuffle_hand_back()
 		draw_starting()
-		
+
+func fill_prizes():
+	while (prize_cards.size() != prize_count):
+		prize_cards.append(usable_deck.pop_front())
 
 #endregion
 #--------------------------------------
@@ -74,10 +80,10 @@ func move_card(card: Base_Card, from: Array, towards: Array): #From X to Y
 		usable_deck.shuffle()
 
 func play_card(card: Base_Card): #From hand to Y
+	fundies.hide_list()
 	print("PLAY ", card.name)
 	hand.erase(card)
 	card.print_info()
-	pass
 
 func ontop_deck(_card: Base_Card): #From X to atop Deck
 	
@@ -88,25 +94,54 @@ func shuffle_hand_back():
 	hand.clear()
 	usable_deck.shuffle()
 
+func discard_card(card: Base_Card):
+	discard_pile.append(card)
+
 #endregion
 #--------------------------------------
 
 #--------------------------------------
 #region CARD DISPLAY
-func spawn_hand(monitor_side: String, using_string: String, allowed: int = Conversions.get_allowed_flags()):
+func spawn_list(monitor_side: String, which: String,\
+ instructions: String = "", allowed: int = Conversions.get_allowed_flags()):
+	var designated: Array[Base_Card]
+	var display_text: String
+	
 	if monitor_side == side:
-		var hand_list: PackedScene = Constants.playing_list
-		var new_node = hand_list.instantiate()
-		
-		new_node.list = hand
-		new_node.top_level = true
-		new_node.allowed = allowed
-		new_node.display_text = "HAND"
-		new_node.instruction_text = using_string
-		
-		add_sibling(new_node)
-		fundies.current_list = new_node
-		#new_node.set_items()
+		match which:
+			"Hand":
+				designated = hand
+				display_text = "HAND"
+			"Deck":
+				designated = usable_deck
+				display_text = "DECK"
+			"Discards":
+				designated = discard_pile
+				display_text = "DISCARD PILE"
+			"Prizes":
+				designated = prize_cards
+				display_text = "PRIZE CARDS"
+			_:
+				push_error("Can't find list specified: ", which)
+	
+	instantiate_list(designated, display_text, instructions, allowed)
+
+func instantiate_list(specified_list: Array[Base_Card], display_text, \
+ using_string: String, allowed: int):
+	var hand_list: PackedScene = Constants.playing_list
+	var new_node = hand_list.instantiate()
+	
+	new_node.list = specified_list
+	new_node.top_level = true
+	new_node.allowed = allowed
+	new_node.display_text = display_text
+	new_node.instruction_text = using_string
+	
+	add_sibling(new_node)
+	fundies.current_list = new_node
+
+func pick_prize():
+	pass
 
 func show_reveal_stack(reveal_slot):
 	if reveal_stack.size() != 0:
@@ -116,3 +151,6 @@ func show_reveal_stack(reveal_slot):
 
 #endregion
 #--------------------------------------
+
+func none_lost() -> bool:
+	return (usable_deck.size() + discard_pile.size() + hand.size() + prize_cards.size()) == 60

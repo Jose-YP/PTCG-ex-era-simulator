@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Deck" load_steps=16 format=3 uid="uid://bleo7p56u5k1f"]
 
-[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/DeckMaker.gd" id="1_2be2h"]
+[ext_resource type="Script" uid="uid://e660iomt5e76" path="res://Code/Resource Makers/CardResources/DeckMaker.gd" id="1_2be2h"]
 [ext_resource type="Resource" uid="uid://b5ukqf6xmn6vv" path="res://Resources/Cards/1 ex Ruby & Saphire/RS109LightningEnergy.tres" id="1_067j5"]
 [ext_resource type="Resource" uid="uid://b7ayufc1njjxh" path="res://Resources/Cards/1 ex Ruby & Saphire/RS29Delcatty.tres" id="2_75y73"]
 [ext_resource type="Resource" uid="uid://s0xeoyp6jtsa" path="res://Resources/Cards/1 ex Ruby & Saphire/RS84LumBerry.tres" id="3_lumwr"]
