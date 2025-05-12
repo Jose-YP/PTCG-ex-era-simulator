@@ -35,7 +35,9 @@ func play_basic_pokemon(card: Base_Card):
 		fundies.slot_ui_actions.set_doing("Bench")
 		fundies.slot_ui_actions.get_choice(card)
 		await fundies.slot_ui_actions.chosen
-		pass
+		fundies.slot_ui_actions.set_doing("Nothing")
+		fundies.slot_ui_actions.color_tween(Color.TRANSPARENT)
+		
 	
 	#Otherwise tell sLot UI actions to prompt the user into placing the bench mon
 	print("Active slots full")

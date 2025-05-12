@@ -111,8 +111,6 @@ ui_slot = NodePath("../../../FullUI/PlayerSide/Main/Bench/BenchPokemon")
 ui_slot = NodePath("../../../FullUI/PlayerSide/Main/Bench/BenchPokemon2")
 
 [connection signal="ready" from="." to="." method="_on_ready"]
-[connection signal="ready" from="FullUI" to="." method="_on_full_ui_ready"]
-[connection signal="ready" from="FullUI/PlayerSide/Main/Active/ActivePokemon" to="." method="_on_active_pokemon_ready"]
 [connection signal="pressed" from="FullUI/CardActions/Draw" to="." method="_on_draw_pressed"]
 [connection signal="pressed" from="FullUI/CardActions/DrawStarting" to="." method="_on_draw_starting_pressed"]
 [connection signal="pressed" from="FullUI/CardActions/Discard" to="." method="_on_discard_pressed"]
@@ -121,7 +119,6 @@ ui_slot = NodePath("../../../FullUI/PlayerSide/Main/Bench/BenchPokemon2")
 [connection signal="pressed" from="FullUI/CardActions/SearchDiscard" to="." method="_on_search_discard_pressed"]
 [connection signal="pressed" from="FullUI/CardActions/Shuffle2Deck" to="." method="_on_shuffle_2_deck_pressed"]
 [connection signal="pressed" from="FullUI/CardActions/ViewAllDeck" to="." method="_on_view_all_deck_pressed"]
-[connection signal="ready" from="Fundies" to="." method="_on_fundies_ready"]
 
 [editable path="FullUI/PlayerSide"]
 [editable path="Fundies"]

@@ -54,6 +54,10 @@ func set_doing(now_doing: String):
 			what_doing = doing.SWAPPING
 		"Wait":
 			what_doing = doing.WAITING
+		"Nothing":
+			what_doing = doing.NOTHING
+		_:
+			push_error(now_doing, " isn't accounted for")
 #endregion
 #--------------------------------------
 
@@ -78,6 +82,9 @@ func left_button_actions(target: PokeSlot):
 			
 			target.current_card = adding_card
 			target.refresh()
+			
+			for slot in allowed_slots:
+				slot.z_index = 0
 			
 			chosen.emit()
 	
@@ -124,6 +131,6 @@ func get_allowed_slots(condition: Callable) -> void:
 
 func color_tween(destination: Color):
 	var color_tweener: Tween = create_tween().set_parallel()
-	color_tweener.tween_property($ColorRect, "modulate", destination, 1)
+	color_tweener.tween_property($ColorRect, "modulate", destination, .5)
 #endregion
 #--------------------------------------

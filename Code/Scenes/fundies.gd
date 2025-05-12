@@ -33,7 +33,6 @@ func _ready() -> void:
 	
 	for i in range(poke_slots.size()):
 		poke_slots[i].ui_slot = player_side.ui_slots[i]
-		slot_ui_actions.ui_slots.append(player_side.ui_slots[i])
 		
 		if player_side.ui_slots[i].active:
 			active_slots.append(poke_slots[i])

@@ -52,6 +52,7 @@ func emit_play_as(flag: int):
 
 func on_check_pressed():
 	if not Globals.checking:
+		print(get_parent())
 		get_parent().show_card()
 
 func on_entered_check():

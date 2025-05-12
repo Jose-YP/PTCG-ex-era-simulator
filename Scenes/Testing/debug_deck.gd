@@ -34,18 +34,3 @@ func _on_shuffle_2_deck_pressed():
 
 func _on_view_all_deck_pressed():
 	pass # Replace with function body.
-
-
-func _on_active_pokemon_ready() -> void:
-	pass # Replace with function body.
-
-func _on_full_ui_ready() -> void:
-	pass # Replace with function body.
-
-
-func _on_fundies_ready() -> void:
-	pass # Replace with function body.
-
-
-func _on_ready() -> void:
-	pass # Replace with function body.
