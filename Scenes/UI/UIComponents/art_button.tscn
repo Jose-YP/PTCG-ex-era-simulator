@@ -1,14 +1,33 @@
-[gd_scene load_steps=4 format=3 uid="uid://dp781vdb5kvc7"]
+[gd_scene load_steps=6 format=3 uid="uid://dp781vdb5kvc7"]
 
-[ext_resource type="StyleBox" uid="uid://duhmik1loeema" path="res://Themes/GBABox.tres" id="1_gbnxf"]
+[ext_resource type="Shader" uid="uid://chaingl03cnx1" path="res://Shaders/Shine2D.gdshader" id="1_dsc7g"]
 [ext_resource type="Texture2D" uid="uid://b4uymubvo04qp" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/37.jpg" id="2_rt8ma"]
 [ext_resource type="Script" uid="uid://dv2mf54udme7l" path="res://Code/Scenes/UI/art_button.gd" id="2_vikux"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q565r"]
+resource_local_to_scene = true
+shader = ExtResource("1_dsc7g")
+shader_parameter/shine_color = Color(0.98, 0.925, 0.231, 1)
+shader_parameter/base_color = Color(0.180736, 0.120593, 0.350483, 1)
+shader_parameter/shine_speed = 7.0
+shader_parameter/shine_size = 0.07
+shader_parameter/shine_bool = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dvhpw"]
+bg_color = Color(0.180736, 0.120593, 0.350483, 1)
+border_width_left = 1
+border_width_top = 2
+border_width_right = 1
+border_width_bottom = 2
+border_color = Color(0.286275, 0.00392157, 0.611765, 1)
+border_blend = true
+
 [node name="ArtButton" type="Button"]
+material = SubResource("ShaderMaterial_q565r")
 custom_minimum_size = Vector2(195, 120)
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_styles/normal = ExtResource("1_gbnxf")
+theme_override_styles/normal = SubResource("StyleBoxFlat_dvhpw")
 button_mask = 3
 script = ExtResource("2_vikux")
 
@@ -23,3 +42,5 @@ modulate = Color(1, 1, 1, 0.992157)
 custom_minimum_size = Vector2(189, 114)
 layout_mode = 2
 texture = ExtResource("2_rt8ma")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

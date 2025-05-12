@@ -44,6 +44,7 @@ folder_colors={
 "res://Resources/Components/": "purple",
 "res://Resources/Decks/": "purple",
 "res://Scenes/": "green",
+"res://Shaders/": "pink",
 "res://Themes/": "pink"
 }
 

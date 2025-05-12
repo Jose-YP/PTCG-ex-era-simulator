@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="Deck" load_steps=16 format=3 uid="uid://bleo7p56u5k1f"]
+[gd_resource type="Resource" script_class="Deck" load_steps=17 format=3 uid="uid://bleo7p56u5k1f"]
 
 [ext_resource type="Script" uid="uid://e660iomt5e76" path="res://Code/Resource Makers/CardResources/DeckMaker.gd" id="1_2be2h"]
 [ext_resource type="Resource" uid="uid://b5ukqf6xmn6vv" path="res://Resources/Cards/1 ex Ruby & Saphire/RS109LightningEnergy.tres" id="1_067j5"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_folnw"]
 [ext_resource type="Resource" uid="uid://b7ayufc1njjxh" path="res://Resources/Cards/1 ex Ruby & Saphire/RS29Delcatty.tres" id="2_75y73"]
 [ext_resource type="Resource" uid="uid://s0xeoyp6jtsa" path="res://Resources/Cards/1 ex Ruby & Saphire/RS84LumBerry.tres" id="3_lumwr"]
 [ext_resource type="Resource" uid="uid://bekwoaj06a44c" path="res://Resources/Cards/1 ex Ruby & Saphire/RS95RainbowEnergy.tres" id="4_0uxdd"]
@@ -18,7 +19,7 @@
 
 [resource]
 script = ExtResource("1_2be2h")
-cards = {
+cards = Dictionary[ExtResource("1_folnw"), int]({
 ExtResource("1_067j5"): 8,
 ExtResource("2_75y73"): 4,
 ExtResource("3_lumwr"): 4,
@@ -33,4 +34,4 @@ ExtResource("11_t0hlb"): 4,
 ExtResource("12_s1k1n"): 4,
 ExtResource("13_cssjx"): 4,
 ExtResource("14_5nils"): 4
-}
+})

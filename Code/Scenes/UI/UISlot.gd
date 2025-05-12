@@ -34,14 +34,6 @@ func _ready():
 	%ArtButton.spawn_direction = list_direction
 	if %ArtButton.benched: %ArtButton/PanelContainer.size = Vector2(149, 96)
 
-#func spawn_attacks() -> Control:
-	#var list = Constants.attack_list.instantiate()
-	#list.poke_slot = connected_card
-	#list.position = position + list_offsets[list_direction]
-	#print(get_parent())
-	#get_parent().add_child(list)
-	#return list
-
 func spawn_card() -> void:
 	#%ArtButton.handle_card_display(connected_card.current_card, connected_card)
 	%ArtButton.spawn_card_display(connected_card.current_card, connected_card)
@@ -134,10 +126,15 @@ func display_shockwave(truth: bool = true) -> void:
 #--------------------------------------
 #region SIGNALS
 func _on_art_button_show_attacks():
-	SignalBus.show_pokemon_card.emit(connected_card)
+	SignalBus.chosen_slot.emit(connected_card)
 
 func _on_art_button_show_card():
-	SignalBus.show_pokemon_card.emit(connected_card)
+	SignalBus.chosen_slot.emit(connected_card)
 
 #endregion
 #--------------------------------------
+func switch_shine(value: bool):
+	%ArtButton.material.set_shader_parameter("shine_bool", value)
+
+func make_allowed(is_allowed: bool):
+	%ArtButton.disabled = true

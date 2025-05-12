@@ -5,8 +5,8 @@ signal show_starting(can_select: bool, message: String, looking_at: String, list
 signal show_list(whose_hand: String, hand: Array[Base_Card])
 #CARD DISPLAY SIGNALS
 signal show_other_card(showing: Base_Card)
-signal show_pokemon_card(showing: PokeSlot)
-signal show_options(button: Button, card: Base_Card)
+signal chosen_slot(showing: PokeSlot)
+#signal show_options(button: Button, card: Base_Card)
 #PLAY CARD SIGNALS
 signal play_basic(card: Base_Card)
 signal play_evo(card: Base_Card)

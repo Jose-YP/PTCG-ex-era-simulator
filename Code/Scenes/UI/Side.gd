@@ -1,3 +1,4 @@
 extends Control
 
-@onready var ui_slots: Array[Node] = %Active.get_children() + %Bench.get_children()
+@onready var ui_slots: Array[UI_Slot] = [%ActivePokemon, $Main/Bench/BenchPokemon, 
+$Main/Bench/BenchPokemon2, $Main/Bench/BenchPokemon3, $Main/Bench/BenchPokemon4, $Main/Bench/BenchPokemon5]

@@ -1,11 +1,21 @@
-[gd_scene load_steps=7 format=3 uid="uid://drg0sr7jdfiel"]
+[gd_scene load_steps=9 format=3 uid="uid://drg0sr7jdfiel"]
 
 [ext_resource type="Script" uid="uid://wt6o27vmhuas" path="res://Code/Scenes/UI/UISlot.gd" id="1_c5ua0"]
 [ext_resource type="Texture2D" uid="uid://ct7oa74jhqcwq" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/74.jpg" id="2_4mrr5"]
+[ext_resource type="Shader" uid="uid://chaingl03cnx1" path="res://Shaders/Shine2D.gdshader" id="3_46l8x"]
 [ext_resource type="Texture2D" uid="uid://d3nrajtlwbvgh" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/84.jpg" id="3_bcik8"]
 [ext_resource type="PackedScene" uid="uid://dp781vdb5kvc7" path="res://Scenes/UI/UIComponents/art_button.tscn" id="3_nyxqq"]
 [ext_resource type="PackedScene" uid="uid://bs3ila6cpt8n1" path="res://Scenes/UI/UIComponents/types.tscn" id="4_5yd0i"]
 [ext_resource type="Texture2D" uid="uid://cijlbc37pj4gd" path="res://icon.svg" id="5_12v7q"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nykcf"]
+resource_local_to_scene = true
+shader = ExtResource("3_46l8x")
+shader_parameter/shine_color = Color(0.980392, 0.92549, 0.231373, 0.709804)
+shader_parameter/base_color = Color(0.180736, 0.120593, 0.350483, 1)
+shader_parameter/shine_speed = 6.2
+shader_parameter/shine_size = 0.12
+shader_parameter/shine_bool = false
 
 [node name="ActivePokemon" type="Control"]
 layout_mode = 3
@@ -41,6 +51,7 @@ text = "[u]HP[/u] 200/200"
 
 [node name="ArtButton" parent="Main" instance=ExtResource("3_nyxqq")]
 unique_name_in_owner = true
+material = SubResource("ShaderMaterial_nykcf")
 layout_mode = 2
 
 [node name="TrainerAttached" type="VBoxContainer" parent="."]

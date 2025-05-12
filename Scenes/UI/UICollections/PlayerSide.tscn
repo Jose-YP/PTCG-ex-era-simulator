@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dognokjork36j"]
+[gd_scene load_steps=9 format=3 uid="uid://dognokjork36j"]
 
 [ext_resource type="PackedScene" uid="uid://df8x227c7a8q4" path="res://Scenes/UI/UIComponents/BenchMon.tscn" id="1_j2t4b"]
 [ext_resource type="Script" uid="uid://dx3o7ac7ius6k" path="res://Code/Scenes/UI/Side.gd" id="1_j016u"]
@@ -6,6 +6,16 @@
 [ext_resource type="Texture2D" uid="uid://c0lenryrao7ol" path="res://Art/Cards/1 ex Ruby & Saphire/89.jpg" id="2_xoxrb"]
 [ext_resource type="PackedScene" uid="uid://dp781vdb5kvc7" path="res://Scenes/UI/UIComponents/art_button.tscn" id="3_u8qkv"]
 [ext_resource type="Texture2D" uid="uid://cijlbc37pj4gd" path="res://icon.svg" id="3_v15xo"]
+[ext_resource type="Shader" uid="uid://chaingl03cnx1" path="res://Shaders/Shine2D.gdshader" id="5_dkvps"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lxnrs"]
+resource_local_to_scene = true
+shader = ExtResource("5_dkvps")
+shader_parameter/shine_color = Color(0.980392, 0.92549, 0.231373, 0.709804)
+shader_parameter/base_color = Color(0.180736, 0.120593, 0.350483, 1)
+shader_parameter/shine_speed = 6.2
+shader_parameter/shine_size = 0.12
+shader_parameter/shine_bool = false
 
 [node name="PlayerSide" type="Control"]
 layout_mode = 3
@@ -60,16 +70,18 @@ layout_mode = 2
 
 [node name="Non_mon" type="HBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 322.0
-offset_top = 74.0
-offset_right = 952.0
-offset_bottom = 158.0
+offset_left = 317.0
+offset_top = 39.0
+offset_right = 1000.0
+offset_bottom = 159.0
 alignment = 2
 metadata/_edit_group_ = true
 
 [node name="SideDisplay" parent="Non_mon" instance=ExtResource("3_u8qkv")]
 editor_description = "This slot displays any supports, revealed cards or items currently in play"
+material = SubResource("ShaderMaterial_lxnrs")
 layout_mode = 2
+pokemon = false
 benched = true
 
 [node name="SupporterNPlay" type="TextureRect" parent="Non_mon"]

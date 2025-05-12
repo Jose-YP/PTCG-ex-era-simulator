@@ -11,10 +11,10 @@ script = ExtResource("1_fh4v4")
 
 [node name="SlotUIActions" parent="." node_paths=PackedStringArray("poke_slots", "ui_slots") instance=ExtResource("1_xxoqv")]
 poke_slots = [NodePath("../Slots/PokeSlot"), NodePath("../Slots/PokeSlot2"), NodePath("../Slots/PokeSlot3"), NodePath("../Slots/PokeSlot4"), NodePath("../Slots/PokeSlot5"), NodePath("../Slots/PokeSlot6")]
-ui_slots = [null, null, null, null, null, null]
+ui_slots = []
 
 [node name="OnSlotActions" parent="." node_paths=PackedStringArray("poke_slots") instance=ExtResource("2_fh4v4")]
-poke_slots = [NodePath("../Slots/PokeSlot"), NodePath("../Slots/PokeSlot2"), NodePath("../Slots/PokeSlot3"), NodePath("../Slots/PokeSlot4"), NodePath("../Slots/PokeSlot5"), NodePath("../Slots/PokeSlot6")]
+poke_slots = []
 
 [node name="PlayerResources" parent="." instance=ExtResource("3_eym7l")]
 deck = null

@@ -8,9 +8,11 @@ class_name Fundies
 
 @onready var slot_ui_actions: SlotUIActions = $SlotUIActions
 @onready var player_resources: Deck_Manipulator = $PlayerResources
-@onready var poke_slots: Array[PokeSlot] = slot_ui_actions.poke_slots
-@onready var on_slot_actions: Node = $OnSlotActions
+@onready var poke_slots: Array[PokeSlot] = [$Slots/PokeSlot, $Slots/PokeSlot2,
+ $Slots/PokeSlot3, $Slots/PokeSlot4, $Slots/PokeSlot5, $Slots/PokeSlot6]
+@onready var on_slot_actions: On_Slot_Actions = $OnSlotActions
 
+var ui_slots: Array[UI_Slot]
 var active_slots: Array[PokeSlot]
 var bench_slots: Array[PokeSlot]
 var current_list: Node
@@ -24,12 +26,14 @@ func _get_configuration_warnings() -> PackedStringArray:
 		return []
 
 func _ready() -> void:
-	on_slot_actions.poke_slots = poke_slots
+	ui_slots = player_side.ui_slots
 	player_resources.deck = deck
+	slot_ui_actions.poke_slots = poke_slots
+	slot_ui_actions.ui_slots = player_side.ui_slots
 	
 	for i in range(poke_slots.size()):
 		poke_slots[i].ui_slot = player_side.ui_slots[i]
-		slot_ui_actions.ui_slots[i] = player_side.ui_slots[i]
+		slot_ui_actions.ui_slots.append(player_side.ui_slots[i])
 		
 		if player_side.ui_slots[i].active:
 			active_slots.append(poke_slots[i])

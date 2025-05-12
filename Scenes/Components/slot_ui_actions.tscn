@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c2dyutb22u6x8"]
+[gd_scene load_steps=3 format=3 uid="uid://c2dyutb22u6x8"]
 
 [ext_resource type="Script" uid="uid://2hyltc7plhdl" path="res://Code/Scenes/Components/SlotUIActions.gd" id="1_hjfor"]
+[ext_resource type="Theme" uid="uid://bfw6ylcttychc" path="res://Themes/AverageButton.tres" id="2_hc1fk"]
 
 [node name="SlotUIActions" type="Node" node_paths=PackedStringArray("poke_slots", "ui_slots")]
 script = ExtResource("1_hjfor")
@@ -8,6 +9,7 @@ poke_slots = [null, null]
 ui_slots = [null, null]
 
 [node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
 anchors_preset = -1
 anchor_right = 1.003
 anchor_bottom = 1.015
@@ -16,4 +18,22 @@ offset_top = -10.0
 offset_right = 7.76001
 offset_bottom = 2.19995
 mouse_filter = 2
-color = Color(1, 1, 1, 0)
+color = Color(0, 0, 0, 0.614)
+
+[node name="PanelContainer" type="PanelContainer" parent="ColorRect"]
+modulate = Color(1, 1, 1, 0.404)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 11.0
+offset_top = 10.0
+offset_right = 11.0
+offset_bottom = 59.0
+grow_horizontal = 2
+theme = ExtResource("2_hc1fk")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect/PanelContainer"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 33
+bbcode_enabled = true
+text = "[center]Select A Pokemon"

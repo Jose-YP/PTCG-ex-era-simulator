@@ -1,5 +1,6 @@
 @icon("res://Art/ProjectSpecific/drag-and-drop.png")
 extends Node
+class_name  On_Slot_Actions
 
 @export var poke_slots: Array[PokeSlot]
 @onready var fundies: Fundies = $".."
@@ -28,8 +29,13 @@ func play_basic_pokemon(card: Base_Card):
 			slot.refresh()
 			return
 	
-	fundies.slot_ui_actions.get_allowed_slots(func(slot: PokeSlot): not slot.current_card)
-	
+	fundies.slot_ui_actions.get_allowed_slots(func(slot: PokeSlot): return not slot.current_card)
+	if fundies.slot_ui_actions.allowed_slots:
+		print(fundies.slot_ui_actions.allowed_slots)
+		fundies.slot_ui_actions.set_doing("Bench")
+		fundies.slot_ui_actions.get_choice(card)
+		await fundies.slot_ui_actions.chosen
+		pass
 	
 	#Otherwise tell sLot UI actions to prompt the user into placing the bench mon
 	print("Active slots full")

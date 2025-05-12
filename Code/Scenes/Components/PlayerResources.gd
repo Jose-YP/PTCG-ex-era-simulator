@@ -9,7 +9,7 @@ class_name Deck_Manipulator
 
 @onready var fundies: Fundies = $".."
 
-signal show_list(can_select: bool, message: String, looking_at: String, list: Array[Base_Card])
+#signal show_list(can_select: bool, message: String, looking_at: String, list: Array[Base_Card])
 signal update_resources()
 
 var reveal_stack: Array[Base_Card]

@@ -1,5 +1,8 @@
 extends Button
 
+#--------------------------------------
+#region VARIABLES
+@export var pokemon: bool = true
 @export var spawn_position: Vector2 = Vector2(230,25)
 @export var benched: bool = false
 @export_enum("Left","Right","Up","Down") var spawn_direction: int = 0
@@ -10,7 +13,6 @@ extends Button
 		art = value
 		art.scale = Vector2.ZERO
 		art_tween.tween_property(%Art, "scale", Vector2.ONE, .1)
-		
 @onready var spawn_offsets: Array[Vector2] = [Vector2(-size.x / 2, 0),
  Vector2(size.x / 2,0), Vector2(0,-size.y / 2), Vector2(0,size.y / 2)]
 
@@ -18,11 +20,16 @@ signal show_attacks
 signal show_card
 
 var current_display
+#endregion
+#--------------------------------------
 
+#--------------------------------------
+#region INITALIZATION & PROCESSING
 func _ready():
 	if benched: 
 		custom_minimum_size = Vector2(149, 96)
 		art.custom_minimum_size = Vector2(142, 87)
+	if not pokemon: disabled = true
 
 # Called when the node enters the scene tree for the first time.
 func _gui_input(event):
@@ -32,6 +39,15 @@ func _gui_input(event):
 	elif event.is_action_pressed("L"):
 		show_card.emit()
 		print('onf')
+#endregion
+#--------------------------------------
+
+#--------------------------------------
+#region PRESSED BUTTON
+func _on_pressed() -> void:
+	if pokemon:
+		print(owner.connected_card)
+		SignalBus.chosen_slot.emit(owner.connected_card)
 
 func handle_card_display(card: Base_Card, slot):
 	if current_display:
@@ -76,3 +92,5 @@ func despawn_card() -> void:
 	await node_tween.finished
 	
 	current_display.queue_free()
+#endregion
+#--------------------------------------
