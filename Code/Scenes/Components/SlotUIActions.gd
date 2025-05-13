@@ -1,4 +1,3 @@
-@tool
 @icon("res://Art/ProjectSpecific/trading.png")
 extends Node
 class_name SlotUIActions
@@ -6,13 +5,14 @@ class_name SlotUIActions
 #--------------------------------------
 #region VARIABLES
 @export var preload_debug: bool = false
-@export var poke_slots: Array[PokeSlot]
 @export var enemy_poke_slots: Array[PokeSlot]
 #Keep player and enemy slots seperate for different actions
-@export var ui_slots: Array[UI_Slot]
 @export var enemy_ui_slots: Array[UI_Slot]
 
-enum doing {NOTHING, ATTACKING, SWAPPING, BENCHING, ENERGY, CHOOSING, WAITING}
+@onready var fundies: Fundies = $".."
+
+enum doing {NOTHING, ATTACKING, SWAPPING, BENCHING, EVOLVING, ENERGY,
+ TOOL, TM, CHOOSING, WAITING}
 
 signal chosen
 signal choice_ready
@@ -24,24 +24,17 @@ var act_on_self: bool = true
 var what_doing: doing = doing.NOTHING
 #endregion
 #--------------------------------------
-
-func _get_configuration_warnings() -> PackedStringArray:
-	if poke_slots.size() == 0:
-		return ["Pokeslots not connected"]
-	else:
-		return []
-
 func _ready():
 	SignalBus.connect("chosen_slot", left_button_actions)
 	owner._ready()
-	for i in range(poke_slots.size()):
-		poke_slots[i].slot_into(ui_slots[i])
-		poke_slots[i].refresh()
+	for i in range(fundies.poke_slots.size()):
+		fundies.poke_slots[i].slot_into(fundies.ui_slots[i])
+		fundies.poke_slots[i].refresh()
 
 #--------------------------------------
 #region HELPER FUNCTIONS
 func group_refresh():
-	for slot in poke_slots: slot.refresh()
+	for slot in fundies.poke_slots: slot.refresh()
 
 func set_doing(now_doing: String):
 	match now_doing:
@@ -53,8 +46,14 @@ func set_doing(now_doing: String):
 			what_doing = doing.ATTACKING
 		"Swapping":
 			what_doing = doing.SWAPPING
+		"Evolve":
+			what_doing = doing.EVOLVING
 		"Energy":
 			what_doing = doing.ENERGY
+		"Tool":
+			what_doing = doing.TOOL
+		"TM":
+			what_doing = doing.TM
 		"Wait":
 			what_doing = doing.WAITING
 		"Nothing":
@@ -73,7 +72,7 @@ func left_button_actions(target: PokeSlot):
 			
 			#Check if there's a display on any of the UI SLots
 			#Despawn any that are present, spawn the current one
-			for slot in (ui_slots + enemy_ui_slots):
+			for slot in (fundies.ui_slots + enemy_ui_slots):
 				if slot.current_display:
 					slot.despawn_card()
 				elif target.ui_slot == slot:
@@ -87,11 +86,18 @@ func left_button_actions(target: PokeSlot):
 			
 			set_doing("Nothing")
 			chosen.emit()
-		doing.ENERGY:
+		doing.EVOLVING:
+			target.evolve_card(adding_card)
 			reset_ui()
+		doing.ENERGY:
 			target.change_energy(adding_card)
-			set_doing("Nothing")
-			chosen.emit()
+			reset_ui()
+		doing.TOOL:
+			target.attatch_tool(adding_card)
+			reset_ui()
+		doing.TM:
+			target.attatch_tm(adding_card)
+			reset_ui()
 	
 	print(target.current_card.name)
 
@@ -118,8 +124,8 @@ func get_choice(for_card: Base_Card, instruction: String):
 func get_slot_type(active: bool = true) -> Array[PokeSlot]:
 	var final: Array[PokeSlot] = []
 	
-	for slot in poke_slots:
-		if slot.ui_slots.active == active:
+	for slot in fundies.poke_slots:
+		if slot.fundies.ui_slots.active == active:
 			final.append(slot)
 	
 	return final
@@ -128,7 +134,7 @@ func get_slot_type(active: bool = true) -> Array[PokeSlot]:
 func get_allowed_slots(condition: Callable) -> void:
 	allowed_slots.clear()
 	
-	for slot in (poke_slots + enemy_poke_slots):
+	for slot in (fundies.poke_slots + enemy_poke_slots):
 		print("Calling ", condition, " on ", slot, condition.call(slot))
 		if condition.call(slot):
 			allowed_slots.append(slot.ui_slot)
@@ -157,8 +163,11 @@ func reset_ui():
 	
 	#Check every slot to see if they have a pokemon in them
 	#If so, let them be checked again
-	for slot in (poke_slots + enemy_poke_slots):
+	for slot in (fundies.poke_slots + enemy_poke_slots):
 		slot.ui_slot.make_allowed(slot.connected_card != null)
+	
+	set_doing("Nothing")
+	chosen.emit()
 
 #endregion
 #--------------------------------------

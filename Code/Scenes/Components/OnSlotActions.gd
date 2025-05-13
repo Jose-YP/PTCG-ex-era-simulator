@@ -34,49 +34,66 @@ func play_basic_pokemon(card: Base_Card):
 	starting_choice("Bench", "Where will pokemon be benched", card, func(slot: PokeSlot): return not slot.current_card)
 	await chosen
 	
-	#fundies.slot_ui_actions.get_allowed_slots(func(slot: PokeSlot): return not slot.current_card)
-	#if fundies.slot_ui_actions.allowed_slots:
-		#print(fundies.slot_ui_actions.allowed_slots)
-		#fundies.slot_ui_actions.set_doing("Bench")
-		#fundies.slot_ui_actions.get_choice(card)
-		#await fundies.slot_ui_actions.chosen
-		#fundies.slot_ui_actions.set_doing("Nothing")
-		#fundies.slot_ui_actions.color_tween(Color.TRANSPARENT)
-	
 	#Otherwise tell sLot UI actions to prompt the user into placing the bench mon
 	print("Active slots full")
 	card.print_info()
 
 #For items, supporters, rsm
-func play_on_nothing():
+func play_on_nothing(card: Base_Card):
 	pass
 
 #For evolutions on pokemon and fossils
-func play_evolution():
-	pass
-
-#For energy cards
-func play_energy(card: Base_Card):
-	starting_choice("Energy", str("Attatch ", card.name, " to which Pokemon")\
-	, card, func(slot: PokeSlot): return slot.current_card)
+func play_evolution(card: Base_Card):
+	starting_choice("Energy", str("Evolve ", card.name, " from which Pokemon")\
+	, card, can_evolve_into)
 	
 	await chosen
 	print("Attatch ", card.name)
 	card.print_info()
-	pass
+
+#For energy cards
+func play_energy(card: Base_Card):
+	starting_choice("Energy", str("Attatch ", card.name, " to which Pokemon")\
+	, card, energy_boolean)
+	
+	await chosen
+	print("Attatch ", card.name)
+	card.print_info()
 
 #For tools
-func play_attatch_tool():
-	pass
+func play_attatch_tool(card: Base_Card):
+	starting_choice("Energy", str("Attatch ", card.name, " to which Pokemon")\
+	, card, tool_boolean)
+	
+	await chosen
+	print("Attatch ", card.name)
+	card.print_info()
 
-func play_attatch_tm():
-	pass
+func play_attatch_tm(card: Base_Card):
+	starting_choice("Energy", str("Attatch ", card.name, " to which Pokemon")\
+	, card, tool_boolean)
+	
+	await chosen
+	print("Attatch ", card.name)
+	card.print_info()
 
-func play_fossil():
-	pass
+
+func play_fossil(card: Base_Card):
+	for slot in fundies.active_slots:
+		if not slot.current_card:
+			fundies.hide_list()
+			slot.current_card = card
+			slot.refresh()
+			#Remove the card from hand
+			fundies.player_resources.play_card(card)
+			return
+	
+	starting_choice("Bench", "Where will pokemon be benched", card, func(slot: PokeSlot): return not slot.current_card)
+	await chosen
+	card.print_info()
 
 #For stadiums
-func play_place_stadium():
+func play_place_stadium(card: Base_Card):
 	pass
 
 func starting_choice(choice_type: String, instruction: String, card: Base_Card, bool_fun: Callable):
@@ -132,6 +149,30 @@ func dmg_manip_effect(_dmg_manip: DamageManip):
 
 func search_effect(_search: Search):
 	pass
+
+#endregion
+#--------------------------------------
+
+#Make these functions now so they can be expanded for edge cases later
+#--------------------------------------
+#region BOOLEAN FUNCTIONS
+func can_evolve_into(slot: PokeSlot, evolution: Base_Card) -> bool:
+	return slot.current_card.name == evolution.pokemon_properties.evolves_from
+
+func energy_boolean(slot: PokeSlot) -> bool:
+	return slot.current_card != null
+
+func tool_boolean(slot: PokeSlot) -> bool:
+	if slot.current_card:
+		return slot.tool_card == null
+	
+	else: return false
+
+func tm_boolean(slot: PokeSlot) -> bool:
+	if slot.current_card:
+		return true
+	
+	else: return false
 
 #endregion
 #--------------------------------------

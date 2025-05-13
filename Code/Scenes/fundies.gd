@@ -3,14 +3,14 @@
 extends Node
 class_name Fundies
 
-@export var player_side: Control
+@export var player_side: CardSideUI
 @export var deck: Deck
 
 @onready var slot_ui_actions: SlotUIActions = $SlotUIActions
 @onready var player_resources: Deck_Manipulator = $PlayerResources
+@onready var on_slot_actions: On_Slot_Actions = $OnSlotActions
 @onready var poke_slots: Array[PokeSlot] = [$Slots/PokeSlot, $Slots/PokeSlot2,
  $Slots/PokeSlot3, $Slots/PokeSlot4, $Slots/PokeSlot5, $Slots/PokeSlot6]
-@onready var on_slot_actions: On_Slot_Actions = $OnSlotActions
 
 var ui_slots: Array[UI_Slot]
 var active_slots: Array[PokeSlot]
@@ -28,8 +28,6 @@ func _get_configuration_warnings() -> PackedStringArray:
 func _ready() -> void:
 	ui_slots = player_side.ui_slots
 	player_resources.deck = deck
-	slot_ui_actions.poke_slots = poke_slots
-	slot_ui_actions.ui_slots = player_side.ui_slots
 	
 	for i in range(poke_slots.size()):
 		poke_slots[i].ui_slot = player_side.ui_slots[i]

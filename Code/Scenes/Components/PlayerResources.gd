@@ -17,9 +17,11 @@ var usable_deck: Array[Base_Card] = []
 var hand: Array[Base_Card] = []
 var discard_pile: Array[Base_Card] = []
 var prize_cards: Array[Base_Card] = []
+var stacks: Dictionary[String, Array] = {"Hand":hand, "Deck":usable_deck, "Discard":discard_pile, "Prize":prize_cards}
 var mulligans: int = 0
 var mulligan_array: Array[Array]
 var supporter_used: bool = false
+
 
 #--------------------------------------
 #region INITALIZATION
@@ -29,6 +31,7 @@ func _ready():
 	if deck: 
 		usable_deck = deck.make_usable()
 		usable_deck.shuffle()
+		update_lists()
 
 func assign_deck(assigned_deck):
 	usable_deck = assigned_deck.make_usable()
@@ -50,7 +53,7 @@ func check_starting():
 	print(start_string)
 	print(hand)
 	if can_start:
-		spawn_list(side, "Hand", start_string, Conversions.get_allowed_flags("Start"))
+		spawn_list(true, "Hand", start_string, Conversions.get_allowed_flags("Start"))
 	else:
 		#If you can't start with current hand, mulligan
 		#record mulligans for later
@@ -71,6 +74,8 @@ func fill_prizes():
 func draw(times: int = 1): #From deck to hand
 	for i in range(times):
 		hand.append(usable_deck.pop_front())
+	
+	update_lists()
 
 func move_card(card: Base_Card, from: Array, towards: Array): #From X to Y
 	var location: int = from.find(card)
@@ -78,10 +83,13 @@ func move_card(card: Base_Card, from: Array, towards: Array): #From X to Y
 	
 	if from == usable_deck:
 		usable_deck.shuffle()
+	
+	update_lists()
 
 func play_card(card: Base_Card): #From hand to Y
 	print("PLAY ", card.name)
 	hand.erase(card)
+	update_lists()
 	card.print_info()
 
 func ontop_deck(_card: Base_Card): #From X to atop Deck
@@ -92,21 +100,27 @@ func shuffle_hand_back():
 	usable_deck.append_array(hand)
 	hand.clear()
 	usable_deck.shuffle()
+	update_lists()
 
 func discard_card(card: Base_Card):
 	discard_pile.append(card)
+	update_lists()
 
 #endregion
 #--------------------------------------
 
 #--------------------------------------
 #region CARD DISPLAY
-func spawn_list(monitor_side: String, which: String,\
+func update_lists():
+	for stack in stacks:
+		fundies.player_side.non_mon.update_stack(stack, stacks[stack].size())
+
+func spawn_list(monitor_side: bool, which: String,\
  instructions: String = "", allowed: int = Conversions.get_allowed_flags()):
 	var designated: Array[Base_Card]
 	var display_text: String
 	
-	if monitor_side == side:
+	if monitor_side:
 		match which:
 			"Hand":
 				designated = hand

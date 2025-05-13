@@ -24,7 +24,7 @@ func _on_search_deck_pressed():
 
 func _on_hand_pressed():
 	print(card_resources.hand)
-	SignalBus.show_list.emit("Player1", "Hand")
+	SignalBus.show_list.emit(true, "Hand")
 
 func _on_search_discard_pressed():
 	pass # Replace with function body.
