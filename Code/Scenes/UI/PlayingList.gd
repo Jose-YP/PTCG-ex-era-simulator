@@ -9,7 +9,7 @@ extends Control
 @export_flags("Basic", "Evolution", "Item",
 "Supporter","Stadium", "Tool", "TM", "RSM", "Fossil",
  "Energy") var allowed: int = 1
-@export_enum("Hand", "Search", "Look") var searching: String = "Hand"
+@export_enum("Hand", "Search", "Discard", "Look") var searching: String = "Hand"
 
 @onready var identifier: RichTextLabel = %Identifier
 @onready var instructions: RichTextLabel = %Instructions

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://f4m1ofpicse4"]
+[gd_scene load_steps=18 format=3 uid="uid://f4m1ofpicse4"]
 
 [ext_resource type="Theme" uid="uid://bfw6ylcttychc" path="res://Themes/AverageButton.tres" id="1_j5ysj"]
 [ext_resource type="Script" uid="uid://dkqmky7i7ibak" path="res://Code/Scenes/UI/PlayingList.gd" id="1_sw67d"]
@@ -14,6 +14,7 @@
 [ext_resource type="Resource" uid="uid://cc3kjnmsj4pr3" path="res://Resources/Cards/1 ex Ruby & Saphire/RS80EnergyRemoval2.tres" id="10_1jo4x"]
 [ext_resource type="StyleBox" uid="uid://bvesf3hjv2bsl" path="res://Themes/GBADragBox.tres" id="13_8wubv"]
 [ext_resource type="PackedScene" uid="uid://c5d081uywglg" path="res://Scenes/UI/UIComponents/close_button.tscn" id="13_xvynf"]
+[ext_resource type="PackedScene" uid="uid://dmhjt2wuanymf" path="res://Scenes/UI/UIComponents/minimize_button.tscn" id="14_fhr5r"]
 [ext_resource type="PackedScene" uid="uid://cmmds4boaksl7" path="res://Scenes/UI/UIComponents/movable.tscn" id="14_mnu8a"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1dsg7"]
@@ -38,7 +39,6 @@ list_item = ExtResource("2_sjm4d")
 list = Array[ExtResource("4_db7eh")]([ExtResource("3_vfbjj"), ExtResource("4_3ly61"), ExtResource("5_fkibm"), ExtResource("6_jpxki"), ExtResource("7_me2dr"), ExtResource("8_1kybj"), ExtResource("9_mfn2x"), ExtResource("10_1jo4x")])
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
-custom_minimum_size = Vector2(420, 600)
 layout_mode = 0
 offset_right = 400.0
 offset_bottom = 44.0
@@ -48,11 +48,12 @@ clip_contents = true
 layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(420, 0)
 layout_mode = 2
 alignment = 1
 
 [node name="IdentifierPanel" type="PanelContainer" parent="PanelContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(375, 40)
+custom_minimum_size = Vector2(345, 40)
 layout_mode = 2
 theme_override_styles/panel = ExtResource("13_8wubv")
 
@@ -63,11 +64,18 @@ bbcode_enabled = true
 text = "[center]"
 fit_content = true
 
+[node name="MinimizeButton" parent="PanelContainer/VBoxContainer/HBoxContainer" node_paths=PackedStringArray("shrinkNodes", "hideNodes") instance=ExtResource("14_fhr5r")]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+shrinkNodes = [NodePath("../../.."), NodePath("../../ScrollBox")]
+hideNodes = [NodePath("../../IdentifierPanel")]
+
 [node name="CloseButton" parent="PanelContainer/VBoxContainer/HBoxContainer" instance=ExtResource("13_xvynf")]
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
 
 [node name="ScrollBox" type="ScrollContainer" parent="PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(420, 500)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_1dsg7")
@@ -113,10 +121,10 @@ fit_content = true
 [node name="Movable" parent="." node_paths=PackedStringArray("dragging_node", "based_on") instance=ExtResource("14_mnu8a")]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.908
-anchor_bottom = 0.071
-offset_right = -0.175964
-offset_bottom = 2.258
+anchor_right = 0.829
+anchor_bottom = 0.075
+offset_right = 0.161987
+offset_bottom = -0.150002
 dragging_node = NodePath("..")
 based_on = NodePath("../PanelContainer/VBoxContainer/HBoxContainer/IdentifierPanel")
 

@@ -7,6 +7,7 @@ func _on_pressed() -> void:
 	owner.queue_free()
 
 func closing_animation() -> void:
+	disabled = true
 	var closing_tween: Tween = create_tween().set_parallel()
 	
 	closing_tween.tween_property(owner, "scale", Vector2.ZERO, .1)
