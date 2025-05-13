@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://crecmsup0hxcr"]
+[gd_scene load_steps=45 format=3 uid="uid://crecmsup0hxcr"]
 
 [ext_resource type="Script" uid="uid://cvx5cmt78lek7" path="res://Code/Scenes/UI/Card.gd" id="1_ao8mj"]
 [ext_resource type="Resource" uid="uid://yjages2tp857" path="res://Resources/Cards/1 ex Ruby & Saphire/RS1Aggron.tres" id="2_13uqe"]
@@ -41,6 +41,7 @@
 [ext_resource type="Texture2D" uid="uid://cu8egxwxamvxw" path="res://Art/ExpansionIcons/45px-SetSymbolPOP_Series_5.png" id="33_yhq78"]
 [ext_resource type="PackedScene" uid="uid://cmmds4boaksl7" path="res://Scenes/UI/UIComponents/movable.tscn" id="38_mgj1b"]
 [ext_resource type="PackedScene" uid="uid://c5d081uywglg" path="res://Scenes/UI/UIComponents/close_button.tscn" id="40_r6caj"]
+[ext_resource type="PackedScene" uid="uid://dmhjt2wuanymf" path="res://Scenes/UI/UIComponents/minimize_button.tscn" id="41_ovkpr"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u7mkw"]
 
@@ -645,6 +646,15 @@ metadata/_tab_index = 21
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Other"]
 layout_mode = 2
 theme_override_constants/margin_bottom = 58
+
+[node name="MinimizeButton" parent="." node_paths=PackedStringArray("shrinkNodes", "hideNodes") instance=ExtResource("41_ovkpr")]
+layout_mode = 0
+offset_left = 397.0
+offset_top = -24.0
+offset_right = 425.0
+offset_bottom = 3.0
+shrinkNodes = [NodePath("../PanelContainer")]
+hideNodes = [NodePath("../PanelContainer/MarginContainer/VBoxContainer/Other"), NodePath("../PanelContainer/MarginContainer/VBoxContainer/Attacks"), NodePath("../PanelContainer/MarginContainer/VBoxContainer/DragArea/VBoxContainer/Evo&Illus"), NodePath("../PanelContainer/MarginContainer/VBoxContainer/DragArea/VBoxContainer/Ruleboxes")]
 
 [node name="CloseButton" parent="." instance=ExtResource("40_r6caj")]
 layout_mode = 0
