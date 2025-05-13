@@ -16,7 +16,7 @@ extends Control
 @onready var rarity: TabContainer = %Rarity
 @onready var set_type: TabContainer = %Set
 
-@onready var close_button: Close_Button = $CloseButton
+@onready var close_button: Close_Button = %CloseButton
 #endregion
 #--------------------------------------
 

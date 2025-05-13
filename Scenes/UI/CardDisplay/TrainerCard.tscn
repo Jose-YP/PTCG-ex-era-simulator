@@ -1,10 +1,11 @@
-[gd_scene load_steps=39 format=3 uid="uid://b6b86gpw8bfpk"]
+[gd_scene load_steps=40 format=3 uid="uid://b6b86gpw8bfpk"]
 
 [ext_resource type="Theme" uid="uid://bfw6ylcttychc" path="res://Themes/AverageButton.tres" id="1_av0ds"]
 [ext_resource type="Script" uid="uid://djgnpgbny56rv" path="res://Code/Scenes/UI/TrainerCard.gd" id="1_lminl"]
 [ext_resource type="Resource" uid="uid://ybub8qpf0t81" path="res://Resources/Cards/5 ex Hidden Lagends/HL87AncientTomb.tres" id="2_oitn0"]
 [ext_resource type="StyleBox" uid="uid://bvesf3hjv2bsl" path="res://Themes/GBADragBox.tres" id="3_7n7u5"]
 [ext_resource type="Texture2D" uid="uid://b4uymubvo04qp" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/37.jpg" id="3_ociyq"]
+[ext_resource type="PackedScene" uid="uid://dmhjt2wuanymf" path="res://Scenes/UI/UIComponents/minimize_button.tscn" id="3_pxlap"]
 [ext_resource type="Texture2D" uid="uid://ciyynt0iw46k5" path="res://Art/Rarities/31px-Rarity_Common.png" id="5_yaayd"]
 [ext_resource type="Texture2D" uid="uid://blfwsqqtrqe8v" path="res://Art/Rarities/31px-Rarity_Uncommon.png" id="6_f4r3p"]
 [ext_resource type="Texture2D" uid="uid://bir0keyl58pst" path="res://Art/Rarities/31px-Rarity_Rare.png" id="7_qik87"]
@@ -52,26 +53,44 @@ grow_vertical = 2
 script = ExtResource("1_lminl")
 card = ExtResource("2_oitn0")
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
-custom_minimum_size = Vector2(400, 0)
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = -1.0
-offset_right = 415.0
-offset_bottom = 209.0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="MinimizeButton" parent="VBoxContainer/HBoxContainer" node_paths=PackedStringArray("shrinkNodes", "hideNodes") instance=ExtResource("3_pxlap")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+shrinkNodes = [NodePath("../../PanelContainer")]
+hideNodes = [NodePath("../../PanelContainer/VBoxContainer/Description"), NodePath("../../PanelContainer/VBoxContainer/Other")]
+
+[node name="CloseButton" parent="VBoxContainer/HBoxContainer" instance=ExtResource("35_wu3ls")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
 theme_override_styles/panel = ExtResource("3_7n7u5")
 metadata/_edit_group_ = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/PanelContainer"]
 layout_mode = 2
 theme = ExtResource("1_av0ds")
 
-[node name="MainInfromation" type="PanelContainer" parent="PanelContainer/VBoxContainer"]
+[node name="MainInfromation" type="PanelContainer" parent="VBoxContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="MainInfromation" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MainInfromation"]
+[node name="MainInfromation" type="HBoxContainer" parent="VBoxContainer/PanelContainer/VBoxContainer/MainInfromation"]
 layout_mode = 2
 
-[node name="Name" type="RichTextLabel" parent="PanelContainer/VBoxContainer/MainInfromation/MainInfromation"]
+[node name="Name" type="RichTextLabel" parent="VBoxContainer/PanelContainer/VBoxContainer/MainInfromation/MainInfromation"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
@@ -80,7 +99,7 @@ size_flags_vertical = 0
 text = "Team Magma's Mightyena"
 fit_content = true
 
-[node name="Extra" type="RichTextLabel" parent="PanelContainer/VBoxContainer/MainInfromation/MainInfromation"]
+[node name="Extra" type="RichTextLabel" parent="VBoxContainer/PanelContainer/VBoxContainer/MainInfromation/MainInfromation"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
@@ -89,11 +108,11 @@ size_flags_vertical = 0
 text = "baby"
 fit_content = true
 
-[node name="Art" type="PanelContainer" parent="PanelContainer/VBoxContainer"]
+[node name="Art" type="PanelContainer" parent="VBoxContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="Art" type="TextureRect" parent="PanelContainer/VBoxContainer/Art"]
+[node name="Art" type="TextureRect" parent="VBoxContainer/PanelContainer/VBoxContainer/Art"]
 unique_name_in_owner = true
 modulate = Color(1, 1, 1, 0.992157)
 custom_minimum_size = Vector2(189, 114)
@@ -102,20 +121,20 @@ texture = ExtResource("3_ociyq")
 expand_mode = 5
 stretch_mode = 5
 
-[node name="Description" type="MarginContainer" parent="PanelContainer/VBoxContainer"]
+[node name="Description" type="MarginContainer" parent="VBoxContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 5
 
-[node name="EffectBox" type="PanelContainer" parent="PanelContainer/VBoxContainer/Description"]
+[node name="EffectBox" type="PanelContainer" parent="VBoxContainer/PanelContainer/VBoxContainer/Description"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/Description/EffectBox"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/PanelContainer/VBoxContainer/Description/EffectBox"]
 layout_mode = 2
 
-[node name="ClassText" type="RichTextLabel" parent="PanelContainer/VBoxContainer/Description/EffectBox/VBoxContainer"]
+[node name="ClassText" type="RichTextLabel" parent="VBoxContainer/PanelContainer/VBoxContainer/Description/EffectBox/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 10
@@ -123,33 +142,33 @@ bbcode_enabled = true
 text = "Illustrator:"
 fit_content = true
 
-[node name="Effect" type="RichTextLabel" parent="PanelContainer/VBoxContainer/Description/EffectBox/VBoxContainer"]
+[node name="Effect" type="RichTextLabel" parent="VBoxContainer/PanelContainer/VBoxContainer/Description/EffectBox/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 bbcode_enabled = true
 text = "Illustrator:"
 fit_content = true
 
-[node name="Other" type="MarginContainer" parent="PanelContainer/VBoxContainer"]
+[node name="Other" type="MarginContainer" parent="VBoxContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_right = 10
 
-[node name="PanelContainer2" type="PanelContainer" parent="PanelContainer/VBoxContainer/Other"]
+[node name="PanelContainer2" type="PanelContainer" parent="VBoxContainer/PanelContainer/VBoxContainer/Other"]
 layout_mode = 2
 
-[node name="OtherProperties" type="HBoxContainer" parent="PanelContainer/VBoxContainer/Other/PanelContainer2"]
+[node name="OtherProperties" type="HBoxContainer" parent="VBoxContainer/PanelContainer/VBoxContainer/Other/PanelContainer2"]
 layout_mode = 2
 theme_override_constants/separation = 5
 alignment = 2
 
-[node name="Illustrator" type="RichTextLabel" parent="PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties"]
+[node name="Illustrator" type="RichTextLabel" parent="VBoxContainer/PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 fit_content = true
 
-[node name="Number" type="RichTextLabel" parent="PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties"]
+[node name="Number" type="RichTextLabel" parent="VBoxContainer/PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
@@ -157,7 +176,7 @@ size_flags_vertical = 8
 text = "100/100"
 fit_content = true
 
-[node name="Rarity" type="TabContainer" parent="PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties"]
+[node name="Rarity" type="TabContainer" parent="VBoxContainer/PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
@@ -168,7 +187,7 @@ current_tab = 0
 tabs_visible = false
 metadata/_edit_group_ = true
 
-[node name="Common" type="TextureRect" parent="PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Rarity"]
+[node name="Common" type="TextureRect" parent="VBoxContainer/PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Rarity"]
 layout_mode = 2
 size_flags_vertical = 8
 texture = ExtResource("5_yaayd")
@@ -176,7 +195,7 @@ expand_mode = 2
 stretch_mode = 5
 metadata/_tab_index = 0
 
-[node name="Uncommon" type="TextureRect" parent="PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Rarity"]
+[node name="Uncommon" type="TextureRect" parent="VBoxContainer/PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Rarity"]
 visible = false
 layout_mode = 2
 size_flags_vertical = 8
@@ -185,7 +204,7 @@ expand_mode = 2
 stretch_mode = 5
 metadata/_tab_index = 1
 
-[node name="Rare" type="TextureRect" parent="PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Rarity"]
+[node name="Rare" type="TextureRect" parent="VBoxContainer/PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Rarity"]
 visible = false
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
@@ -195,7 +214,7 @@ expand_mode = 2
 stretch_mode = 5
 metadata/_tab_index = 2
 
-[node name="Holo Rare" type="TextureRect" parent="PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Rarity"]
+[node name="Holo Rare" type="TextureRect" parent="VBoxContainer/PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Rarity"]
 visible = false
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
@@ -205,7 +224,7 @@ expand_mode = 3
 stretch_mode = 5
 metadata/_tab_index = 3
 
-[node name="ex Rare" type="TextureRect" parent="PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Rarity"]
+[node name="ex Rare" type="TextureRect" parent="VBoxContainer/PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Rarity"]
 visible = false
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
@@ -215,7 +234,7 @@ expand_mode = 3
 stretch_mode = 5
 metadata/_tab_index = 4
 
-[node name="Secret Rare" type="TextureRect" parent="PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Rarity"]
+[node name="Secret Rare" type="TextureRect" parent="VBoxContainer/PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Rarity"]
 visible = false
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
@@ -225,7 +244,7 @@ expand_mode = 3
 stretch_mode = 5
 metadata/_tab_index = 5
 
-[node name="Ultra Rare" type="TextureRect" parent="PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Rarity"]
+[node name="Ultra Rare" type="TextureRect" parent="VBoxContainer/PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Rarity"]
 visible = false
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
@@ -235,7 +254,7 @@ expand_mode = 3
 stretch_mode = 5
 metadata/_tab_index = 6
 
-[node name="Promo" type="TextureRect" parent="PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Rarity"]
+[node name="Promo" type="TextureRect" parent="VBoxContainer/PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Rarity"]
 visible = false
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
@@ -245,7 +264,7 @@ expand_mode = 3
 stretch_mode = 5
 metadata/_tab_index = 7
 
-[node name="Set" type="TabContainer" parent="PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties"]
+[node name="Set" type="TabContainer" parent="VBoxContainer/PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
@@ -256,7 +275,7 @@ current_tab = 0
 tabs_visible = false
 metadata/_edit_group_ = true
 
-[node name="RS" type="TextureRect" parent="PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Set"]
+[node name="RS" type="TextureRect" parent="VBoxContainer/PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Set"]
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
 size_flags_vertical = 8
@@ -265,7 +284,7 @@ expand_mode = 2
 stretch_mode = 4
 metadata/_tab_index = 0
 
-[node name="SS" type="TextureRect" parent="PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Set"]
+[node name="SS" type="TextureRect" parent="VBoxContainer/PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Set"]
 visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
@@ -275,7 +294,7 @@ expand_mode = 2
 stretch_mode = 4
 metadata/_tab_index = 1
 
-[node name="DR" type="TextureRect" parent="PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Set"]
+[node name="DR" type="TextureRect" parent="VBoxContainer/PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Set"]
 visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
@@ -285,7 +304,7 @@ expand_mode = 2
 stretch_mode = 4
 metadata/_tab_index = 2
 
-[node name="MA" type="TextureRect" parent="PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Set"]
+[node name="MA" type="TextureRect" parent="VBoxContainer/PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Set"]
 visible = false
 layout_mode = 2
 size_flags_vertical = 8
@@ -294,7 +313,7 @@ expand_mode = 3
 stretch_mode = 5
 metadata/_tab_index = 3
 
-[node name="HL" type="TextureRect" parent="PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Set"]
+[node name="HL" type="TextureRect" parent="VBoxContainer/PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Set"]
 visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
@@ -304,7 +323,7 @@ expand_mode = 2
 stretch_mode = 4
 metadata/_tab_index = 4
 
-[node name="RG" type="TextureRect" parent="PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Set"]
+[node name="RG" type="TextureRect" parent="VBoxContainer/PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Set"]
 visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
@@ -314,7 +333,7 @@ expand_mode = 2
 stretch_mode = 4
 metadata/_tab_index = 5
 
-[node name="TRR" type="TextureRect" parent="PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Set"]
+[node name="TRR" type="TextureRect" parent="VBoxContainer/PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Set"]
 visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
@@ -324,7 +343,7 @@ expand_mode = 2
 stretch_mode = 4
 metadata/_tab_index = 6
 
-[node name="DX" type="TextureRect" parent="PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Set"]
+[node name="DX" type="TextureRect" parent="VBoxContainer/PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Set"]
 visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
@@ -334,7 +353,7 @@ expand_mode = 2
 stretch_mode = 4
 metadata/_tab_index = 7
 
-[node name="EM" type="TextureRect" parent="PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Set"]
+[node name="EM" type="TextureRect" parent="VBoxContainer/PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Set"]
 visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
@@ -344,7 +363,7 @@ expand_mode = 2
 stretch_mode = 4
 metadata/_tab_index = 8
 
-[node name="UF" type="TextureRect" parent="PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Set"]
+[node name="UF" type="TextureRect" parent="VBoxContainer/PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Set"]
 visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
@@ -354,7 +373,7 @@ expand_mode = 2
 stretch_mode = 4
 metadata/_tab_index = 9
 
-[node name="DS" type="TextureRect" parent="PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Set"]
+[node name="DS" type="TextureRect" parent="VBoxContainer/PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Set"]
 visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
@@ -364,7 +383,7 @@ expand_mode = 2
 stretch_mode = 4
 metadata/_tab_index = 10
 
-[node name="LM" type="TextureRect" parent="PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Set"]
+[node name="LM" type="TextureRect" parent="VBoxContainer/PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Set"]
 visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
@@ -374,7 +393,7 @@ expand_mode = 2
 stretch_mode = 4
 metadata/_tab_index = 11
 
-[node name="HP" type="TextureRect" parent="PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Set"]
+[node name="HP" type="TextureRect" parent="VBoxContainer/PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Set"]
 visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
@@ -384,7 +403,7 @@ expand_mode = 2
 stretch_mode = 4
 metadata/_tab_index = 12
 
-[node name="CG" type="TextureRect" parent="PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Set"]
+[node name="CG" type="TextureRect" parent="VBoxContainer/PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Set"]
 visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
@@ -394,7 +413,7 @@ expand_mode = 2
 stretch_mode = 4
 metadata/_tab_index = 13
 
-[node name="DF" type="TextureRect" parent="PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Set"]
+[node name="DF" type="TextureRect" parent="VBoxContainer/PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Set"]
 visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
@@ -404,7 +423,7 @@ expand_mode = 2
 stretch_mode = 4
 metadata/_tab_index = 14
 
-[node name="PK" type="TextureRect" parent="PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Set"]
+[node name="PK" type="TextureRect" parent="VBoxContainer/PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Set"]
 visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
@@ -414,7 +433,7 @@ expand_mode = 2
 stretch_mode = 4
 metadata/_tab_index = 15
 
-[node name="POP1" type="TextureRect" parent="PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Set"]
+[node name="POP1" type="TextureRect" parent="VBoxContainer/PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Set"]
 visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
@@ -424,7 +443,7 @@ expand_mode = 2
 stretch_mode = 5
 metadata/_tab_index = 16
 
-[node name="POP2" type="TextureRect" parent="PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Set"]
+[node name="POP2" type="TextureRect" parent="VBoxContainer/PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Set"]
 visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
@@ -434,7 +453,7 @@ expand_mode = 2
 stretch_mode = 5
 metadata/_tab_index = 17
 
-[node name="POP3" type="TextureRect" parent="PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Set"]
+[node name="POP3" type="TextureRect" parent="VBoxContainer/PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Set"]
 visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
@@ -444,7 +463,7 @@ expand_mode = 2
 stretch_mode = 5
 metadata/_tab_index = 18
 
-[node name="POP4" type="TextureRect" parent="PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Set"]
+[node name="POP4" type="TextureRect" parent="VBoxContainer/PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Set"]
 visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
@@ -454,7 +473,7 @@ expand_mode = 2
 stretch_mode = 5
 metadata/_tab_index = 19
 
-[node name="POP5" type="TextureRect" parent="PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Set"]
+[node name="POP5" type="TextureRect" parent="VBoxContainer/PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Set"]
 visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
@@ -464,7 +483,7 @@ expand_mode = 2
 stretch_mode = 5
 metadata/_tab_index = 20
 
-[node name="Empty" type="TextureRect" parent="PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Set"]
+[node name="Empty" type="TextureRect" parent="VBoxContainer/PanelContainer/VBoxContainer/Other/PanelContainer2/OtherProperties/Set"]
 visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
@@ -473,14 +492,8 @@ expand_mode = 2
 stretch_mode = 4
 metadata/_tab_index = 21
 
-[node name="Movable" parent="PanelContainer" node_paths=PackedStringArray("dragging_node") instance=ExtResource("35_7n7u5")]
+[node name="Movable" parent="VBoxContainer/PanelContainer" node_paths=PackedStringArray("dragging_node", "based_on") instance=ExtResource("35_7n7u5")]
 unique_name_in_owner = true
 layout_mode = 2
-dragging_node = NodePath("../..")
-
-[node name="CloseButton" parent="." instance=ExtResource("35_wu3ls")]
-layout_mode = 0
-offset_left = 410.0
-offset_top = -17.0
-offset_right = 438.0
-offset_bottom = 10.0
+dragging_node = NodePath("../../..")
+based_on = NodePath("..")

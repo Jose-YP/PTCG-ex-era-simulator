@@ -17,7 +17,7 @@ extends Control
 @onready var set_type: TabContainer = %Set
 
 @onready var movable: Draggable_Control = %Movable
-@onready var close_button: Close_Button = $CloseButton
+@onready var close_button: Close_Button = %CloseButton
 #endregion
 #--------------------------------------
 
