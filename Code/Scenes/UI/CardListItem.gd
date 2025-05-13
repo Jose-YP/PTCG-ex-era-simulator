@@ -4,6 +4,7 @@ extends Button
 @export_flags("Basic", "Evolution", "Item",
 "Supporter", "Stadium", "Tool", "TM", "RSM", "Fossil",
  "Energy") var card_flags: int = 0
+@export_enum("Hand", "Search", "Look") var searching: String = "Hand"
 
 @onready var marker_2d: Marker2D = $Marker2D
 

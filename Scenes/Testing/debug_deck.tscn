@@ -75,6 +75,11 @@ text = "Shuffle Hand to Deck"
 layout_mode = 2
 text = "ViewAllDeck"
 
+[node name="ToggleSearch" type="Button" parent="FullUI/CardActions"]
+layout_mode = 2
+toggle_mode = true
+text = "ViewAllDeck"
+
 [node name="Fundies" parent="." node_paths=PackedStringArray("player_side") instance=ExtResource("5_k0qov")]
 player_side = NodePath("../FullUI/PlayerSide")
 deck = ExtResource("7_441s3")

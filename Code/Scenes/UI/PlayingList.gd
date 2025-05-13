@@ -9,6 +9,7 @@ extends Control
 @export_flags("Basic", "Evolution", "Item",
 "Supporter","Stadium", "Tool", "TM", "RSM", "Fossil",
  "Energy") var allowed: int = 1
+@export_enum("Hand", "Search", "Look") var searching: String = "Hand"
 
 @onready var identifier: RichTextLabel = %Identifier
 @onready var instructions: RichTextLabel = %Instructions
@@ -50,6 +51,7 @@ func is_allowed(button: Button) -> void:
 	#print(button.card_flags & allowed)
 	if (button.card_flags & allowed or whitelisted) and not blacklisted:
 		button.allow(allowed)
+		
 	else:
 		button.not_allowed()
 #endregion
