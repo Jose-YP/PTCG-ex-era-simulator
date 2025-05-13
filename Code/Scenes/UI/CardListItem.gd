@@ -16,28 +16,38 @@ var allowed: bool = false
 #region INITALIZATION
 func _ready() -> void:
 	%Class.clear()
-	if card.categories & 1:
-		%Class.append_text(card.pokemon_properties.evo_stage)
-		if card.pokemon_properties.evo_stage == "Basic":
-			card_flags += Conversions.get_allowed_flags("Basic")
-		elif card.fossil: 
-			card_flags += Conversions.get_allowed_flags("Fossil")
-		else:
-			card_flags += Conversions.get_allowed_flags("Evolution")
-		
-	elif card.categories & 2:
-		var considered = card.trainer_properties.considered
-		if considered == "Rocket's Secret Machine": considered = "RSM"
-		
-		card_flags += Conversions.get_allowed_flags(considered)
-		
-		if considered == "Supporter": considered = "Support"
-		
-		%Class.append_text(considered)
-	
-	else:
-		card_flags += Conversions.get_allowed_flags("Energy")
-		%Class.append_text(card.energy_properties.considered)
+	match parent.searching:
+		"Hand":
+			if card.categories & 1:
+				%Class.append_text(card.pokemon_properties.evo_stage)
+				if card.pokemon_properties.evo_stage == "Basic":
+					card_flags += Conversions.get_allowed_flags("Basic")
+				elif card.fossil: 
+					card_flags += Conversions.get_allowed_flags("Fossil")
+				else:
+					card_flags += Conversions.get_allowed_flags("Evolution")
+				
+			elif card.categories & 2:
+				var considered = card.trainer_properties.considered
+				if considered == "Rocket's Secret Machine": considered = "RSM"
+				
+				card_flags += Conversions.get_allowed_flags(considered)
+				
+				if considered == "Supporter": considered = "Support"
+				
+				%Class.append_text(considered)
+			
+			else:
+				card_flags += Conversions.get_allowed_flags("Energy")
+				%Class.append_text(card.energy_properties.considered)
+		"Search":
+			pass
+		"Discard":
+			pass
+		"Look":
+			pass
+		_:
+			push_error(parent.searching, "doesn't register as a method")
 	
 	%Art.texture = card.image
 	%Name.clear()

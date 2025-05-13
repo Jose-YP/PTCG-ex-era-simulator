@@ -119,28 +119,33 @@ func spawn_list(monitor_side: bool, which: String, searching: bool = false,\
  instructions: String = "", allowed: int = Conversions.get_allowed_flags()):
 	var designated: Array[Base_Card]
 	var display_text: String
+	var spawn_from: Vector2
 	
 	if monitor_side:
 		match which:
 			"Hand":
 				designated = hand
 				display_text = "HAND"
+				spawn_from = fundies.player_side.non_mon.stacks["Hand"].global_position
 			"Deck":
 				designated = usable_deck
 				display_text = "DECK"
+				spawn_from = fundies.player_side.non_mon.stacks["Deck"].global_position
 			"Discard":
 				designated = discard_pile
 				display_text = "DISCARD PILE"
+				spawn_from = fundies.player_side.non_mon.stacks["Discard"].global_position
 			"Prize":
 				designated = prize_cards
 				display_text = "PRIZE CARDS"
+				spawn_from = fundies.player_side.non_mon.stacks["Prize"].global_position
 			_:
 				push_error("Can't find list specified: ", which)
 	
-	instantiate_list(designated, display_text, instructions, allowed, searching)
+	instantiate_list(designated, display_text, instructions, allowed, searching, spawn_from)
 
 func instantiate_list(specified_list: Array[Base_Card], display_text, \
- using_string: String, allowed: int, searching: bool = false):
+ using_string: String, allowed: int, searching: bool = false, spawn_from: Vector2 = Vector2.ZERO):
 	var hand_list: PackedScene = Constants.playing_list
 	var new_node = hand_list.instantiate()
 	
@@ -149,6 +154,7 @@ func instantiate_list(specified_list: Array[Base_Card], display_text, \
 	new_node.allowed = allowed
 	new_node.display_text = display_text
 	new_node.instruction_text = using_string
+	new_node.old_posiiton = spawn_from
 	if display_text == "HAND":
 		new_node.searching = "Hand"
 	elif searching:

@@ -26,7 +26,7 @@ extends Control
 @onready var art: TextureRect = %Art
 
 @onready var movable: Button = %Movable
-@onready var close_button: Close_Button = $CloseButton
+@onready var close_button: Close_Button = %CloseButton
 
 var attack_size: int
 var attack_scroll: ScrollContainer

@@ -4,6 +4,8 @@ extends Control
 @export_flags("Basic", "Evolution", "Item",
 "Supporter", "Stadium", "Tool", "TM", "RSM", "Fossil",
  "Energy") var card_flags: int = 0
+@export var search: bool = false
+@export var discard: bool = false
 
 @onready var items: Array[Node] = $PlayAs/Items.get_children()
 
@@ -12,6 +14,8 @@ signal play_as(card_flag: int, card: Base_Card)
 var old_position: Vector2
 var origin_button: Button
 
+#--------------------------------------
+#region INITALIZATION AND REMOVAL
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#Check for every option except for check, every card should be able to do that
@@ -21,6 +25,9 @@ func _ready():
 			items[i].pressed.connect(emit_play_as.bind(i))
 		
 		else : items[i].hide()
+	
+	if search: %AddToHand.show()
+	if discard: %Discard.show()
 	
 	Globals.enter_check.connect(on_entered_check)
 	Globals.exit_check.connect(on_exited_check)
@@ -44,7 +51,11 @@ func disapear():
 	await disapear_tween.finished
 	
 	queue_free()
+#endregion
+#--------------------------------------
 
+#--------------------------------------
+#region SIGNALS
 func emit_play_as(flag: int):
 	if not Globals.checking:
 		play_as.emit(flag, origin_button.card)
@@ -61,3 +72,5 @@ func on_entered_check():
 func on_exited_check():
 	for i in range($PlayAs/Items.get_child_count()):
 		items[i].disabled = false
+#endregion
+#--------------------------------------

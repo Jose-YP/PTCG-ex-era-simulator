@@ -19,7 +19,7 @@ var display_text: String = ""
 var instruction_text: String = ""
 var black_list: Array[String] = []
 var white_list: Array[String] = []
-
+var old_posiiton: Vector2
 var display: Node
 var options: Node
 var on_card: bool = false
@@ -93,6 +93,7 @@ func disapear():
 	
 	disapear_tween.tween_property(self, "modulate", Color.TRANSPARENT, .1)
 	disapear_tween.tween_property(self, "scale", Vector2(.1,.1), .1)
+	disapear_tween.tween_property(self, "global_position", old_posiiton, .1)
 	
 	await disapear_tween.finished
 	

@@ -63,17 +63,33 @@ theme = ExtResource("3_1mjph")
 script = ExtResource("1_ao8mj")
 card = ExtResource("2_13uqe")
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="MinimizeButton" parent="VBoxContainer/HBoxContainer" node_paths=PackedStringArray("shrinkNodes", "hideNodes") instance=ExtResource("41_ovkpr")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+shrinkNodes = [NodePath("../../PanelContainer")]
+hideNodes = [NodePath("../../PanelContainer/MarginContainer/VBoxContainer/Other"), NodePath("../../PanelContainer/MarginContainer/VBoxContainer/Attacks"), NodePath("../../PanelContainer/MarginContainer/VBoxContainer/DragArea/VBoxContainer/Evo&Illus"), NodePath("../../PanelContainer/MarginContainer/VBoxContainer/DragArea/VBoxContainer/Ruleboxes")]
+
+[node name="CloseButton" parent="VBoxContainer/HBoxContainer" instance=ExtResource("40_r6caj")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
-anchor_right = 0.993
-anchor_bottom = 0.6
-offset_top = -1.0
-offset_right = 0.0309753
-offset_bottom = 0.199982
 theme_override_styles/panel = ExtResource("2_uf5nv")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PanelContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 5
@@ -81,24 +97,24 @@ theme_override_constants/margin_right = 5
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/PanelContainer/MarginContainer"]
 layout_mode = 2
 theme = ExtResource("3_1mjph")
 
-[node name="DragArea" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="DragArea" type="PanelContainer" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_styles/panel = ExtResource("5_cwatx")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/DragArea"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/DragArea"]
 layout_mode = 2
 
-[node name="MainInfo" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/DragArea/VBoxContainer"]
+[node name="MainInfo" type="PanelContainer" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/DragArea/VBoxContainer"]
 layout_mode = 2
 
-[node name="MainInfromation" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/DragArea/VBoxContainer/MainInfo"]
+[node name="MainInfromation" type="HBoxContainer" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/DragArea/VBoxContainer/MainInfo"]
 layout_mode = 2
 
-[node name="Name" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/DragArea/VBoxContainer/MainInfo/MainInfromation"]
+[node name="Name" type="RichTextLabel" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/DragArea/VBoxContainer/MainInfo/MainInfromation"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(215, 0)
 layout_mode = 2
@@ -107,7 +123,7 @@ size_flags_vertical = 0
 text = "Team Magma's Mightyena"
 fit_content = true
 
-[node name="Extra" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/DragArea/VBoxContainer/MainInfo/MainInfromation"]
+[node name="Extra" type="RichTextLabel" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/DragArea/VBoxContainer/MainInfo/MainInfromation"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(38, 0)
 layout_mode = 2
@@ -115,7 +131,7 @@ size_flags_horizontal = 8
 size_flags_vertical = 0
 fit_content = true
 
-[node name="HP" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/DragArea/VBoxContainer/MainInfo/MainInfromation"]
+[node name="HP" type="RichTextLabel" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/DragArea/VBoxContainer/MainInfo/MainInfromation"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(63, 0)
 layout_mode = 2
@@ -124,26 +140,26 @@ size_flags_vertical = 0
 text = "HP: 200"
 fit_content = true
 
-[node name="DefaultType" parent="PanelContainer/MarginContainer/VBoxContainer/DragArea/VBoxContainer/MainInfo/MainInfromation" instance=ExtResource("2_em05s")]
+[node name="DefaultType" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/DragArea/VBoxContainer/MainInfo/MainInfromation" instance=ExtResource("2_em05s")]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
 
-[node name="DefaultType2" parent="PanelContainer/MarginContainer/VBoxContainer/DragArea/VBoxContainer/MainInfo/MainInfromation" instance=ExtResource("2_em05s")]
+[node name="DefaultType2" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/DragArea/VBoxContainer/MainInfo/MainInfromation" instance=ExtResource("2_em05s")]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
 
-[node name="Art" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/DragArea/VBoxContainer"]
+[node name="Art" type="PanelContainer" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/DragArea/VBoxContainer"]
 custom_minimum_size = Vector2(200, 125)
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="Arts" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/DragArea/VBoxContainer/Art"]
+[node name="Arts" type="HBoxContainer" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/DragArea/VBoxContainer/Art"]
 layout_mode = 2
 alignment = 1
 
-[node name="Art" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/DragArea/VBoxContainer/Art/Arts"]
+[node name="Art" type="TextureRect" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/DragArea/VBoxContainer/Art/Arts"]
 unique_name_in_owner = true
 modulate = Color(1, 1, 1, 0.992157)
 custom_minimum_size = Vector2(189, 114)
@@ -152,13 +168,13 @@ texture = ExtResource("3_hm8dc")
 expand_mode = 5
 stretch_mode = 5
 
-[node name="Evo&Illus" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/DragArea/VBoxContainer"]
+[node name="Evo&Illus" type="PanelContainer" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/DragArea/VBoxContainer"]
 layout_mode = 2
 
-[node name="Evo&Illus" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/DragArea/VBoxContainer/Evo&Illus"]
+[node name="Evo&Illus" type="HBoxContainer" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/DragArea/VBoxContainer/Evo&Illus"]
 layout_mode = 2
 
-[node name="EvoFrom" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/DragArea/VBoxContainer/Evo&Illus/Evo&Illus"]
+[node name="EvoFrom" type="RichTextLabel" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/DragArea/VBoxContainer/Evo&Illus/Evo&Illus"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -166,7 +182,7 @@ size_flags_vertical = 4
 text = "Evolves From"
 fit_content = true
 
-[node name="Illustrator" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/DragArea/VBoxContainer/Evo&Illus/Evo&Illus"]
+[node name="Illustrator" type="RichTextLabel" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/DragArea/VBoxContainer/Evo&Illus/Evo&Illus"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -175,57 +191,58 @@ bbcode_enabled = true
 text = "[right]Illustrator:"
 fit_content = true
 
-[node name="Ruleboxes" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/DragArea/VBoxContainer"]
+[node name="Ruleboxes" type="HBoxContainer" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/DragArea/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_constants/separation = 24
 alignment = 1
 
-[node name="exRulebox" parent="PanelContainer/MarginContainer/VBoxContainer/DragArea/VBoxContainer/Ruleboxes" instance=ExtResource("7_87yqa")]
+[node name="exRulebox" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/DragArea/VBoxContainer/Ruleboxes" instance=ExtResource("7_87yqa")]
 visible = false
 layout_mode = 2
 
-[node name="exRulebox2" parent="PanelContainer/MarginContainer/VBoxContainer/DragArea/VBoxContainer/Ruleboxes" instance=ExtResource("8_8f7l3")]
+[node name="exRulebox2" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/DragArea/VBoxContainer/Ruleboxes" instance=ExtResource("8_8f7l3")]
 visible = false
 layout_mode = 2
 
-[node name="Movable" parent="PanelContainer/MarginContainer/VBoxContainer/DragArea" node_paths=PackedStringArray("dragging_node") instance=ExtResource("38_mgj1b")]
+[node name="Movable" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/DragArea" node_paths=PackedStringArray("dragging_node", "based_on") instance=ExtResource("38_mgj1b")]
 unique_name_in_owner = true
 layout_mode = 2
-dragging_node = NodePath("../../../../..")
+dragging_node = NodePath("../../../../../..")
+based_on = NodePath("../../../..")
 
-[node name="Attacks" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Attacks" type="PanelContainer" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Attacks" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Attacks"]
+[node name="Attacks" type="HBoxContainer" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Attacks"]
 unique_name_in_owner = true
 layout_mode = 2
 alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Attacks/Attacks"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Attacks/Attacks"]
 visible = false
 layout_mode = 2
 
-[node name="Other" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Other" type="PanelContainer" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Other"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Other"]
 layout_mode = 2
 alignment = 1
 
-[node name="OtherProperties" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer"]
+[node name="OtherProperties" type="HBoxContainer" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 5
 alignment = 2
 
-[node name="Weakness" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties"]
+[node name="Weakness" type="VBoxContainer" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties"]
 layout_mode = 2
 size_flags_horizontal = 3
 alignment = 1
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Weakness"]
+[node name="RichTextLabel2" type="RichTextLabel" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Weakness"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 8
@@ -233,27 +250,27 @@ bbcode_enabled = true
 text = "[center]Weakness"
 fit_content = true
 
-[node name="Weaknesses" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Weakness"]
+[node name="Weaknesses" type="HBoxContainer" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Weakness"]
 unique_name_in_owner = true
 layout_mode = 2
 alignment = 1
 
-[node name="WeaknessType" parent="PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Weakness/Weaknesses" instance=ExtResource("2_em05s")]
+[node name="WeaknessType" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Weakness/Weaknesses" instance=ExtResource("2_em05s")]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
 
-[node name="WeaknessType2" parent="PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Weakness/Weaknesses" instance=ExtResource("2_em05s")]
+[node name="WeaknessType2" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Weakness/Weaknesses" instance=ExtResource("2_em05s")]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
 
-[node name="Reistance" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties"]
+[node name="Reistance" type="VBoxContainer" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties"]
 layout_mode = 2
 size_flags_horizontal = 3
 alignment = 1
 
-[node name="RichTextLabel3" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Reistance"]
+[node name="RichTextLabel3" type="RichTextLabel" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Reistance"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 8
@@ -261,32 +278,32 @@ bbcode_enabled = true
 text = "[center]Resist"
 fit_content = true
 
-[node name="Resistances" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Reistance"]
+[node name="Resistances" type="HBoxContainer" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Reistance"]
 unique_name_in_owner = true
 layout_mode = 2
 alignment = 1
 
-[node name="ResistanceType" parent="PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Reistance/Resistances" instance=ExtResource("2_em05s")]
+[node name="ResistanceType" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Reistance/Resistances" instance=ExtResource("2_em05s")]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
 
-[node name="ResistanceType2" parent="PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Reistance/Resistances" instance=ExtResource("2_em05s")]
+[node name="ResistanceType2" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Reistance/Resistances" instance=ExtResource("2_em05s")]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
 
-[node name="RetreatButton" parent="PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties" instance=ExtResource("9_uhkmw")]
+[node name="RetreatButton" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties" instance=ExtResource("9_uhkmw")]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="RetreatCost" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties"]
+[node name="RetreatCost" type="VBoxContainer" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties"]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 alignment = 1
 
-[node name="RichTextLabel4" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/RetreatCost"]
+[node name="RichTextLabel4" type="RichTextLabel" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/RetreatCost"]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 3
@@ -295,29 +312,29 @@ bbcode_enabled = true
 text = "[center]Retreat"
 fit_content = true
 
-[node name="RetreatContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/RetreatCost"]
+[node name="RetreatContainer" type="HBoxContainer" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/RetreatCost"]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
 alignment = 1
 
-[node name="Types" parent="PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/RetreatCost/RetreatContainer" instance=ExtResource("2_em05s")]
+[node name="Types" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/RetreatCost/RetreatContainer" instance=ExtResource("2_em05s")]
 visible = false
 layout_mode = 2
 
-[node name="Types2" parent="PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/RetreatCost/RetreatContainer" instance=ExtResource("2_em05s")]
+[node name="Types2" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/RetreatCost/RetreatContainer" instance=ExtResource("2_em05s")]
 visible = false
 layout_mode = 2
 
-[node name="Types3" parent="PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/RetreatCost/RetreatContainer" instance=ExtResource("2_em05s")]
+[node name="Types3" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/RetreatCost/RetreatContainer" instance=ExtResource("2_em05s")]
 visible = false
 layout_mode = 2
 
-[node name="Types4" parent="PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/RetreatCost/RetreatContainer" instance=ExtResource("2_em05s")]
+[node name="Types4" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/RetreatCost/RetreatContainer" instance=ExtResource("2_em05s")]
 visible = false
 layout_mode = 2
 
-[node name="Number" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties"]
+[node name="Number" type="RichTextLabel" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(47, 0)
 layout_mode = 2
@@ -327,7 +344,7 @@ theme_override_font_sizes/normal_font_size = 12
 text = "100/100"
 fit_content = true
 
-[node name="Rarity" type="TabContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties"]
+[node name="Rarity" type="TabContainer" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
@@ -338,7 +355,7 @@ current_tab = 0
 tabs_visible = false
 metadata/_edit_group_ = true
 
-[node name="Common" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Rarity"]
+[node name="Common" type="TextureRect" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Rarity"]
 layout_mode = 2
 size_flags_vertical = 8
 texture = ExtResource("5_hf6p2")
@@ -346,7 +363,7 @@ expand_mode = 2
 stretch_mode = 5
 metadata/_tab_index = 0
 
-[node name="Uncommon" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Rarity"]
+[node name="Uncommon" type="TextureRect" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Rarity"]
 visible = false
 layout_mode = 2
 size_flags_vertical = 8
@@ -355,7 +372,7 @@ expand_mode = 2
 stretch_mode = 5
 metadata/_tab_index = 1
 
-[node name="Rare" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Rarity"]
+[node name="Rare" type="TextureRect" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Rarity"]
 visible = false
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
@@ -365,7 +382,7 @@ expand_mode = 2
 stretch_mode = 5
 metadata/_tab_index = 2
 
-[node name="Holo Rare" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Rarity"]
+[node name="Holo Rare" type="TextureRect" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Rarity"]
 visible = false
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
@@ -375,7 +392,7 @@ expand_mode = 3
 stretch_mode = 5
 metadata/_tab_index = 3
 
-[node name="ex Rare" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Rarity"]
+[node name="ex Rare" type="TextureRect" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Rarity"]
 visible = false
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
@@ -385,7 +402,7 @@ expand_mode = 3
 stretch_mode = 5
 metadata/_tab_index = 4
 
-[node name="Secret Rare" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Rarity"]
+[node name="Secret Rare" type="TextureRect" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Rarity"]
 visible = false
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
@@ -395,7 +412,7 @@ expand_mode = 3
 stretch_mode = 5
 metadata/_tab_index = 5
 
-[node name="Ultra Rare" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Rarity"]
+[node name="Ultra Rare" type="TextureRect" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Rarity"]
 visible = false
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
@@ -405,7 +422,7 @@ expand_mode = 3
 stretch_mode = 5
 metadata/_tab_index = 6
 
-[node name="Promo" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Rarity"]
+[node name="Promo" type="TextureRect" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Rarity"]
 visible = false
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
@@ -415,7 +432,7 @@ expand_mode = 3
 stretch_mode = 5
 metadata/_tab_index = 7
 
-[node name="Set" type="TabContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties"]
+[node name="Set" type="TabContainer" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
@@ -426,7 +443,7 @@ current_tab = 0
 tabs_visible = false
 metadata/_edit_group_ = true
 
-[node name="RS" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Set"]
+[node name="RS" type="TextureRect" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Set"]
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
 size_flags_vertical = 8
@@ -435,7 +452,7 @@ expand_mode = 2
 stretch_mode = 4
 metadata/_tab_index = 0
 
-[node name="SS" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Set"]
+[node name="SS" type="TextureRect" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Set"]
 visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
@@ -445,7 +462,7 @@ expand_mode = 2
 stretch_mode = 4
 metadata/_tab_index = 1
 
-[node name="DR" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Set"]
+[node name="DR" type="TextureRect" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Set"]
 visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
@@ -455,7 +472,7 @@ expand_mode = 2
 stretch_mode = 4
 metadata/_tab_index = 2
 
-[node name="MA" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Set"]
+[node name="MA" type="TextureRect" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Set"]
 visible = false
 layout_mode = 2
 size_flags_vertical = 8
@@ -464,7 +481,7 @@ expand_mode = 3
 stretch_mode = 5
 metadata/_tab_index = 3
 
-[node name="HL" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Set"]
+[node name="HL" type="TextureRect" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Set"]
 visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
@@ -474,7 +491,7 @@ expand_mode = 2
 stretch_mode = 4
 metadata/_tab_index = 4
 
-[node name="RG" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Set"]
+[node name="RG" type="TextureRect" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Set"]
 visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
@@ -484,7 +501,7 @@ expand_mode = 2
 stretch_mode = 4
 metadata/_tab_index = 5
 
-[node name="TRR" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Set"]
+[node name="TRR" type="TextureRect" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Set"]
 visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
@@ -494,7 +511,7 @@ expand_mode = 2
 stretch_mode = 4
 metadata/_tab_index = 6
 
-[node name="DX" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Set"]
+[node name="DX" type="TextureRect" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Set"]
 visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
@@ -504,7 +521,7 @@ expand_mode = 2
 stretch_mode = 4
 metadata/_tab_index = 7
 
-[node name="EM" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Set"]
+[node name="EM" type="TextureRect" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Set"]
 visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
@@ -514,7 +531,7 @@ expand_mode = 2
 stretch_mode = 4
 metadata/_tab_index = 8
 
-[node name="UF" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Set"]
+[node name="UF" type="TextureRect" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Set"]
 visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
@@ -524,7 +541,7 @@ expand_mode = 2
 stretch_mode = 4
 metadata/_tab_index = 9
 
-[node name="DS" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Set"]
+[node name="DS" type="TextureRect" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Set"]
 visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
@@ -534,7 +551,7 @@ expand_mode = 2
 stretch_mode = 4
 metadata/_tab_index = 10
 
-[node name="LM" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Set"]
+[node name="LM" type="TextureRect" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Set"]
 visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
@@ -544,7 +561,7 @@ expand_mode = 2
 stretch_mode = 4
 metadata/_tab_index = 11
 
-[node name="HP" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Set"]
+[node name="HP" type="TextureRect" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Set"]
 visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
@@ -554,7 +571,7 @@ expand_mode = 2
 stretch_mode = 4
 metadata/_tab_index = 12
 
-[node name="CG" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Set"]
+[node name="CG" type="TextureRect" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Set"]
 visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
@@ -564,7 +581,7 @@ expand_mode = 2
 stretch_mode = 4
 metadata/_tab_index = 13
 
-[node name="DF" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Set"]
+[node name="DF" type="TextureRect" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Set"]
 visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
@@ -574,7 +591,7 @@ expand_mode = 2
 stretch_mode = 4
 metadata/_tab_index = 14
 
-[node name="PK" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Set"]
+[node name="PK" type="TextureRect" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Set"]
 visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
@@ -584,7 +601,7 @@ expand_mode = 2
 stretch_mode = 4
 metadata/_tab_index = 15
 
-[node name="POP1" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Set"]
+[node name="POP1" type="TextureRect" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Set"]
 visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
@@ -594,7 +611,7 @@ expand_mode = 2
 stretch_mode = 5
 metadata/_tab_index = 16
 
-[node name="POP2" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Set"]
+[node name="POP2" type="TextureRect" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Set"]
 visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
@@ -604,7 +621,7 @@ expand_mode = 2
 stretch_mode = 5
 metadata/_tab_index = 17
 
-[node name="POP3" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Set"]
+[node name="POP3" type="TextureRect" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Set"]
 visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
@@ -614,7 +631,7 @@ expand_mode = 2
 stretch_mode = 5
 metadata/_tab_index = 18
 
-[node name="POP4" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Set"]
+[node name="POP4" type="TextureRect" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Set"]
 visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
@@ -624,7 +641,7 @@ expand_mode = 2
 stretch_mode = 5
 metadata/_tab_index = 19
 
-[node name="POP5" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Set"]
+[node name="POP5" type="TextureRect" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Set"]
 visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
@@ -634,7 +651,7 @@ expand_mode = 2
 stretch_mode = 5
 metadata/_tab_index = 20
 
-[node name="Empty" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Set"]
+[node name="Empty" type="TextureRect" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/Set"]
 visible = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
@@ -643,25 +660,6 @@ expand_mode = 2
 stretch_mode = 4
 metadata/_tab_index = 21
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Other"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Other"]
 layout_mode = 2
 theme_override_constants/margin_bottom = 58
-
-[node name="MinimizeButton" parent="." node_paths=PackedStringArray("shrinkNodes", "hideNodes") instance=ExtResource("41_ovkpr")]
-layout_mode = 0
-offset_left = 397.0
-offset_top = -24.0
-offset_right = 425.0
-offset_bottom = 3.0
-shrinkNodes = [NodePath("../PanelContainer")]
-hideNodes = [NodePath("../PanelContainer/MarginContainer/VBoxContainer/Other"), NodePath("../PanelContainer/MarginContainer/VBoxContainer/Attacks"), NodePath("../PanelContainer/MarginContainer/VBoxContainer/DragArea/VBoxContainer/Evo&Illus"), NodePath("../PanelContainer/MarginContainer/VBoxContainer/DragArea/VBoxContainer/Ruleboxes")]
-
-[node name="CloseButton" parent="." instance=ExtResource("40_r6caj")]
-layout_mode = 0
-offset_left = 428.0
-offset_top = -25.0
-offset_right = 456.0
-offset_bottom = 2.0
-
-[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

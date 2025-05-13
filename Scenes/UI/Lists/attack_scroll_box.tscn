@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://cj0k023dhlha"]
 
-[ext_resource type="Script" path="res://Code/Scenes/UI/attack_scroll_box.gd" id="1_abqb4"]
+[ext_resource type="Script" uid="uid://ce4xa4cuper2p" path="res://Code/Scenes/UI/attack_scroll_box.gd" id="1_abqb4"]
 [ext_resource type="PackedScene" uid="uid://dvvv8k1g6tgog" path="res://Scenes/UI/Lists/attack_item.tscn" id="2_25ylk"]
 [ext_resource type="PackedScene" uid="uid://beymnk0kvpnut" path="res://Scenes/UI/Lists/power_item.tscn" id="3_wwxct"]
 [ext_resource type="PackedScene" uid="uid://cidor8csiohus" path="res://Scenes/UI/Lists/body_item.tscn" id="4_h32eo"]
@@ -14,7 +14,7 @@ corner_radius_bottom_right = 1
 corner_radius_bottom_left = 1
 
 [node name="AttackScrollBox" type="ScrollContainer"]
-custom_minimum_size = Vector2(400, 0)
+custom_minimum_size = Vector2(415, 0)
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_ud5dv")
 follow_focus = true
@@ -23,7 +23,7 @@ attackItem = ExtResource("2_25ylk")
 powerItem = ExtResource("3_wwxct")
 bodyItem = ExtResource("4_h32eo")
 current_card = ExtResource("5_0hwij")
-max_size = Vector2(400, 400)
+max_size = Vector2(415, 400)
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
 layout_mode = 2
