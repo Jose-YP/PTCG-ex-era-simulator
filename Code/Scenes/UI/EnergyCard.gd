@@ -1,5 +1,8 @@
 @icon("res://Art/Energy/48px-Colorless-attack.png")
 extends Control
+
+#--------------------------------------
+#region VARIABLES
 @export var card: Base_Card
 
 @onready var engData: Energy = card.energy_properties
@@ -12,6 +15,11 @@ extends Control
 @onready var number: RichTextLabel = %Number
 @onready var rarity: TabContainer = %Rarity
 @onready var set_type: TabContainer = %Set
+
+@onready var movable: Draggable_Control = %Movable
+@onready var close_button: Close_Button = $CloseButton
+#endregion
+#--------------------------------------
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

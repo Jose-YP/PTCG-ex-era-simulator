@@ -1,6 +1,8 @@
 @icon("res://Art/Rarities/31px-Rarity_Uncommon.png")
 extends Control
 
+#--------------------------------------
+#region VARIABLES
 @export var card: Base_Card
 
 @onready var trainerData: Trainer = card.trainer_properties
@@ -13,6 +15,10 @@ extends Control
 @onready var number: RichTextLabel = %Number
 @onready var rarity: TabContainer = %Rarity
 @onready var set_type: TabContainer = %Set
+
+@onready var close_button: Close_Button = $CloseButton
+#endregion
+#--------------------------------------
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

@@ -1,5 +1,7 @@
+@tool
 @icon("res://Art/ExpansionIcons/40px-SetSymbolUnseen_Forces.png")
 extends Button
+class_name Draggable_Control
 
 @onready var drag_component = $Drag as Draggable
 
@@ -10,6 +12,12 @@ extends Button
 
 @export var offset: Vector2 = Vector2.ZERO
 var drag_position: Vector2
+
+func _get_configuration_warnings() -> PackedStringArray:
+	if not dragging_node:
+		return ["Node not connected to anything"]
+	else:
+		return []
 
 func _ready() -> void:
 	set_process(false)

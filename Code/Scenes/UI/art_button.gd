@@ -34,7 +34,7 @@ func _ready():
 # Called when the node enters the scene tree for the first time.
 func _gui_input(event):
 	if event.is_action_pressed("A"):
-		show_attacks.emit()
+		#show_attacks.emit()
 		print('eron')
 	elif event.is_action_pressed("L"):
 		show_card.emit()

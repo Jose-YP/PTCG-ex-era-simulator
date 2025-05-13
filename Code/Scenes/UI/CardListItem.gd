@@ -73,7 +73,7 @@ func show_options() -> Node:
 	option_Display.scale = Vector2(.05, .05)
 	option_Display.modulate = Color.TRANSPARENT
 	parent.add_child(option_Display)
-	option_Display.card = card
+	option_Display.origin_button = self
 	option_Display.bring_up()
 	
 	return option_Display

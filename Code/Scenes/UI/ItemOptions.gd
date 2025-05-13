@@ -10,7 +10,7 @@ extends Control
 signal play_as(card_flag: int, card: Base_Card)
 
 var old_position: Vector2
-var card: Base_Card
+var origin_button: Button
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -22,7 +22,6 @@ func _ready():
 		
 		else : items[i].hide()
 	
-	%Check.pressed.connect(on_check_pressed)
 	Globals.enter_check.connect(on_entered_check)
 	Globals.exit_check.connect(on_exited_check)
 	play_as.connect(Callable(SignalBus, "call_action"))
@@ -48,12 +47,12 @@ func disapear():
 
 func emit_play_as(flag: int):
 	if not Globals.checking:
-		play_as.emit(flag, card)
+		play_as.emit(flag, origin_button.card)
 
-func on_check_pressed():
+func _on_check_pressed():
 	if not Globals.checking:
 		print(get_parent())
-		get_parent().show_card()
+		origin_button.show_card()
 
 func on_entered_check():
 	for i in range($PlayAs/Items.get_child_count()):

@@ -1,9 +1,9 @@
-[gd_scene load_steps=37 format=3 uid="uid://b6b86gpw8bfpk"]
+[gd_scene load_steps=39 format=3 uid="uid://b6b86gpw8bfpk"]
 
 [ext_resource type="Theme" uid="uid://bfw6ylcttychc" path="res://Themes/AverageButton.tres" id="1_av0ds"]
 [ext_resource type="Script" uid="uid://djgnpgbny56rv" path="res://Code/Scenes/UI/TrainerCard.gd" id="1_lminl"]
 [ext_resource type="Resource" uid="uid://ybub8qpf0t81" path="res://Resources/Cards/5 ex Hidden Lagends/HL87AncientTomb.tres" id="2_oitn0"]
-[ext_resource type="StyleBox" uid="uid://duhmik1loeema" path="res://Themes/GBABox.tres" id="3_jrka3"]
+[ext_resource type="StyleBox" uid="uid://bvesf3hjv2bsl" path="res://Themes/GBADragBox.tres" id="3_7n7u5"]
 [ext_resource type="Texture2D" uid="uid://b4uymubvo04qp" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/37.jpg" id="3_ociyq"]
 [ext_resource type="Texture2D" uid="uid://ciyynt0iw46k5" path="res://Art/Rarities/31px-Rarity_Common.png" id="5_yaayd"]
 [ext_resource type="Texture2D" uid="uid://blfwsqqtrqe8v" path="res://Art/Rarities/31px-Rarity_Uncommon.png" id="6_f4r3p"]
@@ -34,6 +34,8 @@
 [ext_resource type="Texture2D" uid="uid://be1nfp0g24sdm" path="res://Art/ExpansionIcons/SetSymbolPOP_Series_3.png" id="31_4hilf"]
 [ext_resource type="Texture2D" uid="uid://bfsbptu51xrnn" path="res://Art/ExpansionIcons/45px-SetSymbolPOP_Series_4.png" id="32_w7flp"]
 [ext_resource type="Texture2D" uid="uid://cu8egxwxamvxw" path="res://Art/ExpansionIcons/45px-SetSymbolPOP_Series_5.png" id="33_26wna"]
+[ext_resource type="PackedScene" uid="uid://cmmds4boaksl7" path="res://Scenes/UI/UIComponents/movable.tscn" id="35_7n7u5"]
+[ext_resource type="PackedScene" uid="uid://c5d081uywglg" path="res://Scenes/UI/UIComponents/close_button.tscn" id="35_wu3ls"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wt4wi"]
 
@@ -41,9 +43,10 @@
 
 [node name="TrainerCard" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_right = 0.386
+anchor_bottom = 0.5
+offset_right = 0.119995
+offset_bottom = -28.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_lminl")
@@ -55,7 +58,7 @@ layout_mode = 0
 offset_left = -1.0
 offset_right = 415.0
 offset_bottom = 209.0
-theme_override_styles/panel = ExtResource("3_jrka3")
+theme_override_styles/panel = ExtResource("3_7n7u5")
 metadata/_edit_group_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
@@ -469,3 +472,15 @@ size_flags_vertical = 8
 expand_mode = 2
 stretch_mode = 4
 metadata/_tab_index = 21
+
+[node name="Movable" parent="PanelContainer" node_paths=PackedStringArray("dragging_node") instance=ExtResource("35_7n7u5")]
+unique_name_in_owner = true
+layout_mode = 2
+dragging_node = NodePath("../..")
+
+[node name="CloseButton" parent="." instance=ExtResource("35_wu3ls")]
+layout_mode = 0
+offset_left = 410.0
+offset_top = -17.0
+offset_right = 438.0
+offset_bottom = 10.0
