@@ -62,6 +62,7 @@ func not_allowed():
 func show_options() -> Node:
 	var option_Display: Node = Constants.item_options.instantiate()
 	var option_position = position + Vector2(80, 115)
+	option_position = Vector2(position.x, global_position.y)
 	print(option_position, option_Display.size.x * 2 + 10)
 	#Find a way to prevent it from going off screen
 	#option_position.x = clamp(option_position.x, 60, get_viewport().size.x - option_Display.size.x)

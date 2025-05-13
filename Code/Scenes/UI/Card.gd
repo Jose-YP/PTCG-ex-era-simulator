@@ -119,8 +119,5 @@ func make_text(node: RichTextLabel, text: String):
 	node.clear()
 	node.append_text(text)
 
-func die():
-	$CloseButton._on_pressed()
-
 #endregion
 #--------------------------------------

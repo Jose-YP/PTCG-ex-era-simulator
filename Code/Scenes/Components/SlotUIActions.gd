@@ -12,9 +12,10 @@ class_name SlotUIActions
 @export var ui_slots: Array[UI_Slot]
 @export var enemy_ui_slots: Array[UI_Slot]
 
-enum doing {NOTHING, ATTACKING, SWAPPING, BENCHING, CHOOSING, WAITING}
+enum doing {NOTHING, ATTACKING, SWAPPING, BENCHING, ENERGY, CHOOSING, WAITING}
 
 signal chosen
+signal choice_ready
 
 var adding_card: Base_Card
 var selected_slot: UI_Slot = null
@@ -52,6 +53,8 @@ func set_doing(now_doing: String):
 			what_doing = doing.ATTACKING
 		"Swapping":
 			what_doing = doing.SWAPPING
+		"Energy":
+			what_doing = doing.ENERGY
 		"Wait":
 			what_doing = doing.WAITING
 		"Nothing":
@@ -77,28 +80,34 @@ func left_button_actions(target: PokeSlot):
 					slot.spawn_card()
 		doing.BENCHING:
 			print(target.ui_slot, target)
-			for slot in allowed_slots:
-				slot.switch_shine(false)
+			reset_ui()
 			
 			target.current_card = adding_card
 			target.refresh()
 			
-			for slot in allowed_slots:
-				slot.z_index = 0
-			
+			set_doing("Nothing")
 			chosen.emit()
+		doing.ENERGY:
+			reset_ui()
+			
+			target.change_energy(adding_card)
 	
 	print(target.current_card.name)
 
 func right_button_actions(target: PokeSlot):
 	pass
 
-func get_choice(for_card: Base_Card):
+func get_choice(for_card: Base_Card, instruction: String):
 	color_tween(Color.WHITE)
 	adding_card = for_card
+	
+	%Instructions.clear()
+	%Instructions.append_text(str("[center]",instruction))
+	await choice_ready
+	
 	for slot in allowed_slots:
 		slot.switch_shine(true)
-		pass
+	
 
 #endregion
 #--------------------------------------
@@ -132,5 +141,13 @@ func get_allowed_slots(condition: Callable) -> void:
 func color_tween(destination: Color):
 	var color_tweener: Tween = create_tween().set_parallel()
 	color_tweener.tween_property($ColorRect, "modulate", destination, .5)
+	await color_tweener.finished
+	choice_ready.emit()
+
+func reset_ui():
+	for slot in allowed_slots:
+		slot.switch_shine(false)
+		slot.z_index = 0
+	
 #endregion
 #--------------------------------------

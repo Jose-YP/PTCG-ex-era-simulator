@@ -80,7 +80,6 @@ func move_card(card: Base_Card, from: Array, towards: Array): #From X to Y
 		usable_deck.shuffle()
 
 func play_card(card: Base_Card): #From hand to Y
-	fundies.hide_list()
 	print("PLAY ", card.name)
 	hand.erase(card)
 	card.print_info()

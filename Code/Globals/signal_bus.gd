@@ -38,7 +38,7 @@ func call_action(action: int, card: Base_Card) -> void:
 			play_energy.emit(card)
 		_:
 			play_trainer.emit(card)
-	print(Constants.allowed_list_flags[action])
+	print("PLAY AS ", Constants.allowed_list_flags[action])
 
 func connect_to(functions: Array[Callable]) -> void:
 	var signals: Array[Signal] = [play_basic, play_evo, play_stadium,
