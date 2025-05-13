@@ -14,7 +14,7 @@ func _ready() -> void:
 
 func update(num: int):
 	rich_text_label.clear()
-	rich_text_label.append(str("[u]",list,"[/u]\n",num))
+	rich_text_label.append_text(str("[u]",list,"[/u]\n",num))
 
 func _on_button_pressed() -> void:
 	print("Bring up ", list)

@@ -1,21 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://c3qurrd5vl1ao"]
+[gd_scene load_steps=7 format=3 uid="uid://c3qurrd5vl1ao"]
 
 [ext_resource type="Script" uid="uid://b3ki70ohjb21g" path="res://Scenes/Testing/debug_deck.gd" id="1_76cja"]
 [ext_resource type="Script" uid="uid://b6qi20o3p32gq" path="res://Code/Scenes/UI/full_ui.gd" id="2_iuq08"]
 [ext_resource type="PackedScene" uid="uid://dognokjork36j" path="res://Scenes/UI/UICollections/PlayerSide.tscn" id="3_ibwmv"]
-[ext_resource type="Shader" uid="uid://chaingl03cnx1" path="res://Shaders/Shine2D.gdshader" id="4_441s3"]
 [ext_resource type="PackedScene" uid="uid://bdpxdnxpe1f32" path="res://Scenes/Testing/dummy.tscn" id="4_463lc"]
 [ext_resource type="PackedScene" uid="uid://cni7lmrv7r06c" path="res://Scenes/Main Game/Fundies.tscn" id="5_k0qov"]
 [ext_resource type="Resource" uid="uid://bleo7p56u5k1f" path="res://Resources/Decks/TestDeck.tres" id="7_441s3"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_iuq08"]
-resource_local_to_scene = true
-shader = ExtResource("4_441s3")
-shader_parameter/shine_color = Color(0.980392, 0.92549, 0.231373, 0.709804)
-shader_parameter/base_color = Color(0.180736, 0.120593, 0.350483, 1)
-shader_parameter/shine_speed = 6.2
-shader_parameter/shine_size = 0.12
-shader_parameter/shine_bool = false
 
 [node name="DebugDeck" type="Control"]
 layout_mode = 3
@@ -37,9 +27,6 @@ offset_left = 27.76
 offset_top = 341.84
 offset_right = 27.76
 offset_bottom = 341.84
-
-[node name="SideDisplay" parent="FullUI/PlayerSide/Non_mon" index="0"]
-material = SubResource("ShaderMaterial_iuq08")
 
 [node name="Dummy" parent="FullUI" instance=ExtResource("4_463lc")]
 layout_mode = 1
@@ -91,9 +78,6 @@ text = "ViewAllDeck"
 [node name="Fundies" parent="." node_paths=PackedStringArray("player_side") instance=ExtResource("5_k0qov")]
 player_side = NodePath("../FullUI/PlayerSide")
 deck = ExtResource("7_441s3")
-
-[node name="SlotUIActions" parent="Fundies" index="0" node_paths=PackedStringArray("poke_slots")]
-poke_slots = [NodePath("../Slots/PokeSlot"), null, null, null, null, null]
 
 [node name="OnSlotActions" parent="Fundies" index="1" node_paths=PackedStringArray("poke_slots")]
 poke_slots = [NodePath("../Slots/PokeSlot"), NodePath("../Slots/PokeSlot2"), NodePath("../Slots/PokeSlot3"), NodePath("../Slots/PokeSlot4"), NodePath("../Slots/PokeSlot5"), NodePath("../Slots/PokeSlot6")]

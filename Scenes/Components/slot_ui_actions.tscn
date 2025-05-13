@@ -3,10 +3,8 @@
 [ext_resource type="Script" uid="uid://2hyltc7plhdl" path="res://Code/Scenes/Components/SlotUIActions.gd" id="1_hjfor"]
 [ext_resource type="Theme" uid="uid://bfw6ylcttychc" path="res://Themes/AverageButton.tres" id="2_hc1fk"]
 
-[node name="SlotUIActions" type="Node" node_paths=PackedStringArray("poke_slots", "ui_slots")]
+[node name="SlotUIActions" type="Node"]
 script = ExtResource("1_hjfor")
-poke_slots = [null, null]
-ui_slots = [null, null]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 modulate = Color(1, 1, 1, 0)

@@ -17,7 +17,6 @@ var usable_deck: Array[Base_Card] = []
 var hand: Array[Base_Card] = []
 var discard_pile: Array[Base_Card] = []
 var prize_cards: Array[Base_Card] = []
-var stacks: Dictionary[String, Array] = {"Hand":hand, "Deck":usable_deck, "Discard":discard_pile, "Prize":prize_cards}
 var mulligans: int = 0
 var mulligan_array: Array[Array]
 var supporter_used: bool = false
@@ -112,6 +111,7 @@ func discard_card(card: Base_Card):
 #--------------------------------------
 #region CARD DISPLAY
 func update_lists():
+	var stacks: Dictionary[String, Array] = {"Hand": hand, "Deck": usable_deck, "Discard": discard_pile, "Prize": prize_cards}
 	for stack in stacks:
 		fundies.player_side.non_mon.update_stack(stack, stacks[stack].size())
 

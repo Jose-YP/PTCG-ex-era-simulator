@@ -270,5 +270,4 @@ mouse_filter = 2
 texture = ExtResource("5_12v7q")
 expand_mode = 4
 
-[connection signal="show_attacks" from="Main/ArtButton" to="." method="_on_art_button_show_attacks"]
 [connection signal="show_card" from="Main/ArtButton" to="." method="_on_art_button_show_card"]

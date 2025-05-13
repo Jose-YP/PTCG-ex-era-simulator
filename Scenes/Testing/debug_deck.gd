@@ -17,7 +17,7 @@ func _on_draw_starting_pressed():
 	card_resources.draw_starting()
 
 func _on_discard_pressed():
-	pass # Replace with function body.
+	SignalBus.show_list.emit(true, "Discard")
 
 func _on_search_deck_pressed():
 	pass # Replace with function body.
