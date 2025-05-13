@@ -57,7 +57,7 @@ func play_evolution():
 
 #For energy cards
 func play_energy(card: Base_Card):
-	starting_choice("Energy", str("Attatch ", card.name, "to which Pokemon")\
+	starting_choice("Energy", str("Attatch ", card.name, " to which Pokemon")\
 	, card, func(slot: PokeSlot): return slot.current_card)
 	
 	await chosen

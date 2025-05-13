@@ -125,11 +125,11 @@ func display_shockwave(truth: bool = true) -> void:
 
 #--------------------------------------
 #region SIGNALS
-func _on_art_button_show_attacks():
-	SignalBus.chosen_slot.emit(connected_card)
-
-func _on_art_button_show_card():
-	SignalBus.chosen_slot.emit(connected_card)
+#func _on_art_button_show_attacks():
+	#SignalBus.chosen_slot.emit(connected_card)
+#
+#func _on_art_button_show_card():
+	#SignalBus.chosen_slot.emit(connected_card)
 
 #endregion
 #--------------------------------------
@@ -137,4 +137,4 @@ func switch_shine(value: bool):
 	%ArtButton.material.set_shader_parameter("shine_bool", value)
 
 func make_allowed(is_allowed: bool):
-	%ArtButton.disabled = true
+	%ArtButton.disabled = not is_allowed

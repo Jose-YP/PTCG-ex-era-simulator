@@ -89,8 +89,9 @@ func left_button_actions(target: PokeSlot):
 			chosen.emit()
 		doing.ENERGY:
 			reset_ui()
-			
 			target.change_energy(adding_card)
+			set_doing("Nothing")
+			chosen.emit()
 	
 	print(target.current_card.name)
 
@@ -131,7 +132,8 @@ func get_allowed_slots(condition: Callable) -> void:
 		print("Calling ", condition, " on ", slot, condition.call(slot))
 		if condition.call(slot):
 			allowed_slots.append(slot.ui_slot)
-			slot.ui_slot.z_index += 1
+			slot.ui_slot.z_index = 1
+			slot.ui_slot.make_allowed(true)
 		else:
 			slot.ui_slot.z_index = 0
 			slot.ui_slot.make_allowed(false)
@@ -145,9 +147,18 @@ func color_tween(destination: Color):
 	choice_ready.emit()
 
 func reset_ui():
-	for slot in allowed_slots:
-		slot.switch_shine(false)
-		slot.z_index = 0
+	color_tween(Color.TRANSPARENT)
 	
+	#Check every previously allowed slot
+	#Reset them to look and display like the rest
+	for ui_slot in allowed_slots:
+		ui_slot.z_index = 0
+		ui_slot.switch_shine(false)
+	
+	#Check every slot to see if they have a pokemon in them
+	#If so, let them be checked again
+	for slot in (poke_slots + enemy_poke_slots):
+		slot.ui_slot.make_allowed(slot.connected_card != null)
+
 #endregion
 #--------------------------------------

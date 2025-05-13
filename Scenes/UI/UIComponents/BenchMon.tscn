@@ -1,11 +1,21 @@
-[gd_scene load_steps=7 format=3 uid="uid://df8x227c7a8q4"]
+[gd_scene load_steps=9 format=3 uid="uid://df8x227c7a8q4"]
 
 [ext_resource type="Script" uid="uid://wt6o27vmhuas" path="res://Code/Scenes/UI/UISlot.gd" id="1_ktjfi"]
 [ext_resource type="Texture2D" uid="uid://ct7oa74jhqcwq" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/74.jpg" id="2_m52es"]
 [ext_resource type="PackedScene" uid="uid://dp781vdb5kvc7" path="res://Scenes/UI/UIComponents/art_button.tscn" id="3_1osh3"]
+[ext_resource type="Shader" uid="uid://chaingl03cnx1" path="res://Shaders/Shine2D.gdshader" id="3_dkwm5"]
 [ext_resource type="Texture2D" uid="uid://d3nrajtlwbvgh" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/84.jpg" id="3_pjvm0"]
 [ext_resource type="PackedScene" uid="uid://bs3ila6cpt8n1" path="res://Scenes/UI/UIComponents/types.tscn" id="4_nhrrd"]
 [ext_resource type="Texture2D" uid="uid://cijlbc37pj4gd" path="res://icon.svg" id="5_r3j25"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lj5ts"]
+resource_local_to_scene = true
+shader = ExtResource("3_dkwm5")
+shader_parameter/shine_color = Color(0.98, 0.925, 0.231, 1)
+shader_parameter/base_color = Color(0.180736, 0.120593, 0.350483, 1)
+shader_parameter/shine_speed = 7.0
+shader_parameter/shine_size = 0.07
+shader_parameter/shine_bool = false
 
 [node name="BenchPokemon" type="Control"]
 layout_mode = 3
@@ -55,6 +65,7 @@ layout_mode = 2
 
 [node name="ArtButton" parent="Main/ArtButton/MarginContainer" instance=ExtResource("3_1osh3")]
 unique_name_in_owner = true
+material = SubResource("ShaderMaterial_lj5ts")
 layout_mode = 2
 benched = true
 
@@ -187,5 +198,4 @@ mouse_filter = 2
 texture = ExtResource("5_r3j25")
 expand_mode = 4
 
-[connection signal="show_attacks" from="Main/ArtButton/MarginContainer/ArtButton" to="." method="_on_art_button_show_attacks"]
 [connection signal="show_card" from="Main/ArtButton/MarginContainer/ArtButton" to="." method="_on_art_button_show_card"]

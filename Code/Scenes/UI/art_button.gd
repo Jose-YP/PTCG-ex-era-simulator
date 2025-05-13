@@ -16,7 +16,7 @@ extends Button
 @onready var spawn_offsets: Array[Vector2] = [Vector2(-size.x / 2, 0),
  Vector2(size.x / 2,0), Vector2(0,-size.y / 2), Vector2(0,size.y / 2)]
 
-signal show_attacks
+#signal show_attacks
 signal show_card
 
 var current_display
@@ -46,7 +46,6 @@ func _gui_input(event):
 #region PRESSED BUTTON
 func _on_pressed() -> void:
 	if pokemon:
-		print(owner.connected_card)
 		SignalBus.chosen_slot.emit(owner.connected_card)
 
 func handle_card_display(card: Base_Card, slot):

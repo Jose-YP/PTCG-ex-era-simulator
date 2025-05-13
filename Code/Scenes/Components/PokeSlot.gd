@@ -118,7 +118,7 @@ func count_energy() -> void:
 		for i in range(attached_energy[card]):
 			energy_array.append(card)
 	
-	print("BEFORE: ", energy_array)
+	print("BEFORE SORT: ", energy_array)
 	
 	energy_array.sort_custom(func(a,b): #Basic + Darkness + Metal has highest priority
 		return Constants.energy_types.find(a) < Constants.energy_types.find(b))
