@@ -61,10 +61,10 @@ func not_allowed():
 #region ACTIONS
 func show_options() -> Node:
 	var option_Display: Node = Constants.item_options.instantiate()
-	var option_position = Vector2(size.x/2 - position.x - 80, position.y - size.y/4)
-	
+	var option_position = Vector2(size.x/2 - position.x - 80, global_position.y - size.y/4)
+	option_position = Vector2(size.x/2 - global_position.x - 80, global_position.y + size.y/1.25)
 	option_Display.card_flags = card_flags
-	option_Display.position = option_position
+	option_Display.global_position = option_position
 	option_Display.scale = Vector2(.05, .05)
 	option_Display.modulate = Color.TRANSPARENT
 	option_Display.interaction = parent.interaction

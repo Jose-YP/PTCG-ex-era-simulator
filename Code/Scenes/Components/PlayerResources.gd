@@ -26,6 +26,7 @@ var supporter_used: bool = false
 #region INITALIZATION
 func _ready():
 	SignalBus.connect("show_list", spawn_list)
+	SignalBus.connect("swap_card_location", move_card)
 	
 	if deck: 
 		usable_deck = deck.make_usable()
@@ -76,11 +77,15 @@ func draw(times: int = 1): #From deck to hand
 	
 	update_lists()
 
-func move_card(card: Base_Card, from: Array, towards: Array): #From X to Y
-	var location: int = from.find(card)
-	towards.append(from.pop_at(location))
+func move_card(card: Base_Card, from: String, towards: String, shuffle: bool = true): #From X to Y
+	var stacks: Dictionary[String, Array] = {"Hand": hand, "Deck": usable_deck, "Discard": discard_pile, "Prize": prize_cards}
+	var from_array = stacks[from]
+	var towards_array = stacks[towards]
 	
-	if from == usable_deck:
+	var location: int = from_array.find(card)
+	towards_array.append(from_array.pop_at(location))
+	
+	if (from_array == usable_deck or towards_array == usable_deck) and shuffle:
 		usable_deck.shuffle()
 	
 	update_lists()
@@ -156,6 +161,7 @@ func instantiate_list(specified_list: Array[Base_Card], display_text, \
 	new_node.instruction_text = using_string
 	new_node.old_posiiton = spawn_from
 	new_node.interaction = interaction
+	new_node.
 	add_sibling(new_node)
 	fundies.current_list = new_node
 

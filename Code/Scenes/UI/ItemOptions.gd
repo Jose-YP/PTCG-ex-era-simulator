@@ -28,7 +28,7 @@ func _ready():
 					items[i].show()
 					items[i].pressed.connect(emit_play_as.bind(i))
 		"Tutor":
-			%AddToHand.show()
+			%Tutor.show()
 		"Discard":
 			%Discard.show()
 		"Look":
@@ -73,9 +73,11 @@ func _on_check_pressed():
 
 func _on_tutor_pressed() -> void:
 	print("Tutor ", origin_button.card.name, " from ", origin_button.parent.identifier.text)
+	SignalBus.swap_card_location.emit(origin_button.card, origin_button.parent.identifier.text, "Hand")
 
 func _on_discard_pressed() -> void:
 	print("Discard ", origin_button.card.name, " from ", origin_button.parent.identifier.text)
+	SignalBus.swap_card_location.emit(origin_button.card, origin_button.parent.identifier.text, "Discard")
 
 func on_entered_check():
 	for i in range($PlayAs/Items.get_child_count()):

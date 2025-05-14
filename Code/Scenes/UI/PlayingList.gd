@@ -1,5 +1,6 @@
 @icon("res://Art/ProjectSpecific/list(1).png")
 extends Control
+class_name PlayingList
 
 #--------------------------------------
 #region VARIABLES
@@ -9,7 +10,8 @@ extends Control
 @export_flags("Basic", "Evolution", "Item",
 "Supporter","Stadium", "Tool", "TM", "RSM", "Fossil",
  "Energy") var allowed: int = 1
-@export_enum("Play", "Tutor", "Discard", "Look") var interaction: String = "Hand"
+@export_enum("Play", "Tutor", "Discard", "Look") var interaction: String = "Play"
+@export_enum("Hand", "Deck", "Discard", "Prize") var stack: String = "Hand"
 
 @onready var identifier: RichTextLabel = %Identifier
 @onready var instructions: RichTextLabel = %Instructions

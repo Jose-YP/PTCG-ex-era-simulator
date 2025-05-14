@@ -3,6 +3,7 @@ extends Node
 #HAND SIGNALS
 signal show_starting(can_select: bool, message: String, looking_at: String, list: Array[Base_Card])
 signal show_list(whose_hand: String, hand: Array[Base_Card], interaction: String)
+signal swap_card_location(card: Base_Card, source: String, destination: String, shuffling: bool)
 #CARD DISPLAY SIGNALS
 signal show_other_card(showing: Base_Card)
 signal chosen_slot(showing: PokeSlot)
