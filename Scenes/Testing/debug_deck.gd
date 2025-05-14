@@ -17,20 +17,20 @@ func _on_draw_starting_pressed():
 	card_resources.draw_starting()
 
 func _on_discard_pressed():
-	SignalBus.show_list.emit(true, "Discard", false)
+	SignalBus.show_list.emit(true, "Discard", "Look")
 
 func _on_search_deck_pressed():
-	SignalBus.show_list.emit(true, "Deck", true)
+	SignalBus.show_list.emit(true, "Deck", "Tutor")
 
 func _on_hand_pressed():
 	print(card_resources.hand)
-	SignalBus.show_list.emit(true, "Hand")
+	SignalBus.show_list.emit(true, "Hand", "Play")
 
 func _on_search_discard_pressed():
-	SignalBus.show_list.emit(true, "Discard", true)
+	SignalBus.show_list.emit(true, "Discard", "Tutor")
 
 func _on_shuffle_2_deck_pressed():
 	pass # Replace with function body.
 
 func _on_view_all_deck_pressed():
-	SignalBus.show_list.emit(true, "Deck", false)
+	SignalBus.show_list.emit(true, "Deck", "Look")

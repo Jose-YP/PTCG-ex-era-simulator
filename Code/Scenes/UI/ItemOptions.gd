@@ -4,12 +4,12 @@ extends Control
 @export_flags("Basic", "Evolution", "Item",
 "Supporter", "Stadium", "Tool", "TM", "RSM", "Fossil",
  "Energy") var card_flags: int = 0
-@export var search: bool = false
-@export var discard: bool = false
+@export_enum("Play", "Tutor", "Discard", "Look") var interaction: String = "Hand"
 
 @onready var items: Array[Node] = $PlayAs/Items.get_children()
 
 signal play_as(card_flag: int, card: Base_Card)
+signal transfer()
 
 var old_position: Vector2
 var origin_button: Button
@@ -18,16 +18,22 @@ var origin_button: Button
 #region INITALIZATION AND REMOVAL
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	#Check for every option except for check, every card should be able to do that
-	for i in range($PlayAs/Items.get_child_count() - 1):
-		if card_flags & 2 ** i:
-			items[i].show()
-			items[i].pressed.connect(emit_play_as.bind(i))
-		
-		else : items[i].hide()
-	
-	if search: %AddToHand.show()
-	if discard: %Discard.show()
+	for i in range($PlayAs/Items.get_child_count() - 1): items[i].hide()
+	#Tutor and discard will also need to vary depening on card_flags
+	match interaction:
+		"Play":
+			#Check for every option except for check, every card should be able to do that
+			for i in range($PlayAs/Items.get_child_count() - 1):
+				if card_flags & 2 ** i:
+					items[i].show()
+					items[i].pressed.connect(emit_play_as.bind(i))
+		"Tutor":
+			%AddToHand.show()
+		"Discard":
+			%Discard.show()
+		"Look":
+			pass
+		_: push_error(interaction, " Not an actual interaction")
 	
 	Globals.enter_check.connect(on_entered_check)
 	Globals.exit_check.connect(on_exited_check)
@@ -64,6 +70,12 @@ func _on_check_pressed():
 	if not Globals.checking:
 		print(get_parent())
 		origin_button.show_card()
+
+func _on_tutor_pressed() -> void:
+	print("Tutor ", origin_button.card.name, " from ", origin_button.parent.identifier.text)
+
+func _on_discard_pressed() -> void:
+	print("Discard ", origin_button.card.name, " from ", origin_button.parent.identifier.text)
 
 func on_entered_check():
 	for i in range($PlayAs/Items.get_child_count()):

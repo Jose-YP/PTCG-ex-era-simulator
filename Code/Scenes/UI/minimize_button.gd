@@ -23,12 +23,12 @@ func _ready() -> void:
 
 func _on_pressed() -> void:
 	if minimized:
-		await opening_animation()
 		minimized = false
+		await opening_animation()
 		disabled = false
 	else:
-		await closing_animation()
 		minimized = true
+		await closing_animation()
 		disabled = false
 
 func closing_animation() -> void:

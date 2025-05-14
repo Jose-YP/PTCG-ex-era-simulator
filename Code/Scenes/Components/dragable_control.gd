@@ -26,7 +26,7 @@ func _process(delta: float) -> void:
 	var new_pos: Vector2 = get_global_mouse_position() - drag_position
 	
 	new_pos.x = clampf(new_pos.x, 0, get_viewport().size.x - size.x)
-	new_pos.y = clampf(new_pos.y, -get_viewport().size.y/3 + size.y, get_viewport().size.y - size.y)
+	new_pos.y = clampf(new_pos.y, 0, get_viewport().size.y - size.y)
 	
 	dragging_node.position = new_pos
 

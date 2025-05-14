@@ -61,7 +61,7 @@ text = "Play as Fossil"
 layout_mode = 2
 text = "Play as Energy"
 
-[node name="AddToHand" type="Button" parent="PlayAs/Items"]
+[node name="Tutor" type="Button" parent="PlayAs/Items"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Add to Hand"
@@ -76,4 +76,6 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "Check"
 
+[connection signal="pressed" from="PlayAs/Items/Tutor" to="." method="_on_tutor_pressed"]
+[connection signal="pressed" from="PlayAs/Items/Discard" to="." method="_on_discard_pressed"]
 [connection signal="pressed" from="PlayAs/Items/Check" to="." method="_on_check_pressed"]

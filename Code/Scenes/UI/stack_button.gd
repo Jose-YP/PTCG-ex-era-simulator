@@ -18,4 +18,4 @@ func update(num: int):
 
 func _on_button_pressed() -> void:
 	print("Bring up ", list)
-	SignalBus.show_list.emit(player, list, false)
+	SignalBus.show_list.emit(player, list, "Play" if list == "Hand" else "Look")

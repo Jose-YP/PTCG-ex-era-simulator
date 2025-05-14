@@ -9,10 +9,11 @@ extends Control
 @export_flags("Basic", "Evolution", "Item",
 "Supporter","Stadium", "Tool", "TM", "RSM", "Fossil",
  "Energy") var allowed: int = 1
-@export_enum("Hand", "Search", "Discard", "Look") var searching: String = "Hand"
+@export_enum("Play", "Tutor", "Discard", "Look") var interaction: String = "Hand"
 
 @onready var identifier: RichTextLabel = %Identifier
 @onready var instructions: RichTextLabel = %Instructions
+@onready var old_size: Vector2 = size
 
 var items: Array[Node] = []
 var display_text: String = ""
@@ -23,6 +24,7 @@ var old_posiiton: Vector2
 var display: Node
 var options: Node
 var on_card: bool = false
+
 #endregion
 #--------------------------------------
 
@@ -76,14 +78,14 @@ func _on_resources_show_list(message: String, looking_at: String, using: Array[B
 func connect_display():
 	display.tree_exited.connect(on_display_freed)
 
-func _input(event: InputEvent) -> void:
-	#Check if the user is pressing on the card or outside
-	if event.is_action_released("A") and display:
-		if Globals.dragging:
-			Globals.dragging = false
-		#If they're not pressing on the card, erase the card
-		else:
-			display.close_button._on_pressed()
+#func _input(event: InputEvent) -> void:
+	##Check if the user is pressing on the card or outside
+	#if event.is_action_released("A") and display:
+		#if Globals.dragging:
+			#Globals.dragging = false
+		##If they're not pressing on the card, erase the card
+		#else:
+			#display.close_button._on_pressed()
 
 func on_display_freed():
 	Globals.reset_check()
@@ -98,3 +100,7 @@ func disapear():
 	await disapear_tween.finished
 	
 	queue_free()
+
+func _on_minimize_button_pressed() -> void:
+	size = %Header.size if %MinimizeButton.minimized else old_size
+	print(%Header.size if %MinimizeButton.minimized else old_size, %MinimizeButton.minimized )

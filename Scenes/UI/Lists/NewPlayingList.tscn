@@ -27,9 +27,9 @@ corner_radius_bottom_left = 1
 [node name="PlayingList" type="Control"]
 layout_mode = 3
 anchor_right = 0.391
-anchor_bottom = 0.836
+anchor_bottom = 0.823
 offset_right = -0.280029
-offset_bottom = 0.0799561
+offset_bottom = -6.56
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_j5ysj")
@@ -47,34 +47,42 @@ offset_bottom = 44.0
 clip_contents = true
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+[node name="Header" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(420, 0)
 layout_mode = 2
 alignment = 1
 
-[node name="IdentifierPanel" type="PanelContainer" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+[node name="IdentifierPanel" type="PanelContainer" parent="PanelContainer/VBoxContainer/Header"]
 custom_minimum_size = Vector2(345, 40)
 layout_mode = 2
 theme_override_styles/panel = ExtResource("13_8wubv")
 
-[node name="Identifier" type="RichTextLabel" parent="PanelContainer/VBoxContainer/HBoxContainer/IdentifierPanel"]
+[node name="Identifier" type="RichTextLabel" parent="PanelContainer/VBoxContainer/Header/IdentifierPanel"]
 unique_name_in_owner = true
 layout_mode = 2
 bbcode_enabled = true
 text = "[center]"
 fit_content = true
 
-[node name="MinimizeButton" parent="PanelContainer/VBoxContainer/HBoxContainer" node_paths=PackedStringArray("shrinkNodes", "hideNodes") instance=ExtResource("14_fhr5r")]
+[node name="Movable" parent="PanelContainer/VBoxContainer/Header/IdentifierPanel" node_paths=PackedStringArray("dragging_node", "based_on") instance=ExtResource("14_mnu8a")]
+layout_mode = 2
+dragging_node = NodePath("../../../../..")
+based_on = NodePath("..")
+
+[node name="MinimizeButton" parent="PanelContainer/VBoxContainer/Header" node_paths=PackedStringArray("shrinkNodes", "hideNodes") instance=ExtResource("14_fhr5r")]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
 shrinkNodes = [NodePath("../../.."), NodePath("../../ScrollBox")]
-hideNodes = [NodePath("../../IdentifierPanel")]
+hideNodes = [NodePath("../../IdentifierPanel"), NodePath("../../IdentifierPanel/Movable2")]
 
-[node name="CloseButton" parent="PanelContainer/VBoxContainer/HBoxContainer" instance=ExtResource("13_xvynf")]
+[node name="CloseButton" parent="PanelContainer/VBoxContainer/Header" instance=ExtResource("13_xvynf")]
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
 
 [node name="ScrollBox" type="ScrollContainer" parent="PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(420, 500)
 layout_mode = 2
 size_flags_vertical = 3
@@ -107,6 +115,7 @@ layout_mode = 2
 theme_override_constants/margin_bottom = 15
 
 [node name="IdentifierPanel" type="PanelContainer" parent="PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(400, 40)
 layout_mode = 2
 theme_override_styles/panel = ExtResource("13_8wubv")
@@ -118,25 +127,9 @@ bbcode_enabled = true
 text = "[center]"
 fit_content = true
 
-[node name="Movable" parent="." node_paths=PackedStringArray("dragging_node", "based_on") instance=ExtResource("14_mnu8a")]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.829
-anchor_bottom = 0.075
-offset_right = 0.161987
-offset_bottom = -0.150002
-dragging_node = NodePath("..")
-based_on = NodePath("../PanelContainer/VBoxContainer/HBoxContainer/IdentifierPanel")
-
-[node name="Movable2" parent="Movable" node_paths=PackedStringArray("dragging_node", "based_on") instance=ExtResource("14_mnu8a")]
+[node name="Movable2" parent="PanelContainer/VBoxContainer/IdentifierPanel" node_paths=PackedStringArray("dragging_node", "based_on") instance=ExtResource("14_mnu8a")]
 layout_mode = 2
-anchor_left = 0.003
-anchor_top = 12.356
-anchor_right = 1.097
-anchor_bottom = 13.422
-offset_left = -0.149
-offset_top = -0.0200195
-offset_right = -0.151001
-offset_bottom = 0.00994873
-dragging_node = NodePath("../..")
-based_on = NodePath("../../PanelContainer/VBoxContainer/IdentifierPanel")
+dragging_node = NodePath("../../../..")
+based_on = NodePath("..")
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Header/MinimizeButton" to="." method="_on_minimize_button_pressed"]
