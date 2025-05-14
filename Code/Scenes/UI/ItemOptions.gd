@@ -72,12 +72,12 @@ func _on_check_pressed():
 		origin_button.show_card()
 
 func _on_tutor_pressed() -> void:
-	print("Tutor ", origin_button.card.name, " from ", origin_button.parent.identifier.text)
-	SignalBus.swap_card_location.emit(origin_button.card, origin_button.parent.identifier.text, "Hand")
+	print("Tutor ", origin_button.card.name, " from ", origin_button.parent.stack)
+	SignalBus.swap_card_location.emit(origin_button.card, origin_button.parent.stack, "Hand")
 
 func _on_discard_pressed() -> void:
-	print("Discard ", origin_button.card.name, " from ", origin_button.parent.identifier.text)
-	SignalBus.swap_card_location.emit(origin_button.card, origin_button.parent.identifier.text, "Discard")
+	print("Discard ", origin_button.card.name, " from ", origin_button.parent.stack)
+	SignalBus.swap_card_location.emit(origin_button.card, origin_button.parent.stack, "Discard")
 
 func on_entered_check():
 	for i in range($PlayAs/Items.get_child_count()):
