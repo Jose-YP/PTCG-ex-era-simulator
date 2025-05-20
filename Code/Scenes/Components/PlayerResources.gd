@@ -79,7 +79,7 @@ func draw(times: int = 1): #From deck to hand
 
 func move_card(card: Base_Card, from: String, towards: String, shuffle: bool = true): #From X to Y
 	var dict: Dictionary[String, Array] = arrays.sendStackDictionary()
-	var location: int = arrays.dict[from].find(card)
+	var location: int = dict[from].find(card)
 	arrays.append_to_arrays(towards, dict[from].pop_at(location))
 	
 	if (from == "Deck" or towards == "Deck") and shuffle:
