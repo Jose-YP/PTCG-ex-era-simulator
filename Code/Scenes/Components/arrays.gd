@@ -1,16 +1,31 @@
 extends Node
 
-var reveal_stack: Array[Base_Card]
 var usable_deck: Array[Base_Card] = []
 var hand: Array[Base_Card] = []
 var discard_pile: Array[Base_Card] = []
 var prize_cards: Array[Base_Card] = []
-@onready var stackDictionary: Dictionary[String, Array] = {
+#Here in case they need to be used at some point
+var reveal_stack: Array[Base_Card]
+var cards_in_play: Array[Base_Card]
+
+func sendStackDictionary() -> Dictionary[String, Array]:
+	return {
  "Hand": hand, "Deck": usable_deck,
  "Discard": discard_pile, "Prize": prize_cards}
 
 func append_to_arrays(type: String, card: Base_Card):
-	pass
+	match type:
+		"Hand":
+			hand.append(card)
+		"Deck":
+			usable_deck.append(card)
+		"Discsard":
+			discard_pile.append(card)
+		"Prize":
+			prize_cards.append(card)
+		_:
+			push_error(type, " is not in ", name)
+			hand.append(card)
 
 func get_array(type: String) -> Array[Base_Card]:
 	match type:

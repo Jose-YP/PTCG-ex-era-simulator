@@ -9,9 +9,6 @@ class_name Deck_Manipulator
 
 @onready var fundies: Fundies = $".."
 @onready var arrays: Node = $Arrays
-@onready var stackDictionary: Dictionary[String, Array] = {
- "Hand": arrays.hand, "Deck": arrays.usable_deck,
- "Discard": arrays.discard_pile, "Prize": arrays.prize_cards}
 
 #signal show_list(can_select: bool, message: String, looking_at: String, list: Array[Base_Card])
 signal update_resources()
@@ -67,7 +64,7 @@ func check_starting():
 
 func fill_prizes():
 	while (arrays.prize_cards.size() != prize_count):
-		arrays.prize_cards.append(arrays.usable_deck.pop_front())
+		arrays.append_to_arrays("Prize", arrays.usable_deck.pop_front())
 
 #endregion
 #--------------------------------------
@@ -76,13 +73,14 @@ func fill_prizes():
 #region CARD MOVEMENT
 func draw(times: int = 1): #From deck to hand
 	for i in range(times):
-		arrays.hand.append(arrays.usable_deck.pop_front())
+		arrays.append_to_arrays("Hand", arrays.usable_deck.pop_front())
 	
 	update_lists()
 
 func move_card(card: Base_Card, from: String, towards: String, shuffle: bool = true): #From X to Y
-	var location: int = stackDictionary[from].find(card)
-	stackDictionary[towards].append(stackDictionary[from].pop_at(location))
+	var dict: Dictionary[String, Array] = arrays.sendStackDictionary()
+	var location: int = arrays.dict[from].find(card)
+	arrays.append_to_arrays(towards, dict[from].pop_at(location))
 	
 	if (from == "Deck" or towards == "Deck") and shuffle:
 		arrays.usable_deck.shuffle()
@@ -106,7 +104,7 @@ func shuffle_hand_back():
 	update_lists()
 
 func discard_card(card: Base_Card):
-	arrays.discard_pile.append(card)
+	arrays.append_to_array("Discard", card)
 	update_lists()
 
 #endregion
@@ -115,12 +113,13 @@ func discard_card(card: Base_Card):
 #--------------------------------------
 #region CARD DISPLAY
 func update_lists():
-	for stack in stackDictionary:
-		fundies.player_side.non_mon.update_stack(stack, stackDictionary[stack].size())
+	var dict: Dictionary[String, Array] = arrays.sendStackDictionary()
+	for stack in dict:
+		fundies.player_side.non_mon.update_stack(stack, dict[stack].size())
 
 func spawn_list(monitor_side: bool, which: String, interaction: String = "Look",\
  instructions: String = "", allowed: int = Conversions.get_allowed_flags()):
-	var designated: Array[Base_Card] = stackDictionary[which]
+	var designated: Array[Base_Card] = arrays.sendStackDictionary()[which]
 	var display_text: String
 	var spawn_from: Vector2
 	
