@@ -26,7 +26,7 @@ var supporter_used: bool = false
 #region INITALIZATION
 func _ready():
 	SignalBus.connect("show_list", spawn_list)
-	SignalBus.connect("swap_card_location", move_card)
+	SignalBus.connect("move_cards", move_cards)
 	
 	if deck: 
 		arrays.usable_deck = deck.make_usable()
@@ -77,10 +77,13 @@ func draw(times: int = 1): #From deck to hand
 	
 	update_lists()
 
-func move_card(card: Base_Card, from: String, towards: String, shuffle: bool = true): #From X to Y
+func move_cards(cards: Array[Base_Card], from: String, towards: String, shuffle: bool = true):
 	var dict: Dictionary[String, Array] = arrays.sendStackDictionary()
-	var location: int = dict[from].find(card)
-	arrays.append_to_arrays(towards, dict[from].pop_at(location))
+	for card in cards: 
+		#Remove all tutored cards from source first
+		var adding_card = dict[from].pop_at(dict[from].find(card))
+		#Now it can be added back to the towards array
+		arrays.append_to_arrays(towards, adding_card)
 	
 	if (from == "Deck" or towards == "Deck") and shuffle:
 		arrays.usable_deck.shuffle()

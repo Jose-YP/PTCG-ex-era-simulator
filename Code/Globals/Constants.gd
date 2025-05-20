@@ -53,6 +53,7 @@ const poke_card = preload("res://Scenes/UI/CardDisplay/PokemonCard.tscn")
 const trainer_card = preload("res://Scenes/UI/CardDisplay/TrainerCard.tscn")
 const energy_card = preload("res://Scenes/UI/CardDisplay/EnergyCard.tscn")
 const cursor = preload("res://Scenes/UI/UIComponents/cursor.tscn")
+const tutor_box = preload("res://Scenes/UI/Lists/tutor_box.tscn")
 #endregion
 #--------------------------------------
 
