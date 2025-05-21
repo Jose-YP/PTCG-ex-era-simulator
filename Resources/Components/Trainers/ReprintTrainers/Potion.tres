@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://scca13hg4k1l" path="res://Code/Resource Makers/EffectSpecific/DmgManipMaker.gd" id="1_obrrg"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_jtlhn"]
 [ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="3_281m1"]
-[ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/AskMaker.gd" id="3_yaged"]
+[ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="3_yaged"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="4_hf1ww"]
 
 [sub_resource type="Resource" id="Resource_eomgd"]
@@ -35,7 +35,7 @@ knocked_out = false
 condition = 0
 location = 0
 stage = 7
-inclusive = true
+class_inclusive = true
 pokemon_class = 0
 bench_size = -1
 type = 1023

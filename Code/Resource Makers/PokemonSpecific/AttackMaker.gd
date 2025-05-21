@@ -28,7 +28,7 @@ class_name Attack
 @export var counter: Counter
 
 @export_group("Effects")
-@export var ask: Ask
+@export var ask: SlotAsk
 @export var effect: EffectCall
 @export var fail_effect: EffectCall
 

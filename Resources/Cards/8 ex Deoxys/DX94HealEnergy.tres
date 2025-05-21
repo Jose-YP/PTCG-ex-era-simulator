@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="Base_Card" load_steps=11 format=3 uid="uid://b1xaqtaovjo0b"]
 
-[ext_resource type="Script" path="res://Code/Resource Makers/GeneralUse/AskMaker.gd" id="1_om5kj"]
-[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="2_gb4dl"]
-[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/DmgManipMaker.gd" id="3_x502c"]
-[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_j8yei"]
+[ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="1_om5kj"]
+[ext_resource type="Script" uid="uid://caj1pm8erar2a" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="2_gb4dl"]
+[ext_resource type="Script" uid="uid://scca13hg4k1l" path="res://Code/Resource Makers/EffectSpecific/DmgManipMaker.gd" id="3_x502c"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_j8yei"]
 [ext_resource type="Texture2D" uid="uid://ckmtw4r1dh5es" path="res://Art/Cards/8 ex Deoxys/94.jpg" id="5_mtuyk"]
-[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="6_24dry"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="6_24dry"]
 
 [sub_resource type="Resource" id="Resource_wkjkc"]
 script = ExtResource("1_om5kj")

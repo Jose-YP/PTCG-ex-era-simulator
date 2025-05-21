@@ -3,7 +3,7 @@ class_name Stadium
 
 @export_enum("Anytime", "Between Turns") var when_to_check: int = 0
 ##Who should the stadium activate on
-@export var determine_ask: Ask
+@export var determine_ask: SlotAsk
 ##This effect is a passive that applies depending on ask
 @export var stadium_effect: EffectCall
 ##This effect needs to be explicitly called upon

@@ -10,5 +10,5 @@ class_name PokePower
 @export_enum("Once per Mon", "Once per turn", "Infinite") var how_often: int = 0
 
 @export_group("Action")
-@export var target_ask: Ask
+@export var target_ask: SlotAsk
 @export var effect: EffectCall

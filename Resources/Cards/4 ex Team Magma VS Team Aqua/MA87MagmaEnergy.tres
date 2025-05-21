@@ -1,22 +1,24 @@
 [gd_resource type="Resource" script_class="Base_Card" load_steps=7 format=3 uid="uid://nwmfrwp7fuwu"]
 
-[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_prv0g"]
-[ext_resource type="Script" path="res://Code/Resource Makers/GeneralUse/AskMaker.gd" id="1_t6ak2"]
-[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="2_h52sn"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_prv0g"]
+[ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="1_t6ak2"]
+[ext_resource type="Script" uid="uid://caj1pm8erar2a" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="2_h52sn"]
 [ext_resource type="Texture2D" uid="uid://dcivaekw8m47c" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/87.jpg" id="3_b2ufc"]
 
 [sub_resource type="Resource" id="Resource_nwdmx"]
 script = ExtResource("1_t6ak2")
 target = 1
+damage_comparison = 1
 damage_taken = -10
 energy_attatched = -1
 knocked_out = false
 condition = 0
 location = 4
 stage = 7
-inclusive = true
+class_inclusive = true
 pokemon_class = 16
 bench_size = -1
+type_inclusive = true
 type = 1023
 type_size = 1
 ask_string = ""

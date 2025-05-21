@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Energy" load_steps=9 format=3 uid="uid://dn8da16sjen5f"]
 
-[ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/AskMaker.gd" id="1_e5j2r"]
+[ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="1_e5j2r"]
 [ext_resource type="Script" uid="uid://caj1pm8erar2a" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="2_8vyn0"]
 [ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/BuffMaker.gd" id="3_b0id2"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_1lfkp"]
@@ -15,7 +15,7 @@ knocked_out = false
 condition = 0
 location = 4
 stage = 7
-inclusive = true
+class_inclusive = true
 pokemon_class = 0
 bench_size = -1
 type = 640

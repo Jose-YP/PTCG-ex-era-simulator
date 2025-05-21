@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="EffectCall" load_steps=4 format=3 uid="uid://b86uut4qajrgg"]
+[gd_resource type="Resource" script_class="EffectCall" load_steps=5 format=3 uid="uid://b86uut4qajrgg"]
 
-[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="1_a5rdg"]
-[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/EnMovMaker.gd" id="1_hhfhf"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="1_a5rdg"]
+[ext_resource type="Script" uid="uid://cimk6l7ytw7xg" path="res://Code/Resource Makers/EffectSpecific/EnMovMaker.gd" id="1_hhfhf"]
+[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="3_p1o6r"]
 
 [sub_resource type="Resource" id="Resource_lax7x"]
 script = ExtResource("1_hhfhf")
@@ -16,7 +17,7 @@ type = 2
 script = ExtResource("1_a5rdg")
 order = Array[int]([])
 energy_movement = SubResource("Resource_lax7x")
-search = Array[Resource("res://Code/Resource Makers/EffectSpecific/SearchMaker.gd")]([])
+search = Array[ExtResource("3_p1o6r")]([])
 remove_conditions = false
 remove_shockwave = false
 remove_imprison = false

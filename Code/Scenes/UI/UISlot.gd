@@ -5,6 +5,7 @@ class_name UI_Slot
 #--------------------------------------
 #region VARIABLES
 @export var active: bool = true
+@export var player: bool = true
 @export_enum("Left","Right","Up","Down") var list_direction: int = 0
 
 @onready var name_section: RichTextLabel = %Name

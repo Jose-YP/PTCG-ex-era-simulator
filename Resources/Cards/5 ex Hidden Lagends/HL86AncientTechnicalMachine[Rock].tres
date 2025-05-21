@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bp4cvx4uqbwob" path="res://Art/Cards/5 ex Hidden Legends/86.jpg" id="1_fs338"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_454ab"]
-[ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/AskMaker.gd" id="3_4thpx"]
+[ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="3_4thpx"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_rgudo"]
 [ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="5_bh7p1"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="5_rs7ch"]
@@ -17,7 +17,7 @@ knocked_out = false
 condition = 0
 location = 0
 stage = 6
-inclusive = false
+class_inclusive = true
 pokemon_class = 114
 bench_size = -1
 type = 1023

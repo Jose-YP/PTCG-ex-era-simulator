@@ -1,0 +1,46 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=7 format=3 uid="uid://d4nyotd6k6lrq"]
+
+[ext_resource type="Script" uid="uid://caj1pm8erar2a" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="1_nmr5d"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_17cmj"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="3_tctwf"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="4_vw06b"]
+
+[sub_resource type="Resource" id="Resource_wk0wt"]
+script = ExtResource("1_nmr5d")
+considered = "Special Energy"
+description = ""
+fail_provide = false
+fail_prevent = false
+turns = -1
+number = 1
+react = false
+holon_type = "None"
+type = 1
+fail_type = 1
+metadata/_custom_type_script = "uid://caj1pm8erar2a"
+
+[sub_resource type="Resource" id="Resource_oi6pe"]
+script = ExtResource("3_tctwf")
+HP = 30
+retreat = 0
+attacks = Array[ExtResource("2_17cmj")]([])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 0
+owner = 0
+type = 1
+weak = 0
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("4_vw06b")
+name = "Holon's Electrode"
+illustrator = ""
+number = 21
+rarity = 0
+expansion = 0
+categories = 5
+pokemon_properties = SubResource("Resource_oi6pe")
+energy_properties = SubResource("Resource_wk0wt")
+fossil = false

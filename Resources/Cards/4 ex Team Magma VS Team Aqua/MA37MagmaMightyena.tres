@@ -1,16 +1,16 @@
 [gd_resource type="Resource" script_class="Base_Card" load_steps=18 format=3 uid="uid://22c17vtu70b3"]
 
 [ext_resource type="Texture2D" uid="uid://b4uymubvo04qp" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/37.jpg" id="1_s2ru1"]
-[ext_resource type="Script" path="res://Code/Resource Makers/PokemonSpecific/PowerMaker.gd" id="2_2yu0c"]
+[ext_resource type="Script" uid="uid://b58015mafcw2v" path="res://Code/Resource Makers/PokemonSpecific/PowerMaker.gd" id="2_2yu0c"]
 [ext_resource type="Resource" uid="uid://depecxjmmfklq" path="res://Resources/Components/Effects/Asks/AskSingleFlip.tres" id="2_jit5m"]
-[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="2_jvjdg"]
-[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_i0jr0"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="2_jvjdg"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_i0jr0"]
 [ext_resource type="Resource" uid="uid://dr0vmkppumfhq" path="res://Resources/Components/Effects/Nothing.tres" id="4_it5rv"]
-[ext_resource type="Script" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="5_wxab5"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="5_wxab5"]
 [ext_resource type="Resource" uid="uid://bl4qnrkh3kxdl" path="res://Resources/Components/Effects/Placement/PutIntoHand.tres" id="6_mysfv"]
-[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="6_xc0yb"]
-[ext_resource type="Script" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="8_kronk"]
-[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="9_84c2m"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="6_xc0yb"]
+[ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="8_kronk"]
+[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="9_84c2m"]
 
 [sub_resource type="Resource" id="Resource_kqy8h"]
 script = ExtResource("5_wxab5")
@@ -36,6 +36,7 @@ fail_effect = ExtResource("4_it5rv")
 script = ExtResource("8_kronk")
 must_be_different = false
 broad_class = 1
+exactly = false
 contains = ""
 type = 0
 evolves_from = false
@@ -82,7 +83,6 @@ power = SubResource("Resource_dc2e6")
 attacks = Array[ExtResource("5_wxab5")]([SubResource("Resource_kqy8h")])
 evo_stage = "Stage 1"
 evolves_from = "Team Magma's Poochyena"
-delta = false
 considered = 0
 owner = 0
 type = 64

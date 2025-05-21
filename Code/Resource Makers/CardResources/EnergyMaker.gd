@@ -12,7 +12,7 @@ class_name Energy
 
 @export_group("Prerequisites")
 ##What should the game state be like for this card to be used?
-@export var asks: Ask
+@export var asks: SlotAsk
 ##Should failure constitute providing different kinds of energy?
 @export var fail_provide: bool = false
 ##Failed asks mean the user can't attatch the energy

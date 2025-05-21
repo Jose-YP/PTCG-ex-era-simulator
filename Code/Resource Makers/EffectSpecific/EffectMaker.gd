@@ -43,7 +43,7 @@ ENMOV, DMGMANIP, SEARCH, SWAP, DRAW, OTHER}
  "AnyLimited", "Any") var mimic: int = 0
 
 @export_group("Other")
-##Ask for any extra effects
-@export var ask_extra: Ask
+##SlotAsk for any extra effects
+@export var ask_extra: SlotAsk
 ##Do extra effect for extra ask
 @export var extra_effect: EffectCall

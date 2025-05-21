@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="PokePower" load_steps=10 format=3 uid="uid://6qr7q3qdfbsf"]
 
-[ext_resource type="Script" path="res://Code/Resource Makers/PokemonSpecific/PowerMaker.gd" id="1_53c32"]
-[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="1_esda5"]
-[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/PlacementMaker.gd" id="2_72jks"]
-[ext_resource type="Script" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="2_ldbdo"]
-[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="3_gnqp3"]
+[ext_resource type="Script" uid="uid://b58015mafcw2v" path="res://Code/Resource Makers/PokemonSpecific/PowerMaker.gd" id="1_53c32"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="1_esda5"]
+[ext_resource type="Script" uid="uid://cdyba0wadidwb" path="res://Code/Resource Makers/EffectSpecific/PlacementMaker.gd" id="2_72jks"]
+[ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="2_ldbdo"]
+[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="3_gnqp3"]
 
 [sub_resource type="Resource" id="Resource_cjhnb"]
 script = ExtResource("2_72jks")

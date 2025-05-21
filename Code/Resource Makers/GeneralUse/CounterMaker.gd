@@ -19,7 +19,7 @@ class_name Counter
 @export_enum("Energy Attatched", "Energy Excess", "P Damage Counters",
  "Prizes Left P","Prizes Left O","Prize Difference","Constant") var for_what
 ##Search for the number of pokemon that meet this ask
-@export var meet_ask: Ask
+@export var meet_ask: SlotAsk
 ##What is the max value if any
 @export_group("Returns")
 @export_range(-1,100) var cap: int = 0
