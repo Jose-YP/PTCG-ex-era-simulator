@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CardDisrupt" load_steps=2 format=3 uid="uid://duqgoatke7nio"]
+
+[ext_resource type="Script" uid="uid://8sh5p3leflla" path="res://Code/Resource Makers/EffectSpecific/CardDisruptMaker.gd" id="1_xe38q"]
+
+[resource]
+script = ExtResource("1_xe38q")
+disrupt_target = 1
+disrupting = 1
+send = 0
+send_to = 2
+card_ammount = 1
+reveal = false
+metadata/_custom_type_script = "uid://8sh5p3leflla"

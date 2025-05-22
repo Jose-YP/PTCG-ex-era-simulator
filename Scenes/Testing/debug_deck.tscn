@@ -11,6 +11,7 @@
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_76cja")
+metadata/_edit_vertical_guides_ = [-235.0, -414.0]
 
 [node name="FullUI" type="Control" parent="."]
 layout_mode = 1
@@ -79,6 +80,67 @@ text = "ViewAllDeck"
 layout_mode = 2
 toggle_mode = true
 text = "ViewAllDeck"
+
+[node name="MenuButton" type="MenuButton" parent="FullUI"]
+layout_mode = 0
+offset_left = 235.0
+offset_top = 251.0
+offset_right = 243.0
+offset_bottom = 259.0
+text = "AAAAAAAAAAA"
+
+[node name="Tree" type="Tree" parent="FullUI"]
+layout_mode = 2
+offset_right = 139.0
+offset_bottom = 25.0
+allow_reselect = true
+
+[node name="MenuButton" type="VBoxContainer" parent="FullUI/Tree"]
+layout_mode = 0
+offset_left = 235.0
+offset_top = 251.0
+offset_right = 386.0
+offset_bottom = 597.0
+
+[node name="Basic Energy" type="CheckBox" parent="FullUI/Tree/MenuButton"]
+layout_mode = 2
+text = "Basic Energy"
+
+[node name="Special Energy" type="CheckBox" parent="FullUI/Tree/MenuButton"]
+layout_mode = 2
+text = "Special Energy"
+
+[node name="Basic Pokemon" type="CheckBox" parent="FullUI/Tree/MenuButton"]
+layout_mode = 2
+text = "Basic Pokemon"
+
+[node name="Evolution" type="CheckBox" parent="FullUI/Tree/MenuButton"]
+layout_mode = 2
+text = "Evolution"
+
+[node name="Item" type="CheckBox" parent="FullUI/Tree/MenuButton"]
+layout_mode = 2
+text = "Item"
+
+[node name="Supporter" type="CheckBox" parent="FullUI/Tree/MenuButton"]
+layout_mode = 2
+text = "Supporter"
+
+[node name="Stadium" type="CheckBox" parent="FullUI/Tree/MenuButton"]
+layout_mode = 2
+text = "Stadium"
+
+[node name="Tool" type="CheckBox" parent="FullUI/Tree/MenuButton"]
+layout_mode = 2
+text = "Tool"
+
+[node name="TM" type="CheckBox" parent="FullUI/Tree/MenuButton"]
+layout_mode = 2
+text = "TM"
+
+[node name="Rocket" type="CheckBox" parent="FullUI/Tree/MenuButton"]
+layout_mode = 2
+text = "Rocket Machine"
 
 [node name="Fundies" parent="." node_paths=PackedStringArray("player_side") instance=ExtResource("5_k0qov")]
 player_side = NodePath("../FullUI/PlayerSide")

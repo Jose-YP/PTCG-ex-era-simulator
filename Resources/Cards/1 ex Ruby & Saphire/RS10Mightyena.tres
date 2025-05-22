@@ -1,0 +1,99 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=16 format=3 uid="uid://dnwi6a5kx4bvn"]
+
+[ext_resource type="Texture2D" uid="uid://bwl6enwy315cl" path="res://Art/Cards/1 ex Ruby & Saphire/10.jpg" id="1_2q26m"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_y3sj6"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_7n5p1"]
+[ext_resource type="Resource" uid="uid://depecxjmmfklq" path="res://Resources/Components/Effects/Asks/AskSingleFlip.tres" id="3_j7mx2"]
+[ext_resource type="Resource" uid="uid://duqgoatke7nio" path="res://Resources/Components/Effects/CardDisrupt/DiscardOppUnseen.tres" id="4_04ran"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="5_nryx3"]
+[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="6_0a8mn"]
+[ext_resource type="Resource" uid="uid://cmj80wa0ybso5" path="res://Resources/Components/Effects/Buff/Intimidate.tres" id="7_h7drc"]
+[ext_resource type="Script" uid="uid://b2tlqpng7fq25" path="res://Code/Resource Makers/PokemonSpecific/BodyMaker.gd" id="8_xfy48"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="9_2j1kh"]
+
+[sub_resource type="Resource" id="Resource_88w07"]
+script = ExtResource("5_nryx3")
+order = Array[int]([])
+card_disrupt = ExtResource("4_04ran")
+search = Array[ExtResource("6_0a8mn")]([])
+remove_conditions = false
+remove_shockwave = false
+remove_imprison = false
+choose_active = false
+switch_type = 0
+mimic = 0
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_t4kj7"]
+script = ExtResource("2_7n5p1")
+name = "Shakedown"
+description = "Flip a coin. If heads, choose 1 card from your opponent's hand without looking and discard it."
+grass_cost = 0
+fire_cost = 0
+water_cost = 0
+lightning_cost = 0
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 1
+metal_cost = 0
+colorless_cost = 2
+defender_properties = 0
+ignore_condition = 0
+initial_main_DMG = 40
+self_damage = 0
+modifier = 0
+both_active = false
+ask = ExtResource("3_j7mx2")
+effect = SubResource("Resource_88w07")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_gi0ni"]
+script = ExtResource("5_nryx3")
+order = Array[int]([])
+buff = ExtResource("7_h7drc")
+search = Array[ExtResource("6_0a8mn")]([])
+remove_conditions = false
+remove_shockwave = false
+remove_imprison = false
+choose_active = false
+switch_type = 0
+mimic = 0
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_jvtsy"]
+script = ExtResource("8_xfy48")
+when_active = true
+name = "Intimidating Fang"
+description = "As long as Mightyena is your Active Pokémon, any damage done to your Pokémon by an opponent's attack is reduced by 10 (before applying Weakness and Resistance)."
+affected_by_condition = true
+attatched_energy = 1
+effect = SubResource("Resource_gi0ni")
+metadata/_custom_type_script = "uid://b2tlqpng7fq25"
+
+[sub_resource type="Resource" id="Resource_jmu1c"]
+script = ExtResource("9_2j1kh")
+HP = 70
+retreat = 1
+body = SubResource("Resource_jvtsy")
+attacks = Array[ExtResource("2_7n5p1")]([SubResource("Resource_t4kj7")])
+evo_stage = "Stage 1"
+evolves_from = "Poochyena"
+considered = 0
+owner = 0
+type = 64
+weak = 32
+resist = 16
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_y3sj6")
+name = "Mightyena"
+image = ExtResource("1_2q26m")
+illustrator = ""
+number = 10
+rarity = 3
+expansion = 0
+categories = 1
+pokemon_properties = SubResource("Resource_jmu1c")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

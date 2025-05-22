@@ -24,6 +24,7 @@ class_name Attack
 @export_range(0,200,10) var initial_main_DMG: int = 0
 @export_range(0,200,10) var self_damage: int = 0
 @export_enum("None", "Add", "Multiply", "Subtract") var modifier: int = 0
+@export var both_active: bool
 @export var bench_damage: BenchAttk
 @export var counter: Counter
 

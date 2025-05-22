@@ -31,7 +31,9 @@ class_name SlotAsk
 @export_flags("Grass","Fire","Water",
 "Lightning","Psychic","Fighting",
 "Darkness","Metal","Colorless") var type: int = 1023
-@export var type_size: int = 1
+##I'm guessing this is about how much of x energy there is
+##Make -1 to indicate that it shouldn't be checked
+@export var type_size: int = -1
 
 @export_group("Before Activating")
 @export_multiline var ask_string: String 

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Identifier" load_steps=2 format=3 uid="uid://cbcxks3mto640"]
+
+[ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="1_3s1ue"]
+
+[resource]
+script = ExtResource("1_3s1ue")
+must_be_different = false
+broad_class = 4
+exactly = false
+contains = ""
+type = 16
+evolves_from = false
+poke_class = null
+owner = 0
+stage = null
+trainer_classes = null
+energy_class = null

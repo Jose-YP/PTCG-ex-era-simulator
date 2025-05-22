@@ -1,0 +1,108 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=19 format=3 uid="uid://b6mgd7a47n0iv"]
+
+[ext_resource type="Texture2D" uid="uid://b55mvy488l2pm" path="res://Art/Cards/1 ex Ruby & Saphire/7.jpg" id="1_dljrv"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_x305h"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_mamwr"]
+[ext_resource type="Script" uid="uid://cml2jkc16tlva" path="res://Code/Resource Makers/GeneralUse/CounterMaker.gd" id="3_vnprs"]
+[ext_resource type="Resource" uid="uid://5xgqdwmsc8c1" path="res://Resources/Components/Effects/DmgManip/Take20Dmg.tres" id="4_nh60l"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="5_o1pkv"]
+[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="6_yov0a"]
+[ext_resource type="Resource" uid="uid://ckq0objyn0iok" path="res://Resources/Components/Effects/Placement/PlaceOnSide.tres" id="7_c5pr4"]
+[ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="8_js0eq"]
+[ext_resource type="Resource" uid="uid://cbcxks3mto640" path="res://Resources/Components/Effects/Identifiers/PsychicEnergy.tres" id="9_1o5h7"]
+[ext_resource type="Script" uid="uid://b58015mafcw2v" path="res://Code/Resource Makers/PokemonSpecific/PowerMaker.gd" id="10_61n4a"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="11_e1xak"]
+
+[sub_resource type="Resource" id="Resource_pabra"]
+script = ExtResource("3_vnprs")
+count_for = 0
+filter = 0
+mon_count = 8
+for_what = "Energy Attatched"
+cap = 0
+return_num = 10
+metadata/_custom_type_script = "uid://cml2jkc16tlva"
+
+[sub_resource type="Resource" id="Resource_apf0q"]
+script = ExtResource("2_mamwr")
+name = "Energy Burst"
+description = "Does 10 damage times the total amount of Energy attached to Gardevoir and the Defending Pokémon."
+grass_cost = 0
+fire_cost = 0
+water_cost = 0
+lightning_cost = 0
+psychic_cost = 1
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 0
+defender_properties = 0
+ignore_condition = 0
+initial_main_DMG = 10
+self_damage = 0
+modifier = 2
+both_active = false
+counter = SubResource("Resource_pabra")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_53uyh"]
+script = ExtResource("6_yov0a")
+side = 0
+where = 1
+portion = -1
+how_many = 1
+of_this = Array[ExtResource("8_js0eq")]([ExtResource("9_1o5h7")])
+and_then = ExtResource("7_c5pr4")
+reveal = true
+metadata/_custom_type_script = "uid://cw3yr1k040kw7"
+
+[sub_resource type="Resource" id="Resource_jt5ow"]
+script = ExtResource("5_o1pkv")
+order = Array[int]([6, 5])
+dmgManip = ExtResource("4_nh60l")
+search = Array[ExtResource("6_yov0a")]([SubResource("Resource_53uyh")])
+remove_conditions = false
+remove_shockwave = false
+remove_imprison = false
+choose_active = false
+switch_type = 0
+mimic = 0
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_0dh5a"]
+script = ExtResource("10_61n4a")
+name = "Psy Shadow"
+description = "Once during your turn (before your attack), you may search your deck for a Psychic Energy card and attach it to 1 of your Pokémon. Put 2 damage counters on that Pokémon. Shuffle your deck afterward. This power can't be used if Gardevoir is affected by a Special Condition."
+affected_by_condition = true
+active = false
+how_often = 0
+effect = SubResource("Resource_jt5ow")
+metadata/_custom_type_script = "uid://b58015mafcw2v"
+
+[sub_resource type="Resource" id="Resource_kpytw"]
+script = ExtResource("11_e1xak")
+HP = 100
+retreat = 2
+power = SubResource("Resource_0dh5a")
+attacks = Array[ExtResource("2_mamwr")]([SubResource("Resource_apf0q")])
+evo_stage = "Stage 2"
+evolves_from = "Kirlia"
+considered = 0
+owner = 0
+type = 16
+weak = 16
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_x305h")
+name = "Gardevoir"
+image = ExtResource("1_dljrv")
+illustrator = "Ken Sugimori"
+number = 7
+rarity = 3
+expansion = 0
+categories = 1
+pokemon_properties = SubResource("Resource_kpytw")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

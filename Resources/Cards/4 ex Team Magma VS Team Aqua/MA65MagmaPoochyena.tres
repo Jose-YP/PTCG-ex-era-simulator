@@ -23,6 +23,7 @@ ignore_condition = 0
 initial_main_DMG = 10
 self_damage = 0
 modifier = 0
+both_active = false
 
 [sub_resource type="Resource" id="Resource_vy1eo"]
 script = ExtResource("5_deetf")

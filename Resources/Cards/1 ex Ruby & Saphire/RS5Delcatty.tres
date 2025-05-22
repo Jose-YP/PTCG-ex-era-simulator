@@ -1,0 +1,115 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=17 format=3 uid="uid://bopcqetuha2jo"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_rgg13"]
+[ext_resource type="Texture2D" uid="uid://dm88a7rr1ys2c" path="res://Art/Cards/1 ex Ruby & Saphire/5.jpg" id="1_swy3d"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_xs5ae"]
+[ext_resource type="Script" uid="uid://cml2jkc16tlva" path="res://Code/Resource Makers/GeneralUse/CounterMaker.gd" id="3_qc1fh"]
+[ext_resource type="Script" uid="uid://cimk6l7ytw7xg" path="res://Code/Resource Makers/EffectSpecific/EnMovMaker.gd" id="4_v55ki"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="5_sxqrh"]
+[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="6_amabn"]
+[ext_resource type="Script" uid="uid://b58015mafcw2v" path="res://Code/Resource Makers/PokemonSpecific/PowerMaker.gd" id="7_mgxj5"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="8_unyar"]
+
+[sub_resource type="Resource" id="Resource_8e6qy"]
+script = ExtResource("3_qc1fh")
+count_for = 0
+filter = 4
+mon_count = 17
+for_what = "Energy Attatched"
+cap = 0
+return_num = 0
+metadata/_custom_type_script = "uid://cml2jkc16tlva"
+
+[sub_resource type="Resource" id="Resource_jg3lb"]
+script = ExtResource("2_xs5ae")
+name = "Max Energy Source"
+description = "Does 10 damage times the amount of Energy attached to all of your active Pokemon"
+grass_cost = 0
+fire_cost = 0
+water_cost = 0
+lightning_cost = 0
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 1
+defender_properties = 0
+ignore_condition = 0
+initial_main_DMG = 10
+self_damage = 0
+modifier = 2
+both_active = false
+counter = SubResource("Resource_8e6qy")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_kehm7"]
+script = ExtResource("3_qc1fh")
+count_for = 2
+filter = 4
+mon_count = 0
+for_what = "Constant"
+cap = 3
+return_num = 0
+metadata/_custom_type_script = "uid://cml2jkc16tlva"
+
+[sub_resource type="Resource" id="Resource_wrdao"]
+script = ExtResource("4_v55ki")
+energy_move_type = 0
+action = 1
+which = 1
+energy_ammount = 1
+swap_ammount = 1
+type = 511
+metadata/_custom_type_script = "uid://cimk6l7ytw7xg"
+
+[sub_resource type="Resource" id="Resource_ffdua"]
+script = ExtResource("5_sxqrh")
+order = Array[int]([4, 8])
+draw_ammount = SubResource("Resource_kehm7")
+energy_movement = SubResource("Resource_wrdao")
+search = Array[ExtResource("6_amabn")]([])
+remove_conditions = false
+remove_shockwave = false
+remove_imprison = false
+choose_active = false
+switch_type = 0
+mimic = 0
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_0ctxw"]
+script = ExtResource("7_mgxj5")
+name = "Energy Draw"
+description = "Once during your turn (before your attack), you may discard 1 Energy card from your hand. Then draw up to 3 cards from your deck. This power can't be used if Delcatty is affected by a Special Condition."
+affected_by_condition = true
+active = false
+how_often = 0
+effect = SubResource("Resource_ffdua")
+metadata/_custom_type_script = "uid://b58015mafcw2v"
+
+[sub_resource type="Resource" id="Resource_mlidb"]
+script = ExtResource("8_unyar")
+HP = 70
+retreat = 1
+power = SubResource("Resource_0ctxw")
+attacks = Array[ExtResource("2_xs5ae")]([SubResource("Resource_jg3lb")])
+evo_stage = "Stage 1"
+evolves_from = "Skitty"
+considered = 0
+owner = 0
+type = 256
+weak = 32
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_rgg13")
+name = "Delcatty"
+image = ExtResource("1_swy3d")
+illustrator = "Atsuko Nishida"
+number = 5
+rarity = 3
+expansion = 0
+categories = 1
+pokemon_properties = SubResource("Resource_mlidb")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

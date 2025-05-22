@@ -26,6 +26,7 @@ energy_class = 1
 script = ExtResource("4_g62rc")
 side = null
 where = null
+portion = -1
 how_many = 3
 of_this = Array[ExtResource("5_srr3u")]([SubResource("Resource_aqw3u")])
 and_then = ExtResource("4_mlki2")

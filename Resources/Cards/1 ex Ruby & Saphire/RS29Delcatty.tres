@@ -13,6 +13,7 @@
 [sub_resource type="Resource" id="Resource_8g4jw"]
 script = ExtResource("3_cmhhq")
 where = 4
+reorder = false
 shuffle = false
 evolve = false
 
@@ -20,6 +21,7 @@ evolve = false
 script = ExtResource("5_wf57h")
 side = 0
 where = 0
+portion = -1
 how_many = 1
 of_this = Array[ExtResource("6_rlkfd")]([null])
 and_then = SubResource("Resource_8g4jw")
@@ -54,6 +56,7 @@ ignore_condition = 0
 initial_main_DMG = 10
 self_damage = 0
 modifier = 0
+both_active = false
 effect = SubResource("Resource_3lkdq")
 
 [sub_resource type="Resource" id="Resource_0fqi7"]
@@ -61,7 +64,7 @@ script = ExtResource("7_8dcl4")
 count_for = 0
 filter = 4
 mon_count = 0
-for_what = 1
+for_what = "Constant"
 cap = 0
 return_num = 0
 
@@ -83,6 +86,7 @@ ignore_condition = 0
 initial_main_DMG = 30
 self_damage = 0
 modifier = 1
+both_active = false
 counter = SubResource("Resource_0fqi7")
 
 [sub_resource type="Resource" id="Resource_wmjqw"]

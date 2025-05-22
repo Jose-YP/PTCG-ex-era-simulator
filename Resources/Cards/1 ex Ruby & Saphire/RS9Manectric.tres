@@ -1,0 +1,121 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=18 format=3 uid="uid://55w4gcnt7ldd"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_j4udd"]
+[ext_resource type="Texture2D" uid="uid://bj0gaak878hpw" path="res://Art/Cards/1 ex Ruby & Saphire/9.jpg" id="1_nd5q3"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_lxccs"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_x808d"]
+[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="4_vg802"]
+[ext_resource type="Resource" uid="uid://ckq0objyn0iok" path="res://Resources/Components/Effects/Placement/PlaceOnSide.tres" id="5_vn0b8"]
+[ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="6_it85k"]
+[ext_resource type="Resource" uid="uid://dt0pi71xuk6ih" path="res://Resources/Components/Effects/Identifiers/LightningEnergy.tres" id="7_0j7pm"]
+[ext_resource type="Resource" uid="uid://depecxjmmfklq" path="res://Resources/Components/Effects/Asks/AskSingleFlip.tres" id="8_odr78"]
+[ext_resource type="Resource" uid="uid://choi8otbipw57" path="res://Resources/Components/Effects/DmgManip/Take10Dmg.tres" id="9_tiyuh"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="10_u1bw3"]
+
+[sub_resource type="Resource" id="Resource_uewdd"]
+script = ExtResource("4_vg802")
+side = 0
+where = 1
+portion = -1
+how_many = 1
+of_this = Array[ExtResource("6_it85k")]([ExtResource("7_0j7pm")])
+and_then = ExtResource("5_vn0b8")
+reveal = true
+metadata/_custom_type_script = "uid://cw3yr1k040kw7"
+
+[sub_resource type="Resource" id="Resource_mhi0u"]
+script = ExtResource("3_x808d")
+order = Array[int]([])
+search = Array[ExtResource("4_vg802")]([SubResource("Resource_uewdd")])
+remove_conditions = false
+remove_shockwave = false
+remove_imprison = false
+choose_active = false
+switch_type = 0
+mimic = 0
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_766ft"]
+script = ExtResource("2_lxccs")
+name = "Attract Current"
+description = "Search your deck for a Lightning Energy card and attach it to 1 of your Pokémon. Shuffle your deck afterward."
+grass_cost = 0
+fire_cost = 0
+water_cost = 0
+lightning_cost = 0
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 1
+defender_properties = 0
+ignore_condition = 0
+initial_main_DMG = 10
+self_damage = 0
+modifier = 0
+both_active = false
+effect = SubResource("Resource_mhi0u")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_q1c6f"]
+script = ExtResource("3_x808d")
+order = Array[int]([])
+dmgManip = ExtResource("9_tiyuh")
+search = Array[ExtResource("4_vg802")]([])
+remove_conditions = false
+remove_shockwave = false
+remove_imprison = false
+choose_active = false
+switch_type = 0
+mimic = 0
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_dwn3d"]
+script = ExtResource("2_lxccs")
+name = "Thunder Jolt"
+description = "Flip a coin. If tails, Manectric does 10 damage to itself."
+grass_cost = 0
+fire_cost = 0
+water_cost = 0
+lightning_cost = 2
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 1
+defender_properties = 0
+ignore_condition = 0
+initial_main_DMG = 50
+self_damage = 0
+modifier = 0
+both_active = false
+ask = ExtResource("8_odr78")
+fail_effect = SubResource("Resource_q1c6f")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_v6epq"]
+script = ExtResource("10_u1bw3")
+HP = 70
+retreat = 1
+attacks = Array[ExtResource("2_lxccs")]([SubResource("Resource_766ft"), SubResource("Resource_dwn3d")])
+evo_stage = "Stage 1"
+evolves_from = "Electrike"
+considered = 0
+owner = 0
+type = 8
+weak = 32
+resist = 128
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_j4udd")
+name = "Manectric"
+image = ExtResource("1_nd5q3")
+illustrator = "Mitsuhiro Arita"
+number = 9
+rarity = 3
+expansion = 0
+categories = 1
+pokemon_properties = SubResource("Resource_v6epq")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

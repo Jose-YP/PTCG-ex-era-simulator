@@ -9,6 +9,7 @@
 [sub_resource type="Resource" id="Resource_h0r4n"]
 script = ExtResource("2_l0482")
 where = 5
+reorder = false
 shuffle = false
 evolve = false
 
@@ -30,6 +31,7 @@ energy_class = 3
 script = ExtResource("4_nrk2l")
 side = 0
 where = 0
+portion = -1
 how_many = 1
 of_this = Array[ExtResource("3_bnqyx")]([SubResource("Resource_y7il7")])
 and_then = SubResource("Resource_h0r4n")

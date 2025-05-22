@@ -1,0 +1,129 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=17 format=3 uid="uid://bw4sp04ye7jyx"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_wcs6r"]
+[ext_resource type="Texture2D" uid="uid://cs7gj0dy6jykj" path="res://Art/Cards/1 ex Ruby & Saphire/6.jpg" id="1_wqkxb"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_684l4"]
+[ext_resource type="Script" uid="uid://8s3m1dar3r33" path="res://Code/Resource Makers/EffectSpecific/ConditionMaker.gd" id="3_rwpko"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_7qmw3"]
+[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="5_anyyy"]
+[ext_resource type="Resource" uid="uid://dx17fn4esx8qm" path="res://Resources/Components/Effects/Buff/Immune2Effect.tres" id="6_tg8f0"]
+[ext_resource type="Script" uid="uid://b2tlqpng7fq25" path="res://Code/Resource Makers/PokemonSpecific/BodyMaker.gd" id="7_w0s73"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="8_1sw32"]
+
+[sub_resource type="Resource" id="Resource_arvx3"]
+script = ExtResource("3_rwpko")
+which = 2
+choose_condition = false
+poison = 2
+burn = 0
+addable_effects = 0
+mutually_exclusive_conditions = 0
+knockOut = false
+metadata/_custom_type_script = "uid://8s3m1dar3r33"
+
+[sub_resource type="Resource" id="Resource_g45gr"]
+script = ExtResource("4_7qmw3")
+order = Array[int]([])
+condition = SubResource("Resource_arvx3")
+search = Array[ExtResource("5_anyyy")]([])
+remove_conditions = false
+remove_shockwave = false
+remove_imprison = false
+choose_active = false
+switch_type = 0
+mimic = 0
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_fuvu7"]
+script = ExtResource("2_684l4")
+name = "Toxic"
+description = "The Defending Pokémon is now Poisoned. Put 2 damage counters instead of 1 on the Defending Pokémon between turns."
+grass_cost = 1
+fire_cost = 0
+water_cost = 0
+lightning_cost = 0
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 1
+defender_properties = 0
+ignore_condition = 0
+initial_main_DMG = 0
+self_damage = 0
+modifier = 0
+both_active = false
+effect = SubResource("Resource_g45gr")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_w3yai"]
+script = ExtResource("2_684l4")
+name = "Gust"
+description = ""
+grass_cost = 1
+fire_cost = 0
+water_cost = 0
+lightning_cost = 0
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 2
+defender_properties = 0
+ignore_condition = 0
+initial_main_DMG = 50
+self_damage = 0
+modifier = 0
+both_active = false
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_dk53k"]
+script = ExtResource("4_7qmw3")
+order = Array[int]([])
+buff = ExtResource("6_tg8f0")
+search = Array[ExtResource("5_anyyy")]([])
+remove_conditions = false
+remove_shockwave = false
+remove_imprison = false
+choose_active = false
+switch_type = 0
+mimic = 0
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_jw3ns"]
+script = ExtResource("7_w0s73")
+when_active = false
+name = "Protective Dust"
+description = "Prevent all effects of attacks, except damage, done to Dustox by the Attacking Pokémon."
+affected_by_condition = true
+attatched_energy = 1
+effect = SubResource("Resource_dk53k")
+metadata/_custom_type_script = "uid://b2tlqpng7fq25"
+
+[sub_resource type="Resource" id="Resource_ypaoj"]
+script = ExtResource("8_1sw32")
+HP = 90
+retreat = 0
+body = SubResource("Resource_jw3ns")
+attacks = Array[ExtResource("2_684l4")]([SubResource("Resource_fuvu7"), SubResource("Resource_w3yai")])
+evo_stage = "Stage 2"
+evolves_from = "Cascoon"
+considered = 0
+owner = 0
+type = 1
+weak = 16
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_wcs6r")
+name = "Dustox"
+image = ExtResource("1_wqkxb")
+illustrator = " Midori Harada"
+number = 6
+rarity = 3
+expansion = 0
+categories = 1
+pokemon_properties = SubResource("Resource_ypaoj")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

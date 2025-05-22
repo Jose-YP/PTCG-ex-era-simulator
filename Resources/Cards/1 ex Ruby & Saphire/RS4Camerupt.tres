@@ -1,0 +1,114 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=15 format=3 uid="uid://d0hrsib15ou18"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_8c3j4"]
+[ext_resource type="Texture2D" uid="uid://cfi8etto8kypp" path="res://Art/Cards/1 ex Ruby & Saphire/4.jpg" id="1_a4xqq"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_0lg5k"]
+[ext_resource type="Script" uid="uid://br15mnap82upq" path="res://Code/Resource Makers/PokemonSpecific/BenchAttackMaker.gd" id="3_causi"]
+[ext_resource type="Script" uid="uid://cimk6l7ytw7xg" path="res://Code/Resource Makers/EffectSpecific/EnMovMaker.gd" id="4_ri5lq"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="5_xcuij"]
+[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="6_t8nao"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="7_aoipg"]
+
+[sub_resource type="Resource" id="Resource_3gb0p"]
+script = ExtResource("3_causi")
+how_many = 1
+which = 1
+active_allowed = false
+apply_weak_res = false
+initial_main_DMG = 10
+modifier = 0
+metadata/_custom_type_script = "uid://br15mnap82upq"
+
+[sub_resource type="Resource" id="Resource_fh4bi"]
+script = ExtResource("2_0lg5k")
+name = "Lava Burn"
+description = "Choose 1 of your opponent's Benched Pokémon. This attack does 10 damage to that Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
+grass_cost = 0
+fire_cost = 1
+water_cost = 0
+lightning_cost = 0
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 1
+defender_properties = 0
+ignore_condition = 0
+initial_main_DMG = 20
+self_damage = 0
+modifier = 0
+both_active = false
+bench_damage = SubResource("Resource_3gb0p")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_jcni4"]
+script = ExtResource("4_ri5lq")
+energy_move_type = 0
+action = 1
+which = 1
+energy_ammount = 2
+swap_ammount = 1
+type = 511
+metadata/_custom_type_script = "uid://cimk6l7ytw7xg"
+
+[sub_resource type="Resource" id="Resource_ra3ir"]
+script = ExtResource("5_xcuij")
+order = Array[int]([])
+energy_movement = SubResource("Resource_jcni4")
+search = Array[ExtResource("6_t8nao")]([])
+remove_conditions = false
+remove_shockwave = false
+remove_imprison = false
+choose_active = false
+switch_type = 0
+mimic = 0
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_6mipe"]
+script = ExtResource("2_0lg5k")
+name = "Fire Spin"
+description = "Discard 2 basic Energy cards attached to Camerupt or this attack does nothing."
+grass_cost = 0
+fire_cost = 2
+water_cost = 0
+lightning_cost = 0
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 2
+defender_properties = 0
+ignore_condition = 0
+initial_main_DMG = 100
+self_damage = 0
+modifier = 0
+both_active = false
+effect = SubResource("Resource_ra3ir")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_eh264"]
+script = ExtResource("7_aoipg")
+HP = 90
+retreat = 2
+attacks = Array[ExtResource("2_0lg5k")]([SubResource("Resource_fh4bi"), SubResource("Resource_6mipe")])
+evo_stage = "Stage 1"
+evolves_from = "Numel"
+considered = 0
+owner = 0
+type = 2
+weak = 4
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_8c3j4")
+name = "Camerupt"
+image = ExtResource("1_a4xqq")
+illustrator = "Ken Sugimori"
+number = 4
+rarity = 3
+expansion = 0
+categories = 1
+pokemon_properties = SubResource("Resource_eh264")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

@@ -38,4 +38,5 @@ ignore_condition = 0
 initial_main_DMG = 70
 self_damage = 0
 modifier = 2
+both_active = false
 counter = SubResource("Resource_8moq1")

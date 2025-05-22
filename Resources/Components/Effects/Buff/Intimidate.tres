@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Buff" load_steps=2 format=3 uid="uid://cmj80wa0ybso5"]
+
+[ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/BuffMaker.gd" id="1_4asx2"]
+
+[resource]
+script = ExtResource("1_4asx2")
+buff_target = 1
+duration = -1
+attack_damage = -10
+defense = 0
+after_weak_res = false
+immune_to_effects = false
+immune_to_damage = false
+metadata/_custom_type_script = "uid://coojhwe6m20gd"
