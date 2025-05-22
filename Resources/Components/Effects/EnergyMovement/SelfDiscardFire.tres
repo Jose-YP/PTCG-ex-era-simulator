@@ -11,6 +11,7 @@ action = 1
 which = 1
 energy_ammount = 1
 swap_ammount = 1
+energy_clas = 3
 type = 2
 
 [resource]

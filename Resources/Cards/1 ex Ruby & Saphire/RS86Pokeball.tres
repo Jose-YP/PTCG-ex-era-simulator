@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://bok1dv0p7mo4d"]
+
+[ext_resource type="Texture2D" uid="uid://fpakm4f4tb4g" path="res://Art/Cards/1 ex Ruby & Saphire/86.jpg" id="1_lyg7d"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_kln02"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_eneej"]
+[ext_resource type="Resource" uid="uid://depecxjmmfklq" path="res://Resources/Components/Effects/Asks/AskSingleFlip.tres" id="3_s17sb"]
+[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="4_oe33x"]
+[ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="6_elq20"]
+[ext_resource type="Resource" uid="uid://bkwebtfaqxx1b" path="res://Resources/Components/Effects/Search/SearchAnyPokemon.tres" id="7_nsc63"]
+
+[sub_resource type="Resource" id="Resource_21kd0"]
+script = ExtResource("3_eneej")
+order = Array[int]([])
+search = Array[ExtResource("4_oe33x")]([ExtResource("7_nsc63")])
+remove_conditions = false
+remove_shockwave = false
+remove_imprison = false
+choose_active = false
+switch_type = 0
+mimic = 0
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_8tpb4"]
+script = ExtResource("6_elq20")
+considered = "Item"
+specific_requirement = ""
+description = "Flip a coin. If heads, search your deck for a Basic Pokémon or Evolution card, show it to your opponent and put it into your hand. Shuffle your deck afterward. "
+asks = ExtResource("3_s17sb")
+success_effect = SubResource("Resource_21kd0")
+metadata/_custom_type_script = "uid://crx447i85kshy"
+
+[resource]
+script = ExtResource("2_kln02")
+name = "Pokeball"
+image = ExtResource("1_lyg7d")
+illustrator = "K. Hoshiba"
+number = 86
+rarity = 1
+expansion = 0
+categories = 2
+trainer_properties = SubResource("Resource_8tpb4")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

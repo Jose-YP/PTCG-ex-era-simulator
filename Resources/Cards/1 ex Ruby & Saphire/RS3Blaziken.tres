@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Base_Card" load_steps=4 format=3 uid="uid://b8kt4i4jgosm8"]
 
 [ext_resource type="Texture2D" uid="uid://bcifwgplfoukb" path="res://Art/Cards/1 ex Ruby & Saphire/3.jpg" id="1_x7apq"]
-[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_xuny2"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_xuny2"]
 [ext_resource type="Resource" uid="uid://dvteh4sj66jw4" path="res://Resources/Components/Pokemon/ReprintPokemon/FirestartBlaziken.tres" id="2_xvlcv"]
 
 [resource]

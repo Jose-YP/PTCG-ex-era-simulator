@@ -12,6 +12,7 @@
 [sub_resource type="Resource" id="Resource_ch2de"]
 script = ExtResource("4_35qyi")
 target = 3
+damage_comparison = 1
 damage_taken = -10
 energy_attatched = -1
 knocked_out = false
@@ -21,6 +22,7 @@ stage = 7
 class_inclusive = true
 pokemon_class = 114
 bench_size = -1
+type_inclusive = true
 type = 1023
 type_size = 1
 ask_string = ""

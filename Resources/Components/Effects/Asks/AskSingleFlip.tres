@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Ask" load_steps=4 format=3 uid="uid://depecxjmmfklq"]
+[gd_resource type="Resource" script_class="SlotAsk" load_steps=4 format=3 uid="uid://depecxjmmfklq"]
 
 [ext_resource type="Script" uid="uid://y0v42qaa35wt" path="res://Code/Resource Makers/GeneralUse/CoinFlipNumMaker.gd" id="1_ayymb"]
 [ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="2_enfie"]
@@ -12,6 +12,7 @@ until = false
 [resource]
 script = ExtResource("2_enfie")
 target = 0
+damage_comparison = 1
 damage_taken = -10
 energy_attatched = -1
 knocked_out = false
@@ -21,6 +22,7 @@ stage = 7
 class_inclusive = true
 pokemon_class = 0
 bench_size = -1
+type_inclusive = true
 type = 1023
 type_size = 1
 ask_string = ""

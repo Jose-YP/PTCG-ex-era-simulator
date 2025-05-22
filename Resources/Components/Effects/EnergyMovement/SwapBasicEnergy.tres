@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="EffectCall" load_steps=5 format=3 uid="uid://cmh1v5ltgtx5o"]
+
+[ext_resource type="Script" uid="uid://cimk6l7ytw7xg" path="res://Code/Resource Makers/EffectSpecific/EnMovMaker.gd" id="1_f1gm2"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_2ax07"]
+[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="3_r4bci"]
+
+[sub_resource type="Resource" id="Resource_f2aic"]
+script = ExtResource("1_f1gm2")
+energy_move_type = 0
+action = 0
+which = 21
+energy_ammount = 0
+swap_ammount = 1
+type = 511
+metadata/_custom_type_script = "uid://cimk6l7ytw7xg"
+
+[resource]
+script = ExtResource("2_2ax07")
+order = Array[int]([])
+energy_movement = SubResource("Resource_f2aic")
+search = Array[ExtResource("3_r4bci")]([])
+remove_conditions = false
+remove_shockwave = false
+remove_imprison = false
+choose_active = false
+switch_type = 0
+mimic = 0
+metadata/_custom_type_script = "uid://dmulm3x3dj842"

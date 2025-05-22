@@ -29,6 +29,7 @@ mimic = 0
 [sub_resource type="Resource" id="Resource_31y3e"]
 script = ExtResource("3_yaged")
 target = 0
+damage_comparison = 1
 damage_taken = -10
 energy_attatched = -1
 knocked_out = false
@@ -38,6 +39,7 @@ stage = 7
 class_inclusive = true
 pokemon_class = 0
 bench_size = -1
+type_inclusive = true
 type = 1023
 type_size = 1
 ask_string = ""

@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=6 format=3 uid="uid://c2tk6qy8h57lw"]
+
+[ext_resource type="Texture2D" uid="uid://duvp124f7b6mq" path="res://Art/Cards/1 ex Ruby & Saphire/82.jpg" id="1_lqtpo"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_66xqc"]
+[ext_resource type="Resource" uid="uid://cmh1v5ltgtx5o" path="res://Resources/Components/Effects/EnergyMovement/SwapBasicEnergy.tres" id="3_4ccjk"]
+[ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="5_7j0cj"]
+
+[sub_resource type="Resource" id="Resource_j6siw"]
+script = ExtResource("5_7j0cj")
+considered = "Item"
+specific_requirement = ""
+description = "Move a basic Energy card attached to 1 of your Pokémon to another of your Pokémon. "
+always_effect = ExtResource("3_4ccjk")
+
+[resource]
+script = ExtResource("2_66xqc")
+name = "Energy Switcg "
+image = ExtResource("1_lqtpo")
+illustrator = "Hideyuki Nakajima"
+number = 82
+rarity = 1
+expansion = 0
+categories = 2
+trainer_properties = SubResource("Resource_j6siw")
+fossil = false

@@ -1,0 +1,52 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://baklyfkmvlguj"]
+
+[ext_resource type="Texture2D" uid="uid://c0lenryrao7ol" path="res://Art/Cards/1 ex Ruby & Saphire/89.jpg" id="1_m8l7g"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_nyl4q"]
+[ext_resource type="Script" uid="uid://cml2jkc16tlva" path="res://Code/Resource Makers/GeneralUse/CounterMaker.gd" id="3_lbeju"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_qsc0s"]
+[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="4_xbdrb"]
+[ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="6_j8dp4"]
+
+[sub_resource type="Resource" id="Resource_uq1k3"]
+script = ExtResource("3_lbeju")
+count_for = 1
+filter = 4
+mon_count = 0
+for_what = "Hand P"
+cap = 6
+return_num = 0
+metadata/_custom_type_script = "uid://cml2jkc16tlva"
+
+[sub_resource type="Resource" id="Resource_6plop"]
+script = ExtResource("3_qsc0s")
+order = Array[int]([])
+draw_ammount = SubResource("Resource_uq1k3")
+search = Array[ExtResource("4_xbdrb")]([])
+remove_conditions = false
+remove_shockwave = false
+remove_imprison = false
+choose_active = false
+switch_type = 0
+mimic = 0
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_8tpb4"]
+script = ExtResource("6_j8dp4")
+considered = "Supporter"
+specific_requirement = ""
+description = "Draw cards from your deck until you have 6 cards in your hand. "
+always_effect = SubResource("Resource_6plop")
+metadata/_custom_type_script = "uid://crx447i85kshy"
+
+[resource]
+script = ExtResource("2_nyl4q")
+name = "Professor Birch"
+image = ExtResource("1_m8l7g")
+illustrator = "Ken Sugimori"
+number = 89
+rarity = 1
+expansion = 0
+categories = 2
+trainer_properties = SubResource("Resource_8tpb4")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

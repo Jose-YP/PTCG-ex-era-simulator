@@ -4,7 +4,7 @@ class_name EnMov
 #@export_group("Energy Movement")
 @export_enum("Basic", "Special", "Any") var energy_move_type: int = 0
 @export_enum("Move", "Discard", 
-"Top Deck", "Bottom Deck") var action: int = 1
+"Top Deck", "Bottom Deck", "Hand Attatch") var action: int = 1
 ##If they targets from which meet ask, they're allowed
 @export var candidates: SlotAsk
 ##Targets for removal
@@ -14,7 +14,6 @@ class_name EnMov
 @export var energy_ammount: int = 0
 ##Ammount of swaps allowed. -1 means infinite.
 @export var swap_ammount: int = 1
-@export_flags("Basic", "Special") var energy_clas: int = 3
 ##If any energy is currently considered
 @export_flags("Grass","Fire","Water",
 "Lightning","Psychic","Fighting",

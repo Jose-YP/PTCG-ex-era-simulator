@@ -17,7 +17,10 @@ class_name Counter
  "Opponent Active", "Attacker", "Defender") var mon_count: int = 0
 ##Search for an aspect in the game
 @export_enum("Energy Attatched", "Energy Excess", "P Damage Counters",
- "Prizes Left P","Prizes Left O","Prize Difference","Constant") var for_what
+ "Prizes Left P","Prizes Left O","Prize Difference",
+"Hand P","Hand O","Hand Difference","Discard P",
+"Discard O","Discard Diff","Constant") var for_what: String = "Constant"
+
 ##Search for the number of pokemon that meet this ask
 @export var meet_ask: SlotAsk
 ##What is the max value if any
