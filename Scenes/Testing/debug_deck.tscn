@@ -1,16 +1,136 @@
-[gd_scene load_steps=7 format=3 uid="uid://c3qurrd5vl1ao"]
+[gd_scene load_steps=32 format=3 uid="uid://c3qurrd5vl1ao"]
 
 [ext_resource type="Script" uid="uid://b3ki70ohjb21g" path="res://Scenes/Testing/debug_deck.gd" id="1_76cja"]
 [ext_resource type="Script" uid="uid://b6qi20o3p32gq" path="res://Code/Scenes/UI/full_ui.gd" id="2_iuq08"]
+[ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="2_yqty7"]
+[ext_resource type="Resource" uid="uid://tynomqb1ld65" path="res://Resources/Components/Effects/Identifiers/IsPokemon.tres" id="3_flo2v"]
 [ext_resource type="PackedScene" uid="uid://dognokjork36j" path="res://Scenes/UI/UICollections/PlayerSide.tscn" id="3_ibwmv"]
+[ext_resource type="Resource" uid="uid://dk0v7dyi3r43m" path="res://Resources/Components/Effects/Identifiers/IsTrainer.tres" id="4_6a1ot"]
 [ext_resource type="PackedScene" uid="uid://bdpxdnxpe1f32" path="res://Scenes/Testing/dummy.tscn" id="4_463lc"]
 [ext_resource type="PackedScene" uid="uid://cni7lmrv7r06c" path="res://Scenes/Main Game/Fundies.tscn" id="5_k0qov"]
+[ext_resource type="Resource" uid="uid://366upf662brq" path="res://Resources/Components/Effects/Identifiers/IsEnergy.tres" id="5_pulol"]
+[ext_resource type="Resource" uid="uid://ccj6n5o2yaoev" path="res://Resources/Components/Effects/Identifiers/TeamMagma.tres" id="6_5pq6o"]
 [ext_resource type="Resource" uid="uid://bleo7p56u5k1f" path="res://Resources/Decks/TestDeck.tres" id="7_441s3"]
+[ext_resource type="Resource" uid="uid://bwqpkxc8m63nj" path="res://Resources/Components/Effects/Identifiers/IsSpecialEnergy.tres" id="7_ww7ww"]
+[ext_resource type="Resource" uid="uid://bkuxa81fpcmol" path="res://Resources/Components/Effects/Identifiers/IsSupporter.tres" id="8_owp07"]
+[ext_resource type="Resource" uid="uid://dpo3quamvikcu" path="res://Resources/Components/Effects/Identifiers/IsEvolution.tres" id="9_fukg8"]
+[ext_resource type="Resource" uid="uid://fmsyeknhg72m" path="res://Resources/Components/Effects/Identifiers/EvolvesFromPlayed.tres" id="10_qtpl6"]
+[ext_resource type="Resource" uid="uid://bsrtmv3udqjav" path="res://Resources/Components/Effects/Identifiers/BasicPokemon.tres" id="11_etycu"]
+[ext_resource type="Resource" uid="uid://ccyylno0d5ync" path="res://Resources/Components/Effects/Identifiers/non-ex.tres" id="12_0dfak"]
+[ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="13_xd3r3"]
+[ext_resource type="Resource" uid="uid://bjhfixkixpbev" path="res://Resources/Components/Effects/Asks/100HPorMore.tres" id="14_pulol"]
+[ext_resource type="Resource" uid="uid://cyaqpq76mby4m" path="res://Resources/Components/Effects/Asks/EvolvedMon.tres" id="15_5pq6o"]
+[ext_resource type="Resource" uid="uid://cxegxi6tys8qi" path="res://Resources/Components/Effects/Asks/IsPoisioned.tres" id="16_owp07"]
+[ext_resource type="Resource" uid="uid://bydi0pyqva0ly" path="res://Resources/Components/Effects/Asks/exMon.tres" id="16_ww7ww"]
+[ext_resource type="Resource" uid="uid://1yjd3yshx5a1" path="res://Resources/Components/Effects/Asks/IsAsleep.tres" id="17_fukg8"]
+[ext_resource type="Resource" uid="uid://81ap7i1gfqm0" path="res://Resources/Components/Effects/Asks/AffectedByCondition.tres" id="18_qtpl6"]
+[ext_resource type="Resource" uid="uid://c08tcl1tywrqe" path="res://Resources/Components/Effects/Asks/Either-non-ex.tres" id="20_qtpl6"]
+[ext_resource type="Resource" uid="uid://byktyri4kacof" path="res://Resources/Components/Effects/Asks/RetreatLessThan2.tres" id="21_etycu"]
+
+[sub_resource type="Resource" id="Resource_sreaw"]
+script = ExtResource("2_yqty7")
+must_be_different = false
+broad_class = 1
+exactly = false
+contains = ""
+type = 0
+evolves_from = false
+rare_candy = false
+poke_class = 0
+owner = 0
+stage = 0
+trainer_classes = 0
+energy_class = 3
+metadata/_custom_type_script = "uid://uplawvwcwl8y"
+
+[sub_resource type="Resource" id="Resource_n56ka"]
+script = ExtResource("2_yqty7")
+must_be_different = false
+broad_class = 4
+exactly = false
+contains = ""
+type = 0
+evolves_from = false
+rare_candy = false
+poke_class = 0
+owner = 0
+stage = 0
+trainer_classes = 0
+energy_class = 3
+metadata/_custom_type_script = "uid://uplawvwcwl8y"
+
+[sub_resource type="Resource" id="Resource_rtwb1"]
+script = ExtResource("2_yqty7")
+must_be_different = false
+broad_class = 2
+exactly = false
+contains = ""
+type = 0
+evolves_from = false
+rare_candy = false
+poke_class = 0
+owner = 0
+stage = 0
+trainer_classes = 20
+energy_class = 3
+metadata/_custom_type_script = "uid://uplawvwcwl8y"
+
+[sub_resource type="Resource" id="Resource_owp07"]
+script = ExtResource("13_xd3r3")
+target = 0
+comparison_type = 1
+max_hp = -10
+damage_taken = -10
+retreat_cost = -1
+energy_attatched = -1
+knocked_out = false
+condition = 0
+location = 0
+stage = 7
+rare_candy = false
+class_inclusive = true
+pokemon_class = 0
+bench_size = -1
+type_inclusive = true
+type = 1023
+type_size = -1
+ask_string = ""
+formal_ask = false
+choose = 0
+choose_location = 0
+metadata/_custom_type_script = "uid://mkjynqda7q5g"
+
+[sub_resource type="Resource" id="Resource_fukg8"]
+script = ExtResource("13_xd3r3")
+target = 0
+comparison_type = 1
+max_hp = -10
+damage_taken = -10
+retreat_cost = -1
+energy_attatched = -1
+knocked_out = false
+condition = 0
+location = 0
+stage = 7
+rare_candy = false
+class_inclusive = true
+pokemon_class = 0
+bench_size = -1
+type_inclusive = true
+type = 1023
+type_size = -1
+ask_string = ""
+formal_ask = false
+choose = 0
+choose_location = 0
+metadata/_custom_type_script = "uid://mkjynqda7q5g"
 
 [node name="DebugDeck" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_76cja")
+search_identifiers = Array[ExtResource("2_yqty7")]([ExtResource("3_flo2v"), ExtResource("4_6a1ot"), ExtResource("5_pulol"), ExtResource("6_5pq6o"), ExtResource("7_ww7ww"), ExtResource("8_owp07"), ExtResource("9_fukg8"), ExtResource("10_qtpl6"), SubResource("Resource_sreaw"), SubResource("Resource_n56ka"), ExtResource("11_etycu"), ExtResource("12_0dfak"), SubResource("Resource_rtwb1")])
+slot_asks = Array[ExtResource("13_xd3r3")]([SubResource("Resource_owp07"), ExtResource("14_pulol"), ExtResource("15_5pq6o"), SubResource("Resource_fukg8"), ExtResource("16_owp07"), ExtResource("17_fukg8"), ExtResource("18_qtpl6"), ExtResource("16_ww7ww"), ExtResource("20_qtpl6"), ExtResource("21_etycu")])
 metadata/_edit_vertical_guides_ = [-235.0, -414.0]
 
 [node name="FullUI" type="Control" parent="."]

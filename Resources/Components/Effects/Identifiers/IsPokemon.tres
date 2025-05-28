@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Identifier" load_steps=2 format=3 uid="uid://tynomqb1ld65"]
+
+[ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="1_bsp23"]
+
+[resource]
+script = ExtResource("1_bsp23")
+must_be_different = false
+broad_class = 1
+exactly = false
+contains = ""
+type = 0
+evolves_from = false
+rare_candy = false
+poke_class = 0
+owner = 0
+stage = 0
+trainer_classes = 0
+energy_class = 3
+metadata/_custom_type_script = "uid://uplawvwcwl8y"

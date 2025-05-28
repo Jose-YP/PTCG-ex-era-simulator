@@ -7,9 +7,11 @@ class_name SlotAsk
 ##Which side to pay attention to
 @export_enum("None", "Player", "Opponent", "Both") var target: int = 0
 ##-10 means don't look at this var, 0 means must be undamaged, the rest mean x or more
-@export_enum("LessEq", "GreaterEq") var damage_comparison: int = 1
+@export_enum("LessEq", "GreaterEq") var comparison_type: int = 1
 @export_range(-10,200,10) var max_hp: int = -10
 @export_range(-10,200,10) var damage_taken: int = -10
+##-1 means don't look at it
+@export_range(-1, 6, 1) var retreat_cost: int = -1
 ##-1 means don't look at this var, 0 means must have no energy, the rest mean x or more
 @export var energy_attatched: int = -1
 @export var knocked_out: bool = false
@@ -98,9 +100,9 @@ func check_ask(slot: PokeSlot) -> bool:
 	if max_hp != -10:
 		print("-----------------------------------------------------------")
 		print_rich("[center]Max HP")
-		print("Damage Counters: ", slot.current_card.pokemon_properties.HP)
-		var viewing_hp: int = slot.current_card.pokemon_properties.HP
-		var hp: bool = viewing_hp >= max_hp if damage_comparison == 1 else viewing_hp <= damage_comparison
+		print("Damage Counters: ", slot.pokedata.HP)
+		var viewing_hp: int = slot.pokedata.HP
+		var hp: bool = viewing_hp >= max_hp if comparison_type == 1 else viewing_hp <= comparison_type
 		result = result and hp
 	
 	#If damage_taken isn't -10 check if a pokemon has taken damage
@@ -108,8 +110,15 @@ func check_ask(slot: PokeSlot) -> bool:
 		print("-----------------------------------------------------------")
 		print_rich("[center]Damage Taken")
 		print("Damage Counters: ", slot.damage_counters)
-		var dmg: bool = slot.damage_counters >= damage_taken if damage_comparison == 1 else slot.damage_counters <= damage_taken
+		var dmg: bool = slot.damage_counters >= damage_taken if comparison_type == 1 else slot.damage_counters <= damage_taken
 		result = result and dmg
+	
+	if retreat_cost != -1:
+		print("-----------------------------------------------------------")
+		print_rich("[center]Retreat")
+		print("Retreat Cost: ", slot.pokedata.retreat)
+		var cost: bool = slot.pokedata.retreat >= retreat_cost if comparison_type == 1 else slot.pokedata.retreat <= retreat_cost
+		result = cost and result
 	
 	#If energy attatched isn't -1 check to see if a pokemon has x ammount attatched
 	if energy_attatched != -1:
