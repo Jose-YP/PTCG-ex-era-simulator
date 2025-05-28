@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://idwdorik15vd"]
 
 [ext_resource type="Texture2D" uid="uid://dpkus6tgwiwt" path="res://Art/Cards/1 ex Ruby & Saphire/102.jpg" id="1_bpg55"]
-[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_vv51n"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_vv51n"]
 [ext_resource type="Resource" uid="uid://depecxjmmfklq" path="res://Resources/Components/Effects/Asks/AskSingleFlip.tres" id="2_j08b5"]
 [ext_resource type="Resource" uid="uid://dnr7ljin1eclj" path="res://Resources/Components/Effects/Buff/FullImmunity1Turn.tres" id="3_pja2x"]
-[ext_resource type="Script" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="4_h2ci7"]
-[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_58n71"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="4_h2ci7"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_58n71"]
 
 [sub_resource type="Resource" id="Resource_5dn7d"]
 script = ExtResource("4_h2ci7")
@@ -25,6 +25,7 @@ ignore_condition = 0
 initial_main_DMG = 10
 self_damage = 0
 modifier = 0
+both_active = false
 ask = ExtResource("2_j08b5")
 effect = ExtResource("3_pja2x")
 
@@ -46,6 +47,7 @@ ignore_condition = 0
 initial_main_DMG = 50
 self_damage = 0
 modifier = 0
+both_active = false
 
 [sub_resource type="Resource" id="Resource_yjm86"]
 script = ExtResource("5_58n71")
@@ -54,8 +56,7 @@ retreat = 1
 attacks = Array[ExtResource("4_h2ci7")]([SubResource("Resource_5dn7d"), SubResource("Resource_4yjhr")])
 evo_stage = "Basic"
 evolves_from = ""
-delta = false
-considered = 1
+considered = 2
 owner = 0
 type = 1
 weak = 0

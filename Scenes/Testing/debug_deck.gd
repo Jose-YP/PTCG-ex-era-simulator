@@ -1,6 +1,9 @@
 @icon("res://Art/ProjectSpecific/alpha.png")
 extends Control
 
+@export var search_identifiers: Array[Identifier]
+@export var slot_asks: Array[SlotAsk]
+
 @onready var card_resources: Deck_Manipulator = $Fundies/PlayerResources
 @onready var slotUI: SlotUIActions = $Fundies/SlotUIActions
 @onready var playerSide: Control = $FullUI/PlayerSide

@@ -24,8 +24,8 @@ evolves_from = false
 poke_class = null
 owner = 0
 stage = null
-trainer_classes = null
-energy_class = 3
+trainer_classes = 3
+energy_class = 7
 
 [sub_resource type="Resource" id="Resource_t1h8r"]
 script = ExtResource("4_nrk2l")

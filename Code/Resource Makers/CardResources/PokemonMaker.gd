@@ -13,7 +13,7 @@ class_name Pokemon
 @export_group("Properties")
 @export_enum("Basic", "Stage 1", "Stage 2") var evo_stage: String = "Basic"
 @export var evolves_from: String = ""
-@export_flags("ex", "Baby", "Delta", "Star") var considered: int = 0
+@export_flags("non-ex","ex", "Baby", "Delta", "Star") var considered: int = 1
 @export_enum("None","Team Aqua","Team Magma","Team Rocket", "Holon") var owner: int = 0
 
 @export_group("Type")

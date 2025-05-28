@@ -76,17 +76,78 @@ text = "Shuffle Hand to Deck"
 layout_mode = 2
 text = "ViewAllDeck"
 
-[node name="ToggleSearch" type="Button" parent="FullUI/CardActions"]
+[node name="SearchTest" type="Button" parent="FullUI/CardActions"]
+layout_mode = 2
+toggle_mode = true
+text = "Search Test"
+
+[node name="SearchTypes" type="OptionButton" parent="FullUI/CardActions"]
+layout_mode = 2
+selected = 11
+item_count = 13
+popup/item_0/text = "Pokemon"
+popup/item_0/id = 0
+popup/item_1/text = "Trainers"
+popup/item_1/id = 1
+popup/item_2/text = "Energy"
+popup/item_2/id = 2
+popup/item_3/text = "Team Magma"
+popup/item_3/id = 3
+popup/item_4/text = "Special"
+popup/item_4/id = 4
+popup/item_5/text = "Supporters"
+popup/item_5/id = 5
+popup/item_6/text = "Evolutions"
+popup/item_6/id = 6
+popup/item_7/text = "Evo from Active"
+popup/item_7/id = 7
+popup/item_8/text = "Pokemon of Type"
+popup/item_8/id = 8
+popup/item_9/text = "Basic Energy of Type"
+popup/item_9/id = 9
+popup/item_10/text = "Basic Only"
+popup/item_10/id = 10
+popup/item_11/text = "Non-ex"
+popup/item_11/id = 11
+popup/item_12/text = "Tool & TM"
+popup/item_12/id = 12
+
+[node name="AskTest" type="Button" parent="FullUI/CardActions"]
 layout_mode = 2
 toggle_mode = true
 text = "ViewAllDeck"
 
+[node name="AskTypes" type="OptionButton" parent="FullUI/CardActions"]
+layout_mode = 2
+selected = 9
+item_count = 10
+popup/item_0/text = "Is type"
+popup/item_0/id = 0
+popup/item_1/text = "HP > 100"
+popup/item_1/id = 1
+popup/item_2/text = "Evolved"
+popup/item_2/id = 2
+popup/item_3/text = "Team Magma"
+popup/item_3/id = 3
+popup/item_4/text = "Poisioned"
+popup/item_4/id = 4
+popup/item_5/text = "Asleep"
+popup/item_5/id = 5
+popup/item_6/text = "Conditioned"
+popup/item_6/id = 6
+popup/item_7/text = "ex"
+popup/item_7/id = 7
+popup/item_8/text = "Non-ex"
+popup/item_8/id = 8
+popup/item_9/text = "Retreat < 2"
+popup/item_9/id = 9
+
 [node name="MenuButton2" type="VBoxContainer" parent="FullUI"]
 layout_mode = 0
-offset_left = 235.0
-offset_top = 251.0
-offset_right = 386.0
-offset_bottom = 597.0
+offset_left = -504.0
+offset_top = 149.0
+offset_right = -353.0
+offset_bottom = 495.0
 
 [node name="Basic Energy" type="CheckBox" parent="FullUI/MenuButton2"]
 layout_mode = 2

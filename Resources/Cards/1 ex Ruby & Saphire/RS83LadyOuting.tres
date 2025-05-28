@@ -16,10 +16,11 @@ exactly = false
 contains = ""
 type = 511
 evolves_from = false
-poke_class = null
+rare_candy = false
+poke_class = 0
 owner = 0
-stage = null
-trainer_classes = null
+stage = 0
+trainer_classes = 0
 energy_class = 1
 
 [sub_resource type="Resource" id="Resource_wtgyq"]

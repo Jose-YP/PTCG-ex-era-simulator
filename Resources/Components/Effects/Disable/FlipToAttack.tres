@@ -1,16 +1,19 @@
-[gd_resource type="Resource" script_class="EffectCall" load_steps=4 format=3 uid="uid://tqn8fn4qsn2h"]
+[gd_resource type="Resource" script_class="EffectCall" load_steps=5 format=3 uid="uid://tqn8fn4qsn2h"]
 
-[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/DisableMaker.gd" id="1_ugqmp"]
-[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_xgrgp"]
+[ext_resource type="Script" uid="uid://c0ishgbxk63dg" path="res://Code/Resource Makers/EffectSpecific/DisableMaker.gd" id="1_ugqmp"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_xgrgp"]
+[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="3_wglhy"]
 
 [sub_resource type="Resource" id="Resource_ebbnp"]
 script = ExtResource("1_ugqmp")
 disable_target = 4
+duration = -1
 no_weakness = false
 no_resistance = false
 instead_of_damage = false
 do_nothing = false
 attack = 1
+power = 0
 retreat_duration = 1
 disable_retreat = false
 
@@ -18,7 +21,7 @@ disable_retreat = false
 script = ExtResource("2_xgrgp")
 order = Array[int]([])
 disable = SubResource("Resource_ebbnp")
-search = Array[Resource("res://Code/Resource Makers/EffectSpecific/SearchMaker.gd")]([])
+search = Array[ExtResource("3_wglhy")]([])
 remove_conditions = false
 remove_shockwave = false
 remove_imprison = false

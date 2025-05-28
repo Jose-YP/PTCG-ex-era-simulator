@@ -15,13 +15,123 @@ class_name Identifier
 @export_group("Pokemon Categories")
 ##Search for a mon that evolves from the using mon
 @export var evolves_from: bool = false
-@export_flags("non-ex", "ex", "baby", "delta") var poke_class
+##This one is special [NOT IMPLEMENTED]
+@export var rare_candy: bool = false
+@export_flags("non-ex", "ex", "baby", "delta", "star") var poke_class: int = 0
 @export_flags("Aqua", "Magma", "Rocket", "Holon") var owner: int = 0
-@export_flags("Basic", "Stage 1", "Stage 2") var stage
+@export_flags("Basic", "Stage 1", "Stage 2") var stage: int = 0
 
 @export_group("Trainer Categories")
 @export_flags("Item", "Supporter",
-"Tool", "Stadium", "TM") var trainer_classes
+"Tool", "Stadium", "TM") var trainer_classes: int = 0
 
 @export_group("Energy Categories")
-@export_flags("Basic", "Special") var energy_class
+@export_flags("Basic", "Special") var energy_class: int = 3
+
+func identifier_bool(card: Base_Card, based_on: Base_Card) -> bool:
+	print("----------------------------------------------------")
+	print(card.name, "\n", card.categories)
+	#Only move forward if the card is the correct kind
+	if card.categories & broad_class:
+		print("Yes it's considered the right class ")
+		#Get the results of every applicable identifier
+		#Check if every boolean has to be allowed or not
+		if card.pokemon_properties:
+			if exactly:
+				print("AND BOOL ", and_poke_bool(card, based_on))
+				return and_poke_bool(card, based_on)
+			else:
+				print("OR BOOL ", or_poke_bool(card, based_on))
+				return or_poke_bool(card, based_on)
+		if card.trainer_properties:
+			if trainer_classes != 0:
+				print(card.name, " is ", card.trainer_properties.considered)
+				var tr_class: int = 2 ** 5
+				match card.trainer_properties.considered:
+					"Item":
+						tr_class = 2 ** 0
+					"Supporter":
+						tr_class = 2 ** 1
+					"Tool":
+						tr_class = 2 ** 2
+					"Stadium":
+						tr_class = 2 ** 3
+					"TM":
+						tr_class = 2 ** 4
+				
+				print("Now is this allowed? ", trainer_classes & tr_class)
+				return trainer_classes & tr_class
+			else:
+				print(" I don't care what this is just say it's good enogh")
+				return true
+		else:
+			print(card.name, " is ", card.energy_properties.considered)
+			if card.energy_properties.considered == "Basic Energy":
+				print("Looking for Basic so ", energy_class & 1)
+				return energy_class & 1
+			else:
+				print("Looking for Special so ", energy_class & 2)
+				return energy_class & 2
+	
+	else:
+		print("Not right category, moving on")
+		return false
+
+func or_poke_bool(card: Base_Card, based_on: Base_Card) -> bool:
+	print("/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\")
+	var pokemon: Pokemon = card.pokemon_properties
+	
+	if evolves_from and pokemon.evolves_from == based_on.name: return true
+	
+	if type != 0 and pokemon.type & type: return true
+	
+	if stage != 0:
+		var evo: int = 2 ** 0
+		match pokemon.evo_stage:
+			"Stage 1":
+				evo = 2 ** 1
+			"Stage 2":
+				evo = 2 ** 2
+		
+		if stage & evo: return true
+	
+	if poke_class != 0 and poke_class & pokemon.considered: return true
+	
+	if owner == pokemon.owner: return true
+	
+	return false
+
+func and_poke_bool(card: Base_Card, based_on: Base_Card):
+	print("\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/")
+	var pokemon: Pokemon = card.pokemon_properties
+	if evolves_from and pokemon.evolves_from != based_on.name: return false
+	
+	if type != 0 and not pokemon.type & type: return false
+	
+	if not poke_class & pokemon.considered: return false
+	
+	if owner != pokemon.owner: return false
+	
+	if stage != 0:
+		var evo: int = 2 ** 0
+		match pokemon.evo_stage:
+			"Stage 1":
+				evo = 2 ** 1
+			"Stage 2":
+				evo = 2 ** 2
+		
+		if not stage & evo: return false
+	
+	return true
+
+#func or_trainer_bool(card: Base_Card, based_on: Base_Card):
+	#pass
+#
+#func and_trainer_bool(card: Base_Card, based_on: Base_Card):
+	#pass
+#
+#func or_energy_bool(card: Base_Card, based_on: Base_Card):
+	#pass
+#
+#func and_energy_bool(card: Base_Card, based_on: Base_Card):
+	#pass

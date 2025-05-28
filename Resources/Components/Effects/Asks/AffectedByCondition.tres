@@ -1,21 +1,25 @@
-[gd_resource type="Resource" script_class="Ask" load_steps=2 format=3 uid="uid://81ap7i1gfqm0"]
+[gd_resource type="Resource" script_class="SlotAsk" load_steps=2 format=3 uid="uid://81ap7i1gfqm0"]
 
 [ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="1_hfm7a"]
 
 [resource]
 script = ExtResource("1_hfm7a")
 target = 1
-damage_taken = -10
-energy_attatched = -1
-knocked_out = false
+damage_comparison = null
+max_hp = null
+damage_taken = null
+energy_attatched = null
+knocked_out = null
 condition = 31
 location = 4
-inclusive = true
-pokemon_class = 0
-bench_size = -1
-type = 1023
+stage = null
+class_inclusive = null
+pokemon_class = null
+bench_size = null
+type_inclusive = null
+type = null
 type_size = 1
-ask_string = ""
-formal_ask = false
-choose = 0
-choose_location = 0
+ask_string = null
+formal_ask = null
+choose = null
+choose_location = null

@@ -59,8 +59,8 @@ evolves_from = false
 poke_class = null
 owner = 0
 stage = null
-trainer_classes = null
-energy_class = 3
+trainer_classes = 3
+energy_class = 7
 
 [sub_resource type="Resource" id="Resource_t1h8r"]
 script = ExtResource("7_exgxy")
@@ -98,9 +98,9 @@ HP = 100
 retreat = 2
 power = SubResource("Resource_wvak6")
 attacks = Array[ExtResource("3_08wec")]([SubResource("Resource_ld6ej")])
-evo_stage = "Stage 2"
+evo_stage = "Basic"
 evolves_from = "Combusken"
-considered = 0
+considered = 1
 owner = 0
 type = 2
 weak = 4

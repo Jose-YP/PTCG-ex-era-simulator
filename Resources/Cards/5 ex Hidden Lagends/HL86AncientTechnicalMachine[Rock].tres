@@ -1,33 +1,13 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://day2wur81xum5"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=11 format=3 uid="uid://day2wur81xum5"]
 
 [ext_resource type="Texture2D" uid="uid://bp4cvx4uqbwob" path="res://Art/Cards/5 ex Hidden Legends/86.jpg" id="1_fs338"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_454ab"]
-[ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="3_4thpx"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_rgudo"]
 [ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="5_bh7p1"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="5_rs7ch"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="6_uou67"]
 
 [sub_resource type="Resource" id="Resource_qjbpo"]
-script = ExtResource("3_4thpx")
-target = 0
-damage_comparison = 1
-damage_taken = -10
-energy_attatched = -1
-knocked_out = false
-condition = 0
-location = 0
-stage = 6
-class_inclusive = true
-pokemon_class = 114
-bench_size = -1
-type_inclusive = true
-type = 1023
-type_size = 1
-ask_string = ""
-formal_ask = false
-choose = 0
-choose_location = 0
 
 [sub_resource type="Resource" id="Resource_qux53"]
 script = ExtResource("4_rgudo")

@@ -71,6 +71,7 @@ var shockwave: bool = false
 #endregion
 #--------------------------------------
 var readied: bool = false
+var knocked_out: bool = false
 #endregion
 #--------------------------------------
 

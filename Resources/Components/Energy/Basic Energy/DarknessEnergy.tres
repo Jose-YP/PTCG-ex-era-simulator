@@ -1,22 +1,25 @@
-[gd_resource type="Resource" script_class="Energy" load_steps=9 format=3 uid="uid://cf28iibs06s23"]
+[gd_resource type="Resource" script_class="Energy" load_steps=10 format=3 uid="uid://cf28iibs06s23"]
 
 [ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="1_v3386"]
 [ext_resource type="Script" uid="uid://caj1pm8erar2a" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="2_ipvd8"]
 [ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/BuffMaker.gd" id="3_v07w8"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_rhnr6"]
+[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="5_t4foj"]
 
 [sub_resource type="Resource" id="Resource_jxk1y"]
 script = ExtResource("1_v3386")
 target = 1
+damage_comparison = 1
 damage_taken = -10
 energy_attatched = -1
 knocked_out = false
 condition = 0
 location = 4
 stage = 7
-inclusive = true
+class_inclusive = true
 pokemon_class = 128
 bench_size = -1
+type_inclusive = true
 type = 1023
 type_size = 1
 ask_string = ""
@@ -28,15 +31,17 @@ choose_location = 0
 script = ExtResource("1_v3386")
 or_ask = SubResource("Resource_jxk1y")
 target = 0
+damage_comparison = 1
 damage_taken = -10
 energy_attatched = -1
 knocked_out = false
 condition = 0
 location = 4
 stage = 7
-inclusive = true
+class_inclusive = true
 pokemon_class = 0
 bench_size = -1
+type_inclusive = true
 type = 576
 type_size = 1
 ask_string = ""
@@ -58,7 +63,7 @@ immune_to_damage = false
 script = ExtResource("4_rhnr6")
 order = Array[int]([])
 buff = SubResource("Resource_j3iii")
-search = Array[Resource("res://Code/Resource Makers/EffectSpecific/SearchMaker.gd")]([])
+search = Array[ExtResource("5_t4foj")]([])
 remove_conditions = false
 remove_shockwave = false
 remove_imprison = false
