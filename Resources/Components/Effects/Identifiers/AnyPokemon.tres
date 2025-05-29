@@ -10,6 +10,7 @@ exactly = false
 contains = ""
 type = 511
 evolves_from = false
+rare_candy = false
 poke_class = 15
 owner = 15
 stage = 7

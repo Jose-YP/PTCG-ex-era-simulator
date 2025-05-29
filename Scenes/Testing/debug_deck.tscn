@@ -203,7 +203,6 @@ text = "Search Test"
 
 [node name="SearchTypes" type="OptionButton" parent="FullUI/CardActions"]
 layout_mode = 2
-selected = 11
 item_count = 13
 popup/item_0/text = "Pokemon"
 popup/item_0/id = 0
@@ -336,6 +335,8 @@ ui_slot = NodePath("../../../FullUI/PlayerSide/Main/Bench/BenchPokemon2")
 [connection signal="pressed" from="FullUI/CardActions/SearchDiscard" to="." method="_on_search_discard_pressed"]
 [connection signal="pressed" from="FullUI/CardActions/Shuffle2Deck" to="." method="_on_shuffle_2_deck_pressed"]
 [connection signal="pressed" from="FullUI/CardActions/ViewAllDeck" to="." method="_on_view_all_deck_pressed"]
+[connection signal="pressed" from="FullUI/CardActions/SearchTest" to="." method="_on_search_test_pressed"]
+[connection signal="pressed" from="FullUI/CardActions/AskTest" to="." method="_on_ask_test_pressed"]
 
 [editable path="FullUI/PlayerSide"]
 [editable path="Fundies"]

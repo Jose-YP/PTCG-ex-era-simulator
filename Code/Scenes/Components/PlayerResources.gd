@@ -172,3 +172,39 @@ func show_reveal_stack(reveal_slot):
 
 #endregion
 #--------------------------------------
+
+#--------------------------------------
+#region TUTORING
+func search_array(search: Search, based_on: PokeSlot):
+	var from: Array[Base_Card] = arrays.get_array(search.where)
+	var search_results: Array[Array]
+	for tutor in search.of_this:
+		print("--------------------")
+		print(tutor)
+		print("--------------------")
+		search_results.append(identifier_search(from, based_on, tutor))
+	
+	return search_results
+
+func identifier_search(list: Array[Base_Card], based_on: PokeSlot, identifier: Identifier) -> Array[Base_Card]:
+	var valid_cards: Array[Base_Card]
+	var invalid_cards: Array[Base_Card]
+	var names_valid
+	
+	for card in list:
+		if identifier.identifier_bool(card, based_on.current_card):
+			valid_cards.append(card)
+		else: invalid_cards.append(card)
+	
+	print("--------------------")
+	print("VALID CARDS: ")
+	for card in valid_cards: print(card.name)
+	print("--------------------")
+	print("--------------------")
+	print("INVALID CARDS: ")
+	for card in invalid_cards: print(card.name)
+	print("--------------------")
+	return valid_cards + invalid_cards
+
+#endregion
+#--------------------------------------

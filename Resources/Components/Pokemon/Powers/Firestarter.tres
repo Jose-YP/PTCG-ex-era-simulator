@@ -21,6 +21,7 @@ exactly = false
 contains = ""
 type = 2
 evolves_from = false
+rare_candy = false
 poke_class = null
 owner = 0
 stage = null

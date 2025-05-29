@@ -95,10 +95,14 @@ func or_poke_bool(card: Base_Card, based_on: Base_Card) -> bool:
 		
 		if stage & evo: return true
 	
-	if poke_class != 0 and poke_class & pokemon.considered: return true
+	print(poke_class != 0, poke_class & pokemon.considered)
+	print(poke_class,"|||", pokemon.considered)
 	
-	if owner == pokemon.owner: return true
+	if poke_class != 0 and poke_class & pokemon.considered != 0: return true
 	
+	if owner != 0 and owner & pokemon.owner != 0: return true
+	
+	print(card.name, " isn't allowed")
 	return false
 
 func and_poke_bool(card: Base_Card, based_on: Base_Card):
@@ -108,9 +112,9 @@ func and_poke_bool(card: Base_Card, based_on: Base_Card):
 	
 	if type != 0 and not pokemon.type & type: return false
 	
-	if not poke_class & pokemon.considered: return false
+	if poke_class != 0 and poke_class & pokemon.considered == 0: return false
 	
-	if owner != pokemon.owner: return false
+	if owner != 0 and owner & pokemon.owner == 0: return false
 	
 	if stage != 0:
 		var evo: int = 2 ** 0
