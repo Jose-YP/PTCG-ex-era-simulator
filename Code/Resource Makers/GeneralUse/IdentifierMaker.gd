@@ -93,7 +93,10 @@ func or_poke_bool(card: Base_Card, based_on: Base_Card) -> bool:
 			"Stage 2":
 				evo = 2 ** 2
 		
-		if stage & evo: return true
+		print(pokemon.evo_stage)
+		print(evo, stage)
+		print(stage & evo)
+		if stage & evo != 0: return true
 	
 	print(poke_class != 0, poke_class & pokemon.considered)
 	print(poke_class,"|||", pokemon.considered)
@@ -124,7 +127,7 @@ func and_poke_bool(card: Base_Card, based_on: Base_Card):
 			"Stage 2":
 				evo = 2 ** 2
 		
-		if not stage & evo: return false
+		if not stage & evo == 0: return false
 	
 	return true
 

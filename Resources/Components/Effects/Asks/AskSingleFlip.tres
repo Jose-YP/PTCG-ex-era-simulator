@@ -12,9 +12,10 @@ until = false
 [resource]
 script = ExtResource("2_enfie")
 target = 0
-damage_comparison = 1
+comparison_type = 1
 max_hp = -10
 damage_taken = -10
+retreat_cost = -1
 energy_attatched = -1
 knocked_out = false
 condition = 0

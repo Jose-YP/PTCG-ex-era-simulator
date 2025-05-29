@@ -197,12 +197,12 @@ func identifier_search(list: Array[Base_Card], based_on: PokeSlot, identifier: I
 		else: invalid_cards.append(card)
 	
 	print("--------------------")
-	print("VALID CARDS: ")
-	for card in valid_cards: print(card.name)
-	print("--------------------")
-	print("--------------------")
 	print("INVALID CARDS: ")
 	for card in invalid_cards: print(card.name)
+	print("--------------------")
+	print("--------------------")
+	print("VALID CARDS: ")
+	for card in valid_cards: print(card.name)
 	print("--------------------")
 	return valid_cards + invalid_cards
 

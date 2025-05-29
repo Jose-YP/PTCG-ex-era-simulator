@@ -22,6 +22,7 @@ ignore_condition = 0
 initial_main_DMG = 10
 self_damage = 0
 modifier = 0
+both_active = false
 ask = ExtResource("1_hlle4")
 effect = ExtResource("2_3r0u2")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
