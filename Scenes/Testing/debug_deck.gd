@@ -4,6 +4,7 @@ extends Control
 @export var search_identifiers: Array[Identifier]
 @export var slot_asks: Array[SlotAsk]
 
+@onready var dummy: Dummy = $FullUI/Dummy
 @onready var fundies: Fundies = $Fundies
 @onready var slots: Array[Node] = $Fundies/Slots.get_children()
 @onready var card_resources: Deck_Manipulator = $Fundies/PlayerResources
@@ -43,6 +44,14 @@ func _on_view_all_deck_pressed():
 
 func _on_search_test_pressed() -> void:
 	print(search_identifiers[search_types.get_selected_id()], search_types.get_item_text(search_types.get_selected_id()))
+	var identifier: Identifier = search_identifiers[search_types.get_selected_id()]
+	match search_types.get_selected_id():
+		7: #Evolves from active
+			identifier.edit_in_type(slots[0].type)
+		8: #Pokemon of type
+			identifier.edit_in_type(dummy.get_type_flag())
+		9: #Energy of type
+			identifier.edit_in_type(dummy.get_type_flag())
 	card_resources.identifier_search(card_resources.arrays.get_array("Deck"), slots[0], search_identifiers[search_types.get_selected_id()])
 
 func _on_ask_test_pressed() -> void:

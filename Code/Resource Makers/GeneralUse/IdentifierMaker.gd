@@ -142,3 +142,7 @@ func and_poke_bool(card: Base_Card, based_on: Base_Card):
 #
 #func and_energy_bool(card: Base_Card, based_on: Base_Card):
 	#pass
+
+func edit_in_type(type_flags: int):
+	type = 0
+	type |= type_flags
