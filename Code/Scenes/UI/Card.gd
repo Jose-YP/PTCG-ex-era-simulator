@@ -82,28 +82,24 @@ func _ready():
 	#region SIMPLE EDITS
 	make_text(display_name, card.name)
 	make_text(max_hp, str("HP: ",pokedata.HP))
-	if pokedata.considered & 1: make_text(extra_identifier, "Baby Pokemon")
-	if pokedata.considered & 2: 
-		ruleboxes[0].show()
-		
-	if pokedata.considered & 4: make_text(extra_identifier, "Delta Species")
-	if pokedata.considered & 8: 
-		ruleboxes[1].show()
+	
+	if pokedata.considered & 2: ruleboxes[0].show()
+	if pokedata.considered & 4: make_text(extra_identifier, "Baby")
+	if pokedata.considered & 8: make_text(extra_identifier, "Delta")
+	if pokedata.considered & 16: ruleboxes[1].show()
 	
 	art.texture = card.image
 	
 	make_text(illustrator, str("[right]Illus. ", card.illustrator))
 	if pokedata.evolves_from != "":
 		make_text(evoFrom, str("Evolves from ", pokedata.evolves_from))
-	else:
-		evoFrom.clear()
+	else: evoFrom.clear()
 	
 	make_text(number, str("[right]",card.number, "/", Constants.expansion_counts[card.expansion]))
 	rarity.current_tab = card.rarity
 	set_type.current_tab = card.expansion
 	
-	if checking:
-		%Movable.show()
+	if checking: %Movable.show()
 	
 	#endregion
 	#--------------------------------------

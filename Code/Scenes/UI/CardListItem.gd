@@ -9,35 +9,22 @@ extends Button
 
 var parent: Node
 var checking_card: Node
+var interaction: String
 var allowed: bool = false
 
 #--------------------------------------
 #region INITALIZATION
 func _ready() -> void:
 	%Class.clear()
-	if card.categories & 1:
-		%Class.append_text(card.pokemon_properties.evo_stage)
-		if card.pokemon_properties.evo_stage == "Basic":
-			card_flags += Conversions.get_allowed_flags("Basic")
-		elif card.fossil: 
-			card_flags += Conversions.get_allowed_flags("Fossil")
-		else:
-			card_flags += Conversions.get_allowed_flags("Evolution")
-		
-	elif card.categories & 2:
-		var considered = card.trainer_properties.considered
-		if considered == "Rocket's Secret Machine": considered = "RSM"
-		
-		card_flags += Conversions.get_allowed_flags(considered)
-		
-		if considered == "Supporter": considered = "Support"
-		
-		%Class.append_text(considered)
+	card_flags = Conversions.get_card_flags(card)
 	
-	else:
-		card_flags += Conversions.get_allowed_flags("Energy")
-		%Class.append_text(card.energy_properties.considered)
-
+	if card_flags & 1 or card_flags & 2: %Class.append_text(card.pokemon_properties.evo_stage)
+	elif card_flags & 8: %Class.append_text("Support")
+	elif card_flags & 128: %Class.append_text("RSM")
+	elif card_flags & 256: %Class.append_text("Fossil")
+	elif card_flags & 512: %Class.append_text(card.energy_properties.considered)
+	else: %Class.append_text(card.trainer_properties.considered)
+	
 	%Art.texture = card.image
 	%Name.clear()
 	%Name.append_text(card.name)
@@ -52,7 +39,12 @@ func allow(play_as: int):
 
 func not_allowed():
 	allowed = false
-	disabled = true
+	#disabled = true
+
+func allow_move_to(destination: String):
+	match destination:
+		"Discard": interaction = "Discard"
+		_: interaction = "Tutor"
 
 #endregion
 #--------------------------------------
@@ -68,6 +60,11 @@ func show_options() -> Node:
 	option_Display.scale = Vector2(.05, .05)
 	option_Display.modulate = Color.TRANSPARENT
 	option_Display.interaction = parent.interaction
+	
+	if allowed:
+		option_Display.interaction = interaction
+	else:
+		option_Display.interaction = "Look"
 	
 	parent.add_child(option_Display)
 	option_Display.origin_button = self
@@ -109,7 +106,7 @@ func show_card() -> void:
 	Globals.checking_card()
 
 func _gui_input(event):
-	if allowed and not Globals.checking:
+	if not Globals.checking:
 		if event.is_action_pressed("A"):
 			if parent.options:
 				await parent.options.disapear()

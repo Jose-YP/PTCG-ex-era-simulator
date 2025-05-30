@@ -25,22 +25,22 @@ func _on_draw_starting_pressed():
 	card_resources.draw_starting()
 
 func _on_discard_pressed():
-	SignalBus.show_list.emit(true, "Discard", "Look")
+	SignalBus.show_list.emit(true, card_resources.get_list("Discard"), "Look")
 
 func _on_search_deck_pressed():
-	SignalBus.show_list.emit(true, "Deck", "Tutor")
+	SignalBus.show_list.emit(true, card_resources.get_list("Deck"), "Tutor")
 
 func _on_hand_pressed():
-	SignalBus.show_list.emit(true, "Hand", "Play")
+	SignalBus.show_list.emit(true, card_resources.get_list("Hand"), "Play")
 
 func _on_search_discard_pressed():
-	SignalBus.show_list.emit(true, "Discard", "Tutor")
+	SignalBus.show_list.emit(true, card_resources.get_list("Discard"), "Tutor")
 
 func _on_shuffle_2_deck_pressed():
 	pass # Replace with function body.
 
 func _on_view_all_deck_pressed():
-	SignalBus.show_list.emit(true, "Deck", "Look")
+	SignalBus.show_list.emit(true, card_resources.get_list("Deck"), "Look")
 
 func _on_search_test_pressed() -> void:
 	print(search_identifiers[search_types.get_selected_id()], search_types.get_item_text(search_types.get_selected_id()))

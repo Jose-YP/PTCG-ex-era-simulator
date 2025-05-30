@@ -63,3 +63,29 @@ func get_allowed_flags(allowed: String = "All") -> int:
 			return 2 ** Constants.allowed_list_flags.size() - 1
 		_:
 			return 2 ** Constants.allowed_list_flags.find(allowed)
+
+func get_card_flags(card: Base_Card) -> int:
+	var card_flags: int = 0
+	
+	if card.categories & 1:
+		
+		if card.pokemon_properties.evo_stage == "Basic":
+			card_flags += Conversions.get_allowed_flags("Basic")
+		elif card.fossil: 
+			card_flags += Conversions.get_allowed_flags("Fossil")
+		else:
+			card_flags += Conversions.get_allowed_flags("Evolution")
+		
+	elif card.categories & 2:
+		var considered = card.trainer_properties.considered
+		if considered == "Rocket's Secret Machine": considered = "RSM"
+		
+		card_flags += Conversions.get_allowed_flags(considered)
+		
+		if considered == "Supporter": considered = "Support"
+	
+	if card.categories & 4:
+		card_flags += Conversions.get_allowed_flags("Energy")
+		
+	
+	return card_flags

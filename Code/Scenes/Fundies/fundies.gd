@@ -40,10 +40,11 @@ func hide_list():
 	if current_list: current_list.disapear()
 
 #When moving any ammount of defined cards from one stack to another
-func start_mass_move(from: String, towards: String, instructions: String, prerequisites: int, maximum: int):
-	player_resources.spawn_list(true, from, "Tutor", instructions, prerequisites)
-	var tutor_box = Constants.tutor_box.instantiate()
-	tutor_box.connected_list = current_list
-	tutor_box.max_tutor = maximum
-	tutor_box.current_tutor = prerequisites
-	add_child(tutor_box)
+#func start_mass_move(from: String, towards: String, instructions: String, prerequisites: int, maximum: int):
+	#
+	#player_resources.spawn_list(true, from, "Tutor", instructions, prerequisites)
+	#var tutor_box = Constants.tutor_box.instantiate()
+	#tutor_box.connected_list = current_list
+	#tutor_box.max_tutor = maximum
+	#tutor_box.current_tutor = prerequisites
+	#add_child(tutor_box)

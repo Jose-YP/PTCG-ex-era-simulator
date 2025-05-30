@@ -51,7 +51,7 @@ provided_attack = SubResource("Resource_s63jm")
 
 [resource]
 script = ExtResource("2_454ab")
-name = "Ancient Technical Machine [Steel] "
+name = "Ancient Technical Machine [Rock] "
 image = ExtResource("1_fs338")
 illustrator = "Mitsuhiro Arita"
 number = 86

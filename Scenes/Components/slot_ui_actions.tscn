@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c2dyutb22u6x8"]
 
-[ext_resource type="Script" uid="uid://2hyltc7plhdl" path="res://Code/Scenes/Components/SlotUIActions.gd" id="1_hjfor"]
+[ext_resource type="Script" uid="uid://2hyltc7plhdl" path="res://Code/Scenes/Fundies/SlotUIActions.gd" id="1_hjfor"]
 [ext_resource type="Theme" uid="uid://bfw6ylcttychc" path="res://Themes/AverageButton.tres" id="2_hc1fk"]
 
 [node name="SlotUIActions" type="Node"]

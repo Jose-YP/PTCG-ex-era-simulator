@@ -125,7 +125,7 @@ fit_content = true
 
 [node name="Extra" type="RichTextLabel" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/DragArea/VBoxContainer/MainInfo/MainInfromation"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(38, 0)
+custom_minimum_size = Vector2(47, 0)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0

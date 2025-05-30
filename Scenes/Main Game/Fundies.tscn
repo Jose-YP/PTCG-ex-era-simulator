@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cni7lmrv7r06c"]
 
-[ext_resource type="Script" uid="uid://xvfv7i868cvg" path="res://Code/Scenes/fundies.gd" id="1_fh4v4"]
+[ext_resource type="Script" uid="uid://xvfv7i868cvg" path="res://Code/Scenes/Fundies/fundies.gd" id="1_fh4v4"]
 [ext_resource type="PackedScene" uid="uid://c2dyutb22u6x8" path="res://Scenes/Components/slot_ui_actions.tscn" id="1_xxoqv"]
 [ext_resource type="PackedScene" uid="uid://bm07a7wgsaxxp" path="res://Scenes/Components/on_slot_actions.tscn" id="2_fh4v4"]
 [ext_resource type="PackedScene" uid="uid://cobenwsotye1q" path="res://Scenes/Components/PlayerResources.tscn" id="3_eym7l"]

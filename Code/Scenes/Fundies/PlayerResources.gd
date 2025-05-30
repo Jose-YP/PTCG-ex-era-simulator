@@ -3,9 +3,14 @@ extends Node
 class_name Deck_Manipulator
 
 @export var deck: Deck
-@export var first: bool = false
+@export var first_turn: bool = false
+@export var attatched_energy: bool = false
+@export var supporter_played: bool = false
 @export_range(1,6) var prize_count: int = 6
 @export_enum("Player1", "Player2", "CPU") var side: String = "Player1"
+@export_flags("Basic", "Evolution", "Item",
+"Supporter","Stadium", "Tool", "TM", "RSM", "Fossil",
+ "Energy") var allowed_play: int = 1023
 
 @onready var fundies: Fundies = $".."
 @onready var arrays: Node = $Arrays
@@ -26,7 +31,7 @@ var supporter_used: bool = false
 #region INITALIZATION
 func _ready():
 	SignalBus.connect("show_list", spawn_list)
-	SignalBus.connect("move_cards", move_cards)
+	#SignalBus.connect("move_cards", move_cards)
 	
 	if deck: 
 		arrays.usable_deck = deck.make_usable()
@@ -38,6 +43,7 @@ func assign_deck(assigned_deck):
 	arrays.usable_deck.shuffle()
 
 func draw_starting():
+	allowed_play = 1
 	draw(7)
 	print("----------",side,"---------")
 	check_starting()
@@ -45,15 +51,19 @@ func draw_starting():
 func check_starting():
 	var can_start: bool = false
 	var start_string: String = "There are no basic Pokemon in the starting hand"
+	var hand_dict: Dictionary[Base_Card, bool]
 	for card in arrays.hand:
 		if card.is_considered("Basic") or card.fossil:
 			can_start = true
 			start_string = "Select a Basic Pokemon"
+			hand_dict[card] = true
+		else: hand_dict[card] = false
 	
 	print(start_string)
 	print(arrays.hand)
+	print(hand_dict)
 	if can_start:
-		spawn_list(true, "Hand", "Play", start_string, Conversions.get_allowed_flags("Start"))
+		spawn_list(true, hand_dict, "Play", start_string)
 	else:
 		#If you can't start with current hand, mulligan
 		#record mulligans for later
@@ -120,44 +130,64 @@ func update_lists():
 	for stack in dict:
 		fundies.player_side.non_mon.update_stack(stack, dict[stack].size())
 
-func spawn_list(monitor_side: bool, which: String, interaction: String = "Look",\
- instructions: String = "", allowed: int = Conversions.get_allowed_flags()):
-	var designated: Array[Base_Card] = arrays.sendStackDictionary()[which]
-	var display_text: String
+func get_list(which: String) -> Dictionary[Base_Card, bool]:
+	var dict: Dictionary[Base_Card, bool]
+	determine_allowed()
+	
+	#Everything should check if they're allowed generally, then...
+	#Basic and \fossil should check if there is any empty space
+	#Evolution should check if there's anything to evolve from
+	#Support should check if any was already played
+	#Tool should ceck if there's any mons with nothing equipped
+	
+	for card in arrays.get_array(which):
+		var flags = Conversions.get_card_flags(card)
+		if Conversions.get_card_flags(card) & allowed_play:
+			
+			
+			dict[card] = true
+		else: dict[card] = false
+	
+	return dict
+
+func spawn_list(monitor_side: bool, list: Dictionary[Base_Card, bool],\
+ interaction: String = "Look", instructions: String = "", display_text: String = "HAND"):
 	var spawn_from: Vector2
+	var which: String
 	
 	if monitor_side:
-		match which:
-			"Hand":
-				display_text = "HAND"
+		match display_text:
+			"HAND":
+				which = "Hand"
 				spawn_from = fundies.player_side.non_mon.stacks["Hand"].global_position
-			"Deck":
-				display_text = "DECK"
+			"DECK":
+				which = "Deck"
 				spawn_from = fundies.player_side.non_mon.stacks["Deck"].global_position
-			"Discard":
-				display_text = "DISCARD PILE"
+			"DISCARD PILE":
+				which = "Discard"
 				spawn_from = fundies.player_side.non_mon.stacks["Discard"].global_position
-			"Prize":
-				display_text = "PRIZE CARDS"
+			"PRIZE CARDS":
+				which = "Prize"
 				spawn_from = fundies.player_side.non_mon.stacks["Prize"].global_position
 			_:
 				push_error("Can't find list specified: ", which)
 	
-	instantiate_list(designated, which, display_text, instructions, allowed, interaction, spawn_from)
+	instantiate_list(list, interaction, which, display_text, instructions, spawn_from)
 
-func instantiate_list(specified_list: Array[Base_Card], which: String, display_text: String, \
- using_string: String, allowed: int, interaction: String = "Look", spawn_from: Vector2 = Vector2.ZERO):
+func instantiate_list(specified_list: Dictionary[Base_Card, bool],\
+ interaction: String = "Look", which: String = "Hand"\
+ ,display_text: String = "", using_string: String = "",  spawn_from: Vector2 = Vector2.ZERO):
 	var hand_list: PackedScene = Constants.playing_list
 	var new_node = hand_list.instantiate()
 	
 	new_node.list = specified_list
 	new_node.top_level = true
-	new_node.allowed = allowed
 	new_node.display_text = display_text
 	new_node.instruction_text = using_string
 	new_node.old_posiiton = spawn_from
 	new_node.interaction = interaction
 	new_node.stack = which
+	new_node.allowed_as = allowed_play
 	add_sibling(new_node)
 	fundies.current_list = new_node
 
@@ -177,7 +207,7 @@ func show_reveal_stack(reveal_slot):
 #region TUTORING
 func search_array(search: Search, based_on: PokeSlot):
 	var from: Array[Base_Card] = arrays.get_array(search.where)
-	var search_results: Array[Array]
+	var search_results: Array[Dictionary]
 	for tutor in search.of_this:
 		print("--------------------")
 		print(tutor)
@@ -186,25 +216,32 @@ func search_array(search: Search, based_on: PokeSlot):
 	
 	return search_results
 
-func identifier_search(list: Array[Base_Card], based_on: PokeSlot, identifier: Identifier) -> Array[Base_Card]:
-	var valid_cards: Array[Base_Card]
-	var invalid_cards: Array[Base_Card]
-	var names_valid
+func identifier_search(list: Array[Base_Card], based_on: PokeSlot,\
+ identifier: Identifier) -> Dictionary[Base_Card,bool]:
+	var valid_dictionary: Dictionary[Base_Card,bool]
 	
 	for card in list:
 		if identifier.identifier_bool(card, based_on.current_card):
-			valid_cards.append(card)
-		else: invalid_cards.append(card)
+			valid_dictionary[card] = true
+		else: valid_dictionary[card] = false
 	
 	print("--------------------")
 	print("INVALID CARDS: ")
-	for card in invalid_cards: print(card.name)
+	for card in valid_dictionary: if not valid_dictionary[card]: print(card.name)
 	print("--------------------")
 	print("--------------------")
 	print("VALID CARDS: ")
-	for card in valid_cards: print(card.name)
+	for card in valid_dictionary: if valid_dictionary[card]: print(card.name)
 	print("--------------------")
-	return valid_cards + invalid_cards
+	return valid_dictionary
 
 #endregion
 #--------------------------------------
+
+func determine_allowed():
+	allowed_play = 1023
+	
+	if first_turn:
+		allowed_play -= 8
+	if attatched_energy:
+		allowed_play -= 512

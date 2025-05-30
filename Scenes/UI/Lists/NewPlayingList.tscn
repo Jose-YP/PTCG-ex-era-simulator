@@ -1,17 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://f4m1ofpicse4"]
+[gd_scene load_steps=9 format=3 uid="uid://f4m1ofpicse4"]
 
 [ext_resource type="Theme" uid="uid://bfw6ylcttychc" path="res://Themes/AverageButton.tres" id="1_j5ysj"]
 [ext_resource type="Script" uid="uid://dkqmky7i7ibak" path="res://Code/Scenes/UI/PlayingList.gd" id="1_sw67d"]
 [ext_resource type="PackedScene" uid="uid://dd56w2nt5mqow" path="res://Scenes/UI/Lists/PlayingListItem.tscn" id="2_sjm4d"]
-[ext_resource type="Resource" uid="uid://bpyb5rd3indje" path="res://Resources/Cards/1 ex Ruby & Saphire/RS94MetalEnergy.tres" id="3_vfbjj"]
-[ext_resource type="Resource" uid="uid://bekwoaj06a44c" path="res://Resources/Cards/1 ex Ruby & Saphire/RS95RainbowEnergy.tres" id="4_3ly61"]
-[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="4_db7eh"]
-[ext_resource type="Resource" uid="uid://b7ayufc1njjxh" path="res://Resources/Cards/1 ex Ruby & Saphire/RS29Delcatty.tres" id="5_fkibm"]
-[ext_resource type="Resource" uid="uid://c3tip8v6djvro" path="res://Resources/Cards/4 ex Team Magma VS Team Aqua/MA65MagmaPoochyena.tres" id="6_jpxki"]
-[ext_resource type="Resource" uid="uid://day2wur81xum5" path="res://Resources/Cards/5 ex Hidden Lagends/HL86AncientTechnicalMachine[Rock].tres" id="7_me2dr"]
-[ext_resource type="Resource" uid="uid://mfam4db5asvt" path="res://Resources/Cards/1 ex Ruby & Saphire/RS91Potion.tres" id="8_1kybj"]
-[ext_resource type="Resource" uid="uid://s0xeoyp6jtsa" path="res://Resources/Cards/1 ex Ruby & Saphire/RS84LumBerry.tres" id="9_mfn2x"]
-[ext_resource type="Resource" uid="uid://cc3kjnmsj4pr3" path="res://Resources/Cards/1 ex Ruby & Saphire/RS80EnergyRemoval2.tres" id="10_1jo4x"]
 [ext_resource type="StyleBox" uid="uid://bvesf3hjv2bsl" path="res://Themes/GBADragBox.tres" id="13_8wubv"]
 [ext_resource type="PackedScene" uid="uid://c5d081uywglg" path="res://Scenes/UI/UIComponents/close_button.tscn" id="13_xvynf"]
 [ext_resource type="PackedScene" uid="uid://dmhjt2wuanymf" path="res://Scenes/UI/UIComponents/minimize_button.tscn" id="14_fhr5r"]
@@ -36,7 +27,6 @@ theme = ExtResource("1_j5ysj")
 script = ExtResource("1_sw67d")
 debug = true
 list_item = ExtResource("2_sjm4d")
-list = Array[ExtResource("4_db7eh")]([ExtResource("3_vfbjj"), ExtResource("4_3ly61"), ExtResource("5_fkibm"), ExtResource("6_jpxki"), ExtResource("7_me2dr"), ExtResource("8_1kybj"), ExtResource("9_mfn2x"), ExtResource("10_1jo4x")])
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 0

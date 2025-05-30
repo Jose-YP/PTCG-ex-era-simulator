@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bm07a7wgsaxxp"]
 
-[ext_resource type="Script" uid="uid://bmuywdjhqhkve" path="res://Code/Scenes/Components/OnSlotActions.gd" id="1_4r11g"]
+[ext_resource type="Script" uid="uid://bmuywdjhqhkve" path="res://Code/Scenes/Fundies/OnSlotActions.gd" id="1_4r11g"]
 
 [node name="OnSlotActions" type="Node" node_paths=PackedStringArray("poke_slots")]
 script = ExtResource("1_4r11g")

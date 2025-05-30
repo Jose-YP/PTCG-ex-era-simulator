@@ -1,11 +1,10 @@
 extends Node
 
 #HAND SIGNALS
-signal show_starting(can_select: bool, message: String, looking_at: String, list: Array[Base_Card])
-signal show_list(whose_hand: String, hand: Array[Base_Card], interaction: String)
-signal move_cards(cards: Array[Base_Card], source: String, destination: String, shuffling: bool)
+@warning_ignore("unused_signal")
+signal show_list(whose: String, list: Dictionary[Base_Card, bool], interaction: String)
 #CARD DISPLAY SIGNALS
-signal show_other_card(showing: Base_Card)
+@warning_ignore("unused_signal")
 signal chosen_slot(showing: PokeSlot)
 #signal show_options(button: Button, card: Base_Card)
 #PLAY CARD SIGNALS

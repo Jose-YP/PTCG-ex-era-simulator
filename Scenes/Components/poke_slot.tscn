@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b4tx6kmy763df"]
 
-[ext_resource type="Script" uid="uid://cdjr1fx0pkwj" path="res://Code/Scenes/Components/PokeSlot.gd" id="1_8gi88"]
+[ext_resource type="Script" uid="uid://cdjr1fx0pkwj" path="res://Code/Scenes/Fundies/PokeSlot.gd" id="1_8gi88"]
 
 [node name="PokeSlot" type="Node"]
 script = ExtResource("1_8gi88")

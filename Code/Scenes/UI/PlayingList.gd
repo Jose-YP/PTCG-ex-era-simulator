@@ -6,10 +6,11 @@ class_name PlayingList
 #region VARIABLES
 @export var debug: bool = false
 @export var list_item: PackedScene
-@export var list: Array[Base_Card]
+@export var list: Dictionary[Base_Card, bool]
+#For cards that can be played multiple ways
 @export_flags("Basic", "Evolution", "Item",
 "Supporter","Stadium", "Tool", "TM", "RSM", "Fossil",
- "Energy") var allowed: int = 1
+ "Energy") var allowed_as: int = 1
 @export_enum("Play", "Tutor", "Discard", "Look") var interaction: String = "Play"
 @export_enum("Hand", "Deck", "Discard", "Prize") var stack: String = "Hand"
 
@@ -50,14 +51,18 @@ func set_items():
 	items = %CardList.get_children()
 
 func is_allowed(button: Button) -> void:
-	var whitelisted: bool = white_list.find(button.card.name) != -1
-	var blacklisted: bool = black_list.find(button.card.name) != -1
-	#print(button.card_flags & allowed)
-	if (button.card_flags & allowed or whitelisted) and not blacklisted:
-		button.allow(allowed)
-		
-	else:
-		button.not_allowed()
+	print("List checking if ", button.card.name, " is allowed ", list[button.card])
+	match interaction:
+		"Play":
+			var whitelisted: bool = white_list.find(button.card.name) != -1
+			var blacklisted: bool = black_list.find(button.card.name) != -1
+			#print(button.card_flags & allowed)
+			if (list[button.card] or whitelisted) and not blacklisted:
+				button.allow(allowed_as)
+			else: button.not_allowed()
+		_:
+			if list[button.card]:
+				button.allow_move_to(interaction)
 #endregion
 #--------------------------------------
 func reset_items():
@@ -72,7 +77,8 @@ func _on_resources_show_list(message: String, looking_at: String, using: Array[B
 	%Identifier.append_text(str("[center]", looking_at))
 	%Instructions.append_text(str("[center]",message))
 	
-	list = using
+	for card in using:
+		list[card] = true
 	set_items()
 	
 	show()
