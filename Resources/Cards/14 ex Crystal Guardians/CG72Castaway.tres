@@ -1,14 +1,76 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=2 format=3 uid="uid://w140efhwynxf"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=15 format=3 uid="uid://w140efhwynxf"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_7flfe"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_ejgou"]
+[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="3_wsgdx"]
+[ext_resource type="Resource" uid="uid://bl4qnrkh3kxdl" path="res://Resources/Components/Effects/Placement/PutIntoHand.tres" id="4_ocbcq"]
+[ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="5_cbgp6"]
+[ext_resource type="Resource" uid="uid://bkuxa81fpcmol" path="res://Resources/Components/Effects/Identifiers/IsSupporter.tres" id="6_ry3f1"]
+[ext_resource type="Resource" uid="uid://njjce7akxhr" path="res://Resources/Components/Effects/Identifiers/IsTool.tres" id="7_n7rcf"]
+[ext_resource type="Resource" uid="uid://d2vm6chtedrum" path="res://Resources/Components/Effects/Identifiers/BasicEnergy.tres" id="8_fj2ty"]
+[ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="9_i4gtl"]
+
+[sub_resource type="Resource" id="Resource_6gwsc"]
+script = ExtResource("3_wsgdx")
+side = 0
+where = 1
+portion = -1
+how_many = 1
+of_this = Array[ExtResource("5_cbgp6")]([ExtResource("6_ry3f1")])
+and_then = ExtResource("4_ocbcq")
+reveal = true
+metadata/_custom_type_script = "uid://cw3yr1k040kw7"
+
+[sub_resource type="Resource" id="Resource_iy5vc"]
+script = ExtResource("3_wsgdx")
+side = 0
+where = 1
+portion = -1
+how_many = 1
+of_this = Array[ExtResource("5_cbgp6")]([ExtResource("7_n7rcf")])
+and_then = ExtResource("4_ocbcq")
+reveal = true
+metadata/_custom_type_script = "uid://cw3yr1k040kw7"
+
+[sub_resource type="Resource" id="Resource_ss5n8"]
+script = ExtResource("3_wsgdx")
+side = 0
+where = 1
+portion = -1
+how_many = 1
+of_this = Array[ExtResource("5_cbgp6")]([ExtResource("8_fj2ty")])
+and_then = ExtResource("4_ocbcq")
+reveal = true
+metadata/_custom_type_script = "uid://cw3yr1k040kw7"
+
+[sub_resource type="Resource" id="Resource_ufgl1"]
+script = ExtResource("2_ejgou")
+order = Array[int]([])
+search = Array[ExtResource("3_wsgdx")]([SubResource("Resource_6gwsc"), SubResource("Resource_iy5vc"), SubResource("Resource_ss5n8")])
+remove_conditions = false
+remove_shockwave = false
+remove_imprison = false
+choose_active = false
+switch_type = 0
+mimic = 0
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_e157p"]
+script = ExtResource("9_i4gtl")
+considered = "Item"
+specific_requirement = ""
+description = "Search your deck for a Supporter card, a Pokémon Tool card, and a basic Energy card. Show them to your opponent, and put them into your hand. Shuffle your deck afterward. "
+always_effect = SubResource("Resource_ufgl1")
+metadata/_custom_type_script = "uid://crx447i85kshy"
 
 [resource]
 script = ExtResource("1_7flfe")
-name = ""
-illustrator = ""
-number = 0
-rarity = 0
-expansion = 0
-categories = 0
+name = "Castaway"
+illustrator = "Kouki Saitou"
+number = 72
+rarity = 1
+expansion = 13
+categories = 2
+trainer_properties = SubResource("Resource_e157p")
 fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"
