@@ -6,6 +6,7 @@ class_name PlayingList
 #region VARIABLES
 @export var debug: bool = false
 @export var list_item: PackedScene
+@export var all_lists: Array[Dictionary]
 @export var list: Dictionary[Base_Card, bool]
 #For cards that can be played multiple ways
 @export_flags("Basic", "Evolution", "Item",
@@ -52,6 +53,7 @@ func set_items():
 
 func is_allowed(button: Button) -> void:
 	print("List checking if ", button.card.name, " is allowed ", list[button.card])
+	button.interaction = interaction
 	match interaction:
 		"Play":
 			var whitelisted: bool = white_list.find(button.card.name) != -1

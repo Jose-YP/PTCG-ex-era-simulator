@@ -142,7 +142,7 @@ func get_list(which: String) -> Dictionary[Base_Card, bool]:
 	
 	for card in arrays.get_array(which):
 		var flags = Conversions.get_card_flags(card)
-		if Conversions.get_card_flags(card) & allowed_play:
+		if flags & allowed_play:
 			
 			
 			dict[card] = true

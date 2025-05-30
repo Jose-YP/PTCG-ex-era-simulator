@@ -45,6 +45,7 @@ theme_override_styles/normal = ExtResource("1_mxeim")
 disabled = true
 script = ExtResource("1_bdgo5")
 card = ExtResource("3_xnpqb")
+option_offset = Vector2(80, 100)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
