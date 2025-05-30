@@ -1,13 +1,24 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=2 format=3 uid="uid://c72opknpplx87"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=5 format=3 uid="uid://c72opknpplx87"]
 
-[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_wc1ms"]
+[ext_resource type="Texture2D" uid="uid://bu2fi03raes4v" path="res://Art/Cards/14 ex Crystal Guardians/80.jpg" id="1_poxm7"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_wc1ms"]
+[ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="3_s10yg"]
+
+[sub_resource type="Resource" id="Resource_rmhyx"]
+script = ExtResource("3_s10yg")
+considered = "Item"
+specific_requirement = ""
+description = ""
+metadata/_custom_type_script = "uid://crx447i85kshy"
 
 [resource]
 script = ExtResource("1_wc1ms")
-name = ""
+name = "Memory Berry"
+image = ExtResource("1_poxm7")
 illustrator = ""
-number = 0
-rarity = 0
-expansion = 0
+number = 80
+rarity = 1
+expansion = 13
 categories = 2
+trainer_properties = SubResource("Resource_rmhyx")
 fossil = false

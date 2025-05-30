@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=15 format=3 uid="uid://w140efhwynxf"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=16 format=3 uid="uid://w140efhwynxf"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_7flfe"]
+[ext_resource type="Texture2D" uid="uid://qfejvhb2qqta" path="res://Art/Cards/14 ex Crystal Guardians/72.jpg" id="1_wsgdx"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_ejgou"]
 [ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="3_wsgdx"]
 [ext_resource type="Resource" uid="uid://bl4qnrkh3kxdl" path="res://Resources/Components/Effects/Placement/PutIntoHand.tres" id="4_ocbcq"]
@@ -66,6 +67,7 @@ metadata/_custom_type_script = "uid://crx447i85kshy"
 [resource]
 script = ExtResource("1_7flfe")
 name = "Castaway"
+image = ExtResource("1_wsgdx")
 illustrator = "Kouki Saitou"
 number = 72
 rarity = 1

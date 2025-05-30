@@ -5,14 +5,16 @@
 [resource]
 script = ExtResource("1_hfm7a")
 target = 1
-damage_comparison = null
+comparison_type = 1
 max_hp = null
 damage_taken = null
+retreat_cost = -1
 energy_attatched = null
 knocked_out = null
 condition = 31
 location = 4
 stage = null
+rare_candy = false
 class_inclusive = null
 pokemon_class = null
 bench_size = null
