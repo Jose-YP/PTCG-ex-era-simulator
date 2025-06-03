@@ -3,8 +3,8 @@ class_name Condition
 
 @export_group("Conditions")
 ##imprision/shockwave will ignore this
-@export_enum("Attacker", "Actives", "Defender",
- "Both Defenders") var which: int = 2
+@export var side: Constants.SIDES = Constants.SIDES.OPP
+@export var slot: Constants.SLOTS = Constants.SLOTS.DEFENDER
 
 @export var choose_condition: bool = false
 @export_enum("None", "Normal", "Heavy") var poison: int = 0
@@ -13,3 +13,6 @@ class_name Condition
 @export_enum("None","Asleep",
 "Paralyze", "Confused") var mutually_exclusive_conditions: int = 0
 @export var knockOut: bool = false
+
+func play_effect(fundies: Fundies):
+	print("PLAYING CONDITION")

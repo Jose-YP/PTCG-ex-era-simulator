@@ -16,7 +16,7 @@ count_for = 0
 filter = 4
 coin_flip_num = SubResource("Resource_o5toi")
 mon_count = 0
-for_what = null
+for_what = "Constant"
 cap = 0
 return_num = 70
 

@@ -3,7 +3,7 @@ class_name EffectCall
 
 
 enum effect_types{CONDITION, BUFF, DISRUPT, DISABLE, 
-ENMOV, DMGMANIP, SEARCH, SWAP, DRAW, OTHER}
+ENMOV, DMGMANIP, SEARCH, SWAP, DRAW, ALLEVIATE, MIMIC, OTHER}
 
 ##Determine the order in which the effects are called.
 ##It's best to fill this in, if you don't want the default enum order
@@ -11,7 +11,7 @@ ENMOV, DMGMANIP, SEARCH, SWAP, DRAW, OTHER}
 ##Add a condition
 @export var condition: Condition
 ##Draw an ammount of cards
-@export var draw_ammount: Counter
+@export var draw_ammount: Draw
 ##Buff/Debuff a pokemon's stats or properties
 @export var buff: Buff
 ##Send cards elsewhere
@@ -23,27 +23,28 @@ ENMOV, DMGMANIP, SEARCH, SWAP, DRAW, OTHER}
 ##Move/Add damage counters around
 @export var dmgManip: DamageManip
 ##Look for cards in deck/discard
-@export var search: Array[Search]
-
-@export_group("Minor Changes")
-@export_subgroup("Status Heal")
-@export var remove_conditions: bool = false
-@export var remove_shockwave: bool = false
-@export var remove_imprison: bool = false
-@export_subgroup("Switch")
-##Does the target choose which active mon to switch out?
-##If not it's the defender
-@export var choose_active: bool = false
-##Who switches according to who
-@export_enum("None", "P by P", "O by O",
- "O by P", "Both") var switch_type: int = 0
-@export_subgroup("Mimic")
-##mimicry might be it's own resource
-@export_enum("No","AttatchedLimited", "Attatched",
- "AnyLimited", "Any") var mimic: int = 0
+@export var search: Search
+##Heal from any status
+@export var alleviate: Alleviate
+##Swap the active pokemon
+@export var swap: PokeSwap
+##Mimic other pokemon's moves
+@export var mimic: Mimic
 
 @export_group("Other")
 ##SlotAsk for any extra effects
 @export var ask_extra: SlotAsk
 ##Do extra effect for extra ask
 @export var extra_effect: EffectCall
+
+func play_effect(fundies: Fundies):
+	var default_order = [condition, buff, card_disrupt, disable, 
+energy_movement, dmgManip, search, swap, draw_ammount, alleviate, mimic, extra_effect]
+	if order.size() > 0:
+		for effect in order:
+			if default_order[effect]:
+				default_order[effect].play_effect(fundies)
+	
+	else:
+		for effect in default_order:
+			effect.play_effect(fundies)

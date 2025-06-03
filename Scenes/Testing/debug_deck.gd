@@ -14,10 +14,13 @@ extends Control
 @onready var search_types: OptionButton = $FullUI/CardActions/SearchTypes
 @onready var ask_types: OptionButton = $FullUI/CardActions/AskTypes
 
+const castaway: Base_Card = preload("res://Resources/Cards/14 ex Crystal Guardians/CG72Castaway.tres")
+
 func _ready():
 	slotUI.group_refresh()
 	card_resources.show_reveal_stack(reveal_slot)
 
+#region SIMPLE 
 func _on_draw_pressed():
 	card_resources.draw()
 
@@ -30,9 +33,6 @@ func _on_discard_pressed():
 func _on_search_deck_pressed():
 	SignalBus.show_list.emit(true, card_resources.get_list("Deck"), "Tutor")
 
-func _on_hand_pressed():
-	SignalBus.show_list.emit(true, card_resources.get_list("Hand"), "Play")
-
 func _on_search_discard_pressed():
 	SignalBus.show_list.emit(true, card_resources.get_list("Discard"), "Tutor")
 
@@ -41,6 +41,7 @@ func _on_shuffle_2_deck_pressed():
 
 func _on_view_all_deck_pressed():
 	SignalBus.show_list.emit(true, card_resources.get_list("Deck"), "Look")
+#endregion
 
 func _on_search_test_pressed() -> void:
 	print(search_identifiers[search_types.get_selected_id()], search_types.get_item_text(search_types.get_selected_id()))
@@ -52,7 +53,10 @@ func _on_search_test_pressed() -> void:
 			identifier.edit_in_type(dummy.get_type_flag())
 		9: #Energy of type
 			identifier.edit_in_type(dummy.get_type_flag())
-	card_resources.identifier_search(card_resources.arrays.get_array("Deck"), slots[0], search_identifiers[search_types.get_selected_id()])
+	card_resources.identifier_search(card_resources.arrays.get_array("Deck"), [slots[0]], search_identifiers[search_types.get_selected_id()])
 
 func _on_ask_test_pressed() -> void:
 	pass # Replace with function body.
+
+func _on_castaway_pressed() -> void:
+	SignalBus.play_trainer.emit(castaway)

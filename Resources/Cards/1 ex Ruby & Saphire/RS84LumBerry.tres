@@ -1,22 +1,21 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://s0xeoyp6jtsa"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=9 format=3 uid="uid://s0xeoyp6jtsa"]
 
 [ext_resource type="Texture2D" uid="uid://3tcerc2f5aw2" path="res://Art/Cards/1 ex Ruby & Saphire/84.jpg" id="1_v8vkk"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_1v6bs"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="3_jygnu"]
 [ext_resource type="Script" uid="uid://dj5isddeswaa4" path="res://Code/Resource Makers/CardResources/ToolMaker.gd" id="5_8qdb5"]
-[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="6_e0rnf"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="6_ssfy3"]
 
 [sub_resource type="Resource" id="Resource_8sjaf"]
 script = ExtResource("6_ssfy3")
-order = Array[int]([])
-search = Array[ExtResource("6_e0rnf")]([])
+order = null
+search = null
 remove_conditions = true
-remove_shockwave = false
-remove_imprison = false
-choose_active = false
-switch_type = 0
-mimic = 0
+remove_shockwave = null
+remove_imprison = null
+choose_active = null
+switch_type = null
+mimic = null
 
 [sub_resource type="Resource" id="Resource_7oeef"]
 script = ExtResource("5_8qdb5")

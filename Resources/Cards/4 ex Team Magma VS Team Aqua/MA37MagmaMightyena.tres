@@ -61,14 +61,14 @@ reveal = true
 
 [sub_resource type="Resource" id="Resource_0a22m"]
 script = ExtResource("6_xc0yb")
-order = Array[int]([])
+order = null
 search = Array[ExtResource("9_84c2m")]([SubResource("Resource_0iir3")])
-remove_conditions = false
-remove_shockwave = false
-remove_imprison = false
-choose_active = false
-switch_type = 0
-mimic = 0
+remove_conditions = null
+remove_shockwave = null
+remove_imprison = null
+choose_active = null
+switch_type = null
+mimic = null
 
 [sub_resource type="Resource" id="Resource_dc2e6"]
 script = ExtResource("2_2yu0c")

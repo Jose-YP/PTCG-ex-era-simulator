@@ -1,8 +1,7 @@
-[gd_resource type="Resource" script_class="EffectCall" load_steps=5 format=3 uid="uid://dr0vmkppumfhq"]
+[gd_resource type="Resource" script_class="EffectCall" load_steps=4 format=3 uid="uid://dr0vmkppumfhq"]
 
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="1_iylti"]
 [ext_resource type="Script" uid="uid://c0ishgbxk63dg" path="res://Code/Resource Makers/EffectSpecific/DisableMaker.gd" id="1_p6kns"]
-[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="3_ptfow"]
 
 [sub_resource type="Resource" id="Resource_u5nvf"]
 script = ExtResource("1_p6kns")
@@ -19,12 +18,12 @@ disable_retreat = false
 
 [resource]
 script = ExtResource("1_iylti")
-order = Array[int]([])
+order = null
 disable = SubResource("Resource_u5nvf")
-search = Array[ExtResource("3_ptfow")]([])
-remove_conditions = false
-remove_shockwave = false
-remove_imprison = false
-choose_active = false
-switch_type = 0
-mimic = 0
+search = null
+remove_conditions = null
+remove_shockwave = null
+remove_imprison = null
+choose_active = null
+switch_type = null
+mimic = null

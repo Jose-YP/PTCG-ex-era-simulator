@@ -19,7 +19,7 @@ count_for = 0
 filter = 4
 coin_flip_num = SubResource("Resource_nktju")
 mon_count = 0
-for_what = null
+for_what = "Constant"
 cap = 0
 return_num = 10
 
@@ -49,7 +49,7 @@ script = ExtResource("3_q5aky")
 count_for = 0
 filter = 0
 mon_count = 5
-for_what = null
+for_what = "Constant"
 cap = 0
 return_num = 0
 
@@ -66,7 +66,7 @@ count_for = 0
 filter = 4
 coin_flip_num = SubResource("Resource_gnwi8")
 mon_count = 0
-for_what = null
+for_what = "Constant"
 cap = 0
 return_num = 20
 

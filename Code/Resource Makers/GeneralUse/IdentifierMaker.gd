@@ -28,7 +28,7 @@ class_name Identifier
 @export_group("Energy Categories")
 @export_flags("Basic", "Special") var energy_class: int = 3
 
-func identifier_bool(card: Base_Card, based_on: Base_Card) -> bool:
+func identifier_bool(card: Base_Card, based_on: Array[PokeSlot]) -> bool:
 	print("----------------------------------------------------")
 	print(card.name, "\n", card.categories)
 	#Only move forward if the card is the correct kind
@@ -77,11 +77,18 @@ func identifier_bool(card: Base_Card, based_on: Base_Card) -> bool:
 		print("Not right category, moving on")
 		return false
 
-func or_poke_bool(card: Base_Card, based_on: Base_Card) -> bool:
+func or_poke_bool(card: Base_Card, based_on: Array[PokeSlot]) -> bool:
 	print("/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\")
 	var pokemon: Pokemon = card.pokemon_properties
 	
-	if evolves_from and pokemon.evolves_from == based_on.name: return true
+	#Check if the card evolves from th
+	if evolves_from:
+		var evo_result: bool = false
+		for based_on_slot in based_on:
+			var based_on_card: Base_Card = based_on_slot.current_card
+			if pokemon.evolves_from == based_on_card.name:
+				evo_result = true
+		if evo_result: return true
 	
 	if type != 0 and pokemon.type & type: return true
 	
@@ -108,10 +115,18 @@ func or_poke_bool(card: Base_Card, based_on: Base_Card) -> bool:
 	print(card.name, " isn't allowed")
 	return false
 
-func and_poke_bool(card: Base_Card, based_on: Base_Card):
+func and_poke_bool(card: Base_Card, based_on: Array[PokeSlot]):
 	print("\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/")
 	var pokemon: Pokemon = card.pokemon_properties
-	if evolves_from and pokemon.evolves_from != based_on.name: return false
+	
+	#Check if the card evolves from any card in based_on
+	if evolves_from:
+		var evo_result: bool = false
+		for based_on_slot in based_on:
+			var based_on_card: Base_Card = based_on_slot.current_card
+			if pokemon.evolves_from == based_on_card.name:
+				evo_result = true
+		if not evo_result: return false
 	
 	if type != 0 and not pokemon.type & type: return false
 	

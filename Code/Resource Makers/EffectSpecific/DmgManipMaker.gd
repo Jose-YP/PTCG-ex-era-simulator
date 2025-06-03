@@ -9,9 +9,12 @@ class_name DamageManip
 ##If this is true, the player must choose between the choices for how_many times.
 @export var choose_from: bool = false
 ##Who will get the counter manipulation
-@export_flags("Attacker", "Defender", "OtherActive",
-"Other Defending", "PBench", "OBench", "All") var which: int = 1
+@export var side: Constants.SIDES = Constants.SIDES.PLAYER
+@export var slot: Constants.SLOTS = Constants.SLOTS.ATTACKER
 ##Determines how many will be added/removed based on the Counter
 @export_group("Counter")
 @export var plus: bool = false
 @export var counter: Counter
+
+func play_effect(fundies: Fundies):
+	print("PLAY DAMAGE MANIPULATION")

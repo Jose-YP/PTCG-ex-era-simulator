@@ -2,8 +2,8 @@ extends Resource
 class_name Disable
 
 #@export_group("Disable")
-@export_enum("None","PlayerAll", "OpponentAll", "Self",
-"Defender", "Both Active", "Both Defending", "All") var disable_target: int = 0
+@export var side: Constants.SIDES = Constants.SIDES.OPP
+@export var slot: Constants.SLOTS = Constants.SLOTS.ALL
 @export var duration: int = -1
 @export var no_weakness: bool = false
 @export var no_resistance: bool = false
@@ -15,3 +15,6 @@ class_name Disable
 ##-1 means forever, otherwise it's turn duration
 @export var retreat_duration: int = 1
 @export var disable_retreat: bool = false
+
+func play_effect(fundies: Fundies):
+	print("PLAY DISABLE")

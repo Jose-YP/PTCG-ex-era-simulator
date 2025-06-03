@@ -11,11 +11,14 @@ class_name Fundies
 @onready var on_slot_actions: On_Slot_Actions = $OnSlotActions
 @onready var poke_slots: Array[PokeSlot] = [$Slots/PokeSlot, $Slots/PokeSlot2,
  $Slots/PokeSlot3, $Slots/PokeSlot4, $Slots/PokeSlot5, $Slots/PokeSlot6]
+@onready var opp_slots: Array[PokeSlot]
 
 var ui_slots: Array[UI_Slot]
 var active_slots: Array[PokeSlot]
 var bench_slots: Array[PokeSlot]
 var current_list: Node
+var attacker: PokeSlot
+var defender: PokeSlot
 
 func _get_configuration_warnings() -> PackedStringArray:
 	if player_side == null:
@@ -48,3 +51,27 @@ func hide_list():
 	#tutor_box.max_tutor = maximum
 	#tutor_box.current_tutor = prerequisites
 	#add_child(tutor_box)
+
+
+func get_slots(side_type: Constants.SIDES, slot_type: Constants.SLOTS) -> Array[PokeSlot]:
+	var returned_slots: Array[PokeSlot]
+	
+	print("USING SLOTS ")
+	if slot_type == Constants.SLOTS.ATTACKER:
+		print("ATTACKER ", attacker.name)
+		return [attacker]
+	
+	elif slot_type == Constants.SLOTS.DEFENDER:
+		print("DEFENDER ", defender.name)
+		return [defender]
+	
+	else:
+		for slot in poke_slots + opp_slots:
+			var active: bool = slot.is_active() or slot_type == Constants.SLOTS.ALL
+			var side: bool = slot.is_player() or side_type == Constants.SLOTS.ALL
+			
+			if active and side:
+				returned_slots.append(slot)
+				print(slot.name)
+	
+	return returned_slots

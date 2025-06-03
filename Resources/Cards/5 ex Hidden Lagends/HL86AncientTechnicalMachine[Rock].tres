@@ -1,9 +1,8 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=11 format=3 uid="uid://day2wur81xum5"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://day2wur81xum5"]
 
 [ext_resource type="Texture2D" uid="uid://bp4cvx4uqbwob" path="res://Art/Cards/5 ex Hidden Legends/86.jpg" id="1_fs338"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_454ab"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_rgudo"]
-[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="5_bh7p1"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="5_rs7ch"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="6_uou67"]
 
@@ -11,14 +10,14 @@
 
 [sub_resource type="Resource" id="Resource_qux53"]
 script = ExtResource("4_rgudo")
-order = Array[int]([])
-search = Array[ExtResource("5_bh7p1")]([])
-remove_conditions = false
-remove_shockwave = false
-remove_imprison = false
-choose_active = false
-switch_type = 0
-mimic = 0
+order = null
+search = null
+remove_conditions = null
+remove_shockwave = null
+remove_imprison = null
+choose_active = null
+switch_type = null
+mimic = null
 
 [sub_resource type="Resource" id="Resource_s63jm"]
 script = ExtResource("5_rs7ch")

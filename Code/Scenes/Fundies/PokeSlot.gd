@@ -28,6 +28,7 @@ enum turn_type{NONE, PARALYSIS, ASLEEP, CONFUSION}
 #--------------------------------------
 #region ATTATCHED VARIABLES
 var evolution_ready: bool = false
+var evolved_this_turn: bool = false
 var evolved_from: Array[Base_Card] = [] #
 var energy_array: Array[String] = []
 var attached_energy: Dictionary = {"Grass": 0, "Fire": 0, "Water": 0,
@@ -82,6 +83,26 @@ func _ready():
 		resist = pokedata.resist
 	readied = true
 
+func pokemon_checkup():
+	evolved_this_turn = false
+	evolution_ready = true
+	
+	if turn_condition == turn_type.PARALYSIS:
+		turn_condition = turn_type.NONE
+
+func is_active() -> bool:
+	if ui_slot:
+		return ui_slot.active
+	else:
+		return false
+
+func is_player() -> bool:
+	if ui_slot:
+		return ui_slot.player
+	else:
+		push_error("Not connected to a UI slot")
+		return false
+
 #--------------------------------------
 #region DAMAGE HANDLERS
 func should_ko() -> bool:
@@ -131,7 +152,7 @@ func count_energy() -> void:
 #--------------------------------------
 #region OTHER ATTATCHMENTS
 func can_evolve_into(evolution: Base_Card) -> bool:
-	return current_card.name == evolution.pokemon_properties.evolves_from
+	return current_card.name == evolution.pokemon_properties.evolves_from and not evolved_this_turn
 
 func evolve_card(evolution: Base_Card) -> void:
 	evolved_from.append(current_card)

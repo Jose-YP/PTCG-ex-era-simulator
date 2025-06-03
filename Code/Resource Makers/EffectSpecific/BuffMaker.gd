@@ -3,8 +3,8 @@ class_name Buff
 
 #@export_group("Buff & Debuff")
 ##Who recieves the buff?
-@export_enum("PlayerAll", "OpponentAll", "Self",
-"Defender", "Both Active", "Both Defending") var buff_target: int = 0
+@export var side: Constants.SIDES = Constants.SIDES.PLAYER
+@export var slot: Constants.SLOTS = Constants.SLOTS.ATTACKER
 ##-1 means forever, otherwise how many turns is this active
 @export var duration: int = 1
 ##How much more damage to the active spot?
@@ -17,3 +17,6 @@ class_name Buff
 @export var immune_to_effects: bool = false
 ##Immune to regular & bench damage [NOT DAMAGE MANIP EFFECT CALLS]
 @export var immune_to_damage: bool = false
+
+func play_effect(fundies: Fundies):
+	print("PLAY BUFF")

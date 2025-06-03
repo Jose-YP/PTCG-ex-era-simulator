@@ -9,7 +9,7 @@ signal chosen
 
 var play_functions: Array[Callable] = [play_basic_pokemon, play_evolution, 
 play_place_stadium, play_attatch_tool, play_attatch_tm, play_fossil, 
-play_energy, play_on_nothing]
+play_energy, play_trainer]
 
 func _ready() -> void:
 	SignalBus.connect_to(play_functions)
@@ -20,6 +20,7 @@ func determine_play() -> void:
 #--------------------------------------
 #region MANAGING CARD PLAY
 #For basic mons & fossils
+#region ADD POKEMON
 func play_basic_pokemon(card: Base_Card):
 	#Insert the card onto an active spot if there is one
 	for slot in fundies.active_slots:
@@ -38,12 +39,23 @@ func play_basic_pokemon(card: Base_Card):
 	print("Active slots full")
 	card.print_info()
 
-#For items, supporters, rsm
-func play_on_nothing(card: Base_Card):
-	pass
+func play_fossil(card: Base_Card):
+	for slot in fundies.active_slots:
+		if not slot.current_card:
+			fundies.hide_list()
+			slot.current_card = card
+			slot.refresh()
+			#Remove the card from hand
+			fundies.player_resources.play_card(card)
+			return
+	
+	starting_choice("Bench", "Where will pokemon be benched", card, func(slot: PokeSlot): return not slot.current_card)
+	await chosen
+	card.print_info()
 
 #For evolutions on pokemon and fossils
 func play_evolution(card: Base_Card):
+#endregion
 	starting_choice("Energy", str("Evolve ", card.name, " from which Pokemon")\
 	, card, can_evolve_into)
 	
@@ -59,6 +71,14 @@ func play_energy(card: Base_Card):
 	await chosen
 	print("Attatch ", card.name)
 	card.print_info()
+
+#region TRAINERS
+func play_trainer(card: Base_Card):
+	if card.trainer_properties.asks:
+		print("This card has an ask")
+	
+	if card.trainer_properties.always_effect:
+		pass
 
 #For tools
 func play_attatch_tool(card: Base_Card):
@@ -77,24 +97,10 @@ func play_attatch_tm(card: Base_Card):
 	print("Attatch ", card.name)
 	card.print_info()
 
-
-func play_fossil(card: Base_Card):
-	for slot in fundies.active_slots:
-		if not slot.current_card:
-			fundies.hide_list()
-			slot.current_card = card
-			slot.refresh()
-			#Remove the card from hand
-			fundies.player_resources.play_card(card)
-			return
-	
-	starting_choice("Bench", "Where will pokemon be benched", card, func(slot: PokeSlot): return not slot.current_card)
-	await chosen
-	card.print_info()
-
 #For stadiums
 func play_place_stadium(card: Base_Card):
 	pass
+#endregion
 
 func starting_choice(choice_type: String, instruction: String, card: Base_Card, bool_fun: Callable):
 	fundies.hide_list()
@@ -112,6 +118,7 @@ func starting_choice(choice_type: String, instruction: String, card: Base_Card, 
 		fundies.slot_ui_actions.color_tween(Color.TRANSPARENT)
 	
 	print("Attatch ", card.name)
+
 
 #endregion
 #--------------------------------------

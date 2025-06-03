@@ -180,9 +180,9 @@ text = "Discard Card"
 layout_mode = 2
 text = "Search Deck"
 
-[node name="Hand" type="Button" parent="FullUI/CardActions"]
+[node name="Castaway" type="Button" parent="FullUI/CardActions"]
 layout_mode = 2
-text = "View Hand"
+text = "Play Castaway"
 
 [node name="SearchDiscard" type="Button" parent="FullUI/CardActions"]
 layout_mode = 2
@@ -317,6 +317,12 @@ poke_slots = [NodePath("../Slots/PokeSlot"), NodePath("../Slots/PokeSlot2"), Nod
 
 [node name="PlayerResources" parent="Fundies" index="2"]
 deck = ExtResource("7_441s3")
+first_turn = null
+attatched_energy = null
+supporter_played = null
+prize_count = null
+side = null
+allowed_play = null
 
 [node name="PokeSlot" parent="Fundies/Slots" index="0" node_paths=PackedStringArray("ui_slot")]
 ui_slot = NodePath("../../../FullUI/PlayerSide/Main/Active/ActivePokemon")
@@ -331,7 +337,7 @@ ui_slot = NodePath("../../../FullUI/PlayerSide/Main/Bench/BenchPokemon2")
 [connection signal="pressed" from="FullUI/CardActions/DrawStarting" to="." method="_on_draw_starting_pressed"]
 [connection signal="pressed" from="FullUI/CardActions/Discard" to="." method="_on_discard_pressed"]
 [connection signal="pressed" from="FullUI/CardActions/SearchDeck" to="." method="_on_search_deck_pressed"]
-[connection signal="pressed" from="FullUI/CardActions/Hand" to="." method="_on_hand_pressed"]
+[connection signal="pressed" from="FullUI/CardActions/Castaway" to="." method="_on_casaway_pressed"]
 [connection signal="pressed" from="FullUI/CardActions/SearchDiscard" to="." method="_on_search_discard_pressed"]
 [connection signal="pressed" from="FullUI/CardActions/Shuffle2Deck" to="." method="_on_shuffle_2_deck_pressed"]
 [connection signal="pressed" from="FullUI/CardActions/ViewAllDeck" to="." method="_on_view_all_deck_pressed"]

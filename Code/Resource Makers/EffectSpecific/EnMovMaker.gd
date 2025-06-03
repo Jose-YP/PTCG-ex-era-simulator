@@ -8,8 +8,8 @@ class_name EnMov
 ##If they targets from which meet ask, they're allowed
 @export var candidates: SlotAsk
 ##Targets for removal
-@export_flags("Attacker", "Defender", "OtherActive",
-"Other Defending", "PBench", "OBench", "All") var which: int = 1
+@export var side: Constants.SIDES = Constants.SIDES.PLAYER
+@export var slots: Constants.SLOTS = Constants.SLOTS.ATTACKER
 ##Ammount of energy per swap. -1 means infinite.
 @export var energy_ammount: int = 0
 ##Ammount of swaps allowed. -1 means infinite.
@@ -18,3 +18,6 @@ class_name EnMov
 @export_flags("Grass","Fire","Water",
 "Lightning","Psychic","Fighting",
 "Darkness","Metal","Colorless") var type: int = 2 ** 9 - 1
+
+func play_effect(fundies: Fundies):
+	print("PLAY ENMOV")

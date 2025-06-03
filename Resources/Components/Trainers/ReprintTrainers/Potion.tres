@@ -1,8 +1,7 @@
-[gd_resource type="Resource" script_class="Trainer" load_steps=8 format=3 uid="uid://dksma8geevncm"]
+[gd_resource type="Resource" script_class="Trainer" load_steps=7 format=3 uid="uid://dksma8geevncm"]
 
 [ext_resource type="Script" uid="uid://scca13hg4k1l" path="res://Code/Resource Makers/EffectSpecific/DmgManipMaker.gd" id="1_obrrg"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_jtlhn"]
-[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="3_281m1"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="4_hf1ww"]
 
 [sub_resource type="Resource" id="Resource_eomgd"]
@@ -15,15 +14,15 @@ plus = false
 
 [sub_resource type="Resource" id="Resource_uyuan"]
 script = ExtResource("2_jtlhn")
-order = Array[int]([])
+order = null
 dmgManip = SubResource("Resource_eomgd")
-search = Array[ExtResource("3_281m1")]([])
-remove_conditions = false
-remove_shockwave = false
-remove_imprison = false
-choose_active = false
-switch_type = 0
-mimic = 0
+search = null
+remove_conditions = null
+remove_shockwave = null
+remove_imprison = null
+choose_active = null
+switch_type = null
+mimic = null
 
 [sub_resource type="Resource" id="Resource_31y3e"]
 

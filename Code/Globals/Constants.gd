@@ -63,5 +63,7 @@ const rarity: Array[String] = ["Common", "Uncommon", "Rare",
  "Holofoil Rare", "ex Rare", "Ultra Rare", "Star Rare", "Promo Rare"]
 const allowed_list_flags: Array[String] = ["Basic", "Evolution",
  "Item", "Supporter","Stadium", "Tool", "TM", "RSM", "Fossil", "Energy"]
+enum SIDES {NONE, PLAYER, OPP, BOTH}
+enum SLOTS {NONE, ATTACKER, DEFENDER, ACTIVE, BENCH, ALL}
 #endregion
 #--------------------------------------

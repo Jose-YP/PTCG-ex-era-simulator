@@ -205,7 +205,7 @@ func show_reveal_stack(reveal_slot):
 
 #--------------------------------------
 #region TUTORING
-func search_array(search: Search, based_on: PokeSlot):
+func search_array(search: Search, based_on: Array[PokeSlot]):
 	var from: Array[Base_Card] = arrays.get_array(search.where)
 	var search_results: Array[Dictionary]
 	for tutor in search.of_this:
@@ -216,12 +216,12 @@ func search_array(search: Search, based_on: PokeSlot):
 	
 	return search_results
 
-func identifier_search(list: Array[Base_Card], based_on: PokeSlot,\
+func identifier_search(list: Array[Base_Card], based_on: Array[PokeSlot],\
  identifier: Identifier) -> Dictionary[Base_Card,bool]:
 	var valid_dictionary: Dictionary[Base_Card,bool]
 	
 	for card in list:
-		if identifier.identifier_bool(card, based_on.current_card):
+		if identifier.identifier_bool(card, based_on):
 			valid_dictionary[card] = true
 		else: valid_dictionary[card] = false
 	
