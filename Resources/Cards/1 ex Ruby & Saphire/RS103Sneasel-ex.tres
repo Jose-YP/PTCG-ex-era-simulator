@@ -10,8 +10,8 @@
 [sub_resource type="Resource" id="Resource_nktju"]
 script = ExtResource("2_p50fd")
 heads = true
-const_flip_times = 2
 until = false
+const_flip_times = 2
 
 [sub_resource type="Resource" id="Resource_wl85h"]
 script = ExtResource("3_q5aky")
@@ -52,17 +52,17 @@ script = ExtResource("3_q5aky")
 count_for = 0
 filter = 0
 side = 1
-slot = 1
-for_what = 0
+slot = 4
+for_what = 10
 cap = -1
 return_num = 0
 
 [sub_resource type="Resource" id="Resource_gnwi8"]
 script = ExtResource("2_p50fd")
 heads = true
-const_flip_times = 1
 varying_flip_times = SubResource("Resource_pcbyt")
 until = false
+const_flip_times = 1
 
 [sub_resource type="Resource" id="Resource_vkhqv"]
 script = ExtResource("3_q5aky")
@@ -73,7 +73,7 @@ side = 1
 slot = 1
 for_what = 0
 cap = -1
-return_num = 20
+return_num = 2
 
 [sub_resource type="Resource" id="Resource_ju8be"]
 script = ExtResource("4_p1pt7")

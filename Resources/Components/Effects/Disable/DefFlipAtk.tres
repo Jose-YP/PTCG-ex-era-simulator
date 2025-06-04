@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EffectCall" load_steps=3 format=3 uid="uid://crhjbsphfbwr"]
+
+[ext_resource type="Resource" uid="uid://ovi6aaco5q03" path="res://Resources/Components/Effects/Disable/DefSelfFlipAttack.tres" id="1_msrmc"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_1w8m2"]
+
+[resource]
+script = ExtResource("2_1w8m2")
+order = Array[int]([])
+disable = ExtResource("1_msrmc")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"

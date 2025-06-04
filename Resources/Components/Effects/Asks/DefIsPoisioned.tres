@@ -4,7 +4,8 @@
 
 [resource]
 script = ExtResource("1_5dhp7")
-target = 2
+side_target = 3
+slot_target = 4
 comparison_type = 1
 max_hp = -10
 damage_taken = -10

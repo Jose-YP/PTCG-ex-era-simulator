@@ -5,7 +5,7 @@ class_name BenchAttk
 ##Which kinds of pokemon can the attacker pick
 @export var candidates: SlotAsk
 ##This choice exists for simple choices that don't need asks
-@export_enum("Player","Opponent","All") var which: int = 1
+@export var which: Constants.SIDES = Constants.SIDES.DEFENDING
 ##The attacker can choose to attack an active pokemon instead
 @export var active_allowed: bool = false
 
@@ -14,7 +14,10 @@ class_name BenchAttk
 @export var apply_weak_res: bool = false
 ##Bench dmg/In case bench dmg is different from active dmg
 @export_range(0,200,10) var initial_main_DMG: int = 0
-##
+##None - Use [member initial_main_DMG] as is
+##[br]Add - use [member initial_main_DMG] then add damage depending on [member counter] and [member prompt]
+##[br]Multiply - use [member initial_main_DMG] times the result found with [member counter] and [member prompt], allows 0 as a result
+##[br]Subtract - use [member initial_main_DMG] then add damage depending on [member counter] and [member prompt]
 @export_enum("None", "Add", "Multiply", "Subtract") var modifier: int = 0
 @export var counter: Counter
 

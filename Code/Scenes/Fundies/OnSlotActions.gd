@@ -75,10 +75,12 @@ func play_energy(card: Base_Card):
 func play_trainer(card: Base_Card):
 	var trainer: Trainer = card.trainer_properties
 	if trainer.asks:
-		if trainer.asks.check_ask():
-			trainer.success_effect.play_effect(fundies)
-		else:
-			trainer.fail_effect.play_effect(fundies)
+		#Determine a way to check asks and prompts easily
+		
+		#if trainer.asks.check_ask():
+			#trainer.success_effect.play_effect(fundies)
+		#else:
+			#trainer.fail_effect.play_effect(fundies)
 		
 		print("This card has an ask")
 		

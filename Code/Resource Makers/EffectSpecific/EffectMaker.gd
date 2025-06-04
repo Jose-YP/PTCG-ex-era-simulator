@@ -20,7 +20,7 @@ ENMOV, DMGMANIP, SEARCH, SWAP, DRAW, ALLEVIATE, MIMIC, OTHER}
 @export var disable: Disable
 ##Move current energy in play
 @export var energy_movement: EnMov
-##Move/Add damage counters around
+##Move/Add damage counters around slots and stacks
 @export var dmgManip: DamageManip
 ##Look for cards in deck/discard
 @export var search: Search

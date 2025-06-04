@@ -1,11 +1,11 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=14 format=3 uid="uid://cht2g100xfwct"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=13 format=3 uid="uid://cht2g100xfwct"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_hw0hl"]
 [ext_resource type="Texture2D" uid="uid://cit0gp8cbga1f" path="res://Art/Cards/1 ex Ruby & Saphire/97.jpg" id="1_y7skg"]
-[ext_resource type="Resource" uid="uid://depecxjmmfklq" path="res://Resources/Components/Effects/Asks/AskSingleFlip.tres" id="2_f0mxy"]
 [ext_resource type="Resource" uid="uid://6xmw13js5xd3" path="res://Resources/Components/Effects/Conditions/BasicParalyze.tres" id="3_uh1kh"]
+[ext_resource type="Resource" uid="uid://lfhu3xyr0wpo" path="res://Resources/Components/Effects/Prompts/IfFlipHeads.tres" id="3_uho2u"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="4_4dib8"]
-[ext_resource type="Script" uid="uid://y0v42qaa35wt" path="res://Code/Resource Makers/GeneralUse/CoinFlipNumMaker.gd" id="5_bgr12"]
+[ext_resource type="Resource" uid="uid://csc2clyxejdwm" path="res://Resources/Components/CoinFlip/FlipOnce.tres" id="5_dwd7g"]
 [ext_resource type="Script" uid="uid://cml2jkc16tlva" path="res://Code/Resource Makers/GeneralUse/CounterMaker.gd" id="6_vd63v"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="7_6e4ya"]
 
@@ -24,28 +24,25 @@ metal_cost = 0
 colorless_cost = 0
 defender_properties = 0
 ignore_condition = 0
+prompt_reliant = false
 initial_main_DMG = 10
+conditional_self_dmg = false
 self_damage = 0
 modifier = 0
 both_active = false
-ask = ExtResource("2_f0mxy")
-effect = ExtResource("3_uh1kh")
-
-[sub_resource type="Resource" id="Resource_t4s2j"]
-script = ExtResource("5_bgr12")
-heads = true
-const_flip_times = 1
-until = false
+prompt = ExtResource("3_uho2u")
+success_effect = ExtResource("3_uh1kh")
 
 [sub_resource type="Resource" id="Resource_8igye"]
 script = ExtResource("6_vd63v")
 count_for = 0
 filter = 4
-coin_flip_num = SubResource("Resource_t4s2j")
-mon_count = 0
-for_what = null
-cap = 0
-return_num = 20
+coin_flip_num = ExtResource("5_dwd7g")
+side = 1
+slot = 1
+for_what = 0
+cap = 1
+return_num = 2
 
 [sub_resource type="Resource" id="Resource_u11vq"]
 script = ExtResource("4_4dib8")
@@ -62,7 +59,9 @@ metal_cost = 0
 colorless_cost = 1
 defender_properties = 0
 ignore_condition = 0
+prompt_reliant = false
 initial_main_DMG = 40
+conditional_self_dmg = false
 self_damage = 0
 modifier = 1
 both_active = false

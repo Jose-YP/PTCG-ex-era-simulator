@@ -21,7 +21,7 @@ class_name Counter
 ##Search for an aspect in the game
 @export_enum("Constant", "Energy Attatched", "Energy Excess", "Damage Counters",
  "Prizes Left","Prize Difference","Hand","Hand Difference","Discard",
-"Discard Diff") var for_what: int = 0
+"Discard Diff", "Pokemon in Play") var for_what: int = 0
 
 ##Search for the number of pokemon that meet this ask
 @export var meet_ask: SlotAsk
@@ -33,7 +33,7 @@ class_name Counter
 @export_range(-1,10,1) var return_num: int = 0
 
 var functions: Array[Callable] = [energy_count, energy_excess, damage_count, prize_count,
-prize_difference, hand_count, hand_difference, discard_count, discard_difference]
+prize_difference, hand_count, hand_difference, discard_count, discard_difference, pokemon_count]
 
 func return_count():
 	pass
@@ -63,4 +63,7 @@ func discard_count():
 	pass
 
 func discard_difference():
+	pass
+
+func pokemon_count():
 	pass

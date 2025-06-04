@@ -1,11 +1,12 @@
 extends Resource
 class_name Search
 
+##Which section will the player search (yes there is defender searching)
 @export var side: Constants.SIDES
-@export_enum("Discard", "Deck") var where
+@export_enum("Discard", "Deck") var where: int = 1
+##Will the identifier base it's results on anything?
 @export var based_on_side: Constants.SIDES
 @export var based_on_slots: Constants.SLOTS
-
 
 ##How many cards in the desired section can you check.
 ##-1 means all cards. For certain cards that look at a bit of the top of the deck.
@@ -14,7 +15,9 @@ class_name Search
 @export var how_many: Array[int] = [1]
 ##For each item in identifier, search how_many
 @export var of_this: Array[Identifier]
+##Where do the tutored cards go?
 @export var and_then: Placement
+##Should the defender see any of these cards?
 @export var reveal: bool = true
 
 func play_effect(fundies: Fundies):

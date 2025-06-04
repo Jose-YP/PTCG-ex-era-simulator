@@ -11,6 +11,7 @@ script = ExtResource("1_w8o02")
 remove = false
 how_many = 1
 choose_from = false
+include_target = true
 side = 1
 slot = 1
 plus = false
@@ -32,7 +33,7 @@ number = 1
 react = false
 holon_type = "None"
 type = 511
-fail_type = 256
+fail_type = 0
 
 [resource]
 script = ExtResource("3_kg6gm")
