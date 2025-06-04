@@ -30,13 +30,6 @@ both_active = false
 [sub_resource type="Resource" id="Resource_aatb5"]
 script = ExtResource("5_j0e5d")
 order = null
-search = null
-remove_conditions = true
-remove_shockwave = null
-remove_imprison = null
-choose_active = null
-switch_type = null
-mimic = null
 
 [sub_resource type="Resource" id="Resource_q28ps"]
 script = ExtResource("6_huf6o")

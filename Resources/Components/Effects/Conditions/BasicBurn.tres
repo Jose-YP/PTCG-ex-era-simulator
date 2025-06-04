@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="EffectCall" load_steps=3 format=3 uid="uid://bext0mocufqgp"]
+
+[ext_resource type="Resource" uid="uid://cri7upmf1q7n0" path="res://Resources/Components/Effects/Conditions/DefBurn.tres" id="1_h7cht"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_xm8r8"]
+
+[resource]
+script = ExtResource("2_xm8r8")
+order = Array[int]([0])
+condition = ExtResource("1_h7cht")

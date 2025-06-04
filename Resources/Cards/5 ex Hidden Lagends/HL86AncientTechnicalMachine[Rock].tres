@@ -11,13 +11,6 @@
 [sub_resource type="Resource" id="Resource_qux53"]
 script = ExtResource("4_rgudo")
 order = null
-search = null
-remove_conditions = null
-remove_shockwave = null
-remove_imprison = null
-choose_active = null
-switch_type = null
-mimic = null
 
 [sub_resource type="Resource" id="Resource_s63jm"]
 script = ExtResource("5_rs7ch")

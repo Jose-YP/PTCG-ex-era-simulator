@@ -14,6 +14,8 @@
 script = ExtResource("3_wsgdx")
 side = 0
 where = 1
+based_on_side = 0
+based_on_slots = 0
 portion = -1
 how_many = Array[int]([1, 1, 1])
 of_this = Array[ExtResource("5_cbgp6")]([ExtResource("6_ry3f1"), ExtResource("7_n7rcf"), ExtResource("8_fj2ty")])

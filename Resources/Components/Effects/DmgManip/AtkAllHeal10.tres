@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="DamageManip" load_steps=2 format=3 uid="uid://dnovfxs7a0hv2"]
+
+[ext_resource type="Script" uid="uid://scca13hg4k1l" path="res://Code/Resource Makers/EffectSpecific/DmgManipMaker.gd" id="1_3ah3h"]
+
+[resource]
+script = ExtResource("1_3ah3h")
+remove = true
+how_many = 1
+choose_from = false
+side = 1
+slot = 5
+plus = false
+metadata/_custom_type_script = "uid://scca13hg4k1l"

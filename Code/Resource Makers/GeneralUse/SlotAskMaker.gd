@@ -5,7 +5,9 @@ class_name SlotAsk
 ##If this ask isn't met, look for the next ask
 @export var or_ask: SlotAsk
 ##Which side to pay attention to
-@export_enum("None", "Player", "Opponent", "Both") var target: int = 0
+#@export_enum("None", "Player", "Opponent", "Both") var target: int = 0
+@export var side_target: Constants.SIDES = Constants.SIDES.BOTH
+@export var slot_target: Constants.SLOTS = Constants.SLOTS.ALL
 ##-10 means don't look at this var, 0 means must be undamaged, the rest mean x or more
 @export_enum("LessEq", "GreaterEq") var comparison_type: int = 1
 @export_range(-10,200,10) var max_hp: int = -10
@@ -46,7 +48,7 @@ class_name SlotAsk
 @export var coin_flip: CoinFlip
 ##Give a prompt asking to activate the effect
 @export var formal_ask: bool = false
-@export_enum("None", "Player", "Opponent") var choose: int = 0
+@export var side: Constants.SIDES = Constants.SIDES.ATTACKING
 @export_flags("Bench", "Active", "Self", 
 "Discard", "Hand", "Desicion") var choose_location: int = 0
 
@@ -61,9 +63,16 @@ func check_ask(slot: PokeSlot) -> bool:
 	print("-----------------------------------------------------------")
 	print_rich("[center]Target")
 	print("Player: ", slot.ui_slot.player)
-	if slot.ui_slot.player and target == 2 or target == 0:
+	
+	#First remove any cards that aren't included in sides/slots parameters
+	if not side_target == Constants.SIDES.BOTH or side_target == Constants.SIDES.NONE\
+	or (slot.in_attacking_turn and side_target == Constants.SIDES.DEFENDING) \
+	or (not slot.in_attacking_turn and side_target == Constants.SIDES.ATTACKING):
 		return false
-	elif target == 1:
+	elif not slot_target == Constants.SLOTS.ALL or slot_target == Constants.SLOTS.NONE\
+	or (slot_target == Constants.SLOTS.ACTIVE and not slot.is_active())\
+	or (slot_target == Constants.SLOTS.BENCH and slot.is_active())\
+	or (slot.is_target and Constants.SLOTS.TARGET):
 		return false
 
 	#Check if the pokemon matches the desired stage

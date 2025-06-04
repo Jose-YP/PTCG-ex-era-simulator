@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Energy" load_steps=2 format=3 uid="uid://nrfa4a2piemj"]
 
-[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="1_yqw56"]
+[ext_resource type="Script" uid="uid://caj1pm8erar2a" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="1_yqw56"]
 
 [resource]
 script = ExtResource("1_yqw56")
@@ -13,4 +13,4 @@ number = 1
 react = false
 holon_type = "None"
 type = 16
-fail_type = 1
+fail_type = 16

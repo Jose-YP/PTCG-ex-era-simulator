@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="4_xh2h7"]
 [ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="5_s2t8r"]
 [ext_resource type="Script" uid="uid://br15mnap82upq" path="res://Code/Resource Makers/PokemonSpecific/BenchAttackMaker.gd" id="6_2ypk6"]
-[ext_resource type="Resource" uid="uid://bpmpftwh0r7sm" path="res://Resources/Components/Effects/EnergyMovement/DefenderBasicDiscard.tres" id="7_xmagr"]
+[ext_resource type="Resource" uid="uid://bpmpftwh0r7sm" path="res://Resources/Components/Effects/EnergyMovement/AtkSelfDisAny.tres" id="7_xmagr"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="8_ykxca"]
 [ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="9_r8g3m"]
 

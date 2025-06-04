@@ -10,6 +10,8 @@ class_name Trainer
 
 @export_category("Effect")
 ##What should be asked for this to even happen
+@export var prompt: PromptAsk
+##Does anyone need to be a certain way to activate this
 @export var asks: SlotAsk
 @export var fail_effect: EffectCall
 @export var success_effect: EffectCall

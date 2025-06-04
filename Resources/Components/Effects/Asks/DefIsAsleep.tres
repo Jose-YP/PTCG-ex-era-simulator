@@ -1,17 +1,17 @@
-[gd_resource type="Resource" script_class="SlotAsk" load_steps=2 format=3 uid="uid://bjhfixkixpbev"]
+[gd_resource type="Resource" script_class="SlotAsk" load_steps=2 format=3 uid="uid://1yjd3yshx5a1"]
 
-[ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="1_n0ifu"]
+[ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="1_5yv7n"]
 
 [resource]
-script = ExtResource("1_n0ifu")
-target = 3
+script = ExtResource("1_5yv7n")
+target = 2
 comparison_type = 1
-max_hp = 100
+max_hp = -10
 damage_taken = -10
 retreat_cost = -1
 energy_attatched = -1
 knocked_out = false
-condition = 0
+condition = 8
 location = 0
 stage = 7
 rare_candy = false
@@ -23,6 +23,6 @@ type = 1023
 type_size = -1
 ask_string = ""
 formal_ask = false
-choose = 0
+side = 1
 choose_location = 0
 metadata/_custom_type_script = "uid://mkjynqda7q5g"

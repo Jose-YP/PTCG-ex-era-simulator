@@ -58,6 +58,7 @@ var ex_immune: bool = false
 var use_body: bool = true
 var use_power: bool = false
 var use_attack: bool = true
+var in_attacking_turn: bool = true
 #endregion
 #--------------------------------------
 #--------------------------------------
@@ -73,6 +74,7 @@ var shockwave: bool = false
 #--------------------------------------
 var readied: bool = false
 var knocked_out: bool = false
+var is_target: bool = false
 #endregion
 #--------------------------------------
 

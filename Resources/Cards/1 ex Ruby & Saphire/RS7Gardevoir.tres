@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_x305h"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_mamwr"]
 [ext_resource type="Script" uid="uid://cml2jkc16tlva" path="res://Code/Resource Makers/GeneralUse/CounterMaker.gd" id="3_vnprs"]
-[ext_resource type="Resource" uid="uid://5xgqdwmsc8c1" path="res://Resources/Components/Effects/DmgManip/Take20Dmg.tres" id="4_nh60l"]
+[ext_resource type="Resource" uid="uid://5xgqdwmsc8c1" path="res://Resources/Components/Effects/DmgManip/AtkSelfTake20Dmg.tres" id="4_nh60l"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="5_o1pkv"]
 [ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="6_yov0a"]
 [ext_resource type="Resource" uid="uid://ckq0objyn0iok" path="res://Resources/Components/Effects/Placement/PlaceOnSide.tres" id="7_c5pr4"]

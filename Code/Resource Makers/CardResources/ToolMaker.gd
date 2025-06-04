@@ -7,5 +7,5 @@ class_name ToolCard
 @export var tool_effect: EffectCall
 ##remove tool after it's effect is used
 @export var remove_after: bool = true
-##-1 means it lasts forever
+##-1 means it lasts forever, otherwise it last for this ammount of turns
 @export var duration: int = -1

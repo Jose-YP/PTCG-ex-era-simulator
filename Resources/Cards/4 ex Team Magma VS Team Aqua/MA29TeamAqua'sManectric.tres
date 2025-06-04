@@ -3,28 +3,34 @@
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_dwtlt"]
 [ext_resource type="Texture2D" uid="uid://df02g0rwr5yl1" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/29.jpg" id="1_gl86o"]
 [ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="2_auni2"]
-[ext_resource type="Resource" uid="uid://nx1kc1vsm4ia" path="res://Resources/Components/Effects/Basic Conditions/BasicConfusion.tres" id="3_v7bs6"]
+[ext_resource type="Resource" uid="uid://nx1kc1vsm4ia" path="res://Resources/Components/Effects/Conditions/BasicConfusion.tres" id="3_v7bs6"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="4_0g86g"]
-[ext_resource type="Resource" uid="uid://dnyqnjxvk4386" path="res://Resources/Components/Effects/EnergyMovement/DefenderDiscard.tres" id="5_ltl6m"]
+[ext_resource type="Resource" uid="uid://d4bi0kdblesdq" path="res://Resources/Components/Effects/Asks/DefIsConfused.tres" id="5_1uuvq"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="6_ea6gi"]
+[ext_resource type="Resource" uid="uid://l48hjm27w6e6" path="res://Resources/Components/Effects/EnergyMovement/DefSelfDisAny.tres" id="6_gdiu5"]
 
 [sub_resource type="Resource" id="Resource_owb8s"]
 script = ExtResource("2_auni2")
 target = 2
+comparison_type = 1
+max_hp = -10
 damage_taken = -10
+retreat_cost = -1
 energy_attatched = -1
 knocked_out = false
 condition = 0
 location = 4
 stage = 7
-inclusive = true
+rare_candy = false
+class_inclusive = true
 pokemon_class = 16
 bench_size = -1
+type_inclusive = true
 type = 1023
 type_size = 1
 ask_string = ""
 formal_ask = false
-choose = 0
+side = 1
 choose_location = 0
 
 [sub_resource type="Resource" id="Resource_kg1j7"]
@@ -45,27 +51,9 @@ ignore_condition = 0
 initial_main_DMG = 20
 self_damage = 0
 modifier = 0
+both_active = false
 ask = SubResource("Resource_owb8s")
 effect = ExtResource("3_v7bs6")
-
-[sub_resource type="Resource" id="Resource_4v2wa"]
-script = ExtResource("2_auni2")
-target = 2
-damage_taken = -10
-energy_attatched = -1
-knocked_out = false
-condition = 16
-location = 4
-stage = 7
-inclusive = true
-pokemon_class = 0
-bench_size = -1
-type = 1023
-type_size = 1
-ask_string = ""
-formal_ask = false
-choose = 0
-choose_location = 0
 
 [sub_resource type="Resource" id="Resource_je666"]
 script = ExtResource("4_0g86g")
@@ -85,8 +73,9 @@ ignore_condition = 0
 initial_main_DMG = 50
 self_damage = 0
 modifier = 0
-ask = SubResource("Resource_4v2wa")
-effect = ExtResource("5_ltl6m")
+both_active = false
+ask = ExtResource("5_1uuvq")
+effect = ExtResource("6_gdiu5")
 
 [sub_resource type="Resource" id="Resource_4k40m"]
 script = ExtResource("6_ea6gi")

@@ -9,8 +9,8 @@ class_name DamageManip
 ##If this is true, the player must choose between the choices for how_many times.
 @export var choose_from: bool = false
 ##Who will get the counter manipulation
-@export var side: Constants.SIDES = Constants.SIDES.PLAYER
-@export var slot: Constants.SLOTS = Constants.SLOTS.ATTACKER
+@export var side: Constants.SIDES = Constants.SIDES.ATTACKING
+@export var slot: Constants.SLOTS = Constants.SLOTS.TARGET
 ##Determines how many will be added/removed based on the Counter
 @export_group("Counter")
 @export var plus: bool = false

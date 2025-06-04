@@ -2,7 +2,7 @@ extends Resource
 class_name Disable
 
 #@export_group("Disable")
-@export var side: Constants.SIDES = Constants.SIDES.OPP
+@export var side: Constants.SIDES = Constants.SIDES.DEFENDING
 @export var slot: Constants.SLOTS = Constants.SLOTS.ALL
 @export var duration: int = -1
 @export var no_weakness: bool = false

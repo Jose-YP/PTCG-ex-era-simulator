@@ -18,14 +18,14 @@
 [ext_resource type="Resource" uid="uid://bsrtmv3udqjav" path="res://Resources/Components/Effects/Identifiers/BasicPokemon.tres" id="11_etycu"]
 [ext_resource type="Resource" uid="uid://ccyylno0d5ync" path="res://Resources/Components/Effects/Identifiers/non-ex.tres" id="12_0dfak"]
 [ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="13_xd3r3"]
-[ext_resource type="Resource" uid="uid://bjhfixkixpbev" path="res://Resources/Components/Effects/Asks/100HPorMore.tres" id="14_pulol"]
-[ext_resource type="Resource" uid="uid://cyaqpq76mby4m" path="res://Resources/Components/Effects/Asks/EvolvedMon.tres" id="15_5pq6o"]
-[ext_resource type="Resource" uid="uid://cxegxi6tys8qi" path="res://Resources/Components/Effects/Asks/IsPoisioned.tres" id="16_owp07"]
-[ext_resource type="Resource" uid="uid://bydi0pyqva0ly" path="res://Resources/Components/Effects/Asks/exMon.tres" id="16_ww7ww"]
-[ext_resource type="Resource" uid="uid://1yjd3yshx5a1" path="res://Resources/Components/Effects/Asks/IsAsleep.tres" id="17_fukg8"]
-[ext_resource type="Resource" uid="uid://81ap7i1gfqm0" path="res://Resources/Components/Effects/Asks/AffectedByCondition.tres" id="18_qtpl6"]
-[ext_resource type="Resource" uid="uid://c08tcl1tywrqe" path="res://Resources/Components/Effects/Asks/Either-non-ex.tres" id="20_qtpl6"]
-[ext_resource type="Resource" uid="uid://byktyri4kacof" path="res://Resources/Components/Effects/Asks/RetreatLessThan2.tres" id="21_etycu"]
+[ext_resource type="Resource" uid="uid://bjhfixkixpbev" path="res://Resources/Components/Effects/Asks/BothGT100HP.tres" id="14_pulol"]
+[ext_resource type="Resource" uid="uid://cyaqpq76mby4m" path="res://Resources/Components/Effects/Asks/AtkEvolvedMon.tres" id="15_5pq6o"]
+[ext_resource type="Resource" uid="uid://cxegxi6tys8qi" path="res://Resources/Components/Effects/Asks/DefIsPoisioned.tres" id="16_owp07"]
+[ext_resource type="Resource" uid="uid://bydi0pyqva0ly" path="res://Resources/Components/Effects/Asks/DefExMon.tres" id="16_ww7ww"]
+[ext_resource type="Resource" uid="uid://1yjd3yshx5a1" path="res://Resources/Components/Effects/Asks/DefIsAsleep.tres" id="17_fukg8"]
+[ext_resource type="Resource" uid="uid://81ap7i1gfqm0" path="res://Resources/Components/Effects/Asks/AtkAffectedByCondition.tres" id="18_qtpl6"]
+[ext_resource type="Resource" uid="uid://c08tcl1tywrqe" path="res://Resources/Components/Effects/Asks/BothNon-ex.tres" id="20_qtpl6"]
+[ext_resource type="Resource" uid="uid://byktyri4kacof" path="res://Resources/Components/Effects/Asks/BothLT2Retreat.tres" id="21_etycu"]
 
 [sub_resource type="Resource" id="Resource_sreaw"]
 script = ExtResource("2_yqty7")
@@ -96,7 +96,7 @@ type = 1023
 type_size = -1
 ask_string = ""
 formal_ask = false
-choose = 0
+side = 1
 choose_location = 0
 metadata/_custom_type_script = "uid://mkjynqda7q5g"
 
@@ -121,7 +121,7 @@ type = 1023
 type_size = -1
 ask_string = ""
 formal_ask = false
-choose = 0
+side = 1
 choose_location = 0
 metadata/_custom_type_script = "uid://mkjynqda7q5g"
 

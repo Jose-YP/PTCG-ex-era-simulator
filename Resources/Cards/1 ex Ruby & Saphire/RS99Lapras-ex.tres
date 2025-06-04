@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bf7b3we0s6a0p" path="res://Art/Cards/1 ex Ruby & Saphire/99.jpg" id="1_xkacn"]
 [ext_resource type="Script" uid="uid://cml2jkc16tlva" path="res://Code/Resource Makers/GeneralUse/CounterMaker.gd" id="2_4i1dy"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="3_bb8ip"]
-[ext_resource type="Resource" uid="uid://nx1kc1vsm4ia" path="res://Resources/Components/Effects/Basic Conditions/BasicConfusion.tres" id="4_jwpb3"]
+[ext_resource type="Resource" uid="uid://nx1kc1vsm4ia" path="res://Resources/Components/Effects/Conditions/BasicConfusion.tres" id="4_jwpb3"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_f5leu"]
 
 [sub_resource type="Resource" id="Resource_7x5hs"]

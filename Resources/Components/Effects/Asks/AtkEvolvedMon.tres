@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_eswes")
-target = 0
+target = 1
 comparison_type = 1
 max_hp = -10
 damage_taken = -10
@@ -23,6 +23,6 @@ type = 1023
 type_size = -1
 ask_string = ""
 formal_ask = false
-choose = 0
+side = 1
 choose_location = 0
 metadata/_custom_type_script = "uid://mkjynqda7q5g"

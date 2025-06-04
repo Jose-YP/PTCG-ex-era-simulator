@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="EffectCall" load_steps=3 format=3 uid="uid://dr35h5ltr0i6r"]
+
+[ext_resource type="Resource" uid="uid://dew25qfxkag73" path="res://Resources/Components/Effects/Conditions/DefPoison.tres" id="1_syja3"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_fimau"]
+
+[resource]
+script = ExtResource("2_fimau")
+order = Array[int]([0])
+condition = ExtResource("1_syja3")

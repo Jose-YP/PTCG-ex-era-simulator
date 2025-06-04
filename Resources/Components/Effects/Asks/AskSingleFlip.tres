@@ -31,5 +31,5 @@ type_size = 1
 ask_string = ""
 coin_flip = SubResource("Resource_q0esk")
 formal_ask = false
-choose = 0
+side = 1
 choose_location = 0

@@ -7,10 +7,11 @@
 
 [resource]
 script = ExtResource("2_j35jy")
-side = null
 where = null
+based_on_side = 1
+based_on_slots = 0
 portion = -1
-how_many = 1
+how_many = Array[int]([1])
 of_this = Array[ExtResource("1_4jy4p")]([ExtResource("3_xoil8")])
 and_then = ExtResource("1_qldni")
 reveal = true

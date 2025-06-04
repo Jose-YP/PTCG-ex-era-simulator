@@ -11,6 +11,8 @@ class_name Energy
 @export_multiline var description: String = ""
 
 @export_group("Prerequisites")
+##Is there anything the user must decide before attatching?
+@export var prompt: PromptAsk
 ##What should the game state be like for this card to be used?
 @export var asks: SlotAsk
 ##Should failure constitute providing different kinds of energy?

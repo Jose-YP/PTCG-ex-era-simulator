@@ -1,7 +1,7 @@
 extends Resource
 class_name Search
 
-@export_enum("Player", "Opponent") var side
+@export var side: Constants.SIDES
 @export_enum("Discard", "Deck") var where
 @export var based_on_side: Constants.SIDES
 @export var based_on_slots: Constants.SLOTS
@@ -22,7 +22,7 @@ func play_effect(fundies: Fundies):
 	var based_on_cards: Array[PokeSlot]
 	
 	if based_on_side != 0 and based_on_slots != 0:
-		based_on_cards = fundies.get_slots(Constants.SIDES.PLAYER, Constants.SLOTS.ACTIVE)
+		based_on_cards = fundies.get_slots(based_on_side, based_on_slots)
 		print("BASED ON ", based_on_side, based_on_slots, based_on_cards)
 	
 	fundies.player_resources.search_array(self, based_on_cards)

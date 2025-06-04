@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="EffectCall" load_steps=3 format=3 uid="uid://cqw2kwbgcwgvb"]
+
+[ext_resource type="Resource" uid="uid://hbbi3hqk47gs" path="res://Resources/Components/Effects/Conditions/DefSleep.tres" id="1_clu2n"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_rg2sp"]
+
+[resource]
+script = ExtResource("2_rg2sp")
+order = Array[int]([])
+condition = ExtResource("1_clu2n")

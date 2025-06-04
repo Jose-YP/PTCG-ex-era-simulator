@@ -20,6 +20,7 @@ var current_list: Node
 var attacker: PokeSlot
 var defender: PokeSlot
 
+#region INITALIZATION
 func _get_configuration_warnings() -> PackedStringArray:
 	if player_side == null:
 		return ["Setup the node Fundies should connect to"]
@@ -38,30 +39,21 @@ func _ready() -> void:
 		if player_side.ui_slots[i].active:
 			active_slots.append(poke_slots[i])
 		else: bench_slots.append(poke_slots[i])
+#endregion
 
 func hide_list():
 	if current_list: current_list.disapear()
 
-#When moving any ammount of defined cards from one stack to another
-#func start_mass_move(from: String, towards: String, instructions: String, prerequisites: int, maximum: int):
-	#
-	#player_resources.spawn_list(true, from, "Tutor", instructions, prerequisites)
-	#var tutor_box = Constants.tutor_box.instantiate()
-	#tutor_box.connected_list = current_list
-	#tutor_box.max_tutor = maximum
-	#tutor_box.current_tutor = prerequisites
-	#add_child(tutor_box)
-
-
+#region BOARDWIDE FUNCTIONS
 func get_slots(side_type: Constants.SIDES, slot_type: Constants.SLOTS) -> Array[PokeSlot]:
 	var returned_slots: Array[PokeSlot]
 	
 	print("USING SLOTS ")
-	if slot_type == Constants.SLOTS.ATTACKER:
+	if slot_type == Constants.SLOTS.TARGET and side_type == Constants.SIDES.ATTACKING:
 		print("ATTACKER ", attacker.name)
 		return [attacker]
 	
-	elif slot_type == Constants.SLOTS.DEFENDER:
+	elif slot_type == Constants.SLOTS.TARGET and side_type == Constants.SIDES.DEFENDING:
 		print("DEFENDER ", defender.name)
 		return [defender]
 	
@@ -75,3 +67,21 @@ func get_slots(side_type: Constants.SIDES, slot_type: Constants.SLOTS) -> Array[
 				print(slot.name)
 	
 	return returned_slots
+
+func edit_attacker_defender(new_atk: PokeSlot, new_def: PokeSlot):
+	attacker.is_target = false
+	defender.is_target = false
+	
+	attacker = new_atk
+	defender = new_def
+
+func pass_turn():
+	pass
+
+func check_ask_on_all(ask: SlotAsk) -> bool:
+	for slot in poke_slots + opp_slots:
+		if ask.check_ask(slot):
+			return true
+	
+	return false
+#endregion

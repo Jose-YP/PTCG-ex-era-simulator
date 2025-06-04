@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://0ka4l556u8wj" path="res://Art/Cards/1 ex Ruby & Saphire/73.jpg" id="1_cxf7q"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_g0mns"]
 [ext_resource type="Resource" uid="uid://depecxjmmfklq" path="res://Resources/Components/Effects/Asks/AskSingleFlip.tres" id="3_3aqev"]
-[ext_resource type="Resource" uid="uid://b86uut4qajrgg" path="res://Resources/Components/Effects/EnergyMovement/SelfDiscardFire.tres" id="4_egyx3"]
+[ext_resource type="Resource" uid="uid://b86uut4qajrgg" path="res://Resources/Components/Effects/EnergyMovement/AtkSelfDisFire.tres" id="4_egyx3"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_cfuqc"]
 
 [sub_resource type="Resource" id="Resource_xgtqj"]

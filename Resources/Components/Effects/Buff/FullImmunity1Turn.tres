@@ -6,7 +6,8 @@
 
 [sub_resource type="Resource" id="Resource_hydve"]
 script = ExtResource("1_q84uj")
-buff_target = 0
+side = 1
+slot = 1
 duration = 1
 attack_damage = 0
 defense = 0
@@ -18,10 +19,3 @@ immune_to_damage = true
 script = ExtResource("2_phux3")
 order = Array[int]([])
 buff = SubResource("Resource_hydve")
-search = Array[ExtResource("3_osam7")]([])
-remove_conditions = false
-remove_shockwave = false
-remove_imprison = false
-choose_active = false
-switch_type = 0
-mimic = 0

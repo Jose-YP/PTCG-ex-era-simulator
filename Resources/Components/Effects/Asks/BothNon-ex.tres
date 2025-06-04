@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="SlotAsk" load_steps=2 format=3 uid="uid://bydi0pyqva0ly"]
+[gd_resource type="Resource" script_class="SlotAsk" load_steps=2 format=3 uid="uid://c08tcl1tywrqe"]
 
-[ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="1_7qbj0"]
+[ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="1_uon1v"]
 
 [resource]
-script = ExtResource("1_7qbj0")
-target = 2
+script = ExtResource("1_uon1v")
+target = 3
 comparison_type = 1
 max_hp = -10
 damage_taken = -10
@@ -15,14 +15,14 @@ condition = 0
 location = 0
 stage = 7
 rare_candy = false
-class_inclusive = true
+class_inclusive = false
 pokemon_class = 2
 bench_size = -1
 type_inclusive = true
 type = 1023
-type_size = 1
+type_size = -1
 ask_string = ""
 formal_ask = false
-choose = 0
+side = 1
 choose_location = 0
 metadata/_custom_type_script = "uid://mkjynqda7q5g"

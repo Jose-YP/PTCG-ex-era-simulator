@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://f51ar25ws7av"]
 
 [ext_resource type="Texture2D" uid="uid://batwggrxck3rc" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/79.jpg" id="1_362yo"]
-[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_i2j72"]
-[ext_resource type="Resource" uid="uid://b0lo8uly2lldp" path="res://Resources/Components/Effects/Asks/IsTeamAqua.tres" id="3_uthag"]
-[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_7pouw"]
-[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/ConditionMaker.gd" id="4_rmk35"]
-[ext_resource type="Script" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="5_exr3x"]
-[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="6_6xmn3"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_i2j72"]
+[ext_resource type="Resource" uid="uid://b0lo8uly2lldp" path="res://Resources/Components/Effects/Asks/AtkIsTeamAqua.tres" id="3_uthag"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_7pouw"]
+[ext_resource type="Script" uid="uid://8s3m1dar3r33" path="res://Code/Resource Makers/EffectSpecific/ConditionMaker.gd" id="4_rmk35"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="5_exr3x"]
+[ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="6_6xmn3"]
 
 [sub_resource type="Resource" id="Resource_srpdm"]
 script = ExtResource("4_rmk35")

@@ -1,11 +1,11 @@
-[gd_resource type="Resource" script_class="Pokemon" load_steps=17 format=3 uid="uid://dvteh4sj66jw4"]
+[gd_resource type="Resource" script_class="Pokemon" load_steps=16 format=3 uid="uid://dvteh4sj66jw4"]
 
 [ext_resource type="Script" uid="uid://br15mnap82upq" path="res://Code/Resource Makers/PokemonSpecific/BenchAttackMaker.gd" id="1_npbj7"]
-[ext_resource type="Resource" uid="uid://b86uut4qajrgg" path="res://Resources/Components/Effects/EnergyMovement/SelfDiscardFire.tres" id="2_jrxgv"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="3_08wec"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_gr0cy"]
 [ext_resource type="Script" uid="uid://cdyba0wadidwb" path="res://Code/Resource Makers/EffectSpecific/PlacementMaker.gd" id="5_7y8r4"]
 [ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="6_mefy8"]
+[ext_resource type="Resource" uid="uid://dies0ymvth17j" path="res://Resources/Components/Effects/Identifiers/IsFireEnergy.tres" id="6_wm1f3"]
 [ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="7_exgxy"]
 [ext_resource type="Script" uid="uid://b58015mafcw2v" path="res://Code/Resource Makers/PokemonSpecific/PowerMaker.gd" id="8_4485v"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="9_8uu16"]
@@ -34,55 +34,39 @@ metal_cost = 0
 colorless_cost = 2
 defender_properties = 0
 ignore_condition = 0
+prompt_reliant = false
 initial_main_DMG = 50
+conditional_self_dmg = false
 self_damage = 0
 modifier = 0
 both_active = false
 bench_damage = SubResource("Resource_c7gir")
-effect = ExtResource("2_jrxgv")
 
-[sub_resource type="Resource" id="Resource_h0r4n"]
+[sub_resource type="Resource" id="Resource_nrfu7"]
 script = ExtResource("5_7y8r4")
-where = 5
+where = 6
 reorder = false
 shuffle = false
 evolve = false
+metadata/_custom_type_script = "uid://cdyba0wadidwb"
 
-[sub_resource type="Resource" id="Resource_y7il7"]
-script = ExtResource("6_mefy8")
-must_be_different = false
-broad_class = 4
-exactly = false
-contains = ""
-type = 2
-evolves_from = false
-rare_candy = false
-poke_class = null
-owner = 0
-stage = null
-trainer_classes = 3
-energy_class = 7
-
-[sub_resource type="Resource" id="Resource_t1h8r"]
+[sub_resource type="Resource" id="Resource_3mj0j"]
 script = ExtResource("7_exgxy")
-side = 0
+side = 1
 where = 0
+based_on_side = 0
+based_on_slots = 0
 portion = -1
-how_many = 1
-of_this = Array[ExtResource("6_mefy8")]([SubResource("Resource_y7il7")])
-and_then = SubResource("Resource_h0r4n")
+how_many = Array[int]([1])
+of_this = Array[ExtResource("6_mefy8")]([ExtResource("6_wm1f3")])
+and_then = SubResource("Resource_nrfu7")
 reveal = true
+metadata/_custom_type_script = "uid://cw3yr1k040kw7"
 
 [sub_resource type="Resource" id="Resource_4ym1n"]
 script = ExtResource("4_gr0cy")
 order = Array[int]([])
-search = Array[ExtResource("7_exgxy")]([SubResource("Resource_t1h8r")])
-remove_conditions = false
-remove_shockwave = false
-remove_imprison = false
-choose_active = false
-switch_type = 0
-mimic = 0
+search = SubResource("Resource_3mj0j")
 
 [sub_resource type="Resource" id="Resource_wvak6"]
 script = ExtResource("8_4485v")

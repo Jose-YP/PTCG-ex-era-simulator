@@ -2,7 +2,7 @@
 
 [ext_resource type="Resource" uid="uid://bvnggcokfe52" path="res://Resources/Components/Energy/Basic Energy/GrassEnergy.tres" id="1_t72ao"]
 [ext_resource type="Texture2D" uid="uid://ui2m5hk4hwkh" path="res://Art/Cards/1 ex Ruby & Saphire/104.jpg" id="2_836y4"]
-[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_7l2pi"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_7l2pi"]
 
 [resource]
 script = ExtResource("3_7l2pi")

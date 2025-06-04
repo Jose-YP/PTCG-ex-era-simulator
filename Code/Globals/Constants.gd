@@ -63,7 +63,10 @@ const rarity: Array[String] = ["Common", "Uncommon", "Rare",
  "Holofoil Rare", "ex Rare", "Ultra Rare", "Star Rare", "Promo Rare"]
 const allowed_list_flags: Array[String] = ["Basic", "Evolution",
  "Item", "Supporter","Stadium", "Tool", "TM", "RSM", "Fossil", "Energy"]
-enum SIDES {NONE, PLAYER, OPP, BOTH}
-enum SLOTS {NONE, ATTACKER, DEFENDER, ACTIVE, BENCH, ALL}
+##[enum SIDES.ATTACKING] IS FOR THE PLAYER WHOSE TURN IT IS[br]
+##[enum SIDES.DEFENDING] IS THE OTHER GUY
+enum SIDES {NONE, ATTACKING, DEFENDING, BOTH}
+##[enum SLOTS.TARGET] refers to  pokemon involved in atacks and effects 
+enum SLOTS {NONE, TARGET, ACTIVE, BENCH, ALL}
 #endregion
 #--------------------------------------

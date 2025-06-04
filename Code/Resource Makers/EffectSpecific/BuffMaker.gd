@@ -3,8 +3,8 @@ class_name Buff
 
 #@export_group("Buff & Debuff")
 ##Who recieves the buff?
-@export var side: Constants.SIDES = Constants.SIDES.PLAYER
-@export var slot: Constants.SLOTS = Constants.SLOTS.ATTACKER
+@export var side: Constants.SIDES = Constants.SIDES.ATTACKING
+@export var slot: Constants.SLOTS = Constants.SLOTS.TARGET
 ##-1 means forever, otherwise how many turns is this active
 @export var duration: int = 1
 ##How much more damage to the active spot?

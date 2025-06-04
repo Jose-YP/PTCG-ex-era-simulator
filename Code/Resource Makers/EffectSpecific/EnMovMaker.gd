@@ -8,8 +8,8 @@ class_name EnMov
 ##If they targets from which meet ask, they're allowed
 @export var candidates: SlotAsk
 ##Targets for removal
-@export var side: Constants.SIDES = Constants.SIDES.PLAYER
-@export var slots: Constants.SLOTS = Constants.SLOTS.ATTACKER
+@export var side: Constants.SIDES = Constants.SIDES.ATTACKING
+@export var slots: Constants.SLOTS = Constants.SLOTS.TARGET
 ##Ammount of energy per swap. -1 means infinite.
 @export var energy_ammount: int = 0
 ##Ammount of swaps allowed. -1 means infinite.

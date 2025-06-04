@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="SlotAsk" load_steps=2 format=3 uid="uid://d4bi0kdblesdq"]
+
+[ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="1_t81il"]
+
+[resource]
+script = ExtResource("1_t81il")
+target = 2
+comparison_type = 1
+max_hp = -10
+damage_taken = -10
+retreat_cost = -1
+energy_attatched = -1
+knocked_out = false
+condition = 16
+location = 4
+stage = 7
+rare_candy = false
+class_inclusive = true
+pokemon_class = 0
+bench_size = -1
+type_inclusive = true
+type = 1023
+type_size = 1
+ask_string = ""
+formal_ask = false
+side = 1
+choose_location = 0

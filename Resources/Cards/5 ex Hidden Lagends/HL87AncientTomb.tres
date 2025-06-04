@@ -11,7 +11,8 @@
 
 [sub_resource type="Resource" id="Resource_xs7yy"]
 script = ExtResource("6_r587c")
-disable_target = 7
+side = 2
+slot = 5
 duration = -1
 no_weakness = true
 no_resistance = true
@@ -26,13 +27,6 @@ disable_retreat = false
 script = ExtResource("7_o0eli")
 order = null
 disable = SubResource("Resource_xs7yy")
-search = null
-remove_conditions = null
-remove_shockwave = null
-remove_imprison = null
-choose_active = null
-switch_type = null
-mimic = null
 
 [sub_resource type="Resource" id="Resource_7qsgn"]
 script = ExtResource("5_jiliy")

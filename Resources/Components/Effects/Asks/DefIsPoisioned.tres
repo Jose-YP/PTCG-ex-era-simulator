@@ -23,6 +23,6 @@ type = 1023
 type_size = -1
 ask_string = ""
 formal_ask = false
-choose = 0
+side = 1
 choose_location = 0
 metadata/_custom_type_script = "uid://mkjynqda7q5g"

@@ -27,8 +27,10 @@ energy_class = 1
 script = ExtResource("4_g62rc")
 side = null
 where = null
+based_on_side = 0
+based_on_slots = 0
 portion = -1
-how_many = 3
+how_many = Array[int]([1])
 of_this = Array[ExtResource("5_srr3u")]([SubResource("Resource_aqw3u")])
 and_then = ExtResource("4_mlki2")
 reveal = true
@@ -37,12 +39,6 @@ reveal = true
 script = ExtResource("3_rjoqb")
 order = null
 search = Array[ExtResource("4_g62rc")]([SubResource("Resource_wtgyq")])
-remove_conditions = null
-remove_shockwave = null
-remove_imprison = null
-choose_active = null
-switch_type = null
-mimic = null
 
 [sub_resource type="Resource" id="Resource_d0m0p"]
 script = ExtResource("3_3shah")

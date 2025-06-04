@@ -2,7 +2,7 @@ extends Resource
 class_name CardDisrupt
 
 @export_group("Disruption")
-@export var side: Constants.SIDES = Constants.SIDES.OPP
+@export var side: Constants.SIDES = Constants.SIDES.DEFENDING
 @export_enum("None", "Hand", "Deck", "Pokemon") var disrupting: int = 0
 @export var pokemon_disrupt: Constants.SLOTS
 ##Card sends card and anything else attatched to it, Evolution just sends the evolution card back

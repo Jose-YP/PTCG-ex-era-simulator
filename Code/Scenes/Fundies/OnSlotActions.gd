@@ -55,14 +55,13 @@ func play_fossil(card: Base_Card):
 
 #For evolutions on pokemon and fossils
 func play_evolution(card: Base_Card):
-#endregion
 	starting_choice("Energy", str("Evolve ", card.name, " from which Pokemon")\
 	, card, can_evolve_into)
 	
 	await chosen
 	print("Attatch ", card.name)
 	card.print_info()
-
+#endregion
 #For energy cards
 func play_energy(card: Base_Card):
 	starting_choice("Energy", str("Attatch ", card.name, " to which Pokemon")\
@@ -74,8 +73,15 @@ func play_energy(card: Base_Card):
 
 #region TRAINERS
 func play_trainer(card: Base_Card):
-	if card.trainer_properties.asks:
+	var trainer: Trainer = card.trainer_properties
+	if trainer.asks:
+		if trainer.asks.check_ask():
+			trainer.success_effect.play_effect(fundies)
+		else:
+			trainer.fail_effect.play_effect(fundies)
+		
 		print("This card has an ask")
+		
 	
 	if card.trainer_properties.always_effect:
 		pass

@@ -11,20 +11,14 @@ script = ExtResource("1_w8o02")
 remove = false
 how_many = 1
 choose_from = false
-which = 1
+side = 1
+slot = 1
 plus = false
 
 [sub_resource type="Resource" id="Resource_mysds"]
 script = ExtResource("2_sn5e8")
 order = null
 dmgManip = SubResource("Resource_4accq")
-search = null
-remove_conditions = null
-remove_shockwave = null
-remove_imprison = null
-choose_active = null
-switch_type = null
-mimic = null
 
 [sub_resource type="Resource" id="Resource_10nfj"]
 script = ExtResource("1_s231q")

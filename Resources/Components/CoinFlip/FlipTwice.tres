@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="CoinFlip" load_steps=2 format=3 uid="uid://u3yx47w8rn83"]
+
+[ext_resource type="Script" uid="uid://y0v42qaa35wt" path="res://Code/Resource Makers/GeneralUse/CoinFlipNumMaker.gd" id="1_sea47"]
+
+[resource]
+script = ExtResource("1_sea47")
+heads = true
+const_flip_times = 2
+until = false

@@ -3,8 +3,8 @@ class_name Condition
 
 @export_group("Conditions")
 ##imprision/shockwave will ignore this
-@export var side: Constants.SIDES = Constants.SIDES.OPP
-@export var slot: Constants.SLOTS = Constants.SLOTS.DEFENDER
+@export var side: Constants.SIDES = Constants.SIDES.DEFENDING
+@export var slot: Constants.SLOTS = Constants.SLOTS.TARGET
 
 @export var choose_condition: bool = false
 @export_enum("None", "Normal", "Heavy") var poison: int = 0

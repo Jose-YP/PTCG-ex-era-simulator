@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="EffectCall" load_steps=3 format=3 uid="uid://6xmw13js5xd3"]
+
+[ext_resource type="Resource" uid="uid://b34c7yxt7qoxd" path="res://Resources/Components/Effects/Conditions/DefParalyze.tres" id="1_hmlse"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_ncreh"]
+
+[resource]
+script = ExtResource("2_ncreh")
+order = Array[int]([0])
+condition = ExtResource("1_hmlse")

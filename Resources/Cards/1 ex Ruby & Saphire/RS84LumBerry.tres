@@ -9,13 +9,6 @@
 [sub_resource type="Resource" id="Resource_8sjaf"]
 script = ExtResource("6_ssfy3")
 order = null
-search = null
-remove_conditions = true
-remove_shockwave = null
-remove_imprison = null
-choose_active = null
-switch_type = null
-mimic = null
 
 [sub_resource type="Resource" id="Resource_7oeef"]
 script = ExtResource("5_8qdb5")

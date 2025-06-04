@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Attack" load_steps=4 format=3 uid="uid://bfhbpclxag538"]
 
 [ext_resource type="Resource" uid="uid://depecxjmmfklq" path="res://Resources/Components/Effects/Asks/AskSingleFlip.tres" id="1_hlle4"]
-[ext_resource type="Resource" uid="uid://6xmw13js5xd3" path="res://Resources/Components/Effects/Basic Conditions/BasicParalyze.tres" id="2_3r0u2"]
+[ext_resource type="Resource" uid="uid://6xmw13js5xd3" path="res://Resources/Components/Effects/Conditions/BasicParalyze.tres" id="2_3r0u2"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="3_be23s"]
 
 [resource]

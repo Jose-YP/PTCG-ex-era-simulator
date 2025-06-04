@@ -9,7 +9,7 @@
 [ext_resource type="Resource" uid="uid://d2vm6chtedrum" path="res://Resources/Components/Effects/Identifiers/BasicEnergy.tres" id="4_fala0"]
 [ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="4_ilxq2"]
 [ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="6_cc30g"]
-[ext_resource type="Resource" uid="uid://cqw2kwbgcwgvb" path="res://Resources/Components/Effects/Basic Conditions/BasicSleep.tres" id="7_o25sa"]
+[ext_resource type="Resource" uid="uid://cqw2kwbgcwgvb" path="res://Resources/Components/Effects/Conditions/BasicSleep.tres" id="7_o25sa"]
 
 [sub_resource type="Resource" id="Resource_4hb10"]
 script = ExtResource("4_ilxq2")

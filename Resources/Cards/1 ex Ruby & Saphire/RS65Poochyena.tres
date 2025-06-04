@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_fjgfl"]
 [ext_resource type="Texture2D" uid="uid://c2hb2kll7n10f" path="res://Art/Cards/1 ex Ruby & Saphire/65.jpg" id="1_thbs0"]
-[ext_resource type="Resource" uid="uid://c8sjke0awg8n7" path="res://Resources/Components/Effects/Disable/NoRetreat.tres" id="2_w421s"]
+[ext_resource type="Resource" uid="uid://c8sjke0awg8n7" path="res://Resources/Components/Effects/Disable/DefNoRetreat.tres" id="2_w421s"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="3_o4ni8"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="4_rj823"]
 
