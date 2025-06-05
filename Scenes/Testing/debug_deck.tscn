@@ -77,7 +77,8 @@ metadata/_custom_type_script = "uid://uplawvwcwl8y"
 
 [sub_resource type="Resource" id="Resource_owp07"]
 script = ExtResource("13_xd3r3")
-target = 0
+side_target = 3
+slot_target = 4
 comparison_type = 1
 max_hp = -10
 damage_taken = -10
@@ -89,20 +90,19 @@ location = 0
 stage = 7
 rare_candy = false
 class_inclusive = true
-pokemon_class = 0
+pokemon_class = 63
+owner_inclusive = true
+pokemon_owner = 15
 bench_size = -1
 type_inclusive = true
 type = 1023
 type_size = -1
-ask_string = ""
-formal_ask = false
-side = 1
-choose_location = 0
 metadata/_custom_type_script = "uid://mkjynqda7q5g"
 
 [sub_resource type="Resource" id="Resource_fukg8"]
 script = ExtResource("13_xd3r3")
-target = 0
+side_target = 3
+slot_target = 4
 comparison_type = 1
 max_hp = -10
 damage_taken = -10
@@ -114,15 +114,13 @@ location = 0
 stage = 7
 rare_candy = false
 class_inclusive = true
-pokemon_class = 0
+pokemon_class = 63
+owner_inclusive = true
+pokemon_owner = 15
 bench_size = -1
 type_inclusive = true
 type = 1023
 type_size = -1
-ask_string = ""
-formal_ask = false
-side = 1
-choose_location = 0
 metadata/_custom_type_script = "uid://mkjynqda7q5g"
 
 [node name="DebugDeck" type="Control"]

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="PromptAsk" load_steps=2 format=3 uid="uid://ve5lfndn7cqj"]
+
+[ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="1_kwjs4"]
+
+[resource]
+script = ExtResource("1_kwjs4")
+formal_ask = true
+ask_string = "Which pokemon will you heal"
+side = 1
+choose_location = 3
+metadata/_custom_type_script = "uid://b85jmc7067bjc"

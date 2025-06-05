@@ -13,7 +13,7 @@ class_name BenchAttk
 ##Should you apply weak/res on bench mons
 @export var apply_weak_res: bool = false
 ##Bench dmg/In case bench dmg is different from active dmg
-@export_range(0,200,10) var initial_main_DMG: int = 0
+@export_range(0,200,10) var initial_main_DMG: int = 10
 ##None - Use [member initial_main_DMG] as is
 ##[br]Add - use [member initial_main_DMG] then add damage depending on [member counter] and [member prompt]
 ##[br]Multiply - use [member initial_main_DMG] times the result found with [member counter] and [member prompt], allows 0 as a result

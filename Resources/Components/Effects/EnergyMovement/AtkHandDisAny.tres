@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="EnMov" load_steps=2 format=3 uid="uid://dhafcn53ajxn3"]
+
+[ext_resource type="Script" uid="uid://cimk6l7ytw7xg" path="res://Code/Resource Makers/EffectSpecific/EnMovMaker.gd" id="1_04ffp"]
+
+[resource]
+script = ExtResource("1_04ffp")
+energy_move_type = 2
+action = 5
+side = 1
+slots = 1
+energy_ammount = 1
+swap_ammount = 1
+type = 511
+metadata/_custom_type_script = "uid://cimk6l7ytw7xg"

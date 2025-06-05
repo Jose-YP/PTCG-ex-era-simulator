@@ -27,8 +27,10 @@ class_name SlotAsk
 @export var rare_candy: bool = false
 ##Only including specified classes or excluding specified
 @export var class_inclusive: bool = true
-@export_flags("Baby", "ex", "Delta", "Star",
- "Magma", "Aqua", "Rocket", "Dark") var pokemon_class: int = 0
+@export_flags("non-ex", "ex", "Baby", "Delta", "Star", 
+"Dark") var pokemon_class: int = 63
+@export var owner_inclusive: bool = true
+@export_flags("Magma", "Aqua", "Rocket") var pokemon_owner: int = 15
 @export_subgroup("Bench")
 ##Look for 
 @export_range(-1,5) var bench_size: int = -1
@@ -41,16 +43,6 @@ class_name SlotAsk
 ##I'm guessing this is about how much of x energy there is
 ##Make -1 to indicate that it shouldn't be checked
 @export var type_size: int = -1
-
-@export_group("Before Activating")
-##For booleans, Seperate it with ||
-@export_multiline var ask_string: String 
-@export var coin_flip: CoinFlip
-##Give a prompt asking to activate the effect
-@export var formal_ask: bool = false
-@export var side: Constants.SIDES = Constants.SIDES.ATTACKING
-@export_flags("Bench", "Active", "Self", 
-"Discard", "Hand", "Desicion") var choose_location: int = 0
 
 #Checks if one slot is 
 func check_ask(slot: PokeSlot) -> bool:
@@ -88,7 +80,7 @@ func check_ask(slot: PokeSlot) -> bool:
 	print_rich("[center]Class Flag")
 	print(slot.current_card.pokemon_properties.considered, slot.current_card.pokemon_properties.owner)
 	print(slot.current_card.pokemon_properties.considered ** 2, slot.current_card.pokemon_properties.owner ** 2)
-	var class_flag = slot.current_card.pokemon_properties.considered ** 2 + slot.current_card.pokemon_properties.owner ** 2
+	var class_flag = slot.current_card.pokemon_properties.considered ** 2 & slot.current_card.pokemon_properties.owner ** 2
 	print("CLASS FLAG: ",class_flag)
 	#if slot.current_card.pokemon_properties.considered:
 		#result = true
@@ -169,6 +161,3 @@ func check_ask(slot: PokeSlot) -> bool:
 	
 	if not result and or_ask: return or_ask.check_ask(slot)
 	else: return result
-
-func has_coin_flip() -> bool:
-	return true if coin_flip else false

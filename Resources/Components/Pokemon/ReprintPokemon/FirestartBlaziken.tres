@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="Pokemon" load_steps=16 format=3 uid="uid://dvteh4sj66jw4"]
+[gd_resource type="Resource" script_class="Pokemon" load_steps=17 format=3 uid="uid://dvteh4sj66jw4"]
 
 [ext_resource type="Script" uid="uid://br15mnap82upq" path="res://Code/Resource Makers/PokemonSpecific/BenchAttackMaker.gd" id="1_npbj7"]
+[ext_resource type="Resource" uid="uid://b86uut4qajrgg" path="res://Resources/Components/Effects/EnergyMovement/AtkSelfDisFire.tres" id="2_nrfu7"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="3_08wec"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_gr0cy"]
 [ext_resource type="Script" uid="uid://cdyba0wadidwb" path="res://Code/Resource Makers/EffectSpecific/PlacementMaker.gd" id="5_7y8r4"]
@@ -41,6 +42,7 @@ self_damage = 0
 modifier = 0
 both_active = false
 bench_damage = SubResource("Resource_c7gir")
+always_effect = ExtResource("2_nrfu7")
 
 [sub_resource type="Resource" id="Resource_nrfu7"]
 script = ExtResource("5_7y8r4")

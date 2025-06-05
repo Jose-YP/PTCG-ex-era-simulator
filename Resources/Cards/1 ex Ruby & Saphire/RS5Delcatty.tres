@@ -1,12 +1,12 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=17 format=3 uid="uid://bopcqetuha2jo"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=16 format=3 uid="uid://bopcqetuha2jo"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_rgg13"]
 [ext_resource type="Texture2D" uid="uid://dm88a7rr1ys2c" path="res://Art/Cards/1 ex Ruby & Saphire/5.jpg" id="1_swy3d"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_xs5ae"]
 [ext_resource type="Script" uid="uid://cml2jkc16tlva" path="res://Code/Resource Makers/GeneralUse/CounterMaker.gd" id="3_qc1fh"]
-[ext_resource type="Script" uid="uid://cimk6l7ytw7xg" path="res://Code/Resource Makers/EffectSpecific/EnMovMaker.gd" id="4_v55ki"]
+[ext_resource type="Script" uid="uid://bgtwlw1edjwyc" path="res://Code/Resource Makers/EffectSpecific/DrawMaker.gd" id="4_swy3d"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="5_sxqrh"]
-[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="6_amabn"]
+[ext_resource type="Resource" uid="uid://dhafcn53ajxn3" path="res://Resources/Components/Effects/EnergyMovement/AtkHandDisAny.tres" id="5_xs5ae"]
 [ext_resource type="Script" uid="uid://b58015mafcw2v" path="res://Code/Resource Makers/PokemonSpecific/PowerMaker.gd" id="7_mgxj5"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="8_unyar"]
 
@@ -14,8 +14,9 @@
 script = ExtResource("3_qc1fh")
 count_for = 0
 filter = 4
-mon_count = 17
-for_what = "Energy Attatched"
+side = 1
+slot = 1
+for_what = 0
 cap = 0
 return_num = 0
 metadata/_custom_type_script = "uid://cml2jkc16tlva"
@@ -35,45 +36,27 @@ metal_cost = 0
 colorless_cost = 1
 defender_properties = 0
 ignore_condition = 0
+prompt_reliant = false
 initial_main_DMG = 10
+conditional_self_dmg = false
 self_damage = 0
 modifier = 2
 both_active = false
 counter = SubResource("Resource_8e6qy")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
-[sub_resource type="Resource" id="Resource_kehm7"]
-script = ExtResource("3_qc1fh")
-count_for = 2
-filter = 4
-mon_count = 0
-for_what = "Constant"
-cap = 3
-return_num = 0
-metadata/_custom_type_script = "uid://cml2jkc16tlva"
-
-[sub_resource type="Resource" id="Resource_wrdao"]
-script = ExtResource("4_v55ki")
-energy_move_type = 0
-action = 1
-which = 1
-energy_ammount = 1
-swap_ammount = 1
-type = 511
-metadata/_custom_type_script = "uid://cimk6l7ytw7xg"
+[sub_resource type="Resource" id="Resource_v55ki"]
+script = ExtResource("4_swy3d")
+side = 1
+bottom_deck = false
+simple_constant = 3
+metadata/_custom_type_script = "uid://bgtwlw1edjwyc"
 
 [sub_resource type="Resource" id="Resource_ffdua"]
 script = ExtResource("5_sxqrh")
 order = Array[int]([4, 8])
-draw_ammount = SubResource("Resource_kehm7")
-energy_movement = SubResource("Resource_wrdao")
-search = Array[ExtResource("6_amabn")]([])
-remove_conditions = false
-remove_shockwave = false
-remove_imprison = false
-choose_active = false
-switch_type = 0
-mimic = 0
+draw_ammount = SubResource("Resource_v55ki")
+energy_movement = ExtResource("5_xs5ae")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_0ctxw"]

@@ -4,8 +4,9 @@
 
 [resource]
 script = ExtResource("1_xe38q")
-disrupt_target = 1
+side = 2
 disrupting = 1
+pokemon_disrupt = 0
 send = 0
 send_to = 2
 card_ammount = 1

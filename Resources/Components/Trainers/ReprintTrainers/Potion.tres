@@ -1,29 +1,31 @@
-[gd_resource type="Resource" script_class="Trainer" load_steps=7 format=3 uid="uid://dksma8geevncm"]
+[gd_resource type="Resource" script_class="Trainer" load_steps=8 format=3 uid="uid://dksma8geevncm"]
 
 [ext_resource type="Script" uid="uid://scca13hg4k1l" path="res://Code/Resource Makers/EffectSpecific/DmgManipMaker.gd" id="1_obrrg"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_jtlhn"]
+[ext_resource type="Resource" uid="uid://bcs15wj2goif7" path="res://Resources/Components/Effects/Asks/AtkDamaged.tres" id="3_281m1"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="4_hf1ww"]
+[ext_resource type="Resource" uid="uid://ve5lfndn7cqj" path="res://Resources/Components/Effects/Prompts/AtkChooseHeal.tres" id="4_ulbwm"]
 
 [sub_resource type="Resource" id="Resource_eomgd"]
 script = ExtResource("1_obrrg")
 remove = true
 how_many = 2
 choose_from = true
+include_target = true
 side = 1
 slot = 1
 plus = false
 
 [sub_resource type="Resource" id="Resource_uyuan"]
 script = ExtResource("2_jtlhn")
-order = null
+order = Array[int]([])
 dmgManip = SubResource("Resource_eomgd")
-
-[sub_resource type="Resource" id="Resource_31y3e"]
 
 [resource]
 script = ExtResource("4_hf1ww")
 considered = "Item"
 specific_requirement = ""
 description = "Remove up to 2 damage counters from 1 of your Pokémon (remove 1 damage counter if that Pokémon has only 1)."
-asks = SubResource("Resource_31y3e")
+prompt = ExtResource("4_ulbwm")
+asks = ExtResource("3_281m1")
 always_effect = SubResource("Resource_uyuan")

@@ -1,122 +1,31 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=21 format=3 uid="uid://dpvdlrumqivuv"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=18 format=3 uid="uid://dpvdlrumqivuv"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_6qsu5"]
 [ext_resource type="Texture2D" uid="uid://djxbrnlywgq35" path="res://Art/Cards/1 ex Ruby & Saphire/11.jpg" id="1_ry2bs"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_xuiss"]
-[ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="3_e07y2"]
+[ext_resource type="Resource" uid="uid://cbomu70kytlcn" path="res://Resources/Components/Effects/Asks/AtkSelfHas2Enrg.tres" id="3_xuiss"]
 [ext_resource type="Resource" uid="uid://dew25qfxkag73" path="res://Resources/Components/Effects/Conditions/DefPoison.tres" id="4_dpoqi"]
+[ext_resource type="Resource" uid="uid://wb16g381c2tv" path="res://Resources/Components/Effects/Asks/AtkSelfHas3Energ.tres" id="5_e07y2"]
 [ext_resource type="Resource" uid="uid://hbbi3hqk47gs" path="res://Resources/Components/Effects/Conditions/DefSleep.tres" id="5_u0wp7"]
-[ext_resource type="Resource" uid="uid://cri7upmf1q7n0" path="res://Resources/Components/Effects/Conditions/DefBurn.tres" id="6_ubvli"]
+[ext_resource type="Resource" uid="uid://jmwl80udefh7" path="res://Resources/Components/Effects/Asks/AtkSlefHas4Enrg.tres" id="7_dpoqi"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="7_pi6dd"]
-[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="8_aqyw1"]
 [ext_resource type="Resource" uid="uid://cqw2kwbgcwgvb" path="res://Resources/Components/Effects/Conditions/BasicSleep.tres" id="9_mqkhh"]
+[ext_resource type="Resource" uid="uid://bext0mocufqgp" path="res://Resources/Components/Effects/Conditions/BasicBurn.tres" id="9_u0wp7"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="10_77a3r"]
 
-[sub_resource type="Resource" id="Resource_tnff2"]
-script = ExtResource("3_e07y2")
-target = 0
-comparison_type = 1
-max_hp = -10
-damage_taken = -10
-retreat_cost = -1
-energy_attatched = -1
-knocked_out = false
-condition = 0
-location = 4
-stage = 7
-rare_candy = false
-class_inclusive = true
-pokemon_class = 0
-bench_size = -1
-type_inclusive = true
-type = 1023
-type_size = 2
-ask_string = ""
-formal_ask = false
-choose = 0
-choose_location = 0
-metadata/_custom_type_script = "uid://mkjynqda7q5g"
-
-[sub_resource type="Resource" id="Resource_nxct4"]
-script = ExtResource("3_e07y2")
-target = 1
-comparison_type = 1
-max_hp = -10
-damage_taken = -10
-retreat_cost = -1
-energy_attatched = -1
-knocked_out = false
-condition = 0
-location = 4
-stage = 7
-rare_candy = false
-class_inclusive = true
-pokemon_class = 0
-bench_size = -1
-type_inclusive = true
-type = 1023
-type_size = 3
-ask_string = ""
-formal_ask = false
-choose = 0
-choose_location = 0
-metadata/_custom_type_script = "uid://mkjynqda7q5g"
-
-[sub_resource type="Resource" id="Resource_cu7av"]
+[sub_resource type="Resource" id="Resource_ubvli"]
 script = ExtResource("7_pi6dd")
 order = Array[int]([])
-condition = ExtResource("6_ubvli")
-search = Array[ExtResource("8_aqyw1")]([])
-remove_conditions = false
-remove_shockwave = false
-remove_imprison = false
-choose_active = false
-switch_type = 0
-mimic = 0
-metadata/_custom_type_script = "uid://dmulm3x3dj842"
-
-[sub_resource type="Resource" id="Resource_f0ilk"]
-script = ExtResource("7_pi6dd")
-order = Array[int]([9, 0])
 condition = ExtResource("5_u0wp7")
-search = Array[ExtResource("8_aqyw1")]([])
-remove_conditions = false
-remove_shockwave = false
-remove_imprison = false
-choose_active = false
-switch_type = 0
-mimic = 0
-ask_extra = SubResource("Resource_nxct4")
-extra_effect = SubResource("Resource_cu7av")
-metadata/_custom_type_script = "uid://dmulm3x3dj842"
+ask_extra = ExtResource("7_dpoqi")
+extra_effect = ExtResource("9_u0wp7")
 
-[sub_resource type="Resource" id="Resource_pruol"]
+[sub_resource type="Resource" id="Resource_pi6dd"]
 script = ExtResource("7_pi6dd")
-order = Array[int]([9, 0])
+order = Array[int]([])
 condition = ExtResource("4_dpoqi")
-search = Array[ExtResource("8_aqyw1")]([])
-remove_conditions = false
-remove_shockwave = false
-remove_imprison = false
-choose_active = false
-switch_type = 0
-mimic = 0
-ask_extra = SubResource("Resource_nxct4")
-extra_effect = SubResource("Resource_f0ilk")
-metadata/_custom_type_script = "uid://dmulm3x3dj842"
-
-[sub_resource type="Resource" id="Resource_3g7q5"]
-script = ExtResource("7_pi6dd")
-order = Array[int]([9])
-search = Array[ExtResource("8_aqyw1")]([])
-remove_conditions = false
-remove_shockwave = false
-remove_imprison = false
-choose_active = false
-switch_type = 0
-mimic = 0
-ask_extra = SubResource("Resource_tnff2")
-extra_effect = ExtResource("9_mqkhh")
+ask_extra = ExtResource("5_e07y2")
+extra_effect = SubResource("Resource_ubvli")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_aa30r"]
@@ -134,13 +43,15 @@ metal_cost = 0
 colorless_cost = 1
 defender_properties = 0
 ignore_condition = 0
+prompt_reliant = false
 initial_main_DMG = 20
+conditional_self_dmg = false
 self_damage = 0
 modifier = 0
 both_active = false
-ask = SubResource("Resource_tnff2")
-effect = SubResource("Resource_pruol")
-fail_effect = SubResource("Resource_3g7q5")
+ask = ExtResource("3_xuiss")
+success_effect = SubResource("Resource_pi6dd")
+fail_effect = ExtResource("9_mqkhh")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_270w5"]
@@ -158,7 +69,9 @@ metal_cost = 0
 colorless_cost = 3
 defender_properties = 0
 ignore_condition = 0
+prompt_reliant = false
 initial_main_DMG = 70
+conditional_self_dmg = false
 self_damage = 0
 modifier = 0
 both_active = false

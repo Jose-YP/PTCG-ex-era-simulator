@@ -1,11 +1,9 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=15 format=3 uid="uid://ybxbqon28r0p"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=13 format=3 uid="uid://ybxbqon28r0p"]
 
 [ext_resource type="Texture2D" uid="uid://cnw6bdjck41qb" path="res://Art/Cards/1 ex Ruby & Saphire/23.jpg" id="1_4bc6d"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_ypdm2"]
-[ext_resource type="Resource" uid="uid://cqw2kwbgcwgvb" path="res://Resources/Components/Effects/Conditions/BasicSleep.tres" id="3_02xd6"]
 [ext_resource type="Script" uid="uid://cimk6l7ytw7xg" path="res://Code/Resource Makers/EffectSpecific/EnMovMaker.gd" id="4_agkb0"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="5_e1px8"]
-[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="6_wv0a4"]
 [ext_resource type="Script" uid="uid://b58015mafcw2v" path="res://Code/Resource Makers/PokemonSpecific/PowerMaker.gd" id="7_et187"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="8_keycm"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="9_b0bc6"]
@@ -25,18 +23,20 @@ metal_cost = 0
 colorless_cost = 2
 defender_properties = 0
 ignore_condition = 0
+prompt_reliant = false
 initial_main_DMG = 50
+conditional_self_dmg = false
 self_damage = 0
 modifier = 0
 both_active = false
-effect = ExtResource("3_02xd6")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_ifthe"]
 script = ExtResource("4_agkb0")
 energy_move_type = 2
 action = 4
-which = 1
+side = 1
+slots = 1
 energy_ammount = 1
 swap_ammount = 1
 type = 4
@@ -46,19 +46,12 @@ metadata/_custom_type_script = "uid://cimk6l7ytw7xg"
 script = ExtResource("5_e1px8")
 order = Array[int]([])
 energy_movement = SubResource("Resource_ifthe")
-search = Array[ExtResource("6_wv0a4")]([])
-remove_conditions = false
-remove_shockwave = false
-remove_imprison = false
-choose_active = false
-switch_type = 0
-mimic = 0
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_orc67"]
 script = ExtResource("7_et187")
 name = "Water Call"
-description = "Once during your turn (before your attack), you may attach a Water Energy card from your hand to your Active Pokémon. This power can't be used if Swampert is affected by a Special Condition."
+description = "Once during your turn (before your attack), you may attach a {Water} Energy card from your hand to your Active Pokémon. This power can't be used if Swampert is affected by a Special Condition."
 affected_by_condition = true
 active = false
 how_often = 0

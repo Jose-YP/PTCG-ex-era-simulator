@@ -10,10 +10,6 @@ class_name PokeSwap
 @export var affected: Constants.SIDES = Constants.SIDES.DEFENDING
 ##What are thier options on this side
 @export var slots: Constants.SLOTS = Constants.SLOTS.ALL
-@export_subgroup("Mimic")
-##mimicry might be it's own resource
-@export_enum("No","AttatchedLimited", "Attatched",
- "AnyLimited", "Any") var mimic: int = 0
 
 func play_effect(fundies: Fundies):
 	print("PLAY SWAP")
