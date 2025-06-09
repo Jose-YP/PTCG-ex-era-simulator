@@ -1,18 +1,22 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=9 format=3 uid="uid://s0xeoyp6jtsa"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=11 format=3 uid="uid://s0xeoyp6jtsa"]
 
 [ext_resource type="Texture2D" uid="uid://3tcerc2f5aw2" path="res://Art/Cards/1 ex Ruby & Saphire/84.jpg" id="1_v8vkk"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_1v6bs"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="3_jygnu"]
+[ext_resource type="Resource" uid="uid://t5gwsyj32p74" path="res://Resources/Components/Effects/Asks/Conditions/SelfAffectedByCondition.tres" id="4_qv8gd"]
 [ext_resource type="Script" uid="uid://dj5isddeswaa4" path="res://Code/Resource Makers/CardResources/ToolMaker.gd" id="5_8qdb5"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="6_ssfy3"]
+[ext_resource type="Resource" uid="uid://cxsmsqpp50x7f" path="res://Resources/Components/Effects/ETC/HealCondition.tres" id="6_xpmkv"]
 
 [sub_resource type="Resource" id="Resource_8sjaf"]
 script = ExtResource("6_ssfy3")
-order = null
+order = Array[int]([])
+alleviate = ExtResource("6_xpmkv")
 
 [sub_resource type="Resource" id="Resource_7oeef"]
 script = ExtResource("5_8qdb5")
 when_to_check = 1
+activate_ask = ExtResource("4_qv8gd")
 tool_effect = SubResource("Resource_8sjaf")
 remove_after = true
 duration = -1

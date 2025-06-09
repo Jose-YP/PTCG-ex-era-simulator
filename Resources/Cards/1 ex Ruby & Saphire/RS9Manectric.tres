@@ -7,8 +7,8 @@
 [ext_resource type="Resource" uid="uid://bvv4lysisk1me" path="res://Resources/Components/Effects/Placement/PutOnAnyMon.tres" id="4_nd5q3"]
 [ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="4_vg802"]
 [ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="6_it85k"]
-[ext_resource type="Resource" uid="uid://dt0pi71xuk6ih" path="res://Resources/Components/Effects/Identifiers/LightningEnergy.tres" id="7_0j7pm"]
-[ext_resource type="Resource" uid="uid://depecxjmmfklq" path="res://Resources/Components/Effects/Asks/AskSingleFlip.tres" id="8_odr78"]
+[ext_resource type="Resource" uid="uid://dt0pi71xuk6ih" path="res://Resources/Components/Effects/Identifiers/Energy/LightningEnergy.tres" id="7_0j7pm"]
+[ext_resource type="Resource" path="res://Resources/Components/Effects/Asks/AskSingleFlip.tres" id="8_odr78"]
 [ext_resource type="Resource" uid="uid://choi8otbipw57" path="res://Resources/Components/Effects/DmgManip/AtkSelfTake10Dmg.tres" id="9_tiyuh"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="10_u1bw3"]
 

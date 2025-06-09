@@ -4,7 +4,8 @@
 
 [resource]
 script = ExtResource("1_wl1b7")
-buff_target = 2
+side = 4
+slot = 1
 duration = -1
 attack_damage = 0
 defense = 0

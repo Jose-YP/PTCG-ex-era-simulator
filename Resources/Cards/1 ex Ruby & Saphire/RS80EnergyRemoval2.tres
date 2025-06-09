@@ -1,14 +1,25 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=5 format=3 uid="uid://cc3kjnmsj4pr3"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=9 format=3 uid="uid://cc3kjnmsj4pr3"]
 
 [ext_resource type="Texture2D" uid="uid://ba8jbrbg2km5v" path="res://Art/Cards/1 ex Ruby & Saphire/80.jpg" id="1_hj3wc"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_jy4os"]
+[ext_resource type="Resource" uid="uid://lfhu3xyr0wpo" path="res://Resources/Components/Effects/Prompts/IfFlipHeads.tres" id="3_ujvyd"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="5_lb0wg"]
+[ext_resource type="Resource" uid="uid://ufc0xny4yfur" path="res://Resources/Components/Effects/EnergyMovement/AtkDisDef1.tres" id="5_ujvyd"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="6_261xj"]
+
+[sub_resource type="Resource" id="Resource_w15ih"]
+script = ExtResource("6_261xj")
+order = Array[int]([])
+energy_movement = ExtResource("5_ujvyd")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_ldy6r"]
 script = ExtResource("5_lb0wg")
 considered = "Item"
 specific_requirement = ""
 description = "Flip a coin. If heads, choose 1 Energy card attached to 1 of your opponent's Pokémon and discard it. "
+prompt = ExtResource("3_ujvyd")
+success_effect = SubResource("Resource_w15ih")
 
 [resource]
 script = ExtResource("2_jy4os")

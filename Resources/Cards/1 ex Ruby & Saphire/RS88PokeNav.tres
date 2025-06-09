@@ -1,49 +1,53 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://bfeoddhetuot3"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=13 format=3 uid="uid://bfeoddhetuot3"]
 
 [ext_resource type="Texture2D" uid="uid://bhhdsm1dgkbks" path="res://Art/Cards/1 ex Ruby & Saphire/88.jpg" id="1_hecun"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_uq3k5"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_btmpw"]
 [ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="4_6d5br"]
-[ext_resource type="Resource" uid="uid://bnd3pbei56xqo" path="res://Resources/Components/Effects/Placement/ReorderSearch.tres" id="5_hecun"]
+[ext_resource type="Script" uid="uid://cdyba0wadidwb" path="res://Code/Resource Makers/EffectSpecific/PlacementMaker.gd" id="4_hecun"]
 [ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="6_n7q0i"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="6_oeanx"]
 
 [sub_resource type="Resource" id="Resource_48kux"]
+script = ExtResource("4_hecun")
+where = 0
+reorder = true
+shuffle = false
+evolve = false
+metadata/_custom_type_script = "uid://cdyba0wadidwb"
+
+[sub_resource type="Resource" id="Resource_n7q0i"]
 script = ExtResource("6_n7q0i")
 must_be_different = false
 broad_class = 5
 exactly = false
 contains = ""
-type = 0
+type = 511
 evolves_from = false
-poke_class = 15
-owner = 15
+rare_candy = false
+poke_class = 0
+owner = 0
 stage = 7
-trainer_classes = null
-energy_class = 1
-metadata/_custom_type_script = "uid://uplawvwcwl8y"
+trainer_classes = 0
+energy_class = 3
 
-[sub_resource type="Resource" id="Resource_ewkri"]
+[sub_resource type="Resource" id="Resource_5vxcd"]
 script = ExtResource("4_6d5br")
 side = 0
 where = 1
+based_on_side = 0
+based_on_slots = 0
 portion = 3
-how_many = 1
-of_this = Array[ExtResource("6_n7q0i")]([SubResource("Resource_48kux")])
-and_then = ExtResource("5_hecun")
-reveal = false
+how_many = Array[int]([1])
+of_this = Array[ExtResource("6_n7q0i")]([SubResource("Resource_n7q0i")])
+and_then = SubResource("Resource_48kux")
+reveal = true
 metadata/_custom_type_script = "uid://cw3yr1k040kw7"
 
 [sub_resource type="Resource" id="Resource_6plop"]
 script = ExtResource("3_btmpw")
 order = Array[int]([])
-search = Array[ExtResource("4_6d5br")]([SubResource("Resource_ewkri")])
-remove_conditions = false
-remove_shockwave = false
-remove_imprison = false
-choose_active = false
-switch_type = 0
-mimic = 0
+search = SubResource("Resource_5vxcd")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_8tpb4"]

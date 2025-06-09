@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Alleviate" load_steps=2 format=3 uid="uid://cxsmsqpp50x7f"]
+
+[ext_resource type="Script" uid="uid://b4g5of14m3hj5" path="res://Code/Resource Makers/EffectSpecific/AlleviateMaker.gd" id="1_etrcf"]
+
+[resource]
+script = ExtResource("1_etrcf")
+side = 4
+slot = 1
+remove_conditions = true
+remove_shockwave = false
+remove_imprison = false
+metadata/_custom_type_script = "uid://b4g5of14m3hj5"

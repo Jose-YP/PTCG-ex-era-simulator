@@ -4,7 +4,8 @@
 
 [resource]
 script = ExtResource("1_t81il")
-target = 2
+side_target = 2
+slot_target = 1
 comparison_type = 1
 max_hp = -10
 damage_taken = -10
@@ -17,11 +18,9 @@ stage = 7
 rare_candy = false
 class_inclusive = true
 pokemon_class = 0
+owner_inclusive = true
+pokemon_owner = 15
 bench_size = -1
 type_inclusive = true
 type = 1023
-type_size = 1
-ask_string = ""
-formal_ask = false
-side = 1
-choose_location = 0
+type_size = -1

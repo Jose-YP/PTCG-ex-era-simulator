@@ -13,6 +13,8 @@ class_name Search
 @export_range(-1,60, 1) var portion: int = -1
 ##How many cards can the user pick 
 @export var how_many: Array[int] = [1]
+##Incase of variable search ammounts
+@export var variable_ammount: Counter
 ##For each item in identifier, search how_many
 @export var of_this: Array[Identifier]
 ##Where do the tutored cards go?

@@ -5,7 +5,6 @@ class_name SlotAsk
 ##If this ask isn't met, look for the next ask
 @export var or_ask: SlotAsk
 ##Which side to pay attention to
-#@export_enum("None", "Player", "Opponent", "Both") var target: int = 0
 @export var side_target: Constants.SIDES = Constants.SIDES.BOTH
 @export var slot_target: Constants.SLOTS = Constants.SLOTS.ALL
 ##-10 means don't look at this var, 0 means must be undamaged, the rest mean x or more

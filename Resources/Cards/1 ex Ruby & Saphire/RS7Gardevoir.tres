@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://cdyba0wadidwb" path="res://Code/Resource Makers/EffectSpecific/PlacementMaker.gd" id="6_dljrv"]
 [ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="6_yov0a"]
 [ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="8_js0eq"]
-[ext_resource type="Resource" uid="uid://cbcxks3mto640" path="res://Resources/Components/Effects/Identifiers/PsychicEnergy.tres" id="9_1o5h7"]
+[ext_resource type="Resource" uid="uid://cbcxks3mto640" path="res://Resources/Components/Effects/Identifiers/Energy/PsychicEnergy.tres" id="9_1o5h7"]
 [ext_resource type="Script" uid="uid://b58015mafcw2v" path="res://Code/Resource Makers/PokemonSpecific/PowerMaker.gd" id="10_61n4a"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="11_e1xak"]
 

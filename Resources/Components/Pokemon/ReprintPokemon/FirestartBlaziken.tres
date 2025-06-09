@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_gr0cy"]
 [ext_resource type="Script" uid="uid://cdyba0wadidwb" path="res://Code/Resource Makers/EffectSpecific/PlacementMaker.gd" id="5_7y8r4"]
 [ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="6_mefy8"]
-[ext_resource type="Resource" uid="uid://dies0ymvth17j" path="res://Resources/Components/Effects/Identifiers/IsFireEnergy.tres" id="6_wm1f3"]
+[ext_resource type="Resource" uid="uid://dies0ymvth17j" path="res://Resources/Components/Effects/Identifiers/Energy/IsFireEnergy.tres" id="6_wm1f3"]
 [ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="7_exgxy"]
 [ext_resource type="Script" uid="uid://b58015mafcw2v" path="res://Code/Resource Makers/PokemonSpecific/PowerMaker.gd" id="8_4485v"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="9_8uu16"]

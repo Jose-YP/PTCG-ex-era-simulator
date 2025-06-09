@@ -2,21 +2,15 @@
 
 [ext_resource type="Texture2D" uid="uid://cfd0ir6bko6l8" path="res://Art/Cards/1 ex Ruby & Saphire/87.jpg" id="1_ccrwf"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_mhxcg"]
+[ext_resource type="Resource" uid="uid://lfhu3xyr0wpo" path="res://Resources/Components/Effects/Prompts/IfFlipHeads.tres" id="3_ccrwf"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_e0e0d"]
-[ext_resource type="Resource" uid="uid://depecxjmmfklq" path="res://Resources/Components/Effects/Asks/AskSingleFlip.tres" id="3_x61vg"]
-[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="4_5s7wg"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="6_gdumi"]
+[ext_resource type="Resource" uid="uid://b2osj0q2xrlxc" path="res://Resources/Components/Effects/ETC/SwapReversal.tres" id="6_x61vg"]
 
 [sub_resource type="Resource" id="Resource_lnypp"]
 script = ExtResource("3_e0e0d")
 order = Array[int]([])
-search = Array[ExtResource("4_5s7wg")]([])
-remove_conditions = false
-remove_shockwave = false
-remove_imprison = false
-choose_active = true
-switch_type = 3
-mimic = 0
+swap = ExtResource("6_x61vg")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_8tpb4"]
@@ -24,7 +18,7 @@ script = ExtResource("6_gdumi")
 considered = "Item"
 specific_requirement = ""
 description = "Flip a coin. If heads, your opponent switches 1 of his or her Active Pokémon with 1 of his or her Benched Pokémon. "
-asks = ExtResource("3_x61vg")
+prompt = ExtResource("3_ccrwf")
 success_effect = SubResource("Resource_lnypp")
 metadata/_custom_type_script = "uid://crx447i85kshy"
 

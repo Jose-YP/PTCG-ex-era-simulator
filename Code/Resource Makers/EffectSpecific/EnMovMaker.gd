@@ -5,6 +5,8 @@ class_name EnMov
 @export_enum("Basic", "Special", "Any") var energy_move_type: int = 0
 @export_enum("Move", "Discard", "Top Deck", "Bottom Deck",
  "Hand Attatch", "Hand DIscard") var action: int = 1
+##If the chooser is [enum Constants.SIDES.NONE], then default to [member side]
+@export var chooser: Constants.SIDES = Constants.SIDES.NONE
 ##If they targets from which meet ask, they're allowed
 @export var candidates: SlotAsk
 ##Targets for removal

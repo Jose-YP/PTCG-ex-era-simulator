@@ -21,14 +21,12 @@ stage = null
 rare_candy = null
 class_inclusive = null
 pokemon_class = null
+owner_inclusive = true
+pokemon_owner = 15
 bench_size = null
 type_inclusive = null
 type = 640
 type_size = null
-ask_string = null
-formal_ask = null
-side = null
-choose_location = null
 metadata/_custom_type_script = "uid://mkjynqda7q5g"
 
 [sub_resource type="Resource" id="Resource_w1pwm"]

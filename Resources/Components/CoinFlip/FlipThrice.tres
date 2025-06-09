@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CoinFlip" load_steps=2 format=3 uid="uid://hhfvl581osej"]
+
+[ext_resource type="Script" uid="uid://y0v42qaa35wt" path="res://Code/Resource Makers/GeneralUse/CoinFlipNumMaker.gd" id="1_qxxxm"]
+
+[resource]
+script = ExtResource("1_qxxxm")
+heads = true
+until = false
+const_flip_times = 4
+metadata/_custom_type_script = "uid://y0v42qaa35wt"
