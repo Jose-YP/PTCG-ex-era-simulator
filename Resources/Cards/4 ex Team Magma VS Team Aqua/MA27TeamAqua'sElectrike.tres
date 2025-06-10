@@ -1,12 +1,13 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=17 format=3 uid="uid://2ps0sakw53cw"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=18 format=3 uid="uid://2ps0sakw53cw"]
 
 [ext_resource type="Texture2D" uid="uid://bbdpkwr5sxe4f" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/27.jpg" id="1_l0n2v"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_l4jxc"]
 [ext_resource type="Script" uid="uid://br15mnap82upq" path="res://Code/Resource Makers/PokemonSpecific/BenchAttackMaker.gd" id="2_ax6qi"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="3_dfgxb"]
-[ext_resource type="Resource" path="res://Resources/Components/Effects/Asks/AskSingleFlip.tres" id="4_f4njw"]
+[ext_resource type="Resource" uid="uid://lfhu3xyr0wpo" path="res://Resources/Components/Effects/Prompts/IfFlipHeads.tres" id="4_pu30b"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="5_xpfcg"]
 [ext_resource type="Resource" uid="uid://c8vs2wowmlhne" path="res://Resources/Components/Effects/Placement/PutOnSelf.tres" id="6_f3p2r"]
+[ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="7_0recr"]
 [ext_resource type="Resource" uid="uid://dt0pi71xuk6ih" path="res://Resources/Components/Effects/Identifiers/Energy/LightningEnergy.tres" id="7_k7hf4"]
 [ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="8_qqky0"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="9_vm2o3"]
@@ -15,6 +16,7 @@
 script = ExtResource("2_ax6qi")
 how_many = 1
 which = 1
+active_allowed = false
 apply_weak_res = false
 initial_main_DMG = 10
 modifier = 0
@@ -34,29 +36,32 @@ metal_cost = 0
 colorless_cost = 0
 defender_properties = 0
 ignore_condition = 0
+prompt_reliant = false
 initial_main_DMG = 0
+conditional_self_dmg = false
+self_damage = 0
 modifier = 0
+both_active = false
 bench_damage = SubResource("Resource_x6ign")
 
-[sub_resource type="Resource" id="Resource_jup5w"]
+[sub_resource type="Resource" id="Resource_ffvxl"]
 script = ExtResource("8_qqky0")
-side = 0
+side = 1
 where = 0
-how_many = 1
-of_this = Array[Resource("res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd")]([ExtResource("7_k7hf4")])
+based_on_side = 0
+based_on_slots = 0
+portion = -1
+how_many = Array[int]([1])
+of_this = Array[ExtResource("7_0recr")]([ExtResource("7_k7hf4")])
 and_then = ExtResource("6_f3p2r")
-reveal = false
+reveal = true
+metadata/_custom_type_script = "uid://cw3yr1k040kw7"
 
-[sub_resource type="Resource" id="Resource_4y7dd"]
+[sub_resource type="Resource" id="Resource_bogk1"]
 script = ExtResource("5_xpfcg")
 order = Array[int]([])
-search = Array[ExtResource("8_qqky0")]([SubResource("Resource_jup5w")])
-remove_conditions = false
-remove_shockwave = false
-remove_imprison = false
-choose_active = false
-switch_type = 0
-mimic = 0
+search = SubResource("Resource_ffvxl")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_nvcnk"]
 script = ExtResource("3_dfgxb")
@@ -73,10 +78,14 @@ metal_cost = 0
 colorless_cost = 2
 defender_properties = 0
 ignore_condition = 0
+prompt_reliant = false
 initial_main_DMG = 10
+conditional_self_dmg = false
+self_damage = 0
 modifier = 0
-ask = ExtResource("4_f4njw")
-effect = SubResource("Resource_4y7dd")
+both_active = false
+prompt = ExtResource("4_pu30b")
+success_effect = SubResource("Resource_bogk1")
 
 [sub_resource type="Resource" id="Resource_76xvv"]
 script = ExtResource("9_vm2o3")
@@ -85,7 +94,6 @@ retreat = 1
 attacks = Array[ExtResource("3_dfgxb")]([SubResource("Resource_ko0lf"), SubResource("Resource_nvcnk")])
 evo_stage = "Basic"
 evolves_from = ""
-delta = false
 considered = 0
 owner = 1
 type = 8

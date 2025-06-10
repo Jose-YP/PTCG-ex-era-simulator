@@ -5,14 +5,12 @@
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="2_jvjdg"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_i0jr0"]
 [ext_resource type="Resource" uid="uid://dr0vmkppumfhq" path="res://Resources/Components/Pokemon/Nothing.tres" id="4_it5rv"]
+[ext_resource type="Resource" uid="uid://lfhu3xyr0wpo" path="res://Resources/Components/Effects/Prompts/IfFlipHeads.tres" id="4_xnbu3"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="5_wxab5"]
 [ext_resource type="Resource" uid="uid://bl4qnrkh3kxdl" path="res://Resources/Components/Effects/Placement/PutIntoHand.tres" id="6_mysfv"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="6_xc0yb"]
 [ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="8_kronk"]
 [ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="9_84c2m"]
-
-[sub_resource type="Resource" id="Resource_per72"]
-metadata/__load_path__ = "res://Resources/Components/Effects/Asks/AskSingleFlip.tres"
 
 [sub_resource type="Resource" id="Resource_kqy8h"]
 script = ExtResource("5_wxab5")
@@ -29,13 +27,13 @@ metal_cost = 0
 colorless_cost = 1
 defender_properties = 0
 ignore_condition = 0
-prompt_reliant = false
-initial_main_DMG = 0
+prompt_reliant = true
+initial_main_DMG = 50
 conditional_self_dmg = false
 self_damage = 0
 modifier = 0
 both_active = false
-ask = SubResource("Resource_per72")
+prompt = ExtResource("4_xnbu3")
 fail_effect = ExtResource("4_it5rv")
 
 [sub_resource type="Resource" id="Resource_tccqv"]

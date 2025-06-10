@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="PromptAsk" load_steps=2 format=3 uid="uid://b8xdtjhj0xoye"]
+
+[ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="1_lnhta"]
+
+[resource]
+script = ExtResource("1_lnhta")
+formal_ask = true
+ask_string = "Do you want to activate the effect of this tool?"
+side = 4
+choose_location = 32
+metadata/_custom_type_script = "uid://b85jmc7067bjc"
