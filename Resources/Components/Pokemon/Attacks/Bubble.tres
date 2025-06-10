@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Attack" load_steps=4 format=3 uid="uid://bfhbpclxag538"]
 
-[ext_resource type="Resource" uid="uid://depecxjmmfklq" path="res://Resources/Components/Effects/Asks/AskSingleFlip.tres" id="1_hlle4"]
+[ext_resource type="Resource" uid="uid://lfhu3xyr0wpo" path="res://Resources/Components/Effects/Prompts/IfFlipHeads.tres" id="1_hlle4"]
 [ext_resource type="Resource" uid="uid://6xmw13js5xd3" path="res://Resources/Components/Effects/Conditions/BasicParalyze.tres" id="2_3r0u2"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="3_be23s"]
 
@@ -19,10 +19,12 @@ metal_cost = 0
 colorless_cost = 0
 defender_properties = 0
 ignore_condition = 0
+prompt_reliant = false
 initial_main_DMG = 10
+conditional_self_dmg = false
 self_damage = 0
 modifier = 0
 both_active = false
-ask = ExtResource("1_hlle4")
-effect = ExtResource("2_3r0u2")
+prompt = ExtResource("1_hlle4")
+success_effect = ExtResource("2_3r0u2")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

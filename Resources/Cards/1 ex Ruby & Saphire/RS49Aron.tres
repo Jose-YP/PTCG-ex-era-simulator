@@ -1,9 +1,17 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=8 format=3 uid="uid://oa7r3igevgqi"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=11 format=3 uid="uid://oa7r3igevgqi"]
 
 [ext_resource type="Texture2D" uid="uid://c2o5amlj16doj" path="res://Art/Cards/1 ex Ruby & Saphire/49.jpg" id="1_ianho"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="3_mit06"]
+[ext_resource type="Resource" uid="uid://enpsumkpfugn" path="res://Resources/Components/Effects/Buff/DefSelf-10Atk.tres" id="3_vai4j"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_1cqic"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="4_nbcu4"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="5_1yo3i"]
+
+[sub_resource type="Resource" id="Resource_hi6hn"]
+script = ExtResource("4_1cqic")
+order = Array[int]([])
+buff = ExtResource("3_vai4j")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_iubtr"]
 script = ExtResource("3_mit06")
@@ -26,6 +34,7 @@ conditional_self_dmg = false
 self_damage = 0
 modifier = 0
 both_active = false
+always_effect = SubResource("Resource_hi6hn")
 
 [sub_resource type="Resource" id="Resource_1g2nc"]
 script = ExtResource("3_mit06")

@@ -1,21 +1,59 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=7 format=3 uid="uid://c6hkbplnm1lm1"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=11 format=3 uid="uid://c6hkbplnm1lm1"]
 
-[ext_resource type="Texture2D" uid="uid://b848mihi6w84j" path="res://Art/Cards/1 ex Ruby & Saphire/59.jpg" id="1_uwa4n"]
+[ext_resource type="Texture2D" uid="uid://d0gvmgd8nn8nv" path="res://Art/Cards/1 ex Ruby & Saphire/60.jpg" id="1_a3txu"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_2xrk8"]
-[ext_resource type="Resource" uid="uid://bfhbpclxag538" path="res://Resources/Components/Pokemon/Attacks/Bubble.tres" id="3_a3txu"]
+[ext_resource type="Resource" uid="uid://dkt5ik78wtijs" path="res://Resources/Components/Pokemon/Attacks/Pound.tres" id="3_g6vjq"]
+[ext_resource type="Resource" uid="uid://hhfvl581osej" path="res://Resources/Components/CoinFlip/FlipThrice.tres" id="4_dsduk"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="4_g6vjq"]
+[ext_resource type="Script" uid="uid://cml2jkc16tlva" path="res://Code/Resource Makers/GeneralUse/CounterMaker.gd" id="5_dnina"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="5_dsduk"]
+
+[sub_resource type="Resource" id="Resource_34s5b"]
+script = ExtResource("5_dnina")
+count_for = 0
+filter = 4
+coin_flip_num = ExtResource("4_dsduk")
+side = 1
+slot = 1
+for_what = 0
+cap = -1
+return_num = -1
+metadata/_custom_type_script = "uid://cml2jkc16tlva"
+
+[sub_resource type="Resource" id="Resource_hmkxe"]
+script = ExtResource("2_2xrk8")
+name = "Fury Swipes"
+description = "Flip 3 coins. This attack does 10 damage times the number of heads."
+grass_cost = 0
+fire_cost = 0
+water_cost = 0
+lightning_cost = 0
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 2
+defender_properties = 0
+ignore_condition = 0
+prompt_reliant = false
+initial_main_DMG = 10
+conditional_self_dmg = false
+self_damage = 0
+modifier = 2
+both_active = false
+counter = SubResource("Resource_34s5b")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_dnina"]
 script = ExtResource("4_g6vjq")
 HP = 50
 retreat = 1
-attacks = Array[ExtResource("2_2xrk8")]([ExtResource("3_a3txu")])
+attacks = Array[ExtResource("2_2xrk8")]([ExtResource("3_g6vjq"), SubResource("Resource_hmkxe")])
 evo_stage = "Basic"
 evolves_from = ""
 considered = 1
 owner = 0
-type = 1
+type = 4
 weak = 0
 resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
@@ -23,9 +61,9 @@ metadata/_custom_type_script = "uid://dkximshow1pao"
 [resource]
 script = ExtResource("5_dsduk")
 name = "Mudkip"
-image = ExtResource("1_uwa4n")
-illustrator = "Mitsuhiro Arita"
-number = 59
+image = ExtResource("1_a3txu")
+illustrator = "Ken Sugimori"
+number = 60
 rarity = 0
 expansion = 0
 categories = 1

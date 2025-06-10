@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_5tvh1"]
 [ext_resource type="Texture2D" uid="uid://0ka4l556u8wj" path="res://Art/Cards/1 ex Ruby & Saphire/73.jpg" id="1_cxf7q"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_g0mns"]
-[ext_resource type="Resource" uid="uid://depecxjmmfklq" path="res://Resources/Components/Effects/Asks/AskSingleFlip.tres" id="3_3aqev"]
+[ext_resource type="Resource" uid="uid://lfhu3xyr0wpo" path="res://Resources/Components/Effects/Prompts/IfFlipHeads.tres" id="4_5whtx"]
 [ext_resource type="Resource" uid="uid://b86uut4qajrgg" path="res://Resources/Components/Effects/EnergyMovement/AtkSelfDisFire.tres" id="4_egyx3"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_cfuqc"]
 
@@ -22,7 +22,9 @@ metal_cost = 0
 colorless_cost = 1
 defender_properties = 0
 ignore_condition = 0
+prompt_reliant = false
 initial_main_DMG = 10
+conditional_self_dmg = false
 self_damage = 0
 modifier = 0
 both_active = false
@@ -42,11 +44,13 @@ metal_cost = 0
 colorless_cost = 1
 defender_properties = 0
 ignore_condition = 0
+prompt_reliant = false
 initial_main_DMG = 30
+conditional_self_dmg = false
 self_damage = 0
 modifier = 0
 both_active = false
-ask = ExtResource("3_3aqev")
+prompt = ExtResource("4_5whtx")
 fail_effect = ExtResource("4_egyx3")
 
 [sub_resource type="Resource" id="Resource_4e7m3"]

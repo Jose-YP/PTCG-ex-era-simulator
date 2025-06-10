@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Disable" load_steps=2 format=3 uid="uid://b5h3buocpx1gn"]
+
+[ext_resource type="Script" uid="uid://c0ishgbxk63dg" path="res://Code/Resource Makers/EffectSpecific/DisableMaker.gd" id="1_x77h8"]
+
+[resource]
+script = ExtResource("1_x77h8")
+side = 2
+slot = 1
+duration = 1
+no_weakness = false
+no_resistance = false
+instead_of_damage = false
+do_nothing = false
+attack = 0
+power = 0
+retreat_duration = 1
+disable_retreat = true
+metadata/_custom_type_script = "uid://c0ishgbxk63dg"

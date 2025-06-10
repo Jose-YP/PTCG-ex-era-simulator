@@ -1,14 +1,34 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=2 format=3 uid="uid://o6amuudbmjax"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=7 format=3 uid="uid://bsqvv4tq4rqsl"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_57tpu"]
+[ext_resource type="Texture2D" uid="uid://b848mihi6w84j" path="res://Art/Cards/1 ex Ruby & Saphire/59.jpg" id="1_l00xo"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_lrcto"]
+[ext_resource type="Resource" uid="uid://bfhbpclxag538" path="res://Resources/Components/Pokemon/Attacks/Bubble.tres" id="3_vajtw"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="4_1mrm0"]
+
+[sub_resource type="Resource" id="Resource_dnina"]
+script = ExtResource("4_1mrm0")
+HP = 50
+retreat = 1
+attacks = Array[ExtResource("2_lrcto")]([ExtResource("3_vajtw")])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 1
+owner = 0
+type = 4
+weak = 0
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
 script = ExtResource("1_57tpu")
-name = ""
-illustrator = ""
-number = 0
+name = "Mudkip"
+image = ExtResource("1_l00xo")
+illustrator = "Mitsuhiro Arita"
+number = 59
 rarity = 0
 expansion = 0
-categories = 0
+categories = 1
+pokemon_properties = SubResource("Resource_dnina")
 fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

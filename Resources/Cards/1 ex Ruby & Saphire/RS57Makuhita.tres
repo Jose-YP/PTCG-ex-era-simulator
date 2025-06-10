@@ -4,19 +4,14 @@
 [ext_resource type="Texture2D" uid="uid://c8v5n4y43gf3p" path="res://Art/Cards/1 ex Ruby & Saphire/57.jpg" id="1_er63v"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_ksua0"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="3_bv4e3"]
-[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="4_5qdtv"]
+[ext_resource type="Resource" uid="uid://bi188salan8b3" path="res://Resources/Components/Effects/ETC/SwapDefForce.tres" id="4_5qdtv"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="4_sikvg"]
 
-[sub_resource type="Resource" id="Resource_n1eu0"]
+[sub_resource type="Resource" id="Resource_rhym4"]
 script = ExtResource("2_ksua0")
 order = Array[int]([])
-search = Array[ExtResource("4_5qdtv")]([])
-remove_conditions = false
-remove_shockwave = false
-remove_imprison = false
-choose_active = false
-switch_type = 2
-mimic = 0
+swap = ExtResource("4_5qdtv")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_b0wo5"]
 script = ExtResource("3_bv4e3")
@@ -33,11 +28,13 @@ metal_cost = 0
 colorless_cost = 1
 defender_properties = 0
 ignore_condition = 0
+prompt_reliant = false
 initial_main_DMG = 0
+conditional_self_dmg = false
 self_damage = 0
 modifier = 0
 both_active = false
-effect = SubResource("Resource_n1eu0")
+always_effect = SubResource("Resource_rhym4")
 
 [sub_resource type="Resource" id="Resource_bhvvb"]
 script = ExtResource("3_bv4e3")
@@ -54,7 +51,9 @@ metal_cost = 0
 colorless_cost = 1
 defender_properties = 0
 ignore_condition = 0
+prompt_reliant = false
 initial_main_DMG = 30
+conditional_self_dmg = false
 self_damage = 0
 modifier = 0
 both_active = false
