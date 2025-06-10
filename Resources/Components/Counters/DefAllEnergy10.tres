@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Counter" load_steps=2 format=3 uid="uid://cny10i5pn564c"]
+
+[ext_resource type="Script" uid="uid://cml2jkc16tlva" path="res://Code/Resource Makers/GeneralUse/CounterMaker.gd" id="1_jgnff"]
+
+[resource]
+script = ExtResource("1_jgnff")
+count_for = 0
+filter = 0
+side = 2
+slot = 4
+for_what = 1
+cap = -1
+return_num = 1

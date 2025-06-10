@@ -19,6 +19,7 @@ class_name SlotAsk
 @export_flags("Poison", "Burn", "Paralysis", "Asleep", "Confusion") var condition: int = 0
 ##Self means the attacking/defending pokemon, Active is for doubles
 @export_flags("Bench", "Active", "Self", "Discard", "Hand") var location: int = 0 
+@export var tool_attatched: bool = false
 
 @export_subgroup("Class")
 @export_flags("Basic", "Stage 1", "Stage 2") var stage: int = 7
@@ -39,6 +40,7 @@ class_name SlotAsk
 @export_flags("Grass","Fire","Water",
 "Lightning","Psychic","Fighting",
 "Darkness","Metal","Colorless") var type: int = 1023
+@export_enum("Basic","Special","Both") var energy_class: int = 2
 ##I'm guessing this is about how much of x energy there is
 ##Make -1 to indicate that it shouldn't be checked
 @export var type_size: int = -1

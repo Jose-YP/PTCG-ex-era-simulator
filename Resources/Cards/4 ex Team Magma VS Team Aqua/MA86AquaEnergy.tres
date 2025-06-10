@@ -1,34 +1,15 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=7 format=3 uid="uid://cerpssk67rwka"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=6 format=3 uid="uid://cerpssk67rwka"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_5jdet"]
-[ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="1_j8lln"]
+[ext_resource type="Resource" uid="uid://b0lo8uly2lldp" path="res://Resources/Components/Effects/Asks/Class&Owner/AtkIsTeamAqua.tres" id="1_sgv4c"]
 [ext_resource type="Script" uid="uid://caj1pm8erar2a" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="2_cgfc1"]
 [ext_resource type="Texture2D" uid="uid://brtojfwkvc0s3" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/86.jpg" id="3_idr0n"]
-
-[sub_resource type="Resource" id="Resource_goekp"]
-script = ExtResource("1_j8lln")
-target = 1
-damage_taken = -10
-energy_attatched = -1
-knocked_out = false
-condition = 0
-location = 4
-stage = 7
-inclusive = true
-pokemon_class = 32
-bench_size = -1
-type = 1023
-type_size = 1
-ask_string = ""
-formal_ask = false
-choose = 0
-choose_location = 0
 
 [sub_resource type="Resource" id="Resource_glvqs"]
 script = ExtResource("2_cgfc1")
 considered = "Special Energy"
 description = "Aqua Energy can be attached only to a Pokémon with Team Aqua in its name. Aqua Energy provides {Water} and {Darkness} Energy but provides 2 Energy at a time. (Doesn't count as a basic Energy card when not in play and has no effect other than providing Energy.) At the end of your turn, discard Aqua Energy."
-asks = SubResource("Resource_goekp")
+asks = ExtResource("1_sgv4c")
 fail_provide = false
 fail_prevent = false
 turns = 0

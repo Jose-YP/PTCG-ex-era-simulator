@@ -30,7 +30,7 @@ class_name Attack
 ##[br]Otherwise the pokemon will take this dmg after attacking
 @export var conditional_self_dmg: bool = false
 @export_range(0,200,10) var self_damage: int = 0
-##None - Use [member initial_main_DMG] as is
+##None - Use [member initial_main_DMG] as is or damage returned from [member counter] and [member prompt]
 ##[br]Add - use [member initial_main_DMG] then add damage depending on [member counter] and [member prompt]
 ##[br]Multiply - use [member initial_main_DMG] times the result found with [member counter] and [member prompt], allows 0 as a result
 ##[br]Subtract - use [member initial_main_DMG] then add damage depending on [member counter] and [member prompt]

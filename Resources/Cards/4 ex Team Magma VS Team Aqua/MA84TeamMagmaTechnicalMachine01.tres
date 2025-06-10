@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=13 format=3 uid="uid://bidyxkb8ygjhl"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://bidyxkb8ygjhl"]
 
 [ext_resource type="Texture2D" uid="uid://d3nrajtlwbvgh" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/84.jpg" id="1_1h5tq"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_a73xh"]
@@ -6,29 +6,25 @@
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_1lnrb"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="5_38xhb"]
 [ext_resource type="Script" uid="uid://cimk6l7ytw7xg" path="res://Code/Resource Makers/EffectSpecific/EnMovMaker.gd" id="5_xchay"]
-[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="6_fgddn"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="6_m2fw7"]
 
-[sub_resource type="Resource" id="Resource_v5bhb"]
+[sub_resource type="Resource" id="Resource_sb77a"]
 script = ExtResource("5_xchay")
 energy_move_type = 2
 action = 3
-which = 2
+chooser = 1
+side = 2
+slots = 1
 energy_ammount = 1
 swap_ammount = 1
 type = 511
+metadata/_custom_type_script = "uid://cimk6l7ytw7xg"
 
-[sub_resource type="Resource" id="Resource_574yd"]
+[sub_resource type="Resource" id="Resource_fgddn"]
 script = ExtResource("4_1lnrb")
 order = Array[int]([])
-energy_movement = SubResource("Resource_v5bhb")
-search = Array[ExtResource("6_fgddn")]([])
-remove_conditions = false
-remove_shockwave = false
-remove_imprison = false
-choose_active = false
-switch_type = 0
-mimic = 0
+energy_movement = SubResource("Resource_sb77a")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_cnaec"]
 script = ExtResource("5_38xhb")
@@ -45,9 +41,13 @@ metal_cost = 0
 colorless_cost = 1
 defender_properties = 0
 ignore_condition = 0
+prompt_reliant = false
 initial_main_DMG = 10
+conditional_self_dmg = false
+self_damage = 0
 modifier = 0
-effect = SubResource("Resource_574yd")
+both_active = false
+always_effect = SubResource("Resource_fgddn")
 
 [sub_resource type="Resource" id="Resource_etq3y"]
 script = ExtResource("6_m2fw7")

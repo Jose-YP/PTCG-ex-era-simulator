@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=15 format=3 uid="uid://bn3q2mv1e7fqn"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=11 format=3 uid="uid://bn3q2mv1e7fqn"]
 
 [ext_resource type="Texture2D" uid="uid://c0cgwfbscwhft" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/76.jpg" id="1_0ag7c"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_3gxca"]
@@ -6,42 +6,12 @@
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="4_je6w1"]
 [ext_resource type="Script" uid="uid://dj5isddeswaa4" path="res://Code/Resource Makers/CardResources/ToolMaker.gd" id="5_bowvr"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="5_sd4fg"]
-[ext_resource type="Resource" uid="uid://cygim4rxvdbp8" path="res://Resources/Components/Effects/Placement/AndThenEvolve.tres" id="7_mr8x6"]
-[ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="7_s6boh"]
-[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="8_0b4j5"]
-
-[sub_resource type="Resource" id="Resource_rg3ty"]
-script = ExtResource("7_s6boh")
-must_be_different = false
-broad_class = 1
-contains = ""
-type = 0
-evolves_from = true
-poke_class = null
-owner = 0
-stage = null
-trainer_classes = null
-energy_class = null
-
-[sub_resource type="Resource" id="Resource_sfgeh"]
-script = ExtResource("8_0b4j5")
-side = 0
-where = 1
-how_many = 1
-of_this = Array[ExtResource("7_s6boh")]([SubResource("Resource_rg3ty")])
-and_then = ExtResource("7_mr8x6")
-reveal = true
+[ext_resource type="Resource" uid="uid://d17ayma7fo2kc" path="res://Resources/Components/Effects/Search/SearchEvolvesFromTarget.tres" id="7_binse"]
 
 [sub_resource type="Resource" id="Resource_35j6p"]
 script = ExtResource("5_sd4fg")
 order = Array[int]([])
-search = Array[ExtResource("8_0b4j5")]([SubResource("Resource_sfgeh")])
-remove_conditions = false
-remove_shockwave = false
-remove_imprison = false
-choose_active = false
-switch_type = 0
-mimic = 0
+search = ExtResource("7_binse")
 
 [sub_resource type="Resource" id="Resource_jnlar"]
 script = ExtResource("5_bowvr")

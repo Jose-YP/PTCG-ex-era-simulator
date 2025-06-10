@@ -3,19 +3,18 @@
 [ext_resource type="Texture2D" uid="uid://d2ik003bv5hpu" path="res://Art/Cards/5 ex Hidden Legends/87.jpg" id="1_e3nsq"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_i51uy"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="3_gj5xp"]
+[ext_resource type="Resource" uid="uid://byc4k7o2drbf5" path="res://Resources/Components/Effects/Asks/Class&Owner/BothNoexOrOwners.tres" id="4_1q3sl"]
 [ext_resource type="Script" uid="uid://b8kvis7rgg3j4" path="res://Code/Resource Makers/CardResources/StadiumMaker.gd" id="5_jiliy"]
 [ext_resource type="Script" uid="uid://c0ishgbxk63dg" path="res://Code/Resource Makers/EffectSpecific/DisableMaker.gd" id="6_r587c"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="7_o0eli"]
 
-[sub_resource type="Resource" id="Resource_ch2de"]
-
 [sub_resource type="Resource" id="Resource_xs7yy"]
 script = ExtResource("6_r587c")
-side = 2
-slot = 5
+side = 3
+slot = 4
 duration = -1
 no_weakness = true
-no_resistance = true
+no_resistance = false
 instead_of_damage = false
 do_nothing = false
 attack = 0
@@ -25,13 +24,13 @@ disable_retreat = false
 
 [sub_resource type="Resource" id="Resource_5oguf"]
 script = ExtResource("7_o0eli")
-order = null
+order = Array[int]([])
 disable = SubResource("Resource_xs7yy")
 
 [sub_resource type="Resource" id="Resource_7qsgn"]
 script = ExtResource("5_jiliy")
 when_to_check = 0
-determine_ask = SubResource("Resource_ch2de")
+determine_ask = ExtResource("4_1q3sl")
 stadium_effect = SubResource("Resource_5oguf")
 bench_size = -1
 

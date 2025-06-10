@@ -1,56 +1,50 @@
-[gd_resource type="Resource" script_class="PokePower" load_steps=10 format=3 uid="uid://6qr7q3qdfbsf"]
+[gd_resource type="Resource" script_class="PokePower" load_steps=9 format=3 uid="uid://6qr7q3qdfbsf"]
 
 [ext_resource type="Script" uid="uid://b58015mafcw2v" path="res://Code/Resource Makers/PokemonSpecific/PowerMaker.gd" id="1_53c32"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="1_esda5"]
-[ext_resource type="Script" uid="uid://cdyba0wadidwb" path="res://Code/Resource Makers/EffectSpecific/PlacementMaker.gd" id="2_72jks"]
+[ext_resource type="Resource" uid="uid://dadiauif5jebg" path="res://Resources/Components/Effects/Placement/PlaceOnActive.tres" id="2_c2wys"]
 [ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="2_ldbdo"]
 [ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="3_gnqp3"]
 
-[sub_resource type="Resource" id="Resource_cjhnb"]
-script = ExtResource("2_72jks")
-where = 4
-shuffle = true
-evolve = false
-
-[sub_resource type="Resource" id="Resource_hupt1"]
+[sub_resource type="Resource" id="Resource_ttdy8"]
 script = ExtResource("2_ldbdo")
 must_be_different = false
 broad_class = 1
-exactly = true
+exactly = false
 contains = "Deoxys"
 type = 0
 evolves_from = false
-poke_class = null
+rare_candy = false
+poke_class = 0
 owner = 0
-stage = null
-trainer_classes = null
-energy_class = null
+stage = 0
+trainer_classes = 0
+energy_class = 3
+metadata/_custom_type_script = "uid://uplawvwcwl8y"
 
-[sub_resource type="Resource" id="Resource_ihvoy"]
+[sub_resource type="Resource" id="Resource_0ykxt"]
 script = ExtResource("3_gnqp3")
-side = 0
+side = 1
 where = 1
-how_many = 1
-of_this = Array[ExtResource("2_ldbdo")]([SubResource("Resource_hupt1")])
-and_then = SubResource("Resource_cjhnb")
+based_on_side = 0
+based_on_slots = 0
+portion = -1
+how_many = Array[int]([1])
+of_this = Array[ExtResource("2_ldbdo")]([SubResource("Resource_ttdy8")])
+and_then = ExtResource("2_c2wys")
 reveal = true
+metadata/_custom_type_script = "uid://cw3yr1k040kw7"
 
 [sub_resource type="Resource" id="Resource_gaing"]
 script = ExtResource("1_esda5")
 order = Array[int]([])
-search = Array[ExtResource("3_gnqp3")]([SubResource("Resource_ihvoy")])
-remove_conditions = false
-remove_shockwave = false
-remove_imprison = false
-choose_active = false
-switch_type = 0
-mimic = 0
+search = SubResource("Resource_0ykxt")
 
 [resource]
 script = ExtResource("1_53c32")
 name = "Form Change"
 description = "Once during your turn (before your attack), you may search your deck for another Deoxys and switch it with Deoxys. (Any cards attached to Deoxys, damage counters, Special Conditions, and effects on it are now on the new Pokémon.) If you do, put Deoxys on top of your deck. Shuffle your deck afterward. You can't use more than 1 Form Change Poké-Power each turn."
-affected_by_condition = true
+affected_by_condition = false
 active = false
 how_often = 1
 effect = SubResource("Resource_gaing")

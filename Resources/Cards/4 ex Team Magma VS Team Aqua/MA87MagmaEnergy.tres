@@ -1,36 +1,15 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=7 format=3 uid="uid://nwmfrwp7fuwu"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=6 format=3 uid="uid://nwmfrwp7fuwu"]
 
+[ext_resource type="Resource" uid="uid://3fi6fc6lbj04" path="res://Resources/Components/Effects/Asks/Class&Owner/AtkIsTeamMagma.tres" id="1_6asof"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_prv0g"]
-[ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="1_t6ak2"]
 [ext_resource type="Script" uid="uid://caj1pm8erar2a" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="2_h52sn"]
 [ext_resource type="Texture2D" uid="uid://dcivaekw8m47c" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/87.jpg" id="3_b2ufc"]
-
-[sub_resource type="Resource" id="Resource_nwdmx"]
-script = ExtResource("1_t6ak2")
-target = 1
-damage_comparison = 1
-damage_taken = -10
-energy_attatched = -1
-knocked_out = false
-condition = 0
-location = 4
-stage = 7
-class_inclusive = true
-pokemon_class = 16
-bench_size = -1
-type_inclusive = true
-type = 1023
-type_size = 1
-ask_string = ""
-formal_ask = false
-choose = 0
-choose_location = 0
 
 [sub_resource type="Resource" id="Resource_k37wq"]
 script = ExtResource("2_h52sn")
 considered = "Special Energy"
 description = "Magma Energy can be attached only to a Pokémon with Team Magma in its name. Magma Energy provides {Fighting} and/or {Darkness} Energy but provides 2 Energy at a time. (Doesn't count as a basic Energy card when not in play and has no effect other than providing Energy.) At the end of your turn, discard Magma Energy."
-asks = SubResource("Resource_nwdmx")
+asks = ExtResource("1_6asof")
 fail_provide = false
 fail_prevent = true
 turns = 0
@@ -38,7 +17,7 @@ number = 2
 react = false
 holon_type = "None"
 type = 96
-fail_type = 0
+fail_type = 96
 
 [resource]
 script = ExtResource("1_prv0g")

@@ -11,10 +11,11 @@
 script = ExtResource("2_jl15f")
 count_for = 3
 filter = 4
-mon_count = 48
-for_what = 0
-cap = 0
-return_num = 40
+side = 3
+slot = 1
+for_what = 1
+cap = -1
+return_num = 2
 
 [sub_resource type="Resource" id="Resource_w1d7j"]
 script = ExtResource("3_re3fn")
@@ -31,9 +32,12 @@ metal_cost = 0
 colorless_cost = 1
 defender_properties = 0
 ignore_condition = 0
+prompt_reliant = false
 initial_main_DMG = 40
+conditional_self_dmg = false
 self_damage = 0
 modifier = 0
+both_active = false
 counter = SubResource("Resource_208e1")
 
 [sub_resource type="Resource" id="Resource_bhl8f"]
@@ -44,7 +48,7 @@ power = ExtResource("4_5wcjw")
 attacks = Array[ExtResource("3_re3fn")]([SubResource("Resource_w1d7j")])
 evo_stage = "Basic"
 evolves_from = ""
-considered = 0
+considered = 1
 owner = 0
 type = 16
 weak = 16

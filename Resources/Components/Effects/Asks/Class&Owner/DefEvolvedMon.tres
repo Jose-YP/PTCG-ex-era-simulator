@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="SlotAsk" load_steps=2 format=3 uid="uid://cyaqpq76mby4m"]
+[gd_resource type="Resource" script_class="SlotAsk" load_steps=2 format=3 uid="uid://dsyn2o57xkb0h"]
 
-[ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="1_eswes"]
+[ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="1_t8od5"]
 
 [resource]
-script = ExtResource("1_eswes")
-side_target = 1
+script = ExtResource("1_t8od5")
+side_target = 2
 slot_target = 4
 comparison_type = 1
 max_hp = -10
@@ -24,6 +24,6 @@ pokemon_owner = 15
 bench_size = -1
 type_inclusive = true
 type = 1023
-energy_class = 2
+energy_class = 3
 type_size = -1
 metadata/_custom_type_script = "uid://mkjynqda7q5g"

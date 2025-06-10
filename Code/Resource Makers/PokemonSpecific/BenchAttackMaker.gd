@@ -23,6 +23,8 @@ class_name BenchAttk
 @export var counter: Counter
 
 @export_group("Effects")
+@export var prompt: PromptAsk
 @export var ask: SlotAsk
 @export var effect: EffectCall
+@export var success_effect: EffectCall
 @export var fail_effect: EffectCall

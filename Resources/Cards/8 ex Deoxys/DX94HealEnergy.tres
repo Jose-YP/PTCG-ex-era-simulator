@@ -1,56 +1,22 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=11 format=3 uid="uid://b1xaqtaovjo0b"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=9 format=3 uid="uid://b1xaqtaovjo0b"]
 
-[ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="1_om5kj"]
+[ext_resource type="Resource" uid="uid://b65ksn0e0th78" path="res://Resources/Components/Effects/Asks/Class&Owner/AtkNonex.tres" id="1_adv1g"]
 [ext_resource type="Script" uid="uid://caj1pm8erar2a" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="2_gb4dl"]
-[ext_resource type="Script" uid="uid://scca13hg4k1l" path="res://Code/Resource Makers/EffectSpecific/DmgManipMaker.gd" id="3_x502c"]
+[ext_resource type="Resource" uid="uid://r3gc6e1u0elh" path="res://Resources/Components/Effects/DmgManip/AtkSelfHeal10.tres" id="3_27bls"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_j8yei"]
 [ext_resource type="Texture2D" uid="uid://ckmtw4r1dh5es" path="res://Art/Cards/8 ex Deoxys/94.jpg" id="5_mtuyk"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="6_24dry"]
 
-[sub_resource type="Resource" id="Resource_wkjkc"]
-script = ExtResource("1_om5kj")
-target = 1
-damage_taken = -10
-energy_attatched = -1
-knocked_out = false
-condition = 0
-location = 4
-stage = 7
-inclusive = false
-pokemon_class = 2
-bench_size = -1
-type = 1023
-type_size = 1
-ask_string = ""
-formal_ask = false
-choose = 0
-choose_location = 0
-
-[sub_resource type="Resource" id="Resource_ba6ke"]
-script = ExtResource("3_x502c")
-remove = true
-how_many = 1
-choose_from = false
-which = 1
-plus = false
-
 [sub_resource type="Resource" id="Resource_s7duk"]
 script = ExtResource("4_j8yei")
 order = Array[int]([])
-dmgManip = SubResource("Resource_ba6ke")
-search = Array[Resource("res://Code/Resource Makers/EffectSpecific/SearchMaker.gd")]([])
-remove_conditions = false
-remove_shockwave = false
-remove_imprison = false
-choose_active = false
-switch_type = 0
-mimic = 0
+dmgManip = ExtResource("3_27bls")
 
 [sub_resource type="Resource" id="Resource_xkhcd"]
 script = ExtResource("2_gb4dl")
 considered = "Special Energy"
 description = " Heal Energy provides {Colorless Energy}. When you attach this card from your hand to 1 of your Pokémon, remove 1 damage counter and all Special Conditions from that Pokémon. If Heal Energy is attached to Pokémon-ex, Heal Energy has no effect other than providing Energy."
-asks = SubResource("Resource_wkjkc")
+asks = ExtResource("1_adv1g")
 fail_provide = false
 fail_prevent = false
 success_effect = SubResource("Resource_s7duk")

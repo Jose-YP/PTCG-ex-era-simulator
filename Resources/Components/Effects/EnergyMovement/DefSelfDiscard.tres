@@ -6,8 +6,9 @@
 script = ExtResource("1_3vv37")
 energy_move_type = 2
 action = 1
+chooser = 0
 side = 2
-slots = 2
+slots = 1
 energy_ammount = 1
 swap_ammount = 1
 type = 511
