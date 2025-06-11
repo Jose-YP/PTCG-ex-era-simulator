@@ -54,7 +54,7 @@ layout_mode = 2
 unique_name_in_owner = true
 layout_mode = 2
 icon = ExtResource("7_dle7r")
-list = "Discard"
+list = 2
 
 [node name="Prizes" type="HBoxContainer" parent="."]
 unique_name_in_owner = true
@@ -64,7 +64,7 @@ layout_mode = 2
 unique_name_in_owner = true
 layout_mode = 2
 icon = ExtResource("8_024ff")
-list = "Prize"
+list = 3
 
 [node name="Deck" type="HBoxContainer" parent="."]
 unique_name_in_owner = true
@@ -74,7 +74,7 @@ layout_mode = 2
 unique_name_in_owner = true
 layout_mode = 2
 icon = ExtResource("9_ako2g")
-list = "Deck"
+list = 1
 
 [node name="Hand" type="HBoxContainer" parent="."]
 unique_name_in_owner = true

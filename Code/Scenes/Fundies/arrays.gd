@@ -8,10 +8,10 @@ var prize_cards: Array[Base_Card] = []
 var reveal_stack: Array[Base_Card]
 var cards_in_play: Array[Base_Card]
 
-func sendStackDictionary() -> Dictionary[String, Array]:
+func sendStackDictionary() -> Dictionary[Constants.STACKS, Array]:
 	return {
- "Hand": hand, "Deck": usable_deck,
- "Discard": discard_pile, "Prize": prize_cards}
+ Constants.STACKS.HAND: hand, Constants.STACKS.DECK: usable_deck,
+ Constants.STACKS.DISCARD: discard_pile, Constants.STACKS.PRIZE: prize_cards}
 
 func append_to_arrays(type: String, card: Base_Card):
 	match type:
@@ -27,15 +27,15 @@ func append_to_arrays(type: String, card: Base_Card):
 			push_error(type, " is not in ", name)
 			hand.append(card)
 
-func get_array(type: String) -> Array[Base_Card]:
+func get_array(type: Constants.STACKS) -> Array[Base_Card]:
 	match type:
-		"Hand":
+		Constants.STACKS.HAND:
 			return hand
-		"Deck":
+		Constants.STACKS.DECK:
 			return usable_deck
-		"Discsard":
+		Constants.STACKS.DISCARD:
 			return discard_pile
-		"Prize":
+		Constants.STACKS.PRIZE:
 			return prize_cards
 		_:
 			push_error(type, " is not in ", name)

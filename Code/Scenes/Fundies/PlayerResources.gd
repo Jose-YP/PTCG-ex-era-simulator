@@ -128,11 +128,11 @@ func discard_card(card: Base_Card):
 #--------------------------------------
 #region CARD DISPLAY
 func update_lists():
-	var dict: Dictionary[String, Array] = arrays.sendStackDictionary()
+	var dict: Dictionary[Constants.STACKS, Array] = arrays.sendStackDictionary()
 	for stack in dict:
 		fundies.player_side.non_mon.update_stack(stack, dict[stack].size())
 
-func get_list(which: String) -> Dictionary[Base_Card, bool]:
+func get_list(which: Constants.STACKS) -> Dictionary[Base_Card, bool]:
 	var dict: Dictionary[Base_Card, bool]
 	determine_allowed()
 	
@@ -155,29 +155,29 @@ func get_list(which: String) -> Dictionary[Base_Card, bool]:
 func spawn_list(monitor_side: bool, list: Dictionary[Base_Card, bool],\
  interaction: String = "Look", instructions: String = "", display_text: String = "HAND"):
 	var spawn_from: Vector2
-	var which: String
+	var which: Constants.STACKS
 	
 	if monitor_side:
 		match display_text:
 			"HAND":
-				which = "Hand"
-				spawn_from = fundies.player_side.non_mon.stacks["Hand"].global_position
+				which = Constants.STACKS.HAND
+				spawn_from = fundies.player_side.non_mon.stacks[Constants.STACKS.HAND].global_position
 			"DECK":
-				which = "Deck"
-				spawn_from = fundies.player_side.non_mon.stacks["Deck"].global_position
+				which = Constants.STACKS.DECK
+				spawn_from = fundies.player_side.non_mon.stacks[Constants.STACKS.DECK].global_position
 			"DISCARD PILE":
-				which = "Discard"
-				spawn_from = fundies.player_side.non_mon.stacks["Discard"].global_position
+				which = Constants.STACKS.DISCARD
+				spawn_from = fundies.player_side.non_mon.stacks[Constants.STACKS.DISCARD].global_position
 			"PRIZE CARDS":
-				which = "Prize"
-				spawn_from = fundies.player_side.non_mon.stacks["Prize"].global_position
+				which = Constants.STACKS.PRIZE
+				spawn_from = fundies.player_side.non_mon.stacks[Constants.STACKS.PRIZE].global_position
 			_:
 				push_error("Can't find list specified: ", which)
 	
 	instantiate_list(list, interaction, which, display_text, instructions, spawn_from)
 
 func instantiate_list(specified_list: Dictionary[Base_Card, bool],\
- interaction: String = "Look", which: String = "Hand"\
+ interaction: String = "Look", which: Constants.STACKS = Constants.STACKS.HAND\
  ,display_text: String = "", using_string: String = "",  spawn_from: Vector2 = Vector2.ZERO):
 	var hand_list: PackedScene = Constants.playing_list
 	var new_node = hand_list.instantiate()

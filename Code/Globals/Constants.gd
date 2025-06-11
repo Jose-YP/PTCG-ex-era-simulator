@@ -44,12 +44,11 @@ Color.GRAY, Color.WHITE_SMOKE]
 
 #--------------------------------------
 #region SCENES
-const item_options: PackedScene = preload("res://Scenes/UI/Lists/item_options.tscn")
 const playing_list_item: PackedScene = preload("res://Scenes/UI/Lists/PlayingListItem.tscn")
 const playing_list: PackedScene = preload("res://Scenes/UI/Lists/NewPlayingList.tscn")
 const attack_list_comp: PackedScene = preload("res://Scenes/UI/Lists/attack_scroll_box.tscn")
 #const attack_list = preload("res://Scenes/UI/Lists/attack_list.tscn")
-const poke_card: PackedScene = preload("res://Scenes/UI/CardDisplay/PokemonCard.tscn")
+const poke_card = preload("res://Scenes/UI/CardDisplay/PokemonCard.tscn")
 const trainer_card: PackedScene = preload("res://Scenes/UI/CardDisplay/TrainerCard.tscn")
 const energy_card: PackedScene = preload("res://Scenes/UI/CardDisplay/EnergyCard.tscn")
 const cursor: PackedScene = preload("res://Scenes/UI/UIComponents/cursor.tscn")
@@ -58,12 +57,7 @@ const tutor_box: PackedScene = preload("res://Scenes/UI/Lists/tutor_box.tscn")
 #--------------------------------------
 
 #--------------------------------------
-#region ETC
-const rarity: Array[String] = ["Common", "Uncommon", "Rare",
- "Holofoil Rare", "ex Rare", "Ultra Rare", "Star Rare", "Promo Rare"]
-const allowed_list_flags: Array[String] = ["Basic", "Evolution",
- "Item", "Supporter","Stadium", "Tool", "TM", "RSM", "Fossil", "Energy"]
-
+#region ENUMS
 enum SIDES {NONE, ##IGNORE FIELD AND TAKE DEFAULT
  ATTACKING,##IS FOR THE PLAYER WHOSE TURN IT IS
  DEFENDING,##IS THE OTHER GUY
@@ -77,5 +71,23 @@ enum SLOTS {NONE,##Ignore and use the default
  BENCH,##Refers to pokemon in the bench
  ALL##Refers to any pokemon in the dedicated side
 }
+enum STACKS{HAND, ##CARDS HERE CAN BE PLAYED UNDER THE RIGHT CONDITIONS
+DECK, ##CARDS MUST EITHER BE DRAWN OR TUTORED. ALL CRADS BEGIN HERE
+DISCARD, ##AFTER A CARD IS USED, KO'd OR PAYS FOR ANY DISCARD COSTS
+PRIZE, ##AFTER SETTING UP, PUT X PRIZE CARDS HERE TO TAKE AFTER KO
+PLAY, ##ANY CARD THAT ISN'T IN A STACK
+LOST, ##THE LOST ZONE, NOT LIKELY TO BE IMPLEMENTED BUT NICE TO HAVE FOR NOW. ANY CARD THAT CANNOT BE RETRIEVED FOR FUTURE USE
+ANY
+}
+#endregion
+#--------------------------------------
+
+#--------------------------------------
+#region ETC
+const rarity: Array[String] = ["Common", "Uncommon", "Rare",
+ "Holofoil Rare", "ex Rare", "Ultra Rare", "Star Rare", "Promo Rare"]
+const allowed_list_flags: Array[String] = ["Basic", "Evolution",
+ "Item", "Supporter","Stadium", "Tool", "TM", "RSM", "Fossil", "Energy"]
+
 #endregion
 #--------------------------------------

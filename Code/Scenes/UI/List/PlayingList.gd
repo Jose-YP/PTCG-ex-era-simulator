@@ -13,7 +13,7 @@ class_name PlayingList
 "Supporter","Stadium", "Tool", "TM", "RSM", "Fossil",
  "Energy") var allowed_as: int = 1
 @export_enum("Play", "Tutor", "Discard", "Look") var interaction: String = "Play"
-@export_enum("Hand", "Deck", "Discard", "Prize") var stack: String = "Hand"
+@export var stack: Constants.STACKS = Constants.STACKS.HAND
 
 @onready var identifier: RichTextLabel = %Identifier
 @onready var instructions: RichTextLabel = %Instructions
@@ -41,7 +41,7 @@ func _ready():
 	set_items()
 
 func set_items():
-	print(list)
+	#print(list, list_item)
 	for item in list:
 		var making = list_item.instantiate()
 		making.card = item

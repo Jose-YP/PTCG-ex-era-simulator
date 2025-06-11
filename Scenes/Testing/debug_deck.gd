@@ -28,19 +28,19 @@ func _on_draw_starting_pressed():
 	card_resources.draw_starting()
 
 func _on_discard_pressed():
-	SignalBus.show_list.emit(true, card_resources.get_list("Discard"), "Look")
+	SignalBus.show_list.emit(true, Constants.STACKS.DISCARD, "Look")
 
 func _on_search_deck_pressed():
-	SignalBus.show_list.emit(true, card_resources.get_list("Deck"), "Tutor")
+	SignalBus.show_list.emit(true, Constants.STACKS.DECK, "Tutor")
 
 func _on_search_discard_pressed():
-	SignalBus.show_list.emit(true, card_resources.get_list("Discard"), "Tutor")
+	SignalBus.show_list.emit(true, Constants.STACKS.DISCARD, "Tutor")
 
 func _on_shuffle_2_deck_pressed():
 	pass # Replace with function body.
 
 func _on_view_all_deck_pressed():
-	SignalBus.show_list.emit(true, card_resources.get_list("Deck"), "Look")
+	SignalBus.show_list.emit(true, Constants.STACKS.DECK, "Look")
 #endregion
 
 func _on_search_test_pressed() -> void:
@@ -53,7 +53,7 @@ func _on_search_test_pressed() -> void:
 			identifier.edit_in_type(dummy.get_type_flag())
 		9: #Energy of type
 			identifier.edit_in_type(dummy.get_type_flag())
-	card_resources.identifier_search(card_resources.arrays.get_array("Deck"), [slots[0]], search_identifiers[search_types.get_selected_id()])
+	card_resources.identifier_search(card_resources.arrays.get_array(Constants.STACKS.DECK), [slots[0]], search_identifiers[search_types.get_selected_id()])
 
 func _on_ask_test_pressed() -> void:
 	pass # Replace with function body.

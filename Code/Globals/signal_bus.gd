@@ -2,7 +2,7 @@ extends Node
 
 #HAND SIGNALS
 @warning_ignore("unused_signal")
-signal show_list(whose: String, list: Dictionary[Base_Card, bool], interaction: String)
+signal show_list(whose: String, list: Constants.STACKS, interaction: String)
 #CARD DISPLAY SIGNALS
 @warning_ignore("unused_signal")
 signal chosen_slot(showing: PokeSlot)

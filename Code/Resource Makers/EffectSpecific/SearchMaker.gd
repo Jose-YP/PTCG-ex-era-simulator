@@ -3,7 +3,7 @@ class_name Search
 
 ##Which section will the player search (yes there is defender searching)
 @export var side: Constants.SIDES
-@export_enum("Discard", "Deck") var where: int = 1
+@export var where: Constants.STACKS
 ##Will the identifier base it's results on anything?
 @export var based_on_side: Constants.SIDES
 @export var based_on_slots: Constants.SLOTS
