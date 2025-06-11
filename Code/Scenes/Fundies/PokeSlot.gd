@@ -77,7 +77,6 @@ var knocked_out: bool = false
 var is_target: bool = false
 #endregion
 #--------------------------------------
-
 func _ready():
 	if current_card:
 		type = pokedata.type
@@ -104,6 +103,10 @@ func is_player() -> bool:
 	else:
 		push_error("Not connected to a UI slot")
 		return false
+
+func set_card(card: Base_Card):
+	current_card = card
+	ui_slot.make_allowed(true)
 
 #--------------------------------------
 #region DAMAGE HANDLERS

@@ -26,6 +26,7 @@ func play_basic_pokemon(card: Base_Card):
 	for slot in fundies.active_slots:
 		if not slot.current_card:
 			fundies.hide_list()
+			slot.set_card(card)
 			slot.current_card = card
 			slot.refresh()
 			#Remove the card from hand
@@ -43,7 +44,7 @@ func play_fossil(card: Base_Card):
 	for slot in fundies.active_slots:
 		if not slot.current_card:
 			fundies.hide_list()
-			slot.current_card = card
+			slot.set_card(card)
 			slot.refresh()
 			#Remove the card from hand
 			fundies.player_resources.play_card(card)

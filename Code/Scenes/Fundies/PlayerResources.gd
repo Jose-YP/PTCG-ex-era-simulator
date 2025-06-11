@@ -105,6 +105,8 @@ func play_card(card: Base_Card): #From hand to Y
 	arrays.hand.erase(card)
 	update_lists()
 	card.print_info()
+	fundies.slot_ui_actions.reset_ui()
+	
 
 func ontop_deck(_card: Base_Card): #From X to atop Deck
 	

@@ -81,7 +81,7 @@ func left_button_actions(target: PokeSlot):
 			print(target.ui_slot, target)
 			reset_ui()
 			
-			target.current_card = adding_card
+			target.set_card(adding_card)
 			target.refresh()
 			
 			set_doing("Nothing")
@@ -164,7 +164,8 @@ func reset_ui():
 	#Check every slot to see if they have a pokemon in them
 	#If so, let them be checked again
 	for slot in (fundies.poke_slots + enemy_poke_slots):
-		slot.ui_slot.make_allowed(slot.connected_card != null)
+		print(slot.current_card != null, slot.name)
+		slot.ui_slot.make_allowed(slot.current_card != null)
 	
 	set_doing("Nothing")
 	chosen.emit()
