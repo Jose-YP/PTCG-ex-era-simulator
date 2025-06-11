@@ -1,6 +1,6 @@
 [gd_scene load_steps=45 format=3 uid="uid://crecmsup0hxcr"]
 
-[ext_resource type="Script" uid="uid://cvx5cmt78lek7" path="res://Code/Scenes/UI/Card.gd" id="1_ao8mj"]
+[ext_resource type="Script" uid="uid://cvx5cmt78lek7" path="res://Code/Scenes/UI/Cards/Card.gd" id="1_ao8mj"]
 [ext_resource type="Resource" uid="uid://yjages2tp857" path="res://Resources/Cards/1 ex Ruby & Saphire/RS1Aggron.tres" id="2_13uqe"]
 [ext_resource type="PackedScene" uid="uid://bs3ila6cpt8n1" path="res://Scenes/UI/UIComponents/types.tscn" id="2_em05s"]
 [ext_resource type="StyleBox" uid="uid://duhmik1loeema" path="res://Themes/GBABox.tres" id="2_uf5nv"]

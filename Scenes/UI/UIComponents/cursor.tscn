@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://74qmw8tg05dl"]
 
 [ext_resource type="Texture2D" uid="uid://blsb0qe1ebavp" path="res://Art/UI/9_black.png" id="1_htjjw"]
-[ext_resource type="Script" path="res://Code/Scenes/UI/cursor.gd" id="2_garxm"]
+[ext_resource type="Script" uid="uid://7wfmv4qamiqa" path="res://Code/Scenes/UI/List/cursor.gd" id="2_garxm"]
 
 [node name="Cursor" type="TextureRect"]
 visible = false

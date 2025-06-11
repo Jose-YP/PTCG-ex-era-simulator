@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://o2i8sw2v3cqb"]
 
-[ext_resource type="Script" uid="uid://cr5bqmy6qbsbx" path="res://Code/Scenes/UI/stack_button.gd" id="1_8c7qw"]
+[ext_resource type="Script" uid="uid://cr5bqmy6qbsbx" path="res://Code/Scenes/UI/List/stack_button.gd" id="1_8c7qw"]
 [ext_resource type="Texture2D" uid="uid://b51pkerqwu6l2" path="res://Art/ProjectSpecific/recycle-bin.png" id="1_k2gto"]
 
 [node name="StackButton" type="PanelContainer"]

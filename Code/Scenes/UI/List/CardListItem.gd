@@ -2,6 +2,7 @@ extends Button
 
 @export var card: Base_Card
 @export var option_offset: Vector2 = Vector2(30, 100)
+@export var option_popup: PackedScene
 @export_flags("Basic", "Evolution", "Item",
 "Supporter", "Stadium", "Tool", "TM", "RSM", "Fossil",
  "Energy") var card_flags: int = 0
@@ -53,7 +54,12 @@ func allow_move_to(destination: String):
 #--------------------------------------
 #region ACTIONS
 func show_options() -> Node:
-	var option_Display: Node = Constants.item_options.instantiate()
+	var option_Display = option_popup.instantiate()
+	print(option_Display, option_Display.get_script(), option_Display.has_method("set"))
+	print("LIST\n -----------------------\n",option_Display.get_property_list())
+	#var other = load("res://Scenes/UI/Lists/item_options_copy.tscn").instantiate()
+	#option_Display.set_script("res://Code/Scenes/UI/ItemOptions.gd")
+	#print(option_Display.get_script(), other.get_script())
 	#var option_position = Vector2(size.x/2 - position.x - 80, global_position.y - size.y/4)
 	#option_position = Vector2(size.x/2 - global_position.x - 80, global_position.y + size.y/1.25)
 	option_Display.card_flags = card_flags
@@ -61,7 +67,7 @@ func show_options() -> Node:
 	option_Display.position = position + option_offset
 	option_Display.scale = Vector2(.05, .05)
 	option_Display.modulate = Color.TRANSPARENT
-	option_Display.interaction = parent.interaction
+	#option_Display.interaction = parent.interaction
 	
 	if allowed:
 		option_Display.interaction = interaction

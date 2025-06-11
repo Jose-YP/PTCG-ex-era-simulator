@@ -74,6 +74,9 @@ func play_energy(card: Base_Card):
 #region TRAINERS
 func play_trainer(card: Base_Card):
 	var trainer: Trainer = card.trainer_properties
+	if trainer.prompt:
+		print("This card has a prompt")
+	
 	if trainer.asks:
 		#Determine a way to check asks and prompts easily
 		

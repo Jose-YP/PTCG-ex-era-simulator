@@ -20,6 +20,8 @@ class_name Trainer
 @export var tool_properties: ToolCard
 @export var provided_attack: Attack
 
+func play_card():pass
+
 func print_trainer() -> void:
 	print("Class: ", considered,"
 	Description: ", description)

@@ -44,16 +44,16 @@ Color.GRAY, Color.WHITE_SMOKE]
 
 #--------------------------------------
 #region SCENES
-const item_options = preload("res://Scenes/UI/Lists/item_options.tscn")
-const playing_list_item = preload("res://Scenes/UI/Lists/PlayingListItem.tscn")
-const playing_list = preload("res://Scenes/UI/Lists/NewPlayingList.tscn")
-const attack_list_comp = preload("res://Scenes/UI/Lists/attack_scroll_box.tscn")
+const item_options: PackedScene = preload("res://Scenes/UI/Lists/item_options.tscn")
+const playing_list_item: PackedScene = preload("res://Scenes/UI/Lists/PlayingListItem.tscn")
+const playing_list: PackedScene = preload("res://Scenes/UI/Lists/NewPlayingList.tscn")
+const attack_list_comp: PackedScene = preload("res://Scenes/UI/Lists/attack_scroll_box.tscn")
 #const attack_list = preload("res://Scenes/UI/Lists/attack_list.tscn")
-const poke_card = preload("res://Scenes/UI/CardDisplay/PokemonCard.tscn")
-const trainer_card = preload("res://Scenes/UI/CardDisplay/TrainerCard.tscn")
-const energy_card = preload("res://Scenes/UI/CardDisplay/EnergyCard.tscn")
-const cursor = preload("res://Scenes/UI/UIComponents/cursor.tscn")
-const tutor_box = preload("res://Scenes/UI/Lists/tutor_box.tscn")
+const poke_card: PackedScene = preload("res://Scenes/UI/CardDisplay/PokemonCard.tscn")
+const trainer_card: PackedScene = preload("res://Scenes/UI/CardDisplay/TrainerCard.tscn")
+const energy_card: PackedScene = preload("res://Scenes/UI/CardDisplay/EnergyCard.tscn")
+const cursor: PackedScene = preload("res://Scenes/UI/UIComponents/cursor.tscn")
+const tutor_box: PackedScene = preload("res://Scenes/UI/Lists/tutor_box.tscn")
 #endregion
 #--------------------------------------
 

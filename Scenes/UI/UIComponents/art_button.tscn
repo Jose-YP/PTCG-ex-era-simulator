@@ -3,7 +3,7 @@
 [ext_resource type="Shader" uid="uid://chaingl03cnx1" path="res://Shaders/Shine2D.gdshader" id="1_dsc7g"]
 [ext_resource type="Theme" uid="uid://bfw6ylcttychc" path="res://Themes/AverageButton.tres" id="2_q565r"]
 [ext_resource type="Texture2D" uid="uid://b4uymubvo04qp" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/37.jpg" id="2_rt8ma"]
-[ext_resource type="Script" uid="uid://dv2mf54udme7l" path="res://Code/Scenes/UI/art_button.gd" id="2_vikux"]
+[ext_resource type="Script" uid="uid://dv2mf54udme7l" path="res://Code/Scenes/UI/Main/art_button.gd" id="2_vikux"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_q565r"]
 resource_local_to_scene = true

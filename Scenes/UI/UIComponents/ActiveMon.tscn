@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://drg0sr7jdfiel"]
 
-[ext_resource type="Script" uid="uid://wt6o27vmhuas" path="res://Code/Scenes/UI/UISlot.gd" id="1_c5ua0"]
+[ext_resource type="Script" uid="uid://wt6o27vmhuas" path="res://Code/Scenes/UI/Main/UISlot.gd" id="1_c5ua0"]
 [ext_resource type="Texture2D" uid="uid://ct7oa74jhqcwq" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/74.jpg" id="2_4mrr5"]
 [ext_resource type="Shader" uid="uid://chaingl03cnx1" path="res://Shaders/Shine2D.gdshader" id="3_46l8x"]
 [ext_resource type="Texture2D" uid="uid://d3nrajtlwbvgh" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/84.jpg" id="3_bcik8"]

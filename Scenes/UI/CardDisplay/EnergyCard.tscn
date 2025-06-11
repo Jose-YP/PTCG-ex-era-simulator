@@ -1,6 +1,6 @@
 [gd_scene load_steps=41 format=3 uid="uid://ttnrn3dc8bsv"]
 
-[ext_resource type="Script" uid="uid://1rg04exvw825" path="res://Code/Scenes/UI/EnergyCard.gd" id="1_bpqjl"]
+[ext_resource type="Script" uid="uid://1rg04exvw825" path="res://Code/Scenes/UI/Cards/EnergyCard.gd" id="1_bpqjl"]
 [ext_resource type="Resource" uid="uid://bpyb5rd3indje" path="res://Resources/Cards/1 ex Ruby & Saphire/RS94MetalEnergy.tres" id="2_6goeh"]
 [ext_resource type="PackedScene" uid="uid://bs3ila6cpt8n1" path="res://Scenes/UI/UIComponents/types.tscn" id="2_b8dnl"]
 [ext_resource type="PackedScene" uid="uid://dmhjt2wuanymf" path="res://Scenes/UI/UIComponents/minimize_button.tscn" id="3_62d3j"]

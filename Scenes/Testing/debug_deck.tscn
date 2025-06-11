@@ -1,7 +1,7 @@
 [gd_scene load_steps=32 format=3 uid="uid://c3qurrd5vl1ao"]
 
 [ext_resource type="Script" uid="uid://b3ki70ohjb21g" path="res://Scenes/Testing/debug_deck.gd" id="1_76cja"]
-[ext_resource type="Script" uid="uid://b6qi20o3p32gq" path="res://Code/Scenes/UI/full_ui.gd" id="2_iuq08"]
+[ext_resource type="Script" uid="uid://b6qi20o3p32gq" path="res://Code/Scenes/UI/Main/full_ui.gd" id="2_iuq08"]
 [ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="2_yqty7"]
 [ext_resource type="Resource" uid="uid://tynomqb1ld65" path="res://Resources/Components/Effects/Identifiers/Pokemon/IsPokemon.tres" id="3_flo2v"]
 [ext_resource type="PackedScene" uid="uid://dognokjork36j" path="res://Scenes/UI/UICollections/PlayerSide.tscn" id="3_ibwmv"]
@@ -319,12 +319,6 @@ poke_slots = [NodePath("../Slots/PokeSlot"), NodePath("../Slots/PokeSlot2"), Nod
 
 [node name="PlayerResources" parent="Fundies" index="2"]
 deck = ExtResource("7_441s3")
-first_turn = null
-attatched_energy = null
-supporter_played = null
-prize_count = null
-side = null
-allowed_play = null
 
 [node name="PokeSlot" parent="Fundies/Slots" index="0" node_paths=PackedStringArray("ui_slot")]
 ui_slot = NodePath("../../../FullUI/PlayerSide/Main/Active/ActivePokemon")

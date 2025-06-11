@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://cj0k023dhlha"]
 
-[ext_resource type="Script" uid="uid://ce4xa4cuper2p" path="res://Code/Scenes/UI/attack_scroll_box.gd" id="1_abqb4"]
+[ext_resource type="Script" uid="uid://ce4xa4cuper2p" path="res://Code/Scenes/UI/Cards/attack_scroll_box.gd" id="1_abqb4"]
 [ext_resource type="PackedScene" uid="uid://dvvv8k1g6tgog" path="res://Scenes/UI/Lists/attack_item.tscn" id="2_25ylk"]
 [ext_resource type="PackedScene" uid="uid://beymnk0kvpnut" path="res://Scenes/UI/Lists/power_item.tscn" id="3_wwxct"]
 [ext_resource type="PackedScene" uid="uid://cidor8csiohus" path="res://Scenes/UI/Lists/body_item.tscn" id="4_h32eo"]

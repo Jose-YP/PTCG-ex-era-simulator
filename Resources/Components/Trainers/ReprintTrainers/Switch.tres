@@ -20,6 +20,6 @@ swap = SubResource("Resource_fn3vn")
 [resource]
 script = ExtResource("2_gvqqg")
 considered = "Item"
-specific_requirement = null
+specific_requirement = ""
 description = "Switch 1 of your Active Pokémon with 1 of your Benched Pokémon. "
 always_effect = SubResource("Resource_cb1ok")

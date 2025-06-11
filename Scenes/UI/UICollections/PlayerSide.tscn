@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dognokjork36j"]
 
 [ext_resource type="PackedScene" uid="uid://df8x227c7a8q4" path="res://Scenes/UI/UIComponents/BenchMon.tscn" id="1_j2t4b"]
-[ext_resource type="Script" uid="uid://dx3o7ac7ius6k" path="res://Code/Scenes/UI/Side.gd" id="1_j016u"]
+[ext_resource type="Script" uid="uid://dx3o7ac7ius6k" path="res://Code/Scenes/UI/Main/Side.gd" id="1_j016u"]
 [ext_resource type="PackedScene" uid="uid://drg0sr7jdfiel" path="res://Scenes/UI/UIComponents/ActiveMon.tscn" id="1_n754v"]
 [ext_resource type="PackedScene" uid="uid://f5mxg3phjwb7" path="res://Scenes/UI/UIComponents/non_mon.tscn" id="4_5awab"]
 

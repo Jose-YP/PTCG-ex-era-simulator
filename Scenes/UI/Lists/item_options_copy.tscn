@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://kejk3mwqasft"]
+[gd_scene load_steps=2 format=3 uid="uid://tobk6a46hgx"]
 
-[ext_resource type="Script" uid="uid://bsgkxgrj5o5r1" path="res://Code/Scenes/UI/List/ItemOptions.gd" id="1_ty0wb"]
+[ext_resource type="Script" uid="uid://2en5i2pyoyfv" path="res://Code/Scenes/UI/List/item_options_copy.gd" id="1_uc12c"]
 
 [node name="ItemOptions" type="Control"]
 z_index = 3
@@ -11,7 +11,7 @@ offset_right = 0.119995
 offset_bottom = 0.119965
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_ty0wb")
+script = ExtResource("1_uc12c")
 
 [node name="PlayAs" type="PanelContainer" parent="."]
 layout_mode = 0

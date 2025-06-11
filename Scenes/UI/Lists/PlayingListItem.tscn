@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dd56w2nt5mqow"]
+[gd_scene load_steps=9 format=3 uid="uid://dd56w2nt5mqow"]
 
-[ext_resource type="Script" uid="uid://2hoqakyirh3b" path="res://Code/Scenes/UI/CardListItem.gd" id="1_bdgo5"]
+[ext_resource type="Script" uid="uid://2hoqakyirh3b" path="res://Code/Scenes/UI/List/CardListItem.gd" id="1_bdgo5"]
 [ext_resource type="StyleBox" uid="uid://duhmik1loeema" path="res://Themes/GBABox.tres" id="1_mxeim"]
 [ext_resource type="Resource" uid="uid://bekwoaj06a44c" path="res://Resources/Cards/1 ex Ruby & Saphire/RS95RainbowEnergy.tres" id="3_xnpqb"]
+[ext_resource type="PackedScene" uid="uid://tobk6a46hgx" path="res://Scenes/UI/Lists/item_options_copy.tscn" id="4_06dqo"]
 [ext_resource type="Texture2D" uid="uid://cj4eckcnktq41" path="res://Art/Cards/1 ex Ruby & Saphire/109.jpg" id="4_f4ki5"]
 [ext_resource type="Texture2D" uid="uid://cijlbc37pj4gd" path="res://icon.svg" id="5_0okov"]
 
@@ -46,6 +47,8 @@ disabled = true
 script = ExtResource("1_bdgo5")
 card = ExtResource("3_xnpqb")
 option_offset = Vector2(80, 100)
+option_popup = ExtResource("4_06dqo")
+card_flags = 1023
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0

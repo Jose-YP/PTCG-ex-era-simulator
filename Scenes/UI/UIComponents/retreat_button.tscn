@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dnqq8mwl0vpr3"]
 
 [ext_resource type="PackedScene" uid="uid://bs3ila6cpt8n1" path="res://Scenes/UI/UIComponents/types.tscn" id="1_hgo2m"]
-[ext_resource type="Script" uid="uid://bkar23hv1impm" path="res://Code/Scenes/UI/retreat_button.gd" id="1_nsbvo"]
+[ext_resource type="Script" uid="uid://bkar23hv1impm" path="res://Code/Scenes/UI/Cards/retreat_button.gd" id="1_nsbvo"]
 
 [node name="RetreatButton" type="Control"]
 layout_mode = 3
