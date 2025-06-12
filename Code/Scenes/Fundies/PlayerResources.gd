@@ -15,7 +15,6 @@ class_name Deck_Manipulator
 @onready var fundies: Fundies = $".."
 @onready var arrays: Node = $Arrays
 
-#signal show_list(can_select: bool, message: String, looking_at: String, list: Array[Base_Card])
 #signal update_resources()
 
 #var reveal_stack: Array[Base_Card]

@@ -31,5 +31,4 @@ func update(num: int):
 
 func _on_button_pressed() -> void:
 	print("Bring up ", list)
-	#signal show_list(whose: String, list: Dictionary[Base_Card, bool], interaction: String)
-	SignalBus.show_list.emit(player, list, "Play" if list == Constants.STACKS.HAND else "Look")
+	SignalBus.show_list.emit(player, list, Constants.STACK_ACT.PLAY if list == Constants.STACKS.HAND else Constants.STACK_ACT.LOOK)

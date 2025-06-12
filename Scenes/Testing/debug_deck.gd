@@ -28,19 +28,19 @@ func _on_draw_starting_pressed():
 	card_resources.draw_starting()
 
 func _on_discard_pressed():
-	SignalBus.show_list.emit(true, Constants.STACKS.DISCARD, "Look")
+	SignalBus.show_list.emit(true, Constants.STACKS.DISCARD, Constants.STACK_ACT.LOOK)
 
 func _on_search_deck_pressed():
-	SignalBus.show_list.emit(true, Constants.STACKS.DECK, "Tutor")
+	SignalBus.show_list.emit(true, Constants.STACKS.DECK, Constants.STACK_ACT.TUTOR)
 
 func _on_search_discard_pressed():
-	SignalBus.show_list.emit(true, Constants.STACKS.DISCARD, "Tutor")
+	SignalBus.show_list.emit(true, Constants.STACKS.DISCARD, Constants.STACK_ACT.TUTOR)
 
 func _on_shuffle_2_deck_pressed():
 	pass # Replace with function body.
 
 func _on_view_all_deck_pressed():
-	SignalBus.show_list.emit(true, Constants.STACKS.DECK, "Look")
+	SignalBus.show_list.emit(true, Constants.STACKS.DECK, Constants.STACK_ACT.LOOK)
 #endregion
 
 func _on_search_test_pressed() -> void:

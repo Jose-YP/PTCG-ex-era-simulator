@@ -24,6 +24,7 @@ func _ready() -> void:
 func _on_pressed() -> void:
 	if minimized:
 		minimized = false
+		@warning_ignore("redundant_await")
 		await opening_animation()
 		disabled = false
 	else:

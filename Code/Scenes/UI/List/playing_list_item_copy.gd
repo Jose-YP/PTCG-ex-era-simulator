@@ -2,7 +2,6 @@ extends Button
 
 @export var card: Base_Card
 @export var option_offset: Vector2 = Vector2(30, 100)
-@export var option_popup: PackedScene
 @export_flags("Basic", "Evolution", "Item",
 "Supporter", "Stadium", "Tool", "TM", "RSM", "Fossil",
  "Energy") var card_flags: int = 0
