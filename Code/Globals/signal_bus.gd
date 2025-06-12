@@ -3,6 +3,10 @@ extends Node
 #HAND SIGNALS
 @warning_ignore("unused_signal")
 signal show_list(whose: String, list: Constants.STACKS, interaction: String)
+@warning_ignore("unused_signal")
+signal swap_card_location(card: Array[Base_Card], from: Constants.STACKS, to: String)
+@warning_ignore("unused_signal")
+signal tutor_card(card: Base_Card)
 #CARD DISPLAY SIGNALS
 @warning_ignore("unused_signal")
 signal chosen_slot(showing: PokeSlot)

@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bgjvymhyt234g"]
+[gd_scene load_steps=8 format=3 uid="uid://bgjvymhyt234g"]
 
 [ext_resource type="Theme" uid="uid://bfw6ylcttychc" path="res://Themes/AverageButton.tres" id="1_wc5cx"]
 [ext_resource type="Script" uid="uid://crxnymulvel2m" path="res://Code/Scenes/Components/dragable_control.gd" id="2_4halv"]
 [ext_resource type="Script" uid="uid://masdq75k62tf" path="res://Code/Scenes/UI/List/tutor_box.gd" id="2_fdtu0"]
+[ext_resource type="Resource" uid="uid://dbbymvfonstmf" path="res://Resources/Components/Effects/Search/CastawaySearch.tres" id="3_tixm1"]
 [ext_resource type="StyleBox" uid="uid://bvesf3hjv2bsl" path="res://Themes/GBADragBox.tres" id="4_tixm1"]
 [ext_resource type="Script" uid="uid://bphfo08n46yrj" path="res://Code/Scenes/UI/List/minimize_button.gd" id="5_u0q4j"]
 
@@ -23,6 +24,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_wc5cx")
 script = ExtResource("2_fdtu0")
+search = ExtResource("3_tixm1")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 0
@@ -99,6 +101,17 @@ theme_override_constants/separation = 8
 layout_mode = 2
 theme_override_constants/margin_bottom = 15
 
+[node name="Requirements" type="PanelContainer" parent="PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ReqText" type="RichTextLabel" parent="PanelContainer/VBoxContainer/Requirements"]
+unique_name_in_owner = true
+layout_mode = 2
+bbcode_enabled = true
+fit_content = true
+
 [node name="ConfirmBox" type="PanelContainer" parent="PanelContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 49)
 layout_mode = 2
@@ -119,11 +132,13 @@ text = "[center]Tutor Number: X / X"
 fit_content = true
 
 [node name="Confirm" type="Button" parent="PanelContainer/VBoxContainer/ConfirmBox/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Yes"
 
 [node name="Cancel" type="Button" parent="PanelContainer/VBoxContainer/ConfirmBox/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Cancel"

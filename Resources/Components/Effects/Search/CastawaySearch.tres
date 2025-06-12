@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Search" load_steps=7 format=3 uid="uid://dbbymvfonstmf"]
+
+[ext_resource type="Resource" uid="uid://bl4qnrkh3kxdl" path="res://Resources/Components/Effects/Placement/PutIntoHand.tres" id="1_shfms"]
+[ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="1_wg1nw"]
+[ext_resource type="Resource" uid="uid://bkuxa81fpcmol" path="res://Resources/Components/Effects/Identifiers/Trainers/Supporter.tres" id="3_t0jka"]
+[ext_resource type="Resource" uid="uid://njjce7akxhr" path="res://Resources/Components/Effects/Identifiers/Trainers/Tool.tres" id="4_8bmva"]
+[ext_resource type="Resource" uid="uid://d2vm6chtedrum" path="res://Resources/Components/Effects/Identifiers/Energy/BasicEnergy.tres" id="4_v0orp"]
+[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="5_8bmva"]
+
+[resource]
+script = ExtResource("5_8bmva")
+side = 0
+where = 1
+based_on_side = 0
+based_on_slots = 0
+portion = -1
+how_many = Array[int]([1, 1, 1])
+of_this = Array[ExtResource("1_wg1nw")]([ExtResource("3_t0jka"), ExtResource("4_8bmva"), ExtResource("4_v0orp")])
+and_then = ExtResource("1_shfms")
+reveal = true
+metadata/_custom_type_script = "uid://cw3yr1k040kw7"

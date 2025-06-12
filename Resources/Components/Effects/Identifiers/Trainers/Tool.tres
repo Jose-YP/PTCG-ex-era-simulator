@@ -1,9 +1,10 @@
 [gd_resource type="Resource" script_class="Identifier" load_steps=2 format=3 uid="uid://njjce7akxhr"]
 
-[ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="1_7pguf"]
+[ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="1_wv2ue"]
 
 [resource]
-script = ExtResource("1_7pguf")
+script = ExtResource("1_wv2ue")
+description = "tool card"
 must_be_different = false
 broad_class = 2
 exactly = false

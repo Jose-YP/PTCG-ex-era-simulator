@@ -1,31 +1,15 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=13 format=3 uid="uid://w140efhwynxf"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=8 format=3 uid="uid://w140efhwynxf"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_7flfe"]
 [ext_resource type="Texture2D" uid="uid://qfejvhb2qqta" path="res://Art/Cards/14 ex Crystal Guardians/72.jpg" id="1_wsgdx"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_ejgou"]
-[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="3_wsgdx"]
-[ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="5_cbgp6"]
-[ext_resource type="Resource" uid="uid://bkuxa81fpcmol" path="res://Resources/Components/Effects/Identifiers/Trainers/IsSupporter.tres" id="6_ry3f1"]
-[ext_resource type="Resource" uid="uid://njjce7akxhr" path="res://Resources/Components/Effects/Identifiers/Trainers/IsTool.tres" id="7_n7rcf"]
-[ext_resource type="Resource" uid="uid://d2vm6chtedrum" path="res://Resources/Components/Effects/Identifiers/Energy/BasicEnergy.tres" id="8_fj2ty"]
+[ext_resource type="Resource" uid="uid://dbbymvfonstmf" path="res://Resources/Components/Effects/Search/CastawaySearch.tres" id="4_yi4v2"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="9_i4gtl"]
-
-[sub_resource type="Resource" id="Resource_ejgou"]
-script = ExtResource("3_wsgdx")
-side = 0
-where = 1
-based_on_side = 0
-based_on_slots = 0
-portion = -1
-how_many = Array[int]([1, 1, 1])
-of_this = Array[ExtResource("5_cbgp6")]([ExtResource("6_ry3f1"), ExtResource("7_n7rcf"), ExtResource("8_fj2ty")])
-reveal = true
-metadata/_custom_type_script = "uid://cw3yr1k040kw7"
 
 [sub_resource type="Resource" id="Resource_wsgdx"]
 script = ExtResource("2_ejgou")
 order = Array[int]([])
-search = SubResource("Resource_ejgou")
+search = ExtResource("4_yi4v2")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_e157p"]

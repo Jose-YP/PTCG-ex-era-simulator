@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://458wtrdldir5"]
+[gd_scene load_steps=8 format=3 uid="uid://xnr2qgqkvjyn"]
 
 [ext_resource type="StyleBox" uid="uid://duhmik1loeema" path="res://Themes/GBABox.tres" id="1_mxeim"]
 [ext_resource type="PackedScene" uid="uid://tobk6a46hgx" path="res://Scenes/UI/Lists/item_options_copy.tscn" id="4_06dqo"]
@@ -37,7 +37,7 @@ script/source = "extends Button
 
 var parent: Node
 var checking_card: Node
-var interaction: String
+var stack_act: Constants.STACK_ACT
 var allowed: bool = false
 
 #--------------------------------------
@@ -69,10 +69,10 @@ func not_allowed():
 	allowed = false
 	#disabled = true
 
-func allow_move_to(destination: String):
+func allow_move_to(destination: Constants.STACKS):
 	match destination:
-		\"Discard\": interaction = \"Discard\"
-		_: interaction = \"Tutor\"
+		Constants.STACKS.DISCARD: stack_act = Constants.STACK_ACT.DISCARD
+		_: stack_act = Constants.STACK_ACT.TUTOR
 
 #endregion
 #--------------------------------------
@@ -93,12 +93,12 @@ func show_options() -> Node:
 	option_Display.position = position + option_offset
 	option_Display.scale = Vector2(.05, .05)
 	option_Display.modulate = Color.TRANSPARENT
-	#option_Display.interaction = parent.interaction
+	#option_Display.stack_act = parent.stack_act
 	
 	if allowed:
-		option_Display.interaction = interaction
+		option_Display.stack_act = stack_act
 	else:
-		option_Display.interaction = \"Look\"
+		option_Display.stack_act = \"Look\"
 	
 	parent.add_child(option_Display)
 	option_Display.origin_button = self

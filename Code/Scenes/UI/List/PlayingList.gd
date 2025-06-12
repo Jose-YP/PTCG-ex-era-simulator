@@ -12,7 +12,7 @@ class_name PlayingList
 @export_flags("Basic", "Evolution", "Item",
 "Supporter","Stadium", "Tool", "TM", "RSM", "Fossil",
  "Energy") var allowed_as: int = 1
-@export_enum("Play", "Tutor", "Discard", "Look") var interaction: String = "Play"
+@export var stack_act: Constants.STACK_ACT = Constants.STACK_ACT.PLAY
 @export var stack: Constants.STACKS = Constants.STACKS.HAND
 
 @onready var identifier: RichTextLabel = %Identifier
@@ -53,9 +53,9 @@ func set_items():
 
 func is_allowed(button: Button) -> void:
 	print("List checking if ", button.card.name, " is allowed ", list[button.card])
-	button.interaction = interaction
-	match interaction:
-		"Play":
+	button.stack_act = stack_act
+	match stack_act:
+		Constants.STACK_ACT.PLAY:
 			var whitelisted: bool = white_list.find(button.card.name) != -1
 			var blacklisted: bool = black_list.find(button.card.name) != -1
 			#print(button.card_flags & allowed)
@@ -64,7 +64,7 @@ func is_allowed(button: Button) -> void:
 			else: button.not_allowed()
 		_:
 			if list[button.card]:
-				button.allow_move_to(interaction)
+				button.allow_move_to(stack_act)
 #endregion
 #--------------------------------------
 func reset_items():

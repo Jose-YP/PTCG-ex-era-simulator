@@ -5,14 +5,14 @@
 [ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="2_yqty7"]
 [ext_resource type="Resource" uid="uid://tynomqb1ld65" path="res://Resources/Components/Effects/Identifiers/Pokemon/IsPokemon.tres" id="3_flo2v"]
 [ext_resource type="PackedScene" uid="uid://dognokjork36j" path="res://Scenes/UI/UICollections/PlayerSide.tscn" id="3_ibwmv"]
-[ext_resource type="Resource" uid="uid://dk0v7dyi3r43m" path="res://Resources/Components/Effects/Identifiers/Trainers/IsTrainer.tres" id="4_6a1ot"]
+[ext_resource type="Resource" uid="uid://dk0v7dyi3r43m" path="res://Resources/Components/Effects/Identifiers/Trainers/Trainer.tres" id="4_6a1ot"]
 [ext_resource type="PackedScene" uid="uid://bdpxdnxpe1f32" path="res://Scenes/Testing/dummy.tscn" id="4_463lc"]
 [ext_resource type="PackedScene" uid="uid://cni7lmrv7r06c" path="res://Scenes/Main Game/Fundies.tscn" id="5_k0qov"]
 [ext_resource type="Resource" uid="uid://366upf662brq" path="res://Resources/Components/Effects/Identifiers/Energy/IsEnergy.tres" id="5_pulol"]
 [ext_resource type="Resource" uid="uid://ccj6n5o2yaoev" path="res://Resources/Components/Effects/Identifiers/Pokemon/TeamMagma.tres" id="6_5pq6o"]
 [ext_resource type="Resource" uid="uid://bleo7p56u5k1f" path="res://Resources/Decks/TestDeck.tres" id="7_441s3"]
-[ext_resource type="Resource" uid="uid://bwqpkxc8m63nj" path="res://Resources/Components/Effects/Identifiers/Trainers/IsSpecialEnergy.tres" id="7_ww7ww"]
-[ext_resource type="Resource" uid="uid://bkuxa81fpcmol" path="res://Resources/Components/Effects/Identifiers/Trainers/IsSupporter.tres" id="8_owp07"]
+[ext_resource type="Resource" uid="uid://bwqpkxc8m63nj" path="res://Resources/Components/Effects/Identifiers/Energy/SpecialEnergy.tres" id="7_ww7ww"]
+[ext_resource type="Resource" uid="uid://bkuxa81fpcmol" path="res://Resources/Components/Effects/Identifiers/Trainers/Supporter.tres" id="8_owp07"]
 [ext_resource type="Resource" uid="uid://dpo3quamvikcu" path="res://Resources/Components/Effects/Identifiers/Pokemon/IsEvolution.tres" id="9_fukg8"]
 [ext_resource type="Resource" uid="uid://fmsyeknhg72m" path="res://Resources/Components/Effects/Identifiers/Pokemon/EvolvesFromPlayed.tres" id="10_qtpl6"]
 [ext_resource type="Resource" uid="uid://bsrtmv3udqjav" path="res://Resources/Components/Effects/Identifiers/Pokemon/BasicPokemon.tres" id="11_etycu"]
@@ -29,6 +29,7 @@
 
 [sub_resource type="Resource" id="Resource_sreaw"]
 script = ExtResource("2_yqty7")
+description = ""
 must_be_different = false
 broad_class = 1
 exactly = false
@@ -45,6 +46,7 @@ metadata/_custom_type_script = "uid://uplawvwcwl8y"
 
 [sub_resource type="Resource" id="Resource_n56ka"]
 script = ExtResource("2_yqty7")
+description = ""
 must_be_different = false
 broad_class = 4
 exactly = false
@@ -61,6 +63,7 @@ metadata/_custom_type_script = "uid://uplawvwcwl8y"
 
 [sub_resource type="Resource" id="Resource_rtwb1"]
 script = ExtResource("2_yqty7")
+description = ""
 must_be_different = false
 broad_class = 2
 exactly = false

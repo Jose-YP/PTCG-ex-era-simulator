@@ -16,7 +16,7 @@ class_name Deck_Manipulator
 @onready var arrays: Node = $Arrays
 
 #signal show_list(can_select: bool, message: String, looking_at: String, list: Array[Base_Card])
-signal update_resources()
+#signal update_resources()
 
 #var reveal_stack: Array[Base_Card]
 #var usable_deck: Array[Base_Card] = []
@@ -63,7 +63,7 @@ func check_starting():
 	print(arrays.hand)
 	print(hand_dict)
 	if can_start:
-		spawn_list(true, hand_dict, "Play", start_string)
+		spawn_list(true, hand_dict, Constants.STACK_ACT.PLAY, start_string)
 	else:
 		#If you can't start with current hand, mulligan
 		#record mulligans for later
@@ -153,7 +153,8 @@ func get_list(which: Constants.STACKS) -> Dictionary[Base_Card, bool]:
 	return dict
 
 func spawn_list(monitor_side: bool, list: Dictionary[Base_Card, bool],\
- interaction: String = "Look", instructions: String = "", display_text: String = "HAND"):
+ stack_act: Constants.STACK_ACT = Constants.STACK_ACT.LOOK,\
+ instructions: String = "", display_text: String = "HAND"):
 	var spawn_from: Vector2
 	var which: Constants.STACKS
 	
@@ -174,11 +175,13 @@ func spawn_list(monitor_side: bool, list: Dictionary[Base_Card, bool],\
 			_:
 				push_error("Can't find list specified: ", which)
 	
-	instantiate_list(list, interaction, which, display_text, instructions, spawn_from)
+	instantiate_list(list, stack_act, which, display_text, instructions, spawn_from)
 
 func instantiate_list(specified_list: Dictionary[Base_Card, bool],\
- interaction: String = "Look", which: Constants.STACKS = Constants.STACKS.HAND\
- ,display_text: String = "", using_string: String = "",  spawn_from: Vector2 = Vector2.ZERO):
+ stack_act: Constants.STACK_ACT = Constants.STACK_ACT.LOOK,\
+ which: Constants.STACKS = Constants.STACKS.HAND,\
+ display_text: String = "", using_string: String = "",\
+ spawn_from: Vector2 = Vector2.ZERO):
 	var hand_list: PackedScene = Constants.playing_list
 	var new_node = hand_list.instantiate()
 	
@@ -187,7 +190,7 @@ func instantiate_list(specified_list: Dictionary[Base_Card, bool],\
 	new_node.display_text = display_text
 	new_node.instruction_text = using_string
 	new_node.old_posiiton = spawn_from
-	new_node.interaction = interaction
+	new_node.stack_act = stack_act
 	new_node.stack = which
 	new_node.allowed_as = allowed_play
 	add_sibling(new_node)

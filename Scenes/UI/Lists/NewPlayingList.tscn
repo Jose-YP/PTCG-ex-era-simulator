@@ -60,16 +60,16 @@ layout_mode = 2
 dragging_node = NodePath("../../../../..")
 based_on = NodePath("..")
 
-[node name="MinimizeButton" parent="PanelContainer/VBoxContainer/Header" node_paths=PackedStringArray("shrinkNodes", "hideNodes") instance=ExtResource("14_fhr5r")]
+[node name="MinimizeButton" parent="PanelContainer/VBoxContainer/Header" instance=ExtResource("14_fhr5r")]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
-shrinkNodes = [NodePath("../../.."), NodePath("../../ScrollBox")]
-hideNodes = [NodePath("../../IdentifierPanel"), NodePath("../../IdentifierPanel/Movable2")]
+script = null
 
 [node name="CloseButton" parent="PanelContainer/VBoxContainer/Header" instance=ExtResource("13_xvynf")]
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
+script = null
 
 [node name="ScrollBox" type="ScrollContainer" parent="PanelContainer/VBoxContainer"]
 unique_name_in_owner = true

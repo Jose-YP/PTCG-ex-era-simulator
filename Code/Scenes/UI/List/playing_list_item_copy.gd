@@ -2,7 +2,7 @@ extends Button
 
 @export var card: Base_Card
 @export var option_offset: Vector2 = Vector2(30, 100)
-#@export var option_popup: PackedScene
+@export var option_popup: PackedScene
 @export_flags("Basic", "Evolution", "Item",
 "Supporter", "Stadium", "Tool", "TM", "RSM", "Fossil",
  "Energy") var card_flags: int = 0
@@ -11,7 +11,7 @@ extends Button
 
 var parent: Node
 var checking_card: Node
-var interaction: String
+var stack_act: Constants.STACK_ACT
 var allowed: bool = false
 
 #--------------------------------------
@@ -43,10 +43,10 @@ func not_allowed():
 	allowed = false
 	#disabled = true
 
-func allow_move_to(destination: String):
+func allow_move_to(destination: Constants.STACKS):
 	match destination:
-		"Discard": interaction = "Discard"
-		_: interaction = "Tutor"
+		Constants.STACKS.DISCARD: stack_act = Constants.STACK_ACT.DISCARD
+		_: stack_act = Constants.STACK_ACT.TUTOR
 
 #endregion
 #--------------------------------------
@@ -67,12 +67,12 @@ func show_options() -> Node:
 	option_Display.position = position + option_offset
 	option_Display.scale = Vector2(.05, .05)
 	option_Display.modulate = Color.TRANSPARENT
-	#option_Display.interaction = parent.interaction
+	#option_Display.stack_act = parent.stack_act
 	
 	if allowed:
-		option_Display.interaction = interaction
+		option_Display.stack_act = stack_act
 	else:
-		option_Display.interaction = "Look"
+		option_Display.stack_act = "Look"
 	
 	parent.add_child(option_Display)
 	option_Display.origin_button = self
@@ -92,9 +92,9 @@ func show_card() -> void:
 			card_display = load("res://Scenes/UI/CardDisplay/PokemonCard.tscn").instantiate()
 			card_display.checking = true
 		"Trainer":
-			card_display = load("res://Scenes/UI/CardDisplay/TrainerCard.tscn").instantiate()
+			card_display = Constants.trainer_card.instantiate()
 		"Energy":
-			card_display = load("res://Scenes/UI/CardDisplay/EnergyCard.tscn").instantiate()
+			card_display = Constants.energy_card.instantiate()
 	
 	card_display.card = card
 	card_display.top_level = true

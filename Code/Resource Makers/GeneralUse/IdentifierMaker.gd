@@ -1,6 +1,8 @@
 extends Resource
 class_name Identifier
 
+@export_multiline var description: String
+
 @export_category("Specific Categories")
 ##If this is true, remember what has been searched
 @export var must_be_different: bool = false
