@@ -15,6 +15,7 @@ class_name PlayingList
 @export var stack_act: Constants.STACK_ACT = Constants.STACK_ACT.PLAY
 @export var stack: Constants.STACKS = Constants.STACKS.HAND
 
+@onready var tutor_box: Tutor_Box = %TutorBox
 @onready var identifier: RichTextLabel = %Identifier
 @onready var instructions: RichTextLabel = %Instructions
 @onready var old_size: Vector2 = size
@@ -24,7 +25,7 @@ var display_text: String = ""
 var instruction_text: String = ""
 var black_list: Array[String] = []
 var white_list: Array[String] = []
-var old_posiiton: Vector2
+var old_pos: Vector2
 var display: Node
 var options: Node
 var on_card: bool = false
@@ -37,6 +38,10 @@ var on_card: bool = false
 func _ready():
 	identifier.append_text(display_text)
 	instructions.append_text(instruction_text)
+	
+	if stack_act == Constants.STACK_ACT.TUTOR or stack_act == Constants.STACK_ACT.DISCARD:
+		tutor_box.show()
+	else: tutor_box.set_up_tutor()
 	
 	set_items()
 
@@ -105,7 +110,7 @@ func disapear():
 	
 	disapear_tween.tween_property(self, "modulate", Color.TRANSPARENT, .1)
 	disapear_tween.tween_property(self, "scale", Vector2(.1,.1), .1)
-	disapear_tween.tween_property(self, "global_position", old_posiiton, .1)
+	disapear_tween.tween_property(self, "global_position", old_pos, .1)
 	
 	await disapear_tween.finished
 	

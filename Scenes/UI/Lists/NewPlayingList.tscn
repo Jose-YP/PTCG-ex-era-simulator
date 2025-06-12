@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://f4m1ofpicse4"]
+[gd_scene load_steps=10 format=3 uid="uid://f4m1ofpicse4"]
 
 [ext_resource type="Theme" uid="uid://bfw6ylcttychc" path="res://Themes/AverageButton.tres" id="1_j5ysj"]
 [ext_resource type="Script" uid="uid://dkqmky7i7ibak" path="res://Code/Scenes/UI/List/PlayingList.gd" id="1_sw67d"]
 [ext_resource type="PackedScene" uid="uid://dguolqe6u3fe3" path="res://Scenes/UI/Lists/PlayingListItem_copy.tscn" id="3_4g7pj"]
+[ext_resource type="PackedScene" uid="uid://bgjvymhyt234g" path="res://Scenes/UI/Lists/tutor_box.tscn" id="4_0bxgv"]
 [ext_resource type="StyleBox" uid="uid://bvesf3hjv2bsl" path="res://Themes/GBADragBox.tres" id="13_8wubv"]
 [ext_resource type="PackedScene" uid="uid://c5d081uywglg" path="res://Scenes/UI/UIComponents/close_button.tscn" id="13_xvynf"]
 [ext_resource type="PackedScene" uid="uid://dmhjt2wuanymf" path="res://Scenes/UI/UIComponents/minimize_button.tscn" id="14_fhr5r"]
@@ -28,50 +29,53 @@ script = ExtResource("1_sw67d")
 debug = true
 list_item = ExtResource("3_4g7pj")
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 0
-offset_right = 400.0
-offset_bottom = 44.0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/PanelContainer"]
 clip_contents = true
 layout_mode = 2
 
-[node name="Header" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+[node name="Header" type="HBoxContainer" parent="HBoxContainer/PanelContainer/VBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(420, 0)
 layout_mode = 2
 alignment = 1
 
-[node name="IdentifierPanel" type="PanelContainer" parent="PanelContainer/VBoxContainer/Header"]
+[node name="IdentifierPanel" type="PanelContainer" parent="HBoxContainer/PanelContainer/VBoxContainer/Header"]
 custom_minimum_size = Vector2(345, 40)
 layout_mode = 2
 theme_override_styles/panel = ExtResource("13_8wubv")
 
-[node name="Identifier" type="RichTextLabel" parent="PanelContainer/VBoxContainer/Header/IdentifierPanel"]
+[node name="Identifier" type="RichTextLabel" parent="HBoxContainer/PanelContainer/VBoxContainer/Header/IdentifierPanel"]
 unique_name_in_owner = true
 layout_mode = 2
 bbcode_enabled = true
 text = "[center]"
 fit_content = true
 
-[node name="Movable" parent="PanelContainer/VBoxContainer/Header/IdentifierPanel" node_paths=PackedStringArray("dragging_node", "based_on") instance=ExtResource("14_mnu8a")]
+[node name="Movable" parent="HBoxContainer/PanelContainer/VBoxContainer/Header/IdentifierPanel" node_paths=PackedStringArray("dragging_node", "based_on") instance=ExtResource("14_mnu8a")]
 layout_mode = 2
-dragging_node = NodePath("../../../../..")
+dragging_node = NodePath("../../../../../..")
 based_on = NodePath("..")
 
-[node name="MinimizeButton" parent="PanelContainer/VBoxContainer/Header" instance=ExtResource("14_fhr5r")]
+[node name="MinimizeButton" parent="HBoxContainer/PanelContainer/VBoxContainer/Header" instance=ExtResource("14_fhr5r")]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
 script = null
 
-[node name="CloseButton" parent="PanelContainer/VBoxContainer/Header" instance=ExtResource("13_xvynf")]
+[node name="CloseButton" parent="HBoxContainer/PanelContainer/VBoxContainer/Header" instance=ExtResource("13_xvynf")]
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
 script = null
 
-[node name="ScrollBox" type="ScrollContainer" parent="PanelContainer/VBoxContainer"]
+[node name="ScrollBox" type="ScrollContainer" parent="HBoxContainer/PanelContainer/VBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(420, 500)
 layout_mode = 2
@@ -79,47 +83,54 @@ size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_1dsg7")
 follow_focus = true
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer/VBoxContainer/ScrollBox"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer/PanelContainer/VBoxContainer/ScrollBox"]
 layout_mode = 2
 alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer/ScrollBox/VBoxContainer2"]
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/PanelContainer/VBoxContainer/ScrollBox/VBoxContainer2"]
 layout_mode = 2
 theme_override_constants/margin_bottom = 15
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/ScrollBox/VBoxContainer2"]
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/PanelContainer/VBoxContainer/ScrollBox/VBoxContainer2"]
 layout_mode = 2
 alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer/ScrollBox/VBoxContainer2/HBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/PanelContainer/VBoxContainer/ScrollBox/VBoxContainer2/HBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_right = 5
 
-[node name="CardList" type="VBoxContainer" parent="PanelContainer/VBoxContainer/ScrollBox/VBoxContainer2/HBoxContainer"]
+[node name="CardList" type="VBoxContainer" parent="HBoxContainer/PanelContainer/VBoxContainer/ScrollBox/VBoxContainer2/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/separation = 8
 
-[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/VBoxContainer/ScrollBox/VBoxContainer2"]
+[node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer/PanelContainer/VBoxContainer/ScrollBox/VBoxContainer2"]
 layout_mode = 2
 theme_override_constants/margin_bottom = 15
 
-[node name="IdentifierPanel" type="PanelContainer" parent="PanelContainer/VBoxContainer"]
+[node name="IdentifierPanel" type="PanelContainer" parent="HBoxContainer/PanelContainer/VBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(400, 40)
 layout_mode = 2
 theme_override_styles/panel = ExtResource("13_8wubv")
 
-[node name="Instructions" type="RichTextLabel" parent="PanelContainer/VBoxContainer/IdentifierPanel"]
+[node name="Instructions" type="RichTextLabel" parent="HBoxContainer/PanelContainer/VBoxContainer/IdentifierPanel"]
 unique_name_in_owner = true
 layout_mode = 2
 bbcode_enabled = true
 text = "[center]"
 fit_content = true
 
-[node name="Movable2" parent="PanelContainer/VBoxContainer/IdentifierPanel" node_paths=PackedStringArray("dragging_node", "based_on") instance=ExtResource("14_mnu8a")]
+[node name="Movable2" parent="HBoxContainer/PanelContainer/VBoxContainer/IdentifierPanel" node_paths=PackedStringArray("dragging_node", "based_on") instance=ExtResource("14_mnu8a")]
 layout_mode = 2
-dragging_node = NodePath("../../../..")
+dragging_node = NodePath("../../../../..")
 based_on = NodePath("..")
 
-[connection signal="pressed" from="PanelContainer/VBoxContainer/Header/MinimizeButton" to="." method="_on_minimize_button_pressed"]
+[node name="TutorBox" parent="HBoxContainer" node_paths=PackedStringArray("connected_list") instance=ExtResource("4_0bxgv")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+connected_list = NodePath("../..")
+start_text = "Add "
+
+[connection signal="pressed" from="HBoxContainer/PanelContainer/VBoxContainer/Header/MinimizeButton" to="." method="_on_minimize_button_pressed"]

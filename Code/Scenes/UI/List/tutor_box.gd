@@ -1,4 +1,5 @@
 extends Control
+class_name Tutor_Box
 
 @export var connected_list: PlayingList
 @export var search: Search
@@ -15,9 +16,6 @@ var based_on: Array[PokeSlot]
 var current_tutor: Array[Base_Card]
 var max_tutor: int = 0
 var stack_size: int = 0
-
-func _ready() -> void:
-	set_up_tutor()
 
 func set_up_tutor():
 	var text: String = start_text

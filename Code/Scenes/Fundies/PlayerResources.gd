@@ -62,7 +62,8 @@ func check_starting():
 	print(arrays.hand)
 	print(hand_dict)
 	if can_start:
-		spawn_list(true, hand_dict, Constants.STACK_ACT.PLAY, start_string)
+		instantiate_list(hand_dict, Constants.STACKS.HAND,
+		 Constants.STACK_ACT.PLAY, start_string)
 	else:
 		#If you can't start with current hand, mulligan
 		#record mulligans for later
@@ -143,52 +144,37 @@ func get_list(which: Constants.STACKS) -> Dictionary[Base_Card, bool]:
 	
 	for card in arrays.get_array(which):
 		var flags = Conversions.get_card_flags(card)
-		if flags & allowed_play:
-			
-			
-			dict[card] = true
-		else: dict[card] = false
+		dict[card] = flags && allowed_play
 	
 	return dict
 
-func spawn_list(monitor_side: bool, list: Dictionary[Base_Card, bool],\
- stack_act: Constants.STACK_ACT = Constants.STACK_ACT.LOOK,\
- instructions: String = "", display_text: String = "HAND"):
-	var spawn_from: Vector2
-	var which: Constants.STACKS
-	
-	if monitor_side:
-		match display_text:
-			"HAND":
-				which = Constants.STACKS.HAND
-				spawn_from = fundies.player_side.non_mon.stacks[Constants.STACKS.HAND].global_position
-			"DECK":
-				which = Constants.STACKS.DECK
-				spawn_from = fundies.player_side.non_mon.stacks[Constants.STACKS.DECK].global_position
-			"DISCARD PILE":
-				which = Constants.STACKS.DISCARD
-				spawn_from = fundies.player_side.non_mon.stacks[Constants.STACKS.DISCARD].global_position
-			"PRIZE CARDS":
-				which = Constants.STACKS.PRIZE
-				spawn_from = fundies.player_side.non_mon.stacks[Constants.STACKS.PRIZE].global_position
-			_:
-				push_error("Can't find list specified: ", which)
-	
-	instantiate_list(list, stack_act, which, display_text, instructions, spawn_from)
+func spawn_list(monitor_side: bool, which: Constants.STACKS, stack_act: Constants.STACK_ACT):
+	var instructions: String
 
-func instantiate_list(specified_list: Dictionary[Base_Card, bool],\
- stack_act: Constants.STACK_ACT = Constants.STACK_ACT.LOOK,\
- which: Constants.STACKS = Constants.STACKS.HAND,\
- display_text: String = "", using_string: String = "",\
- spawn_from: Vector2 = Vector2.ZERO):
+	match stack_act:
+		Constants.STACK_ACT.PLAY: instructions = "Choose which allowed cards to play"
+		Constants.STACK_ACT.TUTOR: instructions = "Choose which allowed cards to add"
+		Constants.STACK_ACT.DISCARD: instructions = "Choose which allowed cards to discard"
+		Constants.STACK_ACT.LOOK: instructions = "Only allowed to check cards"
+		_: printerr(stack_act, " not apart of stack act enum")
+	
+	instantiate_list(get_list(which), which, stack_act, instructions)
+
+func instantiate_list(specified_list: Dictionary[Base_Card, bool], which: Constants.STACKS,\
+ stack_act: Constants.STACK_ACT = Constants.STACK_ACT.LOOK, instructions: String = ""):
 	var hand_list: PackedScene = Constants.playing_list
 	var new_node = hand_list.instantiate()
 	
+	match which:
+		Constants.STACKS.HAND: new_node.display_text = "HAND"
+		Constants.STACKS.DECK: new_node.display_text = "DECK"
+		Constants.STACKS.DISCARD: new_node.display_text = "DISCARD"
+		Constants.STACKS.PRIZE: new_node.display_text = "PRIZE"
+	
 	new_node.list = specified_list
 	new_node.top_level = true
-	new_node.display_text = display_text
-	new_node.instruction_text = using_string
-	new_node.old_posiiton = spawn_from
+	new_node.instruction_text = instructions
+	new_node.old_pos = fundies.player_side.non_mon.stacks[which].global_position
 	new_node.stack_act = stack_act
 	new_node.stack = which
 	new_node.allowed_as = allowed_play
