@@ -1,6 +1,7 @@
 @icon("res://Art/ProjectSpecific/alpha.png")
 extends Control
 
+@export var searches: Array[Search]
 @export var search_identifiers: Array[Identifier]
 @export var slot_asks: Array[SlotAsk]
 

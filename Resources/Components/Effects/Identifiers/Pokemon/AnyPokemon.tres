@@ -4,6 +4,7 @@
 
 [resource]
 script = ExtResource("1_ipo0q")
+description = ""
 must_be_different = false
 broad_class = 1
 exactly = false
@@ -11,9 +12,10 @@ contains = ""
 type = 511
 evolves_from = false
 rare_candy = false
-poke_class = 15
+inclusive_class = true
+poke_class = 31
 owner = 15
 stage = 7
-trainer_classes = null
-energy_class = null
+trainer_classes = 0
+energy_class = 3
 metadata/_custom_type_script = "uid://uplawvwcwl8y"

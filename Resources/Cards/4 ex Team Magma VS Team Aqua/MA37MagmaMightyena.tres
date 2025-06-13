@@ -38,6 +38,7 @@ fail_effect = ExtResource("4_it5rv")
 
 [sub_resource type="Resource" id="Resource_tccqv"]
 script = ExtResource("8_kronk")
+description = ""
 must_be_different = false
 broad_class = 1
 exactly = false

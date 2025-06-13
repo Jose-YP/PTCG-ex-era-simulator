@@ -19,13 +19,14 @@ class_name Identifier
 @export var evolves_from: bool = false
 ##This one is special [NOT IMPLEMENTED]
 @export var rare_candy: bool = false
+@export var inclusive_class: bool = true
 @export_flags("non-ex", "ex", "baby", "delta", "star") var poke_class: int = 0
 @export_flags("Aqua", "Magma", "Rocket", "Holon") var owner: int = 0
 @export_flags("Basic", "Stage 1", "Stage 2") var stage: int = 0
 
 @export_group("Trainer Categories")
 @export_flags("Item", "Supporter",
-"Tool", "Stadium", "TM") var trainer_classes: int = 0
+"Tool", "Stadium", "TM", "RSM") var trainer_classes: int = 0
 
 @export_group("Energy Categories")
 @export_flags("Basic", "Special") var energy_class: int = 3
@@ -48,21 +49,23 @@ func identifier_bool(card: Base_Card, based_on: Array[PokeSlot]) -> bool:
 		if card.trainer_properties:
 			if trainer_classes != 0:
 				print(card.name, " is ", card.trainer_properties.considered)
-				var tr_class: int = 2 ** 5
+				var tr_class: int = 0
 				match card.trainer_properties.considered:
 					"Item":
-						tr_class = 2 ** 0
+						tr_class += 2 ** 0
 					"Supporter":
-						tr_class = 2 ** 1
+						tr_class += 2 ** 1
 					"Tool":
-						tr_class = 2 ** 2
+						tr_class += 2 ** 2
 					"Stadium":
-						tr_class = 2 ** 3
+						tr_class += 2 ** 3
 					"TM":
-						tr_class = 2 ** 4
+						tr_class += 2 ** 4
+					"RSM":
+						tr_class += 2 ** 5
 				
-				print("Now is this allowed? ", trainer_classes & tr_class)
-				return trainer_classes & tr_class
+				print("Now is this allowed? ", trainer_classes && tr_class)
+				return trainer_classes && tr_class
 			else:
 				print(" I don't care what this is just say it's good enogh")
 				return true

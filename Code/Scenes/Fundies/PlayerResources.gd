@@ -195,7 +195,7 @@ func show_reveal_stack(reveal_slot):
 
 #--------------------------------------
 #region TUTORING
-func search_array(search: Search, based_on: Array[PokeSlot]):
+func search_array(search: Search, based_on: Array[PokeSlot]) -> Array[Dictionary]:
 	var from: Array[Base_Card] = arrays.get_array(search.where)
 	var search_results: Array[Dictionary]
 	for tutor in search.of_this:

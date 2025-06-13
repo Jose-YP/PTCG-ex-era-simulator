@@ -1,0 +1,76 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=11 format=3 uid="uid://dvpjo4nwfa1xi"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_6ptis"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_6u46t"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_wukec"]
+[ext_resource type="Resource" uid="uid://knu14juippx8" path="res://Resources/Components/Effects/Search/SupporterSearch.tres" id="3_8d8s2"]
+[ext_resource type="Script" uid="uid://b58015mafcw2v" path="res://Code/Resource Makers/PokemonSpecific/PowerMaker.gd" id="4_e2v34"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_3nwq3"]
+
+[sub_resource type="Resource" id="Resource_rxnyb"]
+script = ExtResource("1_6u46t")
+name = "Surf"
+description = ""
+grass_cost = 0
+fire_cost = 0
+water_cost = 1
+lightning_cost = 0
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 1
+defender_properties = 0
+ignore_condition = 0
+prompt_reliant = false
+initial_main_DMG = 30
+conditional_self_dmg = false
+self_damage = 0
+modifier = 0
+both_active = false
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_uk2x1"]
+script = ExtResource("2_wukec")
+order = Array[int]([])
+search = ExtResource("3_8d8s2")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_e5cvy"]
+script = ExtResource("4_e2v34")
+name = "Support Navigation"
+description = "Once during your turn, when you put Lapras onto your Bench from your hand, you may search your deck for a Supporter card, show it to your opponent, and put it into your hand. Shuffle your deck afterward."
+affected_by_condition = true
+active = false
+when_condition = "Added"
+when_position = 3
+how_often = 0
+effect = SubResource("Resource_uk2x1")
+metadata/_custom_type_script = "uid://b58015mafcw2v"
+
+[sub_resource type="Resource" id="Resource_daekk"]
+script = ExtResource("5_3nwq3")
+HP = 80
+retreat = 2
+power = SubResource("Resource_e5cvy")
+attacks = Array[ExtResource("1_6u46t")]([SubResource("Resource_rxnyb")])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 1
+owner = 0
+type = 4
+weak = 8
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_6ptis")
+name = "Lapras"
+illustrator = " Kagemaru Himeno"
+number = 8
+rarity = 3
+expansion = 11
+categories = 1
+pokemon_properties = SubResource("Resource_daekk")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

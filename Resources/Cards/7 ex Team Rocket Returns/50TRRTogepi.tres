@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Base_Card" load_steps=2 format=3 uid="uid://cg7qhfrgw5lmh"]
 
-[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_s6osv"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_s6osv"]
 
 [resource]
 script = ExtResource("1_s6osv")
@@ -8,6 +8,6 @@ name = ""
 illustrator = ""
 number = 0
 rarity = 0
-expansion = 0
+expansion = 6
 categories = 0
 fossil = false

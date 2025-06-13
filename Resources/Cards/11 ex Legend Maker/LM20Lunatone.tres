@@ -1,0 +1,182 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=20 format=3 uid="uid://cdlsj0xlgu0n"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_c0dsq"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_tp1gn"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_ncs6m"]
+[ext_resource type="Resource" uid="uid://7bruqpkp3r4x" path="res://Resources/Components/Effects/Search/TrainerNotSupport.tres" id="3_k8vd7"]
+[ext_resource type="Resource" uid="uid://lfhu3xyr0wpo" path="res://Resources/Components/Effects/Prompts/IfFlipHeads.tres" id="4_gbcfq"]
+[ext_resource type="Resource" uid="uid://6xmw13js5xd3" path="res://Resources/Components/Effects/Conditions/BasicParalyze.tres" id="5_f6d3x"]
+[ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="6_tqtg3"]
+[ext_resource type="Script" uid="uid://c0ishgbxk63dg" path="res://Code/Resource Makers/EffectSpecific/DisableMaker.gd" id="7_65xpm"]
+[ext_resource type="Script" uid="uid://b2tlqpng7fq25" path="res://Code/Resource Makers/PokemonSpecific/BodyMaker.gd" id="8_oftqn"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="9_iq553"]
+
+[sub_resource type="Resource" id="Resource_r8rjj"]
+script = ExtResource("2_ncs6m")
+order = Array[int]([])
+search = ExtResource("3_k8vd7")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_0l0mh"]
+script = ExtResource("1_tp1gn")
+name = "Moon Guidance"
+description = " Search your deck for a Trainer card (excluding Supporter cards), show it to your opponent, and put it into your hand. Shuffle your deck afterward. "
+grass_cost = 0
+fire_cost = 0
+water_cost = 0
+lightning_cost = 0
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 1
+defender_properties = 0
+ignore_condition = 0
+prompt_reliant = false
+initial_main_DMG = 0
+conditional_self_dmg = false
+self_damage = 0
+modifier = 0
+both_active = false
+always_effect = SubResource("Resource_r8rjj")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_hjkuo"]
+script = ExtResource("1_tp1gn")
+name = "Psyshock"
+description = " Flip a coin. If heads, the Defending Pokémon is now Paralyzed. "
+grass_cost = 0
+fire_cost = 0
+water_cost = 0
+lightning_cost = 0
+psychic_cost = 1
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 0
+defender_properties = 0
+ignore_condition = 0
+prompt_reliant = false
+initial_main_DMG = 10
+conditional_self_dmg = false
+self_damage = 0
+modifier = 0
+both_active = false
+prompt = ExtResource("4_gbcfq")
+success_effect = ExtResource("5_f6d3x")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_qafc1"]
+script = ExtResource("6_tqtg3")
+side_target = 4
+slot_target = 4
+specifically = Array[String](["Solrock"])
+comparison_type = 1
+max_hp = -10
+damage_taken = -10
+retreat_cost = -1
+energy_attatched = -1
+knocked_out = false
+condition = 0
+location = 0
+tool_attatched = false
+stage = 7
+rare_candy = false
+class_inclusive = true
+pokemon_class = 63
+owner_inclusive = true
+pokemon_owner = 15
+bench_size = -1
+type_inclusive = true
+type = 1023
+energy_class = 2
+type_size = -1
+metadata/_custom_type_script = "uid://mkjynqda7q5g"
+
+[sub_resource type="Resource" id="Resource_05a84"]
+script = ExtResource("6_tqtg3")
+side_target = 3
+slot_target = 4
+specifically = Array[String]([])
+comparison_type = 1
+max_hp = -10
+damage_taken = -10
+retreat_cost = -1
+energy_attatched = -1
+knocked_out = false
+condition = 0
+location = 0
+tool_attatched = false
+stage = 7
+rare_candy = false
+class_inclusive = false
+pokemon_class = 2
+owner_inclusive = true
+pokemon_owner = 15
+bench_size = -1
+type_inclusive = true
+type = 514
+energy_class = 2
+type_size = -1
+metadata/_custom_type_script = "uid://mkjynqda7q5g"
+
+[sub_resource type="Resource" id="Resource_5ld0q"]
+script = ExtResource("7_65xpm")
+side = 2
+slot = 4
+ask = SubResource("Resource_05a84")
+duration = -1
+no_weakness = false
+no_resistance = false
+instead_of_damage = false
+do_nothing = false
+attack = 0
+power = 2
+retreat_duration = 1
+disable_retreat = false
+metadata/_custom_type_script = "uid://c0ishgbxk63dg"
+
+[sub_resource type="Resource" id="Resource_wpc3u"]
+script = ExtResource("2_ncs6m")
+order = Array[int]([])
+disable = SubResource("Resource_5ld0q")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_gqqt8"]
+script = ExtResource("8_oftqn")
+when_active = false
+name = "Sol Shade"
+description = " As long as you have Solrock in play, each player's {Fire} Pokémon (excluding Pokémon-ex) can't use any Poké-Powers. "
+ask = SubResource("Resource_qafc1")
+affected_by_condition = false
+attatched_energy = 0
+energy_ammount = 1
+effect = SubResource("Resource_wpc3u")
+metadata/_custom_type_script = "uid://b2tlqpng7fq25"
+
+[sub_resource type="Resource" id="Resource_15uuj"]
+script = ExtResource("9_iq553")
+HP = 60
+retreat = 1
+body = SubResource("Resource_gqqt8")
+attacks = Array[ExtResource("1_tp1gn")]([SubResource("Resource_0l0mh"), SubResource("Resource_hjkuo")])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 1
+owner = 0
+type = 16
+weak = 16
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_c0dsq")
+name = "Lunatone"
+illustrator = " Hisao Nakamura"
+number = 20
+rarity = 2
+expansion = 11
+categories = 1
+pokemon_properties = SubResource("Resource_15uuj")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

@@ -44,7 +44,6 @@ Color.GRAY, Color.WHITE_SMOKE]
 
 #--------------------------------------
 #region SCENES
-const playing_list_item: PackedScene = preload("res://Scenes/UI/Lists/PlayingListItem.tscn")
 const playing_list: PackedScene = preload("res://Scenes/UI/Lists/NewPlayingList.tscn")
 const attack_list_comp: PackedScene = preload("res://Scenes/UI/Lists/attack_scroll_box.tscn")
 #const attack_list = preload("res://Scenes/UI/Lists/attack_list.tscn")

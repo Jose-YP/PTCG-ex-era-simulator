@@ -7,6 +7,7 @@ class_name SlotAsk
 ##Which side to pay attention to
 @export var side_target: Constants.SIDES = Constants.SIDES.BOTH
 @export var slot_target: Constants.SLOTS = Constants.SLOTS.ALL
+@export var specifically: Array[String] = []
 ##-10 means don't look at this var, 0 means must be undamaged, the rest mean x or more
 @export_enum("LessEq", "GreaterEq") var comparison_type: int = 1
 @export_range(-10,200,10) var max_hp: int = -10

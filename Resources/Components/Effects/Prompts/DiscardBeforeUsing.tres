@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="PromptAsk" load_steps=6 format=3 uid="uid://btl7v4wchm2j4"]
+
+[ext_resource type="Script" uid="uid://8sh5p3leflla" path="res://Code/Resource Makers/EffectSpecific/CardDisruptMaker.gd" id="1_5gloe"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_p7rfr"]
+[ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="3_hjnbi"]
+
+[sub_resource type="Resource" id="Resource_05uh2"]
+script = ExtResource("1_5gloe")
+send = 0
+bottom_of_stack = false
+send_to = 2
+card_ammount = 1
+reveal = false
+side = 4
+disrupting = 1
+pokemon_disrupt = 0
+metadata/_custom_type_script = "uid://8sh5p3leflla"
+
+[sub_resource type="Resource" id="Resource_xteki"]
+script = ExtResource("2_p7rfr")
+order = Array[int]([])
+card_disrupt = SubResource("Resource_05uh2")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[resource]
+script = ExtResource("3_hjnbi")
+formal_ask = false
+ask_string = ""
+side = 1
+choose_location = 0
+effect = SubResource("Resource_xteki")
+metadata/_custom_type_script = "uid://b85jmc7067bjc"

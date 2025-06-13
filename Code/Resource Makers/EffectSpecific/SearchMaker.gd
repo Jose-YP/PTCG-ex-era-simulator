@@ -2,8 +2,8 @@ extends Resource
 class_name Search
 
 ##Which section will the player search (yes there is defender searching)
-@export var side: Constants.SIDES
-@export var where: Constants.STACKS
+@export var side: Constants.SIDES = Constants.SIDES.SOURCE
+@export var where: Constants.STACKS = Constants.STACKS.DECK
 ##Will the identifier base it's results on anything?
 @export var based_on_side: Constants.SIDES
 @export var based_on_slots: Constants.SLOTS
@@ -11,7 +11,9 @@ class_name Search
 ##How many cards in the desired section can you check.
 ##-1 means all cards. For certain cards that look at a bit of the top of the deck.
 @export_range(-1,60, 1) var portion: int = -1
-##How many cards can the user pick 
+#holon Lass uses a varying portion based on prize cards soooo
+@export var variable_portion: Counter
+##How many cards can the user pick, if it's -1 allow infinite
 @export var how_many: Array[int] = [1]
 ##Incase of variable search ammounts
 @export var variable_ammount: Counter

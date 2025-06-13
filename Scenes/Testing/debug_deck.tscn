@@ -1,22 +1,36 @@
-[gd_scene load_steps=32 format=3 uid="uid://c3qurrd5vl1ao"]
+[gd_scene load_steps=46 format=3 uid="uid://c3qurrd5vl1ao"]
 
 [ext_resource type="Script" uid="uid://b3ki70ohjb21g" path="res://Scenes/Testing/debug_deck.gd" id="1_76cja"]
 [ext_resource type="Script" uid="uid://b6qi20o3p32gq" path="res://Code/Scenes/UI/Main/full_ui.gd" id="2_iuq08"]
+[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="2_m7eiw"]
 [ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="2_yqty7"]
+[ext_resource type="Resource" uid="uid://cdex8l5yqfstv" path="res://Resources/Components/Effects/Search/AnySearch.tres" id="3_aty6d"]
+[ext_resource type="Resource" uid="uid://bkwebtfaqxx1b" path="res://Resources/Components/Effects/Search/SearchAnyPokemon.tres" id="3_b5ooj"]
 [ext_resource type="Resource" uid="uid://tynomqb1ld65" path="res://Resources/Components/Effects/Identifiers/Pokemon/IsPokemon.tres" id="3_flo2v"]
 [ext_resource type="PackedScene" uid="uid://dognokjork36j" path="res://Scenes/UI/UICollections/PlayerSide.tscn" id="3_ibwmv"]
 [ext_resource type="Resource" uid="uid://dk0v7dyi3r43m" path="res://Resources/Components/Effects/Identifiers/Trainers/Trainer.tres" id="4_6a1ot"]
 [ext_resource type="PackedScene" uid="uid://bdpxdnxpe1f32" path="res://Scenes/Testing/dummy.tscn" id="4_463lc"]
+[ext_resource type="Resource" uid="uid://da2pbggvrhq4t" path="res://Resources/Components/Effects/Search/EvolvesFromActive.tres" id="4_facky"]
 [ext_resource type="PackedScene" uid="uid://cni7lmrv7r06c" path="res://Scenes/Main Game/Fundies.tscn" id="5_k0qov"]
 [ext_resource type="Resource" uid="uid://366upf662brq" path="res://Resources/Components/Effects/Identifiers/Energy/IsEnergy.tres" id="5_pulol"]
+[ext_resource type="Resource" uid="uid://bwqb5tsjmyik1" path="res://Resources/Components/Effects/Search/SearchBasicEnergy.tres" id="5_r7cxt"]
 [ext_resource type="Resource" uid="uid://ccj6n5o2yaoev" path="res://Resources/Components/Effects/Identifiers/Pokemon/TeamMagma.tres" id="6_5pq6o"]
+[ext_resource type="Resource" uid="uid://b08mssp5wegne" path="res://Resources/Components/Effects/Search/MasterBallSearch.tres" id="6_r7cxt"]
+[ext_resource type="Resource" uid="uid://6u0bocijrq4m" path="res://Resources/Components/Effects/Search/Search2BasicEnergy.tres" id="6_v5d02"]
 [ext_resource type="Resource" uid="uid://bleo7p56u5k1f" path="res://Resources/Decks/TestDeck.tres" id="7_441s3"]
+[ext_resource type="Resource" uid="uid://ctasha828kh0t" path="res://Resources/Components/Effects/Search/LadyOutingSearch.tres" id="7_aty6d"]
 [ext_resource type="Resource" uid="uid://bwqpkxc8m63nj" path="res://Resources/Components/Effects/Identifiers/Energy/SpecialEnergy.tres" id="7_ww7ww"]
 [ext_resource type="Resource" uid="uid://bkuxa81fpcmol" path="res://Resources/Components/Effects/Identifiers/Trainers/Supporter.tres" id="8_owp07"]
+[ext_resource type="Resource" uid="uid://c4wnoevyvagqq" path="res://Resources/Components/Effects/Search/FirestarterSearch.tres" id="8_uocsv"]
+[ext_resource type="Resource" uid="uid://c1r4iob3b4dhu" path="res://Resources/Components/Effects/Search/PokeNavSearch.tres" id="9_51xdh"]
 [ext_resource type="Resource" uid="uid://dpo3quamvikcu" path="res://Resources/Components/Effects/Identifiers/Pokemon/IsEvolution.tres" id="9_fukg8"]
+[ext_resource type="Resource" uid="uid://dbbymvfonstmf" path="res://Resources/Components/Effects/Search/CastawaySearch.tres" id="10_7lv3d"]
 [ext_resource type="Resource" uid="uid://fmsyeknhg72m" path="res://Resources/Components/Effects/Identifiers/Pokemon/EvolvesFromPlayed.tres" id="10_qtpl6"]
 [ext_resource type="Resource" uid="uid://bsrtmv3udqjav" path="res://Resources/Components/Effects/Identifiers/Pokemon/BasicPokemon.tres" id="11_etycu"]
+[ext_resource type="Resource" uid="uid://knu14juippx8" path="res://Resources/Components/Effects/Search/SupporterSearch.tres" id="11_v5d02"]
 [ext_resource type="Resource" uid="uid://ccyylno0d5ync" path="res://Resources/Components/Effects/Identifiers/Pokemon/non-ex.tres" id="12_0dfak"]
+[ext_resource type="Resource" uid="uid://7bruqpkp3r4x" path="res://Resources/Components/Effects/Search/TrainerNotSupport.tres" id="12_aty6d"]
+[ext_resource type="Resource" uid="uid://dyue46fxhp8nk" path="res://Resources/Components/Effects/Search/ScottSearch.tres" id="13_v5d02"]
 [ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="13_xd3r3"]
 [ext_resource type="Resource" uid="uid://bjhfixkixpbev" path="res://Resources/Components/Effects/Asks/Stats/BothGT100HP.tres" id="14_pulol"]
 [ext_resource type="Resource" uid="uid://cyaqpq76mby4m" path="res://Resources/Components/Effects/Asks/Class&Owner/AtkEvolvedMon.tres" id="15_5pq6o"]
@@ -37,6 +51,7 @@ contains = ""
 type = 0
 evolves_from = false
 rare_candy = false
+inclusive_class = true
 poke_class = 0
 owner = 0
 stage = 0
@@ -54,6 +69,7 @@ contains = ""
 type = 0
 evolves_from = false
 rare_candy = false
+inclusive_class = true
 poke_class = 0
 owner = 0
 stage = 0
@@ -71,6 +87,7 @@ contains = ""
 type = 0
 evolves_from = false
 rare_candy = false
+inclusive_class = true
 poke_class = 0
 owner = 0
 stage = 0
@@ -82,6 +99,7 @@ metadata/_custom_type_script = "uid://uplawvwcwl8y"
 script = ExtResource("13_xd3r3")
 side_target = 3
 slot_target = 4
+specifically = Array[String]([])
 comparison_type = 1
 max_hp = -10
 damage_taken = -10
@@ -108,6 +126,7 @@ metadata/_custom_type_script = "uid://mkjynqda7q5g"
 script = ExtResource("13_xd3r3")
 side_target = 3
 slot_target = 4
+specifically = Array[String]([])
 comparison_type = 1
 max_hp = -10
 damage_taken = -10
@@ -134,6 +153,7 @@ metadata/_custom_type_script = "uid://mkjynqda7q5g"
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_76cja")
+searches = Array[ExtResource("2_m7eiw")]([ExtResource("3_aty6d"), ExtResource("3_b5ooj"), ExtResource("4_facky"), ExtResource("6_r7cxt"), ExtResource("5_r7cxt"), ExtResource("6_v5d02"), ExtResource("7_aty6d"), ExtResource("8_uocsv"), ExtResource("11_v5d02"), ExtResource("12_aty6d"), ExtResource("13_v5d02"), ExtResource("9_51xdh"), ExtResource("10_7lv3d")])
 search_identifiers = Array[ExtResource("2_yqty7")]([ExtResource("3_flo2v"), ExtResource("4_6a1ot"), ExtResource("5_pulol"), ExtResource("6_5pq6o"), ExtResource("7_ww7ww"), ExtResource("8_owp07"), ExtResource("9_fukg8"), ExtResource("10_qtpl6"), SubResource("Resource_sreaw"), SubResource("Resource_n56ka"), ExtResource("11_etycu"), ExtResource("12_0dfak"), SubResource("Resource_rtwb1")])
 slot_asks = Array[ExtResource("13_xd3r3")]([SubResource("Resource_owp07"), ExtResource("14_pulol"), ExtResource("15_5pq6o"), SubResource("Resource_fukg8"), ExtResource("16_owp07"), ExtResource("17_fukg8"), ExtResource("18_qtpl6"), ExtResource("16_ww7ww"), ExtResource("20_qtpl6"), ExtResource("21_etycu")])
 metadata/_edit_vertical_guides_ = [-235.0, -414.0]
@@ -207,6 +227,7 @@ toggle_mode = true
 text = "Search Test"
 
 [node name="SearchTypes" type="OptionButton" parent="FullUI/CardActions"]
+visible = false
 layout_mode = 2
 item_count = 13
 popup/item_0/text = "Pokemon"
@@ -234,6 +255,37 @@ popup/item_10/id = 10
 popup/item_11/text = "Non-ex"
 popup/item_11/id = 11
 popup/item_12/text = "Tool & TM"
+popup/item_12/id = 12
+
+[node name="SearchTypes2" type="OptionButton" parent="FullUI/CardActions"]
+layout_mode = 2
+selected = 0
+item_count = 13
+popup/item_0/text = "Anything"
+popup/item_0/id = 0
+popup/item_1/text = "Pokemon"
+popup/item_1/id = 1
+popup/item_2/text = "Evolve From Active"
+popup/item_2/id = 2
+popup/item_3/text = "Masterball"
+popup/item_3/id = 3
+popup/item_4/text = "Energy"
+popup/item_4/id = 4
+popup/item_5/text = "2 Basic Energy"
+popup/item_5/id = 5
+popup/item_6/text = "Lady Outing"
+popup/item_6/id = 6
+popup/item_7/text = "Firestarter"
+popup/item_7/id = 7
+popup/item_8/text = "Supporter"
+popup/item_8/id = 8
+popup/item_9/text = "Trainer[No Support]"
+popup/item_9/id = 9
+popup/item_10/text = "Scott"
+popup/item_10/id = 10
+popup/item_11/text = "Pokenav"
+popup/item_11/id = 11
+popup/item_12/text = "Castaway"
 popup/item_12/id = 12
 
 [node name="AskTest" type="Button" parent="FullUI/CardActions"]
@@ -265,53 +317,6 @@ popup/item_8/text = "Non-ex"
 popup/item_8/id = 8
 popup/item_9/text = "Retreat < 2"
 popup/item_9/id = 9
-
-[node name="MenuButton2" type="VBoxContainer" parent="FullUI"]
-layout_mode = 0
-offset_left = -504.0
-offset_top = 149.0
-offset_right = -353.0
-offset_bottom = 495.0
-
-[node name="Basic Energy" type="CheckBox" parent="FullUI/MenuButton2"]
-layout_mode = 2
-text = "Basic Energy"
-
-[node name="Special Energy" type="CheckBox" parent="FullUI/MenuButton2"]
-layout_mode = 2
-text = "Special Energy"
-
-[node name="Basic Pokemon" type="CheckBox" parent="FullUI/MenuButton2"]
-layout_mode = 2
-text = "Basic Pokemon"
-
-[node name="Evolution" type="CheckBox" parent="FullUI/MenuButton2"]
-layout_mode = 2
-text = "Evolution"
-
-[node name="Item" type="CheckBox" parent="FullUI/MenuButton2"]
-layout_mode = 2
-text = "Item"
-
-[node name="Supporter" type="CheckBox" parent="FullUI/MenuButton2"]
-layout_mode = 2
-text = "Supporter"
-
-[node name="Stadium" type="CheckBox" parent="FullUI/MenuButton2"]
-layout_mode = 2
-text = "Stadium"
-
-[node name="Tool" type="CheckBox" parent="FullUI/MenuButton2"]
-layout_mode = 2
-text = "Tool"
-
-[node name="TM" type="CheckBox" parent="FullUI/MenuButton2"]
-layout_mode = 2
-text = "TM"
-
-[node name="Rocket" type="CheckBox" parent="FullUI/MenuButton2"]
-layout_mode = 2
-text = "Rocket Machine"
 
 [node name="Fundies" parent="." node_paths=PackedStringArray("player_side") instance=ExtResource("5_k0qov")]
 player_side = NodePath("../FullUI/PlayerSide")

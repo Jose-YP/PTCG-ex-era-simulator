@@ -5,9 +5,9 @@
 [resource]
 script = ExtResource("1_7067e")
 name = "Mew ex"
-illustrator = ""
+illustrator = "Ryo Ueda"
 number = 88
-rarity = 0
+rarity = 5
 expansion = 11
 categories = 1
 fossil = false

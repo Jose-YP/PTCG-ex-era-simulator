@@ -1,0 +1,42 @@
+[gd_resource type="Resource" script_class="Search" load_steps=6 format=3 uid="uid://c1r4iob3b4dhu"]
+
+[ext_resource type="Script" uid="uid://cdyba0wadidwb" path="res://Code/Resource Makers/EffectSpecific/PlacementMaker.gd" id="1_oodrf"]
+[ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="2_och1r"]
+[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="3_4y5sb"]
+
+[sub_resource type="Resource" id="Resource_48kux"]
+script = ExtResource("1_oodrf")
+where = 0
+reorder = true
+shuffle = false
+evolve = false
+metadata/_custom_type_script = "uid://cdyba0wadidwb"
+
+[sub_resource type="Resource" id="Resource_n7q0i"]
+script = ExtResource("2_och1r")
+description = ""
+must_be_different = false
+broad_class = 5
+exactly = false
+contains = ""
+type = 511
+evolves_from = false
+rare_candy = false
+poke_class = 0
+owner = 0
+stage = 7
+trainer_classes = 0
+energy_class = 3
+
+[resource]
+script = ExtResource("3_4y5sb")
+side = 4
+where = 1
+based_on_side = 0
+based_on_slots = 0
+portion = 3
+how_many = Array[int]([1])
+of_this = Array[ExtResource("2_och1r")]([SubResource("Resource_n7q0i")])
+and_then = SubResource("Resource_48kux")
+reveal = true
+metadata/_custom_type_script = "uid://cw3yr1k040kw7"

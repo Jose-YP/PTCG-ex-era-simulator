@@ -1,13 +1,11 @@
-[gd_resource type="Resource" script_class="Pokemon" load_steps=17 format=3 uid="uid://dvteh4sj66jw4"]
+[gd_resource type="Resource" script_class="Pokemon" load_steps=13 format=3 uid="uid://dvteh4sj66jw4"]
 
 [ext_resource type="Script" uid="uid://br15mnap82upq" path="res://Code/Resource Makers/PokemonSpecific/BenchAttackMaker.gd" id="1_npbj7"]
 [ext_resource type="Resource" uid="uid://b86uut4qajrgg" path="res://Resources/Components/Effects/EnergyMovement/AtkSelfDisFire.tres" id="2_nrfu7"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="3_08wec"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_gr0cy"]
-[ext_resource type="Script" uid="uid://cdyba0wadidwb" path="res://Code/Resource Makers/EffectSpecific/PlacementMaker.gd" id="5_7y8r4"]
-[ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="6_mefy8"]
-[ext_resource type="Resource" uid="uid://dies0ymvth17j" path="res://Resources/Components/Effects/Identifiers/Energy/IsFireEnergy.tres" id="6_wm1f3"]
-[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="7_exgxy"]
+[ext_resource type="Resource" uid="uid://c4wnoevyvagqq" path="res://Resources/Components/Effects/Search/FirestarterSearch.tres" id="5_bsvf6"]
+[ext_resource type="Resource" uid="uid://b2bdagwhfrmbo" path="res://Resources/Components/Effects/Asks/AtkHasBenchMons.tres" id="7_wm1f3"]
 [ext_resource type="Script" uid="uid://b58015mafcw2v" path="res://Code/Resource Makers/PokemonSpecific/PowerMaker.gd" id="8_4485v"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="9_8uu16"]
 
@@ -44,31 +42,10 @@ both_active = false
 bench_damage = SubResource("Resource_c7gir")
 always_effect = ExtResource("2_nrfu7")
 
-[sub_resource type="Resource" id="Resource_nrfu7"]
-script = ExtResource("5_7y8r4")
-where = 6
-reorder = false
-shuffle = false
-evolve = false
-metadata/_custom_type_script = "uid://cdyba0wadidwb"
-
-[sub_resource type="Resource" id="Resource_3mj0j"]
-script = ExtResource("7_exgxy")
-side = 1
-where = 0
-based_on_side = 0
-based_on_slots = 0
-portion = -1
-how_many = Array[int]([1])
-of_this = Array[ExtResource("6_mefy8")]([ExtResource("6_wm1f3")])
-and_then = SubResource("Resource_nrfu7")
-reveal = true
-metadata/_custom_type_script = "uid://cw3yr1k040kw7"
-
 [sub_resource type="Resource" id="Resource_4ym1n"]
 script = ExtResource("4_gr0cy")
 order = Array[int]([])
-search = SubResource("Resource_3mj0j")
+search = ExtResource("5_bsvf6")
 
 [sub_resource type="Resource" id="Resource_wvak6"]
 script = ExtResource("8_4485v")
@@ -77,6 +54,7 @@ description = "Once during your turn (before your attack), you may attach a {Fir
 affected_by_condition = true
 active = false
 how_often = 0
+target_ask = ExtResource("7_wm1f3")
 effect = SubResource("Resource_4ym1n")
 
 [resource]

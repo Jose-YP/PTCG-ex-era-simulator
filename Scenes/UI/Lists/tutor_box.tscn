@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bgjvymhyt234g"]
+[gd_scene load_steps=9 format=3 uid="uid://bgjvymhyt234g"]
 
 [ext_resource type="Theme" uid="uid://bfw6ylcttychc" path="res://Themes/AverageButton.tres" id="1_wc5cx"]
 [ext_resource type="Script" uid="uid://crxnymulvel2m" path="res://Code/Scenes/Components/dragable_control.gd" id="2_4halv"]
@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://dbbymvfonstmf" path="res://Resources/Components/Effects/Search/CastawaySearch.tres" id="3_tixm1"]
 [ext_resource type="StyleBox" uid="uid://bvesf3hjv2bsl" path="res://Themes/GBADragBox.tres" id="4_tixm1"]
 [ext_resource type="Script" uid="uid://bphfo08n46yrj" path="res://Code/Scenes/UI/List/minimize_button.gd" id="5_u0q4j"]
+[ext_resource type="StyleBox" uid="uid://bsh6edcpwvowr" path="res://Themes/minimize_button.tres" id="6_u0q4j"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kclru"]
 bg_color = Color(0.12549, 0.109804, 0.117647, 0.780392)
@@ -62,6 +63,7 @@ fit_content = true
 [node name="Minimize_Button" type="Button" parent="PanelContainer/VBoxContainer/Header" node_paths=PackedStringArray("shrinkNodes", "hideNodes")]
 custom_minimum_size = Vector2(25, 0)
 layout_mode = 2
+theme_override_styles/normal = ExtResource("6_u0q4j")
 text = "-"
 script = ExtResource("5_u0q4j")
 shrinkNodes = [NodePath("../../ScrollBox")]

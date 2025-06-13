@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="Search" load_steps=9 format=3 uid="uid://buofx3y8opwf"]
+
+[ext_resource type="Resource" uid="uid://5xgqdwmsc8c1" path="res://Resources/Components/Effects/DmgManip/AtkSelfTake20Dmg.tres" id="1_pf7s7"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_06bqb"]
+[ext_resource type="Script" uid="uid://cdyba0wadidwb" path="res://Code/Resource Makers/EffectSpecific/PlacementMaker.gd" id="3_vd5hw"]
+[ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="4_xnyt7"]
+[ext_resource type="Resource" uid="uid://cbcxks3mto640" path="res://Resources/Components/Effects/Identifiers/Energy/PsychicEnergy.tres" id="5_n2pt0"]
+[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="6_fxg1t"]
+
+[sub_resource type="Resource" id="Resource_mamwr"]
+script = ExtResource("2_06bqb")
+order = Array[int]([])
+dmgManip = ExtResource("1_pf7s7")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_vnprs"]
+script = ExtResource("3_vd5hw")
+where = 7
+reorder = false
+shuffle = true
+evolve = false
+effect_to_mon = SubResource("Resource_mamwr")
+
+[resource]
+script = ExtResource("6_fxg1t")
+side = 1
+where = 1
+based_on_side = 0
+based_on_slots = 0
+portion = -1
+how_many = Array[int]([1])
+of_this = Array[ExtResource("4_xnyt7")]([ExtResource("5_n2pt0")])
+and_then = SubResource("Resource_vnprs")
+reveal = false
+metadata/_custom_type_script = "uid://cw3yr1k040kw7"

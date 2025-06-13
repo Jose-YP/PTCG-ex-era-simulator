@@ -6,6 +6,7 @@ class_name PlayingList
 #region VARIABLES
 @export var debug: bool = false
 @export var list_item: PackedScene
+@export var tutor_box: PackedScene
 @export var all_lists: Array[Dictionary]
 @export var list: Dictionary[Base_Card, bool]
 #For cards that can be played multiple ways
@@ -15,7 +16,7 @@ class_name PlayingList
 @export var stack_act: Constants.STACK_ACT = Constants.STACK_ACT.PLAY
 @export var stack: Constants.STACKS = Constants.STACKS.HAND
 
-@onready var tutor_box: Tutor_Box = %TutorBox
+#@onready var tutor_box: Tutor_Box = %TutorBox
 @onready var identifier: RichTextLabel = %Identifier
 @onready var instructions: RichTextLabel = %Instructions
 @onready var old_size: Vector2 = size
@@ -28,6 +29,7 @@ var white_list: Array[String] = []
 var old_pos: Vector2
 var display: Node
 var options: Node
+var tutor: Tutor_Box
 var on_card: bool = false
 
 #endregion
@@ -38,10 +40,6 @@ var on_card: bool = false
 func _ready():
 	identifier.append_text(display_text)
 	instructions.append_text(instruction_text)
-	
-	if stack_act == Constants.STACK_ACT.TUTOR or stack_act == Constants.STACK_ACT.DISCARD:
-		tutor_box.show()
-	else: tutor_box.set_up_tutor()
 	
 	set_items()
 
@@ -70,6 +68,17 @@ func is_allowed(button: Button) -> void:
 		_:
 			if list[button.card]:
 				button.allow_move_to(stack_act)
+
+func setup_tutor(search: Search):
+	if not (stack_act == Constants.STACK_ACT.TUTOR or stack_act == Constants.STACK_ACT.DISCARD):
+		printerr("Why is setup tutor being called when there's no tutor on right now?")
+		return
+	
+	tutor = tutor_box.instantiate()
+	tutor.search = search
+	tutor.set_up_tutor()
+	add_sibling(tutor)
+
 #endregion
 #--------------------------------------
 func reset_items():

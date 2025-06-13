@@ -1,12 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://f4m1ofpicse4"]
+[gd_scene load_steps=12 format=3 uid="uid://f4m1ofpicse4"]
 
 [ext_resource type="Theme" uid="uid://bfw6ylcttychc" path="res://Themes/AverageButton.tres" id="1_j5ysj"]
 [ext_resource type="Script" uid="uid://dkqmky7i7ibak" path="res://Code/Scenes/UI/List/PlayingList.gd" id="1_sw67d"]
 [ext_resource type="PackedScene" uid="uid://dguolqe6u3fe3" path="res://Scenes/UI/Lists/PlayingListItem_copy.tscn" id="3_4g7pj"]
 [ext_resource type="PackedScene" uid="uid://bgjvymhyt234g" path="res://Scenes/UI/Lists/tutor_box.tscn" id="4_0bxgv"]
+[ext_resource type="Script" uid="uid://bphfo08n46yrj" path="res://Code/Scenes/UI/List/minimize_button.gd" id="6_0bxgv"]
+[ext_resource type="StyleBox" uid="uid://bsh6edcpwvowr" path="res://Themes/minimize_button.tres" id="6_k6oam"]
+[ext_resource type="Script" uid="uid://cqy27ta3ov66b" path="res://Code/Scenes/UI/List/close_button.gd" id="7_75a1o"]
+[ext_resource type="Theme" uid="uid://bgn3jjlbvn1xq" path="res://Themes/PowerButton.tres" id="8_teavr"]
 [ext_resource type="StyleBox" uid="uid://bvesf3hjv2bsl" path="res://Themes/GBADragBox.tres" id="13_8wubv"]
-[ext_resource type="PackedScene" uid="uid://c5d081uywglg" path="res://Scenes/UI/UIComponents/close_button.tscn" id="13_xvynf"]
-[ext_resource type="PackedScene" uid="uid://dmhjt2wuanymf" path="res://Scenes/UI/UIComponents/minimize_button.tscn" id="14_fhr5r"]
 [ext_resource type="PackedScene" uid="uid://cmmds4boaksl7" path="res://Scenes/UI/UIComponents/movable.tscn" id="14_mnu8a"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1dsg7"]
@@ -28,6 +30,7 @@ theme = ExtResource("1_j5ysj")
 script = ExtResource("1_sw67d")
 debug = true
 list_item = ExtResource("3_4g7pj")
+tutor_box = ExtResource("4_0bxgv")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 0
@@ -64,16 +67,25 @@ layout_mode = 2
 dragging_node = NodePath("../../../../../..")
 based_on = NodePath("..")
 
-[node name="MinimizeButton" parent="HBoxContainer/PanelContainer/VBoxContainer/Header" instance=ExtResource("14_fhr5r")]
+[node name="MinimizeButton" type="Button" parent="HBoxContainer/PanelContainer/VBoxContainer/Header" node_paths=PackedStringArray("shrinkNodes", "hideNodes")]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
-script = null
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("6_k6oam")
+text = "-"
+script = ExtResource("6_0bxgv")
+shrinkNodes = [NodePath("../../ScrollBox")]
+hideNodes = [NodePath("../../IdentifierPanel")]
+metadata/_custom_type_script = "uid://bphfo08n46yrj"
 
-[node name="CloseButton" parent="HBoxContainer/PanelContainer/VBoxContainer/Header" instance=ExtResource("13_xvynf")]
-custom_minimum_size = Vector2(30, 0)
+[node name="Close_Button" type="Button" parent="HBoxContainer/PanelContainer/VBoxContainer/Header"]
+unique_name_in_owner = true
 layout_mode = 2
-script = null
+size_flags_horizontal = 3
+theme = ExtResource("8_teavr")
+text = "X"
+script = ExtResource("7_75a1o")
+metadata/_custom_type_script = "uid://cqy27ta3ov66b"
 
 [node name="ScrollBox" type="ScrollContainer" parent="HBoxContainer/PanelContainer/VBoxContainer"]
 unique_name_in_owner = true
@@ -125,12 +137,5 @@ fit_content = true
 layout_mode = 2
 dragging_node = NodePath("../../../../..")
 based_on = NodePath("..")
-
-[node name="TutorBox" parent="HBoxContainer" node_paths=PackedStringArray("connected_list") instance=ExtResource("4_0bxgv")]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-connected_list = NodePath("../..")
-start_text = "Add "
 
 [connection signal="pressed" from="HBoxContainer/PanelContainer/VBoxContainer/Header/MinimizeButton" to="." method="_on_minimize_button_pressed"]

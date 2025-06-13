@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="Search" load_steps=5 format=3 uid="uid://ctasha828kh0t"]
+
+[ext_resource type="Resource" uid="uid://bl4qnrkh3kxdl" path="res://Resources/Components/Effects/Placement/PutIntoHand.tres" id="1_1pdqu"]
+[ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="2_3bjhw"]
+[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="3_2pyyy"]
+
+[sub_resource type="Resource" id="Resource_eqnsd"]
+script = ExtResource("2_3bjhw")
+description = ""
+must_be_different = true
+broad_class = 4
+exactly = false
+contains = ""
+type = 511
+evolves_from = false
+rare_candy = false
+poke_class = 0
+owner = 0
+stage = 0
+trainer_classes = 0
+energy_class = 1
+metadata/_custom_type_script = "uid://uplawvwcwl8y"
+
+[resource]
+script = ExtResource("3_2pyyy")
+side = 1
+where = 1
+based_on_side = 0
+based_on_slots = 0
+portion = -1
+how_many = Array[int]([3])
+of_this = Array[ExtResource("2_3bjhw")]([SubResource("Resource_eqnsd")])
+and_then = ExtResource("1_1pdqu")
+reveal = true
+metadata/_custom_type_script = "uid://cw3yr1k040kw7"

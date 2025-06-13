@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=3 format=3 uid="uid://d2ifkt8qps6l6"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_q4i02"]
+[ext_resource type="Resource" uid="uid://d3ojtgvcvli2v" path="res://Resources/Components/Trainers/ReprintTrainers/MasterBall.tres" id="2_hef82"]
+
+[resource]
+script = ExtResource("1_q4i02")
+name = "Master Ball"
+illustrator = " Keiji Kinebuchi"
+number = 88
+rarity = 1
+expansion = 7
+categories = 2
+trainer_properties = ExtResource("2_hef82")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"
