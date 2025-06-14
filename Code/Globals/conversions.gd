@@ -1,5 +1,7 @@
 extends Node
 
+var all_lists: Array[Dictionary]
+
 func reformat(text: String) -> String:
 	var result: String = text
 	var icon_search = RegEx.new()
@@ -89,3 +91,24 @@ func get_card_flags(card: Base_Card) -> int:
 		
 	
 	return card_flags
+
+#For use in lists
+func default_card_sort(button1: Button, button2: Button):
+	var card1: Base_Card = button1.card
+	var card2: Base_Card = button2.card
+	#First prioritize allowed cards
+	var first_bool: bool = false
+	var second_bool: bool = false
+	
+	for list in all_lists:
+		first_bool = list[card1]
+		second_bool = list[card2]
+	if first_bool and not second_bool:
+		return true
+	elif second_bool and not first_bool:
+		return false
+	
+	#If they're both (not) allowed check card priority
+	else:
+		return card1.card_priority(card2)
+	

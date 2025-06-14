@@ -29,9 +29,15 @@ func _ready():
 					items[i].show()
 					items[i].pressed.connect(emit_play_as.bind(i))
 		Constants.STACK_ACT.TUTOR:
-			%Tutor.show()
+			if origin_button.is_tutored():
+				%Cancel.show()
+			else:
+				%Tutor.show()
 		Constants.STACK_ACT.DISCARD:
-			%Discard.show()
+			if origin_button.is_tutored():
+				%Cancel.show()
+			else:
+				%Discard.show()
 		Constants.STACK_ACT.LOOK:
 			pass
 		_: push_error(stack_act, " Not an actual stack_act")
@@ -76,10 +82,12 @@ func _on_check_pressed():
 func _on_tutor_pressed() -> void:
 	print("Tutor ", origin_button.card.name, " from ", origin_button.parent.stack)
 	SignalBus.tutor_card.emit(origin_button.card)
+	disapear()
 
 func _on_discard_pressed() -> void:
 	print("Discard ", origin_button.card.name, " from ", origin_button.parent.stack)
 	SignalBus.tutor_card.emit(origin_button.card)
+	disapear()
 
 func on_entered_check():
 	for i in range($PlayAs/Items.get_child_count()):
@@ -90,3 +98,8 @@ func on_exited_check():
 		items[i].disabled = false
 #endregion
 #--------------------------------------
+
+
+func _on_cancel_pressed() -> void:
+	SignalBus.cancel_tutor.emit(origin_button)
+	disapear()

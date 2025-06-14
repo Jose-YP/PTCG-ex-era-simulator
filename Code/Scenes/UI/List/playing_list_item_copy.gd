@@ -12,6 +12,7 @@ var parent: Node
 var checking_card: Node
 var stack_act: Constants.STACK_ACT
 var allowed: bool = false
+var from_id: Identifier
 
 #--------------------------------------
 #region INITALIZATION
@@ -49,6 +50,13 @@ func allow_move_to(destination: Constants.STACKS):
 		Constants.STACKS.DISCARD: stack_act = Constants.STACK_ACT.DISCARD
 		_: stack_act = Constants.STACK_ACT.TUTOR
 
+func is_tutored() -> bool:
+	print(parent is PlayingList)
+	return not parent is PlayingList
+
+func get_specifc_id():
+	pass
+
 #endregion
 #--------------------------------------
 
@@ -75,8 +83,8 @@ func show_options() -> Node:
 	else:
 		option_Display.stack_act = "Look"
 	
-	parent.add_child(option_Display)
 	option_Display.origin_button = self
+	parent.add_child(option_Display)
 	option_Display.bring_up()
 	
 	return option_Display

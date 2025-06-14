@@ -14,12 +14,13 @@ signal no_more_adding(id: Identifier)
 
 var tutor_requiremnts: Dictionary[Identifier, Array]
 var based_on: Array[PokeSlot]
-var current_tutor: Array[Base_Card]
 var max_tutor: int = 0
 var stack_size: int = 0
+var options: Node
 
 func _ready() -> void:
 	SignalBus.connect("tutor_card", add_card)
+	SignalBus.connect("cancel_tutor", remove_card)
 
 func set_up_tutor():
 	var text: String = start_text
@@ -46,7 +47,7 @@ func update_tutor():
 		current_num += tutor_requiremnts[tutor].size()
 	
 	status.clear()
-	status.append_text(str("[center]Tutor Number:", current_num," / ", max_tutor))
+	status.append_text(str("[center]Tutor Number: ", current_num," / ", max_tutor))
 	#If the max_tutor is satisfied then allow the confirm OR
 	#If there aren't any cards left from the stack, allow confirmation
 	%Confirm.disabled = current_num != max_tutor or current_num == stack_size
@@ -58,8 +59,7 @@ func add_card(card: Base_Card):
 		var id: Identifier = search.of_this[i]
 		#Check if this card is allowed to be added
 		if id.identifier_bool(card, based_on) and tutor_requiremnts[id].size() < num:
-			tutor_requiremnts[id].append(card)
-			show_card(card)
+			tutor_requiremnts[id].append(show_card(card, id))
 			
 			#If the search identifier is now satisfied make sure no more can be added
 			if tutor_requiremnts[id].size() >= num:
@@ -69,17 +69,38 @@ func add_card(card: Base_Card):
 	#Only ends up here if a card cannot be added for some reason
 	printerr("Can't add ", card.name, " tutor condition doesn't allow it")
 
-func show_card(card: Base_Card):
+func remove_card(button: Button):
+	print(tutor_requiremnts)
+	for id in tutor_requiremnts:
+		#Buttons are recorded so each one is unique and can only be found in one place
+		if tutor_requiremnts[id].find(button) != -1:
+			tutor_requiremnts[id].erase(button)
+			button.queue_free()
+			connected_list.add_item(button.card)
+	
+	connected_list.sort_list()
+	update_tutor()
+
+func show_card(card: Base_Card, id: Identifier) -> Button:
 	var making = list_item.instantiate()
 	making.card = card
 	making.parent = self
+	making.from_id = id
 	%CardList.add_child(making)
 	
 	connected_list.remove_item(card)
+	making.allow_move_to(connected_list.stack)
+	return making
 
 func _on_confirm_pressed() -> void:
-	print("Moving ", current_tutor, " from ", search.and_then.where, " to ", search.where)
-	SignalBus.swap_card_location.emit(current_tutor, search.and_then.where, search.where)
+	var all_tutored: Array[Base_Card]
+	
+	for id in tutor_requiremnts:
+		for button in tutor_requiremnts[id]:
+			all_tutored.append(button.card)
+	
+	print("Moving ", all_tutored, " from ", search.and_then.where, " to ", search.where)
+	SignalBus.swap_card_location.emit(all_tutored, search.and_then.where, search.where)
 
 func _on_cancel_pressed() -> void:
 	pass # Replace with function body.

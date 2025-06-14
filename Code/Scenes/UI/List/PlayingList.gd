@@ -56,6 +56,8 @@ func set_items():
 		is_allowed(making)
 	
 	items = %CardList.get_children()
+	if stack_act != Constants.STACK_ACT.PLAY:
+		sort_items()
 
 func refresh_allowance():
 	items = %CardList.get_children()
@@ -107,6 +109,16 @@ func add_item(card: Base_Card):
 	making.parent = self
 	%CardList.add_child(making)
 	is_allowed(making)
+
+func sort_items():
+	Conversions.all_lists = all_lists
+	items = %CardList.get_children()
+	items.sort_custom(Conversions.default_card_sort)
+	print(items)
+	for i in range(items.size()):
+		%CardList.move_child(items[i], i)
+	
+	pass
 
 func _on_resources_show_list(message: String, looking_at: String, using: Array[Base_Card]):
 	reset_items()

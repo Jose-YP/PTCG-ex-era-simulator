@@ -71,3 +71,58 @@ func is_considered(considered: String):
 		return energy_properties.considered == considered
 	
 	return false
+
+#Lowest number for highest priority
+#priority for pokemon  [ex > owner > delta > dark > baby > non > star] > [basic > 1 > 2] > [type]
+#For all cards, theree's a tie breaker [name] > [expansion + number]
+func card_priority(compared_to: Base_Card) -> bool:
+	#Top level priority
+	#if they're both pokemon
+	if (pokemon_properties and compared_to.pokemon_properties) and not (fossil or compared_to.fossil):
+		#If they're equal look at stage
+		if pokemon_properties.considered == compared_to.pokemon_properties.considered:
+			if pokemon_properties.evo_stage == compared_to.pokemon_properties.evo_stage:
+				if pokemon_properties.type == compared_to.pokemon_properties.type:
+					return generic_sort(compared_to)
+				else:
+					return pokemon_properties.type > compared_to.pokemon_properties.type
+			else:
+				return pokemon_properties.evo_stage > compared_to.pokemon_properties.evo_stage
+		else:
+			if pokemon_properties.owner != 0 and compared_to.pokemon_properties.owner != 0:
+				return pokemon_properties.owner > compared_to.pokemon_properties.owner
+			else:
+				return pokemon_properties.considered > compared_to.pokemon_properties.considered
+	#if only one is a pokemon
+	elif (pokemon_properties != null) != (compared_to.pokemon_properties != null):
+		return pokemon_properties != null
+
+	#If they're both trainers
+	if trainer_properties and compared_to.trainer_properties:
+		if fossil != compared_to.fossil:
+			return fossil
+		
+		if trainer_properties.considered == compared_to.trainer_properties.considered:
+			return generic_sort(compared_to)
+		
+		return Constants.trainer_classes.find(trainer_properties.considered)\
+		 < Constants.trainer_classes.find(compared_to.trainer_properties.considered)
+	elif (trainer_properties != null) != (compared_to.trainer_properties != null):
+		return trainer_properties != null
+	
+	if energy_properties.considered == compared_to.energy_properties.considered:
+		if energy_properties.react != compared_to.energy_properties.react:
+			return energy_properties.react
+		if energy_properties.holon_type != compared_to.energy_properties.holon_type:
+			return energy_properties.holon_type > compared_to.energy_properties.holon_type
+		if energy_properties.number != compared_to.energy_properties.number:
+			return energy_properties.number > compared_to.energy_properties.number
+		
+		return energy_properties.type > compared_to.energy_properties.type
+	else:
+		return energy_properties.considered > compared_to.energy_properties.considered
+
+func generic_sort(compared_to: Base_Card) -> bool:
+	if compared_to.expansion == expansion:
+		return number > compared_to.number
+	return compared_to.expansion > expansion
