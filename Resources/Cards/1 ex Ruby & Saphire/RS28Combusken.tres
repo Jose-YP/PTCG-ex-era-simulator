@@ -42,6 +42,7 @@ name = "Natural Cure"
 description = "When you attach a {Fire} Energy card from your hand to Combusken, remove all Special Conditions from Combusken."
 affected_by_condition = false
 attatched_energy = 2
+energy_ammount = 1
 effect = ExtResource("5_xbsys")
 
 [sub_resource type="Resource" id="Resource_b61eb"]

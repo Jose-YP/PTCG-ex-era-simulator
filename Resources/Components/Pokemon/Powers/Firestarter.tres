@@ -1,50 +1,11 @@
-[gd_resource type="Resource" script_class="PokePower" load_steps=10 format=3 uid="uid://dpppa2iiky1ct"]
+[gd_resource type="Resource" script_class="PokePower" load_steps=4 format=3 uid="uid://dpppa2iiky1ct"]
 
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="1_e36eh"]
-[ext_resource type="Script" uid="uid://cdyba0wadidwb" path="res://Code/Resource Makers/EffectSpecific/PlacementMaker.gd" id="2_l0482"]
-[ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="3_bnqyx"]
-[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="4_nrk2l"]
 [ext_resource type="Script" uid="uid://b58015mafcw2v" path="res://Code/Resource Makers/PokemonSpecific/PowerMaker.gd" id="5_juba2"]
-
-[sub_resource type="Resource" id="Resource_h0r4n"]
-script = ExtResource("2_l0482")
-where = 5
-reorder = false
-shuffle = false
-evolve = false
-
-[sub_resource type="Resource" id="Resource_y7il7"]
-script = ExtResource("3_bnqyx")
-description = ""
-must_be_different = false
-broad_class = 4
-exactly = false
-contains = ""
-type = 2
-evolves_from = false
-rare_candy = false
-poke_class = 0
-owner = 0
-stage = 0
-trainer_classes = 3
-energy_class = 7
-
-[sub_resource type="Resource" id="Resource_t1h8r"]
-script = ExtResource("4_nrk2l")
-side = 0
-where = 0
-based_on_side = 0
-based_on_slots = 0
-portion = -1
-how_many = Array[int]([1])
-of_this = Array[ExtResource("3_bnqyx")]([SubResource("Resource_y7il7")])
-and_then = SubResource("Resource_h0r4n")
-reveal = true
 
 [sub_resource type="Resource" id="Resource_tgj0g"]
 script = ExtResource("1_e36eh")
-order = null
-search = [SubResource("Resource_t1h8r")]
+order = Array[int]([])
 
 [resource]
 script = ExtResource("5_juba2")
@@ -52,5 +13,7 @@ name = "Firestarter"
 description = "Once during your turn (before your attack), you may attach a {Fire} Energy card from your discard pile to 1 of your Benched Pokémon. This power can't be used if Blaziken is affected by a Special Condition."
 affected_by_condition = true
 active = false
+when_condition = "Whenever"
+when_position = 4
 how_often = 0
 effect = SubResource("Resource_tgj0g")

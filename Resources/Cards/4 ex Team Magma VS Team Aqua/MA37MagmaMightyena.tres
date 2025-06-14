@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=18 format=3 uid="uid://22c17vtu70b3"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=13 format=3 uid="uid://22c17vtu70b3"]
 
 [ext_resource type="Texture2D" uid="uid://b4uymubvo04qp" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/37.jpg" id="1_s2ru1"]
 [ext_resource type="Script" uid="uid://b58015mafcw2v" path="res://Code/Resource Makers/PokemonSpecific/PowerMaker.gd" id="2_2yu0c"]
@@ -7,10 +7,7 @@
 [ext_resource type="Resource" uid="uid://dr0vmkppumfhq" path="res://Resources/Components/Pokemon/Nothing.tres" id="4_it5rv"]
 [ext_resource type="Resource" uid="uid://lfhu3xyr0wpo" path="res://Resources/Components/Effects/Prompts/IfFlipHeads.tres" id="4_xnbu3"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="5_wxab5"]
-[ext_resource type="Resource" uid="uid://bl4qnrkh3kxdl" path="res://Resources/Components/Effects/Placement/PutIntoHand.tres" id="6_mysfv"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="6_xc0yb"]
-[ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="8_kronk"]
-[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="9_84c2m"]
 
 [sub_resource type="Resource" id="Resource_kqy8h"]
 script = ExtResource("5_wxab5")
@@ -36,38 +33,9 @@ both_active = false
 prompt = ExtResource("4_xnbu3")
 fail_effect = ExtResource("4_it5rv")
 
-[sub_resource type="Resource" id="Resource_tccqv"]
-script = ExtResource("8_kronk")
-description = ""
-must_be_different = false
-broad_class = 1
-exactly = false
-contains = ""
-type = 0
-evolves_from = false
-rare_candy = false
-poke_class = null
-owner = 2
-stage = null
-trainer_classes = null
-energy_class = null
-
-[sub_resource type="Resource" id="Resource_0iir3"]
-script = ExtResource("9_84c2m")
-side = 0
-where = 1
-based_on_side = 0
-based_on_slots = 0
-portion = -1
-how_many = Array[int]([1])
-of_this = Array[ExtResource("8_kronk")]([SubResource("Resource_tccqv")])
-and_then = ExtResource("6_mysfv")
-reveal = true
-
 [sub_resource type="Resource" id="Resource_0a22m"]
 script = ExtResource("6_xc0yb")
-order = null
-search = Array[ExtResource("9_84c2m")]([SubResource("Resource_0iir3")])
+order = Array[int]([])
 
 [sub_resource type="Resource" id="Resource_dc2e6"]
 script = ExtResource("2_2yu0c")
@@ -75,6 +43,8 @@ name = "Call for Help"
 description = "Once during your turn (before your attack), if Team Magma's Mightyena is your Active Pokémon, you may search your deck for a Pokémon with Team Magma in its name, show it to your opponent, and put it into your hand. Shuffle your deck afterward. This power can't be used if Team Magma's Mightyena is affected by a Special Condition."
 affected_by_condition = true
 active = true
+when_condition = "Whenever"
+when_position = 4
 how_often = 0
 effect = SubResource("Resource_0a22m")
 

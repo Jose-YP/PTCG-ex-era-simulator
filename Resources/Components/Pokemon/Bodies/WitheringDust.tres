@@ -30,4 +30,5 @@ name = "Withering Dust"
 description = "As long as Beautifly is in play, do not apply Resistance for all Active Pokémon."
 affected_by_condition = false
 attatched_energy = 0
+energy_ammount = 1
 effect = SubResource("Resource_fbclb")

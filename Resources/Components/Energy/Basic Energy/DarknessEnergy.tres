@@ -9,6 +9,7 @@
 script = ExtResource("1_v3386")
 side_target = 3
 slot_target = 4
+specifically = Array[String]([])
 comparison_type = 1
 max_hp = -10
 damage_taken = -10
@@ -35,6 +36,7 @@ script = ExtResource("1_v3386")
 or_ask = SubResource("Resource_jxk1y")
 side_target = 3
 slot_target = 4
+specifically = Array[String]([])
 comparison_type = 1
 max_hp = -10
 damage_taken = -10
@@ -69,7 +71,7 @@ immune_to_damage = false
 
 [sub_resource type="Resource" id="Resource_gso0c"]
 script = ExtResource("4_rhnr6")
-order = null
+order = Array[int]([])
 buff = SubResource("Resource_j3iii")
 
 [resource]

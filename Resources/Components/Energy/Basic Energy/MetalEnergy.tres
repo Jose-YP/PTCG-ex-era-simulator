@@ -9,6 +9,7 @@
 script = ExtResource("1_reypr")
 side_target = null
 slot_target = 1
+specifically = Array[String]([])
 comparison_type = null
 max_hp = null
 damage_taken = null
@@ -44,7 +45,7 @@ immune_to_damage = false
 
 [sub_resource type="Resource" id="Resource_rtiwi"]
 script = ExtResource("4_1lfkp")
-order = null
+order = Array[int]([])
 buff = SubResource("Resource_w1pwm")
 
 [resource]

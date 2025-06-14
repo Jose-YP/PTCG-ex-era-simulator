@@ -14,6 +14,7 @@ contains = ""
 type = 0
 evolves_from = true
 rare_candy = false
+inclusive_class = true
 poke_class = 0
 owner = 0
 stage = 6

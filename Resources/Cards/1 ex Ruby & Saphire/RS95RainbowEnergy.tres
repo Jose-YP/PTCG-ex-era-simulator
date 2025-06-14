@@ -18,7 +18,7 @@ plus = false
 
 [sub_resource type="Resource" id="Resource_mysds"]
 script = ExtResource("2_sn5e8")
-order = null
+order = Array[int]([])
 dmgManip = SubResource("Resource_4accq")
 
 [sub_resource type="Resource" id="Resource_10nfj"]
