@@ -6,7 +6,7 @@
 
 [sub_resource type="Resource" id="Resource_eqnsd"]
 script = ExtResource("2_3bjhw")
-description = ""
+description = "different types of Basic Energy"
 must_be_different = true
 broad_class = 4
 exactly = false

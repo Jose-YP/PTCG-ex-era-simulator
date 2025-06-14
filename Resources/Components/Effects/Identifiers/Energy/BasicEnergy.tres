@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_om8ao")
-description = "basic energy"
+description = "Basic Energy"
 must_be_different = false
 broad_class = 4
 exactly = false

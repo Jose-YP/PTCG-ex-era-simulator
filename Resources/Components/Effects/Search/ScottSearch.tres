@@ -6,7 +6,7 @@
 
 [sub_resource type="Resource" id="Resource_ejoaa"]
 script = ExtResource("1_o8vj0")
-description = "supporters and stadiums in any combination"
+description = "Supporters or Stadiums"
 must_be_different = false
 broad_class = 2
 exactly = false

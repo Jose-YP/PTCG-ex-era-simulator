@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_7odkx")
-description = "supporter card"
+description = "Supporter Card"
 must_be_different = false
 broad_class = 2
 exactly = false

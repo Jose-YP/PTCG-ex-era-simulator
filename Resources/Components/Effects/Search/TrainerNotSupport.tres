@@ -6,7 +6,7 @@
 
 [sub_resource type="Resource" id="Resource_0xbcy"]
 script = ExtResource("2_0k3ge")
-description = "Trainer card (excluding Supporter cards)"
+description = "Trainer Card (excluding Supporter Cards)"
 must_be_different = false
 broad_class = 2
 exactly = false

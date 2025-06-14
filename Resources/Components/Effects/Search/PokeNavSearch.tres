@@ -14,7 +14,7 @@ metadata/_custom_type_script = "uid://cdyba0wadidwb"
 
 [sub_resource type="Resource" id="Resource_n7q0i"]
 script = ExtResource("2_och1r")
-description = ""
+description = "Pokemon or Energy card"
 must_be_different = false
 broad_class = 5
 exactly = false

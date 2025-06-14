@@ -94,6 +94,9 @@ func is_allowed(button: Button) -> void:
 
 #endregion
 #--------------------------------------
+
+#--------------------------------------
+#region ITEM MANAGEMENT
 func reset_items():
 	for item in items:
 		item.queue_free()
@@ -119,7 +122,11 @@ func sort_items():
 		%CardList.move_child(items[i], i)
 	
 	pass
+#endregion
+#--------------------------------------
 
+#--------------------------------------
+#region SIGNALS
 func _on_resources_show_list(message: String, looking_at: String, using: Array[Base_Card]):
 	reset_items()
 	
@@ -163,3 +170,6 @@ func disapear():
 func _on_minimize_button_pressed() -> void:
 	size = %Header.size if %MinimizeButton.minimized else old_size
 	print(%Header.size if %MinimizeButton.minimized else old_size, %MinimizeButton.minimized )
+#endregion
+#--------------------------------------
+ 

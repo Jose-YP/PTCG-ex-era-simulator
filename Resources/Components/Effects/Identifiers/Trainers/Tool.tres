@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_wv2ue")
-description = "tool card"
+description = "Tool Card"
 must_be_different = false
 broad_class = 2
 exactly = false

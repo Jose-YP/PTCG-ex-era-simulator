@@ -6,7 +6,7 @@
 
 [sub_resource type="Resource" id="Resource_ia3mn"]
 script = ExtResource("2_bqxrx")
-description = ""
+description = "evolution for Active"
 must_be_different = false
 broad_class = 1
 exactly = false

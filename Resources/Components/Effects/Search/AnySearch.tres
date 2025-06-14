@@ -5,7 +5,7 @@
 
 [sub_resource type="Resource" id="Resource_fnpip"]
 script = ExtResource("1_5ugi7")
-description = "of any card"
+description = "Card"
 must_be_different = false
 broad_class = 7
 exactly = false

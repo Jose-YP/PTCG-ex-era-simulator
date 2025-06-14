@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_ipo0q")
-description = ""
+description = "of any Pokemon"
 must_be_different = false
 broad_class = 1
 exactly = false
