@@ -4,6 +4,7 @@ class_name Tutor_Box
 @export var connected_list: PlayingList
 @export var search: Search
 @export var start_text: String
+@export var list_item: PackedScene
 
 @onready var req_text: RichTextLabel = %ReqText
 @onready var status: RichTextLabel = %Status
@@ -17,6 +18,9 @@ var current_tutor: Array[Base_Card]
 var max_tutor: int = 0
 var stack_size: int = 0
 
+func _ready() -> void:
+	SignalBus.connect("tutor_card", add_card)
+
 func set_up_tutor():
 	var text: String = start_text
 	for i in range(search.of_this.size()):
@@ -26,6 +30,9 @@ func set_up_tutor():
 			text = str(text, ", & ", search.how_many[i], " ", search.of_this[i].description)
 		else:
 			text = str(text, " ", search.how_many[i], " ", search.of_this[i].description)
+	
+	for id in search.of_this:
+		tutor_requiremnts[id] = []
 	
 	print(text)
 	req_text.append_text(text)
@@ -52,6 +59,8 @@ func add_card(card: Base_Card):
 		#Check if this card is allowed to be added
 		if id.identifier_bool(card, based_on) and tutor_requiremnts[id].size() < num:
 			tutor_requiremnts[id].append(card)
+			show_card(card)
+			
 			#If the search identifier is now satisfied make sure no more can be added
 			if tutor_requiremnts[id].size() >= num:
 				no_more_adding.emit(id)
@@ -60,9 +69,18 @@ func add_card(card: Base_Card):
 	#Only ends up here if a card cannot be added for some reason
 	printerr("Can't add ", card.name, " tutor condition doesn't allow it")
 
+func show_card(card: Base_Card):
+	var making = list_item.instantiate()
+	making.card = card
+	making.parent = self
+	%CardList.add_child(making)
+
 func _on_confirm_pressed() -> void:
 	print("Moving ", current_tutor, " from ", search.and_then.where, " to ", search.where)
 	SignalBus.swap_card_location.emit(current_tutor, search.and_then.where, search.where)
 
 func _on_cancel_pressed() -> void:
 	pass # Replace with function body.
+
+func _on_no_more_adding(id: Identifier) -> void:
+	print("Got every card that is ", id.description)

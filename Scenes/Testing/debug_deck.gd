@@ -13,6 +13,7 @@ extends Control
 @onready var slotUI: SlotUIActions = $Fundies/SlotUIActions
 @onready var playerSide: Control = $FullUI/PlayerSide
 @onready var reveal_slot: Button = $FullUI/PlayerSide/Non_mon/SideDisplay
+@onready var identifier_types: OptionButton = $FullUI/CardActions/IdentifierTypes
 @onready var search_types: OptionButton = $FullUI/CardActions/SearchTypes
 @onready var ask_types: OptionButton = $FullUI/CardActions/AskTypes
 
@@ -49,17 +50,17 @@ func template_search():
 	effect_template.search = searches[search_types.get_selected_id()]
 	effect_template.play_effect(fundies)
 
-func _on_search_test_pressed() -> void:
-	print(search_identifiers[search_types.get_selected_id()], search_types.get_item_text(search_types.get_selected_id()))
-	var identifier: Identifier = search_identifiers[search_types.get_selected_id()]
-	match search_types.get_selected_id():
-		7: #Evolves from active
-			identifier.edit_in_type(slots[0].type)
-		8: #Pokemon of type
-			identifier.edit_in_type(dummy.get_type_flag())
-		9: #Energy of type
-			identifier.edit_in_type(dummy.get_type_flag())
-	card_resources.identifier_search(card_resources.arrays.get_array(Constants.STACKS.DECK), [slots[0]], search_identifiers[search_types.get_selected_id()])
+#func _on_search_test_pressed() -> void:
+	#print(search_identifiers[search_types.get_selected_id()], search_types.get_item_text(search_types.get_selected_id()))
+	#var identifier: Identifier = search_identifiers[search_types.get_selected_id()]
+	#match search_types.get_selected_id():
+		#7: #Evolves from active
+			#identifier.edit_in_type(slots[0].type)
+		#8: #Pokemon of type
+			#identifier.edit_in_type(dummy.get_type_flag())
+		#9: #Energy of type
+			#identifier.edit_in_type(dummy.get_type_flag())
+	#card_resources.identifier_search(card_resources.arrays.get_array(Constants.STACKS.DECK), [slots[0]], search_identifiers[search_types.get_selected_id()])
 
 func _on_ask_test_pressed() -> void:
 	pass # Replace with function body.

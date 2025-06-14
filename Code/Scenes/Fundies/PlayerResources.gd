@@ -225,6 +225,29 @@ func identifier_search(list: Array[Base_Card], based_on: Array[PokeSlot],\
 	print("--------------------")
 	return valid_dictionary
 
+#Redundant for the most part but if it gets the job done
+func tutor_instantiate_list(specified_list: Array[Dictionary], search: Search,\
+ which: Constants.STACKS, stack_act: Constants.STACK_ACT = Constants.STACK_ACT.LOOK):
+	var hand_list: PackedScene = Constants.playing_list
+	var new_node = hand_list.instantiate()
+	
+	match which:
+		Constants.STACKS.HAND: new_node.display_text = "HAND"
+		Constants.STACKS.DECK: new_node.display_text = "DECK"
+		Constants.STACKS.DISCARD: new_node.display_text = "DISCARD"
+		Constants.STACKS.PRIZE: new_node.display_text = "PRIZE"
+	
+	new_node.all_lists = specified_list
+	new_node.list = specified_list[0]
+	new_node.top_level = true
+	new_node.instruction_text = "Choose cards to send over"
+	new_node.old_pos = fundies.player_side.non_mon.stacks[which].global_position
+	new_node.stack_act = stack_act
+	new_node.stack = which
+	add_sibling(new_node)
+	fundies.current_list = new_node
+	new_node.tutor_component.setup_tutor(search)
+
 #endregion
 #--------------------------------------
 

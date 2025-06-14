@@ -233,7 +233,7 @@ layout_mode = 2
 toggle_mode = true
 text = "Search Test"
 
-[node name="SearchTypes" type="OptionButton" parent="FullUI/CardActions"]
+[node name="IdentifierTypes" type="OptionButton" parent="FullUI/CardActions"]
 visible = false
 layout_mode = 2
 item_count = 13
@@ -264,7 +264,7 @@ popup/item_11/id = 11
 popup/item_12/text = "Tool & TM"
 popup/item_12/id = 12
 
-[node name="SearchTypes2" type="OptionButton" parent="FullUI/CardActions"]
+[node name="SearchTypes" type="OptionButton" parent="FullUI/CardActions"]
 layout_mode = 2
 selected = 0
 item_count = 13

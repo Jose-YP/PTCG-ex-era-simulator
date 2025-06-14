@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://f4m1ofpicse4"]
+[gd_scene load_steps=13 format=3 uid="uid://f4m1ofpicse4"]
 
 [ext_resource type="Theme" uid="uid://bfw6ylcttychc" path="res://Themes/AverageButton.tres" id="1_j5ysj"]
 [ext_resource type="Script" uid="uid://dkqmky7i7ibak" path="res://Code/Scenes/UI/List/PlayingList.gd" id="1_sw67d"]
@@ -8,6 +8,7 @@
 [ext_resource type="StyleBox" uid="uid://bsh6edcpwvowr" path="res://Themes/minimize_button.tres" id="6_k6oam"]
 [ext_resource type="Script" uid="uid://cqy27ta3ov66b" path="res://Code/Scenes/UI/List/close_button.gd" id="7_75a1o"]
 [ext_resource type="Theme" uid="uid://bgn3jjlbvn1xq" path="res://Themes/PowerButton.tres" id="8_teavr"]
+[ext_resource type="Script" uid="uid://2qrhsccmgtfl" path="res://Code/Scenes/UI/List/tutor_component.gd" id="11_teavr"]
 [ext_resource type="StyleBox" uid="uid://bvesf3hjv2bsl" path="res://Themes/GBADragBox.tres" id="13_8wubv"]
 [ext_resource type="PackedScene" uid="uid://cmmds4boaksl7" path="res://Scenes/UI/UIComponents/movable.tscn" id="14_mnu8a"]
 
@@ -137,5 +138,8 @@ fit_content = true
 layout_mode = 2
 dragging_node = NodePath("../../../../..")
 based_on = NodePath("..")
+
+[node name="TutorComponent" type="Node" parent="."]
+script = ExtResource("11_teavr")
 
 [connection signal="pressed" from="HBoxContainer/PanelContainer/VBoxContainer/Header/MinimizeButton" to="." method="_on_minimize_button_pressed"]

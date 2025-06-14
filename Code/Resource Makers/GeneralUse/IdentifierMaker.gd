@@ -70,16 +70,18 @@ func identifier_bool(card: Base_Card, based_on: Array[PokeSlot]) -> bool:
 				print(" I don't care what this is just say it's good enogh")
 				return true
 		else:
-			if type & card.energy_properties.fail_type == 0:
+			print(type, " ", card.energy_properties.fail_type)
+			if type != 511 and type & card.energy_properties.fail_type == 0:
+				print("Not considered the right type")
 				return false
 			
 			print(card.name, " is ", card.energy_properties.considered)
 			if card.energy_properties.considered == "Basic Energy":
 				print("Looking for Basic so ", energy_class & 1)
-				return energy_class & 1
+				return energy_class && 1
 			else:
 				print("Looking for Special so ", energy_class & 2)
-				return energy_class & 2
+				return energy_class && 2
 	
 	else:
 		print("Not right category, moving on")

@@ -20,6 +20,7 @@ class_name PlayingList
 @onready var identifier: RichTextLabel = %Identifier
 @onready var instructions: RichTextLabel = %Instructions
 @onready var old_size: Vector2 = size
+@onready var tutor_component: Node = $TutorComponent
 
 var items: Array[Node] = []
 var display_text: String = ""
@@ -29,7 +30,6 @@ var white_list: Array[String] = []
 var old_pos: Vector2
 var display: Node
 var options: Node
-var tutor: Tutor_Box
 var on_card: bool = false
 
 #endregion
@@ -40,6 +40,9 @@ var on_card: bool = false
 func _ready():
 	identifier.append_text(display_text)
 	instructions.append_text(instruction_text)
+	
+	if stack != Constants.STACKS.HAND:
+		%Close_Button.hide()
 	
 	set_items()
 
@@ -67,17 +70,8 @@ func is_allowed(button: Button) -> void:
 			else: button.not_allowed()
 		_:
 			if list[button.card]:
+				
 				button.allow_move_to(stack_act)
-
-func setup_tutor(search: Search):
-	if not (stack_act == Constants.STACK_ACT.TUTOR or stack_act == Constants.STACK_ACT.DISCARD):
-		printerr("Why is setup tutor being called when there's no tutor on right now?")
-		return
-	
-	tutor = tutor_box.instantiate()
-	tutor.search = search
-	tutor.set_up_tutor()
-	add_sibling(tutor)
 
 #endregion
 #--------------------------------------

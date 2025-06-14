@@ -32,4 +32,5 @@ func play_effect(fundies: Fundies):
 		based_on_cards = fundies.get_slots(based_on_side, based_on_slots)
 		print("BASED ON ", based_on_side, based_on_slots, based_on_cards)
 	
-	fundies.player_resources.search_array(self, based_on_cards)
+	var search_for: Array[Dictionary] = fundies.player_resources.search_array(self, based_on_cards)
+	fundies.player_resources.tutor_instantiate_list(search_for, self, where, Constants.STACK_ACT.TUTOR)

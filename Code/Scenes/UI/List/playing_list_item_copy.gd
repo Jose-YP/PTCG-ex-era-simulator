@@ -43,6 +43,8 @@ func not_allowed():
 	#disabled = true
 
 func allow_move_to(destination: Constants.STACKS):
+	allowed = true
+	disabled = false
 	match destination:
 		Constants.STACKS.DISCARD: stack_act = Constants.STACK_ACT.DISCARD
 		_: stack_act = Constants.STACK_ACT.TUTOR
@@ -113,7 +115,7 @@ func show_card() -> void:
 	Globals.checking_card()
 
 func _gui_input(event):
-	if not Globals.checking:
+	if not Globals.checking and not disabled:
 		if event.is_action_pressed("A"):
 			if parent.options:
 				await parent.options.disapear()
