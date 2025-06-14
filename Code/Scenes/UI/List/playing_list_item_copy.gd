@@ -40,7 +40,7 @@ func allow(play_as: int):
 
 func not_allowed():
 	allowed = false
-	#disabled = true
+	disabled = true
 
 func allow_move_to(destination: Constants.STACKS):
 	allowed = true

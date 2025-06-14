@@ -57,6 +57,12 @@ func set_items():
 	
 	items = %CardList.get_children()
 
+func refresh_allowance():
+	items = %CardList.get_children()
+	
+	for item in items:
+		is_allowed(item)
+
 func is_allowed(button: Button) -> void:
 	print("List checking if ", button.card.name, " is allowed ", list[button.card])
 	button.stack_act = stack_act
@@ -68,9 +74,20 @@ func is_allowed(button: Button) -> void:
 			if (list[button.card] or whitelisted) and not blacklisted:
 				button.allow(allowed_as)
 			else: button.not_allowed()
+		Constants.STACK_ACT.TUTOR:
+			if tutor_component.readied:
+				if tutor_component.list_allowed(button.card):
+					button.allow_move_to(stack_act)
+				else: button.not_allowed()
+			else:
+				var result: bool = false
+				for loc_list in all_lists:
+					result = result or loc_list[button.card]
+				if result: button.allow_move_to(stack_act)
+				else: button.not_allowed()
+			
 		_:
 			if list[button.card]:
-				
 				button.allow_move_to(stack_act)
 
 #endregion
@@ -78,6 +95,18 @@ func is_allowed(button: Button) -> void:
 func reset_items():
 	for item in items:
 		item.queue_free()
+
+func remove_item(card: Base_Card):
+	for item in items:
+		if item.card == card:
+			item.queue_free()
+
+func add_item(card: Base_Card):
+	var making = list_item.instantiate()
+	making.card = card
+	making.parent = self
+	%CardList.add_child(making)
+	is_allowed(making)
 
 func _on_resources_show_list(message: String, looking_at: String, using: Array[Base_Card]):
 	reset_items()

@@ -74,6 +74,8 @@ func show_card(card: Base_Card):
 	making.card = card
 	making.parent = self
 	%CardList.add_child(making)
+	
+	connected_list.remove_item(card)
 
 func _on_confirm_pressed() -> void:
 	print("Moving ", current_tutor, " from ", search.and_then.where, " to ", search.where)
