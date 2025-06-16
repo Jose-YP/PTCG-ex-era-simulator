@@ -143,3 +143,4 @@ based_on = NodePath("..")
 script = ExtResource("11_teavr")
 
 [connection signal="pressed" from="HBoxContainer/PanelContainer/VBoxContainer/Header/MinimizeButton" to="." method="_on_minimize_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/PanelContainer/VBoxContainer/Header/Close_Button" to="." method="disapear"]

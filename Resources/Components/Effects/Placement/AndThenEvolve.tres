@@ -1,9 +1,14 @@
 [gd_resource type="Resource" script_class="Placement" load_steps=2 format=3 uid="uid://cygim4rxvdbp8"]
 
-[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/PlacementMaker.gd" id="1_nk1yb"]
+[ext_resource type="Script" uid="uid://cdyba0wadidwb" path="res://Code/Resource Makers/EffectSpecific/PlacementMaker.gd" id="1_nk1yb"]
 
 [resource]
 script = ExtResource("1_nk1yb")
-where = 4
+which = 1
+top_deck = false
+stack = 1
+slot = 1
+use_as = 0
+reorder_type = 0
 shuffle = true
 evolve = true

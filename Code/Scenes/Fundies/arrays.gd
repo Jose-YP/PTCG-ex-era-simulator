@@ -1,4 +1,5 @@
 extends Node
+class_name Card_Arrays
 
 var usable_deck: Array[Base_Card] = []
 var hand: Array[Base_Card] = []
@@ -13,15 +14,20 @@ func sendStackDictionary() -> Dictionary[Constants.STACKS, Array]:
  Constants.STACKS.HAND: hand, Constants.STACKS.DECK: usable_deck,
  Constants.STACKS.DISCARD: discard_pile, Constants.STACKS.PRIZE: prize_cards}
 
-func append_to_arrays(type: String, card: Base_Card):
+func append_to_arrays(type: Constants.STACKS, card: Base_Card, top_deck: bool = false):
+	#Constants.STACKS.DECK and bottom_stack
 	match type:
-		"Hand":
+		Constants.STACKS.HAND:
 			hand.append(card)
-		"Deck":
-			usable_deck.append(card)
-		"Discsard":
+		Constants.STACKS.DECK:
+			if top_deck: #This is generally slower so only when top deck is important
+				usable_deck.push_front(card)
+			else:
+				usable_deck.append(card)
+			
+		Constants.STACKS.DISCARD:
 			discard_pile.append(card)
-		"Prize":
+		Constants.STACKS.PRIZE:
 			prize_cards.append(card)
 		_:
 			push_error(type, " is not in ", name)

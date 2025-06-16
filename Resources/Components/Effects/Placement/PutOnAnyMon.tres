@@ -4,7 +4,13 @@
 
 [resource]
 script = ExtResource("1_d71xv")
-where = 7
+which = 1
+bottom_stack = false
+stack = 1
+slot = 4
+use_as = 0
+reorder_type = 0
 reorder = false
+reordering_chosen = false
 shuffle = false
 evolve = false

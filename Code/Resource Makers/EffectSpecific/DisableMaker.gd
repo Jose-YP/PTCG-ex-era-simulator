@@ -23,5 +23,5 @@ class_name Disable
 @export var retreat_duration: int = 1
 @export var disable_retreat: bool = false
 
-func play_effect(fundies: Fundies):
+func play_effect(fundies: Fundies, attacking_targets: Array[PokeSlot], defender_targets: Array[PokeSlot]):
 	print("PLAY DISABLE")

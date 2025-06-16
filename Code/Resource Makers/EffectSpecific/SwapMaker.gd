@@ -11,5 +11,5 @@ class_name PokeSwap
 ##What are thier options on this side
 @export var slots: Constants.SLOTS = Constants.SLOTS.ALL
 
-func play_effect(fundies: Fundies):
+func play_effect(fundies: Fundies, attacking_targets: Array[PokeSlot], defender_targets: Array[PokeSlot]):
 	print("PLAY SWAP")

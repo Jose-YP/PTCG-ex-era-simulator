@@ -4,8 +4,14 @@
 
 [resource]
 script = ExtResource("1_nq611")
-where = 7
+which = 0
+bottom_stack = false
+stack = 1
+slot = 4
+use_as = 0
+reorder_type = 0
 reorder = false
+reordering_chosen = false
 shuffle = true
 evolve = false
 metadata/_custom_type_script = "uid://cdyba0wadidwb"

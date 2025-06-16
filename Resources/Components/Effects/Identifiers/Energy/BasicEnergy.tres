@@ -5,16 +5,16 @@
 [resource]
 script = ExtResource("1_om8ao")
 description = "Basic Energy"
-must_be_different = false
+must_be_different = null
 broad_class = 4
-exactly = false
-contains = ""
+exactly = null
+contains = null
 type = 511
-evolves_from = false
-rare_candy = false
-inclusive_class = true
-poke_class = 0
-owner = 0
-stage = 0
-trainer_classes = 0
+evolves_from = null
+rare_candy = null
+inclusive_class = null
+poke_class = null
+owner = null
+stage = null
+trainer_classes = null
 energy_class = 1

@@ -1,16 +1,20 @@
 [gd_resource type="Resource" script_class="Identifier" load_steps=2 format=3 uid="uid://cd880a7x21jgg"]
 
-[ext_resource type="Script" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="1_4xpar"]
+[ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="1_4xpar"]
 
 [resource]
 script = ExtResource("1_4xpar")
-must_be_different = false
+description = null
+must_be_different = null
 broad_class = 4
-contains = ""
+exactly = null
+contains = null
 type = 511
-evolves_from = false
+evolves_from = null
+rare_candy = null
+inclusive_class = null
 poke_class = null
-owner = 0
+owner = null
 stage = null
 trainer_classes = null
-energy_class = 3
+energy_class = null

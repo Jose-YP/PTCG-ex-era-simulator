@@ -1,9 +1,16 @@
 [gd_resource type="Resource" script_class="Placement" load_steps=2 format=3 uid="uid://bl4qnrkh3kxdl"]
 
-[ext_resource type="Script" path="res://Code/Resource Makers/EffectSpecific/PlacementMaker.gd" id="1_d1qw4"]
+[ext_resource type="Script" uid="uid://cdyba0wadidwb" path="res://Code/Resource Makers/EffectSpecific/PlacementMaker.gd" id="1_d1qw4"]
 
 [resource]
 script = ExtResource("1_d1qw4")
-where = 0
+which = 0
+bottom_stack = false
+stack = 0
+slot = 4
+use_as = 0
+reorder_type = 0
+reorder = false
+reordering_chosen = false
 shuffle = true
 evolve = false

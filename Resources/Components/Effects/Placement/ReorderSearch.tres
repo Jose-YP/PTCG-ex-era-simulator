@@ -4,8 +4,12 @@
 
 [resource]
 script = ExtResource("1_f8oxr")
-where = 1
-reorder = true
+which = 0
+top_deck = true
+stack = 1
+slot = 4
+use_as = 0
+reorder_type = 3
 shuffle = false
 evolve = false
 metadata/_custom_type_script = "uid://cdyba0wadidwb"

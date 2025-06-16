@@ -48,7 +48,7 @@ func _on_view_all_deck_pressed():
 
 func template_search():
 	effect_template.search = searches[search_types.get_selected_id()]
-	effect_template.play_effect(fundies)
+	effect_template.play_effect(fundies, [], [])
 
 #func _on_search_test_pressed() -> void:
 	#print(search_identifiers[search_types.get_selected_id()], search_types.get_item_text(search_types.get_selected_id()))

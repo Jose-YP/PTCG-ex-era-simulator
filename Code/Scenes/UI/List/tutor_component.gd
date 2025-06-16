@@ -26,7 +26,9 @@ func setup_tutor(search: Search):
 	tutor.connected_list = par
 	par.add_sibling(tutor)
 	tutor.set_up_tutor()
-	tutor.connect("no_more_adding", disable_list)
+	#tutor.connect("no_more_adding", disable_list)
+	tutor.connect("check_requirements", check_lists)
+	
 	readied = true
 
 func list_allowed(card: Base_Card) -> bool:
@@ -35,11 +37,13 @@ func list_allowed(card: Base_Card) -> bool:
 		result = result or (list[card] and allowed_dict[list])
 	return result
 
-func disable_list(id: Identifier):
-	allowed_dict[search_dict[id]] = false
+func check_lists(id: Identifier, allowed: bool):
+	allowed_dict[search_dict[id]] = allowed
 	par.refresh_allowance()
-	print(search_dict[id])
-
-func enable_list(id: Identifier):
-	allowed_dict[search_dict[id]] = true
-	par.refresh_allowance()
+	
+	var any_allowed: bool = false
+	for dict in allowed_dict:
+		any_allowed = allowed_dict[dict] or any_allowed
+	
+	if not any_allowed:
+		tutor.n

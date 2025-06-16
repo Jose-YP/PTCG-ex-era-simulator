@@ -13,15 +13,11 @@ class_name Deck_Manipulator
  "Energy") var allowed_play: int = 1023
 
 @onready var fundies: Fundies = $".."
-@onready var arrays: Node = $Arrays
+@onready var arrays: Card_Arrays = $Arrays
 
 #signal update_resources()
 
 #var reveal_stack: Array[Base_Card]
-#var usable_deck: Array[Base_Card] = []
-#var hand: Array[Base_Card] = []
-#var discard_pile: Array[Base_Card] = []
-#var prize_cards: Array[Base_Card] = []
 var mulligans: int = 0
 var mulligan_array: Array[Array]
 var supporter_used: bool = false
@@ -30,6 +26,7 @@ var supporter_used: bool = false
 #region INITALIZATION
 func _ready():
 	SignalBus.connect("show_list", spawn_list)
+	SignalBus.connect("swap_card_location", placement_handling)
 	#SignalBus.connect("move_cards", move_cards)
 	
 	if deck: 
@@ -74,7 +71,7 @@ func check_starting():
 
 func fill_prizes():
 	while (arrays.prize_cards.size() != prize_count):
-		arrays.append_to_arrays("Prize", arrays.usable_deck.pop_front())
+		arrays.append_to_arrays(Constants.STACKS.PRIZE, arrays.usable_deck.pop_front())
 
 #endregion
 #--------------------------------------
@@ -83,19 +80,21 @@ func fill_prizes():
 #region CARD MOVEMENT
 func draw(times: int = 1): #From deck to hand
 	for i in range(times):
-		arrays.append_to_arrays("Hand", arrays.usable_deck.pop_front())
+		arrays.append_to_arrays(Constants.STACKS.HAND, arrays.usable_deck.pop_front())
 	
 	update_lists()
 
-func move_cards(cards: Array[Base_Card], from: String, towards: String, shuffle: bool = true):
-	var dict: Dictionary[String, Array] = arrays.sendStackDictionary()
+func move_cards(cards: Array[Base_Card], from: Constants.STACKS, towards: Constants.STACKS,
+ shuffle: bool = true, top_deck: bool = false):
+	var dict: Dictionary[Constants.STACKS, Array] = arrays.sendStackDictionary()
 	for card in cards: 
 		#Remove all tutored cards from source first
 		var adding_card = dict[from].pop_at(dict[from].find(card))
 		#Now it can be added back to the towards array
-		arrays.append_to_arrays(towards, adding_card)
+		arrays.append_to_arrays(towards, adding_card, top_deck)
 	
-	if (from == "Deck" or towards == "Deck") and shuffle:
+	#The deck is the only one that needs to be shuffled
+	if (from == Constants.STACKS.DECK or towards == Constants.STACKS.DECK) and shuffle:
 		arrays.usable_deck.shuffle()
 	
 	update_lists()
@@ -247,6 +246,28 @@ func tutor_instantiate_list(specified_list: Array[Dictionary], search: Search,\
 	add_sibling(new_node)
 	fundies.current_list = new_node
 	new_node.tutor_component.setup_tutor(search)
+
+func placement_handling(tutored_cards: Array[Base_Card], placement: Placement, origin: Constants.STACKS):
+	#Is this placement on a stack or on a slot
+	#Stack placement
+	if placement.which == 0:
+		#var origin_stack = arrays.get_array(origin)
+		#for card in tutored_cards:
+			#origin_stack.erase(card)
+		
+		move_cards(tutored_cards, origin, placement.stack, placement.shuffle, placement.top_deck)
+		
+		pass
+	
+	
+	#Does placement necessitate a shuffle?
+	
+	#Does the placement allow these cards to be reordered?
+	#Reorder the unchosen cards or chosen cards?
+	
+	#Where are these cards going?
+	
+	pass
 
 #endregion
 #--------------------------------------

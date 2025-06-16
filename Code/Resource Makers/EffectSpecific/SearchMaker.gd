@@ -24,7 +24,7 @@ class_name Search
 ##Should the defender see any of these cards?
 @export var reveal: bool = true
 
-func play_effect(fundies: Fundies):
+func play_effect(fundies: Fundies, attacking_targets: Array[PokeSlot], defender_targets: Array[PokeSlot]):
 	print("PLAY SEARCH")
 	var based_on_cards: Array[PokeSlot]
 	

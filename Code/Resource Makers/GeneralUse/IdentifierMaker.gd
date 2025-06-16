@@ -39,7 +39,7 @@ func identifier_bool(card: Base_Card, based_on: Array[PokeSlot]) -> bool:
 		print("Yes it's considered the right class ")
 		#Get the results of every applicable identifier
 		#Check if every boolean has to be allowed or not
-		if card.pokemon_properties:
+		if card.pokemon_properties and not card.fossil:
 			if exactly:
 				print("AND BOOL ", and_poke_bool(card, based_on))
 				return and_poke_bool(card, based_on)
@@ -64,8 +64,8 @@ func identifier_bool(card: Base_Card, based_on: Array[PokeSlot]) -> bool:
 					"RSM":
 						tr_class += 2 ** 5
 				
-				print("Now is this allowed? ", trainer_classes && tr_class)
-				return trainer_classes && tr_class
+				print("Now is this allowed? ", trainer_classes & tr_class != 0)
+				return trainer_classes & tr_class != 0
 			else:
 				print(" I don't care what this is just say it's good enogh")
 				return true
@@ -75,17 +75,19 @@ func identifier_bool(card: Base_Card, based_on: Array[PokeSlot]) -> bool:
 				print("Not considered the right type")
 				return false
 			
-			print(card.name, " is ", card.energy_properties.considered)
-			if card.energy_properties.considered == "Basic Energy":
-				print("Looking for Basic so ", energy_class & 1)
+			print(card.name, " is ", card.energy_properties.considered, " looking for ", energy_class)
+			print(energy_class && 1, energy_class && 2, energy_class & 1, energy_class & 2)
+			if card.energy_properties.considered == "Basic Energy" and energy_class & 1 != 0:
+				print("Looking for Basic so ", energy_class && 1)
 				return energy_class && 1
+			elif energy_class & 2 != 0:
+				print("Looking for Special so ", energy_class && 2)
+				return card.energy_properties.considered != "Special Energy"
 			else:
-				print("Looking for Special so ", energy_class & 2)
-				return energy_class && 2
+				return false
 	
-	else:
-		print("Not right category, moving on")
-		return false
+	print("Not right category, moving on")
+	return false
 
 func or_poke_bool(card: Base_Card, based_on: Array[PokeSlot]) -> bool:
 	print("/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\")

@@ -100,9 +100,11 @@ func is_allowed(button: Button) -> void:
 func reset_items():
 	for item in items:
 		item.queue_free()
+	
+	items = %CardList.get_children()
 
 func remove_item(card: Base_Card):
-	for item in items:
+	for item in %CardList.get_children():
 		if item.card == card:
 			item.queue_free()
 
@@ -172,4 +174,3 @@ func _on_minimize_button_pressed() -> void:
 	print(%Header.size if %MinimizeButton.minimized else old_size, %MinimizeButton.minimized )
 #endregion
 #--------------------------------------
- 

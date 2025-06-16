@@ -8,5 +8,5 @@ class_name Alleviate
 @export var remove_shockwave: bool = false
 @export var remove_imprison: bool = false
 
-func play_effect(fundies: Fundies):
+func play_effect(fundies: Fundies, attacking_targets: Array[PokeSlot], defender_targets: Array[PokeSlot]):
 	print("PLAY ALLEVIATE")

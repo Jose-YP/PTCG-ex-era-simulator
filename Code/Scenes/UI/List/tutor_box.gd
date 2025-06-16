@@ -7,12 +7,13 @@ class_name Tutor_Box
 @export var search: Search
 @export var start_text: String
 @export var list_item: PackedScene
+@export var disapear_timing: float = .1
 
 @onready var req_text: RichTextLabel = %ReqText
 @onready var status: RichTextLabel = %Status
 @onready var card_list: VBoxContainer = %CardList
 
-signal no_more_adding(id: Identifier)
+signal check_requirements(id: Identifier)
 
 var tutor_requiremnts: Dictionary[Identifier, Array]
 var based_on: Array[PokeSlot]
@@ -52,10 +53,10 @@ func update_tutor():
 	#If the max_tutor is satisfied then allow the confirm OR
 	#If there aren't any cards left from the stack, allow confirmation
 	%Confirm.disabled = current_num != max_tutor or current_num == stack_size
-	if not (current_num != max_tutor or current_num == stack_size):
-		print("Maybe I can use thing now?")
-	else:
-		print(current_num != max_tutor, current_num == stack_size)
+	#if not (current_num != max_tutor or current_num == stack_size):
+		#print("Maybe I can use thing now?")
+	#else:
+		#print(current_num != max_tutor, current_num == stack_size)
 
 func update_status():
 	var stat_text: String = ""
@@ -87,7 +88,7 @@ func add_card(card: Base_Card):
 			
 			#If the search identifier is now satisfied make sure no more can be added
 			if tutor_requiremnts[id].size() >= num:
-				no_more_adding.emit(id)
+				check_requirements.emit(id, false)
 			update_tutor()
 			return
 	#Only ends up here if a card cannot be added for some reason
@@ -101,8 +102,9 @@ func remove_card(button: Button):
 			tutor_requiremnts[id].erase(button)
 			button.queue_free()
 			connected_list.add_item(button.card)
+			check_requirements.emit(id, true)
 	
-	connected_list.sort_list()
+	connected_list.sort_items()
 	update_tutor()
 
 func show_card(card: Base_Card, id: Identifier) -> Button:
@@ -115,8 +117,12 @@ func show_card(card: Base_Card, id: Identifier) -> Button:
 	connected_list.remove_item(card)
 	making.allow_move_to(connected_list.stack)
 	return making
+
 #endregion
 #--------------------------------------
+
+func nothing_left():
+	%Confirm.disabled = false
 
 #--------------------------------------
 #region SIGNALS
@@ -127,8 +133,10 @@ func _on_confirm_pressed() -> void:
 		for button in tutor_requiremnts[id]:
 			all_tutored.append(button.card)
 	
-	print("Moving ", all_tutored, " from ", search.and_then.where, " to ", search.where)
-	SignalBus.swap_card_location.emit(all_tutored, search.and_then.where, search.where)
+	print("Moving ", all_tutored, " from ", search.and_then.stack, " to ", search.where)
+	SignalBus.swap_card_location.emit(all_tutored, search.and_then, search.where)
+	Globals.control_disapear(self, disapear_timing, connected_list.old_pos)
+	Globals.control_disapear(connected_list, disapear_timing, connected_list.old_pos)
 
 func _on_cancel_pressed() -> void:
 	pass # Replace with function body.

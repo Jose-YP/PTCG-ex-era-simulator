@@ -144,6 +144,5 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "Cancel"
 
-[connection signal="no_more_adding" from="." to="." method="_on_no_more_adding"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/ConfirmBox/HBoxContainer/Confirm" to="." method="_on_confirm_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/ConfirmBox/HBoxContainer/Cancel" to="." method="_on_cancel_pressed"]

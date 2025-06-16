@@ -8,5 +8,5 @@ class_name Mimic
 @export_enum("No","AttatchedLimited", "Attatched",
  "AnyLimited", "Any") var mimic: int = 0
 
-func play_effect(fundies: Fundies):
+func play_effect(fundies: Fundies, attacking_targets: Array[PokeSlot], defender_targets: Array[PokeSlot]):
 	print("PLAY MIMIC")

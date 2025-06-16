@@ -19,6 +19,8 @@ var bench_slots: Array[PokeSlot]
 var current_list: Node
 var attacker: PokeSlot
 var defender: PokeSlot
+var attacking_targets: Array[Array]
+var defending_targets: Array[Array]
 
 #region INITALIZATION
 func _get_configuration_warnings() -> PackedStringArray:
@@ -30,9 +32,9 @@ func _get_configuration_warnings() -> PackedStringArray:
 		return []
 
 func _ready() -> void:
-	ui_slots = player_side.ui_slots
+	ui_slots = player_side.get_slots()
 	player_resources.deck = deck
-	
+	ui_slots = player_side.ui_slots
 	for i in range(poke_slots.size()):
 		poke_slots[i].ui_slot = player_side.ui_slots[i]
 		

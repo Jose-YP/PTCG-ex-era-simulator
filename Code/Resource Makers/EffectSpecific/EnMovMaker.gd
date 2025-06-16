@@ -21,5 +21,5 @@ class_name EnMov
 "Lightning","Psychic","Fighting",
 "Darkness","Metal","Colorless") var type: int = 2 ** 9 - 1
 
-func play_effect(fundies: Fundies):
+func play_effect(fundies: Fundies, attacking_targets: Array[PokeSlot], defender_targets: Array[PokeSlot]):
 	print("PLAY ENMOV")

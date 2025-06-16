@@ -18,5 +18,5 @@ class_name Buff
 ##Immune to regular & bench damage [NOT DAMAGE MANIP EFFECT CALLS]
 @export var immune_to_damage: bool = false
 
-func play_effect(fundies: Fundies):
+func play_effect(fundies: Fundies, attacking_targets: Array[PokeSlot], defender_targets: Array[PokeSlot]):
 	print("PLAY BUFF")
