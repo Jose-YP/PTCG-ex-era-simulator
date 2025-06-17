@@ -6,8 +6,6 @@ extends Button
 "Supporter", "Stadium", "Tool", "TM", "RSM", "Fossil",
  "Energy") var card_flags: int = 0
 
-@onready var marker_2d: Marker2D = $Marker2D
-
 var parent: Node
 var checking_card: Node
 var stack_act: Constants.STACK_ACT
@@ -66,25 +64,19 @@ func show_options() -> Node:
 	var option_Display = load("res://Scenes/UI/Lists/item_options_copy.tscn").instantiate()
 	print(option_Display, option_Display.get_script(), option_Display.has_method("set"))
 	print("LIST\n -----------------------\n",option_Display.get_property_list())
-	#var other = load("res://Scenes/UI/Lists/item_options_copy.tscn").instantiate()
-	#option_Display.set_script("res://Code/Scenes/UI/ItemOptions.gd")
-	#print(option_Display.get_script(), other.get_script())
-	#var option_position = Vector2(size.x/2 - position.x - 80, global_position.y - size.y/4)
-	#option_position = Vector2(size.x/2 - global_position.x - 80, global_position.y + size.y/1.25)
 	option_Display.card_flags = card_flags
-	#option_Display.global_position = option_position + Vector2(80,0)
-	option_Display.position = position + option_offset
+	option_Display.global_position = %spawnLocation.global_position + option_offset
 	option_Display.scale = Vector2(.05, .05)
 	option_Display.modulate = Color.TRANSPARENT
-	#option_Display.stack_act = parent.stack_act
-	
 	if allowed:
 		option_Display.stack_act = stack_act
 	else:
 		option_Display.stack_act = "Look"
 	
+	option_Display.connectedList = parent
 	option_Display.origin_button = self
-	parent.add_child(option_Display)
+	parent.get_parent().add_child(option_Display)
+	#parent.add_child(option_Display)
 	option_Display.bring_up()
 	
 	return option_Display

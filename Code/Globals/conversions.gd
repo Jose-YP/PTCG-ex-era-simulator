@@ -101,8 +101,8 @@ func default_card_sort(button1: Button, button2: Button):
 	var second_bool: bool = false
 	
 	for list in all_lists:
-		first_bool = list[card1]
-		second_bool = list[card2]
+		first_bool = list[card1] or first_bool
+		second_bool = list[card2] or second_bool
 	if first_bool and not second_bool:
 		return true
 	elif second_bool and not first_bool:

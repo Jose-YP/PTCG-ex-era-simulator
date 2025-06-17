@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dguolqe6u3fe3"]
+[gd_scene load_steps=6 format=3 uid="uid://dguolqe6u3fe3"]
 
 [ext_resource type="StyleBox" uid="uid://duhmik1loeema" path="res://Themes/GBABox.tres" id="1_ep7dx"]
 [ext_resource type="Script" uid="uid://bidony3vw3glr" path="res://Code/Scenes/UI/List/playing_list_item_copy.gd" id="2_o6l5l"]
 [ext_resource type="Texture2D" uid="uid://cj4eckcnktq41" path="res://Art/Cards/1 ex Ruby & Saphire/109.jpg" id="4_8oxaf"]
-[ext_resource type="Texture2D" uid="uid://cijlbc37pj4gd" path="res://icon.svg" id="5_jlunp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yloa2"]
 bg_color = Color(0.301961, 0.215686, 0.556863, 1)
@@ -43,6 +42,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_auhmd")
 theme_override_styles/normal = ExtResource("1_ep7dx")
 disabled = true
 script = ExtResource("2_o6l5l")
+option_offset = Vector2(30, 50)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
@@ -92,7 +92,8 @@ bbcode_enabled = true
 text = "Team Magma's Mightyena"
 fit_content = true
 
-[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
+[node name="spawnLocation" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/margin_right = 15
 
@@ -100,16 +101,3 @@ theme_override_constants/margin_right = 15
 visible = false
 layout_mode = 2
 theme_override_constants/margin_top = 19
-
-[node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(378, 32)
-
-[node name="TextureRect" type="TextureRect" parent="Marker2D"]
-visible = false
-offset_left = -68.0
-offset_top = -70.0
-offset_right = 60.0
-offset_bottom = 58.0
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("5_jlunp")

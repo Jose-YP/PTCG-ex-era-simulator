@@ -18,7 +18,7 @@ func setup_tutor(search: Search):
 	
 	#This will help the tutor list enable and disable the necessary cards
 	for i in range(par.all_lists.size()):
-		var num_allowed: int
+		var num_allowed: int = 0
 		for item in par.all_lists[i]:
 			if par.all_lists[i][item]:
 				num_allowed += 1
@@ -53,8 +53,10 @@ func check_lists(id: Identifier, allowed: bool, choices_made: int):
 		tutor.nothing_left()
 	
 	for dict in allowed_dict:
+		#probably not necessary like this but I might break it if I change
 		if allowed_dict[dict] and search_dict[id] != dict:
-			print("Switch over to a new dict?")
+			tutor.nothing_left()
+			return
 		elif allowed_dict[dict]:
 			return
 	
