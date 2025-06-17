@@ -8,6 +8,7 @@ extends Node
 var tutor: Tutor_Box
 var search_dict: Dictionary [Identifier, Dictionary]
 var allowed_dict: Dictionary[Dictionary, bool]
+var choices_left: Dictionary[Dictionary, int]
 var readied: bool = false
 
 func setup_tutor(search: Search):
@@ -17,8 +18,13 @@ func setup_tutor(search: Search):
 	
 	#This will help the tutor list enable and disable the necessary cards
 	for i in range(par.all_lists.size()):
+		var num_allowed: int
+		for item in par.all_lists[i]:
+			if par.all_lists[i][item]:
+				num_allowed += 1
 		search_dict[search.of_this[i]] = par.all_lists[i]
 		allowed_dict[par.all_lists[i]] = true
+		choices_left[par.all_lists[i]] = num_allowed
 	
 	tutor = par.tutor_box.instantiate()
 	tutor.search = search
@@ -37,13 +43,19 @@ func list_allowed(card: Base_Card) -> bool:
 		result = result or (list[card] and allowed_dict[list])
 	return result
 
-func check_lists(id: Identifier, allowed: bool):
-	allowed_dict[search_dict[id]] = allowed
+
+func check_lists(id: Identifier, allowed: bool, choices_made: int):
+	print(choices_made, choices_left[search_dict[id]])
+	print(allowed, choices_made < choices_left[search_dict[id]])
+	allowed_dict[search_dict[id]] = allowed and choices_made < choices_left[search_dict[id]]
 	par.refresh_allowance()
+	if choices_made < choices_left[search_dict[id]]:
+		tutor.nothing_left()
 	
-	var any_allowed: bool = false
 	for dict in allowed_dict:
-		any_allowed = allowed_dict[dict] or any_allowed
+		if allowed_dict[dict] and search_dict[id] != dict:
+			print("Switch over to a new dict?")
+		elif allowed_dict[dict]:
+			return
 	
-	if not any_allowed:
-		tutor.n
+	tutor.nothing_left()

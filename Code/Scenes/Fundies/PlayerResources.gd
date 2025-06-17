@@ -96,7 +96,8 @@ func move_cards(cards: Array[Base_Card], from: Constants.STACKS, towards: Consta
 	#The deck is the only one that needs to be shuffled
 	if (from == Constants.STACKS.DECK or towards == Constants.STACKS.DECK) and shuffle:
 		arrays.usable_deck.shuffle()
-	
+	else:
+		print(from == Constants.STACKS.DECK, towards == Constants.STACKS.DECK, shuffle)
 	update_lists()
 
 func play_card(card: Base_Card): #From hand to Y

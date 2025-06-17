@@ -13,7 +13,7 @@ class_name Tutor_Box
 @onready var status: RichTextLabel = %Status
 @onready var card_list: VBoxContainer = %CardList
 
-signal check_requirements(id: Identifier)
+signal check_requirements(id: Identifier, allowed: bool, choices_made: int)
 
 var tutor_requiremnts: Dictionary[Identifier, Array]
 var based_on: Array[PokeSlot]
@@ -52,7 +52,7 @@ func update_tutor():
 	req_text.append_text(str("[center]Tutor Number: ", current_num," / ", max_tutor))
 	#If the max_tutor is satisfied then allow the confirm OR
 	#If there aren't any cards left from the stack, allow confirmation
-	%Confirm.disabled = current_num != max_tutor or current_num == stack_size
+	#%Confirm.disabled = current_num != max_tutor or current_num == stack_size
 	#if not (current_num != max_tutor or current_num == stack_size):
 		#print("Maybe I can use thing now?")
 	#else:
@@ -87,8 +87,7 @@ func add_card(card: Base_Card):
 			tutor_requiremnts[id].append(show_card(card, id))
 			
 			#If the search identifier is now satisfied make sure no more can be added
-			if tutor_requiremnts[id].size() >= num:
-				check_requirements.emit(id, false)
+			check_requirements.emit(id, tutor_requiremnts[id].size() < num, tutor_requiremnts[id].size())
 			update_tutor()
 			return
 	#Only ends up here if a card cannot be added for some reason
@@ -102,7 +101,7 @@ func remove_card(button: Button):
 			tutor_requiremnts[id].erase(button)
 			button.queue_free()
 			connected_list.add_item(button.card)
-			check_requirements.emit(id, true)
+			check_requirements.emit(id, true, tutor_requiremnts[id].size())
 	
 	connected_list.sort_items()
 	update_tutor()

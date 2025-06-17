@@ -56,7 +56,7 @@ func set_items():
 		is_allowed(making)
 	
 	items = %CardList.get_children()
-	if stack_act != Constants.STACK_ACT.PLAY:
+	if stack_act != Constants.STACK_ACT.PLAY and stack_act != Constants.STACK_ACT.LOOK:
 		sort_items()
 
 func refresh_allowance():
@@ -66,7 +66,7 @@ func refresh_allowance():
 		is_allowed(item)
 
 func is_allowed(button: Button) -> void:
-	print("List checking if ", button.card.name, " is allowed ", list[button.card])
+	#print("List checking if ", button.card.name, " is allowed ", list[button.card])
 	button.stack_act = stack_act
 	match stack_act:
 		Constants.STACK_ACT.PLAY:
