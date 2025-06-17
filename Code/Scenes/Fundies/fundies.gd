@@ -13,6 +13,8 @@ class_name Fundies
  $Slots/PokeSlot3, $Slots/PokeSlot4, $Slots/PokeSlot5, $Slots/PokeSlot6]
 @onready var opp_slots: Array[PokeSlot]
 
+var turn_number: int = 1
+var current_turn: Constants.PLAYER_TYPES
 var ui_slots: Array[UI_Slot]
 var active_slots: Array[PokeSlot]
 var bench_slots: Array[PokeSlot]
@@ -21,6 +23,7 @@ var attacker: PokeSlot
 var defender: PokeSlot
 var attacking_targets: Array[Array]
 var defending_targets: Array[Array]
+var current_source: Array[Constants.PLAYER_TYPES]
 
 #region INITALIZATION
 func _get_configuration_warnings() -> PackedStringArray:
@@ -70,6 +73,50 @@ func get_slots(side_type: Constants.SIDES, slot_type: Constants.SLOTS) -> Array[
 	
 	return returned_slots
 
+func can_be_played(card: Base_Card) -> int:
+	var considered: int = Conversions.get_card_flags(card)
+	var allowed_to: int = 0
+	
+	if considered & 1 != 0:
+		if find_allowed_slots(func(slot: PokeSlot): return not slot.current_card,\
+		Constants.SIDES.ATTACKING).size() != 0:
+			allowed_to += 1
+	if considered & 2 != 0:
+		var can_evo_from = Globals.make_can_evo_from(card)
+		
+		if find_allowed_slots(can_evo_from, Constants.SIDES.ATTACKING).size() != 0:
+			allowed_to += 2
+		else:
+			print(card.name, " can't evolve from any current slot")
+	if considered & 4 != 0:
+		pass
+	if considered & 8 != 0:
+		if not player_resources.supporter_played:
+			allowed_to += 8
+	if considered & 16 != 0:
+		pass
+	if considered & 32 != 0:
+		pass
+	if considered & 64 != 0:
+		pass
+	if considered & 128 != 0:
+		pass
+	if considered & 256 != 0:
+		if find_allowed_slots(func(slot: PokeSlot): return not slot.current_card,\
+		Constants.SIDES.ATTACKING).size() != 0:
+			allowed_to += 256
+	if considered & 512:
+		pass
+	return allowed_to
+
+func find_allowed_slots(condition: Callable, side: Constants.SIDES, slot: Constants.SLOTS = Constants.SLOTS.ALL):
+	var allowed: Array[UI_Slot]
+	for pokeslot in (poke_slots + opp_slots):
+		if pokeslot.is_in_slot(side, slot) and condition.call(pokeslot):
+			allowed.append(pokeslot.ui_slot)
+	
+	return allowed
+
 func edit_attacker_defender(new_atk: PokeSlot, new_def: PokeSlot):
 	attacker.is_target = false
 	defender.is_target = false
@@ -86,4 +133,35 @@ func check_ask_on_all(ask: SlotAsk) -> bool:
 			return true
 	
 	return false
+
+#region TARGET MANAGEMENT
+func add_targets(attacking: Array[PokeSlot], defending: Array[PokeSlot]):
+	attacking_targets.append(attacking)
+	defending_targets.append(defending)
+
+func remove_targets():
+	attacking_targets.pop_back()
+	defending_targets.pop_back()
+
+func clear_targets():
+	attacking_targets.clear()
+	defending_targets.clear()
+
+func get_targets() -> Array[PokeSlot]:
+	return attacking_targets[-1] + defending_targets[-1]
+#endregion
+
+#region SOURCE MANAGEMENT
+func record_source(slot: PokeSlot):
+	current_source.append(slot.player_type)
+
+func get_source_considered() -> Constants.PLAYER_TYPES:
+	return current_source[-1]
+
+func remove_source():
+	current_source.pop_back()
+
+func clear_sources():
+	current_source = []
+#endregion
 #endregion

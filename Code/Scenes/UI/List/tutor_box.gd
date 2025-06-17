@@ -77,7 +77,8 @@ func add_card(card: Base_Card):
 		var num: int = search.how_many[i]
 		var id: Identifier = search.of_this[i]
 		#Check if this card is allowed to be added
-		if id.identifier_bool(card, based_on) and tutor_requiremnts[id].size() < num:
+		#id.identifier_bool(card, based_on) and
+		if tutor_requiremnts[id].size() < num:
 			tutor_requiremnts[id].append(show_card(card, id))
 			
 			#If the search identifier is now satisfied make sure no more can be added

@@ -14,8 +14,23 @@ play_energy, play_trainer]
 func _ready() -> void:
 	SignalBus.connect_to(play_functions)
 
-func determine_play() -> void:
-	pass
+func determine_play(card: Base_Card, placement: Placement = null) -> void:
+	var card_type: int = Conversions.get_card_flags(card)
+	#Play fossils, basics and evolutions onto the bench
+	if card_type & 1 != 0 or card_type & 2 != 0:
+		play_basic_pokemon(card)
+	#play stadiums onto the stadium slot
+	elif card_type & 32 != 0 :
+		play_place_stadium(card)
+	elif card_type & 256 != 0:
+		play_fossil(card)
+	#play energy onto any pokemon defined by placement
+	elif card_type & 512 != 0:
+		play_energy(card, placement)
+	
+	#play trainers
+	else:
+		pass
 
 #--------------------------------------
 #region MANAGING CARD PLAY
@@ -33,7 +48,7 @@ func play_basic_pokemon(card: Base_Card):
 			fundies.player_resources.play_card(card)
 			return
 	
-	starting_choice("Bench", "Where will pokemon be benched", card, func(slot: PokeSlot): return not slot.current_card)
+	starting_choice("Where will pokemon be benched", card, func(slot: PokeSlot): return not slot.current_card)
 	await chosen
 	
 	#Otherwise tell sLot UI actions to prompt the user into placing the bench mon
@@ -50,23 +65,35 @@ func play_fossil(card: Base_Card):
 			fundies.player_resources.play_card(card)
 			return
 	
-	starting_choice("Bench", "Where will pokemon be benched", card, func(slot: PokeSlot): return not slot.current_card)
+	starting_choice("Where will pokemon be benched", card, func(slot: PokeSlot): return not slot.current_card)
 	await chosen
 	card.print_info()
 
 #For evolutions on pokemon and fossils
-func play_evolution(card: Base_Card):
-	starting_choice("Energy", str("Evolve ", card.name, " from which Pokemon")\
-	, card, can_evolve_into)
+func play_evolution(card: Base_Card, placement: Placement = null):
+	if placement == null:
+		starting_choice(str("Evolve ", card.name, " from which Pokemon"), card,\
+		 func(slot:PokeSlot): return can_evolve_into(slot,card))
+	else:
+		var place_func = func placement_evo(slot):
+			var evo: Base_Card = card
+			var pl: Placement = placement
+			if can_evolve_into(slot, evo):
+				card.is_in_slot(Constants.SIDES.SOURCE,pl.slot)
+		starting_choice(str("Evolve ", card.name, " from which Pokemon"), card, place_func)
 	
 	await chosen
 	print("Attatch ", card.name)
 	card.print_info()
 #endregion
 #For energy cards
-func play_energy(card: Base_Card):
-	starting_choice("Energy", str("Attatch ", card.name, " to which Pokemon")\
-	, card, energy_boolean)
+func play_energy(card: Base_Card, placement:Placement = null):
+	if placement == null:
+		pass
+	else:
+		pass
+	
+	starting_choice(str("Attatch ", card.name, " to which Pokemon"), card, energy_boolean)
 	
 	await chosen
 	print("Attatch ", card.name)
@@ -94,7 +121,7 @@ func play_trainer(card: Base_Card):
 
 #For tools
 func play_attatch_tool(card: Base_Card):
-	starting_choice("Energy", str("Attatch ", card.name, " to which Pokemon")\
+	starting_choice(str("Attatch ", card.name, " to which Pokemon")\
 	, card, tool_boolean)
 	
 	await chosen
@@ -102,7 +129,7 @@ func play_attatch_tool(card: Base_Card):
 	card.print_info()
 
 func play_attatch_tm(card: Base_Card):
-	starting_choice("Energy", str("Attatch ", card.name, " to which Pokemon")\
+	starting_choice(str("Attatch ", card.name, " to which Pokemon")\
 	, card, tool_boolean)
 	
 	await chosen
@@ -114,23 +141,26 @@ func play_place_stadium(card: Base_Card):
 	pass
 #endregion
 
-func starting_choice(choice_type: String, instruction: String, card: Base_Card, bool_fun: Callable):
+func starting_choice(instruction: String, card: Base_Card, bool_fun: Callable):
 	fundies.hide_list()
 	fundies.slot_ui_actions.get_allowed_slots(bool_fun)
 	
 	if fundies.slot_ui_actions.allowed_slots:
 		print(fundies.slot_ui_actions.allowed_slots)
-		fundies.slot_ui_actions.set_doing(choice_type)
 		fundies.slot_ui_actions.get_choice(card, instruction)
 		await fundies.slot_ui_actions.chosen
 		
 		chosen.emit()
 		fundies.player_resources.play_card(card)
-		fundies.slot_ui_actions.set_doing("Nothing")
+		#fundies.slot_ui_actions.set_doing("Nothing")
 		fundies.slot_ui_actions.color_tween(Color.TRANSPARENT)
 	
 	print("Attatch ", card.name)
 
+func manage_tutored(tutored_cards: Array[Base_Card], placement: Placement):
+	for card in tutored_cards:
+		determine_play(card)
+	pass
 
 #endregion
 #--------------------------------------

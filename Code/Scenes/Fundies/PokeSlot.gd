@@ -2,6 +2,9 @@
 extends Node
 class_name PokeSlot
 
+@export var player_type: Constants.PLAYER_TYPES
+@export var side: Constants.SIDES
+@export var slot: Constants.SLOTS
 @export var current_card: Base_Card
 @export var ui_slot: UI_Slot
 
@@ -22,7 +25,6 @@ enum poison_type{NONE, NORMAL, HEAVY}
 enum burn_type{NONE, NORMAL, HEAVY}
 enum turn_type{NONE, PARALYSIS, ASLEEP, CONFUSION}
 
-#signal refresh()
 #--------------------------------------
 #region VARIABLES
 #--------------------------------------
@@ -75,6 +77,7 @@ var shockwave: bool = false
 var readied: bool = false
 var knocked_out: bool = false
 var is_target: bool = false
+var fundies: Fundies
 #endregion
 #--------------------------------------
 func _ready():
@@ -91,6 +94,35 @@ func pokemon_checkup():
 	if turn_condition == turn_type.PARALYSIS:
 		turn_condition = turn_type.NONE
 
+func is_in_slot(desired_side: Constants.SIDES, desired_slot: Constants.SLOTS):
+	var side_bool: bool = false
+	var slot_bool: bool = false
+	
+	match desired_side:
+		Constants.SIDES.BOTH:
+			side_bool = true
+		Constants.SIDES.ATTACKING:
+			side_bool = in_attacking_turn
+		Constants.SIDES.DEFENDING:
+			side_bool = not in_attacking_turn
+		Constants.SIDES.SOURCE:
+			side_bool = fundies.get_source_considered() == player_type
+		Constants.SIDES.OTHER:
+			side_bool = not fundies.get_source_considered() == player_type
+	
+	match desired_slot:
+		Constants.SLOTS.ALL:
+			slot_bool = true
+		Constants.SLOTS.ACTIVE:
+			slot_bool = is_active()
+		Constants.SLOTS.BENCH:
+			slot_bool = not is_active()
+		Constants.SLOTS.TARGET:
+			var targets: Array[PokeSlot] = fundies.get_targets()
+			slot_bool = targets.find(self) != 0
+	
+	return slot_bool and side_bool
+
 func is_active() -> bool:
 	if ui_slot:
 		return ui_slot.active
@@ -103,6 +135,26 @@ func is_player() -> bool:
 	else:
 		push_error("Not connected to a UI slot")
 		return false
+
+func use_card(card: Base_Card):
+	var card_type: int = Conversions.get_card_flags(card)
+	#Play fossils, basics and evolutions onto the bench
+	if card_type & 1 != 0 or card_type & 256 != 0:
+		set_card(card)
+	elif card_type & 2 != 0:
+		if current_card:
+			evolve_card(card)
+		else:
+			set_card(card)
+	elif card_type & 32 != 0:
+		attatch_tool(card)
+	elif card_type & 64 != 0:
+		attatch_tm(card)
+	#play energy onto any pokemon defined by placement
+	elif card_type & 512 != 0:
+		change_energy(card)
+	else:
+		printerr("You probably can't pay ", card, " on a pokeslot ", card_type)
 
 func set_card(card: Base_Card):
 	current_card = card

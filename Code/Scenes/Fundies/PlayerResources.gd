@@ -106,7 +106,6 @@ func play_card(card: Base_Card): #From hand to Y
 	update_lists()
 	card.print_info()
 	fundies.slot_ui_actions.reset_ui()
-	
 
 func ontop_deck(_card: Base_Card): #From X to atop Deck
 	
@@ -256,19 +255,22 @@ func placement_handling(tutored_cards: Array[Base_Card], placement: Placement, o
 		#for card in tutored_cards:
 			#origin_stack.erase(card)
 		
+		#Does the placement allow these cards to be reordered?
+		#Reorder the unchosen cards or chosen cards?
+		
 		move_cards(tutored_cards, origin, placement.stack, placement.shuffle, placement.top_deck)
 		
 		pass
 	
-	
-	#Does placement necessitate a shuffle?
-	
-	#Does the placement allow these cards to be reordered?
-	#Reorder the unchosen cards or chosen cards?
-	
 	#Where are these cards going?
-	
-	pass
+	else: 
+		if placement.evolve:
+			pass
+		else:
+			fundies.on_slot_actions.manage_tutored(tutored_cards, placement)
+		
+		
+		print()
 
 #endregion
 #--------------------------------------

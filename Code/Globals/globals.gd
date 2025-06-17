@@ -25,3 +25,11 @@ func control_disapear(node: Node, timing: float, old_position: Vector2 = Vector2
 	await disapear_tween.finished
 	
 	node.queue_free()
+
+func make_can_evo_from(evo: Base_Card) -> Callable:
+	var evo_func: Callable = func can_evo_from(slot: PokeSlot):
+		if slot.current_card:
+			return slot.current_card.name == evo.pokemon_properties.evolves_from
+		else:
+			return false
+	return evo_func

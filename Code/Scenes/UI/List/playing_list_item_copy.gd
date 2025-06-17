@@ -70,7 +70,7 @@ func show_options() -> Node:
 	else:
 		option_Display.stack_act = Constants.STACK_ACT.LOOK
 	
-	if %RightSpawn.global_position.x > get_window().size.x / 2:
+	if %RightSpawn.global_position.x > float(get_window().size.x) / 2:
 		option_Display.global_position = %LeftSpawn.global_position
 		option_Display.global_position.x -= option_offset.x
 		option_Display.global_position.y += option_offset.y

@@ -95,12 +95,15 @@ func or_poke_bool(card: Base_Card, based_on: Array[PokeSlot]) -> bool:
 	
 	#Check if the card evolves from th
 	if evolves_from:
+		
 		var evo_result: bool = false
 		for based_on_slot in based_on:
 			var based_on_card: Base_Card = based_on_slot.current_card
 			if pokemon.evolves_from == based_on_card.name:
 				evo_result = true
-		if evo_result: return true
+		print(card.name, evo_result, based_on)
+		if evo_result: 
+			return true
 	
 	if type != 0 and pokemon.type & type: return true
 	

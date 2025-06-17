@@ -21,7 +21,11 @@ var adding_card: Base_Card
 var selected_slot: UI_Slot = null
 var allowed_slots: Array[UI_Slot]
 var act_on_self: bool = true
+var choosing: bool = false
 var what_doing: doing = doing.NOTHING
+var slot_side: Constants.SIDES
+var slot_choice: Constants.SLOTS
+
 #endregion
 #--------------------------------------
 func _ready():
@@ -66,38 +70,23 @@ func set_doing(now_doing: String):
 #--------------------------------------
 #region INPUTS
 func left_button_actions(target: PokeSlot):
-	match what_doing:
-		doing.NOTHING:
-			if target.current_card == null: return
-			
-			#Check if there's a display on any of the UI SLots
-			#Despawn any that are present, spawn the current one
-			for slot in (fundies.ui_slots + enemy_ui_slots):
-				if slot.current_display:
-					slot.despawn_card()
-				elif target.ui_slot == slot:
-					slot.spawn_card()
-		doing.BENCHING:
-			print(target.ui_slot, target)
-			reset_ui()
-			
-			target.set_card(adding_card)
-			target.refresh()
-			
-			set_doing("Nothing")
-			chosen.emit()
-		doing.EVOLVING:
-			target.evolve_card(adding_card)
-			reset_ui()
-		doing.ENERGY:
-			target.change_energy(adding_card)
-			reset_ui()
-		doing.TOOL:
-			target.attatch_tool(adding_card)
-			reset_ui()
-		doing.TM:
-			target.attatch_tm(adding_card)
-			reset_ui()
+	if choosing:
+		print(target.ui_slot, target)
+		reset_ui()
+		
+		target.use_card(adding_card)
+		target.refresh()
+		
+		chosen.emit()
+	else:
+		if target.current_card == null: return
+		#Check if there's a display on any of the UI SLots
+		#Despawn any that are present, spawn the current one
+		for slot in (fundies.ui_slots + enemy_ui_slots):
+			if slot.current_display:
+				slot.despawn_card()
+			elif target.ui_slot == slot:
+				slot.spawn_card()
 	
 	print(target.current_card.name)
 
@@ -112,24 +101,15 @@ func get_choice(for_card: Base_Card, instruction: String):
 	%Instructions.append_text(str("[center]",instruction))
 	await choice_ready
 	
+	choosing = true
 	for slot in allowed_slots:
 		slot.switch_shine(true)
-	
 
 #endregion
 #--------------------------------------
 
 #--------------------------------------
 #region CHOICE MANAGEMENT
-func get_slot_type(active: bool = true) -> Array[PokeSlot]:
-	var final: Array[PokeSlot] = []
-	
-	for slot in fundies.poke_slots:
-		if slot.fundies.ui_slots.active == active:
-			final.append(slot)
-	
-	return final
-
 #Use a lambda function to get different boolean functions
 func get_allowed_slots(condition: Callable) -> void:
 	allowed_slots.clear()
@@ -167,7 +147,7 @@ func reset_ui():
 		print(slot.current_card != null, slot.name)
 		slot.ui_slot.make_allowed(slot.current_card != null)
 	
-	set_doing("Nothing")
+	choosing = false
 	chosen.emit()
 
 #endregion

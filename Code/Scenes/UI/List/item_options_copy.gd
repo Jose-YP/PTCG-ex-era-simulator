@@ -71,6 +71,7 @@ func disapear():
 func emit_play_as(flag: int):
 	if not Globals.checking:
 		play_as.emit(flag, origin_button.card)
+		disapear()
 
 func _on_check_pressed():
 	if not Globals.checking:
@@ -95,10 +96,10 @@ func on_entered_check():
 func on_exited_check():
 	for i in range($PlayAs/Items.get_child_count()):
 		items[i].disabled = false
-#endregion
-#--------------------------------------
-
 
 func _on_cancel_pressed() -> void:
 	SignalBus.cancel_tutor.emit(origin_button)
 	disapear()
+
+#endregion
+#--------------------------------------
