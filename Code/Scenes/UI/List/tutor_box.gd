@@ -13,6 +13,7 @@ class_name Tutor_Box
 @onready var status: RichTextLabel = %Status
 @onready var card_list: VBoxContainer = %CardList
 
+signal blacklist(card: Base_Card, adding_to: bool)
 signal check_requirements(id: Identifier, allowed: bool, choices_made: int)
 
 var tutor_requiremnts: Dictionary[Identifier, Array]
@@ -81,6 +82,9 @@ func add_card(card: Base_Card):
 			
 			#If the search identifier is now satisfied make sure no more can be added
 			check_requirements.emit(id, tutor_requiremnts[id].size() < num, tutor_requiremnts[id].size())
+			if id.must_be_different:
+				blacklist.emit(card, true)
+			
 			update_tutor()
 			return
 	#Only ends up here if a card cannot be added for some reason
@@ -91,6 +95,8 @@ func remove_card(button: Button):
 	for id in tutor_requiremnts:
 		#Buttons are recorded so each one is unique and can only be found in one place
 		if tutor_requiremnts[id].find(button) != -1:
+			if id.must_be_different:
+				blacklist.emit(button.card, false)
 			tutor_requiremnts[id].erase(button)
 			button.queue_free()
 			connected_list.add_item(button.card)

@@ -28,7 +28,6 @@ script = ExtResource("2_fdtu0")
 search = ExtResource("3_tixm1")
 start_text = "[center]"
 list_item = ExtResource("4_u0q4j")
-disapear_timing = null
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 0

@@ -32,7 +32,7 @@ func setup_tutor(search: Search):
 	tutor.connected_list = par
 	par.add_sibling(tutor)
 	tutor.set_up_tutor()
-	#tutor.connect("no_more_adding", disable_list)
+	tutor.connect("blacklist", diff_tutor_blacklist)
 	tutor.connect("check_requirements", check_lists)
 	
 	readied = true
@@ -43,21 +43,13 @@ func list_allowed(card: Base_Card) -> bool:
 		result = result or (list[card] and allowed_dict[list])
 	return result
 
-
 func check_lists(id: Identifier, allowed: bool, choices_made: int):
-	print(choices_made, choices_left[search_dict[id]])
-	print(allowed, choices_made < choices_left[search_dict[id]])
 	allowed_dict[search_dict[id]] = allowed and choices_made < choices_left[search_dict[id]]
 	par.refresh_allowance()
-	#if choices_made < choices_left[search_dict[id]]:
-		#tutor.nothing_left()
-	#
-	#for dict in allowed_dict:
-		##probably not necessary like this but I might break it if I change
-		#if allowed_dict[dict] and search_dict[id] != dict:
-			#tutor.nothing_left()
-			#return
-		#elif allowed_dict[dict]:
-			#return
-	#
-	#tutor.nothing_left()
+
+func diff_tutor_blacklist(card: Base_Card, adding: bool = true):
+	if adding:
+		par.black_list.append(card.name)
+	else:
+		par.black_list.erase(card.name)
+	par.refresh_allowance()

@@ -78,7 +78,7 @@ func is_allowed(button: Button) -> void:
 			else: button.not_allowed()
 		Constants.STACK_ACT.TUTOR:
 			if tutor_component.readied:
-				if tutor_component.list_allowed(button.card):
+				if tutor_component.list_allowed(button.card) and not black_list.find(button.card.name) != -1:
 					button.allow_move_to(stack_act)
 				else: button.not_allowed()
 			else:

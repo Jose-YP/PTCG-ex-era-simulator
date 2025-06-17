@@ -49,11 +49,7 @@ func allow_move_to(destination: Constants.STACKS):
 		_: stack_act = Constants.STACK_ACT.TUTOR
 
 func is_tutored() -> bool:
-	print(parent is PlayingList)
 	return not parent is PlayingList
-
-func get_specifc_id():
-	pass
 
 #endregion
 #--------------------------------------
