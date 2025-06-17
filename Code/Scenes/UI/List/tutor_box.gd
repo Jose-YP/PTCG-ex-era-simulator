@@ -50,13 +50,6 @@ func update_tutor():
 	
 	req_text.clear()
 	req_text.append_text(str("[center]Tutor Number: ", current_num," / ", max_tutor))
-	#If the max_tutor is satisfied then allow the confirm OR
-	#If there aren't any cards left from the stack, allow confirmation
-	#%Confirm.disabled = current_num != max_tutor or current_num == stack_size
-	#if not (current_num != max_tutor or current_num == stack_size):
-		#print("Maybe I can use thing now?")
-	#else:
-		#print(current_num != max_tutor, current_num == stack_size)
 
 func update_status():
 	var stat_text: String = ""
@@ -120,9 +113,6 @@ func show_card(card: Base_Card, id: Identifier) -> Button:
 #endregion
 #--------------------------------------
 
-func nothing_left():
-	%Confirm.disabled = false
-
 #--------------------------------------
 #region SIGNALS
 func _on_confirm_pressed() -> void:
@@ -137,10 +127,5 @@ func _on_confirm_pressed() -> void:
 	Globals.control_disapear(self, disapear_timing, connected_list.old_pos)
 	Globals.control_disapear(connected_list, disapear_timing, connected_list.old_pos)
 
-func _on_cancel_pressed() -> void:
-	pass # Replace with function body.
-
-func _on_no_more_adding(id: Identifier) -> void:
-	print("Got every card that is ", id.description)
 #endregion
-#--------------------------------------
+#-------------------------------------- 

@@ -60,20 +60,25 @@ func get_specifc_id():
 
 #--------------------------------------
 #region ACTIONS
+#probably should add a way to check if closer to left or right
 func show_options() -> Node:
 	var option_Display = load("res://Scenes/UI/Lists/item_options_copy.tscn").instantiate()
 	print(option_Display, option_Display.get_script(), option_Display.has_method("set"))
 	print("LIST\n -----------------------\n",option_Display.get_property_list())
 	option_Display.card_flags = card_flags
-	option_Display.global_position = %spawnLocation.global_position + option_offset
+	option_Display.global_position = %RightSpawn.global_position + option_offset
 	option_Display.scale = Vector2(.05, .05)
 	option_Display.modulate = Color.TRANSPARENT
 	if allowed:
 		option_Display.stack_act = stack_act
 	else:
-		option_Display.stack_act = "Look"
+		option_Display.stack_act = Constants.STACK_ACT.LOOK
 	
-	option_Display.connectedList = parent
+	if %RightSpawn.global_position.x > get_window().size.x / 2:
+		option_Display.global_position = %LeftSpawn.global_position
+		option_Display.global_position.x -= option_offset.x
+		option_Display.global_position.y += option_offset.y
+	
 	option_Display.origin_button = self
 	parent.get_parent().add_child(option_Display)
 	#parent.add_child(option_Display)

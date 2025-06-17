@@ -20,6 +20,7 @@ corner_radius_bottom_right = 1
 corner_radius_bottom_left = 1
 
 [node name="PlayingList" type="Control"]
+z_index = 1
 layout_mode = 3
 anchor_right = 0.391
 anchor_bottom = 0.823
@@ -142,5 +143,6 @@ based_on = NodePath("..")
 [node name="TutorComponent" type="Node" parent="."]
 script = ExtResource("11_teavr")
 
+[connection signal="pressed" from="HBoxContainer/PanelContainer/VBoxContainer/Header/IdentifierPanel/Movable" to="." method="_on_movable_pressed"]
 [connection signal="pressed" from="HBoxContainer/PanelContainer/VBoxContainer/Header/MinimizeButton" to="." method="_on_minimize_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/PanelContainer/VBoxContainer/Header/Close_Button" to="." method="disapear"]

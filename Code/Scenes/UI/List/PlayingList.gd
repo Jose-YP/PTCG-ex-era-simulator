@@ -174,5 +174,12 @@ func disapear():
 func _on_minimize_button_pressed() -> void:
 	size = %Header.size if %MinimizeButton.minimized else old_size
 	print(%Header.size if %MinimizeButton.minimized else old_size, %MinimizeButton.minimized )
+
 #endregion
 #--------------------------------------
+
+
+func _on_movable_pressed() -> void:
+	if options:
+		print("A")
+		Globals.control_disapear(options, options.timing, options.old_position)

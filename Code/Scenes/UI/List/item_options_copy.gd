@@ -10,11 +10,9 @@ class_name ItemOptions
 @onready var items: Array[Node] = $PlayAs/Items.get_children()
 
 signal play_as(card_flag: int, card: Base_Card)
-#signal transfer()
 
 var old_position: Vector2
 var origin_button: Button
-var connectedList: PlayingList
 
 #--------------------------------------
 #region INITALIZATION AND REMOVAL

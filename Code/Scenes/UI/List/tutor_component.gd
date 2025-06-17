@@ -49,15 +49,15 @@ func check_lists(id: Identifier, allowed: bool, choices_made: int):
 	print(allowed, choices_made < choices_left[search_dict[id]])
 	allowed_dict[search_dict[id]] = allowed and choices_made < choices_left[search_dict[id]]
 	par.refresh_allowance()
-	if choices_made < choices_left[search_dict[id]]:
-		tutor.nothing_left()
-	
-	for dict in allowed_dict:
-		#probably not necessary like this but I might break it if I change
-		if allowed_dict[dict] and search_dict[id] != dict:
-			tutor.nothing_left()
-			return
-		elif allowed_dict[dict]:
-			return
-	
-	tutor.nothing_left()
+	#if choices_made < choices_left[search_dict[id]]:
+		#tutor.nothing_left()
+	#
+	#for dict in allowed_dict:
+		##probably not necessary like this but I might break it if I change
+		#if allowed_dict[dict] and search_dict[id] != dict:
+			#tutor.nothing_left()
+			#return
+		#elif allowed_dict[dict]:
+			#return
+	#
+	#tutor.nothing_left()
