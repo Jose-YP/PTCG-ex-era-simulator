@@ -15,8 +15,12 @@ metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_vnprs"]
 script = ExtResource("3_vd5hw")
-where = 7
-reorder = false
+which = 0
+top_deck = false
+stack = 1
+slot = 4
+use_as = 0
+reorder_type = 0
 shuffle = true
 evolve = false
 effect_to_mon = SubResource("Resource_mamwr")

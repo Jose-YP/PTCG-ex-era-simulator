@@ -3,24 +3,7 @@
 [ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="1_5ugi7"]
 [ext_resource type="Resource" uid="uid://bl4qnrkh3kxdl" path="res://Resources/Components/Effects/Placement/PutIntoHand.tres" id="1_gnmcr"]
 [ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="2_gnmcr"]
-
-[sub_resource type="Resource" id="Resource_fnpip"]
-script = ExtResource("1_5ugi7")
-description = "Card"
-must_be_different = false
-broad_class = 7
-exactly = false
-contains = ""
-type = 511
-evolves_from = false
-rare_candy = false
-inclusive_class = true
-poke_class = 0
-owner = 0
-stage = 0
-trainer_classes = 0
-energy_class = 3
-metadata/_custom_type_script = "uid://uplawvwcwl8y"
+[ext_resource type="Resource" uid="uid://dm2i7spst0qpp" path="res://Resources/Components/Effects/Identifiers/AnyCard.tres" id="3_fnpip"]
 
 [resource]
 script = ExtResource("2_gnmcr")
@@ -30,7 +13,7 @@ based_on_side = 0
 based_on_slots = 0
 portion = -1
 how_many = Array[int]([1])
-of_this = Array[ExtResource("1_5ugi7")]([SubResource("Resource_fnpip")])
+of_this = Array[ExtResource("1_5ugi7")]([ExtResource("3_fnpip")])
 and_then = ExtResource("1_gnmcr")
 reveal = true
 metadata/_custom_type_script = "uid://cw3yr1k040kw7"

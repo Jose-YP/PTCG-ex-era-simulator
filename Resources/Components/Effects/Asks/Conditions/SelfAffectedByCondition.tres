@@ -6,6 +6,7 @@
 script = ExtResource("1_7kh7w")
 side_target = 4
 slot_target = 1
+specifically = Array[String]([])
 comparison_type = 1
 max_hp = -10
 damage_taken = -10

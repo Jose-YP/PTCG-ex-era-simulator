@@ -89,16 +89,18 @@ func can_be_played(card: Base_Card) -> int:
 		else:
 			print(card.name, " can't evolve from any current slot")
 	if considered & 4 != 0:
-		pass
+		allowed_to += 4
 	if considered & 8 != 0:
 		if not player_resources.supporter_played:
 			allowed_to += 8
 	if considered & 16 != 0:
-		pass
+		allowed_to += 16
 	if considered & 32 != 0:
-		pass
+		if find_allowed_slots(func (slot: PokeSlot):\
+		 return slot.tool_card, Constants.SIDES.ATTACKING).size() != 0:
+			allowed_to += 32
 	if considered & 64 != 0:
-		pass
+		allowed_to += 64
 	if considered & 128 != 0:
 		pass
 	if considered & 256 != 0:
@@ -106,7 +108,7 @@ func can_be_played(card: Base_Card) -> int:
 		Constants.SIDES.ATTACKING).size() != 0:
 			allowed_to += 256
 	if considered & 512:
-		pass
+		allowed_to += 512
 	return allowed_to
 
 func find_allowed_slots(condition: Callable, side: Constants.SIDES, slot: Constants.SLOTS = Constants.SLOTS.ALL):

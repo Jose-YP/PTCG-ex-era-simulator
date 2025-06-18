@@ -74,7 +74,8 @@ func is_allowed(button: Button) -> void:
 			var blacklisted: bool = black_list.find(button.card.name) != -1
 			#print(button.card_flags & allowed)
 			print(get_parent().can_be_played(button.card))
-			if (list[button.card] or whitelisted) and not blacklisted:
+			
+			if (list[button.card] or whitelisted) and not blacklisted and get_parent().can_be_played(button.card):
 				button.allow(allowed_as)
 			else: button.not_allowed()
 		Constants.STACK_ACT.TUTOR:

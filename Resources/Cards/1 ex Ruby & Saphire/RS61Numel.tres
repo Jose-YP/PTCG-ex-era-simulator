@@ -1,0 +1,83 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://c38teiq8jwir0"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_cendl"]
+[ext_resource type="Texture2D" uid="uid://bwgwrr50owgu1" path="res://Art/Cards/1 ex Ruby & Saphire/61.jpg" id="1_svn3g"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_ac0ve"]
+[ext_resource type="Resource" uid="uid://lfhu3xyr0wpo" path="res://Resources/Components/Effects/Prompts/IfFlipHeads.tres" id="3_e5n67"]
+[ext_resource type="Resource" uid="uid://bext0mocufqgp" path="res://Resources/Components/Effects/Conditions/BasicBurn.tres" id="4_7r0g3"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_ufae1"]
+
+[sub_resource type="Resource" id="Resource_4ohrg"]
+script = ExtResource("2_ac0ve")
+name = "Headbutt"
+description = ""
+grass_cost = 0
+fire_cost = 0
+water_cost = 0
+lightning_cost = 0
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 1
+defender_properties = 0
+ignore_condition = 0
+prompt_reliant = false
+initial_main_DMG = 10
+conditional_self_dmg = false
+self_damage = 0
+modifier = 0
+both_active = false
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_d5vkb"]
+script = ExtResource("2_ac0ve")
+name = "Burn Off"
+description = "Flip a coin. If heads, each Defending Pokémon is now Burned."
+grass_cost = 0
+fire_cost = 0
+water_cost = 0
+lightning_cost = 0
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 1
+defender_properties = 0
+ignore_condition = 0
+prompt_reliant = false
+initial_main_DMG = 0
+conditional_self_dmg = false
+self_damage = 0
+modifier = 0
+both_active = false
+prompt = ExtResource("3_e5n67")
+success_effect = ExtResource("4_7r0g3")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_hr3sm"]
+script = ExtResource("5_ufae1")
+HP = 50
+retreat = 0
+attacks = Array[ExtResource("2_ac0ve")]([SubResource("Resource_4ohrg"), SubResource("Resource_d5vkb")])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 1
+owner = 0
+type = 2
+weak = 4
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_cendl")
+name = "Numel"
+image = ExtResource("1_svn3g")
+illustrator = "Ken Sugimori"
+number = 61
+rarity = 0
+expansion = 0
+categories = 1
+pokemon_properties = SubResource("Resource_hr3sm")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

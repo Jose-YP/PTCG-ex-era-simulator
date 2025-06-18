@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Identifier" load_steps=2 format=3 uid="uid://dm2i7spst0qpp"]
+
+[ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="1_c42my"]
+
+[resource]
+script = ExtResource("1_c42my")
+description = "Card"
+must_be_different = false
+broad_class = 7
+exactly = false
+contains = ""
+type = 511
+evolves_from = false
+rare_candy = false
+inclusive_class = true
+poke_class = 0
+owner = 0
+stage = 0
+trainer_classes = 0
+energy_class = 3
+metadata/_custom_type_script = "uid://uplawvwcwl8y"

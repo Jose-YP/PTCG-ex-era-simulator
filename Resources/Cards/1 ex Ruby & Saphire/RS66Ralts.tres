@@ -1,0 +1,60 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=9 format=3 uid="uid://cpk1v504xejvf"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_l66g7"]
+[ext_resource type="Texture2D" uid="uid://bmyqnxf8ryj0o" path="res://Art/Cards/1 ex Ruby & Saphire/66.jpg" id="1_ygfa8"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_8h6o7"]
+[ext_resource type="Resource" uid="uid://lfhu3xyr0wpo" path="res://Resources/Components/Effects/Prompts/IfFlipHeads.tres" id="3_iipon"]
+[ext_resource type="Resource" uid="uid://nx1kc1vsm4ia" path="res://Resources/Components/Effects/Conditions/BasicConfusion.tres" id="4_r8vef"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_x2j8m"]
+
+[sub_resource type="Resource" id="Resource_p443m"]
+script = ExtResource("2_8h6o7")
+name = "Confuse Ray"
+description = "Flip a coin. If heads, the Defending Pokémon is now Confused."
+grass_cost = 0
+fire_cost = 0
+water_cost = 0
+lightning_cost = 0
+psychic_cost = 1
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 0
+defender_properties = 0
+ignore_condition = 0
+prompt_reliant = false
+initial_main_DMG = 10
+conditional_self_dmg = false
+self_damage = 0
+modifier = 0
+both_active = false
+prompt = ExtResource("3_iipon")
+success_effect = ExtResource("4_r8vef")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_ncwsx"]
+script = ExtResource("5_x2j8m")
+HP = 50
+retreat = 1
+attacks = Array[ExtResource("2_8h6o7")]([SubResource("Resource_p443m")])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 1
+owner = 0
+type = 16
+weak = 16
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_l66g7")
+name = "Ralts"
+image = ExtResource("1_ygfa8")
+illustrator = "Ken Sugimori"
+number = 66
+rarity = 0
+expansion = 0
+categories = 1
+pokemon_properties = SubResource("Resource_ncwsx")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

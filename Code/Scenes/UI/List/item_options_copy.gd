@@ -28,6 +28,7 @@ func _ready():
 					items[i].show()
 					items[i].pressed.connect(emit_play_as.bind(i))
 		Constants.STACK_ACT.TUTOR:
+			origin_button.connect("tree_exited", disapear)
 			if origin_button.is_tutored():
 				%Cancel.show()
 			else:

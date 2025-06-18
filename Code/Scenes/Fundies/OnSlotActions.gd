@@ -71,15 +71,16 @@ func play_fossil(card: Base_Card):
 
 #For evolutions on pokemon and fossils
 func play_evolution(card: Base_Card, placement: Placement = null):
+	var evo_fun: Callable = Globals.make_can_evo_from(card)
+	
 	if placement == null:
-		starting_choice(str("Evolve ", card.name, " from which Pokemon"), card,\
-		 func(slot:PokeSlot): return can_evolve_into(slot,card))
+		starting_choice(str("Evolve ", card.name, " from which Pokemon"), card, evo_fun)
 	else:
 		var place_func = func placement_evo(slot):
 			var evo: Base_Card = card
 			var pl: Placement = placement
-			if can_evolve_into(slot, evo):
-				card.is_in_slot(Constants.SIDES.SOURCE,pl.slot)
+			if card.is_in_slot(Constants.SIDES.SOURCE,pl.slot):
+				evo_fun.call(slot)
 		starting_choice(str("Evolve ", card.name, " from which Pokemon"), card, place_func)
 	
 	await chosen

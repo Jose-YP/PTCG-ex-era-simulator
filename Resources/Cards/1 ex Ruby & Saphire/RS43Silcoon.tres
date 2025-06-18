@@ -1,0 +1,99 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=16 format=3 uid="uid://by8ynv4fc500g"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_qrwoa"]
+[ext_resource type="Texture2D" uid="uid://b7muex4lsbyin" path="res://Art/Cards/1 ex Ruby & Saphire/43.jpg" id="1_vkyqs"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_1wrtr"]
+[ext_resource type="Resource" uid="uid://b5h3buocpx1gn" path="res://Resources/Components/Effects/Disable/DefSelfCantRetreat1.tres" id="3_iwaip"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_opply"]
+[ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/BuffMaker.gd" id="5_je7tc"]
+[ext_resource type="Resource" uid="uid://lfhu3xyr0wpo" path="res://Resources/Components/Effects/Prompts/IfFlipHeads.tres" id="6_yj6uk"]
+[ext_resource type="Script" uid="uid://b2tlqpng7fq25" path="res://Code/Resource Makers/PokemonSpecific/BodyMaker.gd" id="7_vdnjw"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="8_upxcc"]
+
+[sub_resource type="Resource" id="Resource_lkjkl"]
+script = ExtResource("4_opply")
+order = Array[int]([])
+disable = ExtResource("3_iwaip")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_b0l7j"]
+script = ExtResource("2_1wrtr")
+name = "Gooey Thread"
+description = "The Defending Pokémon can't retreat until the end of your opponent's next turn."
+grass_cost = 0
+fire_cost = 0
+water_cost = 0
+lightning_cost = 0
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 1
+defender_properties = 0
+ignore_condition = 0
+prompt_reliant = false
+initial_main_DMG = 10
+conditional_self_dmg = false
+self_damage = 0
+modifier = 0
+both_active = false
+always_effect = SubResource("Resource_lkjkl")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_jgabk"]
+script = ExtResource("5_je7tc")
+side = 4
+slot = 1
+duration = 0
+attack_damage = 0
+defense = 30
+after_weak_res = true
+immune_to_effects = false
+immune_to_damage = false
+metadata/_custom_type_script = "uid://coojhwe6m20gd"
+
+[sub_resource type="Resource" id="Resource_4qb3d"]
+script = ExtResource("4_opply")
+order = Array[int]([])
+buff = SubResource("Resource_jgabk")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_5d4ud"]
+script = ExtResource("7_vdnjw")
+when_active = false
+name = "Hard Cocoon"
+description = "During your opponent's turn, if Silcoon would be damaged by an opponent's attack (after applying Weakness and Resistance), flip a coin. If heads, reduce that damage by 30."
+prompt = ExtResource("6_yj6uk")
+affected_by_condition = false
+attatched_energy = 0
+energy_ammount = 0
+effect = SubResource("Resource_4qb3d")
+metadata/_custom_type_script = "uid://b2tlqpng7fq25"
+
+[sub_resource type="Resource" id="Resource_qybx1"]
+script = ExtResource("8_upxcc")
+HP = 60
+retreat = 2
+body = SubResource("Resource_5d4ud")
+attacks = Array[ExtResource("2_1wrtr")]([SubResource("Resource_b0l7j")])
+evo_stage = "Stage 1"
+evolves_from = "Wurmple"
+considered = 1
+owner = 0
+type = 1
+weak = 2
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_qrwoa")
+name = "Silcoon"
+image = ExtResource("1_vkyqs")
+illustrator = "Hajime Kusajima"
+number = 43
+rarity = 1
+expansion = 0
+categories = 1
+pokemon_properties = SubResource("Resource_qybx1")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"
