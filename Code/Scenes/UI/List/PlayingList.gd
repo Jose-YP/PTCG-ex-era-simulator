@@ -82,10 +82,7 @@ func is_allowed(button: Button) -> void:
 					button.allow_move_to(stack_act)
 				else: button.not_allowed()
 			else:
-				var result: bool = false
-				for loc_list in all_lists:
-					result = result or loc_list[button.card]
-				if result:
+				if all_lists.any(func(loc_list): return loc_list[button.card]):
 					button.allow_move_to(stack_act)
 				else: 
 					button.not_allowed()

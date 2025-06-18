@@ -198,6 +198,9 @@ func search_array(search: Search, based_on: Array[PokeSlot]) -> Array[Dictionary
 	if search.portion != -1:
 		from = from.slice(0, search.portion)
 	
+	if search.and_then.reorder_type != 0:
+		pass
+	
 	for tutor in search.of_this:
 		print("--------------------")
 		print(tutor)

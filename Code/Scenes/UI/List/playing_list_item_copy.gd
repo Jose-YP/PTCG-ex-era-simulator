@@ -15,6 +15,9 @@ var from_id: Identifier
 #--------------------------------------
 #region INITALIZATION
 func _ready() -> void:
+	if stack_act == Constants.STACK_ACT.REORDER:
+		pass
+	
 	%Class.clear()
 	card_flags = Conversions.get_card_flags(card)
 	

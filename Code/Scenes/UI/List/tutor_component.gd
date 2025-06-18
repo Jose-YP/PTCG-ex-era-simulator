@@ -38,10 +38,7 @@ func setup_tutor(search: Search):
 	readied = true
 
 func list_allowed(card: Base_Card) -> bool:
-	var result: bool = false
-	for list in par.all_lists:
-		result = result or (list[card] and allowed_dict[list])
-	return result
+	return par.all_lists.any(func(list): list[card] and allowed_dict[list])
 
 func check_lists(id: Identifier, allowed: bool, choices_made: int):
 	allowed_dict[search_dict[id]] = allowed and choices_made < choices_left[search_dict[id]]

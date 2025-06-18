@@ -16,6 +16,7 @@ class_name Fundies
 var turn_number: int = 1
 var current_turn: Constants.PLAYER_TYPES
 var ui_slots: Array[UI_Slot]
+var opp_ui_slots: Array[UI_Slot]
 var active_slots: Array[PokeSlot]
 var bench_slots: Array[PokeSlot]
 var current_list: Node
@@ -36,9 +37,8 @@ func _get_configuration_warnings() -> PackedStringArray:
 		return []
 
 func _ready() -> void:
-	ui_slots = player_side.get_slots()
-	player_resources.deck = deck
 	ui_slots = player_side.ui_slots
+	player_resources.deck = deck
 	for i in range(poke_slots.size()):
 		poke_slots[i].ui_slot = player_side.ui_slots[i]
 		poke_slots[i].fundies = self
@@ -115,12 +115,8 @@ func can_be_played(card: Base_Card) -> int:
 
 func find_allowed_slots(condition: Callable,\
  side: Constants.SIDES, slot: Constants.SLOTS = Constants.SLOTS.ALL) -> Array[UI_Slot]:
-	var allowed: Array[UI_Slot]
-	
-	for pokeslot in (poke_slots + opp_slots):
-		print(pokeslot, condition.call(pokeslot))
-		if pokeslot.is_in_slot(side, slot) and condition.call(pokeslot):
-			allowed.append(pokeslot.ui_slot)
+	var allowed: Array[UI_Slot] = (ui_slots + opp_ui_slots).filter(func(uislot: UI_Slot):\
+	 return uislot.connected_card.is_in_slot(side, slot) and condition.call(uislot.connected_card))
 	
 	return allowed
 
