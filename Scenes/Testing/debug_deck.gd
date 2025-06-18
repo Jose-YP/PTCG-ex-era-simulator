@@ -23,7 +23,7 @@ func _ready():
 	slotUI.group_refresh()
 	card_resources.show_reveal_stack(reveal_slot)
 
-#region SIMPLE 
+#region SIGNALS 
 func _on_draw_pressed():
 	card_resources.draw()
 
@@ -31,39 +31,16 @@ func _on_draw_starting_pressed():
 	card_resources.draw_starting()
 
 func _on_discard_pressed():
-	SignalBus.show_list.emit(true, Constants.STACKS.DISCARD, Constants.STACK_ACT.LOOK)
-
-func _on_search_deck_pressed():
-	SignalBus.show_list.emit(true, Constants.STACKS.DECK, Constants.STACK_ACT.TUTOR)
-
-func _on_search_discard_pressed():
-	SignalBus.show_list.emit(true, Constants.STACKS.DISCARD, Constants.STACK_ACT.TUTOR)
+	print()
+	SignalBus.show_list.emit(true, Constants.STACKS.HAND, Constants.STACK_ACT.DISCARD)
 
 func _on_shuffle_2_deck_pressed():
 	pass # Replace with function body.
-
-func _on_view_all_deck_pressed():
-	SignalBus.show_list.emit(true, Constants.STACKS.DECK, Constants.STACK_ACT.LOOK)
-#endregion
 
 func template_search():
 	effect_template.search = searches[search_types.get_selected_id()]
 	effect_template.play_effect(fundies, [], [])
 
-#func _on_search_test_pressed() -> void:
-	#print(search_identifiers[search_types.get_selected_id()], search_types.get_item_text(search_types.get_selected_id()))
-	#var identifier: Identifier = search_identifiers[search_types.get_selected_id()]
-	#match search_types.get_selected_id():
-		#7: #Evolves from active
-			#identifier.edit_in_type(slots[0].type)
-		#8: #Pokemon of type
-			#identifier.edit_in_type(dummy.get_type_flag())
-		#9: #Energy of type
-			#identifier.edit_in_type(dummy.get_type_flag())
-	#card_resources.identifier_search(card_resources.arrays.get_array(Constants.STACKS.DECK), [slots[0]], search_identifiers[search_types.get_selected_id()])
-
 func _on_ask_test_pressed() -> void:
 	pass # Replace with function body.
-
-func _on_castaway_pressed() -> void:
-	SignalBus.play_trainer.emit(castaway)
+#endregion

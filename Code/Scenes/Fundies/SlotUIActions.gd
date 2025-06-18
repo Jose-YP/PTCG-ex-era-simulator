@@ -112,19 +112,15 @@ func get_choice(for_card: Base_Card, instruction: String):
 #region CHOICE MANAGEMENT
 #Use a lambda function to get different boolean functions
 func get_allowed_slots(condition: Callable) -> void:
-	allowed_slots.clear()
+	allowed_slots = fundies.find_allowed_slots(condition, Constants.SIDES.ATTACKING)
 	
-	for slot in (fundies.poke_slots + enemy_poke_slots):
-		print("Calling ", condition, " on ", slot, condition.call(slot))
-		if condition.call(slot):
-			allowed_slots.append(slot.ui_slot)
-			slot.ui_slot.z_index = 1
-			slot.ui_slot.make_allowed(true)
+	for slot in (fundies.ui_slots + enemy_ui_slots):
+		if slot in allowed_slots:
+			slot.z_index = 1
+			slot.make_allowed(true)
 		else:
-			slot.ui_slot.z_index = 0
-			slot.ui_slot.make_allowed(false)
-	
-	print(allowed_slots)
+			slot.z_index = 0
+			slot.make_allowed(false)
 
 func color_tween(destination: Color):
 	var color_tweener: Tween = create_tween().set_parallel()

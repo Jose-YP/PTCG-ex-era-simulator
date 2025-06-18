@@ -23,7 +23,8 @@ var attacker: PokeSlot
 var defender: PokeSlot
 var attacking_targets: Array[Array]
 var defending_targets: Array[Array]
-var current_source: Array[Constants.PLAYER_TYPES]
+#For now keep it like this, edit it when source is actually implemented
+var current_source: Array[Constants.PLAYER_TYPES] = [Constants.PLAYER_TYPES.PLAYER1]
 
 #region INITALIZATION
 func _get_configuration_warnings() -> PackedStringArray:
@@ -40,13 +41,14 @@ func _ready() -> void:
 	ui_slots = player_side.ui_slots
 	for i in range(poke_slots.size()):
 		poke_slots[i].ui_slot = player_side.ui_slots[i]
+		poke_slots[i].fundies = self
 		
 		if player_side.ui_slots[i].active:
 			active_slots.append(poke_slots[i])
 		else: bench_slots.append(poke_slots[i])
 #endregion
 
-func hide_list():
+func hide_list() -> void:
 	if current_list: current_list.disapear()
 
 #region BOARDWIDE FUNCTIONS
@@ -111,9 +113,12 @@ func can_be_played(card: Base_Card) -> int:
 		allowed_to += 512
 	return allowed_to
 
-func find_allowed_slots(condition: Callable, side: Constants.SIDES, slot: Constants.SLOTS = Constants.SLOTS.ALL):
+func find_allowed_slots(condition: Callable,\
+ side: Constants.SIDES, slot: Constants.SLOTS = Constants.SLOTS.ALL) -> Array[UI_Slot]:
 	var allowed: Array[UI_Slot]
+	
 	for pokeslot in (poke_slots + opp_slots):
+		print(pokeslot, condition.call(pokeslot))
 		if pokeslot.is_in_slot(side, slot) and condition.call(pokeslot):
 			allowed.append(pokeslot.ui_slot)
 	
@@ -126,7 +131,7 @@ func edit_attacker_defender(new_atk: PokeSlot, new_def: PokeSlot):
 	attacker = new_atk
 	defender = new_def
 
-func pass_turn():
+func pass_turn() -> void:
 	pass
 
 func check_ask_on_all(ask: SlotAsk) -> bool:
@@ -141,11 +146,11 @@ func add_targets(attacking: Array[PokeSlot], defending: Array[PokeSlot]):
 	attacking_targets.append(attacking)
 	defending_targets.append(defending)
 
-func remove_targets():
+func remove_targets() -> void:
 	attacking_targets.pop_back()
 	defending_targets.pop_back()
 
-func clear_targets():
+func clear_targets() -> void:
 	attacking_targets.clear()
 	defending_targets.clear()
 

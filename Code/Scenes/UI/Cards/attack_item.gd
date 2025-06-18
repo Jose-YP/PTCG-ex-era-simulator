@@ -44,7 +44,7 @@ func check_usability(energy_array: Array[String]):
 	
 	#Check basic energy
 	for element in energy_array:
-		if count_cost.find(element) != -1:
+		if element in count_cost:
 			count_cost.erase(element)
 		match element:
 			"Rainbow":
@@ -57,7 +57,7 @@ func check_usability(energy_array: Array[String]):
 				print("DARK METAL")
 		#The other energies are colorless or single types
 		#Any energy type can remove colorless
-		if count_cost.find("Colorless") != -1:
+		if "Colorless" in count_cost:
 			count_cost.erase("Colorless")
 	
 	print(count_cost)
@@ -65,11 +65,3 @@ func check_usability(energy_array: Array[String]):
 
 func _on_focus_entered():
 	attackButton.grab_focus()
-
-
-func _on_attack_button_minimum_size_changed():
-	print("VDESOUJBNBDVJASIJKDV")
-
-
-func _on_attack_button_resized():
-	print("OH ", size.y)

@@ -55,9 +55,6 @@ func check_starting():
 			hand_dict[card] = true
 		else: hand_dict[card] = false
 	
-	print(start_string)
-	print(arrays.hand)
-	print(hand_dict)
 	if can_start:
 		instantiate_list(hand_dict, Constants.STACKS.HAND,
 		 Constants.STACK_ACT.PLAY, start_string)
@@ -197,6 +194,10 @@ func show_reveal_stack(reveal_slot):
 func search_array(search: Search, based_on: Array[PokeSlot]) -> Array[Dictionary]:
 	var from: Array[Base_Card] = arrays.get_array(search.where)
 	var search_results: Array[Dictionary]
+	
+	if search.portion != -1:
+		from = from.slice(0, search.portion)
+	
 	for tutor in search.of_this:
 		print("--------------------")
 		print(tutor)
@@ -264,10 +265,7 @@ func placement_handling(tutored_cards: Array[Base_Card], placement: Placement, o
 	
 	#Where are these cards going?
 	else: 
-		if placement.evolve:
-			pass
-		else:
-			fundies.on_slot_actions.manage_tutored(tutored_cards, placement)
+		fundies.on_slot_actions.manage_tutored(tutored_cards, placement)
 		
 		
 		print()

@@ -119,7 +119,7 @@ func is_in_slot(desired_side: Constants.SIDES, desired_slot: Constants.SLOTS):
 			slot_bool = not is_active()
 		Constants.SLOTS.TARGET:
 			var targets: Array[PokeSlot] = fundies.get_targets()
-			slot_bool = targets.find(self) != 0
+			slot_bool = targets.has(self)
 	
 	return slot_bool and side_bool
 

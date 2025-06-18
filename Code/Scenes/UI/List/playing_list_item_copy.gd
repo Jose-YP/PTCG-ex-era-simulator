@@ -59,8 +59,6 @@ func is_tutored() -> bool:
 #probably should add a way to check if closer to left or right
 func show_options() -> Node:
 	var option_Display = load("res://Scenes/UI/Lists/item_options_copy.tscn").instantiate()
-	print(option_Display, option_Display.get_script(), option_Display.has_method("set"))
-	print("LIST\n -----------------------\n",option_Display.get_property_list())
 	option_Display.card_flags = card_flags
 	option_Display.global_position = %RightSpawn.global_position + option_offset
 	option_Display.scale = Vector2(.05, .05)

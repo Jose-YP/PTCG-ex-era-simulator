@@ -65,7 +65,6 @@ func update_status():
 		else:
 			stat_text = str(stat_text, "\n", currently, " / ", ammount, " ", desc)
 	
-	print(stat_text)
 	status.clear()
 	status.append_text(str("[center]",stat_text))
 
@@ -95,7 +94,7 @@ func remove_card(button: Button):
 	print(tutor_requiremnts)
 	for id in tutor_requiremnts:
 		#Buttons are recorded so each one is unique and can only be found in one place
-		if tutor_requiremnts[id].find(button) != -1:
+		if button in tutor_requiremnts[id]:
 			if id.must_be_different:
 				blacklist.emit(button.card, false)
 			tutor_requiremnts[id].erase(button)

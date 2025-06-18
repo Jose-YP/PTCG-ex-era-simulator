@@ -76,7 +76,6 @@ func emit_play_as(flag: int):
 
 func _on_check_pressed():
 	if not Globals.checking:
-		#print(get_parent())
 		origin_button.show_card()
 
 #signal swap_card_location(card: Array[Base_Card], from: Constants.STACKS, to: String)

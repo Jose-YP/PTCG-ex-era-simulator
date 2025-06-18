@@ -1,11 +1,14 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://cfps337rtsmpi"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=13 format=3 uid="uid://cfps337rtsmpi"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_c210u"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_sjf0f"]
 [ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="3_jkrwu"]
+[ext_resource type="Resource" uid="uid://bl4qnrkh3kxdl" path="res://Resources/Components/Effects/Placement/PutIntoHand.tres" id="3_utur0"]
 [ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="4_4unrw"]
+[ext_resource type="Resource" uid="uid://cd880a7x21jgg" path="res://Resources/Components/Effects/Identifiers/Energy/AnyEnergy.tres" id="5_05uh2"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="5_cwdhh"]
 [ext_resource type="Resource" uid="uid://btl7v4wchm2j4" path="res://Resources/Components/Effects/Prompts/DiscardBeforeUsing.tres" id="5_utur0"]
+[ext_resource type="Resource" uid="uid://u6vitm0abc30" path="res://Resources/Components/Counters/ForBothPrizesLeft.tres" id="7_xteki"]
 
 [sub_resource type="Resource" id="Resource_05uh2"]
 script = ExtResource("4_4unrw")
@@ -14,8 +17,10 @@ where = 1
 based_on_side = 0
 based_on_slots = 0
 portion = -1
-how_many = Array[int]([1])
-of_this = Array[ExtResource("3_jkrwu")]([])
+variable_portion = ExtResource("7_xteki")
+how_many = Array[int]([-1])
+of_this = Array[ExtResource("3_jkrwu")]([ExtResource("5_05uh2")])
+and_then = ExtResource("3_utur0")
 reveal = true
 metadata/_custom_type_script = "uid://cw3yr1k040kw7"
 

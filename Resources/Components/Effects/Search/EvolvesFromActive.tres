@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Search" load_steps=5 format=3 uid="uid://da2pbggvrhq4t"]
 
-[ext_resource type="Resource" uid="uid://cygim4rxvdbp8" path="res://Resources/Components/Effects/Placement/AndThenEvolve.tres" id="1_vbr40"]
+[ext_resource type="Resource" uid="uid://cqdhex6hpge1c" path="res://Resources/Components/Effects/Placement/EvoActive.tres" id="1_vbr40"]
 [ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="2_bqxrx"]
 [ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="3_wcndj"]
 

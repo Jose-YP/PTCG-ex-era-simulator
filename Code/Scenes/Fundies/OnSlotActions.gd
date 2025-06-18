@@ -17,8 +17,10 @@ func _ready() -> void:
 func determine_play(card: Base_Card, placement: Placement = null) -> void:
 	var card_type: int = Conversions.get_card_flags(card)
 	#Play fossils, basics and evolutions onto the bench
-	if card_type & 1 != 0 or card_type & 2 != 0:
+	if card_type & 1 != 0 or (card_type & 2 != 0 and placement and not placement.evolve):
 		play_basic_pokemon(card)
+	elif card_type & 2 != 0 and placement and placement.evolve:
+		play_evolution(card, placement)
 	#play stadiums onto the stadium slot
 	elif card_type & 32 != 0 :
 		play_place_stadium(card)
@@ -30,7 +32,7 @@ func determine_play(card: Base_Card, placement: Placement = null) -> void:
 	
 	#play trainers
 	else:
-		pass
+		play_trainer(card)
 
 #--------------------------------------
 #region MANAGING CARD PLAY
@@ -77,10 +79,10 @@ func play_evolution(card: Base_Card, placement: Placement = null):
 		starting_choice(str("Evolve ", card.name, " from which Pokemon"), card, evo_fun)
 	else:
 		var place_func = func placement_evo(slot):
-			var evo: Base_Card = card
-			var pl: Placement = placement
-			if card.is_in_slot(Constants.SIDES.SOURCE,pl.slot):
-				evo_fun.call(slot)
+			if slot.is_in_slot(Constants.SIDES.SOURCE,placement.slot):
+				return evo_fun.call(slot)
+			else: return false
+		
 		starting_choice(str("Evolve ", card.name, " from which Pokemon"), card, place_func)
 	
 	await chosen
@@ -147,7 +149,6 @@ func starting_choice(instruction: String, card: Base_Card, bool_fun: Callable):
 	fundies.slot_ui_actions.get_allowed_slots(bool_fun)
 	
 	if fundies.slot_ui_actions.allowed_slots:
-		print(fundies.slot_ui_actions.allowed_slots)
 		fundies.slot_ui_actions.get_choice(card, instruction)
 		await fundies.slot_ui_actions.chosen
 		
@@ -160,8 +161,7 @@ func starting_choice(instruction: String, card: Base_Card, bool_fun: Callable):
 
 func manage_tutored(tutored_cards: Array[Base_Card], placement: Placement):
 	for card in tutored_cards:
-		determine_play(card)
-	pass
+		determine_play(card, placement)
 
 #endregion
 #--------------------------------------
@@ -197,18 +197,12 @@ func energy_mov_effect(_en_mov: EnMov):
 func dmg_manip_effect(_dmg_manip: DamageManip):
 	pass
 
-func search_effect(_search: Search):
-	pass
-
 #endregion
 #--------------------------------------
 
 #Make these functions now so they can be expanded for edge cases later
 #--------------------------------------
 #region BOOLEAN FUNCTIONS
-func can_evolve_into(slot: PokeSlot, evolution: Base_Card) -> bool:
-	return slot.current_card.name == evolution.pokemon_properties.evolves_from
-
 func energy_boolean(slot: PokeSlot) -> bool:
 	return slot.current_card != null
 

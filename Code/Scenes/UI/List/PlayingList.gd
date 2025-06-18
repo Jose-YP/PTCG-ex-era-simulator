@@ -70,17 +70,15 @@ func is_allowed(button: Button) -> void:
 	button.stack_act = stack_act
 	match stack_act:
 		Constants.STACK_ACT.PLAY:
-			var whitelisted: bool = white_list.find(button.card.name) != -1
-			var blacklisted: bool = black_list.find(button.card.name) != -1
-			#print(button.card_flags & allowed)
-			print(get_parent().can_be_played(button.card))
+			var whitelisted: bool = white_list.has(button.card.name)
+			var blacklisted: bool = black_list.has(button.card.name)
 			
 			if (list[button.card] or whitelisted) and not blacklisted and get_parent().can_be_played(button.card):
 				button.allow(allowed_as)
 			else: button.not_allowed()
 		Constants.STACK_ACT.TUTOR:
 			if tutor_component.readied:
-				if tutor_component.list_allowed(button.card) and not black_list.find(button.card.name) != -1:
+				if tutor_component.list_allowed(button.card) and not button.card.name in black_list:
 					button.allow_move_to(stack_act)
 				else: button.not_allowed()
 			else:
@@ -123,7 +121,6 @@ func sort_items():
 	Conversions.all_lists = all_lists
 	items = %CardList.get_children()
 	items.sort_custom(Conversions.default_card_sort)
-	print(items)
 	for i in range(items.size()):
 		%CardList.move_child(items[i], i)
 	
@@ -175,7 +172,6 @@ func disapear():
 
 func _on_minimize_button_pressed() -> void:
 	size = %Header.size if %MinimizeButton.minimized else old_size
-	print(%Header.size if %MinimizeButton.minimized else old_size, %MinimizeButton.minimized )
 
 #endregion
 #--------------------------------------
@@ -183,5 +179,4 @@ func _on_minimize_button_pressed() -> void:
 
 func _on_movable_pressed() -> void:
 	if options:
-		print("A")
 		Globals.control_disapear(options, options.timing, options.old_position)

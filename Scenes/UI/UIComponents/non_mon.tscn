@@ -21,7 +21,7 @@ shader_parameter/shine_size = 0.12
 shader_parameter/shine_bool = false
 
 [node name="Non_mon" type="HBoxContainer"]
-offset_left = 317.0
+offset_left = 552.0
 offset_top = 39.0
 offset_right = 1000.0
 offset_bottom = 159.0
@@ -46,47 +46,52 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("3_faxoe")
 
-[node name="Discards" type="HBoxContainer" parent="."]
-unique_name_in_owner = true
-layout_mode = 2
-
-[node name="DiscardButton" parent="Discards" instance=ExtResource("5_faxoe")]
-unique_name_in_owner = true
-layout_mode = 2
-icon = ExtResource("7_dle7r")
-list = 2
-
-[node name="Prizes" type="HBoxContainer" parent="."]
-unique_name_in_owner = true
-layout_mode = 2
-
-[node name="PrizeButton" parent="Prizes" instance=ExtResource("5_faxoe")]
-unique_name_in_owner = true
-layout_mode = 2
-icon = ExtResource("8_024ff")
-list = 3
-
-[node name="Deck" type="HBoxContainer" parent="."]
-unique_name_in_owner = true
-layout_mode = 2
-
-[node name="DeckButton" parent="Deck" instance=ExtResource("5_faxoe")]
-unique_name_in_owner = true
-layout_mode = 2
-icon = ExtResource("9_ako2g")
-list = 1
-
-[node name="Hand" type="HBoxContainer" parent="."]
-unique_name_in_owner = true
-layout_mode = 2
-
-[node name="HandButton" parent="Hand" instance=ExtResource("5_faxoe")]
-unique_name_in_owner = true
-layout_mode = 2
-icon = ExtResource("10_n01m2")
-
 [node name="Cards" type="GridContainer" parent="."]
 visible = false
 layout_mode = 2
 columns = 4
 metadata/_edit_group_ = true
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 4
+columns = 2
+
+[node name="Discards" type="HBoxContainer" parent="GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="DiscardButton" parent="GridContainer/Discards" instance=ExtResource("5_faxoe")]
+unique_name_in_owner = true
+layout_mode = 2
+icon = ExtResource("7_dle7r")
+list = 2
+
+[node name="Prizes" type="HBoxContainer" parent="GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="PrizeButton" parent="GridContainer/Prizes" instance=ExtResource("5_faxoe")]
+unique_name_in_owner = true
+layout_mode = 2
+icon = ExtResource("8_024ff")
+list = 3
+
+[node name="Deck" type="HBoxContainer" parent="GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="DeckButton" parent="GridContainer/Deck" instance=ExtResource("5_faxoe")]
+unique_name_in_owner = true
+layout_mode = 2
+icon = ExtResource("9_ako2g")
+list = 1
+
+[node name="Hand" type="HBoxContainer" parent="GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HandButton" parent="GridContainer/Hand" instance=ExtResource("5_faxoe")]
+unique_name_in_owner = true
+layout_mode = 2
+icon = ExtResource("10_n01m2")

@@ -20,9 +20,3 @@ func _ready():
 
 func _on_focus_entered():
 	bodyButton.grab_focus()
-
-func _on_attack_button_minimum_size_changed():
-	print("VDESOUJBNBDVJASIJKDV")
-
-func _on_button_resized():
-	print("OH ", size.y)
