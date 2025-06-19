@@ -198,6 +198,8 @@ func search_array(search: Search, based_on: Array[PokeSlot]) -> Array[Dictionary
 	if search.portion != -1:
 		from = from.slice(0, search.portion)
 	
+	if search.and_then.reorder_type != 0:
+		pass
 	
 	for tutor in search.of_this:
 		print("--------------------")
@@ -248,21 +250,6 @@ func tutor_instantiate_list(specified_list: Array[Dictionary], search: Search,\
 	add_sibling(new_node)
 	fundies.current_list = new_node
 	new_node.tutor_component.setup_tutor(search)
-
-func tutor_instantiate_reorder(specified_list: Array[Dictionary], search: Search, which: Constants.STACKS):
-	var reorder_list: PackedScene = Constants.reorder_lists
-	var new_node = reorder_list.instantiate()
-	
-	match which:
-		Constants.STACKS.HAND: new_node.display_text = "HAND"
-		Constants.STACKS.DECK: new_node.display_text = "DECK"
-		Constants.STACKS.DISCARD: new_node.display_text = "DISCARD"
-		Constants.STACKS.PRIZE: new_node.display_text = "PRIZE"
-	
-	new_node.all_lists = specified_list
-	new_node.list = specified_list[0]
-	add_sibling(new_node)
-	fundies.current_list = new_node
 
 func placement_handling(tutored_cards: Array[Base_Card], placement: Placement, origin: Constants.STACKS):
 	#Is this placement on a stack or on a slot
