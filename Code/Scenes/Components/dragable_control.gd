@@ -46,4 +46,7 @@ func _on_drag_started(event_position: Variant) -> void:
 	drag.emit()
 
 func _on_gui_input(event: InputEvent) -> void:
+	if not event.is_action_pressed("Drag")\
+	 and dragging_node.has_method("_on_gui_input"):
+		dragging_node.gui_input.emit(event)
 	drag_component.object_held_down(event)

@@ -6,6 +6,7 @@ extends Control
 var location: Constants.STACKS
 var placement: Placement
 var reordering: Node
+var display: Control
 
 func _ready():
 	_set_up()
@@ -34,6 +35,7 @@ func _set_up():
 		making.index = i + 1
 		making.check_reorder.connect(start_reorder)
 		making.drop_reorder.connect(place_node)
+		making.reorder_button.parent = self
 
 func start_reorder(button: PanelContainer):
 	reordering = button

@@ -8,6 +8,7 @@
 
 [node name="ReorderItem" type="PanelContainer"]
 custom_minimum_size = Vector2(0, 60)
+mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxEmpty_qytal")
 script = ExtResource("1_pcnvp")
 

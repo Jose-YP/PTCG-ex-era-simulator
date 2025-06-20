@@ -23,10 +23,13 @@ func _ready() -> void:
 func _on_movable_drag() -> void:
 	origin = position
 	top_level = true
-	focus_entered.emit()
 	global_position = get_global_mouse_position()
 
 func _on_movable_drop() -> void:
 	top_level = false
 	position = origin
-	focus_exited.emit()
+
+func _on_gui_input(event: InputEvent) -> void:
+	printt(event.is_action("Check"), event.as_text())
+	if event.is_action_pressed("Check"):
+		Globals.show_card(card, self)
