@@ -81,14 +81,11 @@ func get_card_flags(card: Base_Card) -> int:
 	elif card.categories & 2:
 		var considered = card.trainer_properties.considered
 		if considered == "Rocket's Secret Machine": considered = "RSM"
-		
-		card_flags += Conversions.get_allowed_flags(considered)
-		
 		if considered == "Supporter": considered = "Support"
+		card_flags += Conversions.get_allowed_flags(considered)
 	
 	if card.categories & 4:
 		card_flags += Conversions.get_allowed_flags("Energy")
-		
 	
 	return card_flags
 

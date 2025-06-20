@@ -58,9 +58,22 @@ func card_display() -> String:
 	push_error(name, " isn't considered anything")
 	return "NONE"
 
+func get_considered() -> String:
+	if pokemon_properties:
+		#Holon's mons will be considered pokemon before looking at energy properties
+		return pokemon_properties.evo_stage
+	if trainer_properties:
+		if trainer_properties.considered == "Supporter":
+			return "Support"
+		return trainer_properties.considered
+	if energy_properties:
+		#Energy might need a function for this
+		return "Energy"
+	
+	return "NONE"
 ##Function used to check what type of functions a card will use
 ##Prioritizes pokemon properties, then trainer properties and lastly energy properties
-func is_considered(considered: String):
+func is_considered(considered: String) -> bool:
 	if pokemon_properties:
 		#Holon's mons will be considered pokemon before looking at energy properties
 		return pokemon_properties.evo_stage == considered

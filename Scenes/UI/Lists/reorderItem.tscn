@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://bp1vuamf6uoxr"]
+
+[ext_resource type="PackedScene" uid="uid://okxu6caq50xw" path="res://Scenes/UI/Lists/ReorderButton.tscn" id="1_3cj6u"]
+[ext_resource type="Script" uid="uid://c80ucbe75nx7j" path="res://Code/Scenes/UI/List/reorder_item.gd" id="1_pcnvp"]
+[ext_resource type="StyleBox" uid="uid://bvesf3hjv2bsl" path="res://Themes/GBADragBox.tres" id="2_pcnvp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qytal"]
+
+[node name="ReorderItem" type="PanelContainer"]
+custom_minimum_size = Vector2(0, 60)
+theme_override_styles/panel = SubResource("StyleBoxEmpty_qytal")
+script = ExtResource("1_pcnvp")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="IndexTab" type="PanelContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Index" type="RichTextLabel" parent="HBoxContainer/IndexTab"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(15, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+text = "1."
+fit_content = true
+
+[node name="ReorderButton" parent="HBoxContainer" instance=ExtResource("1_3cj6u")]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("2_pcnvp")

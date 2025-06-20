@@ -8,16 +8,10 @@
 [ext_resource type="StyleBox" uid="uid://bsh6edcpwvowr" path="res://Themes/minimize_button.tres" id="6_k6oam"]
 [ext_resource type="Script" uid="uid://cqy27ta3ov66b" path="res://Code/Scenes/UI/List/close_button.gd" id="7_75a1o"]
 [ext_resource type="Theme" uid="uid://bgn3jjlbvn1xq" path="res://Themes/PowerButton.tres" id="8_teavr"]
+[ext_resource type="StyleBox" uid="uid://hb14mew2o8sf" path="res://Themes/translucent.tres" id="11_db7eh"]
 [ext_resource type="Script" uid="uid://2qrhsccmgtfl" path="res://Code/Scenes/UI/List/tutor_component.gd" id="11_teavr"]
 [ext_resource type="StyleBox" uid="uid://bvesf3hjv2bsl" path="res://Themes/GBADragBox.tres" id="13_8wubv"]
 [ext_resource type="PackedScene" uid="uid://cmmds4boaksl7" path="res://Scenes/UI/UIComponents/movable.tscn" id="14_mnu8a"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1dsg7"]
-bg_color = Color(0.12549, 0.109804, 0.117647, 0.780392)
-corner_radius_top_left = 1
-corner_radius_top_right = 1
-corner_radius_bottom_right = 1
-corner_radius_bottom_left = 1
 
 [node name="PlayingList" type="Control"]
 z_index = 1
@@ -94,7 +88,7 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(420, 500)
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_1dsg7")
+theme_override_styles/panel = ExtResource("11_db7eh")
 follow_focus = true
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer/PanelContainer/VBoxContainer/ScrollBox"]

@@ -9,8 +9,11 @@ class_name Draggable_Control
 @export var dragging_node: Control
 ##If this is filled, it will use this node's position as the offset
 @export var based_on: Control
-
 @export var offset: Vector2 = Vector2.ZERO
+
+signal drag(node: Node)
+signal drop(node: Node)
+
 var drag_position: Vector2
 
 func _get_configuration_warnings() -> PackedStringArray:
@@ -32,6 +35,7 @@ func _process(delta: float) -> void:
 
 func _on_drag_ended() -> void:
 	set_process(false)
+	drop.emit()
 
 func _on_drag_started(event_position: Variant) -> void:
 	drag_position = event_position
@@ -39,6 +43,7 @@ func _on_drag_started(event_position: Variant) -> void:
 		drag_position.y += based_on.position.y
 	Globals.dragging = true
 	set_process(true)
+	drag.emit()
 
 func _on_gui_input(event: InputEvent) -> void:
 	drag_component.object_held_down(event)

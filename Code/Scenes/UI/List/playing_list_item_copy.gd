@@ -15,9 +15,6 @@ var from_id: Identifier
 #--------------------------------------
 #region INITALIZATION
 func _ready() -> void:
-	if stack_act == Constants.STACK_ACT.REORDER:
-		pass
-	
 	%Class.clear()
 	card_flags = Conversions.get_card_flags(card)
 	
@@ -123,10 +120,7 @@ func _gui_input(event):
 				await parent.options.disapear()
 			else:
 				parent.options = show_options()
-		elif event.is_action_pressed("L"):
-			if parent.display:
-				pass
-			
+		elif event.is_action_pressed("Check") and parent.display:
 			show_card()
 
 #endregion

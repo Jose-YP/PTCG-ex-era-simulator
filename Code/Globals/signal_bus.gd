@@ -6,6 +6,8 @@ signal show_list(whose: String, list: Constants.STACKS, act: Constants.STACK_ACT
 @warning_ignore("unused_signal")
 signal swap_card_location(card: Array[Base_Card], placement: Placement, from: Constants.STACKS)
 @warning_ignore("unused_signal")
+signal reorder_cards(card: Array[Base_Card], placement: Placement,)
+@warning_ignore("unused_signal")
 signal start_tutor(search: Search)
 @warning_ignore("unused_signal")
 signal tutor_card(card: Base_Card)

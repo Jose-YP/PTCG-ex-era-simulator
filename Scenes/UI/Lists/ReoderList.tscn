@@ -1,0 +1,103 @@
+[gd_scene load_steps=16 format=3 uid="uid://u1576g11rakh"]
+
+[ext_resource type="Theme" uid="uid://bfw6ylcttychc" path="res://Themes/AverageButton.tres" id="1_vfu45"]
+[ext_resource type="Script" uid="uid://coc5ucyg548yj" path="res://Code/Scenes/UI/List/reorder_box.gd" id="2_bgbqr"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_68v0d"]
+[ext_resource type="Resource" uid="uid://d3oqllkeh61wl" path="res://Resources/Cards/1 ex Ruby & Saphire/RS63Poochyena.tres" id="4_djwkv"]
+[ext_resource type="Resource" uid="uid://dnwi6a5kx4bvn" path="res://Resources/Cards/1 ex Ruby & Saphire/RS10Mightyena.tres" id="5_p8if0"]
+[ext_resource type="Resource" uid="uid://dyqdhaov0ywxk" path="res://Resources/Cards/1 ex Ruby & Saphire/RS92Switch.tres" id="6_chh4k"]
+[ext_resource type="Resource" uid="uid://cm0tjkff2o52" path="res://Resources/Cards/1 ex Ruby & Saphire/RS83LadyOuting.tres" id="7_bgbqr"]
+[ext_resource type="Resource" uid="uid://bmvatu4cfwe4n" path="res://Resources/Cards/4 ex Team Magma VS Team Aqua/MA81TeamMagmaBelt.tres" id="8_qytal"]
+[ext_resource type="Resource" uid="uid://nwmfrwp7fuwu" path="res://Resources/Cards/4 ex Team Magma VS Team Aqua/MA87MagmaEnergy.tres" id="9_h60wi"]
+[ext_resource type="Resource" uid="uid://bidyxkb8ygjhl" path="res://Resources/Cards/4 ex Team Magma VS Team Aqua/MA84TeamMagmaTechnicalMachine01.tres" id="10_oeo6a"]
+[ext_resource type="StyleBox" uid="uid://hb14mew2o8sf" path="res://Themes/translucent.tres" id="11_p8if0"]
+[ext_resource type="PackedScene" uid="uid://bp1vuamf6uoxr" path="res://Scenes/UI/Lists/reorderItem.tscn" id="12_djwkv"]
+[ext_resource type="PackedScene" uid="uid://cmmds4boaksl7" path="res://Scenes/UI/UIComponents/movable.tscn" id="13_chh4k"]
+[ext_resource type="StyleBox" uid="uid://bvesf3hjv2bsl" path="res://Themes/GBADragBox.tres" id="13_jdmvj"]
+[ext_resource type="PackedScene" uid="uid://dmhjt2wuanymf" path="res://Scenes/UI/UIComponents/minimize_button.tscn" id="14_jdmvj"]
+
+[node name="Reorder" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_vfu45")
+script = ExtResource("2_bgbqr")
+list = Array[ExtResource("3_68v0d")]([ExtResource("4_djwkv"), ExtResource("5_p8if0"), ExtResource("6_chh4k"), ExtResource("7_bgbqr"), ExtResource("8_qytal"), ExtResource("9_h60wi"), ExtResource("10_oeo6a")])
+reorder_item = ExtResource("12_djwkv")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="Header" type="PanelContainer" parent="PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 22)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("13_jdmvj")
+
+[node name="Movable" parent="PanelContainer/VBoxContainer/Header" node_paths=PackedStringArray("dragging_node") instance=ExtResource("13_chh4k")]
+layout_mode = 2
+theme_override_styles/normal = ExtResource("13_jdmvj")
+dragging_node = NodePath("../../../..")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/Header"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Title" type="RichTextLabel" parent="PanelContainer/VBoxContainer/Header/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+text = "DECK"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="MinimizeButton" parent="PanelContainer/VBoxContainer/Header/HBoxContainer" node_paths=PackedStringArray("shrinkNodes", "hideNodes") instance=ExtResource("14_jdmvj")]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+shrinkNodes = [NodePath("../../../PanelContainer/ScrollContainer"), NodePath("../../../PanelContainer/ScrollContainer/ItemList")]
+hideNodes = [NodePath("../../../Footer")]
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 37)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/VBoxContainer/PanelContainer"]
+custom_minimum_size = Vector2(429, 447)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("11_p8if0")
+follow_focus = true
+draw_focus_border = true
+
+[node name="ItemList" type="VBoxContainer" parent="PanelContainer/VBoxContainer/PanelContainer/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Footer" type="PanelContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/Footer"]
+layout_mode = 2
+
+[node name="Instr" type="RichTextLabel" parent="PanelContainer/VBoxContainer/Footer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Reorder when these cards will be drawn"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Confirm" type="Button" parent="PanelContainer/VBoxContainer/Footer/HBoxContainer"]
+layout_mode = 2
+text = "Confirm"
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Footer/HBoxContainer/Confirm" to="." method="_on_confirm_pressed"]
