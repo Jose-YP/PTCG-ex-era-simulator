@@ -123,13 +123,15 @@ func show_card(card: Base_Card, id: Identifier) -> Button:
 #region SIGNALS
 func _on_confirm_pressed() -> void:
 	var all_tutored: Array[Base_Card]
+	var rest: Array[Base_Card] = connected_list.list.keys()
 	
 	for id in tutor_requiremnts:
 		for button in tutor_requiremnts[id]:
 			all_tutored.append(button.card)
+			rest.erase(button.card)
 	
 	print("Moving ", all_tutored, " from ", search.and_then.stack, " to ", search.where)
-	SignalBus.swap_card_location.emit(all_tutored, search.and_then, search.where)
+	SignalBus.swap_card_location.emit(all_tutored, search.and_then, search.where, rest)
 	Globals.control_disapear(self, disapear_timing, connected_list.old_pos)
 	Globals.control_disapear(connected_list, disapear_timing, connected_list.old_pos)
 

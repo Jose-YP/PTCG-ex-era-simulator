@@ -4,6 +4,7 @@ class_name Search
 ##Which section will the player search (yes there is defender searching)
 @export var side: Constants.SIDES = Constants.SIDES.SOURCE
 @export var where: Constants.STACKS = Constants.STACKS.DECK
+@export var reordering_only: bool = false
 ##Will the identifier base it's results on anything?
 @export var based_on_side: Constants.SIDES
 @export var based_on_slots: Constants.SLOTS
@@ -33,7 +34,7 @@ func play_effect(fundies: Fundies, attacking_targets: Array[PokeSlot], defender_
 		print("BASED ON ", based_on_side, based_on_slots, based_on_cards)
 	
 	var search_for: Array[Dictionary] = fundies.player_resources.search_array(self, based_on_cards)
-	if and_then.reorder_type != 0:
-		fundies.player_resources.tutor_instantiate_reorder(search_for, self)
+	if reordering_only and and_then.reorder_type != 0:
+		fundies.player_resources.tutor_instantiate_reorder(search_for[0].keys(), and_then)
 	else:
 		fundies.player_resources.tutor_instantiate_list(search_for, self)

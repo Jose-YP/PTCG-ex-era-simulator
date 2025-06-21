@@ -30,6 +30,5 @@ func _on_movable_drop() -> void:
 	position = origin
 
 func _on_gui_input(event: InputEvent) -> void:
-	printt(event.is_action("Check"), event.as_text())
 	if event.is_action_pressed("Check"):
 		Globals.show_card(card, self)

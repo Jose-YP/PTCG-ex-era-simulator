@@ -52,6 +52,7 @@ const trainer_card: PackedScene = preload("res://Scenes/UI/CardDisplay/TrainerCa
 const energy_card: PackedScene = preload("res://Scenes/UI/CardDisplay/EnergyCard.tscn")
 const cursor: PackedScene = preload("res://Scenes/UI/UIComponents/cursor.tscn")
 const tutor_box: PackedScene = preload("res://Scenes/UI/Lists/tutor_box.tscn")
+const reorder_list: PackedScene = preload("res://Scenes/UI/Lists/ReoderList.tscn")
 #endregion
 #--------------------------------------
 

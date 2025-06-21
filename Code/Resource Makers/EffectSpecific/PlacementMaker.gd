@@ -25,9 +25,6 @@ class_name Placement
 @export var evolve: bool = false
 @export var effect_to_mon: EffectCall
 
-func reordering():
-	pass
-
 #If an action places a card on a slot, determine how that works out
 func determine_action(fundies: Fundies, card: Base_Card):
 	var usage: int = Conversions.get_card_flags(card)

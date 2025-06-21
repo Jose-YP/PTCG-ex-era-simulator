@@ -27,7 +27,7 @@ var supporter_used: bool = false
 func _ready():
 	SignalBus.connect("show_list", spawn_list)
 	SignalBus.connect("swap_card_location", placement_handling)
-	#SignalBus.connect("move_cards", move_cards)
+	SignalBus.connect("reorder_cards", reorder_handling)
 	
 	if deck: 
 		arrays.usable_deck = deck.make_usable()
@@ -250,30 +250,56 @@ func tutor_instantiate_list(specified_list: Array[Dictionary], search: Search):
 	fundies.current_list = new_node
 	new_node.tutor_component.setup_tutor(search)
 
-func tutor_instantiate_reorder(specified_list: Array[Dictionary], search: Search):
-	pass
-
-func placement_handling(tutored_cards: Array[Base_Card], placement: Placement, origin: Constants.STACKS):
+func placement_handling(tutored_cards: Array[Base_Card], placement: Placement,\
+ origin: Constants.STACKS, untutored_cards: Array[Base_Card]):
 	#Is this placement on a stack or on a slot
 	#Stack placement
 	if placement.which == 0:
-		#var origin_stack = arrays.get_array(origin)
-		#for card in tutored_cards:
-			#origin_stack.erase(card)
-		
 		#Does the placement allow these cards to be reordered?
 		#Reorder the unchosen cards or chosen cards?
-		
 		move_cards(tutored_cards, origin, placement.stack, placement.shuffle, placement.top_deck)
-		
-		pass
 	
 	#Where are these cards going?
 	else: 
 		fundies.on_slot_actions.manage_tutored(tutored_cards, placement)
-		
-		
 		print()
+	
+	print(placement.reorder_type)
+	#"None", "Reorder Chosen", "Reorder Nonchosen", "Both" reorder_type: int = 0
+	if placement.reorder_type != 0:
+		if placement.reorder_type != 2:
+			var reorder_node = tutor_instantiate_reorder(tutored_cards, placement)
+			await SignalBus.reorder_cards
+			Globals.control_disapear(reorder_node, .1, reorder_node.old_pos)
+		if placement.reorder_type != 1:
+			var reorder_node = tutor_instantiate_reorder(untutored_cards, placement)
+			await SignalBus.reorder_cards
+			Globals.control_disapear(reorder_node, .1, reorder_node.old_pos)
+
+#region REORDERING
+func tutor_instantiate_reorder(specified_list: Array[Base_Card], placement: Placement):
+	var reorder_list: ReorderList = Constants.reorder_list.instantiate()
+	
+	reorder_list.list = specified_list
+	reorder_list.location = Constants.STACKS.DECK
+	reorder_list.placement = placement
+	reorder_list.old_pos = fundies.player_side.non_mon.stacks[Constants.STACKS.DECK].global_position
+	add_sibling(reorder_list)
+	
+	return reorder_list
+
+func reorder_handling(tutored_cards: Array[Base_Card], origin: Constants.STACKS):
+	if origin != Constants.STACKS.DECK:
+		print()
+	var dict: Dictionary[Constants.STACKS, Array] = arrays.sendStackDictionary()
+	for card in tutored_cards: 
+		#Remove all tutored cards from source first
+		dict[origin].pop_at(dict[origin].find(card))
+	for i in range(tutored_cards.size() - 1, -1, -1):
+		dict[origin].push_front(tutored_cards[i])
+
+
+#endregion
 
 #endregion
 #--------------------------------------

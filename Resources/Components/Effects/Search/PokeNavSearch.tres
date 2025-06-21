@@ -8,10 +8,10 @@
 script = ExtResource("1_oodrf")
 which = 0
 top_deck = false
-stack = 1
+stack = 0
 slot = 4
 use_as = 0
-reorder_type = 0
+reorder_type = 2
 shuffle = false
 evolve = false
 metadata/_custom_type_script = "uid://cdyba0wadidwb"

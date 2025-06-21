@@ -98,6 +98,7 @@ horizontal_alignment = 1
 
 [node name="Confirm" type="Button" parent="PanelContainer/VBoxContainer/Footer/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
 text = "Confirm"
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Footer/HBoxContainer/Confirm" to="." method="_on_confirm_pressed"]
