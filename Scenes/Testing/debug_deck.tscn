@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://c3qurrd5vl1ao"]
+[gd_scene load_steps=53 format=3 uid="uid://c3qurrd5vl1ao"]
 
 [ext_resource type="Script" uid="uid://b3ki70ohjb21g" path="res://Scenes/Testing/debug_deck.gd" id="1_76cja"]
 [ext_resource type="Script" uid="uid://b6qi20o3p32gq" path="res://Code/Scenes/UI/Main/full_ui.gd" id="2_iuq08"]
@@ -40,7 +40,12 @@
 [ext_resource type="Resource" uid="uid://81ap7i1gfqm0" path="res://Resources/Components/Effects/Asks/Conditions/AtkAffectedByCondition.tres" id="18_qtpl6"]
 [ext_resource type="Resource" uid="uid://c08tcl1tywrqe" path="res://Resources/Components/Effects/Asks/Class&Owner/BothNon-ex.tres" id="20_qtpl6"]
 [ext_resource type="Resource" uid="uid://byktyri4kacof" path="res://Resources/Components/Effects/Asks/Stats/BothLT2Retreat.tres" id="21_etycu"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="36_dgj42"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="36_uocsv"]
+[ext_resource type="Resource" uid="uid://dyqdhaov0ywxk" path="res://Resources/Cards/1 ex Ruby & Saphire/RS92Switch.tres" id="37_n28jf"]
+[ext_resource type="Resource" uid="uid://ben8fxv5hw5hb" path="res://Resources/Cards/1 ex Ruby & Saphire/RS87PokemonReversal.tres" id="38_3hydm"]
+[ext_resource type="Resource" uid="uid://deq0ap6i1b46v" path="res://Resources/Cards/4 ex Team Magma VS Team Aqua/MA85WarpPoint.tres" id="39_qtokj"]
+[ext_resource type="Resource" uid="uid://bn4tw1p2av7gj" path="res://Resources/Cards/7 ex Team Rocket Returns/TRR85PowHandExtension.tres" id="40_nr8gy"]
 
 [sub_resource type="Resource" id="Resource_sreaw"]
 script = ExtResource("2_yqty7")
@@ -152,6 +157,7 @@ metadata/_custom_type_script = "uid://mkjynqda7q5g"
 
 [sub_resource type="Resource" id="Resource_51xdh"]
 script = ExtResource("36_uocsv")
+either_or = false
 order = Array[int]([])
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -162,6 +168,7 @@ script = ExtResource("1_76cja")
 searches = Array[ExtResource("2_m7eiw")]([ExtResource("3_aty6d"), ExtResource("3_b5ooj"), ExtResource("4_facky"), ExtResource("6_r7cxt"), ExtResource("5_r7cxt"), ExtResource("6_v5d02"), ExtResource("7_aty6d"), ExtResource("8_uocsv"), ExtResource("11_v5d02"), ExtResource("12_aty6d"), ExtResource("13_v5d02"), ExtResource("9_51xdh"), ExtResource("10_7lv3d")])
 search_identifiers = Array[ExtResource("2_yqty7")]([ExtResource("3_flo2v"), ExtResource("4_6a1ot"), ExtResource("5_pulol"), ExtResource("6_5pq6o"), ExtResource("7_ww7ww"), ExtResource("8_owp07"), ExtResource("9_fukg8"), ExtResource("10_qtpl6"), SubResource("Resource_sreaw"), SubResource("Resource_n56ka"), ExtResource("11_etycu"), ExtResource("12_0dfak"), SubResource("Resource_rtwb1")])
 slot_asks = Array[ExtResource("13_xd3r3")]([SubResource("Resource_owp07"), ExtResource("14_pulol"), ExtResource("15_5pq6o"), SubResource("Resource_fukg8"), ExtResource("16_owp07"), ExtResource("17_fukg8"), ExtResource("18_qtpl6"), ExtResource("16_ww7ww"), ExtResource("20_qtpl6"), ExtResource("21_etycu")])
+switch_types = Array[ExtResource("36_dgj42")]([ExtResource("37_n28jf"), ExtResource("38_3hydm"), ExtResource("39_qtokj"), ExtResource("40_nr8gy")])
 effect_template = SubResource("Resource_51xdh")
 metadata/_edit_vertical_guides_ = [-235.0, -414.0]
 
@@ -288,7 +295,7 @@ popup/item_12/id = 12
 [node name="AskTest" type="Button" parent="FullUI/CardActions"]
 layout_mode = 2
 toggle_mode = true
-text = "ViewAllDeck"
+text = "AskTest"
 
 [node name="AskTypes" type="OptionButton" parent="FullUI/CardActions"]
 layout_mode = 2
@@ -314,6 +321,40 @@ popup/item_8/text = "Non-ex"
 popup/item_8/id = 8
 popup/item_9/text = "Retreat < 2"
 popup/item_9/id = 9
+
+[node name="SwitchTest" type="Button" parent="FullUI/CardActions"]
+layout_mode = 2
+text = "SwitchTest"
+
+[node name="SwitchOptions" type="OptionButton" parent="FullUI/CardActions"]
+layout_mode = 2
+selected = 0
+item_count = 4
+popup/item_0/text = "Switch"
+popup/item_0/id = 0
+popup/item_1/text = "Pokemon Reversal"
+popup/item_1/id = 1
+popup/item_2/text = "Warp Point"
+popup/item_2/id = 2
+popup/item_3/text = "Pow! Hand Extension"
+popup/item_3/id = 3
+
+[node name="EnMovTest" type="Button" parent="FullUI/CardActions"]
+layout_mode = 2
+text = "EnMovTest"
+
+[node name="EnMoveOptions" type="OptionButton" parent="FullUI/CardActions"]
+layout_mode = 2
+selected = 0
+item_count = 4
+popup/item_0/text = "Switch"
+popup/item_0/id = 0
+popup/item_1/text = "Pokemon Reversal"
+popup/item_1/id = 1
+popup/item_2/text = "Warp Point"
+popup/item_2/id = 2
+popup/item_3/text = "Pow! Hand Extension"
+popup/item_3/id = 3
 
 [node name="Fundies" parent="." node_paths=PackedStringArray("player_side") instance=ExtResource("5_k0qov")]
 player_side = NodePath("../FullUI/PlayerSide")

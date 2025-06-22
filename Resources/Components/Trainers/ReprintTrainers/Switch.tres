@@ -14,6 +14,7 @@ metadata/_custom_type_script = "uid://curklvf1517ml"
 
 [sub_resource type="Resource" id="Resource_cb1ok"]
 script = ExtResource("1_5h22j")
+either_or = false
 order = Array[int]([])
 swap = SubResource("Resource_fn3vn")
 

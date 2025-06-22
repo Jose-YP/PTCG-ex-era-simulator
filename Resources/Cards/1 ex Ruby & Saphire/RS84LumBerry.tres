@@ -10,6 +10,7 @@
 
 [sub_resource type="Resource" id="Resource_8sjaf"]
 script = ExtResource("6_ssfy3")
+either_or = false
 order = Array[int]([])
 alleviate = ExtResource("6_xpmkv")
 

@@ -8,7 +8,7 @@ class_name PromptAsk
 ##If there's a coin flip, check if it passes[br]
 ##Succesful coin flips allow for succesful effects and coin reliant dmg
 @export var coin_flip: CoinFlip
-
+@export var counter: Counter
 @export var side: Constants.SIDES = Constants.SIDES.ATTACKING
 
 @export_flags("Bench", "Active", "Self", 

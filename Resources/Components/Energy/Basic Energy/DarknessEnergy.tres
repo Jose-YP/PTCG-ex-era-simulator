@@ -71,6 +71,7 @@ immune_to_damage = false
 
 [sub_resource type="Resource" id="Resource_gso0c"]
 script = ExtResource("4_rhnr6")
+either_or = false
 order = Array[int]([])
 buff = SubResource("Resource_j3iii")
 

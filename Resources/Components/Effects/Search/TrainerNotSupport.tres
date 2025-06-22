@@ -26,6 +26,7 @@ metadata/_custom_type_script = "uid://uplawvwcwl8y"
 script = ExtResource("3_65efq")
 side = 4
 where = 1
+reordering_only = false
 based_on_side = 0
 based_on_slots = 0
 portion = -1

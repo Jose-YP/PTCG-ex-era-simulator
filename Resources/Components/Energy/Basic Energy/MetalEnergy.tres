@@ -45,6 +45,7 @@ immune_to_damage = false
 
 [sub_resource type="Resource" id="Resource_rtiwi"]
 script = ExtResource("4_1lfkp")
+either_or = false
 order = Array[int]([])
 buff = SubResource("Resource_w1pwm")
 

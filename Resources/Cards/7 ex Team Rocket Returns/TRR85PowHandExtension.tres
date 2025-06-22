@@ -1,0 +1,107 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=16 format=3 uid="uid://bn4tw1p2av7gj"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_gsupt"]
+[ext_resource type="Script" uid="uid://cml2jkc16tlva" path="res://Code/Resource Makers/GeneralUse/CounterMaker.gd" id="2_ci705"]
+[ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="3_tpnca"]
+[ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="4_uy43t"]
+[ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="5_okvmh"]
+[ext_resource type="Script" uid="uid://cimk6l7ytw7xg" path="res://Code/Resource Makers/EffectSpecific/EnMovMaker.gd" id="6_d1501"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="7_dmrxn"]
+[ext_resource type="Script" uid="uid://curklvf1517ml" path="res://Code/Resource Makers/EffectSpecific/SwapMaker.gd" id="8_uw2sm"]
+
+[sub_resource type="Resource" id="Resource_smuww"]
+script = ExtResource("2_ci705")
+count_for = 4
+filter = 4
+side = 3
+slot = 1
+for_what = 5
+cap = -1
+return_num = 0
+metadata/_custom_type_script = "uid://cml2jkc16tlva"
+
+[sub_resource type="Resource" id="Resource_bu8wl"]
+script = ExtResource("3_tpnca")
+formal_ask = true
+ask_string = "Move the opponent's Energy or Pokemon? || Energy || Pokemon"
+counter = SubResource("Resource_smuww")
+side = 1
+choose_location = 0
+metadata/_custom_type_script = "uid://b85jmc7067bjc"
+
+[sub_resource type="Resource" id="Resource_cn8ke"]
+script = ExtResource("5_okvmh")
+side_target = 5
+slot_target = 4
+specifically = Array[String]([])
+comparison_type = 1
+max_hp = -10
+damage_taken = -10
+retreat_cost = -1
+energy_attatched = -1
+knocked_out = false
+condition = 0
+location = 0
+tool_attatched = false
+stage = 7
+rare_candy = false
+class_inclusive = true
+pokemon_class = 63
+owner_inclusive = true
+pokemon_owner = 15
+bench_size = -1
+type_inclusive = true
+type = 1023
+energy_class = 2
+type_size = -1
+metadata/_custom_type_script = "uid://mkjynqda7q5g"
+
+[sub_resource type="Resource" id="Resource_k8l2b"]
+script = ExtResource("6_d1501")
+energy_move_type = 2
+action = 0
+chooser = 4
+candidates = SubResource("Resource_cn8ke")
+side = 5
+slots = 2
+energy_ammount = 0
+swap_ammount = 1
+type = 511
+metadata/_custom_type_script = "uid://cimk6l7ytw7xg"
+
+[sub_resource type="Resource" id="Resource_4or8k"]
+script = ExtResource("8_uw2sm")
+choose_active = false
+chosing = 4
+affected = 5
+slots = 4
+metadata/_custom_type_script = "uid://curklvf1517ml"
+
+[sub_resource type="Resource" id="Resource_slho1"]
+script = ExtResource("7_dmrxn")
+either_or = false
+order = Array[int]([])
+energy_movement = SubResource("Resource_k8l2b")
+swap = SubResource("Resource_4or8k")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_4ey07"]
+script = ExtResource("4_uy43t")
+considered = "Rocket's Secret Machine"
+specific_requirement = "You may use this card only if you have more Prize cards left than your opponent. "
+description = "Move 1 Energy card attached to the Defending Pokémon to another of your opponent's Pokémon. Or, switch 1 of your opponent's Benched Pokémon with 1 of the Defending Pokémon. Your opponent chooses the Defending Pokémon to switch. "
+prompt = SubResource("Resource_bu8wl")
+success_effect = SubResource("Resource_slho1")
+metadata/_custom_type_script = "uid://crx447i85kshy"
+
+[resource]
+script = ExtResource("1_gsupt")
+name = "Pow! Hand Extension"
+illustrator = "Katsura Tabata"
+number = 85
+rarity = 1
+expansion = 0
+categories = 2
+trainer_properties = SubResource("Resource_4ey07")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

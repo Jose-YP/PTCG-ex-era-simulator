@@ -8,6 +8,7 @@
 
 [sub_resource type="Resource" id="Resource_htv53"]
 script = ExtResource("3_rjoqb")
+either_or = false
 order = Array[int]([])
 search = ExtResource("4_r3q3e")
 

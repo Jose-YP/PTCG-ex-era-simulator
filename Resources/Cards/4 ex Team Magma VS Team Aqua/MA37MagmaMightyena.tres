@@ -35,6 +35,7 @@ fail_effect = ExtResource("4_it5rv")
 
 [sub_resource type="Resource" id="Resource_0a22m"]
 script = ExtResource("6_xc0yb")
+either_or = false
 order = Array[int]([])
 
 [sub_resource type="Resource" id="Resource_dc2e6"]

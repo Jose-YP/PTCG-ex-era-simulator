@@ -5,6 +5,7 @@ class_name EffectCall
 enum effect_types{CONDITION, BUFF, DISRUPT, DISABLE, 
 ENMOV, DMGMANIP, SEARCH, SWAP, DRAW, ALLEVIATE, MIMIC, OTHER}
 
+@export var either_or: bool = false
 ##Determine the order in which the effects are called.
 ##It's best to fill this in, if you don't want the default enum order
 @export var order: Array[effect_types]
@@ -32,6 +33,7 @@ ENMOV, DMGMANIP, SEARCH, SWAP, DRAW, ALLEVIATE, MIMIC, OTHER}
 @export var mimic: Mimic
 
 @export_group("Other")
+@export var prompt_extra: PromptAsk
 ##SlotAsk for any extra effects
 @export var ask_extra: SlotAsk
 ##Do extra effect for extra ask

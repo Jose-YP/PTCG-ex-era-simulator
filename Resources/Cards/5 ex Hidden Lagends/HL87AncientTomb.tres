@@ -24,6 +24,7 @@ disable_retreat = false
 
 [sub_resource type="Resource" id="Resource_5oguf"]
 script = ExtResource("7_o0eli")
+either_or = false
 order = Array[int]([])
 disable = SubResource("Resource_xs7yy")
 
