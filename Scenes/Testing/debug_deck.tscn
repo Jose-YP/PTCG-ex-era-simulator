@@ -390,6 +390,8 @@ ui_slot = NodePath("../../../FullUI/PlayerSide/Main/Bench/BenchPokemon5")
 [connection signal="pressed" from="FullUI/CardActions/Discard" to="." method="_on_discard_pressed"]
 [connection signal="pressed" from="FullUI/CardActions/SearchTest" to="." method="template_search"]
 [connection signal="pressed" from="FullUI/CardActions/AskTest" to="." method="_on_ask_test_pressed"]
+[connection signal="pressed" from="FullUI/CardActions/SwitchTest" to="." method="_on_switch_test_pressed"]
+[connection signal="pressed" from="FullUI/CardActions/EnMovTest" to="." method="_on_en_mov_test_pressed"]
 
 [editable path="FullUI/PlayerSide"]
 [editable path="Fundies"]

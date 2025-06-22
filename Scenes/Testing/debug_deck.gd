@@ -5,6 +5,7 @@ extends Control
 @export var search_identifiers: Array[Identifier]
 @export var slot_asks: Array[SlotAsk]
 @export var switch_types: Array[Base_Card]
+@export var en_mov_types: Array[EnMov]
 @export var effect_template: EffectCall
 
 @onready var dummy: Dummy = $FullUI/Dummy
@@ -17,6 +18,8 @@ extends Control
 @onready var identifier_types: OptionButton = $FullUI/CardActions/IdentifierTypes
 @onready var search_types: OptionButton = $FullUI/CardActions/SearchTypes
 @onready var ask_types: OptionButton = $FullUI/CardActions/AskTypes
+@onready var switch_options: OptionButton = $FullUI/CardActions/SwitchOptions
+@onready var en_move_options: OptionButton = $FullUI/CardActions/EnMoveOptions
 
 const castaway: Base_Card = preload("res://Resources/Cards/14 ex Crystal Guardians/CG72Castaway.tres")
 
@@ -39,9 +42,18 @@ func _on_shuffle_2_deck_pressed():
 	pass # Replace with function body.
 
 func template_search():
+	effect_template = EffectCall.new()
 	effect_template.search = searches[search_types.get_selected_id()]
 	effect_template.play_effect(fundies, [], [])
 
 func _on_ask_test_pressed() -> void:
 	pass # Replace with function body.
+
+func _on_switch_test_pressed() -> void:
+	SignalBus.play_trainer.emit(switch_types[switch_options.get_selected_id()])
+
+func _on_en_mov_test_pressed() -> void:
+	effect_template = EffectCall.new()
+	effect_template.energy_movement = en_mov_types[en_move_options.get_selected_id()]
+	effect_template.play_effect(fundies, [], [])
 #endregion
