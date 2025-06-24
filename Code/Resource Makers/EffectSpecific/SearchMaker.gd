@@ -33,8 +33,8 @@ func play_effect(fundies: Fundies, attacking_targets: Array[PokeSlot], defender_
 		based_on_cards = fundies.get_slots(based_on_side, based_on_slots)
 		print("BASED ON ", based_on_side, based_on_slots, based_on_cards)
 	
-	var search_for: Array[Dictionary] = fundies.player_resources.search_array(self, based_on_cards)
+	var search_for: Array[Dictionary] = fundies.stack_manager.search_array(self, based_on_cards)
 	if reordering_only and and_then.reorder_type != 0:
-		fundies.player_resources.tutor_instantiate_reorder(search_for[0].keys(), and_then)
+		fundies.stack_manager.tutor_instantiate_reorder(search_for[0].keys(), and_then)
 	else:
-		fundies.player_resources.tutor_instantiate_list(search_for, self)
+		fundies.stack_manager.tutor_instantiate_list(search_for, self)

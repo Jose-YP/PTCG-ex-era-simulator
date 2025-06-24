@@ -1,6 +1,6 @@
 @icon("res://Art/ProjectSpecific/drag-and-drop.png")
 extends Node
-class_name  On_Slot_Actions
+class_name CardPlayer
 
 @export var poke_slots: Array[PokeSlot]
 @onready var fundies: Fundies = $".."
@@ -47,7 +47,7 @@ func play_basic_pokemon(card: Base_Card):
 			slot.current_card = card
 			slot.refresh()
 			#Remove the card from hand
-			fundies.player_resources.play_card(card)
+			fundies.stack_manager.play_card(card)
 			return
 	
 	starting_choice("Where will pokemon be benched", card, func(slot: PokeSlot): return not slot.current_card)
@@ -64,7 +64,7 @@ func play_fossil(card: Base_Card):
 			slot.set_card(card)
 			slot.refresh()
 			#Remove the card from hand
-			fundies.player_resources.play_card(card)
+			fundies.stack_manager.play_card(card)
 			return
 	
 	starting_choice("Where will pokemon be benched", card, func(slot: PokeSlot): return not slot.current_card)
@@ -145,16 +145,16 @@ func play_place_stadium(card: Base_Card):
 
 func starting_choice(instruction: String, card: Base_Card, bool_fun: Callable):
 	fundies.hide_list()
-	fundies.slot_ui_actions.get_allowed_slots(bool_fun)
+	fundies.ui_actions.get_allowed_slots(bool_fun)
 	
-	if fundies.slot_ui_actions.allowed_slots:
-		fundies.slot_ui_actions.get_choice(card, instruction)
-		await fundies.slot_ui_actions.chosen
+	if fundies.ui_actions.allowed_slots:
+		fundies.ui_actions.get_choice(card, instruction)
+		await fundies.ui_actions.chosen
 		
 		chosen.emit()
-		fundies.player_resources.play_card(card)
-		#fundies.slot_ui_actions.set_doing("Nothing")
-		fundies.slot_ui_actions.color_tween(Color.TRANSPARENT)
+		fundies.stack_manager.play_card(card)
+		#fundies.ui_actions.set_doing("Nothing")
+		fundies.ui_actions.color_tween(Color.TRANSPARENT)
 	
 	print("Attatch ", card.name)
 

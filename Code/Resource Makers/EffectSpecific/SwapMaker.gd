@@ -14,7 +14,7 @@ class_name PokeSwap
 func play_effect(fundies: Fundies, attacking_targets: Array[PokeSlot], defender_targets: Array[PokeSlot]):
 	print("PLAY SWAP")
 	#Get whichever active pokemon are allowed to switch
-	fundies.slot_ui_actions.get_choice(null, "Choose and active Pokemon to switch")
+	fundies.ui_actions.get_choice(null, "Choose and active Pokemon to switch")
 	#Get whichever benched pokemon are allowed to switch
 	
 	#Swap the data between eachother

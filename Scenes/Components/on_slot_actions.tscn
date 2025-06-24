@@ -2,5 +2,5 @@
 
 [ext_resource type="Script" uid="uid://bmuywdjhqhkve" path="res://Code/Scenes/Fundies/OnSlotActions.gd" id="1_4r11g"]
 
-[node name="OnSlotActions" type="Node"]
+[node name="CardPlayer" type="Node"]
 script = ExtResource("1_4r11g")

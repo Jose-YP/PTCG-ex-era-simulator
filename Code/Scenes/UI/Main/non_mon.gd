@@ -6,6 +6,8 @@ class_name NonMonUI
 @onready var stacks: Dictionary[Constants.STACKS, StackButton] = {Constants.STACKS.DISCARD:%DiscardButton,
 Constants.STACKS.PRIZE:%PrizeButton, Constants.STACKS.DECK:%DeckButton, Constants.STACKS.HAND:%HandButton}
 
+var current_supporter: Base_Card
+
 func _ready() -> void:
 	for button in stacks:
 		stacks[button].player = player
@@ -15,3 +17,11 @@ func _ready() -> void:
 
 func update_stack(which: Constants.STACKS, num: int):
 	stacks[which].update(num)
+
+func show_supporter(card: Base_Card):
+	%ArtButton.art = card.image
+	current_supporter = card
+
+func clear_supporter():
+	%ArtButton.art = null
+	current_supporter = null

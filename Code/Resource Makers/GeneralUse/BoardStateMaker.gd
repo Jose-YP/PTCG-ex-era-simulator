@@ -11,5 +11,10 @@ class_name BoardState
 @export var default_start: bool = false
 @export var stadium: Base_Card
 
+@export var home_side: Constants.PLAYER_TYPES = Constants.PLAYER_TYPES.PLAYER
 @export var home: SideState
+@export var away_side: Constants.PLAYER_TYPES = Constants.PLAYER_TYPES.CPU
 @export var away: SideState
+
+func get_side(home_bool: bool) -> SideState:
+	return home if home_bool else away

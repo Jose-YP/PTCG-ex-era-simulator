@@ -98,7 +98,7 @@ func play_card(card: Base_Card): #From hand to Y
 	arrays.hand.erase(card)
 	update_lists()
 	card.print_info()
-	fundies.slot_ui_actions.reset_ui()
+	fundies.ui_actions.reset_ui()
 
 func ontop_deck(_card: Base_Card): #From X to atop Deck
 	
@@ -257,7 +257,7 @@ func placement_handling(tutored_cards: Array[Base_Card], placement: Placement,\
 	
 	#Where are these cards going?
 	else: 
-		fundies.on_slot_actions.manage_tutored(tutored_cards, placement)
+		fundies.card_player.manage_tutored(tutored_cards, placement)
 		print()
 	
 	print(placement.reorder_type)

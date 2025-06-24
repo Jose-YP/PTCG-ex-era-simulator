@@ -1,7 +1,6 @@
 extends Resource
 class_name SideState
 
-@export var side_type: Constants.PLAYER_TYPES = Constants.PLAYER_TYPES.PLAYER1
 @export var deck: Deck
 ##This should only be filled in for cases where usable deck starts at less than 60
 @export var usable_deck: Array[Base_Card]

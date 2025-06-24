@@ -7,9 +7,9 @@ class_name Fundies
 @export var player_side: CardSideUI
 @export var deck: Deck
 
-@onready var slot_ui_actions: SlotUIActions = $SlotUIActions
-@onready var player_resources: Deck_Manipulator = $PlayerResources
-@onready var on_slot_actions: On_Slot_Actions = $OnSlotActions
+@onready var ui_actions: SlotUIActions = $SlotUIActions
+@onready var stack_manager: Deck_Manipulator = $PlayerResources
+@onready var card_player: CardPlayer = $CardPlayer
 @onready var poke_slots: Array[PokeSlot]
 @onready var opp_slots: Array[PokeSlot]
 
@@ -25,7 +25,7 @@ var defender: PokeSlot
 var attacking_targets: Array[Array]
 var defending_targets: Array[Array]
 #For now keep it like this, edit it when source is actually implemented
-var current_source: Array[Constants.PLAYER_TYPES] = [Constants.PLAYER_TYPES.PLAYER1]
+var current_source: Array[Constants.PLAYER_TYPES] = [Constants.PLAYER_TYPES.PLAYER]
 
 #region INITALIZATION
 func _get_configuration_warnings() -> PackedStringArray:
@@ -82,7 +82,7 @@ func can_be_played(card: Base_Card) -> int:
 	if considered & 4 != 0:
 		allowed_to += 4
 	if considered & 8 != 0:
-		if not player_resources.supporter_played:
+		if not stack_manager.supporter_played:
 			allowed_to += 8
 	if considered & 16 != 0:
 		allowed_to += 16

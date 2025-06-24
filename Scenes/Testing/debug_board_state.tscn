@@ -18,7 +18,7 @@ shader_parameter/shine_speed = 7.0
 shader_parameter/shine_size = 0.07
 shader_parameter/shine_bool = false
 
-[node name="DebugBoardState" type="Control" node_paths=PackedStringArray("player_side", "opponent_side", "fundies")]
+[node name="DebugBoardState" type="Control" node_paths=PackedStringArray("fundies")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -27,8 +27,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_auq40")
 board_state = ExtResource("2_43axb")
-player_side = NodePath("PlayerSide")
-opponent_side = NodePath("OpponentSide")
 fundies = NodePath("Fundies")
 
 [node name="PlayerSide" parent="." instance=ExtResource("2_yhhmj")]
