@@ -23,7 +23,7 @@ class_name BoardState
 @export var home_bench_size: int = 5
 ##The boolean will determine whether or not a slot is active or not
 ##[br] take these cards inside slots from deck if [member home_UD] is null
-@export var home_slots: Dictionary[PokeSlotRes, bool]
+@export var home_slots: Dictionary[PokeSlot, bool]
 @export var home_supporter: Base_Card
 
 @export_group("Away")
@@ -38,5 +38,5 @@ class_name BoardState
 @export var away_bench_size: int = 5
 ##The boolean will determine whether or not a slot is active or not
 ##[br] take these cards inside slots from deck if [member away_UD] is null
-@export var away_slots: Dictionary[PokeSlotRes, bool]
+@export var away_slots: Dictionary[PokeSlot, bool]
 @export var away_supporter: Base_Card

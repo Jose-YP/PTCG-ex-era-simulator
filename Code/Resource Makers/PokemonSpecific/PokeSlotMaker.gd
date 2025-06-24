@@ -1,6 +1,6 @@
 @icon("res://Art/ExpansionIcons/40px-SetSymbolFireRed_and_LeafGreen.png")
 extends Resource
-class_name PokeSlotRes
+class_name PokeSlot
 
 #--------------------------------------
 #region VARIABLES
@@ -130,8 +130,7 @@ func is_in_slot(desired_side: Constants.SIDES, desired_slot: Constants.SLOTS):
 		Constants.SLOTS.BENCH:
 			slot_bool = not is_active()
 		Constants.SLOTS.TARGET:
-			var targets: Array[PokeSlot] = fundies.get_targets()
-			slot_bool = targets.has(self)
+			slot_bool = fundies.get_targets().has(self)
 	
 	return slot_bool and side_bool
 
@@ -351,7 +350,7 @@ func refresh() -> void:
 	
 	#recognize position of slot
 	benched = not ui_slot.active
-	#ui_slot.connected_card = self
+	#ui_slot.connected_slot = self
 	
 	#check for any attatched cards/conditions
 	ui_slot.display_energy(energy_array, attached_energy)

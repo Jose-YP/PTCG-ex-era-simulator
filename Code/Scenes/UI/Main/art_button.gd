@@ -46,7 +46,7 @@ func _gui_input(event):
 #region PRESSED BUTTON
 func _on_pressed() -> void:
 	if pokemon:
-		SignalBus.chosen_slot.emit(owner.connected_card)
+		SignalBus.chosen_slot.emit(owner.connected_slot)
 
 func handle_card_display(card: Base_Card, slot):
 	if current_display:

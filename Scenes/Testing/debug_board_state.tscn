@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dnij7qm62bibx"]
+[gd_scene load_steps=10 format=3 uid="uid://dnij7qm62bibx"]
 
 [ext_resource type="Script" uid="uid://j57m0tmwtg4n" path="res://Code/Scenes/debug_board_state.gd" id="1_auq40"]
 [ext_resource type="Resource" uid="uid://csngw38pof3y8" path="res://Resources/BoardStates/BoardStatetest.tres" id="2_43axb"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dp781vdb5kvc7" path="res://Scenes/UI/UIComponents/art_button.tscn" id="4_mxy7v"]
 [ext_resource type="Shader" uid="uid://chaingl03cnx1" path="res://Shaders/Shine2D.gdshader" id="5_7c6pk"]
 [ext_resource type="PackedScene" uid="uid://cni7lmrv7r06c" path="res://Scenes/Main Game/Fundies.tscn" id="6_iquab"]
+[ext_resource type="Resource" uid="uid://bleo7p56u5k1f" path="res://Resources/Decks/TestDeck.tres" id="8_43axb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o8atk"]
 resource_local_to_scene = true
@@ -54,7 +55,7 @@ benched = true
 board = NodePath("..")
 player_side = NodePath("../PlayerSide")
 
-[node name="PokeSlot" parent="Fundies/Slots" index="0" node_paths=PackedStringArray("ui_slot")]
-ui_slot = NodePath("../../../PlayerSide/Main/Active/ActivePokemon")
+[node name="PlayerResources" parent="Fundies" index="2"]
+deck = ExtResource("8_43axb")
 
 [editable path="Fundies"]

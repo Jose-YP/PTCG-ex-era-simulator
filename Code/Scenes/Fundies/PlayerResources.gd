@@ -28,15 +28,11 @@ func _ready():
 	SignalBus.connect("show_list", spawn_list)
 	SignalBus.connect("swap_card_location", placement_handling)
 	SignalBus.connect("reorder_cards", reorder_handling)
-	
-	if deck: 
-		arrays.usable_deck = deck.make_usable()
-		arrays.usable_deck.shuffle()
-		update_lists()
 
-func assign_deck(assigned_deck):
+func assign_deck(assigned_deck: Deck):
 	arrays.usable_deck = assigned_deck.make_usable()
 	arrays.usable_deck.shuffle()
+	update_lists()
 
 func draw_starting():
 	allowed_play = 1

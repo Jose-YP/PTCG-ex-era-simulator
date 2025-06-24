@@ -10,8 +10,7 @@ class_name Fundies
 @onready var slot_ui_actions: SlotUIActions = $SlotUIActions
 @onready var player_resources: Deck_Manipulator = $PlayerResources
 @onready var on_slot_actions: On_Slot_Actions = $OnSlotActions
-@onready var poke_slots: Array[PokeSlot] = [$Slots/PokeSlot, $Slots/PokeSlot2,
- $Slots/PokeSlot3, $Slots/PokeSlot4, $Slots/PokeSlot5, $Slots/PokeSlot6]
+@onready var poke_slots: Array[PokeSlot]
 @onready var opp_slots: Array[PokeSlot]
 
 var turn_number: int = 1
@@ -36,17 +35,6 @@ func _get_configuration_warnings() -> PackedStringArray:
 		return ["Fundies needs a deck to operate on, otherwise it will use the debug deck"]
 	else:
 		return []
-
-func _ready() -> void:
-	ui_slots = board.player_side.ui_slots
-	player_resources.deck = board.board_state.home_deck
-	for i in range(poke_slots.size()):
-		poke_slots[i].ui_slot = player_side.ui_slots[i]
-		poke_slots[i].fundies = self
-		
-		if player_side.ui_slots[i].active:
-			active_slots.append(poke_slots[i])
-		else: bench_slots.append(poke_slots[i])
 #endregion
 
 func hide_list() -> void:
@@ -117,7 +105,7 @@ func can_be_played(card: Base_Card) -> int:
 func find_allowed_slots(condition: Callable,\
  side: Constants.SIDES, slot: Constants.SLOTS = Constants.SLOTS.ALL) -> Array[UI_Slot]:
 	var allowed: Array[UI_Slot] = (ui_slots + opp_ui_slots).filter(func(uislot: UI_Slot):\
-	 return uislot.connected_card.is_in_slot(side, slot) and condition.call(uislot.connected_card))
+	 return uislot.connected_slot.is_in_slot(side, slot) and condition.call(uislot.connected_slot))
 	
 	return allowed
 

@@ -21,8 +21,7 @@ class_name UI_Slot
  Vector2(size.x / 2,0), Vector2(0,-size.y / 2), Vector2(0,size.y / 2)]
 
 #Unfinished, doesn't account for special energy
-var connected_card: PokeSlot
-var connected_slot: PokeSlotRes
+var connected_slot: PokeSlot = PokeSlot.new()
 var attached_energy: Dictionary = {"Grass": 0, "Fire": 0, "Water": 0,
  "Lightning": 0, "Psychic":0, "Darkness":0, "Metal":0, "Colorless":0,
  "Rainbow":0, "Magma":0, "Aqua":0, "Dark Metal":0, "React": 0,
@@ -37,8 +36,8 @@ func _ready():
 	if %ArtButton.benched: %ArtButton/PanelContainer.size = Vector2(149, 96)
 
 func spawn_card() -> void:
-	#%ArtButton.handle_card_display(connected_card.current_card, connected_card)
-	%ArtButton.spawn_card_display(connected_card.current_card, connected_card)
+	#%ArtButton.handle_card_display(connected_slot.current_card, connected_slot)
+	%ArtButton.spawn_card_display(connected_slot.current_card, connected_slot)
 	current_display = %ArtButton.current_display
 
 func despawn_card() -> void:
@@ -100,17 +99,17 @@ func display_energy(energy_arr: Array, energy_dict: Dictionary):
 #--------------------------------------
 #region CONDITION DISPLAY
 func display_condition() -> void:
-	if connected_card.poison_condition != 0:
+	if connected_slot.poison_condition != 0:
 		%Poison.show()
 	elif active: %Poison.hide()
 	
-	if connected_card.burn_condition != 0:
+	if connected_slot.burn_condition != 0:
 		%Burn.show()
 	elif active: %Burn.hide()
 	
-	if connected_card.turn_condition != 0:
+	if connected_slot.turn_condition != 0:
 		%TurnConditions.show()
-		%TurnConditions.current_tab = connected_card.turn_condition - 1
+		%TurnConditions.current_tab = connected_slot.turn_condition - 1
 
 	elif active: %TurnConditions.hide()
 
@@ -128,10 +127,10 @@ func display_shockwave(truth: bool = true) -> void:
 #--------------------------------------
 #region SIGNALS
 #func _on_art_button_show_attacks():
-	#SignalBus.chosen_slot.emit(connected_card)
+	#SignalBus.chosen_slot.emit(connected_slot)
 #
 #func _on_art_button_show_card():
-	#SignalBus.chosen_slot.emit(connected_card)
+	#SignalBus.chosen_slot.emit(connected_slot)
 
 #endregion
 #--------------------------------------
