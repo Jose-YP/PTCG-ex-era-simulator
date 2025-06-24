@@ -17,6 +17,7 @@ metadata/_custom_type_script = "uid://cimk6l7ytw7xg"
 
 [resource]
 script = ExtResource("2_dukji")
+either_or = false
 order = Array[int]([])
 energy_movement = SubResource("Resource_f2aic")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"

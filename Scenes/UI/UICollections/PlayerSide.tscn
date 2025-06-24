@@ -58,7 +58,7 @@ layout_mode = 2
 
 [node name="Non_mon" parent="." instance=ExtResource("4_5awab")]
 layout_mode = 0
-offset_left = 288.0
-offset_top = 54.0
-offset_right = 987.0
-offset_bottom = 174.0
+offset_left = 542.0
+offset_top = 34.0
+offset_right = 989.0
+offset_bottom = 154.0

@@ -13,3 +13,13 @@ $Main/Bench/BenchPokemon2, $Main/Bench/BenchPokemon3, $Main/Bench/BenchPokemon4,
 func get_slots() -> Array[UI_Slot]:
 	return [%ActivePokemon, $Main/Bench/BenchPokemon, 
 $Main/Bench/BenchPokemon2, $Main/Bench/BenchPokemon3, $Main/Bench/BenchPokemon4, $Main/Bench/BenchPokemon5]
+
+func insert_active_slot(slot):
+	for ui_slot in $Main/Active.get_children():
+		if not ui_slot.connected_slot:
+			ui_slot.connected_slot = slot
+
+func insert_bench_slot(slot):
+	for ui_slot in $Main/Bench.get_children():
+		if not ui_slot.connected_slot:
+			ui_slot.connected_slot = slot

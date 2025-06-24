@@ -1,0 +1,60 @@
+[gd_scene load_steps=9 format=3 uid="uid://dnij7qm62bibx"]
+
+[ext_resource type="Script" uid="uid://j57m0tmwtg4n" path="res://Code/Scenes/debug_board_state.gd" id="1_auq40"]
+[ext_resource type="Resource" uid="uid://csngw38pof3y8" path="res://Resources/BoardStates/BoardStatetest.tres" id="2_43axb"]
+[ext_resource type="PackedScene" uid="uid://dognokjork36j" path="res://Scenes/UI/UICollections/PlayerSide.tscn" id="2_yhhmj"]
+[ext_resource type="PackedScene" uid="uid://dvpkx1fqkwvd7" path="res://Scenes/UI/UICollections/OpponentSide.tscn" id="3_43axb"]
+[ext_resource type="PackedScene" uid="uid://dp781vdb5kvc7" path="res://Scenes/UI/UIComponents/art_button.tscn" id="4_mxy7v"]
+[ext_resource type="Shader" uid="uid://chaingl03cnx1" path="res://Shaders/Shine2D.gdshader" id="5_7c6pk"]
+[ext_resource type="PackedScene" uid="uid://cni7lmrv7r06c" path="res://Scenes/Main Game/Fundies.tscn" id="6_iquab"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o8atk"]
+resource_local_to_scene = true
+shader = ExtResource("5_7c6pk")
+shader_parameter/shine_color = Color(0.98, 0.925, 0.231, 1)
+shader_parameter/base_color = Color(0.180736, 0.120593, 0.350483, 1)
+shader_parameter/shine_speed = 7.0
+shader_parameter/shine_size = 0.07
+shader_parameter/shine_bool = false
+
+[node name="DebugBoardState" type="Control" node_paths=PackedStringArray("player_side", "opponent_side", "fundies")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_auq40")
+board_state = ExtResource("2_43axb")
+player_side = NodePath("PlayerSide")
+opponent_side = NodePath("OpponentSide")
+fundies = NodePath("Fundies")
+
+[node name="PlayerSide" parent="." instance=ExtResource("2_yhhmj")]
+layout_mode = 1
+
+[node name="OpponentSide" parent="." instance=ExtResource("3_43axb")]
+layout_mode = 1
+offset_left = 34.0
+offset_top = 14.0
+offset_right = -11.0
+offset_bottom = -345.0
+
+[node name="Stadium" parent="." instance=ExtResource("4_mxy7v")]
+material = SubResource("ShaderMaterial_o8atk")
+layout_mode = 0
+offset_left = 427.0
+offset_top = 286.0
+offset_right = 622.0
+offset_bottom = 406.0
+pokemon = false
+benched = true
+
+[node name="Fundies" parent="." node_paths=PackedStringArray("board", "player_side") instance=ExtResource("6_iquab")]
+board = NodePath("..")
+player_side = NodePath("../PlayerSide")
+
+[node name="PokeSlot" parent="Fundies/Slots" index="0" node_paths=PackedStringArray("ui_slot")]
+ui_slot = NodePath("../../../PlayerSide/Main/Active/ActivePokemon")
+
+[editable path="Fundies"]

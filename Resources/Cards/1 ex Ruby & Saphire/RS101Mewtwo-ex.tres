@@ -14,6 +14,7 @@
 script = ExtResource("5_2carm")
 side = 1
 where = 0
+reordering_only = false
 based_on_side = 0
 based_on_slots = 0
 portion = -1
@@ -25,6 +26,7 @@ metadata/_custom_type_script = "uid://cw3yr1k040kw7"
 
 [sub_resource type="Resource" id="Resource_ve4h8"]
 script = ExtResource("2_ynh6h")
+either_or = false
 order = Array[int]([])
 search = SubResource("Resource_bu0nr")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"

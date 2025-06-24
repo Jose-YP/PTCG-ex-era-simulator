@@ -22,6 +22,7 @@ class_name UI_Slot
 
 #Unfinished, doesn't account for special energy
 var connected_card: PokeSlot
+var connected_slot: PokeSlotRes
 var attached_energy: Dictionary = {"Grass": 0, "Fire": 0, "Water": 0,
  "Lightning": 0, "Psychic":0, "Darkness":0, "Metal":0, "Colorless":0,
  "Rainbow":0, "Magma":0, "Aqua":0, "Dark Metal":0, "React": 0,

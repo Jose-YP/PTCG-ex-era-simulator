@@ -3,6 +3,7 @@
 extends Node
 class_name Fundies
 
+@export var board: BoardNode
 @export var player_side: CardSideUI
 @export var deck: Deck
 
@@ -37,8 +38,8 @@ func _get_configuration_warnings() -> PackedStringArray:
 		return []
 
 func _ready() -> void:
-	ui_slots = player_side.ui_slots
-	player_resources.deck = deck
+	ui_slots = board.player_side.ui_slots
+	player_resources.deck = board.board_state.home_deck
 	for i in range(poke_slots.size()):
 		poke_slots[i].ui_slot = player_side.ui_slots[i]
 		poke_slots[i].fundies = self

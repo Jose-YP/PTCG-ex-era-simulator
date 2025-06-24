@@ -9,6 +9,7 @@
 
 [sub_resource type="Resource" id="Resource_mamwr"]
 script = ExtResource("2_06bqb")
+either_or = false
 order = Array[int]([])
 dmgManip = ExtResource("1_pf7s7")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
@@ -29,6 +30,7 @@ effect_to_mon = SubResource("Resource_mamwr")
 script = ExtResource("6_fxg1t")
 side = 1
 where = 1
+reordering_only = false
 based_on_side = 0
 based_on_slots = 0
 portion = -1

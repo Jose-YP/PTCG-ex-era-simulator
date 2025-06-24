@@ -1,17 +1,23 @@
 [gd_scene load_steps=5 format=3 uid="uid://dvpkx1fqkwvd7"]
 
+[ext_resource type="Script" uid="uid://dx3o7ac7ius6k" path="res://Code/Scenes/UI/Main/Side.gd" id="1_iv2kv"]
 [ext_resource type="PackedScene" uid="uid://df8x227c7a8q4" path="res://Scenes/UI/UIComponents/BenchMon.tscn" id="1_o88tv"]
 [ext_resource type="PackedScene" uid="uid://drg0sr7jdfiel" path="res://Scenes/UI/UIComponents/ActiveMon.tscn" id="2_fs4jj"]
-[ext_resource type="Texture2D" uid="uid://cijlbc37pj4gd" path="res://icon.svg" id="3_je3ne"]
-[ext_resource type="Texture2D" uid="uid://c0lenryrao7ol" path="res://Art/Cards/1 ex Ruby & Saphire/89.jpg" id="4_kle8c"]
+[ext_resource type="PackedScene" uid="uid://f5mxg3phjwb7" path="res://Scenes/UI/UIComponents/non_mon.tscn" id="3_he6l3"]
 
 [node name="OpponentSide" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 37.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = -351.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_iv2kv")
+metadata/_edit_group_ = true
 
 [node name="Main" type="VBoxContainer" parent="."]
 layout_mode = 0
@@ -55,109 +61,13 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="ActivePokemon" parent="Main/Active/Active" instance=ExtResource("2_fs4jj")]
+unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Non_mon" type="HBoxContainer" parent="."]
+[node name="Non_mon" parent="." instance=ExtResource("3_he6l3")]
 layout_mode = 0
-offset_left = 35.0
-offset_top = 163.0
-offset_right = 712.0
-offset_bottom = 247.0
-metadata/_edit_group_ = true
-
-[node name="Discards" type="HBoxContainer" parent="Non_mon"]
-unique_name_in_owner = true
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="Non_mon/Discards"]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("3_je3ne")
-expand_mode = 4
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Non_mon/Discards"]
-custom_minimum_size = Vector2(82, 50)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-bbcode_enabled = true
-text = "[u]Discards[/u] num"
-
-[node name="Prizes" type="HBoxContainer" parent="Non_mon"]
-unique_name_in_owner = true
-layout_mode = 2
-
-[node name="TextureRect2" type="TextureRect" parent="Non_mon/Prizes"]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("3_je3ne")
-expand_mode = 4
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Non_mon/Prizes"]
-custom_minimum_size = Vector2(82, 50)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-bbcode_enabled = true
-text = "[u]Prizes[/u]
-num"
-
-[node name="Deck" type="HBoxContainer" parent="Non_mon"]
-unique_name_in_owner = true
-layout_mode = 2
-
-[node name="TextureRect3" type="TextureRect" parent="Non_mon/Deck"]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("3_je3ne")
-expand_mode = 4
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Non_mon/Deck"]
-custom_minimum_size = Vector2(82, 50)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-bbcode_enabled = true
-text = "[u]Deck[/u]
-num"
-
-[node name="Hand" type="HBoxContainer" parent="Non_mon"]
-unique_name_in_owner = true
-layout_mode = 2
-
-[node name="TextureRect4" type="TextureRect" parent="Non_mon/Hand"]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("3_je3ne")
-expand_mode = 4
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Non_mon/Hand"]
-custom_minimum_size = Vector2(82, 49)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-bbcode_enabled = true
-text = "[u]Hand[/u]
-num"
-
-[node name="SupporterNPlay" type="TextureRect" parent="Non_mon"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(141, 43)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("4_kle8c")
-
-[node name="Cards" type="GridContainer" parent="Non_mon"]
-visible = false
-layout_mode = 2
-columns = 4
-metadata/_edit_group_ = true
+offset_left = 17.0
+offset_top = 177.0
+offset_right = 464.0
+offset_bottom = 297.0
+player = false

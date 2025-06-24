@@ -9,6 +9,8 @@ Constants.STACKS.PRIZE:%PrizeButton, Constants.STACKS.DECK:%DeckButton, Constant
 func _ready() -> void:
 	for button in stacks:
 		stacks[button].player = player
+	if not player:
+		$Stacks.move_to_front()
 
 func update_stack(which: Constants.STACKS, num: int):
 	stacks[which].update(num)
