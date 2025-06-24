@@ -30,7 +30,6 @@ var slot_choice: Constants.SLOTS
 #--------------------------------------
 func _ready():
 	SignalBus.connect("chosen_slot", left_button_actions)
-	owner._ready()
 	for i in range(fundies.poke_slots.size()):
 		fundies.poke_slots[i].slot_into(fundies.ui_slots[i])
 		fundies.poke_slots[i].refresh()

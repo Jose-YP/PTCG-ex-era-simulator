@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cni7lmrv7r06c" path="res://Scenes/Main Game/Fundies.tscn" id="6_iquab"]
 [ext_resource type="Resource" uid="uid://bleo7p56u5k1f" path="res://Resources/Decks/TestDeck.tres" id="8_43axb"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_o8atk"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_43axb"]
 resource_local_to_scene = true
 shader = ExtResource("5_7c6pk")
 shader_parameter/shine_color = Color(0.98, 0.925, 0.231, 1)
@@ -41,15 +41,28 @@ offset_top = 14.0
 offset_right = -11.0
 offset_bottom = -345.0
 
-[node name="Stadium" parent="." instance=ExtResource("4_mxy7v")]
-material = SubResource("ShaderMaterial_o8atk")
-layout_mode = 0
-offset_left = 427.0
-offset_top = 286.0
-offset_right = 622.0
-offset_bottom = 406.0
-pokemon = false
-benched = true
+[node name="Stadium" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -97.5
+offset_top = -60.0
+offset_right = 97.5
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_group_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="Stadium"]
+layout_mode = 2
+
+[node name="ArtButton" parent="Stadium/MarginContainer" instance=ExtResource("4_mxy7v")]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_43axb")
+layout_mode = 2
 
 [node name="Fundies" parent="." node_paths=PackedStringArray("board", "player_side") instance=ExtResource("6_iquab")]
 board = NodePath("..")

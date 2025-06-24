@@ -11,8 +11,8 @@ config_version=5
 [application]
 
 config/name="Pokemon TCG"
-config/tags=PackedStringArray("made", "test")
-run/main_scene="uid://c3qurrd5vl1ao"
+config/tags=PackedStringArray("2d", "made", "test")
+run/main_scene="uid://dnij7qm62bibx"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://Art/Energy/48px-Metal-attack.png"
 

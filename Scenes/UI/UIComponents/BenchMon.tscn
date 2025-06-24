@@ -67,7 +67,6 @@ layout_mode = 2
 unique_name_in_owner = true
 material = SubResource("ShaderMaterial_lj5ts")
 layout_mode = 2
-benched = true
 
 [node name="TrainerAttached" type="VBoxContainer" parent="."]
 layout_mode = 0

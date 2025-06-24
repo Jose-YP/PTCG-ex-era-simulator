@@ -1,22 +1,34 @@
-[gd_resource type="Resource" script_class="BoardState" load_steps=14 format=3 uid="uid://csngw38pof3y8"]
+[gd_resource type="Resource" script_class="BoardState" load_steps=18 format=3 uid="uid://csngw38pof3y8"]
 
 [ext_resource type="Script" uid="uid://cs70ix831b5g4" path="res://Code/Resource Makers/PokemonSpecific/PokeSlotMaker.gd" id="1_11uv4"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_vut8t"]
+[ext_resource type="Script" uid="uid://dgqpurnuh14t1" path="res://Code/Resource Makers/GeneralUse/SideStateMaker.gd" id="2_v7wag"]
 [ext_resource type="Script" uid="uid://c7ucx36aubnh8" path="res://Code/Resource Makers/GeneralUse/BoardStateMaker.gd" id="2_vut8t"]
-[ext_resource type="Resource" uid="uid://d3qd7r6gwfitd" path="res://Resources/Decks/TestDeckFP.tres" id="3_qmibj"]
 [ext_resource type="Resource" uid="uid://bleo7p56u5k1f" path="res://Resources/Decks/TestDeck.tres" id="4_uybm8"]
 [ext_resource type="Resource" uid="uid://dyqdhaov0ywxk" path="res://Resources/Cards/1 ex Ruby & Saphire/RS92Switch.tres" id="5_uheu6"]
 [ext_resource type="Resource" uid="uid://bpyb5rd3indje" path="res://Resources/Cards/1 ex Ruby & Saphire/RS94MetalEnergy.tres" id="6_v7wag"]
 [ext_resource type="Resource" uid="uid://b5ukqf6xmn6vv" path="res://Resources/Cards/1 ex Ruby & Saphire/RS109LightningEnergy.tres" id="7_5nkwt"]
 [ext_resource type="Resource" uid="uid://b45smf3ecldmx" path="res://Resources/Cards/1 ex Ruby & Saphire/RS103Sneasel-ex.tres" id="8_utwwn"]
 [ext_resource type="Resource" uid="uid://oa7r3igevgqi" path="res://Resources/Cards/1 ex Ruby & Saphire/RS49Aron.tres" id="9_1jl5v"]
+[ext_resource type="Resource" uid="uid://c2tk6qy8h57lw" path="res://Resources/Cards/1 ex Ruby & Saphire/RS82EnergySwitch.tres" id="9_5nkwt"]
 [ext_resource type="Resource" uid="uid://c3tip8v6djvro" path="res://Resources/Cards/4 ex Team Magma VS Team Aqua/MA65MagmaPoochyena.tres" id="10_pbkiq"]
+[ext_resource type="Resource" uid="uid://co4rk4hqixy8b" path="res://Resources/Cards/1 ex Ruby & Saphire/RS37Lairon.tres" id="10_utwwn"]
 
-[sub_resource type="Resource" id="Resource_rc5bh"]
+[sub_resource type="Resource" id="Resource_1jl5v"]
+script = ExtResource("2_v7wag")
+side_type = 2
+usable_deck = Array[ExtResource("1_vut8t")]([])
+initial_hand = Array[ExtResource("1_vut8t")]([])
+prize_cards = 6
+bench_size = 5
+slots = Dictionary[ExtResource("1_11uv4"), bool]({})
+metadata/_custom_type_script = "uid://dgqpurnuh14t1"
+
+[sub_resource type="Resource" id="Resource_pbkiq"]
 script = ExtResource("1_11uv4")
 player_type = 0
-side = 1
-slot = 2
+side = 0
+slot = 0
 current_card = ExtResource("9_1jl5v")
 evolution_ready = false
 evolved_this_turn = false
@@ -66,11 +78,11 @@ knocked_out = false
 is_target = false
 metadata/_custom_type_script = "uid://cs70ix831b5g4"
 
-[sub_resource type="Resource" id="Resource_mbr53"]
+[sub_resource type="Resource" id="Resource_rc5bh"]
 script = ExtResource("1_11uv4")
 player_type = 0
-side = 1
-slot = 3
+side = 0
+slot = 0
 current_card = ExtResource("10_pbkiq")
 evolution_ready = false
 evolved_this_turn = false
@@ -120,6 +132,20 @@ knocked_out = false
 is_target = false
 metadata/_custom_type_script = "uid://cs70ix831b5g4"
 
+[sub_resource type="Resource" id="Resource_mbr53"]
+script = ExtResource("2_v7wag")
+side_type = 0
+deck = ExtResource("4_uybm8")
+usable_deck = Array[ExtResource("1_vut8t")]([])
+initial_hand = Array[ExtResource("1_vut8t")]([ExtResource("8_utwwn"), ExtResource("5_uheu6"), ExtResource("6_v7wag"), ExtResource("7_5nkwt"), ExtResource("7_5nkwt"), ExtResource("9_5nkwt"), ExtResource("10_utwwn")])
+prize_cards = 6
+bench_size = 5
+slots = Dictionary[ExtResource("1_11uv4"), bool]({
+SubResource("Resource_pbkiq"): true,
+SubResource("Resource_rc5bh"): false
+})
+metadata/_custom_type_script = "uid://dgqpurnuh14t1"
+
 [resource]
 script = ExtResource("2_vut8t")
 prize_rules = 0
@@ -128,21 +154,6 @@ discard_rules = 0
 who_starts_first = 0
 doubles = false
 default_start = false
-side_home = 0
-home_deck = ExtResource("4_uybm8")
-home_UD = Array[ExtResource("1_vut8t")]([])
-home_hand = Array[ExtResource("1_vut8t")]([ExtResource("5_uheu6"), ExtResource("6_v7wag"), ExtResource("7_5nkwt"), ExtResource("7_5nkwt"), ExtResource("6_v7wag"), ExtResource("8_utwwn")])
-home_prize_cards = 6
-home_bench_size = 5
-home_slots = Dictionary[ExtResource("1_11uv4"), bool]({
-SubResource("Resource_rc5bh"): true,
-SubResource("Resource_mbr53"): false
-})
-side_away = 2
-away_deck = ExtResource("3_qmibj")
-away_UD = Array[ExtResource("1_vut8t")]([])
-away_hand = Array[ExtResource("1_vut8t")]([])
-away_prize_cards = 6
-away_bench_size = 5
-away_slots = Dictionary[ExtResource("1_11uv4"), bool]({})
+home = SubResource("Resource_mbr53")
+away = SubResource("Resource_1jl5v")
 metadata/_custom_type_script = "uid://c7ucx36aubnh8"

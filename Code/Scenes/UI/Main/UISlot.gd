@@ -34,6 +34,7 @@ var current_display: Node
 func _ready():
 	%ArtButton.spawn_direction = list_direction
 	if %ArtButton.benched: %ArtButton/PanelContainer.size = Vector2(149, 96)
+	clear()
 
 func spawn_card() -> void:
 	#%ArtButton.handle_card_display(connected_slot.current_card, connected_slot)
@@ -46,6 +47,11 @@ func despawn_card() -> void:
 
 #--------------------------------------
 #region ATTATCH
+func attatch_pokeslot(slot: PokeSlot):
+	connected_slot = slot
+	connected_slot.ui_slot = self
+	connected_slot.refresh()
+
 func attatch_tool(tool_card: Base_Card):
 	if tool_card:
 		tool.show()
@@ -139,3 +145,14 @@ func switch_shine(value: bool):
 
 func make_allowed(is_allowed: bool):
 	%ArtButton.disabled = not is_allowed
+
+func clear():
+	name_section.clear()
+	max_hp.clear()
+	art.texture = null
+	display_types([])
+	tm.hide()
+	tool.hide()
+	display_condition()
+	display_imprision(false)
+	display_shockwave(false)

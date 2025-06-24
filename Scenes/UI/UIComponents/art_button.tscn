@@ -30,8 +30,11 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("2_q565r")
 theme_override_styles/normal = SubResource("StyleBoxFlat_dvhpw")
+disabled = true
 button_mask = 3
 script = ExtResource("2_vikux")
+pokemon = false
+benched = true
 
 [node name="PanelContainer" type="CenterContainer" parent="."]
 layout_mode = 2

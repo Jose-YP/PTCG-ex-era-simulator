@@ -7,17 +7,15 @@
 
 [node name="OpponentSide" type="Control"]
 layout_mode = 3
-anchors_preset = 15
+anchor_left = 0.03
+anchor_top = 0.032
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 37.0
-offset_top = 8.0
-offset_right = -8.0
-offset_bottom = -351.0
+anchor_bottom = 0.032
+offset_left = -0.400002
+offset_top = -0.0400009
+offset_bottom = -0.0400009
 grow_horizontal = 2
-grow_vertical = 2
 script = ExtResource("1_iv2kv")
-metadata/_edit_group_ = true
 
 [node name="Main" type="VBoxContainer" parent="."]
 layout_mode = 0
@@ -66,8 +64,8 @@ layout_mode = 2
 
 [node name="Non_mon" parent="." instance=ExtResource("3_he6l3")]
 layout_mode = 0
-offset_left = 17.0
-offset_top = 177.0
-offset_right = 464.0
-offset_bottom = 297.0
+offset_left = -39.0
+offset_top = 147.0
+offset_right = 408.0
+offset_bottom = 267.0
 player = false

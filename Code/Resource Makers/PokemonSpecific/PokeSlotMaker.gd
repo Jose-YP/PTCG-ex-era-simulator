@@ -106,6 +106,8 @@ func pokemon_checkup():
 	if turn_condition == turn_type.PARALYSIS:
 		turn_condition = turn_type.NONE
 
+#--------------------------------------
+#region BOOLEANS
 func is_in_slot(desired_side: Constants.SIDES, desired_slot: Constants.SLOTS):
 	var side_bool: bool = false
 	var slot_bool: bool = false
@@ -146,6 +148,8 @@ func is_player() -> bool:
 	else:
 		push_error("Not connected to a UI slot")
 		return false
+#endregion
+#--------------------------------------
 
 func use_card(card: Base_Card):
 	var card_type: int = Conversions.get_card_flags(card)
@@ -331,7 +335,7 @@ func slot_into(destination: UI_Slot):
 	refresh()
 
 func refresh() -> void:
-	if not readied: return
+	#if not readied: return
 	
 	#Change slot's card display
 	ui_slot.name_section.clear()
@@ -350,7 +354,7 @@ func refresh() -> void:
 	
 	#recognize position of slot
 	benched = not ui_slot.active
-	#ui_slot.connected_slot = self
+	ui_slot.connected_slot = self
 	
 	#check for any attatched cards/conditions
 	ui_slot.display_energy(energy_array, attached_energy)

@@ -18,12 +18,14 @@ func get_slots() -> Array[UI_Slot]:
 		arr.append(slot)
 	return arr
 
-func insert_slot(slot: PokeSlot, predefined: bool):
-	if slot.is_active() or predefined:
+func insert_slot(slot: PokeSlot, predefined: bool = false):
+	if predefined or slot.is_active():
 		for ui_slot in %Active.get_children():
-			if not ui_slot.connected_slot:
-				ui_slot.connected_slot = slot
+			if not ui_slot.connected_slot.current_card:
+				ui_slot.attatch_pokeslot(slot)
+				return
 	else:
 		for ui_slot in %Bench.get_children():
-			if not ui_slot.connected_slot:
-				ui_slot.connected_slot = slot
+			if not ui_slot.connected_slot.current_card:
+				ui_slot.attatch_pokeslot(slot)
+				return

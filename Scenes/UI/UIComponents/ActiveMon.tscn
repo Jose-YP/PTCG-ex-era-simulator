@@ -53,6 +53,7 @@ text = "[u]HP[/u] 200/200"
 unique_name_in_owner = true
 material = SubResource("ShaderMaterial_nykcf")
 layout_mode = 2
+benched = false
 
 [node name="TrainerAttached" type="VBoxContainer" parent="."]
 layout_mode = 0

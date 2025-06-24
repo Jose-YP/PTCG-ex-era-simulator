@@ -26,19 +26,16 @@ var current_display
 #--------------------------------------
 #region INITALIZATION & PROCESSING
 func _ready():
+	get_child(0).size = %ArtButton.size
 	if benched: 
 		custom_minimum_size = Vector2(149, 96)
 		art.custom_minimum_size = Vector2(142, 87)
-	if not pokemon: disabled = true
+		art.position = Vector2(4,3)
 
 # Called when the node enters the scene tree for the first time.
 func _gui_input(event):
-	if event.is_action_pressed("A"):
-		#show_attacks.emit()
-		print('eron')
-	elif event.is_action_pressed("L"):
+	if event.is_action_pressed("Check"):
 		show_card.emit()
-		print('onf')
 #endregion
 #--------------------------------------
 
