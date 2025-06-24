@@ -117,10 +117,9 @@ func play_trainer(card: Base_Card):
 			#trainer.fail_effect.play_effect(fundies)
 		
 		print("This card has an ask")
-		
 	
-	if card.trainer_properties.always_effect:
-		pass
+	if trainer.always_effect:
+		trainer.always_effect.play_effect(fundies, [], [])
 
 #For tools
 func play_attatch_tool(card: Base_Card):

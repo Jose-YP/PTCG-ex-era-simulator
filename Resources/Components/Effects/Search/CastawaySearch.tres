@@ -11,6 +11,7 @@
 script = ExtResource("5_8bmva")
 side = 0
 where = 1
+reordering_only = false
 based_on_side = 0
 based_on_slots = 0
 portion = -1

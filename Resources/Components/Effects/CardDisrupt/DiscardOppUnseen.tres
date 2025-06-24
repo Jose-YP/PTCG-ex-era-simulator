@@ -4,11 +4,12 @@
 
 [resource]
 script = ExtResource("1_xe38q")
-side = 2
-disrupting = 1
-pokemon_disrupt = 0
 send = 0
+bottom_of_stack = false
 send_to = 2
 card_ammount = 1
 reveal = false
+side = 2
+disrupting = 1
+pokemon_disrupt = 0
 metadata/_custom_type_script = "uid://8sh5p3leflla"
