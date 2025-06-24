@@ -15,6 +15,7 @@ enum doing {NOTHING, ATTACKING, SWAPPING, BENCHING, EVOLVING, ENERGY,
  TOOL, TM, CHOOSING, WAITING}
 
 signal chosen
+signal add_to_candidates
 signal choice_ready
 
 var adding_card: Base_Card
@@ -22,7 +23,6 @@ var selected_slot: UI_Slot = null
 var allowed_slots: Array[UI_Slot]
 var act_on_self: bool = true
 var choosing: bool = false
-var what_doing: doing = doing.NOTHING
 var slot_side: Constants.SIDES
 var slot_choice: Constants.SLOTS
 
@@ -40,30 +40,6 @@ func _ready():
 func group_refresh():
 	for slot in fundies.poke_slots: slot.refresh()
 
-func set_doing(now_doing: String):
-	match now_doing:
-		"Bench":
-			what_doing = doing.BENCHING
-		"Choose":
-			what_doing = doing.CHOOSING
-		"Attack":
-			what_doing = doing.ATTACKING
-		"Swapping":
-			what_doing = doing.SWAPPING
-		"Evolve":
-			what_doing = doing.EVOLVING
-		"Energy":
-			what_doing = doing.ENERGY
-		"Tool":
-			what_doing = doing.TOOL
-		"TM":
-			what_doing = doing.TM
-		"Wait":
-			what_doing = doing.WAITING
-		"Nothing":
-			what_doing = doing.NOTHING
-		_:
-			push_error(now_doing, " isn't accounted for")
 #endregion
 #--------------------------------------
 
@@ -74,7 +50,10 @@ func left_button_actions(target: PokeSlot):
 		print(target.ui_slot, target)
 		reset_ui()
 		
-		target.use_card(adding_card)
+		if adding_card:
+			target.use_card(adding_card)
+		else:
+			add_to_candidates.emit(target)
 		target.refresh()
 		
 		chosen.emit()
