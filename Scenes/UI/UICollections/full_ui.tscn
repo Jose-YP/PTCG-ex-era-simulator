@@ -1,0 +1,60 @@
+[gd_scene load_steps=7 format=3 uid="uid://bsad85ywgca3d"]
+
+[ext_resource type="Script" uid="uid://b6qi20o3p32gq" path="res://Code/Scenes/UI/Main/full_ui.gd" id="1_2n6bm"]
+[ext_resource type="PackedScene" uid="uid://dognokjork36j" path="res://Scenes/UI/UICollections/PlayerSide.tscn" id="1_wioh2"]
+[ext_resource type="PackedScene" uid="uid://dvpkx1fqkwvd7" path="res://Scenes/UI/UICollections/OpponentSide.tscn" id="2_2n6bm"]
+[ext_resource type="PackedScene" uid="uid://dp781vdb5kvc7" path="res://Scenes/UI/UIComponents/art_button.tscn" id="3_tcktg"]
+[ext_resource type="Shader" uid="uid://chaingl03cnx1" path="res://Shaders/Shine2D.gdshader" id="4_r2ex1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_43axb"]
+resource_local_to_scene = true
+shader = ExtResource("4_r2ex1")
+shader_parameter/shine_color = Color(0.98, 0.925, 0.231, 1)
+shader_parameter/base_color = Color(0.180736, 0.120593, 0.350483, 1)
+shader_parameter/shine_speed = 7.0
+shader_parameter/shine_size = 0.07
+shader_parameter/shine_bool = false
+
+[node name="FullUI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_2n6bm")
+
+[node name="PlayerSide" parent="." instance=ExtResource("1_wioh2")]
+layout_mode = 1
+offset_left = 54.88
+offset_top = 340.0
+offset_right = 55.12
+offset_bottom = 340.0
+
+[node name="OpponentSide" parent="." instance=ExtResource("2_2n6bm")]
+layout_mode = 1
+offset_left = 65.2
+offset_top = 35.76
+offset_right = 26.4
+offset_bottom = 35.76
+
+[node name="Stadium" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 422.5
+offset_top = 280.0
+offset_right = 617.5
+offset_bottom = 400.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_group_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="Stadium"]
+layout_mode = 2
+
+[node name="ArtButton" parent="Stadium/MarginContainer" instance=ExtResource("3_tcktg")]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_43axb")
+layout_mode = 2

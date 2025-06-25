@@ -1,40 +1,156 @@
-[gd_resource type="Resource" script_class="BoardState" load_steps=19 format=3 uid="uid://csngw38pof3y8"]
+[gd_resource type="Resource" script_class="BoardState" load_steps=32 format=3 uid="uid://csngw38pof3y8"]
 
 [ext_resource type="Script" uid="uid://cs70ix831b5g4" path="res://Code/Resource Makers/PokemonSpecific/PokeSlotMaker.gd" id="1_11uv4"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_vut8t"]
 [ext_resource type="Script" uid="uid://dgqpurnuh14t1" path="res://Code/Resource Makers/GeneralUse/SideStateMaker.gd" id="2_v7wag"]
 [ext_resource type="Script" uid="uid://c7ucx36aubnh8" path="res://Code/Resource Makers/GeneralUse/BoardStateMaker.gd" id="2_vut8t"]
+[ext_resource type="Resource" uid="uid://gyk46ghjiejq" path="res://Resources/Cards/1 ex Ruby & Saphire/RS101Mewtwo-ex.tres" id="3_ai8fb"]
 [ext_resource type="Resource" uid="uid://d3qd7r6gwfitd" path="res://Resources/Decks/TestDeckFP.tres" id="3_qmibj"]
+[ext_resource type="Resource" uid="uid://d24ynfvvhyvm0" path="res://Resources/Cards/13 ex Holon Phantoms/HP96MultiEnergy.tres" id="4_b0i0u"]
 [ext_resource type="Resource" uid="uid://bleo7p56u5k1f" path="res://Resources/Decks/TestDeck.tres" id="4_uybm8"]
+[ext_resource type="Resource" uid="uid://dliic77tptn8j" path="res://Resources/Cards/1 ex Ruby & Saphire/RS34Kirlia.tres" id="5_1jl5v"]
+[ext_resource type="Resource" uid="uid://cm0tjkff2o52" path="res://Resources/Cards/1 ex Ruby & Saphire/RS83LadyOuting.tres" id="5_ajom2"]
 [ext_resource type="Resource" uid="uid://dyqdhaov0ywxk" path="res://Resources/Cards/1 ex Ruby & Saphire/RS92Switch.tres" id="5_uheu6"]
+[ext_resource type="Resource" uid="uid://dxq22uwxelttj" path="res://Resources/Cards/1 ex Ruby & Saphire/RS107PsychicEnergy.tres" id="6_ngwm2"]
+[ext_resource type="Resource" uid="uid://cpk1v504xejvf" path="res://Resources/Cards/1 ex Ruby & Saphire/RS66Ralts.tres" id="6_pbkiq"]
 [ext_resource type="Resource" uid="uid://bpyb5rd3indje" path="res://Resources/Cards/1 ex Ruby & Saphire/RS94MetalEnergy.tres" id="6_v7wag"]
 [ext_resource type="Resource" uid="uid://b5ukqf6xmn6vv" path="res://Resources/Cards/1 ex Ruby & Saphire/RS109LightningEnergy.tres" id="7_5nkwt"]
+[ext_resource type="Resource" uid="uid://cvjyyq2lad5k5" path="res://Resources/Cards/1 ex Ruby & Saphire/RS108FireEnergy.tres" id="7_ux2rt"]
 [ext_resource type="Resource" uid="uid://b45smf3ecldmx" path="res://Resources/Cards/1 ex Ruby & Saphire/RS103Sneasel-ex.tres" id="8_utwwn"]
 [ext_resource type="Resource" uid="uid://oa7r3igevgqi" path="res://Resources/Cards/1 ex Ruby & Saphire/RS49Aron.tres" id="9_1jl5v"]
 [ext_resource type="Resource" uid="uid://c2tk6qy8h57lw" path="res://Resources/Cards/1 ex Ruby & Saphire/RS82EnergySwitch.tres" id="9_5nkwt"]
+[ext_resource type="Resource" uid="uid://cfps337rtsmpi" path="res://Resources/Cards/10 ex Delta Species/DS92HolonLass.tres" id="9_rmblw"]
 [ext_resource type="Resource" uid="uid://c3tip8v6djvro" path="res://Resources/Cards/4 ex Team Magma VS Team Aqua/MA65MagmaPoochyena.tres" id="10_pbkiq"]
 [ext_resource type="Resource" uid="uid://co4rk4hqixy8b" path="res://Resources/Cards/1 ex Ruby & Saphire/RS37Lairon.tres" id="10_utwwn"]
+[ext_resource type="Resource" uid="uid://b8kt4i4jgosm8" path="res://Resources/Cards/1 ex Ruby & Saphire/RS3Blaziken.tres" id="14_spws8"]
+[ext_resource type="Resource" uid="uid://dqknf3vfxe3hp" path="res://Resources/Cards/1 ex Ruby & Saphire/RS73Torchic.tres" id="15_lvnsc"]
+[ext_resource type="Resource" uid="uid://dq5yc7aoltpwf" path="res://Resources/Cards/1 ex Ruby & Saphire/RS27Combusken.tres" id="16_cneqj"]
+
+[sub_resource type="Resource" id="Resource_wudh5"]
+script = ExtResource("1_11uv4")
+player_type = 0
+current_card = ExtResource("5_1jl5v")
+evolution_ready = false
+evolved_this_turn = false
+evolved_from = Array[ExtResource("1_vut8t")]([ExtResource("6_pbkiq")])
+energy_cards = Array[ExtResource("1_vut8t")]([])
+attached_energy = {
+"Aqua": 0,
+"Colorless": 0,
+"Dark Metal": 0,
+"Darkness": 0,
+"Fighting": 0,
+"Fire": 0,
+"Grass": 0,
+"Holon FF": 0,
+"Holon GL": 0,
+"Holon WP": 0,
+"Lightning": 0,
+"Magma": 0,
+"Metal": 0,
+"Psychic": 0,
+"Rainbow": 0,
+"React": 0,
+"Water": 0
+}
+tm_cards = Array[ExtResource("1_vut8t")]([])
+use_weakness = true
+use_resistance = true
+type = 0
+weak = 0
+resist = 0
+attack_buff = 0
+defense_buff = 0
+use_body = true
+ex_immune = false
+use_power = false
+use_attack = true
+in_attacking_turn = true
+damage_counters = 0
+benched = false
+poison_condition = 0
+burn_condition = 0
+turn_condition = 0
+imprison = false
+shockwave = false
+readied = false
+knocked_out = false
+is_target = false
+metadata/_custom_type_script = "uid://cs70ix831b5g4"
+
+[sub_resource type="Resource" id="Resource_3fcng"]
+script = ExtResource("1_11uv4")
+player_type = 0
+current_card = ExtResource("14_spws8")
+evolution_ready = false
+evolved_this_turn = false
+evolved_from = Array[ExtResource("1_vut8t")]([ExtResource("15_lvnsc"), ExtResource("16_cneqj")])
+energy_cards = Array[ExtResource("1_vut8t")]([ExtResource("7_ux2rt"), ExtResource("7_ux2rt")])
+attached_energy = {
+"Aqua": 0,
+"Colorless": 0,
+"Dark Metal": 0,
+"Darkness": 0,
+"Fighting": 0,
+"Fire": 0,
+"Grass": 0,
+"Holon FF": 0,
+"Holon GL": 0,
+"Holon WP": 0,
+"Lightning": 0,
+"Magma": 0,
+"Metal": 0,
+"Psychic": 0,
+"Rainbow": 0,
+"React": 0,
+"Water": 0
+}
+tm_cards = Array[ExtResource("1_vut8t")]([])
+use_weakness = true
+use_resistance = true
+type = 0
+weak = 0
+resist = 0
+attack_buff = 0
+defense_buff = 0
+use_body = true
+ex_immune = false
+use_power = false
+use_attack = true
+in_attacking_turn = true
+damage_counters = 0
+benched = false
+poison_condition = 0
+burn_condition = 0
+turn_condition = 0
+imprison = false
+shockwave = false
+readied = false
+knocked_out = false
+is_target = false
+metadata/_custom_type_script = "uid://cs70ix831b5g4"
 
 [sub_resource type="Resource" id="Resource_1jl5v"]
 script = ExtResource("2_v7wag")
 deck = ExtResource("3_qmibj")
 usable_deck = Array[ExtResource("1_vut8t")]([])
-initial_hand = Array[ExtResource("1_vut8t")]([])
+initial_hand = Array[ExtResource("1_vut8t")]([ExtResource("3_ai8fb"), ExtResource("4_b0i0u"), ExtResource("5_ajom2"), ExtResource("6_ngwm2"), ExtResource("7_ux2rt"), ExtResource("9_5nkwt"), ExtResource("9_rmblw")])
 prize_cards = 6
 bench_size = 5
-slots = Dictionary[ExtResource("1_11uv4"), bool]({})
+slots = Dictionary[ExtResource("1_11uv4"), bool]({
+SubResource("Resource_wudh5"): true,
+SubResource("Resource_3fcng"): false
+})
 metadata/_custom_type_script = "uid://dgqpurnuh14t1"
 
 [sub_resource type="Resource" id="Resource_pbkiq"]
 script = ExtResource("1_11uv4")
 player_type = 0
-side = 0
-slot = 0
 current_card = ExtResource("9_1jl5v")
 evolution_ready = false
 evolved_this_turn = false
 evolved_from = Array[ExtResource("1_vut8t")]([])
-energy_array = Array[String]([])
+energy_cards = Array[ExtResource("1_vut8t")]([])
 attached_energy = {
 "Aqua": 0,
 "Colorless": 0,
@@ -82,13 +198,11 @@ metadata/_custom_type_script = "uid://cs70ix831b5g4"
 [sub_resource type="Resource" id="Resource_rc5bh"]
 script = ExtResource("1_11uv4")
 player_type = 0
-side = 0
-slot = 0
 current_card = ExtResource("10_pbkiq")
 evolution_ready = false
 evolved_this_turn = false
 evolved_from = Array[ExtResource("1_vut8t")]([])
-energy_array = Array[String]([])
+energy_cards = Array[ExtResource("1_vut8t")]([])
 attached_energy = {
 "Aqua": 0,
 "Colorless": 0,

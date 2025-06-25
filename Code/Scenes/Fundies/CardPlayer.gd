@@ -2,7 +2,6 @@
 extends Node
 class_name CardPlayer
 
-@export var poke_slots: Array[PokeSlot]
 @onready var fundies: Fundies = $".."
 
 signal chosen

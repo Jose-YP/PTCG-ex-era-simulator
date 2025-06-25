@@ -1,22 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://dnij7qm62bibx"]
+[gd_scene load_steps=6 format=3 uid="uid://dnij7qm62bibx"]
 
 [ext_resource type="Script" uid="uid://j57m0tmwtg4n" path="res://Code/Scenes/debug_board_state.gd" id="1_auq40"]
 [ext_resource type="Resource" uid="uid://csngw38pof3y8" path="res://Resources/BoardStates/BoardStatetest.tres" id="2_43axb"]
-[ext_resource type="PackedScene" uid="uid://dognokjork36j" path="res://Scenes/UI/UICollections/PlayerSide.tscn" id="2_yhhmj"]
-[ext_resource type="PackedScene" uid="uid://dvpkx1fqkwvd7" path="res://Scenes/UI/UICollections/OpponentSide.tscn" id="3_43axb"]
-[ext_resource type="PackedScene" uid="uid://dp781vdb5kvc7" path="res://Scenes/UI/UIComponents/art_button.tscn" id="4_mxy7v"]
-[ext_resource type="Shader" uid="uid://chaingl03cnx1" path="res://Shaders/Shine2D.gdshader" id="5_7c6pk"]
+[ext_resource type="PackedScene" uid="uid://bsad85ywgca3d" path="res://Scenes/UI/UICollections/full_ui.tscn" id="4_cs3hf"]
 [ext_resource type="PackedScene" uid="uid://cni7lmrv7r06c" path="res://Scenes/Main Game/Fundies.tscn" id="6_iquab"]
-[ext_resource type="Resource" uid="uid://bleo7p56u5k1f" path="res://Resources/Decks/TestDeck.tres" id="8_43axb"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_43axb"]
-resource_local_to_scene = true
-shader = ExtResource("5_7c6pk")
-shader_parameter/shine_color = Color(0.98, 0.925, 0.231, 1)
-shader_parameter/base_color = Color(0.180736, 0.120593, 0.350483, 1)
-shader_parameter/shine_speed = 7.0
-shader_parameter/shine_size = 0.07
-shader_parameter/shine_bool = false
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t8we2"]
 
 [node name="DebugBoardState" type="Control" node_paths=PackedStringArray("fundies")]
 layout_mode = 3
@@ -29,44 +18,21 @@ script = ExtResource("1_auq40")
 board_state = ExtResource("2_43axb")
 fundies = NodePath("Fundies")
 
-[node name="PlayerSide" parent="." instance=ExtResource("2_yhhmj")]
+[node name="DebugButton" type="Button" parent="."]
 layout_mode = 1
-
-[node name="OpponentSide" parent="." instance=ExtResource("3_43axb")]
-layout_mode = 1
-offset_left = 34.0
-offset_top = 14.0
-offset_right = -11.0
-offset_bottom = -345.0
-
-[node name="Stadium" type="CenterContainer" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -97.5
-offset_top = -60.0
-offset_right = 97.5
-offset_bottom = 60.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-metadata/_edit_group_ = true
+theme_override_styles/normal = SubResource("StyleBoxEmpty_t8we2")
 
-[node name="MarginContainer" type="MarginContainer" parent="Stadium"]
-layout_mode = 2
-
-[node name="ArtButton" parent="Stadium/MarginContainer" instance=ExtResource("4_mxy7v")]
-unique_name_in_owner = true
-material = SubResource("ShaderMaterial_43axb")
-layout_mode = 2
-
-[node name="Fundies" parent="." node_paths=PackedStringArray("board", "player_side") instance=ExtResource("6_iquab")]
+[node name="Fundies" parent="." node_paths=PackedStringArray("board", "full_ui") instance=ExtResource("6_iquab")]
 board = NodePath("..")
-player_side = NodePath("../PlayerSide")
+full_ui = NodePath("../FullUI")
 
-[node name="PlayerResources" parent="Fundies" index="2"]
-deck = ExtResource("8_43axb")
+[node name="FullUI" parent="." instance=ExtResource("4_cs3hf")]
+
+[connection signal="pressed" from="DebugButton" to="." method="_on_button_pressed"]
 
 [editable path="Fundies"]

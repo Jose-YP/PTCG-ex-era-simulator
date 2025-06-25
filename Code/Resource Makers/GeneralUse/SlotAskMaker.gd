@@ -128,7 +128,7 @@ func check_ask(slot: PokeSlot) -> bool:
 		print("-----------------------------------------------------------")
 		print_rich("[center]Energy Attatched")
 		slot.count_energy()
-		result = result and slot.energy_array.size()
+		result = result and slot.get_energy_strings().size()
 	
 	#Check if any desired condition exists in the pokemon
 	if condition != 0:

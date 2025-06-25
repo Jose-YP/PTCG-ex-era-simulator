@@ -16,5 +16,8 @@ class_name BoardState
 @export var away_side: Constants.PLAYER_TYPES = Constants.PLAYER_TYPES.CPU
 @export var away: SideState
 
+func get_player_type(home_bool: bool) -> Constants.PLAYER_TYPES:
+	return home_side if home_bool else away_side
+
 func get_side(home_bool: bool) -> SideState:
 	return home if home_bool else away

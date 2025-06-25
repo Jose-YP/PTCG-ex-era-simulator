@@ -4,11 +4,10 @@ extends Node
 class_name Fundies
 
 @export var board: BoardNode
-@export var player_side: CardSideUI
-@export var deck: Deck
+@export var full_ui: FullBoardUI
 
-@onready var ui_actions: SlotUIActions = $SlotUIActions
-@onready var stack_manager: Deck_Manipulator = $PlayerResources
+@onready var ui_actions: SlotUIActions = $UIActions
+@onready var stack_manager: Deck_Manipulator = $StackManager
 @onready var card_player: CardPlayer = $CardPlayer
 @onready var poke_slots: Array[PokeSlot]
 @onready var opp_slots: Array[PokeSlot]
@@ -26,16 +25,6 @@ var attacking_targets: Array[Array]
 var defending_targets: Array[Array]
 #For now keep it like this, edit it when source is actually implemented
 var current_source: Array[Constants.PLAYER_TYPES] = [Constants.PLAYER_TYPES.PLAYER]
-
-#region INITALIZATION
-func _get_configuration_warnings() -> PackedStringArray:
-	if player_side == null:
-		return ["Setup the node Fundies should connect to"]
-	if deck == null:
-		return ["Fundies needs a deck to operate on, otherwise it will use the debug deck"]
-	else:
-		return []
-#endregion
 
 func hide_list() -> void:
 	if current_list: current_list.disapear()

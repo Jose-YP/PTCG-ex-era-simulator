@@ -139,3 +139,9 @@ func generic_sort(compared_to: Base_Card) -> bool:
 	if compared_to.expansion == expansion:
 		return number > compared_to.number
 	return compared_to.expansion > expansion
+
+##This function can find the same card regardless of locality
+##[br] The same card will always have a unique expansion & number
+func same_card(comparing_to: Base_Card) -> bool:
+	return (comparing_to.number == number and 
+	comparing_to.expansion == expansion)

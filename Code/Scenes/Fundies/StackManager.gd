@@ -120,9 +120,9 @@ func discard_card(card: Base_Card):
 #--------------------------------------
 #region CARD DISPLAY
 func update_lists():
+	#Needs a lot of updates
 	var dict: Dictionary[Constants.STACKS, Array] = arrays.sendStackDictionary()
-	for stack in dict:
-		fundies.player_side.non_mon.update_stack(stack, dict[stack].size())
+	fundies.full_ui.update_stacks(dict, Constants.PLAYER_TYPES.PLAYER)
 
 func get_list(which: Constants.STACKS) -> Dictionary[Base_Card, bool]:
 	var dict: Dictionary[Base_Card, bool]

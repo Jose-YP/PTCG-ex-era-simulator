@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://c2dyutb22u6x8"]
 
-[ext_resource type="Script" uid="uid://2hyltc7plhdl" path="res://Code/Scenes/Fundies/SlotUIActions.gd" id="1_hjfor"]
-[ext_resource type="Theme" uid="uid://bfw6ylcttychc" path="res://Themes/AverageButton.tres" id="2_hc1fk"]
+[ext_resource type="Script" uid="uid://2hyltc7plhdl" path="res://Code/Scenes/Fundies/UIActions.gd" id="1_ddjd7"]
+[ext_resource type="Theme" uid="uid://bfw6ylcttychc" path="res://Themes/AverageButton.tres" id="2_2xlbq"]
 
 [node name="UIActions" type="Node"]
-script = ExtResource("1_hjfor")
+script = ExtResource("1_ddjd7")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 modulate = Color(1, 1, 1, 0)
@@ -28,7 +28,7 @@ offset_top = 10.0
 offset_right = 11.0
 offset_bottom = 59.0
 grow_horizontal = 2
-theme = ExtResource("2_hc1fk")
+theme = ExtResource("2_2xlbq")
 
 [node name="Instructions" type="RichTextLabel" parent="ColorRect/PanelContainer"]
 unique_name_in_owner = true

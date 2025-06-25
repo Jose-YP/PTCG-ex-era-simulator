@@ -68,7 +68,7 @@ func set_items() -> void:
 		making.attack = item
 		%CardList.add_child(making)
 		if poke_slot: #only try this when attatched to a pokeslot
-			making.check_usability(poke_slot.energy_array)
+			making.check_usability(poke_slot.get_energy_strings())
 	
 	items = %CardList.get_children()
 

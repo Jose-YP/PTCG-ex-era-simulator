@@ -10,12 +10,13 @@ class_name CardSideUI
 #$Main/Bench/BenchPokemon2, $Main/Bench/BenchPokemon3, $Main/Bench/BenchPokemon4, $Main/Bench/BenchPokemon5]
 @onready var non_mon: NonMonUI = $Non_mon
 
+
 func get_slots() -> Array[UI_Slot]:
 	var arr: Array[UI_Slot]
 	for slot in %Active.get_children():
-		arr.append(slot)
+		arr.append(slot as UI_Slot)
 	for slot in %Bench.get_children():
-		arr.append(slot)
+		arr.append(slot as UI_Slot)
 	return arr
 
 func insert_slot(slot: PokeSlot, predefined: bool = false):

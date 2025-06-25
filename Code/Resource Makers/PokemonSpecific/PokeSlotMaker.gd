@@ -7,8 +7,6 @@ class_name PokeSlot
 #--------------------------------------
 #region LOCATION
 @export var player_type: Constants.PLAYER_TYPES
-@export var side: Constants.SIDES
-@export var slot: Constants.SLOTS
 @export var current_card: Base_Card
 #endregion
 #--------------------------------------
@@ -29,7 +27,7 @@ enum turn_type{NONE, PARALYSIS, ASLEEP, CONFUSION}
 @export var evolution_ready: bool = false
 @export var evolved_this_turn: bool = false
 @export var evolved_from: Array[Base_Card] = [] #
-@export var energy_array: Array[String] = []
+@export var energy_cards: Array[Base_Card] = []
 @export var attached_energy: Dictionary = {"Grass": 0, "Fire": 0, "Water": 0,
 	"Lightning": 0, "Psychic":0, "Fighting":0 ,"Darkness":0, "Metal":0,
 	"Colorless":0, "Magma":0, "Aqua":0, "Dark Metal":0, "React": 0, 
@@ -167,7 +165,7 @@ func use_card(card: Base_Card):
 		attatch_tm(card)
 	#play energy onto any pokemon defined by placement
 	elif card_type & 512 != 0:
-		change_energy(card)
+		add_energy(card)
 	else:
 		printerr("You probably can't pay ", card, " on a pokeslot ", card_type)
 
@@ -190,14 +188,20 @@ func bench_add_damage(_ammount) -> int:
 
 #--------------------------------------
 #region ENERGY HANDLERS
-func change_energy(energy_card: Base_Card, ammount: int = 1) -> void: #VERY UNFINISHED
-	#Count energy cards, count number later
+func add_energy(energy_card: Base_Card):
 	var energy_string: String = energy_card.energy_properties.how_display()
-	attached_energy[energy_string] += ammount
-	if attached_energy[energy_string] < 0: attached_energy[energy_string] = 0
-	print(attached_energy, energy_array)
-	count_energy()
+	energy_cards.append(energy_card)
+	attached_energy[energy_string] += energy_card.energy_properties.number
 	refresh()
+
+func remove_energy(en_name: String):
+	for card in energy_cards:
+		if card.name == en_name:
+			energy_cards.erase(card)
+			refresh()
+			return
+	
+	printerr("Couldn't find ", en_name, " in array ", energy_cards)
 
 func count_energy() -> void:
 	#Count if energy cars provided give the right energy for each attack
@@ -205,18 +209,31 @@ func count_energy() -> void:
 	#EG: Double magma will provide two dark for one attack but two fighting for another
 	#It depends on which combination satisfies the cost
 	print(current_card.name,"'s energy")
-	energy_array.clear()
-	for card in attached_energy:
-		if not attached_energy[card]:
-			continue
-		for i in range(attached_energy[card]):
-			energy_array.append(card)
+	attached_energy = {"Grass": 0, "Fire": 0, "Water": 0,
+	"Lightning": 0, "Psychic":0, "Fighting":0 ,"Darkness":0, "Metal":0,
+	"Colorless":0, "Magma":0, "Aqua":0, "Dark Metal":0, "React": 0, 
+	"Holon FF": 0, "Holon GL": 0, "Holon WP": 0, "Rainbow":0}
 	
-	print("BEFORE SORT: ", energy_array)
+	for energy in energy_cards:
+		var en_name: String = energy.energy_properties.how_display()
+		attached_energy[en_name] += energy.number
 	
-	energy_array.sort_custom(func(a,b): #Basic + Darkness + Metal has highest priority
+	print(attached_energy)
+
+func get_energy_strings() -> Array[String]:
+	var energy_stirngs: Array[String]
+	
+	for card in energy_cards:
+		var en_name = card.name
+		energy_stirngs.append(en_name)
+	
+	print("BEFORE SORT: ", energy_stirngs)
+	
+	energy_stirngs.sort_custom(func(a,b): #Basic + Darkness + Metal has highest priority
 		return Constants.energy_types.find(a) < Constants.energy_types.find(b))
-	print("AFTER: ", energy_array)
+	print("AFTER: ", energy_stirngs)
+	
+	return energy_stirngs
 
 #endregion
 #--------------------------------------
@@ -357,7 +374,7 @@ func refresh() -> void:
 	ui_slot.connected_slot = self
 	
 	#check for any attatched cards/conditions
-	ui_slot.display_energy(energy_array, attached_energy)
+	ui_slot.display_energy(get_energy_strings(), attached_energy)
 	ui_slot.display_condition()
 	ui_slot.display_imprision(imprison)
 	ui_slot.display_shockwave(shockwave)

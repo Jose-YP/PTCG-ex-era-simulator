@@ -14,6 +14,7 @@ func _ready() -> void:
 	if not player:
 		$Stacks.move_to_front()
 	%ArtButton.get_child(0).size = %ArtButton.size
+	#%ArtButton.art = null
 
 func update_stack(which: Constants.STACKS, num: int):
 	stacks[which].update(num)
