@@ -28,6 +28,6 @@ func make_usable() -> Array[Base_Card]:
 	var usable: Array[Base_Card] = []
 	for card in cards:
 		for i in cards[card]:
-			usable.append(card.duplicate())
+			usable.append(card)
 	
 	return usable

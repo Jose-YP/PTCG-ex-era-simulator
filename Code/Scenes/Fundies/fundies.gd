@@ -3,6 +3,8 @@
 extends Node
 class_name Fundies
 
+#--------------------------------------
+#region VARIABLES
 @export var board: BoardNode
 @export var full_ui: FullBoardUI
 
@@ -25,10 +27,13 @@ var attacking_targets: Array[Array]
 var defending_targets: Array[Array]
 #For now keep it like this, edit it when source is actually implemented
 var current_source: Array[Constants.PLAYER_TYPES] = [Constants.PLAYER_TYPES.PLAYER]
+#endregion
+#--------------------------------------
 
 func hide_list() -> void:
 	if current_list: current_list.disapear()
 
+#--------------------------------------
 #region BOARDWIDE FUNCTIONS
 func get_slots(side_type: Constants.SIDES, slot_type: Constants.SLOTS) -> Array[PokeSlot]:
 	var returned_slots: Array[PokeSlot]
@@ -146,3 +151,4 @@ func clear_sources():
 	current_source = []
 #endregion
 #endregion
+#--------------------------------------
