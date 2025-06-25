@@ -216,7 +216,7 @@ func count_energy() -> void:
 	
 	for energy in energy_cards:
 		var en_name: String = energy.energy_properties.how_display()
-		attached_energy[en_name] += energy.number
+		attached_energy[en_name] += energy.energy_properties.number
 	
 	print(attached_energy)
 
@@ -224,7 +224,7 @@ func get_energy_strings() -> Array[String]:
 	var energy_stirngs: Array[String]
 	
 	for card in energy_cards:
-		var en_name = card.name
+		var en_name = card.energy_properties.how_display()
 		energy_stirngs.append(en_name)
 	
 	print("BEFORE SORT: ", energy_stirngs)
@@ -374,6 +374,7 @@ func refresh() -> void:
 	ui_slot.connected_slot = self
 	
 	#check for any attatched cards/conditions
+	count_energy()
 	ui_slot.display_energy(get_energy_strings(), attached_energy)
 	ui_slot.display_condition()
 	ui_slot.display_imprision(imprison)

@@ -19,6 +19,7 @@ board_state = ExtResource("2_43axb")
 fundies = NodePath("Fundies")
 
 [node name="DebugButton" type="Button" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -32,6 +33,7 @@ board = NodePath("..")
 full_ui = NodePath("../FullUI")
 
 [node name="FullUI" parent="." instance=ExtResource("4_cs3hf")]
+metadata/_edit_lock_ = true
 
 [connection signal="pressed" from="DebugButton" to="." method="_on_button_pressed"]
 

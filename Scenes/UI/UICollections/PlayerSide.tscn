@@ -15,6 +15,7 @@ offset_left = -0.240002
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_j016u")
+player = null
 
 [node name="Main" type="VBoxContainer" parent="."]
 layout_mode = 0
@@ -56,6 +57,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Non_mon" parent="." instance=ExtResource("4_5awab")]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 509.0
 offset_top = 45.0

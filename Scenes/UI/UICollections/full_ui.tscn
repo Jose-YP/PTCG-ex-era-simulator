@@ -28,12 +28,13 @@ offset_left = 54.88
 offset_top = 340.0
 offset_right = 55.12
 offset_bottom = 340.0
+player = false
 
 [node name="OpponentSide" parent="." instance=ExtResource("2_2n6bm")]
 layout_mode = 1
-offset_left = 65.2
+offset_left = 55.8
 offset_top = 35.76
-offset_right = 26.4
+offset_right = 17.0
 offset_bottom = 35.76
 
 [node name="Stadium" type="CenterContainer" parent="."]
