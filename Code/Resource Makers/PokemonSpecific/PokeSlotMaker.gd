@@ -360,7 +360,7 @@ func refresh() -> void:
 	
 	if current_card:
 		pokedata = current_card.pokemon_properties
-		ui_slot.display_image(current_card.image)
+		ui_slot.display_image(current_card)
 		ui_slot.name_section.append_text(current_card.name)
 		ui_slot.max_hp.append_text(str("HP: ",pokedata.HP - damage_counters, "/", pokedata.HP))
 		ui_slot.display_types(Conversions.flags_to_type_array(pokedata.type))

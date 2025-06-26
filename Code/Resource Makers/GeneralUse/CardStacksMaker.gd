@@ -25,10 +25,11 @@ var cards_in_play: Array[Base_Card]
 
 #--------------------------------------
 #region INITALIZATION
-func setup():
+func make_deck():
 	usable_deck = deck.make_usable()
 	usable_deck.shuffle()
-	
+
+func setup():
 	move_cards(init_hand, Constants.STACKS.DECK, Constants.STACKS.HAND)
 	
 	if init_deck.size() != 0:

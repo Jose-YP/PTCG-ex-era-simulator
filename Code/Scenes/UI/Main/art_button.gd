@@ -8,21 +8,31 @@ extends Button
 @export_enum("Left","Right","Up","Down") var spawn_direction: int = 0
 
 @onready var art: TextureRect = %Art
-@onready var image: CompressedTexture2D = %Art.texture:
-	set(value):
-		%Art.texture = value
-		print(disabled, value == null)
-		disabled = value == null
-		if value != null:
-			var art_tween: Tween = create_tween().set_parallel()
-			art.scale = Vector2.ZERO
-			art_tween.tween_property(%Art, "scale", Vector2.ONE, .1)
+@onready var image: CompressedTexture2D = %Art.texture
+	#set(value):
+		#%Art.texture = value
+		#disabled = value == null
+		#if value != null:
+			#var art_tween: Tween = create_tween().set_parallel()
+			#art.scale = Vector2.ZERO
+			#art_tween.tween_property(%Art, "scale", Vector2.ONE, .1)
 @onready var spawn_offsets: Array[Vector2] = [Vector2(-size.x / 2, 0),
  Vector2(size.x / 2,0), Vector2(0,-size.y / 2), Vector2(0,size.y / 2)]
 
 #signal show_attacks
 signal show_card
 
+var current_card: Base_Card:
+	set(value):
+		current_card = value
+		disabled = value == null
+		if value != null:
+			%Art.texture = value.image
+			var art_tween: Tween = create_tween().set_parallel()
+			art.scale = Vector2.ZERO
+			art_tween.tween_property(%Art, "scale", Vector2.ONE, .1)
+		else:
+			%Art.texture = null
 var current_display
 #endregion
 #--------------------------------------
@@ -38,8 +48,8 @@ func _ready():
 
 # Called when the node enters the scene tree for the first time.
 func _gui_input(event):
-	if event.is_action_pressed("Check"):
-		show_card.emit()
+	if event.is_action_pressed("A"):
+		Globals.show_card(current_card, self)
 #endregion
 #--------------------------------------
 

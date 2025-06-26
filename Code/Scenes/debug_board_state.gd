@@ -27,7 +27,7 @@ func set_up(home: bool):
 	ui.player_type = player_type
 	fundies.ui_slots = ui.get_slots()
 	fundies.stack_manager.assign_card_stacks(stacks, home)
-	stacks.setup()
+	stacks.make_deck()
 	
 	#Set up pre defined slots
 	for slot in temp_side.slots:
@@ -35,6 +35,7 @@ func set_up(home: bool):
 		ui.insert_slot(slot, temp_side.slots[slot])
 		stacks.account_for_slot(slot)
 	
+	stacks.setup()
 	full_ui.update_stacks(stacks.sendStackDictionary(),player_type)
 
 func _on_button_pressed() -> void:

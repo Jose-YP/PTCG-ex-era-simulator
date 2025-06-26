@@ -145,8 +145,8 @@ func switch_shine(value: bool):
 func make_allowed(is_allowed: bool):
 	%ArtButton.disabled = not is_allowed
 
-func display_image(card_art):
-	%ArtButton.image = card_art
+func display_image(card: Base_Card):
+	%ArtButton.current_card = card
 
 func clear():
 	name_section.clear()
