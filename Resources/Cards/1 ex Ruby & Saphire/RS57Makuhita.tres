@@ -9,6 +9,7 @@
 
 [sub_resource type="Resource" id="Resource_rhym4"]
 script = ExtResource("2_ksua0")
+either_or = false
 order = Array[int]([])
 swap = ExtResource("4_5qdtv")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"

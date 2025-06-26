@@ -1,13 +1,13 @@
 [gd_resource type="Resource" script_class="Base_Card" load_steps=2 format=3 uid="uid://dsniqxxtqasj7"]
 
-[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_uc2un"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_uc2un"]
 
 [resource]
 script = ExtResource("1_uc2un")
-name = ""
+name = "Kabuto"
 illustrator = ""
-number = 0
-rarity = 0
-expansion = 0
+number = 67
+rarity = 1
+expansion = 12
 categories = 0
 fossil = false

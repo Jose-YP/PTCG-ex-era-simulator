@@ -13,4 +13,3 @@ script = ExtResource("1_fh4v4")
 [node name="CardPlayer" parent="." instance=ExtResource("2_fh4v4")]
 
 [node name="StackManager" parent="." instance=ExtResource("3_eym7l")]
-deck = null

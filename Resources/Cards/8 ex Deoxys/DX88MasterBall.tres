@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=3 format=3 uid="uid://d2ifkt8qps6l6"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=4 format=3 uid="uid://d2ifkt8qps6l6"]
 
+[ext_resource type="Texture2D" uid="uid://cvl6x0uxjmd4n" path="res://Art/Cards/8 ex Deoxys/88.jpg" id="1_edwao"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_q4i02"]
 [ext_resource type="Resource" uid="uid://d3ojtgvcvli2v" path="res://Resources/Components/Trainers/ReprintTrainers/MasterBall.tres" id="2_hef82"]
 
 [resource]
 script = ExtResource("1_q4i02")
 name = "Master Ball"
+image = ExtResource("1_edwao")
 illustrator = " Keiji Kinebuchi"
 number = 88
 rarity = 1

@@ -1,13 +1,13 @@
 [gd_resource type="Resource" script_class="Base_Card" load_steps=2 format=3 uid="uid://b1wmepba718r6"]
 
-[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_j4c1c"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_j4c1c"]
 
 [resource]
 script = ExtResource("1_j4c1c")
-name = ""
+name = "Holon Research Tower"
 illustrator = ""
-number = 0
-rarity = 0
-expansion = 0
+number = 94
+rarity = 1
+expansion = 10
 categories = 2
 fossil = false

@@ -28,7 +28,6 @@ offset_left = 54.88
 offset_top = 340.0
 offset_right = 55.12
 offset_bottom = 340.0
-player = false
 
 [node name="OpponentSide" parent="." instance=ExtResource("2_2n6bm")]
 layout_mode = 1

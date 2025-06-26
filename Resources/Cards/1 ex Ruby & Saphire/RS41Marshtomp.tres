@@ -37,6 +37,7 @@ name = "Natural Cure"
 description = "When you attach a {Water} Energy card from your hand to Marshtomp, remove all Special Conditions from Marshtomp."
 affected_by_condition = false
 attatched_energy = 4
+energy_ammount = 1
 effect = ExtResource("3_jkfog")
 metadata/_custom_type_script = "uid://b2tlqpng7fq25"
 

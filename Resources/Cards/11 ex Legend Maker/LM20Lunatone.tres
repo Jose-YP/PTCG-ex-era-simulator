@@ -13,6 +13,7 @@
 
 [sub_resource type="Resource" id="Resource_r8rjj"]
 script = ExtResource("2_ncs6m")
+either_or = false
 order = Array[int]([])
 search = ExtResource("3_k8vd7")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
@@ -138,6 +139,7 @@ metadata/_custom_type_script = "uid://c0ishgbxk63dg"
 
 [sub_resource type="Resource" id="Resource_wpc3u"]
 script = ExtResource("2_ncs6m")
+either_or = false
 order = Array[int]([])
 disable = SubResource("Resource_5ld0q")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
@@ -172,7 +174,7 @@ metadata/_custom_type_script = "uid://dkximshow1pao"
 [resource]
 script = ExtResource("1_c0dsq")
 name = "Lunatone"
-illustrator = " Hisao Nakamura"
+illustrator = "Hisao Nakamura"
 number = 20
 rarity = 2
 expansion = 11

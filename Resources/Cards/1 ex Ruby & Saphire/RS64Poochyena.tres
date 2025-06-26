@@ -10,6 +10,7 @@
 
 [sub_resource type="Resource" id="Resource_p8uss"]
 script = ExtResource("4_f10id")
+either_or = false
 order = Array[int]([])
 card_disrupt = ExtResource("4_poxxm")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"

@@ -22,6 +22,7 @@ metadata/_custom_type_script = "uid://8s3m1dar3r33"
 
 [sub_resource type="Resource" id="Resource_10jvr"]
 script = ExtResource("4_7pouw")
+either_or = false
 order = Array[int]([])
 condition = SubResource("Resource_ov5dn")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"

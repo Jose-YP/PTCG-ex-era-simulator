@@ -1,13 +1,15 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=2 format=3 uid="uid://dle1lc4aydvig"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=3 format=3 uid="uid://dle1lc4aydvig"]
 
-[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_xub2c"]
+[ext_resource type="Resource" uid="uid://dn8da16sjen5f" path="res://Resources/Components/Energy/Basic Energy/MetalEnergy.tres" id="1_jth46"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_xub2c"]
 
 [resource]
 script = ExtResource("1_xub2c")
-name = ""
-illustrator = ""
-number = 0
-rarity = 0
-expansion = 0
-categories = 0
+name = "Metal Energy"
+illustrator = "Milky Isobe"
+number = 95
+rarity = 2
+expansion = 12
+categories = 4
+energy_properties = ExtResource("1_jth46")
 fossil = false

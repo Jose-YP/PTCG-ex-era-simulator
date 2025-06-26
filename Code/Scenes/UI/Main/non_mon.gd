@@ -14,15 +14,15 @@ func _ready() -> void:
 	if not player:
 		$Stacks.move_to_front()
 	%ArtButton.get_child(0).size = %ArtButton.size
-	#%ArtButton.art = null
+	clear_supporter()
 
 func update_stack(which: Constants.STACKS, num: int):
 	stacks[which].update(num)
 
 func show_supporter(card: Base_Card):
-	%ArtButton.art = card.image
+	%ArtButton.art.texture = card.image
 	current_supporter = card
 
 func clear_supporter():
-	%ArtButton.art = null
+	%ArtButton.art.texture = null
 	current_supporter = null

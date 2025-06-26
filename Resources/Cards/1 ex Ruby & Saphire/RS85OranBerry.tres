@@ -12,6 +12,7 @@
 script = ExtResource("3_05nyp")
 side_target = 4
 slot_target = 1
+specifically = Array[String]([])
 comparison_type = 1
 max_hp = -10
 damage_taken = 20
@@ -45,6 +46,7 @@ plus = false
 
 [sub_resource type="Resource" id="Resource_40hbl"]
 script = ExtResource("7_8s2co")
+either_or = false
 order = Array[int]([])
 dmgManip = SubResource("Resource_yweta")
 
@@ -67,7 +69,7 @@ tool_properties = SubResource("Resource_jvoai")
 script = ExtResource("1_hcmcm")
 name = "Oran Berry"
 image = ExtResource("1_2xwq7")
-illustrator = ""
+illustrator = "Kazuo Yazawa"
 number = 85
 rarity = 1
 expansion = 0

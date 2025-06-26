@@ -32,6 +32,7 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_uk2x1"]
 script = ExtResource("2_wukec")
+either_or = false
 order = Array[int]([])
 search = ExtResource("3_8d8s2")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
@@ -66,7 +67,7 @@ metadata/_custom_type_script = "uid://dkximshow1pao"
 [resource]
 script = ExtResource("1_6ptis")
 name = "Lapras"
-illustrator = " Kagemaru Himeno"
+illustrator = "Kagemaru Himeno"
 number = 8
 rarity = 3
 expansion = 11

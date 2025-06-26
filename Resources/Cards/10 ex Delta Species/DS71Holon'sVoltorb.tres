@@ -1,13 +1,13 @@
 [gd_resource type="Resource" script_class="Base_Card" load_steps=2 format=3 uid="uid://dja82vdsanhj7"]
 
-[ext_resource type="Script" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_mykrm"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_mykrm"]
 
 [resource]
 script = ExtResource("1_mykrm")
-name = ""
+name = "Holon's Voltorb"
 illustrator = ""
-number = 0
+number = 71
 rarity = 0
-expansion = 0
+expansion = 10
 categories = 5
 fossil = false

@@ -15,6 +15,7 @@
 
 [sub_resource type="Resource" id="Resource_ubvli"]
 script = ExtResource("7_pi6dd")
+either_or = false
 order = Array[int]([])
 condition = ExtResource("5_u0wp7")
 ask_extra = ExtResource("7_dpoqi")
@@ -22,6 +23,7 @@ extra_effect = ExtResource("9_u0wp7")
 
 [sub_resource type="Resource" id="Resource_pi6dd"]
 script = ExtResource("7_pi6dd")
+either_or = false
 order = Array[int]([])
 condition = ExtResource("4_dpoqi")
 ask_extra = ExtResource("5_e07y2")

@@ -35,6 +35,7 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 script = ExtResource("4_agkb0")
 energy_move_type = 2
 action = 4
+chooser = 0
 side = 1
 slots = 1
 energy_ammount = 1
@@ -44,6 +45,7 @@ metadata/_custom_type_script = "uid://cimk6l7ytw7xg"
 
 [sub_resource type="Resource" id="Resource_gcqqh"]
 script = ExtResource("5_e1px8")
+either_or = false
 order = Array[int]([])
 energy_movement = SubResource("Resource_ifthe")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
@@ -54,6 +56,8 @@ name = "Water Call"
 description = "Once during your turn (before your attack), you may attach a {Water} Energy card from your hand to your Active Pokémon. This power can't be used if Swampert is affected by a Special Condition."
 affected_by_condition = true
 active = false
+when_condition = "Whenever"
+when_position = 4
 how_often = 0
 effect = SubResource("Resource_gcqqh")
 metadata/_custom_type_script = "uid://b58015mafcw2v"

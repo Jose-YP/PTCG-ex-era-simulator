@@ -7,13 +7,15 @@ extends Button
 @export var benched: bool = false
 @export_enum("Left","Right","Up","Down") var spawn_direction: int = 0
 
-@onready var art: TextureRect = %Art:
+@onready var art: TextureRect = %Art
+@onready var image: CompressedTexture2D = %Art.texture:
 	set(value):
-		var art_tween: Tween = create_tween().set_parallel()
-		art = value
-		art.scale = Vector2.ZERO
-		art_tween.tween_property(%Art, "scale", Vector2.ONE, .1)
-		disabled = art == null
+		image = value
+		disabled = image == null
+		if value != null:
+			var art_tween: Tween = create_tween().set_parallel()
+			art.scale = Vector2.ZERO
+			art_tween.tween_property(%Art, "scale", Vector2.ONE, .1)
 @onready var spawn_offsets: Array[Vector2] = [Vector2(-size.x / 2, 0),
  Vector2(size.x / 2,0), Vector2(0,-size.y / 2), Vector2(0,size.y / 2)]
 

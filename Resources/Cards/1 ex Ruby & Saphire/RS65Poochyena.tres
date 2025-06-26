@@ -9,6 +9,7 @@
 
 [sub_resource type="Resource" id="Resource_65c7g"]
 script = ExtResource("4_0m7vu")
+either_or = false
 order = Array[int]([])
 disable = ExtResource("3_08hdy")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"

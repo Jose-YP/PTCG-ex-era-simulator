@@ -4,10 +4,10 @@
 
 [resource]
 script = ExtResource("1_s6osv")
-name = ""
+name = "Togepi"
 illustrator = ""
-number = 0
+number = 50
 rarity = 0
 expansion = 6
-categories = 0
+categories = 1
 fossil = false

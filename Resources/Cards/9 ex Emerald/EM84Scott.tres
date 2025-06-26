@@ -7,6 +7,7 @@
 
 [sub_resource type="Resource" id="Resource_3k4dv"]
 script = ExtResource("2_jr6w3")
+either_or = false
 order = Array[int]([])
 search = ExtResource("3_aeut6")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
@@ -24,8 +25,8 @@ script = ExtResource("1_8e6gb")
 name = "Scott"
 illustrator = "Ken Sugimori"
 number = 84
-rarity = 0
-expansion = 0
+rarity = 1
+expansion = 8
 categories = 2
 trainer_properties = SubResource("Resource_684xe")
 fossil = false

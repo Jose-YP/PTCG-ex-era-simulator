@@ -28,15 +28,6 @@ func set_up(home: bool):
 		ui.insert_slot(slot, temp_side.slots[slot])
 		stacks.account_for_slot(slot)
 	
-	#stacks.move_cards(stacks.init_hand,
-		#Constants.STACKS.DECK, Constants.STACKS.HAND)
-	#
-	#if stacks.init_deck.size() != 0:
-		#stacks.move_cards(stacks.usable_deck,
-			#Constants.STACKS.DECK, Constants.STACKS.DISCARD)
-		#stacks.move_cards(stacks.init_deck,
-			#Constants.STACKS.DISCARD, Constants.STACKS.DECK)
-	
 	full_ui.update_stacks(stacks.sendStackDictionary(),player_type)
 
 func _on_button_pressed() -> void:

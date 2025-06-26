@@ -2,7 +2,6 @@
 extends Node
 class_name Deck_Manipulator
 
-@export var deck: Deck
 @export var first_turn: bool = false
 @export var attatched_energy: bool = false
 @export var supporter_played: bool = false
@@ -36,11 +35,6 @@ func assign_card_stacks(stacks: CardStacks, side: bool):
 		home_stacks = stacks
 	else:
 		away_stacks = stacks
-
-#func assign_deck(assigned_deck: Deck):
-	#arrays.usable_deck = assigned_deck.make_usable()
-	#arrays.usable_deck.shuffle()
-	#update_lists()
 
 func draw_starting():
 	allowed_play = 1
@@ -153,7 +147,8 @@ func get_list(which: Constants.STACKS) -> Dictionary[Base_Card, bool]:
 
 func spawn_list(monitor_side: bool, which: Constants.STACKS, stack_act: Constants.STACK_ACT):
 	var instructions: String
-
+	operate_home = monitor_side
+	
 	match stack_act:
 		Constants.STACK_ACT.PLAY: instructions = "Choose which allowed cards to play"
 		Constants.STACK_ACT.TUTOR: instructions = "Choose which allowed cards to add"
@@ -312,6 +307,11 @@ func reorder_handling(tutored_cards: Array[Base_Card], origin: Constants.STACKS)
 #endregion
 #--------------------------------------
 
+#--------------------------------------
+#region HELPER FUNCTIONS
+func set_operate_home(side: bool):
+	operate_home = side
+
 func get_stacks(side: bool) -> CardStacks:
 	operate_home = side
 	return home_stacks if side else away_stacks
@@ -323,3 +323,5 @@ func determine_allowed():
 		allowed_play -= 8
 	if attatched_energy:
 		allowed_play -= 512
+#endregion
+#--------------------------------------

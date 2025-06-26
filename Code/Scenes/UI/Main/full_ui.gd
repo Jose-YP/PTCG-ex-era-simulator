@@ -10,7 +10,7 @@ var home_side: Constants.PLAYER_TYPES
 
 func _ready() -> void:
 	%ArtButton.get_child(0).size = %ArtButton.size
-	#%ArtButton.art = null
+	%ArtButton.art.texture = null
 
 func get_side(home: bool) -> CardSideUI:
 	return player_side if home else opponent_side
