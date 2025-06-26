@@ -196,5 +196,3 @@ size_flags_vertical = 4
 mouse_filter = 2
 texture = ExtResource("5_r3j25")
 expand_mode = 4
-
-[connection signal="show_card" from="Main/ArtButton/MarginContainer/ArtButton" to="." method="_on_art_button_show_card"]

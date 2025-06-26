@@ -16,13 +16,20 @@ func _ready() -> void:
 	%ArtButton.get_child(0).size = %ArtButton.size
 	clear_supporter()
 
-func update_stack(which: Constants.STACKS, num: int):
+func print_stack_numbers() -> String:
+	var lists: String
+	for stack in stacks:
+		var stack_str: String = Conversions.stack_into_string(stack)
+		lists = str(lists, "[", stack_str, " = ", stacks[stack].current_num, " ] ")
+	return lists
+
+func update_stack(which: Constants.STACKS, num: int) -> void:
 	stacks[which].update(num)
 
-func show_supporter(card: Base_Card):
+func show_supporter(card: Base_Card) -> void:
 	%ArtButton.current_card = card
 	current_supporter = card
 
-func clear_supporter():
+func clear_supporter() -> void:
 	%ArtButton.current_card = null
 	current_supporter = null

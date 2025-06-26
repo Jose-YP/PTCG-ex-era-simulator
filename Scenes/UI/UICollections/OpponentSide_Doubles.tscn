@@ -16,6 +16,7 @@ offset_top = -0.0400009
 offset_bottom = -0.0400009
 grow_horizontal = 2
 script = ExtResource("1_4p4fp")
+home = false
 
 [node name="Main" type="VBoxContainer" parent="."]
 layout_mode = 0

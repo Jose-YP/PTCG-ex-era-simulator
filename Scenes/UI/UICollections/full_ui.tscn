@@ -36,6 +36,7 @@ offset_top = 35.76
 offset_right = 17.0
 offset_bottom = 35.76
 player_type = 1
+home = false
 
 [node name="Stadium" type="CenterContainer" parent="."]
 layout_mode = 1

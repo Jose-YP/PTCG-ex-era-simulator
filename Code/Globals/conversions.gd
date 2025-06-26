@@ -108,4 +108,20 @@ func default_card_sort(button1: Button, button2: Button):
 	#If they're both (not) allowed check card priority
 	else:
 		return card1.card_priority(card2)
-	
+
+func stack_into_string(stack: Constants.STACKS):
+	match stack:
+		Constants.STACKS.HAND:
+			return "Hand"
+		Constants.STACKS.DISCARD:
+			return "Discard"
+		Constants.STACKS.DECK:
+			return "Deck"
+		Constants.STACKS.PRIZE:
+			return "Prize"
+		Constants.STACKS.LOST:
+			return "Lost Zone"
+		Constants.STACKS.PLAY:
+			return "In Play"
+		_:
+			printerr(stack, "Isn't recognized as a viable type")

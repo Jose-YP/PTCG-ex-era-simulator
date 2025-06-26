@@ -17,6 +17,9 @@ func _ready() -> void:
 	
 	set_up(true)
 	set_up(false)
+	
+	fundies.full_ui = full_ui
+	fundies.current_turn_print()
 
 func set_up(home: bool):
 	var temp_side: SideState = board_state.get_side(home)

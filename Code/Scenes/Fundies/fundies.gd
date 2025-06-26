@@ -28,10 +28,17 @@ var defending_targets: Array[Array]
 var current_source: Array[Constants.PLAYER_TYPES] = [Constants.PLAYER_TYPES.PLAYER]
 #endregion
 #--------------------------------------
+func current_turn_print():
+	#Get the side that's attacking
+	print("CURRENT ATTACKER")
+	full_ui.get_side(home_turn).print_status()
+	
+	#Get the side that's defending
+	print("CURRENT DEFENDER")
+	full_ui.get_side(not home_turn).print_status()
 
 func hide_list() -> void:
 	if current_list: current_list.disapear()
-
 
 func get_side_ui() -> CardSideUI:
 	return full_ui.get_side(home_turn)
@@ -98,7 +105,7 @@ func can_be_played(card: Base_Card) -> int:
 
 func find_allowed_slots(condition: Callable,\
  side: Constants.SIDES, slot: Constants.SLOTS = Constants.SLOTS.ALL) -> Array[UI_Slot]:
-	print(full_ui.get_)
+	print(full_ui.get_slots(side, slot))
 	var allowed: Array[UI_Slot] = (ui_slots + opp_ui_slots).filter(func(uislot: UI_Slot):\
 	 return uislot.connected_slot.is_in_slot(side, slot) and condition.call(uislot.connected_slot))
 	

@@ -35,15 +35,6 @@ func _ready():
 	if %ArtButton.benched: %ArtButton/PanelContainer.size = Vector2(149, 96)
 	clear()
 
-func spawn_card() -> void:
-	#%ArtButton.handle_card_display(connected_slot.current_card, connected_slot)
-	%ArtButton.spawn_card_display(connected_slot.current_card, connected_slot)
-	current_display = %ArtButton.current_display
-
-func despawn_card() -> void:
-	%ArtButton.despawn_card()
-	current_display = null
-
 #--------------------------------------
 #region ATTATCH
 func attatch_pokeslot(slot: PokeSlot):
@@ -129,16 +120,6 @@ func display_shockwave(truth: bool = true) -> void:
 #endregion
 #--------------------------------------
 
-#--------------------------------------
-#region SIGNALS
-#func _on_art_button_show_attacks():
-	#SignalBus.chosen_slot.emit(connected_slot)
-#
-#func _on_art_button_show_card():
-	#SignalBus.chosen_slot.emit(connected_slot)
-
-#endregion
-#--------------------------------------
 func switch_shine(value: bool):
 	%ArtButton.material.set_shader_parameter("shine_bool", value)
 
