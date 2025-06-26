@@ -10,7 +10,6 @@ class_name UI_Slot
 
 @onready var name_section: RichTextLabel = %Name
 @onready var max_hp: RichTextLabel = %MaxHP
-@onready var art: TextureRect = %ArtButton.art
 @onready var tool: TextureRect = %Tool
 @onready var tm: TextureRect = %TM
 @onready var imprison = %Imprison
@@ -146,10 +145,13 @@ func switch_shine(value: bool):
 func make_allowed(is_allowed: bool):
 	%ArtButton.disabled = not is_allowed
 
+func display_image(card_art):
+	%ArtButton.image = card_art
+
 func clear():
 	name_section.clear()
 	max_hp.clear()
-	art.texture = null
+	display_image(null)
 	display_types([])
 	tm.hide()
 	tool.hide()

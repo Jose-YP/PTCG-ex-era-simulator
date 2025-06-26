@@ -20,9 +20,9 @@ func update_stack(which: Constants.STACKS, num: int):
 	stacks[which].update(num)
 
 func show_supporter(card: Base_Card):
-	%ArtButton.art.texture = card.image
+	%ArtButton.image = card.image
 	current_supporter = card
 
 func clear_supporter():
-	%ArtButton.art.texture = null
+	%ArtButton.image = null
 	current_supporter = null

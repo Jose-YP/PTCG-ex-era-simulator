@@ -115,9 +115,9 @@ func move_cards(cards: Array[Base_Card], from: Constants.STACKS, towards: Consta
 #endregion
 #--------------------------------------
 
-func mark_as_played(card: Base_Card, from: Constants.STACKS):
-	var array = get_array(from)
-	
-	
-	
-	pass
+#func mark_as_played(card: Base_Card, from: Constants.STACKS):
+	#var array = get_array(from)
+	#
+	#
+	#
+	#pass

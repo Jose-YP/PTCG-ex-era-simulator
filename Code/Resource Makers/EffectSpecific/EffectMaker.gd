@@ -42,11 +42,11 @@ ENMOV, DMGMANIP, SEARCH, SWAP, DRAW, ALLEVIATE, MIMIC, OTHER}
 func play_effect(fundies: Fundies, attacking_targets: Array[PokeSlot], defender_targets: Array[PokeSlot]):
 	var default_order = [condition, buff, card_disrupt, disable, 
 	 energy_movement, dmgManip, search, swap, draw_ammount, alleviate, mimic, extra_effect]
-	var enum_dict: Dictionary = {effect_types.CONDITION:condition, effect_types.BUFF:buff,
-	 effect_types.DISRUPT:card_disrupt, effect_types.DISABLE:disable,
-	 effect_types.ENMOV:energy_movement, effect_types.DMGMANIP: dmgManip,
-	 effect_types.SEARCH: search, effect_types.SWAP:swap, effect_types.DRAW:draw_ammount,
-	 effect_types.ALLEVIATE:alleviate, effect_types.MIMIC:mimic}
+	#var enum_dict: Dictionary = {effect_types.CONDITION:condition, effect_types.BUFF:buff,
+	 #effect_types.DISRUPT:card_disrupt, effect_types.DISABLE:disable,
+	 #effect_types.ENMOV:energy_movement, effect_types.DMGMANIP: dmgManip,
+	 #effect_types.SEARCH: search, effect_types.SWAP:swap, effect_types.DRAW:draw_ammount,
+	 #effect_types.ALLEVIATE:alleviate, effect_types.MIMIC:mimic}
 	
 	print("PLaying effect ", resource_name)
 	if order.size() > 0:

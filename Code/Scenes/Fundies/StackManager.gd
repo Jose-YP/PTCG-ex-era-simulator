@@ -188,7 +188,7 @@ func show_reveal_stack(reveal_slot):
 	if stacks.reveal_stack.size() != 0:
 		reveal_slot.art.texture = stacks.reveal_stack[-1]
 	else:
-		reveal_slot.art.texture = null
+		reveal_slot.image = null
 
 #endregion
 #--------------------------------------

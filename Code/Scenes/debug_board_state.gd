@@ -4,11 +4,17 @@ class_name BoardNode
 
 @export var board_state: BoardState
 @export var fundies: Fundies
+@export var doubles: bool = true
 
-@onready var full_ui: FullBoardUI = $FullUI
+var full_ui: FullBoardUI
+var singles_ui: PackedScene = load("res://Scenes/UI/UICollections/full_ui.tscn")
+var doubles_ui: PackedScene = load("res://Scenes/UI/UICollections/full_ui_doubles.tscn")
 
 func _ready() -> void:
+	full_ui = doubles_ui.instantiate() if doubles else singles_ui.instantiate()
+	add_child(full_ui)
 	full_ui.home_side = board_state.home_side
+	
 	set_up(true)
 	set_up(false)
 

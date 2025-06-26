@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=4 format=3 uid="uid://xvauv8yfopfw"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_473jj"]
+[ext_resource type="Resource" uid="uid://dvjuu7nr3hi0w" path="res://Resources/Components/Energy/SpecialEnergy/MultiEnergy.tres" id="1_f1g1o"]
+[ext_resource type="Texture2D" uid="uid://bdfdht8yd2dxk" path="res://Art/Cards/2 ex Sandstorm/93.jpg" id="2_hldat"]
+
+[resource]
+script = ExtResource("1_473jj")
+name = "MultiEnergy"
+image = ExtResource("2_hldat")
+illustrator = "Takumi Akabane"
+number = 93
+rarity = 2
+expansion = 1
+categories = 4
+energy_properties = ExtResource("1_f1g1o")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

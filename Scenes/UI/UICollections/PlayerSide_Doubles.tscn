@@ -1,0 +1,67 @@
+[gd_scene load_steps=5 format=3 uid="uid://bc4kcgiwhgyub"]
+
+[ext_resource type="Script" uid="uid://dx3o7ac7ius6k" path="res://Code/Scenes/UI/Main/Side.gd" id="1_gco5a"]
+[ext_resource type="PackedScene" uid="uid://drg0sr7jdfiel" path="res://Scenes/UI/UIComponents/ActiveMon.tscn" id="2_bl05u"]
+[ext_resource type="PackedScene" uid="uid://df8x227c7a8q4" path="res://Scenes/UI/UIComponents/BenchMon.tscn" id="3_gvewi"]
+[ext_resource type="PackedScene" uid="uid://f5mxg3phjwb7" path="res://Scenes/UI/UIComponents/non_mon.tscn" id="4_pjrwh"]
+
+[node name="PlayerSide" type="Control"]
+layout_mode = 3
+anchor_left = 0.053
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -0.240002
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gco5a")
+
+[node name="Main" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 6.0
+offset_top = -6.0
+offset_right = 736.0
+offset_bottom = 332.0
+theme_override_constants/separation = 172
+metadata/_edit_group_ = true
+
+[node name="Active" type="HBoxContainer" parent="Main"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 223
+
+[node name="ActivePokemon" parent="Main/Active" instance=ExtResource("2_bl05u")]
+unique_name_in_owner = true
+layout_mode = 2
+list_direction = 1
+
+[node name="ActivePokemon2" parent="Main/Active" instance=ExtResource("2_bl05u")]
+unique_name_in_owner = true
+layout_mode = 2
+list_direction = 1
+
+[node name="Bench" type="HBoxContainer" parent="Main"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 200
+alignment = 1
+
+[node name="BenchPokemon2" parent="Main/Bench" instance=ExtResource("3_gvewi")]
+layout_mode = 2
+
+[node name="BenchPokemon3" parent="Main/Bench" instance=ExtResource("3_gvewi")]
+layout_mode = 2
+
+[node name="BenchPokemon4" parent="Main/Bench" instance=ExtResource("3_gvewi")]
+layout_mode = 2
+
+[node name="BenchPokemon5" parent="Main/Bench" instance=ExtResource("3_gvewi")]
+layout_mode = 2
+
+[node name="Non_mon" parent="." instance=ExtResource("4_pjrwh")]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 509.0
+offset_top = 45.0
+offset_right = 956.0
+offset_bottom = 165.0

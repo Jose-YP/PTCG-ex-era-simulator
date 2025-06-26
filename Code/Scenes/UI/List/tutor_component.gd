@@ -38,6 +38,7 @@ func setup_tutor(search: Search):
 	readied = true
 
 func list_allowed(card: Base_Card) -> bool:
+	@warning_ignore("standalone_expression")
 	return par.all_lists.any(func(list): list[card] and allowed_dict[list])
 
 func check_lists(id: Identifier, allowed: bool, choices_made: int):

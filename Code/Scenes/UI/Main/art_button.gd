@@ -10,8 +10,9 @@ extends Button
 @onready var art: TextureRect = %Art
 @onready var image: CompressedTexture2D = %Art.texture:
 	set(value):
-		image = value
-		disabled = image == null
+		%Art.texture = value
+		print(disabled, value == null)
+		disabled = value == null
 		if value != null:
 			var art_tween: Tween = create_tween().set_parallel()
 			art.scale = Vector2.ZERO

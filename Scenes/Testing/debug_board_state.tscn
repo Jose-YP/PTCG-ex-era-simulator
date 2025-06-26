@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dnij7qm62bibx"]
+[gd_scene load_steps=5 format=3 uid="uid://dnij7qm62bibx"]
 
 [ext_resource type="Script" uid="uid://j57m0tmwtg4n" path="res://Code/Scenes/debug_board_state.gd" id="1_auq40"]
 [ext_resource type="Resource" uid="uid://csngw38pof3y8" path="res://Resources/BoardStates/BoardStatetest.tres" id="2_43axb"]
-[ext_resource type="PackedScene" uid="uid://bsad85ywgca3d" path="res://Scenes/UI/UICollections/full_ui.tscn" id="4_cs3hf"]
 [ext_resource type="PackedScene" uid="uid://cni7lmrv7r06c" path="res://Scenes/Main Game/Fundies.tscn" id="6_iquab"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t8we2"]
@@ -28,12 +27,8 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_t8we2")
 
-[node name="Fundies" parent="." node_paths=PackedStringArray("board", "full_ui") instance=ExtResource("6_iquab")]
+[node name="Fundies" parent="." node_paths=PackedStringArray("board") instance=ExtResource("6_iquab")]
 board = NodePath("..")
-full_ui = NodePath("../FullUI")
-
-[node name="FullUI" parent="." instance=ExtResource("4_cs3hf")]
-metadata/_edit_lock_ = true
 
 [connection signal="pressed" from="DebugButton" to="." method="_on_button_pressed"]
 
