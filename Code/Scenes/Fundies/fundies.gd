@@ -15,11 +15,10 @@ class_name Fundies
 @onready var opp_slots: Array[PokeSlot]
 
 var turn_number: int = 1
+var home_turn: bool = true
 var current_turn: Constants.PLAYER_TYPES
 var ui_slots: Array[UI_Slot]
 var opp_ui_slots: Array[UI_Slot]
-var active_slots: Array[PokeSlot]
-var bench_slots: Array[PokeSlot]
 var current_list: Node
 var attacker: PokeSlot
 var defender: PokeSlot
@@ -33,8 +32,12 @@ var current_source: Array[Constants.PLAYER_TYPES] = [Constants.PLAYER_TYPES.PLAY
 func hide_list() -> void:
 	if current_list: current_list.disapear()
 
+
+func get_side_ui() -> CardSideUI:
+	return full_ui.get_side(home_turn)
+
 #--------------------------------------
-#region BOARDWIDE FUNCTIONS
+#region SLOT FUNCTIONS
 func get_slots(side_type: Constants.SIDES, slot_type: Constants.SLOTS) -> Array[PokeSlot]:
 	var returned_slots: Array[PokeSlot]
 	
@@ -49,10 +52,7 @@ func get_slots(side_type: Constants.SIDES, slot_type: Constants.SLOTS) -> Array[
 	
 	else:
 		for slot in poke_slots + opp_slots:
-			var active: bool = slot.is_active() or slot_type == Constants.SLOTS.ALL
-			var side: bool = slot.is_player() or side_type == Constants.SLOTS.ALL
-			
-			if active and side:
+			if slot.is_in_slot(side_type, slot_type):
 				returned_slots.append(slot)
 				print(slot.name)
 	
@@ -98,6 +98,7 @@ func can_be_played(card: Base_Card) -> int:
 
 func find_allowed_slots(condition: Callable,\
  side: Constants.SIDES, slot: Constants.SLOTS = Constants.SLOTS.ALL) -> Array[UI_Slot]:
+	print(full_ui.get_)
 	var allowed: Array[UI_Slot] = (ui_slots + opp_ui_slots).filter(func(uislot: UI_Slot):\
 	 return uislot.connected_slot.is_in_slot(side, slot) and condition.call(uislot.connected_slot))
 	

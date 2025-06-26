@@ -58,8 +58,8 @@ const reorder_list: PackedScene = preload("res://Scenes/UI/Lists/ReoderList.tscn
 
 #--------------------------------------
 #region ENUMS
-enum PLAYER_TYPES{PLAYER, ##HUMAN CONTROLLED
- CPU, ## CPU CONTROLLED
+enum PLAYER_TYPES{PLAYER, ##HUMAN CONTROLLED 
+CPU, ## CPU CONTROLLED
  DUMMY, ## SPECIFIC CPU THAT ALWAYS CHOOSES EASIEST OPTION FOR DEBUGGING
 }
 enum SIDES {NONE, ##IGNORE FIELD AND TAKE DEFAULT

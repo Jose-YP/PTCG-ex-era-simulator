@@ -5,7 +5,7 @@ class_name CardSideUI
 ##Not really a tool for functionality there's justa bug right now
 ##@tutorial https://github.com/godotengine/godot/commit/2d8f6c1b1d984222d1690f8afd504faed9f303be
 ##@tutorial https://stackoverflow.com/questions/79569605/my-godot-tool-script-produces-attempt-to-call-a-method-on-a-placeholder-instanc
-@export var player: bool = false
+@export var player_type: Constants.PLAYER_TYPES = Constants.PLAYER_TYPES.PLAYER
 
 @onready var ui_slots: Array[Node] = %Active.get_children() + %Bench.get_children()
 #$Main/Bench/BenchPokemon2, $Main/Bench/BenchPokemon3, $Main/Bench/BenchPokemon4, $Main/Bench/BenchPokemon5]

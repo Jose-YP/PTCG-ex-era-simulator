@@ -1,23 +1,8 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=8 format=3 uid="uid://cm0tjkff2o52"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=4 format=3 uid="uid://cm0tjkff2o52"]
 
 [ext_resource type="Texture2D" uid="uid://bxd7otcg332kf" path="res://Art/Cards/1 ex Ruby & Saphire/83.jpg" id="1_mp216"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_77uu6"]
-[ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="3_3shah"]
-[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_rjoqb"]
-[ext_resource type="Resource" uid="uid://ctasha828kh0t" path="res://Resources/Components/Effects/Search/LadyOutingSearch.tres" id="4_r3q3e"]
-
-[sub_resource type="Resource" id="Resource_htv53"]
-script = ExtResource("3_rjoqb")
-either_or = false
-order = Array[int]([])
-search = ExtResource("4_r3q3e")
-
-[sub_resource type="Resource" id="Resource_d0m0p"]
-script = ExtResource("3_3shah")
-considered = "Supporter"
-specific_requirement = ""
-description = "Search your deck for up to 3 different types of basic Energy cards, show them to your opponent, and put them into your hand. Shuffle your deck afterward. "
-always_effect = SubResource("Resource_htv53")
+[ext_resource type="Resource" uid="uid://et8lxplilgin" path="res://Resources/Components/Trainers/ReprintTrainers/LadyOuting.tres" id="3_bcjxh"]
 
 [resource]
 script = ExtResource("2_77uu6")
@@ -28,5 +13,5 @@ number = 83
 rarity = 1
 expansion = 0
 categories = 2
-trainer_properties = SubResource("Resource_d0m0p")
+trainer_properties = ExtResource("3_bcjxh")
 fossil = false

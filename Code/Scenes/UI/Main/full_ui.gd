@@ -15,6 +15,19 @@ func _ready() -> void:
 func get_side(home: bool) -> CardSideUI:
 	return player_side if home else opponent_side
 
+func all_slots() -> Array[UI_Slot]:
+	return player_side.get_slots() + opponent_side.get_slots()
+
+func get_slots(side: Constants.SIDES, slot: Constants.SLOTS) -> Array[UI_Slot]:
+	var all_slots = all_slots()
+	print(all_slots, side, slot)
+	
+	all_slots.filter(func(uislot: UI_Slot):
+		return uislot.connected_slot.is_in_slot(side, slot))
+	
+	print(all_slots)
+	return all_slots
+
 func remove_card() -> void:
 	print("IHJBEFDI")
 

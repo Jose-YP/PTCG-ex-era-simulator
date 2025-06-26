@@ -5,22 +5,22 @@
         "visibility": 0.0
       },
       "fossil": {
-        "visibility": 0
+        "visibility": 0.0
       },
       "metadata/_custom_type_script": {
         "visibility": 0.0
       },
       "pokemon_properties": {
-        "visibility": 1
+        "visibility": 1.0
       },
       "resource_local_to_scene": {
         "visibility": 0.0
       },
       "resource_name": {
-        "visibility": 0
+        "visibility": 0.0
       },
       "resource_path": {
-        "visibility": 1
+        "visibility": 1.0
       },
       "trainer_properties": {
         "visibility": 0.0
@@ -42,13 +42,13 @@
     },
     "res://Resources/Cards/1 ex Ruby & Saphire::energy_properties/": {
       "metadata/_custom_type_script": {
-        "visibility": 0
+        "visibility": 0.0
       },
       "resource_local_to_scene": {
-        "visibility": 0
+        "visibility": 0.0
       },
       "resource_name": {
-        "visibility": 0
+        "visibility": 0.0
       }
     },
     "res://Resources/Cards/1 ex Ruby & Saphire::pokemon_properties/": {

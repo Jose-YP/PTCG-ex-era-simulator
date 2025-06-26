@@ -172,7 +172,8 @@ func instantiate_list(specified_list: Dictionary[Base_Card, bool], which: Consta
 	new_node.list = specified_list
 	new_node.top_level = true
 	new_node.instruction_text = instructions
-	new_node.old_pos = fundies.player_side.non_mon.stacks[which].global_position
+	
+	new_node.old_pos = fundies.get_side_ui().non_mon.stacks[which].global_position
 	new_node.stack_act = stack_act
 	new_node.stack = which
 	new_node.allowed_as = allowed_play

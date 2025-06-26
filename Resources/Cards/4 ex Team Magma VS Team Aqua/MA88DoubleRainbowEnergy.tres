@@ -1,0 +1,55 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://dxgh8i8vloevn"]
+
+[ext_resource type="Resource" uid="uid://cyaqpq76mby4m" path="res://Resources/Components/Effects/Asks/Class&Owner/AtkEvolvedMon.tres" id="1_qq2ix"]
+[ext_resource type="Script" uid="uid://caj1pm8erar2a" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="2_50l8q"]
+[ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/BuffMaker.gd" id="3_7o04u"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="4_7o04u"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_ykgg5"]
+[ext_resource type="Texture2D" uid="uid://c0xc5okx3j7by" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/88.jpg" id="5_717jw"]
+
+[sub_resource type="Resource" id="Resource_573ab"]
+script = ExtResource("3_7o04u")
+side = 4
+slot = 1
+duration = 1
+attack_damage = -10
+defense = 0
+after_weak_res = true
+immune_to_effects = false
+immune_to_damage = false
+metadata/_custom_type_script = "uid://coojhwe6m20gd"
+
+[sub_resource type="Resource" id="Resource_jrjwr"]
+script = ExtResource("4_ykgg5")
+either_or = false
+order = Array[int]([])
+buff = SubResource("Resource_573ab")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_blg67"]
+script = ExtResource("2_50l8q")
+considered = "Special Energy"
+description = " Double Rainbow Energy can be attached only to an Evolved Pokémon (excluding Pokémon-ex). While in play, Double Rainbow Energy provides every type of Energy but provides 2 Energy at a time. (Doesn't count as a basic Energy when not in play and has no effect other than providing Energy.) Damage done to your opponent's Pokémon by the Pokémon Double Rainbow Energy is attached to is reduced by 10 (after applying Weakness and Resistance). When the Pokémon Double Rainbow Energy is attached to is no longer an Evolved Pokémon, discard Double Rainbow Energy."
+asks = ExtResource("1_qq2ix")
+fail_provide = false
+fail_prevent = false
+success_effect = SubResource("Resource_jrjwr")
+turns = -1
+number = 2
+react = false
+holon_type = "None"
+type = 511
+fail_type = 256
+metadata/_custom_type_script = "uid://caj1pm8erar2a"
+
+[resource]
+script = ExtResource("4_7o04u")
+name = "Double Rainbow Energy"
+image = ExtResource("5_717jw")
+illustrator = "Takumi Akabane"
+number = 88
+rarity = 2
+expansion = 3
+categories = 4
+energy_properties = SubResource("Resource_blg67")
+fossil = false

@@ -18,6 +18,7 @@ func set_up(home: bool):
 	var player_type: Constants.PLAYER_TYPES = board_state.get_player_type(home)
 	var stacks: CardStacks = temp_side.card_stacks
 	
+	ui.player_type = player_type
 	fundies.ui_slots = ui.get_slots()
 	fundies.stack_manager.assign_card_stacks(stacks, home)
 	stacks.setup()
