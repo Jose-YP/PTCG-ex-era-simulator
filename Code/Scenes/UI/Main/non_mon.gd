@@ -2,6 +2,7 @@ extends HBoxContainer
 class_name NonMonUI
 
 @export var player: bool = true
+@export var home: bool = true
 
 @onready var stacks: Dictionary[Constants.STACKS, StackButton] = {Constants.STACKS.DISCARD:%DiscardButton,
 Constants.STACKS.PRIZE:%PrizeButton, Constants.STACKS.DECK:%DeckButton, Constants.STACKS.HAND:%HandButton}

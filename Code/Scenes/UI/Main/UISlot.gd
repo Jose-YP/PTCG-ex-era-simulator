@@ -6,6 +6,7 @@ class_name UI_Slot
 #region VARIABLES
 @export var active: bool = true
 @export var player: bool = true
+@export var home: bool = true
 @export_enum("Left","Right","Up","Down") var list_direction: int = 0
 
 @onready var name_section: RichTextLabel = %Name
@@ -34,13 +35,14 @@ func _ready():
 	%ArtButton.spawn_direction = list_direction
 	if %ArtButton.benched: %ArtButton/PanelContainer.size = Vector2(149, 96)
 	clear()
+	connected_slot.slot_into(self)
 
 #--------------------------------------
 #region ATTATCH
 func attatch_pokeslot(slot: PokeSlot):
 	connected_slot = slot
-	connected_slot.ui_slot = self
-	connected_slot.refresh()
+	slot.slot_into(self)
+	slot.refresh()
 
 func attatch_tool(tool_card: Base_Card):
 	if tool_card:

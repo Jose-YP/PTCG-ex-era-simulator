@@ -114,9 +114,11 @@ func is_in_slot(desired_side: Constants.SIDES, desired_slot: Constants.SLOTS):
 		Constants.SIDES.BOTH:
 			side_bool = true
 		Constants.SIDES.ATTACKING:
-			side_bool = in_attacking_turn
+			side_bool = ((ui_slot.home and fundies.home_turn) or
+			 (not ui_slot.home and not fundies.home_turn))
 		Constants.SIDES.DEFENDING:
-			side_bool = not in_attacking_turn
+			side_bool = ((ui_slot.home and not fundies.home_turn) or
+			 (not ui_slot.home and fundies.home_turn))
 		Constants.SIDES.SOURCE:
 			side_bool = fundies.get_source_considered() == player_type
 		Constants.SIDES.OTHER:
@@ -208,7 +210,6 @@ func count_energy() -> void:
 	#Each attackm will be treated differently
 	#EG: Double magma will provide two dark for one attack but two fighting for another
 	#It depends on which combination satisfies the cost
-	print(current_card.name,"'s energy")
 	attached_energy = {"Grass": 0, "Fire": 0, "Water": 0,
 	"Lightning": 0, "Psychic":0, "Fighting":0 ,"Darkness":0, "Metal":0,
 	"Colorless":0, "Magma":0, "Aqua":0, "Dark Metal":0, "React": 0, 
@@ -217,8 +218,6 @@ func count_energy() -> void:
 	for energy in energy_cards:
 		var en_name: String = energy.energy_properties.how_display()
 		attached_energy[en_name] += energy.energy_properties.number
-	
-	print(attached_energy)
 
 func get_energy_strings() -> Array[String]:
 	var energy_stirngs: Array[String]

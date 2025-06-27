@@ -14,10 +14,10 @@ func _ready() -> void:
 	full_ui = doubles_ui.instantiate() if doubles else singles_ui.instantiate()
 	add_child(full_ui)
 	full_ui.home_side = board_state.home_side
-	
 	set_up(true)
 	set_up(false)
 	
+	full_ui.fundies = fundies
 	fundies.full_ui = full_ui
 	fundies.current_turn_print()
 

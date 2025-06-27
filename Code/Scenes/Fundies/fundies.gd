@@ -36,6 +36,26 @@ func current_turn_print():
 	#Get the side that's defending
 	print("CURRENT DEFENDER")
 	full_ui.get_side(not home_turn).print_status()
+	
+	print_simple_slot_types()
+
+func print_simple_slot_types():
+	print("-------------------------")
+	#GET ATTACKING
+	print_slots(Constants.SIDES.ATTACKING, Constants.SLOTS.ALL, "ATTACKING SLOTS: ")
+	print_slots(Constants.SIDES.DEFENDING, Constants.SLOTS.ALL, "DEFENDING SLOTS: ")
+	print_slots(Constants.SIDES.BOTH, Constants.SLOTS.ACTIVE, "ACTIVE SLOTS: ")
+	print_slots(Constants.SIDES.BOTH, Constants.SLOTS.BENCH, "BENCH SLOTS: ")
+	print("-------------------------")
+
+func print_slots(sides: Constants.SIDES, slots: Constants.SLOTS, init_string: String):
+	var slot_string: String = init_string
+	for slot in full_ui.get_slots(sides, slots):
+		if not slot.connected_slot.current_card:
+			continue
+		slot_string = str(slot_string, "[", slot.connected_slot.current_card.name, "]")
+	
+	print(slot_string, "\n")
 
 func hide_list() -> void:
 	if current_list: current_list.disapear()
