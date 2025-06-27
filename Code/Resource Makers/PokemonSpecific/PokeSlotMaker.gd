@@ -90,34 +90,36 @@ enum turn_type{NONE, PARALYSIS, ASLEEP, CONFUSION}
 #endregion
 #--------------------------------------
 
-func _ready():
+func _ready() -> void:
 	if current_card:
 		type = pokedata.type
 		weak = pokedata.weak
 		resist = pokedata.resist
 	readied = true
 
-func pokemon_checkup():
+#--------------------------------------
+#region CHECKUP & POWER/BODY
+func pokemon_checkup() -> void:
 	evolved_this_turn = false
 	evolution_ready = true
 	
 	if turn_condition == turn_type.PARALYSIS:
 		turn_condition = turn_type.NONE
 
-func get_targets(atk: PokeSlot, def: Array[PokeSlot]) -> Array[Array]:
-	var targets: Array[Array] = [[],[]]
-	
-	if atk.ui_slot.home:
-		targets[0].append(atk)
-		targets[1] = def
-	else:
-		targets[1].append(atk)
-		targets[0] = def
-	
-	return targets
+func action_checkup(action: String):
+	var targets = get_targets(self, [])
+	fundies.record_source_target(ui_slot.home, targets[0], targets[1])
+	check_power_body(action)
+
+func check_power_body(action: String):
+	print("Check ", current_card.name, "'s power/body after ", action)
+	fundies.remove_top_source_target()
+
+#endregion
+#--------------------------------------
 
 #--------------------------------------
-#region BOOLEANS
+#region HELPERS
 func is_in_slot(desired_side: Constants.SIDES, desired_slot: Constants.SLOTS):
 	var side_bool: bool = false
 	var slot_bool: bool = false
@@ -132,9 +134,9 @@ func is_in_slot(desired_side: Constants.SIDES, desired_slot: Constants.SLOTS):
 			side_bool = ((ui_slot.home and not fundies.home_turn) or
 			 (not ui_slot.home and fundies.home_turn))
 		Constants.SIDES.SOURCE:
-			side_bool = fundies.get_source_considered() == player_type
+			side_bool = fundies.get_source_considered() == ui_slot.home
 		Constants.SIDES.OTHER:
-			side_bool = not fundies.get_source_considered() == player_type
+			side_bool = not fundies.get_source_considered() == ui_slot.home
 	
 	match desired_slot:
 		Constants.SLOTS.ALL:
@@ -160,10 +162,31 @@ func is_player() -> bool:
 	else:
 		push_error("Not connected to a UI slot")
 		return false
+
+func can_evolve_into(evolution: Base_Card) -> bool:
+	return current_card.name == evolution.pokemon_properties.evolves_from and not evolved_this_turn
+
+func can_devolve() -> bool:
+	return evolved_from.size()
+
+func get_targets(atk: PokeSlot, def: Array[PokeSlot]) -> Array[Array]:
+	var targets: Array[Array] = [[],[]]
+	
+	if atk.ui_slot.home:
+		targets[0].append(atk)
+		targets[1] = def
+	else:
+		targets[1].append(atk)
+		targets[0] = def
+	
+	return targets
+
 #endregion
 #--------------------------------------
 
-func use_card(card: Base_Card):
+#--------------------------------------
+#region SLOTTING IN
+func use_card(card: Base_Card) -> void:
 	var card_type: int = Conversions.get_card_flags(card)
 	#Play fossils, basics and evolutions onto the bench
 	if card_type & 1 != 0 or card_type & 256 != 0:
@@ -183,12 +206,16 @@ func use_card(card: Base_Card):
 	else:
 		printerr("You probably can't pay ", card, " on a pokeslot ", card_type)
 
-func set_card(card: Base_Card):
-	var targets = get_targets(self, [])
+func set_card(card: Base_Card) -> void:
 	current_card = card
 	pokedata = card.pokemon_properties
 	ui_slot.make_allowed(true)
-	fundies.record_source_target(ui_slot.home, targets[0], targets[1])
+	action_checkup("Set")
+
+func return_card() -> void:
+	pass
+#endregion
+#--------------------------------------
 
 #--------------------------------------
 #region DAMAGE HANDLERS
@@ -210,6 +237,7 @@ func add_energy(energy_card: Base_Card):
 	energy_cards.append(energy_card)
 	attached_energy[energy_string] += energy_card.energy_properties.number
 	refresh()
+	action_checkup(str("EN ", energy_string))
 
 func remove_energy(en_name: String):
 	for card in energy_cards:
@@ -226,9 +254,9 @@ func count_energy() -> void:
 	#EG: Double magma will provide two dark for one attack but two fighting for another
 	#It depends on which combination satisfies the cost
 	attached_energy = {"Grass": 0, "Fire": 0, "Water": 0,
-	"Lightning": 0, "Psychic":0, "Fighting":0 ,"Darkness":0, "Metal":0,
-	"Colorless":0, "Magma":0, "Aqua":0, "Dark Metal":0, "React": 0, 
-	"Holon FF": 0, "Holon GL": 0, "Holon WP": 0, "Rainbow":0}
+	 "Lightning": 0, "Psychic":0, "Fighting":0 ,"Darkness":0, "Metal":0,
+	 "Colorless":0, "Magma":0, "Aqua":0, "Dark Metal":0, "React": 0, 
+	 "Holon FF": 0, "Holon GL": 0, "Holon WP": 0, "Rainbow":0}
 	
 	for energy in energy_cards:
 		var en_name: String = energy.energy_properties.how_display()
@@ -254,16 +282,11 @@ func get_energy_strings() -> Array[String]:
 
 #--------------------------------------
 #region OTHER ATTATCHMENTS
-func can_evolve_into(evolution: Base_Card) -> bool:
-	return current_card.name == evolution.pokemon_properties.evolves_from and not evolved_this_turn
-
 func evolve_card(evolution: Base_Card) -> void:
 	evolved_from.append(current_card)
 	current_card = evolution
 	refresh()
-
-func can_devolve() -> bool:
-	return evolved_from.size()
+	action_checkup("Evo")
 
 func devolve_card() -> Base_Card:
 	var old_card: Base_Card = current_card
@@ -277,6 +300,7 @@ func attatch_tool(new_tool: Base_Card) -> void:
 	else:
 		push_error(current_card.name, " already has tool attatched")
 	refresh()
+	action_checkup("Tool")
 
 func remove_tool() -> void:
 	tool_card = null
@@ -286,6 +310,7 @@ func attatch_tm(new_tm: Base_Card) -> void:
 	tm_cards.push_front(new_tm)
 	print("TMS: ",tm_cards)
 	refresh()
+	action_checkup("TM")
 
 func remove_tms() -> void:
 	tm_cards.clear()

@@ -39,10 +39,10 @@ func _ready():
 # Called when the node enters the scene tree for the first time.
 func _gui_input(event):
 	if event.is_action_pressed("A") and not disabled:
-		if current_card:
-			Globals.show_card(current_card, self)
-		else:
+		if connected_ui and connected_ui.z_index > 0:
 			SignalBus.chosen_slot.emit(connected_ui.connected_slot)
+		elif current_card:
+			Globals.show_card(current_card, self)
 
 func _on_pressed() -> void:
 	if pokemon:

@@ -43,7 +43,6 @@ func group_refresh():
 #region INPUTS
 func left_button_actions(target: PokeSlot):
 	if choosing:
-		print(target.ui_slot, target)
 		reset_ui()
 		
 		if adding_card:
@@ -62,8 +61,6 @@ func left_button_actions(target: PokeSlot):
 				slot.despawn_card()
 			elif target.ui_slot == slot:
 				slot.spawn_card()
-	
-	print(target.current_card.name)
 
 func right_button_actions(target: PokeSlot):
 	pass
@@ -115,7 +112,6 @@ func reset_ui():
 	#Check every slot to see if they have a pokemon in them
 	#If so, let them be checked again
 	for slot in fundies.full_ui.all_slots():
-		print(slot.connected_slot != null, slot.name)
 		slot.make_allowed(slot.connected_slot != null)
 	
 	choosing = false

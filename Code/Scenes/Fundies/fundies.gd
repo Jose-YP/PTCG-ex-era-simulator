@@ -134,11 +134,26 @@ func check_ask_on_all(ask: SlotAsk) -> bool:
 #region TARGET SOURCE MANAGEMENT
 #First record then print out what I can get from this, then rmeove when used up
 func record_source_target(is_home: bool, home_trg: Array, away_trg: Array):
-	printt(is_home, home_targets, away_targets)
-	
 	source_stack.append(is_home)
 	home_targets.append(home_trg)
 	away_targets.append(away_trg)
+	#printt("SRC/TRG: ",source_stack, home_targets, away_targets)
+	print_src_trg()
+
+func remove_top_source_target():
+	source_stack.pop_back()
+	home_targets.pop_back()
+	away_targets.pop_back()
+
+func get_targets() -> Array:
+	return home_targets[-1] + away_targets[-1]
+
+func get_source_considered() -> bool:
+	return source_stack[-1]
+
+func print_src_trg():
+	print_slots(Constants.SIDES.SOURCE, Constants.SLOTS.ALL, "SOURCE SLOTS: ")
+	print_slots(Constants.SIDES.BOTH, Constants.SLOTS.TARGET, "TARGET SLOTS: ")
 
 #endregion
 #endregion
