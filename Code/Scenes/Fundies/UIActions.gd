@@ -9,8 +9,6 @@ class_name SlotUIActions
 #Keep player and enemy slots seperate for different actions
 @export var enemy_ui_slots: Array[UI_Slot]
 
-@onready var fundies: Fundies = $".."
-
 enum doing {NOTHING, ATTACKING, SWAPPING, BENCHING, EVOLVING, ENERGY,
  TOOL, TM, CHOOSING, WAITING}
 
@@ -34,7 +32,7 @@ func _ready():
 #--------------------------------------
 #region HELPER FUNCTIONS
 func group_refresh():
-	for slot in fundies.poke_slots: slot.refresh()
+	for slot in Globals.fundies.poke_slots: slot.refresh()
 
 #endregion
 #--------------------------------------
@@ -56,7 +54,7 @@ func left_button_actions(target: PokeSlot):
 		if target.current_card == null: return
 		#Check if there's a display on any of the UI SLots
 		#Despawn any that are present, spawn the current one
-		for slot in (fundies.ui_slots + enemy_ui_slots):
+		for slot in (Globals.fundies.ui_slots + enemy_ui_slots):
 			if slot.current_display:
 				slot.despawn_card()
 			elif target.ui_slot == slot:
@@ -84,9 +82,9 @@ func get_choice(for_card: Base_Card, instruction: String):
 #region CHOICE MANAGEMENT
 #Use a lambda function to get different boolean functions
 func get_allowed_slots(condition: Callable) -> void:
-	allowed_slots = fundies.find_allowed_slots(condition, Constants.SIDES.ATTACKING)
+	allowed_slots = Globals.fundies.find_allowed_slots(condition, Constants.SIDES.ATTACKING)
 	
-	for slot in fundies.full_ui.all_slots():
+	for slot in Globals.full_ui.all_slots():
 		if slot in allowed_slots:
 			slot.z_index = 1
 			slot.make_allowed(true)
@@ -111,7 +109,7 @@ func reset_ui():
 	
 	#Check every slot to see if they have a pokemon in them
 	#If so, let them be checked again
-	for slot in fundies.full_ui.all_slots():
+	for slot in Globals.full_ui.all_slots():
 		slot.make_allowed(slot.connected_slot != null)
 	
 	choosing = false

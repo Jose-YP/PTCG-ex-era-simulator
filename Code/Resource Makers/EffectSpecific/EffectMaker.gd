@@ -41,7 +41,8 @@ ENMOV, DMGMANIP, SEARCH, SWAP, DRAW, ALLEVIATE, MIMIC, OTHER}
 ##Do extra effect for extra ask
 @export var extra_effect: EffectCall
 
-func play_effect(fundies: Fundies, attacking_targets: Array[PokeSlot], defender_targets: Array[PokeSlot]):
+#These are params since the indivdual call knows best which is what
+func play_effect():
 	var default_order = [condition, buff, card_disrupt, disable, 
 	 energy_movement, dmgManip, search, swap, draw_ammount, alleviate, mimic, extra_effect]
 	#var enum_dict: Dictionary = {effect_types.CONDITION:condition, effect_types.BUFF:buff,
@@ -51,13 +52,14 @@ func play_effect(fundies: Fundies, attacking_targets: Array[PokeSlot], defender_
 	 #effect_types.ALLEVIATE:alleviate, effect_types.MIMIC:mimic}
 	
 	print("PLaying effect ", resource_name)
+	#fundies.record_source_target(home, atk_trg, def_trg)
 	if order.size() > 0:
 		for effect in order:
 			if default_order[effect]:
 				print("PLAYING ", effect)
-				default_order[effect].play_effect(fundies, attacking_targets, defender_targets)
+				default_order[effect].play_effect()
 	
 	else:
 		for effect in default_order:
 			if effect:
-				effect.play_effect(fundies, attacking_targets, defender_targets)
+				effect.play_effect()

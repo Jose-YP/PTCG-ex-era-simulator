@@ -1,6 +1,6 @@
 @icon("res://Art/ProjectSpecific/cards.png")
 extends Node
-class_name Deck_Manipulator
+class_name StackManager
 
 @export var first_turn: bool = false
 @export var attatched_energy: bool = false
@@ -9,8 +9,6 @@ class_name Deck_Manipulator
 @export_flags("Basic", "Evolution", "Item",
 "Supporter","Stadium", "Tool", "TM", "RSM", "Fossil",
  "Energy") var allowed_play: int = 1023
-
-@onready var fundies: Fundies = $".."
 
 #var reveal_stack: Array[Base_Card]
 var operate_home: bool = true
@@ -99,10 +97,9 @@ func play_card(card: Base_Card): #From hand to Y
 	get_stacks(operate_home).hand.erase(card)
 	update_lists()
 	card.print_info()
-	fundies.ui_actions.reset_ui()
+	Globals.fundies.ui_actions.reset_ui()
 
 func ontop_deck(_card: Base_Card): #From X to atop Deck
-	
 	pass
 
 func shuffle_hand_back():
@@ -123,8 +120,8 @@ func discard_card(card: Base_Card):
 #region CARD DISPLAY
 func update_lists():
 	#Needs a lot of updates
-	fundies.full_ui.update_stacks(home_stacks.sendStackDictionary(), Constants.PLAYER_TYPES.PLAYER)
-	fundies.full_ui.update_stacks(away_stacks.sendStackDictionary(), Constants.PLAYER_TYPES.CPU)
+	Globals.full_ui.update_stacks(home_stacks.sendStackDictionary(), Constants.PLAYER_TYPES.PLAYER)
+	Globals.full_ui.update_stacks(away_stacks.sendStackDictionary(), Constants.PLAYER_TYPES.CPU)
 
 func get_list(which: Constants.STACKS) -> Dictionary[Base_Card, bool]:
 	var dict: Dictionary[Base_Card, bool]
@@ -171,12 +168,12 @@ func instantiate_list(specified_list: Dictionary[Base_Card, bool], which: Consta
 	new_node.instruction_text = instructions
 	
 	new_node.home = operate_home
-	new_node.old_pos = fundies.get_side_ui().non_mon.stacks[which].global_position
+	new_node.old_pos = Globals.fundies.get_side_ui().non_mon.stacks[which].global_position
 	new_node.stack_act = stack_act
 	new_node.stack = which
 	new_node.allowed_as = allowed_play
 	add_sibling(new_node)
-	fundies.current_list = new_node
+	Globals.fundies.current_list = new_node
 
 func pick_prize():
 	pass
@@ -245,11 +242,11 @@ func tutor_instantiate_list(specified_list: Array[Dictionary], search: Search):
 	new_node.list = specified_list[0]
 	new_node.top_level = true
 	new_node.instruction_text = "Choose cards to send over"
-	new_node.old_pos = fundies.player_side.non_mon.stacks[search.where].global_position
+	new_node.old_pos = Globals.full_ui.player_side.non_mon.stacks[search.where].global_position
 	new_node.stack_act = Constants.STACK_ACT.TUTOR
 	new_node.stack = search.where
 	add_sibling(new_node)
-	fundies.current_list = new_node
+	Globals.fundies.current_list = new_node
 	new_node.tutor_component.setup_tutor(search)
 
 func placement_handling(tutored_cards: Array[Base_Card], placement: Placement,\
@@ -264,7 +261,7 @@ func placement_handling(tutored_cards: Array[Base_Card], placement: Placement,\
 	
 	#Where are these cards going?
 	else: 
-		fundies.card_player.manage_tutored(tutored_cards, placement)
+		Globals.fundies.card_player.manage_tutored(tutored_cards, placement)
 		print()
 	
 	print(placement.reorder_type)
@@ -286,7 +283,7 @@ func tutor_instantiate_reorder(specified_list: Array[Base_Card], placement: Plac
 	reorder_list.list = specified_list
 	reorder_list.location = Constants.STACKS.DECK
 	reorder_list.placement = placement
-	reorder_list.old_pos = fundies.player_side.non_mon.stacks[Constants.STACKS.DECK].global_position
+	reorder_list.old_pos = Globals.full_ui.player_side.non_mon.stacks[Constants.STACKS.DECK].global_position
 	add_sibling(reorder_list)
 	
 	return reorder_list

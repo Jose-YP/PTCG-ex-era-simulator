@@ -26,16 +26,16 @@ class_name Search
 ##Should the defender see any of these cards?
 @export var reveal: bool = true
 
-func play_effect(fundies: Fundies, attacking_targets: Array[PokeSlot], defender_targets: Array[PokeSlot]):
+func play_effect():
 	print("PLAY SEARCH")
 	var based_on_cards: Array[PokeSlot]
-	
+	var stack_mana: StackManager = Globals.fundies.stack_manager
 	if based_on_side != 0 and based_on_slots != 0:
-		based_on_cards = fundies.get_poke_slots(based_on_side, based_on_slots)
+		based_on_cards = Globals.fundies.get_poke_slots(based_on_side, based_on_slots)
 		print("BASED ON ", based_on_side, based_on_slots, based_on_cards)
 	
-	var search_for: Array[Dictionary] = fundies.stack_manager.search_array(self, based_on_cards)
+	var search_for: Array[Dictionary] = stack_mana.search_array(self, based_on_cards)
 	if reordering_only and and_then.reorder_type != 0:
-		fundies.stack_manager.tutor_instantiate_reorder(search_for[0].keys(), and_then)
+		stack_mana.tutor_instantiate_reorder(search_for[0].keys(), and_then)
 	else:
-		fundies.stack_manager.tutor_instantiate_list(search_for, self)
+		stack_mana.tutor_instantiate_list(search_for, self)

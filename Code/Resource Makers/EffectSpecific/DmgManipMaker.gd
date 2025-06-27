@@ -17,5 +17,5 @@ class_name DamageManip
 @export var plus: bool = false
 @export var counter: Counter
 
-func play_effect(fundies: Fundies, attacking_targets: Array[PokeSlot], defender_targets: Array[PokeSlot]):
+func play_effect():
 	print("PLAY DAMAGE MANIPULATION")

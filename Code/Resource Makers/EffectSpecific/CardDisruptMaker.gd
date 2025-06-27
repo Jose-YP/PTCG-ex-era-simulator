@@ -20,5 +20,5 @@ class_name CardDisrupt
 @export var pokemon_disrupt: Constants.SLOTS
 
 
-func play_effect(fundies: Fundies, attacking_targets: Array[PokeSlot], defender_targets: Array[PokeSlot]):
+func play_effect():
 	print("PLAY DISRUPT")

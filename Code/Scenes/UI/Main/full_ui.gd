@@ -8,11 +8,6 @@ var current_card: Control
 @onready var stadium: Button = %ArtButton
 
 var home_side: Constants.PLAYER_TYPES
-var fundies: Fundies:
-	set(value):
-		fundies = value
-		for slot in all_slots():
-			slot.connected_slot.fundies = value
 
 func _ready() -> void:
 	%ArtButton.get_child(0).size = %ArtButton.size

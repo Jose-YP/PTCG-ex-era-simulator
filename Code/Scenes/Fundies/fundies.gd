@@ -6,35 +6,33 @@ class_name Fundies
 #--------------------------------------
 #region VARIABLES
 @export var board: BoardNode
-@export var full_ui: FullBoardUI
 
 @onready var ui_actions: SlotUIActions = $UIActions
-@onready var stack_manager: Deck_Manipulator = $StackManager
+@onready var stack_manager: StackManager = $StackManager
 @onready var card_player: CardPlayer = $CardPlayer
 
 var turn_number: int = 1
 var home_turn: bool = true
 var current_list: Control
-var attacker: PokeSlot
-var defender: PokeSlot
 var home_targets: Array[Array]
 var away_targets: Array[Array]
-#For now keep it like this, edit it when source is actually implemented
-var source_stack: Array[bool] = [true]
+var source_stack: Array[bool]
 #endregion
 #--------------------------------------
 
 func _ready() -> void:
 	SignalBus.connect("record_source_trg", record_source_target)
 
+#--------------------------------------
+#region PRINT
 func current_turn_print():
 	#Get the side that's attacking
 	print("CURRENT ATTACKER")
-	full_ui.get_side(home_turn).print_status()
+	Globals.full_ui.get_side(home_turn).print_status()
 	
 	#Get the side that's defending
 	print("CURRENT DEFENDER")
-	full_ui.get_side(not home_turn).print_status()
+	Globals.full_ui.get_side(not home_turn).print_status()
 	
 	print_simple_slot_types()
 
@@ -49,18 +47,20 @@ func print_simple_slot_types():
 
 func print_slots(sides: Constants.SIDES, slots: Constants.SLOTS, init_string: String):
 	var slot_string: String = init_string
-	for slot in full_ui.get_slots(sides, slots):
+	for slot in Globals.full_ui.get_slots(sides, slots):
 		if not slot.connected_slot.current_card:
 			continue
 		slot_string = str(slot_string, "[", slot.connected_slot.current_card.name, "]")
 	
 	print(slot_string, "\n")
+#endregion
+#--------------------------------------
 
 func hide_list() -> void:
 	if current_list: current_list.disapear()
 
 func get_side_ui() -> CardSideUI:
-	return full_ui.get_side(home_turn)
+	return Globals.full_ui.get_side(home_turn)
 
 #--------------------------------------
 #region SLOT FUNCTIONS
@@ -104,22 +104,15 @@ func can_be_played(card: Base_Card) -> int:
 
 func find_allowed_slots(condition: Callable, sides: Constants.SIDES,\
  slots: Constants.SLOTS = Constants.SLOTS.ALL) -> Array[UI_Slot]:
-	return full_ui.get_slots(sides, slots).filter(func(uislot: UI_Slot):\
+	return Globals.full_ui.get_slots(sides, slots).filter(func(uislot: UI_Slot):\
 	 return condition.call(uislot.connected_slot))
 
 func get_poke_slots(sides: Constants.SIDES = Constants.SIDES.BOTH, 
  slots: Constants.SLOTS = Constants.SLOTS.ALL) -> Array[PokeSlot]:
 	var array: Array[PokeSlot]
-	for ui_slot in full_ui.get_slots(sides, slots):
+	for ui_slot in Globals.full_ui.get_slots(sides, slots):
 		array.append(ui_slot.connected_slot)
 	return array
-
-func edit_attacker_defender(new_atk: PokeSlot, new_def: PokeSlot):
-	attacker.is_target = false
-	defender.is_target = false
-	
-	attacker = new_atk
-	defender = new_def
 
 func pass_turn() -> void:
 	pass

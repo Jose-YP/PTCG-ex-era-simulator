@@ -12,5 +12,5 @@ class_name Draw
 ##If an effect is called with this class use the cards drawn as the subject
 @export var with_drawn_cards: EffectCall
 
-func play_effect(fundies: Fundies, attacking_targets: Array[PokeSlot], defender_targets: Array[PokeSlot]):
+func play_effect():
 	print("PLAY DRAW")

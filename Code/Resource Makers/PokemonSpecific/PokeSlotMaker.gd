@@ -14,7 +14,6 @@ class_name PokeSlot
 #region NON EXPORT
 var ui_slot: UI_Slot
 var pokedata: Pokemon = current_card.pokemon_properties if current_card else null
-var fundies: Fundies
 
 enum poison_type{NONE, NORMAL, HEAVY}
 enum burn_type{NONE, NORMAL, HEAVY}
@@ -108,12 +107,12 @@ func pokemon_checkup() -> void:
 
 func action_checkup(action: String):
 	var targets = get_targets(self, [])
-	fundies.record_source_target(ui_slot.home, targets[0], targets[1])
+	Globals.fundies.record_source_target(ui_slot.home, targets[0], targets[1])
 	check_power_body(action)
 
 func check_power_body(action: String):
 	print("Check ", current_card.name, "'s power/body after ", action)
-	fundies.remove_top_source_target()
+	Globals.fundies.remove_top_source_target()
 
 #endregion
 #--------------------------------------
@@ -125,18 +124,19 @@ func is_in_slot(desired_side: Constants.SIDES, desired_slot: Constants.SLOTS):
 	var slot_bool: bool = false
 	
 	match desired_side:
+		#var fund: Fundies = Globals.fundies
 		Constants.SIDES.BOTH:
 			side_bool = true
 		Constants.SIDES.ATTACKING:
-			side_bool = ((ui_slot.home and fundies.home_turn) or
-			 (not ui_slot.home and not fundies.home_turn))
+			side_bool = ((ui_slot.home and Globals.fundies.home_turn) or
+			 (not ui_slot.home and not Globals.fundies.home_turn))
 		Constants.SIDES.DEFENDING:
-			side_bool = ((ui_slot.home and not fundies.home_turn) or
-			 (not ui_slot.home and fundies.home_turn))
+			side_bool = ((ui_slot.home and not Globals.fundies.home_turn) or
+			 (not ui_slot.home and Globals.fundies.home_turn))
 		Constants.SIDES.SOURCE:
-			side_bool = fundies.get_source_considered() == ui_slot.home
+			side_bool = Globals.fundies.get_source_considered() == ui_slot.home
 		Constants.SIDES.OTHER:
-			side_bool = not fundies.get_source_considered() == ui_slot.home
+			side_bool = not Globals.fundies.get_source_considered() == ui_slot.home
 	
 	match desired_slot:
 		Constants.SLOTS.ALL:
@@ -146,7 +146,7 @@ func is_in_slot(desired_side: Constants.SIDES, desired_slot: Constants.SLOTS):
 		Constants.SLOTS.BENCH:
 			slot_bool = not is_active()
 		Constants.SLOTS.TARGET:
-			slot_bool = fundies.get_targets().has(self)
+			slot_bool = Globals.fundies.get_targets().has(self)
 	
 	return slot_bool and side_bool
 

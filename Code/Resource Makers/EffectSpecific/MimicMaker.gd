@@ -10,5 +10,5 @@ class_name Mimic
 @export var must_pay_energy: bool = false
 @export var adjustable_type: bool = false
 
-func play_effect(fundies: Fundies, attacking_targets: Array[PokeSlot], defender_targets: Array[PokeSlot]):
+func play_effect():
 	print("PLAY MIMIC")

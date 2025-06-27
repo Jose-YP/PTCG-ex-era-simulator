@@ -35,13 +35,13 @@ func _init() -> void:
 		if always_effect.alleviate: pass
 		if always_effect.mimic: pass
 
-func play_card(fundies: Fundies):	
+func play_card():
 	if fail_effect:
-		fail_effect.play_effect(fundies, [], [])
+		fail_effect.play_effect()
 	if success_effect:
-		success_effect.play_effect(fundies, [], [])
+		success_effect.play_effect()
 	if always_effect:
-		always_effect.play_effect(fundies, [], [])
+		always_effect.play_effect()
 
 func print_trainer() -> void:
 	print("Class: ", considered,"

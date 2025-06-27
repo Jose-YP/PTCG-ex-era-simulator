@@ -2,8 +2,6 @@
 extends Node
 class_name CardPlayer
 
-@onready var fundies: Fundies = $".."
-
 signal chosen
 
 var play_functions: Array[Callable] = [play_basic_pokemon, play_evolution, 
@@ -39,14 +37,14 @@ func determine_play(card: Base_Card, placement: Placement = null) -> void:
 #region ADD POKEMON
 func play_basic_pokemon(card: Base_Card):
 	#Insert the card onto an active spot if there is one
-	for slot in fundies.full_ui.get_slots(Constants.SIDES.ATTACKING, Constants.SLOTS.BENCH):
+	for slot in Globals.fundies.full_ui.get_slots(Constants.SIDES.ATTACKING, Constants.SLOTS.BENCH):
 		if not slot.connected_slot:
-			fundies.hide_list()
+			Globals.fundies.hide_list()
 			slot.set_card(card)
 			slot.current_card = card
 			slot.refresh()
 			#Remove the card from hand
-			fundies.stack_manager.play_card(card)
+			Globals.fundies.stack_manager.play_card(card)
 			return
 	
 	starting_choice("Where will pokemon be benched", card, func(slot: PokeSlot): return not slot.current_card)
@@ -57,13 +55,13 @@ func play_basic_pokemon(card: Base_Card):
 	card.print_info()
 
 func play_fossil(card: Base_Card):
-	for slot in fundies.active_slots:
+	for slot in Globals.fundies.active_slots:
 		if not slot.current_card:
-			fundies.hide_list()
+			Globals.fundies.hide_list()
 			slot.set_card(card)
 			slot.refresh()
 			#Remove the card from hand
-			fundies.stack_manager.play_card(card)
+			Globals.fundies.stack_manager.play_card(card)
 			return
 	
 	starting_choice("Where will pokemon be benched", card, func(slot: PokeSlot): return not slot.current_card)
@@ -118,7 +116,7 @@ func play_trainer(card: Base_Card):
 		print("This card has an ask")
 	
 	if trainer.always_effect:
-		trainer.always_effect.play_effect(fundies, [], [])
+		trainer.always_effect.play_effect()
 
 #For tools
 func play_attatch_tool(card: Base_Card):
@@ -143,17 +141,17 @@ func play_place_stadium(card: Base_Card):
 #endregion
 
 func starting_choice(instruction: String, card: Base_Card, bool_fun: Callable):
-	fundies.hide_list()
-	fundies.ui_actions.get_allowed_slots(bool_fun)
+	Globals.fundies.hide_list()
+	Globals.fundies.ui_actions.get_allowed_slots(bool_fun)
 	
-	if fundies.ui_actions.allowed_slots:
-		fundies.ui_actions.get_choice(card, instruction)
-		await fundies.ui_actions.chosen
+	if Globals.fundies.ui_actions.allowed_slots:
+		Globals.fundies.ui_actions.get_choice(card, instruction)
+		await Globals.fundies.ui_actions.chosen
 		
 		chosen.emit()
-		fundies.stack_manager.play_card(card)
-		#fundies.ui_actions.set_doing("Nothing")
-		fundies.ui_actions.color_tween(Color.TRANSPARENT)
+		Globals.fundies.stack_manager.play_card(card)
+		#Globals.fundies.ui_actions.set_doing("Nothing")
+		Globals.fundies.ui_actions.color_tween(Color.TRANSPARENT)
 	
 	print("Attatch ", card.name)
 

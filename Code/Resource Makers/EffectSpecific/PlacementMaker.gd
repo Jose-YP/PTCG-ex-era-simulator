@@ -26,7 +26,7 @@ class_name Placement
 @export var effect_to_mon: EffectCall
 
 #If an action places a card on a slot, determine how that works out
-func determine_action(fundies: Fundies, card: Base_Card):
+func determine_action(card: Base_Card):
 	var usage: int = Conversions.get_card_flags(card)
 	
 	#For basics

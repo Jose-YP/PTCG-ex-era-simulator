@@ -17,8 +17,8 @@ func _ready() -> void:
 	set_up(true)
 	set_up(false)
 	
-	full_ui.fundies = fundies
-	fundies.full_ui = full_ui
+	Globals.fundies = fundies
+	Globals.full_ui = full_ui
 	fundies.current_turn_print()
 
 func set_up(home: bool):

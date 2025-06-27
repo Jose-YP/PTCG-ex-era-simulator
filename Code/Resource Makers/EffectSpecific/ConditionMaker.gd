@@ -14,5 +14,5 @@ class_name Condition
 "Paralyze", "Confused") var mutually_exclusive_conditions: int = 0
 @export var knockOut: bool = false
 
-func play_effect(fundies: Fundies, attacking_targets: Array[PokeSlot], defender_targets: Array[PokeSlot]):
+func play_effect():
 	print("PLAYING CONDITION")
