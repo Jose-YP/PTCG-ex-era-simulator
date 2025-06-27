@@ -39,8 +39,8 @@ func determine_play(card: Base_Card, placement: Placement = null) -> void:
 #region ADD POKEMON
 func play_basic_pokemon(card: Base_Card):
 	#Insert the card onto an active spot if there is one
-	for slot in fundies.active_slots:
-		if not slot.current_card:
+	for slot in fundies.full_ui.get_slots(Constants.SIDES.ATTACKING, Constants.SLOTS.BENCH):
+		if not slot.connected_slot:
 			fundies.hide_list()
 			slot.set_card(card)
 			slot.current_card = card

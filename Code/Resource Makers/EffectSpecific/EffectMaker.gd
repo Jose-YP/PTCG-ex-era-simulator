@@ -31,6 +31,8 @@ ENMOV, DMGMANIP, SEARCH, SWAP, DRAW, ALLEVIATE, MIMIC, OTHER}
 @export var swap: PokeSwap
 ##Mimic other pokemon's moves
 @export var mimic: Mimic
+##What rules should be changed?
+@export var override: OverRide
 
 @export_group("Other")
 @export var prompt_extra: PromptAsk

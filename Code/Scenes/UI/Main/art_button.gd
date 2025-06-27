@@ -11,6 +11,8 @@ extends Button
 @onready var spawn_offsets: Array[Vector2] = [Vector2(-size.x / 2, 0),
  Vector2(size.x / 2,0), Vector2(0,-size.y / 2), Vector2(0,size.y / 2)]
 
+var connected_ui: UI_Slot
+
 var current_card: Base_Card:
 	set(value):
 		current_card = value
@@ -36,8 +38,11 @@ func _ready():
 
 # Called when the node enters the scene tree for the first time.
 func _gui_input(event):
-	if event.is_action_pressed("A"):
-		Globals.show_card(current_card, self)
+	if event.is_action_pressed("A") and not disabled:
+		if current_card:
+			Globals.show_card(current_card, self)
+		else:
+			SignalBus.chosen_slot.emit(connected_ui.connected_slot)
 
 func _on_pressed() -> void:
 	if pokemon:

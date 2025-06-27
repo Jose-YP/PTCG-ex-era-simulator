@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=4 format=3 uid="uid://c8ot31o7xctp1"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_86vyo"]
+[ext_resource type="Texture2D" uid="uid://dlx5vl1aax2xv" path="res://Art/Cards/5 ex Hidden Legends/6 ex FireRed & LeafGreen/98.jpg" id="1_rvhks"]
+[ext_resource type="Resource" uid="uid://opuo5erocnhi" path="res://Resources/Components/Trainers/ReprintSupport/OakResearch.tres" id="3_u3h4x"]
+
+[resource]
+script = ExtResource("1_86vyo")
+name = "Professor Oak's Research"
+image = ExtResource("1_rvhks")
+illustrator = "Ken Sugimori"
+number = 97
+rarity = 1
+expansion = 5
+categories = 2
+trainer_properties = ExtResource("3_u3h4x")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

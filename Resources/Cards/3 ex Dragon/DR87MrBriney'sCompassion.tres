@@ -1,0 +1,51 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://b0lfj4blf1nv4"]
+
+[ext_resource type="Texture2D" uid="uid://bt3x0ljk6c3u3" path="res://Art/Cards/3 ex Dragon/87.jpg" id="1_261i5"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_pfo7m"]
+[ext_resource type="Resource" uid="uid://c08tcl1tywrqe" path="res://Resources/Components/Effects/Asks/Class&Owner/BothNon-ex.tres" id="3_s3hhj"]
+[ext_resource type="Script" uid="uid://8sh5p3leflla" path="res://Code/Resource Makers/EffectSpecific/CardDisruptMaker.gd" id="4_m4br1"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="5_k5rc7"]
+[ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="6_xcsvu"]
+
+[sub_resource type="Resource" id="Resource_pxmwx"]
+script = ExtResource("4_m4br1")
+send = 0
+from = 1
+send_to = 0
+bottom_of_stack = false
+shuffle = false
+card_ammount = 1
+reveal = false
+side = 2
+from_stack = 0
+in_play_options = ExtResource("3_s3hhj")
+pokemon_disrupt = 4
+metadata/_custom_type_script = "uid://8sh5p3leflla"
+
+[sub_resource type="Resource" id="Resource_tccqi"]
+script = ExtResource("5_k5rc7")
+either_or = false
+order = Array[int]([])
+card_disrupt = SubResource("Resource_pxmwx")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_76sah"]
+script = ExtResource("6_xcsvu")
+considered = "Supporter"
+specific_requirement = ""
+description = "Choose 1 of your Pokémon in play (excluding Pokémon-ex). Return that Pokémon and all cards attached to it to your hand. "
+always_effect = SubResource("Resource_tccqi")
+metadata/_custom_type_script = "uid://crx447i85kshy"
+
+[resource]
+script = ExtResource("1_pfo7m")
+name = "Mr. Briney's Compassion"
+image = ExtResource("1_261i5")
+illustrator = "Ken Sugimori"
+number = 87
+rarity = 1
+expansion = 2
+categories = 2
+trainer_properties = SubResource("Resource_76sah")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

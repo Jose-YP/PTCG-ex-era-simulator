@@ -30,9 +30,6 @@ var slot_choice: Constants.SLOTS
 #--------------------------------------
 func _ready():
 	SignalBus.connect("chosen_slot", left_button_actions)
-	for i in range(fundies.poke_slots.size()):
-		fundies.poke_slots[i].slot_into(fundies.ui_slots[i])
-		fundies.poke_slots[i].refresh()
 
 #--------------------------------------
 #region HELPER FUNCTIONS
@@ -92,7 +89,7 @@ func get_choice(for_card: Base_Card, instruction: String):
 func get_allowed_slots(condition: Callable) -> void:
 	allowed_slots = fundies.find_allowed_slots(condition, Constants.SIDES.ATTACKING)
 	
-	for slot in (fundies.ui_slots + enemy_ui_slots):
+	for slot in fundies.full_ui.all_slots():
 		if slot in allowed_slots:
 			slot.z_index = 1
 			slot.make_allowed(true)
@@ -117,9 +114,9 @@ func reset_ui():
 	
 	#Check every slot to see if they have a pokemon in them
 	#If so, let them be checked again
-	for slot in (fundies.poke_slots + enemy_poke_slots):
-		print(slot.current_card != null, slot.name)
-		slot.ui_slot.make_allowed(slot.current_card != null)
+	for slot in fundies.full_ui.all_slots():
+		print(slot.connected_slot != null, slot.name)
+		slot.make_allowed(slot.connected_slot != null)
 	
 	choosing = false
 	chosen.emit()

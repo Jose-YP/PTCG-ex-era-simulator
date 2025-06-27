@@ -5,6 +5,7 @@ class_name Search
 @export var side: Constants.SIDES = Constants.SIDES.SOURCE
 @export var where: Constants.STACKS = Constants.STACKS.DECK
 @export var reordering_only: bool = false
+@export var shuffle_first: bool = false
 ##Will the identifier base it's results on anything?
 @export var based_on_side: Constants.SIDES
 @export var based_on_slots: Constants.SLOTS
@@ -30,7 +31,7 @@ func play_effect(fundies: Fundies, attacking_targets: Array[PokeSlot], defender_
 	var based_on_cards: Array[PokeSlot]
 	
 	if based_on_side != 0 and based_on_slots != 0:
-		based_on_cards = fundies.get_slots(based_on_side, based_on_slots)
+		based_on_cards = fundies.get_poke_slots(based_on_side, based_on_slots)
 		print("BASED ON ", based_on_side, based_on_slots, based_on_cards)
 	
 	var search_for: Array[Dictionary] = fundies.stack_manager.search_array(self, based_on_cards)

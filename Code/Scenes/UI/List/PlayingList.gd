@@ -31,6 +31,7 @@ var old_pos: Vector2
 var display: Node
 var options: Node
 var on_card: bool = false
+var home: bool = true
 
 #endregion
 #--------------------------------------
@@ -143,15 +144,6 @@ func _on_resources_show_list(message: String, looking_at: String, using: Array[B
 
 func connect_display():
 	display.tree_exited.connect(on_display_freed)
-
-#func _input(event: InputEvent) -> void:
-	##Check if the user is pressing on the card or outside
-	#if event.is_action_released("A") and display:
-		#if Globals.dragging:
-			#Globals.dragging = false
-		##If they're not pressing on the card, erase the card
-		#else:
-			#display.close_button._on_pressed()
 
 func on_display_freed():
 	Globals.reset_check()

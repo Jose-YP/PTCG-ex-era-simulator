@@ -11,23 +11,22 @@ class_name Fundies
 @onready var ui_actions: SlotUIActions = $UIActions
 @onready var stack_manager: Deck_Manipulator = $StackManager
 @onready var card_player: CardPlayer = $CardPlayer
-@onready var poke_slots: Array[PokeSlot]
-@onready var opp_slots: Array[PokeSlot]
 
 var turn_number: int = 1
 var home_turn: bool = true
-var current_turn: Constants.PLAYER_TYPES
-var ui_slots: Array[UI_Slot]
-var opp_ui_slots: Array[UI_Slot]
-var current_list: Node
+var current_list: Control
 var attacker: PokeSlot
 var defender: PokeSlot
-var attacking_targets: Array[Array]
-var defending_targets: Array[Array]
+var home_targets: Array[Array]
+var away_targets: Array[Array]
 #For now keep it like this, edit it when source is actually implemented
-var current_source: Array[Constants.PLAYER_TYPES] = [Constants.PLAYER_TYPES.PLAYER]
+var source_stack: Array[bool] = [true]
 #endregion
 #--------------------------------------
+
+func _ready() -> void:
+	SignalBus.connect("record_source_trg", record_source_target)
+
 func current_turn_print():
 	#Get the side that's attacking
 	print("CURRENT ATTACKER")
@@ -65,26 +64,6 @@ func get_side_ui() -> CardSideUI:
 
 #--------------------------------------
 #region SLOT FUNCTIONS
-func get_slots(side_type: Constants.SIDES, slot_type: Constants.SLOTS) -> Array[PokeSlot]:
-	var returned_slots: Array[PokeSlot]
-	
-	print("USING SLOTS ")
-	if slot_type == Constants.SLOTS.TARGET and side_type == Constants.SIDES.ATTACKING:
-		print("ATTACKER ", attacker.name)
-		return [attacker]
-	
-	elif slot_type == Constants.SLOTS.TARGET and side_type == Constants.SIDES.DEFENDING:
-		print("DEFENDER ", defender.name)
-		return [defender]
-	
-	else:
-		for slot in poke_slots + opp_slots:
-			if slot.is_in_slot(side_type, slot_type):
-				returned_slots.append(slot)
-				print(slot.name)
-	
-	return returned_slots
-
 func can_be_played(card: Base_Card) -> int:
 	var considered: int = Conversions.get_card_flags(card)
 	var allowed_to: int = 0
@@ -123,13 +102,17 @@ func can_be_played(card: Base_Card) -> int:
 		allowed_to += 512
 	return allowed_to
 
-func find_allowed_slots(condition: Callable,\
- side: Constants.SIDES, slot: Constants.SLOTS = Constants.SLOTS.ALL) -> Array[UI_Slot]:
-	print(full_ui.get_slots(side, slot))
-	var allowed: Array[UI_Slot] = (ui_slots + opp_ui_slots).filter(func(uislot: UI_Slot):\
-	 return uislot.connected_slot.is_in_slot(side, slot) and condition.call(uislot.connected_slot))
-	
-	return allowed
+func find_allowed_slots(condition: Callable, sides: Constants.SIDES,\
+ slots: Constants.SLOTS = Constants.SLOTS.ALL) -> Array[UI_Slot]:
+	return full_ui.get_slots(sides, slots).filter(func(uislot: UI_Slot):\
+	 return condition.call(uislot.connected_slot))
+
+func get_poke_slots(sides: Constants.SIDES = Constants.SIDES.BOTH, 
+ slots: Constants.SLOTS = Constants.SLOTS.ALL) -> Array[PokeSlot]:
+	var array: Array[PokeSlot]
+	for ui_slot in full_ui.get_slots(sides, slots):
+		array.append(ui_slot.connected_slot)
+	return array
 
 func edit_attacker_defender(new_atk: PokeSlot, new_def: PokeSlot):
 	attacker.is_target = false
@@ -142,41 +125,21 @@ func pass_turn() -> void:
 	pass
 
 func check_ask_on_all(ask: SlotAsk) -> bool:
-	for slot in poke_slots + opp_slots:
+	for slot in get_poke_slots():
 		if ask.check_ask(slot):
 			return true
 	
 	return false
 
-#region TARGET MANAGEMENT
-func add_targets(attacking: Array[PokeSlot], defending: Array[PokeSlot]):
-	attacking_targets.append(attacking)
-	defending_targets.append(defending)
+#region TARGET SOURCE MANAGEMENT
+#First record then print out what I can get from this, then rmeove when used up
+func record_source_target(is_home: bool, home_trg: Array, away_trg: Array):
+	printt(is_home, home_targets, away_targets)
+	
+	source_stack.append(is_home)
+	home_targets.append(home_trg)
+	away_targets.append(away_trg)
 
-func remove_targets() -> void:
-	attacking_targets.pop_back()
-	defending_targets.pop_back()
-
-func clear_targets() -> void:
-	attacking_targets.clear()
-	defending_targets.clear()
-
-func get_targets() -> Array[PokeSlot]:
-	return attacking_targets[-1] + defending_targets[-1]
-#endregion
-
-#region SOURCE MANAGEMENT
-func record_source(slot: PokeSlot):
-	current_source.append(slot.player_type)
-
-func get_source_considered() -> Constants.PLAYER_TYPES:
-	return current_source[-1]
-
-func remove_source():
-	current_source.pop_back()
-
-func clear_sources():
-	current_source = []
 #endregion
 #endregion
 #--------------------------------------

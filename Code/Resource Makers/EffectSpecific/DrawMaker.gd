@@ -1,6 +1,7 @@
 extends Resource
 class_name Draw
 
+@export var shuffle_back_first: bool
 @export var side: Constants.SIDES = Constants.SIDES.ATTACKING
 ##If unchecked it will draw from the top of the deck
 @export var bottom_deck: bool = false

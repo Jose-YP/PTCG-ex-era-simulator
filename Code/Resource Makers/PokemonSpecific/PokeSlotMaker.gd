@@ -104,6 +104,18 @@ func pokemon_checkup():
 	if turn_condition == turn_type.PARALYSIS:
 		turn_condition = turn_type.NONE
 
+func get_targets(atk: PokeSlot, def: Array[PokeSlot]) -> Array[Array]:
+	var targets: Array[Array] = [[],[]]
+	
+	if atk.ui_slot.home:
+		targets[0].append(atk)
+		targets[1] = def
+	else:
+		targets[1].append(atk)
+		targets[0] = def
+	
+	return targets
+
 #--------------------------------------
 #region BOOLEANS
 func is_in_slot(desired_side: Constants.SIDES, desired_slot: Constants.SLOTS):
@@ -172,8 +184,11 @@ func use_card(card: Base_Card):
 		printerr("You probably can't pay ", card, " on a pokeslot ", card_type)
 
 func set_card(card: Base_Card):
+	var targets = get_targets(self, [])
 	current_card = card
+	pokedata = card.pokemon_properties
 	ui_slot.make_allowed(true)
+	fundies.record_source_target(ui_slot.home, targets[0], targets[1])
 
 #--------------------------------------
 #region DAMAGE HANDLERS

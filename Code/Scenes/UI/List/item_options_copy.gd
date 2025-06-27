@@ -3,7 +3,7 @@ class_name ItemOptions
 
 @export var timing: float = .1
 @export_flags("Basic", "Evolution", "Item",
-"Supporter", "Stadium", "Tool", "TM", "RSM", "Fossil",
+ "Supporter", "Stadium", "Tool", "TM", "RSM", "Fossil",
  "Energy") var card_flags: int = 0
 @export var stack_act: Constants.STACK_ACT = Constants.STACK_ACT.PLAY
 
@@ -13,6 +13,7 @@ signal play_as(card_flag: int, card: Base_Card)
 
 var old_position: Vector2
 var origin_button: Button
+var home: bool
 
 #--------------------------------------
 #region INITALIZATION AND REMOVAL
@@ -69,6 +70,7 @@ func disapear():
 
 #--------------------------------------
 #region SIGNALS
+#Record source here, no need to record target as anything in particular
 func emit_play_as(flag: int):
 	if not Globals.checking:
 		play_as.emit(flag, origin_button.card)
@@ -79,6 +81,8 @@ func _on_check_pressed():
 		origin_button.show_card()
 
 #signal swap_card_location(card: Array[Base_Card], from: Constants.STACKS, to: String)
+
+#Tutor and discard record source and target on effect call
 func _on_tutor_pressed() -> void:
 	print("Tutor ", origin_button.card.name, " from ", origin_button.parent.stack)
 	SignalBus.tutor_card.emit(origin_button.card)

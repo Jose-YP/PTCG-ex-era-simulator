@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=4 format=3 uid="uid://jhipo8gr7d04"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_e62w5"]
+[ext_resource type="Texture2D" uid="uid://ccetrw8rnmhrl" path="res://Art/Cards/3 ex Dragon/88.jpg" id="1_ekywo"]
+[ext_resource type="Resource" uid="uid://p247guaw1vls" path="res://Resources/Components/Trainers/ReprintSupport/TVReporter.tres" id="3_76sah"]
+
+[resource]
+script = ExtResource("1_e62w5")
+name = "TV Reporter"
+image = ExtResource("1_ekywo")
+illustrator = "Ken Sugimori"
+number = 88
+rarity = 1
+expansion = 2
+categories = 2
+trainer_properties = ExtResource("3_76sah")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

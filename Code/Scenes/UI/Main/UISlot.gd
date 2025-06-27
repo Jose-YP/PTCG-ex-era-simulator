@@ -36,6 +36,7 @@ func _ready():
 	if %ArtButton.benched: %ArtButton/PanelContainer.size = Vector2(149, 96)
 	clear()
 	connected_slot.slot_into(self)
+	%ArtButton.connected_ui = self
 
 #--------------------------------------
 #region ATTATCH

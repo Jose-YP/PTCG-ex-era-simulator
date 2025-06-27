@@ -75,6 +75,7 @@ func show_options() -> Node:
 	
 	option_Display.origin_button = self
 	parent.get_parent().add_child(option_Display)
+	
 	#parent.add_child(option_Display)
 	option_Display.bring_up()
 	

@@ -4,9 +4,11 @@ class_name Mimic
 ##Target for mimicry
 @export var side: Constants.SIDES = Constants.SIDES.BOTH
 @export var slots: Constants.SLOTS = Constants.SLOTS.ALL
-##mimicry might be it's own resource
-@export_enum("No","AttatchedLimited", "Attatched",
- "AnyLimited", "Any") var mimic: int = 0
+##Take attacks from stated pokemon + any cards they evolved
+@export var attatched_cards: bool = false
+##You can only use the attack if you meet the energy requirements
+@export var must_pay_energy: bool = false
+@export var adjustable_type: bool = false
 
 func play_effect(fundies: Fundies, attacking_targets: Array[PokeSlot], defender_targets: Array[PokeSlot]):
 	print("PLAY MIMIC")

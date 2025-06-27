@@ -1,0 +1,68 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=11 format=3 uid="uid://d16ibvu8tyuiw"]
+
+[ext_resource type="Texture2D" uid="uid://jaosrycmdoym" path="res://Art/Cards/2 ex Sandstorm/87.jpg" id="1_47thq"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_ci10j"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_df2as"]
+[ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="4_gmspd"]
+[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="5_hbumv"]
+[ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="6_vlnqk"]
+
+[sub_resource type="Resource" id="Resource_liyln"]
+script = ExtResource("4_gmspd")
+description = "different types of basic pokemon (excluding Baby Pokémon)"
+must_be_different = true
+broad_class = 1
+exactly = false
+contains = ""
+type = 0
+evolves_from = false
+rare_candy = false
+inclusive_class = false
+poke_class = 4
+owner = 0
+stage = 1
+trainer_classes = 0
+energy_class = 3
+metadata/_custom_type_script = "uid://uplawvwcwl8y"
+
+[sub_resource type="Resource" id="Resource_8v658"]
+script = ExtResource("5_hbumv")
+side = 4
+where = 1
+reordering_only = false
+shuffle_first = false
+based_on_side = 0
+based_on_slots = 0
+portion = -1
+how_many = Array[int]([3])
+of_this = Array[ExtResource("4_gmspd")]([SubResource("Resource_liyln")])
+reveal = true
+metadata/_custom_type_script = "uid://cw3yr1k040kw7"
+
+[sub_resource type="Resource" id="Resource_8lfl8"]
+script = ExtResource("3_df2as")
+either_or = false
+order = Array[int]([])
+search = SubResource("Resource_8v658")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_pjtk1"]
+script = ExtResource("6_vlnqk")
+considered = "Supporter"
+specific_requirement = ""
+description = "Search your deck for up to 3 different types of Basic Pokémon cards (excluding Baby Pokémon), show them to your opponent, and put them into your hand. Shuffle your deck afterward. "
+always_effect = SubResource("Resource_8lfl8")
+metadata/_custom_type_script = "uid://crx447i85kshy"
+
+[resource]
+script = ExtResource("1_ci10j")
+name = "Lanette's Net Search"
+image = ExtResource("1_47thq")
+illustrator = "Ken Sugimori"
+number = 87
+rarity = 1
+expansion = 1
+categories = 2
+trainer_properties = SubResource("Resource_pjtk1")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

@@ -11,12 +11,9 @@ class_name Deck_Manipulator
  "Energy") var allowed_play: int = 1023
 
 @onready var fundies: Fundies = $".."
-#@onready var arrays: Card_Arrays = $Arrays
-
-#signal update_resources()
 
 #var reveal_stack: Array[Base_Card]
-var operate_home: bool
+var operate_home: bool = true
 var home_stacks: CardStacks
 var away_stacks: CardStacks
 var mulligans: int = 0
@@ -173,6 +170,7 @@ func instantiate_list(specified_list: Dictionary[Base_Card, bool], which: Consta
 	new_node.top_level = true
 	new_node.instruction_text = instructions
 	
+	new_node.home = operate_home
 	new_node.old_pos = fundies.get_side_ui().non_mon.stacks[which].global_position
 	new_node.stack_act = stack_act
 	new_node.stack = which

@@ -1,0 +1,58 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://30ov4tahogne"]
+
+[ext_resource type="Texture2D" uid="uid://dp0rdow1twovb" path="res://Art/Cards/5 ex Hidden Legends/92.jpg" id="1_jpkyc"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_q3ye2"]
+[ext_resource type="Resource" uid="uid://vj0he73ngf2s" path="res://Resources/Components/Effects/Draw/StevenDraw.tres" id="3_qi5s1"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_u52if"]
+[ext_resource type="Script" uid="uid://cml2jkc16tlva" path="res://Code/Resource Makers/GeneralUse/CounterMaker.gd" id="5_q5n8l"]
+[ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="6_7ycbh"]
+[ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="7_sapsk"]
+
+[sub_resource type="Resource" id="Resource_1ynff"]
+script = ExtResource("4_u52if")
+either_or = false
+order = Array[int]([])
+draw_ammount = ExtResource("3_qi5s1")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_8bhvc"]
+script = ExtResource("5_q5n8l")
+count_for = 5
+filter = 4
+side = 4
+slot = 1
+for_what = 6
+cap = 8
+return_num = 8
+metadata/_custom_type_script = "uid://cml2jkc16tlva"
+
+[sub_resource type="Resource" id="Resource_mkoc1"]
+script = ExtResource("6_7ycbh")
+formal_ask = false
+ask_string = ""
+counter = SubResource("Resource_8bhvc")
+side = 1
+choose_location = 0
+metadata/_custom_type_script = "uid://b85jmc7067bjc"
+
+[sub_resource type="Resource" id="Resource_3nd0w"]
+script = ExtResource("7_sapsk")
+considered = "Supporter"
+specific_requirement = "If you have more than 7 cards (including this one) in your hand, you can't play this card."
+description = "Draw a number of cards up to the number of your opponent's Pokémon in play."
+prompt = SubResource("Resource_mkoc1")
+always_effect = SubResource("Resource_1ynff")
+metadata/_custom_type_script = "uid://crx447i85kshy"
+
+[resource]
+script = ExtResource("1_q3ye2")
+name = "Steven's Advice"
+image = ExtResource("1_jpkyc")
+illustrator = "Ken Sugimori"
+number = 92
+rarity = 1
+expansion = 4
+categories = 2
+trainer_properties = SubResource("Resource_3nd0w")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"
