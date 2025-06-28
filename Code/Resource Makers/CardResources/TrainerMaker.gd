@@ -31,7 +31,6 @@ func _init() -> void:
 		if success_effect.alleviate: pass
 		if success_effect.mimic: pass
 	if always_effect:
-		if always_effect.swap: pass
 		if always_effect.alleviate: pass
 		if always_effect.mimic: pass
 

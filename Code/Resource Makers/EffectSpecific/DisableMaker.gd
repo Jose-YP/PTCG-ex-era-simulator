@@ -23,5 +23,9 @@ class_name Disable
 @export var retreat_duration: int = 1
 @export var disable_retreat: bool = false
 
+signal finished
+
 func play_effect():
 	print("PLAY DISABLE")
+	
+	finished.emit()

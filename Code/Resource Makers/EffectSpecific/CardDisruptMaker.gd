@@ -19,6 +19,9 @@ class_name CardDisrupt
 @export var in_play_options: SlotAsk
 @export var pokemon_disrupt: Constants.SLOTS
 
+signal finished
 
 func play_effect():
 	print("PLAY DISRUPT")
+	
+	finished.emit()

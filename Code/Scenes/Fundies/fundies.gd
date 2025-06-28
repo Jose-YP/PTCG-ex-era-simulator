@@ -20,9 +20,6 @@ var source_stack: Array[bool]
 #endregion
 #--------------------------------------
 
-func _ready() -> void:
-	SignalBus.connect("record_source_trg", record_source_target)
-
 #--------------------------------------
 #region PRINT
 func current_turn_print():

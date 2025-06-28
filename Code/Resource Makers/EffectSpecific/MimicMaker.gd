@@ -10,5 +10,9 @@ class_name Mimic
 @export var must_pay_energy: bool = false
 @export var adjustable_type: bool = false
 
+signal finished
+
 func play_effect():
 	print("PLAY MIMIC")
+	
+	finished.emit()

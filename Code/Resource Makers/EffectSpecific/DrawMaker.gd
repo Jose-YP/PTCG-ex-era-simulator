@@ -12,5 +12,9 @@ class_name Draw
 ##If an effect is called with this class use the cards drawn as the subject
 @export var with_drawn_cards: EffectCall
 
+signal finished
+
 func play_effect():
 	print("PLAY DRAW")
+	
+	finished.emit()

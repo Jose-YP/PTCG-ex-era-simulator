@@ -26,6 +26,8 @@ class_name Search
 ##Should the defender see any of these cards?
 @export var reveal: bool = true
 
+signal finished
+
 func play_effect():
 	print("PLAY SEARCH")
 	var based_on_cards: Array[PokeSlot]
@@ -39,3 +41,5 @@ func play_effect():
 		stack_mana.tutor_instantiate_reorder(search_for[0].keys(), and_then)
 	else:
 		stack_mana.tutor_instantiate_list(search_for, self)
+	
+	finished.emit()

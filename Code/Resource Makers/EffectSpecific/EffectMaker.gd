@@ -41,6 +41,8 @@ ENMOV, DMGMANIP, SEARCH, SWAP, DRAW, ALLEVIATE, MIMIC, OTHER}
 ##Do extra effect for extra ask
 @export var extra_effect: EffectCall
 
+signal finished
+
 #These are params since the indivdual call knows best which is what
 func play_effect():
 	var default_order = [condition, buff, card_disrupt, disable, 
@@ -57,9 +59,11 @@ func play_effect():
 		for effect in order:
 			if default_order[effect]:
 				print("PLAYING ", effect)
-				default_order[effect].play_effect()
+				await default_order[effect].play_effect()
 	
 	else:
 		for effect in default_order:
 			if effect:
-				effect.play_effect()
+				await effect.play_effect()
+	
+	finished.emit()

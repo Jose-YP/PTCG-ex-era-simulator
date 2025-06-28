@@ -11,6 +11,8 @@ class_name PokeSwap
 ##What are thier options on this side
 @export var slots: Constants.SLOTS = Constants.SLOTS.ALL
 
+signal finished
+
 var first: PokeSlot
 var second: PokeSlot
 
@@ -33,3 +35,5 @@ func play_effect():
 	var temp_slot: UI_Slot = second.ui_slot
 	second.slot_into(first.ui_slot)
 	first.slot_into(temp_slot)
+	
+	finished.emit()

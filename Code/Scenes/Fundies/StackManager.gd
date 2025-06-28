@@ -110,7 +110,8 @@ func shuffle_hand_back():
 	update_lists()
 
 func discard_card(card: Base_Card):
-	get_stacks(operate_home).append_to_array("Discard", card)
+	var stack = get_stacks(operate_home)
+	stack.append_to_arrays(Constants.STACKS.DISCARD, card)
 	update_lists()
 
 #endregion

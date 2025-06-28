@@ -17,5 +17,9 @@ class_name DamageManip
 @export var plus: bool = false
 @export var counter: Counter
 
+signal finished
+
 func play_effect():
 	print("PLAY DAMAGE MANIPULATION")
+	
+	finished.emit()

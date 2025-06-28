@@ -14,5 +14,9 @@ class_name Condition
 "Paralyze", "Confused") var mutually_exclusive_conditions: int = 0
 @export var knockOut: bool = false
 
+signal finished
+
 func play_effect():
 	print("PLAYING CONDITION")
+	
+	finished.emit()

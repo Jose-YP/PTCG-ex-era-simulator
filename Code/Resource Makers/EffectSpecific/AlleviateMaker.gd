@@ -8,5 +8,8 @@ class_name Alleviate
 @export var remove_shockwave: bool = false
 @export var remove_imprison: bool = false
 
+signal finished
+
 func play_effect():
 	print("PLAY ALLEVIATE")
+	finished.emit()

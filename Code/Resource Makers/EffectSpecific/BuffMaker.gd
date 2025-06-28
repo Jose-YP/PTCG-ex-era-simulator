@@ -18,5 +18,9 @@ class_name Buff
 ##Immune to regular & bench damage [NOT DAMAGE MANIP EFFECT CALLS]
 @export var immune_to_damage: bool = false
 
+signal finished
+
 func play_effect():
 	print("PLAY BUFF")
+	
+	finished.emit()

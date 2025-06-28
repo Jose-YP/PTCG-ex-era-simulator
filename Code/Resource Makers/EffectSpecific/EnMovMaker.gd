@@ -21,5 +21,9 @@ class_name EnMov
 "Lightning","Psychic","Fighting",
 "Darkness","Metal","Colorless") var type: int = 2 ** 9 - 1
 
+signal finished
+
 func play_effect():
 	print("PLAY ENMOV")
+	
+	finished.emit()
