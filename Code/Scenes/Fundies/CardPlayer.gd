@@ -8,8 +8,11 @@ var play_functions: Array[Callable] = [play_basic_pokemon, play_evolution,
 play_place_stadium, play_attatch_tool, play_attatch_tm, play_fossil, 
 play_energy, play_trainer]
 
+var hold_candidate: PokeSlot
+
 func _ready() -> void:
 	SignalBus.connect_to(play_functions)
+	SignalBus.get_candidate.connect(record_candidate)
 
 func determine_play(card: Base_Card, placement: Placement = null) -> void:
 	var card_type: int = Conversions.get_card_flags(card)
@@ -37,7 +40,7 @@ func determine_play(card: Base_Card, placement: Placement = null) -> void:
 #region ADD POKEMON
 func play_basic_pokemon(card: Base_Card):
 	#Insert the card onto an active spot if there is one
-	for slot in Globals.fundies.full_ui.get_slots(Constants.SIDES.ATTACKING, Constants.SLOTS.BENCH):
+	for slot in Globals.full_ui.get_slots(Constants.SIDES.ATTACKING, Constants.SLOTS.BENCH):
 		if not slot.connected_slot:
 			Globals.fundies.hide_list()
 			slot.set_card(card)
@@ -47,7 +50,7 @@ func play_basic_pokemon(card: Base_Card):
 			Globals.fundies.stack_manager.play_card(card)
 			return
 	
-	starting_choice("Where will pokemon be benched", card, func(slot: PokeSlot): return not slot.current_card)
+	start_add_choice("Where will pokemon be benched", card, func(slot: PokeSlot): return not slot.current_card)
 	await chosen
 	
 	#Otherwise tell sLot UI actions to prompt the user into placing the bench mon
@@ -64,7 +67,7 @@ func play_fossil(card: Base_Card):
 			Globals.fundies.stack_manager.play_card(card)
 			return
 	
-	starting_choice("Where will pokemon be benched", card, func(slot: PokeSlot): return not slot.current_card)
+	start_add_choice("Where will pokemon be benched", card, func(slot: PokeSlot): return not slot.current_card)
 	await chosen
 	card.print_info()
 
@@ -73,14 +76,14 @@ func play_evolution(card: Base_Card, placement: Placement = null):
 	var evo_fun: Callable = Globals.make_can_evo_from(card)
 	
 	if placement == null:
-		starting_choice(str("Evolve ", card.name, " from which Pokemon"), card, evo_fun)
+		start_add_choice(str("Evolve ", card.name, " from which Pokemon"), card, evo_fun)
 	else:
 		var place_func = func placement_evo(slot):
 			if slot.is_in_slot(Constants.SIDES.SOURCE,placement.slot):
 				return evo_fun.call(slot)
 			else: return false
 		
-		starting_choice(str("Evolve ", card.name, " from which Pokemon"), card, place_func)
+		start_add_choice(str("Evolve ", card.name, " from which Pokemon"), card, place_func)
 	
 	await chosen
 	print("Attatch ", card.name)
@@ -93,7 +96,7 @@ func play_energy(card: Base_Card, placement:Placement = null):
 	else:
 		pass
 	
-	starting_choice(str("Attatch ", card.name, " to which Pokemon"), card, energy_boolean)
+	start_add_choice(str("Attatch ", card.name, " to which Pokemon"), card, energy_boolean)
 	
 	await chosen
 	print("Attatch ", card.name)
@@ -120,7 +123,7 @@ func play_trainer(card: Base_Card):
 
 #For tools
 func play_attatch_tool(card: Base_Card):
-	starting_choice(str("Attatch ", card.name, " to which Pokemon")\
+	start_add_choice(str("Attatch ", card.name, " to which Pokemon")\
 	, card, tool_boolean)
 	
 	await chosen
@@ -128,7 +131,7 @@ func play_attatch_tool(card: Base_Card):
 	card.print_info()
 
 func play_attatch_tm(card: Base_Card):
-	starting_choice(str("Attatch ", card.name, " to which Pokemon")\
+	start_add_choice(str("Attatch ", card.name, " to which Pokemon")\
 	, card, tool_boolean)
 	
 	await chosen
@@ -140,25 +143,43 @@ func play_place_stadium(card: Base_Card):
 	pass
 #endregion
 
-func starting_choice(instruction: String, card: Base_Card, bool_fun: Callable):
-	Globals.fundies.hide_list()
-	Globals.fundies.ui_actions.get_allowed_slots(bool_fun)
-	
-	if Globals.fundies.ui_actions.allowed_slots:
-		Globals.fundies.ui_actions.get_choice(card, instruction)
-		await Globals.fundies.ui_actions.chosen
-		
-		chosen.emit()
-		Globals.fundies.stack_manager.play_card(card)
-		#Globals.fundies.ui_actions.set_doing("Nothing")
-		Globals.fundies.ui_actions.color_tween(Color.TRANSPARENT)
-	
-	print("Attatch ", card.name)
-
 func manage_tutored(tutored_cards: Array[Base_Card], placement: Placement):
 	for card in tutored_cards:
 		determine_play(card, placement)
 
+#endregion
+#--------------------------------------
+
+#--------------------------------------
+#region CHOICE MANAGEMENT
+func start_add_choice(instruction: String, card: Base_Card, bool_fun: Callable):
+	Globals.fundies.hide_list()
+	Globals.fundies.ui_actions.set_adding_card(card)
+	await generic_choice(instruction, bool_fun)
+	
+	if Globals.fundies.ui_actions.allowed_slots:
+		Globals.fundies.stack_manager.play_card(card)
+		Globals.fundies.ui_actions.color_tween(Color.TRANSPARENT)
+	
+	print("Attatch ", card.name)
+
+func get_choice_candidates(instruction: String, bool_fun: Callable) -> PokeSlot:
+	Globals.fundies.hide_list()
+	hold_candidate = null
+	await generic_choice(instruction, bool_fun)
+	return hold_candidate
+
+func generic_choice(instruction: String, bool_fun: Callable):
+	Globals.fundies.ui_actions.get_allowed_slots(bool_fun)
+	
+	if Globals.fundies.ui_actions.allowed_slots:
+		Globals.fundies.ui_actions.get_choice(instruction)
+		await Globals.fundies.ui_actions.chosen
+		
+		chosen.emit()
+
+func record_candidate(slot: PokeSlot):
+	hold_candidate = slot
 #endregion
 #--------------------------------------
 

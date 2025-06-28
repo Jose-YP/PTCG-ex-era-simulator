@@ -11,11 +11,25 @@ class_name PokeSwap
 ##What are thier options on this side
 @export var slots: Constants.SLOTS = Constants.SLOTS.ALL
 
+var first: PokeSlot
+var second: PokeSlot
+
 func play_effect():
+	var first_candidate: Callable = func(slot: PokeSlot):
+		return slot.is_in_slot(chosing, Constants.SLOTS.ACTIVE\
+		 if choose_active else Constants.SLOTS.TARGET) and slot.current_card
+	var second_candidate: Callable = func(slot: PokeSlot):
+		return slot.is_in_slot(chosing, Constants.SLOTS.BENCH) and slot.current_card
+	
 	print("PLAY SWAP")
 	#Get whichever active pokemon are allowed to switch
-	Globals.fundies.ui_actions.get_choice(null, "Choose and active Pokemon to switch")
+	first = await Globals.fundies.card_player.get_choice_candidates(\
+	"Choose an active Pokemon to switch", first_candidate)
+	second = await Globals.fundies.card_player.get_choice_candidates(\
+	"Choose an benched Pokemon to switch", second_candidate)
 	#Get whichever benched pokemon are allowed to switch
 	
 	#Swap the data between eachother
-	
+	var temp_slot: UI_Slot = second.ui_slot
+	second.slot_into(first.ui_slot)
+	first.slot_into(temp_slot)

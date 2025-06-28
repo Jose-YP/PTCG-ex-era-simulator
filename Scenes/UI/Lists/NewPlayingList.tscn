@@ -24,7 +24,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_j5ysj")
 script = ExtResource("1_sw67d")
-debug = true
 list_item = ExtResource("3_4g7pj")
 tutor_box = ExtResource("4_0bxgv")
 

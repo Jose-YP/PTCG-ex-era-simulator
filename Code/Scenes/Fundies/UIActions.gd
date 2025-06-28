@@ -13,7 +13,6 @@ enum doing {NOTHING, ATTACKING, SWAPPING, BENCHING, EVOLVING, ENERGY,
  TOOL, TM, CHOOSING, WAITING}
 
 signal chosen
-signal add_to_candidates
 signal choice_ready
 
 var adding_card: Base_Card
@@ -34,6 +33,9 @@ func _ready():
 func group_refresh():
 	for slot in Globals.fundies.poke_slots: slot.refresh()
 
+func set_adding_card(for_card: Base_Card):
+	adding_card = for_card
+
 #endregion
 #--------------------------------------
 
@@ -41,15 +43,14 @@ func group_refresh():
 #region INPUTS
 func left_button_actions(target: PokeSlot):
 	if choosing:
-		reset_ui()
-		
 		if adding_card:
 			target.use_card(adding_card)
+			adding_card = null
 		else:
-			add_to_candidates.emit(target)
-		target.refresh()
+			SignalBus.get_candidate.emit(target)
 		
-		chosen.emit()
+		target.refresh()
+		reset_ui()
 	else:
 		if target.current_card == null: return
 		#Check if there's a display on any of the UI SLots
@@ -63,9 +64,8 @@ func left_button_actions(target: PokeSlot):
 func right_button_actions(target: PokeSlot):
 	pass
 
-func get_choice(for_card: Base_Card, instruction: String):
+func get_choice(instruction: String):
 	color_tween(Color.WHITE)
-	adding_card = for_card
 	
 	%Instructions.clear()
 	%Instructions.append_text(str("[center]",instruction))

@@ -27,7 +27,8 @@ signal play_tm(card: Base_Card)
 signal play_fossil(card: Base_Card)
 signal play_energy(card: Base_Card)
 #EFFECT SIGNALS
-signal record_source_trg(home: bool, atk_slots: Array[PokeSlot], def_slots: Array[PokeSlot])
+@warning_ignore("unused_signal")
+signal get_candidate(pokeSlot: PokeSlot)
 
 func call_action(action: int, card: Base_Card) -> void:
 	match action:

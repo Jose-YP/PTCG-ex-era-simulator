@@ -4,7 +4,6 @@ class_name PlayingList
 
 #--------------------------------------
 #region VARIABLES
-@export var debug: bool = false
 @export var list_item: PackedScene
 @export var tutor_box: PackedScene
 @export var all_lists: Array[Dictionary]

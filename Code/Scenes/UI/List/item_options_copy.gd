@@ -73,8 +73,8 @@ func disapear():
 #Record source here, no need to record target as anything in particular
 func emit_play_as(flag: int):
 	if not Globals.checking:
-		play_as.emit(flag, origin_button.card)
 		disapear()
+		play_as.emit(flag, origin_button.card)
 
 func _on_check_pressed():
 	if not Globals.checking:

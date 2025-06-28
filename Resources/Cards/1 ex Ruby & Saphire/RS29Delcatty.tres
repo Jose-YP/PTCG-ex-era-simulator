@@ -16,6 +16,7 @@ script = ExtResource("7_jw5o4")
 side = 1
 where = 0
 reordering_only = false
+shuffle_first = false
 based_on_side = 0
 based_on_slots = 0
 portion = -1

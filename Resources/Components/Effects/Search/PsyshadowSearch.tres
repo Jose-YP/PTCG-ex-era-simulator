@@ -31,6 +31,7 @@ script = ExtResource("6_fxg1t")
 side = 1
 where = 1
 reordering_only = false
+shuffle_first = false
 based_on_side = 0
 based_on_slots = 0
 portion = -1

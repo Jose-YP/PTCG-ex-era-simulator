@@ -7,12 +7,14 @@
 [sub_resource type="Resource" id="Resource_05uh2"]
 script = ExtResource("1_5gloe")
 send = 0
-bottom_of_stack = false
+from = 0
 send_to = 2
+bottom_of_stack = false
+shuffle = false
 card_ammount = 1
 reveal = false
 side = 4
-disrupting = 1
+from_stack = 0
 pokemon_disrupt = 0
 metadata/_custom_type_script = "uid://8sh5p3leflla"
 
