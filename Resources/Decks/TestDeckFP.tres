@@ -15,7 +15,6 @@
 [ext_resource type="Resource" uid="uid://dyqdhaov0ywxk" path="res://Resources/Cards/1 ex Ruby & Saphire/RS92Switch.tres" id="11_jjwms"]
 [ext_resource type="Resource" uid="uid://c2tk6qy8h57lw" path="res://Resources/Cards/1 ex Ruby & Saphire/RS82EnergySwitch.tres" id="12_kievl"]
 [ext_resource type="Resource" uid="uid://gyk46ghjiejq" path="res://Resources/Cards/1 ex Ruby & Saphire/RS101Mewtwo-ex.tres" id="14_f75d0"]
-[ext_resource type="Resource" uid="uid://bok1dv0p7mo4d" path="res://Resources/Cards/1 ex Ruby & Saphire/RS86Pokeball.tres" id="15_kytef"]
 [ext_resource type="Resource" uid="uid://ben8fxv5hw5hb" path="res://Resources/Cards/1 ex Ruby & Saphire/RS87PokemonReversal.tres" id="16_vqwbr"]
 [ext_resource type="Resource" uid="uid://b1xaqtaovjo0b" path="res://Resources/Cards/8 ex Deoxys/DX94HealEnergy.tres" id="17_3wyrm"]
 [ext_resource type="Resource" uid="uid://2gbttee2ievi" path="res://Resources/Cards/13 ex Holon Phantoms/HP44Holon'sCastform.tres" id="18_14v7r"]
@@ -25,32 +24,33 @@
 [ext_resource type="Resource" uid="uid://dso1ico2qb1px" path="res://Resources/Cards/1 ex Ruby & Saphire/RS67Ralts.tres" id="23_a8a20"]
 [ext_resource type="Resource" uid="uid://xvauv8yfopfw" path="res://Resources/Cards/2 ex Sandstorm/SS93MultiEnergy.tres" id="24_2lodo"]
 [ext_resource type="Resource" uid="uid://vnimvixfy8o8" path="res://Resources/Cards/1 ex Ruby & Saphire/RS68Ralts.tres" id="24_jjwms"]
+[ext_resource type="Resource" uid="uid://deq0ap6i1b46v" path="res://Resources/Cards/4 ex Team Magma VS Team Aqua/MA85WarpPoint.tres" id="24_xfhe8"]
 
 [resource]
 script = ExtResource("2_fvlvl")
 cards = Dictionary[ExtResource("1_gcdyb"), int]({
-ExtResource("24_2lodo"): 2,
-ExtResource("24_jjwms"): 1,
-ExtResource("23_a8a20"): 2,
-ExtResource("22_vccug"): 1,
-ExtResource("21_2lodo"): 2,
-ExtResource("20_xfhe8"): 2,
-ExtResource("2_cm37y"): 4,
-ExtResource("3_w0ti8"): 4,
-ExtResource("4_t042h"): 2,
-ExtResource("5_kcley"): 2,
-ExtResource("6_gtniq"): 2,
-ExtResource("7_xfhe8"): 2,
-ExtResource("8_2lodo"): 6,
-ExtResource("9_vccug"): 6,
-ExtResource("10_a8a20"): 3,
-ExtResource("11_jjwms"): 2,
-ExtResource("12_kievl"): 3,
-ExtResource("14_f75d0"): 2,
-ExtResource("15_kytef"): 2,
-ExtResource("16_vqwbr"): 3,
-ExtResource("17_3wyrm"): 2,
+ExtResource("24_xfhe8"): 2,
+ExtResource("2_xfhe8"): 2,
 ExtResource("18_14v7r"): 3,
-ExtResource("2_xfhe8"): 2
+ExtResource("17_3wyrm"): 2,
+ExtResource("16_vqwbr"): 3,
+ExtResource("14_f75d0"): 2,
+ExtResource("12_kievl"): 3,
+ExtResource("11_jjwms"): 2,
+ExtResource("10_a8a20"): 3,
+ExtResource("9_vccug"): 6,
+ExtResource("8_2lodo"): 6,
+ExtResource("7_xfhe8"): 2,
+ExtResource("6_gtniq"): 2,
+ExtResource("5_kcley"): 2,
+ExtResource("4_t042h"): 2,
+ExtResource("3_w0ti8"): 4,
+ExtResource("2_cm37y"): 4,
+ExtResource("20_xfhe8"): 2,
+ExtResource("21_2lodo"): 2,
+ExtResource("22_vccug"): 1,
+ExtResource("23_a8a20"): 2,
+ExtResource("24_jjwms"): 1,
+ExtResource("24_2lodo"): 2
 })
 metadata/_custom_type_script = "uid://e660iomt5e76"

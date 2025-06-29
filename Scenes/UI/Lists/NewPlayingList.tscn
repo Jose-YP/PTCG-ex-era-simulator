@@ -84,7 +84,7 @@ metadata/_custom_type_script = "uid://cqy27ta3ov66b"
 
 [node name="ScrollBox" type="ScrollContainer" parent="HBoxContainer/PanelContainer/VBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(420, 500)
+custom_minimum_size = Vector2(420, 510)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = ExtResource("11_db7eh")
