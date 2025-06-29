@@ -14,7 +14,7 @@ always_effect = ExtResource("3_4ccjk")
 
 [resource]
 script = ExtResource("2_66xqc")
-name = "Energy Switcg "
+name = "Energy Switch"
 image = ExtResource("1_lqtpo")
 illustrator = "Hideyuki Nakajima"
 number = 82

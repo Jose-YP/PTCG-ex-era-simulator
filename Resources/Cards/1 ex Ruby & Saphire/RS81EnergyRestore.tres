@@ -28,6 +28,7 @@ script = ExtResource("8_0udr8")
 side = 4
 where = 0
 reordering_only = false
+shuffle_first = false
 based_on_side = 0
 based_on_slots = 0
 portion = -1
@@ -54,7 +55,7 @@ always_effect = SubResource("Resource_r3udp")
 
 [resource]
 script = ExtResource("1_ai46a")
-name = "Energy Restore "
+name = "Energy Restore"
 image = ExtResource("1_imayw")
 illustrator = "Hideyuki Nakajima"
 number = 81

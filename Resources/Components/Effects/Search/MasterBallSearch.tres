@@ -10,6 +10,7 @@ script = ExtResource("2_6r2xb")
 side = 4
 where = 1
 reordering_only = false
+shuffle_first = false
 based_on_side = 0
 based_on_slots = 0
 portion = 7

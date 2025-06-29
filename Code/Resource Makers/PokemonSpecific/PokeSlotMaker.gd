@@ -391,8 +391,6 @@ func slot_into(destination: UI_Slot):
 	refresh()
 
 func refresh() -> void:
-	#if not readied: return
-	
 	#Change slot's card display
 	ui_slot.name_section.clear()
 	ui_slot.max_hp.clear()

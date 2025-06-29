@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Deck" load_steps=23 format=3 uid="uid://bleo7p56u5k1f"]
+[gd_resource type="Resource" script_class="Deck" load_steps=24 format=3 uid="uid://bleo7p56u5k1f"]
 
 [ext_resource type="Script" uid="uid://e660iomt5e76" path="res://Code/Resource Makers/CardResources/DeckMaker.gd" id="1_2be2h"]
 [ext_resource type="Resource" uid="uid://b5ukqf6xmn6vv" path="res://Resources/Cards/1 ex Ruby & Saphire/RS109LightningEnergy.tres" id="1_067j5"]
@@ -22,28 +22,30 @@
 [ext_resource type="Resource" uid="uid://c2tk6qy8h57lw" path="res://Resources/Cards/1 ex Ruby & Saphire/RS82EnergySwitch.tres" id="20_dt21v"]
 [ext_resource type="Resource" uid="uid://1ktns5k8q1q5" path="res://Resources/Cards/1 ex Ruby & Saphire/RS44Skitty.tres" id="20_ky38v"]
 [ext_resource type="Resource" uid="uid://nwmfrwp7fuwu" path="res://Resources/Cards/4 ex Team Magma VS Team Aqua/MA87MagmaEnergy.tres" id="21_vw31d"]
+[ext_resource type="Resource" uid="uid://ben8fxv5hw5hb" path="res://Resources/Cards/1 ex Ruby & Saphire/RS87PokemonReversal.tres" id="22_vw31d"]
 
 [resource]
 script = ExtResource("1_2be2h")
 cards = Dictionary[ExtResource("1_folnw"), int]({
-ExtResource("21_vw31d"): 2,
-ExtResource("20_ky38v"): 2,
-ExtResource("20_dt21v"): 2,
-ExtResource("1_067j5"): 6,
-ExtResource("2_75y73"): 2,
-ExtResource("3_lumwr"): 2,
-ExtResource("4_0uxdd"): 4,
-ExtResource("5_h8nfu"): 4,
-ExtResource("6_m1q22"): 2,
-ExtResource("7_wvjiq"): 2,
-ExtResource("9_5ie2h"): 4,
-ExtResource("10_sq3h6"): 3,
-ExtResource("11_t0hlb"): 3,
-ExtResource("12_s1k1n"): 4,
-ExtResource("13_cssjx"): 2,
-ExtResource("14_5nils"): 2,
+ExtResource("22_vw31d"): 2,
+ExtResource("19_ky38v"): 2,
+ExtResource("18_dt21v"): 3,
+ExtResource("17_73ykl"): 3,
 ExtResource("16_u8opw"): 2,
-ExtResource("17_73ykl"): 4,
-ExtResource("18_dt21v"): 4,
-ExtResource("19_ky38v"): 2
+ExtResource("14_5nils"): 2,
+ExtResource("13_cssjx"): 2,
+ExtResource("12_s1k1n"): 4,
+ExtResource("11_t0hlb"): 3,
+ExtResource("10_sq3h6"): 3,
+ExtResource("9_5ie2h"): 4,
+ExtResource("7_wvjiq"): 2,
+ExtResource("6_m1q22"): 2,
+ExtResource("5_h8nfu"): 4,
+ExtResource("4_0uxdd"): 4,
+ExtResource("3_lumwr"): 2,
+ExtResource("2_75y73"): 2,
+ExtResource("1_067j5"): 6,
+ExtResource("20_dt21v"): 2,
+ExtResource("20_ky38v"): 2,
+ExtResource("21_vw31d"): 2
 })

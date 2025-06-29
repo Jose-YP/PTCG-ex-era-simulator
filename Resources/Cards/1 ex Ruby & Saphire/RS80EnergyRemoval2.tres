@@ -24,7 +24,7 @@ success_effect = SubResource("Resource_w15ih")
 
 [resource]
 script = ExtResource("2_jy4os")
-name = "Energy Removal 2 "
+name = "Energy Removal 2"
 image = ExtResource("1_hj3wc")
 illustrator = "Keniji Kinebuchi"
 number = 80

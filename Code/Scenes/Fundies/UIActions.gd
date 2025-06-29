@@ -39,12 +39,11 @@ func left_button_actions(target: PokeSlot):
 			selected_slot = target
 			target.use_card(adding_card)
 			adding_card = null
-			reset_ui()
 		else:
 			SignalBus.get_candidate.emit(target)
-			reset_ui()
 		
 		target.refresh()
+		reset_ui()
 	else:
 		if target.current_card == null: return
 		#Check if there's a display on any of the UI SLots
@@ -82,7 +81,7 @@ func get_choice(instruction: String):
 #region CHOICE MANAGEMENT
 #Use a lambda function to get different boolean functions
 func get_allowed_slots(condition: Callable) -> void:
-	allowed_slots = Globals.fundies.find_allowed_slots(condition, Constants.SIDES.ATTACKING)
+	allowed_slots = Globals.fundies.find_allowed_slots(condition, Constants.SIDES.BOTH)
 	
 	for slot in Globals.full_ui.all_slots():
 		if slot in allowed_slots:

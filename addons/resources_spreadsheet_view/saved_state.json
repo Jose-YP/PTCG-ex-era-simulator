@@ -75,15 +75,11 @@
     }
   },
   "recent_paths": [
-    "res://Resources/Cards/1 ex Ruby & Saphire/",
-    "res://Resources/Cards/",
-    "res://Resources/Cards/1 ex Ruby & Saphire::pokemon_properties/",
-    "res://Resources/Cards/1 ex Ruby & Saphire::trainer_properties/",
-    "res://Resources/Cards/1 ex Ruby & Saphire::energy_properties/"
+    "res://Resources/Cards/"
   ],
   "table_functions": {
     "filter": [
-      "return true"
+      "return res.trainer_properties != null"
     ],
     "process": [
       "return value"

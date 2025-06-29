@@ -15,14 +15,15 @@ var connected_ui: UI_Slot
 
 var current_card: Base_Card:
 	set(value):
+		var old = current_card
 		current_card = value
 		disabled = value == null
-		if value != null:
+		if value != old:
 			%Art.texture = value.image
 			var art_tween: Tween = create_tween().set_parallel()
 			art.scale = Vector2.ZERO
 			art_tween.tween_property(%Art, "scale", Vector2.ONE, .1)
-		else:
+		elif value == null:
 			%Art.texture = null
 #endregion
 #--------------------------------------

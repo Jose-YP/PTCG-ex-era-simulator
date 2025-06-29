@@ -124,6 +124,12 @@ func play_trainer(card: Base_Card):
 		
 		print("This card has an ask")
 	
+	if trainer.fail_effect:
+		await trainer.fail_effect.play_effect()
+	
+	if trainer.success_effect:
+		await trainer.success_effect.play_effect()
+	
 	if trainer.always_effect:
 		await trainer.always_effect.play_effect()
 	
@@ -174,17 +180,27 @@ func start_add_choice(instruction: String, card: Base_Card, bool_fun: Callable, 
 		print("Nevermind")
 	Globals.fundies.ui_actions.color_tween(Color.TRANSPARENT)
 
-func get_choice_candidates(instruction: String, bool_fun: Callable) -> PokeSlot:
+func get_choice_candidates(instruction: String, bool_fun: Callable,\
+ choosing_player: Constants.PLAYER_TYPES = Constants.PLAYER_TYPES.PLAYER) -> PokeSlot:
 	Globals.fundies.hide_list()
 	hold_candidate = null
 	await generic_choice(instruction, bool_fun)
 	chosen.emit()
 	return hold_candidate
 
-func generic_choice(instruction: String, bool_fun: Callable):
-	Globals.fundies.ui_actions.get_allowed_slots(bool_fun)
-	Globals.fundies.ui_actions.get_choice(instruction)
-	await Globals.fundies.ui_actions.chosen
+func generic_choice(instruction: String, bool_fun: Callable,\
+ choosing_player: Constants.PLAYER_TYPES = Constants.PLAYER_TYPES.PLAYER):
+	var ui_act: SlotUIActions = Globals.fundies.ui_actions
+	ui_act.get_allowed_slots(bool_fun)
+	var allow_slots: Array[UI_Slot] = ui_act.allowed_slots
+	#If there's only one choice and there's no going back, make the choice instantly
+	if allow_slots.size() == 1 and not ui_act.can_reverse:
+		ui_act.choosing = true
+		ui_act.left_button_actions(allow_slots[0].connected_slot)
+	#Otherwise wait for player to choose
+	else:
+		ui_act.get_choice(instruction)
+		await ui_act.chosen
 	chosen.emit()
 
 func record_candidate(slot: PokeSlot):

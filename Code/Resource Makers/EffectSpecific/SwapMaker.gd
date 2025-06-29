@@ -18,15 +18,15 @@ var second: PokeSlot
 
 func play_effect():
 	var first_candidate: Callable = func(slot: PokeSlot):
-		return slot.is_in_slot(chosing, Constants.SLOTS.ACTIVE\
+		return slot.is_in_slot(affected, Constants.SLOTS.ACTIVE\
 		 if choose_active else Constants.SLOTS.TARGET) and slot.current_card
 	var second_candidate: Callable = func(slot: PokeSlot):
-		return slot.is_in_slot(chosing, Constants.SLOTS.BENCH) and slot.current_card
+		return slot.is_in_slot(affected, Constants.SLOTS.BENCH) and slot.current_card
 	
-	print("PLAY SWAP")
 	#Get whichever active pokemon are allowed to switch
 	first = await Globals.fundies.card_player.get_choice_candidates(\
 	"Choose an active Pokemon to switch", first_candidate)
+	print("AAAAAAAAAAAAAA")
 	second = await Globals.fundies.card_player.get_choice_candidates(\
 	"Choose an benched Pokemon to switch", second_candidate)
 	#Get whichever benched pokemon are allowed to switch
