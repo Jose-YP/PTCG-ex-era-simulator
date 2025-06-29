@@ -22,7 +22,7 @@ offset_left = 6.0
 offset_top = -6.0
 offset_right = 736.0
 offset_bottom = 332.0
-theme_override_constants/separation = 172
+theme_override_constants/separation = 170
 metadata/_edit_group_ = true
 
 [node name="Active" type="HBoxContainer" parent="Main"]

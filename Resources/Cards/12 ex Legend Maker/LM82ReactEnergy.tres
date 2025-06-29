@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=5 format=3 uid="uid://bkih6iwdpqvmx"]
+
+[ext_resource type="Script" uid="uid://caj1pm8erar2a" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="1_diav4"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_gd7lj"]
+[ext_resource type="Texture2D" uid="uid://b8okvs247gctx" path="res://Art/Cards/12 ex Legend Maker/82.jpg" id="2_6q83e"]
+
+[sub_resource type="Resource" id="Resource_r3bp8"]
+script = ExtResource("1_diav4")
+considered = "Special Energy"
+description = " React Energy provides {Colorless} Energy."
+fail_provide = false
+fail_prevent = false
+turns = -1
+number = 1
+react = true
+holon_type = "None"
+type = 256
+fail_type = 256
+metadata/_custom_type_script = "uid://caj1pm8erar2a"
+
+[resource]
+script = ExtResource("1_gd7lj")
+name = "React Energy"
+image = ExtResource("2_6q83e")
+illustrator = "Takumi Akabane"
+number = 82
+rarity = 2
+expansion = 11
+categories = 4
+energy_properties = SubResource("Resource_r3bp8")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

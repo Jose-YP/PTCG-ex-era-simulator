@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dguolqe6u3fe3"]
 
-[ext_resource type="StyleBox" uid="uid://duhmik1loeema" path="res://Themes/GBABox.tres" id="1_ep7dx"]
+[ext_resource type="StyleBox" uid="uid://duhmik1loeema" path="res://Themes/StyleBoxes/GBABox.tres" id="1_ep7dx"]
 [ext_resource type="Script" uid="uid://bidony3vw3glr" path="res://Code/Scenes/UI/List/playing_list_item_copy.gd" id="2_o6l5l"]
 [ext_resource type="Texture2D" uid="uid://cj4eckcnktq41" path="res://Art/Cards/1 ex Ruby & Saphire/109.jpg" id="4_8oxaf"]
 

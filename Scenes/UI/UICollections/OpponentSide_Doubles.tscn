@@ -22,7 +22,7 @@ home = false
 layout_mode = 0
 offset_right = 810.0
 offset_bottom = 270.0
-theme_override_constants/separation = 141
+theme_override_constants/separation = 132
 
 [node name="Bench" type="HBoxContainer" parent="Main"]
 unique_name_in_owner = true

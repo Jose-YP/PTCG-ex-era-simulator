@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://tobk6a46hgx"]
 
 [ext_resource type="Script" uid="uid://2en5i2pyoyfv" path="res://Code/Scenes/UI/List/item_options_copy.gd" id="1_uc12c"]
-[ext_resource type="Theme" uid="uid://bfw6ylcttychc" path="res://Themes/AverageButton.tres" id="1_ygpa5"]
+[ext_resource type="Theme" uid="uid://bfw6ylcttychc" path="res://Themes/Themes/AverageButton.tres" id="1_ygpa5"]
 
 [node name="ItemOptions" type="Control"]
 z_index = 3

@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=5 format=3 uid="uid://dge3b12by00m4"]
+
+[ext_resource type="Script" uid="uid://caj1pm8erar2a" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="1_wlt10"]
+[ext_resource type="Texture2D" uid="uid://cso0ce1vr8ywy" path="res://Art/Cards/11 ex Delta Species/106.jpg" id="2_ojiq1"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_pxit3"]
+
+[sub_resource type="Resource" id="Resource_yixtv"]
+script = ExtResource("1_wlt10")
+considered = "Special Energy"
+description = ""
+fail_provide = false
+fail_prevent = false
+turns = -1
+number = 1
+react = false
+holon_type = "None"
+type = 1
+fail_type = 1
+metadata/_custom_type_script = "uid://caj1pm8erar2a"
+
+[resource]
+script = ExtResource("2_pxit3")
+name = "Holon Energy WP"
+image = ExtResource("2_ojiq1")
+illustrator = "Takumi Akabane"
+number = 106
+rarity = 2
+expansion = 10
+categories = 4
+energy_properties = SubResource("Resource_yixtv")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

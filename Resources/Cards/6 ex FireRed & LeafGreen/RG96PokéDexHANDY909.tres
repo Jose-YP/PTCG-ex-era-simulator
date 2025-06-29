@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Base_Card" load_steps=11 format=3 uid="uid://b3y5i8lcqwvu6"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_iw2ee"]
-[ext_resource type="Texture2D" uid="uid://dyt6qui12djhn" path="res://Art/Cards/5 ex Hidden Legends/6 ex FireRed & LeafGreen/96.jpg" id="1_xs0cg"]
+[ext_resource type="Texture2D" uid="uid://dyt6qui12djhn" path="res://Art/Cards/6 ex FireRed & LeafGreen/96.jpg" id="1_xs0cg"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_sch7r"]
 [ext_resource type="Resource" uid="uid://bnd3pbei56xqo" path="res://Resources/Components/Effects/Placement/ReorderSearch.tres" id="4_2nhg1"]
 [ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="5_iv4ld"]

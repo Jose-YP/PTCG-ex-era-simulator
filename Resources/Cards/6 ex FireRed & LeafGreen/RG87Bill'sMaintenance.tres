@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://cxx0d3lavwyno"]
 
-[ext_resource type="Texture2D" uid="uid://c4mehup1vjr2" path="res://Art/Cards/5 ex Hidden Legends/6 ex FireRed & LeafGreen/87.jpg" id="1_213qm"]
+[ext_resource type="Texture2D" uid="uid://c4mehup1vjr2" path="res://Art/Cards/6 ex FireRed & LeafGreen/87.jpg" id="1_213qm"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_wvoyw"]
 [ext_resource type="Resource" uid="uid://cd5cllx4tmb2p" path="res://Resources/Components/Effects/CardDisrupt/SourceShuffleBack1Hand.tres" id="3_ldqnv"]
 [ext_resource type="Resource" uid="uid://dmb635n2d0erk" path="res://Resources/Components/Effects/Draw/Draw3.tres" id="4_7lxuy"]

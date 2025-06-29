@@ -31,18 +31,19 @@ script = ExtResource("1_c5ua0")
 layout_mode = 0
 offset_right = 198.0
 offset_bottom = 164.0
+theme_override_constants/separation = -2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Main"]
+[node name="Header" type="HBoxContainer" parent="Main"]
 layout_mode = 2
 
-[node name="Name" type="RichTextLabel" parent="Main/HBoxContainer"]
+[node name="Name" type="RichTextLabel" parent="Main/Header"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(130, 46)
 layout_mode = 2
 text = "Team Magma's
 Mightyena"
 
-[node name="MaxHP" type="RichTextLabel" parent="Main/HBoxContainer"]
+[node name="MaxHP" type="RichTextLabel" parent="Main/Header"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(64, 46)
 layout_mode = 2
@@ -58,9 +59,9 @@ benched = false
 [node name="TrainerAttached" type="VBoxContainer" parent="."]
 layout_mode = 0
 offset_left = -17.0
-offset_top = 73.0
+offset_top = 71.0
 offset_right = 31.0
-offset_bottom = 133.0
+offset_bottom = 131.0
 mouse_filter = 2
 
 [node name="Tool" type="TextureRect" parent="TrainerAttached"]
@@ -94,14 +95,13 @@ text = "+"
 [node name="EnergyTypes" type="HBoxContainer" parent="."]
 unique_name_in_owner = true
 layout_mode = 2
-offset_left = -3.0
-offset_top = 167.0
-offset_right = 209.0
-offset_bottom = 167.0
+offset_left = -4.0
+offset_top = 150.0
+offset_right = 208.0
+offset_bottom = 174.0
 mouse_filter = 2
 
 [node name="Types" parent="EnergyTypes" instance=ExtResource("4_5yd0i")]
-visible = false
 layout_mode = 2
 
 [node name="Types2" parent="EnergyTypes" instance=ExtResource("4_5yd0i")]
@@ -139,10 +139,10 @@ layout_mode = 2
 [node name="TypeContainer" type="HBoxContainer" parent="."]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 3.0
-offset_top = 45.0
-offset_right = 137.0
-offset_bottom = 65.0
+offset_left = -4.0
+offset_top = 43.0
+offset_right = 130.0
+offset_bottom = 67.0
 mouse_filter = 2
 metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
@@ -173,9 +173,9 @@ layout_mode = 2
 [node name="Conditions" type="VBoxContainer" parent="."]
 layout_mode = 0
 offset_left = 178.0
-offset_top = 45.0
+offset_top = 43.0
 offset_right = 210.0
-offset_bottom = 149.0
+offset_bottom = 147.0
 mouse_filter = 2
 metadata/_edit_group_ = true
 
@@ -208,10 +208,11 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_filter = 2
-current_tab = 0
+current_tab = 2
 tabs_visible = false
 
 [node name="Paralysis" type="TextureRect" parent="Conditions/TurnConditions"]
+visible = false
 modulate = Color(1, 1, 0.0901961, 1)
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
@@ -231,7 +232,6 @@ expand_mode = 4
 metadata/_tab_index = 1
 
 [node name="Confusion" type="TextureRect" parent="Conditions/TurnConditions"]
-visible = false
 modulate = Color(0.196078, 0.529412, 0, 1)
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
@@ -243,9 +243,9 @@ metadata/_tab_index = 2
 [node name="SecondaryCondtions" type="VBoxContainer" parent="."]
 layout_mode = 0
 offset_left = 145.0
-offset_top = 45.0
+offset_top = 43.0
 offset_right = 177.0
-offset_bottom = 113.0
+offset_bottom = 111.0
 mouse_filter = 2
 metadata/_edit_group_ = true
 

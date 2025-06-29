@@ -33,13 +33,13 @@ metadata/_edit_group_ = true
 layout_mode = 0
 offset_right = 147.0
 offset_bottom = 133.0
-theme_override_constants/separation = 0
+theme_override_constants/separation = -12
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Main"]
+[node name="Header" type="HBoxContainer" parent="Main"]
 layout_mode = 2
 theme_override_constants/separation = -30
 
-[node name="Name" type="RichTextLabel" parent="Main/HBoxContainer"]
+[node name="Name" type="RichTextLabel" parent="Main/Header"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(130, 46)
 layout_mode = 2
@@ -49,7 +49,7 @@ bbcode_enabled = true
 text = "Team Magma's
 Mightyena"
 
-[node name="MaxHP" type="RichTextLabel" parent="Main/HBoxContainer"]
+[node name="MaxHP" type="RichTextLabel" parent="Main/Header"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(47, 46)
 layout_mode = 2
@@ -71,9 +71,9 @@ layout_mode = 2
 [node name="TrainerAttached" type="VBoxContainer" parent="."]
 layout_mode = 0
 offset_left = -17.0
-offset_top = 68.0
+offset_top = 56.0
 offset_right = 31.0
-offset_bottom = 128.0
+offset_bottom = 116.0
 mouse_filter = 2
 metadata/_edit_group_ = true
 
@@ -99,17 +99,15 @@ stretch_mode = 4
 unique_name_in_owner = true
 layout_mode = 2
 offset_left = -8.0
-offset_top = 130.0
+offset_top = 112.0
 offset_right = 156.0
-offset_bottom = 130.0
+offset_bottom = 136.0
 mouse_filter = 2
 
 [node name="Types" parent="EnergyTypes" instance=ExtResource("4_nhrrd")]
-visible = false
 layout_mode = 2
 
 [node name="Types2" parent="EnergyTypes" instance=ExtResource("4_nhrrd")]
-visible = false
 layout_mode = 2
 
 [node name="Types3" parent="EnergyTypes" instance=ExtResource("4_nhrrd")]
@@ -135,10 +133,10 @@ layout_mode = 2
 [node name="TypeContainer" type="HBoxContainer" parent="."]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 3.0
-offset_top = 45.0
-offset_right = 137.0
-offset_bottom = 65.0
+offset_left = -8.0
+offset_top = 32.0
+offset_right = 126.0
+offset_bottom = 56.0
 mouse_filter = 2
 metadata/_edit_group_ = true
 
@@ -167,10 +165,10 @@ layout_mode = 2
 
 [node name="Conditions" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 126.0
-offset_top = 55.0
-offset_right = 158.0
-offset_bottom = 123.0
+offset_left = 128.0
+offset_top = 42.0
+offset_right = 160.0
+offset_bottom = 110.0
 mouse_filter = 2
 
 [node name="Imprison" type="TextureRect" parent="Conditions"]

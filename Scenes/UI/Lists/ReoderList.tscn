@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://u1576g11rakh"]
 
-[ext_resource type="Theme" uid="uid://bfw6ylcttychc" path="res://Themes/AverageButton.tres" id="1_vfu45"]
+[ext_resource type="Theme" uid="uid://bfw6ylcttychc" path="res://Themes/Themes/AverageButton.tres" id="1_vfu45"]
 [ext_resource type="Script" uid="uid://coc5ucyg548yj" path="res://Code/Scenes/UI/List/reorder_box.gd" id="2_bgbqr"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_68v0d"]
 [ext_resource type="Resource" uid="uid://d3oqllkeh61wl" path="res://Resources/Cards/1 ex Ruby & Saphire/RS63Poochyena.tres" id="4_djwkv"]
@@ -10,10 +10,10 @@
 [ext_resource type="Resource" uid="uid://bmvatu4cfwe4n" path="res://Resources/Cards/4 ex Team Magma VS Team Aqua/MA81TeamMagmaBelt.tres" id="8_qytal"]
 [ext_resource type="Resource" uid="uid://nwmfrwp7fuwu" path="res://Resources/Cards/4 ex Team Magma VS Team Aqua/MA87MagmaEnergy.tres" id="9_h60wi"]
 [ext_resource type="Resource" uid="uid://bidyxkb8ygjhl" path="res://Resources/Cards/4 ex Team Magma VS Team Aqua/MA84TeamMagmaTechnicalMachine01.tres" id="10_oeo6a"]
-[ext_resource type="StyleBox" uid="uid://hb14mew2o8sf" path="res://Themes/translucent.tres" id="11_p8if0"]
+[ext_resource type="StyleBox" uid="uid://hb14mew2o8sf" path="res://Themes/StyleBoxes/translucent.tres" id="11_p8if0"]
 [ext_resource type="PackedScene" uid="uid://bp1vuamf6uoxr" path="res://Scenes/UI/Lists/reorderItem.tscn" id="12_djwkv"]
 [ext_resource type="PackedScene" uid="uid://cmmds4boaksl7" path="res://Scenes/UI/UIComponents/movable.tscn" id="13_chh4k"]
-[ext_resource type="StyleBox" uid="uid://bvesf3hjv2bsl" path="res://Themes/GBADragBox.tres" id="13_jdmvj"]
+[ext_resource type="StyleBox" uid="uid://bvesf3hjv2bsl" path="res://Themes/StyleBoxes/GBADragBox.tres" id="13_jdmvj"]
 [ext_resource type="PackedScene" uid="uid://dmhjt2wuanymf" path="res://Scenes/UI/UIComponents/minimize_button.tscn" id="14_jdmvj"]
 
 [node name="Reorder" type="Control"]

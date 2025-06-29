@@ -7,7 +7,7 @@ const tool_text: String = "to 1 of your Pokémon that doesn't already have a Pok
 const tm_text: String = "Attach this card to 1 of your Evolved Pokémon (excluding Pokémon-ex and Pokémon that has an owner in its name) in play. That Pokémon may use this card's attack instead of its own. At the end of your turn, discard "
 const stadium_text: String = "This card stays in play when you play it. Discard this card if another Stadium card comes into play."
 const trainer_classes: Array[String] = ["Item", "Supporter", "Tool", "Stadium", "TM",
-"Rocket's Secret Machine"]
+ "Rocket's Secret Machine"]
 #Items and RSM don't have class text
 const class_texts: Array[String] = ["", supporter_text, tool_text, stadium_text, tm_text, ""]
 #endregion
@@ -38,7 +38,9 @@ const energy_icons = ["res://Art/Energy/48px-Grass-attack.png", "res://Art/Energ
 "res://Art/Energy/48px-Colorless-attack.png"]
 const energy_colors: Array[Color] = [Color.GREEN, Color.RED, Color.AQUA,
  Color.YELLOW, Color.PURPLE, Color.ORANGE_RED, Color.DARK_SLATE_GRAY,
-Color.GRAY, Color.WHITE_SMOKE]
+ Color.GRAY, Color.WHITE_SMOKE, Color.VIOLET, Color.WEB_MAROON,
+ Color.DARK_BLUE, Color.CRIMSON, Color.ORANGE_RED, Color.YELLOW_GREEN,
+ Color.MEDIUM_SLATE_BLUE, Color.DEEP_SKY_BLUE]
 #endregion
 #--------------------------------------
 
@@ -46,7 +48,6 @@ Color.GRAY, Color.WHITE_SMOKE]
 #region SCENES
 var playing_list: PackedScene = load("res://Scenes/UI/Lists/NewPlayingList.tscn")
 const attack_list_comp: PackedScene = preload("res://Scenes/UI/Lists/attack_scroll_box.tscn")
-#const attack_list = preload("res://Scenes/UI/Lists/attack_list.tscn")
 const poke_card = preload("res://Scenes/UI/CardDisplay/PokemonCard.tscn")
 const trainer_card: PackedScene = preload("res://Scenes/UI/CardDisplay/TrainerCard.tscn")
 const energy_card: PackedScene = preload("res://Scenes/UI/CardDisplay/EnergyCard.tscn")
@@ -59,7 +60,7 @@ const reorder_list: PackedScene = preload("res://Scenes/UI/Lists/ReoderList.tscn
 #--------------------------------------
 #region ENUMS
 enum PLAYER_TYPES{PLAYER, ##HUMAN CONTROLLED 
-CPU, ## CPU CONTROLLED
+ CPU, ## CPU CONTROLLED
  DUMMY, ## SPECIFIC CPU THAT ALWAYS CHOOSES EASIEST OPTION FOR DEBUGGING
 }
 enum SIDES {NONE, ##IGNORE FIELD AND TAKE DEFAULT
@@ -76,13 +77,13 @@ enum SLOTS {NONE,##Ignore and use the default
  ALL##Refers to any pokemon in the dedicated side
 }
 enum STACKS{HAND, ##CARDS HERE CAN BE PLAYED UNDER THE RIGHT CONDITIONS
-DECK, ##CARDS MUST EITHER BE DRAWN OR TUTORED. ALL CRADS BEGIN HERE
-DISCARD, ##AFTER A CARD IS USED, KO'd OR PAYS FOR ANY DISCARD COSTS
-PRIZE, ##AFTER SETTING UP, PUT X PRIZE CARDS HERE TO TAKE AFTER KO
-PLAY, ##ANY CARD THAT ISN'T IN A STACK
-LOST, ##THE LOST ZONE, NOT LIKELY TO BE IMPLEMENTED BUT NICE TO HAVE FOR NOW. ANY CARD THAT CANNOT BE RETRIEVED FOR FUTURE USE
-ANY,
-NONE
+ DECK, ##CARDS MUST EITHER BE DRAWN OR TUTORED. ALL CRADS BEGIN HERE
+ DISCARD, ##AFTER A CARD IS USED, KO'd OR PAYS FOR ANY DISCARD COSTS
+ PRIZE, ##AFTER SETTING UP, PUT X PRIZE CARDS HERE TO TAKE AFTER KO
+ PLAY, ##ANY CARD THAT ISN'T IN A STACK
+ LOST, ##THE LOST ZONE, NOT LIKELY TO BE IMPLEMENTED BUT NICE TO HAVE FOR NOW. ANY CARD THAT CANNOT BE RETRIEVED FOR FUTURE USE
+ ANY,
+ NONE
 }
 enum STACK_ACT{PLAY,##ALLOWED CARDS CAN BE PLAYED ONTO THE BOARD
 	TUTOR, ##ALLOWED CARDS WILL BE SENT TO ANOTHER DESTINATION

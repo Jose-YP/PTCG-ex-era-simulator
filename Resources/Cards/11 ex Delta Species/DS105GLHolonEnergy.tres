@@ -1,0 +1,126 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=19 format=3 uid="uid://cqr3tfc8nry8w"]
+
+[ext_resource type="Script" uid="uid://caj1pm8erar2a" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="1_5i42c"]
+[ext_resource type="Resource" uid="uid://dck0aw0wiqcpw" path="res://Resources/Components/Effects/Asks/Class&Owner/Other'sTrgEXMon.tres" id="1_420ij"]
+[ext_resource type="Resource" uid="uid://f6cgam4ldfj8" path="res://Resources/Components/Effects/Buff/Immune2Conditions.tres" id="1_tf38m"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_7lxul"]
+[ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/BuffMaker.gd" id="2_tf38m"]
+[ext_resource type="Texture2D" uid="uid://bcy6v2x6sapi" path="res://Art/Cards/11 ex Delta Species/105.jpg" id="2_yixtv"]
+[ext_resource type="Resource" uid="uid://dyg31r0aqj4ed" path="res://Resources/Components/Effects/Prompts/NonEXHasGrassEn.tres" id="3_tyuxn"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_10hjv"]
+[ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="5_rv8r4"]
+[ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="6_os01s"]
+
+[sub_resource type="Resource" id="Resource_tyuxn"]
+script = ExtResource("4_10hjv")
+either_or = false
+order = Array[int]([])
+buff = ExtResource("1_tf38m")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_5rppq"]
+script = ExtResource("4_10hjv")
+either_or = false
+order = Array[int]([])
+prompt_extra = ExtResource("3_tyuxn")
+extra_effect = SubResource("Resource_tyuxn")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_rb1o5"]
+script = ExtResource("5_rv8r4")
+side_target = 1
+slot_target = 4
+specifically = Array[String]([])
+comparison_type = 1
+max_hp = -10
+damage_taken = -10
+retreat_cost = -1
+energy_attatched = 1
+knocked_out = false
+condition = 0
+location = 4
+tool_attatched = false
+stage = 7
+rare_candy = false
+class_inclusive = false
+pokemon_class = 2
+owner_inclusive = true
+pokemon_owner = 15
+bench_size = -1
+type_inclusive = true
+type = 520
+energy_class = 0
+type_size = 1
+
+[sub_resource type="Resource" id="Resource_kjebj"]
+script = ExtResource("6_os01s")
+formal_ask = false
+ask_string = ""
+is_in = SubResource("Resource_rb1o5")
+side = 1
+choose_location = 0
+metadata/_custom_type_script = "uid://b85jmc7067bjc"
+
+[sub_resource type="Resource" id="Resource_3qxn5"]
+script = ExtResource("2_tf38m")
+side = 1
+slot = 1
+duration = -1
+against = ExtResource("1_420ij")
+attack_damage = 0
+defense = 10
+after_weak_res = true
+ignore_res_other = false
+ignore_weak_self = false
+immunities = 0
+immune_to_special_conditions = true
+immune_to_effects = false
+immune_to_damage = false
+metadata/_custom_type_script = "uid://coojhwe6m20gd"
+
+[sub_resource type="Resource" id="Resource_10hjv"]
+script = ExtResource("4_10hjv")
+either_or = false
+order = Array[int]([])
+buff = ExtResource("1_tf38m")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_oiiyp"]
+script = ExtResource("4_10hjv")
+either_or = false
+order = Array[int]([])
+buff = SubResource("Resource_3qxn5")
+prompt_extra = ExtResource("3_tyuxn")
+extra_effect = SubResource("Resource_10hjv")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_yixtv"]
+script = ExtResource("1_5i42c")
+considered = "Special Energy"
+description = "Holon Energy GL provides {Colorless} Energy.
+If the Pokémon that Holon Energy GL is attached to also has a basic {Grass} Energy card attached to it, that Pokémon can't be affected by any Special Conditions. If the Pokémon that Holon Energy GL is attached to also has a basic {Lightning} Energy card attached to it, damage done by your opponent's Pokémon-ex is reduced by 10. Ignore these effects if Holon Energy GL is attached to Pokémon-ex."
+prompt = SubResource("Resource_kjebj")
+fail_provide = false
+fail_prevent = false
+fail_effect = SubResource("Resource_5rppq")
+success_effect = SubResource("Resource_oiiyp")
+turns = -1
+number = 1
+react = false
+holon_type = "GL"
+type = 256
+fail_type = 256
+metadata/_custom_type_script = "uid://caj1pm8erar2a"
+
+[resource]
+script = ExtResource("2_7lxul")
+name = "Holon Energy GL"
+image = ExtResource("2_yixtv")
+illustrator = "Takumi Akabane"
+number = 105
+rarity = 2
+expansion = 10
+categories = 4
+energy_properties = SubResource("Resource_yixtv")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

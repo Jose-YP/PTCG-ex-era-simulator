@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Buff" load_steps=2 format=3 uid="uid://byem0mc65f4xt"]
+
+[ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/BuffMaker.gd" id="1_dvdx1"]
+
+[resource]
+script = ExtResource("1_dvdx1")
+side = 1
+slot = 1
+duration = 1
+attack_damage = 0
+defense = 0
+retreat_change = -10
+after_weak_res = true
+ignore_res_other = false
+ignore_weak_self = false
+immunities = 0
+immune_to_special_conditions = true
+immune_to_effects = false
+immune_to_damage = false
+metadata/_custom_type_script = "uid://coojhwe6m20gd"

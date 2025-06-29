@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="EffectCall" load_steps=4 format=3 uid="uid://b1qbcihu1hshu"]
+
+[ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/BuffMaker.gd" id="1_px0gr"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_l78b5"]
+
+[sub_resource type="Resource" id="Resource_cwd6r"]
+script = ExtResource("1_px0gr")
+side = 4
+slot = 1
+duration = -1
+attack_damage = 0
+defense = 0
+after_weak_res = false
+ignore_res_other = false
+ignore_weak_self = false
+immune_to_effects = false
+immune_to_damage = false
+metadata/_custom_type_script = "uid://coojhwe6m20gd"
+
+[resource]
+script = ExtResource("2_l78b5")
+either_or = false
+order = Array[int]([])
+buff = SubResource("Resource_cwd6r")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"

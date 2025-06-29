@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://dmhjt2wuanymf"]
 
-[ext_resource type="Theme" uid="uid://bfw6ylcttychc" path="res://Themes/AverageButton.tres" id="1_8wy7t"]
+[ext_resource type="Theme" uid="uid://bfw6ylcttychc" path="res://Themes/Themes/AverageButton.tres" id="1_8wy7t"]
 [ext_resource type="Script" uid="uid://bphfo08n46yrj" path="res://Code/Scenes/UI/List/minimize_button.gd" id="2_ie3vv"]
-[ext_resource type="StyleBox" uid="uid://bsh6edcpwvowr" path="res://Themes/minimize_button.tres" id="2_v3vjs"]
+[ext_resource type="StyleBox" uid="uid://bsh6edcpwvowr" path="res://Themes/StyleBoxes/minimize_button.tres" id="2_v3vjs"]
 
 [node name="MinimizeButton" type="Button"]
 offset_left = 3.0

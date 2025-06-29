@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=7 format=3 uid="uid://c6i6ebtt7wfoi"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=8 format=3 uid="uid://c6i6ebtt7wfoi"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_8e6gb"]
+[ext_resource type="Texture2D" uid="uid://b470mp5iffa4" path="res://Art/Cards/9 ex Emerald/84.jpg" id="1_s5s5g"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_jr6w3"]
 [ext_resource type="Resource" uid="uid://dyue46fxhp8nk" path="res://Resources/Components/Effects/Search/ScottSearch.tres" id="3_aeut6"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="6_j8r84"]
@@ -23,6 +24,7 @@ metadata/_custom_type_script = "uid://crx447i85kshy"
 [resource]
 script = ExtResource("1_8e6gb")
 name = "Scott"
+image = ExtResource("1_s5s5g")
 illustrator = "Ken Sugimori"
 number = 84
 rarity = 1

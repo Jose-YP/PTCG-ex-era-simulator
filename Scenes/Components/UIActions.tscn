@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://c2dyutb22u6x8"]
 
 [ext_resource type="Script" uid="uid://2hyltc7plhdl" path="res://Code/Scenes/Fundies/UIActions.gd" id="1_ddjd7"]
-[ext_resource type="Theme" uid="uid://bfw6ylcttychc" path="res://Themes/AverageButton.tres" id="2_2xlbq"]
-[ext_resource type="StyleBox" uid="uid://dbxi0dyaybdu1" path="res://Themes/RED.tres" id="3_2xlbq"]
+[ext_resource type="Theme" uid="uid://bfw6ylcttychc" path="res://Themes/Themes/AverageButton.tres" id="2_2xlbq"]
+[ext_resource type="StyleBox" uid="uid://dbxi0dyaybdu1" path="res://Themes/StyleBoxes/RED.tres" id="3_2xlbq"]
 
 [node name="UIActions" type="Node"]
 script = ExtResource("1_ddjd7")

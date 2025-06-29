@@ -9,6 +9,7 @@ class_name PromptAsk
 ##Succesful coin flips allow for succesful effects and coin reliant dmg
 @export var coin_flip: CoinFlip
 @export var counter: Counter
+@export var is_in: SlotAsk
 @export var side: Constants.SIDES = Constants.SIDES.ATTACKING
 
 @export_flags("Bench", "Active", "Self", 

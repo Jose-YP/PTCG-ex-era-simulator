@@ -9,6 +9,7 @@ ENMOV, DMGMANIP, SEARCH, SWAP, DRAW, ALLEVIATE, MIMIC, OTHER}
 ##Determine the order in which the effects are called.
 ##It's best to fill this in, if you don't want the default enum order
 @export var order: Array[effect_types]
+@export_group("Components")
 ##Add a condition
 @export var condition: Condition
 ##Draw an ammount of cards

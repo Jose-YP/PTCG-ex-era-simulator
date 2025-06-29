@@ -5,7 +5,7 @@
 [ext_resource type="Resource" uid="uid://lfhu3xyr0wpo" path="res://Resources/Components/Effects/Prompts/IfFlipHeads.tres" id="3_ccrwf"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_e0e0d"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="6_gdumi"]
-[ext_resource type="Resource" uid="uid://b2osj0q2xrlxc" path="res://Resources/Components/Effects/ETC/SwapReversal.tres" id="6_x61vg"]
+[ext_resource type="Resource" uid="uid://b2osj0q2xrlxc" path="res://Resources/Components/Effects/Swap/SwapReversal.tres" id="6_x61vg"]
 
 [sub_resource type="Resource" id="Resource_lnypp"]
 script = ExtResource("3_e0e0d")

@@ -1,0 +1,130 @@
+[gd_resource type="Theme" load_steps=13 format=3 uid="uid://bfw6ylcttychc"]
+
+[ext_resource type="StyleBox" uid="uid://duhmik1loeema" path="res://Themes/StyleBoxes/GBABox.tres" id="1_j8r7k"]
+[ext_resource type="StyleBox" uid="uid://bvesf3hjv2bsl" path="res://Themes/StyleBoxes/GBADragBox.tres" id="2_0j40x"]
+[ext_resource type="StyleBox" uid="uid://dmlko6tcmyk71" path="res://Themes/StyleBoxes/EnergyButton.tres" id="3_0j40x"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wcrro"]
+bg_color = Color(0.0329064, 0.0688881, 0.221139, 1)
+border_color = Color(0.286275, 0.00392157, 0.611765, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mtcsg"]
+bg_color = Color(0.45477, 0.29124, 0.653315, 1)
+border_width_left = 1
+border_width_top = 2
+border_width_right = 1
+border_width_bottom = 2
+border_color = Color(0.286275, 0.00392157, 0.611765, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_auhmd"]
+bg_color = Color(0.137255, 0.141176, 0.278431, 1)
+border_width_left = 1
+border_width_top = 2
+border_width_right = 1
+border_width_bottom = 2
+border_color = Color(0.286275, 0.00392157, 0.611765, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c3wud"]
+bg_color = Color(0.017398, 0.272077, 0.462747, 1)
+border_width_left = 1
+border_width_top = 2
+border_width_right = 1
+border_width_bottom = 2
+border_color = Color(0, 0.282909, 0.287954, 1)
+border_blend = true
+shadow_size = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0j40x"]
+resource_local_to_scene = true
+bg_color = Color(0.717647, 0.737255, 0.752941, 0.917647)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.596078, 0.596078, 0.596078, 0.239216)
+border_blend = true
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 14
+shadow_color = Color(0, 0, 0, 0.0980392)
+shadow_size = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_au071"]
+resource_local_to_scene = true
+bg_color = Color(0.717647, 0.737255, 0.752941, 0.917647)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.596078, 0.596078, 0.596078, 0.239216)
+border_blend = true
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 14
+shadow_color = Color(0, 0, 0, 0.0980392)
+shadow_size = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_amp7u"]
+resource_local_to_scene = true
+bg_color = Color(0.717647, 0.737255, 0.752941, 0.917647)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.596078, 0.596078, 0.596078, 0.239216)
+border_blend = true
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 14
+shadow_color = Color(0, 0, 0, 0.0980392)
+shadow_size = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4wb57"]
+resource_local_to_scene = true
+bg_color = Color(0.717647, 0.737255, 0.752941, 0.917647)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.596078, 0.596078, 0.596078, 0.239216)
+border_blend = true
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 14
+shadow_color = Color(0, 0, 0, 0.0980392)
+shadow_size = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ptgho"]
+bg_color = Color(0.368627, 0.27451, 0.698039, 0.701961)
+shadow_size = 1
+
+[resource]
+resource_name = "EnButton"
+BodyButton/base_type = &"Button"
+BodyButton/styles/normal = null
+Button/styles/disabled = SubResource("StyleBoxFlat_wcrro")
+Button/styles/hover = SubResource("StyleBoxFlat_mtcsg")
+Button/styles/normal = ExtResource("1_j8r7k")
+Button/styles/pressed = SubResource("StyleBoxFlat_auhmd")
+DragButton/base_type = &"Button"
+DragButton/styles/normal = ExtResource("2_0j40x")
+DragButton/styles/pressed = SubResource("StyleBoxFlat_c3wud")
+EnergyButton/base_type = &"Button"
+EnergyButton/styles/disabled = SubResource("StyleBoxFlat_0j40x")
+EnergyButton/styles/focus = SubResource("StyleBoxFlat_au071")
+EnergyButton/styles/hover = SubResource("StyleBoxFlat_amp7u")
+EnergyButton/styles/normal = ExtResource("3_0j40x")
+EnergyButton/styles/pressed = SubResource("StyleBoxFlat_4wb57")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_ptgho")
+PowerButton/base_type = &"Button"

@@ -36,7 +36,9 @@ anchor_left = 0.875
 anchor_top = 9.05
 anchor_right = 0.875
 anchor_bottom = 9.05
-offset_left = -3.8147e-06
+offset_left = 0.0
+offset_top = 28.0
+offset_bottom = 28.0
 grow_vertical = 0
 
 [node name="Stadium" type="CenterContainer" parent="."]

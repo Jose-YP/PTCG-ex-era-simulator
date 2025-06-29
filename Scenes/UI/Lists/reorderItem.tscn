@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://okxu6caq50xw" path="res://Scenes/UI/Lists/ReorderButton.tscn" id="1_3cj6u"]
 [ext_resource type="Script" uid="uid://c80ucbe75nx7j" path="res://Code/Scenes/UI/List/reorder_item.gd" id="1_pcnvp"]
-[ext_resource type="StyleBox" uid="uid://bvesf3hjv2bsl" path="res://Themes/GBADragBox.tres" id="2_pcnvp"]
+[ext_resource type="StyleBox" uid="uid://bvesf3hjv2bsl" path="res://Themes/StyleBoxes/GBADragBox.tres" id="2_pcnvp"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qytal"]
 

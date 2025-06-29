@@ -79,7 +79,7 @@
   ],
   "table_functions": {
     "filter": [
-      "return res.trainer_properties != null"
+      "return true"
     ],
     "process": [
       "return value"

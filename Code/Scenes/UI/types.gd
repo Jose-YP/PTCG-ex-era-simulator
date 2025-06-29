@@ -29,3 +29,6 @@ func remove_type():
 	
 	if number <= 1: $Number.hide()
 	if number < 1: hide()
+
+func get_type_index() -> int:
+	return $Tabs.current_tab
