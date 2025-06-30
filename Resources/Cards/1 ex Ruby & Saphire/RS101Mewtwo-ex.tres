@@ -92,7 +92,7 @@ resist = 0
 
 [resource]
 script = ExtResource("1_rbc1e")
-name = " Mewtwo ex"
+name = "Mewtwo ex"
 image = ExtResource("1_gsob6")
 illustrator = "Katsura Tabata"
 number = 101

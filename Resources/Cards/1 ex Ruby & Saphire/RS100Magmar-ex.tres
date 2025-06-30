@@ -68,7 +68,7 @@ resist = 0
 
 [resource]
 script = ExtResource("1_g74x1")
-name = " Magmar ex"
+name = "Magmar ex"
 image = ExtResource("1_461p5")
 illustrator = "Hikaru Koike"
 number = 100

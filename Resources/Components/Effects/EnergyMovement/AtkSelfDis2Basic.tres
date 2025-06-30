@@ -4,10 +4,12 @@
 
 [resource]
 script = ExtResource("1_hrfik")
-energy_move_type = 0
-action = 1
+action = 0
+chooser = 4
 side = 1
 slots = 1
+to_stack = 2
+stack_direction = 2
 energy_ammount = 2
-swap_ammount = 1
+energy_move_type = 0
 type = 511

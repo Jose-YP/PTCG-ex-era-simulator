@@ -28,6 +28,8 @@ var cards_in_play: Array[Base_Card]
 func make_deck():
 	usable_deck = deck.make_usable()
 	usable_deck.shuffle()
+	init_sync(init_deck)
+	init_sync(init_hand)
 
 func setup():
 	move_cards(init_hand, Constants.STACKS.DECK, Constants.STACKS.HAND)
@@ -51,6 +53,13 @@ func init_remove_deck(card: Base_Card):
 	usable_deck.remove_at(usable_deck.find_custom(card.same_card))
 	#usable_deck.erase(card)
 	cards_in_play.append(card.duplicate())
+
+func init_sync(list: Array[Base_Card]):
+	for card in list:
+		var index: int = usable_deck.find_custom(card.same_card)
+		if index != -1:
+			card = usable_deck[index]
+
 #endregion
 #--------------------------------------
 
@@ -103,7 +112,13 @@ func move_cards(cards: Array[Base_Card], from: Constants.STACKS, towards: Consta
 	for i in range(cards.size() - 1, -1, -1):
 		var card: Base_Card = cards[i]
 		#Remove all tutored cards from source first
-		var adding_card = dict[from].pop_at(dict[from].find(card))
+		#print()
+		#var adding_card = dict[from].pop_at(dict[from].find_custom(card.same_card))
+		var adding_card = dict[from][dict[from].find_custom(card.same_card)]
+		if not card.same_card(adding_card):
+			for c in dict[from]: print(c.name)
+			print(dict[from].find_custom(card.same_card))
+			printerr(card.name, " is not the same as ", adding_card.name)
 		#Now it can be added back to the towards array
 		append_to_arrays(towards, adding_card, top_deck)
 	

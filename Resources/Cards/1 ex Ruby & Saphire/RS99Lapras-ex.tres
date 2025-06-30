@@ -78,7 +78,7 @@ resist = 0
 
 [resource]
 script = ExtResource("1_70xxw")
-name = " Lapras ex"
+name = "Lapras ex"
 image = ExtResource("1_xkacn")
 illustrator = "Hikaru Koike"
 number = 99

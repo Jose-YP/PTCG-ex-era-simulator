@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="Condition" load_steps=2 format=3 uid="uid://lvedqhtvr1w4"]
 
-[ext_resource type="Script" uid="uid://8s3m1dar3r33" path="res://Code/Resource Makers/EffectSpecific/ConditionMaker.gd" id="1_srs2w"]
+[ext_resource type="Script" uid="uid://8s3m1dar3r33" path="res://Code/Resource Makers/EffectSpecific/ConditionMaker.gd" id="1_2deed"]
 
 [resource]
-script = ExtResource("1_srs2w")
+script = ExtResource("1_2deed")
 side = 2
 slot = 1
 choose_condition = false

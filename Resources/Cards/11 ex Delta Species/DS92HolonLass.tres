@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=13 format=3 uid="uid://cfps337rtsmpi"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=14 format=3 uid="uid://cfps337rtsmpi"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_c210u"]
+[ext_resource type="Texture2D" uid="uid://cbidbiom6jjhq" path="res://Art/Cards/11 ex Delta Species/92.jpg" id="1_kwip2"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_sjf0f"]
 [ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="3_jkrwu"]
 [ext_resource type="Resource" uid="uid://bl4qnrkh3kxdl" path="res://Resources/Components/Effects/Placement/PutIntoHand.tres" id="3_utur0"]
@@ -45,6 +46,7 @@ metadata/_custom_type_script = "uid://crx447i85kshy"
 [resource]
 script = ExtResource("1_c210u")
 name = "Holon Lass"
+image = ExtResource("1_kwip2")
 illustrator = "Kouki Saitou"
 number = 92
 rarity = 1

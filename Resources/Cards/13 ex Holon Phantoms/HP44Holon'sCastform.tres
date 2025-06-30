@@ -1,42 +1,111 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=7 format=3 uid="uid://2gbttee2ievi"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=19 format=3 uid="uid://2gbttee2ievi"]
 
+[ext_resource type="Resource" uid="uid://1iw4wd8nc8ml" path="res://Resources/Components/Effects/EnergyMovement/SelfEnMovToHand.tres" id="1_36kks"]
 [ext_resource type="Script" uid="uid://caj1pm8erar2a" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="1_adrwu"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_khsbn"]
+[ext_resource type="Texture2D" uid="uid://dqdxh2ikej4n0" path="res://Art/Cards/13 ex Holon Phantoms/44.jpg" id="2_45r76"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_kh6h8"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_oe5pn"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="3_45r76"]
+[ext_resource type="Resource" uid="uid://baopicsn523to" path="res://Resources/Components/Effects/Prompts/HasAnyEnergy.tres" id="3_ho6l4"]
+[ext_resource type="Resource" uid="uid://c6ydfl8wqi0hs" path="res://Resources/Components/Effects/Asks/Class&Owner/DeltaPokemon.tres" id="7_6g24n"]
+[ext_resource type="Script" uid="uid://cml2jkc16tlva" path="res://Code/Resource Makers/GeneralUse/CounterMaker.gd" id="8_tf4u3"]
+[ext_resource type="Script" uid="uid://bgtwlw1edjwyc" path="res://Code/Resource Makers/EffectSpecific/DrawMaker.gd" id="9_x1qkv"]
+
+[sub_resource type="Resource" id="Resource_uhfbr"]
+script = ExtResource("2_kh6h8")
+either_or = false
+order = Array[int]([])
+energy_movement = ExtResource("1_36kks")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_m7xdt"]
 script = ExtResource("1_adrwu")
 considered = "Special Energy"
-description = ""
+description = "You may attach this as an Energy card from your hand to 1 of your Pokémon that already has an Energy card attached to it. When you attach this card, return an Energy card attached to that Pokémon to your hand. While attached, this card is a Special Energy card and provides every type of Energy but 2 Energy at a time. (Has no effect other than providing Energy.)"
+prompt = ExtResource("3_ho6l4")
 fail_provide = false
 fail_prevent = false
+attatch_effect = SubResource("Resource_uhfbr")
 turns = -1
-number = 1
+number = 2
 react = false
 holon_type = "None"
-type = 1
+type = 511
 fail_type = 1
 metadata/_custom_type_script = "uid://caj1pm8erar2a"
 
+[sub_resource type="Resource" id="Resource_bbpea"]
+script = ExtResource("8_tf4u3")
+count_for = 1
+filter = 0
+side = 1
+slot = 1
+for_what = 0
+meet_ask = ExtResource("7_6g24n")
+cap = -1
+return_num = 0
+metadata/_custom_type_script = "uid://cml2jkc16tlva"
+
+[sub_resource type="Resource" id="Resource_scy87"]
+script = ExtResource("9_x1qkv")
+shuffle_back_first = false
+side = 1
+bottom_deck = false
+simple_constant = 0
+counter = SubResource("Resource_bbpea")
+metadata/_custom_type_script = "uid://bgtwlw1edjwyc"
+
+[sub_resource type="Resource" id="Resource_cfi5g"]
+script = ExtResource("2_kh6h8")
+either_or = false
+order = Array[int]([])
+draw_ammount = SubResource("Resource_scy87")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_gfvgc"]
+script = ExtResource("2_oe5pn")
+name = "Delta Draw"
+description = "Count the number of Pokémon you have in play that has δ on its card. Draw up to that many cards."
+grass_cost = 0
+fire_cost = 0
+water_cost = 0
+lightning_cost = 0
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 1
+defender_properties = 0
+ignore_condition = 0
+prompt_reliant = false
+initial_main_DMG = 0
+conditional_self_dmg = false
+self_damage = 0
+modifier = 0
+both_active = false
+always_effect = SubResource("Resource_cfi5g")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
 [sub_resource type="Resource" id="Resource_4nuec"]
 script = ExtResource("3_45r76")
-HP = 30
-retreat = 0
-attacks = Array[ExtResource("2_oe5pn")]([])
+HP = 50
+retreat = 1
+attacks = Array[ExtResource("2_oe5pn")]([SubResource("Resource_gfvgc")])
 evo_stage = "Basic"
 evolves_from = ""
-considered = 0
-owner = 0
-type = 1
-weak = 0
+considered = 1
+owner = 4
+type = 256
+weak = 32
 resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
 script = ExtResource("1_khsbn")
 name = "Holon's Castform"
-illustrator = ""
+image = ExtResource("2_45r76")
+illustrator = "Mitsuhiro Arita"
 number = 44
 rarity = 2
 expansion = 12

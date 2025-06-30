@@ -82,7 +82,7 @@ resist = 128
 
 [resource]
 script = ExtResource("1_hw0hl")
-name = " Electabuzz ex"
+name = "Electabuzz ex"
 image = ExtResource("1_y7skg")
 illustrator = "Hikaru Koike"
 number = 97

@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="PromptAsk" load_steps=4 format=3 uid="uid://baopicsn523to"]
+
+[ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="1_lvk6x"]
+[ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="2_ed0hd"]
+
+[sub_resource type="Resource" id="Resource_n2oao"]
+script = ExtResource("1_lvk6x")
+side_target = 1
+slot_target = 4
+specifically = Array[String]([])
+comparison_type = 1
+max_hp = -10
+damage_taken = -10
+retreat_cost = -1
+energy_attatched = 1
+knocked_out = false
+condition = 0
+location = 0
+tool_attatched = false
+stage = 7
+rare_candy = false
+class_inclusive = true
+pokemon_class = 63
+owner_inclusive = true
+pokemon_owner = 15
+bench_size = -1
+type_inclusive = true
+type = 1023
+energy_class = 2
+type_size = -1
+metadata/_custom_type_script = "uid://mkjynqda7q5g"
+
+[resource]
+script = ExtResource("2_ed0hd")
+formal_ask = false
+ask_string = ""
+is_in = SubResource("Resource_n2oao")
+side = 1
+choose_location = 0
+metadata/_custom_type_script = "uid://b85jmc7067bjc"

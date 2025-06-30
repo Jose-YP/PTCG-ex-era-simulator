@@ -3,7 +3,7 @@ extends Node
 class_name CardPlayer
 
 signal chosen
-signal back
+#signal back
 
 var play_functions: Array[Callable] = [play_basic_pokemon, play_evolution, 
 play_place_stadium, play_attatch_tool, play_attatch_tm, play_fossil, 

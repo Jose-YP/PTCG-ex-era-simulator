@@ -85,7 +85,7 @@ resist = 0
 
 [resource]
 script = ExtResource("1_uuq4o")
-name = " Chansey ex"
+name = "Chansey ex"
 image = ExtResource("1_yoln1")
 illustrator = "Ryo Ueda"
 number = 96

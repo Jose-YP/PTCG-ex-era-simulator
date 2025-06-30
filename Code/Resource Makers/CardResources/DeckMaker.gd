@@ -16,9 +16,11 @@ func is_legal() -> bool:
 	
 	if count > 60:
 		status = DECK_STATUS.TOOBIG
+		printerr("This deck isn't legal as it has ", count, " cards")
 		return false
 	if count < 60:
 		status = DECK_STATUS.INCOMPLETE
+		printerr("This deck isn't legal as it has ", count, " cards")
 		return false
 	
 	status = DECK_STATUS.READY
@@ -26,6 +28,7 @@ func is_legal() -> bool:
 
 func make_usable() -> Array[Base_Card]:
 	var usable: Array[Base_Card] = []
+	
 	for card in cards:
 		for i in cards[card]:
 			#These have to be unique to make search function

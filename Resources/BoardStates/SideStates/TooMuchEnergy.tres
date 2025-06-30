@@ -1,7 +1,11 @@
-[gd_resource type="Resource" script_class="SideState" load_steps=8 format=3 uid="uid://cu2ksi0icg1cg"]
+[gd_resource type="Resource" script_class="SideState" load_steps=13 format=3 uid="uid://cu2ksi0icg1cg"]
 
 [ext_resource type="Resource" uid="uid://bsbo6s5jo87t2" path="res://Resources/Decks/EnergysDeck.tres" id="1_xrlcv"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_w3gu5"]
+[ext_resource type="Resource" uid="uid://cc3kjnmsj4pr3" path="res://Resources/Cards/1 ex Ruby & Saphire/RS80EnergyRemoval2.tres" id="3_mbehl"]
+[ext_resource type="Resource" uid="uid://cvjyyq2lad5k5" path="res://Resources/Cards/1 ex Ruby & Saphire/RS108FireEnergy.tres" id="4_syeol"]
+[ext_resource type="Resource" uid="uid://c2tk6qy8h57lw" path="res://Resources/Cards/1 ex Ruby & Saphire/RS82EnergySwitch.tres" id="5_mbehl"]
+[ext_resource type="Resource" uid="uid://8aluya3mraht" path="res://Resources/Cards/2 ex Sandstorm/SS54Wynaut.tres" id="10_h8qln"]
 [ext_resource type="Script" uid="uid://calm3n7va5yjo" path="res://Code/Resource Makers/GeneralUse/CardStacksMaker.gd" id="21_6pic0"]
 [ext_resource type="Script" uid="uid://dgqpurnuh14t1" path="res://Code/Resource Makers/GeneralUse/SideStateMaker.gd" id="22_ema4h"]
 [ext_resource type="Script" uid="uid://cs70ix831b5g4" path="res://Code/Resource Makers/PokemonSpecific/PokeSlotMaker.gd" id="23_gp3on"]
@@ -11,10 +15,62 @@
 script = ExtResource("21_6pic0")
 deck = ExtResource("1_xrlcv")
 init_deck = Array[ExtResource("2_w3gu5")]([])
-init_hand = Array[ExtResource("2_w3gu5")]([])
+init_hand = Array[ExtResource("2_w3gu5")]([ExtResource("3_mbehl"), ExtResource("4_syeol"), ExtResource("5_mbehl")])
 init_discard = Array[ExtResource("2_w3gu5")]([])
 init_prize = Array[ExtResource("2_w3gu5")]([])
 metadata/_custom_type_script = "uid://calm3n7va5yjo"
+
+[sub_resource type="Resource" id="Resource_gimbx"]
+script = ExtResource("23_gp3on")
+player_type = 0
+current_card = ExtResource("10_h8qln")
+evolution_ready = false
+evolved_this_turn = false
+evolved_from = Array[ExtResource("2_w3gu5")]([])
+energy_cards = Array[ExtResource("2_w3gu5")]([])
+attached_energy = {
+"Aqua": 0,
+"Colorless": 0,
+"Dark Metal": 0,
+"Darkness": 0,
+"Fighting": 0,
+"Fire": 0,
+"Grass": 0,
+"Holon FF": 0,
+"Holon GL": 0,
+"Holon WP": 0,
+"Lightning": 0,
+"Magma": 0,
+"Metal": 0,
+"Psychic": 0,
+"Rainbow": 0,
+"React": 0,
+"Water": 0
+}
+tm_cards = Array[ExtResource("2_w3gu5")]([])
+use_weakness = true
+use_resistance = true
+type = 0
+weak = 0
+resist = 0
+attack_buff = 0
+defense_buff = 0
+use_body = true
+ex_immune = false
+use_power = false
+use_attack = true
+in_attacking_turn = true
+damage_counters = 0
+benched = false
+poison_condition = 0
+burn_condition = 0
+turn_condition = 0
+imprison = false
+shockwave = false
+readied = false
+knocked_out = false
+is_target = false
+metadata/_custom_type_script = "uid://cs70ix831b5g4"
 
 [resource]
 script = ExtResource("22_ema4h")
@@ -22,6 +78,7 @@ card_stacks = SubResource("Resource_ai8fb")
 prize_cards = 6
 bench_size = 5
 slots = Dictionary[ExtResource("23_gp3on"), bool]({
-ExtResource("24_g8kch"): true
+ExtResource("24_g8kch"): true,
+SubResource("Resource_gimbx"): false
 })
 metadata/_custom_type_script = "uid://dgqpurnuh14t1"

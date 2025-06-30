@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Deck" load_steps=28 format=3 uid="uid://bsbo6s5jo87t2"]
+[gd_resource type="Resource" script_class="Deck" load_steps=30 format=3 uid="uid://bsbo6s5jo87t2"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_8sv5r"]
 [ext_resource type="Resource" uid="uid://cjxwqcnfm20fq" path="res://Resources/Cards/1 ex Ruby & Saphire/RS104GrassEnergy.tres" id="2_7rjek"]
@@ -21,40 +21,44 @@
 [ext_resource type="Resource" uid="uid://ch7qqjhkbd26n" path="res://Resources/Cards/12 ex Legend Maker/LM88Mew-ex.tres" id="19_mmoec"]
 [ext_resource type="Script" uid="uid://e660iomt5e76" path="res://Code/Resource Makers/CardResources/DeckMaker.gd" id="19_yiiw5"]
 [ext_resource type="Resource" uid="uid://c2tk6qy8h57lw" path="res://Resources/Cards/1 ex Ruby & Saphire/RS82EnergySwitch.tres" id="20_y8kfg"]
-[ext_resource type="Resource" uid="uid://biwey6tlevx3y" path="res://Resources/Cards/1 ex Ruby & Saphire/RS81EnergyRestore.tres" id="21_qvaoo"]
 [ext_resource type="Resource" uid="uid://bktrsptpmigoe" path="res://Resources/Cards/1 ex Ruby & Saphire/RS90EnergySearch.tres" id="22_jdxhp"]
 [ext_resource type="Resource" uid="uid://w140efhwynxf" path="res://Resources/Cards/14 ex Crystal Guardians/CG72Castaway.tres" id="23_2fhxc"]
 [ext_resource type="Resource" uid="uid://cg7qhfrgw5lmh" path="res://Resources/Cards/7 ex Team Rocket Returns/TRR50Togepi.tres" id="24_bym1g"]
 [ext_resource type="Resource" uid="uid://bsk4yge3w701c" path="res://Resources/Cards/7 ex Team Rocket Returns/TRR14Togetic.tres" id="25_go32p"]
 [ext_resource type="Resource" uid="uid://c3f1stq37lffi" path="res://Resources/Cards/2 ex Sandstorm/SS60Dunsparce.tres" id="26_2l30t"]
+[ext_resource type="Resource" uid="uid://8aluya3mraht" path="res://Resources/Cards/2 ex Sandstorm/SS54Wynaut.tres" id="27_mmoec"]
+[ext_resource type="Resource" uid="uid://cc3kjnmsj4pr3" path="res://Resources/Cards/1 ex Ruby & Saphire/RS80EnergyRemoval2.tres" id="28_mmoec"]
+[ext_resource type="Resource" uid="uid://dcgvxv02mymn0" path="res://Resources/Cards/2 ex Sandstorm/SS26Wobbuffet.tres" id="28_y8kfg"]
 
 [resource]
 script = ExtResource("19_yiiw5")
 cards = Dictionary[ExtResource("1_8sv5r"), int]({
-ExtResource("26_2l30t"): 4,
-ExtResource("25_go32p"): 3,
-ExtResource("24_bym1g"): 4,
-ExtResource("23_2fhxc"): 2,
-ExtResource("22_jdxhp"): 2,
-ExtResource("21_qvaoo"): 2,
-ExtResource("20_y8kfg"): 2,
-ExtResource("19_mmoec"): 3,
-ExtResource("18_2l30t"): 2,
-ExtResource("17_go32p"): 2,
-ExtResource("16_bym1g"): 2,
-ExtResource("15_2fhxc"): 2,
-ExtResource("14_jdxhp"): 2,
-ExtResource("13_qvaoo"): 2,
-ExtResource("12_y8kfg"): 2,
-ExtResource("11_mmoec"): 2,
-ExtResource("10_mlujw"): 2,
-ExtResource("9_rdet8"): 2,
-ExtResource("8_wqs0q"): 2,
-ExtResource("7_7yefa"): 2,
-ExtResource("6_wr612"): 2,
-ExtResource("5_6l4ih"): 2,
-ExtResource("4_4phmd"): 2,
+ExtResource("28_mmoec"): 2,
+ExtResource("28_y8kfg"): 2,
+ExtResource("27_mmoec"): 2,
+ExtResource("2_7rjek"): 2,
 ExtResource("3_t40pd"): 2,
-ExtResource("2_7rjek"): 2
+ExtResource("4_4phmd"): 2,
+ExtResource("5_6l4ih"): 2,
+ExtResource("6_wr612"): 2,
+ExtResource("7_7yefa"): 2,
+ExtResource("8_wqs0q"): 2,
+ExtResource("9_rdet8"): 2,
+ExtResource("10_mlujw"): 2,
+ExtResource("11_mmoec"): 2,
+ExtResource("12_y8kfg"): 2,
+ExtResource("13_qvaoo"): 2,
+ExtResource("14_jdxhp"): 2,
+ExtResource("15_2fhxc"): 2,
+ExtResource("16_bym1g"): 2,
+ExtResource("17_go32p"): 2,
+ExtResource("18_2l30t"): 2,
+ExtResource("19_mmoec"): 3,
+ExtResource("20_y8kfg"): 2,
+ExtResource("22_jdxhp"): 2,
+ExtResource("23_2fhxc"): 2,
+ExtResource("24_bym1g"): 4,
+ExtResource("25_go32p"): 3,
+ExtResource("26_2l30t"): 4
 })
 metadata/_custom_type_script = "uid://e660iomt5e76"
