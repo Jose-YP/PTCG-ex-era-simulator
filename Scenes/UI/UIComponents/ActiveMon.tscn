@@ -96,9 +96,9 @@ text = "+"
 [node name="EnergyTypes" parent="." instance=ExtResource("6_nykcf")]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = -9.0
+offset_left = 2.0
 offset_top = 147.0
-offset_right = 211.0
+offset_right = 194.0
 offset_bottom = 171.0
 
 [node name="TypeContainer" type="HBoxContainer" parent="."]

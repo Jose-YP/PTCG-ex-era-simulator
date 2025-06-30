@@ -23,6 +23,7 @@ var supporter_used: bool = false
 func _ready():
 	SignalBus.connect("show_list", spawn_list)
 	SignalBus.connect("swap_card_location", placement_handling)
+	SignalBus.connect("show_energy_attatched", spawn_energy_list)
 	SignalBus.connect("reorder_cards", reorder_handling)
 
 func assign_card_stacks(stacks: CardStacks, side: bool):
@@ -177,6 +178,10 @@ func instantiate_list(specified_list: Dictionary[Base_Card, bool], which: Consta
 	Globals.fundies.current_list = new_node
 
 func pick_prize():
+	pass
+
+func spawn_energy_list(slot: PokeSlot):
+	print("WHAT???")
 	pass
 
 func show_reveal_stack(reveal_slot):

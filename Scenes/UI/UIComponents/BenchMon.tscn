@@ -28,7 +28,7 @@ offset_right = -0.0400085
 offset_bottom = 0.279999
 script = ExtResource("1_ktjfi")
 active = false
-metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
 
 [node name="Main" type="VBoxContainer" parent="."]
 layout_mode = 0
@@ -132,10 +132,10 @@ layout_mode = 2
 [node name="EnergyTypes" parent="." instance=ExtResource("7_lj5ts")]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = -12.0
-offset_top = 138.0
+offset_left = -8.0
+offset_top = 118.0
 offset_right = 212.0
-offset_bottom = 162.0
+offset_bottom = 142.0
 en_count = 6
 
 [node name="Conditions" type="VBoxContainer" parent="."]

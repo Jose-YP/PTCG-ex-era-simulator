@@ -1,67 +1,96 @@
-[gd_scene load_steps=3 format=3 uid="uid://dph43kayde03u"]
+[gd_scene load_steps=4 format=3 uid="uid://dph43kayde03u"]
 
 [ext_resource type="Script" uid="uid://cynioeqfr1oyb" path="res://Code/Scenes/UI/Main/energy_types.gd" id="1_3xx0f"]
 [ext_resource type="PackedScene" uid="uid://bs3ila6cpt8n1" path="res://Scenes/UI/UIComponents/types.tscn" id="1_ksw5v"]
 
-[node name="EnergyTypes" type="GridContainer"]
-offset_left = -4.0
-offset_top = 150.0
-offset_right = 216.0
-offset_bottom = 176.0
-mouse_filter = 2
-columns = 8
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3xx0f"]
+
+[node name="EnergyTypes" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("1_3xx0f")
 
-[node name="Types" parent="." instance=ExtResource("1_ksw5v")]
+[node name="Timer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 1.25
+
+[node name="Panel" type="PanelContainer" parent="."]
+layout_mode = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_3xx0f")
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 2
+theme_type_variation = &"EnergyButton"
+
+[node name="Container" type="HBoxContainer" parent="Panel"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Types" parent="Panel/Container" instance=ExtResource("1_ksw5v")]
 layout_mode = 2
 
-[node name="Types2" parent="." instance=ExtResource("1_ksw5v")]
+[node name="Types2" parent="Panel/Container" instance=ExtResource("1_ksw5v")]
 layout_mode = 2
 
-[node name="Types3" parent="." instance=ExtResource("1_ksw5v")]
+[node name="Types3" parent="Panel/Container" instance=ExtResource("1_ksw5v")]
 layout_mode = 2
 
-[node name="Types4" parent="." instance=ExtResource("1_ksw5v")]
+[node name="Types4" parent="Panel/Container" instance=ExtResource("1_ksw5v")]
 layout_mode = 2
 
-[node name="Types5" parent="." instance=ExtResource("1_ksw5v")]
+[node name="Types5" parent="Panel/Container" instance=ExtResource("1_ksw5v")]
 layout_mode = 2
 
-[node name="Types6" parent="." instance=ExtResource("1_ksw5v")]
+[node name="Types6" parent="Panel/Container" instance=ExtResource("1_ksw5v")]
 layout_mode = 2
 
-[node name="Types7" parent="." instance=ExtResource("1_ksw5v")]
+[node name="Types7" parent="Panel/Container" instance=ExtResource("1_ksw5v")]
 layout_mode = 2
 
-[node name="Types8" parent="." instance=ExtResource("1_ksw5v")]
+[node name="Types8" parent="Panel/Container" instance=ExtResource("1_ksw5v")]
+visible = false
 layout_mode = 2
 
-[node name="Types9" parent="." instance=ExtResource("1_ksw5v")]
+[node name="Types9" parent="Panel/Container" instance=ExtResource("1_ksw5v")]
+visible = false
 layout_mode = 2
 
-[node name="Types10" parent="." instance=ExtResource("1_ksw5v")]
+[node name="Types10" parent="Panel/Container" instance=ExtResource("1_ksw5v")]
+visible = false
 layout_mode = 2
 
-[node name="Types11" parent="." instance=ExtResource("1_ksw5v")]
+[node name="Types11" parent="Panel/Container" instance=ExtResource("1_ksw5v")]
+visible = false
 layout_mode = 2
 
-[node name="Types12" parent="." instance=ExtResource("1_ksw5v")]
+[node name="Types12" parent="Panel/Container" instance=ExtResource("1_ksw5v")]
+visible = false
 layout_mode = 2
 
-[node name="Types13" parent="." instance=ExtResource("1_ksw5v")]
+[node name="Types13" parent="Panel/Container" instance=ExtResource("1_ksw5v")]
+visible = false
 layout_mode = 2
 
-[node name="Types14" parent="." instance=ExtResource("1_ksw5v")]
+[node name="Types14" parent="Panel/Container" instance=ExtResource("1_ksw5v")]
+visible = false
 layout_mode = 2
 
-[node name="Types15" parent="." instance=ExtResource("1_ksw5v")]
+[node name="Types15" parent="Panel/Container" instance=ExtResource("1_ksw5v")]
+visible = false
 layout_mode = 2
 
-[node name="Types16" parent="." instance=ExtResource("1_ksw5v")]
+[node name="Types16" parent="Panel/Container" instance=ExtResource("1_ksw5v")]
+visible = false
 layout_mode = 2
 
-[node name="Types17" parent="." instance=ExtResource("1_ksw5v")]
+[node name="Types17" parent="Panel/Container" instance=ExtResource("1_ksw5v")]
+visible = false
 layout_mode = 2
 
-[node name="Types18" parent="." instance=ExtResource("1_ksw5v")]
-layout_mode = 2
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]

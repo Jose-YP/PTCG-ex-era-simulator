@@ -2,6 +2,10 @@
 extends Button
 class_name Close_Button
 
+func _input(event: InputEvent) -> void:
+	if event.is_action("Back"):
+		_on_pressed()
+
 func _on_pressed() -> void:
 	await closing_animation()
 	owner.queue_free()
