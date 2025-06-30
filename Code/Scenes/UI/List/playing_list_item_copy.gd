@@ -46,7 +46,7 @@ func allow_move_to(destination: Constants.STACKS):
 	disabled = false
 	match destination:
 		Constants.STACKS.DISCARD: stack_act = Constants.STACK_ACT.DISCARD
-		_: stack_act = Constants.STACK_ACT.TUTOR
+		Constants.STACKS.PLAY: stack_act = Constants.STACK_ACT.TUTOR
 
 func is_tutored() -> bool:
 	return not parent is PlayingList
@@ -81,48 +81,22 @@ func show_options() -> Node:
 	
 	return option_Display
 
-#There's a function almost just like this in 
-#"res://Scenes/UI/UIComponents/art_button.tscn"
-#One day make a function that can do this kind of task globally from any node
-func show_card() -> void:
-	var considered: String = card.card_display()
-	var node_tween: Tween = get_tree().create_tween().set_parallel(true)
-	var card_display: Node
-	match considered:
-		"Pokemon":
-			card_display = load("res://Scenes/UI/CardDisplay/PokemonCard.tscn").instantiate()
-			card_display.checking = true
-		"Trainer":
-			card_display = Constants.trainer_card.instantiate()
-		"Energy":
-			card_display = Constants.energy_card.instantiate()
-	
-	card_display.card = card
-	card_display.top_level = true
-	card_display.position = global_position #Put on center of screen
-	card_display.scale = Vector2(.05, .05)
-	card_display.modulate = Color.TRANSPARENT
-	card_display.name = str(card.name, " Card")
-	add_child(card_display)
-	parent.display = card_display
-	parent.connect_display()
-	
-	node_tween.tween_property(card_display, "position", get_viewport_rect().size / 2 - Vector2(100,150), .1)
-	node_tween.tween_property(card_display, "scale", Vector2.ONE, .1)
-	node_tween.tween_property(card_display, "modulate", Color.WHITE, .1)
-	
-	#Can't do anything outside of interact with the check display
-	Globals.checking_card()
-
 func _gui_input(event):
-	if not Globals.checking and not disabled:
+	if not disabled:
 		if event.is_action_pressed("A"):
 			if parent.options:
 				await parent.options.disapear()
 			else:
-				parent.options = show_options()
-		elif event.is_action_pressed("Check") and parent.display:
-			show_card()
+				if stack_act == Constants.STACK_ACT.LOOK:
+					Globals.show_card(card, self, parent)
+				elif not Globals.checking:
+					parent.options = show_options()
+	if event.is_action_pressed("Check"):
+		Globals.show_card(card, self, parent)
 
 #endregion
 #--------------------------------------
+
+
+func _on_pressed() -> void:
+	pass # Replace with function body.

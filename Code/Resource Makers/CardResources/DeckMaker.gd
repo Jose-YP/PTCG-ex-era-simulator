@@ -28,6 +28,7 @@ func make_usable() -> Array[Base_Card]:
 	var usable: Array[Base_Card] = []
 	for card in cards:
 		for i in cards[card]:
-			usable.append(card)
+			#These have to be unique to make search function
+			usable.append(card.duplicate())
 	
 	return usable

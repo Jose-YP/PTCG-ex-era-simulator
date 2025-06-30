@@ -45,3 +45,6 @@ func _ready():
 func make_text(node: RichTextLabel, text: String):
 	node.clear()
 	node.append_text(text)
+
+func _on_tree_exiting() -> void:
+	Globals.checking = false

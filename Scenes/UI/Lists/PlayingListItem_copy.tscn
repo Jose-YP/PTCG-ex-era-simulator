@@ -48,6 +48,7 @@ option_offset = Vector2(30, 50)
 layout_mode = 0
 offset_right = 407.0
 offset_bottom = 84.0
+mouse_filter = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -55,6 +56,7 @@ theme_override_constants/margin_bottom = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="LeftSpawn" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
@@ -102,3 +104,5 @@ theme_override_constants/margin_right = 15
 visible = false
 layout_mode = 2
 theme_override_constants/margin_top = 19
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

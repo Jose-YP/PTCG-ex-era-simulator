@@ -1,0 +1,85 @@
+[gd_resource type="Resource" script_class="PokeSlot" load_steps=10 format=3 uid="uid://cbbgtypsmc1a2"]
+
+[ext_resource type="Resource" uid="uid://b8kt4i4jgosm8" path="res://Resources/Cards/1 ex Ruby & Saphire/RS3Blaziken.tres" id="1_j0klf"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_br7xd"]
+[ext_resource type="Resource" uid="uid://bbpbby31t7cth" path="res://Resources/Components/Energy/Basic Energy/FireEnergy.tres" id="3_jdscm"]
+[ext_resource type="Texture2D" uid="uid://cyr5xfh5yroaf" path="res://Art/Cards/1 ex Ruby & Saphire/108.jpg" id="4_1ppjs"]
+[ext_resource type="Resource" uid="uid://dqknf3vfxe3hp" path="res://Resources/Cards/1 ex Ruby & Saphire/RS73Torchic.tres" id="5_vh3hf"]
+[ext_resource type="Resource" uid="uid://dq5yc7aoltpwf" path="res://Resources/Cards/1 ex Ruby & Saphire/RS27Combusken.tres" id="6_pttkb"]
+[ext_resource type="Script" uid="uid://cs70ix831b5g4" path="res://Code/Resource Makers/PokemonSpecific/PokeSlotMaker.gd" id="7_o332v"]
+
+[sub_resource type="Resource" id="Resource_0tjgr"]
+script = ExtResource("2_br7xd")
+name = "Fire Energy"
+image = ExtResource("4_1ppjs")
+illustrator = ""
+number = 108
+rarity = 0
+expansion = 0
+categories = 4
+energy_properties = ExtResource("3_jdscm")
+fossil = false
+
+[sub_resource type="Resource" id="Resource_xbexa"]
+script = ExtResource("2_br7xd")
+name = "Fire Energy"
+image = ExtResource("4_1ppjs")
+illustrator = ""
+number = 108
+rarity = 0
+expansion = 0
+categories = 4
+energy_properties = ExtResource("3_jdscm")
+fossil = false
+
+[resource]
+script = ExtResource("7_o332v")
+player_type = 0
+current_card = ExtResource("1_j0klf")
+evolution_ready = false
+evolved_this_turn = false
+evolved_from = Array[ExtResource("2_br7xd")]([ExtResource("5_vh3hf"), ExtResource("6_pttkb")])
+energy_cards = Array[ExtResource("2_br7xd")]([SubResource("Resource_0tjgr"), SubResource("Resource_xbexa")])
+attached_energy = {
+"Aqua": 0,
+"Colorless": 0,
+"Dark Metal": 0,
+"Darkness": 0,
+"Fighting": 0,
+"Fire": 0,
+"Grass": 0,
+"Holon FF": 0,
+"Holon GL": 0,
+"Holon WP": 0,
+"Lightning": 0,
+"Magma": 0,
+"Metal": 0,
+"Psychic": 0,
+"Rainbow": 0,
+"React": 0,
+"Water": 0
+}
+tm_cards = Array[ExtResource("2_br7xd")]([])
+use_weakness = true
+use_resistance = true
+type = 0
+weak = 0
+resist = 0
+attack_buff = 0
+defense_buff = 0
+use_body = true
+ex_immune = false
+use_power = false
+use_attack = true
+in_attacking_turn = true
+damage_counters = 0
+benched = false
+poison_condition = 0
+burn_condition = 0
+turn_condition = 0
+imprison = false
+shockwave = false
+readied = false
+knocked_out = false
+is_target = false
+metadata/_custom_type_script = "uid://cs70ix831b5g4"

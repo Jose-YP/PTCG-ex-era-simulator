@@ -41,6 +41,8 @@ func show_card(card: Base_Card, parent: Node, ancestor: Node = null):
 	node_tween.tween_property(card_display, "scale", Vector2.ONE, .1)
 	node_tween.tween_property(card_display, "modulate", Color.WHITE, .1)
 	checked_card = card_display
+	checked_card.z_index = 1
+	#checked_card.connect("tree")
 	checking_card()
 
 func remove_card():

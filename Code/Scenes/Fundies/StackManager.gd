@@ -142,47 +142,46 @@ func get_list(which: Constants.STACKS) -> Dictionary[Base_Card, bool]:
 	return dict
 
 func spawn_list(monitor_side: bool, which: Constants.STACKS, stack_act: Constants.STACK_ACT):
-	var instructions: String
 	operate_home = monitor_side
 	
-	match stack_act:
-		Constants.STACK_ACT.PLAY: instructions = "Choose which allowed cards to play"
-		Constants.STACK_ACT.TUTOR: instructions = "Choose which allowed cards to add"
-		Constants.STACK_ACT.DISCARD: instructions = "Choose which allowed cards to discard"
-		Constants.STACK_ACT.LOOK: instructions = "Only allowed to check cards"
-		_: printerr(stack_act, " not apart of stack act enum")
-	
-	instantiate_list(get_list(which), which, stack_act, instructions)
+	instantiate_list(get_list(which), which, stack_act)
 
 func instantiate_list(specified_list: Dictionary[Base_Card, bool], which: Constants.STACKS,\
  stack_act: Constants.STACK_ACT = Constants.STACK_ACT.LOOK, instructions: String = ""):
-	var hand_list: PackedScene = Constants.playing_list
-	var new_node = hand_list.instantiate()
-	
-	match which:
-		Constants.STACKS.HAND: new_node.display_text = "HAND"
-		Constants.STACKS.DECK: new_node.display_text = "DECK"
-		Constants.STACKS.DISCARD: new_node.display_text = "DISCARD"
-		Constants.STACKS.PRIZE: new_node.display_text = "PRIZE"
+	var new_node = Constants.playing_list.instantiate()
 	
 	new_node.list = specified_list
 	new_node.top_level = true
-	new_node.instruction_text = instructions
-	
 	new_node.home = operate_home
 	new_node.old_pos = Globals.fundies.get_side_ui().non_mon.stacks[which].global_position
 	new_node.stack_act = stack_act
 	new_node.stack = which
 	new_node.allowed_as = allowed_play
+	if instructions != "":
+		new_node.instruction_text = instructions
 	add_sibling(new_node)
 	Globals.fundies.current_list = new_node
 
 func pick_prize():
 	pass
 
-func spawn_energy_list(slot: PokeSlot):
+func spawn_energy_list(slot: PokeSlot, allowed_fun: Callable = func(a): return true):
 	print("WHAT???")
-	pass
+	var energy_dict: Dictionary[Base_Card, bool]
+	for card in slot.energy_cards:
+		energy_dict[card] = allowed_fun.call(card)
+	
+	var new_node = Constants.playing_list.instantiate()
+	
+	new_node.list = energy_dict
+	new_node.top_level = true
+	new_node.home = operate_home
+	new_node.old_pos = slot.ui_slot.global_position
+	new_node.stack_act = Constants.STACK_ACT.LOOK
+	new_node.stack = Constants.STACKS.NONE
+	Globals.fundies.current_list = new_node
+	add_sibling(new_node)
+	Globals.fundies.current_list = new_node
 
 func show_reveal_stack(reveal_slot):
 	var stacks = get_stacks(operate_home)
@@ -237,12 +236,6 @@ func identifier_search(list: Array[Base_Card], based_on: Array[PokeSlot],\
 func tutor_instantiate_list(specified_list: Array[Dictionary], search: Search):
 	var hand_list: PackedScene = Constants.playing_list
 	var new_node = hand_list.instantiate()
-	
-	match search.where:
-		Constants.STACKS.HAND: new_node.display_text = "HAND"
-		Constants.STACKS.DECK: new_node.display_text = "DECK"
-		Constants.STACKS.DISCARD: new_node.display_text = "DISCARD"
-		Constants.STACKS.PRIZE: new_node.display_text = "PRIZE"
 	
 	new_node.all_lists = specified_list
 	new_node.list = specified_list[0]

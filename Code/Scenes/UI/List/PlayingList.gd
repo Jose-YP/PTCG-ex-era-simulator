@@ -38,11 +38,30 @@ var home: bool = true
 #--------------------------------------
 #region INITALIZATION
 func _ready():
+	match stack_act:
+		Constants.STACK_ACT.PLAY: instruction_text = "Choose which allowed cards to play"
+		Constants.STACK_ACT.TUTOR:
+			%Close_Button.hide()
+			instruction_text = "Choose which allowed cards to add"
+		Constants.STACK_ACT.DISCARD:
+			%Close_Button.hide()
+			instruction_text = "Choose which allowed cards to discard"
+		Constants.STACK_ACT.LOOK: instruction_text = "Only allowed to check cards"
+		_: printerr(stack_act, " not apart of stack act enum")
+	match stack:
+		Constants.STACKS.HAND: display_text = "HAND"
+		Constants.STACKS.DECK: display_text = "DECK"
+		Constants.STACKS.DISCARD: display_text = "DISCARD"
+		Constants.STACKS.PRIZE: display_text = "PRIZE"
+		Constants.STACKS.PLAY: display_text = "HAND"
+		Constants.STACKS.NONE: pass
+		_: printerr(stack, " not apart of stack enum")
+	
 	identifier.append_text(display_text)
 	instructions.append_text(instruction_text)
 	
-	if stack != Constants.STACKS.HAND:
-		%Close_Button.hide()
+	if instruction_text == "":
+		%IdentifierPanel.hide()
 	
 	set_items()
 

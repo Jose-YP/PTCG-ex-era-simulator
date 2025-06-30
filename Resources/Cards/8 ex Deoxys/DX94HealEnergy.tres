@@ -16,7 +16,7 @@ dmgManip = ExtResource("3_27bls")
 [sub_resource type="Resource" id="Resource_xkhcd"]
 script = ExtResource("2_gb4dl")
 considered = "Special Energy"
-description = " Heal Energy provides {Colorless Energy}. When you attach this card from your hand to 1 of your Pokémon, remove 1 damage counter and all Special Conditions from that Pokémon. If Heal Energy is attached to Pokémon-ex, Heal Energy has no effect other than providing Energy."
+description = " Heal Energy provides {Colorless} Energy. When you attach this card from your hand to 1 of your Pokémon, remove 1 damage counter and all Special Conditions from that Pokémon. If Heal Energy is attached to Pokémon-ex, Heal Energy has no effect other than providing Energy."
 asks = ExtResource("1_adv1g")
 fail_provide = false
 fail_prevent = false
