@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://df8x227c7a8q4"]
+[gd_scene load_steps=10 format=3 uid="uid://df8x227c7a8q4"]
 
 [ext_resource type="Script" uid="uid://wt6o27vmhuas" path="res://Code/Scenes/UI/Main/UISlot.gd" id="1_ktjfi"]
 [ext_resource type="Texture2D" uid="uid://ct7oa74jhqcwq" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/74.jpg" id="2_m52es"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://d3nrajtlwbvgh" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/84.jpg" id="3_pjvm0"]
 [ext_resource type="PackedScene" uid="uid://bs3ila6cpt8n1" path="res://Scenes/UI/UIComponents/types.tscn" id="4_nhrrd"]
 [ext_resource type="Texture2D" uid="uid://cijlbc37pj4gd" path="res://icon.svg" id="5_r3j25"]
+[ext_resource type="PackedScene" uid="uid://dph43kayde03u" path="res://Scenes/UI/UIComponents/energy_types.tscn" id="7_lj5ts"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lj5ts"]
 resource_local_to_scene = true
@@ -95,41 +96,6 @@ texture = ExtResource("3_pjvm0")
 expand_mode = 5
 stretch_mode = 4
 
-[node name="EnergyTypes" type="HBoxContainer" parent="."]
-unique_name_in_owner = true
-layout_mode = 2
-offset_left = -8.0
-offset_top = 112.0
-offset_right = 156.0
-offset_bottom = 136.0
-mouse_filter = 2
-
-[node name="Types" parent="EnergyTypes" instance=ExtResource("4_nhrrd")]
-layout_mode = 2
-
-[node name="Types2" parent="EnergyTypes" instance=ExtResource("4_nhrrd")]
-layout_mode = 2
-
-[node name="Types3" parent="EnergyTypes" instance=ExtResource("4_nhrrd")]
-visible = false
-layout_mode = 2
-
-[node name="Types4" parent="EnergyTypes" instance=ExtResource("4_nhrrd")]
-visible = false
-layout_mode = 2
-
-[node name="Types5" parent="EnergyTypes" instance=ExtResource("4_nhrrd")]
-visible = false
-layout_mode = 2
-
-[node name="Types6" parent="EnergyTypes" instance=ExtResource("4_nhrrd")]
-visible = false
-layout_mode = 2
-
-[node name="Types7" parent="EnergyTypes" instance=ExtResource("4_nhrrd")]
-visible = false
-layout_mode = 2
-
 [node name="TypeContainer" type="HBoxContainer" parent="."]
 unique_name_in_owner = true
 layout_mode = 0
@@ -162,6 +128,15 @@ layout_mode = 2
 [node name="Types6" parent="TypeContainer" instance=ExtResource("4_nhrrd")]
 visible = false
 layout_mode = 2
+
+[node name="EnergyTypes" parent="." instance=ExtResource("7_lj5ts")]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -12.0
+offset_top = 138.0
+offset_right = 212.0
+offset_bottom = 162.0
+en_count = 6
 
 [node name="Conditions" type="VBoxContainer" parent="."]
 layout_mode = 0

@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Buff" load_steps=3 format=3 uid="uid://1siwtrlhj518"]
+
+[ext_resource type="Resource" uid="uid://bydi0pyqva0ly" path="res://Resources/Components/Effects/Asks/Class&Owner/DefExMon.tres" id="1_bgea0"]
+[ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/BuffMaker.gd" id="2_akc5w"]
+
+[resource]
+script = ExtResource("2_akc5w")
+side = 4
+slot = 1
+duration = -1
+against = ExtResource("1_bgea0")
+attack_damage = 0
+defense = 0
+retreat_change = 0
+after_weak_res = true
+ignore_res_other = false
+ignore_weak_self = false
+immunities = 6
+immune_to_special_conditions = false
+immune_to_effects = true
+immune_to_damage = true
+metadata/_custom_type_script = "uid://coojhwe6m20gd"

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Mimic" load_steps=2 format=3 uid="uid://ddwidijycqadu"]
+
+[ext_resource type="Script" uid="uid://dtv1d2u2kvixy" path="res://Code/Resource Makers/EffectSpecific/MimicMaker.gd" id="1_l3uvi"]
+
+[resource]
+script = ExtResource("1_l3uvi")
+side = 4
+slots = 3
+attatched_cards = false
+must_pay_energy = false
+adjustable_type = false
+metadata/_custom_type_script = "uid://dtv1d2u2kvixy"

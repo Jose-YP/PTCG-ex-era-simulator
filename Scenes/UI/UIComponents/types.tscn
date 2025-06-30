@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bs3ila6cpt8n1"]
+[gd_scene load_steps=14 format=3 uid="uid://bs3ila6cpt8n1"]
 
 [ext_resource type="Script" uid="uid://yp1ave4we0i2" path="res://Code/Scenes/UI/types.gd" id="1_476s5"]
 [ext_resource type="Texture2D" uid="uid://cujjluirx6yyu" path="res://Art/Energy/48px-Grass-attack.png" id="2_ibm8e"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://gom7mkykamch" path="res://Art/Energy/48px-Metal-attack.png" id="9_r1y5g"]
 [ext_resource type="Texture2D" uid="uid://dht4h5jns71o5" path="res://Art/Energy/48px-Colorless-attack.png" id="10_6wlln"]
 [ext_resource type="Texture2D" uid="uid://l6f5mmmcjnyq" path="res://Art/Energy/35px-Rainbow-attack.png" id="11_x7hf6"]
+[ext_resource type="Texture2D" uid="uid://jjb4hkrwn216" path="res://Art/UI/more.png" id="12_72mgm"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nsmgk"]
 
@@ -187,6 +188,13 @@ mouse_filter = 2
 texture = ExtResource("10_6wlln")
 expand_mode = 2
 metadata/_tab_index = 16
+
+[node name="Misc" type="TextureRect" parent="Tabs"]
+visible = false
+layout_mode = 2
+texture = ExtResource("12_72mgm")
+expand_mode = 2
+metadata/_tab_index = 17
 
 [node name="Number" type="RichTextLabel" parent="."]
 visible = false

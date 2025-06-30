@@ -13,6 +13,8 @@ class_name Buff
 @export_range(-120, 120, 10) var attack_damage: int = 0
 ##How much less damage should be taken from opponent
 @export_range(-120, 120, 10) var defense: int = 0
+##How mucht to add/subtract from a pokemon's retreat cost?
+@export_range(-10,6,1) var retreat_change: int = 0
 ##Is it applied before or after weak/res
 @export var after_weak_res: bool = true
 ##Ignore the resistance of whatever this pokemon attacks next
@@ -21,7 +23,7 @@ class_name Buff
 @export var ignore_weak_self: bool = false
 @export_flags("Special Conditions", "Effects", "Damage") var immunities: int = 0
 ##Ignore any conditions if this is true
-@export var immune_to_special_conditions: bool = true
+@export var immune_to_special_conditions: bool = false
 ##Stop any effects calls if this is true
 @export var immune_to_effects: bool = false
 ##Immune to regular & bench damage [NOT DAMAGE MANIP EFFECT CALLS]

@@ -1,0 +1,60 @@
+[gd_resource type="Resource" script_class="Deck" load_steps=28 format=3 uid="uid://bsbo6s5jo87t2"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_8sv5r"]
+[ext_resource type="Resource" uid="uid://cjxwqcnfm20fq" path="res://Resources/Cards/1 ex Ruby & Saphire/RS104GrassEnergy.tres" id="2_7rjek"]
+[ext_resource type="Resource" uid="uid://cvjyyq2lad5k5" path="res://Resources/Cards/1 ex Ruby & Saphire/RS108FireEnergy.tres" id="3_t40pd"]
+[ext_resource type="Resource" uid="uid://d3wqsrtlqtlqm" path="res://Resources/Cards/1 ex Ruby & Saphire/RS106WaterEnergy.tres" id="4_4phmd"]
+[ext_resource type="Resource" uid="uid://b5ukqf6xmn6vv" path="res://Resources/Cards/1 ex Ruby & Saphire/RS109LightningEnergy.tres" id="5_6l4ih"]
+[ext_resource type="Resource" uid="uid://y724htokdlrt" path="res://Resources/Cards/1 ex Ruby & Saphire/RS105FightingEnergy.tres" id="6_wr612"]
+[ext_resource type="Resource" uid="uid://dxq22uwxelttj" path="res://Resources/Cards/1 ex Ruby & Saphire/RS107PsychicEnergy.tres" id="7_7yefa"]
+[ext_resource type="Resource" uid="uid://dipr5ie1kx7v8" path="res://Resources/Cards/1 ex Ruby & Saphire/RS93DarknessEnergy.tres" id="8_wqs0q"]
+[ext_resource type="Resource" uid="uid://bpyb5rd3indje" path="res://Resources/Cards/1 ex Ruby & Saphire/RS94MetalEnergy.tres" id="9_rdet8"]
+[ext_resource type="Resource" uid="uid://xvauv8yfopfw" path="res://Resources/Cards/2 ex Sandstorm/SS93MultiEnergy.tres" id="10_mlujw"]
+[ext_resource type="Resource" uid="uid://b1xaqtaovjo0b" path="res://Resources/Cards/8 ex Deoxys/DX94HealEnergy.tres" id="11_mmoec"]
+[ext_resource type="Resource" uid="uid://nwmfrwp7fuwu" path="res://Resources/Cards/4 ex Team Magma VS Team Aqua/MA87MagmaEnergy.tres" id="12_y8kfg"]
+[ext_resource type="Resource" uid="uid://cerpssk67rwka" path="res://Resources/Cards/4 ex Team Magma VS Team Aqua/MA86AquaEnergy.tres" id="13_qvaoo"]
+[ext_resource type="Resource" uid="uid://ch5vg8k6ed63k" path="res://Resources/Cards/13 ex Holon Phantoms/HP97DarkMetalEnergy.tres" id="14_jdxhp"]
+[ext_resource type="Resource" uid="uid://dm1p5cbmn4s77" path="res://Resources/Cards/11 ex Delta Species/DS104FFHolonEnergy.tres" id="15_2fhxc"]
+[ext_resource type="Resource" uid="uid://cqr3tfc8nry8w" path="res://Resources/Cards/11 ex Delta Species/DS105GLHolonEnergy.tres" id="16_bym1g"]
+[ext_resource type="Resource" uid="uid://dge3b12by00m4" path="res://Resources/Cards/11 ex Delta Species/DS106WPHolonEnergy.tres" id="17_go32p"]
+[ext_resource type="Resource" uid="uid://bkih6iwdpqvmx" path="res://Resources/Cards/12 ex Legend Maker/LM82ReactEnergy.tres" id="18_2l30t"]
+[ext_resource type="Resource" uid="uid://ch7qqjhkbd26n" path="res://Resources/Cards/12 ex Legend Maker/LM88Mew-ex.tres" id="19_mmoec"]
+[ext_resource type="Script" uid="uid://e660iomt5e76" path="res://Code/Resource Makers/CardResources/DeckMaker.gd" id="19_yiiw5"]
+[ext_resource type="Resource" uid="uid://c2tk6qy8h57lw" path="res://Resources/Cards/1 ex Ruby & Saphire/RS82EnergySwitch.tres" id="20_y8kfg"]
+[ext_resource type="Resource" uid="uid://biwey6tlevx3y" path="res://Resources/Cards/1 ex Ruby & Saphire/RS81EnergyRestore.tres" id="21_qvaoo"]
+[ext_resource type="Resource" uid="uid://bktrsptpmigoe" path="res://Resources/Cards/1 ex Ruby & Saphire/RS90EnergySearch.tres" id="22_jdxhp"]
+[ext_resource type="Resource" uid="uid://w140efhwynxf" path="res://Resources/Cards/14 ex Crystal Guardians/CG72Castaway.tres" id="23_2fhxc"]
+[ext_resource type="Resource" uid="uid://cg7qhfrgw5lmh" path="res://Resources/Cards/7 ex Team Rocket Returns/TRR50Togepi.tres" id="24_bym1g"]
+[ext_resource type="Resource" uid="uid://bsk4yge3w701c" path="res://Resources/Cards/7 ex Team Rocket Returns/TRR14Togetic.tres" id="25_go32p"]
+[ext_resource type="Resource" uid="uid://c3f1stq37lffi" path="res://Resources/Cards/2 ex Sandstorm/SS60Dunsparce.tres" id="26_2l30t"]
+
+[resource]
+script = ExtResource("19_yiiw5")
+cards = Dictionary[ExtResource("1_8sv5r"), int]({
+ExtResource("26_2l30t"): 4,
+ExtResource("25_go32p"): 3,
+ExtResource("24_bym1g"): 4,
+ExtResource("23_2fhxc"): 2,
+ExtResource("22_jdxhp"): 2,
+ExtResource("21_qvaoo"): 2,
+ExtResource("20_y8kfg"): 2,
+ExtResource("19_mmoec"): 3,
+ExtResource("18_2l30t"): 2,
+ExtResource("17_go32p"): 2,
+ExtResource("16_bym1g"): 2,
+ExtResource("15_2fhxc"): 2,
+ExtResource("14_jdxhp"): 2,
+ExtResource("13_qvaoo"): 2,
+ExtResource("12_y8kfg"): 2,
+ExtResource("11_mmoec"): 2,
+ExtResource("10_mlujw"): 2,
+ExtResource("9_rdet8"): 2,
+ExtResource("8_wqs0q"): 2,
+ExtResource("7_7yefa"): 2,
+ExtResource("6_wr612"): 2,
+ExtResource("5_6l4ih"): 2,
+ExtResource("4_4phmd"): 2,
+ExtResource("3_t40pd"): 2,
+ExtResource("2_7rjek"): 2
+})
+metadata/_custom_type_script = "uid://e660iomt5e76"

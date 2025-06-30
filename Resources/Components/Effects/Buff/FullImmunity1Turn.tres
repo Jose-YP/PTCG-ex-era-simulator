@@ -10,7 +10,12 @@ slot = 1
 duration = 1
 attack_damage = 0
 defense = 0
+retreat_change = 0
 after_weak_res = true
+ignore_res_other = false
+ignore_weak_self = false
+immunities = 0
+immune_to_special_conditions = false
 immune_to_effects = true
 immune_to_damage = true
 

@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Buff" load_steps=3 format=3 uid="uid://c2uvm38pnk5uy"]
+
+[ext_resource type="Resource" uid="uid://bwa02bbigkkgl" path="res://Resources/Components/Effects/Asks/Class&Owner/DarkNameMons.tres" id="1_c308m"]
+[ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/BuffMaker.gd" id="2_grynf"]
+
+[resource]
+script = ExtResource("2_grynf")
+side = 4
+slot = 1
+duration = 1
+against = ExtResource("1_c308m")
+attack_damage = 0
+defense = 0
+retreat_change = 0
+after_weak_res = true
+ignore_res_other = false
+ignore_weak_self = false
+immunities = 6
+immune_to_special_conditions = false
+immune_to_effects = false
+immune_to_damage = false
+metadata/_custom_type_script = "uid://coojhwe6m20gd"

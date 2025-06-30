@@ -76,22 +76,30 @@ func display_types(types: Array[String]):
 		typeContainer[i].show()
 
 func display_energy(energy_arr: Array, energy_dict: Dictionary):
-	for node in energyContainer:
-		node.hide()
-		node.number = 0
-	
-	if energy_arr.size() > energyContainer.size():
-		print("COMPRESSED ADD")
-		var total_types: int = 0
-		for type in energy_dict:
-			if energy_dict[type] > 0:
-				energyContainer[total_types].add_type(type, energy_dict[type])
-				total_types += 1
-	else:
-		print("REGULAR ADD")
-		for i in range(energy_arr.size()):
-			print("ADD", energy_arr[i])
-			energyContainer[i].add_type(energy_arr[i])
+	print(energy_arr, energy_dict, energyContainer)
+	%EnergyTypes.display_energy(energy_arr, energy_dict)
+	#for node in energyContainer:
+		#node.hide()
+		#node.number = 0
+	#
+	#if energy_arr.size() > energyContainer.size():
+		#var total_size = energy_arr.size()
+		#var total_types: int = 0
+		#print("COMPRESSED ADD")
+		#for type in energy_dict:
+			#if total_types > energyContainer.size() - 1:
+				#energyContainer[-1].make_misc(total_size)
+				#break
+			#elif energy_dict[type] > 0:
+				#energyContainer[total_types].add_type(type, energy_dict[type])
+				#total_types += 1
+				#total_size -= energy_dict[type]
+	#else:
+		#print("REGULAR ADD")
+		#for i in range(energy_arr.size()):
+			#print("ADD", energy_arr[i])
+			#energyContainer[i].add_type(energy_arr[i])
+
 #endregion
 #--------------------------------------
 

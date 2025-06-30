@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="PokeSlot" load_steps=16 format=3 uid="uid://iu8hdblsowd3"]
+[gd_resource type="Resource" script_class="PokeSlot" load_steps=21 format=3 uid="uid://iu8hdblsowd3"]
 
+[ext_resource type="Resource" uid="uid://ch7qqjhkbd26n" path="res://Resources/Cards/12 ex Legend Maker/LM88Mew-ex.tres" id="1_1q05n"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_2trac"]
 [ext_resource type="Resource" uid="uid://cjxwqcnfm20fq" path="res://Resources/Cards/1 ex Ruby & Saphire/RS104GrassEnergy.tres" id="2_xpyfr"]
 [ext_resource type="Resource" uid="uid://cvjyyq2lad5k5" path="res://Resources/Cards/1 ex Ruby & Saphire/RS108FireEnergy.tres" id="3_j1q7d"]
@@ -15,14 +16,19 @@
 [ext_resource type="Resource" uid="uid://nwmfrwp7fuwu" path="res://Resources/Cards/4 ex Team Magma VS Team Aqua/MA87MagmaEnergy.tres" id="13_778qs"]
 [ext_resource type="Resource" uid="uid://cerpssk67rwka" path="res://Resources/Cards/4 ex Team Magma VS Team Aqua/MA86AquaEnergy.tres" id="14_vnqax"]
 [ext_resource type="Script" uid="uid://cs70ix831b5g4" path="res://Code/Resource Makers/PokemonSpecific/PokeSlotMaker.gd" id="15_ku0vf"]
+[ext_resource type="Resource" uid="uid://dm1p5cbmn4s77" path="res://Resources/Cards/11 ex Delta Species/DS104FFHolonEnergy.tres" id="16_ktxrd"]
+[ext_resource type="Resource" uid="uid://cqr3tfc8nry8w" path="res://Resources/Cards/11 ex Delta Species/DS105GLHolonEnergy.tres" id="17_pa7g1"]
+[ext_resource type="Resource" uid="uid://dge3b12by00m4" path="res://Resources/Cards/11 ex Delta Species/DS106WPHolonEnergy.tres" id="18_mcq5m"]
+[ext_resource type="Resource" uid="uid://bkih6iwdpqvmx" path="res://Resources/Cards/12 ex Legend Maker/LM82ReactEnergy.tres" id="19_m1ghp"]
 
 [resource]
 script = ExtResource("15_ku0vf")
 player_type = 0
+current_card = ExtResource("1_1q05n")
 evolution_ready = false
 evolved_this_turn = false
 evolved_from = Array[ExtResource("1_2trac")]([])
-energy_cards = Array[ExtResource("1_2trac")]([ExtResource("2_xpyfr"), ExtResource("3_j1q7d"), ExtResource("4_7ibjm"), ExtResource("5_h1o0t"), ExtResource("6_1q05n"), ExtResource("7_ktxrd"), ExtResource("8_pa7g1"), ExtResource("9_mcq5m"), ExtResource("10_m1ghp"), ExtResource("11_gtcet"), ExtResource("12_iokug"), ExtResource("13_778qs"), ExtResource("14_vnqax"), null, null, null, null])
+energy_cards = Array[ExtResource("1_2trac")]([ExtResource("2_xpyfr"), ExtResource("3_j1q7d"), ExtResource("4_7ibjm"), ExtResource("5_h1o0t"), ExtResource("6_1q05n"), ExtResource("7_ktxrd"), ExtResource("8_pa7g1"), ExtResource("9_mcq5m"), ExtResource("10_m1ghp"), ExtResource("11_gtcet"), ExtResource("12_iokug"), ExtResource("13_778qs"), ExtResource("14_vnqax"), ExtResource("16_ktxrd"), ExtResource("17_pa7g1"), ExtResource("18_mcq5m"), ExtResource("19_m1ghp")])
 attached_energy = {
 "Aqua": 0,
 "Colorless": 0,

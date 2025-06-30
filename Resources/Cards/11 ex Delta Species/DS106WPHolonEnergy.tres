@@ -1,21 +1,97 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=5 format=3 uid="uid://dge3b12by00m4"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=17 format=3 uid="uid://dge3b12by00m4"]
 
+[ext_resource type="Resource" uid="uid://byem0mc65f4xt" path="res://Resources/Components/Effects/Buff/RetreatCostis0.tres" id="1_30ej2"]
 [ext_resource type="Script" uid="uid://caj1pm8erar2a" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="1_wlt10"]
 [ext_resource type="Texture2D" uid="uid://cso0ce1vr8ywy" path="res://Art/Cards/11 ex Delta Species/106.jpg" id="2_ojiq1"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_pxit3"]
+[ext_resource type="Resource" uid="uid://dx17fn4esx8qm" path="res://Resources/Components/Effects/Buff/Immune2Effect.tres" id="2_t3o48"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_kd7ft"]
+[ext_resource type="Resource" uid="uid://bsq014coejys5" path="res://Resources/Components/Effects/Prompts/NonEXHasWaterEn.tres" id="4_gerff"]
+[ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="5_8orlp"]
+[ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="6_14lbo"]
+
+[sub_resource type="Resource" id="Resource_38o81"]
+script = ExtResource("3_kd7ft")
+either_or = false
+order = Array[int]([])
+buff = ExtResource("2_t3o48")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_lp23s"]
+script = ExtResource("3_kd7ft")
+either_or = false
+order = Array[int]([])
+buff = ExtResource("1_30ej2")
+prompt_extra = ExtResource("4_gerff")
+extra_effect = SubResource("Resource_38o81")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_fsd37"]
+script = ExtResource("3_kd7ft")
+either_or = false
+order = Array[int]([])
+buff = ExtResource("2_t3o48")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_qfefc"]
+script = ExtResource("3_kd7ft")
+either_or = false
+order = Array[int]([])
+prompt_extra = ExtResource("4_gerff")
+extra_effect = SubResource("Resource_fsd37")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_hd156"]
+script = ExtResource("5_8orlp")
+side_target = 1
+slot_target = 1
+specifically = Array[String]([])
+comparison_type = 1
+max_hp = -10
+damage_taken = -10
+retreat_cost = -1
+energy_attatched = 1
+knocked_out = false
+condition = 0
+location = 4
+tool_attatched = false
+stage = 7
+rare_candy = false
+class_inclusive = false
+pokemon_class = 2
+owner_inclusive = true
+pokemon_owner = 15
+bench_size = -1
+type_inclusive = true
+type = 528
+energy_class = 0
+type_size = 1
+
+[sub_resource type="Resource" id="Resource_bvyln"]
+script = ExtResource("6_14lbo")
+formal_ask = false
+ask_string = ""
+is_in = SubResource("Resource_hd156")
+side = 1
+choose_location = 0
+metadata/_custom_type_script = "uid://b85jmc7067bjc"
 
 [sub_resource type="Resource" id="Resource_yixtv"]
 script = ExtResource("1_wlt10")
 considered = "Special Energy"
-description = ""
+description = "Holon Energy WP provides {Colorless} Energy.
+If the Pokémon that Holon Energy WP is attached to also has a basic {Water} Energy card attached to it, prevent all effects, excluding damage, done to that Pokémon by your opponent's Pokémon. If the Pokémon that Holon Energy WP is attached to also has a basic {Psychic} Energy card attached to it, that Pokémon's Retreat Cost is 0. Ignore these effects if Holon Energy WP is attached to Pokémon-ex."
+prompt = SubResource("Resource_bvyln")
 fail_provide = false
 fail_prevent = false
+fail_effect = SubResource("Resource_qfefc")
+attatch_effect = SubResource("Resource_lp23s")
 turns = -1
 number = 1
 react = false
-holon_type = "None"
-type = 1
-fail_type = 1
+holon_type = "WP"
+type = 256
+fail_type = 256
 metadata/_custom_type_script = "uid://caj1pm8erar2a"
 
 [resource]

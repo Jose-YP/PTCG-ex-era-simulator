@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="PokeSwap" load_steps=2 format=3 uid="uid://dpdqacd4xagnh"]
+
+[ext_resource type="Script" uid="uid://curklvf1517ml" path="res://Code/Resource Makers/EffectSpecific/SwapMaker.gd" id="1_pecfe"]
+
+[resource]
+script = ExtResource("1_pecfe")
+choose_active = false
+chosing = 1
+affected = 1
+slots = 4
+metadata/_custom_type_script = "uid://curklvf1517ml"

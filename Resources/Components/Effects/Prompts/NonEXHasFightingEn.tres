@@ -3,10 +3,10 @@
 [ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="1_0u1nb"]
 [ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="2_c1lbv"]
 
-[sub_resource type="Resource" id="Resource_rb1o5"]
+[sub_resource type="Resource" id="Resource_0u1nb"]
 script = ExtResource("1_0u1nb")
 side_target = 1
-slot_target = 4
+slot_target = 1
 specifically = Array[String]([])
 comparison_type = 1
 max_hp = -10
@@ -33,7 +33,7 @@ type_size = 1
 script = ExtResource("2_c1lbv")
 formal_ask = false
 ask_string = ""
-is_in = SubResource("Resource_rb1o5")
+is_in = SubResource("Resource_0u1nb")
 side = 1
 choose_location = 0
 metadata/_custom_type_script = "uid://b85jmc7067bjc"

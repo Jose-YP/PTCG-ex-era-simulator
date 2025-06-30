@@ -1,6 +1,7 @@
-[gd_scene load_steps=40 format=3 uid="uid://dnij7qm62bibx"]
+[gd_scene load_steps=39 format=3 uid="uid://dnij7qm62bibx"]
 
 [ext_resource type="Script" uid="uid://j57m0tmwtg4n" path="res://Code/Scenes/debug_board_state.gd" id="1_auq40"]
+[ext_resource type="Resource" uid="uid://cu2ksi0icg1cg" path="res://Resources/BoardStates/SideStates/TooMuchEnergy.tres" id="2_526bm"]
 [ext_resource type="Resource" uid="uid://d3qd7r6gwfitd" path="res://Resources/Decks/TestDeckFP.tres" id="2_lih34"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_xkeps"]
 [ext_resource type="Resource" uid="uid://gvd588t8jyxg" path="res://Resources/Cards/1 ex Ruby & Saphire/RS35Kirlia.tres" id="4_526bm"]
@@ -30,23 +31,6 @@
 [ext_resource type="Resource" uid="uid://cpk1v504xejvf" path="res://Resources/Cards/1 ex Ruby & Saphire/RS66Ralts.tres" id="25_xkeps"]
 [ext_resource type="Resource" uid="uid://dso1ico2qb1px" path="res://Resources/Cards/1 ex Ruby & Saphire/RS67Ralts.tres" id="26_kwm3j"]
 [ext_resource type="Script" uid="uid://c7ucx36aubnh8" path="res://Code/Resource Makers/GeneralUse/BoardStateMaker.gd" id="28_7d1mi"]
-
-[sub_resource type="Resource" id="Resource_ai8fb"]
-script = ExtResource("21_xl2h2")
-deck = ExtResource("2_lih34")
-init_deck = Array[ExtResource("3_xkeps")]([ExtResource("4_526bm"), ExtResource("5_r56go"), ExtResource("6_nm5ii"), ExtResource("7_pk2p2"), ExtResource("8_lbfn2"), ExtResource("8_lbfn2"), ExtResource("9_l5jd0"), ExtResource("9_l5jd0"), ExtResource("10_fu4ym"), ExtResource("11_246ek"), ExtResource("12_bq0oi"), ExtResource("13_5kusi"), ExtResource("14_kb452"), ExtResource("15_7esxo"), ExtResource("15_7esxo"), ExtResource("16_h4vdr"), ExtResource("16_h4vdr"), ExtResource("17_thr75"), ExtResource("18_7gqd7"), ExtResource("18_7gqd7")])
-init_hand = Array[ExtResource("3_xkeps")]([ExtResource("19_7xd6i"), ExtResource("8_lbfn2"), ExtResource("9_l5jd0"), ExtResource("7_pk2p2"), ExtResource("14_kb452"), ExtResource("20_vl5tn"), ExtResource("21_xkeps")])
-init_discard = Array[ExtResource("3_xkeps")]([])
-init_prize = Array[ExtResource("3_xkeps")]([])
-metadata/_custom_type_script = "uid://calm3n7va5yjo"
-
-[sub_resource type="Resource" id="Resource_s6wwd"]
-script = ExtResource("22_0jiev")
-card_stacks = SubResource("Resource_ai8fb")
-prize_cards = 6
-bench_size = 5
-slots = Dictionary[ExtResource("23_t8g77"), bool]({})
-metadata/_custom_type_script = "uid://dgqpurnuh14t1"
 
 [sub_resource type="Resource" id="Resource_526bm"]
 script = ExtResource("21_xl2h2")
@@ -234,9 +218,9 @@ who_starts_first = 0
 doubles = false
 default_start = false
 home_side = 0
-home = SubResource("Resource_r56go")
+home = ExtResource("2_526bm")
 away_side = 1
-away = SubResource("Resource_s6wwd")
+away = SubResource("Resource_r56go")
 metadata/_custom_type_script = "uid://c7ucx36aubnh8"
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t8we2"]

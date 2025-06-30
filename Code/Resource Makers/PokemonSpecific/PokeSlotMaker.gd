@@ -58,7 +58,8 @@ enum turn_type{NONE, PARALYSIS, ASLEEP, CONFUSION}
 @export_group("Buffs")
 @export var attack_buff: int = 0
 @export var defense_buff: int = 0
-
+@export var applied_buffs: Buff = Buff.new()
+@export var applied_disable: Disable = Disable.new()
 #endregion
 #--------------------------------------
 #--------------------------------------
@@ -256,7 +257,7 @@ func count_energy() -> void:
 	attached_energy = {"Grass": 0, "Fire": 0, "Water": 0,
 	 "Lightning": 0, "Psychic":0, "Fighting":0 ,"Darkness":0, "Metal":0,
 	 "Colorless":0, "Magma":0, "Aqua":0, "Dark Metal":0, "React": 0, 
-	 "Holon FF": 0, "Holon GL": 0, "Holon WP": 0, "Rainbow":0}
+	 "FF": 0, "GL": 0, "WP": 0, "Rainbow":0}
 	
 	for energy in energy_cards:
 		var en_name: String = energy.energy_properties.how_display()

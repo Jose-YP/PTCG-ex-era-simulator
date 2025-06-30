@@ -1,5 +1,6 @@
 @icon("res://Art/Energy/35px-Rainbow-attack.png")
 extends Control
+class_name TypeContainer
 
 @export var retreat: bool = false
 @export var energy: bool = false
@@ -24,6 +25,16 @@ func display_type(type: String):
 
 func remove_type():
 	number -= 1
+	$Number.clear()
+	$Number.append_text(str(number))
+	
+	if number <= 1: $Number.hide()
+	if number < 1: hide()
+
+func make_misc(ammount: int) -> void:
+	number = ammount
+	$Tabs.current_tab = $Tabs.get_tab_count() - 1
+	
 	$Number.clear()
 	$Number.append_text(str(number))
 	
