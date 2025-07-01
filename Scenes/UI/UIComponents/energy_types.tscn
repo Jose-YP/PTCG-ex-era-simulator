@@ -8,7 +8,6 @@
 [node name="EnergyTypes" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_3xx0f")
 
@@ -17,13 +16,17 @@ unique_name_in_owner = true
 wait_time = 1.25
 
 [node name="Panel" type="PanelContainer" parent="."]
+unique_name_in_owner = true
 layout_mode = 1
+offset_bottom = 24.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxEmpty_3xx0f")
 
 [node name="Button" type="Button" parent="Panel"]
+unique_name_in_owner = true
 layout_mode = 2
+focus_mode = 0
 theme_type_variation = &"EnergyButton"
 
 [node name="Container" type="HBoxContainer" parent="Panel"]
@@ -32,24 +35,31 @@ layout_mode = 2
 mouse_filter = 2
 
 [node name="Types" parent="Panel/Container" instance=ExtResource("1_ksw5v")]
+visible = false
 layout_mode = 2
 
 [node name="Types2" parent="Panel/Container" instance=ExtResource("1_ksw5v")]
+visible = false
 layout_mode = 2
 
 [node name="Types3" parent="Panel/Container" instance=ExtResource("1_ksw5v")]
+visible = false
 layout_mode = 2
 
 [node name="Types4" parent="Panel/Container" instance=ExtResource("1_ksw5v")]
+visible = false
 layout_mode = 2
 
 [node name="Types5" parent="Panel/Container" instance=ExtResource("1_ksw5v")]
+visible = false
 layout_mode = 2
 
 [node name="Types6" parent="Panel/Container" instance=ExtResource("1_ksw5v")]
+visible = false
 layout_mode = 2
 
 [node name="Types7" parent="Panel/Container" instance=ExtResource("1_ksw5v")]
+visible = false
 layout_mode = 2
 
 [node name="Types8" parent="Panel/Container" instance=ExtResource("1_ksw5v")]

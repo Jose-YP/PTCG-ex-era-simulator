@@ -28,5 +28,21 @@ signal finished
 
 func play_effect():
 	print("PLAY ENMOV")
+	match action:
+		0:
+			await move_effect()
+		1:
+			await swap_effect()
+		2:
+			await attatch_effect()
 	
+	finished.emit()
+
+func move_effect():
+	finished.emit()
+
+func swap_effect():
+	finished.emit()
+
+func attatch_effect():
 	finished.emit()

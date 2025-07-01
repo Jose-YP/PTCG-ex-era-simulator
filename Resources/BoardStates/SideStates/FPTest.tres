@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SideState" load_steps=29 format=3 uid="uid://3mi21qf5xxe4"]
+[gd_resource type="Resource" script_class="SideState" load_steps=28 format=3 uid="uid://3mi21qf5xxe4"]
 
 [ext_resource type="Resource" uid="uid://d3qd7r6gwfitd" path="res://Resources/Decks/TestDeckFP.tres" id="1_3fosg"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_67esg"]
@@ -10,7 +10,6 @@
 [ext_resource type="Resource" uid="uid://cvjyyq2lad5k5" path="res://Resources/Cards/1 ex Ruby & Saphire/RS108FireEnergy.tres" id="8_eib0e"]
 [ext_resource type="Resource" uid="uid://cfps337rtsmpi" path="res://Resources/Cards/11 ex Delta Species/DS92HolonLass.tres" id="9_nia4n"]
 [ext_resource type="Resource" uid="uid://b1xaqtaovjo0b" path="res://Resources/Cards/8 ex Deoxys/DX94HealEnergy.tres" id="10_lwvrn"]
-[ext_resource type="Resource" uid="uid://bok1dv0p7mo4d" path="res://Resources/Cards/1 ex Ruby & Saphire/RS86Pokeball.tres" id="11_284ys"]
 [ext_resource type="Resource" uid="uid://gyk46ghjiejq" path="res://Resources/Cards/1 ex Ruby & Saphire/RS101Mewtwo-ex.tres" id="12_b66bu"]
 [ext_resource type="Resource" uid="uid://ben8fxv5hw5hb" path="res://Resources/Cards/1 ex Ruby & Saphire/RS87PokemonReversal.tres" id="13_wu0hp"]
 [ext_resource type="Resource" uid="uid://b8kt4i4jgosm8" path="res://Resources/Cards/1 ex Ruby & Saphire/RS3Blaziken.tres" id="14_xl8qu"]
@@ -18,7 +17,7 @@
 [ext_resource type="Resource" uid="uid://dyqdhaov0ywxk" path="res://Resources/Cards/1 ex Ruby & Saphire/RS92Switch.tres" id="16_kydxs"]
 [ext_resource type="Resource" uid="uid://2gbttee2ievi" path="res://Resources/Cards/13 ex Holon Phantoms/HP44Holon'sCastform.tres" id="17_4sl3x"]
 [ext_resource type="Resource" uid="uid://vnimvixfy8o8" path="res://Resources/Cards/1 ex Ruby & Saphire/RS68Ralts.tres" id="18_sh3up"]
-[ext_resource type="Resource" uid="uid://d24ynfvvhyvm0" path="res://Resources/Cards/13 ex Holon Phantoms/HP96MultiEnergy.tres" id="19_evam5"]
+[ext_resource type="Resource" uid="uid://xvauv8yfopfw" path="res://Resources/Cards/2 ex Sandstorm/SS93MultiEnergy.tres" id="19_3fosg"]
 [ext_resource type="Script" uid="uid://calm3n7va5yjo" path="res://Code/Resource Makers/GeneralUse/CardStacksMaker.gd" id="20_rx5tr"]
 [ext_resource type="Script" uid="uid://dgqpurnuh14t1" path="res://Code/Resource Makers/GeneralUse/SideStateMaker.gd" id="21_wmcmf"]
 [ext_resource type="Script" uid="uid://cs70ix831b5g4" path="res://Code/Resource Makers/PokemonSpecific/PokeSlotMaker.gd" id="22_ti8fa"]
@@ -29,8 +28,8 @@
 [sub_resource type="Resource" id="Resource_ai8fb"]
 script = ExtResource("20_rx5tr")
 deck = ExtResource("1_3fosg")
-init_deck = Array[ExtResource("2_67esg")]([ExtResource("3_nsat6"), ExtResource("4_udrok"), ExtResource("5_xxjyd"), ExtResource("6_wvi4a"), ExtResource("7_h4gfa"), ExtResource("7_h4gfa"), ExtResource("8_eib0e"), ExtResource("8_eib0e"), ExtResource("9_nia4n"), ExtResource("10_lwvrn"), ExtResource("11_284ys"), ExtResource("12_b66bu"), ExtResource("13_wu0hp"), ExtResource("14_xl8qu"), ExtResource("14_xl8qu"), ExtResource("15_froou"), ExtResource("15_froou"), ExtResource("16_kydxs"), ExtResource("17_4sl3x"), ExtResource("17_4sl3x"), ExtResource("17_4sl3x")])
-init_hand = Array[ExtResource("2_67esg")]([ExtResource("18_sh3up"), ExtResource("8_eib0e"), ExtResource("19_evam5"), ExtResource("6_wvi4a"), ExtResource("13_wu0hp"), ExtResource("10_lwvrn"), ExtResource("17_4sl3x")])
+init_deck = Array[ExtResource("2_67esg")]([ExtResource("3_nsat6"), ExtResource("4_udrok"), ExtResource("5_xxjyd"), ExtResource("6_wvi4a"), ExtResource("7_h4gfa"), ExtResource("7_h4gfa"), ExtResource("8_eib0e"), ExtResource("8_eib0e"), ExtResource("9_nia4n"), ExtResource("10_lwvrn"), ExtResource("12_b66bu"), ExtResource("13_wu0hp"), ExtResource("14_xl8qu"), ExtResource("14_xl8qu"), ExtResource("15_froou"), ExtResource("15_froou"), ExtResource("16_kydxs"), ExtResource("17_4sl3x"), ExtResource("17_4sl3x"), ExtResource("17_4sl3x")])
+init_hand = Array[ExtResource("2_67esg")]([ExtResource("18_sh3up"), ExtResource("8_eib0e"), ExtResource("19_3fosg"), ExtResource("6_wvi4a"), ExtResource("13_wu0hp"), ExtResource("10_lwvrn"), ExtResource("17_4sl3x")])
 init_discard = Array[ExtResource("2_67esg")]([])
 init_prize = Array[ExtResource("2_67esg")]([])
 metadata/_custom_type_script = "uid://calm3n7va5yjo"

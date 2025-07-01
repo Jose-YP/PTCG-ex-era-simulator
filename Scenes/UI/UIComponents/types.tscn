@@ -26,6 +26,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_filter = 2
 script = ExtResource("1_476s5")
+metadata/_edit_lock_ = true
 
 [node name="Tabs" type="TabContainer" parent="."]
 layout_mode = 1
@@ -199,10 +200,10 @@ metadata/_tab_index = 17
 [node name="Number" type="RichTextLabel" parent="."]
 visible = false
 layout_mode = 1
-offset_left = -8.0
-offset_top = 5.0
-offset_right = 22.0
-offset_bottom = 29.0
+offset_left = 20.0
+offset_top = 15.0
+offset_right = 38.0
+offset_bottom = 36.0
 mouse_filter = 2
 bbcode_enabled = true
 text = "99"

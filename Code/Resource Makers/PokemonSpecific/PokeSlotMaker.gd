@@ -91,6 +91,7 @@ enum turn_type{NONE, PARALYSIS, ASLEEP, CONFUSION}
 #--------------------------------------
 
 func _ready() -> void:
+	pokedata = current_card.pokemon_properties if current_card else null
 	if current_card:
 		type = pokedata.type
 		weak = pokedata.weak
@@ -262,6 +263,8 @@ func count_energy() -> void:
 	for energy in energy_cards:
 		var en_name: String = energy.energy_properties.how_display()
 		attached_energy[en_name] += energy.energy_properties.number
+	
+	print(attached_energy)
 
 func get_energy_strings() -> Array[String]:
 	var energy_stirngs: Array[String]

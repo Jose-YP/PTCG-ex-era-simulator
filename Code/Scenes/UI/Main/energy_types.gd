@@ -1,19 +1,27 @@
 @icon("res://Art/Energy/35px-Rainbow-attack.png")
 extends Control
+class_name EnergyCollection
 
 @export var en_count: int = 7
+@export var align_right: bool = false
+@export var disabled: bool = false
 
 @onready var container: HBoxContainer = %Container
+@onready var panel: PanelContainer = %Panel
 
 var energyContainer: Array[TypeContainer]
 var current_indexes: Array
 
 func _ready() -> void:
 	current_indexes = range(en_count)
+	%Button.disabled = disabled
 	
 	for i in container.get_child_count():
 		energyContainer.append(container.get_child(i))
 		container.get_child(i).hide()
+	
+	if align_right:
+		grow_horizontal = Control.GROW_DIRECTION_BEGIN
 
 #--------------------------------------
 #region ENERGY DISPLAY

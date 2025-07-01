@@ -1,0 +1,121 @@
+[gd_scene load_steps=8 format=3 uid="uid://bmhljiqag6upw"]
+
+[ext_resource type="StyleBox" uid="uid://duhmik1loeema" path="res://Themes/StyleBoxes/GBABox.tres" id="1_4j8ma"]
+[ext_resource type="Script" uid="uid://cr1fsv0gkmwb0" path="res://Code/Scenes/UI/List/poke_slot_item.gd" id="2_4r1ij"]
+[ext_resource type="Resource" uid="uid://iu8hdblsowd3" path="res://Resources/BoardStates/PokeSlots/AllEnergys.tres" id="3_xmuas"]
+[ext_resource type="PackedScene" uid="uid://dph43kayde03u" path="res://Scenes/UI/UIComponents/energy_types.tscn" id="4_8evmm"]
+[ext_resource type="Texture2D" uid="uid://cj4eckcnktq41" path="res://Art/Cards/1 ex Ruby & Saphire/109.jpg" id="5_lyayy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yloa2"]
+bg_color = Color(0.301961, 0.215686, 0.556863, 1)
+border_width_left = 1
+border_width_top = 2
+border_width_right = 1
+border_width_bottom = 2
+border_color = Color(0.286275, 0.00392157, 0.611765, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_auhmd"]
+bg_color = Color(0.129649, 0.0483941, 0.353005, 1)
+border_width_left = 1
+border_width_top = 2
+border_width_right = 1
+border_width_bottom = 2
+border_color = Color(0.286275, 0.00392157, 0.611765, 1)
+border_blend = true
+
+[node name="PokeSlotItem" type="Button"]
+clip_contents = true
+custom_minimum_size = Vector2(400, 60)
+anchors_preset = -1
+anchor_left = 0.316
+anchor_top = 0.458
+anchor_right = 0.686
+anchor_bottom = 0.558
+offset_left = -0.280029
+offset_top = 0.23999
+offset_right = 0.119995
+offset_bottom = 0.23999
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+theme_override_styles/hover = SubResource("StyleBoxFlat_yloa2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_auhmd")
+theme_override_styles/normal = ExtResource("1_4j8ma")
+disabled = true
+script = ExtResource("2_4r1ij")
+slot = ExtResource("3_xmuas")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+alignment = 1
+
+[node name="TopSpawn" type="MarginContainer" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="LeftSpawn" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/margin_right = 13
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 5
+
+[node name="TextInfo" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Name" type="RichTextLabel" parent="VBoxContainer/HBoxContainer/VBoxContainer/TextInfo"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(184, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+bbcode_enabled = true
+text = "Team Magma's Mightyena"
+fit_content = true
+
+[node name="HP" type="RichTextLabel" parent="VBoxContainer/HBoxContainer/VBoxContainer/TextInfo"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(82, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+bbcode_enabled = true
+text = "HP: 200/200"
+fit_content = true
+
+[node name="EnergyTypes" parent="VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource("4_8evmm")]
+unique_name_in_owner = true
+layout_mode = 2
+en_count = 9
+align_right = true
+disabled = true
+
+[node name="Art" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+clip_contents = true
+custom_minimum_size = Vector2(90, 52)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("5_lyayy")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="SlotNum" type="RichTextLabel" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(14, 0)
+layout_mode = 2
+text = "A1"

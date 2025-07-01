@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=13 format=3 uid="uid://bfw6ylcttychc"]
+[gd_resource type="Theme" load_steps=12 format=3 uid="uid://bfw6ylcttychc"]
 
 [ext_resource type="StyleBox" uid="uid://duhmik1loeema" path="res://Themes/StyleBoxes/GBABox.tres" id="1_j8r7k"]
 [ext_resource type="StyleBox" uid="uid://bvesf3hjv2bsl" path="res://Themes/StyleBoxes/GBADragBox.tres" id="2_0j40x"]
@@ -36,27 +36,6 @@ border_width_right = 1
 border_width_bottom = 2
 border_color = Color(0, 0.282909, 0.287954, 1)
 border_blend = true
-shadow_size = 1
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0j40x"]
-resource_local_to_scene = true
-bg_color = Color(0.717647, 0.737255, 0.752941, 0.917647)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.596078, 0.596078, 0.596078, 0.239216)
-border_blend = true
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
-corner_detail = 14
-expand_margin_left = 1.0
-expand_margin_top = 1.0
-expand_margin_right = 1.0
-expand_margin_bottom = 1.0
-shadow_color = Color(0, 0, 0, 0.0980392)
 shadow_size = 1
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_amp7u"]
@@ -114,7 +93,7 @@ DragButton/base_type = &"Button"
 DragButton/styles/normal = ExtResource("2_0j40x")
 DragButton/styles/pressed = SubResource("StyleBoxFlat_c3wud")
 EnergyButton/base_type = &"Button"
-EnergyButton/styles/disabled = SubResource("StyleBoxFlat_0j40x")
+EnergyButton/styles/disabled = ExtResource("3_0j40x")
 EnergyButton/styles/focus = SubResource("StyleBoxFlat_amp7u")
 EnergyButton/styles/hover = SubResource("StyleBoxFlat_amp7u")
 EnergyButton/styles/normal = ExtResource("3_0j40x")

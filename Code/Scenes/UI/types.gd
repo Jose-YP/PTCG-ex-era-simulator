@@ -17,8 +17,10 @@ func add_type(type: String, ammount: int = 1):
 	$Number.append_text(str(number))
 	
 	if number >= 1: show()
-	elif number > 1: $Number.show()
-	else: $Number.hide()
+	if number > 1: $Number.show()
+	else:
+		print(type, number)
+		$Number.hide()
 
 func display_type(type: String):
 	$Tabs.current_tab = Constants.energy_types.find(type)
