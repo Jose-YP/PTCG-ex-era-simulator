@@ -38,7 +38,7 @@ func show_card(card: Base_Card, parent: Node):
 	node_tween.tween_property(card_display, "modulate", Color.WHITE, .1)
 	checked_card = card_display
 	checked_card.z_index = 1
-	#checked_card.connect("tree")
+	checked_card.connect("tree_exiting", reset_check)
 	checking_card()
 
 func remove_card():

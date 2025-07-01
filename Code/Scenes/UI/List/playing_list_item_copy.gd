@@ -83,7 +83,8 @@ func _gui_input(event):
 	if not disabled:
 		if event.is_action_pressed("A"):
 			if Globals.fundies.options:
-				await Globals.control_disapear(Globals.fundies.options, .1, global_position)
+				await Globals.control_disapear(Globals.fundies.options, .15, global_position)
+				Globals.fundies.options = show_options()
 			else:
 				if stack_act == Constants.STACK_ACT.LOOK:
 					Globals.show_card(card, self)

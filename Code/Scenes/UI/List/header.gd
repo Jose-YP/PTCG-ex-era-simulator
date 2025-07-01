@@ -30,6 +30,7 @@ func setup(txt: String):
 	
 	if txt == "":
 		hide()
+	else: show()
 
 func _on_movable_pressed() -> void:
 	if dragging_node.options:

@@ -19,3 +19,4 @@ func setup(txt: String):
 	
 	if txt == "":
 		hide()
+	else: show()

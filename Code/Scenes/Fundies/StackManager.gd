@@ -172,16 +172,16 @@ func spawn_energy_list(slot: PokeSlot, allowed_fun: Callable = func(a): return t
 	for card in slot.energy_cards:
 		energy_dict[card] = allowed_fun.call(card)
 	
-	var new_node = Constants.playing_list.instantiate()
+	var new_node = Constants.reg_list.instantiate()
 	
-	new_node.playing_list.list = energy_dict
+	new_node.list = energy_dict
 	new_node.top_level = true
 	new_node.home = operate_home
 	new_node.old_pos = slot.ui_slot.global_position
 	new_node.stack_act = Constants.STACK_ACT.LOOK
 	new_node.stack = Constants.STACKS.NONE
-	Globals.fundies.current_list = new_node
 	add_sibling(new_node)
+	new_node.header.setup(str(slot.current_card.name, "'s Attatched Energy"))
 	Globals.fundies.current_list = new_node
 
 func show_reveal_stack(reveal_slot):
