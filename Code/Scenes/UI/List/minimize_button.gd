@@ -17,9 +17,13 @@ func _get_configuration_warnings() -> PackedStringArray:
 	else:
 		return []
 
-func _ready() -> void:
+func set_up():
 	for node in shrinkNodes:
+		if not null: break
 		original_sizes[node] = node.custom_minimum_size
+
+func _ready() -> void:
+	set_up()
 
 func _on_pressed() -> void:
 	if minimized:

@@ -3,17 +3,19 @@
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_wcs6r"]
 [ext_resource type="Texture2D" uid="uid://cs7gj0dy6jykj" path="res://Art/Cards/1 ex Ruby & Saphire/6.jpg" id="1_wqkxb"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_684l4"]
-[ext_resource type="Resource" uid="uid://lvedqhtvr1w4" path="res://Resources/Components/Effects/Conditions/DefSelfMorePoi.tres" id="3_maanl"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_7qmw3"]
 [ext_resource type="Resource" uid="uid://dx17fn4esx8qm" path="res://Resources/Components/Effects/Buff/Immune2Effect.tres" id="6_tg8f0"]
 [ext_resource type="Script" uid="uid://b2tlqpng7fq25" path="res://Code/Resource Makers/PokemonSpecific/BodyMaker.gd" id="7_w0s73"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="8_1sw32"]
 
+[sub_resource type="Resource" id="Resource_a701k"]
+metadata/__load_path__ = "res://Resources/Components/Effects/EnergyMovement/DefSelfMorePoi.tres"
+
 [sub_resource type="Resource" id="Resource_wqkxb"]
 script = ExtResource("4_7qmw3")
 either_or = false
 order = Array[int]([])
-condition = ExtResource("3_maanl")
+condition = SubResource("Resource_a701k")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_fuvu7"]

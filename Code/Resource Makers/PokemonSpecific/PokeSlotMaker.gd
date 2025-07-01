@@ -130,11 +130,9 @@ func is_in_slot(desired_side: Constants.SIDES, desired_slot: Constants.SLOTS):
 		Constants.SIDES.BOTH:
 			side_bool = true
 		Constants.SIDES.ATTACKING:
-			side_bool = ((ui_slot.home and Globals.fundies.home_turn) or
-			 (not ui_slot.home and not Globals.fundies.home_turn))
+			side_bool = is_attacker()
 		Constants.SIDES.DEFENDING:
-			side_bool = ((ui_slot.home and not Globals.fundies.home_turn) or
-			 (not ui_slot.home and Globals.fundies.home_turn))
+			side_bool = not is_attacker()
 		Constants.SIDES.SOURCE:
 			side_bool = Globals.fundies.get_source_considered() == ui_slot.home
 		Constants.SIDES.OTHER:
@@ -158,12 +156,9 @@ func is_active() -> bool:
 	else:
 		return false
 
-func is_player() -> bool:
-	if ui_slot:
-		return ui_slot.player
-	else:
-		push_error("Not connected to a UI slot")
-		return false
+func is_attacker() -> bool:
+	return ((ui_slot.home and Globals.fundies.home_turn) or
+		(not ui_slot.home and not Globals.fundies.home_turn))
 
 func can_evolve_into(evolution: Base_Card) -> bool:
 	return current_card.name == evolution.pokemon_properties.evolves_from and not evolved_this_turn

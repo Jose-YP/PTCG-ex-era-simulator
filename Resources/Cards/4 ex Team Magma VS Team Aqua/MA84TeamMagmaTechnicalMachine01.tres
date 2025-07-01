@@ -10,13 +10,14 @@
 
 [sub_resource type="Resource" id="Resource_sb77a"]
 script = ExtResource("5_xchay")
-energy_move_type = 2
 action = 3
 chooser = 1
 side = 2
 slots = 1
+to_stack = 2
+stack_direction = 2
 energy_ammount = 1
-swap_ammount = 1
+energy_move_type = 2
 type = 511
 metadata/_custom_type_script = "uid://cimk6l7ytw7xg"
 

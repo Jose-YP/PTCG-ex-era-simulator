@@ -29,7 +29,6 @@ func _ready():
 					items[i].show()
 					items[i].pressed.connect(emit_play_as.bind(i))
 		Constants.STACK_ACT.TUTOR:
-			origin_button.connect("tree_exited", disapear)
 			if origin_button.is_tutored():
 				%Cancel.show()
 			else:
@@ -55,16 +54,6 @@ func bring_up():
 	appear_tween.tween_property(self, "modulate", Color.WHITE, timing)
 	appear_tween.tween_property(self, "scale", Vector2.ONE, timing)
 
-func disapear():
-	var disapear_tween: Tween = get_tree().create_tween().set_parallel()
-	
-	disapear_tween.tween_property(self, "position", old_position, timing)
-	disapear_tween.tween_property(self, "modulate", Color.TRANSPARENT, timing)
-	disapear_tween.tween_property(self, "scale", Vector2(.1,.1), timing)
-	
-	await disapear_tween.finished
-	
-	queue_free()
 #endregion
 #--------------------------------------
 
@@ -73,7 +62,7 @@ func disapear():
 #Record source here, no need to record target as anything in particular
 func emit_play_as(flag: int):
 	if not Globals.checking:
-		disapear()
+		Globals.control_disapear(self, .1, old_position)
 		play_as.emit(flag, origin_button.card)
 
 func _on_check_pressed():
@@ -86,12 +75,12 @@ func _on_check_pressed():
 func _on_tutor_pressed() -> void:
 	print("Tutor ", origin_button.card.name, " from ", origin_button.parent.stack)
 	SignalBus.tutor_card.emit(origin_button.card)
-	disapear()
+	Globals.control_disapear(self, .1, old_position)
 
 func _on_discard_pressed() -> void:
 	print("Discard ", origin_button.card.name, " from ", origin_button.parent.stack)
 	SignalBus.tutor_card.emit(origin_button.card)
-	disapear()
+	Globals.control_disapear(self, .1, old_position)
 
 func on_entered_check():
 	for i in range($PlayAs/Items.get_child_count()):
@@ -103,7 +92,7 @@ func on_exited_check():
 
 func _on_cancel_pressed() -> void:
 	SignalBus.cancel_tutor.emit(origin_button)
-	disapear()
+	Globals.control_disapear(self, .1, old_position)
 
 #endregion
 #--------------------------------------

@@ -148,17 +148,18 @@ func spawn_list(monitor_side: bool, which: Constants.STACKS, stack_act: Constant
 
 func instantiate_list(specified_list: Dictionary[Base_Card, bool], which: Constants.STACKS,\
  stack_act: Constants.STACK_ACT = Constants.STACK_ACT.LOOK, instructions: String = ""):
-	var new_node = Constants.playing_list.instantiate()
+	var new_node = Constants.reg_list.instantiate()
 	
 	new_node.list = specified_list
+	
 	new_node.top_level = true
 	new_node.home = operate_home
 	new_node.old_pos = Globals.fundies.get_side_ui().non_mon.stacks[which].global_position
 	new_node.stack_act = stack_act
 	new_node.stack = which
 	new_node.allowed_as = allowed_play
-	if instructions != "":
-		new_node.instruction_text = instructions
+	new_node.instruction_text = instructions
+	
 	add_sibling(new_node)
 	Globals.fundies.current_list = new_node
 
@@ -173,7 +174,7 @@ func spawn_energy_list(slot: PokeSlot, allowed_fun: Callable = func(a): return t
 	
 	var new_node = Constants.playing_list.instantiate()
 	
-	new_node.list = energy_dict
+	new_node.playing_list.list = energy_dict
 	new_node.top_level = true
 	new_node.home = operate_home
 	new_node.old_pos = slot.ui_slot.global_position

@@ -192,6 +192,7 @@ func generic_choice(instruction: String, bool_fun: Callable,\
  choosing_player: Constants.PLAYER_TYPES = Constants.PLAYER_TYPES.PLAYER):
 	var ui_act: SlotUIActions = Globals.fundies.ui_actions
 	ui_act.get_allowed_slots(bool_fun)
+	
 	var allow_slots: Array[UI_Slot] = ui_act.allowed_slots
 	#If there's only one choice and there's no going back, make the choice instantly
 	if allow_slots.size() == 1 and not ui_act.can_reverse:
@@ -246,7 +247,7 @@ func dmg_manip_effect(_dmg_manip: DamageManip):
 #--------------------------------------
 #region BOOLEAN FUNCTIONS
 func energy_boolean(slot: PokeSlot) -> bool:
-	return slot.current_card != null
+	return slot.current_card != null and slot.is_attacker()
 
 func tool_boolean(slot: PokeSlot) -> bool:
 	if slot.current_card:

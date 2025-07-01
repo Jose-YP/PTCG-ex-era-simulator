@@ -104,5 +104,3 @@ theme_override_constants/margin_right = 15
 visible = false
 layout_mode = 2
 theme_override_constants/margin_top = 19
-
-[connection signal="pressed" from="." to="." method="_on_pressed"]

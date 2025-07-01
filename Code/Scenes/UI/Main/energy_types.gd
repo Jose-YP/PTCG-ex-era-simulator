@@ -66,17 +66,17 @@ func _on_button_pressed() -> void:
 
 func _on_timer_timeout() -> void:
 	var next_index: int = (current_indexes[-1] + 1) % energyContainer.size()
-	energyContainer[current_indexes.pop_front()].hide()
-	
+	current_indexes.pop_front()
 	if energyContainer[next_index].number == 0:
 		next_index = 0
-	
 	current_indexes.append(next_index)
-	energyContainer[current_indexes[-1]].show()
-
+	
+	for node in energyContainer:
+		node.hide()
 	#Move the current shown to the top based on order
 	for i in range(en_count):
 		var type: TypeContainer = energyContainer[current_indexes[i]]
 		container.move_child(type, i)
+		type.show()
 #endregion
 #--------------------------------------

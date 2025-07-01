@@ -11,13 +11,14 @@
 
 [sub_resource type="Resource" id="Resource_teul3"]
 script = ExtResource("3_prlnf")
-energy_move_type = 0
 action = 4
 chooser = 1
 side = 1
 slots = 1
+to_stack = 2
+stack_direction = 2
 energy_ammount = -1
-swap_ammount = 1
+energy_move_type = 0
 type = 4
 metadata/_custom_type_script = "uid://cimk6l7ytw7xg"
 

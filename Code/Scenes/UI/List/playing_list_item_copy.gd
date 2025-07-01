@@ -74,9 +74,7 @@ func show_options() -> Node:
 		option_Display.global_position.y += option_offset.y
 	
 	option_Display.origin_button = self
-	parent.get_parent().add_child(option_Display)
-	
-	#parent.add_child(option_Display)
+	Globals.fundies.current_list.add_child(option_Display)
 	option_Display.bring_up()
 	
 	return option_Display
@@ -84,19 +82,15 @@ func show_options() -> Node:
 func _gui_input(event):
 	if not disabled:
 		if event.is_action_pressed("A"):
-			if parent.options:
-				await parent.options.disapear()
+			if Globals.fundies.options:
+				await Globals.control_disapear(Globals.fundies.options, .1, global_position)
 			else:
 				if stack_act == Constants.STACK_ACT.LOOK:
-					Globals.show_card(card, self, parent)
+					Globals.show_card(card, self)
 				elif not Globals.checking:
-					parent.options = show_options()
+					Globals.fundies.options = show_options()
 	if event.is_action_pressed("Check"):
-		Globals.show_card(card, self, parent)
+		Globals.show_card(card, self)
 
 #endregion
 #--------------------------------------
-
-
-func _on_pressed() -> void:
-	pass # Replace with function body.

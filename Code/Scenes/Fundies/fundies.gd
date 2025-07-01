@@ -17,6 +17,8 @@ var current_list: Control
 var home_targets: Array[Array]
 var away_targets: Array[Array]
 var source_stack: Array[bool]
+var options: ItemOptions
+
 #endregion
 #--------------------------------------
 
@@ -54,7 +56,7 @@ func print_slots(sides: Constants.SIDES, slots: Constants.SLOTS, init_string: St
 #--------------------------------------
 
 func hide_list() -> void:
-	if current_list: current_list.disapear()
+	if current_list: Globals.control_disapear(current_list, .1, current_list.old_pos)
 
 func get_side_ui() -> CardSideUI:
 	return Globals.full_ui.get_side(home_turn)

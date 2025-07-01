@@ -59,14 +59,15 @@ metadata/_custom_type_script = "uid://mkjynqda7q5g"
 
 [sub_resource type="Resource" id="Resource_k8l2b"]
 script = ExtResource("6_d1501")
-energy_move_type = 2
 action = 0
 chooser = 4
 candidates = SubResource("Resource_cn8ke")
 side = 5
 slots = 2
+to_stack = 2
+stack_direction = 2
 energy_ammount = 0
-swap_ammount = 1
+energy_move_type = 2
 type = 511
 metadata/_custom_type_script = "uid://cimk6l7ytw7xg"
 

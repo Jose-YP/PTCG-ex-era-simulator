@@ -8,7 +8,7 @@
 script = ExtResource("1_q4i02")
 name = "Master Ball"
 image = ExtResource("1_edwao")
-illustrator = " Keiji Kinebuchi"
+illustrator = "Keiji Kinebuchi"
 number = 88
 rarity = 1
 expansion = 7

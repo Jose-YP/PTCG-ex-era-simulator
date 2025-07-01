@@ -124,14 +124,15 @@ type_size = 1
 
 [sub_resource type="Resource" id="Resource_xmkch"]
 script = ExtResource("5_no1xd")
-energy_move_type = 0
 action = 0
 chooser = 0
 candidates = SubResource("Resource_81wwo")
 side = 1
 slots = 1
+to_stack = 2
+stack_direction = 2
 energy_ammount = -1
-swap_ammount = 1
+energy_move_type = 0
 type = 511
 
 [sub_resource type="Resource" id="Resource_ys2ao"]

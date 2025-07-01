@@ -10,7 +10,7 @@ var full_ui: FullBoardUI
 signal enter_check
 signal exit_check
 
-func show_card(card: Base_Card, parent: Node, ancestor: Node = null):
+func show_card(card: Base_Card, parent: Node):
 	if checked_card:
 		remove_card()
 	
@@ -33,10 +33,6 @@ func show_card(card: Base_Card, parent: Node, ancestor: Node = null):
 	card_display.modulate = Color.TRANSPARENT
 	card_display.name = str(card.name, " Card")
 	parent.add_child(card_display)
-	
-	if ancestor:
-		ancestor.display = card_display
-		ancestor.connect_display()
 	
 	node_tween.tween_property(card_display, "scale", Vector2.ONE, .1)
 	node_tween.tween_property(card_display, "modulate", Color.WHITE, .1)

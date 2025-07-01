@@ -4,7 +4,7 @@ class_name PlayingList
 
 #--------------------------------------
 #region VARIABLES
-@export var list_item: PackedScene
+@export var par: Control
 @export var tutor_box: PackedScene
 @export var all_lists: Array[Dictionary]
 @export var list: Dictionary[Base_Card, bool]
@@ -15,18 +15,11 @@ class_name PlayingList
 @export var stack_act: Constants.STACK_ACT = Constants.STACK_ACT.PLAY
 @export var stack: Constants.STACKS = Constants.STACKS.HAND
 
-#@onready var tutor_box: Tutor_Box = %TutorBox
-@onready var identifier: RichTextLabel = %Identifier
-@onready var instructions: RichTextLabel = %Instructions
-@onready var old_size: Vector2 = size
-@onready var tutor_component: Node = $TutorComponent
+const list_item: PackedScene = preload("res://Scenes/UI/Lists/PlayingListItem_copy.tscn")
 
 var items: Array[Node] = []
-var display_text: String = ""
-var instruction_text: String = ""
 var black_list: Array[String] = []
 var white_list: Array[String] = []
-var old_pos: Vector2
 var display: Node
 var options: Node
 var on_card: bool = false
@@ -37,36 +30,10 @@ var home: bool = true
 
 #--------------------------------------
 #region INITALIZATION
-func _ready():
-	match stack_act:
-		Constants.STACK_ACT.PLAY: instruction_text = "Choose which allowed cards to play"
-		Constants.STACK_ACT.TUTOR:
-			%Close_Button.hide()
-			instruction_text = "Choose which allowed cards to add"
-		Constants.STACK_ACT.DISCARD:
-			%Close_Button.hide()
-			instruction_text = "Choose which allowed cards to discard"
-		Constants.STACK_ACT.LOOK: instruction_text = "Only allowed to check cards"
-		_: printerr(stack_act, " not apart of stack act enum")
-	match stack:
-		Constants.STACKS.HAND: display_text = "HAND"
-		Constants.STACKS.DECK: display_text = "DECK"
-		Constants.STACKS.DISCARD: display_text = "DISCARD"
-		Constants.STACKS.PRIZE: display_text = "PRIZE"
-		Constants.STACKS.PLAY: display_text = "HAND"
-		Constants.STACKS.NONE: pass
-		_: printerr(stack, " not apart of stack enum")
-	
-	identifier.append_text(display_text)
-	instructions.append_text(instruction_text)
-	
-	if instruction_text == "":
-		%IdentifierPanel.hide()
-	
-	set_items()
-
 func set_items():
-	#print(list, list_item)
+	stack = par.stack
+	stack_act = par.stack_act
+	
 	for item in list:
 		var making = list_item.instantiate()
 		making.card = item
@@ -92,12 +59,12 @@ func is_allowed(button: Button) -> void:
 			var whitelisted: bool = white_list.has(button.card.name)
 			var blacklisted: bool = black_list.has(button.card.name)
 			
-			if (list[button.card] or whitelisted) and not blacklisted and get_parent().can_be_played(button.card):
+			if (list[button.card] or whitelisted) and not blacklisted and Globals.fundies.can_be_played(button.card):
 				button.allow(allowed_as)
 			else: button.not_allowed()
 		Constants.STACK_ACT.TUTOR:
-			if tutor_component.readied:
-				if tutor_component.list_allowed(button.card) and not button.card.name in black_list:
+			if par.readied:
+				if par.list_allowed(button.card) and not button.card.name in black_list:
 					button.allow_move_to(stack_act)
 				else: button.not_allowed()
 			else:
@@ -146,44 +113,18 @@ func sort_items():
 
 #--------------------------------------
 #region SIGNALS
-func _on_resources_show_list(message: String, looking_at: String, using: Array[Base_Card]):
-	reset_items()
-	
-	%Identifier.clear()
-	%Instructions.clear()
-	%Identifier.append_text(str("[center]", looking_at))
-	%Instructions.append_text(str("[center]",message))
-	
-	for card in using:
-		list[card] = true
-	set_items()
-	
-	show()
-
-func connect_display():
-	display.tree_exited.connect(on_display_freed)
-
-func on_display_freed():
-	Globals.reset_check()
-
-func disapear():
-	var disapear_tween: Tween = get_tree().create_tween().set_parallel()
-	
-	disapear_tween.tween_property(self, "modulate", Color.TRANSPARENT, .1)
-	disapear_tween.tween_property(self, "scale", Vector2(.1,.1), .1)
-	disapear_tween.tween_property(self, "global_position", old_pos, .1)
-	
-	await disapear_tween.finished
-	
-	queue_free()
-
-func _on_minimize_button_pressed() -> void:
-	size = %Header.size if %MinimizeButton.minimized else old_size
-
+#func _on_resources_show_list(message: String, looking_at: String, using: Array[Base_Card]):
+	#reset_items()
+	#
+	#%Identifier.clear()
+	#%Instructions.clear()
+	#%Identifier.append_text(str("[center]", looking_at))
+	#%Instructions.append_text(str("[center]",message))
+	#
+	#for card in using:
+		#list[card] = true
+	#set_items()
+	#
+	#show()
 #endregion
 #--------------------------------------
-
-
-func _on_movable_pressed() -> void:
-	if options:
-		Globals.control_disapear(options, options.timing, options.old_position)
