@@ -14,7 +14,9 @@ var current_indexes: Array
 
 func _ready() -> void:
 	current_indexes = range(en_count)
-	%Button.disabled = disabled
+	if disabled:
+		%Button.disabled = disabled
+		%Button.mouse_filter = MOUSE_FILTER_IGNORE
 	
 	for i in container.get_child_count():
 		energyContainer.append(container.get_child(i))

@@ -110,21 +110,3 @@ func sort_items():
 	pass
 #endregion
 #--------------------------------------
-
-#--------------------------------------
-#region SIGNALS
-#func _on_resources_show_list(message: String, looking_at: String, using: Array[Base_Card]):
-	#reset_items()
-	#
-	#%Identifier.clear()
-	#%Instructions.clear()
-	#%Identifier.append_text(str("[center]", looking_at))
-	#%Instructions.append_text(str("[center]",message))
-	#
-	#for card in using:
-		#list[card] = true
-	#set_items()
-	#
-	#show()
-#endregion
-#--------------------------------------

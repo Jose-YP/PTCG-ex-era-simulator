@@ -6,10 +6,12 @@ class_name BoardNode
 @export var board_state: BoardState
 @export var fundies: Fundies
 @export var doubles: bool = true
+@export var test: PackedScene
 
 var full_ui: FullBoardUI
 var singles_ui: PackedScene = load("res://Scenes/UI/UICollections/full_ui.tscn")
 var doubles_ui: PackedScene = load("res://Scenes/UI/UICollections/full_ui_doubles.tscn")
+var test_out: bool = false
 
 func _ready() -> void:
 	full_ui = doubles_ui.instantiate() if doubles else singles_ui.instantiate()
@@ -43,3 +45,16 @@ func set_up(home: bool):
 
 func _on_button_pressed() -> void:
 	pass # Replace with function body.
+
+func _input(event: InputEvent) -> void:
+	if event.is_action("TEST") and not test_out:
+		var new = test.instantiate()
+		
+		#region EDIT WITH WHATEVER
+		new.side = full_ui.get_side(true)
+		new.singles = false
+		#endregion
+		
+		add_child(new)
+		test_out = true
+	

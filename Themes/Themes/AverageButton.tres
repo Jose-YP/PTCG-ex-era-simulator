@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=12 format=3 uid="uid://bfw6ylcttychc"]
+[gd_resource type="Theme" load_steps=13 format=3 uid="uid://bfw6ylcttychc"]
 
 [ext_resource type="StyleBox" uid="uid://duhmik1loeema" path="res://Themes/StyleBoxes/GBABox.tres" id="1_j8r7k"]
 [ext_resource type="StyleBox" uid="uid://bvesf3hjv2bsl" path="res://Themes/StyleBoxes/GBADragBox.tres" id="2_0j40x"]
@@ -76,6 +76,9 @@ corner_detail = 14
 shadow_color = Color(0, 0, 0, 0.0980392)
 shadow_size = 1
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_au071"]
+bg_color = Color(0.160784, 0.137255, 0.207843, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ptgho"]
 bg_color = Color(0.368627, 0.27451, 0.698039, 0.701961)
 shadow_size = 1
@@ -98,5 +101,7 @@ EnergyButton/styles/focus = SubResource("StyleBoxFlat_amp7u")
 EnergyButton/styles/hover = SubResource("StyleBoxFlat_amp7u")
 EnergyButton/styles/normal = ExtResource("3_0j40x")
 EnergyButton/styles/pressed = SubResource("StyleBoxFlat_4wb57")
+ListPanel/base_type = &"PanelContainer"
+ListPanel/styles/panel = SubResource("StyleBoxFlat_au071")
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_ptgho")
 PowerButton/base_type = &"Button"
