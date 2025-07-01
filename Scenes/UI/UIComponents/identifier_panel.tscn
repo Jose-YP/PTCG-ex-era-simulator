@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1doyw07lc583"]
+
+[ext_resource type="StyleBox" uid="uid://bvesf3hjv2bsl" path="res://Themes/StyleBoxes/GBADragBox.tres" id="1_7xohd"]
+[ext_resource type="PackedScene" uid="uid://cmmds4boaksl7" path="res://Scenes/UI/UIComponents/movable.tscn" id="2_o4pkp"]
+
+[node name="IdentifierPanel" type="PanelContainer"]
+custom_minimum_size = Vector2(400, 40)
+theme_override_styles/panel = ExtResource("1_7xohd")
+
+[node name="Instructions" type="RichTextLabel" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]"
+fit_content = true
+
+[node name="Movable" parent="." node_paths=PackedStringArray("based_on") instance=ExtResource("2_o4pkp")]
+layout_mode = 2
+based_on = NodePath("..")

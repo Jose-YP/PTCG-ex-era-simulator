@@ -4,6 +4,7 @@ extends Node
 @export var offset: float = 50
 
 @onready var par: PlayingList = $".."
+@onready var scroll_box: ScrollContainer = %ScrollBox
 
 var tutor: Tutor_Box
 var search_dict: Dictionary [Identifier, Dictionary]

@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://c3xey2xwxbne0"]
+
+[ext_resource type="StyleBox" uid="uid://bvesf3hjv2bsl" path="res://Themes/StyleBoxes/GBADragBox.tres" id="1_drfb4"]
+[ext_resource type="PackedScene" uid="uid://cmmds4boaksl7" path="res://Scenes/UI/UIComponents/movable.tscn" id="2_sr48m"]
+[ext_resource type="StyleBox" uid="uid://bsh6edcpwvowr" path="res://Themes/StyleBoxes/minimize_button.tres" id="3_q04uv"]
+[ext_resource type="Script" uid="uid://bphfo08n46yrj" path="res://Code/Scenes/UI/List/minimize_button.gd" id="4_ro1bh"]
+[ext_resource type="Theme" uid="uid://bgn3jjlbvn1xq" path="res://Themes/Themes/PowerButton.tres" id="5_ml2av"]
+[ext_resource type="Script" uid="uid://cqy27ta3ov66b" path="res://Code/Scenes/UI/List/close_button.gd" id="6_p3gqh"]
+
+[node name="Header" type="HBoxContainer"]
+custom_minimum_size = Vector2(420, 0)
+alignment = 1
+
+[node name="IdentifierPanel" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(345, 40)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_drfb4")
+
+[node name="Identifier" type="RichTextLabel" parent="IdentifierPanel"]
+unique_name_in_owner = true
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]"
+fit_content = true
+
+[node name="Movable" parent="IdentifierPanel" node_paths=PackedStringArray("dragging_node", "based_on") instance=ExtResource("2_sr48m")]
+layout_mode = 2
+dragging_node = NodePath("")
+based_on = NodePath("..")
+
+[node name="MinimizeButton" type="Button" parent="." node_paths=PackedStringArray("shrinkNodes", "hideNodes")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("3_q04uv")
+text = "-"
+script = ExtResource("4_ro1bh")
+shrinkNodes = [NodePath("")]
+hideNodes = [NodePath("")]
+metadata/_custom_type_script = "uid://bphfo08n46yrj"
+
+[node name="Close_Button" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("5_ml2av")
+text = "X"
+script = ExtResource("6_p3gqh")
+metadata/_custom_type_script = "uid://cqy27ta3ov66b"
