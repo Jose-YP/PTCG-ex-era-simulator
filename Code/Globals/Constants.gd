@@ -48,12 +48,12 @@ const energy_colors: Array[Color] = [Color.GREEN, Color.RED, Color.AQUA,
 #region SCENES
 var reg_list: PackedScene = load("res://Scenes/UI/Lists/RegList.tscn")
 const attack_list_comp: PackedScene = preload("res://Scenes/UI/Lists/attack_scroll_box.tscn")
-const poke_card = preload("res://Scenes/UI/CardDisplay/PokemonCard.tscn")
+const poke_card : PackedScene = preload("res://Scenes/UI/CardDisplay/PokemonCard.tscn")
 const trainer_card: PackedScene = preload("res://Scenes/UI/CardDisplay/TrainerCard.tscn")
 const energy_card: PackedScene = preload("res://Scenes/UI/CardDisplay/EnergyCard.tscn")
-const cursor: PackedScene = preload("res://Scenes/UI/UIComponents/cursor.tscn")
 const tutor_box: PackedScene = preload("res://Scenes/UI/Lists/tutor_box.tscn")
 const reorder_list: PackedScene = preload("res://Scenes/UI/Lists/ReoderList.tscn")
+const swap_box: PackedScene = preload("res://Scenes/UI/Lists/swap_box.tscn")
 #endregion
 #--------------------------------------
 
@@ -89,7 +89,8 @@ enum STACK_ACT{PLAY,##ALLOWED CARDS CAN BE PLAYED ONTO THE BOARD
 	TUTOR, ##ALLOWED CARDS WILL BE SENT TO ANOTHER DESTINATION
 	DISCARD, ##ALLOWED CARDS WILL BE SENT TO DISCARD PILE
 	LOOK, ##NOT ALLOWED TO INTERACT WITH CARDS
-	REORDER ##REARRANGE CARDS AS NECESSARY
+	REORDER, ##REARRANGE CARDS AS NECESSARY
+	ENSWAP
 }
 #endregion
 #--------------------------------------

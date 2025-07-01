@@ -1,3 +1,4 @@
+@icon("res://Art/ProjectSpecific/recycle-bin.png")
 extends Resource
 class_name CardDisrupt
 

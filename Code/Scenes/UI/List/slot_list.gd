@@ -1,11 +1,13 @@
-extends PanelContainer
+@icon("res://Art/ProjectSpecific/swap.png")
+extends ScrollContainer
+class_name SlotList
 
 @export var side: CardSideUI
 @export var singles: bool = true
 
 var slots: Array[PokeSlotButton]
 
-func _ready() -> void:
+func setup():
 	for node in %SlotList.get_children():
 		slots.append(node as PokeSlotButton)
 		node.set_slotNum(node.name)

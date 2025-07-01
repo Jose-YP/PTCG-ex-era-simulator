@@ -124,14 +124,14 @@ func card_priority(compared_to: Base_Card) -> bool:
 		return trainer_properties != null
 	
 	if energy_properties.considered == compared_to.energy_properties.considered:
+		if energy_properties.number != compared_to.energy_properties.number:
+			return energy_properties.number > compared_to.energy_properties.number
 		if energy_properties.react != compared_to.energy_properties.react:
 			return energy_properties.react
 		if energy_properties.holon_type != compared_to.energy_properties.holon_type:
 			return energy_properties.holon_type > compared_to.energy_properties.holon_type
-		if energy_properties.number != compared_to.energy_properties.number:
-			return energy_properties.number > compared_to.energy_properties.number
 		
-		return energy_properties.type > compared_to.energy_properties.type
+		return energy_properties.type < compared_to.energy_properties.type
 	else:
 		return energy_properties.considered > compared_to.energy_properties.considered
 

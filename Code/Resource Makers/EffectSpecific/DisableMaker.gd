@@ -1,3 +1,4 @@
+@icon("res://Art/ProjectSpecific/disabled.png")
 extends Resource
 class_name Disable
 

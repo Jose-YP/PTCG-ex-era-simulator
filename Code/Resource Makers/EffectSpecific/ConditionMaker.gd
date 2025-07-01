@@ -1,3 +1,4 @@
+@icon("res://Art/ProjectSpecific/poison.png")
 extends Resource
 class_name Condition
 

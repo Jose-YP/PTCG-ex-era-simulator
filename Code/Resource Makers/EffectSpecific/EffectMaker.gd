@@ -1,6 +1,6 @@
+@icon("res://Art/ProjectSpecific/beauty.png")
 extends Resource
 class_name EffectCall
-
 
 enum effect_types{CONDITION, BUFF, DISRUPT, DISABLE, 
 ENMOV, DMGMANIP, SEARCH, SWAP, DRAW, ALLEVIATE, MIMIC, OTHER}

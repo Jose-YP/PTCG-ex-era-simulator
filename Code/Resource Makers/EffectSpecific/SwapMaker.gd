@@ -1,3 +1,4 @@
+@icon("res://Art/ProjectSpecific/swap.png")
 extends Resource
 class_name PokeSwap
 

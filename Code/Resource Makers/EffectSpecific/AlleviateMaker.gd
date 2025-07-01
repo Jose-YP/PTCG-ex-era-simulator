@@ -1,3 +1,4 @@
+@icon("res://Art/ProjectSpecific/leaves.png")
 extends Resource
 class_name Alleviate
 

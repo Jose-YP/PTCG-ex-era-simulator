@@ -9,11 +9,11 @@ extends HBoxContainer
 @export var shrinkNodes: Array[Control]
 @export var hideNodes: Array[Control]
 
-@onready var movable: Draggable_Control = $IdentifierPanel/Movable
+@onready var movable: Draggable_Control = %Movable
 @onready var identifier: RichTextLabel = %Identifier
 @onready var minimize_button: Minimize_Button = %MinimizeButton
 
-func _ready() -> void:
+func setup(txt: String):
 	movable.dragging_node = dragging_node
 	movable.based_on = based_on
 	movable.offset = offset
@@ -24,8 +24,7 @@ func _ready() -> void:
 	
 	if closable:
 		%Close_Button.show()
-
-func setup(txt: String):
+	
 	identifier.append_text(txt)
 	
 	if txt == "":

@@ -56,5 +56,6 @@ func _input(event: InputEvent) -> void:
 		#endregion
 		
 		add_child(new)
+		new.setup()
 		test_out = true
 	

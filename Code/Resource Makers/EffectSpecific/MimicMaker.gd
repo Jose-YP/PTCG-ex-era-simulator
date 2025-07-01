@@ -1,3 +1,4 @@
+@icon("res://Art/ProjectSpecific/man.png")
 extends Resource
 class_name Mimic
 

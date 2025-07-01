@@ -17,7 +17,6 @@ class_name PlayingList
 
 const list_item: PackedScene = preload("res://Scenes/UI/Lists/PlayingListItem_copy.tscn")
 
-var items: Array[Node] = []
 var black_list: Array[String] = []
 var white_list: Array[String] = []
 var display: Node
@@ -41,14 +40,11 @@ func set_items():
 		%CardList.add_child(making)
 		is_allowed(making)
 	
-	items = %CardList.get_children()
-	if stack_act != Constants.STACK_ACT.PLAY and stack_act != Constants.STACK_ACT.LOOK:
+	if stack_act != Constants.STACK_ACT.PLAY and stack_act != Constants.STACK_ACT.LOOK and %CardList.get_child_count() != 0:
 		sort_items()
 
 func refresh_allowance():
-	items = %CardList.get_children()
-	
-	for item in items:
+	for item in %CardList.get_children():
 		is_allowed(item)
 
 func is_allowed(button: Button) -> void:
@@ -83,15 +79,14 @@ func is_allowed(button: Button) -> void:
 #--------------------------------------
 #region ITEM MANAGEMENT
 func reset_items():
-	for item in items:
-		item.queue_free()
-	
-	items = %CardList.get_children()
+	for item in %CardList.get_children():
+		%CardList.remove_child(item)
+		print(item)
 
 func remove_item(card: Base_Card):
 	for item in %CardList.get_children():
 		if item.card == card:
-			item.queue_free()
+			%CardList.remove_child(item)
 
 func add_item(card: Base_Card):
 	var making = list_item.instantiate()
@@ -102,7 +97,7 @@ func add_item(card: Base_Card):
 
 func sort_items():
 	Conversions.all_lists = all_lists
-	items = %CardList.get_children()
+	var items = %CardList.get_children()
 	items.sort_custom(Conversions.default_card_sort)
 	for i in range(items.size()):
 		%CardList.move_child(items[i], i)

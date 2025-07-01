@@ -1,0 +1,80 @@
+[gd_scene load_steps=6 format=3 uid="uid://mkvxdbo067mv"]
+
+[ext_resource type="Script" uid="uid://b4s6kcb4bs43a" path="res://Code/Scenes/UI/List/swap_box.gd" id="1_7u88y"]
+[ext_resource type="PackedScene" uid="uid://bttlpdvhmocn3" path="res://Scenes/UI/Lists/header.tscn" id="2_b6wtd"]
+[ext_resource type="PackedScene" uid="uid://dwn2qsmdqyhiw" path="res://Scenes/UI/Lists/playing_list.tscn" id="3_djaoh"]
+[ext_resource type="PackedScene" uid="uid://forsjrvfnym2" path="res://Scenes/UI/Lists/slot_list.tscn" id="4_a8luo"]
+[ext_resource type="PackedScene" uid="uid://c28rtuj3kak48" path="res://Scenes/UI/Lists/Footer.tscn" id="5_m4yaq"]
+
+[node name="SwapBox" type="Control"]
+layout_mode = 3
+anchor_right = 0.774
+anchor_bottom = 0.831
+offset_right = 0.0799561
+offset_bottom = -0.320007
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7u88y")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Header" parent="VBoxContainer" node_paths=PackedStringArray("dragging_node", "based_on", "shrinkNodes", "hideNodes") instance=ExtResource("2_b6wtd")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(836, 0)
+layout_mode = 2
+dragging_node = NodePath("../..")
+based_on = NodePath(".")
+shrinkNodes = [NodePath("../PanelContainer/Lists/VBoxContainer/SlotList"), NodePath("../PanelContainer/Lists/PlayingList")]
+hideNodes = [NodePath("../IdentifierPanel2"), NodePath("../PanelContainer/Lists/VBoxContainer/Actions")]
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Lists" type="HBoxContainer" parent="VBoxContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="PlayingList" parent="VBoxContainer/PanelContainer/Lists" node_paths=PackedStringArray("par") instance=ExtResource("3_djaoh")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+par = NodePath("../../../..")
+allowed_as = 512
+stack_act = 4
+stack = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/PanelContainer/Lists"]
+layout_mode = 2
+
+[node name="SlotList" parent="VBoxContainer/PanelContainer/Lists/VBoxContainer" instance=ExtResource("4_a8luo")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="Actions" type="PanelContainer" parent="VBoxContainer/PanelContainer/Lists/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/PanelContainer/Lists/VBoxContainer/Actions"]
+layout_mode = 2
+
+[node name="Instructions" type="RichTextLabel" parent="VBoxContainer/PanelContainer/Lists/VBoxContainer/Actions/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+fit_content = true
+
+[node name="End" type="Button" parent="VBoxContainer/PanelContainer/Lists/VBoxContainer/Actions/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Finish"
+
+[node name="IdentifierPanel2" parent="VBoxContainer" node_paths=PackedStringArray("dragging_node") instance=ExtResource("5_m4yaq")]
+unique_name_in_owner = true
+layout_mode = 2
+dragging_node = NodePath("../..")
+
+[connection signal="pressed" from="VBoxContainer/PanelContainer/Lists/VBoxContainer/Actions/HBoxContainer/End" to="." method="_on_end_pressed"]

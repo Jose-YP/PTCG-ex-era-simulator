@@ -1,3 +1,4 @@
+@icon("res://Art/ProjectSpecific/steroids.png")
 extends Resource
 class_name DamageManip
 

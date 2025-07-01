@@ -6,7 +6,8 @@
 
 [node name="PlayingList" type="ScrollContainer"]
 custom_minimum_size = Vector2(420, 510)
-size_flags_vertical = 3
+size_flags_horizontal = 4
+size_flags_vertical = 0
 theme_override_styles/panel = ExtResource("1_fincb")
 follow_focus = true
 script = ExtResource("2_dv6ib")

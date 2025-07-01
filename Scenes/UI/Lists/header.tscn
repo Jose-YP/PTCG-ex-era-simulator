@@ -1,15 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://bttlpdvhmocn3"]
+[gd_scene load_steps=7 format=3 uid="uid://bttlpdvhmocn3"]
 
 [ext_resource type="StyleBox" uid="uid://bvesf3hjv2bsl" path="res://Themes/StyleBoxes/GBADragBox.tres" id="1_h08pk"]
 [ext_resource type="Script" uid="uid://c3lvjf2086efq" path="res://Code/Scenes/UI/List/header.gd" id="1_nss2a"]
 [ext_resource type="PackedScene" uid="uid://cmmds4boaksl7" path="res://Scenes/UI/UIComponents/movable.tscn" id="2_nss2a"]
-[ext_resource type="StyleBox" uid="uid://bsh6edcpwvowr" path="res://Themes/StyleBoxes/minimize_button.tres" id="3_sankd"]
-[ext_resource type="Script" uid="uid://bphfo08n46yrj" path="res://Code/Scenes/UI/List/minimize_button.gd" id="4_cdbln"]
+[ext_resource type="PackedScene" uid="uid://dmhjt2wuanymf" path="res://Scenes/UI/UIComponents/minimize_button.tscn" id="4_h08pk"]
 [ext_resource type="Theme" uid="uid://bgn3jjlbvn1xq" path="res://Themes/Themes/PowerButton.tres" id="5_i38dm"]
 [ext_resource type="Script" uid="uid://cqy27ta3ov66b" path="res://Code/Scenes/UI/List/close_button.gd" id="6_jxl0u"]
 
 [node name="Header" type="HBoxContainer" node_paths=PackedStringArray("based_on")]
 custom_minimum_size = Vector2(420, 0)
+size_flags_horizontal = 3
 alignment = 1
 script = ExtResource("1_nss2a")
 based_on = NodePath("IdentifierPanel")
@@ -17,6 +17,7 @@ based_on = NodePath("IdentifierPanel")
 [node name="IdentifierPanel" type="PanelContainer" parent="."]
 custom_minimum_size = Vector2(345, 40)
 layout_mode = 2
+size_flags_horizontal = 3
 theme_override_styles/panel = ExtResource("1_h08pk")
 
 [node name="Identifier" type="RichTextLabel" parent="IdentifierPanel"]
@@ -27,19 +28,13 @@ text = "[center]"
 fit_content = true
 
 [node name="Movable" parent="IdentifierPanel" node_paths=PackedStringArray("based_on") instance=ExtResource("2_nss2a")]
+unique_name_in_owner = true
 layout_mode = 2
 based_on = NodePath("..")
 
-[node name="MinimizeButton" type="Button" parent="." node_paths=PackedStringArray("shrinkNodes", "hideNodes")]
+[node name="MinimizeButton" parent="." instance=ExtResource("4_h08pk")]
 unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/normal = ExtResource("3_sankd")
-text = "-"
-script = ExtResource("4_cdbln")
-shrinkNodes = [null]
-hideNodes = [null]
-metadata/_custom_type_script = "uid://bphfo08n46yrj"
 
 [node name="Close_Button" type="Button" parent="."]
 unique_name_in_owner = true

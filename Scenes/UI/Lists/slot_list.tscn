@@ -3,9 +3,10 @@
 [ext_resource type="Script" uid="uid://cqr00trtkt8t8" path="res://Code/Scenes/UI/List/slot_list.gd" id="1_eokr6"]
 [ext_resource type="PackedScene" uid="uid://bmhljiqag6upw" path="res://Scenes/UI/Lists/poke_slot_item.tscn" id="2_2myyc"]
 
-[node name="SlotList" type="PanelContainer"]
-offset_right = 409.0
-offset_bottom = 400.0
+[node name="SlotList" type="ScrollContainer"]
+custom_minimum_size = Vector2(410, 410)
+offset_right = 410.0
+offset_bottom = 410.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_eokr6")
@@ -17,35 +18,32 @@ theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
-theme_type_variation = &"ListPanel"
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer"]
-layout_mode = 2
-alignment = 1
-
-[node name="SlotList" type="VBoxContainer" parent="MarginContainer/PanelContainer/HBoxContainer"]
+[node name="SlotList" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 8
 alignment = 1
 
-[node name="A1" parent="MarginContainer/PanelContainer/HBoxContainer/SlotList" instance=ExtResource("2_2myyc")]
+[node name="A1" parent="MarginContainer/HBoxContainer/SlotList" instance=ExtResource("2_2myyc")]
 layout_mode = 2
 
-[node name="A2_B5" parent="MarginContainer/PanelContainer/HBoxContainer/SlotList" instance=ExtResource("2_2myyc")]
+[node name="A2_B5" parent="MarginContainer/HBoxContainer/SlotList" instance=ExtResource("2_2myyc")]
 layout_mode = 2
 
-[node name="B1" parent="MarginContainer/PanelContainer/HBoxContainer/SlotList" instance=ExtResource("2_2myyc")]
+[node name="B1" parent="MarginContainer/HBoxContainer/SlotList" instance=ExtResource("2_2myyc")]
 layout_mode = 2
 
-[node name="B2" parent="MarginContainer/PanelContainer/HBoxContainer/SlotList" instance=ExtResource("2_2myyc")]
+[node name="B2" parent="MarginContainer/HBoxContainer/SlotList" instance=ExtResource("2_2myyc")]
 layout_mode = 2
 
-[node name="B3" parent="MarginContainer/PanelContainer/HBoxContainer/SlotList" instance=ExtResource("2_2myyc")]
+[node name="B3" parent="MarginContainer/HBoxContainer/SlotList" instance=ExtResource("2_2myyc")]
 layout_mode = 2
 
-[node name="B4" parent="MarginContainer/PanelContainer/HBoxContainer/SlotList" instance=ExtResource("2_2myyc")]
+[node name="B4" parent="MarginContainer/HBoxContainer/SlotList" instance=ExtResource("2_2myyc")]
 layout_mode = 2

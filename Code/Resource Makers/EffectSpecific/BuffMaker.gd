@@ -1,3 +1,4 @@
+@icon("res://Art/ProjectSpecific/sword(1).png")
 extends Resource
 class_name Buff
 

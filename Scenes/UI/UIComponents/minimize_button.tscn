@@ -5,6 +5,7 @@
 [ext_resource type="StyleBox" uid="uid://bsh6edcpwvowr" path="res://Themes/StyleBoxes/minimize_button.tres" id="2_v3vjs"]
 
 [node name="MinimizeButton" type="Button"]
+custom_minimum_size = Vector2(25, 0)
 offset_left = 3.0
 offset_top = 1.0
 offset_right = 31.0
