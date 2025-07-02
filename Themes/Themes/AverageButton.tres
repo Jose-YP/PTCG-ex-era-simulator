@@ -1,8 +1,9 @@
-[gd_resource type="Theme" load_steps=13 format=3 uid="uid://bfw6ylcttychc"]
+[gd_resource type="Theme" load_steps=15 format=3 uid="uid://bfw6ylcttychc"]
 
 [ext_resource type="StyleBox" uid="uid://duhmik1loeema" path="res://Themes/StyleBoxes/GBABox.tres" id="1_j8r7k"]
 [ext_resource type="StyleBox" uid="uid://bvesf3hjv2bsl" path="res://Themes/StyleBoxes/GBADragBox.tres" id="2_0j40x"]
 [ext_resource type="StyleBox" uid="uid://dmlko6tcmyk71" path="res://Themes/StyleBoxes/EnergyButton.tres" id="3_0j40x"]
+[ext_resource type="StyleBox" uid="uid://hb14mew2o8sf" path="res://Themes/StyleBoxes/translucent.tres" id="4_amp7u"]
 [ext_resource type="FontFile" uid="uid://c51lppak2duli" path="res://Themes/Themes/AdobeClean-Regular.ttf" id="4_au071"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wcrro"]
@@ -20,12 +21,21 @@ border_color = Color(0.286275, 0.00392157, 0.611765, 1)
 border_blend = true
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_auhmd"]
-bg_color = Color(0.137255, 0.141176, 0.278431, 1)
+bg_color = Color(0.389713, 0.291421, 0.690951, 1)
 border_width_left = 1
 border_width_top = 2
 border_width_right = 1
 border_width_bottom = 2
 border_color = Color(0.286275, 0.00392157, 0.611765, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3fel7"]
+bg_color = Color(0.140275, 0.249123, 0.574551, 1)
+border_width_left = 2
+border_width_top = 1
+border_width_right = 2
+border_width_bottom = 1
+border_color = Color(0.236219, 0.277338, 0.603685, 1)
 border_blend = true
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c3wud"]
@@ -92,6 +102,8 @@ Button/styles/disabled = SubResource("StyleBoxFlat_wcrro")
 Button/styles/hover = SubResource("StyleBoxFlat_mtcsg")
 Button/styles/normal = ExtResource("1_j8r7k")
 Button/styles/pressed = SubResource("StyleBoxFlat_auhmd")
+DeepPannel/base_type = &"PanelContainer"
+DeepPannel/styles/panel = SubResource("StyleBoxFlat_3fel7")
 DragButton/base_type = &"Button"
 DragButton/styles/normal = ExtResource("2_0j40x")
 DragButton/styles/pressed = SubResource("StyleBoxFlat_c3wud")
@@ -105,3 +117,4 @@ ListPanel/base_type = &"PanelContainer"
 ListPanel/styles/panel = SubResource("StyleBoxFlat_au071")
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_ptgho")
 PowerButton/base_type = &"Button"
+ScrollContainer/styles/panel = ExtResource("4_amp7u")

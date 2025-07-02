@@ -103,5 +103,12 @@ func sort_items():
 		%CardList.move_child(items[i], i)
 	
 	pass
+
+func get_items() -> Array[PlayingButton]:
+	var items: Array[PlayingButton]
+	for item in %CardList.get_children():
+		items.append(item)
+	
+	return items
 #endregion
 #--------------------------------------

@@ -1,10 +1,13 @@
 extends Button
+class_name PlayingButton
 
 @export var card: Base_Card
 @export var option_offset: Vector2 = Vector2(30, 100)
 @export_flags("Basic", "Evolution", "Item",
 "Supporter", "Stadium", "Tool", "TM", "RSM", "Fossil",
  "Energy") var card_flags: int = 0
+
+signal select
 
 var parent: Node
 var checking_card: Node
@@ -82,14 +85,15 @@ func show_options() -> Node:
 func _gui_input(event):
 	if not disabled:
 		if event.is_action_pressed("A"):
-			if Globals.fundies.options:
-				await Globals.control_disapear(Globals.fundies.options, .15, global_position)
-				Globals.fundies.options = show_options()
-			else:
-				if stack_act == Constants.STACK_ACT.LOOK:
-					Globals.show_card(card, self)
-				elif not Globals.checking:
+			if stack_act == Constants.STACK_ACT.PLAY:
+				if Globals.fundies.options:
+					await Globals.control_disapear(Globals.fundies.options, .15, global_position)
+				if not Globals.checking:
 					Globals.fundies.options = show_options()
+			elif stack_act == Constants.STACK_ACT.LOOK:
+				Globals.show_card(card, self)
+			else:
+				select.emit()
 	if event.is_action_pressed("Check"):
 		Globals.show_card(card, self)
 

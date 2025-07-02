@@ -1,6 +1,5 @@
-[gd_scene load_steps=4 format=3 uid="uid://dwn2qsmdqyhiw"]
+[gd_scene load_steps=3 format=3 uid="uid://dwn2qsmdqyhiw"]
 
-[ext_resource type="StyleBox" uid="uid://hb14mew2o8sf" path="res://Themes/StyleBoxes/translucent.tres" id="1_fincb"]
 [ext_resource type="Script" uid="uid://dkqmky7i7ibak" path="res://Code/Scenes/UI/List/PlayingList.gd" id="2_dv6ib"]
 [ext_resource type="PackedScene" uid="uid://bgjvymhyt234g" path="res://Scenes/UI/Lists/tutor_box.tscn" id="3_dv6ib"]
 
@@ -8,10 +7,14 @@
 custom_minimum_size = Vector2(420, 510)
 size_flags_horizontal = 4
 size_flags_vertical = 0
-theme_override_styles/panel = ExtResource("1_fincb")
 follow_focus = true
 script = ExtResource("2_dv6ib")
 tutor_box = ExtResource("3_dv6ib")
+all_lists = null
+list = null
+allowed_as = null
+stack_act = null
+stack = null
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2

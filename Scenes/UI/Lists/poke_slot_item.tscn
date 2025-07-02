@@ -122,8 +122,3 @@ custom_minimum_size = Vector2(14, 0)
 layout_mode = 2
 mouse_filter = 2
 text = "A1"
-
-[node name="ScrollContainer" type="ScrollContainer" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
