@@ -66,6 +66,7 @@ side = 5
 slots = 2
 to_stack = 2
 stack_direction = 2
+action_ammount = 0
 energy_ammount = 0
 energy_move_type = 2
 type = 511

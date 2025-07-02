@@ -12,7 +12,6 @@ class_name SwapBox
 @onready var header: HBoxContainer = %Header
 @onready var footer: PanelContainer = %Footer
 @onready var energy_types: EnergyCollection = %EnergyTypes
-@onready var blank: Control = %Blank
 
 enum STEP {GIVER, ENERGY, RECIECVER}
 
@@ -21,7 +20,7 @@ signal finished
 const stack = Constants.STACKS.PLAY
 const stack_act = Constants.STACK_ACT.ENSWAP
 
-var swap_rules: EnMov
+var swap_rules: EnMov = load("res://Resources/Components/Effects/EnergyMovement/EnergyTrans.tres")
 var swaps_made: int = 0
 var giver: PokeSlotButton
 var reciever: PokeSlotButton
@@ -39,16 +38,14 @@ func _ready() -> void:
 	for button in slot_list.slots:
 		button.pressed.connect(handle_pressed_slot.bind(button))
 	
-	if swap_rules == null:
-		var default_effect: EffectCall = load("res://Resources/Components/Effects/EnergyMovement/AtkSwapBasic.tres")
-		swap_rules = default_effect.energy_movement
-	
-	setup()
+	#if swap_rules == null:
+		#var default_effect: EffectCall = load("energytran")
+		#swap_rules = default_effect.energy_movement
+	#
+	update_info()
 	header.setup("SWAP BOX")
-	footer.setup(str("PRESS ESC TO UNDO \t SWAPS MADE: ", swaps_made, "/",swap_rules.action_ammount))
+	footer.setup("PRESS ESC TO UNDO")
 
-func setup():
-	pass
 #endregion
 #--------------------------------------
 
@@ -68,11 +65,22 @@ func _input(event: InputEvent) -> void:
 #region GIVE/RECIEVE
 func handle_pressed_slot(slot_button: PokeSlotButton):
 	if giver == null:
+		giver = slot_button
 		get_swappable(slot_button)
+		giver.flat = true
 	elif giver != slot_button:
 		reciever = slot_button
-		%Swap.disabled = false
-		%Swap.text = str("Swap ",energy_given.size(), " to ", slot_button.slot.current_card.name)
+		reciever.flat = true
+	elif giver == slot_button:
+		giver.flat = false
+		giver = null
+		playing_list.reset_items()
+		energy_given.clear()
+		energy_types.reset_energy()
+	elif reciever == slot_button:
+		reciever.flat = true
+		reciever = null
+	update_info()
 
 func get_swappable(slot_button: PokeSlotButton):
 	playing_list.reset_items()
@@ -89,10 +97,6 @@ func get_swappable(slot_button: PokeSlotButton):
 	for button in playing_list.get_items():
 		button.select.connect(select_energy.bind(button))
 	
-	giver = slot_button
-	
-	update_info(str("Choose cards to swap from ", slot_button.slot.current_card.name,
-	 "\n", 0,"/",swap_rules.energy_ammount))
 #endregion
 #--------------------------------------
 
@@ -111,11 +115,10 @@ func select_energy(button: PlayingButton):
 	
 	print(energy_given)
 	allowed_more()
-	update_info(str(energy_given.size() ,"/",swap_rules.energy_ammount,
-	 "\n", "Choose cards to swap from ", giver.slot.current_card.name))
+	update_info()
 
 func allowed_more():
-	if energy_given.size() == swap_rules.energy_ammount:
+	if swap_rules.enough_energy(energy_given.size()):
 		for button in playing_list.get_items():
 			if button.flat: continue
 			button.disabled = true
@@ -138,15 +141,28 @@ func display_current_swap():
 		energy_dict[energy_name] += button.card.energy_properties.number
 	
 	energy_types.display_energy(energy_names, energy_dict)
-	if energy_types.visible: blank.hide()
-	else: blank.show()
 
 #endregion
 #--------------------------------------
 
-func update_info(txt: String):
+func update_info():
+	var giver_txt: String = str("Giver: ", 
+	"" if giver == null else giver.slot.current_card.name)
+	var reciever_txt: String = str("Reciever: ", 
+	"" if reciever == null else reciever.slot.current_card.name)
+	
+	var giving_txt: String = str(energy_given.size(),"/",
+	swap_rules.energy_ammount if swap_rules.energy_ammount != -1 else "X")
+	var actions_left: String = str("Swaps Left: ",swaps_made,"/",
+	swap_rules.action_ammount if swap_rules.action_ammount != -1 else "X")
+	
+	%indSwapNum.clear()
+	%indSwapNum.append_text(giving_txt)
 	%Instructions.clear()
-	%Instructions.append_text(txt)
+	%Instructions.append_text(str(giver_txt,"\n",reciever_txt,"\n",actions_left))
+	
+	if reciever:
+		%Swap.text = str("Swap ", energy_given.size()," to ", reciever.slot.current_card.name)
 
 func _on_end_pressed() -> void:
 	pass # Replace with function body.

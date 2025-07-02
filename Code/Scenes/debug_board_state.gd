@@ -36,6 +36,12 @@ func set_up(home: bool):
 	
 	#Set up pre defined slots
 	for slot in temp_side.slots:
+		var new_arr: Array[Base_Card]
+		print(slot.energy_cards)
+		for en in slot.energy_cards:
+			new_arr.append(en.duplicate())
+		slot.energy_cards = new_arr
+		print(slot.energy_cards)
 		slot.player_type = player_type
 		ui.insert_slot(slot, temp_side.slots[slot])
 		stacks.account_for_slot(slot)
@@ -56,6 +62,5 @@ func _input(event: InputEvent) -> void:
 		#endregion
 		
 		add_child(new)
-		new.setup()
 		test_out = true
 	

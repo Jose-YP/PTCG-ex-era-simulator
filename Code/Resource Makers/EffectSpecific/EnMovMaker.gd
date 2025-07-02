@@ -45,12 +45,12 @@ func move_effect():
 	finished.emit()
 
 func swap_effect():
-	var new_box: SwapBox = Constants.swap_box.instantiate()
+	#var new_box: SwapBox = Constants.swap_box.instantiate()
 	
-	new_box.swap_rules = self
+	#new_box.swap_rules = self
 	
-	Globals.fundies.add_child(new_box)
-	await new_box.finished
+	#Globals.fundies.add_child(new_box)
+	#await new_box.finished
 	finished.emit()
 
 func attatch_effect():
@@ -64,3 +64,9 @@ func energy_allowed(card: Base_Card, fail: bool) -> bool:
 	 or (energy_move_type == 0 and card.energy_properties.considered == "Basic Energy")
 	
 	return provides & type != 0 and same
+
+func enough_energy(ammount: int) -> bool:
+	return energy_ammount != -1 and ammount == energy_ammount 
+
+func enough_actions(ammount: int) -> bool:
+	return action_ammount != -1 and ammount == action_ammount

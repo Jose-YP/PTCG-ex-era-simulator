@@ -1,0 +1,52 @@
+[gd_resource type="Resource" script_class="Deck" load_steps=24 format=3 uid="uid://c73v0ww8k8rg2"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_hfsv0"]
+[ext_resource type="Resource" uid="uid://cgm3sofk1dkq3" path="res://Resources/Cards/6 ex FireRed & LeafGreen/RG112Venusaurex.tres" id="2_jo5kh"]
+[ext_resource type="Resource" uid="uid://ct34kdqkmfsuu" path="res://Resources/Cards/6 ex FireRed & LeafGreen/RG35Ivysaur.tres" id="3_swbub"]
+[ext_resource type="Resource" uid="uid://c0kbwsboq8b5x" path="res://Resources/Cards/6 ex FireRed & LeafGreen/RG55Bubasaur.tres" id="4_xap5f"]
+[ext_resource type="Resource" uid="uid://dpvdlrumqivuv" path="res://Resources/Cards/1 ex Ruby & Saphire/RS11Sceptile.tres" id="5_1n57e"]
+[ext_resource type="Resource" uid="uid://x137dggkdklo" path="res://Resources/Cards/1 ex Ruby & Saphire/RS31Grovyle.tres" id="6_xevj7"]
+[ext_resource type="Resource" uid="uid://dno2q4q3waycq" path="res://Resources/Cards/1 ex Ruby & Saphire/RS32Grovyle.tres" id="7_nruug"]
+[ext_resource type="Resource" uid="uid://dx17bi2e0sqkj" path="res://Resources/Cards/1 ex Ruby & Saphire/RS75Treecko.tres" id="8_fadku"]
+[ext_resource type="Resource" uid="uid://cb4kum8iw4q3" path="res://Resources/Cards/1 ex Ruby & Saphire/RS76Treecko.tres" id="9_tgtpm"]
+[ext_resource type="Resource" uid="uid://c357yy7k4yvv3" path="res://Resources/Cards/1 ex Ruby & Saphire/RS2Beautifly.tres" id="10_adjw0"]
+[ext_resource type="Resource" uid="uid://by8ynv4fc500g" path="res://Resources/Cards/1 ex Ruby & Saphire/RS43Silcoon.tres" id="11_nkbty"]
+[ext_resource type="Resource" uid="uid://bw4sp04ye7jyx" path="res://Resources/Cards/1 ex Ruby & Saphire/RS6Dustox.tres" id="12_155ue"]
+[ext_resource type="Resource" uid="uid://d10tfnmvnup6w" path="res://Resources/Cards/1 ex Ruby & Saphire/RS26Cascoon.tres" id="13_w1abg"]
+[ext_resource type="Resource" uid="uid://bekwoaj06a44c" path="res://Resources/Cards/1 ex Ruby & Saphire/RS95RainbowEnergy.tres" id="14_7wnk2"]
+[ext_resource type="Resource" uid="uid://cjxwqcnfm20fq" path="res://Resources/Cards/1 ex Ruby & Saphire/RS104GrassEnergy.tres" id="15_d2od3"]
+[ext_resource type="Resource" uid="uid://cbrv0ftymjhbj" path="res://Resources/Cards/1 ex Ruby & Saphire/RS78Wurmple.tres" id="16_soasr"]
+[ext_resource type="Resource" uid="uid://c2tk6qy8h57lw" path="res://Resources/Cards/1 ex Ruby & Saphire/RS82EnergySwitch.tres" id="17_c3e7t"]
+[ext_resource type="Resource" uid="uid://cc3kjnmsj4pr3" path="res://Resources/Cards/1 ex Ruby & Saphire/RS80EnergyRemoval2.tres" id="18_evi5k"]
+[ext_resource type="Resource" uid="uid://jhipo8gr7d04" path="res://Resources/Cards/3 ex Dragon/DR88TVReporter.tres" id="19_76tvs"]
+[ext_resource type="Resource" uid="uid://c8ot31o7xctp1" path="res://Resources/Cards/6 ex FireRed & LeafGreen/RG98ProfessorOak'sResearch.tres" id="20_qfq8e"]
+[ext_resource type="Resource" uid="uid://biwey6tlevx3y" path="res://Resources/Cards/1 ex Ruby & Saphire/RS81EnergyRestore.tres" id="21_gxdg5"]
+[ext_resource type="Resource" uid="uid://xvauv8yfopfw" path="res://Resources/Cards/2 ex Sandstorm/SS93MultiEnergy.tres" id="22_tlvwd"]
+[ext_resource type="Script" uid="uid://e660iomt5e76" path="res://Code/Resource Makers/CardResources/DeckMaker.gd" id="23_808if"]
+
+[resource]
+script = ExtResource("23_808if")
+cards = Dictionary[ExtResource("1_hfsv0"), int]({
+ExtResource("22_tlvwd"): 2,
+ExtResource("21_gxdg5"): 2,
+ExtResource("20_qfq8e"): 4,
+ExtResource("19_76tvs"): 2,
+ExtResource("18_evi5k"): 3,
+ExtResource("17_c3e7t"): 3,
+ExtResource("16_soasr"): 2,
+ExtResource("15_d2od3"): 16,
+ExtResource("14_7wnk2"): 3,
+ExtResource("13_w1abg"): 2,
+ExtResource("12_155ue"): 2,
+ExtResource("11_nkbty"): 2,
+ExtResource("10_adjw0"): 2,
+ExtResource("9_tgtpm"): 1,
+ExtResource("8_fadku"): 1,
+ExtResource("7_nruug"): 1,
+ExtResource("6_xevj7"): 1,
+ExtResource("5_1n57e"): 2,
+ExtResource("4_xap5f"): 3,
+ExtResource("3_swbub"): 3,
+ExtResource("2_jo5kh"): 3
+})
+metadata/_custom_type_script = "uid://e660iomt5e76"

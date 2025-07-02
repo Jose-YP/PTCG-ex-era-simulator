@@ -52,6 +52,10 @@ func display_energy(energy_arr: Array, energy_dict: Dictionary):
 	
 	if_nothing_in()
 
+func reset_energy():
+	for i in container.get_child_count():
+		container.get_child(i).hide()
+
 func if_nothing_in():
 	var result: bool = false
 	for node in energyContainer:

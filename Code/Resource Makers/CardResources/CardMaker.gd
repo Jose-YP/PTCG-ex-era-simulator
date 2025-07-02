@@ -8,14 +8,14 @@ class_name Base_Card
 @export var illustrator: String
 @export var number: int = 0
 @export_enum("Common", "Uncommon", "Rare", "Holofoil Rare", "ex Rare",
-"Ultra Rare", "Star Rare", "Promo Rare") var rarity: int = 0
+ "Ultra Rare", "Star Rare", "Promo Rare") var rarity: int = 0
 @export_enum("EX Ruby & Sapphire", "EX Sandstorm", "EX Dragon",
-"EX Team Magma vs Team Aqua", "EX Hidden Legends", "EX FireRed & LeadGreen",
-"EX Team Rocket Returns", "EX Deoxys", "EX Emerald", "EX Unseen Forces",
-"EX Delta Species", "EX Legend Maker", "EX Holon Phantoms", "EX Crystal Guardians",
-"EX Dragon Frontiers", "EX Power Keepers", "Black Star Promo",
-"POP Series 1", "POP Series 2", "POP Series 3",
-"POP Series 4", "POP Series 5") var expansion: int = 0
+ "EX Team Magma vs Team Aqua", "EX Hidden Legends", "EX FireRed & LeafGreen",
+ "EX Team Rocket Returns", "EX Deoxys", "EX Emerald", "EX Unseen Forces",
+ "EX Delta Species", "EX Legend Maker", "EX Holon Phantoms", "EX Crystal Guardians",
+ "EX Dragon Frontiers", "EX Power Keepers", "Black Star Promo",
+ "POP Series 1", "POP Series 2", "POP Series 3",
+ "POP Series 4", "POP Series 5") var expansion: int = 0
 
 @export_category("Properties")
 ##Allows a card to serve multiple functions, will be important for:

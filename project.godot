@@ -40,6 +40,7 @@ Conversions="*res://Code/Globals/conversions.gd"
 [debug]
 
 gdscript/warnings/unused_parameter=0
+gdscript/warnings/incompatible_ternary=0
 
 [display]
 

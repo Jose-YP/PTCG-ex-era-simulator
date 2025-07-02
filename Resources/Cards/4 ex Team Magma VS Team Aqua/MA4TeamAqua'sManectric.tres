@@ -131,6 +131,7 @@ side = 1
 slots = 1
 to_stack = 2
 stack_direction = 2
+action_ammount = 0
 energy_ammount = -1
 energy_move_type = 0
 type = 511
