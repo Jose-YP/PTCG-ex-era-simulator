@@ -7,12 +7,13 @@
 
 [resource]
 script = ExtResource("2_j35jy")
-side = 0
+side = 4
 where = 1
 reordering_only = false
 shuffle_first = false
-based_on_side = 1
+based_on_side = 0
 based_on_slots = 0
+based_on_energy = 1
 portion = -1
 how_many = Array[int]([1])
 of_this = Array[ExtResource("1_4jy4p")]([ExtResource("3_xoil8")])

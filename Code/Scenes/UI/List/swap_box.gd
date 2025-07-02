@@ -72,11 +72,7 @@ func handle_pressed_slot(slot_button: PokeSlotButton):
 		reciever = slot_button
 		reciever.flat = true
 	elif giver == slot_button:
-		giver.flat = false
-		giver = null
-		playing_list.reset_items()
-		energy_given.clear()
-		energy_types.reset_energy()
+		reset()
 	elif reciever == slot_button:
 		reciever.flat = true
 		reciever = null
@@ -86,6 +82,7 @@ func get_swappable(slot_button: PokeSlotButton):
 	playing_list.reset_items()
 	var energy_dict: Dictionary[Base_Card, bool] = {}
 	
+	slot_button.slot.count_energy()
 	for card in slot_button.slot.energy_cards:
 		#Asume true for now, make a function to see if it fails or not later
 		energy_dict[card] = swap_rules.energy_allowed(card, false)
@@ -161,11 +158,43 @@ func update_info():
 	%Instructions.clear()
 	%Instructions.append_text(str(giver_txt,"\n",reciever_txt,"\n",actions_left))
 	
+	%Swap.disabled = reciever != null
 	if reciever:
 		%Swap.text = str("Swap ", energy_given.size()," to ", reciever.slot.current_card.name)
+
+func reset():
+	playing_list.reset_items()
+	energy_types.reset_energy()
+	
+	giver.flat = false
+	giver = null
+	energy_given.clear()
+	reciever.flat = false
+	reciever = null
+	
+	update_info()
 
 func _on_end_pressed() -> void:
 	pass # Replace with function body.
 
 func _on_swap_pressed() -> void:
-	pass # Replace with function body.
+	print("Swap!!!!")
+	var temp: Array[Base_Card]
+	var left: Array[Base_Card]
+	
+	for button in energy_given:
+		left.append(button.card)
+	temp = left
+	
+	for en in giver.slot.energy_cards:
+		if en in left:
+			left.erase(en)
+			giver.slot.energy_cards.erase(en)
+	
+	for en in temp:
+		reciever.slot.add_energy(en)
+	
+	reciever.slot.count_energy()
+	giver.slot.count_energy()
+	
+	reset()

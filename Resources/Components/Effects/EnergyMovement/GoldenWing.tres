@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="EnMov" load_steps=2 format=3 uid="uid://obi5wbrc3am1"]
+
+[ext_resource type="Script" uid="uid://cimk6l7ytw7xg" path="res://Code/Resource Makers/EffectSpecific/EnMovMaker.gd" id="1_so8dc"]
+
+[resource]
+script = ExtResource("1_so8dc")
+action = 0
+chooser = 4
+to_stack = 2
+stack_direction = 2
+energy_carry_over = true
+action_ammount = -1
+energy_ammount = 2
+energy_move_type = 2
+react = false
+type = 511
+metadata/_custom_type_script = "uid://cimk6l7ytw7xg"

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SideState" load_steps=22 format=3 uid="uid://bafa2bpj2n8u0"]
+[gd_resource type="Resource" script_class="SideState" load_steps=23 format=3 uid="uid://bafa2bpj2n8u0"]
 
 [ext_resource type="Script" uid="uid://dgqpurnuh14t1" path="res://Code/Resource Makers/GeneralUse/SideStateMaker.gd" id="1_058ln"]
 [ext_resource type="Resource" uid="uid://c73v0ww8k8rg2" path="res://Resources/Decks/GrassTransDeck.tres" id="1_rwwha"]
@@ -16,6 +16,7 @@
 [ext_resource type="Resource" uid="uid://c0kbwsboq8b5x" path="res://Resources/Cards/6 ex FireRed & LeafGreen/RG55Bubasaur.tres" id="14_qoyrj"]
 [ext_resource type="Resource" uid="uid://ct34kdqkmfsuu" path="res://Resources/Cards/6 ex FireRed & LeafGreen/RG35Ivysaur.tres" id="15_a5eex"]
 [ext_resource type="Resource" uid="uid://x137dggkdklo" path="res://Resources/Cards/1 ex Ruby & Saphire/RS31Grovyle.tres" id="16_fcuve"]
+[ext_resource type="Resource" uid="uid://xvauv8yfopfw" path="res://Resources/Cards/2 ex Sandstorm/SS93MultiEnergy.tres" id="17_5ih3w"]
 [ext_resource type="Resource" uid="uid://dx17bi2e0sqkj" path="res://Resources/Cards/1 ex Ruby & Saphire/RS75Treecko.tres" id="17_h7xhs"]
 
 [sub_resource type="Resource" id="Resource_44dmm"]
@@ -138,7 +139,7 @@ current_card = ExtResource("16_fcuve")
 evolution_ready = false
 evolved_this_turn = false
 evolved_from = Array[ExtResource("2_5ih3w")]([ExtResource("17_h7xhs")])
-energy_cards = Array[ExtResource("2_5ih3w")]([ExtResource("4_mepvs"), ExtResource("4_mepvs"), ExtResource("4_mepvs"), ExtResource("4_mepvs")])
+energy_cards = Array[ExtResource("2_5ih3w")]([ExtResource("4_mepvs"), ExtResource("4_mepvs"), ExtResource("4_mepvs"), ExtResource("4_mepvs"), ExtResource("17_5ih3w"), ExtResource("4_mepvs")])
 attached_energy = {
 "Aqua": 0,
 "Colorless": 0,

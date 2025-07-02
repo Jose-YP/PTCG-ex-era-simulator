@@ -18,6 +18,7 @@ class_name Counter
 ##Ways to count current mons in play, might not be used in favor of meet_ask
 @export var side: Constants.SIDES = Constants.SIDES.ATTACKING
 @export var slot: Constants.SLOTS = Constants.SLOTS.TARGET
+
 ##Search for an aspect in the game
 @export_enum("Constant", "Energy Attatched", "Energy Excess", "Damage Counters",
  "Prizes Left","Prize Difference","Hand","Hand Difference","Discard",

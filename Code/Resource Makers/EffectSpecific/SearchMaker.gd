@@ -9,7 +9,7 @@ class_name Search
 ##Will the identifier base it's results on anything?
 @export var based_on_side: Constants.SIDES
 @export var based_on_slots: Constants.SLOTS
-
+@export_enum("None","Shown", "Attatched") var based_on_energy: int = 0
 ##How many cards in the desired section can you check.
 ##-1 means all cards. For certain cards that look at a bit of the top of the deck.
 @export_range(-1,60, 1) var portion: int = -1
@@ -22,7 +22,7 @@ class_name Search
 ##For each item in identifier, search how_many
 @export var of_this: Array[Identifier]
 ##Where do the tutored cards go?
-@export var and_then: Placement
+@export var and_then: Placement = preload("res://Resources/Components/Effects/Placement/PutIntoHand.tres")
 ##Should the defender see any of these cards?
 @export var reveal: bool = true
 

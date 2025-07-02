@@ -1,0 +1,122 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=18 format=3 uid="uid://blgwu6rviyvhh"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_6nbak"]
+[ext_resource type="Texture2D" uid="uid://bwy02si5cv6mh" path="res://Art/Cards/3 ex Dragon/90.jpg" id="1_i3arf"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_2hwsj"]
+[ext_resource type="Resource" uid="uid://hbftp7wc0ueo" path="res://Resources/Components/Effects/EnergyMovement/SelfDis1Water.tres" id="3_2hwsj"]
+[ext_resource type="Resource" uid="uid://lfhu3xyr0wpo" path="res://Resources/Components/Effects/Prompts/IfFlipHeads.tres" id="3_hslfc"]
+[ext_resource type="Resource" uid="uid://c67aj5gpaamgd" path="res://Resources/Components/Effects/EnergyMovement/SelfDis1Lightning.tres" id="4_hslfc"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="6_mpcq0"]
+[ext_resource type="Script" uid="uid://b58015mafcw2v" path="res://Code/Resource Makers/PokemonSpecific/PowerMaker.gd" id="7_ur7nu"]
+[ext_resource type="Resource" uid="uid://dmpx0flrt2hxl" path="res://Resources/Components/Effects/EnergyMovement/LendMeYourEnergy.tres" id="7_x717q"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="8_mdixv"]
+
+[sub_resource type="Resource" id="Resource_imidg"]
+script = ExtResource("6_mpcq0")
+either_or = false
+order = Array[int]([])
+energy_movement = ExtResource("4_hslfc")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_mpcq0"]
+script = ExtResource("6_mpcq0")
+either_or = false
+order = Array[int]([])
+energy_movement = ExtResource("3_2hwsj")
+extra_effect = SubResource("Resource_imidg")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_bmkne"]
+script = ExtResource("2_2hwsj")
+name = "Dragon Wave"
+description = " Discard a {Water} Energy card and a {Lightning} Energy card attached to Dragonite ex. "
+grass_cost = 0
+fire_cost = 0
+water_cost = 1
+lightning_cost = 1
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 0
+defender_properties = 0
+ignore_condition = 0
+prompt_reliant = false
+initial_main_DMG = 70
+conditional_self_dmg = false
+self_damage = 0
+modifier = 0
+both_active = false
+always_effect = SubResource("Resource_mpcq0")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_o5ava"]
+script = ExtResource("2_2hwsj")
+name = "Giant Tail"
+description = " Flip a coin. If tails, this attack does nothing."
+grass_cost = 0
+fire_cost = 0
+water_cost = 0
+lightning_cost = 0
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 4
+defender_properties = 0
+ignore_condition = 0
+prompt_reliant = true
+initial_main_DMG = 120
+conditional_self_dmg = false
+self_damage = 0
+modifier = 0
+both_active = false
+prompt = ExtResource("3_hslfc")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_n8rdp"]
+script = ExtResource("6_mpcq0")
+either_or = false
+order = Array[int]([])
+energy_movement = ExtResource("7_x717q")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_krkpn"]
+script = ExtResource("7_ur7nu")
+name = "Call for Power"
+description = " As often as you like during your turn, you may move an Energy card attached to 1 of your Pokémon to Dragonite ex. This power can't be used if Dragonite ex is affected by a Special Condition."
+affected_by_condition = true
+active = false
+when_condition = "Whenever"
+when_position = 4
+how_often = 2
+effect = SubResource("Resource_n8rdp")
+metadata/_custom_type_script = "uid://b58015mafcw2v"
+
+[sub_resource type="Resource" id="Resource_ysok2"]
+script = ExtResource("8_mdixv")
+HP = 30
+retreat = 0
+power = SubResource("Resource_krkpn")
+attacks = Array[ExtResource("2_2hwsj")]([SubResource("Resource_bmkne"), SubResource("Resource_o5ava")])
+evo_stage = "Stage 2"
+evolves_from = "Dragonair"
+considered = 2
+owner = 0
+type = 256
+weak = 256
+resist = 33
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_6nbak")
+name = "Dragonite ex"
+image = ExtResource("1_i3arf")
+illustrator = " Ryo Ueda"
+number = 90
+rarity = 4
+expansion = 2
+categories = 1
+pokemon_properties = SubResource("Resource_ysok2")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

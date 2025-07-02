@@ -2,26 +2,28 @@
 extends Resource
 class_name EnMov
 
-##[enum Move] takes attatched energy and moves it to the [member to_stack][br]
+##[enum Send] takes attatched energy and moves it to the [member to_stack][br]
 ##[enum Swap] takes attatched energy and looks for a second candidate to attatch it to[br]
 ##[enum Attatch] Using energy found in [member to_stack] attatch energy to this mon 
-@export_enum("Move", "Swap", "Attatch") var action: int = 0
-##If the chooser is [enum Constants.SIDES.NONE], then default to [member side]
+@export_enum("Send", "Swap", "Attatch") var action: int = 0
+##If the chooser is [enum Constants.SIDES.NONE], then default to [enum Constants.SIDES.SOURCE]
 @export var chooser: Constants.SIDES = Constants.SIDES.SOURCE
+@export var givers: SlotAsk = preload("res://Resources/Components/Effects/Asks/FromSource.tres")
 @export_group("From - To")
-##If they targets from which meet ask, they're allowed
-@export var candidates: SlotAsk
+##If they targets from slot ask will determine if they're allowed
+@export var reciever: SlotAsk = preload("res://Resources/Components/Effects/Asks/FromSource.tres")
 ##Targets for removal
-@export var side: Constants.SIDES = Constants.SIDES.ATTACKING
-@export var slots: Constants.SLOTS = Constants.SLOTS.TARGET
 @export var to_stack: Constants.STACKS = Constants.STACKS.DISCARD
 @export_enum("Top", "Bottom", "Eh") var stack_direction: int = 2
 @export_group("Energy")
+##If this is true, instead limit actions based on number of energy allowed to swap
+@export var energy_carry_over: bool = false
 ##How many times are you allowed to perform [member action]. -1 means infinite
-@export var action_ammount: int = 0
+@export var action_ammount: int = 1
 ##Ammount of energy per action. -1 means infinite.
-@export var energy_ammount: int = 0
+@export var energy_ammount: int = 1
 @export_enum("Basic", "Special", "Any") var energy_move_type: int = 0
+@export var react: bool = false
 ##If any energy is currently considered
 @export_flags("Grass","Fire","Water",
 "Lightning","Psychic","Fighting",
@@ -62,8 +64,9 @@ func energy_allowed(card: Base_Card, fail: bool) -> bool:
 	var same: bool = energy_move_type == 2 or\
 	 (energy_move_type == 1 and card.energy_properties.considered == "Special Energy")\
 	 or (energy_move_type == 0 and card.energy_properties.considered == "Basic Energy")
+	var is_react: bool = (react and react == card.energy_properties.react) or not react
 	
-	return provides & type != 0 and same
+	return provides & type != 0 and same and is_react
 
 func enough_energy(ammount: int) -> bool:
 	return energy_ammount != -1 and ammount == energy_ammount 
