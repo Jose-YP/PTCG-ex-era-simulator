@@ -70,10 +70,11 @@ func fill_prizes():
 
 #--------------------------------------
 #region CARD MOVEMENT
-func draw(times: int = 1): #From deck to hand
+func draw(times: int = 1, top: bool = true): #From deck to hand
 	var stacks: CardStacks = get_stacks(operate_home)
 	for i in range(times):
-		stacks.append_to_arrays(Constants.STACKS.HAND, stacks.usable_deck.pop_front())
+		stacks.append_to_arrays(Constants.STACKS.HAND,
+		 stacks.usable_deck.pop_front() if top else stacks.usable_deck.pop_back())
 	
 	update_lists()
 

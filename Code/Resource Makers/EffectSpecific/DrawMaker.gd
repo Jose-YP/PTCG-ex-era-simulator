@@ -16,5 +16,17 @@ signal finished
 
 func play_effect():
 	print("PLAY DRAW")
+	var num_draw = simple_constant
+	var old_val = Globals.fundies.stack_manager.operate_home
+	Globals.fundies.stack_manager.operate_home = Globals.fundies.get_considered_home(side)
+	if counter != null:
+		pass
 	
+	if shuffle_back_first:
+		var stack: CardStacks = Globals.fundies.stack_manager.get_stacks(Globals.fundies.get_considered_home(side))
+		stack.move_cards(stack.hand, Constants.STACKS.HAND, Constants.STACKS.DECK)
+		stack.usable_deck.shuffle()
+	
+	Globals.fundies.stack_manager.draw(num_draw, not bottom_deck)
+	Globals.fundies.stack_manager.operate_home = old_val
 	finished.emit()

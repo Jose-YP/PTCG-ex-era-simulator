@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SideState" load_steps=23 format=3 uid="uid://bafa2bpj2n8u0"]
+[gd_resource type="Resource" script_class="SideState" load_steps=24 format=3 uid="uid://bafa2bpj2n8u0"]
 
 [ext_resource type="Script" uid="uid://dgqpurnuh14t1" path="res://Code/Resource Makers/GeneralUse/SideStateMaker.gd" id="1_058ln"]
 [ext_resource type="Resource" uid="uid://c73v0ww8k8rg2" path="res://Resources/Decks/GrassTransDeck.tres" id="1_rwwha"]
@@ -10,6 +10,7 @@
 [ext_resource type="Resource" uid="uid://c2tk6qy8h57lw" path="res://Resources/Cards/1 ex Ruby & Saphire/RS82EnergySwitch.tres" id="6_c5xxw"]
 [ext_resource type="Resource" uid="uid://cc3kjnmsj4pr3" path="res://Resources/Cards/1 ex Ruby & Saphire/RS80EnergyRemoval2.tres" id="7_c5qlx"]
 [ext_resource type="Resource" uid="uid://c357yy7k4yvv3" path="res://Resources/Cards/1 ex Ruby & Saphire/RS2Beautifly.tres" id="8_tbqu3"]
+[ext_resource type="Resource" uid="uid://c8ot31o7xctp1" path="res://Resources/Cards/6 ex FireRed & LeafGreen/RG98ProfessorOak'sResearch.tres" id="9_6pujo"]
 [ext_resource type="Script" uid="uid://calm3n7va5yjo" path="res://Code/Resource Makers/GeneralUse/CardStacksMaker.gd" id="9_ncntw"]
 [ext_resource type="Resource" uid="uid://cbrv0ftymjhbj" path="res://Resources/Cards/1 ex Ruby & Saphire/RS78Wurmple.tres" id="12_wd7ae"]
 [ext_resource type="Resource" uid="uid://cgm3sofk1dkq3" path="res://Resources/Cards/6 ex FireRed & LeafGreen/RG112Venusaurex.tres" id="13_gmg8j"]
@@ -23,7 +24,7 @@
 script = ExtResource("9_ncntw")
 deck = ExtResource("1_rwwha")
 init_deck = Array[ExtResource("2_5ih3w")]([])
-init_hand = Array[ExtResource("2_5ih3w")]([ExtResource("5_s64pf"), ExtResource("6_c5xxw"), ExtResource("7_c5qlx"), ExtResource("3_6pujo"), ExtResource("8_tbqu3")])
+init_hand = Array[ExtResource("2_5ih3w")]([ExtResource("5_s64pf"), ExtResource("6_c5xxw"), ExtResource("7_c5qlx"), ExtResource("3_6pujo"), ExtResource("8_tbqu3"), ExtResource("9_6pujo")])
 init_discard = Array[ExtResource("2_5ih3w")]([ExtResource("3_6pujo"), ExtResource("4_mepvs"), ExtResource("4_mepvs")])
 init_prize = Array[ExtResource("2_5ih3w")]([])
 metadata/_custom_type_script = "uid://calm3n7va5yjo"

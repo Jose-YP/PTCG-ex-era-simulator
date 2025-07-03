@@ -43,6 +43,7 @@ func play_effect():
 	
 	finished.emit()
 
+#region EFFECTS
 func send_effect():
 	var giver_call: Callable = func(slot: PokeSlot):
 		return givers.check_ask(slot) and slot.current_card and slot.energy_cards.size() != 0
@@ -80,6 +81,10 @@ func swap_effect():
 	
 	finished.emit()
 
+func attatch_effect():
+	finished.emit()
+#endregion
+
 func swap(giver: PokeSlot, rec: PokeSlot, energy_giving: Array[Base_Card]):
 	var left: Array[Base_Card] = energy_giving.duplicate()
 	
@@ -98,11 +103,8 @@ func swap(giver: PokeSlot, rec: PokeSlot, energy_giving: Array[Base_Card]):
 	
 	giver.refresh()
 
-func attatch_effect():
-	finished.emit()
-
+#region BOOL RETURNS
 func energy_allowed(card: Base_Card, fail: bool) -> bool:
-	@warning_ignore("incompatible_ternary")
 	var provides: int = card.energy_properties.fail_provide if fail else card.energy_properties.type
 	var same: bool = energy_move_type == 2 or\
 	 (energy_move_type == 1 and card.energy_properties.considered == "Special Energy")\
@@ -116,3 +118,4 @@ func enough_energy(ammount: int) -> bool:
 
 func enough_actions(ammount: int) -> bool:
 	return action_ammount != -1 and ammount == action_ammount
+#endregion
