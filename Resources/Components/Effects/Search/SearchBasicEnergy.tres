@@ -13,6 +13,7 @@ reordering_only = false
 shuffle_first = false
 based_on_side = 1
 based_on_slots = 0
+based_on_energy = 0
 portion = -1
 how_many = Array[int]([1])
 of_this = Array[ExtResource("2_hkyih")]([ExtResource("3_g67gw")])

@@ -1,12 +1,12 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=17 format=3 uid="uid://bn4tw1p2av7gj"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=16 format=3 uid="uid://bn4tw1p2av7gj"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_gsupt"]
 [ext_resource type="Texture2D" uid="uid://cvn72gm0i2ycb" path="res://Art/Cards/7 ex Team Rocket Returns/85.jpg" id="1_tpnca"]
 [ext_resource type="Script" uid="uid://cml2jkc16tlva" path="res://Code/Resource Makers/GeneralUse/CounterMaker.gd" id="2_ci705"]
 [ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="3_tpnca"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="4_uy43t"]
-[ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="5_okvmh"]
 [ext_resource type="Script" uid="uid://cimk6l7ytw7xg" path="res://Code/Resource Makers/EffectSpecific/EnMovMaker.gd" id="6_d1501"]
+[ext_resource type="Resource" uid="uid://dqj6gq7pt3dbk" path="res://Resources/Components/Effects/Asks/FromSource.tres" id="6_tpnca"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="7_dmrxn"]
 [ext_resource type="Script" uid="uid://curklvf1517ml" path="res://Code/Resource Makers/EffectSpecific/SwapMaker.gd" id="8_uw2sm"]
 
@@ -30,45 +30,19 @@ side = 1
 choose_location = 0
 metadata/_custom_type_script = "uid://b85jmc7067bjc"
 
-[sub_resource type="Resource" id="Resource_cn8ke"]
-script = ExtResource("5_okvmh")
-side_target = 5
-slot_target = 4
-specifically = Array[String]([])
-comparison_type = 1
-max_hp = -10
-damage_taken = -10
-retreat_cost = -1
-energy_attatched = -1
-knocked_out = false
-condition = 0
-location = 0
-tool_attatched = false
-stage = 7
-rare_candy = false
-class_inclusive = true
-pokemon_class = 63
-owner_inclusive = true
-pokemon_owner = 15
-bench_size = -1
-type_inclusive = true
-type = 1023
-energy_class = 2
-type_size = -1
-metadata/_custom_type_script = "uid://mkjynqda7q5g"
-
 [sub_resource type="Resource" id="Resource_k8l2b"]
 script = ExtResource("6_d1501")
 action = 0
 chooser = 4
-candidates = SubResource("Resource_cn8ke")
-side = 5
-slots = 2
+givers = ExtResource("6_tpnca")
+reciever = ExtResource("6_tpnca")
 to_stack = 2
 stack_direction = 2
+energy_carry_over = false
 action_ammount = 0
 energy_ammount = 0
 energy_move_type = 2
+react = false
 type = 511
 metadata/_custom_type_script = "uid://cimk6l7ytw7xg"
 

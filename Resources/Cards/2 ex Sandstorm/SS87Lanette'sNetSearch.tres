@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=11 format=3 uid="uid://d16ibvu8tyuiw"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://d16ibvu8tyuiw"]
 
 [ext_resource type="Texture2D" uid="uid://jaosrycmdoym" path="res://Art/Cards/2 ex Sandstorm/87.jpg" id="1_47thq"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_ci10j"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_df2as"]
+[ext_resource type="Resource" uid="uid://bl4qnrkh3kxdl" path="res://Resources/Components/Effects/Placement/PutIntoHand.tres" id="4_df2as"]
 [ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="4_gmspd"]
 [ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="5_hbumv"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="6_vlnqk"]
@@ -33,9 +34,11 @@ reordering_only = false
 shuffle_first = false
 based_on_side = 0
 based_on_slots = 0
+based_on_energy = 0
 portion = -1
 how_many = Array[int]([3])
 of_this = Array[ExtResource("4_gmspd")]([SubResource("Resource_liyln")])
+and_then = ExtResource("4_df2as")
 reveal = true
 metadata/_custom_type_script = "uid://cw3yr1k040kw7"
 

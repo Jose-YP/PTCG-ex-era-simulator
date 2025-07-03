@@ -30,6 +30,7 @@ reordering_only = false
 shuffle_first = false
 based_on_side = 0
 based_on_slots = 0
+based_on_energy = 0
 portion = -1
 how_many = Array[int]([3])
 of_this = Array[ExtResource("1_o8vj0")]([SubResource("Resource_ejoaa")])

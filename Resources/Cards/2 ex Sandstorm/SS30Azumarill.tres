@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=17 format=3 uid="uid://btetlfpnc0pgh"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=18 format=3 uid="uid://btetlfpnc0pgh"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_1d60h"]
 [ext_resource type="Texture2D" uid="uid://b6db2ua3lcrpy" path="res://Art/Cards/2 ex Sandstorm/30.jpg" id="1_op54d"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_7v2tk"]
+[ext_resource type="Resource" uid="uid://dqj6gq7pt3dbk" path="res://Resources/Components/Effects/Asks/FromSource.tres" id="3_5exig"]
 [ext_resource type="Script" uid="uid://cimk6l7ytw7xg" path="res://Code/Resource Makers/EffectSpecific/EnMovMaker.gd" id="3_prlnf"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_5exig"]
 [ext_resource type="Script" uid="uid://y0v42qaa35wt" path="res://Code/Resource Makers/GeneralUse/CoinFlipNumMaker.gd" id="5_hm0ul"]
@@ -13,13 +14,15 @@
 script = ExtResource("3_prlnf")
 action = 4
 chooser = 1
-side = 1
-slots = 1
+givers = ExtResource("3_5exig")
+reciever = ExtResource("3_5exig")
 to_stack = 2
 stack_direction = 2
+energy_carry_over = false
 action_ammount = 0
 energy_ammount = -1
 energy_move_type = 0
+react = false
 type = 4
 metadata/_custom_type_script = "uid://cimk6l7ytw7xg"
 

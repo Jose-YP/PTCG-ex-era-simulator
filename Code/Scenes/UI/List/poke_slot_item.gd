@@ -14,13 +14,12 @@ func setup(new: PokeSlot):
 	disabled = false
 	var card: Base_Card = slot.current_card
 	
-	slot.count_energy()
 	%Art.texture = card.image
 	%Name.clear()
 	%Name.append_text(card.name)
 	%HP.clear()
 	%HP.append_text(str("HP: ", card.pokemon_properties.HP - slot.damage_counters, "/", card.pokemon_properties.HP))
-	energy_types.display_energy(slot.get_energy_strings(), slot.attached_energy)
+	set_energy()
 
 func empty():
 	%Art.texture = null
@@ -30,6 +29,10 @@ func empty():
 	disabled = true
 	
 	%SlotNum.clear()
+
+func set_energy():
+	slot.count_energy()
+	energy_types.display_energy(slot.get_energy_strings(), slot.attached_energy)
 
 func set_slotNum(slotNum: String):
 	%SlotNum.clear()

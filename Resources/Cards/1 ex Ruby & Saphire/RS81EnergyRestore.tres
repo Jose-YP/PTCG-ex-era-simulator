@@ -31,6 +31,7 @@ reordering_only = false
 shuffle_first = false
 based_on_side = 0
 based_on_slots = 0
+based_on_energy = 0
 portion = -1
 how_many = Array[int]([1])
 variable_ammount = SubResource("Resource_ibcws")

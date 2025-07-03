@@ -47,13 +47,32 @@ func move_effect():
 	finished.emit()
 
 func swap_effect():
-	#var new_box: SwapBox = Constants.swap_box.instantiate()
+	var new_box: SwapBox = Constants.swap_box.instantiate()
 	
-	#new_box.swap_rules = self
+	new_box.swap_rules = self
 	
-	#Globals.fundies.add_child(new_box)
-	#await new_box.finished
+	Globals.fundies.add_child(new_box)
+	await new_box.finished
 	finished.emit()
+
+func swap(giver: PokeSlot, reciever: PokeSlot, energy_giving: Array[Base_Card]):
+	var left: Array[Base_Card] = energy_giving.duplicate()
+	
+	for en in energy_giving:
+		for card in giver.energy_cards:
+			if card.same_card(en):
+				left.erase(en)
+				giver.energy_cards.erase(en)
+				break
+	
+	if left.size() != 0:
+		printerr(left," has ",left.size()," cards left")
+	
+	for en in energy_giving:
+		reciever.add_energy(en)
+	
+	reciever.count_energy()
+	giver.count_energy()
 
 func attatch_effect():
 	finished.emit()

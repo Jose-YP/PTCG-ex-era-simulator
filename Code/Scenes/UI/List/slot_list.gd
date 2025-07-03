@@ -25,3 +25,8 @@ func list_items():
 	for i in range(%SlotList.get_child_count()):
 		if ui_slots[i].connected_slot.current_card:
 			slots[i].setup(ui_slots[i].connected_slot)
+
+func refresh_energy():
+	for node in %SlotList.get_children():
+		if node.slot:
+			node.set_energy()

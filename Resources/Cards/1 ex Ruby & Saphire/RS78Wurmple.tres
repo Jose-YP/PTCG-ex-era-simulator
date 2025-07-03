@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=22 format=3 uid="uid://cbrv0ftymjhbj"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=23 format=3 uid="uid://cbrv0ftymjhbj"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_fufby"]
 [ext_resource type="Texture2D" uid="uid://bkcx8mdj0b2ne" path="res://Art/Cards/1 ex Ruby & Saphire/78.jpg" id="1_kcvhr"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_qb5u4"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_tpouj"]
+[ext_resource type="Resource" uid="uid://bl4qnrkh3kxdl" path="res://Resources/Components/Effects/Placement/PutIntoHand.tres" id="4_qb5u4"]
 [ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="4_sfbeu"]
 [ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="5_jctry"]
 [ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="6_wia63"]
@@ -54,9 +55,11 @@ reordering_only = false
 shuffle_first = false
 based_on_side = 0
 based_on_slots = 0
+based_on_energy = 0
 portion = -1
 how_many = Array[int]([1, 1])
 of_this = Array[ExtResource("4_sfbeu")]([SubResource("Resource_clm34"), SubResource("Resource_nm5pd")])
+and_then = ExtResource("4_qb5u4")
 reveal = true
 metadata/_custom_type_script = "uid://cw3yr1k040kw7"
 
@@ -119,9 +122,11 @@ reordering_only = false
 shuffle_first = false
 based_on_side = 0
 based_on_slots = 0
+based_on_energy = 0
 portion = -1
 how_many = Array[int]([1, 1])
 of_this = Array[ExtResource("4_sfbeu")]([SubResource("Resource_tp81p"), SubResource("Resource_feg0g")])
+and_then = ExtResource("4_qb5u4")
 reveal = true
 metadata/_custom_type_script = "uid://cw3yr1k040kw7"
 

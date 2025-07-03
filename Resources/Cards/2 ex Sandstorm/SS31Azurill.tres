@@ -43,7 +43,9 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_gmk3x"]
 script = ExtResource("6_0ehm3")
+rare_candy = false
 can_evolve_into = "Marill"
+new_type = 0
 metadata/_custom_type_script = "uid://cg3m7vpqxf2t6"
 
 [sub_resource type="Resource" id="Resource_qhbof"]

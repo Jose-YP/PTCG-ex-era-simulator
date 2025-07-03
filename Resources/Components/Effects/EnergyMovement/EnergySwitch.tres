@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="EnMov" load_steps=3 format=3 uid="uid://cact3iqnfc5tn"]
+
+[ext_resource type="Resource" uid="uid://dqj6gq7pt3dbk" path="res://Resources/Components/Effects/Asks/FromSource.tres" id="1_8r0g2"]
+[ext_resource type="Script" uid="uid://cimk6l7ytw7xg" path="res://Code/Resource Makers/EffectSpecific/EnMovMaker.gd" id="2_o2ifh"]
+
+[resource]
+script = ExtResource("2_o2ifh")
+action = 1
+chooser = 4
+givers = ExtResource("1_8r0g2")
+reciever = ExtResource("1_8r0g2")
+to_stack = 2
+stack_direction = 2
+energy_carry_over = false
+action_ammount = 0
+energy_ammount = 1
+energy_move_type = 0
+react = false
+type = 511
+metadata/_custom_type_script = "uid://cimk6l7ytw7xg"

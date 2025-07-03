@@ -1,25 +1,11 @@
-[gd_resource type="Resource" script_class="EffectCall" load_steps=4 format=3 uid="uid://cmh1v5ltgtx5o"]
+[gd_resource type="Resource" script_class="EffectCall" load_steps=3 format=3 uid="uid://cmh1v5ltgtx5o"]
 
-[ext_resource type="Script" uid="uid://cimk6l7ytw7xg" path="res://Code/Resource Makers/EffectSpecific/EnMovMaker.gd" id="1_dvc1q"]
+[ext_resource type="Resource" uid="uid://cact3iqnfc5tn" path="res://Resources/Components/Effects/EnergyMovement/EnergySwitch.tres" id="1_dvc1q"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_dukji"]
-
-[sub_resource type="Resource" id="Resource_f2aic"]
-script = ExtResource("1_dvc1q")
-action = 1
-chooser = 4
-side = 1
-slots = 4
-to_stack = 2
-stack_direction = 2
-action_ammount = 0
-energy_ammount = 1
-energy_move_type = 0
-type = 511
-metadata/_custom_type_script = "uid://cimk6l7ytw7xg"
 
 [resource]
 script = ExtResource("2_dukji")
 either_or = false
 order = Array[int]([])
-energy_movement = SubResource("Resource_f2aic")
+energy_movement = ExtResource("1_dvc1q")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"

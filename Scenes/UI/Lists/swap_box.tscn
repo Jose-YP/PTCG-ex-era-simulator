@@ -82,16 +82,16 @@ alignment = 2
 [node name="EnergyTypes" parent="VBoxContainer/PanelContainer/Lists/VBoxContainer/Actions/VBoxContainer/IndSwap/HBoxContainer" instance=ExtResource("5_b6wtd")]
 unique_name_in_owner = true
 visible = false
-custom_minimum_size = Vector2(155, 0)
+custom_minimum_size = Vector2(186, 0)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 2
-en_count = 5
+en_count = 6
 disabled = true
 
 [node name="Swap" type="Button" parent="VBoxContainer/PanelContainer/Lists/VBoxContainer/Actions/VBoxContainer/IndSwap/HBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(166, 25)
 layout_mode = 2
 size_flags_vertical = 3
 disabled = true
@@ -103,9 +103,11 @@ size_flags_vertical = 3
 
 [node name="Instructions" type="RichTextLabel" parent="VBoxContainer/PanelContainer/Lists/VBoxContainer/Actions/VBoxContainer/Info&End"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(236, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+text = "Reciever: Team Magma's Mightyena"
 fit_content = true
 
 [node name="End" type="Button" parent="VBoxContainer/PanelContainer/Lists/VBoxContainer/Actions/VBoxContainer/Info&End"]

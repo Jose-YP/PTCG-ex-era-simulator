@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://bmhljiqag6upw"]
+[gd_scene load_steps=7 format=3 uid="uid://bmhljiqag6upw"]
 
 [ext_resource type="StyleBox" uid="uid://duhmik1loeema" path="res://Themes/StyleBoxes/GBABox.tres" id="1_4j8ma"]
 [ext_resource type="Script" uid="uid://cr1fsv0gkmwb0" path="res://Code/Scenes/UI/List/poke_slot_item.gd" id="2_4r1ij"]
-[ext_resource type="Resource" uid="uid://iu8hdblsowd3" path="res://Resources/BoardStates/PokeSlots/AllEnergys.tres" id="3_xmuas"]
 [ext_resource type="PackedScene" uid="uid://dph43kayde03u" path="res://Scenes/UI/UIComponents/energy_types.tscn" id="4_8evmm"]
 [ext_resource type="Texture2D" uid="uid://cj4eckcnktq41" path="res://Art/Cards/1 ex Ruby & Saphire/109.jpg" id="5_lyayy"]
 
@@ -44,7 +43,6 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_auhmd")
 theme_override_styles/normal = ExtResource("1_4j8ma")
 disabled = true
 script = ExtResource("2_4r1ij")
-slot = ExtResource("3_xmuas")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0

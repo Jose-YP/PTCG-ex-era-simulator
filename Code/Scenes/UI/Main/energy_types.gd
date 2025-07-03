@@ -41,14 +41,14 @@ func display_energy(energy_arr: Array, energy_dict: Dictionary):
 				total_types += 1
 				if total_types > en_count:
 					energyContainer[total_types - 1].hide()
-		
-	if total_types > en_count - 1:
-		%Timer.start()
 	else:
 		print("REGULAR ADD")
 		for i in range(energy_arr.size()):
 			print("ADD", energy_arr[i])
 			energyContainer[i].add_type(energy_arr[i])
+	
+	if total_types > en_count - 1:
+		%Timer.start()
 	
 	if_nothing_in()
 
