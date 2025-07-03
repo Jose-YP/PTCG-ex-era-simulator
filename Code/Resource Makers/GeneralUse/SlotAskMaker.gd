@@ -31,7 +31,7 @@ class_name SlotAsk
 @export_flags("non-ex", "ex", "Baby", "Delta", "Star", 
 "Dark") var pokemon_class: int = 63
 @export var owner_inclusive: bool = true
-@export_flags("Magma", "Aqua", "Rocket") var pokemon_owner: int = 15
+@export_flags("None","Magma", "Aqua", "Rocket", "Holon") var pokemon_owner: int = 31
 @export_subgroup("Bench")
 ##Look for 
 @export_range(-1,5) var bench_size: int = -1
@@ -54,36 +54,34 @@ func check_ask(slot: PokeSlot) -> bool:
 	print_rich("[center]",slot.current_card.name)
 	#Check if the slot being seen should even be targetted
 	#Meanwhile count the player and opp bench size
-	print("-----------------------------------------------------------")
+	print_rich("[center]-----------------------------------------------------------")
 	print_rich("[center]Target")
-	print("Player: ", slot.ui_slot.player)
+	print("[center]IN SLOT & SIDE: ", slot.is_in_slot(side_target, slot_target))
 	
 	#First remove any cards that aren't included in sides/slots parameters
-	if not side_target == Constants.SIDES.BOTH or side_target == Constants.SIDES.NONE\
-	or (slot.in_attacking_turn and side_target == Constants.SIDES.DEFENDING) \
-	or (not slot.in_attacking_turn and side_target == Constants.SIDES.ATTACKING):
+	if not slot.is_in_slot(side_target, slot_target):
 		return false
-	elif not slot_target == Constants.SLOTS.ALL or slot_target == Constants.SLOTS.NONE\
-	or (slot_target == Constants.SLOTS.ACTIVE and not slot.is_active())\
-	or (slot_target == Constants.SLOTS.BENCH and slot.is_active())\
-	or (slot.is_target and Constants.SLOTS.TARGET):
-		return false
-
+	
 	#Check if the pokemon matches the desired stage
-	print("-----------------------------------------------------------")
+	print_rich("[center]-----------------------------------------------------------")
 	print_rich("[center]Evolution")
-	print(slot.evolved_from.size(), slot.evolved_from.size() ** 2, slot.evolved_from.size() ** 2 & stage)
-	if slot.evolved_from.size() ** 2 & stage:
+	print("[center]",slot.evolved_from.size(), 2 ** slot.evolved_from.size(), 2 ** slot.evolved_from.size() && stage)
+	if 2 ** slot.evolved_from.size() & stage:
 		#First thing checked, so it doesn't need to account for anything else
 		result = true
 	
 	#Check if the pokemon is in the defined class
-	print("-----------------------------------------------------------")
-	print_rich("[center]Class Flag")
-	print(slot.current_card.pokemon_properties.considered, slot.current_card.pokemon_properties.owner)
-	print(slot.current_card.pokemon_properties.considered ** 2, slot.current_card.pokemon_properties.owner ** 2)
-	var class_flag = slot.current_card.pokemon_properties.considered ** 2 & slot.current_card.pokemon_properties.owner ** 2
+	print_rich("[center]-----------------------------------------------------------")
+	print_rich("[center]Class Flag\nCONSIDERED & OWNER:",
+	slot.current_card.pokemon_properties.considered, 2 ** slot.current_card.pokemon_properties.owner)
+	print(slot.current_card.pokemon_properties.owner, pokemon_owner)
+	print(2 ** slot.current_card.pokemon_properties.owner && pokemon_owner)
+	#This is because godot has no xor/xnor :(
+	var class_flag = (not(pokemon_class && slot.current_card.pokemon_properties.considered and not class_inclusive)
+	and not(2 ** slot.current_card.pokemon_properties.owner && pokemon_owner and not owner_inclusive))
+	
 	print("CLASS FLAG: ",class_flag)
+	result = result and class_flag
 	#if slot.current_card.pokemon_properties.considered:
 		#result = true
 	
@@ -91,48 +89,57 @@ func check_ask(slot: PokeSlot) -> bool:
 	#If it isn't include it if exclusive class
 	#inclusive class xor~ inside class
 	
-	print("-----------------------------------------------------------")
+	print_rich("[center]-----------------------------------------------------------")
 	print_rich("[center]Type Flag")
 	#Check if the pokemon is type inclusive xor~ type
-	var type_color: String = str("[color=",Constants.energy_colors[log(slot.type) / log(2)].to_html(),"]") 
-	print_rich("Type: ", type_color)
-	print(((slot.type && type) == type_inclusive))
+	var types: Array[String] = Conversions.flags_to_type_array(slot.current_card.pokemon_properties.type)
+	var type_string: String = "[center]Type: "
+	for loc_type in types:
+		var type_int: float = Constants.energy_types.find(loc_type)
+		var type_color: String = str("[color=",Constants.energy_colors[type_int].to_html(),"]")
+		
+		type_string += type_color + loc_type + "[/color]"
+	print_rich(type_string, "\n", slot.current_card.pokemon_properties.type && type, 
+	 not (slot.current_card.pokemon_properties.type && type != 0 and not type_inclusive))
 	
+	var type_bool: bool = not(slot.current_card.pokemon_properties.type && type != 0 and not type_inclusive)
+	result = type_bool and result
 	#To Activate
 	#Who should be checked
 	if max_hp != -10:
-		print("-----------------------------------------------------------")
+		print_rich("[center]-----------------------------------------------------------")
 		print_rich("[center]Max HP")
-		print("Damage Counters: ", slot.pokedata.HP)
-		var viewing_hp: int = slot.pokedata.HP
+		print("Damage Counters: ", slot.current_card.pokemon_properties.HP)
+		var viewing_hp: int = slot.current_card.pokemon_properties.HP
 		var hp: bool = viewing_hp >= max_hp if comparison_type == 1 else viewing_hp <= comparison_type
 		result = result and hp
 	
 	#If damage_taken isn't -10 check if a pokemon has taken damage
 	if damage_taken != -10:
-		print("-----------------------------------------------------------")
+		print_rich("[center]-----------------------------------------------------------")
 		print_rich("[center]Damage Taken")
 		print("Damage Counters: ", slot.damage_counters)
 		var dmg: bool = slot.damage_counters >= damage_taken if comparison_type == 1 else slot.damage_counters <= damage_taken
 		result = result and dmg
 	
 	if retreat_cost != -1:
-		print("-----------------------------------------------------------")
+		print_rich("[center]-----------------------------------------------------------")
 		print_rich("[center]Retreat")
-		print("Retreat Cost: ", slot.pokedata.retreat)
-		var cost: bool = slot.pokedata.retreat >= retreat_cost if comparison_type == 1 else slot.pokedata.retreat <= retreat_cost
+		print("Retreat Cost: ", slot.current_card.pokemon_properties.retreat)
+		var cost: bool = (slot.current_card.pokemon_properties.retreat >= retreat_cost
+		 if comparison_type == 1 else slot.current_card.pokemon_properties.retreat <= retreat_cost)
 		result = cost and result
 	
 	#If energy attatched isn't -1 check to see if a pokemon has x ammount attatched
 	if energy_attatched != -1:
-		print("-----------------------------------------------------------")
+		print_rich("[center]-----------------------------------------------------------")
 		print_rich("[center]Energy Attatched")
 		slot.count_energy()
-		result = result and slot.get_energy_strings().size()
+		result = result and slot.get_energy_strings().size() >= energy_attatched
 	
 	#Check if any desired condition exists in the pokemon
 	if condition != 0:
-		print("-----------------------------------------------------------")
+		print_rich("[center]-----------------------------------------------------------")
 		print_rich("[center]Conditions")
 		print("Poision: ", slot.poison_condition, "
 		Burn: ", slot.burn_condition,"

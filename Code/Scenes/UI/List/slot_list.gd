@@ -30,3 +30,12 @@ func refresh_energy():
 	for node in %SlotList.get_children():
 		if node.slot:
 			node.set_energy()
+
+func disable_all():
+	for node in %SlotList.get_children():
+		node.disabled = true
+
+func find_allowed(ask: SlotAsk):
+	for node in %SlotList.get_children():
+		if node.slot:
+			node.disabled = not ask.check_ask(node.slot)

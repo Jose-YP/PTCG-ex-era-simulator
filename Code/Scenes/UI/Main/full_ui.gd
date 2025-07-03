@@ -23,6 +23,14 @@ func get_slots(side: Constants.SIDES, slot: Constants.SLOTS) -> Array[UI_Slot]:
 	return all_slots().filter(func(uislot: UI_Slot):
 		return uislot.connected_slot.is_in_slot(side, slot))
 
+func get_poke_slots(side: Constants.SIDES, slot: Constants.SLOTS) -> Array[PokeSlot]:
+	var poke: Array[PokeSlot]
+	for ui_slot in all_slots():
+		if ui_slot.connected_slot.is_in_slot(side, slot):
+			poke.append(ui_slot.connected_slot)
+	
+	return poke
+
 func remove_card() -> void:
 	print("IHJBEFDI")
 

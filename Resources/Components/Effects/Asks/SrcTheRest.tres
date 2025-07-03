@@ -1,11 +1,11 @@
-[gd_resource type="Resource" script_class="SlotAsk" load_steps=2 format=3 uid="uid://dqj6gq7pt3dbk"]
+[gd_resource type="Resource" script_class="SlotAsk" load_steps=2 format=3 uid="uid://dv5gbkvk3uxtj"]
 
-[ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="1_ya6q5"]
+[ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="1_x2qpi"]
 
 [resource]
-script = ExtResource("1_ya6q5")
+script = ExtResource("1_x2qpi")
 side_target = 4
-slot_target = 4
+slot_target = 5
 specifically = Array[String]([])
 comparison_type = 1
 max_hp = -10

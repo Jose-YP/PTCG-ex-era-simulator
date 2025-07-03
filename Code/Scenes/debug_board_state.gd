@@ -54,6 +54,9 @@ func _on_button_pressed() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action("TEST") and not test_out:
+		fundies.record_source_target(true, 
+		 [full_ui.get_poke_slots(Constants.SIDES.ATTACKING, Constants.SLOTS.ACTIVE)[0]],
+		 [])
 		var new = test.instantiate()
 		
 		#region EDIT WITH WHATEVER
@@ -63,4 +66,3 @@ func _input(event: InputEvent) -> void:
 		
 		add_child(new)
 		test_out = true
-	

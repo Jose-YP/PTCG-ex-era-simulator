@@ -34,7 +34,6 @@ func display_energy(energy_arr: Array, energy_dict: Dictionary):
 		node.number = 0
 	
 	if energy_arr.size() > en_count:
-		print("COMPRESSED ADD")
 		for type in energy_dict:
 			if energy_dict[type] > 0:
 				energyContainer[total_types].add_type(type, energy_dict[type])
@@ -42,9 +41,7 @@ func display_energy(energy_arr: Array, energy_dict: Dictionary):
 				if total_types > en_count:
 					energyContainer[total_types - 1].hide()
 	else:
-		print("REGULAR ADD")
 		for i in range(energy_arr.size()):
-			print("ADD", energy_arr[i])
 			energyContainer[i].add_type(energy_arr[i])
 	
 	if total_types > en_count - 1:

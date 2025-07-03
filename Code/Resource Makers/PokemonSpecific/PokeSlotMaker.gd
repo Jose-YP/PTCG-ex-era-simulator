@@ -147,6 +147,8 @@ func is_in_slot(desired_side: Constants.SIDES, desired_slot: Constants.SLOTS):
 			slot_bool = not is_active()
 		Constants.SLOTS.TARGET:
 			slot_bool = Globals.fundies.get_targets().has(self)
+		Constants.SLOTS.REST:
+			slot_bool = not Globals.fundies.get_targets().has(self)
 	
 	return slot_bool and side_bool
 

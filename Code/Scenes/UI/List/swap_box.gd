@@ -6,15 +6,13 @@ class_name SwapBox
 #region VARIABLES
 @export var side: CardSideUI
 @export var singles: bool = true
-var swap_rules: EnMov = load("res://Resources/Components/Effects/EnergyMovement/EnergyTrans.tres")
+var swap_rules: EnMov = load("res://Resources/Components/Effects/EnergyMovement/LendMeYourEnergy.tres")
 
 @onready var playing_list: PlayingList = %PlayingList
 @onready var slot_list: SlotList = %SlotList
 @onready var header: HBoxContainer = %Header
 @onready var footer: PanelContainer = %Footer
 @onready var energy_types: EnergyCollection = %EnergyTypes
-
-enum STEP {GIVER, ENERGY, RECIECVER}
 
 signal finished
 
@@ -46,18 +44,21 @@ func _ready() -> void:
 	update_info()
 	header.setup("SWAP BOX")
 	footer.setup("PRESS ESC TO UNDO")
+	slot_list.find_allowed(swap_rules.givers)
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Back"):
 		if reciever != null:
 			reciever = null
+			slot_list.find_allowed(swap_rules.reciever)
 		elif energy_given.size() > 0:
 			energy_given.pop_back().flat = false
-			allowed_more()
+			allowed_more_energy()
 			display_current_swap()
 		elif giver != null:
 			giver = null
 			playing_list.reset_items()
+			slot_list.find_allowed(swap_rules.givers)
 #endregion
 #--------------------------------------
 
@@ -68,6 +69,9 @@ func handle_pressed_slot(slot_button: PokeSlotButton):
 		giver = slot_button
 		get_swappable(slot_button)
 		giver.flat = true
+		slot_list.find_allowed(swap_rules.reciever)
+		#Allow for reset
+		giver.disabled = false
 	elif giver != slot_button:
 		reciever = slot_button
 		reciever.flat = true
@@ -105,10 +109,10 @@ func select_energy(button: PlayingButton):
 		energy_given.erase(button)
 	
 	display_current_swap()
-	allowed_more()
+	allowed_more_energy()
 	update_info()
 
-func allowed_more():
+func allowed_more_energy():
 	if swap_rules.enough_energy(energy_given.size()):
 		for button in playing_list.get_items():
 			if button.flat: continue
@@ -153,12 +157,13 @@ func update_info():
 	
 	%indSwapNum.append_text(giving_txt)
 	%Instructions.append_text(str(giver_txt,"\n",reciever_txt,"\n",actions_left))
+	%Swap.text = str("Swap" if reciever == null else "Swap Ready")
+	
 	%Swap.disabled = reciever == null
-	if reciever:
-		%Swap.text = str("Swap ", energy_given.size()," to ", reciever.slot.current_card.name)
 
-func anymore_allowed():
+func anymore_swaps_allowed():
 	if swap_rules.enough_actions(swaps_made) or swap_rules.enough_energy(energy_swapped):
+		slot_list.disable_all()
 		print("NO MORE SWAPS")
 
 func reset():
@@ -177,6 +182,7 @@ func reset():
 	reciever.flat = false
 	reciever = null
 	
+	slot_list.find_allowed(swap_rules.givers)
 	update_info()
 #endregion
 #--------------------------------------
@@ -185,9 +191,9 @@ func reset():
 #region SIGNALS
 func _on_end_pressed() -> void:
 	finished.emit()
+	Globals.control_disapear(self, .1)
 
 func _on_swap_pressed() -> void:
-	print("Swap!!!!")
 	#First convert the list into a list of base_cards
 	var card_list: Array[Base_Card] = []
 	
@@ -197,5 +203,6 @@ func _on_swap_pressed() -> void:
 	swap_rules.swap(giver.slot, reciever.slot, card_list)
 	swaps_made += 1
 	reset()
+	anymore_swaps_allowed()
 #endregion
 #--------------------------------------

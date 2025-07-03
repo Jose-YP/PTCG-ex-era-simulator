@@ -71,10 +71,11 @@ enum SIDES {NONE, ##IGNORE FIELD AND TAKE DEFAULT
  OTHER, ##WHICHEVER SIDE DIDN'T CALL THE EFFECT
 } 
 enum SLOTS {NONE,##Ignore and use the default
- TARGET,##Refers to  pokemon involved in atacks and effects
+ TARGET,##Refers to  pokemon involved in attacks and effects
  ACTIVE,##Refers to the pokemon in the Active Slot
  BENCH,##Refers to pokemon in the bench
- ALL##Refers to any pokemon in the dedicated side
+ ALL,##Refers to any pokemon in the dedicated side
+ REST ##Refers to any pokemon not involves with attacks or effects
 }
 enum STACKS{HAND, ##CARDS HERE CAN BE PLAYED UNDER THE RIGHT CONDITIONS
  DECK, ##CARDS MUST EITHER BE DRAWN OR TUTORED. ALL CRADS BEGIN HERE
