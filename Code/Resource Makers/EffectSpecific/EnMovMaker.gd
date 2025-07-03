@@ -35,7 +35,7 @@ func play_effect():
 	print("PLAY ENMOV")
 	match action:
 		0:
-			await move_effect()
+			await send_effect()
 		1:
 			await swap_effect()
 		2:
@@ -43,7 +43,30 @@ func play_effect():
 	
 	finished.emit()
 
-func move_effect():
+func send_effect():
+	var giver_call: Callable = func(slot: PokeSlot):
+		return givers.check_ask(slot) and slot.current_card and slot.energy_cards.size() != 0
+	
+	#Get whichever meant to discard
+	var candidate: PokeSlot = await Globals.fundies.card_player.get_choice_candidates(\
+	"Choose a Pokemon", giver_call)
+	
+	print(candidate.energy_cards, candidate.count_diff_energy())
+	if candidate.count_diff_energy() == 1:
+		candidate.remove_energy(candidate.energy_cards[0].name)
+	else:
+		var en_dict: Dictionary[Base_Card, bool]
+		for en in candidate.energy_cards:
+			en_dict[en] = energy_allowed(en, false)
+		var dis_box: DiscardList = Globals.fundies.stack_manager.spawn_discard_list(
+			en_dict, Constants.STACKS.PLAY, to_stack)
+		
+		dis_box.home = Globals.fundies.get_considered_home(givers.side_target)
+		dis_box.discards_left = energy_ammount
+		Globals.fundies.add_child(dis_box)
+		
+		await dis_box.tree_exited
+	
 	finished.emit()
 
 func swap_effect():
@@ -53,11 +76,11 @@ func swap_effect():
 	new_box.side = Globals.full_ui.get_side(givers.side_target)
 	new_box.singles = Globals.full_ui.singles
 	Globals.fundies.add_child(new_box)
-	await new_box.finished
+	await new_box.tree_exited
 	
 	finished.emit()
 
-func swap(giver: PokeSlot, reciever: PokeSlot, energy_giving: Array[Base_Card]):
+func swap(giver: PokeSlot, rec: PokeSlot, energy_giving: Array[Base_Card]):
 	var left: Array[Base_Card] = energy_giving.duplicate()
 	
 	for en in energy_giving:
@@ -71,10 +94,8 @@ func swap(giver: PokeSlot, reciever: PokeSlot, energy_giving: Array[Base_Card]):
 		printerr(left," has ",left.size()," cards left")
 	
 	for en in energy_giving:
-		reciever.add_energy(en)
+		rec.add_energy(en)
 	
-	reciever.count_energy()
-	giver.count_energy()
 	giver.refresh()
 
 func attatch_effect():

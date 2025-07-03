@@ -15,6 +15,7 @@ func _ready() -> void:
 	movable.offset = offset
 
 func setup(txt: String):
+	instructions.clear()
 	instructions.append_text(txt)
 	
 	if txt == "":

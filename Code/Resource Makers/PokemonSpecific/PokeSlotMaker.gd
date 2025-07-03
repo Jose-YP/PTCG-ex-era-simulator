@@ -278,6 +278,16 @@ func get_energy_strings() -> Array[String]:
 	
 	return energy_stirngs
 
+func count_diff_energy() -> int:
+	var diff: int = 0
+	var recorded: Array[String] = []
+	for card in energy_cards:
+		if not(card.name in recorded):
+			diff += 1
+			recorded.append(card.name)
+	
+	return diff
+
 #endregion
 #--------------------------------------
 

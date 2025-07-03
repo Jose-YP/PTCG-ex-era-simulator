@@ -4,8 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://cmmds4boaksl7" path="res://Scenes/UI/UIComponents/movable.tscn" id="2_68cux"]
 [ext_resource type="Script" uid="uid://bl436pvq0cslp" path="res://Code/Scenes/UI/List/footer.gd" id="2_vyyv0"]
 
-[node name="IdentifierPanel" type="PanelContainer" node_paths=PackedStringArray("based_on")]
-custom_minimum_size = Vector2(400, 40)
+[node name="Footer" type="PanelContainer" node_paths=PackedStringArray("based_on")]
+custom_minimum_size = Vector2(0, 25)
+size_flags_horizontal = 3
 theme_override_styles/panel = ExtResource("1_agf5c")
 script = ExtResource("2_vyyv0")
 based_on = NodePath(".")

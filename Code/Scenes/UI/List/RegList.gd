@@ -1,4 +1,5 @@
 extends PanelContainer
+class_name RegList
 
 @export var stack_act: Constants.STACK_ACT = Constants.STACK_ACT.PLAY
 @export var stack: Constants.STACKS = Constants.STACKS.HAND

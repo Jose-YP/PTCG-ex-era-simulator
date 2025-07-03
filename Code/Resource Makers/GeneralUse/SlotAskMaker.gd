@@ -49,6 +49,7 @@ class_name SlotAsk
 #Checks if one slot is 
 func check_ask(slot: PokeSlot) -> bool:
 	var result: bool
+	if not slot.current_card: return false
 	
 	#Find which pokemon to check
 	print_rich("[center]",slot.current_card.name)
@@ -93,13 +94,13 @@ func check_ask(slot: PokeSlot) -> bool:
 	print_rich("[center]Type Flag")
 	#Check if the pokemon is type inclusive xor~ type
 	var types: Array[String] = Conversions.flags_to_type_array(slot.current_card.pokemon_properties.type)
-	var type_string: String = "[center]Type: "
+	var type_str: String = "[center]Type: "
 	for loc_type in types:
 		var type_int: float = Constants.energy_types.find(loc_type)
 		var type_color: String = str("[color=",Constants.energy_colors[type_int].to_html(),"]")
 		
-		type_string += type_color + loc_type + "[/color]"
-	print_rich(type_string, "\n", slot.current_card.pokemon_properties.type && type, 
+		type_str += type_color + loc_type + "[/color]"
+	print_rich(type_str, "\n", slot.current_card.pokemon_properties.type && type, 
 	 not (slot.current_card.pokemon_properties.type && type != 0 and not type_inclusive))
 	
 	var type_bool: bool = not(slot.current_card.pokemon_properties.type && type != 0 and not type_inclusive)

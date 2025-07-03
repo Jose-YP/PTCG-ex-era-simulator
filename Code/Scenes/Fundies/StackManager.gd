@@ -166,6 +166,14 @@ func instantiate_list(specified_list: Dictionary[Base_Card, bool], which: Consta
 func pick_prize():
 	pass
 
+func spawn_discard_list(specified_list: Dictionary[Base_Card, bool],
+ from: Constants.STACKS, to: Constants.STACKS) -> DiscardList:
+	var dis_box: DiscardList = Constants.discard_box.instantiate()
+	
+	dis_box.list = specified_list
+	dis_box.stack = from
+	return dis_box
+
 func spawn_energy_list(slot: PokeSlot, allowed_fun: Callable = func(a): return true):
 	print("WHAT???")
 	var energy_dict: Dictionary[Base_Card, bool]

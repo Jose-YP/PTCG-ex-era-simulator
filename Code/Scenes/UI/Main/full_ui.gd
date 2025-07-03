@@ -40,6 +40,7 @@ func update_stacks(dict: Dictionary[Constants.STACKS,Array],
  side: Constants.PLAYER_TYPES):
 	var temp_side: CardSideUI = get_side(home_side == side)
 	for stack in dict:
+		if stack == Constants.STACKS.PLAY: break
 		temp_side.non_mon.update_stack(stack, dict[stack].size())
 
 func _gui_input(event: InputEvent) -> void:

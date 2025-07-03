@@ -20,6 +20,7 @@ var hand: Array[Base_Card] = []
 #Here in case they need to be used at some point
 var reveal_stack: Array[Base_Card]
 var cards_in_play: Array[Base_Card]
+var lost_zone: Array[Base_Card]
 #endregion
 #--------------------------------------
 
@@ -68,7 +69,8 @@ func init_sync(list: Array[Base_Card]):
 func sendStackDictionary() -> Dictionary[Constants.STACKS, Array]:
 	return {
  Constants.STACKS.HAND: hand, Constants.STACKS.DECK: usable_deck,
- Constants.STACKS.DISCARD: discard_pile, Constants.STACKS.PRIZE: prize_cards}
+ Constants.STACKS.DISCARD: discard_pile, Constants.STACKS.PRIZE: prize_cards,
+ Constants.STACKS.PLAY: cards_in_play, Constants.STACKS.LOST: lost_zone}
 
 func append_to_arrays(type: Constants.STACKS, card: Base_Card, top_deck: bool = false):
 	#Constants.STACKS.DECK and bottom_stack
@@ -104,15 +106,20 @@ func get_array(type: Constants.STACKS) -> Array[Base_Card]:
 			return hand
 
 func none_lost() -> bool:
-	return (usable_deck.size() + discard_pile.size() + hand.size() + prize_cards.size()) == 60
+	if (usable_deck.size() + discard_pile.size() + hand.size()
+	 + prize_cards.size() + cards_in_play.size() + lost_zone.size()) != 60:
+		printerr("We lost someone")
+	
+	return (usable_deck.size() + discard_pile.size() + hand.size()
+	 + prize_cards.size() + cards_in_play.size() + lost_zone.size()) == 60
 
 func move_cards(cards: Array[Base_Card], from: Constants.STACKS, towards: Constants.STACKS,
  shuffle: bool = true, top_deck: bool = false):
 	var dict: Dictionary[Constants.STACKS, Array] = sendStackDictionary()
+	none_lost()
 	for i in range(cards.size() - 1, -1, -1):
 		var card: Base_Card = cards[i]
 		#Remove all tutored cards from source first
-		#print()
 		#var adding_card = dict[from].pop_at(dict[from].find_custom(card.same_card))
 		var adding_card = dict[from][dict[from].find_custom(card.same_card)]
 		if not card.same_card(adding_card):
