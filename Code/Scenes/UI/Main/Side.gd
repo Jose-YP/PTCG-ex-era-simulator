@@ -74,3 +74,6 @@ func insert_slot(slot: PokeSlot, predefined: bool = false):
 			if not ui_slot.connected_slot.current_card:
 				ui_slot.attatch_pokeslot(slot)
 				return
+
+func supporter_played() -> bool:
+	return non_mon.current_supporter != null

@@ -91,7 +91,7 @@ func can_be_played(card: Base_Card) -> int:
 	if considered & 4 != 0:
 		allowed_to += 4
 	if considered & 8 != 0:
-		if not stack_manager.supporter_played:
+		if not Globals.full_ui.get_side(home_turn).supporter_played():
 			allowed_to += 8
 	if considered & 16 != 0:
 		allowed_to += 16
