@@ -12,7 +12,7 @@ class_name ItemOptions
 signal play_as(card_flag: int, card: Base_Card)
 
 var old_position: Vector2
-var origin_button: Button
+var origin_button: PlayingButton
 var home: bool
 
 #--------------------------------------
@@ -64,6 +64,7 @@ func emit_play_as(flag: int):
 	if not Globals.checking:
 		Globals.control_disapear(self, .1, old_position)
 		play_as.emit(flag, origin_button.card)
+		origin_button.parent.finished.emit()
 
 func _on_check_pressed():
 	if not Globals.checking:

@@ -10,11 +10,6 @@ size_flags_vertical = 0
 follow_focus = true
 script = ExtResource("2_dv6ib")
 tutor_box = ExtResource("3_dv6ib")
-all_lists = null
-list = null
-allowed_as = null
-stack_act = null
-stack = null
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2

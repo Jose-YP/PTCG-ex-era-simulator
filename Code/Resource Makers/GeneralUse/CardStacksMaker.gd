@@ -31,9 +31,9 @@ func make_deck():
 	usable_deck.shuffle()
 	init_sync(init_deck)
 	init_sync(init_hand)
+	move_cards(init_hand, Constants.STACKS.DECK, Constants.STACKS.HAND)
 
 func setup():
-	move_cards(init_hand, Constants.STACKS.DECK, Constants.STACKS.HAND)
 	if init_deck.size() != 0:
 		move_cards(usable_deck, Constants.STACKS.DECK, Constants.STACKS.DISCARD)
 		move_cards(init_deck, Constants.STACKS.DISCARD, Constants.STACKS.DECK)
@@ -117,7 +117,6 @@ func none_lost() -> bool:
 func move_cards(cards: Array[Base_Card], from: Constants.STACKS, towards: Constants.STACKS,
  shuffle: bool = true, top_deck: bool = false):
 	var dict: Dictionary[Constants.STACKS, Array] = sendStackDictionary()
-	none_lost()
 	for i in range(cards.size() - 1, -1, -1):
 		var card: Base_Card = cards[i]
 		#Remove all tutored cards from source first
@@ -136,6 +135,8 @@ func move_cards(cards: Array[Base_Card], from: Constants.STACKS, towards: Consta
 		usable_deck.shuffle()
 	else:
 		print(from == Constants.STACKS.DECK, towards == Constants.STACKS.DECK, shuffle)
+	
+	none_lost()
 
 #endregion
 #--------------------------------------

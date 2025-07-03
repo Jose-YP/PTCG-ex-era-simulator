@@ -102,7 +102,7 @@ enum STACK_ACT{PLAY,##ALLOWED CARDS CAN BE PLAYED ONTO THE BOARD
 const rarity: Array[String] = ["Common", "Uncommon", "Rare",
  "Holofoil Rare", "ex Rare", "Ultra Rare", "Star Rare", "Promo Rare"]
 const allowed_list_flags: Array[String] = ["Basic", "Evolution",
- "Item", "Supporter","Stadium", "Tool", "TM", "RSM", "Fossil", "Energy"]
+ "Item", "Support","Stadium", "Tool", "TM", "RSM", "Fossil", "Energy"]
 
 #endregion
 #--------------------------------------

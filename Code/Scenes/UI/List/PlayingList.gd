@@ -15,6 +15,8 @@ class_name PlayingList
 @export var stack_act: Constants.STACK_ACT = Constants.STACK_ACT.PLAY
 @export var stack: Constants.STACKS = Constants.STACKS.HAND
 
+signal finished
+
 const list_item: PackedScene = preload("res://Scenes/UI/Lists/PlayingListItem_copy.tscn")
 
 var black_list: Array[String] = []
@@ -55,7 +57,8 @@ func is_allowed(button: Button) -> void:
 			var whitelisted: bool = white_list.has(button.card.name)
 			var blacklisted: bool = black_list.has(button.card.name)
 			
-			if (list[button.card] or whitelisted) and not blacklisted and Globals.fundies.can_be_played(button.card):
+			if (list[button.card] or whitelisted) and not blacklisted and \
+			 Globals.fundies.can_be_played(button.card):
 				button.allow(allowed_as)
 			else: button.not_allowed()
 		Constants.STACK_ACT.TUTOR:

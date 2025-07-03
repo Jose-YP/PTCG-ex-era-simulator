@@ -33,3 +33,5 @@ par = NodePath("../..")
 unique_name_in_owner = true
 layout_mode = 2
 dragging_node = NodePath("../..")
+
+[connection signal="finished" from="VBoxContainer/PlayingList" to="." method="_on_playing_list_finished"]

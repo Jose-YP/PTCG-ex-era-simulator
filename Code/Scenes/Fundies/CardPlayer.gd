@@ -112,6 +112,9 @@ func play_energy(card: Base_Card, placement:Placement = null):
 func play_trainer(card: Base_Card):
 	var trainer: Trainer = card.trainer_properties
 	Globals.fundies.record_source_target(Globals.fundies.home_turn, [], [])
+	if card.is_considered("Supporter"):
+		Globals.fundies.stack_manager.play_supporter(card, Globals.fundies.home_turn)
+	
 	if trainer.prompt:
 		print("This card has a prompt")
 	
@@ -134,8 +137,8 @@ func play_trainer(card: Base_Card):
 	if trainer.always_effect:
 		await trainer.always_effect.play_effect()
 	
-	Globals.fundies.stack_manager.play_card(card, Globals.fundies.home_turn)
-	Globals.fundies.stack_manager.discard_card(card)
+	if not card.is_considered("Supporter"):
+		Globals.fundies.stack_manager.play_card(card, Globals.fundies.home_turn)
 
 #For tools
 func play_attatch_tool(card: Base_Card):

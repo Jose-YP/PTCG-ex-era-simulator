@@ -84,7 +84,6 @@ func can_be_played(card: Base_Card) -> int:
 			allowed_to += 1
 	if considered & 2 != 0:
 		var can_evo_from = Globals.make_can_evo_from(card)
-		
 		if find_allowed_slots(can_evo_from, Constants.SIDES.ATTACKING).size() != 0:
 			allowed_to += 2
 		else:

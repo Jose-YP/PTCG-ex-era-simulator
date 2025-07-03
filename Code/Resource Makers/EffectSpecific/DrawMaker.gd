@@ -23,9 +23,7 @@ func play_effect():
 		pass
 	
 	if shuffle_back_first:
-		var stack: CardStacks = Globals.fundies.stack_manager.get_stacks(Globals.fundies.get_considered_home(side))
-		stack.move_cards(stack.hand, Constants.STACKS.HAND, Constants.STACKS.DECK)
-		stack.usable_deck.shuffle()
+		Globals.fundies.stack_manager.shuffle_hand_back()
 	
 	Globals.fundies.stack_manager.draw(num_draw, not bottom_deck)
 	Globals.fundies.stack_manager.operate_home = old_val

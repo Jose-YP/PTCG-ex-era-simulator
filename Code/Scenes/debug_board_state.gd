@@ -25,10 +25,10 @@ func _ready() -> void:
 	fundies.current_turn_print()
 
 func set_up(home: bool):
-	var temp_side: SideState = board_state.get_side(home)
+	var temp_side: SideState = board_state.get_side(home).duplicate()
 	var ui: CardSideUI = full_ui.get_side(home)
 	var player_type: Constants.PLAYER_TYPES = board_state.get_player_type(home)
-	var stacks: CardStacks = temp_side.card_stacks
+	var stacks: CardStacks = temp_side.card_stacks.duplicate()
 	
 	ui.player_type = player_type
 	fundies.stack_manager.assign_card_stacks(stacks, home)

@@ -6,9 +6,6 @@ class_name StackManager
 @export var attatched_energy: bool = false
 @export var supporter_played: bool = false
 @export_range(1,6) var prize_count: int = 6
-@export_flags("Basic", "Evolution", "Item",
-"Supporter","Stadium", "Tool", "TM", "RSM", "Fossil",
- "Energy") var allowed_play: int = 1023
 
 #var reveal_stack: Array[Base_Card]
 var operate_home: bool = true
@@ -33,7 +30,6 @@ func assign_card_stacks(stacks: CardStacks, side: bool):
 		away_stacks = stacks
 
 func draw_starting():
-	allowed_play = 1
 	draw(7)
 	print("----------",operate_home,"---------")
 	check_starting()
@@ -83,7 +79,17 @@ func play_card(card: Base_Card, home: bool): #From hand to Y
 	get_stacks(home).hand.erase(card)
 	update_lists()
 	card.print_info()
+	discard_card(card)
 	Globals.fundies.ui_actions.reset_ui()
+
+func play_supporter(card: Base_Card, home: bool):
+	var side: CardSideUI = Globals.full_ui.get_side(home)
+	var stack: CardStacks = get_stacks(home)
+	side.non_mon.show_supporter(card)
+	#Whichever one works stays
+	stack.hand.erase(card)
+	stack.cards_in_play.append(card)
+	stack.none_lost()
 
 func ontop_deck(_card: Base_Card): #From X to atop Deck
 	pass
@@ -112,8 +118,7 @@ func update_lists():
 
 func get_list(which: Constants.STACKS) -> Dictionary[Base_Card, bool]:
 	var dict: Dictionary[Base_Card, bool]
-	determine_allowed()
-	
+	var allowed_as: int = determine_allowed()
 	#Everything should check if they're allowed generally, then...
 	#Basic and \fossil should check if there is any empty space
 	#Evolution should check if there's anything to evolve from
@@ -122,7 +127,7 @@ func get_list(which: Constants.STACKS) -> Dictionary[Base_Card, bool]:
 	
 	for card in get_stacks(operate_home).get_array(which):
 		var flags = Conversions.get_card_flags(card)
-		dict[card] = flags && allowed_play
+		dict[card] = flags && allowed_as
 	
 	return dict
 
@@ -142,7 +147,7 @@ func instantiate_list(specified_list: Dictionary[Base_Card, bool], which: Consta
 	new_node.old_pos = Globals.fundies.get_side_ui().non_mon.stacks[which].global_position
 	new_node.stack_act = stack_act
 	new_node.stack = which
-	new_node.allowed_as = allowed_play
+	new_node.allowed_as = determine_allowed()
 	new_node.instruction_text = instructions
 	
 	add_sibling(new_node)
@@ -305,12 +310,14 @@ func get_stacks(side: bool) -> CardStacks:
 	operate_home = side
 	return home_stacks if side else away_stacks
 
-func determine_allowed():
-	allowed_play = 1023
+func determine_allowed() -> int:
+	var allowed: int = 1023
 	
 	if first_turn:
-		allowed_play -= 8
+		allowed -= 8
 	if attatched_energy:
-		allowed_play -= 512
+		allowed -= 512
+	
+	return allowed
 #endregion
 #--------------------------------------

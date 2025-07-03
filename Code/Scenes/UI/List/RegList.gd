@@ -44,3 +44,6 @@ func _ready() -> void:
 	playing_list.list = list
 	playing_list.allowed_as = allowed_as
 	playing_list.set_items()
+
+func _on_playing_list_finished() -> void:
+	Globals.control_disapear(self, .1, old_pos)
