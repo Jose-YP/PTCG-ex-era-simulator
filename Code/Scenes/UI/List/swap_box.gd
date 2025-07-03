@@ -6,7 +6,7 @@ class_name SwapBox
 #region VARIABLES
 @export var side: CardSideUI
 @export var singles: bool = true
-var swap_rules: EnMov = load("res://Resources/Components/Effects/EnergyMovement/LendMeYourEnergy.tres")
+var swap_rules: EnMov = load("res://Resources/Components/Effects/EnergyMovement/GoldenWing.tres")
 
 @onready var playing_list: PlayingList = %PlayingList
 @onready var slot_list: SlotList = %SlotList
@@ -38,9 +38,6 @@ func _ready() -> void:
 	for button in slot_list.slots:
 		button.pressed.connect(handle_pressed_slot.bind(button))
 	
-	#if swap_rules == null:
-		#var default_effect: EffectCall = load("energytran")
-		#swap_rules = default_effect.energy_movement
 	update_info()
 	header.setup("SWAP BOX")
 	footer.setup("PRESS ESC TO UNDO")
@@ -113,7 +110,7 @@ func select_energy(button: PlayingButton):
 	update_info()
 
 func allowed_more_energy():
-	if swap_rules.enough_energy(energy_given.size()):
+	if swap_rules.enough_energy(energy_given.size() + energy_swapped):
 		for button in playing_list.get_items():
 			if button.flat: continue
 			button.disabled = true
@@ -150,7 +147,7 @@ func update_info():
 	var reciever_txt: String = str("Reciever: ", 
 	"" if reciever == null else reciever.slot.current_card.name)
 	var giving_txt: String = str(energy_swapping,"/",
-	swap_rules.energy_ammount if swap_rules.energy_ammount != -1 else "X")
+	swap_rules.energy_ammount - energy_swapped if swap_rules.energy_ammount != -1 else "X")
 	var actions_left: String = str("Swaps Left: ",swaps_made,"/",
 	swap_rules.action_ammount if swap_rules.action_ammount != -1 else "X")
 	
@@ -167,9 +164,6 @@ func anymore_swaps_allowed():
 		print("NO MORE SWAPS")
 
 func reset():
-	if swap_rules.energy_carry_over:
-		energy_swapped = energy_swapping 
-	
 	energy_swapping = 0
 	playing_list.reset_items()
 	energy_types.reset_energy()
@@ -202,6 +196,8 @@ func _on_swap_pressed() -> void:
 	
 	swap_rules.swap(giver.slot, reciever.slot, card_list)
 	swaps_made += 1
+	if swap_rules.energy_carry_over:
+		energy_swapped += energy_swapping
 	reset()
 	anymore_swaps_allowed()
 #endregion
