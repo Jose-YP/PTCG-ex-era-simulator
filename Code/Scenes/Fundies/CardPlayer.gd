@@ -48,7 +48,7 @@ func play_basic_pokemon(card: Base_Card):
 			slot.current_card = card
 			slot.refresh()
 			#Remove the card from hand
-			Globals.fundies.stack_manager.play_card(card)
+			Globals.fundies.stack_manager.play_card(card, Globals.fundies.home_turn)
 			return
 	
 	start_add_choice("Where will pokemon be benched", card,
@@ -66,7 +66,7 @@ func play_fossil(card: Base_Card):
 			slot.set_card(card)
 			slot.refresh()
 			#Remove the card from hand
-			Globals.fundies.stack_manager.play_card(card)
+			Globals.fundies.stack_manager.play_card(card, Globals.fundies.home_turn)
 			return
 	
 	start_add_choice("Where will pokemon be benched", card,
@@ -134,7 +134,7 @@ func play_trainer(card: Base_Card):
 	if trainer.always_effect:
 		await trainer.always_effect.play_effect()
 	
-	Globals.fundies.stack_manager.play_card(card)
+	Globals.fundies.stack_manager.play_card(card, Globals.fundies.home_turn)
 	Globals.fundies.stack_manager.discard_card(card)
 
 #For tools
@@ -175,7 +175,7 @@ func start_add_choice(instruction: String, card: Base_Card, bool_fun: Callable, 
 	await generic_choice(instruction, bool_fun)
 	
 	if Globals.fundies.ui_actions.selected_slot:
-		Globals.fundies.stack_manager.play_card(card)
+		Globals.fundies.stack_manager.play_card(card, Globals.fundies.home_turn)
 		print("Attatch ", card.name)
 	else:
 		print("Nevermind")

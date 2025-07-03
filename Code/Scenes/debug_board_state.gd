@@ -37,11 +37,9 @@ func set_up(home: bool):
 	#Set up pre defined slots
 	for slot in temp_side.slots:
 		var new_arr: Array[Base_Card]
-		print(slot.energy_cards)
 		for en in slot.energy_cards:
 			new_arr.append(en.duplicate())
 		slot.energy_cards = new_arr
-		print(slot.energy_cards)
 		slot.player_type = player_type
 		ui.insert_slot(slot, temp_side.slots[slot])
 		stacks.account_for_slot(slot)
@@ -53,7 +51,7 @@ func _on_button_pressed() -> void:
 	pass # Replace with function body.
 
 func _input(event: InputEvent) -> void:
-	if event.is_action("TEST") and not test_out:
+	if event.is_action("TEST") and not test_out and test:
 		fundies.record_source_target(true, 
 		 [full_ui.get_poke_slots(Constants.SIDES.ATTACKING, Constants.SLOTS.ACTIVE)[0]],
 		 [])

@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dnij7qm62bibx"]
+[gd_scene load_steps=8 format=3 uid="uid://dnij7qm62bibx"]
 
 [ext_resource type="Script" uid="uid://j57m0tmwtg4n" path="res://Code/Scenes/debug_board_state.gd" id="1_auq40"]
 [ext_resource type="Resource" uid="uid://cu2ksi0icg1cg" path="res://Resources/BoardStates/SideStates/TooMuchEnergy.tres" id="2_auq40"]
 [ext_resource type="Resource" uid="uid://bafa2bpj2n8u0" path="res://Resources/BoardStates/SideStates/GrassTrans.tres" id="3_auq40"]
-[ext_resource type="PackedScene" uid="uid://mkvxdbo067mv" path="res://Scenes/UI/Lists/swap_box.tscn" id="5_auq40"]
 [ext_resource type="PackedScene" uid="uid://cni7lmrv7r06c" path="res://Scenes/Main Game/Fundies.tscn" id="6_iquab"]
 [ext_resource type="Script" uid="uid://c7ucx36aubnh8" path="res://Code/Resource Makers/GeneralUse/BoardStateMaker.gd" id="28_7d1mi"]
 
@@ -34,7 +33,6 @@ script = ExtResource("1_auq40")
 debug_prompt = 3
 board_state = SubResource("Resource_myyen")
 fundies = NodePath("Fundies")
-test = ExtResource("5_auq40")
 
 [node name="DebugButton" type="Button" parent="."]
 visible = false

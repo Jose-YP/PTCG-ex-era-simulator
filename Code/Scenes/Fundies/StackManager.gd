@@ -77,25 +77,9 @@ func draw(times: int = 1): #From deck to hand
 	
 	update_lists()
 
-#func move_cards(cards: Array[Base_Card], from: Constants.STACKS, towards: Constants.STACKS,
- #shuffle: bool = true, top_deck: bool = false):
-	#var dict: Dictionary[Constants.STACKS, Array] = arrays.sendStackDictionary()
-	#for card in cards: 
-		##Remove all tutored cards from source first
-		#var adding_card = dict[from].pop_at(dict[from].find(card))
-		##Now it can be added back to the towards array
-		#arrays.append_to_arrays(towards, adding_card, top_deck)
-	#
-	##The deck is the only one that needs to be shuffled
-	#if (from == Constants.STACKS.DECK or towards == Constants.STACKS.DECK) and shuffle:
-		#arrays.usable_deck.shuffle()
-	#else:
-		#print(from == Constants.STACKS.DECK, towards == Constants.STACKS.DECK, shuffle)
-	#update_lists()
-
-func play_card(card: Base_Card): #From hand to Y
+func play_card(card: Base_Card, home: bool): #From hand to Y
 	print("PLAY ", card.name)
-	get_stacks(operate_home).hand.erase(card)
+	get_stacks(home).hand.erase(card)
 	update_lists()
 	card.print_info()
 	Globals.fundies.ui_actions.reset_ui()

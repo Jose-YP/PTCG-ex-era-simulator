@@ -34,7 +34,6 @@ func make_deck():
 
 func setup():
 	move_cards(init_hand, Constants.STACKS.DECK, Constants.STACKS.HAND)
-	
 	if init_deck.size() != 0:
 		move_cards(usable_deck, Constants.STACKS.DECK, Constants.STACKS.DISCARD)
 		move_cards(init_deck, Constants.STACKS.DISCARD, Constants.STACKS.DECK)
@@ -53,7 +52,7 @@ func account_for_slot(slot: PokeSlot):
 func init_remove_deck(card: Base_Card):
 	usable_deck.remove_at(usable_deck.find_custom(card.same_card))
 	#usable_deck.erase(card)
-	cards_in_play.append(card.duplicate())
+	cards_in_play.append(card)
 
 func init_sync(list: Array[Base_Card]):
 	for card in list:
@@ -106,12 +105,14 @@ func get_array(type: Constants.STACKS) -> Array[Base_Card]:
 			return hand
 
 func none_lost() -> bool:
-	if (usable_deck.size() + discard_pile.size() + hand.size()
-	 + prize_cards.size() + cards_in_play.size() + lost_zone.size()) != 60:
+	var total: int = (usable_deck.size() + discard_pile.size() + hand.size()
+	 + prize_cards.size() + cards_in_play.size() + lost_zone.size())
+	if total != 60:
+		printt(usable_deck.size(),  discard_pile.size(), hand.size(), prize_cards.size(),
+		cards_in_play.size(), lost_zone.size(), total)
 		printerr("We lost someone")
 	
-	return (usable_deck.size() + discard_pile.size() + hand.size()
-	 + prize_cards.size() + cards_in_play.size() + lost_zone.size()) == 60
+	return total == 60
 
 func move_cards(cards: Array[Base_Card], from: Constants.STACKS, towards: Constants.STACKS,
  shuffle: bool = true, top_deck: bool = false):
@@ -121,11 +122,12 @@ func move_cards(cards: Array[Base_Card], from: Constants.STACKS, towards: Consta
 		var card: Base_Card = cards[i]
 		#Remove all tutored cards from source first
 		#var adding_card = dict[from].pop_at(dict[from].find_custom(card.same_card))
-		var adding_card = dict[from][dict[from].find_custom(card.same_card)]
+		var adding_card: Base_Card = dict[from][dict[from].find_custom(card.same_card)]
 		if not card.same_card(adding_card):
 			for c in dict[from]: print(c.name)
 			print(dict[from].find_custom(card.same_card))
 			printerr(card.name, " is not the same as ", adding_card.name)
+		dict[from].erase(adding_card)
 		#Now it can be added back to the towards array
 		append_to_arrays(towards, adding_card, top_deck)
 	
