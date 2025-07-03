@@ -61,6 +61,17 @@ func hide_list() -> void:
 func get_side_ui() -> CardSideUI:
 	return Globals.full_ui.get_side(home_turn)
 
+func get_considered_home(side: Constants.SIDES):
+	match side:
+		Constants.SIDES.ATTACKING:
+			return home_turn
+		Constants.SIDES.DEFENDING:
+			return not home_turn
+		Constants.SIDES.SOURCE:
+			return get_source_considered()
+		Constants.SIDES.OTHER:
+			return not get_source_considered()
+
 #--------------------------------------
 #region SLOT FUNCTIONS
 func can_be_played(card: Base_Card) -> int:

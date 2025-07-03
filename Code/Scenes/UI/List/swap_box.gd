@@ -196,6 +196,7 @@ func _on_swap_pressed() -> void:
 	
 	swap_rules.swap(giver.slot, reciever.slot, card_list)
 	swaps_made += 1
+	#Only record previously swapped if the rules ask for it
 	if swap_rules.energy_carry_over:
 		energy_swapped += energy_swapping
 	reset()

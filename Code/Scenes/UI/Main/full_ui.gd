@@ -1,6 +1,8 @@
 extends Control
 class_name FullBoardUI
 
+@export var singles: bool = true
+
 var current_card: Control
 
 @onready var player_side: CardSideUI = $PlayerSide

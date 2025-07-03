@@ -47,14 +47,15 @@ func move_effect():
 	finished.emit()
 
 func swap_effect():
-	#var new_box: SwapBox = Constants.swap_box.instantiate()
+	var new_box: SwapBox = Constants.swap_box.instantiate()
+	#Globals.fundies.get_considered_home(chooser)
+	new_box.swap_rules = self
+	new_box.side = Globals.full_ui.get_side(givers.side_target)
+	new_box.singles = Globals.full_ui.singles
+	Globals.fundies.add_child(new_box)
+	await new_box.finished
 	
-	#new_box.swap_rules = self
-	#
-	#Globals.fundies.add_child(new_box)
-	#await new_box.finished
 	finished.emit()
-	pass
 
 func swap(giver: PokeSlot, reciever: PokeSlot, energy_giving: Array[Base_Card]):
 	var left: Array[Base_Card] = energy_giving.duplicate()

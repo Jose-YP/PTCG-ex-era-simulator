@@ -111,6 +111,7 @@ func play_energy(card: Base_Card, placement:Placement = null):
 #region TRAINERS
 func play_trainer(card: Base_Card):
 	var trainer: Trainer = card.trainer_properties
+	Globals.fundies.record_source_target(Globals.fundies.home_turn, [], [])
 	if trainer.prompt:
 		print("This card has a prompt")
 	

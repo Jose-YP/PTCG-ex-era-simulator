@@ -21,6 +21,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_g3lbb")
+singles = false
 
 [node name="OpponentSide" parent="." instance=ExtResource("2_g3lbb")]
 layout_mode = 1
