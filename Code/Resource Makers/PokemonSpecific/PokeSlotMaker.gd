@@ -5,15 +5,19 @@ class_name PokeSlot
 #--------------------------------------
 #region VARIABLES
 #--------------------------------------
-#region LOCATION
-@export var player_type: Constants.PLAYER_TYPES
+#region BASIC
 @export var current_card: Base_Card
+@export var damage_counters: int = 0
 #endregion
 #--------------------------------------
 #--------------------------------------
 #region NON EXPORT
 var ui_slot: UI_Slot
-var pokedata: Pokemon = current_card.pokemon_properties if current_card else null
+var in_attacking_turn: bool = true
+var attached_energy: Dictionary = {"Grass": 0, "Fire": 0, "Water": 0,
+	"Lightning": 0, "Psychic":0, "Fighting":0 ,"Darkness":0, "Metal":0,
+	"Colorless":0, "Magma":0, "Aqua":0, "Dark Metal":0, "React": 0, 
+	"Holon FF": 0, "Holon GL": 0, "Holon WP": 0, "Rainbow":0}
 
 enum poison_type{NONE, NORMAL, HEAVY}
 enum burn_type{NONE, NORMAL, HEAVY}
@@ -27,15 +31,11 @@ enum turn_type{NONE, PARALYSIS, ASLEEP, CONFUSION}
 @export var evolved_this_turn: bool = false
 @export var evolved_from: Array[Base_Card] = [] #
 @export var energy_cards: Array[Base_Card] = []
-@export var attached_energy: Dictionary = {"Grass": 0, "Fire": 0, "Water": 0,
-	"Lightning": 0, "Psychic":0, "Fighting":0 ,"Darkness":0, "Metal":0,
-	"Colorless":0, "Magma":0, "Aqua":0, "Dark Metal":0, "React": 0, 
-	"Holon FF": 0, "Holon GL": 0, "Holon WP": 0, "Rainbow":0}
 @export var tm_cards: Array[Base_Card] = []
 @export var tool_card: Base_Card
-@export_group("Buffs")
 @export var applied_buffs: Array[Buff]
 @export var applied_disable: Array[Disable]
+@export var applied_condition: Condition
 #endregion
 #--------------------------------------
 #--------------------------------------
@@ -53,18 +53,6 @@ enum turn_type{NONE, PARALYSIS, ASLEEP, CONFUSION}
 "Darkness","Metal","Colorless") var resist: int = 0
 #endregion
 #--------------------------------------
-#--------------------------------------
-#region CONDITION VARIABLES
-@export_group("Condition")
-@export var in_attacking_turn: bool = true
-@export var damage_counters: int = 0
-@export var poison_condition: poison_type = poison_type.NONE
-@export var burn_condition: burn_type = burn_type.NONE
-@export var turn_condition: turn_type = turn_type.NONE
-@export var imprison: bool = false
-@export var shockwave: bool = false
-#endregion
-#--------------------------------------
 
 #endregion
 #--------------------------------------
@@ -75,8 +63,8 @@ func pokemon_checkup() -> void:
 	evolved_this_turn = false
 	evolution_ready = true
 	
-	if turn_condition == turn_type.PARALYSIS:
-		turn_condition = turn_type.NONE
+	if applied_condition.mutually_exclusive_conditions == turn_type.PARALYSIS:
+		applied_condition.mutually_exclusive_conditions = turn_type.NONE
 
 func action_checkup(action: String):
 	var targets = get_targets(self, [])
@@ -92,7 +80,7 @@ func check_power_body(action: String):
 
 #--------------------------------------
 #region HELPERS
-func is_in_slot(desired_side: Constants.SIDES, desired_slot: Constants.SLOTS):
+func is_in_slot(desired_side: Constants.SIDES, desired_slot: Constants.SLOTS) -> bool:
 	var side_bool: bool = false
 	var slot_bool: bool = false
 	
@@ -151,6 +139,9 @@ func get_targets(atk: PokeSlot, def: Array[PokeSlot]) -> Array[Array]:
 	
 	return targets
 
+func get_pokedata() -> Pokemon:
+	return current_card.pokemon_properties
+
 #endregion
 #--------------------------------------
 
@@ -178,7 +169,6 @@ func use_card(card: Base_Card) -> void:
 
 func set_card(card: Base_Card) -> void:
 	current_card = card
-	pokedata = card.pokemon_properties
 	ui_slot.make_allowed(true)
 	action_checkup("Set")
 
@@ -190,7 +180,7 @@ func return_card() -> void:
 #--------------------------------------
 #region DAMAGE HANDLERS
 func should_ko() -> bool:
-	return (pokedata.HP - damage_counters) < 0
+	return (get_pokedata().HP - damage_counters) < 0
 
 func add_damage(_base_ammount) -> int:
 	return 0
@@ -319,14 +309,14 @@ func add_condition(condition: String, severe: bool = false) -> void:
 
 func add_poison(severe: bool = false) -> void:
 	if not is_active():
-		poison_condition = poison_type.HEAVY if severe else poison_type.NORMAL
+		applied_condition.poison = poison_type.HEAVY if severe else poison_type.NORMAL
 	else:
 		print(current_card.name)
 		push_error("Adding Poision to a benched mon")
 
 func add_burn(severe: bool = false) -> void:
 	if not is_active():
-		burn_condition = burn_type.HEAVY if severe else burn_type.NORMAL
+		applied_condition.burn = burn_type.HEAVY if severe else burn_type.NORMAL
 	else:
 		push_error("Adding Poision to a benched mon")
 
@@ -334,33 +324,33 @@ func add_turn(which) -> void:
 	if not is_active():
 		match which:
 			"Paralysis":
-				turn_condition = turn_type.PARALYSIS
+				applied_condition.mutually_exclusive_conditions = turn_type.PARALYSIS
 			"Asleep":
-				turn_condition = turn_type.ASLEEP
+				applied_condition.mutually_exclusive_conditions = turn_type.ASLEEP
 			"Confusion":
-				turn_condition = turn_type.CONFUSION
+				applied_condition.mutually_exclusive_conditions = turn_type.CONFUSION
 			_:
 				push_error("add_turn can't add ", which)
 
 func set_imprison(result: bool) -> void:
-	imprison = result
+	applied_condition.imprison = result
 	refresh()
 
 func set_shockwave(result: bool) -> void:
-	shockwave = result
+	applied_condition.shockwave = result
 	refresh()
 
 func affected_by_condition() -> bool:
-	var poisioned: bool = poison_condition != poison_type.NONE
-	var burnt: bool = burn_condition != burn_type.NONE
-	var turnt: bool = turn_condition != turn_type.NONE
+	var poisioned: bool = applied_condition.poison != poison_type.NONE
+	var burnt: bool = applied_condition.burn != burn_type.NONE
+	var turnt: bool = applied_condition.mutually_exclusive_conditions != turn_type.NONE
 	
 	return poisioned or burnt or turnt
 
 func heal_status() -> void:
-	poison_condition = poison_type.NONE
-	burn_condition = burn_type.NONE
-	turn_condition = turn_type.NONE
+	applied_condition.poison = poison_type.NONE
+	applied_condition.burn = burn_type.NONE
+	applied_condition.mutually_exclusive_conditions = turn_type.NONE
 	refresh()
 
 #endregion
@@ -378,11 +368,10 @@ func refresh() -> void:
 	ui_slot.max_hp.clear()
 	
 	if current_card:
-		pokedata = current_card.pokemon_properties
 		ui_slot.display_image(current_card)
 		ui_slot.name_section.append_text(current_card.name)
-		ui_slot.max_hp.append_text(str("HP: ",pokedata.HP - damage_counters, "/", pokedata.HP))
-		ui_slot.display_types(Conversions.flags_to_type_array(pokedata.type))
+		ui_slot.max_hp.append_text(str("HP: ",get_pokedata().HP - damage_counters, "/", get_pokedata().HP))
+		ui_slot.display_types(Conversions.flags_to_type_array(get_pokedata().type))
 	else:
 		ui_slot.display_image(null)
 		ui_slot.display_types([])
@@ -394,8 +383,8 @@ func refresh() -> void:
 	count_energy()
 	ui_slot.display_energy(get_energy_strings(), attached_energy)
 	ui_slot.display_condition()
-	ui_slot.display_imprision(imprison)
-	ui_slot.display_shockwave(shockwave)
+	ui_slot.display_imprision(applied_condition.addable_effects & 1)
+	ui_slot.display_shockwave(applied_condition.addable_effects & 2)
 	
 	if tm_cards.size():
 		ui_slot.tm.texture = tm_cards[0].image

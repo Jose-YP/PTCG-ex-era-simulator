@@ -33,128 +33,50 @@ metadata/_custom_type_script = "uid://calm3n7va5yjo"
 
 [sub_resource type="Resource" id="Resource_slk46"]
 script = ExtResource("2_ot1eh")
-player_type = 0
 current_card = ExtResource("12_wd7ae")
+damage_counters = 0
 evolution_ready = false
 evolved_this_turn = false
 evolved_from = Array[ExtResource("2_5ih3w")]([])
 energy_cards = Array[ExtResource("2_5ih3w")]([ExtResource("4_mepvs")])
-attached_energy = {
-"Aqua": 0,
-"Colorless": 0,
-"Dark Metal": 0,
-"Darkness": 0,
-"Fighting": 0,
-"Fire": 0,
-"Grass": 0,
-"Holon FF": 0,
-"Holon GL": 0,
-"Holon WP": 0,
-"Lightning": 0,
-"Magma": 0,
-"Metal": 0,
-"Psychic": 0,
-"Rainbow": 0,
-"React": 0,
-"Water": 0
-}
 tm_cards = Array[ExtResource("2_5ih3w")]([])
 applied_buffs = Array[ExtResource("13_s64pf")]([])
 applied_disable = Array[ExtResource("14_c5xxw")]([])
 type = 0
 weak = 0
 resist = 0
-in_attacking_turn = true
-damage_counters = 0
-poison_condition = 0
-burn_condition = 0
-turn_condition = 0
-imprison = false
-shockwave = false
 metadata/_custom_type_script = "uid://cs70ix831b5g4"
 
 [sub_resource type="Resource" id="Resource_oeine"]
 script = ExtResource("2_ot1eh")
-player_type = 0
 current_card = ExtResource("13_gmg8j")
+damage_counters = 0
 evolution_ready = false
 evolved_this_turn = false
 evolved_from = Array[ExtResource("2_5ih3w")]([ExtResource("14_qoyrj"), ExtResource("15_a5eex")])
 energy_cards = Array[ExtResource("2_5ih3w")]([ExtResource("3_6pujo"), ExtResource("4_mepvs"), ExtResource("4_mepvs")])
-attached_energy = {
-"Aqua": 0,
-"Colorless": 0,
-"Dark Metal": 0,
-"Darkness": 0,
-"Fighting": 0,
-"Fire": 0,
-"Grass": 0,
-"Holon FF": 0,
-"Holon GL": 0,
-"Holon WP": 0,
-"Lightning": 0,
-"Magma": 0,
-"Metal": 0,
-"Psychic": 0,
-"Rainbow": 0,
-"React": 0,
-"Water": 0
-}
 tm_cards = Array[ExtResource("2_5ih3w")]([])
 applied_buffs = Array[ExtResource("13_s64pf")]([])
 applied_disable = Array[ExtResource("14_c5xxw")]([])
 type = 0
 weak = 0
 resist = 0
-in_attacking_turn = true
-damage_counters = 0
-poison_condition = 0
-burn_condition = 0
-turn_condition = 0
-imprison = false
-shockwave = false
 metadata/_custom_type_script = "uid://cs70ix831b5g4"
 
 [sub_resource type="Resource" id="Resource_ebxpc"]
 script = ExtResource("2_ot1eh")
-player_type = 0
 current_card = ExtResource("16_fcuve")
+damage_counters = 0
 evolution_ready = false
 evolved_this_turn = false
 evolved_from = Array[ExtResource("2_5ih3w")]([ExtResource("17_h7xhs")])
 energy_cards = Array[ExtResource("2_5ih3w")]([ExtResource("4_mepvs"), ExtResource("4_mepvs"), ExtResource("4_mepvs"), ExtResource("4_mepvs"), ExtResource("17_5ih3w"), ExtResource("4_mepvs")])
-attached_energy = {
-"Aqua": 0,
-"Colorless": 0,
-"Dark Metal": 0,
-"Darkness": 0,
-"Fighting": 0,
-"Fire": 0,
-"Grass": 0,
-"Holon FF": 0,
-"Holon GL": 0,
-"Holon WP": 0,
-"Lightning": 0,
-"Magma": 0,
-"Metal": 0,
-"Psychic": 0,
-"Rainbow": 0,
-"React": 0,
-"Water": 0
-}
 tm_cards = Array[ExtResource("2_5ih3w")]([])
 applied_buffs = Array[ExtResource("13_s64pf")]([])
 applied_disable = Array[ExtResource("14_c5xxw")]([])
 type = 0
 weak = 0
 resist = 0
-in_attacking_turn = true
-damage_counters = 0
-poison_condition = 0
-burn_condition = 0
-turn_condition = 0
-imprison = false
-shockwave = false
 metadata/_custom_type_script = "uid://cs70ix831b5g4"
 
 [resource]

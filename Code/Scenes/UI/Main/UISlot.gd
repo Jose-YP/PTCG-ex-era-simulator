@@ -76,7 +76,7 @@ func display_types(types: Array[String]):
 		typeContainer[i].show()
 
 func display_energy(energy_arr: Array, energy_dict: Dictionary):
-	print(energy_arr, energy_dict, energyContainer)
+	#print(energy_arr, energy_dict, energyContainer)
 	%EnergyTypes.display_energy(energy_arr, energy_dict)
 
 #endregion
@@ -85,17 +85,17 @@ func display_energy(energy_arr: Array, energy_dict: Dictionary):
 #--------------------------------------
 #region CONDITION DISPLAY
 func display_condition() -> void:
-	if connected_slot.poison_condition != 0:
+	if connected_slot.applied_condition.poison != 0:
 		%Poison.show()
 	elif active: %Poison.hide()
 	
-	if connected_slot.burn_condition != 0:
+	if connected_slot.applied_condition.burn != 0:
 		%Burn.show()
 	elif active: %Burn.hide()
 	
-	if connected_slot.turn_condition != 0:
+	if connected_slot.applied_condition.mutually_exclusive_conditions != 0:
 		%TurnConditions.show()
-		%TurnConditions.current_tab = connected_slot.turn_condition - 1
+		%TurnConditions.current_tab = connected_slot.applied_condition.mutually_exclusive_conditions - 1
 
 	elif active: %TurnConditions.hide()
 

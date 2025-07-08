@@ -21,13 +21,13 @@ var body: PokeBody
 
 func _ready() -> void:
 	#So it can be sued on a poke slot or not
-	attacks = (poke_slot.pokedata.attacks if poke_slot 
+	attacks = (poke_slot.get_pokedata().attacks if poke_slot 
 	else current_card.pokemon_properties.attacks)
 	
-	power = (poke_slot.pokedata.power if poke_slot 
+	power = (poke_slot.get_pokedata().power if poke_slot 
 	else current_card.pokemon_properties.power)
 	
-	body = (poke_slot.pokedata.body if poke_slot 
+	body = (poke_slot.get_pokedata().body if poke_slot 
 	else current_card.pokemon_properties.body)
 	
 	set_items()
