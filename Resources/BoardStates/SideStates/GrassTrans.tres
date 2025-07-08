@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SideState" load_steps=24 format=3 uid="uid://bafa2bpj2n8u0"]
+[gd_resource type="Resource" script_class="SideState" load_steps=26 format=3 uid="uid://bafa2bpj2n8u0"]
 
 [ext_resource type="Script" uid="uid://dgqpurnuh14t1" path="res://Code/Resource Makers/GeneralUse/SideStateMaker.gd" id="1_058ln"]
 [ext_resource type="Resource" uid="uid://c73v0ww8k8rg2" path="res://Resources/Decks/GrassTransDeck.tres" id="1_rwwha"]
@@ -14,6 +14,8 @@
 [ext_resource type="Script" uid="uid://calm3n7va5yjo" path="res://Code/Resource Makers/GeneralUse/CardStacksMaker.gd" id="9_ncntw"]
 [ext_resource type="Resource" uid="uid://cbrv0ftymjhbj" path="res://Resources/Cards/1 ex Ruby & Saphire/RS78Wurmple.tres" id="12_wd7ae"]
 [ext_resource type="Resource" uid="uid://cgm3sofk1dkq3" path="res://Resources/Cards/6 ex FireRed & LeafGreen/RG112Venusaurex.tres" id="13_gmg8j"]
+[ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/BuffMaker.gd" id="13_s64pf"]
+[ext_resource type="Script" uid="uid://c0ishgbxk63dg" path="res://Code/Resource Makers/EffectSpecific/DisableMaker.gd" id="14_c5xxw"]
 [ext_resource type="Resource" uid="uid://c0kbwsboq8b5x" path="res://Resources/Cards/6 ex FireRed & LeafGreen/RG55Bubasaur.tres" id="14_qoyrj"]
 [ext_resource type="Resource" uid="uid://ct34kdqkmfsuu" path="res://Resources/Cards/6 ex FireRed & LeafGreen/RG35Ivysaur.tres" id="15_a5eex"]
 [ext_resource type="Resource" uid="uid://x137dggkdklo" path="res://Resources/Cards/1 ex Ruby & Saphire/RS31Grovyle.tres" id="16_fcuve"]
@@ -57,28 +59,18 @@ attached_energy = {
 "Water": 0
 }
 tm_cards = Array[ExtResource("2_5ih3w")]([])
-use_weakness = true
-use_resistance = true
+applied_buffs = Array[ExtResource("13_s64pf")]([])
+applied_disable = Array[ExtResource("14_c5xxw")]([])
 type = 0
 weak = 0
 resist = 0
-attack_buff = 0
-defense_buff = 0
-use_body = true
-ex_immune = false
-use_power = false
-use_attack = true
 in_attacking_turn = true
 damage_counters = 0
-benched = false
 poison_condition = 0
 burn_condition = 0
 turn_condition = 0
 imprison = false
 shockwave = false
-readied = false
-knocked_out = false
-is_target = false
 metadata/_custom_type_script = "uid://cs70ix831b5g4"
 
 [sub_resource type="Resource" id="Resource_oeine"]
@@ -109,28 +101,18 @@ attached_energy = {
 "Water": 0
 }
 tm_cards = Array[ExtResource("2_5ih3w")]([])
-use_weakness = true
-use_resistance = true
+applied_buffs = Array[ExtResource("13_s64pf")]([])
+applied_disable = Array[ExtResource("14_c5xxw")]([])
 type = 0
 weak = 0
 resist = 0
-attack_buff = 0
-defense_buff = 0
-use_body = true
-ex_immune = false
-use_power = false
-use_attack = true
 in_attacking_turn = true
 damage_counters = 0
-benched = false
 poison_condition = 0
 burn_condition = 0
 turn_condition = 0
 imprison = false
 shockwave = false
-readied = false
-knocked_out = false
-is_target = false
 metadata/_custom_type_script = "uid://cs70ix831b5g4"
 
 [sub_resource type="Resource" id="Resource_ebxpc"]
@@ -161,28 +143,18 @@ attached_energy = {
 "Water": 0
 }
 tm_cards = Array[ExtResource("2_5ih3w")]([])
-use_weakness = true
-use_resistance = true
+applied_buffs = Array[ExtResource("13_s64pf")]([])
+applied_disable = Array[ExtResource("14_c5xxw")]([])
 type = 0
 weak = 0
 resist = 0
-attack_buff = 0
-defense_buff = 0
-use_body = true
-ex_immune = false
-use_power = false
-use_attack = true
 in_attacking_turn = true
 damage_counters = 0
-benched = false
 poison_condition = 0
 burn_condition = 0
 turn_condition = 0
 imprison = false
 shockwave = false
-readied = false
-knocked_out = false
-is_target = false
 metadata/_custom_type_script = "uid://cs70ix831b5g4"
 
 [resource]

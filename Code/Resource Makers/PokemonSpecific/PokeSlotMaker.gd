@@ -33,14 +33,14 @@ enum turn_type{NONE, PARALYSIS, ASLEEP, CONFUSION}
 	"Holon FF": 0, "Holon GL": 0, "Holon WP": 0, "Rainbow":0}
 @export var tm_cards: Array[Base_Card] = []
 @export var tool_card: Base_Card
+@export_group("Buffs")
+@export var applied_buffs: Array[Buff]
+@export var applied_disable: Array[Disable]
 #endregion
 #--------------------------------------
 #--------------------------------------
 #region TYPE VARIABLES
 @export_group("Type")
-@export var use_weakness: bool = true
-@export var use_resistance: bool = true
-
 @export_subgroup("Temp Types")
 @export_flags("Grass","Fire","Water",
 "Lightning","Psychic","Fighting",
@@ -54,29 +54,10 @@ enum turn_type{NONE, PARALYSIS, ASLEEP, CONFUSION}
 #endregion
 #--------------------------------------
 #--------------------------------------
-#region BUFF/DEBUFF VARIABLES
-@export_group("Buffs")
-@export var attack_buff: int = 0
-@export var defense_buff: int = 0
-@export var applied_buffs: Buff = Buff.new()
-@export var applied_disable: Disable = Disable.new()
-#endregion
-#--------------------------------------
-#--------------------------------------
-#region ALLOWANCES VARIABLES
-@export_group("Allowances")
-@export var use_body: bool = true
-@export var ex_immune: bool = false
-@export var use_power: bool = false
-@export var use_attack: bool = true
-@export var in_attacking_turn: bool = true
-#endregion
-#--------------------------------------
-#--------------------------------------
 #region CONDITION VARIABLES
 @export_group("Condition")
+@export var in_attacking_turn: bool = true
 @export var damage_counters: int = 0
-@export var benched: bool = false
 @export var poison_condition: poison_type = poison_type.NONE
 @export var burn_condition: burn_type = burn_type.NONE
 @export var turn_condition: turn_type = turn_type.NONE
@@ -84,19 +65,9 @@ enum turn_type{NONE, PARALYSIS, ASLEEP, CONFUSION}
 @export var shockwave: bool = false
 #endregion
 #--------------------------------------
-@export var readied: bool = false
-@export var knocked_out: bool = false
-@export var is_target: bool = false
+
 #endregion
 #--------------------------------------
-
-func _ready() -> void:
-	pokedata = current_card.pokemon_properties if current_card else null
-	if current_card:
-		type = pokedata.type
-		weak = pokedata.weak
-		resist = pokedata.resist
-	readied = true
 
 #--------------------------------------
 #region CHECKUP & POWER/BODY
@@ -347,20 +318,20 @@ func add_condition(condition: String, severe: bool = false) -> void:
 	refresh()
 
 func add_poison(severe: bool = false) -> void:
-	if not benched:
+	if not is_active():
 		poison_condition = poison_type.HEAVY if severe else poison_type.NORMAL
 	else:
 		print(current_card.name)
 		push_error("Adding Poision to a benched mon")
 
 func add_burn(severe: bool = false) -> void:
-	if not benched:
+	if not is_active():
 		burn_condition = burn_type.HEAVY if severe else burn_type.NORMAL
 	else:
 		push_error("Adding Poision to a benched mon")
 
 func add_turn(which) -> void:
-	if not benched:
+	if not is_active():
 		match which:
 			"Paralysis":
 				turn_condition = turn_type.PARALYSIS
@@ -417,7 +388,6 @@ func refresh() -> void:
 		ui_slot.display_types([])
 	
 	#recognize position of slot
-	benched = not ui_slot.active
 	ui_slot.connected_slot = self
 	
 	#check for any attatched cards/conditions
