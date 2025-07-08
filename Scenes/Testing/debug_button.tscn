@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmhba1mua5n81"]
+
+[ext_resource type="Script" uid="uid://bqix7612e7kdm" path="res://Code/Test/debug_button.gd" id="1_tnw4s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t8we2"]
+
+[node name="DebugButton" type="Button"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_t8we2")
+script = ExtResource("1_tnw4s")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

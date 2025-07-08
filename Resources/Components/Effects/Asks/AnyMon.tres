@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="SlotAsk" load_steps=2 format=3 uid="uid://dlwjoywjjep0b"]
+[gd_resource type="Resource" script_class="SlotAsk" load_steps=2 format=3 uid="uid://bns8h72u2hxqo"]
 
-[ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="1_bk57f"]
+[ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="1_81ys1"]
 
 [resource]
-script = ExtResource("1_bk57f")
-side_target = 1
+script = ExtResource("1_81ys1")
+side_target = 3
 slot_target = 4
 specifically = Array[String]([])
 comparison_type = 1
@@ -18,10 +18,10 @@ location = 0
 tool_attatched = false
 stage = 7
 rare_candy = false
-class_inclusive = false
-pokemon_class = 2
-owner_inclusive = false
-pokemon_owner = 15
+class_inclusive = true
+pokemon_class = 63
+owner_inclusive = true
+pokemon_owner = 31
 bench_size = -1
 type_inclusive = true
 type = 1023
