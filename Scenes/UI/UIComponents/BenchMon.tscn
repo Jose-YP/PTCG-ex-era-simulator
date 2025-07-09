@@ -36,27 +36,30 @@ offset_right = 147.0
 offset_bottom = 133.0
 theme_override_constants/separation = -12
 
-[node name="Header" type="HBoxContainer" parent="Main"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Main"]
 layout_mode = 2
-theme_override_constants/separation = -30
 
-[node name="Name" type="RichTextLabel" parent="Main/Header"]
+[node name="Name" type="RichTextLabel" parent="Main/HBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(130, 46)
+custom_minimum_size = Vector2(95, 46)
 layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 8
 theme_override_font_sizes/normal_font_size = 12
 bbcode_enabled = true
 text = "Team Magma's
 Mightyena"
+fit_content = true
 
-[node name="MaxHP" type="RichTextLabel" parent="Main/Header"]
+[node name="MaxHP" type="RichTextLabel" parent="Main/HBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(47, 46)
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 12
 bbcode_enabled = true
 text = "[u]HP[/u] 200/200"
+fit_content = true
+horizontal_alignment = 2
 
 [node name="ArtButton" type="CenterContainer" parent="Main"]
 layout_mode = 2

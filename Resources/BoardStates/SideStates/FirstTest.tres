@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SideState" load_steps=19 format=3 uid="uid://d4h8gk2wx844f"]
+[gd_resource type="Resource" script_class="SideState" load_steps=20 format=3 uid="uid://d4h8gk2wx844f"]
 
 [ext_resource type="Resource" uid="uid://bleo7p56u5k1f" path="res://Resources/Decks/TestDeck.tres" id="1_nvyqg"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_bqy12"]
@@ -15,6 +15,7 @@
 [ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/BuffMaker.gd" id="12_oj2xo"]
 [ext_resource type="Script" uid="uid://c0ishgbxk63dg" path="res://Code/Resource Makers/EffectSpecific/DisableMaker.gd" id="13_h4sxn"]
 [ext_resource type="Resource" uid="uid://c3tip8v6djvro" path="res://Resources/Cards/4 ex Team Magma VS Team Aqua/MA65MagmaPoochyena.tres" id="13_j65tm"]
+[ext_resource type="Resource" uid="uid://dipr5ie1kx7v8" path="res://Resources/Cards/1 ex Ruby & Saphire/RS93DarknessEnergy.tres" id="16_h4sxn"]
 
 [sub_resource type="Resource" id="Resource_yn0ge"]
 script = ExtResource("9_7p35y")
@@ -25,14 +26,14 @@ init_discard = Array[ExtResource("2_bqy12")]([])
 init_prize = Array[ExtResource("2_bqy12")]([])
 metadata/_custom_type_script = "uid://calm3n7va5yjo"
 
-[sub_resource type="Resource" id="Resource_pbkiq"]
+[sub_resource type="Resource" id="Resource_ttukk"]
 script = ExtResource("11_ixewp")
-current_card = ExtResource("12_dgtnw")
+current_card = ExtResource("13_j65tm")
 damage_counters = 0
 evolution_ready = false
 evolved_this_turn = false
 evolved_from = Array[ExtResource("2_bqy12")]([])
-energy_cards = Array[ExtResource("2_bqy12")]([])
+energy_cards = Array[ExtResource("2_bqy12")]([ExtResource("16_h4sxn")])
 tm_cards = Array[ExtResource("2_bqy12")]([])
 applied_buffs = Array[ExtResource("12_oj2xo")]([])
 applied_disable = Array[ExtResource("13_h4sxn")]([])
@@ -41,14 +42,14 @@ weak = 0
 resist = 0
 metadata/_custom_type_script = "uid://cs70ix831b5g4"
 
-[sub_resource type="Resource" id="Resource_rc5bh"]
+[sub_resource type="Resource" id="Resource_h4sxn"]
 script = ExtResource("11_ixewp")
-current_card = ExtResource("13_j65tm")
+current_card = ExtResource("12_dgtnw")
 damage_counters = 0
 evolution_ready = false
 evolved_this_turn = false
 evolved_from = Array[ExtResource("2_bqy12")]([])
-energy_cards = Array[ExtResource("2_bqy12")]([])
+energy_cards = Array[ExtResource("2_bqy12")]([ExtResource("5_ttukk")])
 tm_cards = Array[ExtResource("2_bqy12")]([])
 applied_buffs = Array[ExtResource("12_oj2xo")]([])
 applied_disable = Array[ExtResource("13_h4sxn")]([])
@@ -63,7 +64,7 @@ card_stacks = SubResource("Resource_yn0ge")
 prize_cards = 6
 bench_size = 5
 slots = Dictionary[ExtResource("11_ixewp"), bool]({
-SubResource("Resource_pbkiq"): true,
-SubResource("Resource_rc5bh"): false
+SubResource("Resource_ttukk"): false,
+SubResource("Resource_h4sxn"): true
 })
 metadata/_custom_type_script = "uid://dgqpurnuh14t1"

@@ -13,6 +13,7 @@ func _on_pressed() -> void:
 func spawn_debug():
 	var debug: Control = spawning_debug.instantiate()
 	var debug_tween: Tween = get_tree().create_tween()
+	current = debug
 	add_child(debug)
 	
 	debug.top_level = true

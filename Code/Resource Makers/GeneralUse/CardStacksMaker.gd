@@ -31,7 +31,11 @@ func make_deck():
 	usable_deck.shuffle()
 	init_sync(init_deck)
 	init_sync(init_hand)
+	init_sync(init_discard)
+	init_sync(init_prize)
 	move_cards(init_hand, Constants.STACKS.DECK, Constants.STACKS.HAND)
+	move_cards(init_discard, Constants.STACKS.DECK, Constants.STACKS.DISCARD)
+	move_cards(init_prize, Constants.STACKS.DECK, Constants.STACKS.PRIZE)
 
 func setup():
 	if init_deck.size() != 0:

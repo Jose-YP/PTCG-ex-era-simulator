@@ -2,8 +2,6 @@ extends Control
 
 @export var comparators: Array[Comparator]
 
-@onready var comparison: OptionButton = $PlayAs/Items/Comparison
-
 func _ready() -> void:
 	var buttons: Array[Node] = get_tree().get_nodes_in_group("Button")
 	for i in range(buttons.size()):

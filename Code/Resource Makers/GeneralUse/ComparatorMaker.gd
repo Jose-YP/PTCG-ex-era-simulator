@@ -23,10 +23,10 @@ func start_comparision() -> Variant:
 		"None":
 			return first_return
 		"Const":
-			print(make_comparision(first_return, second_constant))
+			print(first_return, second_constant)
 			return make_comparision(first_return, second_constant)
 		"Second":
-			print(make_comparision(first_return, second_constant))
+			print(first_return, second_counter.evaluate())
 			return make_comparision(first_return, second_counter.evaluate())
 	return false
 
@@ -34,8 +34,8 @@ func make_comparision(first: int, second: int) -> Variant:
 	match comparision_type:
 		"Return": return "How did I get here?"
 		"Difference": return first - second
-		"Equal": return first == second
-		"Not Equals": return first != second
+		"Equals": return first == second
+		"Not Equal": return first != second
 		"Greater": return first > second
 		"Lesser": return first < second
-	return false
+	return ":("

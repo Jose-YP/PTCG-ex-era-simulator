@@ -232,7 +232,7 @@ func stack_evaluation(stack_data: String, ask_data: SlotAsk) -> int:
 		return atk_stack.get(stack_data).size() + def_stack.get(stack_data).size()
 	else:
 		var stacks: CardStacks = fundies.stack_manager.get_stacks(fundies.get_considered_home(ask_data.side_target))
-		print(stacks, stack_data)
+		print(stacks, stack_data, stacks.get(stack_data))
 		return stacks.get(stack_data).size()
 
 func coinflip_evaluation(coinflip_data: CoinFlip):
