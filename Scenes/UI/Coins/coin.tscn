@@ -1,0 +1,260 @@
+[gd_scene load_steps=20 format=3 uid="uid://c5kmososgwevn"]
+
+[ext_resource type="Script" uid="uid://dp2yqoeteiyuy" path="res://Code/Scenes/UI/coin.gd" id="1_twut7"]
+[ext_resource type="Texture2D" uid="uid://drxfxca8h30gk" path="res://Art/Coins/BreloomFirst.png" id="2_iwykv"]
+[ext_resource type="Texture2D" uid="uid://d3o5qbgfoyddq" path="res://Art/Coins/Coin.png" id="3_s4slo"]
+
+[sub_resource type="Animation" id="Animation_1paum"]
+resource_name = "FlipHeads"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FlipAnim:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.933333),
+"transitions": PackedFloat32Array(1, 1.56917),
+"update": 1,
+"values": [&"default", &"Heads"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.266667, 0.633333, 0.933333),
+"transitions": PackedFloat32Array(0.554785, 2.2974, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -12), Vector2(0, 0)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.266667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play_flip"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PanelContainer/Heads:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_twut7"]
+resource_name = "FlipTails"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FlipAnim:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.933333),
+"transitions": PackedFloat32Array(1, 1.56917),
+"update": 1,
+"values": [&"default", &"Tails"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.266667, 0.633333, 0.933333),
+"transitions": PackedFloat32Array(0.554785, 2.2974, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -12), Vector2(0, 0)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.266667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play_flip"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_pmgwh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FlipAnim:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Tails"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rws27"]
+_data = {
+&"FlipHeads": SubResource("Animation_1paum"),
+&"FlipTails": SubResource("Animation_twut7"),
+&"RESET": SubResource("Animation_pmgwh")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cnsky"]
+atlas = ExtResource("3_s4slo")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3n1b5"]
+atlas = ExtResource("3_s4slo")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ih34t"]
+atlas = ExtResource("3_s4slo")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wjv4k"]
+atlas = ExtResource("3_s4slo")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w4lht"]
+atlas = ExtResource("3_s4slo")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_byilf"]
+atlas = ExtResource("3_s4slo")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vcxth"]
+atlas = ExtResource("3_s4slo")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6lo2r"]
+atlas = ExtResource("3_s4slo")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_twut7"]
+atlas = ExtResource("3_s4slo")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwykv"]
+atlas = ExtResource("3_s4slo")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aq6xa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cnsky")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3n1b5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ih34t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wjv4k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w4lht")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_byilf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vcxth")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6lo2r")
+}],
+"loop": true,
+"name": &"Flip",
+"speed": 48.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"Heads",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_twut7")
+}],
+"loop": true,
+"name": &"Tails",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iwykv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_twut7"]
+
+[node name="Coin" type="Control"]
+modulate = Color(0, 0.914888, 0.227207, 1)
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 0
+scale = Vector2(2, 2)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_twut7")
+coin_heads = ExtResource("2_iwykv")
+metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_rws27")
+}
+
+[node name="FlipAnim" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+texture_filter = 1
+position = Vector2(0, 1)
+sprite_frames = SubResource("SpriteFrames_aq6xa")
+animation = &"Tails"
+autoplay = "default"
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = -16.0
+offset_top = -15.0
+offset_right = 16.0
+offset_bottom = 17.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_twut7")
+
+[node name="Heads" type="TextureRect" parent="PanelContainer"]
+unique_name_in_owner = true
+visible = false
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("2_iwykv")
+expand_mode = 3
+stretch_mode = 4
+metadata/_edit_lock_ = true

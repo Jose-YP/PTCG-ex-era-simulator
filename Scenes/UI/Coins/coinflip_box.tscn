@@ -1,0 +1,69 @@
+[gd_scene load_steps=6 format=3 uid="uid://de0rjixsixmm6"]
+
+[ext_resource type="Script" uid="uid://lf1rky0vk1os" path="res://Code/Scenes/UI/coinflip_box.gd" id="1_kxik6"]
+[ext_resource type="Script" uid="uid://y0v42qaa35wt" path="res://Code/Resource Makers/GeneralUse/CoinFlipNumMaker.gd" id="2_0fvjr"]
+[ext_resource type="PackedScene" uid="uid://c28rtuj3kak48" path="res://Scenes/UI/Lists/Footer.tscn" id="2_mo24q"]
+[ext_resource type="PackedScene" uid="uid://c5kmososgwevn" path="res://Scenes/UI/Coins/coin.tscn" id="4_5t34e"]
+
+[sub_resource type="Resource" id="Resource_5t34e"]
+script = ExtResource("2_0fvjr")
+heads = true
+until = false
+const_flip_times = 20
+metadata/_custom_type_script = "uid://y0v42qaa35wt"
+
+[node name="CoinBox" type="PanelContainer"]
+offset_right = 40.0
+offset_bottom = 37.0
+script = ExtResource("1_kxik6")
+coinflip = SubResource("Resource_5t34e")
+coin_scene = ExtResource("4_5t34e")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Footer" parent="VBoxContainer" node_paths=PackedStringArray("dragging_node") instance=ExtResource("2_mo24q")]
+layout_mode = 2
+dragging_node = NodePath("../..")
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="CoinScroll" type="ScrollContainer" parent="VBoxContainer/MarginContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(152, 64)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/CoinScroll"]
+layout_mode = 2
+alignment = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer/CoinScroll/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 52
+
+[node name="CoinContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/CoinScroll/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 42
+alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/MarginContainer/CoinScroll/VBoxContainer/CoinContainer"]
+layout_mode = 2
+
+[node name="Footer2" parent="VBoxContainer" node_paths=PackedStringArray("dragging_node") instance=ExtResource("2_mo24q")]
+layout_mode = 2
+dragging_node = NodePath("../..")
+
+[node name="Begin" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+autostart = true
+
+[node name="Cooldown" type="Timer" parent="."]
+
+[connection signal="timeout" from="Begin" to="." method="_on_begin_timeout"]

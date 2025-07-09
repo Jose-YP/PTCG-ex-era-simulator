@@ -4,7 +4,7 @@ class_name CoinFlip
 ##Count number of heads or tails?
 @export var heads: bool = true
 ##If this is present then the counter will determine how many coinflips should happen
-@export var varying_flip_times: Counter
+@export var varying_flip_times: IndvCounter
 ##If this is true the con will flip until tails and return the total heads
 @export var until: bool = false
 ##Otherwise use the constant number defined here
@@ -13,6 +13,12 @@ class_name CoinFlip
 #@export var effect_array: Dictionary{int: Effect}
 
 var results: Dictionary = {"Heads" : 0, "Tails": 0}
+
+func get_num():
+	if varying_flip_times:
+		return varying_flip_times.evaluate()
+	else:
+		return const_flip_times
 
 func activate_CF() -> Dictionary:
 	#Reset before doing this again
@@ -37,6 +43,14 @@ func activate_CF() -> Dictionary:
 			single_flip()
 	
 	return results
+
+func get_flip_array(dict: Dictionary) -> Array[bool]:
+	var final: Array[bool]
+	for result in dict:
+		for i in range(dict[result]):
+			final.append(result == "Heads")
+	
+	return final
 
 func single_flip():
 	var flip: int = randi_range(0,1)
