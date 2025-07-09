@@ -3,11 +3,13 @@ extends Control
 
 @export var coinflip: CoinFlip
 @export var coin_scene: PackedScene
+@export var max_size: Vector2 = Vector2(152, 64)
 
 @onready var coin_container: HBoxContainer = %CoinContainer
 @onready var top: PanelContainer = $VBoxContainer/Footer
 @onready var bottom: PanelContainer = $VBoxContainer/Footer2
 @onready var cooldown: Timer = $Cooldown
+@onready var margin_container: MarginContainer = %MarginContainer
 
 var flip_results: Array[bool]
 var shown_results: Dictionary[bool, int] = {true: 0, false: 0}
@@ -28,6 +30,10 @@ func _ready() -> void:
 		new_coin.shown.connect(display_results.bind(result))
 		new_coin.add_to_group("coins")
 		coin_container.add_child(new_coin)
+	
+	coin_container.custom_minimum_size.x = max_size.x / 3\
+	 - clamp(get_tree().get_nodes_in_group("coins").size(), 0, 3)
+	coin_container.add_child(margin_container.duplicate())
 
 func display_results(result: bool):
 	shown_results[result] += 1
@@ -40,7 +46,7 @@ func _on_begin_timeout() -> void:
 		var coin: Node = coins[i]
 		coin.play_result()
 		cooldown.start()
-		if i > 3:
+		if i > 1 and coins.size() > 2:
 			var scroll_tween: Tween = create_tween()
 			scroll_tween.tween_property(%CoinScroll, "scroll_horizontal", 
 			%CoinScroll.scroll_horizontal + 42, cooldown.wait_time)

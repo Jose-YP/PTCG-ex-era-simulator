@@ -2,6 +2,7 @@
 extends Control
 
 @export var coin_heads: CompressedTexture2D = load("res://Art/Coins/BreloomFirst.png")
+@export var offset: Vector2 = Vector2(0,-24)
 
 @onready var flip_anim: AnimatedSprite2D = %FlipAnim
 @onready var heads: TextureRect = %Heads
@@ -18,14 +19,15 @@ func play_result():
 	else: %AnimationPlayer.play("FlipTails")
 
 func play_flip():
-	print(self, position, global_position)
 	%FlipAnim.play("Flip")
+	toss()
 
-func flip_tween():
+func toss():
 	var flip_tween: Tween = create_tween().set_ease(Tween.EASE_OUT)
-	flip_tween.tween_property(self, "position", position - Vector2(0,11), .2)
+	position += offset
+	flip_tween.tween_property(self, "position", position - Vector2(0,11), .35)
 	flip_tween.set_ease(Tween.EASE_IN)
-	flip_tween.tween_property(self, "position", position + Vector2(0,11), .2)
+	flip_tween.tween_property(self, "position", position + Vector2(0,11), .15)
 
 func emit_result():
 	shown.emit()
