@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="IndvCounter" load_steps=3 format=3 uid="uid://2akjc8w7fe7q"]
+
+[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/Self.tres" id="1_p3e3y"]
+[ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="2_j5rmd"]
+
+[resource]
+script = ExtResource("2_j5rmd")
+which = "Slot"
+ask = ExtResource("1_p3e3y")
+slot_vars = "energy_cards"
+en_count_methods = "Attatched"
+cap = -1
+metadata/_custom_type_script = "uid://vjn146j3ayd6"

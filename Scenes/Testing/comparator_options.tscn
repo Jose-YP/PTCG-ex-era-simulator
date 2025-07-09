@@ -1,0 +1,75 @@
+[gd_scene load_steps=12 format=3 uid="uid://b2f8g5a5evnv4"]
+
+[ext_resource type="Script" uid="uid://dugwlyyu4d5ji" path="res://Code/Test/comparator_options.gd" id="1_x6ib3"]
+[ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="2_727dm"]
+[ext_resource type="Resource" uid="uid://uoutqhe11742" path="res://Resources/Components/Counters/Comparator/CountAllEn.tres" id="3_i1rn0"]
+[ext_resource type="Resource" uid="uid://co4fwj0wi5dob" path="res://Resources/Components/Counters/Comparator/SelfVsOtherEN.tres" id="4_0hm4c"]
+[ext_resource type="Resource" uid="uid://bny1ix4regvyv" path="res://Resources/Components/Counters/Comparator/Has2DiffTypes.tres" id="5_tjxgr"]
+[ext_resource type="Resource" uid="uid://crlxvia0kynq" path="res://Resources/Components/Counters/Comparator/DiscardsUnequal.tres" id="6_ce0ei"]
+[ext_resource type="Resource" uid="uid://ddeij66cuqx7d" path="res://Resources/Components/Counters/Comparator/AtkGreaterHand.tres" id="7_hruce"]
+[ext_resource type="Resource" uid="uid://1yahyklj3y7s" path="res://Resources/Components/Counters/Indv/AtkBenchCount.tres" id="8_51sfc"]
+[ext_resource type="Resource" uid="uid://bujld5756sv01" path="res://Resources/Components/Counters/Indv/DefBenchCount.tres" id="9_kkr3x"]
+
+[sub_resource type="Resource" id="Resource_tjxgr"]
+script = ExtResource("2_727dm")
+comparision_type = "Lesser"
+first_comparison = ExtResource("8_51sfc")
+compare_to = "Second"
+second_constant = 0
+second_counter = ExtResource("9_kkr3x")
+metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
+
+[sub_resource type="Resource" id="Resource_pbgpp"]
+script = ExtResource("2_727dm")
+comparision_type = "Equals"
+first_comparison = ExtResource("8_51sfc")
+compare_to = "Const"
+second_constant = 2
+metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
+
+[node name="Comparator_Options" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_x6ib3")
+comparators = Array[ExtResource("2_727dm")]([ExtResource("3_i1rn0"), ExtResource("4_0hm4c"), ExtResource("5_tjxgr"), ExtResource("6_ce0ei"), ExtResource("7_hruce"), SubResource("Resource_tjxgr"), SubResource("Resource_pbgpp")])
+
+[node name="PlayAs" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_right = 42.0
+offset_bottom = 25.0
+
+[node name="Items" type="VBoxContainer" parent="PlayAs"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Return" type="Button" parent="PlayAs/Items" groups=["Button"]]
+layout_mode = 2
+text = "ReturnEn"
+
+[node name="Difference" type="Button" parent="PlayAs/Items" groups=["Button"]]
+layout_mode = 2
+text = "ActiveEnDiff"
+
+[node name="Equal" type="Button" parent="PlayAs/Items" groups=["Button"]]
+layout_mode = 2
+text = "DiffTypeEquals2"
+
+[node name="NotEqual" type="Button" parent="PlayAs/Items" groups=["Button"]]
+layout_mode = 2
+text = "NotEqualDiscard"
+
+[node name="Greater" type="Button" parent="PlayAs/Items" groups=["Button"]]
+layout_mode = 2
+text = "GreaterHand"
+
+[node name="Lesser" type="Button" parent="PlayAs/Items" groups=["Button"]]
+layout_mode = 2
+text = "LessBench"
+
+[node name="Lesser2" type="Button" parent="PlayAs/Items" groups=["Button"]]
+layout_mode = 2
+text = "EqBenchConst"
