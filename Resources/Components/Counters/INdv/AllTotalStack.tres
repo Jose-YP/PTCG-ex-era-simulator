@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="IndvCounter" load_steps=3 format=3 uid="uid://cbyca7hirj7et"]
+
+[ext_resource type="Resource" uid="uid://bns8h72u2hxqo" path="res://Resources/Components/Effects/Asks/AnyMon.tres" id="1_i57q3"]
+[ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="2_sghfb"]
+
+[resource]
+script = ExtResource("2_sghfb")
+which = "Stack"
+ask = ExtResource("1_i57q3")
+stack_vars = "usable_deck"
+cap = -1
+metadata/_custom_type_script = "uid://vjn146j3ayd6"

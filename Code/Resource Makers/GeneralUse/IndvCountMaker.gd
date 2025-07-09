@@ -223,11 +223,17 @@ func energy_card_evaluation(en_count_methods_data: String, slot: PokeSlot):
 
 func stack_evaluation(stack_data: String, ask_data: SlotAsk) -> int:
 	print("STACK EVALUATION")
+	print(stack_data, ask_data)
 	var fundies: Fundies = Globals.fundies
-	var stacks: CardStacks = fundies.stack_manager.get_stacks(fundies.get_considered_home(ask_data.side_target))
-	
-	print(stacks, stack_data)
-	return stacks.get(stack_data).size()
+	if ask_data.side_target == Constants.SIDES.BOTH:
+		var atk_stack: CardStacks = fundies.stack_manager.get_stacks(fundies.get_considered_home(Constants.SIDES.ATTACKING))
+		var def_stack: CardStacks = fundies.stack_manager.get_stacks(fundies.get_considered_home(Constants.SIDES.DEFENDING))
+		print(atk_stack, def_stack, stack_data)
+		return atk_stack.get(stack_data).size() + def_stack.get(stack_data).size()
+	else:
+		var stacks: CardStacks = fundies.stack_manager.get_stacks(fundies.get_considered_home(ask_data.side_target))
+		print(stacks, stack_data)
+		return stacks.get(stack_data).size()
 
 func coinflip_evaluation(coinflip_data: CoinFlip):
 	print(coinflip_data)

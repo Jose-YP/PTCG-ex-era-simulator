@@ -119,8 +119,7 @@ func is_active() -> bool:
 		return false
 
 func is_attacker() -> bool:
-	return ((ui_slot.home and Globals.fundies.home_turn) or
-		(not ui_slot.home and not Globals.fundies.home_turn))
+	return ui_slot.home == Globals.fundies.home_turn
 
 func can_evolve_into(evolution: Base_Card) -> bool:
 	return current_card.name == evolution.pokemon_properties.evolves_from and not evolved_this_turn
@@ -255,7 +254,7 @@ func get_energy_considered(basic: bool = true):
 	var final_array: Array[Base_Card]
 	
 	for card in energy_cards:
-		if not (card.energy_properties.considered == "Basic" and not basic):
+		if (card.energy_properties.considered == "Basic Energy") == basic:
 			final_array.append(card)
 	
 	return final_array
@@ -269,7 +268,10 @@ func get_total_energy() -> int:
 	return total
 
 func get_energy_excess() -> int:
-	return get_total_energy() - current_attack.pay_cost(self)
+	var test_attack: Attack = current_card.pokemon_properties.attacks[-1]
+	print(get_total_energy())
+	print(test_attack.pay_cost(self))
+	return get_total_energy() + test_attack.pay_cost(self)
 
 #endregion
 #--------------------------------------

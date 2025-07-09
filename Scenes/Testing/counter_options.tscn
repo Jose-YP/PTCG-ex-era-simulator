@@ -1,68 +1,12 @@
-[gd_scene load_steps=13 format=3 uid="uid://dwwg8nkp2wt8e"]
+[gd_scene load_steps=8 format=3 uid="uid://dwwg8nkp2wt8e"]
 
 [ext_resource type="Script" uid="uid://mrrj0ntkwam1" path="res://Code/Test/counter_options.gd" id="1_4a7yd"]
 [ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="2_8bw3b"]
-[ext_resource type="Resource" uid="uid://bns8h72u2hxqo" path="res://Resources/Components/Effects/Asks/AnyMon.tres" id="3_c4vra"]
-[ext_resource type="Resource" uid="uid://b2bdagwhfrmbo" path="res://Resources/Components/Effects/Asks/AtkHasBenchMons.tres" id="4_5m2i8"]
-[ext_resource type="Resource" uid="uid://b65ksn0e0th78" path="res://Resources/Components/Effects/Asks/Class&Owner/AtkNonex.tres" id="5_f6hah"]
-
-[sub_resource type="Resource" id="Resource_5m2i8"]
-script = ExtResource("2_8bw3b")
-which = "Slot"
-ask = ExtResource("3_c4vra")
-slot_vars = "energy_cards"
-en_count_methods = "Attatched"
-cap = -1
-metadata/_custom_type_script = "uid://vjn146j3ayd6"
-
-[sub_resource type="Resource" id="Resource_f6hah"]
-script = ExtResource("2_8bw3b")
-which = "Slot"
-ask = ExtResource("4_5m2i8")
-slot_vars = "current_card"
-cap = -1
-metadata/_custom_type_script = "uid://vjn146j3ayd6"
-
-[sub_resource type="Resource" id="Resource_qwh4v"]
-script = ExtResource("2_8bw3b")
-which = "Stack"
-ask = ExtResource("3_c4vra")
-stack_vars = "prize_cards"
-cap = -1
-metadata/_custom_type_script = "uid://vjn146j3ayd6"
-
-[sub_resource type="Resource" id="Resource_758vm"]
-script = ExtResource("2_8bw3b")
-which = "Stack"
-ask = ExtResource("4_5m2i8")
-stack_vars = "hand"
-cap = 0
-metadata/_custom_type_script = "uid://vjn146j3ayd6"
-
-[sub_resource type="Resource" id="Resource_6a18g"]
-script = ExtResource("2_8bw3b")
-which = "Slot"
-ask = ExtResource("3_c4vra")
-slot_vars = "energy_cards"
-en_count_methods = "Excess"
-cap = -1
-metadata/_custom_type_script = "uid://vjn146j3ayd6"
-
-[sub_resource type="Resource" id="Resource_crrno"]
-script = ExtResource("2_8bw3b")
-which = "Stack"
-ask = ExtResource("3_c4vra")
-stack_vars = "discard_pile"
-cap = 0
-metadata/_custom_type_script = "uid://vjn146j3ayd6"
-
-[sub_resource type="Resource" id="Resource_l5ypp"]
-script = ExtResource("2_8bw3b")
-which = "Stack"
-ask = ExtResource("5_f6hah")
-stack_vars = "discard_pile"
-cap = -1
-metadata/_custom_type_script = "uid://vjn146j3ayd6"
+[ext_resource type="Resource" uid="uid://en7n610f58x5" path="res://Resources/Components/Counters/INdv/AllEnNum.tres" id="3_qwh4v"]
+[ext_resource type="Resource" uid="uid://1yahyklj3y7s" path="res://Resources/Components/Counters/INdv/AtkBenchCount.tres" id="4_758vm"]
+[ext_resource type="Resource" uid="uid://cbyca7hirj7et" path="res://Resources/Components/Counters/INdv/AllTotalStack.tres" id="5_6a18g"]
+[ext_resource type="Resource" uid="uid://dy4k02ewyav5j" path="res://Resources/Components/Counters/INdv/AtkHandSize.tres" id="6_crrno"]
+[ext_resource type="Resource" uid="uid://cngepehpfnug8" path="res://Scenes/Testing/SelfEnergyExcess.tres" id="7_l5ypp"]
 
 [node name="CounterOptions" type="Control"]
 layout_mode = 3
@@ -72,7 +16,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4a7yd")
-counters = Array[ExtResource("2_8bw3b")]([SubResource("Resource_5m2i8"), SubResource("Resource_f6hah"), SubResource("Resource_qwh4v"), SubResource("Resource_758vm"), SubResource("Resource_6a18g"), SubResource("Resource_crrno"), SubResource("Resource_l5ypp")])
+counters = Array[ExtResource("2_8bw3b")]([ExtResource("3_qwh4v"), ExtResource("4_758vm"), ExtResource("5_6a18g"), ExtResource("6_crrno"), ExtResource("7_l5ypp")])
 
 [node name="PlayAs" type="PanelContainer" parent="."]
 layout_mode = 0
@@ -106,26 +50,18 @@ popup/item_6/id = 6
 layout_mode = 2
 text = "EnCount"
 
-[node name="BenchCount" type="Button" parent="PlayAs/Items" groups=["Button"]]
+[node name="AtkBenchCount" type="Button" parent="PlayAs/Items" groups=["Button"]]
 layout_mode = 2
-text = "BenchCount"
+text = "AtkBenchCount"
 
-[node name="PrizeCount" type="Button" parent="PlayAs/Items" groups=["Button"]]
+[node name="DeckCount" type="Button" parent="PlayAs/Items" groups=["Button"]]
 layout_mode = 2
-text = "PrizeCount"
+text = "DeckCount"
 
-[node name="HandCount" type="Button" parent="PlayAs/Items" groups=["Button"]]
+[node name="AtkHandCount" type="Button" parent="PlayAs/Items" groups=["Button"]]
 layout_mode = 2
-text = "HandCount"
+text = "AtkHandCount"
 
 [node name="Excess2Last" type="Button" parent="PlayAs/Items" groups=["Button"]]
 layout_mode = 2
 text = "EnExcessCount"
-
-[node name="Discard" type="Button" parent="PlayAs/Items" groups=["Button"]]
-layout_mode = 2
-text = "DiscardCount"
-
-[node name="Discard2" type="Button" parent="PlayAs/Items" groups=["Button"]]
-layout_mode = 2
-text = "SelfDiscard"

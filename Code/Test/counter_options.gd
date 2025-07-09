@@ -12,6 +12,10 @@ func _ready() -> void:
 		buttons[i].pressed.connect(use_counter.bind(i))
 
 func use_counter(index: int):
-	print(comparison.get_selected_id())
-	print(counters[index])
+	Globals.fundies.record_source_target(true,
+	 Globals.full_ui.get_poke_slots(Constants.SIDES.ATTACKING, Constants.SLOTS.ACTIVE),
+	 Globals.full_ui.get_poke_slots(Constants.SIDES.DEFENDING, Constants.SLOTS.ACTIVE))
+	
 	print("FINAL RESULT: ", counters[index].evaluate())
+	
+	Globals.fundies.remove_top_source_target()
