@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="Comparator" load_steps=6 format=3 uid="uid://yr6x8qm12gxi"]
+
+[ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="1_66dss"]
+[ext_resource type="Resource" uid="uid://bns8h72u2hxqo" path="res://Resources/Components/Effects/Asks/AnyMon.tres" id="1_xxs5a"]
+[ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="2_nmnxy"]
+
+[sub_resource type="Resource" id="Resource_83l64"]
+script = ExtResource("2_nmnxy")
+which = 0
+ask = ExtResource("1_xxs5a")
+slot_vars = "energy_cards"
+en_count_methods = 0
+cap = 0
+metadata/_custom_type_script = "uid://vjn146j3ayd6"
+
+[sub_resource type="Resource" id="Resource_8ldym"]
+script = ExtResource("2_nmnxy")
+which = 0
+ask = ExtResource("1_xxs5a")
+slot_vars = "None"
+cap = 0
+metadata/_custom_type_script = "uid://vjn146j3ayd6"
+
+[resource]
+script = ExtResource("1_66dss")
+comparision_type = "Return"
+first_comparison = SubResource("Resource_83l64")
+compare_to = "None"
+second_constant = 0
+second_counter = SubResource("Resource_8ldym")
+metadata/_custom_type_script = "uid://b65jx8u5cgcgl"

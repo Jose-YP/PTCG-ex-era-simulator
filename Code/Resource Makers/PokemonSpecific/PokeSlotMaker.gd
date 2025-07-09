@@ -14,6 +14,7 @@ class_name PokeSlot
 #region NON EXPORT
 var ui_slot: UI_Slot
 var in_attacking_turn: bool = true
+var current_attack: Attack
 var attached_energy: Dictionary = {"Grass": 0, "Fire": 0, "Water": 0,
 	"Lightning": 0, "Psychic":0, "Fighting":0 ,"Darkness":0, "Metal":0,
 	"Colorless":0, "Magma":0, "Aqua":0, "Dark Metal":0, "React": 0, 
@@ -33,9 +34,9 @@ enum turn_type{NONE, PARALYSIS, ASLEEP, CONFUSION}
 @export var energy_cards: Array[Base_Card] = []
 @export var tm_cards: Array[Base_Card] = []
 @export var tool_card: Base_Card
-@export var applied_buffs: Array[Buff]
-@export var applied_disable: Array[Disable]
-@export var applied_condition: Condition
+@export var applied_buffs: Array[Buff] = []
+@export var applied_disable: Array[Disable] = []
+@export var applied_condition: Condition = Condition.new()
 #endregion
 #--------------------------------------
 #--------------------------------------
@@ -222,7 +223,7 @@ func count_energy() -> void:
 		var en_name: String = energy.energy_properties.how_display()
 		attached_energy[en_name] += energy.energy_properties.number
 	
-	print(attached_energy)
+	#print(attached_energy)
 
 func get_energy_strings() -> Array[String]:
 	var energy_stirngs: Array[String]
@@ -248,6 +249,27 @@ func count_diff_energy() -> int:
 			recorded.append(card.name)
 	
 	return diff
+
+##If true this function return basic energy otherwise, special
+func get_energy_considered(basic: bool = true):
+	var final_array: Array[Base_Card]
+	
+	for card in energy_cards:
+		if not (card.energy_properties.considered == "Basic" and not basic):
+			final_array.append(card)
+	
+	return final_array
+
+func get_total_energy() -> int:
+	count_energy()
+	var total: int = 0
+	for loc_type in attached_energy:
+		total += attached_energy[loc_type]
+	
+	return total
+
+func get_energy_excess() -> int:
+	return get_total_energy() - current_attack.pay_cost(self)
 
 #endregion
 #--------------------------------------

@@ -1,6 +1,68 @@
-[gd_scene load_steps=2 format=3 uid="uid://dwwg8nkp2wt8e"]
+[gd_scene load_steps=13 format=3 uid="uid://dwwg8nkp2wt8e"]
 
 [ext_resource type="Script" uid="uid://mrrj0ntkwam1" path="res://Code/Test/counter_options.gd" id="1_4a7yd"]
+[ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="2_8bw3b"]
+[ext_resource type="Resource" uid="uid://bns8h72u2hxqo" path="res://Resources/Components/Effects/Asks/AnyMon.tres" id="3_c4vra"]
+[ext_resource type="Resource" uid="uid://b2bdagwhfrmbo" path="res://Resources/Components/Effects/Asks/AtkHasBenchMons.tres" id="4_5m2i8"]
+[ext_resource type="Resource" uid="uid://b65ksn0e0th78" path="res://Resources/Components/Effects/Asks/Class&Owner/AtkNonex.tres" id="5_f6hah"]
+
+[sub_resource type="Resource" id="Resource_5m2i8"]
+script = ExtResource("2_8bw3b")
+which = "Slot"
+ask = ExtResource("3_c4vra")
+slot_vars = "energy_cards"
+en_count_methods = "Attatched"
+cap = -1
+metadata/_custom_type_script = "uid://vjn146j3ayd6"
+
+[sub_resource type="Resource" id="Resource_f6hah"]
+script = ExtResource("2_8bw3b")
+which = "Slot"
+ask = ExtResource("4_5m2i8")
+slot_vars = "current_card"
+cap = -1
+metadata/_custom_type_script = "uid://vjn146j3ayd6"
+
+[sub_resource type="Resource" id="Resource_qwh4v"]
+script = ExtResource("2_8bw3b")
+which = "Stack"
+ask = ExtResource("3_c4vra")
+stack_vars = "prize_cards"
+cap = -1
+metadata/_custom_type_script = "uid://vjn146j3ayd6"
+
+[sub_resource type="Resource" id="Resource_758vm"]
+script = ExtResource("2_8bw3b")
+which = "Stack"
+ask = ExtResource("4_5m2i8")
+stack_vars = "hand"
+cap = 0
+metadata/_custom_type_script = "uid://vjn146j3ayd6"
+
+[sub_resource type="Resource" id="Resource_6a18g"]
+script = ExtResource("2_8bw3b")
+which = "Slot"
+ask = ExtResource("3_c4vra")
+slot_vars = "energy_cards"
+en_count_methods = "Excess"
+cap = -1
+metadata/_custom_type_script = "uid://vjn146j3ayd6"
+
+[sub_resource type="Resource" id="Resource_crrno"]
+script = ExtResource("2_8bw3b")
+which = "Stack"
+ask = ExtResource("3_c4vra")
+stack_vars = "discard_pile"
+cap = 0
+metadata/_custom_type_script = "uid://vjn146j3ayd6"
+
+[sub_resource type="Resource" id="Resource_l5ypp"]
+script = ExtResource("2_8bw3b")
+which = "Stack"
+ask = ExtResource("5_f6hah")
+stack_vars = "discard_pile"
+cap = -1
+metadata/_custom_type_script = "uid://vjn146j3ayd6"
 
 [node name="CounterOptions" type="Control"]
 layout_mode = 3
@@ -10,6 +72,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4a7yd")
+counters = Array[ExtResource("2_8bw3b")]([SubResource("Resource_5m2i8"), SubResource("Resource_f6hah"), SubResource("Resource_qwh4v"), SubResource("Resource_758vm"), SubResource("Resource_6a18g"), SubResource("Resource_crrno"), SubResource("Resource_l5ypp")])
 
 [node name="PlayAs" type="PanelContainer" parent="."]
 layout_mode = 0
@@ -65,4 +128,4 @@ text = "DiscardCount"
 
 [node name="Discard2" type="Button" parent="PlayAs/Items" groups=["Button"]]
 layout_mode = 2
-text = "DiscardCount"
+text = "SelfDiscard"

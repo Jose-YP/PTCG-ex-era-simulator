@@ -8,15 +8,16 @@ class_name IndvCounter
 #script constants
 const pokeSlot = preload("res://Code/Resource Makers/PokemonSpecific/PokeSlotMaker.gd")
 const stackRes = preload("res://Code/Resource Makers/GeneralUse/CardStacksMaker.gd")
-const which_vars: PackedStringArray = ["Slot", "Stack"]
+const which_vars: PackedStringArray = ["Slot", "Stack", "Coinflip"]
 const en_methods: PackedStringArray = ["Attatched","Excess","Types"]
 
 var slot_instance = pokeSlot.new()
 var stack_instance = stackRes.new()
-var internal_data = {"which" : 0,
+var internal_data = {"which" : "Slot",
  "slot_vars" : "None", "stack_vars" : "None",
+ "coin_flip" : load("res://Resources/Components/CoinFlip/FlipOnce.tres"),
  "ask" : load("res://Resources/Components/Effects/Asks/AnyMon.tres"),
- "en_count_methods" : 0, "cap" : 0}
+ "en_count_methods" : "Attatched", "cap" : -1}
 #endregion
 #--------------------------------------
 
@@ -44,20 +45,21 @@ func _get_property_list() -> Array[Dictionary]:
 	#region ESTABLISH PROPERTIES
 	props.append({
 		"name" : "which",
-		"type" : TYPE_INT,
+		"type" : TYPE_STRING,
 		"hint" : PROPERTY_HINT_ENUM,
 		"hint_string" : ",".join(which_vars),
 		"usage" : PROPERTY_USAGE_DEFAULT
 	})
-	#Find slot_vars
-	if internal_data["which"] == 0:
-		props.append({
+	#I'll always need ask for at least defining side to check
+	props.append({
 			"name" : "ask",
 			"type" : TYPE_OBJECT,
 			"hint" : PROPERTY_HINT_RESOURCE_TYPE,
 			"hint_string" : "SlotAsk",
 			"usage" : PROPERTY_USAGE_DEFAULT
-		})
+	})
+	#Find slot_vars
+	if internal_data["which"] == "Slot":
 		#Append their names into an enum to select from
 		props.append({
 			"name" : "slot_vars",
@@ -70,18 +72,27 @@ func _get_property_list() -> Array[Dictionary]:
 			#Slot specific count methods
 			props.append({
 				"name" : "en_count_methods",
-				"type" : TYPE_INT,
+				"type" : TYPE_STRING,
 				"hint" : PROPERTY_HINT_ENUM,
 				"hint_string" : ",".join(en_methods),
 				"usage" : PROPERTY_USAGE_DEFAULT
 			})
 	#Find Stack vars
-	else:
+	elif internal_data["which"] == "Stack":
 		props.append({
 			"name" : "stack_vars",
 			"type" : TYPE_STRING,
 			"hint" : PROPERTY_HINT_ENUM,
 			"hint_string" : ",".join(stack_array_names),
+			"usage" : PROPERTY_USAGE_DEFAULT
+		})
+	#Find Coin flip
+	elif internal_data["which"] == "Coinflip":
+		props.append({
+			"name" : "coin_flip",
+			"type" : TYPE_OBJECT,
+			"hint" : PROPERTY_HINT_RESOURCE_TYPE,
+			"hint_string" : "CoinFlip",
 			"usage" : PROPERTY_USAGE_DEFAULT
 		})
 	props.append({
@@ -101,6 +112,7 @@ func _get(property):
 		"which": return internal_data["which"]
 		"slot_vars": return internal_data["slot_vars"]
 		"stack_vars": return internal_data["stack_vars"]
+		"coin_flip": return internal_data["coin_flip"]
 		"ask": return internal_data["ask"]
 		"en_count_methods": return internal_data["en_count_methods"]
 		"cap": return internal_data["cap"]
@@ -109,18 +121,20 @@ func _get(property):
 
 func _property_can_revert(property: StringName):
 	if (property == "which" or property == "slot_vars" or property == "stack_vars"
-	or property == "ask" or property == "en_count_methods" or property == "cap"):
+	or property == "coin_flip" or property == "ask" or property == "en_count_methods"
+	or property == "cap"):
 		return true
 	return false
 
 func _property_get_revert(property: StringName) -> Variant:
 	match property:
-		"which": return 0
+		"which": return "Slot"
 		"slot_vars": return "None"
 		"stack_vars": return "None"
+		"coin_flip": return load("res://Resources/Components/CoinFlip/FlipOnce.tres")
 		"ask": return load("res://Resources/Components/Effects/Asks/AnyMon.tres")
-		"en_count_methods": return 0
-		"cap": return 0
+		"en_count_methods": return "Attatched"
+		"cap": return -1
 	return null
 #endregion
 #--------------------------------------
@@ -139,6 +153,8 @@ func _set(property, value):
 		"stack_vars": 
 			internal_data["stack_vars"] = value
 			return true
+		"coin_flip":
+			internal_data["coin_flip"] = value
 		"ask": 
 			internal_data["ask"] = value
 			return true
@@ -150,7 +166,68 @@ func _set(property, value):
 			return true
 	
 	return false
-
 #--------------------------------------
 
-func evaluate():pass
+func evaluate() -> int:
+	var result: int = 0
+	
+	match internal_data["which"]:
+		"Slot":
+			result = slot_evaluation(internal_data["slot_vars"], internal_data["ask"])
+		"Stack":
+			result = stack_evaluation(internal_data["stack_vars"], internal_data["ask"])
+		"Coinflip":
+			result = coinflip_evaluation(internal_data["coin_flip"])
+	
+	if internal_data["cap"] != -1:
+		result = clamp(result, 0, internal_data["cap"])
+	
+	return result
+
+func slot_evaluation(slot_data: String, ask_data: SlotAsk) -> int:
+	var result: int = 0
+	var poke_slots: Array[PokeSlot] = Globals.full_ui.get_poke_slots(Constants.SIDES.BOTH)
+	var filtered_slots: Array[PokeSlot] = []
+	for slot in poke_slots:
+		if ask_data.check_ask(slot):
+			filtered_slots.append(slot)
+	#For now .filter doesn't work here so.....
+	#print("a:", poke_slots.filter(func (slot: PokeSlot): not ask_data.check_ask(slot)))
+	#print("B:", poke_slots.filter(func (slot: PokeSlot): ask_data.check_ask(slot)))
+	
+	for slot in filtered_slots:
+		print(slot, slot.get(slot_data))
+		if slot_data == "energy_cards":
+			result += energy_card_evaluation(internal_data["en_count_methods"], slot)
+		else:
+			var data = slot.get(slot_data)
+			if data is Array:
+				result += data.size()
+			#This is here for counting number of pokemon as it will use current_card instead of an int
+			elif not data is int and data != null:
+				result += 1
+			else:
+				result += slot.get(slot_data)
+	
+	return result
+
+func energy_card_evaluation(en_count_methods_data: String, slot: PokeSlot):
+	print("Using ENERGY COUNT")
+	match en_count_methods_data:
+		"Attatched":
+			return slot.get_total_energy()
+		"Excess":
+			return slot.get_energy_excess()
+		"Types":
+			return slot.count_diff_energy()
+
+func stack_evaluation(stack_data: String, ask_data: SlotAsk) -> int:
+	print("STACK EVALUATION")
+	var fundies: Fundies = Globals.fundies
+	var stacks: CardStacks = fundies.stack_manager.get_stacks(fundies.get_considered_home(ask_data.side_target))
+	
+	print(stacks, stack_data)
+	return stacks.get(stack_data).size()
+
+func coinflip_evaluation(coinflip_data: CoinFlip):
+	print(coinflip_data)

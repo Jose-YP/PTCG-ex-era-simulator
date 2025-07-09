@@ -14,3 +14,4 @@ func _ready() -> void:
 func use_counter(index: int):
 	print(comparison.get_selected_id())
 	print(counters[index])
+	print("FINAL RESULT: ", counters[index].evaluate())

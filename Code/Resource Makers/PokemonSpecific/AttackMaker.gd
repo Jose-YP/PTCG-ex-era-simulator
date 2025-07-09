@@ -66,42 +66,49 @@ func get_energy_cost() -> Array[String]:
 	
 	return final_array
 
-##Checks if the provided energy is enough to cover for the attack cost[br]
-##This function prioritizes using basic energy first to optimize energy spending[br]
-##ex. [i] [Grass, Darkness] [Rainbow][/i][br] for an attack that costs
-## [i][Grasss, Grass, Darkness] [/i] [br]
-##It will fill in every cost it can without using multicolor energy only using when necessary.
-##Special energy is sorted based on how many colors it can fill in Rainbow > Aqua & Magma
-func can_pay(basic_energy: Array[int], special_energy: Array[int]) -> bool:
+func pay_cost(slot: PokeSlot):
 	var all_costs: Array[int] = [grass_cost, fire_cost, water_cost,
 	lightning_cost, psychic_cost, fighting_cost, darkness_cost,
 	metal_cost, colorless_cost]
+	var basic_energy: Array[Base_Card] = slot.get_energy_considered()
+	var special_energy: Array[Base_Card] = slot.get_energy_considered(false)
 	
 	#Edit costs depending on whatever factors
 	#Priotitize basic/single type first
 	print("ENERGY SORT ", basic_energy)
 	for card in basic_energy:
-		var index = int((log(float(card)) / log(2)))
+		var index = int((log(float(card.energy_properties.type)) / log(2)))
 		print(index)
 		if all_costs[index] > 0: all_costs[index] -= 1
 		else: all_costs[8] -= 1
 	
 	#Maybe sort based on flag size
-	special_energy.sort_custom(func(a,b): return a[0] < b[0])
+	special_energy.sort_custom(func(a: Base_Card,b: Base_Card): return a.energy_properties.type < b.energy_properties.type)
 	print("SPECIAL SORT: ", special_energy)
 	for i in range(all_costs.size()):
 		for card in special_energy:
-			if i ** 2 & card:
+			if i ** 2 & card.energy_properties.type:
 				print(card, " for ", i)
 				all_costs[i] -= 1
 				special_energy.erase(card)
 			if all_costs[i] == 0: 
 				print("Satisfied ", i)
 				break
+	
+	var final_cost: int = 0
 	#How to consider special energy later
 	for cost in all_costs:
+		final_cost += cost
 		if cost > 0:
 			print(cost, " LEFTOVER: ", all_costs.find(cost))
-			return false
 	
-	return true
+	return final_cost
+
+##Checks if the provided energy is enough to cover for the attack cost[br]
+##This function prioritizes using basic energy first to optimize energy spending[br]
+##ex. [i] [Grass, Darkness] [Rainbow][/i][br] for an attack that costs
+## [i][Grasss, Grass, Darkness] [/i] [br]
+##It will fill in every cost it can without using multicolor energy only using when necessary.
+##Special energy is sorted based on how many colors it can fill in Rainbow > Aqua & Magma
+func can_pay(slot: PokeSlot) -> bool:
+	return true if pay_cost(slot) == 0 else false

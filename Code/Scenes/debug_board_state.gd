@@ -40,7 +40,6 @@ func set_up(home: bool):
 		for en in slot.energy_cards:
 			new_arr.append(en.duplicate())
 		slot.energy_cards = new_arr
-		slot.player_type = player_type
 		ui.insert_slot(slot, temp_side.slots[slot])
 		stacks.account_for_slot(slot)
 	

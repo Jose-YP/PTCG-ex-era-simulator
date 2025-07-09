@@ -4,7 +4,8 @@
 
 [resource]
 script = ExtResource("1_gml0m")
-which = 2
+side = 2
+slot = 1
 choose_condition = false
 poison = 1
 burn = 0
