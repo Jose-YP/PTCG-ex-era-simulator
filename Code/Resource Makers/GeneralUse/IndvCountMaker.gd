@@ -235,5 +235,20 @@ func stack_evaluation(stack_data: String, ask_data: SlotAsk) -> int:
 		print(stacks, stack_data, stacks.get(stack_data))
 		return stacks.get(stack_data).size()
 
-func coinflip_evaluation(coinflip_data: CoinFlip):
+func coinflip_evaluation(coinflip_data: CoinFlip) -> int:
 	print(coinflip_data)
+	var flip_data: Dictionary = coinflip_data.activate_CF()
+	var flip_results: Array[bool] = coinflip_data.get_flip_array(flip_data)
+	var flip_box: Control
+	
+	if coinflip_data.until:
+		flip_box = Constants.until_flip_box.instantiate()
+	else:
+		flip_box = Constants.reg_flip_box.instantiate()
+		flip_results.shuffle()
+	
+	flip_box.flip_results = flip_results
+	flip_box.top_level = true
+	Globals.fundies.add_child(flip_box)
+	
+	return flip_data["Heads"] if coinflip_data.heads else flip_data["Tails"]

@@ -6,6 +6,7 @@ var dragging: bool = false
 var checked_card: Control
 var fundies: Fundies
 var full_ui: FullBoardUI
+var coinflip: Control
 
 signal enter_check
 signal exit_check
