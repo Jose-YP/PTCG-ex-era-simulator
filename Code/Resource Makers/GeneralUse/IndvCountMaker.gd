@@ -177,7 +177,7 @@ func evaluate() -> int:
 		"Stack":
 			result = stack_evaluation(internal_data["stack_vars"], internal_data["ask"])
 		"Coinflip":
-			result = coinflip_evaluation(internal_data["coin_flip"])
+			result = await coinflip_evaluation(internal_data["coin_flip"])
 	
 	if internal_data["cap"] != -1:
 		result = clamp(result, 0, internal_data["cap"])
@@ -237,3 +237,17 @@ func stack_evaluation(stack_data: String, ask_data: SlotAsk) -> int:
 
 func coinflip_evaluation(coinflip_data: CoinFlip):
 	print(coinflip_data)
+	var flip_results: Array[bool] = coinflip_data.get_flip_array(coinflip_data.activate_CF())
+	var flip_box: Control
+	
+	if coinflip_data.until:
+		flip_box = Constants.until_flip_box.instantiate()
+	else:
+		flip_box = Constants.reg_flip_box.instantiate()
+		flip_results.shuffle()
+	
+	flip_box.flip_results = flip_results
+	flip_box.top_level = true
+	Globals.fundies.add_child(flip_box)
+	await flip_box.finished
+	Globals.control_disapear(flip_box, .1)
