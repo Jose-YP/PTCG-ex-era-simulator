@@ -6,5 +6,5 @@
 script = ExtResource("1_qxxxm")
 heads = true
 until = false
-const_flip_times = 4
+const_flip_times = 3
 metadata/_custom_type_script = "uid://y0v42qaa35wt"
