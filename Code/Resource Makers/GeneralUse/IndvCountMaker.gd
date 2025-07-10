@@ -168,6 +168,8 @@ func _set(property, value):
 	return false
 #--------------------------------------
 
+#--------------------------------------
+#region EVALUATION
 func evaluate() -> int:
 	var result: int = 0
 	
@@ -252,3 +254,8 @@ func coinflip_evaluation(coinflip_data: CoinFlip) -> int:
 	Globals.fundies.add_child(flip_box)
 	
 	return flip_data["Heads"] if coinflip_data.heads else flip_data["Tails"]
+#endregion
+#--------------------------------------
+
+func has_coinflip() -> bool:
+	return _get("which") == "Coinflip"

@@ -11,8 +11,6 @@ extends Control
 @onready var cooldown: Timer = $Cooldown
 #@onready var margin_container: MarginContainer = %MarginContainer
 
-signal finished
-
 var flip_results: Array[bool]
 var shown_results: Dictionary[bool, int] = {true: 0, false: 0}
 
@@ -51,7 +49,7 @@ func _on_begin_timeout() -> void:
 		await cooldown.timeout
 	
 	await get_tree().create_timer(1).timeout
-	finished.emit()
+	SignalBus.finished_coinflip.emit()
 	Globals.control_disapear(self, .1)
 
 func _on_coin_container_resized() -> void:

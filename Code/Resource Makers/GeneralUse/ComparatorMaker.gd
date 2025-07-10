@@ -39,3 +39,9 @@ func make_comparision(first: int, second: int) -> Variant:
 		"Greater": return first > second
 		"Lesser": return first < second
 	return ":("
+
+func has_coinflip() -> bool:
+	var result: bool = first_comparison.has_coinflip()
+	if second_counter:
+		result = result or second_counter.has_coinflip()
+	return result
