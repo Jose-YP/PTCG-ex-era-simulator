@@ -11,15 +11,13 @@ extends Control
 @onready var cooldown: Timer = $Cooldown
 #@onready var margin_container: MarginContainer = %MarginContainer
 
-signal finished
-
 var flip_results: Array[bool]
 var shown_results: Dictionary[bool, int] = {true: 0, false: 0}
 
 func _ready() -> void:
 	#For testing coinflips will be done here
-	#flip_results = coinflip.get_flip_array(coinflip.activate_CF())
-	#flip_results.shuffle()
+	flip_results = coinflip.get_flip_array(coinflip.activate_CF())
+	flip_results.shuffle()
 	#on implementation the result should be found beforehand
 	
 	top.setup("[center]Coinflips")
@@ -49,9 +47,6 @@ func _on_begin_timeout() -> void:
 			scroll_tween.tween_property(%CoinScroll, "scroll_horizontal", 
 			%CoinScroll.scroll_horizontal + 36, cooldown.wait_time)
 		await cooldown.timeout
-	
-	await get_tree().create_timer(.5).timeout
-	finished.emit()
 
 func _on_coin_container_resized() -> void:
 	print(%CoinContainer.size)

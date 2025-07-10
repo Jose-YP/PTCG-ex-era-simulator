@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://b2f8g5a5evnv4"]
+[gd_scene load_steps=12 format=3 uid="uid://b2f8g5a5evnv4"]
 
 [ext_resource type="Script" uid="uid://dugwlyyu4d5ji" path="res://Code/Test/comparator_options.gd" id="1_x6ib3"]
 [ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="2_727dm"]
@@ -9,9 +9,6 @@
 [ext_resource type="Resource" uid="uid://ddeij66cuqx7d" path="res://Resources/Components/Counters/Comparator/AtkGreaterHand.tres" id="7_hruce"]
 [ext_resource type="Resource" uid="uid://1yahyklj3y7s" path="res://Resources/Components/Counters/Indv/AtkBenchCount.tres" id="8_51sfc"]
 [ext_resource type="Resource" uid="uid://bujld5756sv01" path="res://Resources/Components/Counters/Indv/DefBenchCount.tres" id="9_kkr3x"]
-[ext_resource type="Resource" uid="uid://bns8h72u2hxqo" path="res://Resources/Components/Effects/Asks/AnyMon.tres" id="10_ce0ei"]
-[ext_resource type="Resource" uid="uid://csc2clyxejdwm" path="res://Resources/Components/CoinFlip/FlipOnce.tres" id="11_hruce"]
-[ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="12_51sfc"]
 
 [sub_resource type="Resource" id="Resource_tjxgr"]
 script = ExtResource("2_727dm")
@@ -30,22 +27,6 @@ compare_to = "Const"
 second_constant = 2
 metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
-[sub_resource type="Resource" id="Resource_kkr3x"]
-script = ExtResource("12_51sfc")
-which = "Coinflip"
-ask = ExtResource("10_ce0ei")
-coin_flip = ExtResource("11_hruce")
-cap = -1
-metadata/_custom_type_script = "uid://vjn146j3ayd6"
-
-[sub_resource type="Resource" id="Resource_ag26t"]
-script = ExtResource("2_727dm")
-comparision_type = "Equals"
-first_comparison = SubResource("Resource_kkr3x")
-compare_to = "Const"
-second_constant = 1
-metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
-
 [node name="Comparator_Options" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -54,7 +35,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_x6ib3")
-comparators = Array[ExtResource("2_727dm")]([ExtResource("3_i1rn0"), ExtResource("4_0hm4c"), ExtResource("5_tjxgr"), ExtResource("6_ce0ei"), ExtResource("7_hruce"), SubResource("Resource_tjxgr"), SubResource("Resource_pbgpp"), SubResource("Resource_ag26t")])
+comparators = Array[ExtResource("2_727dm")]([ExtResource("3_i1rn0"), ExtResource("4_0hm4c"), ExtResource("5_tjxgr"), ExtResource("6_ce0ei"), ExtResource("7_hruce"), SubResource("Resource_tjxgr"), SubResource("Resource_pbgpp")])
 
 [node name="PlayAs" type="PanelContainer" parent="."]
 layout_mode = 0
@@ -89,10 +70,6 @@ text = "GreaterHand"
 layout_mode = 2
 text = "LessBench"
 
-[node name="EqBench" type="Button" parent="PlayAs/Items" groups=["Button"]]
+[node name="Lesser2" type="Button" parent="PlayAs/Items" groups=["Button"]]
 layout_mode = 2
 text = "EqBenchConst"
-
-[node name="CoinflipHeads" type="Button" parent="PlayAs/Items" groups=["Button"]]
-layout_mode = 2
-text = "CoinflipHeads"
