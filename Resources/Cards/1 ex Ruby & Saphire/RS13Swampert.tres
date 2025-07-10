@@ -1,8 +1,7 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=14 format=3 uid="uid://ybxbqon28r0p"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=13 format=3 uid="uid://ybxbqon28r0p"]
 
 [ext_resource type="Texture2D" uid="uid://cnw6bdjck41qb" path="res://Art/Cards/1 ex Ruby & Saphire/23.jpg" id="1_4bc6d"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_ypdm2"]
-[ext_resource type="Resource" uid="uid://dqj6gq7pt3dbk" path="res://Resources/Components/Effects/Asks/FromSource.tres" id="3_6y18b"]
 [ext_resource type="Script" uid="uid://cimk6l7ytw7xg" path="res://Code/Resource Makers/EffectSpecific/EnMovMaker.gd" id="4_agkb0"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="5_e1px8"]
 [ext_resource type="Script" uid="uid://b58015mafcw2v" path="res://Code/Resource Makers/PokemonSpecific/PowerMaker.gd" id="7_et187"]
@@ -36,15 +35,13 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 script = ExtResource("4_agkb0")
 action = 4
 chooser = 0
-givers = ExtResource("3_6y18b")
-reciever = ExtResource("3_6y18b")
-to_stack = 2
-stack_direction = 2
-energy_carry_over = false
+to_stack = null
+stack_direction = null
+energy_carry_over = null
 action_ammount = 0
-energy_ammount = 1
+energy_ammount = null
 energy_move_type = 2
-react = false
+react = null
 type = 4
 metadata/_custom_type_script = "uid://cimk6l7ytw7xg"
 

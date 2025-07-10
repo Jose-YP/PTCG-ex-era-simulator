@@ -1,28 +1,23 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=18 format=3 uid="uid://btetlfpnc0pgh"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://btetlfpnc0pgh"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_1d60h"]
 [ext_resource type="Texture2D" uid="uid://b6db2ua3lcrpy" path="res://Art/Cards/2 ex Sandstorm/30.jpg" id="1_op54d"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_7v2tk"]
-[ext_resource type="Resource" uid="uid://dqj6gq7pt3dbk" path="res://Resources/Components/Effects/Asks/FromSource.tres" id="3_5exig"]
 [ext_resource type="Script" uid="uid://cimk6l7ytw7xg" path="res://Code/Resource Makers/EffectSpecific/EnMovMaker.gd" id="3_prlnf"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_5exig"]
-[ext_resource type="Script" uid="uid://y0v42qaa35wt" path="res://Code/Resource Makers/GeneralUse/CoinFlipNumMaker.gd" id="5_hm0ul"]
-[ext_resource type="Script" uid="uid://cml2jkc16tlva" path="res://Code/Resource Makers/GeneralUse/CounterMaker.gd" id="6_ilgxi"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="7_p7lid"]
 
 [sub_resource type="Resource" id="Resource_teul3"]
 script = ExtResource("3_prlnf")
 action = 4
 chooser = 1
-givers = ExtResource("3_5exig")
-reciever = ExtResource("3_5exig")
-to_stack = 2
-stack_direction = 2
-energy_carry_over = false
+to_stack = null
+stack_direction = null
+energy_carry_over = null
 action_ammount = 0
 energy_ammount = -1
-energy_move_type = 0
-react = false
+energy_move_type = null
+react = null
 type = 4
 metadata/_custom_type_script = "uid://cimk6l7ytw7xg"
 
@@ -57,37 +52,6 @@ both_active = false
 always_effect = SubResource("Resource_r2wsf")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
-[sub_resource type="Resource" id="Resource_s4o6s"]
-script = ExtResource("6_ilgxi")
-count_for = 1
-filter = 0
-side = 1
-slot = 2
-for_what = 1
-cap = -1
-return_num = 1
-metadata/_custom_type_script = "uid://cml2jkc16tlva"
-
-[sub_resource type="Resource" id="Resource_qef3v"]
-script = ExtResource("5_hm0ul")
-heads = true
-varying_flip_times = SubResource("Resource_s4o6s")
-until = false
-const_flip_times = 1
-metadata/_custom_type_script = "uid://y0v42qaa35wt"
-
-[sub_resource type="Resource" id="Resource_46hn3"]
-script = ExtResource("6_ilgxi")
-count_for = 0
-filter = 0
-coin_flip_num = SubResource("Resource_qef3v")
-side = 1
-slot = 4
-for_what = 0
-cap = -1
-return_num = 3
-metadata/_custom_type_script = "uid://cml2jkc16tlva"
-
 [sub_resource type="Resource" id="Resource_snn6m"]
 script = ExtResource("2_7v2tk")
 name = "Max Bubbles"
@@ -109,7 +73,6 @@ conditional_self_dmg = false
 self_damage = 0
 modifier = 2
 both_active = false
-counter = SubResource("Resource_46hn3")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_br177"]

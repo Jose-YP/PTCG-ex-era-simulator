@@ -1,24 +1,10 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=11 format=3 uid="uid://c6hkbplnm1lm1"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=8 format=3 uid="uid://c6hkbplnm1lm1"]
 
 [ext_resource type="Texture2D" uid="uid://d0gvmgd8nn8nv" path="res://Art/Cards/1 ex Ruby & Saphire/60.jpg" id="1_a3txu"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_2xrk8"]
 [ext_resource type="Resource" uid="uid://dkt5ik78wtijs" path="res://Resources/Components/Pokemon/Attacks/Pound.tres" id="3_g6vjq"]
-[ext_resource type="Resource" uid="uid://hhfvl581osej" path="res://Resources/Components/CoinFlip/FlipThrice.tres" id="4_dsduk"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="4_g6vjq"]
-[ext_resource type="Script" uid="uid://cml2jkc16tlva" path="res://Code/Resource Makers/GeneralUse/CounterMaker.gd" id="5_dnina"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="5_dsduk"]
-
-[sub_resource type="Resource" id="Resource_34s5b"]
-script = ExtResource("5_dnina")
-count_for = 0
-filter = 4
-coin_flip_num = ExtResource("4_dsduk")
-side = 1
-slot = 1
-for_what = 0
-cap = -1
-return_num = -1
-metadata/_custom_type_script = "uid://cml2jkc16tlva"
 
 [sub_resource type="Resource" id="Resource_hmkxe"]
 script = ExtResource("2_2xrk8")
@@ -41,7 +27,6 @@ conditional_self_dmg = false
 self_damage = 0
 modifier = 2
 both_active = false
-counter = SubResource("Resource_34s5b")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_dnina"]

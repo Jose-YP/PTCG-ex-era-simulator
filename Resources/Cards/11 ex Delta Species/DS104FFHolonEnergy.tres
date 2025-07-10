@@ -1,10 +1,9 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=16 format=3 uid="uid://dm1p5cbmn4s77"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=14 format=3 uid="uid://dm1p5cbmn4s77"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_fshtl"]
 [ext_resource type="Resource" uid="uid://b1qbcihu1hshu" path="res://Resources/Components/Effects/Buff/IgnoreResistance.tres" id="1_g0ch6"]
 [ext_resource type="Resource" uid="uid://bdnsa31pds5n8" path="res://Resources/Components/Effects/Prompts/NonEXHasFightingEn.tres" id="2_qjrqu"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_f62cj"]
-[ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="4_vwine"]
 [ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="5_wpt5d"]
 [ext_resource type="Script" uid="uid://caj1pm8erar2a" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="6_o6o62"]
 [ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/BuffMaker.gd" id="7_spbdi"]
@@ -18,39 +17,13 @@ prompt_extra = ExtResource("2_qjrqu")
 extra_effect = ExtResource("1_g0ch6")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
-[sub_resource type="Resource" id="Resource_tq28l"]
-script = ExtResource("4_vwine")
-side_target = 1
-slot_target = 4
-specifically = Array[String]([])
-comparison_type = 1
-max_hp = -10
-damage_taken = -10
-retreat_cost = -1
-energy_attatched = 1
-knocked_out = false
-condition = 0
-location = 4
-tool_attatched = false
-stage = 7
-rare_candy = false
-class_inclusive = false
-pokemon_class = 2
-owner_inclusive = true
-pokemon_owner = 15
-bench_size = -1
-type_inclusive = true
-type = 514
-energy_class = 0
-type_size = 1
-
 [sub_resource type="Resource" id="Resource_ebe5i"]
 script = ExtResource("5_wpt5d")
 formal_ask = false
 ask_string = ""
-is_in = SubResource("Resource_tq28l")
-side = 1
-choose_location = 0
+chooser = 0
+choose_location = "None"
+which_stack = 0
 metadata/_custom_type_script = "uid://b85jmc7067bjc"
 
 [sub_resource type="Resource" id="Resource_bahob"]

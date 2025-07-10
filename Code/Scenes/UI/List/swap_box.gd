@@ -6,7 +6,7 @@ class_name SwapBox
 #region VARIABLES
 @export var side: CardSideUI
 @export var singles: bool = true
-var swap_rules: EnMov = load("res://Resources/Components/Effects/EnergyMovement/GoldenWing.tres")
+var swap_rules: EnMov = null
 
 @onready var playing_list: PlayingList = %PlayingList
 @onready var slot_list: SlotList = %SlotList
@@ -173,8 +173,9 @@ func reset():
 	giver.flat = false
 	giver = null
 	energy_given.clear()
-	reciever.flat = false
-	reciever = null
+	if reciever != null:
+		reciever.flat = false
+		reciever = null
 	
 	slot_list.find_allowed(swap_rules.givers)
 	update_info()

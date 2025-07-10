@@ -1,10 +1,8 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=11 format=3 uid="uid://dq5yc7aoltpwf"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=8 format=3 uid="uid://dq5yc7aoltpwf"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_ndf4o"]
 [ext_resource type="Texture2D" uid="uid://cts8ls7vx2xot" path="res://Art/Cards/1 ex Ruby & Saphire/27.jpg" id="1_yu5dk"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_dvlhu"]
-[ext_resource type="Resource" uid="uid://u3yx47w8rn83" path="res://Resources/Components/CoinFlip/FlipTwice.tres" id="3_mfqg1"]
-[ext_resource type="Script" uid="uid://cml2jkc16tlva" path="res://Code/Resource Makers/GeneralUse/CounterMaker.gd" id="4_p7dmw"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_1qs0k"]
 
 [sub_resource type="Resource" id="Resource_60dvo"]
@@ -29,17 +27,6 @@ self_damage = 0
 modifier = 0
 both_active = false
 
-[sub_resource type="Resource" id="Resource_aa8d8"]
-script = ExtResource("4_p7dmw")
-count_for = 0
-filter = 4
-coin_flip_num = ExtResource("3_mfqg1")
-side = 1
-slot = 1
-for_what = 0
-cap = 2
-return_num = 4
-
 [sub_resource type="Resource" id="Resource_hq0qi"]
 script = ExtResource("2_dvlhu")
 name = "Double Kick"
@@ -61,7 +48,6 @@ conditional_self_dmg = false
 self_damage = 0
 modifier = 2
 both_active = false
-counter = SubResource("Resource_aa8d8")
 
 [sub_resource type="Resource" id="Resource_b61eb"]
 script = ExtResource("5_1qs0k")

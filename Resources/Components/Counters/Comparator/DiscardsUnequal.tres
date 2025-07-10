@@ -25,7 +25,6 @@ retreat_cost = -1
 energy_attatched = -1
 knocked_out = false
 condition = 0
-location = 0
 tool_attatched = false
 stage = 7
 rare_candy = false

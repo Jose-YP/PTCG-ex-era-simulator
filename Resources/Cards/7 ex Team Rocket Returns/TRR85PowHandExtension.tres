@@ -1,49 +1,34 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=16 format=3 uid="uid://bn4tw1p2av7gj"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=13 format=3 uid="uid://bn4tw1p2av7gj"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_gsupt"]
 [ext_resource type="Texture2D" uid="uid://cvn72gm0i2ycb" path="res://Art/Cards/7 ex Team Rocket Returns/85.jpg" id="1_tpnca"]
-[ext_resource type="Script" uid="uid://cml2jkc16tlva" path="res://Code/Resource Makers/GeneralUse/CounterMaker.gd" id="2_ci705"]
 [ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="3_tpnca"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="4_uy43t"]
 [ext_resource type="Script" uid="uid://cimk6l7ytw7xg" path="res://Code/Resource Makers/EffectSpecific/EnMovMaker.gd" id="6_d1501"]
-[ext_resource type="Resource" uid="uid://dqj6gq7pt3dbk" path="res://Resources/Components/Effects/Asks/FromSource.tres" id="6_tpnca"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="7_dmrxn"]
 [ext_resource type="Script" uid="uid://curklvf1517ml" path="res://Code/Resource Makers/EffectSpecific/SwapMaker.gd" id="8_uw2sm"]
-
-[sub_resource type="Resource" id="Resource_smuww"]
-script = ExtResource("2_ci705")
-count_for = 4
-filter = 4
-side = 3
-slot = 1
-for_what = 5
-cap = -1
-return_num = 0
-metadata/_custom_type_script = "uid://cml2jkc16tlva"
 
 [sub_resource type="Resource" id="Resource_bu8wl"]
 script = ExtResource("3_tpnca")
 formal_ask = true
 ask_string = "Move the opponent's Energy or Pokemon? || Energy || Pokemon"
-counter = SubResource("Resource_smuww")
-side = 1
-choose_location = 0
+chooser = 0
+choose_location = "None"
+which_stack = 0
 metadata/_custom_type_script = "uid://b85jmc7067bjc"
 
 [sub_resource type="Resource" id="Resource_k8l2b"]
 script = ExtResource("6_d1501")
-action = 0
-chooser = 4
-givers = ExtResource("6_tpnca")
-reciever = ExtResource("6_tpnca")
-to_stack = 2
-stack_direction = 2
-energy_carry_over = false
+action = null
+chooser = null
+to_stack = null
+stack_direction = null
+energy_carry_over = null
 action_ammount = 0
 energy_ammount = 0
 energy_move_type = 2
-react = false
-type = 511
+react = null
+type = null
 metadata/_custom_type_script = "uid://cimk6l7ytw7xg"
 
 [sub_resource type="Resource" id="Resource_4or8k"]

@@ -1,21 +1,10 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://cb1v7n822h87e"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=8 format=3 uid="uid://cb1v7n822h87e"]
 
 [ext_resource type="Texture2D" uid="uid://7bxyvuwtxyns" path="res://Art/Cards/8 ex Deoxys/16.jpg" id="1_q6m2g"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_u75df"]
-[ext_resource type="Script" uid="uid://cml2jkc16tlva" path="res://Code/Resource Makers/GeneralUse/CounterMaker.gd" id="2_jl15f"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="3_re3fn"]
 [ext_resource type="Resource" uid="uid://6qr7q3qdfbsf" path="res://Resources/Components/Pokemon/Powers/FormChangeDeoxys.tres" id="4_5wcjw"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_hjcee"]
-
-[sub_resource type="Resource" id="Resource_208e1"]
-script = ExtResource("2_jl15f")
-count_for = 3
-filter = 4
-side = 3
-slot = 1
-for_what = 1
-cap = -1
-return_num = 2
 
 [sub_resource type="Resource" id="Resource_w1d7j"]
 script = ExtResource("3_re3fn")
@@ -38,7 +27,6 @@ conditional_self_dmg = false
 self_damage = 0
 modifier = 0
 both_active = false
-counter = SubResource("Resource_208e1")
 
 [sub_resource type="Resource" id="Resource_bhl8f"]
 script = ExtResource("5_hjcee")

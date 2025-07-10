@@ -1,28 +1,9 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=15 format=3 uid="uid://b45smf3ecldmx"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=8 format=3 uid="uid://b45smf3ecldmx"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_awq2c"]
 [ext_resource type="Texture2D" uid="uid://4io7x213u2ui" path="res://Art/Cards/1 ex Ruby & Saphire/103.jpg" id="1_sakby"]
-[ext_resource type="Script" uid="uid://y0v42qaa35wt" path="res://Code/Resource Makers/GeneralUse/CoinFlipNumMaker.gd" id="2_p50fd"]
-[ext_resource type="Script" uid="uid://cml2jkc16tlva" path="res://Code/Resource Makers/GeneralUse/CounterMaker.gd" id="3_q5aky"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="4_p1pt7"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_pr7l4"]
-
-[sub_resource type="Resource" id="Resource_nktju"]
-script = ExtResource("2_p50fd")
-heads = true
-until = false
-const_flip_times = 2
-
-[sub_resource type="Resource" id="Resource_wl85h"]
-script = ExtResource("3_q5aky")
-count_for = 0
-filter = 4
-coin_flip_num = SubResource("Resource_nktju")
-side = 1
-slot = 1
-for_what = 0
-cap = -1
-return_num = 1
 
 [sub_resource type="Resource" id="Resource_xrmox"]
 script = ExtResource("4_p1pt7")
@@ -45,35 +26,6 @@ conditional_self_dmg = false
 self_damage = 0
 modifier = 2
 both_active = false
-counter = SubResource("Resource_wl85h")
-
-[sub_resource type="Resource" id="Resource_pcbyt"]
-script = ExtResource("3_q5aky")
-count_for = 0
-filter = 0
-side = 1
-slot = 4
-for_what = 10
-cap = -1
-return_num = 0
-
-[sub_resource type="Resource" id="Resource_gnwi8"]
-script = ExtResource("2_p50fd")
-heads = true
-varying_flip_times = SubResource("Resource_pcbyt")
-until = false
-const_flip_times = 1
-
-[sub_resource type="Resource" id="Resource_vkhqv"]
-script = ExtResource("3_q5aky")
-count_for = 0
-filter = 4
-coin_flip_num = SubResource("Resource_gnwi8")
-side = 1
-slot = 1
-for_what = 0
-cap = -1
-return_num = 2
 
 [sub_resource type="Resource" id="Resource_ju8be"]
 script = ExtResource("4_p1pt7")
@@ -96,7 +48,6 @@ conditional_self_dmg = false
 self_damage = 0
 modifier = 2
 both_active = false
-counter = SubResource("Resource_vkhqv")
 
 [sub_resource type="Resource" id="Resource_kh1cl"]
 script = ExtResource("5_pr7l4")

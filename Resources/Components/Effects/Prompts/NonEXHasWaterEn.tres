@@ -51,6 +51,7 @@ script = ExtResource("2_thmnf")
 formal_ask = false
 ask_string = ""
 comparator = SubResource("Resource_2l8n7")
+chooser = 0
 choose_location = "None"
 which_stack = 0
 metadata/_custom_type_script = "uid://b85jmc7067bjc"

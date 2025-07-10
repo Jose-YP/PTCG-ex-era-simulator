@@ -1,18 +1,25 @@
-[gd_resource type="Resource" script_class="Draw" load_steps=4 format=3 uid="uid://vj0he73ngf2s"]
+[gd_resource type="Resource" script_class="Draw" load_steps=7 format=3 uid="uid://vj0he73ngf2s"]
 
-[ext_resource type="Script" uid="uid://cml2jkc16tlva" path="res://Code/Resource Makers/GeneralUse/CounterMaker.gd" id="1_mgd1o"]
+[ext_resource type="Resource" uid="uid://crhg4u3yu2cso" path="res://Resources/Components/Effects/Asks/FromOther.tres" id="1_xwg80"]
+[ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="2_qihbw"]
 [ext_resource type="Script" uid="uid://bgtwlw1edjwyc" path="res://Code/Resource Makers/EffectSpecific/DrawMaker.gd" id="2_t8f0g"]
+[ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="3_ciqid"]
 
-[sub_resource type="Resource" id="Resource_xwg80"]
-script = ExtResource("1_mgd1o")
-count_for = 1
-filter = 4
-side = 5
-slot = 4
-for_what = 10
+[sub_resource type="Resource" id="Resource_kfno7"]
+script = ExtResource("2_qihbw")
+which = "Slot"
+ask = ExtResource("1_xwg80")
+slot_vars = "current_card"
 cap = -1
-return_num = 1
-metadata/_custom_type_script = "uid://cml2jkc16tlva"
+metadata/_custom_type_script = "uid://vjn146j3ayd6"
+
+[sub_resource type="Resource" id="Resource_842b2"]
+script = ExtResource("3_ciqid")
+comparision_type = "Return"
+first_comparison = SubResource("Resource_kfno7")
+compare_to = "None"
+second_constant = 0
+metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
 [resource]
 script = ExtResource("2_t8f0g")
@@ -20,5 +27,5 @@ shuffle_back_first = false
 side = 4
 bottom_deck = false
 simple_constant = 0
-counter = SubResource("Resource_xwg80")
+comparator = SubResource("Resource_842b2")
 metadata/_custom_type_script = "uid://bgtwlw1edjwyc"

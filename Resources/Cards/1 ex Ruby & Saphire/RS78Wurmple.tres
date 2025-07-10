@@ -74,8 +74,9 @@ metadata/_custom_type_script = "uid://dmulm3x3dj842"
 script = ExtResource("6_wia63")
 formal_ask = true
 ask_string = "Search for Silcoon and Beautifly or Cascoon and Dustox |Silcoon and Beautifly|Cascoon and Dustox"
-side = 1
-choose_location = 0
+chooser = 0
+choose_location = "None"
+which_stack = 0
 metadata/_custom_type_script = "uid://b85jmc7067bjc"
 
 [sub_resource type="Resource" id="Resource_tp81p"]

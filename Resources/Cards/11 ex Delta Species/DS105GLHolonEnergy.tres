@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=19 format=3 uid="uid://cqr3tfc8nry8w"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=17 format=3 uid="uid://cqr3tfc8nry8w"]
 
 [ext_resource type="Script" uid="uid://caj1pm8erar2a" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="1_5i42c"]
 [ext_resource type="Resource" uid="uid://dck0aw0wiqcpw" path="res://Resources/Components/Effects/Asks/Class&Owner/Other'sTrgEXMon.tres" id="1_420ij"]
@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://bcy6v2x6sapi" path="res://Art/Cards/11 ex Delta Species/105.jpg" id="2_yixtv"]
 [ext_resource type="Resource" uid="uid://dyg31r0aqj4ed" path="res://Resources/Components/Effects/Prompts/NonEXHasGrassEn.tres" id="3_tyuxn"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_10hjv"]
-[ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="5_rv8r4"]
 [ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="6_os01s"]
 
 [sub_resource type="Resource" id="Resource_tyuxn"]
@@ -26,39 +25,13 @@ prompt_extra = ExtResource("3_tyuxn")
 extra_effect = SubResource("Resource_tyuxn")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
-[sub_resource type="Resource" id="Resource_tf38m"]
-script = ExtResource("5_rv8r4")
-side_target = 1
-slot_target = 1
-specifically = Array[String]([])
-comparison_type = 1
-max_hp = -10
-damage_taken = -10
-retreat_cost = -1
-energy_attatched = 1
-knocked_out = false
-condition = 0
-location = 4
-tool_attatched = false
-stage = 7
-rare_candy = false
-class_inclusive = false
-pokemon_class = 2
-owner_inclusive = true
-pokemon_owner = 15
-bench_size = -1
-type_inclusive = true
-type = 520
-energy_class = 0
-type_size = 1
-
 [sub_resource type="Resource" id="Resource_kjebj"]
 script = ExtResource("6_os01s")
 formal_ask = false
 ask_string = ""
-is_in = SubResource("Resource_tf38m")
-side = 1
-choose_location = 0
+chooser = 0
+choose_location = "None"
+which_stack = 0
 metadata/_custom_type_script = "uid://b85jmc7067bjc"
 
 [sub_resource type="Resource" id="Resource_3qxn5"]

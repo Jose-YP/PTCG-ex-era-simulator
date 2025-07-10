@@ -1,9 +1,8 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=9 format=3 uid="uid://c0kbwsboq8b5x"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=8 format=3 uid="uid://c0kbwsboq8b5x"]
 
 [ext_resource type="Texture2D" uid="uid://ceasya7uuo5vr" path="res://Art/Cards/6 ex FireRed & LeafGreen/55.jpg" id="1_27r6r"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_jyoji"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_i2mn5"]
-[ext_resource type="Resource" uid="uid://djmtpdd5nwvri" path="res://Resources/Components/Counters/CoinFlip+10.tres" id="3_25njs"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="4_gvs0k"]
 
 [sub_resource type="Resource" id="Resource_kdkar"]
@@ -50,7 +49,6 @@ conditional_self_dmg = false
 self_damage = 0
 modifier = 1
 both_active = false
-counter = ExtResource("3_25njs")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_ofxcy"]

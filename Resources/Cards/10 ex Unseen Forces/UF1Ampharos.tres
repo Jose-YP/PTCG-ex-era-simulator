@@ -24,9 +24,10 @@ metadata/_custom_type_script = "uid://dmulm3x3dj842"
 script = ExtResource("5_kd6vc")
 formal_ask = true
 ask_string = "Discard all {Lightning} Energy?"
-side = 1
-choose_location = 0
 effect = SubResource("Resource_ujupi")
+chooser = 0
+choose_location = "None"
+which_stack = 0
 metadata/_custom_type_script = "uid://b85jmc7067bjc"
 
 [sub_resource type="Resource" id="Resource_1cpy3"]
@@ -76,17 +77,17 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_ws3ge"]
 script = ExtResource("9_u7a6q")
 action = 1
-chooser = 4
+chooser = null
 givers = ExtResource("7_dvwig")
 reciever = ExtResource("8_phwcg")
-to_stack = 2
-stack_direction = 2
-energy_carry_over = false
+to_stack = null
+stack_direction = null
+energy_carry_over = null
 action_ammount = -1
 energy_ammount = -1
-energy_move_type = 0
-react = false
-type = 511
+energy_move_type = null
+react = null
+type = null
 metadata/_custom_type_script = "uid://cimk6l7ytw7xg"
 
 [sub_resource type="Resource" id="Resource_0m8xk"]

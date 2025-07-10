@@ -1,24 +1,12 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=14 format=3 uid="uid://b6mgd7a47n0iv"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://b6mgd7a47n0iv"]
 
 [ext_resource type="Texture2D" uid="uid://b55mvy488l2pm" path="res://Art/Cards/1 ex Ruby & Saphire/7.jpg" id="1_dljrv"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_x305h"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_mamwr"]
-[ext_resource type="Script" uid="uid://cml2jkc16tlva" path="res://Code/Resource Makers/GeneralUse/CounterMaker.gd" id="3_vnprs"]
 [ext_resource type="Resource" uid="uid://buofx3y8opwf" path="res://Resources/Components/Effects/Search/PsyshadowSearch.tres" id="5_k252l"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="5_o1pkv"]
 [ext_resource type="Script" uid="uid://b58015mafcw2v" path="res://Code/Resource Makers/PokemonSpecific/PowerMaker.gd" id="10_61n4a"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="11_e1xak"]
-
-[sub_resource type="Resource" id="Resource_pabra"]
-script = ExtResource("3_vnprs")
-count_for = 0
-filter = 0
-side = 3
-slot = 1
-for_what = 1
-cap = -1
-return_num = 1
-metadata/_custom_type_script = "uid://cml2jkc16tlva"
 
 [sub_resource type="Resource" id="Resource_apf0q"]
 script = ExtResource("2_mamwr")
@@ -41,7 +29,6 @@ conditional_self_dmg = false
 self_damage = 0
 modifier = 2
 both_active = false
-counter = SubResource("Resource_pabra")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_jt5ow"]

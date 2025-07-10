@@ -73,7 +73,7 @@ func send_effect():
 func swap_effect():
 	var new_box: SwapBox = Constants.swap_box.instantiate()
 	#Globals.fundies.get_considered_home(chooser)
-	new_box.swap_rules = self
+	new_box.swap_rules = self.duplicate()
 	new_box.side = Globals.full_ui.get_side(givers.side_target)
 	new_box.singles = Globals.full_ui.singles
 	Globals.fundies.add_child(new_box)

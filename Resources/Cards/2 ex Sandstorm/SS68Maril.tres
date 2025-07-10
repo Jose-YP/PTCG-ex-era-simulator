@@ -1,33 +1,19 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=13 format=3 uid="uid://cnmxonj4m81n1"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://cnmxonj4m81n1"]
 
 [ext_resource type="Texture2D" uid="uid://c4apwfoy8tjkd" path="res://Art/Cards/2 ex Sandstorm/68.jpg" id="1_mh6c5"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_x6qfw"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_8p0sp"]
 [ext_resource type="Resource" uid="uid://6xmw13js5xd3" path="res://Resources/Components/Effects/Conditions/BasicParalyze.tres" id="3_goaxk"]
-[ext_resource type="Resource" uid="uid://u3yx47w8rn83" path="res://Resources/Components/CoinFlip/FlipTwice.tres" id="4_3lkbc"]
-[ext_resource type="Script" uid="uid://cml2jkc16tlva" path="res://Code/Resource Makers/GeneralUse/CounterMaker.gd" id="5_sif8h"]
 [ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="6_oax0i"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="7_j5xge"]
-
-[sub_resource type="Resource" id="Resource_c5uui"]
-script = ExtResource("5_sif8h")
-count_for = 5
-filter = 4
-coin_flip_num = ExtResource("4_3lkbc")
-side = 1
-slot = 1
-for_what = 0
-cap = 1
-return_num = 0
-metadata/_custom_type_script = "uid://cml2jkc16tlva"
 
 [sub_resource type="Resource" id="Resource_to7ul"]
 script = ExtResource("6_oax0i")
 formal_ask = false
 ask_string = ""
-counter = SubResource("Resource_c5uui")
-side = 1
-choose_location = 0
+chooser = 0
+choose_location = "None"
+which_stack = 0
 metadata/_custom_type_script = "uid://b85jmc7067bjc"
 
 [sub_resource type="Resource" id="Resource_p6nwg"]

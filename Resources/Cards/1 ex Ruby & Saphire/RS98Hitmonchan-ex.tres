@@ -1,12 +1,9 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=9 format=3 uid="uid://bgdym04a78y12"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=8 format=3 uid="uid://bgdym04a78y12"]
 
 [ext_resource type="Texture2D" uid="uid://dvtexggcwt056" path="res://Art/Cards/1 ex Ruby & Saphire/98.jpg" id="1_o7tas"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_wduvi"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="4_tikk5"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_n0j4e"]
-
-[sub_resource type="Resource" id="Resource_k24uy"]
-metadata/__load_path__ = "res://Resources/Components/Effects/CoinFlipOnceFor.tres"
 
 [sub_resource type="Resource" id="Resource_3lp3d"]
 script = ExtResource("4_tikk5")
@@ -29,7 +26,6 @@ conditional_self_dmg = false
 self_damage = 0
 modifier = 1
 both_active = false
-counter = SubResource("Resource_k24uy")
 
 [sub_resource type="Resource" id="Resource_e1f0j"]
 script = ExtResource("4_tikk5")

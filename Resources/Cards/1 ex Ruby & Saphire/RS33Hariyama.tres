@@ -1,11 +1,9 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=13 format=3 uid="uid://cervqyyl0dqf2"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://cervqyyl0dqf2"]
 
 [ext_resource type="Texture2D" uid="uid://b6qd05q5xmb33" path="res://Art/Cards/1 ex Ruby & Saphire/33.jpg" id="1_7j12q"]
 [ext_resource type="Resource" uid="uid://lfhu3xyr0wpo" path="res://Resources/Components/Effects/Prompts/IfFlipHeads.tres" id="3_1pnys"]
 [ext_resource type="Resource" uid="uid://6xmw13js5xd3" path="res://Resources/Components/Effects/Conditions/BasicParalyze.tres" id="3_axcwr"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="4_6dlgm"]
-[ext_resource type="Resource" uid="uid://u3yx47w8rn83" path="res://Resources/Components/CoinFlip/FlipTwice.tres" id="5_jwfrn"]
-[ext_resource type="Script" uid="uid://cml2jkc16tlva" path="res://Code/Resource Makers/GeneralUse/CounterMaker.gd" id="6_wfjlc"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="7_i2uvt"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="8_wcw0t"]
 
@@ -33,17 +31,6 @@ both_active = false
 prompt = ExtResource("3_1pnys")
 success_effect = ExtResource("3_axcwr")
 
-[sub_resource type="Resource" id="Resource_on12m"]
-script = ExtResource("6_wfjlc")
-count_for = 0
-filter = 4
-coin_flip_num = ExtResource("5_jwfrn")
-side = 1
-slot = 1
-for_what = 0
-cap = -1
-return_num = 1
-
 [sub_resource type="Resource" id="Resource_ju4ha"]
 script = ExtResource("4_6dlgm")
 name = "Slap Down"
@@ -65,7 +52,6 @@ conditional_self_dmg = false
 self_damage = 0
 modifier = 1
 both_active = false
-counter = SubResource("Resource_on12m")
 
 [sub_resource type="Resource" id="Resource_guupo"]
 script = ExtResource("7_i2uvt")

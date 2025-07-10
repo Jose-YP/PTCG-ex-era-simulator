@@ -1,11 +1,12 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://30ov4tahogne"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=13 format=3 uid="uid://30ov4tahogne"]
 
 [ext_resource type="Texture2D" uid="uid://dp0rdow1twovb" path="res://Art/Cards/5 ex Hidden Legends/92.jpg" id="1_jpkyc"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_q3ye2"]
 [ext_resource type="Resource" uid="uid://vj0he73ngf2s" path="res://Resources/Components/Effects/Draw/StevenDraw.tres" id="3_qi5s1"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_u52if"]
-[ext_resource type="Script" uid="uid://cml2jkc16tlva" path="res://Code/Resource Makers/GeneralUse/CounterMaker.gd" id="5_q5n8l"]
+[ext_resource type="Resource" uid="uid://dy4k02ewyav5j" path="res://Resources/Components/Counters/INdv/AtkHandSize.tres" id="5_qi5s1"]
 [ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="6_7ycbh"]
+[ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="6_u52if"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="7_sapsk"]
 
 [sub_resource type="Resource" id="Resource_1ynff"]
@@ -15,24 +16,22 @@ order = Array[int]([])
 draw_ammount = ExtResource("3_qi5s1")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
-[sub_resource type="Resource" id="Resource_8bhvc"]
-script = ExtResource("5_q5n8l")
-count_for = 5
-filter = 4
-side = 4
-slot = 1
-for_what = 6
-cap = 8
-return_num = 8
-metadata/_custom_type_script = "uid://cml2jkc16tlva"
+[sub_resource type="Resource" id="Resource_q5n8l"]
+script = ExtResource("6_u52if")
+comparision_type = "Lesser"
+first_comparison = ExtResource("5_qi5s1")
+compare_to = "None"
+second_constant = 6
+metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
 [sub_resource type="Resource" id="Resource_mkoc1"]
 script = ExtResource("6_7ycbh")
 formal_ask = false
 ask_string = ""
-counter = SubResource("Resource_8bhvc")
-side = 1
-choose_location = 0
+comparator = SubResource("Resource_q5n8l")
+chooser = 0
+choose_location = "None"
+which_stack = 0
 metadata/_custom_type_script = "uid://b85jmc7067bjc"
 
 [sub_resource type="Resource" id="Resource_3nd0w"]

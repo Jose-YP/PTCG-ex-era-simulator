@@ -9,7 +9,9 @@
 [ext_resource type="Resource" uid="uid://cd880a7x21jgg" path="res://Resources/Components/Effects/Identifiers/Energy/AnyEnergy.tres" id="5_05uh2"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="5_cwdhh"]
 [ext_resource type="Resource" uid="uid://btl7v4wchm2j4" path="res://Resources/Components/Effects/Prompts/DiscardBeforeUsing.tres" id="5_utur0"]
-[ext_resource type="Resource" uid="uid://u6vitm0abc30" path="res://Resources/Components/Counters/ForBothPrizesLeft.tres" id="7_xteki"]
+
+[sub_resource type="Resource" id="Resource_0h82h"]
+metadata/__load_path__ = "res://Resources/Components/Counters/ForBothPrizesLeft.tres"
 
 [sub_resource type="Resource" id="Resource_05uh2"]
 script = ExtResource("4_4unrw")
@@ -21,7 +23,7 @@ based_on_side = 0
 based_on_slots = 0
 based_on_energy = 0
 portion = -1
-variable_portion = ExtResource("7_xteki")
+variable_portion = SubResource("Resource_0h82h")
 how_many = Array[int]([-1])
 of_this = Array[ExtResource("3_jkrwu")]([ExtResource("5_05uh2")])
 and_then = ExtResource("3_utur0")

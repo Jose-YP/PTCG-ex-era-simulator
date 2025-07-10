@@ -1,24 +1,12 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=14 format=3 uid="uid://r14xssseba8n"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://r14xssseba8n"]
 
 [ext_resource type="Texture2D" uid="uid://kt5023nwmrf4" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/95.jpg" id="1_4uunb"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_tudmd"]
-[ext_resource type="Script" uid="uid://cml2jkc16tlva" path="res://Code/Resource Makers/GeneralUse/CounterMaker.gd" id="3_u8gkk"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="3_vivns"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="4_xh2h7"]
 [ext_resource type="Resource" uid="uid://lfhu3xyr0wpo" path="res://Resources/Components/Effects/Prompts/IfFlipHeads.tres" id="5_66xai"]
 [ext_resource type="Script" uid="uid://br15mnap82upq" path="res://Code/Resource Makers/PokemonSpecific/BenchAttackMaker.gd" id="6_2ypk6"]
 [ext_resource type="Resource" uid="uid://l48hjm27w6e6" path="res://Resources/Components/Effects/EnergyMovement/DefSelfDisAny.tres" id="6_66xai"]
-
-[sub_resource type="Resource" id="Resource_gkcf5"]
-script = ExtResource("3_u8gkk")
-count_for = 0
-filter = 4
-side = 1
-slot = 1
-for_what = 1
-cap = 4
-return_num = 2
-metadata/_custom_type_script = "uid://cml2jkc16tlva"
 
 [sub_resource type="Resource" id="Resource_x2vyq"]
 script = ExtResource("2_tudmd")
@@ -41,7 +29,6 @@ conditional_self_dmg = false
 self_damage = 0
 modifier = 1
 both_active = false
-counter = SubResource("Resource_gkcf5")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_mtcby"]

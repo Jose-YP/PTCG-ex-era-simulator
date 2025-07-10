@@ -30,6 +30,7 @@ script = ExtResource("3_hjnbi")
 formal_ask = false
 ask_string = ""
 effect = SubResource("Resource_xteki")
+chooser = 0
 choose_location = "None"
 which_stack = 0
 metadata/_custom_type_script = "uid://b85jmc7067bjc"

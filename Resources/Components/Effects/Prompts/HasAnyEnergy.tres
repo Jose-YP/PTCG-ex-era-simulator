@@ -17,6 +17,7 @@ script = ExtResource("2_ed0hd")
 formal_ask = false
 ask_string = ""
 comparator = SubResource("Resource_fny4h")
+chooser = 0
 choose_location = "None"
 which_stack = 0
 metadata/_custom_type_script = "uid://b85jmc7067bjc"
