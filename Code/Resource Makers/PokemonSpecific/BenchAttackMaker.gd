@@ -20,7 +20,7 @@ class_name BenchAttk
 ##[br]Multiply - use [member initial_main_DMG] times the result found with [member counter] and [member prompt], allows 0 as a result
 ##[br]Subtract - use [member initial_main_DMG] then add damage depending on [member counter] and [member prompt]
 @export_enum("None", "Add", "Multiply", "Subtract") var modifier: int = 0
-@export var counter: Counter
+@export var comparator: Comparator
 
 @export_group("Effects")
 @export var prompt: PromptAsk

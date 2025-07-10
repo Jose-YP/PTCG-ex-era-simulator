@@ -231,11 +231,11 @@ func get_energy_strings() -> Array[String]:
 		var en_name = card.energy_properties.how_display()
 		energy_stirngs.append(en_name)
 	
-	print("BEFORE SORT: ", energy_stirngs)
+	print_verbose("BEFORE SORT: ", energy_stirngs)
 	
 	energy_stirngs.sort_custom(func(a,b): #Basic + Darkness + Metal has highest priority
 		return Constants.energy_types.find(a) < Constants.energy_types.find(b))
-	print("AFTER: ", energy_stirngs)
+	print_verbose("AFTER: ", energy_stirngs)
 	
 	return energy_stirngs
 
@@ -269,8 +269,6 @@ func get_total_energy() -> int:
 
 func get_energy_excess() -> int:
 	var test_attack: Attack = current_card.pokemon_properties.attacks[-1]
-	print(get_total_energy())
-	print(test_attack.pay_cost(self))
 	return get_total_energy() + test_attack.pay_cost(self)
 
 #endregion

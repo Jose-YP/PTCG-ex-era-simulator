@@ -1,22 +1,39 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=11 format=3 uid="uid://baklyfkmvlguj"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=15 format=3 uid="uid://baklyfkmvlguj"]
 
 [ext_resource type="Texture2D" uid="uid://c0lenryrao7ol" path="res://Art/Cards/1 ex Ruby & Saphire/89.jpg" id="1_m8l7g"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_nyl4q"]
-[ext_resource type="Script" uid="uid://cml2jkc16tlva" path="res://Code/Resource Makers/GeneralUse/CounterMaker.gd" id="3_lbeju"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_qsc0s"]
+[ext_resource type="Resource" uid="uid://dy4k02ewyav5j" path="res://Resources/Components/Counters/INdv/AtkHandSize.tres" id="3_uq1k3"]
 [ext_resource type="Script" uid="uid://bgtwlw1edjwyc" path="res://Code/Resource Makers/EffectSpecific/DrawMaker.gd" id="4_m8l7g"]
+[ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="4_sxuyp"]
+[ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="5_l36f4"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="6_j8dp4"]
 
-[sub_resource type="Resource" id="Resource_lbeju"]
-script = ExtResource("3_lbeju")
-count_for = 5
-filter = 4
-side = 1
-slot = 1
-for_what = 6
-cap = 6
-return_num = 0
-metadata/_custom_type_script = "uid://cml2jkc16tlva"
+[sub_resource type="Resource" id="Resource_q8yeg"]
+script = ExtResource("4_sxuyp")
+comparision_type = "Lesser"
+first_comparison = ExtResource("3_uq1k3")
+compare_to = "None"
+second_constant = 6
+metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
+
+[sub_resource type="Resource" id="Resource_csdl0"]
+script = ExtResource("5_l36f4")
+formal_ask = false
+ask_string = ""
+comparator = SubResource("Resource_q8yeg")
+chooser = 0
+choose_location = "None"
+which_stack = 0
+metadata/_custom_type_script = "uid://b85jmc7067bjc"
+
+[sub_resource type="Resource" id="Resource_2h8s7"]
+script = ExtResource("4_sxuyp")
+comparision_type = "Difference"
+first_comparison = ExtResource("3_uq1k3")
+compare_to = "Const"
+second_constant = 6
+metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
 [sub_resource type="Resource" id="Resource_uq1k3"]
 script = ExtResource("4_m8l7g")
@@ -24,7 +41,7 @@ shuffle_back_first = false
 side = 1
 bottom_deck = false
 simple_constant = 0
-counter = SubResource("Resource_lbeju")
+comparator = SubResource("Resource_2h8s7")
 metadata/_custom_type_script = "uid://bgtwlw1edjwyc"
 
 [sub_resource type="Resource" id="Resource_6plop"]
@@ -39,7 +56,8 @@ script = ExtResource("6_j8dp4")
 considered = "Supporter"
 specific_requirement = ""
 description = "Draw cards from your deck until you have 6 cards in your hand. "
-always_effect = SubResource("Resource_6plop")
+prompt = SubResource("Resource_csdl0")
+success_effect = SubResource("Resource_6plop")
 metadata/_custom_type_script = "uid://crx447i85kshy"
 
 [resource]

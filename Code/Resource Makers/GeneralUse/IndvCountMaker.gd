@@ -214,7 +214,6 @@ func slot_evaluation(slot_data: String, ask_data: SlotAsk) -> int:
 	return result
 
 func energy_card_evaluation(en_count_methods_data: String, slot: PokeSlot):
-	print("Using ENERGY COUNT")
 	match en_count_methods_data:
 		"Attatched":
 			return slot.get_total_energy()
@@ -224,21 +223,16 @@ func energy_card_evaluation(en_count_methods_data: String, slot: PokeSlot):
 			return slot.count_diff_energy()
 
 func stack_evaluation(stack_data: String, ask_data: SlotAsk) -> int:
-	print("STACK EVALUATION")
-	print(stack_data, ask_data)
 	var fundies: Fundies = Globals.fundies
 	if ask_data.side_target == Constants.SIDES.BOTH:
 		var atk_stack: CardStacks = fundies.stack_manager.get_stacks(fundies.get_considered_home(Constants.SIDES.ATTACKING))
 		var def_stack: CardStacks = fundies.stack_manager.get_stacks(fundies.get_considered_home(Constants.SIDES.DEFENDING))
-		print(atk_stack, def_stack, stack_data)
 		return atk_stack.get(stack_data).size() + def_stack.get(stack_data).size()
 	else:
 		var stacks: CardStacks = fundies.stack_manager.get_stacks(fundies.get_considered_home(ask_data.side_target))
-		print(stacks, stack_data, stacks.get(stack_data))
 		return stacks.get(stack_data).size()
 
 func coinflip_evaluation(coinflip_data: CoinFlip) -> int:
-	print(coinflip_data)
 	var flip_data: Dictionary = coinflip_data.activate_CF()
 	var flip_results: Array[bool] = coinflip_data.get_flip_array(flip_data)
 	var flip_box: Control

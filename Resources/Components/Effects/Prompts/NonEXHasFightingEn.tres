@@ -1,39 +1,56 @@
-[gd_resource type="Resource" script_class="PromptAsk" load_steps=4 format=3 uid="uid://bdnsa31pds5n8"]
+[gd_resource type="Resource" script_class="PromptAsk" load_steps=8 format=3 uid="uid://bdnsa31pds5n8"]
 
 [ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="1_0u1nb"]
 [ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="2_c1lbv"]
+[ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="2_rb1o5"]
+[ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="3_mo2me"]
 
-[sub_resource type="Resource" id="Resource_0u1nb"]
+[sub_resource type="Resource" id="Resource_0w30g"]
 script = ExtResource("1_0u1nb")
 side_target = 1
-slot_target = 1
+slot_target = 4
 specifically = Array[String]([])
 comparison_type = 1
 max_hp = -10
 damage_taken = -10
 retreat_cost = -1
-energy_attatched = 1
+energy_attatched = -1
 knocked_out = false
 condition = 0
-location = 4
 tool_attatched = false
 stage = 7
 rare_candy = false
 class_inclusive = false
 pokemon_class = 2
 owner_inclusive = true
-pokemon_owner = 15
+pokemon_owner = 31
 bench_size = -1
 type_inclusive = true
 type = 544
-energy_class = 0
+energy_class = 2
 type_size = 1
+
+[sub_resource type="Resource" id="Resource_3huyd"]
+script = ExtResource("2_rb1o5")
+which = "Slot"
+ask = SubResource("Resource_0w30g")
+slot_vars = "current_card"
+cap = -1
+metadata/_custom_type_script = "uid://vjn146j3ayd6"
+
+[sub_resource type="Resource" id="Resource_hkj2g"]
+script = ExtResource("3_mo2me")
+comparision_type = "Greater"
+first_comparison = SubResource("Resource_3huyd")
+compare_to = "Const"
+second_constant = 0
+metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
 [resource]
 script = ExtResource("2_c1lbv")
 formal_ask = false
 ask_string = ""
-is_in = SubResource("Resource_0u1nb")
-side = 1
-choose_location = 0
+comparator = SubResource("Resource_hkj2g")
+choose_location = "None"
+which_stack = 0
 metadata/_custom_type_script = "uid://b85jmc7067bjc"

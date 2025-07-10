@@ -61,5 +61,4 @@ func connect_to(functions: Array[Callable]) -> void:
 	 play_tool, play_tm, play_fossil, play_energy, play_trainer]
 	
 	for i in range(functions.size()):
-		print(functions[i])
 		signals[i].connect(functions[i])

@@ -40,7 +40,7 @@ class_name Attack
 @export var bench_damage: BenchAttk
 ##Determines how damage should be changed
 ##[br][i]If modifieer is none, this can replace [member initial_main_DMG]
-@export var counter: Counter
+@export var comparator: Comparator
 
 @export_group("Effects")
 @export var prompt: PromptAsk

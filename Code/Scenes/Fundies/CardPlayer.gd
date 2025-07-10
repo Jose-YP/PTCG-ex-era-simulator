@@ -111,12 +111,15 @@ func play_energy(card: Base_Card, placement:Placement = null):
 #region TRAINERS
 func play_trainer(card: Base_Card):
 	var trainer: Trainer = card.trainer_properties
+	var allowed: bool = false
 	Globals.fundies.record_source_target(Globals.fundies.home_turn, [], [])
 	if card.is_considered("Supporter"):
 		Globals.fundies.stack_manager.play_supporter(card, Globals.fundies.home_turn)
 	
 	if trainer.prompt:
 		print("This card has a prompt")
+		allowed = await trainer.prompt.check_prompt()
+		print("Prompt Result: ", allowed)
 	
 	if trainer.asks:
 		#Determine a way to check asks and prompts easily
@@ -128,10 +131,10 @@ func play_trainer(card: Base_Card):
 		
 		print("This card has an ask")
 	
-	if trainer.fail_effect:
+	if not allowed and trainer.fail_effect:
 		await trainer.fail_effect.play_effect()
 	
-	if trainer.success_effect:
+	if allowed and trainer.success_effect:
 		await trainer.success_effect.play_effect()
 	
 	if trainer.always_effect:
@@ -139,6 +142,7 @@ func play_trainer(card: Base_Card):
 	
 	if not card.is_considered("Supporter"):
 		Globals.fundies.stack_manager.play_card(card, Globals.fundies.home_turn)
+	Globals.fundies.remove_top_source_target()
 
 #For tools
 func play_attatch_tool(card: Base_Card):
@@ -216,32 +220,6 @@ func record_candidate(slot: PokeSlot):
 #--------------------------------------
 #region DETERMINING EFFECTS
 func scope_effect():
-	pass
-
-#endregion
-#--------------------------------------
-
-#--------------------------------------
-#region EFFECT TYPES
-func condition_effect(_condition: Condition):
-	pass
-
-func draw_effect(_card_draw: Counter):
-	pass
-
-func buff_effect(_buff: Buff):
-	pass
-
-func card_disrupt_effect(_card_dis: CardDisrupt):
-	pass
-
-func disable_effect(_disable: Disable):
-	pass
-
-func energy_mov_effect(_en_mov: EnMov):
-	pass
-
-func dmg_manip_effect(_dmg_manip: DamageManip):
 	pass
 
 #endregion

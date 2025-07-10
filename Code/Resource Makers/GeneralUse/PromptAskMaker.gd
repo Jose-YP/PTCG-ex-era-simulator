@@ -3,17 +3,53 @@ class_name PromptAsk
 
 ##Give a prompt asking to activate the effect?
 @export var formal_ask: bool = false
-##For booleans, Seperate it with ||
+##This is the text given for context when a player must choose something
+##[br]When [member formal_ask] is [code]true[/code], seperate choices with ||
 @export_multiline var ask_string: String 
-##If there's a coin flip, check if it passes[br]
-##Succesful coin flips allow for succesful effects and coin reliant dmg
-@export var coin_flip: CoinFlip
-@export var counter: Counter
-@export var is_in: SlotAsk
-@export var side: Constants.SIDES = Constants.SIDES.ATTACKING
 
-@export_flags("Bench", "Active", "Self", 
-"Discard", "Hand", "Desicion") var choose_location: int = 0
-
+##What comparator must it pass to work? 
+@export var comparator: Comparator
 ##These must be performed before doing the proceeding effect/attack
 @export var effect: EffectCall
+
+@export_group("Choice")
+##Who decides which to choose
+@export var chooser: Constants.SIDES
+##Does the user have to choose something before the effect can activate?
+@export_enum("None", "Slot", "Stack") var choose_location: String = "None"
+##This ask is for the user to first make a choice
+@export var which_slots: SlotAsk
+##From which stack should they make a choice
+@export var which_stack: Constants.STACKS = Constants.STACKS.HAND
+##Which cards are allowed in choice
+@export var which_cards: Identifier
+
+signal finished
+
+var result: bool = false
+
+func check_prompt():
+	result = false
+	
+	if comparator:
+		var found = comparator.start_comparision()
+		
+		if comparator.has_coinflip():
+			await SignalBus.finished_coinflip
+		
+		result = result or found
+		
+	if choose_location == "Slot":
+		pass
+	elif choose_location == "Stack":
+		pass
+	elif formal_ask:
+		pass
+	if effect:
+		pass
+	
+	
+	return result
+
+func get_result():
+	return result

@@ -14,11 +14,11 @@ class_name Search
 ##-1 means all cards. For certain cards that look at a bit of the top of the deck.
 @export_range(-1,60, 1) var portion: int = -1
 #holon Lass uses a varying portion based on prize cards soooo
-@export var variable_portion: Counter
+@export var variable_portion: Comparator
 ##How many cards can the user pick, if it's -1 allow infinite
 @export var how_many: Array[int] = [1]
 ##Incase of variable search ammounts
-@export var variable_ammount: Counter
+@export var variable_ammount: Comparator
 ##For each item in identifier, search how_many
 @export var of_this: Array[Identifier]
 ##Where do the tutored cards go?

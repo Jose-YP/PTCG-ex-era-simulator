@@ -19,7 +19,6 @@ class_name SlotAsk
 @export var knocked_out: bool = false
 @export_flags("Poison", "Burn", "Paralysis", "Asleep", "Confusion") var condition: int = 0
 ##Self means the attacking/defending pokemon, Active is for doubles
-@export_flags("Bench", "Active", "Self", "Discard", "Hand") var location: int = 0 
 @export var tool_attatched: bool = false
 
 @export_subgroup("Class")

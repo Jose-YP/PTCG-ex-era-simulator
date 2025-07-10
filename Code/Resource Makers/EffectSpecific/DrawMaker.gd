@@ -8,7 +8,7 @@ class_name Draw
 ##For constant card draws
 @export var simple_constant: int = 0
 ##For variable card draws
-@export var counter: Counter
+@export var comparator: Comparator
 ##If an effect is called with this class use the cards drawn as the subject
 @export var with_drawn_cards: EffectCall
 
@@ -19,7 +19,7 @@ func play_effect():
 	var num_draw = simple_constant
 	var old_val = Globals.fundies.stack_manager.operate_home
 	Globals.fundies.stack_manager.operate_home = Globals.fundies.get_considered_home(side)
-	if counter != null:
+	if comparator != null:
 		pass
 	
 	if shuffle_back_first:

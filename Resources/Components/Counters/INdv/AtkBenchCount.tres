@@ -7,6 +7,7 @@
 script = ExtResource("2_1yv4q")
 which = "Slot"
 ask = ExtResource("1_hkmp2")
-slot_vars = "current_card"
+slot_vars = "energy_cards"
+en_count_methods = "Attatched"
 cap = -1
 metadata/_custom_type_script = "uid://vjn146j3ayd6"

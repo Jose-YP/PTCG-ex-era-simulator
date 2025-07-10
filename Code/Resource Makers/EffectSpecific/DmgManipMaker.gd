@@ -16,7 +16,7 @@ class_name DamageManip
 ##Determines how many will be added/removed based on the Counter
 @export_group("Counter")
 @export var plus: bool = false
-@export var counter: Counter
+@export var comparator: Comparator
 
 signal finished
 

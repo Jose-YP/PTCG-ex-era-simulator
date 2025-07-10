@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="PromptAsk" load_steps=2 format=3 uid="uid://ve5lfndn7cqj"]
+[gd_resource type="Resource" script_class="PromptAsk" load_steps=3 format=3 uid="uid://ve5lfndn7cqj"]
 
 [ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="1_kwjs4"]
+[ext_resource type="Resource" uid="uid://bcs15wj2goif7" path="res://Resources/Components/Effects/Asks/AtkDamaged.tres" id="2_xcx42"]
 
 [resource]
 script = ExtResource("1_kwjs4")
-formal_ask = true
+formal_ask = false
 ask_string = "Which pokemon will you heal"
-side = 1
-choose_location = 3
+choose_location = "None"
+which_slots = ExtResource("2_xcx42")
+which_stack = 0
 metadata/_custom_type_script = "uid://b85jmc7067bjc"

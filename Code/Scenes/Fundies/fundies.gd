@@ -139,7 +139,6 @@ func record_source_target(is_home: bool, home_trg: Array, away_trg: Array):
 	source_stack.append(is_home)
 	home_targets.append(home_trg)
 	away_targets.append(away_trg)
-	#printt("SRC/TRG: ",source_stack, home_targets, away_targets)
 	print_src_trg()
 
 func remove_top_source_target():
