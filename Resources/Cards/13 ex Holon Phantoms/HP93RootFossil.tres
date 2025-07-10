@@ -1,10 +1,12 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=2 format=3 uid="uid://dm424v2qfq0w6"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=3 format=3 uid="uid://dm424v2qfq0w6"]
 
+[ext_resource type="Texture2D" uid="uid://bod0fqwhmiour" path="res://Art/Cards/13 ex Holon Phantoms/93.jpg" id="1_uu5ho"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_vtdm4"]
 
 [resource]
 script = ExtResource("1_vtdm4")
 name = "Root Fossil"
+image = ExtResource("1_uu5ho")
 illustrator = ""
 number = 93
 rarity = 1

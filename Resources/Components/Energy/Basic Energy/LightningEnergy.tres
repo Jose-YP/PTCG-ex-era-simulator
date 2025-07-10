@@ -1,16 +1,19 @@
-[gd_resource type="Resource" script_class="Energy" load_steps=2 format=3 uid="uid://c8rj67jkl6r7u"]
+[gd_resource type="Resource" script_class="Energy" load_steps=3 format=3 uid="uid://c8rj67jkl6r7u"]
 
 [ext_resource type="Script" uid="uid://caj1pm8erar2a" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="1_frag2"]
+[ext_resource type="Resource" uid="uid://cxnlthowpb4r4" path="res://Resources/Components/EnData/Lightning.tres" id="1_t18sj"]
 
 [resource]
 script = ExtResource("1_frag2")
 considered = "Basic Energy"
 description = "Provide 1 {Lightning} Energy"
-fail_provide = false
-fail_prevent = false
+has_fail_provide = false
+has_fail_prevent = false
 turns = -1
 number = 1
 react = false
 holon_type = "None"
 type = 8
 fail_type = 8
+fail_provide = ExtResource("1_t18sj")
+success_provide = ExtResource("1_t18sj")

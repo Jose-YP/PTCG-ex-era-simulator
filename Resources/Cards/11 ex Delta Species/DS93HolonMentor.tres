@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=2 format=3 uid="uid://dpq83tgsde1lq"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=3 format=3 uid="uid://dpq83tgsde1lq"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_cqdsr"]
+[ext_resource type="Texture2D" uid="uid://ct3nosi7e85x4" path="res://Art/Cards/11 ex Delta Species/93.jpg" id="1_j7n0k"]
 
 [resource]
 script = ExtResource("1_cqdsr")
 name = "Holon Mentor"
-illustrator = ""
+image = ExtResource("1_j7n0k")
+illustrator = "Ken Sugimori"
 number = 93
 rarity = 1
 expansion = 10

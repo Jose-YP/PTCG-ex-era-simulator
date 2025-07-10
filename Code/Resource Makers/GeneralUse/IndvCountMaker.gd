@@ -10,14 +10,17 @@ const pokeSlot = preload("res://Code/Resource Makers/PokemonSpecific/PokeSlotMak
 const stackRes = preload("res://Code/Resource Makers/GeneralUse/CardStacksMaker.gd")
 const which_vars: PackedStringArray = ["Slot", "Stack", "Coinflip"]
 const en_methods: PackedStringArray = ["Attatched","Excess","Types"]
+const en_categories: PackedStringArray = ["Any", "Basic Energy", "Special Energy"]
 
 var slot_instance = pokeSlot.new()
 var stack_instance = stackRes.new()
 var internal_data = {"which" : "Slot",
- "slot_vars" : "None", "stack_vars" : "None",
+ "slot_vars" : "current_card", "stack_vars" : "None",
  "coin_flip" : load("res://Resources/Components/CoinFlip/FlipOnce.tres"),
- "ask" : load("res://Resources/Components/Effects/Asks/AnyMon.tres"),
- "en_count_methods" : "Attatched", "cap" : -1}
+ "ask" : load("res://Resources/Components/Effects/Asks/General/AnyMon.tres"),
+ "en_count_methods" : "Attatched", "en_categories" : "Any",
+ "en_counting" : load("res://Resources/Components/EnData/Rainbow.tres")
+ ,"cap" : -1}
 #endregion
 #--------------------------------------
 
@@ -25,7 +28,7 @@ var internal_data = {"which" : "Slot",
 func _get_property_list() -> Array[Dictionary]:
 	#region GATHER INFO
 	var props: Array[Dictionary] = []
-	var slot_array_names: PackedStringArray = ["None"]
+	var slot_array_names: PackedStringArray = []
 	var stack_array_names: PackedStringArray = ["None"]
 	var res_prop_list = ClassDB.class_get_property_list("Resource")
 	#Collect the name of every property that's in a poke_slot
@@ -77,6 +80,20 @@ func _get_property_list() -> Array[Dictionary]:
 				"hint_string" : ",".join(en_methods),
 				"usage" : PROPERTY_USAGE_DEFAULT
 			})
+			props.append({
+				"name" : "en_categories",
+				"type" : TYPE_STRING,
+				"hint" : PROPERTY_HINT_ENUM,
+				"hint_string" : ",".join(en_categories),
+				"usage" : PROPERTY_USAGE_DEFAULT
+			})
+			props.append({
+				"name" : "en_counting",
+				"type" : TYPE_OBJECT,
+				"hint" : PROPERTY_HINT_RESOURCE_TYPE,
+				"hint_string" : "EnData",
+				"usage" : PROPERTY_USAGE_DEFAULT
+			})
 	#Find Stack vars
 	elif internal_data["which"] == "Stack":
 		props.append({
@@ -115,6 +132,8 @@ func _get(property):
 		"coin_flip": return internal_data["coin_flip"]
 		"ask": return internal_data["ask"]
 		"en_count_methods": return internal_data["en_count_methods"]
+		"en_categories": return internal_data["en_categories"]
+		"en_counting": return internal_data["en_counting"]
 		"cap": return internal_data["cap"]
 	
 	return null
@@ -122,18 +141,20 @@ func _get(property):
 func _property_can_revert(property: StringName):
 	if (property == "which" or property == "slot_vars" or property == "stack_vars"
 	or property == "coin_flip" or property == "ask" or property == "en_count_methods"
-	or property == "cap"):
+	or property == "en_categories" or property == "en_counting" or property == "cap"):
 		return true
 	return false
 
 func _property_get_revert(property: StringName) -> Variant:
 	match property:
 		"which": return "Slot"
-		"slot_vars": return "None"
+		"slot_vars": return "current_card"
 		"stack_vars": return "None"
 		"coin_flip": return load("res://Resources/Components/CoinFlip/FlipOnce.tres")
-		"ask": return load("res://Resources/Components/Effects/Asks/AnyMon.tres")
+		"ask": return load("res://Resources/Components/Effects/Asks/General/AnyMon.tres")
 		"en_count_methods": return "Attatched"
+		"en_categories": return "Any"
+		"en_counting": return load("res://Resources/Components/EnData/Rainbow.tres")
 		"cap": return -1
 	return null
 #endregion
@@ -160,6 +181,12 @@ func _set(property, value):
 			return true
 		"en_count_methods": 
 			internal_data["en_count_methods"] = value
+			return true
+		"en_categories":
+			internal_data["en_categories"] = value
+			return true
+		"en_counting":
+			internal_data["en_counting"] = value
 			return true
 		"cap": 
 			internal_data["cap"] = value

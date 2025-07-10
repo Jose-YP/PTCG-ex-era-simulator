@@ -1,10 +1,12 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=2 format=3 uid="uid://b6rg0l5hxpcd8"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=3 format=3 uid="uid://b6rg0l5hxpcd8"]
 
+[ext_resource type="Texture2D" uid="uid://d2ipluxk0nn6g" path="res://Art/Cards/13 ex Holon Phantoms/86.jpg" id="1_cmoiq"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_dug0u"]
 
 [resource]
 script = ExtResource("1_dug0u")
 name = "Holon Fossil"
+image = ExtResource("1_cmoiq")
 illustrator = ""
 number = 86
 rarity = 1

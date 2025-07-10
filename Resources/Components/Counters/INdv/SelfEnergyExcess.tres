@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="IndvCounter" load_steps=3 format=3 uid="uid://cngepehpfnug8"]
 
-[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/Self.tres" id="1_4o88j"]
+[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="1_4o88j"]
 [ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="2_n5s7v"]
 
 [resource]

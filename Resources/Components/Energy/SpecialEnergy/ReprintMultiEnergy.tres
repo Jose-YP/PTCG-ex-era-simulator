@@ -1,7 +1,10 @@
-[gd_resource type="Resource" script_class="Energy" load_steps=4 format=3 uid="uid://dkso66ihqiwet"]
+[gd_resource type="Resource" script_class="Energy" load_steps=7 format=3 uid="uid://dkso66ihqiwet"]
 
+[ext_resource type="Resource" uid="uid://c7itelq8jtjc2" path="res://Resources/Components/EnData/Rainbow.tres" id="1_7eema"]
 [ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="1_ndwjy"]
 [ext_resource type="Script" uid="uid://caj1pm8erar2a" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="2_cuf6k"]
+[ext_resource type="Resource" uid="uid://vk18jkchsq3v" path="res://Resources/Components/EnData/Colorless.tres" id="3_amwxe"]
+[ext_resource type="Resource" uid="uid://ck80jky0mu4ta" path="res://Resources/Components/Effects/Prompts/PromptSelfHasSpecialEnergy.tres" id="4_vrqwi"]
 
 [sub_resource type="Resource" id="Resource_kky8u"]
 script = ExtResource("1_ndwjy")
@@ -12,7 +15,6 @@ comparison_type = 0
 max_hp = -10
 damage_taken = -10
 retreat_cost = -1
-energy_attatched = 0
 knocked_out = false
 condition = 0
 tool_attatched = false
@@ -22,24 +24,28 @@ class_inclusive = true
 pokemon_class = 63
 owner_inclusive = true
 pokemon_owner = 15
-bench_size = -1
 type_inclusive = true
-type = 1023
+pokemon_type = 1023
+energy_inclusive = true
+energy_attatched = 0
 energy_class = 1
-type_size = -1
+energy_type = ExtResource("1_7eema")
 metadata/_custom_type_script = "uid://mkjynqda7q5g"
 
 [resource]
 script = ExtResource("2_cuf6k")
 considered = "Special Energy"
-description = " Attach Multi Energy to 1 of your Pokémon. While in play, Multi Energy provides every type of Energy but provides only 1 Energy at a time. (Has no effect other than providing Energy.) Multi Energy provides Colorless Energy when attached to a Pokémon that already has Special Energy cards attached to it."
+description = "Attach Multi Energy to 1 of your Pokémon. While in play, Multi Energy provides every type of Energy but provides only 1 Energy at a time. (Has no effect other than providing Energy.) Multi Energy provides Colorless Energy when attached to a Pokémon that already has Special Energy cards attached to it."
+prompt = ExtResource("4_vrqwi")
 asks = SubResource("Resource_kky8u")
-fail_provide = false
-fail_prevent = false
+has_fail_provide = true
+has_fail_prevent = false
 turns = -1
 number = 1
 react = false
 holon_type = "None"
 type = 511
 fail_type = 256
+fail_provide = ExtResource("3_amwxe")
+success_provide = ExtResource("1_7eema")
 metadata/_custom_type_script = "uid://caj1pm8erar2a"

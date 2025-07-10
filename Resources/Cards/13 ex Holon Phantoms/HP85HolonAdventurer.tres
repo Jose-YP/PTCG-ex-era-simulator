@@ -1,10 +1,12 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=2 format=3 uid="uid://bd77gcfuxaop"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=3 format=3 uid="uid://bd77gcfuxaop"]
 
+[ext_resource type="Texture2D" uid="uid://bh33dulwhg2ib" path="res://Art/Cards/13 ex Holon Phantoms/85.jpg" id="1_foxcv"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_qbx3l"]
 
 [resource]
 script = ExtResource("1_qbx3l")
 name = "Holon Adventurer"
+image = ExtResource("1_foxcv")
 illustrator = ""
 number = 85
 rarity = 1

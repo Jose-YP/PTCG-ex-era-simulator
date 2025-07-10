@@ -1,12 +1,17 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=14 format=3 uid="uid://dm1p5cbmn4s77"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=22 format=3 uid="uid://dm1p5cbmn4s77"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_fshtl"]
 [ext_resource type="Resource" uid="uid://b1qbcihu1hshu" path="res://Resources/Components/Effects/Buff/IgnoreResistance.tres" id="1_g0ch6"]
 [ext_resource type="Resource" uid="uid://bdnsa31pds5n8" path="res://Resources/Components/Effects/Prompts/NonEXHasFightingEn.tres" id="2_qjrqu"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_f62cj"]
+[ext_resource type="Resource" uid="uid://d380rwptluxo6" path="res://Resources/Components/EnData/FFHolon.tres" id="4_wpt5d"]
+[ext_resource type="Resource" uid="uid://mregpmlqoyvy" path="res://Resources/Components/EnData/Fire.tres" id="5_o6o62"]
 [ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="5_wpt5d"]
 [ext_resource type="Script" uid="uid://caj1pm8erar2a" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="6_o6o62"]
+[ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="6_spbdi"]
+[ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="7_cqf8k"]
 [ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/BuffMaker.gd" id="7_spbdi"]
+[ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="8_51ik5"]
 [ext_resource type="Texture2D" uid="uid://bhimhai61wj0a" path="res://Art/Cards/11 ex Delta Species/104.jpg" id="8_cqf8k"]
 
 [sub_resource type="Resource" id="Resource_51ik5"]
@@ -17,10 +22,52 @@ prompt_extra = ExtResource("2_qjrqu")
 extra_effect = ExtResource("1_g0ch6")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
+[sub_resource type="Resource" id="Resource_tq28l"]
+script = ExtResource("6_spbdi")
+side_target = 1
+slot_target = 4
+specifically = Array[String]([])
+comparison_type = 1
+max_hp = -10
+damage_taken = -10
+retreat_cost = -1
+knocked_out = false
+condition = 0
+tool_attatched = false
+stage = 7
+rare_candy = false
+class_inclusive = false
+pokemon_class = 2
+owner_inclusive = true
+pokemon_owner = 31
+type_inclusive = true
+pokemon_type = 1023
+energy_inclusive = true
+energy_attatched = 1
+energy_class = 2
+energy_type = ExtResource("5_o6o62")
+
 [sub_resource type="Resource" id="Resource_ebe5i"]
+script = ExtResource("7_cqf8k")
+which = "Slot"
+ask = SubResource("Resource_tq28l")
+slot_vars = "current_card"
+cap = -1
+metadata/_custom_type_script = "uid://vjn146j3ayd6"
+
+[sub_resource type="Resource" id="Resource_jopuc"]
+script = ExtResource("8_51ik5")
+comparision_type = "Greater"
+first_comparison = SubResource("Resource_ebe5i")
+compare_to = "Const"
+second_constant = 0
+metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
+
+[sub_resource type="Resource" id="Resource_dvqih"]
 script = ExtResource("5_wpt5d")
 formal_ask = false
 ask_string = ""
+comparator = SubResource("Resource_jopuc")
 chooser = 0
 choose_location = "None"
 which_stack = 0
@@ -57,9 +104,9 @@ script = ExtResource("6_o6o62")
 considered = "Special Energy"
 description = "Holon Energy FF provides {Colorless} Energy.
 If the Pokémon that Holon Energy FF is attached to also has a basic {Fire} Energy card attached to it, that Pokémon has no Weakness. If the Pokémon that Holon Energy FF is attached to also has a basic {Fighting} Energy card attached to it, damage done by that Pokémon's attack isn't affected by Resistance. Ignore these effects if Holon Energy FF is attached to Pokémon-ex."
-prompt = SubResource("Resource_ebe5i")
-fail_provide = false
-fail_prevent = false
+prompt = SubResource("Resource_dvqih")
+has_fail_provide = false
+has_fail_prevent = false
 fail_effect = SubResource("Resource_51ik5")
 success_effect = SubResource("Resource_sqyxo")
 turns = -1
@@ -68,6 +115,8 @@ react = false
 holon_type = "FF"
 type = 256
 fail_type = 256
+fail_provide = ExtResource("4_wpt5d")
+success_provide = ExtResource("4_wpt5d")
 metadata/_custom_type_script = "uid://caj1pm8erar2a"
 
 [resource]

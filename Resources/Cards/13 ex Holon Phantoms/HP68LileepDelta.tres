@@ -1,10 +1,12 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=2 format=3 uid="uid://dm65her8yjguh"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=3 format=3 uid="uid://dm65her8yjguh"]
 
+[ext_resource type="Texture2D" uid="uid://dh336vxtkqmov" path="res://Art/Cards/13 ex Holon Phantoms/68.jpg" id="1_iyc00"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_omdqw"]
 
 [resource]
 script = ExtResource("1_omdqw")
 name = "Lileep"
+image = ExtResource("1_iyc00")
 illustrator = ""
 number = 68
 rarity = 1

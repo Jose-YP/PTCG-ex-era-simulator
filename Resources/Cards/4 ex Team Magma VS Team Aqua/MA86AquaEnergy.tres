@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=6 format=3 uid="uid://cerpssk67rwka"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=7 format=3 uid="uid://cerpssk67rwka"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_5jdet"]
 [ext_resource type="Resource" uid="uid://b0lo8uly2lldp" path="res://Resources/Components/Effects/Asks/Class&Owner/AtkIsTeamAqua.tres" id="1_sgv4c"]
 [ext_resource type="Script" uid="uid://caj1pm8erar2a" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="2_cgfc1"]
+[ext_resource type="Resource" uid="uid://gksosl8updui" path="res://Resources/Components/EnData/Aqua.tres" id="2_k37ex"]
 [ext_resource type="Texture2D" uid="uid://brtojfwkvc0s3" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/86.jpg" id="3_idr0n"]
 
 [sub_resource type="Resource" id="Resource_glvqs"]
@@ -10,14 +11,16 @@ script = ExtResource("2_cgfc1")
 considered = "Special Energy"
 description = "Aqua Energy can be attached only to a Pokémon with Team Aqua in its name. Aqua Energy provides {Water} and {Darkness} Energy but provides 2 Energy at a time. (Doesn't count as a basic Energy card when not in play and has no effect other than providing Energy.) At the end of your turn, discard Aqua Energy."
 asks = ExtResource("1_sgv4c")
-fail_provide = false
-fail_prevent = false
+has_fail_provide = false
+has_fail_prevent = false
 turns = 0
 number = 2
 react = false
 holon_type = "None"
 type = 68
 fail_type = 0
+fail_provide = ExtResource("2_k37ex")
+success_provide = ExtResource("2_k37ex")
 
 [resource]
 script = ExtResource("1_5jdet")

@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=3 format=3 uid="uid://dle1lc4aydvig"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=4 format=3 uid="uid://dle1lc4aydvig"]
 
 [ext_resource type="Resource" uid="uid://dn8da16sjen5f" path="res://Resources/Components/Energy/Basic Energy/MetalEnergy.tres" id="1_jth46"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_xub2c"]
+[ext_resource type="Texture2D" uid="uid://dfdvikds4gcv" path="res://Art/Cards/13 ex Holon Phantoms/95.jpg" id="2_tukyj"]
 
 [resource]
 script = ExtResource("1_xub2c")
 name = "Metal Energy"
+image = ExtResource("2_tukyj")
 illustrator = "Milky Isobe"
 number = 95
 rarity = 2

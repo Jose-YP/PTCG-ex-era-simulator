@@ -1,10 +1,12 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=2 format=3 uid="uid://yo6mwyi1cfi8"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=3 format=3 uid="uid://yo6mwyi1cfi8"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_5sbna"]
+[ext_resource type="Texture2D" uid="uid://ca6n2vtgbmb0l" path="res://Art/Cards/11 ex Delta Species/96.jpg" id="1_yje6t"]
 
 [resource]
 script = ExtResource("1_5sbna")
 name = "Holon Ruins"
+image = ExtResource("1_yje6t")
 illustrator = ""
 number = 96
 rarity = 1

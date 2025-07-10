@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="PromptAsk" load_steps=5 format=3 uid="uid://baopicsn523to"]
 
-[ext_resource type="Resource" uid="uid://1yahyklj3y7s" path="res://Resources/Components/Counters/INdv/AtkBenchCount.tres" id="1_ed0hd"]
+[ext_resource type="Resource" uid="uid://1yahyklj3y7s" path="res://Resources/Components/Counters/Indv/AtkBenchCount.tres" id="1_ed0hd"]
 [ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="2_ed0hd"]
 [ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="2_n2oao"]
 

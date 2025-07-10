@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=3 format=3 uid="uid://db1olpxownusx"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=4 format=3 uid="uid://db1olpxownusx"]
 
 [ext_resource type="Resource" uid="uid://cf28iibs06s23" path="res://Resources/Components/Energy/Basic Energy/DarknessEnergy.tres" id="1_pihlj"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_xk1my"]
+[ext_resource type="Texture2D" uid="uid://b4i5m2e811d6q" path="res://Art/Cards/13 ex Holon Phantoms/94.jpg" id="2_ad5pk"]
 
 [resource]
 script = ExtResource("1_xk1my")
 name = "Darkness Energyu"
+image = ExtResource("2_ad5pk")
 illustrator = "Milky Isobe"
 number = 94
 rarity = 2

@@ -1,35 +1,10 @@
 [gd_resource type="Resource" script_class="Energy" load_steps=8 format=3 uid="uid://dn8da16sjen5f"]
 
-[ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="1_reypr"]
+[ext_resource type="Resource" uid="uid://cvl23bjanqo3l" path="res://Resources/Components/EnData/Metal.tres" id="1_ffs31"]
 [ext_resource type="Script" uid="uid://caj1pm8erar2a" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="2_8vyn0"]
+[ext_resource type="Resource" uid="uid://cndwbefva1geb" path="res://Resources/Components/Effects/Prompts/IfSelfMetal.tres" id="2_cvapn"]
 [ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/BuffMaker.gd" id="3_b0id2"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_1lfkp"]
-
-[sub_resource type="Resource" id="Resource_ffs31"]
-script = ExtResource("1_reypr")
-side_target = null
-slot_target = 1
-specifically = Array[String]([])
-comparison_type = null
-max_hp = null
-damage_taken = null
-retreat_cost = null
-energy_attatched = null
-knocked_out = null
-condition = null
-tool_attatched = false
-stage = null
-rare_candy = null
-class_inclusive = null
-pokemon_class = null
-owner_inclusive = true
-pokemon_owner = 15
-bench_size = null
-type_inclusive = null
-type = 640
-energy_class = 2
-type_size = null
-metadata/_custom_type_script = "uid://mkjynqda7q5g"
 
 [sub_resource type="Resource" id="Resource_w1pwm"]
 script = ExtResource("3_b0id2")
@@ -56,10 +31,10 @@ buff = SubResource("Resource_w1pwm")
 [resource]
 script = ExtResource("2_8vyn0")
 considered = "Special Energy"
-description = " Damage done by attacks to the Pokémon that Metal Energy is attached to is reduced by 10 (after applying Weakness and Resistance). Ignore this effect if the Pokémon that Metal Energy is attached to isn't {Metal}. Metal Energy provides {Metal} Energy. (Doesn't count as a basic Energy card.)"
-asks = SubResource("Resource_ffs31")
-fail_provide = false
-fail_prevent = false
+description = "Damage done by attacks to the Pokémon that Metal Energy is attached to is reduced by 10 (after applying Weakness and Resistance). Ignore this effect if the Pokémon that Metal Energy is attached to isn't {Metal}. Metal Energy provides {Metal} Energy. (Doesn't count as a basic Energy card.)"
+prompt = ExtResource("2_cvapn")
+has_fail_provide = false
+has_fail_prevent = false
 success_effect = SubResource("Resource_rtiwi")
 turns = -1
 number = 1
@@ -67,3 +42,5 @@ react = false
 holon_type = "None"
 type = 128
 fail_type = 128
+fail_provide = ExtResource("1_ffs31")
+success_provide = ExtResource("1_ffs31")

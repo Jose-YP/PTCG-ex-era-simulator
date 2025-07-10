@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EnData" load_steps=2 format=3 uid="uid://c7itelq8jtjc2"]
+
+[ext_resource type="Script" uid="uid://c0cub51v5sn02" path="res://Code/Resource Makers/GeneralUse/EnergyDataMaker.gd" id="1_0naii"]
+
+[resource]
+script = ExtResource("1_0naii")
+number = 1
+react = false
+holon_type = "None"
+type = 511
+metadata/_custom_type_script = "uid://c0cub51v5sn02"

@@ -1,46 +1,60 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=7 format=3 uid="uid://d4nyotd6k6lrq"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=9 format=3 uid="uid://d4nyotd6k6lrq"]
 
-[ext_resource type="Script" uid="uid://caj1pm8erar2a" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="1_nmr5d"]
+[ext_resource type="Resource" uid="uid://ddhtth12ohjx5" path="res://Resources/Components/Energy/SpecialEnergy/Holon'sDR.tres" id="1_0h2eg"]
+[ext_resource type="Texture2D" uid="uid://d05hye2peb5vm" path="res://Art/Cards/11 ex Delta Species/21.jpg" id="2_5tfdv"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_17cmj"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="3_tctwf"]
+[ext_resource type="Resource" uid="uid://nx1kc1vsm4ia" path="res://Resources/Components/Effects/Conditions/BasicConfusion.tres" id="4_fby8h"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="4_vw06b"]
 
-[sub_resource type="Resource" id="Resource_wk0wt"]
-script = ExtResource("1_nmr5d")
-considered = "Special Energy"
-description = ""
-fail_provide = false
-fail_prevent = false
-turns = -1
-number = 1
-react = false
-holon_type = "None"
-type = 1
-fail_type = 1
-metadata/_custom_type_script = "uid://caj1pm8erar2a"
+[sub_resource type="Resource" id="Resource_44gyq"]
+script = ExtResource("2_17cmj")
+name = "Dazzle Blast"
+description = "The Defending Pokémon is now Confused."
+grass_cost = 0
+fire_cost = 0
+water_cost = 0
+lightning_cost = 1
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 1
+defender_properties = 0
+ignore_condition = 0
+prompt_reliant = false
+initial_main_DMG = 30
+conditional_self_dmg = false
+self_damage = 0
+modifier = 0
+modifier_num = 0
+both_active = false
+always_effect = ExtResource("4_fby8h")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_oi6pe"]
 script = ExtResource("3_tctwf")
-HP = 30
+HP = 70
 retreat = 0
-attacks = Array[ExtResource("2_17cmj")]([])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 0
-owner = 0
-type = 1
-weak = 0
+attacks = Array[ExtResource("2_17cmj")]([SubResource("Resource_44gyq")])
+evo_stage = "Stage 1"
+evolves_from = " Holon's Voltorb"
+considered = 1
+owner = 4
+type = 8
+weak = 32
 resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
 script = ExtResource("4_vw06b")
 name = "Holon's Electrode"
-illustrator = ""
+image = ExtResource("2_5tfdv")
+illustrator = "Hisao Nakamura"
 number = 21
-rarity = 0
+rarity = 2
 expansion = 10
 categories = 5
 pokemon_properties = SubResource("Resource_oi6pe")
-energy_properties = SubResource("Resource_wk0wt")
+energy_properties = ExtResource("1_0h2eg")
 fossil = false

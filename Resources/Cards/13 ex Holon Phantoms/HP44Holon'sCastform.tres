@@ -1,37 +1,12 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=16 format=3 uid="uid://2gbttee2ievi"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://2gbttee2ievi"]
 
-[ext_resource type="Resource" uid="uid://1iw4wd8nc8ml" path="res://Resources/Components/Effects/EnergyMovement/SelfEnMovToHand.tres" id="1_36kks"]
-[ext_resource type="Script" uid="uid://caj1pm8erar2a" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="1_adrwu"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_khsbn"]
+[ext_resource type="Resource" uid="uid://ddhtth12ohjx5" path="res://Resources/Components/Energy/SpecialEnergy/Holon'sDR.tres" id="1_m7xdt"]
 [ext_resource type="Texture2D" uid="uid://dqdxh2ikej4n0" path="res://Art/Cards/13 ex Holon Phantoms/44.jpg" id="2_45r76"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_kh6h8"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_oe5pn"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="3_45r76"]
-[ext_resource type="Resource" uid="uid://baopicsn523to" path="res://Resources/Components/Effects/Prompts/HasAnyEnergy.tres" id="3_ho6l4"]
 [ext_resource type="Script" uid="uid://bgtwlw1edjwyc" path="res://Code/Resource Makers/EffectSpecific/DrawMaker.gd" id="9_x1qkv"]
-
-[sub_resource type="Resource" id="Resource_uhfbr"]
-script = ExtResource("2_kh6h8")
-either_or = false
-order = Array[int]([])
-energy_movement = ExtResource("1_36kks")
-metadata/_custom_type_script = "uid://dmulm3x3dj842"
-
-[sub_resource type="Resource" id="Resource_m7xdt"]
-script = ExtResource("1_adrwu")
-considered = "Special Energy"
-description = "You may attach this as an Energy card from your hand to 1 of your Pokémon that already has an Energy card attached to it. When you attach this card, return an Energy card attached to that Pokémon to your hand. While attached, this card is a Special Energy card and provides every type of Energy but 2 Energy at a time. (Has no effect other than providing Energy.)"
-prompt = ExtResource("3_ho6l4")
-fail_provide = false
-fail_prevent = false
-attatch_effect = SubResource("Resource_uhfbr")
-turns = -1
-number = 2
-react = false
-holon_type = "None"
-type = 511
-fail_type = 1
-metadata/_custom_type_script = "uid://caj1pm8erar2a"
 
 [sub_resource type="Resource" id="Resource_scy87"]
 script = ExtResource("9_x1qkv")
@@ -68,6 +43,7 @@ initial_main_DMG = 0
 conditional_self_dmg = false
 self_damage = 0
 modifier = 0
+modifier_num = 0
 both_active = false
 always_effect = SubResource("Resource_cfi5g")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
@@ -96,5 +72,5 @@ rarity = 2
 expansion = 12
 categories = 5
 pokemon_properties = SubResource("Resource_4nuec")
-energy_properties = SubResource("Resource_m7xdt")
+energy_properties = ExtResource("1_m7xdt")
 fossil = false

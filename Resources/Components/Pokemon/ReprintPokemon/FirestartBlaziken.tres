@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="3_08wec"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_gr0cy"]
 [ext_resource type="Resource" uid="uid://c4wnoevyvagqq" path="res://Resources/Components/Effects/Search/FirestarterSearch.tres" id="5_bsvf6"]
-[ext_resource type="Resource" uid="uid://b2bdagwhfrmbo" path="res://Resources/Components/Effects/Asks/AtkHasBenchMons.tres" id="7_wm1f3"]
+[ext_resource type="Resource" uid="uid://b2bdagwhfrmbo" path="res://Resources/Components/Effects/Asks/General/AtkHasBenchMons.tres" id="7_bsvf6"]
 [ext_resource type="Script" uid="uid://b58015mafcw2v" path="res://Code/Resource Makers/PokemonSpecific/PowerMaker.gd" id="8_4485v"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="9_8uu16"]
 
@@ -57,7 +57,7 @@ active = false
 when_condition = "Whenever"
 when_position = 4
 how_often = 0
-target_ask = ExtResource("7_wm1f3")
+target_ask = ExtResource("7_bsvf6")
 effect = SubResource("Resource_4ym1n")
 
 [resource]

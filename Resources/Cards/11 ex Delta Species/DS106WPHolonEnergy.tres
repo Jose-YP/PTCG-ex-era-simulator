@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=15 format=3 uid="uid://dge3b12by00m4"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=23 format=3 uid="uid://dge3b12by00m4"]
 
 [ext_resource type="Resource" uid="uid://byem0mc65f4xt" path="res://Resources/Components/Effects/Buff/RetreatCostis0.tres" id="1_30ej2"]
 [ext_resource type="Script" uid="uid://caj1pm8erar2a" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="1_wlt10"]
@@ -7,7 +7,12 @@
 [ext_resource type="Resource" uid="uid://dx17fn4esx8qm" path="res://Resources/Components/Effects/Buff/Immune2Effect.tres" id="2_t3o48"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_kd7ft"]
 [ext_resource type="Resource" uid="uid://bsq014coejys5" path="res://Resources/Components/Effects/Prompts/NonEXHasWaterEn.tres" id="4_gerff"]
+[ext_resource type="Resource" uid="uid://bpn2kuaa687w6" path="res://Resources/Components/EnData/WPHolon.tres" id="5_8orlp"]
 [ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="6_14lbo"]
+[ext_resource type="Resource" uid="uid://b0lup3upo6m4f" path="res://Resources/Components/EnData/Psychic.tres" id="6_38o81"]
+[ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="7_lp23s"]
+[ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="8_fsd37"]
+[ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="9_qfefc"]
 
 [sub_resource type="Resource" id="Resource_38o81"]
 script = ExtResource("3_kd7ft")
@@ -40,10 +45,52 @@ prompt_extra = ExtResource("4_gerff")
 extra_effect = SubResource("Resource_fsd37")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
+[sub_resource type="Resource" id="Resource_hd156"]
+script = ExtResource("7_lp23s")
+side_target = 1
+slot_target = 4
+specifically = Array[String]([])
+comparison_type = 1
+max_hp = -10
+damage_taken = -10
+retreat_cost = -1
+knocked_out = false
+condition = 0
+tool_attatched = false
+stage = 7
+rare_candy = false
+class_inclusive = false
+pokemon_class = 2
+owner_inclusive = true
+pokemon_owner = 31
+type_inclusive = true
+pokemon_type = 1023
+energy_inclusive = true
+energy_attatched = -1
+energy_class = 2
+energy_type = ExtResource("6_38o81")
+
 [sub_resource type="Resource" id="Resource_bvyln"]
+script = ExtResource("8_fsd37")
+which = "Slot"
+ask = SubResource("Resource_hd156")
+slot_vars = "current_card"
+cap = -1
+metadata/_custom_type_script = "uid://vjn146j3ayd6"
+
+[sub_resource type="Resource" id="Resource_ugtgf"]
+script = ExtResource("9_qfefc")
+comparision_type = "Greater"
+first_comparison = SubResource("Resource_bvyln")
+compare_to = "Const"
+second_constant = 0
+metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
+
+[sub_resource type="Resource" id="Resource_qm18p"]
 script = ExtResource("6_14lbo")
 formal_ask = false
 ask_string = ""
+comparator = SubResource("Resource_ugtgf")
 chooser = 0
 choose_location = "None"
 which_stack = 0
@@ -54,9 +101,9 @@ script = ExtResource("1_wlt10")
 considered = "Special Energy"
 description = "Holon Energy WP provides {Colorless} Energy.
 If the Pokémon that Holon Energy WP is attached to also has a basic {Water} Energy card attached to it, prevent all effects, excluding damage, done to that Pokémon by your opponent's Pokémon. If the Pokémon that Holon Energy WP is attached to also has a basic {Psychic} Energy card attached to it, that Pokémon's Retreat Cost is 0. Ignore these effects if Holon Energy WP is attached to Pokémon-ex."
-prompt = SubResource("Resource_bvyln")
-fail_provide = false
-fail_prevent = false
+prompt = SubResource("Resource_qm18p")
+has_fail_provide = false
+has_fail_prevent = false
 fail_effect = SubResource("Resource_qfefc")
 attatch_effect = SubResource("Resource_lp23s")
 turns = -1
@@ -65,6 +112,8 @@ react = false
 holon_type = "WP"
 type = 256
 fail_type = 256
+fail_provide = ExtResource("5_8orlp")
+success_provide = ExtResource("5_8orlp")
 metadata/_custom_type_script = "uid://caj1pm8erar2a"
 
 [resource]

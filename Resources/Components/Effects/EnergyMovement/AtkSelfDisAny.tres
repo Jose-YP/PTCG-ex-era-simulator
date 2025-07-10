@@ -1,13 +1,21 @@
-[gd_resource type="Resource" script_class="EnMov" load_steps=2 format=3 uid="uid://bpmpftwh0r7sm"]
+[gd_resource type="Resource" script_class="EnMov" load_steps=4 format=3 uid="uid://bpmpftwh0r7sm"]
 
 [ext_resource type="Script" uid="uid://cimk6l7ytw7xg" path="res://Code/Resource Makers/EffectSpecific/EnMovMaker.gd" id="1_en7wp"]
+[ext_resource type="Resource" uid="uid://c7itelq8jtjc2" path="res://Resources/Components/EnData/Rainbow.tres" id="1_n026f"]
+[ext_resource type="Resource" uid="uid://dqj6gq7pt3dbk" path="res://Resources/Components/Effects/Asks/General/FromSource.tres" id="2_20tiq"]
 
 [resource]
 script = ExtResource("1_en7wp")
-energy_move_type = 2
 action = 1
-which = 2
+chooser = 4
+givers = ExtResource("2_20tiq")
+reciever = ExtResource("2_20tiq")
+to_stack = 2
+stack_direction = 2
+energy_carry_over = false
+action_ammount = 1
 energy_ammount = 1
-swap_ammount = 1
-energy_clas = 1
+energy_move_type = 2
+en_type = ExtResource("1_n026f")
+react = false
 type = 511

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Base_Card" load_steps=8 format=3 uid="uid://bj5xfvpv3nya5"]
 
-[ext_resource type="Texture2D" uid="uid://d0gvmgd8nn8nv" path="res://Art/Cards/1 ex Ruby & Saphire/60.jpg" id="1_kxe7m"]
+[ext_resource type="Texture2D" uid="uid://cyirn6ch71adw" path="res://Art/Cards/Black Star Promo/5.jpg" id="1_0gm4f"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_6lepo"]
 [ext_resource type="Resource" uid="uid://dkt5ik78wtijs" path="res://Resources/Components/Pokemon/Attacks/Pound.tres" id="3_5o8yj"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="6_26n5m"]
@@ -46,9 +46,9 @@ metadata/_custom_type_script = "uid://dkximshow1pao"
 [resource]
 script = ExtResource("7_me6to")
 name = "Mudkip"
-image = ExtResource("1_kxe7m")
+image = ExtResource("1_0gm4f")
 illustrator = "Ken Sugimori"
-number = 10
+number = 5
 rarity = 7
 expansion = 16
 categories = 1

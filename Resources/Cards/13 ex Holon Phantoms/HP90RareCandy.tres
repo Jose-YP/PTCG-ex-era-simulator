@@ -1,10 +1,12 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=2 format=3 uid="uid://u32jgx6p4ymt"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=3 format=3 uid="uid://u32jgx6p4ymt"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_6m0wj"]
+[ext_resource type="Texture2D" uid="uid://s5eobyxv62k6" path="res://Art/Cards/13 ex Holon Phantoms/90.jpg" id="1_rqxjd"]
 
 [resource]
 script = ExtResource("1_6m0wj")
 name = "Rare Candy"
+image = ExtResource("1_rqxjd")
 illustrator = ""
 number = 90
 rarity = 1

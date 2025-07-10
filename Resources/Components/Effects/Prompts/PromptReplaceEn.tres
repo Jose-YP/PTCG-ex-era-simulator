@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="PromptAsk" load_steps=5 format=3 uid="uid://bdavuduesc606"]
+
+[ext_resource type="Resource" uid="uid://1iw4wd8nc8ml" path="res://Resources/Components/Effects/EnergyMovement/SelfEnMovToHand.tres" id="1_tohrn"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_fs06k"]
+[ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="3_g2sng"]
+
+[sub_resource type="Resource" id="Resource_4ocq5"]
+script = ExtResource("2_fs06k")
+either_or = false
+order = Array[int]([])
+energy_movement = ExtResource("1_tohrn")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[resource]
+script = ExtResource("3_g2sng")
+formal_ask = false
+ask_string = ""
+effect = SubResource("Resource_4ocq5")
+chooser = 0
+choose_location = "None"
+which_stack = 0
+metadata/_custom_type_script = "uid://b85jmc7067bjc"

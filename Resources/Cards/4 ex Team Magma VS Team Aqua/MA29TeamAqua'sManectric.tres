@@ -27,9 +27,9 @@ class_inclusive = true
 pokemon_class = 16
 owner_inclusive = true
 pokemon_owner = 15
-bench_size = -1
 type_inclusive = true
-type = 1023
+pokemon_type = 1023
+energy_type = 1023
 energy_class = 2
 type_size = 1
 

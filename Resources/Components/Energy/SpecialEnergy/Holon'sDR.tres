@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="Energy" load_steps=5 format=3 uid="uid://ddhtth12ohjx5"]
+
+[ext_resource type="Resource" uid="uid://cjcg38vdgxy3y" path="res://Resources/Components/Effects/Asks/Types/AtkEnAttatched.tres" id="1_83v2k"]
+[ext_resource type="Resource" uid="uid://cfvxvq4wbo1td" path="res://Resources/Components/EnData/DoubleRainbow.tres" id="2_4a70j"]
+[ext_resource type="Resource" uid="uid://bdavuduesc606" path="res://Resources/Components/Effects/Prompts/PromptReplaceEn.tres" id="3_qweaf"]
+[ext_resource type="Script" uid="uid://caj1pm8erar2a" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="4_67f24"]
+
+[resource]
+script = ExtResource("4_67f24")
+considered = "Special Energy"
+description = "You may attach this as an Energy card from your hand to 1 of your Pokémon that already has an Energy card attached to it. When you attach this card, return an Energy card attached to that Pokémon to your hand. While attached, this card is a Special Energy card and provides every type of Energy but 2 Energy at a time. (Has no effect other than providing Energy.)"
+prompt = ExtResource("3_qweaf")
+asks = ExtResource("1_83v2k")
+has_fail_provide = false
+has_fail_prevent = false
+turns = -1
+number = 1
+react = false
+holon_type = "None"
+type = 1
+fail_type = 1
+fail_provide = ExtResource("2_4a70j")
+success_provide = ExtResource("2_4a70j")
+metadata/_custom_type_script = "uid://caj1pm8erar2a"

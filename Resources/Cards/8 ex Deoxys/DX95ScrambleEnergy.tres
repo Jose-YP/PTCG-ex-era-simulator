@@ -1,21 +1,27 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=5 format=3 uid="uid://0unl37pqgi3b"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=8 format=3 uid="uid://0unl37pqgi3b"]
 
+[ext_resource type="Resource" uid="uid://lop03i25k4pb" path="res://Resources/Components/EnData/AtkEvoNonEx.tres" id="1_0mllo"]
 [ext_resource type="Texture2D" uid="uid://c1ooj70gf1266" path="res://Art/Cards/8 ex Deoxys/95.jpg" id="2_8iygo"]
 [ext_resource type="Script" uid="uid://caj1pm8erar2a" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="2_171kh"]
+[ext_resource type="Resource" uid="uid://vk18jkchsq3v" path="res://Resources/Components/EnData/Colorless.tres" id="2_uvk6q"]
+[ext_resource type="Resource" uid="uid://boh8cm2ke5dn0" path="res://Resources/Components/EnData/Scramble.tres" id="4_031x8"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="6_002h6"]
 
 [sub_resource type="Resource" id="Resource_01org"]
 script = ExtResource("2_171kh")
 considered = "Special Energy"
-description = ""
-fail_provide = false
-fail_prevent = false
+description = "Scramble Energy can be attached only to an Evolved Pokémon (excluding Pokémon-ex). Scramble Energy provides {Colorless} Energy. While in play, if you have more Prize cards left than your opponent, Scramble Energy provides every type of Energy but provides only 3 in any combination at a time. If the Pokémon Scramble Energy is attached to isn't an Evolved Pokémon (or evolves into Pokémon-ex), discard Scramble Energy."
+asks = ExtResource("1_0mllo")
+has_fail_provide = true
+has_fail_prevent = false
 turns = -1
 number = 1
 react = false
 holon_type = "None"
 type = 1
 fail_type = 1
+fail_provide = ExtResource("2_uvk6q")
+success_provide = ExtResource("4_031x8")
 metadata/_custom_type_script = "uid://caj1pm8erar2a"
 
 [resource]

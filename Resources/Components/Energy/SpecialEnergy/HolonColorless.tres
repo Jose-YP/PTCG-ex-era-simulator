@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Energy" load_steps=3 format=3 uid="uid://v2wh22nj2iy3"]
+
+[ext_resource type="Resource" uid="uid://vk18jkchsq3v" path="res://Resources/Components/EnData/Colorless.tres" id="1_jkdis"]
+[ext_resource type="Script" uid="uid://caj1pm8erar2a" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="2_qja5d"]
+
+[resource]
+script = ExtResource("2_qja5d")
+considered = "Special Energy"
+description = "You may attach this as an Energy card from your hand to 1 of your Pokémon. While attached, this card is a Special Energy card and provides {Colorless} Energy."
+has_fail_provide = false
+has_fail_prevent = false
+turns = -1
+number = 1
+react = false
+holon_type = "None"
+type = 256
+fail_type = 256
+fail_provide = ExtResource("1_jkdis")
+success_provide = ExtResource("1_jkdis")
+metadata/_custom_type_script = "uid://caj1pm8erar2a"

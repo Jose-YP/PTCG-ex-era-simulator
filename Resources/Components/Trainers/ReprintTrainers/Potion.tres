@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://scca13hg4k1l" path="res://Code/Resource Makers/EffectSpecific/DmgManipMaker.gd" id="1_obrrg"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_jtlhn"]
-[ext_resource type="Resource" uid="uid://bcs15wj2goif7" path="res://Resources/Components/Effects/Asks/AtkDamaged.tres" id="3_281m1"]
+[ext_resource type="Resource" uid="uid://bcs15wj2goif7" path="res://Resources/Components/Effects/Asks/Stats/AtkDamaged.tres" id="3_281m1"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="4_hf1ww"]
 [ext_resource type="Resource" uid="uid://ve5lfndn7cqj" path="res://Resources/Components/Effects/Prompts/AtkChooseHeal.tres" id="4_ulbwm"]
 

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="IndvCounter" load_steps=3 format=3 uid="uid://1yahyklj3y7s"]
 
-[ext_resource type="Resource" uid="uid://b2bdagwhfrmbo" path="res://Resources/Components/Effects/Asks/AtkHasBenchMons.tres" id="1_hkmp2"]
+[ext_resource type="Resource" uid="uid://b2bdagwhfrmbo" path="res://Resources/Components/Effects/Asks/General/AtkHasBenchMons.tres" id="1_hkmp2"]
 [ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="2_1yv4q"]
 
 [resource]

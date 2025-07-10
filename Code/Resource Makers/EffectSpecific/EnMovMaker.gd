@@ -8,10 +8,10 @@ class_name EnMov
 @export_enum("Send", "Swap", "Attatch") var action: int = 0
 ##If the chooser is [enum Constants.SIDES.NONE], then default to [enum Constants.SIDES.SOURCE]
 @export var chooser: Constants.SIDES = Constants.SIDES.SOURCE
-@export var givers: SlotAsk = preload("res://Resources/Components/Effects/Asks/FromSource.tres")
+@export var givers: SlotAsk = preload("res://Resources/Components/Effects/Asks/General/FromSource.tres")
 @export_group("From - To")
 ##If they targets from slot ask will determine if they're allowed
-@export var reciever: SlotAsk = preload("res://Resources/Components/Effects/Asks/FromSource.tres")
+@export var reciever: SlotAsk = preload("res://Resources/Components/Effects/Asks/General/FromSource.tres")
 ##Targets for removal
 @export var to_stack: Constants.STACKS = Constants.STACKS.DISCARD
 @export_enum("Top", "Bottom", "Eh") var stack_direction: int = 2
@@ -23,11 +23,9 @@ class_name EnMov
 ##Ammount of energy per action. -1 means infinite.
 @export var energy_ammount: int = 1
 @export_enum("Basic", "Special", "Any") var energy_move_type: int = 0
-@export var react: bool = false
 ##If any energy is currently considered
-@export_flags("Grass","Fire","Water",
-"Lightning","Psychic","Fighting",
-"Darkness","Metal","Colorless") var type: int = 2 ** 9 - 1
+@export var en_type: EnData = preload("res://Resources/Components/EnData/Rainbow.tres")
+@export var react: bool = false
 
 signal finished
 
@@ -105,13 +103,14 @@ func swap(giver: PokeSlot, rec: PokeSlot, energy_giving: Array[Base_Card]):
 
 #region BOOL RETURNS
 func energy_allowed(card: Base_Card, fail: bool) -> bool:
-	var provides: int = card.energy_properties.fail_provide if fail else card.energy_properties.type
+	var provides: int  = card.energy_properties.fail_provide.type if fail else card.energy_properties.success_provide.type
+	#var provides: int = card.energy_properties.fail_provide if fail else card.energy_properties.type
 	var same: bool = energy_move_type == 2 or\
 	 (energy_move_type == 1 and card.energy_properties.considered == "Special Energy")\
 	 or (energy_move_type == 0 and card.energy_properties.considered == "Basic Energy")
 	var is_react: bool = (react and react == card.energy_properties.react) or not react
 	
-	return provides & type != 0 and same and is_react
+	return provides & en_type.type != 0 and same and is_react
 
 func enough_energy(ammount: int) -> bool:
 	return energy_ammount != -1 and ammount == energy_ammount 

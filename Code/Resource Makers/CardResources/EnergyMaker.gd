@@ -1,5 +1,5 @@
 ##Resource for cards that provide energy on top of any additional effects to attatching as energy
-
+@icon("res://Art/Energy/48px-Colorless-attack.png")
 extends Resource
 class_name Energy
 
@@ -11,14 +11,15 @@ class_name Energy
 @export_multiline var description: String = ""
 
 @export_group("Prerequisites")
-##Is there anything the user must decide before attatching?
+##Is there anything the user must decide before attatching?[br]
+##What should the game state be like for this card's [member success_effect] and [member type] to be used?
 @export var prompt: PromptAsk
-##What should the game state be like for this card to be used?
+##Which slots are allowed to attatch this card?
 @export var asks: SlotAsk
 ##Should failure constitute providing different kinds of energy?
-@export var fail_provide: bool = false
+@export var has_fail_provide: bool = false
 ##Failed asks mean the user can't attatch the energy
-@export var fail_prevent: bool = false
+@export var has_fail_prevent: bool = false
 @export_group("Effect")
 ##What should happen if the ask isn't met
 @export var fail_effect: EffectCall 
@@ -27,12 +28,10 @@ class_name Energy
 ##What should happen on attatch specifically
 @export var attatch_effect: EffectCall 
 
-@export_group("Duration")
+@export_group("Provides")
 ##-1 means forever, otherwise it's how many turns it'll last 
 ##0 means it'll be removed after turn end
 @export var turns: int = -1
-
-@export_group("Provides")
 ##How much energy does this provide on a succesful attatch
 @export var number: int = 1
 ##React energy interacts with several poke-powers, so it needs to be categorized
@@ -50,6 +49,8 @@ class_name Energy
 @export_flags("Grass","Fire","Water",
 "Lightning","Psychic","Fighting",
 "Darkness","Metal","Colorless") var fail_type: int = 1
+@export var fail_provide: EnData
+@export var success_provide: EnData
 
 ##Debug function to print out the specifics of the card's energy properties
 func print_energy() -> void:

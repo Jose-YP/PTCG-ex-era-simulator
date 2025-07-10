@@ -6,18 +6,19 @@ class_name Attack
 @export_multiline var description: String
 
 @export_group("Costs")
-@export var grass_cost: int = 0
-@export var fire_cost: int = 0
-@export var water_cost: int = 0
-@export var lightning_cost: int = 0
-@export var psychic_cost: int = 0
-@export var fighting_cost: int = 0
-@export var darkness_cost: int = 0
-@export var metal_cost: int = 0
-@export var colorless_cost: int = 1
+@export_range(0,20,1) var grass_cost: int = 0
+@export_range(0,20,1) var fire_cost: int = 0
+@export_range(0,20,1) var water_cost: int = 0
+@export_range(0,20,1) var lightning_cost: int = 0
+@export_range(0,20,1) var psychic_cost: int = 0
+@export_range(0,20,1) var fighting_cost: int = 0
+@export_range(0,20,1) var darkness_cost: int = 0
+@export_range(0,20,1) var metal_cost: int = 0
+@export_range(0,20,1) var colorless_cost: int = 1
 
 @export_group("Ignore")
-@export_flags("Body","Weakness","Resistance", "All") var defender_properties: int = 0
+##Don't check any of these if they're checked
+@export_flags("Body", "Weakness", "Resistance", "Effects") var defender_properties: int = 0
 ##The pokemon can use this attack even if it has these conditions
 @export_flags("Alseep", "Paralysis", "Confusion") var ignore_condition: int = 0
 
@@ -26,21 +27,28 @@ class_name Attack
 @export var prompt_reliant: bool = false
 ##Dmg that displays on the main card info next to name
 @export_range(0,200,10) var initial_main_DMG: int = 0
+@export_subgroup("Self Damage")
 ##If this is true then dmg can be increased/activated depending on [member prompt] and [member ask]
 ##[br]Otherwise the pokemon will take this dmg after attacking
 @export var conditional_self_dmg: bool = false
 @export_range(0,200,10) var self_damage: int = 0
-##None - Use [member initial_main_DMG] as is or damage returned from [member counter] and [member prompt]
-##[br]Add - use [member initial_main_DMG] then add damage depending on [member counter] and [member prompt]
-##[br]Multiply - use [member initial_main_DMG] times the result found with [member counter] and [member prompt], allows 0 as a result
-##[br]Subtract - use [member initial_main_DMG] then add damage depending on [member counter] and [member prompt]
+@export_subgroup("Modifier")
+##[member comparator] * [member prompt] will be multiplied by [member modifier_num] then...
+##[br][enum None] - Use [member initial_main_DMG] as is or modified damage if prompt fails
+##[br][enum Add] - use [member initial_main_DMG] then add damage depending from modified damage
+##[br][enum Multiply] - use modified damage as the result
+##[br][enum Subtract] - use [member initial_main_DMG] then subtract damage depending from modified damage
 @export_enum("None", "Add", "Multiply", "Subtract") var modifier: int = 0
-##Does this attack hit both defending pokemon in doubles?
-@export var both_active: bool = false
-@export var bench_damage: BenchAttk
+##When the comparator returns, how much will it be multiplied by?
+@export_range(0,200,10) var modifier_num: int = 0
 ##Determines how damage should be changed
 ##[br][i]If modifieer is none, this can replace [member initial_main_DMG]
 @export var comparator: Comparator
+@export_subgroup("Alt Targetting")
+##Does this attack hit both defending pokemon in doubles?
+@export var both_active: bool = false
+@export var bench_damage: BenchAttk
+
 
 @export_group("Effects")
 @export var prompt: PromptAsk

@@ -7,8 +7,8 @@
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_x6q3b"]
 [ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="5_kd6vc"]
 [ext_resource type="Script" uid="uid://8s3m1dar3r33" path="res://Code/Resource Makers/EffectSpecific/ConditionMaker.gd" id="6_sl773"]
-[ext_resource type="Resource" uid="uid://kfpd4o04y0q" path="res://Resources/Components/Effects/Asks/SrcBench.tres" id="7_dvwig"]
-[ext_resource type="Resource" uid="uid://bnv2dkudpcueo" path="res://Resources/Components/Effects/Asks/SrcActive.tres" id="8_phwcg"]
+[ext_resource type="Resource" uid="uid://kfpd4o04y0q" path="res://Resources/Components/Effects/Asks/General/SrcBench.tres" id="7_246m0"]
+[ext_resource type="Resource" uid="uid://bnv2dkudpcueo" path="res://Resources/Components/Effects/Asks/General/SrcActive.tres" id="8_xck7i"]
 [ext_resource type="Script" uid="uid://cimk6l7ytw7xg" path="res://Code/Resource Makers/EffectSpecific/EnMovMaker.gd" id="9_u7a6q"]
 [ext_resource type="Script" uid="uid://b58015mafcw2v" path="res://Code/Resource Makers/PokemonSpecific/PowerMaker.gd" id="10_4xr6q"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="11_veuta"]
@@ -77,17 +77,17 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_ws3ge"]
 script = ExtResource("9_u7a6q")
 action = 1
-chooser = null
-givers = ExtResource("7_dvwig")
-reciever = ExtResource("8_phwcg")
-to_stack = null
-stack_direction = null
-energy_carry_over = null
+chooser = 4
+givers = ExtResource("7_246m0")
+reciever = ExtResource("8_xck7i")
+to_stack = 2
+stack_direction = 2
+energy_carry_over = false
 action_ammount = -1
 energy_ammount = -1
-energy_move_type = null
-react = null
-type = null
+energy_move_type = 0
+react = false
+type = 511
 metadata/_custom_type_script = "uid://cimk6l7ytw7xg"
 
 [sub_resource type="Resource" id="Resource_0m8xk"]

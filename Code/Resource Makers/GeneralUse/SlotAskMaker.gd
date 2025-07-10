@@ -1,7 +1,6 @@
 extends Resource
 class_name SlotAsk
 
-@export_group("To Activate")
 ##If this ask isn't met, look for the next ask
 @export var or_ask: SlotAsk
 ##Which side to pay attention to
@@ -14,8 +13,6 @@ class_name SlotAsk
 @export_range(-10,200,10) var damage_taken: int = -10
 ##-1 means don't look at it
 @export_range(-1, 6, 1) var retreat_cost: int = -1
-##-1 means don't look at this var, 0 means must have no energy, the rest mean x or more
-@export var energy_attatched: int = -1
 @export var knocked_out: bool = false
 @export_flags("Poison", "Burn", "Paralysis", "Asleep", "Confusion") var condition: int = 0
 ##Self means the attacking/defending pokemon, Active is for doubles
@@ -31,19 +28,20 @@ class_name SlotAsk
 "Dark") var pokemon_class: int = 63
 @export var owner_inclusive: bool = true
 @export_flags("None","Magma", "Aqua", "Rocket", "Holon") var pokemon_owner: int = 31
-@export_subgroup("Bench")
-##Look for 
-@export_range(-1,5) var bench_size: int = -1
 @export_subgroup("Type")
 ##Check if the pokemon has this type
 @export var type_inclusive: bool = true
 @export_flags("Grass","Fire","Water",
 "Lightning","Psychic","Fighting",
-"Darkness","Metal","Colorless") var type: int = 1023
-@export_enum("Basic","Special","Both") var energy_class: int = 2
-##I'm guessing this is about how much of x energy there is
+"Darkness","Metal","Colorless") var pokemon_type: int = 1023
+##Look for energy that is of the specified type or ones that aren't
+@export var energy_inclusive: bool = true
+##How much of [member energy_type] energy there is[br]
 ##Make -1 to indicate that it shouldn't be checked
-@export var type_size: int = -1
+@export var energy_attatched: int = -1
+@export_enum("Basic","Special","Both") var energy_class: int = 2
+@export var energy_type: EnData = preload("res://Resources/Components/EnData/Rainbow.tres")
+
 
 #Checks if one slot is 
 func check_ask(slot: PokeSlot) -> bool:
@@ -99,10 +97,10 @@ func check_ask(slot: PokeSlot) -> bool:
 		var type_color: String = str("[color=",Constants.energy_colors[type_int].to_html(),"]")
 		
 		type_str += type_color + loc_type + "[/color]"
-	print_verbose(type_str, "\n", slot.current_card.pokemon_properties.type && type, 
-	 not (slot.current_card.pokemon_properties.type && type != 0 and not type_inclusive))
+	print_verbose(type_str, "\n", slot.current_card.pokemon_properties.type && pokemon_type, 
+	 not (slot.current_card.pokemon_properties.type && pokemon_type != 0 and not type_inclusive))
 	
-	var type_bool: bool = not(slot.current_card.pokemon_properties.type && type != 0 and not type_inclusive)
+	var type_bool: bool = not(slot.current_card.pokemon_properties.type && pokemon_type != 0 and not type_inclusive)
 	result = type_bool and result
 	#To Activate
 	#Who should be checked

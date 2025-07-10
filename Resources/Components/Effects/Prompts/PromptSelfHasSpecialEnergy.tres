@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="PromptAsk" load_steps=7 format=3 uid="uid://ck80jky0mu4ta"]
+
+[ext_resource type="Resource" uid="uid://baii0q48esunq" path="res://Resources/Components/Effects/Asks/Types/SelfHasSpecialEnergy.tres" id="1_6268p"]
+[ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="2_qtcqf"]
+[ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="3_m88e0"]
+[ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="4_o2l3o"]
+
+[sub_resource type="Resource" id="Resource_a8oe8"]
+script = ExtResource("2_qtcqf")
+which = "Slot"
+ask = ExtResource("1_6268p")
+slot_vars = "current_card"
+cap = -1
+metadata/_custom_type_script = "uid://vjn146j3ayd6"
+
+[sub_resource type="Resource" id="Resource_gcpq8"]
+script = ExtResource("3_m88e0")
+comparision_type = "Equals"
+first_comparison = SubResource("Resource_a8oe8")
+compare_to = "None"
+second_constant = 0
+metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
+
+[resource]
+script = ExtResource("4_o2l3o")
+formal_ask = false
+ask_string = ""
+comparator = SubResource("Resource_gcpq8")
+chooser = 0
+choose_location = "None"
+which_stack = 0
+metadata/_custom_type_script = "uid://b85jmc7067bjc"

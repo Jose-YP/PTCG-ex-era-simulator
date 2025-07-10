@@ -30,6 +30,7 @@ class_name Identifier
 
 @export_group("Energy Categories")
 @export_flags("Basic", "Special") var energy_class: int = 3
+@export var energy_provides: EnData
 
 func identifier_bool(card: Base_Card, based_on: Array[PokeSlot]) -> bool:
 	print("----------------------------------------------------")

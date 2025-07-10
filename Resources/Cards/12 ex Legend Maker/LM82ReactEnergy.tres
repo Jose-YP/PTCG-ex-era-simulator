@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=5 format=3 uid="uid://bkih6iwdpqvmx"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=6 format=3 uid="uid://bkih6iwdpqvmx"]
 
+[ext_resource type="Resource" uid="uid://b7fdar1wf5suh" path="res://Resources/Components/EnData/React.tres" id="1_6q83e"]
 [ext_resource type="Script" uid="uid://caj1pm8erar2a" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="1_diav4"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_gd7lj"]
 [ext_resource type="Texture2D" uid="uid://b8okvs247gctx" path="res://Art/Cards/12 ex Legend Maker/82.jpg" id="2_6q83e"]
@@ -8,14 +9,16 @@
 script = ExtResource("1_diav4")
 considered = "Special Energy"
 description = " React Energy provides {Colorless} Energy."
-fail_provide = false
-fail_prevent = false
+has_fail_provide = false
+has_fail_prevent = false
 turns = -1
 number = 1
 react = true
 holon_type = "None"
 type = 256
 fail_type = 256
+fail_provide = ExtResource("1_6q83e")
+success_provide = ExtResource("1_6q83e")
 metadata/_custom_type_script = "uid://caj1pm8erar2a"
 
 [resource]

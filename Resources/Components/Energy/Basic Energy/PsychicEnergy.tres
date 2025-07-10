@@ -1,16 +1,19 @@
-[gd_resource type="Resource" script_class="Energy" load_steps=2 format=3 uid="uid://nrfa4a2piemj"]
+[gd_resource type="Resource" script_class="Energy" load_steps=3 format=3 uid="uid://nrfa4a2piemj"]
 
+[ext_resource type="Resource" uid="uid://b0lup3upo6m4f" path="res://Resources/Components/EnData/Psychic.tres" id="1_ayw16"]
 [ext_resource type="Script" uid="uid://caj1pm8erar2a" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="1_yqw56"]
 
 [resource]
 script = ExtResource("1_yqw56")
 considered = "Basic Energy"
 description = "Provide 1 {Psychic} Energy"
-fail_provide = false
-fail_prevent = false
+has_fail_provide = false
+has_fail_prevent = false
 turns = -1
 number = 1
 react = false
 holon_type = "None"
 type = 16
 fail_type = 16
+fail_provide = ExtResource("1_ayw16")
+success_provide = ExtResource("1_ayw16")

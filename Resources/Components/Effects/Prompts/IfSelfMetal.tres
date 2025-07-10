@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="PromptAsk" load_steps=7 format=3 uid="uid://cndwbefva1geb"]
+
+[ext_resource type="Resource" uid="uid://nmy8uqw0uiew" path="res://Resources/Components/Effects/Asks/Types/SelfIsMetal.tres" id="1_dahoj"]
+[ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="2_002if"]
+[ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="3_k50cg"]
+[ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="4_tjvtd"]
+
+[sub_resource type="Resource" id="Resource_ofh8l"]
+script = ExtResource("2_002if")
+which = "Slot"
+ask = ExtResource("1_dahoj")
+slot_vars = "current_card"
+cap = -1
+metadata/_custom_type_script = "uid://vjn146j3ayd6"
+
+[sub_resource type="Resource" id="Resource_tpgwn"]
+script = ExtResource("3_k50cg")
+comparision_type = "Equals"
+first_comparison = SubResource("Resource_ofh8l")
+compare_to = "Const"
+second_constant = 1
+metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
+
+[resource]
+script = ExtResource("4_tjvtd")
+formal_ask = false
+ask_string = ""
+comparator = SubResource("Resource_tpgwn")
+chooser = 0
+choose_location = "None"
+which_stack = 0
+metadata/_custom_type_script = "uid://b85jmc7067bjc"

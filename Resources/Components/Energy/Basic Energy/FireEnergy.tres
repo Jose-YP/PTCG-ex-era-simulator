@@ -1,16 +1,19 @@
-[gd_resource type="Resource" script_class="Energy" load_steps=2 format=3 uid="uid://bbpbby31t7cth"]
+[gd_resource type="Resource" script_class="Energy" load_steps=3 format=3 uid="uid://bbpbby31t7cth"]
 
 [ext_resource type="Script" uid="uid://caj1pm8erar2a" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="1_3mfhp"]
+[ext_resource type="Resource" uid="uid://mregpmlqoyvy" path="res://Resources/Components/EnData/Fire.tres" id="1_wa438"]
 
 [resource]
 script = ExtResource("1_3mfhp")
 considered = "Basic Energy"
 description = "Provide 1 {Fire} Energy"
-fail_provide = false
-fail_prevent = false
+has_fail_provide = false
+has_fail_prevent = false
 turns = -1
 number = 1
 react = false
 holon_type = "None"
 type = 2
 fail_type = 2
+fail_provide = ExtResource("1_wa438")
+success_provide = ExtResource("1_wa438")

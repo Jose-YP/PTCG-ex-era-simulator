@@ -1,10 +1,12 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=2 format=3 uid="uid://djtfdcqj2je6j"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=3 format=3 uid="uid://djtfdcqj2je6j"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_8nmm5"]
+[ext_resource type="Texture2D" uid="uid://2iet0g6tye4l" path="res://Art/Cards/13 ex Holon Phantoms/74.jpg" id="1_ve7f1"]
 
 [resource]
 script = ExtResource("1_8nmm5")
 name = "Omanyte"
+image = ExtResource("1_ve7f1")
 illustrator = ""
 number = 74
 rarity = 1

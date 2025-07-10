@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=5 format=3 uid="uid://ch5vg8k6ed63k"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=6 format=3 uid="uid://ch5vg8k6ed63k"]
 
 [ext_resource type="Script" uid="uid://caj1pm8erar2a" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="1_n0xd0"]
+[ext_resource type="Resource" uid="uid://catcrprq8lpc7" path="res://Resources/Components/EnData/DarkMetal.tres" id="1_p1ttm"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_qsafo"]
 [ext_resource type="Texture2D" uid="uid://pek6bdbojhj8" path="res://Art/Cards/13 ex Holon Phantoms/97.jpg" id="2_p1ttm"]
 
@@ -8,14 +9,16 @@
 script = ExtResource("1_n0xd0")
 considered = "Special Energy"
 description = "Attach Dark Metal Energy to 1 of your Pokémon. While in play, Dark Metal Energy provides {Darkness} Energy and {Metal} Energy, but provides only 1 Energy at a time. (Doesn't count as a basic Energy card when not in play and has no effect other than providing Energy.)"
-fail_provide = false
-fail_prevent = false
+has_fail_provide = false
+has_fail_prevent = false
 turns = -1
 number = 1
 react = false
 holon_type = "None"
 type = 192
 fail_type = 192
+fail_provide = ExtResource("1_p1ttm")
+success_provide = ExtResource("1_p1ttm")
 metadata/_custom_type_script = "uid://caj1pm8erar2a"
 
 [resource]

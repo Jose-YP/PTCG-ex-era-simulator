@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=9 format=3 uid="uid://b1xaqtaovjo0b"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://b1xaqtaovjo0b"]
 
-[ext_resource type="Resource" uid="uid://b65ksn0e0th78" path="res://Resources/Components/Effects/Asks/Class&Owner/AtkNonex.tres" id="1_adv1g"]
+[ext_resource type="Resource" uid="uid://vk18jkchsq3v" path="res://Resources/Components/EnData/Colorless.tres" id="1_k24tu"]
+[ext_resource type="Resource" uid="uid://1wsc5djtni2" path="res://Resources/Components/Effects/Prompts/PromptSelfNonex.tres" id="2_27bls"]
 [ext_resource type="Script" uid="uid://caj1pm8erar2a" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="2_gb4dl"]
 [ext_resource type="Resource" uid="uid://r3gc6e1u0elh" path="res://Resources/Components/Effects/DmgManip/AtkSelfHeal10.tres" id="3_27bls"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_j8yei"]
@@ -16,10 +17,10 @@ dmgManip = ExtResource("3_27bls")
 [sub_resource type="Resource" id="Resource_xkhcd"]
 script = ExtResource("2_gb4dl")
 considered = "Special Energy"
-description = " Heal Energy provides {Colorless} Energy. When you attach this card from your hand to 1 of your Pokémon, remove 1 damage counter and all Special Conditions from that Pokémon. If Heal Energy is attached to Pokémon-ex, Heal Energy has no effect other than providing Energy."
-asks = ExtResource("1_adv1g")
-fail_provide = false
-fail_prevent = false
+description = "Heal Energy provides {Colorless} Energy. When you attach this card from your hand to 1 of your Pokémon, remove 1 damage counter and all Special Conditions from that Pokémon. If Heal Energy is attached to Pokémon-ex, Heal Energy has no effect other than providing Energy."
+prompt = ExtResource("2_27bls")
+has_fail_provide = false
+has_fail_prevent = false
 success_effect = SubResource("Resource_s7duk")
 turns = -1
 number = 1
@@ -27,6 +28,8 @@ react = false
 holon_type = "None"
 type = 256
 fail_type = 256
+fail_provide = ExtResource("1_k24tu")
+success_provide = ExtResource("1_k24tu")
 
 [resource]
 script = ExtResource("6_24dry")

@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="PromptAsk" load_steps=8 format=3 uid="uid://bdnsa31pds5n8"]
+[gd_resource type="Resource" script_class="PromptAsk" load_steps=9 format=3 uid="uid://bdnsa31pds5n8"]
 
 [ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="1_0u1nb"]
+[ext_resource type="Resource" uid="uid://cth0exsidfeqb" path="res://Resources/Components/EnData/Fighting.tres" id="1_mo2me"]
 [ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="2_c1lbv"]
 [ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="2_rb1o5"]
 [ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="3_mo2me"]
@@ -14,7 +15,6 @@ comparison_type = 1
 max_hp = -10
 damage_taken = -10
 retreat_cost = -1
-energy_attatched = -1
 knocked_out = false
 condition = 0
 tool_attatched = false
@@ -24,11 +24,12 @@ class_inclusive = false
 pokemon_class = 2
 owner_inclusive = true
 pokemon_owner = 31
-bench_size = -1
 type_inclusive = true
-type = 544
+pokemon_type = 1023
+energy_inclusive = true
+energy_attatched = -1
 energy_class = 2
-type_size = 1
+energy_type = ExtResource("1_mo2me")
 
 [sub_resource type="Resource" id="Resource_3huyd"]
 script = ExtResource("2_rb1o5")

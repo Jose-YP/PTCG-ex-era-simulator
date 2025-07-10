@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=2 format=3 uid="uid://das4fogpex6ts"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=3 format=3 uid="uid://das4fogpex6ts"]
 
+[ext_resource type="Texture2D" uid="uid://cbfwwsfi531ow" path="res://Art/Cards/11 ex Delta Species/91.jpg" id="1_8854x"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_pfhw6"]
 
 [resource]
 script = ExtResource("1_pfhw6")
 name = "Holon Farmer"
-illustrator = ""
+image = ExtResource("1_8854x")
+illustrator = "Ken Sugimori"
 number = 91
 rarity = 1
 expansion = 10

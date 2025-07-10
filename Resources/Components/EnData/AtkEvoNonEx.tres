@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="SlotAsk" load_steps=2 format=3 uid="uid://lop03i25k4pb"]
+
+[ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="1_c5rxt"]
+
+[resource]
+script = ExtResource("1_c5rxt")
+side_target = 1
+slot_target = 4
+specifically = Array[String]([])
+comparison_type = 1
+max_hp = -10
+damage_taken = -10
+retreat_cost = -1
+knocked_out = false
+condition = 0
+tool_attatched = false
+stage = 6
+rare_candy = false
+class_inclusive = false
+pokemon_class = 2
+owner_inclusive = true
+pokemon_owner = 31
+type_inclusive = true
+pokemon_type = 1023
+energy_inclusive = true
+energy_attatched = -1
+energy_class = 2
+metadata/_custom_type_script = "uid://mkjynqda7q5g"

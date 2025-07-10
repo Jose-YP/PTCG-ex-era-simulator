@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Energy" load_steps=2 format=3 uid="uid://dfecfonjisw7w"]
+
+[ext_resource type="Script" uid="uid://caj1pm8erar2a" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="1_05ucl"]
+
+[resource]
+script = ExtResource("1_05ucl")
+considered = "Special Energy"
+description = "Double Rainbow Energy can be attached only to an Evolved Pokémon (excluding Pokémon-ex). While in play, Double Rainbow Energy provides every type of Energy but provides 2 Energy at a time. (Has no effect other than providing Energy.) Damage done to your opponent's Pokémon by the Pokémon Double Rainbow Energy is attached to is reduced by 10 (before applying Weakness and Resistance). When the Pokémon Double Rainbow Energy is attached to is no longer an Evolved Pokémon, discard Double Rainbow Energy."
+has_fail_provide = false
+has_fail_prevent = false
+turns = -1
+number = 1
+react = false
+holon_type = "None"
+type = 1
+fail_type = 1
+metadata/_custom_type_script = "uid://caj1pm8erar2a"
