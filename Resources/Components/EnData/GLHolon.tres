@@ -7,5 +7,5 @@ script = ExtResource("1_jtkus")
 number = 1
 react = false
 holon_type = "GL"
-type = 768
+type = 256
 metadata/_custom_type_script = "uid://c0cub51v5sn02"

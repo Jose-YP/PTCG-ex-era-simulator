@@ -17,7 +17,7 @@ metadata/_custom_type_script = "uid://vjn146j3ayd6"
 script = ExtResource("3_m88e0")
 comparision_type = "Equals"
 first_comparison = SubResource("Resource_6268p")
-compare_to = "None"
+compare_to = "Const"
 second_constant = 0
 metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 

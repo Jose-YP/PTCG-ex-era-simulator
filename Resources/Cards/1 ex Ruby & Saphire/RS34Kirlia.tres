@@ -35,6 +35,7 @@ initial_main_DMG = 10
 conditional_self_dmg = false
 self_damage = 0
 modifier = 0
+modifier_num = 0
 both_active = false
 prompt = ExtResource("3_rmk0s")
 success_effect = SubResource("Resource_t0ir0")
@@ -60,6 +61,7 @@ initial_main_DMG = 50
 conditional_self_dmg = false
 self_damage = 0
 modifier = 0
+modifier_num = 0
 both_active = false
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 

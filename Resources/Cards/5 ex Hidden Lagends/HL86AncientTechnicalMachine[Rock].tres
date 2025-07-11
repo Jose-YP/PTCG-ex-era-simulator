@@ -36,6 +36,7 @@ initial_main_DMG = 0
 conditional_self_dmg = false
 self_damage = 0
 modifier = 0
+modifier_num = 0
 both_active = false
 ask = ExtResource("6_qoj0b")
 always_effect = SubResource("Resource_kj4ty")

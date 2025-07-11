@@ -18,4 +18,3 @@ energy_ammount = 1
 energy_move_type = 2
 en_type = ExtResource("1_dn48b")
 react = false
-type = 2

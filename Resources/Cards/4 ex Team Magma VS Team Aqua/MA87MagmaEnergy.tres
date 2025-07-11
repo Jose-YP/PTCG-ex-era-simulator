@@ -17,8 +17,6 @@ turns = 0
 number = 2
 react = false
 holon_type = "None"
-type = 96
-fail_type = 96
 fail_provide = ExtResource("2_qfv06")
 success_provide = ExtResource("2_qfv06")
 

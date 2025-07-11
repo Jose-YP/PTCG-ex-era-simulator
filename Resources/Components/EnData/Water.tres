@@ -7,5 +7,5 @@ script = ExtResource("1_totgn")
 number = 1
 react = false
 holon_type = "None"
-type = 516
+type = 4
 metadata/_custom_type_script = "uid://c0cub51v5sn02"

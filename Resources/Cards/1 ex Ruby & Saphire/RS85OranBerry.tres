@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=13 format=3 uid="uid://cikspsque6rym"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=14 format=3 uid="uid://cikspsque6rym"]
 
 [ext_resource type="Texture2D" uid="uid://diera1jn3813v" path="res://Art/Cards/1 ex Ruby & Saphire/85.jpg" id="1_2xwq7"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_hcmcm"]
 [ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="3_05nyp"]
+[ext_resource type="Resource" uid="uid://c7itelq8jtjc2" path="res://Resources/Components/EnData/Rainbow.tres" id="4_57sig"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="4_blq1p"]
 [ext_resource type="Script" uid="uid://dj5isddeswaa4" path="res://Code/Resource Makers/CardResources/ToolMaker.gd" id="5_85iqr"]
 [ext_resource type="Script" uid="uid://scca13hg4k1l" path="res://Code/Resource Makers/EffectSpecific/DmgManipMaker.gd" id="6_kl0j4"]
@@ -17,9 +18,7 @@ comparison_type = 1
 max_hp = -10
 damage_taken = 20
 retreat_cost = -1
-energy_attatched = -1
 knocked_out = false
-condition = 0
 tool_attatched = false
 stage = 7
 rare_candy = false
@@ -29,9 +28,11 @@ owner_inclusive = true
 pokemon_owner = 15
 type_inclusive = true
 pokemon_type = 1023
-energy_type = 1023
-energy_class = 2
-type_size = 1
+energy_inclusive = true
+check_cards = true
+energy_attatched = -1
+energy_class = "Any"
+energy_type = ExtResource("4_57sig")
 
 [sub_resource type="Resource" id="Resource_yweta"]
 script = ExtResource("6_kl0j4")

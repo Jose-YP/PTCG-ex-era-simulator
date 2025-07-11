@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://ov65eileuo4o"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=13 format=3 uid="uid://ov65eileuo4o"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_dwtlt"]
 [ext_resource type="Texture2D" uid="uid://df02g0rwr5yl1" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/29.jpg" id="1_gl86o"]
 [ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="2_auni2"]
+[ext_resource type="Resource" uid="uid://c7itelq8jtjc2" path="res://Resources/Components/EnData/Rainbow.tres" id="3_1uuvq"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="4_0g86g"]
 [ext_resource type="Resource" uid="uid://d4bi0kdblesdq" path="res://Resources/Components/Effects/Asks/Conditions/DefIsConfused.tres" id="5_1uuvq"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="6_ea6gi"]
@@ -17,9 +18,7 @@ comparison_type = 1
 max_hp = -10
 damage_taken = -10
 retreat_cost = -1
-energy_attatched = -1
 knocked_out = false
-condition = 0
 tool_attatched = false
 stage = 7
 rare_candy = false
@@ -29,9 +28,11 @@ owner_inclusive = true
 pokemon_owner = 15
 type_inclusive = true
 pokemon_type = 1023
-energy_type = 1023
-energy_class = 2
-type_size = 1
+energy_inclusive = true
+check_cards = true
+energy_attatched = -1
+energy_class = "Any"
+energy_type = ExtResource("3_1uuvq")
 
 [sub_resource type="Resource" id="Resource_kg1j7"]
 script = ExtResource("4_0g86g")
@@ -53,6 +54,7 @@ initial_main_DMG = 20
 conditional_self_dmg = false
 self_damage = 0
 modifier = 0
+modifier_num = 0
 both_active = false
 ask = SubResource("Resource_owb8s")
 
@@ -76,6 +78,7 @@ initial_main_DMG = 50
 conditional_self_dmg = false
 self_damage = 0
 modifier = 0
+modifier_num = 0
 both_active = false
 ask = ExtResource("5_1uuvq")
 success_effect = ExtResource("6_gdiu5")

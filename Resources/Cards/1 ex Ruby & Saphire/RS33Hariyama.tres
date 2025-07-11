@@ -27,6 +27,7 @@ initial_main_DMG = 20
 conditional_self_dmg = false
 self_damage = 0
 modifier = 0
+modifier_num = 0
 both_active = false
 prompt = ExtResource("3_1pnys")
 success_effect = ExtResource("3_axcwr")
@@ -51,6 +52,7 @@ initial_main_DMG = 40
 conditional_self_dmg = false
 self_damage = 0
 modifier = 1
+modifier_num = 0
 both_active = false
 
 [sub_resource type="Resource" id="Resource_guupo"]

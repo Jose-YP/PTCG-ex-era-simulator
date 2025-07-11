@@ -35,6 +35,7 @@ initial_main_DMG = 0
 conditional_self_dmg = false
 self_damage = 0
 modifier = 0
+modifier_num = 0
 both_active = false
 prompt = ExtResource("3_57yi4")
 success_effect = SubResource("Resource_p8uss")
@@ -59,6 +60,7 @@ initial_main_DMG = 20
 conditional_self_dmg = false
 self_damage = 0
 modifier = 0
+modifier_num = 0
 both_active = false
 
 [sub_resource type="Resource" id="Resource_c6c3u"]

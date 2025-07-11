@@ -26,6 +26,7 @@ initial_main_DMG = 20
 conditional_self_dmg = false
 self_damage = 0
 modifier = 0
+modifier_num = 0
 both_active = false
 bench_damage = ExtResource("3_ufb8t")
 
@@ -49,6 +50,7 @@ initial_main_DMG = 30
 conditional_self_dmg = false
 self_damage = 0
 modifier = 1
+modifier_num = 0
 both_active = false
 
 [sub_resource type="Resource" id="Resource_iq16m"]

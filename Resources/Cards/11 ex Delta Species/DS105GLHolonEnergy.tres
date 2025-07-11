@@ -40,7 +40,6 @@ max_hp = -10
 damage_taken = -10
 retreat_cost = -1
 knocked_out = false
-condition = 0
 tool_attatched = false
 stage = 7
 rare_candy = false
@@ -51,8 +50,9 @@ pokemon_owner = 31
 type_inclusive = true
 pokemon_type = 1023
 energy_inclusive = true
+check_cards = true
 energy_attatched = -1
-energy_class = 2
+energy_class = "Any"
 energy_type = ExtResource("5_3qxn5")
 
 [sub_resource type="Resource" id="Resource_4mowb"]
@@ -129,8 +129,6 @@ turns = -1
 number = 1
 react = false
 holon_type = "GL"
-type = 256
-fail_type = 256
 fail_provide = ExtResource("4_os01s")
 success_provide = ExtResource("4_os01s")
 metadata/_custom_type_script = "uid://caj1pm8erar2a"

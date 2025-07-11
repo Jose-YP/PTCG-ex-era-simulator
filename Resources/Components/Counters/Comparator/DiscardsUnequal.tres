@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="Comparator" load_steps=8 format=3 uid="uid://crlxvia0kynq"]
+[gd_resource type="Resource" script_class="Comparator" load_steps=9 format=3 uid="uid://crlxvia0kynq"]
 
 [ext_resource type="Resource" uid="uid://bnv2dkudpcueo" path="res://Resources/Components/Effects/Asks/General/SrcActive.tres" id="1_8xrcl"]
 [ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="2_r4o3s"]
 [ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="3_6bh1g"]
 [ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="4_77qmt"]
+[ext_resource type="Resource" uid="uid://c7itelq8jtjc2" path="res://Resources/Components/EnData/Rainbow.tres" id="4_qiqxc"]
 
 [sub_resource type="Resource" id="Resource_uanf6"]
 script = ExtResource("2_r4o3s")
@@ -22,9 +23,7 @@ comparison_type = 1
 max_hp = -10
 damage_taken = -10
 retreat_cost = -1
-energy_attatched = -1
 knocked_out = false
-condition = 0
 tool_attatched = false
 stage = 7
 rare_candy = false
@@ -35,8 +34,10 @@ pokemon_owner = 15
 type_inclusive = true
 pokemon_type = 1023
 energy_inclusive = true
-type_size = -1
-energy_class = 2
+check_cards = true
+energy_attatched = -1
+energy_class = "Any"
+energy_type = ExtResource("4_qiqxc")
 metadata/_custom_type_script = "uid://mkjynqda7q5g"
 
 [sub_resource type="Resource" id="Resource_4ejse"]

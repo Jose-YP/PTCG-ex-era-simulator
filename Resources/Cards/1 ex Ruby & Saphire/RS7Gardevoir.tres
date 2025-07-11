@@ -28,6 +28,7 @@ initial_main_DMG = 10
 conditional_self_dmg = false
 self_damage = 0
 modifier = 2
+modifier_num = 0
 both_active = false
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 

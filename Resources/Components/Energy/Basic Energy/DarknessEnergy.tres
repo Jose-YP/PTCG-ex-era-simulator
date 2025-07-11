@@ -51,7 +51,5 @@ turns = -1
 number = 1
 react = false
 holon_type = "None"
-type = 64
-fail_type = 64
 fail_provide = ExtResource("1_phikd")
 success_provide = ExtResource("1_phikd")

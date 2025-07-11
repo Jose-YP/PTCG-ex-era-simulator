@@ -45,6 +45,7 @@ initial_main_DMG = 0
 conditional_self_dmg = false
 self_damage = 0
 modifier = 0
+modifier_num = 0
 both_active = false
 always_effect = SubResource("Resource_g7ndq")
 
@@ -68,6 +69,7 @@ initial_main_DMG = 80
 conditional_self_dmg = false
 self_damage = 60
 modifier = 0
+modifier_num = 0
 both_active = false
 
 [sub_resource type="Resource" id="Resource_kuod5"]

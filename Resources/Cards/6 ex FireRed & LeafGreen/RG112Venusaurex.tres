@@ -48,6 +48,7 @@ initial_main_DMG = 20
 conditional_self_dmg = false
 self_damage = 0
 modifier = 0
+modifier_num = 0
 both_active = false
 always_effect = SubResource("Resource_84f6i")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
@@ -72,6 +73,7 @@ initial_main_DMG = 90
 conditional_self_dmg = false
 self_damage = 0
 modifier = 0
+modifier_num = 0
 both_active = false
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 

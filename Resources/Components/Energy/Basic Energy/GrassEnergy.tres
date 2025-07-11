@@ -13,7 +13,5 @@ turns = -1
 number = 1
 react = false
 holon_type = "None"
-type = 1
-fail_type = 1
 fail_provide = ExtResource("1_pvwiv")
 success_provide = ExtResource("1_pvwiv")

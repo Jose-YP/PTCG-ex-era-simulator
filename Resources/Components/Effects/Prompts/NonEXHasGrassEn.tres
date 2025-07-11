@@ -16,7 +16,6 @@ max_hp = -10
 damage_taken = -10
 retreat_cost = -1
 knocked_out = false
-condition = 0
 tool_attatched = false
 stage = 7
 rare_candy = false
@@ -27,8 +26,9 @@ pokemon_owner = 31
 type_inclusive = true
 pokemon_type = 1023
 energy_inclusive = true
+check_cards = true
 energy_attatched = -1
-energy_class = 2
+energy_class = "Any"
 energy_type = ExtResource("1_t02um")
 
 [sub_resource type="Resource" id="Resource_lvpp0"]

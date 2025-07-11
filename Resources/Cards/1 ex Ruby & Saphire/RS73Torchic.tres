@@ -27,6 +27,7 @@ initial_main_DMG = 10
 conditional_self_dmg = false
 self_damage = 0
 modifier = 0
+modifier_num = 0
 both_active = false
 
 [sub_resource type="Resource" id="Resource_bl36v"]
@@ -49,6 +50,7 @@ initial_main_DMG = 30
 conditional_self_dmg = false
 self_damage = 0
 modifier = 0
+modifier_num = 0
 both_active = false
 prompt = ExtResource("4_5whtx")
 fail_effect = ExtResource("4_egyx3")

@@ -55,6 +55,7 @@ initial_main_DMG = 100
 conditional_self_dmg = false
 self_damage = 0
 modifier = 0
+modifier_num = 0
 both_active = false
 prompt = SubResource("Resource_jk4hl")
 always_effect = SubResource("Resource_em8ff")

@@ -13,7 +13,7 @@ class_name EnData
 ##Providing multiple types means that one of the multiple types will be accounted for when counting energy
 @export_flags("Grass","Fire","Water",
 "Lightning","Psychic","Fighting",
-"Darkness","Metal","Colorless") var type: int = 1023
+"Darkness","Metal","Colorless") var type: int = 511
 
 ##Funciton that tells the game how the energy should be displayed visually
 ##[br]Not every combination of type needs to be accounted for

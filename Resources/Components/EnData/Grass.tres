@@ -7,5 +7,5 @@ script = ExtResource("1_c1rwt")
 number = 1
 react = false
 holon_type = "None"
-type = 513
+type = 1
 metadata/_custom_type_script = "uid://c0cub51v5sn02"

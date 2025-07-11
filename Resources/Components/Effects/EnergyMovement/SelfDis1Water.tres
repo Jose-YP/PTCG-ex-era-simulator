@@ -19,5 +19,4 @@ energy_ammount = 1
 energy_move_type = 2
 en_type = ExtResource("1_74yea")
 react = false
-type = 4
 metadata/_custom_type_script = "uid://cimk6l7ytw7xg"

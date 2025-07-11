@@ -26,6 +26,7 @@ pokemon_owner = 15
 type_inclusive = true
 pokemon_type = 1023
 energy_inclusive = true
+check_cards = true
 energy_attatched = 0
 energy_class = "Any"
 energy_type = ExtResource("1_7eema")

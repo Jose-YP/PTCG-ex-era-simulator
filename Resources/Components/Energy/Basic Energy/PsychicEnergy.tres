@@ -13,7 +13,5 @@ turns = -1
 number = 1
 react = false
 holon_type = "None"
-type = 16
-fail_type = 16
 fail_provide = ExtResource("1_ayw16")
 success_provide = ExtResource("1_ayw16")
