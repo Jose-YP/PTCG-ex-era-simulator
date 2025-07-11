@@ -43,7 +43,6 @@ func _ready():
 func attatch_pokeslot(slot: PokeSlot):
 	connected_slot = slot
 	slot.slot_into(self)
-	slot.refresh()
 
 func attatch_tool(tool_card: Base_Card):
 	if tool_card:

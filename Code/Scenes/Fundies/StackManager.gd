@@ -164,11 +164,14 @@ func spawn_discard_list(specified_list: Dictionary[Base_Card, bool],
 	dis_box.stack = from
 	return dis_box
 
-func spawn_energy_list(slot: PokeSlot, allowed_fun: Callable = func(a): return true):
-	print("WHAT???")
+func spawn_energy_list(slot: PokeSlot, allowed_fun: Callable = func(card): return true):
+	print("WHAT???", slot.energy_cards)
 	var energy_dict: Dictionary[Base_Card, bool]
 	for card in slot.energy_cards:
-		energy_dict[card] = allowed_fun.call(card)
+		#For some reason duplication doesn't seem to last so I'm duplicating it aghain here
+		#Might be fixed in 4.5
+		var new_card: Base_Card = card.duplicate(true)
+		energy_dict[new_card] = allowed_fun.call(card)
 	
 	var new_node = Constants.reg_list.instantiate()
 	

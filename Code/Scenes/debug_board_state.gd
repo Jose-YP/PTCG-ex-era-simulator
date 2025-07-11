@@ -36,10 +36,14 @@ func set_up(home: bool):
 	
 	#Set up pre defined slots
 	for slot in temp_side.slots:
-		var new_arr: Array[Base_Card]
+		var new_arr: Array[Base_Card] = []
 		var new_slot: PokeSlot = slot.duplicate()
+		
+		#I don't know if this works, the duplicated resources don't seem to last
 		for en in slot.energy_cards:
-			new_arr.append(en.duplicate())
+			print(en.name, en)
+			var duplicated: Base_Card = en.duplicate()
+			new_arr.append(duplicated)
 		slot.energy_cards = new_arr
 		ui.insert_slot(new_slot, temp_side.slots[slot])
 		stacks.account_for_slot(new_slot)

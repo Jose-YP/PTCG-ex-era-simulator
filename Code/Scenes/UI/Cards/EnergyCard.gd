@@ -26,7 +26,7 @@ func _ready():
 	make_text(display_name, card.name)
 	make_text(extra_identifier, engData.considered)
 	
-	for num in range(engData.number):
+	for num in range(engData.success_provide.number):
 		default_types[num].display_type(engData.success_provide.get_string())
 		default_types[num].show()
 	

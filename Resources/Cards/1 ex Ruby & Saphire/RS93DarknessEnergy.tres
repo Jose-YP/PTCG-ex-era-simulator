@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="5_iyc3r"]
 
 [resource]
+resource_local_to_scene = true
 script = ExtResource("5_iyc3r")
 name = "Darkness Energy"
 image = ExtResource("4_7n6vd")

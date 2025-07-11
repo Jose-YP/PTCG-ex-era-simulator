@@ -3,7 +3,6 @@
 extends Resource
 class_name Energy
 
-#@export_group("Properties")
 ##Basic energy and special enegry each have thier own categories since different cards interact with each
 ##Darkness and Metal energy are considered special during the ex Series
 @export_enum("Basic Energy", "Special Energy") var considered: String = "Special Energy"
@@ -32,13 +31,6 @@ class_name Energy
 ##-1 means forever, otherwise it's how many turns it'll last 
 ##0 means it'll be removed after turn end
 @export var turns: int = -1
-##How much energy does this provide on a succesful attatch
-@export var number: int = 1
-##React energy interacts with several poke-powers, so it needs to be categorized
-##It doesn't provide different types however, so it's not considered as one
-@export var react: bool = false
-##Holon's energy are thier own categoory so they can be interacted with
-@export_enum("None","FF","GL","WP") var holon_type: String = "None"
 ##Providing multiple types means that one of the multiple types will be accounted for when counting energy
 ##[br]What types does this energy provide upon failure
 @export var fail_provide: EnData
@@ -49,9 +41,10 @@ var attatched_to: PokeSlot
 
 ##Debug function to print out the specifics of the card's energy properties
 func print_energy() -> void:
+	var en_prov: EnData = get_current_provide()
 	print("Class: ", considered ,"
-	Types: ", Conversions.flags_to_type_array(get_current_provide().type),"
-	Number Provided: ", number,"
+	Types: ", Conversions.flags_to_type_array(en_prov.type),"
+	Number Provided: ", en_prov.number,"
 	Description: ", description)
 	
 	print("-------------------------------------------------------------")

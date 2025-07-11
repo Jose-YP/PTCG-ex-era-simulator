@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_7l2pi"]
 
 [resource]
+resource_local_to_scene = true
 script = ExtResource("3_7l2pi")
 name = "Grass Energy"
 image = ExtResource("2_836y4")

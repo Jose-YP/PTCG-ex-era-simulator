@@ -227,6 +227,7 @@ func count_energy() -> void:
 	 "FF": 0, "GL": 0, "WP": 0, "Rainbow":0}
 	
 	for energy in energy_cards:
+		print(energy)
 		if energy.energy_properties.attatched_to != self:
 			energy.energy_properties.attatched_to = self
 		var en_provide: EnData = energy.energy_properties.get_current_provide()
@@ -276,8 +277,6 @@ func get_total_energy(enData_filter: EnData = null, filtered_array: Array[Base_C
 	var skip_enData: bool = enData_filter == null or enData_filter.get_string() == "Rainbow"
 	
 	for card in using:
-		#I can't come up with anything better right now but to prevent infinite recursion I have bandaids
-		var add_num: int = 0
 		var en_provide: EnData = card.energy_properties.get_current_provide()
 		var add: bool = skip_enData or (en_provide.same_type(enData_filter))
 		if add:

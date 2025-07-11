@@ -14,7 +14,7 @@
         "visibility": 1.0
       },
       "resource_local_to_scene": {
-        "visibility": 0.0
+        "visibility": 1
       },
       "resource_name": {
         "visibility": 0.0
