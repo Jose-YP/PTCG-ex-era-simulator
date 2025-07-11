@@ -52,7 +52,7 @@ func play_basic_pokemon(card: Base_Card):
 			return
 	
 	start_add_choice("Where will pokemon be benched", card,
-	 func(slot: PokeSlot): return not slot.current_card, true)
+	 func(slot: PokeSlot): return not slot.is_filled(), true)
 	await chosen
 	
 	#Otherwise tell sLot UI actions to prompt the user into placing the bench mon
@@ -61,7 +61,7 @@ func play_basic_pokemon(card: Base_Card):
 
 func play_fossil(card: Base_Card):
 	for slot in Globals.fundies.active_slots:
-		if not slot.current_card:
+		if not slot.is_filled():
 			Globals.fundies.hide_list()
 			slot.set_card(card)
 			slot.refresh()
@@ -70,7 +70,7 @@ func play_fossil(card: Base_Card):
 			return
 	
 	start_add_choice("Where will pokemon be benched", card,
-	 func(slot: PokeSlot): return not slot.current_card, true)
+	 func(slot: PokeSlot): return not slot.is_filled(), true)
 	await chosen
 	card.print_info()
 
@@ -100,9 +100,15 @@ func play_energy(card: Base_Card, placement:Placement = null):
 		pass
 	else:
 		pass
+	var energy_bool: Callable = func(slot: PokeSlot) -> bool:
+		var result: bool = slot.is_filled() and slot.is_attacker()
+		if card.energy_properties.asks:
+			result = result and card.energy_properties.asks.check_ask(slot)
+		return result
+	
 	
 	start_add_choice(str("Attatch ", card.name, " to which Pokemon"),
-	 card, energy_boolean, true)
+	 card, energy_bool, true)
 	
 	await chosen
 	print("Attatch ", card.name)
@@ -228,17 +234,14 @@ func scope_effect():
 #Make these functions now so they can be expanded for edge cases later
 #--------------------------------------
 #region BOOLEAN FUNCTIONS
-func energy_boolean(slot: PokeSlot) -> bool:
-	return slot.current_card != null and slot.is_attacker()
-
 func tool_boolean(slot: PokeSlot) -> bool:
-	if slot.current_card:
+	if slot.is_filled():
 		return slot.tool_card == null
 	
 	else: return false
 
 func tm_boolean(slot: PokeSlot) -> bool:
-	if slot.current_card:
+	if slot.is_filled():
 		return true
 	
 	else: return false

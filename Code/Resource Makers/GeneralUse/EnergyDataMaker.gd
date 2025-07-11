@@ -15,6 +15,16 @@ class_name EnData
 "Lightning","Psychic","Fighting",
 "Darkness","Metal","Colorless") var type: int = 1023
 
+##Funciton that tells the game how the energy should be displayed visually
+##[br]Not every combination of type needs to be accounted for
+##only the ones that appear in the ex Series
+##[br]* Basic Types
+##[br]* Rainbow
+##[br]* Holon's
+##[br]* React
+##[br]* Magma & Aqua
+##[br]* DarkMetal
+##[br]* React
 func get_string():
 	if react: return "React"
 	if holon_type != "None": return holon_type
@@ -25,3 +35,7 @@ func get_string():
 	
 	var index = int((log(float(type)) / log(2)))
 	return Constants.energy_types[index]
+
+func same_type(compared_to: EnData):
+	print(compared_to.type, type)
+	return compared_to.type & type != 0

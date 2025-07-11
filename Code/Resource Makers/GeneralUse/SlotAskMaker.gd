@@ -14,7 +14,7 @@ class_name SlotAsk
 ##-1 means don't look at it
 @export_range(-1, 6, 1) var retreat_cost: int = -1
 @export var knocked_out: bool = false
-@export_flags("Poison", "Burn", "Paralysis", "Asleep", "Confusion") var condition: int = 0
+@export var desired_condition: Condition
 ##Self means the attacking/defending pokemon, Active is for doubles
 @export var tool_attatched: bool = false
 
@@ -34,19 +34,23 @@ class_name SlotAsk
 @export_flags("Grass","Fire","Water",
 "Lightning","Psychic","Fighting",
 "Darkness","Metal","Colorless") var pokemon_type: int = 1023
+@export_group("Energy Attatched")
 ##Look for energy that is of the specified type or ones that aren't
 @export var energy_inclusive: bool = true
+##If this is true it will count the number of energy cards
+##instead of the number of effective energy
+@export var check_cards: bool = true
 ##How much of [member energy_type] energy there is[br]
 ##Make -1 to indicate that it shouldn't be checked
 @export var energy_attatched: int = -1
-@export_enum("Basic","Special","Both") var energy_class: int = 2
+@export_enum("Basic Energy","Special Energy","Any") var energy_class: String = "Any"
 @export var energy_type: EnData = preload("res://Resources/Components/EnData/Rainbow.tres")
 
 
 #Checks if one slot is 
 func check_ask(slot: PokeSlot) -> bool:
 	var result: bool
-	if not slot.current_card: return false
+	if not slot.is_filled(): return false
 	
 	#Find which pokemon to check
 	print_verbose("[center]",slot.current_card.name)
@@ -101,6 +105,7 @@ func check_ask(slot: PokeSlot) -> bool:
 	 not (slot.current_card.pokemon_properties.type && pokemon_type != 0 and not type_inclusive))
 	
 	var type_bool: bool = not(slot.current_card.pokemon_properties.type && pokemon_type != 0 and not type_inclusive)
+	if not type_bool: return false
 	result = type_bool and result
 	#To Activate
 	#Who should be checked
@@ -110,7 +115,7 @@ func check_ask(slot: PokeSlot) -> bool:
 		print_verbose("Damage Counters: ", slot.current_card.pokemon_properties.HP)
 		var viewing_hp: int = slot.current_card.pokemon_properties.HP
 		var hp: bool = viewing_hp >= max_hp if comparison_type == 1 else viewing_hp <= comparison_type
-		result = result and hp
+		result = hp and result
 	
 	#If damage_taken isn't -10 check if a pokemon has taken damage
 	if damage_taken != -10:
@@ -118,7 +123,7 @@ func check_ask(slot: PokeSlot) -> bool:
 		print_verbose("[center]Damage Taken")
 		print_verbose("Damage Counters: ", slot.damage_counters)
 		var dmg: bool = slot.damage_counters >= damage_taken if comparison_type == 1 else slot.damage_counters <= damage_taken
-		result = result and dmg
+		result = dmg and result
 	
 	if retreat_cost != -1:
 		print_verbose("[center]-----------------------------------------------------------")
@@ -132,34 +137,38 @@ func check_ask(slot: PokeSlot) -> bool:
 	if energy_attatched != -1:
 		print_verbose("[center]-----------------------------------------------------------")
 		print_verbose("[center]Energy Attatched")
-		slot.count_energy()
-		result = result and slot.get_energy_strings().size() >= energy_attatched
+		print_verbose("Check Cards?", energy_class)
+		print_verbose("Checking for: ", energy_type.get_string(), " | ", energy_class)
+		
+		var using = slot.energy_cards if energy_class != "Any" else slot.get_total_en_categories(energy_class)
+		var total: int = using.size() if check_cards else slot.get_total_energy(energy_type, using)
+		var passes: bool = total >= energy_attatched if comparison_type == 1 else total <= energy_attatched
+		print_verbose("Total: ",total, passes)
+		
+		result = passes and result
 	
 	#Check if any desired condition exists in the pokemon
-	if condition != 0:
+	if desired_condition != null:
 		print_verbose("[center]-----------------------------------------------------------")
 		print_verbose("[center]Conditions")
-		print_verbose("Poision: ", slot.poison_condition, "
-		Burn: ", slot.burn_condition,"
-		Turn: ", slot.turn_condition)
+		print_verbose(slot.applied_condition)
 		var affected: bool = true
-		print_verbose(slot.poison_condition, slot.burn_condition, slot.turn_condition)
-		if slot.poison_condition != 0:
-			print_verbose("Is ", slot.name, " Poisioned? ", condition & 1)
-			affected = condition & 1 or affected
-		if slot.burn_condition != 0:
-			print_verbose("Is ", slot.name, " Burnt? ", condition & 2)
-			affected = condition & 2 or affected
-		if slot.turn_condition != 0:
-			if condition & 4:
-				print_verbose("Is ", slot.name, " Paralyzed? ", slot.turn_condition == 1)
-				affected = slot.turn_condition == 1 or affected
-			if condition & 8:
-				print_verbose("Is ", slot.name, " Asleep? ", slot.turn_condition == 2)
-				affected = slot.turn_condition == 2 or affected
-			if condition & 16:
-				print_verbose("Is ", slot.name, " Confused? ", slot.turn_condition == 3)
-				affected = slot.turn_condition == 3 or affected
+		#if slot.poison_condition != 0:
+			#print_verbose("Is ", slot.name, " Poisioned? ", condition & 1)
+			#affected = condition & 1 or affected
+		#if slot.burn_condition != 0:
+			#print_verbose("Is ", slot.name, " Burnt? ", condition & 2)
+			#affected = condition & 2 or affected
+		#if slot.turn_condition != 0:
+			#if condition & 4:
+				#print_verbose("Is ", slot.name, " Paralyzed? ", slot.turn_condition == 1)
+				#affected = slot.turn_condition == 1 or affected
+			#if condition & 8:
+				#print_verbose("Is ", slot.name, " Asleep? ", slot.turn_condition == 2)
+				#affected = slot.turn_condition == 2 or affected
+			#if condition & 16:
+				#print_verbose("Is ", slot.name, " Confused? ", slot.turn_condition == 3)
+				#affected = slot.turn_condition == 3 or affected
 		
 		result = affected and result
 	

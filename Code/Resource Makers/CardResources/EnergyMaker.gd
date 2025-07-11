@@ -39,63 +39,34 @@ class_name Energy
 @export var react: bool = false
 ##Holon's energy are thier own categoory so they can be interacted with
 @export_enum("None","FF","GL","WP") var holon_type: String = "None"
-##What types does this energy provide upon success.
-##
 ##Providing multiple types means that one of the multiple types will be accounted for when counting energy
-@export_flags("Grass","Fire","Water",
-"Lightning","Psychic","Fighting",
-"Darkness","Metal","Colorless") var type: int = 1
-##What types does this energy provide upon failure
-@export_flags("Grass","Fire","Water",
-"Lightning","Psychic","Fighting",
-"Darkness","Metal","Colorless") var fail_type: int = 1
+##[br]What types does this energy provide upon failure
 @export var fail_provide: EnData
+##What types does this energy provide upon success.
 @export var success_provide: EnData
+
+var attatched_to: PokeSlot
 
 ##Debug function to print out the specifics of the card's energy properties
 func print_energy() -> void:
 	print("Class: ", considered ,"
-	Types: ", Conversions.flags_to_type_array(type),"
+	Types: ", Conversions.flags_to_type_array(get_current_provide().type),"
 	Number Provided: ", number,"
 	Description: ", description)
 	
 	print("-------------------------------------------------------------")
 
 func get_current_provide() -> EnData:
-	return success_provide
+	if (not prompt or not has_fail_provide) or fail_provide == success_provide:
+		return success_provide
+	
+	Globals.fundies.record_single_src_trg(attatched_to)
+	var result = prompt.check_prompt()
+	Globals.fundies.remove_top_source_target()
+	return success_provide if result else fail_provide
 
 func get_current_type() -> int:
-	var current_type: int = success_provide.type
-	
-	return current_type
+	return get_current_provide().type
 
-##Funciton that tells the game how the energy should be displayed visually
-##Not every combination of type needs to be accounted for
-## only the ones that appear in the ex Series
-##[br]
-##* Basic Types
-##[br]
-##* Rainbow
-##[br]
-##* Holon's
-##[br]
-##* React
-##[br]
-##* Magma & Aqua
-##[br]
-##* DarkMetal
-func how_display(passed: bool = true) -> String:
-	#Figure out how the energy will be displayed
-	var using: int = 0
-	if passed: using = type
-	else: passed = fail_type
-	
-	if react: return "React"
-	if holon_type != "None": return holon_type
-	if using == 2 ** 9 - 1: return "Rainbow"
-	elif using == 2 ** 7 + 2 ** 6: return "Dark Metal"
-	elif using == 2 ** 5 + 2 ** 6: return "Magma"
-	elif using == 2 ** 2 + 2 ** 6: return  "Aqua"
-	
-	var index = int((log(float(using)) / log(2)))
-	return Constants.energy_types[index]
+func get_current_string() -> String:
+	return get_current_provide().get_string()

@@ -1,8 +1,7 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=8 format=3 uid="uid://c2tidvg3hbb7p"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=7 format=3 uid="uid://c2tidvg3hbb7p"]
 
 [ext_resource type="Resource" uid="uid://cyaqpq76mby4m" path="res://Resources/Components/Effects/Asks/Class&Owner/AtkEvolvedMon.tres" id="1_ucmag"]
 [ext_resource type="Texture2D" uid="uid://cy1ayax6we5jj" path="res://Art/Cards/8 ex Deoxys/93.jpg" id="2_35v5r"]
-[ext_resource type="Resource" uid="uid://vk18jkchsq3v" path="res://Resources/Components/EnData/Colorless.tres" id="2_ikjhv"]
 [ext_resource type="Script" uid="uid://caj1pm8erar2a" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="2_xsslt"]
 [ext_resource type="Resource" uid="uid://ggwe23axa0eu" path="res://Resources/Components/EnData/Boost.tres" id="4_bgt4u"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="6_gqdgy"]
@@ -18,9 +17,7 @@ turns = 0
 number = 1
 react = false
 holon_type = "None"
-type = 1
-fail_type = 1
-fail_provide = ExtResource("2_ikjhv")
+fail_provide = ExtResource("4_bgt4u")
 success_provide = ExtResource("4_bgt4u")
 metadata/_custom_type_script = "uid://caj1pm8erar2a"
 

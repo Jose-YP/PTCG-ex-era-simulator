@@ -44,7 +44,7 @@ func play_effect():
 #region EFFECTS
 func send_effect():
 	var giver_call: Callable = func(slot: PokeSlot):
-		return givers.check_ask(slot) and slot.current_card and slot.energy_cards.size() != 0
+		return givers.check_ask(slot) and slot.energy_cards.size() != 0
 	
 	#Get whichever meant to discard
 	var candidate: PokeSlot = await Globals.fundies.card_player.get_choice_candidates(\
@@ -104,13 +104,13 @@ func swap(giver: PokeSlot, rec: PokeSlot, energy_giving: Array[Base_Card]):
 #region BOOL RETURNS
 func energy_allowed(card: Base_Card, fail: bool) -> bool:
 	var current_en: EnData = card.energy_properties.get_current_provide()
-	var provides: int  = current_en.type
+	var is_react: bool = (react and react == current_en.react) or not react
 	var same: bool = energy_move_type == 2 or\
 	 (energy_move_type == 1 and card.energy_properties.considered == "Special Energy")\
 	 or (energy_move_type == 0 and card.energy_properties.considered == "Basic Energy")
-	var is_react: bool = (react and react == current_en.react) or not react
 	
-	return provides & en_type.type != 0 and same and is_react
+	
+	return current_en.same_type(en_type) and same and is_react
 
 func enough_energy(ammount: int) -> bool:
 	return energy_ammount != -1 and ammount == energy_ammount 

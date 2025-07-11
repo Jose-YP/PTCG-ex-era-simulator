@@ -47,7 +47,7 @@ func print_simple_slot_types():
 func print_slots(sides: Constants.SIDES, slots: Constants.SLOTS, init_string: String):
 	var slot_string: String = init_string
 	for slot in Globals.full_ui.get_slots(sides, slots):
-		if not slot.connected_slot.current_card:
+		if not slot.connected_slot.is_filled():
 			continue
 		slot_string = str(slot_string, "[", slot.connected_slot.current_card.name, "]")
 	
@@ -79,7 +79,7 @@ func can_be_played(card: Base_Card) -> int:
 	var allowed_to: int = 0
 	
 	if considered & 1 != 0:
-		if find_allowed_slots(func(slot: PokeSlot): return not slot.current_card,\
+		if find_allowed_slots(func(slot: PokeSlot): return not slot.is_filled(),\
 		Constants.SIDES.ATTACKING).size() != 0:
 			allowed_to += 1
 	if considered & 2 != 0:
@@ -104,7 +104,7 @@ func can_be_played(card: Base_Card) -> int:
 	if considered & 128 != 0:
 		pass
 	if considered & 256 != 0:
-		if find_allowed_slots(func(slot: PokeSlot): return not slot.current_card,\
+		if find_allowed_slots(func(slot: PokeSlot): return not slot.is_filled(),\
 		Constants.SIDES.ATTACKING).size() != 0:
 			allowed_to += 256
 	if considered & 512:
@@ -140,6 +140,16 @@ func record_source_target(is_home: bool, home_trg: Array, away_trg: Array):
 	home_targets.append(home_trg)
 	away_targets.append(away_trg)
 	print_src_trg()
+
+func record_single_src_trg(slot: PokeSlot):
+	var home_trg: Array = []
+	var away_trg: Array = []
+	var is_home: bool = slot.is_home()
+	
+	if is_home: home_trg.append(slot)
+	else: away_trg.append(slot)
+	
+	record_source_target(is_home, home_trg, away_trg)
 
 func remove_top_source_target():
 	source_stack.pop_back()

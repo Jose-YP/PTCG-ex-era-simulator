@@ -23,7 +23,7 @@ func setup():
 func list_items():
 	var ui_slots: Array[UI_Slot] = side.get_slots()
 	for i in range(%SlotList.get_child_count()):
-		if ui_slots[i].connected_slot.current_card:
+		if ui_slots[i].connected_slot.is_filled():
 			slots[i].setup(ui_slots[i].connected_slot)
 
 func refresh_energy():

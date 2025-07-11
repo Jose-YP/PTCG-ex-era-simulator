@@ -9,7 +9,7 @@ class_name IndvCounter
 const pokeSlot = preload("res://Code/Resource Makers/PokemonSpecific/PokeSlotMaker.gd")
 const stackRes = preload("res://Code/Resource Makers/GeneralUse/CardStacksMaker.gd")
 const which_vars: PackedStringArray = ["Slot", "Stack", "Coinflip"]
-const en_methods: PackedStringArray = ["Attatched","Excess","Types"]
+const en_methods: PackedStringArray = ["Total", "Excess", "Diff Types", "Categories"]
 const en_categories: PackedStringArray = ["Any", "Basic Energy", "Special Energy"]
 
 var slot_instance = pokeSlot.new()
@@ -18,7 +18,7 @@ var internal_data = {"which" : "Slot",
  "slot_vars" : "current_card", "stack_vars" : "None",
  "coin_flip" : load("res://Resources/Components/CoinFlip/FlipOnce.tres"),
  "ask" : load("res://Resources/Components/Effects/Asks/General/AnyMon.tres"),
- "en_count_methods" : "Attatched", "en_categories" : "Any",
+ "en_count_methods" : "Total", "en_categories" : "Any",
  "en_counting" : load("res://Resources/Components/EnData/Rainbow.tres")
  ,"cap" : -1}
 #endregion
@@ -80,20 +80,22 @@ func _get_property_list() -> Array[Dictionary]:
 				"hint_string" : ",".join(en_methods),
 				"usage" : PROPERTY_USAGE_DEFAULT
 			})
-			props.append({
-				"name" : "en_categories",
-				"type" : TYPE_STRING,
-				"hint" : PROPERTY_HINT_ENUM,
-				"hint_string" : ",".join(en_categories),
-				"usage" : PROPERTY_USAGE_DEFAULT
-			})
-			props.append({
-				"name" : "en_counting",
-				"type" : TYPE_OBJECT,
-				"hint" : PROPERTY_HINT_RESOURCE_TYPE,
-				"hint_string" : "EnData",
-				"usage" : PROPERTY_USAGE_DEFAULT
-			})
+			if internal_data["en_count_methods"] == "Total":
+				props.append({
+					"name" : "en_categories",
+					"type" : TYPE_STRING,
+					"hint" : PROPERTY_HINT_ENUM,
+					"hint_string" : ",".join(en_categories),
+					"usage" : PROPERTY_USAGE_DEFAULT
+				})
+			if internal_data["en_count_methods"] == "Categories":
+				props.append({
+					"name" : "en_counting",
+					"type" : TYPE_OBJECT,
+					"hint" : PROPERTY_HINT_RESOURCE_TYPE,
+					"hint_string" : "EnData",
+					"usage" : PROPERTY_USAGE_DEFAULT
+					})
 	#Find Stack vars
 	elif internal_data["which"] == "Stack":
 		props.append({
@@ -152,7 +154,7 @@ func _property_get_revert(property: StringName) -> Variant:
 		"stack_vars": return "None"
 		"coin_flip": return load("res://Resources/Components/CoinFlip/FlipOnce.tres")
 		"ask": return load("res://Resources/Components/Effects/Asks/General/AnyMon.tres")
-		"en_count_methods": return "Attatched"
+		"en_count_methods": return "Total"
 		"en_categories": return "Any"
 		"en_counting": return load("res://Resources/Components/EnData/Rainbow.tres")
 		"cap": return -1
@@ -242,12 +244,14 @@ func slot_evaluation(slot_data: String, ask_data: SlotAsk) -> int:
 
 func energy_card_evaluation(en_count_methods_data: String, slot: PokeSlot):
 	match en_count_methods_data:
-		"Attatched":
-			return slot.get_total_energy()
+		"Total":
+			return slot.get_total_energy(internal_data["en_counting"])
 		"Excess":
 			return slot.get_energy_excess()
-		"Types":
+		"Diff Types":
 			return slot.count_diff_energy()
+		"Categories":
+			return slot.get_total_en_categories(internal_data["en_categories"]).size()
 
 func stack_evaluation(stack_data: String, ask_data: SlotAsk) -> int:
 	var fundies: Fundies = Globals.fundies

@@ -28,15 +28,12 @@ signal finished
 
 var result: bool = false
 
+#Await for any coin flips in card player
 func check_prompt():
 	result = false
 	
 	if comparator:
 		var found = comparator.start_comparision()
-		
-		if comparator.has_coinflip():
-			await SignalBus.finished_coinflip
-		
 		result = result or found
 		
 	if choose_location == "Slot":

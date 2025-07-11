@@ -85,6 +85,8 @@ func is_in_slot(desired_side: Constants.SIDES, desired_slot: Constants.SLOTS) ->
 	var side_bool: bool = false
 	var slot_bool: bool = false
 	
+	if not is_filled(): return false
+	
 	match desired_side:
 		#var fund: Fundies = Globals.fundies
 		Constants.SIDES.BOTH:
@@ -112,11 +114,17 @@ func is_in_slot(desired_side: Constants.SIDES, desired_slot: Constants.SLOTS) ->
 	
 	return slot_bool and side_bool
 
+func is_filled() -> bool:
+	return current_card != null
+
 func is_active() -> bool:
 	if ui_slot:
 		return ui_slot.active
 	else:
 		return false
+
+func is_home() -> bool:
+	return ui_slot.home
 
 func is_attacker() -> bool:
 	return ui_slot.home == Globals.fundies.home_turn
@@ -193,8 +201,9 @@ func bench_add_damage(_ammount) -> int:
 #--------------------------------------
 #region ENERGY HANDLERS
 func add_energy(energy_card: Base_Card):
-	var energy_string: String = energy_card.energy_properties.get_current_provide().get_string()
+	var energy_string: String = energy_card.energy_properties.get_current_string()
 	energy_cards.append(energy_card)
+	energy_card.energy_properties.attatched_to = self
 	refresh()
 	action_checkup(str("EN ", energy_string))
 
@@ -218,6 +227,8 @@ func count_energy() -> void:
 	 "FF": 0, "GL": 0, "WP": 0, "Rainbow":0}
 	
 	for energy in energy_cards:
+		if energy.energy_properties.attatched_to != self:
+			energy.energy_properties.attatched_to = self
 		var en_provide: EnData = energy.energy_properties.get_current_provide()
 		var en_name: String = en_provide.get_string()
 		attached_energy[en_name] += en_provide.number
@@ -228,7 +239,7 @@ func get_energy_strings() -> Array[String]:
 	var energy_stirngs: Array[String]
 	
 	for card in energy_cards:
-		var en_name = card.energy_properties.how_display()
+		var en_name = card.energy_properties.get_current_string()
 		energy_stirngs.append(en_name)
 	
 	print_verbose("BEFORE SORT: ", energy_stirngs)
@@ -259,13 +270,29 @@ func get_energy_considered(basic: bool = true):
 	
 	return final_array
 
-func get_total_energy() -> int:
-	count_energy()
+func get_total_energy(enData_filter: EnData = null, filtered_array: Array[Base_Card] = []) -> int:
 	var total: int = 0
-	for loc_type in attached_energy:
-		total += attached_energy[loc_type]
+	var using: Array[Base_Card] = filtered_array if filtered_array.size() != 0 else energy_cards
+	var skip_enData: bool = enData_filter == null or enData_filter.get_string() == "Rainbow"
+	
+	for card in using:
+		#I can't come up with anything better right now but to prevent infinite recursion I have bandaids
+		var add_num: int = 0
+		var en_provide: EnData = card.energy_properties.get_current_provide()
+		var add: bool = skip_enData or (en_provide.same_type(enData_filter))
+		if add:
+			total += en_provide.number
 	
 	return total
+
+#When provides don't matter
+func get_total_en_categories(category_filter: String = "Any") -> Array[Base_Card]:
+	var final: Array[Base_Card]
+	var skip_category: bool = category_filter == "Any"
+	for card in energy_cards:
+		if skip_category or card.energy_properties.considered == category_filter:
+			final.append(card)
+	return final
 
 func get_energy_excess() -> int:
 	var test_attack: Attack = current_card.pokemon_properties.attacks[-1]

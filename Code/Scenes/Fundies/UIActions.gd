@@ -109,7 +109,7 @@ func reset_ui():
 	#Check every slot to see if they have a pokemon in them
 	#If so, let them be checked again
 	for slot in Globals.full_ui.all_slots():
-		slot.make_allowed(slot.connected_slot.current_card != null)
+		slot.make_allowed(slot.connected_slot.is_filled())
 	
 	choosing = false
 	can_reverse = false

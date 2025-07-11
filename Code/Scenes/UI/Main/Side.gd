@@ -25,7 +25,7 @@ func print_status():
 	var stack_status: String
 	for slot in get_slots():
 		var mon_name: String
-		if slot.connected_slot.current_card:
+		if slot.connected_slot.is_filled():
 			mon_name = slot.connected_slot.current_card.name 
 		if slot.active:
 			active_mons = str(active_mons, " [", mon_name ,"]")
@@ -66,12 +66,12 @@ func get_slots() -> Array[UI_Slot]:
 func insert_slot(slot: PokeSlot, predefined: bool = false):
 	if predefined or slot.is_active():
 		for ui_slot in %Active.get_children():
-			if not ui_slot.connected_slot.current_card:
+			if not ui_slot.connected_slot.is_filled():
 				ui_slot.attatch_pokeslot(slot)
 				return
 	else:
 		for ui_slot in %Bench.get_children():
-			if not ui_slot.connected_slot.current_card:
+			if not ui_slot.connected_slot.is_filled():
 				ui_slot.attatch_pokeslot(slot)
 				return
 
