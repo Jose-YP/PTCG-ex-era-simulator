@@ -61,6 +61,14 @@ func print_energy() -> void:
 	
 	print("-------------------------------------------------------------")
 
+func get_current_provide() -> EnData:
+	return success_provide
+
+func get_current_type() -> int:
+	var current_type: int = success_provide.type
+	
+	return current_type
+
 ##Funciton that tells the game how the energy should be displayed visually
 ##Not every combination of type needs to be accounted for
 ## only the ones that appear in the ex Series

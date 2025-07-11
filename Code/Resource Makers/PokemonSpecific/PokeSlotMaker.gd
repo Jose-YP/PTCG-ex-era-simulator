@@ -193,9 +193,8 @@ func bench_add_damage(_ammount) -> int:
 #--------------------------------------
 #region ENERGY HANDLERS
 func add_energy(energy_card: Base_Card):
-	var energy_string: String = energy_card.energy_properties.how_display()
+	var energy_string: String = energy_card.energy_properties.get_current_provide().get_string()
 	energy_cards.append(energy_card)
-	attached_energy[energy_string] += energy_card.energy_properties.number
 	refresh()
 	action_checkup(str("EN ", energy_string))
 
@@ -219,8 +218,9 @@ func count_energy() -> void:
 	 "FF": 0, "GL": 0, "WP": 0, "Rainbow":0}
 	
 	for energy in energy_cards:
-		var en_name: String = energy.energy_properties.how_display()
-		attached_energy[en_name] += energy.energy_properties.number
+		var en_provide: EnData = energy.energy_properties.get_current_provide()
+		var en_name: String = en_provide.get_string()
+		attached_energy[en_name] += en_provide.number
 	
 	#print(attached_energy)
 

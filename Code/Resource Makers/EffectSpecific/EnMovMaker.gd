@@ -103,12 +103,12 @@ func swap(giver: PokeSlot, rec: PokeSlot, energy_giving: Array[Base_Card]):
 
 #region BOOL RETURNS
 func energy_allowed(card: Base_Card, fail: bool) -> bool:
-	var provides: int  = card.energy_properties.fail_provide.type if fail else card.energy_properties.success_provide.type
-	#var provides: int = card.energy_properties.fail_provide if fail else card.energy_properties.type
+	var current_en: EnData = card.energy_properties.get_current_provide()
+	var provides: int  = current_en.type
 	var same: bool = energy_move_type == 2 or\
 	 (energy_move_type == 1 and card.energy_properties.considered == "Special Energy")\
 	 or (energy_move_type == 0 and card.energy_properties.considered == "Basic Energy")
-	var is_react: bool = (react and react == card.energy_properties.react) or not react
+	var is_react: bool = (react and react == current_en.react) or not react
 	
 	return provides & en_type.type != 0 and same and is_react
 

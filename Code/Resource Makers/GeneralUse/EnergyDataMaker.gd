@@ -14,3 +14,14 @@ class_name EnData
 @export_flags("Grass","Fire","Water",
 "Lightning","Psychic","Fighting",
 "Darkness","Metal","Colorless") var type: int = 1023
+
+func get_string():
+	if react: return "React"
+	if holon_type != "None": return holon_type
+	if type == 2 ** 9 - 1: return "Rainbow"
+	elif type == 2 ** 7 + 2 ** 6: return "Dark Metal"
+	elif type == 2 ** 5 + 2 ** 6: return "Magma"
+	elif type == 2 ** 2 + 2 ** 6: return  "Aqua"
+	
+	var index = int((log(float(type)) / log(2)))
+	return Constants.energy_types[index]

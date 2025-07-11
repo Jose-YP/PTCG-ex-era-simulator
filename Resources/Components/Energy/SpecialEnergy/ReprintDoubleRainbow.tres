@@ -1,17 +1,24 @@
-[gd_resource type="Resource" script_class="Energy" load_steps=2 format=3 uid="uid://dfecfonjisw7w"]
+[gd_resource type="Resource" script_class="Energy" load_steps=5 format=3 uid="uid://dfecfonjisw7w"]
 
 [ext_resource type="Script" uid="uid://caj1pm8erar2a" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="1_05ucl"]
+[ext_resource type="Resource" uid="uid://lop03i25k4pb" path="res://Resources/Components/EnData/AtkEvoNonEx.tres" id="1_vn2w4"]
+[ext_resource type="Resource" uid="uid://cv3vlfatr1glg" path="res://Resources/Components/Effects/Buff/SrcSelf-10Atk.tres" id="2_vb6yn"]
+[ext_resource type="Resource" uid="uid://cfvxvq4wbo1td" path="res://Resources/Components/EnData/DoubleRainbow.tres" id="3_avjee"]
 
 [resource]
 script = ExtResource("1_05ucl")
 considered = "Special Energy"
 description = "Double Rainbow Energy can be attached only to an Evolved Pokémon (excluding Pokémon-ex). While in play, Double Rainbow Energy provides every type of Energy but provides 2 Energy at a time. (Has no effect other than providing Energy.) Damage done to your opponent's Pokémon by the Pokémon Double Rainbow Energy is attached to is reduced by 10 (before applying Weakness and Resistance). When the Pokémon Double Rainbow Energy is attached to is no longer an Evolved Pokémon, discard Double Rainbow Energy."
+asks = ExtResource("1_vn2w4")
 has_fail_provide = false
 has_fail_prevent = false
+attatch_effect = ExtResource("2_vb6yn")
 turns = -1
 number = 1
 react = false
 holon_type = "None"
 type = 1
 fail_type = 1
+fail_provide = ExtResource("3_avjee")
+success_provide = ExtResource("3_avjee")
 metadata/_custom_type_script = "uid://caj1pm8erar2a"

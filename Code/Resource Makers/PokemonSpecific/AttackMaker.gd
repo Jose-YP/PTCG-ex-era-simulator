@@ -85,17 +85,18 @@ func pay_cost(slot: PokeSlot):
 	#Priotitize basic/single type first
 	print("ENERGY SORT ", basic_energy)
 	for card in basic_energy:
-		var index = int((log(float(card.energy_properties.type)) / log(2)))
+		var index = int((log(float(card.energy_properties.get_current_type())) / log(2)))
 		print(index)
 		if all_costs[index] > 0: all_costs[index] -= 1
 		else: all_costs[8] -= 1
 	
 	#Maybe sort based on flag size
-	special_energy.sort_custom(func(a: Base_Card,b: Base_Card): return a.energy_properties.type < b.energy_properties.type)
+	special_energy.sort_custom(func(a: Base_Card,b: Base_Card):\
+	 return a.energy_properties.get_current_type() < b.energy_properties.get_current_type())
 	print("SPECIAL SORT: ", special_energy)
 	for i in range(all_costs.size()):
 		for card in special_energy:
-			if i ** 2 & card.energy_properties.type:
+			if i ** 2 & card.energy_properties.get_current_type():
 				print(card, " for ", i)
 				all_costs[i] -= 1
 				special_energy.erase(card)

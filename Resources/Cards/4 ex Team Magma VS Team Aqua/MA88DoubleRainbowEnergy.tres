@@ -1,37 +1,12 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://dxgh8i8vloevn"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=9 format=3 uid="uid://dxgh8i8vloevn"]
 
 [ext_resource type="Resource" uid="uid://cyaqpq76mby4m" path="res://Resources/Components/Effects/Asks/Class&Owner/AtkEvolvedMon.tres" id="1_qq2ix"]
+[ext_resource type="Resource" uid="uid://cv3vlfatr1glg" path="res://Resources/Components/Effects/Buff/SrcSelf-10Atk.tres" id="2_7o04u"]
 [ext_resource type="Script" uid="uid://caj1pm8erar2a" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="2_50l8q"]
 [ext_resource type="Resource" uid="uid://vk18jkchsq3v" path="res://Resources/Components/EnData/Colorless.tres" id="2_ykgg5"]
-[ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/BuffMaker.gd" id="3_7o04u"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="4_7o04u"]
-[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_ykgg5"]
 [ext_resource type="Texture2D" uid="uid://c0xc5okx3j7by" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/88.jpg" id="5_717jw"]
 [ext_resource type="Resource" uid="uid://c7itelq8jtjc2" path="res://Resources/Components/EnData/Rainbow.tres" id="6_717jw"]
-
-[sub_resource type="Resource" id="Resource_573ab"]
-script = ExtResource("3_7o04u")
-side = 4
-slot = 1
-duration = 1
-attack_damage = -10
-defense = 0
-retreat_change = 0
-after_weak_res = true
-ignore_res_other = false
-ignore_weak_self = false
-immunities = 0
-immune_to_special_conditions = false
-immune_to_effects = false
-immune_to_damage = false
-metadata/_custom_type_script = "uid://coojhwe6m20gd"
-
-[sub_resource type="Resource" id="Resource_jrjwr"]
-script = ExtResource("4_ykgg5")
-either_or = false
-order = Array[int]([])
-buff = SubResource("Resource_573ab")
-metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_blg67"]
 script = ExtResource("2_50l8q")
@@ -40,7 +15,7 @@ description = " Double Rainbow Energy can be attached only to an Evolved Pokémo
 asks = ExtResource("1_qq2ix")
 has_fail_provide = false
 has_fail_prevent = false
-success_effect = SubResource("Resource_jrjwr")
+attatch_effect = ExtResource("2_7o04u")
 turns = -1
 number = 2
 react = false

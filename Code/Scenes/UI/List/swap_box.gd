@@ -126,9 +126,10 @@ func display_current_swap():
 	var energy_names: Array[String]
 	
 	for button in energy_given:
-		var energy_name: String = button.card.energy_properties.how_display()
+		var en_provide: EnData = button.card.energy_properties.get_current_provide()
+		var energy_name: String = en_provide.get_string()
 		energy_names.append(energy_name)
-		energy_dict[energy_name] += button.card.energy_properties.number
+		energy_dict[energy_name] += en_provide.number
 	
 	energy_types.display_energy(energy_names, energy_dict)
 

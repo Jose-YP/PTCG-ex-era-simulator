@@ -71,8 +71,8 @@ func identifier_bool(card: Base_Card, based_on: Array[PokeSlot]) -> bool:
 				print(" I don't care what this is just say it's good enogh")
 				return true
 		else:
-			print(type, " ", card.energy_properties.fail_type)
-			if type != 511 and type & card.energy_properties.fail_type == 0:
+			print(energy_provides.type, " ", card.energy_properties.fail_provide.type)
+			if energy_provides.type != 511 and type & card.energy_properties.fail_provide.type == 0:
 				print("Not considered the right type")
 				return false
 			

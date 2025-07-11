@@ -27,7 +27,7 @@ func _ready():
 	make_text(extra_identifier, engData.considered)
 	
 	for num in range(engData.number):
-		default_types[num].display_type(engData.how_display())
+		default_types[num].display_type(engData.success_provide.get_string())
 		default_types[num].show()
 	
 	art.texture = card.image
