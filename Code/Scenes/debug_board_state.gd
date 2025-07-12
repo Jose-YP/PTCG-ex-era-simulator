@@ -14,6 +14,15 @@ var doubles_ui: PackedScene = load("res://Scenes/UI/UICollections/full_ui_double
 var test_out: bool = false
 
 func _ready() -> void:
+	var show_me: IndvCounter = load("res://Resources/Components/Counters/Indv/CoinflipOnce.tres")
+	var flip_heads: Comparator = load("res://Resources/Components/Counters/Comparator/CoinflipHeads.tres")
+	print(show_me, flip_heads)
+	print(flip_heads.first_comparison)
+	var reversal: Base_Card = load("res://Resources/Cards/1 ex Ruby & Saphire/RS87PokemonReversal.tres")
+	print(reversal.trainer_properties.prompt)
+	print(reversal.trainer_properties.prompt.comparator)
+	print(reversal.trainer_properties.prompt.comparator.first_comparison)
+	
 	full_ui = doubles_ui.instantiate() if doubles else singles_ui.instantiate()
 	add_child(full_ui)
 	full_ui.home_side = board_state.home_side

@@ -7,8 +7,8 @@
 [ext_resource type="Resource" uid="uid://bny1ix4regvyv" path="res://Resources/Components/Counters/Comparator/Has2DiffTypes.tres" id="5_tjxgr"]
 [ext_resource type="Resource" uid="uid://crlxvia0kynq" path="res://Resources/Components/Counters/Comparator/DiscardsUnequal.tres" id="6_ce0ei"]
 [ext_resource type="Resource" uid="uid://ddeij66cuqx7d" path="res://Resources/Components/Counters/Comparator/AtkGreaterHand.tres" id="7_hruce"]
-[ext_resource type="Resource" uid="uid://1yahyklj3y7s" path="res://Resources/Components/Counters/INdv/AtkBenchCount.tres" id="8_51sfc"]
-[ext_resource type="Resource" uid="uid://bujld5756sv01" path="res://Resources/Components/Counters/INdv/DefBenchCount.tres" id="9_kkr3x"]
+[ext_resource type="Resource" uid="uid://1yahyklj3y7s" path="res://Resources/Components/Counters/Indv/AtkBenchCount.tres" id="8_51sfc"]
+[ext_resource type="Resource" uid="uid://bujld5756sv01" path="res://Resources/Components/Counters/Indv/DefBenchCount.tres" id="9_kkr3x"]
 [ext_resource type="Resource" uid="uid://c8ugmpvetg8xj" path="res://Resources/Components/Counters/Comparator/CoinflipHeads.tres" id="10_0hm4c"]
 
 [sub_resource type="Resource" id="Resource_tjxgr"]

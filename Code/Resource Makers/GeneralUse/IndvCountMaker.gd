@@ -148,7 +148,7 @@ func _property_can_revert(property: StringName):
 	return false
 
 func _property_get_revert(property: StringName) -> Variant:
-	match property:
+	match property: 
 		"which": return "Slot"
 		"slot_vars": return "current_card"
 		"stack_vars": return "None"

@@ -122,13 +122,24 @@ func play_trainer(card: Base_Card):
 	var trainer: Trainer = card.trainer_properties
 	var allowed: bool = false
 	Globals.fundies.record_source_target(Globals.fundies.home_turn, [], [])
-	if card.is_considered("Supporter"):
-		Globals.fundies.stack_manager.play_supporter(card, Globals.fundies.home_turn)
 	
 	if trainer.prompt:
 		print("This card has a prompt")
+		if card.has_before_prompt():
+			var went_back: bool = false
+			went_back = await card.trainer_properties.prompt.before_activating() 
+			if went_back:
+				print("Nevermind")
+				return
+		
 		allowed = await trainer.prompt.check_prompt()
+		chosen.emit()
 		print("Prompt Result: ", allowed)
+	else: chosen.emit()
+	await chosen
+	
+	if card.is_considered("Supporter"):
+		Globals.fundies.stack_manager.play_supporter(card, Globals.fundies.home_turn)
 	
 	if trainer.asks:
 		#Determine a way to check asks and prompts easily
@@ -192,7 +203,6 @@ func start_add_choice(instruction: String, card: Base_Card, play_as: int, bool_f
 	
 	if Globals.fundies.ui_actions.selected_slot:
 		var went_back: bool = false
-		Conversions
 		if card.has_before_prompt() and not Conversions.playing_as_pokemon(play_as):
 			Globals.fundies.record_single_src_trg(Globals.fundies.ui_actions.selected_slot)
 			went_back = await card.play_before_prompt()

@@ -28,12 +28,18 @@ class_name PromptAsk
 ##Which cards are allowed in choice
 @export var which_cards: Identifier
 
+func _init() -> void:
+	if comparator:
+		if comparator.first_comparison: pass
+		else: 
+			print("Where?")
+
 #Any prompts that can change in the moment
 func check_prompt():
 	var result: bool = false
 	
 	if comparator:
-		print("CHECKING COMPARATOR")
+		print("CHECKING COMPARATOR ", comparator.first_comparison)
 		var found = comparator.start_comparision()
 		print(found)
 		result = result or found

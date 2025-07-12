@@ -1,10 +1,31 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=9 format=3 uid="uid://ben8fxv5hw5hb"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=13 format=3 uid="uid://ben8fxv5hw5hb"]
 
 [ext_resource type="Texture2D" uid="uid://cfd0ir6bko6l8" path="res://Art/Cards/1 ex Ruby & Saphire/87.jpg" id="1_ccrwf"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_mhxcg"]
-[ext_resource type="Resource" uid="uid://lfhu3xyr0wpo" path="res://Resources/Components/Effects/Prompts/IfFlipHeads.tres" id="3_ccrwf"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_e0e0d"]
+[ext_resource type="Resource" uid="uid://bguwqqss8e0r7" path="res://Resources/Components/Counters/Indv/CoinflipOnce.tres" id="3_x61vg"]
+[ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="4_lnypp"]
+[ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="4_x61vg"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="6_gdumi"]
+
+[sub_resource type="Resource" id="Resource_kkyit"]
+script = ExtResource("4_lnypp")
+comparision_type = "Equals"
+first_comparison = ExtResource("3_x61vg")
+compare_to = "Const"
+second_constant = 1
+metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
+
+[sub_resource type="Resource" id="Resource_g2a2o"]
+script = ExtResource("4_x61vg")
+formal_ask = false
+ask_string = ""
+comparator = SubResource("Resource_kkyit")
+can_reverse = true
+chooser = 0
+choose_location = "None"
+which_stack = 0
+metadata/_custom_type_script = "uid://b85jmc7067bjc"
 
 [sub_resource type="Resource" id="Resource_t70ie"]
 metadata/__load_path__ = "res://Resources/Components/Effects/ETC/SwapReversal.tres"
@@ -21,7 +42,7 @@ script = ExtResource("6_gdumi")
 considered = "Item"
 specific_requirement = ""
 description = "Flip a coin. If heads, your opponent switches 1 of his or her Active Pokémon with 1 of his or her Benched Pokémon. "
-prompt = ExtResource("3_ccrwf")
+prompt = SubResource("Resource_g2a2o")
 success_effect = SubResource("Resource_lnypp")
 metadata/_custom_type_script = "uid://crx447i85kshy"
 
