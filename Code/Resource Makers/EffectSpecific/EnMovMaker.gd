@@ -28,9 +28,8 @@ class_name EnMov
 @export var react: bool = false
 
 signal finished
-signal reversed
 
-func play_effect(reversable: bool = false):
+func play_effect(reversable: bool = false) -> void:
 	print("PLAY ENMOV")
 	match action:
 		0:
@@ -43,7 +42,7 @@ func play_effect(reversable: bool = false):
 	finished.emit()
 
 #region EFFECTS
-func send_effect(reversable: bool = false):
+func send_effect(reversable: bool = false) -> void:
 	Globals.fundies.card_player.set_reversable(reversable)
 	var giver_call: Callable = func(slot: PokeSlot):
 		return givers.check_ask(slot) and slot.energy_cards.size() != 0
@@ -53,30 +52,35 @@ func send_effect(reversable: bool = false):
 	"Choose a Pokemon", giver_call, reversable)
 	
 	if candidate == null:
-		reversed.emit()
+		SignalBus.went_back.emit()
 		return
 	
 	print(candidate.energy_cards, candidate.count_diff_energy())
 	if candidate.count_diff_energy() == 1 and not reversable:
-		candidate.remove_energy(candidate.energy_cards[0].name)
+		candidate.remove_energy(candidate.energy_cards[0])
 	else:
 		var en_dict: Dictionary[Base_Card, bool]
 		for en in candidate.energy_cards:
 			var duplicated: Base_Card = en.duplicate(true)
 			en_dict[duplicated] = energy_allowed(en, false)
+		
 		var dis_box: DiscardList = Globals.fundies.stack_manager.spawn_discard_list(
 			en_dict, Constants.STACKS.PLAY, to_stack)
 		
+		dis_box.pokeslot_origin = candidate
 		dis_box.home = Globals.fundies.get_considered_home(givers.side_target)
 		dis_box.discards_left = energy_ammount
+		dis_box.header_txt = str(candidate.get_card_name(),"'s Energy")
+		dis_box.footer_prefix = str("Energy Left: ")
+		dis_box.action_txt = str("Send to ",Conversions.stack_into_string(to_stack))
 		if reversable: dis_box.allow_reverse()
-		Globals.fundies.add_child(dis_box)
 		
+		Globals.fundies.add_child(dis_box)
 		await dis_box.tree_exited
 	
 	finished.emit()
 
-func swap_effect(reversable: bool = false):
+func swap_effect(reversable: bool = false) -> void:
 	var new_box: SwapBox = Constants.swap_box.instantiate()
 	#Globals.fundies.get_considered_home(chooser)
 	new_box.swap_rules = self.duplicate()
@@ -90,7 +94,7 @@ func swap_effect(reversable: bool = false):
 	
 	finished.emit()
 
-func attatch_effect(reversable: bool = false):
+func attatch_effect(reversable: bool = false) -> void:
 	finished.emit()
 #endregion
 
@@ -129,6 +133,3 @@ func enough_energy(ammount: int) -> bool:
 func enough_actions(ammount: int) -> bool:
 	return action_ammount != -1 and ammount == action_ammount
 #endregion
-
-func just_reversed():
-	pass

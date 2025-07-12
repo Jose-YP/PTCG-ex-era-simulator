@@ -138,7 +138,7 @@ func move_cards(cards: Array[Base_Card], from: Constants.STACKS, towards: Consta
 	if (from == Constants.STACKS.DECK or towards == Constants.STACKS.DECK) and shuffle:
 		usable_deck.shuffle()
 	else:
-		print(from == Constants.STACKS.DECK, towards == Constants.STACKS.DECK, shuffle)
+		print(Conversions.stack_into_string(from), Conversions.stack_into_string(towards), shuffle)
 	
 	none_lost()
 

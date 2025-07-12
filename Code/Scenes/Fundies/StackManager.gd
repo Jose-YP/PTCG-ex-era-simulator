@@ -74,12 +74,15 @@ func draw(times: int = 1, top: bool = true): #From deck to hand
 	
 	update_lists()
 
-func play_card(card: Base_Card, home: bool): #From hand to Y
+func play_card(card: Base_Card, destination: Constants.STACKS, home: bool = Globals.fundies.home_turn): #From hand to Y
 	print("PLAY ", card.name)
 	get_stacks(home).hand.erase(card)
 	update_lists()
 	card.print_info()
-	discard_card(card)
+	if destination == Constants.STACKS.DISCARD:
+		discard_card(card)
+	else:
+		get_stacks(home).cards_in_play.append(card)
 	Globals.fundies.ui_actions.reset_ui()
 
 func play_supporter(card: Base_Card, home: bool):
@@ -162,6 +165,8 @@ func spawn_discard_list(specified_list: Dictionary[Base_Card, bool],
 	
 	dis_box.list = specified_list
 	dis_box.stack = from
+	dis_box.destination = to
+	
 	return dis_box
 
 func spawn_energy_list(slot: PokeSlot, allowed_fun: Callable = func(card): return true):

@@ -182,8 +182,27 @@ func set_card(card: Base_Card) -> void:
 	ui_slot.make_allowed(true)
 	action_checkup("Set")
 
-func return_card() -> void:
-	pass
+#General use function, use specific ones if possible
+func remove_cards(cards: Array[Base_Card]) -> void:
+	for card in cards:
+		var removed: bool = false
+		#Remove the tool card if it's here
+		if tool_card and tool_card.same_card(card):
+			remove_tool()
+			continue
+		#Remove the first energy card that matches this card
+		for en in energy_cards:
+			if en.same_card(card):
+				remove_energy(en)
+				removed = true
+				break
+		if removed: continue
+		#Remove any evos if they're here
+		for evo in evolved_from:
+			if evo.same_card(card):
+				devolve_card()
+				removed = true
+	
 #endregion
 #--------------------------------------
 
@@ -209,14 +228,14 @@ func add_energy(energy_card: Base_Card):
 	refresh()
 	action_checkup(str("EN ", energy_string))
 
-func remove_energy(en_name: String):
+func remove_energy(removing: Base_Card):
 	for card in energy_cards:
-		if card.name == en_name:
+		if card.same_card(removing):
 			energy_cards.erase(card)
 			refresh()
 			return
 	
-	printerr("Couldn't find ", en_name, " in array ", energy_cards)
+	printerr("Couldn't find ", removing.name, " in array ", energy_cards)
 
 func count_energy() -> void:
 	#Count if energy cars provided give the right energy for each attack
@@ -232,6 +251,7 @@ func count_energy() -> void:
 		if energy.energy_properties.attatched_to != self:
 			energy.energy_properties.attatched_to = self
 		var en_provide: EnData = energy.energy_properties.get_current_provide()
+		print(en_provide.number, energy.name)
 		var en_name: String = en_provide.get_string()
 		attached_energy[en_name] += en_provide.number
 

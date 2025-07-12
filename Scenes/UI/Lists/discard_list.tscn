@@ -36,10 +36,11 @@ unique_name_in_owner = true
 layout_mode = 2
 dragging_node = NodePath("../../..")
 
-[node name="Discard" type="Button" parent="VBoxContainer/HBoxContainer"]
+[node name="Action" type="Button" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(90, 0)
 layout_mode = 2
 text = "Discard"
 
 [connection signal="close_button_pressed" from="VBoxContainer/Header" to="." method="_on_header_close_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/Discard" to="." method="_on_discard_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Action" to="." method="_on_discard_pressed"]

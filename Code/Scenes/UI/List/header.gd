@@ -27,11 +27,15 @@ func setup(txt: String):
 	if closable:
 		%Close_Button.show()
 	
+	identifier.clear()
 	identifier.append_text(txt)
 	
 	if txt == "":
 		hide()
 	else: show()
+
+func has_text() -> bool:
+	return identifier.text != ""
 
 func _on_movable_pressed() -> void:
 	if dragging_node.options:

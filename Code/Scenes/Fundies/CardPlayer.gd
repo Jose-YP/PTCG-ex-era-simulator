@@ -48,7 +48,7 @@ func play_basic_pokemon(card: Base_Card):
 			slot.current_card = card
 			slot.refresh()
 			#Remove the card from hand
-			Globals.fundies.stack_manager.play_card(card, Globals.fundies.home_turn)
+			Globals.fundies.stack_manager.play_card(card, Constants.STACKS.PLAY)
 			return
 	Conversions.get_allowed_flags("Basic")
 	start_add_choice("Where will pokemon be benched", card, Conversions.get_allowed_flags("Basic"),
@@ -66,7 +66,7 @@ func play_fossil(card: Base_Card):
 			slot.set_card(card)
 			slot.refresh()
 			#Remove the card from hand
-			Globals.fundies.stack_manager.play_card(card, Globals.fundies.home_turn)
+			Globals.fundies.stack_manager.play_card(card, Constants.STACKS.PLAY)
 			return
 	
 	start_add_choice("Where will pokemon be benched", card, Conversions.get_allowed_flags("Fossil"),
@@ -91,6 +91,7 @@ func play_evolution(card: Base_Card, placement: Placement = null):
 		 Conversions.get_allowed_flags("Evolution"), place_func, false)
 	
 	await chosen
+	Globals.fundies.stack_manager.play_card(card, Constants.STACKS.PLAY)
 	print("Attatch ", card.name)
 	card.print_info()
 #endregion
@@ -112,6 +113,7 @@ func play_energy(card: Base_Card, placement:Placement = null):
 	 Conversions.get_allowed_flags("Energy"), energy_bool, true)
 	
 	await chosen
+	Globals.fundies.stack_manager.play_card(card, Constants.STACKS.PLAY)
 	print("Attatch ", card.name)
 	card.print_info()
 
@@ -148,7 +150,7 @@ func play_trainer(card: Base_Card):
 		await trainer.always_effect.play_effect()
 	
 	if not card.is_considered("Supporter"):
-		Globals.fundies.stack_manager.play_card(card, Globals.fundies.home_turn)
+		Globals.fundies.stack_manager.play_card(card, Constants.STACKS.DISCARD)
 	Globals.fundies.remove_top_source_target()
 
 #For tools
@@ -189,15 +191,14 @@ func start_add_choice(instruction: String, card: Base_Card, play_as: int, bool_f
 	await generic_choice(instruction, bool_fun)
 	
 	if Globals.fundies.ui_actions.selected_slot:
-		var went_through: bool = true
+		var went_back: bool = true
 		if card.has_before_prompt():
 			Globals.fundies.record_single_src_trg(Globals.fundies.ui_actions.selected_slot)
-			went_through = await card.play_before_prompt()
+			went_back = await card.play_before_prompt()
 			Globals.fundies.remove_top_source_target()
-		if went_through:
+		if not went_back:
 			hold_candidate.use_card(card, play_as)
 			hold_candidate = null
-			Globals.fundies.stack_manager.play_card(card, Globals.fundies.home_turn)
 		print("Attatch ", card.name)
 	else:
 		print("Nevermind")

@@ -15,9 +15,10 @@ class_name PlayingList
 @export var stack_act: Constants.STACK_ACT = Constants.STACK_ACT.PLAY
 @export var stack: Constants.STACKS = Constants.STACKS.HAND
 
-signal finished
-
 const list_item: PackedScene = preload("res://Scenes/UI/Lists/PlayingListItem_copy.tscn")
+
+@warning_ignore("unused_signal")
+signal finished
 
 var black_list: Array[String] = []
 var white_list: Array[String] = []

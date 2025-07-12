@@ -28,13 +28,9 @@ class_name PromptAsk
 ##Which cards are allowed in choice
 @export var which_cards: Identifier
 
-signal finished
-
-var result: bool = false
-
 #Any prompts that can change in the moment
 func check_prompt():
-	result = false
+	var result: bool = false
 	
 	if comparator:
 		print("CHECKING COMPARATOR")
@@ -53,17 +49,11 @@ func check_prompt():
 
 #Any prompts that are checked before playing card/effects
 func before_activating() -> bool:
-	result = true
 	if effect:
-		effect.reversed.connect(get_reversed)
 		await effect.play_effect(can_reverse)
 		print("DID WE GO BACK? ", effect.went_back)
-		effect.reversed.disconnect(get_reversed)
 	
-	return result
+	return effect.went_back
 
 func has_before_prompt() -> bool:
 	return effect != null or choose_location != "None" or formal_ask
-
-func get_reversed():
-	result = false

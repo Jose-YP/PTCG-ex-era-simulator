@@ -21,3 +21,6 @@ func setup(txt: String):
 	if txt == "":
 		hide()
 	else: show()
+
+func has_text() -> bool:
+	return instructions.text != ""

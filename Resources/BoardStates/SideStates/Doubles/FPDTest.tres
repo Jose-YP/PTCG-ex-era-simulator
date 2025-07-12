@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SideState" load_steps=34 format=3 uid="uid://dge18p0in3cyo"]
+[gd_resource type="Resource" script_class="SideState" load_steps=33 format=3 uid="uid://dge18p0in3cyo"]
 
 [ext_resource type="Resource" uid="uid://d3qd7r6gwfitd" path="res://Resources/Decks/TestDeckFP.tres" id="1_6pulm"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_6yda8"]
@@ -10,7 +10,6 @@
 [ext_resource type="Resource" uid="uid://cvjyyq2lad5k5" path="res://Resources/Cards/1 ex Ruby & Saphire/RS108FireEnergy.tres" id="8_7rmjj"]
 [ext_resource type="Resource" uid="uid://cfps337rtsmpi" path="res://Resources/Cards/11 ex Delta Species/DS92HolonLass.tres" id="9_6yda8"]
 [ext_resource type="Resource" uid="uid://b1xaqtaovjo0b" path="res://Resources/Cards/8 ex Deoxys/DX94HealEnergy.tres" id="10_2lgin"]
-[ext_resource type="Resource" uid="uid://bok1dv0p7mo4d" path="res://Resources/Cards/1 ex Ruby & Saphire/RS86Pokeball.tres" id="11_4kny5"]
 [ext_resource type="Resource" uid="uid://gyk46ghjiejq" path="res://Resources/Cards/1 ex Ruby & Saphire/RS101Mewtwo-ex.tres" id="12_4t3wo"]
 [ext_resource type="Resource" uid="uid://ben8fxv5hw5hb" path="res://Resources/Cards/1 ex Ruby & Saphire/RS87PokemonReversal.tres" id="13_t157j"]
 [ext_resource type="Resource" uid="uid://b8kt4i4jgosm8" path="res://Resources/Cards/1 ex Ruby & Saphire/RS3Blaziken.tres" id="14_ms4b8"]
@@ -33,7 +32,7 @@
 [sub_resource type="Resource" id="Resource_ai8fb"]
 script = ExtResource("20_th0o3")
 deck = ExtResource("1_6pulm")
-init_deck = Array[ExtResource("2_6yda8")]([ExtResource("3_s1i7m"), ExtResource("4_nxave"), ExtResource("5_rif2t"), ExtResource("6_jiqsc"), ExtResource("7_ymgto"), ExtResource("7_ymgto"), ExtResource("8_7rmjj"), ExtResource("8_7rmjj"), ExtResource("9_6yda8"), ExtResource("10_2lgin"), ExtResource("11_4kny5"), ExtResource("12_4t3wo"), ExtResource("13_t157j"), ExtResource("14_ms4b8"), ExtResource("14_ms4b8"), ExtResource("15_fx773"), ExtResource("15_fx773"), ExtResource("16_hyhr3"), ExtResource("17_47ikc"), ExtResource("17_47ikc")])
+init_deck = Array[ExtResource("2_6yda8")]([ExtResource("3_s1i7m"), ExtResource("4_nxave"), ExtResource("5_rif2t"), ExtResource("6_jiqsc"), ExtResource("7_ymgto"), ExtResource("7_ymgto"), ExtResource("8_7rmjj"), ExtResource("8_7rmjj"), ExtResource("9_6yda8"), ExtResource("10_2lgin"), ExtResource("12_4t3wo"), ExtResource("13_t157j"), ExtResource("14_ms4b8"), ExtResource("14_ms4b8"), ExtResource("15_fx773"), ExtResource("15_fx773"), ExtResource("16_hyhr3"), ExtResource("17_47ikc"), ExtResource("17_47ikc"), ExtResource("20_s1i7m")])
 init_hand = Array[ExtResource("2_6yda8")]([ExtResource("18_iehmd"), ExtResource("7_ymgto"), ExtResource("8_7rmjj"), ExtResource("6_jiqsc"), ExtResource("13_t157j"), ExtResource("19_s1i7m"), ExtResource("20_s1i7m"), ExtResource("17_47ikc")])
 init_discard = Array[ExtResource("2_6yda8")]([])
 init_prize = Array[ExtResource("2_6yda8")]([])
