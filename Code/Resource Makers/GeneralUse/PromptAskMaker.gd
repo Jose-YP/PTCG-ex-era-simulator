@@ -28,12 +28,6 @@ class_name PromptAsk
 ##Which cards are allowed in choice
 @export var which_cards: Identifier
 
-func _init() -> void:
-	if comparator:
-		if comparator.first_comparison: pass
-		else: 
-			print("Where?")
-
 #Any prompts that can change in the moment
 func check_prompt():
 	var result: bool = false
@@ -43,11 +37,7 @@ func check_prompt():
 		var found = comparator.start_comparision()
 		print(found)
 		result = result or found
-		
-	if choose_location == "Slot":
-		pass
-	elif choose_location == "Stack":
-		pass
+	
 	elif formal_ask:
 		pass
 	
@@ -58,8 +48,20 @@ func before_activating() -> bool:
 	if effect:
 		await effect.play_effect(can_reverse)
 		print("DID WE GO BACK? ", effect.went_back)
+	if choose_location == "Slot":
+		pass
+	elif choose_location == "Stack":
+		pass
 	
 	return effect.went_back
 
 func has_before_prompt() -> bool:
 	return effect != null or choose_location != "None" or formal_ask
+
+func has_coinflip() -> bool:
+	if comparator:
+		var result: bool = comparator.first_comparison.has_coinflip()
+		if comparator.second_counter:
+			result = result or comparator.second_counter.has_coinflip()
+		return result
+	return false

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="PromptAsk" load_steps=3 format=3 uid="uid://ekj1myy642kh"]
+
+[ext_resource type="Resource" uid="uid://b45cmbaixh154" path="res://Resources/Components/Counters/Comparator/OneFlipHead.tres" id="1_bqwdo"]
+[ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="3_0ldrp"]
+
+[resource]
+script = ExtResource("3_0ldrp")
+formal_ask = false
+ask_string = ""
+comparator = ExtResource("1_bqwdo")
+can_reverse = true
+chooser = 0
+choose_location = "None"
+which_stack = 0
+metadata/_custom_type_script = "uid://b85jmc7067bjc"

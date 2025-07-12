@@ -132,23 +132,18 @@ func play_trainer(card: Base_Card):
 				print("Nevermind")
 				return
 		
-		allowed = await trainer.prompt.check_prompt()
-		chosen.emit()
-		print("Prompt Result: ", allowed)
-	else: chosen.emit()
-	await chosen
+		allowed = trainer.prompt.check_prompt()
+		
+		if trainer.prompt.has_coinflip():
+			await SignalBus.finished_coinflip
+			print("COINFLIP RESULT: ", allowed)
+		else: print("Prompt Result: ", allowed)
+		print(str(card.name, " played it's ", "success effect" if allowed else "fail effect"))
 	
 	if card.is_considered("Supporter"):
 		Globals.fundies.stack_manager.play_supporter(card, Globals.fundies.home_turn)
 	
 	if trainer.asks:
-		#Determine a way to check asks and prompts easily
-		
-		#if trainer.asks.check_ask():
-			#trainer.success_effect.play_effect(fundies)
-		#else:
-			#trainer.fail_effect.play_effect(fundies)
-		
 		print("This card has an ask")
 	
 	if not allowed and trainer.fail_effect:
@@ -156,6 +151,8 @@ func play_trainer(card: Base_Card):
 	
 	if allowed and trainer.success_effect:
 		await trainer.success_effect.play_effect()
+	else:
+		print(trainer.success_effect)
 	
 	if trainer.always_effect:
 		await trainer.always_effect.play_effect()

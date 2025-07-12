@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Comparator" load_steps=3 format=3 uid="uid://b45cmbaixh154"]
+
+[ext_resource type="Resource" uid="uid://bguwqqss8e0r7" path="res://Resources/Components/Counters/Indv/CoinflipOnce.tres" id="1_bqdqv"]
+[ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="2_m01s6"]
+
+[resource]
+script = ExtResource("2_m01s6")
+comparision_type = "Equals"
+first_comparison = ExtResource("1_bqdqv")
+compare_to = "Const"
+second_constant = 1
+metadata/_custom_type_script = "uid://b65jx8u5cgcgl"

@@ -35,9 +35,11 @@ func switch(aff: Constants.SIDES, reversable: bool):
 	
 	#Get whichever active pokemon are allowed to switch
 	first = await Globals.fundies.card_player.get_choice_candidates(\
-	"Choose an active Pokemon to switch", first_candidate, reversable)
+	"Choose a benched Pokemon to switch", first_candidate, reversable)
+	if first == null: return
 	second = await Globals.fundies.card_player.get_choice_candidates(\
-	"Choose an benched Pokemon to switch", second_candidate, reversable)
+	"Choose an active Pokemon to switch", second_candidate, reversable)
+	if second == null: return
 	#Get whichever benched pokemon are allowed to switch
 	
 	#Swap the data between eachother
