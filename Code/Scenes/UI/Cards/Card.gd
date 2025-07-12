@@ -24,6 +24,7 @@ extends Control
 @onready var set_type: TabContainer = %Set
 @onready var retreat_button: Control = %RetreatButton
 @onready var art: TextureRect = %Art
+@onready var use_as_energy: PanelContainer = %UseAsEnergy
 
 @onready var movable: Button = %Movable
 @onready var close_button: Close_Button = %CloseButton
@@ -77,6 +78,11 @@ func _ready():
 	
 	#endregion
 	#--------------------------------------
+	
+	if card.energy_properties:
+		use_as_energy.show()
+		use_as_energy.setup(card.energy_properties)
+	else: use_as_energy.hide()
 	
 	#--------------------------------------
 	#region SIMPLE EDITS

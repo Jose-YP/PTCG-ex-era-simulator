@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="PromptAsk" load_steps=3 format=3 uid="uid://i3dimt0ebxnk"]
+
+[ext_resource type="Resource" uid="uid://bu51pnjgufk7q" path="res://Resources/Components/Counters/Comparator/CoinflipTails.tres" id="1_hwtil"]
+[ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="2_nsmqk"]
+
+[resource]
+script = ExtResource("2_nsmqk")
+formal_ask = false
+ask_string = ""
+comparator = ExtResource("1_hwtil")
+can_reverse = true
+chooser = 0
+choose_location = "None"
+which_stack = 0
+metadata/_custom_type_script = "uid://b85jmc7067bjc"

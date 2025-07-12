@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://c51lppak2duli"
-path="res://.godot/imported/AdobeClean-Regular.ttf-1307367ae7c2a9cc6d55166c8f976173.fontdata"
+uid="uid://br6xrownibuu7"
+path="res://.godot/imported/AdobeClean-BoldIt.ttf-8943f717641be262621e3db1979f6fb0.fontdata"
 
 [deps]
 
-source_file="res://Themes/Themes/AdobeClean-Regular.ttf"
-dest_files=["res://.godot/imported/AdobeClean-Regular.ttf-1307367ae7c2a9cc6d55166c8f976173.fontdata"]
+source_file="res://Themes/Fonts/AdobeClean-BoldIt.ttf"
+dest_files=["res://.godot/imported/AdobeClean-BoldIt.ttf-8943f717641be262621e3db1979f6fb0.fontdata"]
 
 [params]
 

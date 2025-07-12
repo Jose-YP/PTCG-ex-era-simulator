@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://bw7jisy6l5ego"]
+
+[ext_resource type="Script" uid="uid://ck2da3g375v0j" path="res://Scenes/UI/CardDisplay/use_as_energy.gd" id="1_67coc"]
+[ext_resource type="PackedScene" uid="uid://bs3ila6cpt8n1" path="res://Scenes/UI/UIComponents/types.tscn" id="1_wi7fv"]
+
+[node name="UseAsEnergy" type="PanelContainer"]
+anchors_preset = -1
+anchor_left = 0.293
+anchor_top = 0.5
+anchor_right = 0.777
+anchor_bottom = 0.501
+offset_left = -0.440002
+offset_top = -52.0
+offset_right = -0.160034
+offset_bottom = 17.28
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+script = ExtResource("1_67coc")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Types" parent="HBoxContainer" instance=ExtResource("1_wi7fv")]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/bold_italics_font_size = 11
+theme_override_font_sizes/italics_font_size = 14
+theme_override_font_sizes/mono_font_size = 11
+theme_override_font_sizes/normal_font_size = 11
+theme_override_font_sizes/bold_font_size = 11
+bbcode_enabled = true
+text = "You may attach this as an Energy card from your hand to 1 of your Pokémon that already has an Energy card attached to it. When you attach this card, return an Energy card attached to that Pokémon to your hand. While attached, this card is a Special Energy card and provides every type of Energy but 2 Energy at a time. (Has no effect other than providing Energy.)"
+fit_content = true

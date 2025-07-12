@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=7 format=3 uid="uid://cb4kum8iw4q3"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=8 format=3 uid="uid://cb4kum8iw4q3"]
 
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_cmh7r"]
+[ext_resource type="Texture2D" uid="uid://b2rx2bvdndk0a" path="res://Art/Cards/1 ex Ruby & Saphire/76.jpg" id="1_efrcq"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="2_efrcq"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_2e7hi"]
 
@@ -69,7 +70,8 @@ metadata/_custom_type_script = "uid://dkximshow1pao"
 [resource]
 script = ExtResource("3_2e7hi")
 name = "Treecko"
-illustrator = ""
+image = ExtResource("1_efrcq")
+illustrator = "Ken Sugimori"
 number = 76
 rarity = 0
 expansion = 0

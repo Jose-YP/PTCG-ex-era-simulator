@@ -1,0 +1,105 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=14 format=3 uid="uid://6xnw5siylvv7"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_c4a4f"]
+[ext_resource type="Texture2D" uid="uid://bjr2w5kv86n26" path="res://Art/Cards/1 ex Ruby & Saphire/30.jpg" id="1_qdtyb"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_8agjp"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_oqe5b"]
+[ext_resource type="Resource" uid="uid://cbvai25ndykp2" path="res://Resources/Components/Effects/Search/LigENFromDiscard.tres" id="4_c0257"]
+[ext_resource type="Resource" uid="uid://c8ugmpvetg8xj" path="res://Resources/Components/Counters/Comparator/CoinflipHeads.tres" id="5_lrr1f"]
+[ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="6_o558d"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="7_uniyw"]
+
+[sub_resource type="Resource" id="Resource_yt2pr"]
+script = ExtResource("3_oqe5b")
+either_or = false
+order = Array[int]([])
+search = ExtResource("4_c0257")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_wugrw"]
+script = ExtResource("2_8agjp")
+name = "Charge"
+description = "Attach a {Lightning} Energy card from your discard pile to Electrike."
+grass_cost = 0
+fire_cost = 0
+water_cost = 0
+lightning_cost = 1
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 0
+defender_properties = 0
+ignore_condition = 0
+prompt_reliant = false
+initial_main_DMG = 0
+conditional_self_dmg = false
+self_damage = 0
+modifier = 0
+modifier_num = 0
+both_active = false
+always_effect = SubResource("Resource_yt2pr")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_toiwb"]
+script = ExtResource("6_o558d")
+formal_ask = false
+ask_string = ""
+comparator = ExtResource("5_lrr1f")
+can_reverse = true
+chooser = 0
+choose_location = "None"
+which_stack = 0
+metadata/_custom_type_script = "uid://b85jmc7067bjc"
+
+[sub_resource type="Resource" id="Resource_41dnb"]
+script = ExtResource("2_8agjp")
+name = "Thunder Jolt"
+description = "Flip a coin. If tails, Electrike does 10 damage to itself."
+grass_cost = 0
+fire_cost = 0
+water_cost = 0
+lightning_cost = 1
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 1
+defender_properties = 0
+ignore_condition = 0
+prompt_reliant = false
+initial_main_DMG = 30
+conditional_self_dmg = true
+self_damage = 10
+modifier = 0
+modifier_num = 0
+both_active = false
+prompt = SubResource("Resource_toiwb")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_nwmgj"]
+script = ExtResource("7_uniyw")
+HP = 50
+retreat = 1
+attacks = Array[ExtResource("2_8agjp")]([SubResource("Resource_wugrw"), SubResource("Resource_41dnb")])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 1
+owner = 0
+type = 8
+weak = 32
+resist = 128
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_c4a4f")
+name = "Electrike"
+image = ExtResource("1_qdtyb")
+illustrator = "Hajime Kusajima"
+number = 30
+rarity = 0
+expansion = 0
+categories = 1
+pokemon_properties = SubResource("Resource_nwmgj")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

@@ -1,10 +1,13 @@
-[gd_resource type="Theme" load_steps=15 format=3 uid="uid://bfw6ylcttychc"]
+[gd_resource type="Theme" load_steps=18 format=3 uid="uid://bfw6ylcttychc"]
 
 [ext_resource type="StyleBox" uid="uid://duhmik1loeema" path="res://Themes/StyleBoxes/GBABox.tres" id="1_j8r7k"]
 [ext_resource type="StyleBox" uid="uid://bvesf3hjv2bsl" path="res://Themes/StyleBoxes/GBADragBox.tres" id="2_0j40x"]
 [ext_resource type="StyleBox" uid="uid://dmlko6tcmyk71" path="res://Themes/StyleBoxes/EnergyButton.tres" id="3_0j40x"]
 [ext_resource type="StyleBox" uid="uid://hb14mew2o8sf" path="res://Themes/StyleBoxes/translucent.tres" id="4_amp7u"]
-[ext_resource type="FontFile" uid="uid://c51lppak2duli" path="res://Themes/Themes/AdobeClean-Regular.ttf" id="4_au071"]
+[ext_resource type="FontFile" uid="uid://bpd163fqdmsn7" path="res://Themes/Fonts/AdobeClean-Bold.ttf" id="4_dou84"]
+[ext_resource type="FontFile" uid="uid://br6xrownibuu7" path="res://Themes/Fonts/AdobeClean-BoldIt.ttf" id="5_nvsbv"]
+[ext_resource type="FontFile" uid="uid://cnijxelwvfmy8" path="res://Themes/Fonts/AdobeClean-It.ttf" id="6_i36k3"]
+[ext_resource type="FontFile" uid="uid://c51lppak2duli" path="res://Themes/Fonts/AdobeClean-Regular.ttf" id="8_gux6n"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wcrro"]
 bg_color = Color(0.0329064, 0.0688881, 0.221139, 1)
@@ -95,7 +98,7 @@ shadow_size = 1
 
 [resource]
 resource_name = "EnButton"
-default_font = ExtResource("4_au071")
+default_font = ExtResource("8_gux6n")
 BodyButton/base_type = &"Button"
 BodyButton/styles/normal = null
 Button/styles/disabled = SubResource("StyleBoxFlat_wcrro")
@@ -117,4 +120,7 @@ ListPanel/base_type = &"PanelContainer"
 ListPanel/styles/panel = SubResource("StyleBoxFlat_au071")
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_ptgho")
 PowerButton/base_type = &"Button"
+RichTextLabel/fonts/bold_font = ExtResource("4_dou84")
+RichTextLabel/fonts/bold_italics_font = ExtResource("5_nvsbv")
+RichTextLabel/fonts/italics_font = ExtResource("6_i36k3")
 ScrollContainer/styles/panel = ExtResource("4_amp7u")
