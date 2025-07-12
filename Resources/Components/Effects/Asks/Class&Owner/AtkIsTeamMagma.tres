@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="SlotAsk" load_steps=2 format=3 uid="uid://3fi6fc6lbj04"]
+[gd_resource type="Resource" script_class="SlotAsk" load_steps=3 format=3 uid="uid://3fi6fc6lbj04"]
 
 [ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="1_axeh8"]
+[ext_resource type="Resource" uid="uid://c7itelq8jtjc2" path="res://Resources/Components/EnData/Rainbow.tres" id="1_rgo00"]
 
 [resource]
 script = ExtResource("1_axeh8")
@@ -11,18 +12,18 @@ comparison_type = 1
 max_hp = -10
 damage_taken = -10
 retreat_cost = -1
-energy_attatched = -1
 knocked_out = false
-condition = 0
 tool_attatched = false
 stage = 7
 rare_candy = false
 class_inclusive = true
 pokemon_class = 63
 owner_inclusive = true
-pokemon_owner = 9
-bench_size = -1
+pokemon_owner = 4
 type_inclusive = true
-type = 1023
-energy_class = 2
-type_size = 1
+pokemon_type = 1023
+energy_inclusive = true
+check_cards = true
+energy_attatched = -1
+energy_class = "Any"
+energy_type = ExtResource("1_rgo00")

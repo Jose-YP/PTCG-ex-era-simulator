@@ -259,8 +259,10 @@ func get_energy_strings() -> Array[String]:
 	var energy_stirngs: Array[String]
 	
 	for card in energy_cards:
-		var en_name = card.energy_properties.get_current_string()
-		energy_stirngs.append(en_name)
+		var en_provide = card.energy_properties.get_current_provide()
+		var en_name = en_provide.get_string()
+		for i in range(en_provide.number):
+			energy_stirngs.append(en_name)
 	
 	print_verbose("BEFORE SORT: ", energy_stirngs)
 	

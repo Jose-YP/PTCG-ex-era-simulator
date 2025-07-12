@@ -191,7 +191,7 @@ func start_add_choice(instruction: String, card: Base_Card, play_as: int, bool_f
 	await generic_choice(instruction, bool_fun)
 	
 	if Globals.fundies.ui_actions.selected_slot:
-		var went_back: bool = true
+		var went_back: bool = false
 		if card.has_before_prompt():
 			Globals.fundies.record_single_src_trg(Globals.fundies.ui_actions.selected_slot)
 			went_back = await card.play_before_prompt()
@@ -199,7 +199,8 @@ func start_add_choice(instruction: String, card: Base_Card, play_as: int, bool_f
 		if not went_back:
 			hold_candidate.use_card(card, play_as)
 			hold_candidate = null
-		print("Attatch ", card.name)
+			print("Attatch ", card.name)
+		else: print("I changed my mind")
 	else:
 		print("Nevermind")
 	Globals.fundies.ui_actions.color_tween(Color.TRANSPARENT)

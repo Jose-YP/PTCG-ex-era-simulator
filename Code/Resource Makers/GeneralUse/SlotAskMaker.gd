@@ -27,7 +27,7 @@ class_name SlotAsk
 @export_flags("non-ex", "ex", "Baby", "Delta", "Star", 
 "Dark") var pokemon_class: int = 63
 @export var owner_inclusive: bool = true
-@export_flags("None","Magma", "Aqua", "Rocket", "Holon") var pokemon_owner: int = 31
+@export_flags("None", "Aqua", "Magma", "Rocket", "Holon") var pokemon_owner: int = 31
 @export_subgroup("Type")
 ##Check if the pokemon has this type
 @export var type_inclusive: bool = true
@@ -53,7 +53,7 @@ func check_ask(slot: PokeSlot) -> bool:
 	if not slot.is_filled(): return false
 	
 	#Find which pokemon to check
-	print_verbose("[center]",slot.current_card.name)
+	print_verbose("[center]",slot.get_card_name())
 	#Check if the slot being seen should even be targetted
 	#Meanwhile count the player and opp bench size
 	print_verbose("[center]-----------------------------------------------------------")
@@ -76,14 +76,15 @@ func check_ask(slot: PokeSlot) -> bool:
 	print_verbose("[center]-----------------------------------------------------------")
 	print_verbose("[center]Class Flag\nCONSIDERED & OWNER:",
 	slot.current_card.pokemon_properties.considered, 2 ** slot.current_card.pokemon_properties.owner)
-	print_verbose(slot.current_card.pokemon_properties.owner, pokemon_owner)
-	print_verbose(2 ** slot.current_card.pokemon_properties.owner && pokemon_owner)
+	print_verbose("OWNER CHECK: ", pokemon_owner, " CLASS CHECK: ", pokemon_class)
+	print_verbose(slot.current_card.pokemon_properties.owner, 2 ** slot.current_card.pokemon_properties.owner)
+	print_verbose(2 ** slot.current_card.pokemon_properties.owner & pokemon_owner != 0)
 	#This is because godot has no xor/xnor :(
-	var class_flag = (not(pokemon_class && slot.current_card.pokemon_properties.considered and not class_inclusive)
-	and not(2 ** slot.current_card.pokemon_properties.owner && pokemon_owner and not owner_inclusive))
-	
+	var class_flag = (pokemon_class && slot.current_card.pokemon_properties.considered) == class_inclusive
+	var owner_flag = (2 ** slot.current_card.pokemon_properties.owner & pokemon_owner != 0) == owner_inclusive
 	print_verbose("CLASS FLAG: ",class_flag)
-	result = result and class_flag
+	print_verbose("OWNER FLAG: ", owner_flag)
+	result = result and class_flag and owner_flag
 	#if slot.current_card.pokemon_properties.considered:
 		#result = true
 	

@@ -26,6 +26,7 @@ class_name Base_Card
 @export var energy_properties: Energy
 @export var fossil: bool = false
 
+#region DEBUG
 ##Debug funciton, useful for making sure the exact car is known
 func print_info() -> void:
 	print("-------------------------", name, "-------------------------")
@@ -57,6 +58,7 @@ func card_display() -> String:
 	
 	push_error(name, " isn't considered anything")
 	return "NONE"
+#endregion
 
 func get_considered() -> String:
 	if pokemon_properties:
@@ -85,6 +87,7 @@ func is_considered(considered: String) -> bool:
 	
 	return false
 
+#region BOOLEANS
 #Lowest number for highest priority
 #priority for pokemon  [ex > owner > delta > dark > baby > non > star] > [basic > 1 > 2] > [type]
 #For all cards, theree's a tie breaker [name] > [expansion + number]
@@ -149,9 +152,9 @@ func same_card(comparing_to: Base_Card) -> bool:
 func has_before_prompt() -> bool:
 	var result: bool = false
 	
-	if trainer_properties:
+	if trainer_properties and trainer_properties.prompt:
 		result = trainer_properties.prompt.has_before_prompt()
-	if energy_properties:
+	if energy_properties and energy_properties.prompt:
 		result = energy_properties.prompt.has_before_prompt() or result
 	
 	return result
@@ -165,3 +168,4 @@ func play_before_prompt() -> bool:
 	
 	#Return whether or not the prompt was done
 	return result
+#endregion
