@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dwn2qsmdqyhiw"]
+[gd_scene load_steps=2 format=3 uid="uid://dwn2qsmdqyhiw"]
 
 [ext_resource type="Script" uid="uid://dkqmky7i7ibak" path="res://Code/Scenes/UI/List/PlayingList.gd" id="2_dv6ib"]
-[ext_resource type="PackedScene" uid="uid://bgjvymhyt234g" path="res://Scenes/UI/Lists/tutor_box.tscn" id="3_dv6ib"]
 
 [node name="PlayingList" type="ScrollContainer"]
 custom_minimum_size = Vector2(420, 510)
@@ -9,7 +8,6 @@ size_flags_horizontal = 4
 size_flags_vertical = 0
 follow_focus = true
 script = ExtResource("2_dv6ib")
-tutor_box = ExtResource("3_dv6ib")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2

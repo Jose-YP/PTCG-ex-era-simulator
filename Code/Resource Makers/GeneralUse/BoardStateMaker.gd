@@ -2,7 +2,7 @@ extends Resource
 class_name BoardState
 
 @export_enum("Win by taking", "Lose by Taking") var prize_rules: int = 0
-@export_enum("Default","Always Heads", "Always Tails", "Alternate") var coin_rules: int = 0
+@export var coin_rules: Constants.COIN_RULES = Constants.COIN_RULES.REG
 @export_enum("Default", "Discard to Lost Zone", "Discard to Deck") var discard_rules: int = 0
 @export_enum("Home", "Away", "Flip") var who_starts_first: int = 0
 @export var doubles: bool = false

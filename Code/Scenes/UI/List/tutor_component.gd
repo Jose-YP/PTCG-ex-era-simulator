@@ -26,7 +26,7 @@ func setup_tutor(search: Search):
 		allowed_dict[par.all_lists[i]] = true
 		choices_left[par.all_lists[i]] = num_allowed
 	
-	tutor = par.tutor_box.instantiate()
+	#tutor = par.tutor_box.instantiate()
 	tutor.search = search
 	tutor.position.x = par.size.x + offset
 	tutor.connected_list = par

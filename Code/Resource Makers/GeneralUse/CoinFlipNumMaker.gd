@@ -13,14 +13,15 @@ class_name CoinFlip
 #@export var effect_array: Dictionary{int: Effect}
 
 var results: Dictionary = {"Heads" : 0, "Tails": 0}
+var prev: int
 
-func get_num():
+func get_num() -> int:
 	if varying_flip_times:
 		return varying_flip_times.evaluate()
 	else:
 		return const_flip_times
 
-func activate_CF() -> Dictionary:
+func activate_CF() -> Dictionary[String, int]:
 	#Reset before doing this again
 	results = {"Heads" : 0, "Tails": 0}
 	
@@ -28,8 +29,13 @@ func activate_CF() -> Dictionary:
 	if until:
 		var tails: bool = false
 		while not tails:
+			#Safeguard to prevent infinite flips
+			if Globals.coin_rules == Constants.COIN_RULES.HEADS:
+				if results["Heads"] > 10: return results
+			
 			single_flip()
 			if results["Tails"] > 0:
+				tails = true
 				return results
 	#For num, flip as many times as stated
 	else:
@@ -52,7 +58,19 @@ func get_flip_array(dict: Dictionary) -> Array[bool]:
 	
 	return final
 
-func single_flip():
-	var flip: int = randi_range(0,1)
+func single_flip() -> void:
+	var flip: int
+	match Globals.coin_rules:
+		Constants.COIN_RULES.REG:
+			flip = randi_range(0,1)
+		Constants.COIN_RULES.HEADS:
+			flip = 1
+		Constants.COIN_RULES.TAILS:
+			flip = 0
+		Constants.COIN_RULES.ALTERNATE:
+			if prev: flip = 0
+			else: flip = 1
+	
 	if flip: results["Heads"] += 1
 	else: results["Tails"] += 1
+	prev = flip

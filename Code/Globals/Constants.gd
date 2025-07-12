@@ -51,7 +51,7 @@ const attack_list_comp: PackedScene = preload("res://Scenes/UI/Lists/attack_scro
 const poke_card : PackedScene = preload("res://Scenes/UI/CardDisplay/PokemonCard.tscn")
 const trainer_card: PackedScene = preload("res://Scenes/UI/CardDisplay/TrainerCard.tscn")
 const energy_card: PackedScene = preload("res://Scenes/UI/CardDisplay/EnergyCard.tscn")
-const tutor_box: PackedScene = preload("res://Scenes/UI/Lists/tutor_box.tscn")
+const tutor_box: PackedScene = preload("res://Scenes/UI/Lists/new_tutor_box.tscn")
 const reorder_list: PackedScene = preload("res://Scenes/UI/Lists/ReoderList.tscn")
 var swap_box: PackedScene = load("res://Scenes/UI/Lists/swap_box.tscn")
 const discard_box: PackedScene = preload("res://Scenes/UI/Lists/discard_list.tscn")
@@ -95,6 +95,12 @@ enum STACK_ACT{PLAY,##ALLOWED CARDS CAN BE PLAYED ONTO THE BOARD
 	LOOK, ##NOT ALLOWED TO INTERACT WITH CARDS
 	REORDER, ##REARRANGE CARDS AS NECESSARY
 	ENSWAP
+}
+enum COIN_RULES{
+	REG,
+	HEADS,
+	TAILS,
+	ALTERNATE
 }
 #endregion
 #--------------------------------------

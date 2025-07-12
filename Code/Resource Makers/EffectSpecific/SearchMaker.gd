@@ -39,7 +39,9 @@ func play_effect(reversable: bool = false):
 	var search_for: Array[Dictionary] = stack_mana.search_array(self, based_on_cards)
 	if reordering_only and and_then.reorder_type != 0:
 		stack_mana.tutor_instantiate_reorder(search_for[0].keys(), and_then)
+		await SignalBus.reorder_cards
 	else:
 		stack_mana.tutor_instantiate_list(search_for, self)
+		await SignalBus.swap_card_location
 	
 	finished.emit()

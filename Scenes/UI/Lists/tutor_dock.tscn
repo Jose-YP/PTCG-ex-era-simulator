@@ -1,12 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://bgjvymhyt234g"]
+[gd_scene load_steps=6 format=3 uid="uid://ccy4qililt3t3"]
 
-[ext_resource type="Theme" uid="uid://bfw6ylcttychc" path="res://Themes/Themes/AverageButton.tres" id="1_wc5cx"]
-[ext_resource type="Script" uid="uid://masdq75k62tf" path="res://Code/Scenes/UI/List/tutor_box.gd" id="2_fdtu0"]
-[ext_resource type="Resource" uid="uid://dbbymvfonstmf" path="res://Resources/Components/Effects/Search/CastawaySearch.tres" id="3_tixm1"]
-[ext_resource type="StyleBox" uid="uid://bvesf3hjv2bsl" path="res://Themes/StyleBoxes/GBADragBox.tres" id="4_tixm1"]
-[ext_resource type="PackedScene" uid="uid://dguolqe6u3fe3" path="res://Scenes/UI/Lists/PlayingListItem_copy.tscn" id="4_u0q4j"]
-[ext_resource type="PackedScene" uid="uid://cmmds4boaksl7" path="res://Scenes/UI/UIComponents/movable.tscn" id="5_y3cag"]
-[ext_resource type="PackedScene" uid="uid://dmhjt2wuanymf" path="res://Scenes/UI/UIComponents/minimize_button.tscn" id="6_tixm1"]
+[ext_resource type="Theme" uid="uid://bfw6ylcttychc" path="res://Themes/Themes/AverageButton.tres" id="1_7726x"]
+[ext_resource type="Script" uid="uid://masdq75k62tf" path="res://Code/Scenes/UI/List/tutor_box.gd" id="2_g0t8c"]
+[ext_resource type="Resource" uid="uid://dbbymvfonstmf" path="res://Resources/Components/Effects/Search/CastawaySearch.tres" id="3_kc6ps"]
+[ext_resource type="PackedScene" uid="uid://dguolqe6u3fe3" path="res://Scenes/UI/Lists/PlayingListItem_copy.tscn" id="4_j0u0r"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kclru"]
 bg_color = Color(0.12549, 0.109804, 0.117647, 0.780392)
@@ -15,19 +12,19 @@ corner_radius_top_right = 1
 corner_radius_bottom_right = 1
 corner_radius_bottom_left = 1
 
-[node name="TutorBox" type="Control"]
+[node name="tutor_dock" type="Control"]
+custom_minimum_size = Vector2(420, 0)
 layout_mode = 3
-anchor_right = 0.39
-anchor_bottom = 0.553
-offset_right = -0.200012
-offset_bottom = -0.160034
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("1_wc5cx")
-script = ExtResource("2_fdtu0")
-search = ExtResource("3_tixm1")
+anchors_preset = 0
+offset_right = 420.0
+offset_bottom = 13.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_7726x")
+script = ExtResource("2_g0t8c")
+search = ExtResource("3_kc6ps")
 start_text = "[center]"
-list_item = ExtResource("4_u0q4j")
+list_item = ExtResource("4_j0u0r")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 0
@@ -37,39 +34,19 @@ offset_bottom = 40.0
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
 layout_mode = 2
 
-[node name="Header" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
-custom_minimum_size = Vector2(420, 0)
+[node name="Header" type="PanelContainer" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 3
+theme_type_variation = &"DeepPannel"
 
-[node name="Label" type="PanelContainer" parent="PanelContainer/VBoxContainer/Header"]
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/VBoxContainer/Header"]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-mouse_filter = 2
-theme_override_styles/panel = ExtResource("4_tixm1")
-
-[node name="Movable" parent="PanelContainer/VBoxContainer/Header/Label" node_paths=PackedStringArray("dragging_node") instance=ExtResource("5_y3cag")]
-layout_mode = 2
-dragging_node = NodePath("../../../../..")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/VBoxContainer/Header/Label"]
-layout_mode = 2
-size_flags_horizontal = 3
-mouse_filter = 2
 bbcode_enabled = true
-text = "[center] Tutoring"
+text = "[center] SELECTED CARDS"
 fit_content = true
-
-[node name="MinimizeButton" parent="PanelContainer/VBoxContainer/Header" node_paths=PackedStringArray("shrinkNodes", "hideNodes") instance=ExtResource("6_tixm1")]
-custom_minimum_size = Vector2(25, 0)
-layout_mode = 2
-shrinkNodes = [NodePath("../../ScrollBox")]
-hideNodes = [NodePath("../../Requirements"), NodePath("../../ConfirmBox")]
 
 [node name="ScrollBox" type="ScrollContainer" parent="PanelContainer/VBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(420, 318.75)
+custom_minimum_size = Vector2(420, 358)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_kclru")
@@ -101,9 +78,10 @@ layout_mode = 2
 theme_override_constants/margin_bottom = 15
 
 [node name="Requirements" type="PanelContainer" parent="PanelContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 25)
+custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
 size_flags_vertical = 3
+theme_type_variation = &"DeepPannel"
 
 [node name="ReqText" type="RichTextLabel" parent="PanelContainer/VBoxContainer/Requirements"]
 unique_name_in_owner = true
@@ -115,6 +93,7 @@ fit_content = true
 custom_minimum_size = Vector2(0, 49)
 layout_mode = 2
 mouse_filter = 1
+theme_type_variation = &"DeepPannel"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/ConfirmBox"]
 layout_mode = 2

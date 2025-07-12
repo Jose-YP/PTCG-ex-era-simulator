@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=3 uid="uid://ctqlcem1xc7v3"]
+
+[ext_resource type="PackedScene" uid="uid://bttlpdvhmocn3" path="res://Scenes/UI/Lists/header.tscn" id="1_p3at3"]
+[ext_resource type="Script" uid="uid://kv7s237smdw7" path="res://Code/Scenes/UI/List/new_tutor_box.gd" id="1_trxwm"]
+[ext_resource type="PackedScene" uid="uid://dwn2qsmdqyhiw" path="res://Scenes/UI/Lists/playing_list.tscn" id="2_trxwm"]
+[ext_resource type="PackedScene" uid="uid://ccy4qililt3t3" path="res://Scenes/UI/Lists/tutor_dock.tscn" id="3_scr8c"]
+[ext_resource type="PackedScene" uid="uid://c28rtuj3kak48" path="res://Scenes/UI/Lists/Footer.tscn" id="4_ho25i"]
+
+[node name="NewTutorBox" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_trxwm")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Header" parent="VBoxContainer" node_paths=PackedStringArray("dragging_node", "shrinkNodes", "hideNodes") instance=ExtResource("1_p3at3")]
+unique_name_in_owner = true
+layout_mode = 2
+dragging_node = NodePath("../..")
+shrinkNodes = [NodePath("../PanelContainer/HBoxContainer/PlayingList"), NodePath("../PanelContainer/HBoxContainer/tutor_dock")]
+hideNodes = [NodePath("../Footer")]
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="PlayingList" parent="VBoxContainer/PanelContainer/HBoxContainer" node_paths=PackedStringArray("par") instance=ExtResource("2_trxwm")]
+unique_name_in_owner = true
+layout_mode = 2
+par = NodePath("../../../..")
+
+[node name="tutor_dock" parent="VBoxContainer/PanelContainer/HBoxContainer" node_paths=PackedStringArray("connected_list") instance=ExtResource("3_scr8c")]
+unique_name_in_owner = true
+layout_mode = 2
+connected_list = NodePath("../PlayingList")
+
+[node name="Footer" parent="VBoxContainer" node_paths=PackedStringArray("dragging_node") instance=ExtResource("4_ho25i")]
+unique_name_in_owner = true
+layout_mode = 2
+dragging_node = NodePath("../..")
+
+[connection signal="blacklist" from="VBoxContainer/PanelContainer/HBoxContainer/tutor_dock" to="." method="diff_tutor_blacklist"]
+[connection signal="check_requirements" from="VBoxContainer/PanelContainer/HBoxContainer/tutor_dock" to="." method="check_lists"]
+[connection signal="disapear" from="VBoxContainer/PanelContainer/HBoxContainer/tutor_dock" to="." method="_on_tutor_dock_disapear"]

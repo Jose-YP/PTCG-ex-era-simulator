@@ -1,5 +1,5 @@
 extends Control
-class_name Tutor_Box
+class_name Tutor_Dock
 
 #--------------------------------------
 #region VARIABLES
@@ -15,6 +15,7 @@ class_name Tutor_Box
 
 signal blacklist(card: Base_Card, adding_to: bool)
 signal check_requirements(id: Identifier, allowed: bool, choices_made: int)
+signal disapear
 
 var tutor_requiremnts: Dictionary[Identifier, Array]
 var based_on: Array[PokeSlot]
@@ -132,8 +133,7 @@ func _on_confirm_pressed() -> void:
 	
 	print("Moving ", all_tutored, " from ", search.and_then.stack, " to ", search.where)
 	SignalBus.swap_card_location.emit(all_tutored, search.and_then, search.where, rest)
-	Globals.control_disapear(self, disapear_timing, connected_list.old_pos)
-	Globals.control_disapear(connected_list, disapear_timing, connected_list.old_pos)
+	disapear.emit()
 
 #endregion
 #-------------------------------------- 

@@ -7,6 +7,7 @@ var checked_card: Control
 var fundies: Fundies
 var full_ui: FullBoardUI
 var coinflip: Control
+var coin_rules: Constants.COIN_RULES = Constants.COIN_RULES.REG
 
 signal enter_check
 signal exit_check

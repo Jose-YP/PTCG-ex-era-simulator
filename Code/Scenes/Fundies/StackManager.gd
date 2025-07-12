@@ -241,19 +241,18 @@ func identifier_search(list: Array[Base_Card], based_on: Array[PokeSlot],\
 
 #Redundant for the most part but if it gets the job done
 func tutor_instantiate_list(specified_list: Array[Dictionary], search: Search):
-	var hand_list: PackedScene = Constants.playing_list
-	var new_node = hand_list.instantiate()
+	var new_node: Tutor_Box = Constants.tutor_box.instantiate()
 	
-	new_node.all_lists = specified_list
-	new_node.list = specified_list[0]
 	new_node.top_level = true
-	new_node.instruction_text = "Choose cards to send over"
+	new_node.footer_txt = "Choose cards to send over"
 	new_node.old_pos = Globals.full_ui.player_side.non_mon.stacks[search.where].global_position
 	new_node.stack_act = Constants.STACK_ACT.TUTOR
-	new_node.stack = search.where
+	new_node.playing_list.all_lists = specified_list
+	new_node.playing_list.list = specified_list[0]
+	new_node.playing_list.stack = search.where
 	add_sibling(new_node)
+	new_node.setup_tutor(search)
 	Globals.fundies.current_list = new_node
-	new_node.tutor_component.setup_tutor(search)
 
 func placement_handling(tutored_cards: Array[Base_Card], placement: Placement,\
  origin: Constants.STACKS, untutored_cards: Array[Base_Card]):

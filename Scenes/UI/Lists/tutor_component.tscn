@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cdlq65vgc8hrn"]
-
-[ext_resource type="Script" uid="uid://2qrhsccmgtfl" path="res://Code/Scenes/UI/List/tutor_component.gd" id="1_kjbn1"]
-
-[node name="TutorComponent" type="Node"]
-script = ExtResource("1_kjbn1")

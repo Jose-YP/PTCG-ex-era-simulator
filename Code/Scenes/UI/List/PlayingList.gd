@@ -5,7 +5,6 @@ class_name PlayingList
 #--------------------------------------
 #region VARIABLES
 @export var par: Control
-@export var tutor_box: PackedScene
 @export var all_lists: Array[Dictionary]
 @export var list: Dictionary[Base_Card, bool]
 #For cards that can be played multiple ways
