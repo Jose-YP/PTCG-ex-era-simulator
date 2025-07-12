@@ -53,14 +53,17 @@ func check_prompt():
 
 #Any prompts that are checked before playing card/effects
 func before_activating() -> bool:
-	var went_through: bool = false
+	result = true
 	if effect:
+		effect.reversed.connect(get_reversed)
 		await effect.play_effect(can_reverse)
+		print("DID WE GO BACK? ", effect.went_back)
+		effect.reversed.disconnect(get_reversed)
 	
-	return went_through
+	return result
 
 func has_before_prompt() -> bool:
 	return effect != null or choose_location != "None" or formal_ask
 
-func get_result():
-	return result
+func get_reversed():
+	result = false

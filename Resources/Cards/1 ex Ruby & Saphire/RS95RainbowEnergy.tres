@@ -32,9 +32,6 @@ has_fail_provide = false
 has_fail_prevent = false
 attatch_effect = SubResource("Resource_mysds")
 turns = -1
-number = 1
-react = false
-holon_type = "None"
 fail_provide = ExtResource("3_mfk52")
 success_provide = ExtResource("5_qxfu1")
 

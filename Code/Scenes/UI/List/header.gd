@@ -13,6 +13,8 @@ extends HBoxContainer
 @onready var identifier: RichTextLabel = %Identifier
 @onready var minimize_button: Minimize_Button = %MinimizeButton
 
+signal close_button_pressed
+
 func setup(txt: String):
 	movable.dragging_node = dragging_node
 	movable.based_on = based_on
@@ -36,4 +38,5 @@ func _on_movable_pressed() -> void:
 		Globals.control_disapear(dragging_node.options, .1, dragging_node.options.old_position)
 
 func _on_close_button_pressed() -> void:
+	close_button_pressed.emit()
 	owner.queue_free()

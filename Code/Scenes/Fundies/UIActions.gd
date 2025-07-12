@@ -37,7 +37,7 @@ func left_button_actions(target: PokeSlot):
 	if choosing:
 		if adding_card:
 			selected_slot = target
-			target.use_card(adding_card)
+			Globals.fundies.card_player.record_candidate(target)
 			adding_card = null
 		else:
 			SignalBus.get_candidate.emit(target)

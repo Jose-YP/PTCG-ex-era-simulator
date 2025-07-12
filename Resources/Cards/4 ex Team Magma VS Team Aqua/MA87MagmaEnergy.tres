@@ -14,9 +14,6 @@ asks = ExtResource("1_6asof")
 has_fail_provide = false
 has_fail_prevent = false
 turns = 0
-number = 2
-react = false
-holon_type = "None"
 fail_provide = ExtResource("2_qfv06")
 success_provide = ExtResource("2_qfv06")
 

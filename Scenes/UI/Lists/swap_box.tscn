@@ -16,7 +16,6 @@ offset_bottom = -0.320007
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7u88y")
-singles = null
 
 [node name="EnergyUI" type="VBoxContainer" parent="."]
 layout_mode = 0
@@ -122,6 +121,6 @@ unique_name_in_owner = true
 layout_mode = 2
 dragging_node = NodePath("../..")
 
-[connection signal="tree_exited" from="." to="." method="_on_tree_exited"]
+[connection signal="close_button_pressed" from="EnergyUI/Header" to="." method="_on_header_close_button_pressed"]
 [connection signal="pressed" from="EnergyUI/PanelContainer/Lists/Slots/Actions/InfoSection/IndSwap/HBoxContainer/Swap" to="." method="_on_swap_pressed"]
 [connection signal="pressed" from="EnergyUI/PanelContainer/Lists/Slots/Actions/InfoSection/Info&End/End" to="." method="_on_end_pressed"]

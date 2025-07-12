@@ -32,6 +32,8 @@ signal play_energy(card: Base_Card)
 @warning_ignore("unused_signal")
 signal get_candidate(pokeSlot: PokeSlot)
 @warning_ignore("unused_signal")
+signal went_back
+@warning_ignore("unused_signal")
 signal finished_coinflip()
 
 func call_action(action: int, card: Base_Card) -> void:

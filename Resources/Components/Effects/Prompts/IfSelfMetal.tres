@@ -26,6 +26,7 @@ script = ExtResource("4_tjvtd")
 formal_ask = false
 ask_string = ""
 comparator = SubResource("Resource_tpgwn")
+can_reverse = true
 chooser = 0
 choose_location = "None"
 which_stack = 0

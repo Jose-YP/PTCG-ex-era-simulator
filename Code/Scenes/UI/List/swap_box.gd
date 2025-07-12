@@ -228,7 +228,9 @@ func _on_swap_pressed() -> void:
 #--------------------------------------
 
 #Reverse any changes made if closed prematurely
-func _on_tree_exited() -> void:
+func _on_header_close_button_pressed() -> void:
 	if %Header.closable:
-		for log in swap_history:
+		SignalBus.went_back.emit()
+		for swap_log in swap_history:
 			undo_swap()
+	else: push_error("Closed when shouldn't be able to")

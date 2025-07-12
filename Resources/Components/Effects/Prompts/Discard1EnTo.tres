@@ -31,6 +31,7 @@ metadata/_custom_type_script = "uid://dmulm3x3dj842"
 script = ExtResource("4_teu5e")
 formal_ask = false
 ask_string = "Which energy card will you discard?"
+can_reverse = true
 effect = SubResource("Resource_gm1a6")
 chooser = 0
 choose_location = "None"

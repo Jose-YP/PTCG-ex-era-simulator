@@ -23,9 +23,6 @@ has_fail_provide = false
 has_fail_prevent = false
 success_effect = SubResource("Resource_s7duk")
 turns = -1
-number = 1
-react = false
-holon_type = "None"
 fail_provide = ExtResource("1_k24tu")
 success_provide = ExtResource("1_k24tu")
 

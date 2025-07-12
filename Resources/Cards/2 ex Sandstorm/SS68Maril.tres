@@ -11,6 +11,7 @@
 script = ExtResource("6_oax0i")
 formal_ask = false
 ask_string = ""
+can_reverse = true
 chooser = 0
 choose_location = "None"
 which_stack = 0

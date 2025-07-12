@@ -26,6 +26,7 @@ script = ExtResource("4_j5nml")
 formal_ask = false
 ask_string = ""
 comparator = SubResource("Resource_x7mh2")
+can_reverse = true
 chooser = 0
 choose_location = "None"
 which_stack = 0

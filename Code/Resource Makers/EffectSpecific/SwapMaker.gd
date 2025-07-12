@@ -19,14 +19,14 @@ var second: PokeSlot
 
 func play_effect(reversable: bool = false):
 	if affected == Constants.SIDES.BOTH:
-		await switch(Constants.SIDES.ATTACKING)
-		await switch(Constants.SIDES.DEFENDING)
+		await switch(Constants.SIDES.ATTACKING, reversable)
+		await switch(Constants.SIDES.DEFENDING, reversable)
 	else:
-		await switch(affected)
+		await switch(affected, reversable)
 	
 	finished.emit()
 
-func switch(aff: Constants.SIDES):
+func switch(aff: Constants.SIDES, reversable: bool):
 	var first_candidate: Callable = func(slot: PokeSlot):
 		return slot.is_in_slot(aff, Constants.SLOTS.BENCH\
 		 if choose_active else Constants.SLOTS.TARGET)
@@ -35,9 +35,9 @@ func switch(aff: Constants.SIDES):
 	
 	#Get whichever active pokemon are allowed to switch
 	first = await Globals.fundies.card_player.get_choice_candidates(\
-	"Choose an active Pokemon to switch", first_candidate)
+	"Choose an active Pokemon to switch", first_candidate, reversable)
 	second = await Globals.fundies.card_player.get_choice_candidates(\
-	"Choose an benched Pokemon to switch", second_candidate)
+	"Choose an benched Pokemon to switch", second_candidate, reversable)
 	#Get whichever benched pokemon are allowed to switch
 	
 	#Swap the data between eachother

@@ -43,6 +43,9 @@ ENMOV, DMGMANIP, SEARCH, SWAP, DRAW, ALLEVIATE, MIMIC, OTHER}
 @export var extra_effect: EffectCall
 
 signal finished
+signal reversed
+
+var went_back: bool = false
 
 #These are params since the indivdual call knows best which is what
 func play_effect(reversable: bool = false):
@@ -54,17 +57,42 @@ func play_effect(reversable: bool = false):
 	 #effect_types.SEARCH: search, effect_types.SWAP:swap, effect_types.DRAW:draw_ammount,
 	 #effect_types.ALLEVIATE:alleviate, effect_types.MIMIC:mimic}
 	
+	went_back = false
+	if reversable: SignalBus.went_back.connect(just_reversed)
+	
 	print("PLaying effect ", resource_name)
 	#fundies.record_source_target(home, atk_trg, def_trg)
 	if order.size() > 0:
 		for effect in order:
+			if went_back:
+				print()
+				return
+			
 			if default_order[effect]:
 				print("PLAYING ", effect)
-				await default_order[effect].play_effect()
+				await handle_component(default_order[effect], reversable)
 	
 	else:
 		for effect in default_order:
+			if went_back:
+				print()
+				return
+			
 			if effect:
-				await effect.play_effect()
+				await handle_component(effect, reversable)
 	
 	finished.emit()
+
+func handle_component(comp, reversable: bool = false):
+	if reversable:
+		comp.reversed.connect(just_reversed)
+	
+	await comp.play_effect(reversable)
+	
+	if reversable:
+		comp.reversed.disconnect(just_reversed)
+
+func just_reversed():
+	went_back = true
+	SignalBus.went_back.disconnect(just_reversed)
+	reversed.emit()

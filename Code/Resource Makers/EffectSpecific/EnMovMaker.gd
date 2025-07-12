@@ -28,6 +28,7 @@ class_name EnMov
 @export var react: bool = false
 
 signal finished
+signal reversed
 
 func play_effect(reversable: bool = false):
 	print("PLAY ENMOV")
@@ -49,20 +50,26 @@ func send_effect(reversable: bool = false):
 	
 	#Get whichever meant to discard
 	var candidate: PokeSlot = await Globals.fundies.card_player.get_choice_candidates(\
-	"Choose a Pokemon", giver_call)
+	"Choose a Pokemon", giver_call, reversable)
+	
+	if candidate == null:
+		reversed.emit()
+		return
 	
 	print(candidate.energy_cards, candidate.count_diff_energy())
-	if candidate.count_diff_energy() == 1:
+	if candidate.count_diff_energy() == 1 and not reversable:
 		candidate.remove_energy(candidate.energy_cards[0].name)
 	else:
 		var en_dict: Dictionary[Base_Card, bool]
 		for en in candidate.energy_cards:
-			en_dict[en] = energy_allowed(en, false)
+			var duplicated: Base_Card = en.duplicate(true)
+			en_dict[duplicated] = energy_allowed(en, false)
 		var dis_box: DiscardList = Globals.fundies.stack_manager.spawn_discard_list(
 			en_dict, Constants.STACKS.PLAY, to_stack)
 		
 		dis_box.home = Globals.fundies.get_considered_home(givers.side_target)
 		dis_box.discards_left = energy_ammount
+		if reversable: dis_box.allow_reverse()
 		Globals.fundies.add_child(dis_box)
 		
 		await dis_box.tree_exited
@@ -122,3 +129,6 @@ func enough_energy(ammount: int) -> bool:
 func enough_actions(ammount: int) -> bool:
 	return action_ammount != -1 and ammount == action_ammount
 #endregion
+
+func just_reversed():
+	pass

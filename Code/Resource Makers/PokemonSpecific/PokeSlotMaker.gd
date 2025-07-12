@@ -158,25 +158,24 @@ func get_pokedata() -> Pokemon:
 
 #--------------------------------------
 #region SLOTTING IN
-func use_card(card: Base_Card) -> void:
-	var card_type: int = Conversions.get_card_flags(card)
+func use_card(card: Base_Card, play_as: int) -> void:
 	#Play fossils, basics and evolutions onto the bench
-	if card_type & 1 != 0 or card_type & 256 != 0:
+	if play_as & 1 != 0 or play_as & 256 != 0:
 		set_card(card)
-	elif card_type & 2 != 0:
+	elif play_as & 2 != 0:
 		if current_card:
 			evolve_card(card)
 		else:
 			set_card(card)
-	elif card_type & 32 != 0:
+	elif play_as & 32 != 0:
 		attatch_tool(card)
-	elif card_type & 64 != 0:
+	elif play_as & 64 != 0:
 		attatch_tm(card)
 	#play energy onto any pokemon defined by placement
-	elif card_type & 512 != 0:
+	elif play_as & 512 != 0:
 		add_energy(card)
 	else:
-		printerr("You probably can't pay ", card, " on a pokeslot ", card_type)
+		printerr("You probably can't pay ", card, " on a pokeslot as ", play_as)
 
 func set_card(card: Base_Card) -> void:
 	current_card = card

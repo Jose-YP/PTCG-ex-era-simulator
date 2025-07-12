@@ -22,6 +22,7 @@ script = ExtResource("5_l36f4")
 formal_ask = false
 ask_string = ""
 comparator = SubResource("Resource_q8yeg")
+can_reverse = true
 chooser = 0
 choose_location = "None"
 which_stack = 0

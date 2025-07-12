@@ -52,6 +52,7 @@ script = ExtResource("2_c1lbv")
 formal_ask = false
 ask_string = ""
 comparator = SubResource("Resource_hkj2g")
+can_reverse = true
 chooser = 0
 choose_location = "None"
 which_stack = 0

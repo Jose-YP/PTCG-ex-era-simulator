@@ -50,8 +50,8 @@ func play_basic_pokemon(card: Base_Card):
 			#Remove the card from hand
 			Globals.fundies.stack_manager.play_card(card, Globals.fundies.home_turn)
 			return
-	
-	start_add_choice("Where will pokemon be benched", card,
+	Conversions.get_allowed_flags("Basic")
+	start_add_choice("Where will pokemon be benched", card, Conversions.get_allowed_flags("Basic"),
 	 func(slot: PokeSlot): return not slot.is_filled(), true)
 	await chosen
 	
@@ -69,7 +69,7 @@ func play_fossil(card: Base_Card):
 			Globals.fundies.stack_manager.play_card(card, Globals.fundies.home_turn)
 			return
 	
-	start_add_choice("Where will pokemon be benched", card,
+	start_add_choice("Where will pokemon be benched", card, Conversions.get_allowed_flags("Fossil"),
 	 func(slot: PokeSlot): return not slot.is_filled(), true)
 	await chosen
 	card.print_info()
@@ -79,16 +79,16 @@ func play_evolution(card: Base_Card, placement: Placement = null):
 	var evo_fun: Callable = Globals.make_can_evo_from(card)
 	
 	if placement == null:
-		start_add_choice(str("Evolve ", card.name, " from which Pokemon"),
-		 card, evo_fun, true)
+		start_add_choice(str("Evolve ", card.name, " from which Pokemon"), card,
+		 Conversions.get_allowed_flags("Evolution"), evo_fun, true)
 	else:
 		var place_func = func placement_evo(slot):
 			if slot.is_in_slot(Constants.SIDES.SOURCE,placement.slot):
 				return evo_fun.call(slot)
 			else: return false
 		
-		start_add_choice(str("Evolve ", card.name, " from which Pokemon"), 
-		card, place_func, false)
+		start_add_choice(str("Evolve ", card.name, " from which Pokemon"), card,
+		 Conversions.get_allowed_flags("Evolution"), place_func, false)
 	
 	await chosen
 	print("Attatch ", card.name)
@@ -108,8 +108,8 @@ func play_energy(card: Base_Card, placement:Placement = null):
 		return result
 	
 	
-	start_add_choice(str("Attatch ", card.name, " to which Pokemon"),
-	 card, energy_bool, true)
+	start_add_choice(str("Attatch ", card.name, " to which Pokemon"), card, 
+	 Conversions.get_allowed_flags("Energy"), energy_bool, true)
 	
 	await chosen
 	print("Attatch ", card.name)
@@ -153,16 +153,16 @@ func play_trainer(card: Base_Card):
 
 #For tools
 func play_attatch_tool(card: Base_Card):
-	start_add_choice(str("Attatch ", card.name, " to which Pokemon")\
-	, card, tool_boolean, true)
+	start_add_choice(str("Attatch ", card.name, " to which Pokemon"), card, 
+	Conversions.get_allowed_flags("Tool"), tool_boolean, true)
 	
 	await chosen
 	print("Attatch ", card.name)
 	card.print_info()
 
 func play_attatch_tm(card: Base_Card):
-	start_add_choice(str("Attatch ", card.name, " to which Pokemon")\
-	, card, tool_boolean, true)
+	start_add_choice(str("Attatch ", card.name, " to which Pokemon"), card,
+	Conversions.get_allowed_flags("TM"), tool_boolean, true)
 	
 	await chosen
 	print("Attatch ", card.name)
@@ -182,7 +182,7 @@ func manage_tutored(tutored_cards: Array[Base_Card], placement: Placement):
 
 #--------------------------------------
 #region CHOICE MANAGEMENT
-func start_add_choice(instruction: String, card: Base_Card, bool_fun: Callable, reversable: bool):
+func start_add_choice(instruction: String, card: Base_Card, play_as: int, bool_fun: Callable, reversable: bool):
 	Globals.fundies.hide_list()
 	Globals.fundies.ui_actions.set_adding_card(card)
 	set_reversable(reversable)
@@ -191,21 +191,33 @@ func start_add_choice(instruction: String, card: Base_Card, bool_fun: Callable, 
 	if Globals.fundies.ui_actions.selected_slot:
 		var went_through: bool = true
 		if card.has_before_prompt():
+			Globals.fundies.record_single_src_trg(Globals.fundies.ui_actions.selected_slot)
 			went_through = await card.play_before_prompt()
+			Globals.fundies.remove_top_source_target()
 		if went_through:
+			hold_candidate.use_card(card, play_as)
+			hold_candidate = null
 			Globals.fundies.stack_manager.play_card(card, Globals.fundies.home_turn)
 		print("Attatch ", card.name)
 	else:
 		print("Nevermind")
 	Globals.fundies.ui_actions.color_tween(Color.TRANSPARENT)
 
-func get_choice_candidates(instruction: String, bool_fun: Callable,\
- choosing_player: Constants.PLAYER_TYPES = Constants.PLAYER_TYPES.PLAYER) -> PokeSlot:
+func get_choice_candidates(instruction: String, bool_fun: Callable, reversable: bool,
+ choosing_player: Constants.PLAYER_TYPES = Constants.PLAYER_TYPES.PLAYER,) -> PokeSlot:
+	set_reversable(reversable)
 	Globals.fundies.hide_list()
 	hold_candidate = null
 	await generic_choice(instruction, bool_fun)
-	chosen.emit()
-	return hold_candidate
+	if hold_candidate:
+		print("We'll choose ", hold_candidate.get_card_name())
+		chosen.emit()
+		return hold_candidate
+	else:
+		print("Nevermind")
+		SignalBus.went_back.emit()
+		return null
+	
 
 func generic_choice(instruction: String, bool_fun: Callable,\
  choosing_player: Constants.PLAYER_TYPES = Constants.PLAYER_TYPES.PLAYER):
