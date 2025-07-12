@@ -20,14 +20,14 @@ var home: bool
 
 func _ready() -> void:
 	match stack_act:
-		Constants.STACK_ACT.PLAY: instruction_text = "Choose which allowed cards to play"
+		Constants.STACK_ACT.PLAY: instruction_text = "[center]Choose which allowed cards to play"
 		Constants.STACK_ACT.TUTOR:
 			%Close_Button.hide()
-			instruction_text = "Choose which allowed cards to add"
+			instruction_text = "[center]Choose which allowed cards to add"
 		Constants.STACK_ACT.DISCARD:
 			%Close_Button.hide()
-			instruction_text = "Choose which allowed cards to discard"
-		Constants.STACK_ACT.LOOK: instruction_text = "Only allowed to check cards"
+			instruction_text = "[center]Choose which allowed cards to discard"
+		Constants.STACK_ACT.LOOK: instruction_text = "[center]Only allowed to check cards"
 		_: printerr(stack_act, " not apart of stack act enum")
 	match stack:
 		Constants.STACKS.HAND: display_text = "HAND"

@@ -114,6 +114,9 @@ func is_in_slot(desired_side: Constants.SIDES, desired_slot: Constants.SLOTS) ->
 	
 	return slot_bool and side_bool
 
+func get_card_name() -> String:
+	return current_card.name if is_filled() else "null"
+
 func is_filled() -> bool:
 	return current_card != null
 
@@ -227,7 +230,6 @@ func count_energy() -> void:
 	 "FF": 0, "GL": 0, "WP": 0, "Rainbow":0}
 	
 	for energy in energy_cards:
-		print(energy)
 		if energy.energy_properties.attatched_to != self:
 			energy.energy_properties.attatched_to = self
 		var en_provide: EnData = energy.energy_properties.get_current_provide()
@@ -289,6 +291,7 @@ func get_total_en_categories(category_filter: String = "Any") -> Array[Base_Card
 	var final: Array[Base_Card]
 	var skip_category: bool = category_filter == "Any"
 	for card in energy_cards:
+		var considered: String = card.energy_properties.considered
 		if skip_category or card.energy_properties.considered == category_filter:
 			final.append(card)
 	return final

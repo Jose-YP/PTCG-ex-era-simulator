@@ -28,7 +28,7 @@
 script = ExtResource("9_ncntw")
 deck = ExtResource("1_rwwha")
 init_deck = Array[ExtResource("2_5ih3w")]([])
-init_hand = Array[ExtResource("2_5ih3w")]([ExtResource("5_s64pf"), ExtResource("6_c5xxw"), ExtResource("7_c5qlx"), ExtResource("3_6pujo"), ExtResource("8_tbqu3"), ExtResource("9_6pujo"), ExtResource("10_c5qlx"), ExtResource("11_tbqu3")])
+init_hand = Array[ExtResource("2_5ih3w")]([ExtResource("5_s64pf"), ExtResource("6_c5xxw"), ExtResource("7_c5qlx"), ExtResource("3_6pujo"), ExtResource("8_tbqu3"), ExtResource("9_6pujo"), ExtResource("10_c5qlx"), ExtResource("11_tbqu3"), ExtResource("17_5ih3w")])
 init_discard = Array[ExtResource("2_5ih3w")]([ExtResource("3_6pujo"), ExtResource("4_mepvs"), ExtResource("4_mepvs")])
 init_prize = Array[ExtResource("2_5ih3w")]([])
 metadata/_custom_type_script = "uid://calm3n7va5yjo"

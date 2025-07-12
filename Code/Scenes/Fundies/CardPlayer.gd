@@ -104,6 +104,7 @@ func play_energy(card: Base_Card, placement:Placement = null):
 		var result: bool = slot.is_filled() and slot.is_attacker()
 		if card.energy_properties.asks:
 			result = result and card.energy_properties.asks.check_ask(slot)
+		printt(result, slot.get_card_name())
 		return result
 	
 	

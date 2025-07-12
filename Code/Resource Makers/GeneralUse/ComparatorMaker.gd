@@ -23,10 +23,10 @@ func start_comparision() -> Variant:
 		"None":
 			return first_return
 		"Const":
-			print(first_return, second_constant)
+			printt("CONST CHECK:", first_return, second_constant)
 			return make_comparision(first_return, second_constant)
 		"Second":
-			print(first_return, second_counter.evaluate())
+			printt("DUAL COUNTER CHECK:",first_return, second_counter.evaluate())
 			return make_comparision(first_return, second_counter.evaluate())
 	return false
 

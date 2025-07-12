@@ -33,7 +33,9 @@ func check_prompt():
 	result = false
 	
 	if comparator:
+		print("CHECKING COMPARATOR")
 		var found = comparator.start_comparision()
+		print(found)
 		result = result or found
 		
 	if choose_location == "Slot":

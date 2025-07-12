@@ -10,7 +10,7 @@ const pokeSlot = preload("res://Code/Resource Makers/PokemonSpecific/PokeSlotMak
 const stackRes = preload("res://Code/Resource Makers/GeneralUse/CardStacksMaker.gd")
 const which_vars: PackedStringArray = ["Slot", "Stack", "Coinflip"]
 const en_methods: PackedStringArray = ["Total", "Excess", "Diff Types", "Categories"]
-const en_categories: PackedStringArray = ["Any", "Basic Energy", "Special Energy"]
+const en_category_enum: PackedStringArray = ["Any", "Basic Energy", "Special Energy"]
 
 var slot_instance = pokeSlot.new()
 var stack_instance = stackRes.new()
@@ -80,15 +80,15 @@ func _get_property_list() -> Array[Dictionary]:
 				"hint_string" : ",".join(en_methods),
 				"usage" : PROPERTY_USAGE_DEFAULT
 			})
-			if internal_data["en_count_methods"] == "Total":
+			if internal_data["en_count_methods"] == "Categories":
 				props.append({
 					"name" : "en_categories",
 					"type" : TYPE_STRING,
 					"hint" : PROPERTY_HINT_ENUM,
-					"hint_string" : ",".join(en_categories),
+					"hint_string" : ",".join(en_category_enum),
 					"usage" : PROPERTY_USAGE_DEFAULT
 				})
-			if internal_data["en_count_methods"] == "Categories":
+			if internal_data["en_count_methods"] == "Total":
 				props.append({
 					"name" : "en_counting",
 					"type" : TYPE_OBJECT,
@@ -183,6 +183,7 @@ func _set(property, value):
 			return true
 		"en_count_methods": 
 			internal_data["en_count_methods"] = value
+			notify_property_list_changed()
 			return true
 		"en_categories":
 			internal_data["en_categories"] = value
