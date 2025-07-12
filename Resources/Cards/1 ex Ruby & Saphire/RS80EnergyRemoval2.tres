@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://ba8jbrbg2km5v" path="res://Art/Cards/1 ex Ruby & Saphire/80.jpg" id="1_hj3wc"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_jy4os"]
-[ext_resource type="Resource" uid="uid://lfhu3xyr0wpo" path="res://Resources/Components/Effects/Prompts/IfFlipHeads.tres" id="3_ujvyd"]
+[ext_resource type="Resource" uid="uid://ekj1myy642kh" path="res://Resources/Components/Effects/Prompts/PromptHeads.tres" id="3_ujvyd"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="5_lb0wg"]
 [ext_resource type="Resource" uid="uid://ufc0xny4yfur" path="res://Resources/Components/Effects/EnergyMovement/AtkDisDef1.tres" id="5_ujvyd"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="6_261xj"]

@@ -17,9 +17,9 @@ who_starts_first = 0
 doubles = false
 default_start = false
 home_side = 0
-home = ExtResource("3_yhhmj")
+home = ExtResource("3_43axb")
 away_side = 1
-away = ExtResource("3_43axb")
+away = ExtResource("3_yhhmj")
 metadata/_custom_type_script = "uid://c7ucx36aubnh8"
 
 [node name="DebugBoardState" type="Control" node_paths=PackedStringArray("fundies")]

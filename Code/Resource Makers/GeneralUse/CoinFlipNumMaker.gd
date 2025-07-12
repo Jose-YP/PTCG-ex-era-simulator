@@ -12,7 +12,7 @@ class_name CoinFlip
 
 #@export var effect_array: Dictionary{int: Effect}
 
-var results: Dictionary = {"Heads" : 0, "Tails": 0}
+var results: Dictionary[String, int] = {"Heads" : 0, "Tails": 0}
 var prev: int
 
 func get_num() -> int:

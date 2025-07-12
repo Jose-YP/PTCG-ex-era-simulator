@@ -62,16 +62,11 @@ func is_allowed(button: Button) -> void:
 				button.allow(can_be_played_as)
 			else: button.not_allowed()
 		Constants.STACK_ACT.TUTOR:
-			if par.readied:
-				if par.list_allowed(button.card) and not button.card.name in black_list:
-					button.allow_move_to(stack_act)
-				else: button.not_allowed()
+			prints(button.card.name ,"allowed for tutor?", par.list_allowed(button.card))
+			if par.list_allowed(button.card) and not button.card.name in black_list:
+				button.allow_move_to(stack_act)
 			else:
-				if all_lists.any(func(loc_list): return loc_list[button.card]):
-					button.allow_move_to(stack_act)
-				else: 
-					button.not_allowed()
-			
+				button.not_allowed()
 		_:
 			if list[button.card]:
 				button.allow_move_to(stack_act)

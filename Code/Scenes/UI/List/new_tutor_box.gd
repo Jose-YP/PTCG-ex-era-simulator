@@ -2,6 +2,7 @@ extends Control
 class_name Tutor_Box
 
 @export var stack_act: Constants.STACK_ACT
+@export var stack: Constants.STACKS = Constants.STACKS.DECK
 
 @onready var tutor_dock: Tutor_Dock = %tutor_dock
 @onready var playing_list: PlayingList = %PlayingList
@@ -12,7 +13,6 @@ var old_pos: Vector2
 var search_dict: Dictionary [Identifier, Dictionary]
 var allowed_dict: Dictionary[Dictionary, bool]
 var choices_left: Dictionary[Dictionary, int]
-var readied: bool = false
 
 func _ready() -> void:
 	%Header.setup("[center]Tutor Box")
@@ -36,12 +36,14 @@ func setup_tutor(search: Search):
 	#tutor = par.tutor_box.instantiate()
 	tutor_dock.search = search
 	tutor_dock.set_up_tutor()
-	
-	readied = true
+	print(allowed_dict)
+	playing_list.set_items()
 
 func list_allowed(card: Base_Card) -> bool:
-	@warning_ignore("standalone_expression")
-	return playing_list.all_lists.any(func(list): list[card] and allowed_dict[list])
+	for list in playing_list.all_lists:
+		if allowed_dict[list] and list[card]: return true
+	
+	return false
 
 func check_lists(id: Identifier, allowed: bool, choices_made: int):
 	allowed_dict[search_dict[id]] = allowed and choices_made < choices_left[search_dict[id]]
@@ -55,4 +57,4 @@ func diff_tutor_blacklist(card: Base_Card, adding: bool = true):
 	playing_list.refresh_allowance()
 
 func _on_tutor_dock_disapear() -> void:
-	Globals.control_disapear(self, .1, old_pos)
+	Globals.control_disapear(self, .1, old_pos, )

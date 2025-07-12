@@ -54,9 +54,9 @@ func not_allowed():
 func allow_move_to(destination: Constants.STACKS):
 	allowed = true
 	disabled = false
-	match destination:
-		Constants.STACKS.DISCARD: stack_act = Constants.STACK_ACT.DISCARD
-		Constants.STACKS.PLAY: stack_act = Constants.STACK_ACT.TUTOR
+	#match destination:
+		#Constants.STACKS.DISCARD: stack_act = Constants.STACK_ACT.DISCARD
+		#Constants.STACKS.PLAY: stack_act = Constants.STACK_ACT.TUTOR
 
 func is_tutored() -> bool:
 	return not parent is PlayingList
@@ -92,7 +92,7 @@ func show_options() -> Node:
 func _gui_input(event):
 	if not disabled:
 		if event.is_action_pressed("A"):
-			if stack_act == Constants.STACK_ACT.PLAY:
+			if stack_act != Constants.STACK_ACT.LOOK:
 				if Globals.fundies.options:
 					await Globals.control_disapear(Globals.fundies.options, .15, global_position)
 				if not Globals.checking:

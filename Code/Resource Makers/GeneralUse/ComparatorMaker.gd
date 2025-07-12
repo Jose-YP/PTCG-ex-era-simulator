@@ -11,10 +11,7 @@ class_name Comparator
 @export_enum("Return", "Difference", "Equals", "Not Equal",
  "Greater", "Lesser") var comparision_type: String = "Return"
 
-@export var first_comparison: IndvCounter:
-	set(value):
-		print("SET TO: ", value)
-		first_comparison = value
+@export var first_comparison: IndvCounter
 @export_enum("None", "Const", "Second") var compare_to: String = "None"
 @export_group("Compare To Vars")
 @export var second_constant: int = 0
