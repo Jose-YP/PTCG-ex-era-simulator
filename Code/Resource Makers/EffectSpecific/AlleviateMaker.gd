@@ -11,6 +11,6 @@ class_name Alleviate
 
 signal finished
 
-func play_effect():
+func play_effect(reversable: bool = false):
 	print("PLAY ALLEVIATE")
 	finished.emit()

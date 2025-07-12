@@ -20,7 +20,7 @@ class_name DamageManip
 
 signal finished
 
-func play_effect():
+func play_effect(reversable: bool = false):
 	print("PLAY DAMAGE MANIPULATION")
 	
 	finished.emit()

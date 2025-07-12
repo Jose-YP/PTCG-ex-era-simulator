@@ -19,7 +19,6 @@ func add_type(type: String, ammount: int = 1):
 	if number >= 1: show()
 	if number > 1: $Number.show()
 	else:
-		print(type, number)
 		$Number.hide()
 
 func display_type(type: String):

@@ -41,7 +41,6 @@ func set_up(home: bool):
 		
 		#I don't know if this works, the duplicated resources don't seem to last
 		for en in slot.energy_cards:
-			print(en.name, en)
 			var duplicated: Base_Card = en.duplicate()
 			new_arr.append(duplicated)
 		slot.energy_cards = new_arr

@@ -25,6 +25,7 @@ var energy_swapped: int = 0
 var giver: PokeSlotButton
 var reciever: PokeSlotButton
 var energy_given: Array[PlayingButton]
+var swap_history: Array[Dictionary] = []
 #endregion
 #--------------------------------------
 
@@ -42,6 +43,10 @@ func _ready() -> void:
 	header.setup("SWAP BOX")
 	footer.setup("PRESS ESC TO UNDO")
 	slot_list.find_allowed(swap_rules.givers)
+
+#If this is closable be ready to reverse changes upon closee
+func make_closable() -> void:
+	%Header.closable = true
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Back"):
@@ -183,6 +188,21 @@ func reset():
 #endregion
 #--------------------------------------
 
+func record_swap(giv: PokeSlot, rec: PokeSlot, cards: Array[Base_Card]):
+	var swap_log: Dictionary = {"Giver": null, "Reciever": null, "Cards": null}
+	
+	swap_log["Giver"] = giv
+	swap_log["Reciever"] = reciever
+	swap_log["Cards"] = cards
+	
+	swap_history.append(swap_log)
+	print(swap_log)
+
+func undo_swap():
+	var latest_log = swap_history.pop_back()
+	print("REVERSING: ", latest_log)
+	swap_rules.swap(latest_log["Reciever"], latest_log["Giver"], latest_log["Cards"])
+
 #--------------------------------------
 #region SIGNALS
 func _on_end_pressed() -> void:
@@ -197,6 +217,7 @@ func _on_swap_pressed() -> void:
 		card_list.append(button.card)
 	
 	swap_rules.swap(giver.slot, reciever.slot, card_list)
+	record_swap(giver.slot, reciever.slot, card_list)
 	swaps_made += 1
 	#Only record previously swapped if the rules ask for it
 	if swap_rules.energy_carry_over:
@@ -205,3 +226,9 @@ func _on_swap_pressed() -> void:
 	anymore_swaps_allowed()
 #endregion
 #--------------------------------------
+
+#Reverse any changes made if closed prematurely
+func _on_tree_exited() -> void:
+	if %Header.closable:
+		for log in swap_history:
+			undo_swap()

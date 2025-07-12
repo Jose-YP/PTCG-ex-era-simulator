@@ -17,7 +17,7 @@ signal finished
 var first: PokeSlot
 var second: PokeSlot
 
-func play_effect():
+func play_effect(reversable: bool = false):
 	if affected == Constants.SIDES.BOTH:
 		await switch(Constants.SIDES.ATTACKING)
 		await switch(Constants.SIDES.DEFENDING)

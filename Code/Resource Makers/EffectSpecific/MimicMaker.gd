@@ -13,7 +13,7 @@ class_name Mimic
 
 signal finished
 
-func play_effect():
+func play_effect(reversable: bool = false):
 	print("PLAY MIMIC")
 	
 	finished.emit()

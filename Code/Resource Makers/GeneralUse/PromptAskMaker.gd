@@ -9,6 +9,10 @@ class_name PromptAsk
 
 ##What comparator must it pass to work? 
 @export var comparator: Comparator
+##For before activating prompts: 
+##[member effect], [member choose_location], [member formal_ask]
+##[br]Are they allowed cancel the prompt, forcing a failure?
+@export var can_reverse: bool = true
 ##These must be performed before doing the proceeding effect/attack
 @export var effect: EffectCall
 
@@ -28,7 +32,7 @@ signal finished
 
 var result: bool = false
 
-#Await for any coin flips in card player
+#Any prompts that can change in the moment
 func check_prompt():
 	result = false
 	
@@ -44,11 +48,19 @@ func check_prompt():
 		pass
 	elif formal_ask:
 		pass
-	if effect:
-		pass
-	
 	
 	return result
+
+#Any prompts that are checked before playing card/effects
+func before_activating() -> bool:
+	var went_through: bool = false
+	if effect:
+		await effect.play_effect(can_reverse)
+	
+	return went_through
+
+func has_before_prompt() -> bool:
+	return effect != null or choose_location != "None" or formal_ask
 
 func get_result():
 	return result

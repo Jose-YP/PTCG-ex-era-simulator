@@ -235,8 +235,6 @@ func count_energy() -> void:
 		var en_provide: EnData = energy.energy_properties.get_current_provide()
 		var en_name: String = en_provide.get_string()
 		attached_energy[en_name] += en_provide.number
-	
-	#print(attached_energy)
 
 func get_energy_strings() -> Array[String]:
 	var energy_stirngs: Array[String]

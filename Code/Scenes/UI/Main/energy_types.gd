@@ -65,7 +65,6 @@ func if_nothing_in():
 #--------------------------------------
 #region SIGNALS
 func _on_button_pressed() -> void:
-	print((owner as UI_Slot).connected_slot.energy_cards)
 	SignalBus.show_energy_attatched.emit((owner as UI_Slot).connected_slot)
 
 func _on_timer_timeout() -> void:

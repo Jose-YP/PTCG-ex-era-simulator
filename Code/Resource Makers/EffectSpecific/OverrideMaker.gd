@@ -10,7 +10,7 @@ class_name OverRide
 
 signal finished
 
-func play_effect():
+func play_effect(reversable: bool = false):
 	print("PLAY OVERIDE")
 	
 	finished.emit()

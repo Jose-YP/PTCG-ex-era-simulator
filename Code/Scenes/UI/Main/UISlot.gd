@@ -75,7 +75,6 @@ func display_types(types: Array[String]):
 		typeContainer[i].show()
 
 func display_energy(energy_arr: Array, energy_dict: Dictionary):
-	#print(energy_arr, energy_dict, energyContainer)
 	%EnergyTypes.display_energy(energy_arr, energy_dict)
 
 #endregion

@@ -28,7 +28,7 @@ class_name Search
 
 signal finished
 
-func play_effect():
+func play_effect(reversable: bool = false):
 	print("PLAY SEARCH")
 	var based_on_cards: Array[PokeSlot]
 	var stack_mana: StackManager = Globals.fundies.stack_manager

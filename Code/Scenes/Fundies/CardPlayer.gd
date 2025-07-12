@@ -185,11 +185,15 @@ func manage_tutored(tutored_cards: Array[Base_Card], placement: Placement):
 func start_add_choice(instruction: String, card: Base_Card, bool_fun: Callable, reversable: bool):
 	Globals.fundies.hide_list()
 	Globals.fundies.ui_actions.set_adding_card(card)
-	Globals.fundies.ui_actions.can_reverse = reversable
+	set_reversable(reversable)
 	await generic_choice(instruction, bool_fun)
 	
 	if Globals.fundies.ui_actions.selected_slot:
-		Globals.fundies.stack_manager.play_card(card, Globals.fundies.home_turn)
+		var went_through: bool = true
+		if card.has_before_prompt():
+			went_through = await card.play_before_prompt()
+		if went_through:
+			Globals.fundies.stack_manager.play_card(card, Globals.fundies.home_turn)
 		print("Attatch ", card.name)
 	else:
 		print("Nevermind")
@@ -221,6 +225,9 @@ func generic_choice(instruction: String, bool_fun: Callable,\
 
 func record_candidate(slot: PokeSlot):
 	hold_candidate = slot
+
+func set_reversable(reversable: bool):
+	Globals.fundies.ui_actions.can_reverse = reversable
 #endregion
 #--------------------------------------
 

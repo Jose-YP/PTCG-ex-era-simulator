@@ -26,7 +26,7 @@ class_name Disable
 
 signal finished
 
-func play_effect():
+func play_effect(reversable: bool = false):
 	print("PLAY DISABLE")
 	
 	finished.emit()

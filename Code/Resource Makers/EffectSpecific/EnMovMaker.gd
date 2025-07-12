@@ -29,20 +29,21 @@ class_name EnMov
 
 signal finished
 
-func play_effect():
+func play_effect(reversable: bool = false):
 	print("PLAY ENMOV")
 	match action:
 		0:
-			await send_effect()
+			await send_effect(reversable)
 		1:
-			await swap_effect()
+			await swap_effect(reversable)
 		2:
-			await attatch_effect()
+			await attatch_effect(reversable)
 	
 	finished.emit()
 
 #region EFFECTS
-func send_effect():
+func send_effect(reversable: bool = false):
+	Globals.fundies.card_player.set_reversable(reversable)
 	var giver_call: Callable = func(slot: PokeSlot):
 		return givers.check_ask(slot) and slot.energy_cards.size() != 0
 	
@@ -68,18 +69,21 @@ func send_effect():
 	
 	finished.emit()
 
-func swap_effect():
+func swap_effect(reversable: bool = false):
 	var new_box: SwapBox = Constants.swap_box.instantiate()
 	#Globals.fundies.get_considered_home(chooser)
 	new_box.swap_rules = self.duplicate()
 	new_box.side = Globals.full_ui.get_side(givers.side_target)
 	new_box.singles = Globals.full_ui.singles
+	
+	if reversable: new_box.make_closable()
+	
 	Globals.fundies.add_child(new_box)
 	await new_box.tree_exited
 	
 	finished.emit()
 
-func attatch_effect():
+func attatch_effect(reversable: bool = false):
 	finished.emit()
 #endregion
 

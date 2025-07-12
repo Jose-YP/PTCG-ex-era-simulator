@@ -17,7 +17,7 @@ class_name Condition
 
 signal finished
 
-func play_effect():
+func play_effect(reversable: bool = false):
 	print("PLAYING CONDITION")
 	
 	finished.emit()

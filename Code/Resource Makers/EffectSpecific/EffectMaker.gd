@@ -45,7 +45,7 @@ ENMOV, DMGMANIP, SEARCH, SWAP, DRAW, ALLEVIATE, MIMIC, OTHER}
 signal finished
 
 #These are params since the indivdual call knows best which is what
-func play_effect():
+func play_effect(reversable: bool = false):
 	var default_order = [condition, buff, card_disrupt, disable, 
 	 energy_movement, dmgManip, search, swap, draw_ammount, alleviate, mimic, extra_effect]
 	#var enum_dict: Dictionary = {effect_types.CONDITION:condition, effect_types.BUFF:buff,

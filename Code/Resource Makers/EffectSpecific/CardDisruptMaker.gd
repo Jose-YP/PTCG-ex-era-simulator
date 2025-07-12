@@ -22,7 +22,7 @@ class_name CardDisrupt
 
 signal finished
 
-func play_effect():
+func play_effect(reversable: bool = false):
 	print("PLAY DISRUPT")
 	
 	finished.emit()

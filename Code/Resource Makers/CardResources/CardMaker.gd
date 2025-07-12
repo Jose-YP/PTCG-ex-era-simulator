@@ -145,3 +145,23 @@ func generic_sort(compared_to: Base_Card) -> bool:
 func same_card(comparing_to: Base_Card) -> bool:
 	return (comparing_to.number == number and 
 	comparing_to.expansion == expansion)
+
+func has_before_prompt() -> bool:
+	var result: bool = false
+	
+	if trainer_properties:
+		result = trainer_properties.prompt.has_before_prompt()
+	if energy_properties:
+		result = energy_properties.prompt.has_before_prompt() or result
+	
+	return result
+
+func play_before_prompt() -> bool:
+	var result: bool = false
+	if trainer_properties:
+		result = await trainer_properties.prompt.before_activating()
+	if energy_properties:
+		result = await energy_properties.prompt.before_activating()
+	
+	#Return whether or not the prompt was done
+	return result

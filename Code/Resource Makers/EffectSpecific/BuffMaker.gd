@@ -32,7 +32,7 @@ class_name Buff
 
 signal finished
 
-func play_effect():
+func play_effect(reversable: bool = false):
 	print("PLAY BUFF")
 	
 	finished.emit()
