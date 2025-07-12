@@ -56,11 +56,34 @@ func flags_to_type_array(type_flags: int) -> Array[String]:
 	
 	return types
 
+func flags_to_allowed_array(allowed_flags: int) -> Array[String]:
+	var allowed_array: Array[String]
+	var checking: float = allowed_flags
+	for i in range(Constants.allowed_list_flags.size()-1, -1, -1):
+		print(2 ** i, checking, checking / 2 ** i)
+		if checking / 2 ** i > 0:
+			checking -= 2 ** i
+			allowed_array.append(Constants.allowed_list_flags[i])
+			print("Added allowed: ", allowed_array)
+		
+		pass
+	
+	return allowed_array
+ 
 func get_allowed_flags(allowed: String = "All") -> int:
 	match allowed:
 		"Start":
 			return (2 ** Constants.allowed_list_flags.find("Basic")
 			 + 2 ** Constants.allowed_list_flags.rfind("Fossil"))
+		"Pokemon":
+			return (2 ** Constants.allowed_list_flags.find("Basic")
+			+ 2 ** Constants.allowed_list_flags.find("Evolution")
+			 + 2 ** Constants.allowed_list_flags.rfind("Fossil"))
+		"Trainer":
+			return (2 ** Constants.allowed_list_flags.size() - 1 -
+			 (2 ** Constants.allowed_list_flags.find("Basic")
+			+ 2 ** Constants.allowed_list_flags.find("Evolution")
+			 + 2 ** Constants.allowed_list_flags.rfind("Energy")))
 		"All":
 			return 2 ** Constants.allowed_list_flags.size() - 1
 		_:
@@ -88,6 +111,9 @@ func get_card_flags(card: Base_Card) -> int:
 		card_flags += Conversions.get_allowed_flags("Energy")
 	
 	return card_flags
+
+func playing_as_pokemon(allowed_flag: int) -> bool:
+	return allowed_flag & get_allowed_flags("Pokemon") != 0
 
 #For use in lists
 func default_card_sort(button1: Button, button2: Button):

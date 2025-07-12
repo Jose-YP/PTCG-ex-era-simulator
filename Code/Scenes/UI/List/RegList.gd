@@ -38,7 +38,7 @@ func _ready() -> void:
 		Constants.STACKS.NONE: pass
 		_: printerr(stack, " not apart of stack enum")
 	
-	header.setup(display_text)
+	header.setup(str("[center]",display_text))
 	footer.setup(instruction_text)
 	
 	playing_list.list = list

@@ -37,5 +37,5 @@ func get_string():
 	return Constants.energy_types[index]
 
 func same_type(compared_to: EnData):
-	print(compared_to.type, type)
+	#print(compared_to.type, type)
 	return compared_to.type & type != 0

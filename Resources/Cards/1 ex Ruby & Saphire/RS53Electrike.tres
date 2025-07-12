@@ -1,14 +1,62 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=2 format=3 uid="uid://dl0nmvq0hpu6a"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://dl0nmvq0hpu6a"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_3b78y"]
+[ext_resource type="Texture2D" uid="uid://4fb1mqmrjcyy" path="res://Art/Cards/1 ex Ruby & Saphire/53.jpg" id="1_ewy4q"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_k3tgj"]
+[ext_resource type="Resource" uid="uid://lfhu3xyr0wpo" path="res://Resources/Components/Effects/Prompts/IfFlipHeads.tres" id="3_v1nb7"]
+[ext_resource type="Resource" uid="uid://6xmw13js5xd3" path="res://Resources/Components/Effects/Conditions/BasicParalyze.tres" id="4_lg46j"]
+[ext_resource type="Resource" uid="uid://srojhh5idedm" path="res://Resources/Components/Pokemon/Attacks/Tackle2-20.tres" id="5_gow71"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="6_pra87"]
+
+[sub_resource type="Resource" id="Resource_wvyg7"]
+script = ExtResource("2_k3tgj")
+name = "Super Thunder Wave"
+description = "Flip a coin. If heads, each Defending Pokémon is now Paralyzed."
+grass_cost = 0
+fire_cost = 0
+water_cost = 0
+lightning_cost = 0
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 1
+defender_properties = 0
+ignore_condition = 0
+prompt_reliant = false
+initial_main_DMG = 0
+conditional_self_dmg = false
+self_damage = 0
+modifier = 0
+modifier_num = 0
+both_active = false
+prompt = ExtResource("3_v1nb7")
+success_effect = ExtResource("4_lg46j")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_u70e5"]
+script = ExtResource("6_pra87")
+HP = 50
+retreat = 0
+attacks = Array[ExtResource("2_k3tgj")]([SubResource("Resource_wvyg7"), ExtResource("5_gow71")])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 1
+owner = 0
+type = 8
+weak = 32
+resist = 128
+metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
 script = ExtResource("1_3b78y")
-name = ""
-illustrator = ""
-number = 0
+name = "Electrike"
+image = ExtResource("1_ewy4q")
+illustrator = "Mitsuhiro Arita"
+number = 53
 rarity = 0
 expansion = 0
-categories = 0
+categories = 1
+pokemon_properties = SubResource("Resource_u70e5")
 fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

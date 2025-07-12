@@ -21,15 +21,15 @@
 [ext_resource type="Resource" uid="uid://y0672nb8rmt7" path="res://Resources/Cards/1 ex Ruby & Saphire/RS52Electrike.tres" id="19_htdgp"]
 [ext_resource type="Resource" uid="uid://dl0nmvq0hpu6a" path="res://Resources/Cards/1 ex Ruby & Saphire/RS53Electrike.tres" id="20_wia2e"]
 [ext_resource type="Resource" uid="uid://mfam4db5asvt" path="res://Resources/Cards/1 ex Ruby & Saphire/RS91Potion.tres" id="21_fj4wb"]
-[ext_resource type="Resource" uid="uid://bigbvtmdvobb8" path="res://Resources/Cards/12 ex Legend Maker/LM22Magneton.tres" id="22_urbe4"]
+[ext_resource type="Resource" uid="uid://bfs5itna2x8k5" path="res://Resources/Cards/11 ex Delta Species/DS22Holon'sMagneton.tres" id="23_ofgyt"]
 [ext_resource type="Resource" uid="uid://b0lfj4blf1nv4" path="res://Resources/Cards/3 ex Dragon/DR87MrBriney'sCompassion.tres" id="23_s3i3u"]
 [ext_resource type="Script" uid="uid://e660iomt5e76" path="res://Code/Resource Makers/CardResources/DeckMaker.gd" id="24_71ovo"]
 
 [resource]
 script = ExtResource("24_71ovo")
 cards = Dictionary[ExtResource("1_ofgyt"), int]({
+ExtResource("23_ofgyt"): 2,
 ExtResource("23_s3i3u"): 4,
-ExtResource("22_urbe4"): 2,
 ExtResource("21_fj4wb"): 3,
 ExtResource("20_wia2e"): 1,
 ExtResource("19_htdgp"): 1,

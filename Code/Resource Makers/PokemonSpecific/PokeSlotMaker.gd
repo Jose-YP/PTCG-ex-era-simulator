@@ -251,7 +251,6 @@ func count_energy() -> void:
 		if energy.energy_properties.attatched_to != self:
 			energy.energy_properties.attatched_to = self
 		var en_provide: EnData = energy.energy_properties.get_current_provide()
-		print(en_provide.number, energy.name)
 		var en_name: String = en_provide.get_string()
 		attached_energy[en_name] += en_provide.number
 

@@ -192,7 +192,8 @@ func start_add_choice(instruction: String, card: Base_Card, play_as: int, bool_f
 	
 	if Globals.fundies.ui_actions.selected_slot:
 		var went_back: bool = false
-		if card.has_before_prompt():
+		Conversions
+		if card.has_before_prompt() and not Conversions.playing_as_pokemon(play_as):
 			Globals.fundies.record_single_src_trg(Globals.fundies.ui_actions.selected_slot)
 			went_back = await card.play_before_prompt()
 			Globals.fundies.remove_top_source_target()

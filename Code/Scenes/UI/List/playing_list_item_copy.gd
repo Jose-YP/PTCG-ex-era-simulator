@@ -11,6 +11,7 @@ signal select
 
 var parent: Node
 var checking_card: Node
+var disable_flags: int = 0
 var stack_act: Constants.STACK_ACT
 var allowed: bool = false
 var from_id: Identifier
@@ -35,9 +36,15 @@ func _ready() -> void:
 	set_name(card.name)
 
 func allow(play_as: int):
-	allowed = true
-	print(play_as & card_flags, play_as, card_flags)
+	#var check_first: Array[String] = Conversions.flags_to_allowed_array(play_as)
+	#var allowed_as = Globals.fundies.can_be_played(card)
+	printt("ALLOW CHECK:",card.name,play_as & card_flags, play_as, card_flags)
+	#printt("ALLOWED AS:", allowed_as)
 	card_flags = play_as & card_flags
+	
+	#if allowed_as != card_flags:
+		#disable_flags = card_flags - allowed_as
+	allowed = true
 	disabled = false
 
 func not_allowed():

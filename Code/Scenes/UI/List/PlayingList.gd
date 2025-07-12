@@ -57,10 +57,10 @@ func is_allowed(button: Button) -> void:
 		Constants.STACK_ACT.PLAY:
 			var whitelisted: bool = white_list.has(button.card.name)
 			var blacklisted: bool = black_list.has(button.card.name)
-			
+			var can_be_played_as: int = Globals.fundies.can_be_played(button.card)
 			if (list[button.card] or whitelisted) and not blacklisted and \
-			 Globals.fundies.can_be_played(button.card):
-				button.allow(allowed_as)
+			 can_be_played_as & allowed_as != 0:
+				button.allow(can_be_played_as)
 			else: button.not_allowed()
 		Constants.STACK_ACT.TUTOR:
 			if par.readied:

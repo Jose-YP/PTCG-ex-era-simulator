@@ -1,71 +1,12 @@
-[gd_scene load_steps=32 format=3 uid="uid://dnij7qm62bibx"]
+[gd_scene load_steps=9 format=3 uid="uid://dnij7qm62bibx"]
 
 [ext_resource type="Script" uid="uid://j57m0tmwtg4n" path="res://Code/Scenes/debug_board_state.gd" id="1_auq40"]
-[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_vacgx"]
+[ext_resource type="Resource" uid="uid://cbga37453a4ca" path="res://Resources/BoardStates/SideStates/ElecAquaTest.tres" id="3_43axb"]
 [ext_resource type="Resource" uid="uid://dge18p0in3cyo" path="res://Resources/BoardStates/SideStates/Doubles/FPDTest.tres" id="3_yhhmj"]
-[ext_resource type="Resource" uid="uid://cerpssk67rwka" path="res://Resources/Cards/4 ex Team Magma VS Team Aqua/MA86AquaEnergy.tres" id="4_6m717"]
 [ext_resource type="PackedScene" uid="uid://bmhba1mua5n81" path="res://Scenes/Testing/debug_button.tscn" id="4_t8we2"]
-[ext_resource type="Resource" uid="uid://bn3q2mv1e7fqn" path="res://Resources/Cards/4 ex Team Magma VS Team Aqua/MA76TeamAquaBelt.tres" id="5_lih34"]
 [ext_resource type="PackedScene" uid="uid://b2f8g5a5evnv4" path="res://Scenes/Testing/comparator_options.tscn" id="6_43axb"]
 [ext_resource type="PackedScene" uid="uid://cni7lmrv7r06c" path="res://Scenes/Main Game/Fundies.tscn" id="6_iquab"]
-[ext_resource type="Resource" uid="uid://f51ar25ws7av" path="res://Resources/Cards/4 ex Team Magma VS Team Aqua/MA79TeamAquaTechnicalMachine01.tres" id="6_xkeps"]
-[ext_resource type="Resource" uid="uid://d3y3ggocst4r0" path="res://Resources/Cards/4 ex Team Magma VS Team Aqua/MA4TeamAqua'sManectric.tres" id="7_526bm"]
-[ext_resource type="Resource" uid="uid://ov65eileuo4o" path="res://Resources/Cards/4 ex Team Magma VS Team Aqua/MA29TeamAqua'sManectric.tres" id="8_r56go"]
-[ext_resource type="Resource" uid="uid://2ps0sakw53cw" path="res://Resources/Cards/4 ex Team Magma VS Team Aqua/MA27TeamAqua'sElectrike.tres" id="9_nm5ii"]
-[ext_resource type="Resource" uid="uid://brmb7q2xs8h6v" path="res://Resources/Cards/4 ex Team Magma VS Team Aqua/MA52TeamAqua'sElectrike.tres" id="10_pk2p2"]
-[ext_resource type="Resource" uid="uid://d4nyotd6k6lrq" path="res://Resources/Cards/11 ex Delta Species/DS21Holon'sElectrode.tres" id="11_lbfn2"]
-[ext_resource type="Resource" uid="uid://dja82vdsanhj7" path="res://Resources/Cards/11 ex Delta Species/DS71Holon'sVoltorb.tres" id="12_l5jd0"]
-[ext_resource type="Resource" uid="uid://b5ukqf6xmn6vv" path="res://Resources/Cards/1 ex Ruby & Saphire/RS109LightningEnergy.tres" id="13_fu4ym"]
-[ext_resource type="Resource" uid="uid://bn4tw1p2av7gj" path="res://Resources/Cards/7 ex Team Rocket Returns/TRR85PowHandExtension.tres" id="14_246ek"]
-[ext_resource type="Resource" uid="uid://bok1dv0p7mo4d" path="res://Resources/Cards/1 ex Ruby & Saphire/RS86Pokeball.tres" id="15_bq0oi"]
-[ext_resource type="Resource" uid="uid://ben8fxv5hw5hb" path="res://Resources/Cards/1 ex Ruby & Saphire/RS87PokemonReversal.tres" id="16_5kusi"]
-[ext_resource type="Resource" uid="uid://cht2g100xfwct" path="res://Resources/Cards/1 ex Ruby & Saphire/RS97Electabuzz-ex.tres" id="17_kb452"]
-[ext_resource type="Resource" uid="uid://55w4gcnt7ldd" path="res://Resources/Cards/1 ex Ruby & Saphire/RS9Manectric.tres" id="18_7esxo"]
-[ext_resource type="Resource" uid="uid://u26b4ssyr2mf" path="res://Resources/Cards/1 ex Ruby & Saphire/RS39Manectric.tres" id="19_h4vdr"]
-[ext_resource type="Script" uid="uid://e660iomt5e76" path="res://Code/Resource Makers/CardResources/DeckMaker.gd" id="20_thr75"]
-[ext_resource type="Script" uid="uid://calm3n7va5yjo" path="res://Code/Resource Makers/GeneralUse/CardStacksMaker.gd" id="21_7gqd7"]
-[ext_resource type="Script" uid="uid://dgqpurnuh14t1" path="res://Code/Resource Makers/GeneralUse/SideStateMaker.gd" id="22_7xd6i"]
-[ext_resource type="Script" uid="uid://cs70ix831b5g4" path="res://Code/Resource Makers/PokemonSpecific/PokeSlotMaker.gd" id="23_vl5tn"]
 [ext_resource type="Script" uid="uid://c7ucx36aubnh8" path="res://Code/Resource Makers/GeneralUse/BoardStateMaker.gd" id="28_7d1mi"]
-
-[sub_resource type="Resource" id="Resource_xl2h2"]
-script = ExtResource("20_thr75")
-cards = Dictionary[ExtResource("3_vacgx"), int]({
-ExtResource("4_6m717"): 4,
-ExtResource("5_lih34"): 3,
-ExtResource("6_xkeps"): 3,
-ExtResource("7_526bm"): 2,
-ExtResource("8_r56go"): 2,
-ExtResource("9_nm5ii"): 2,
-ExtResource("10_pk2p2"): 2,
-ExtResource("11_lbfn2"): 2,
-ExtResource("12_l5jd0"): 2,
-ExtResource("13_fu4ym"): 6,
-ExtResource("14_246ek"): 3,
-ExtResource("15_bq0oi"): 4,
-ExtResource("16_5kusi"): 4,
-ExtResource("17_kb452"): 2,
-ExtResource("18_7esxo"): 2,
-ExtResource("19_h4vdr"): 2
-})
-metadata/_custom_type_script = "uid://e660iomt5e76"
-
-[sub_resource type="Resource" id="Resource_0jiev"]
-script = ExtResource("21_7gqd7")
-deck = SubResource("Resource_xl2h2")
-init_deck = Array[ExtResource("3_vacgx")]([])
-init_hand = Array[ExtResource("3_vacgx")]([])
-init_discard = Array[ExtResource("3_vacgx")]([])
-init_prize = Array[ExtResource("3_vacgx")]([])
-metadata/_custom_type_script = "uid://calm3n7va5yjo"
-
-[sub_resource type="Resource" id="Resource_t8g77"]
-script = ExtResource("22_7xd6i")
-card_stacks = SubResource("Resource_0jiev")
-prize_cards = 6
-bench_size = 5
-slots = Dictionary[ExtResource("23_vl5tn"), bool]({})
-metadata/_custom_type_script = "uid://dgqpurnuh14t1"
 
 [sub_resource type="Resource" id="Resource_myyen"]
 script = ExtResource("28_7d1mi")
@@ -76,7 +17,7 @@ who_starts_first = 0
 doubles = false
 default_start = false
 home_side = 0
-home = SubResource("Resource_t8g77")
+home = ExtResource("3_43axb")
 away_side = 1
 away = ExtResource("3_yhhmj")
 metadata/_custom_type_script = "uid://c7ucx36aubnh8"

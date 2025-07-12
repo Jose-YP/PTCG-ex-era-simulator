@@ -228,7 +228,7 @@ func slot_evaluation(slot_data: String, ask_data: SlotAsk) -> int:
 	#print("B:", poke_slots.filter(func (slot: PokeSlot): ask_data.check_ask(slot)))
 	
 	for slot in filtered_slots:
-		print(slot, slot.get(slot_data))
+		#print(slot, slot.get(slot_data))
 		if slot_data == "energy_cards":
 			result += energy_card_evaluation(internal_data["en_count_methods"], slot)
 		else:

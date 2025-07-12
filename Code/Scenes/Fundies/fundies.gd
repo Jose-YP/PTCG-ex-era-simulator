@@ -102,7 +102,7 @@ func can_be_played(card: Base_Card) -> int:
 	if considered & 64 != 0:
 		allowed_to += 64
 	if considered & 128 != 0:
-		pass
+		allowed_to += 128
 	if considered & 256 != 0:
 		if find_allowed_slots(func(slot: PokeSlot): return not slot.is_filled(),\
 		Constants.SIDES.ATTACKING).size() != 0:

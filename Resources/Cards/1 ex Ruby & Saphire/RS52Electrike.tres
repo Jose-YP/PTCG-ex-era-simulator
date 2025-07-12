@@ -1,14 +1,34 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=2 format=3 uid="uid://y0672nb8rmt7"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=7 format=3 uid="uid://y0672nb8rmt7"]
 
+[ext_resource type="Texture2D" uid="uid://do8qwswxngn5d" path="res://Art/Cards/1 ex Ruby & Saphire/52.jpg" id="1_8mybm"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_c2qaa"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_naj4b"]
+[ext_resource type="Resource" uid="uid://cy2rqr8mk2lb7" path="res://Resources/Components/Pokemon/Attacks/Headbutt10.tres" id="3_8j2a1"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="4_2f2de"]
+
+[sub_resource type="Resource" id="Resource_0s0r4"]
+script = ExtResource("4_2f2de")
+HP = 50
+retreat = 1
+attacks = Array[ExtResource("2_naj4b")]([ExtResource("3_8j2a1")])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 1
+owner = 0
+type = 8
+weak = 32
+resist = 128
+metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
 script = ExtResource("1_c2qaa")
-name = ""
-illustrator = ""
-number = 0
+name = "Electrike"
+image = ExtResource("1_8mybm")
+illustrator = "Ken Sugimori"
+number = 52
 rarity = 0
 expansion = 0
-categories = 0
+categories = 1
+pokemon_properties = SubResource("Resource_0s0r4")
 fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"
