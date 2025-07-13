@@ -57,6 +57,7 @@ var swap_box: PackedScene = load("res://Scenes/UI/Lists/swap_box.tscn")
 const discard_box: PackedScene = preload("res://Scenes/UI/Lists/discard_list.tscn")
 const reg_flip_box: PackedScene = preload("res://Scenes/UI/Coins/coinflip_box.tscn")
 const until_flip_box: PackedScene = preload("res://Scenes/UI/Coins/until_box.tscn")
+const prompt_answer: PackedScene = preload("res://Scenes/UI/ETC/PromptAnswer.tscn")
 #endregion
 #--------------------------------------
 
@@ -64,14 +65,14 @@ const until_flip_box: PackedScene = preload("res://Scenes/UI/Coins/until_box.tsc
 #region ENUMS
 enum PLAYER_TYPES{PLAYER, ##HUMAN CONTROLLED 
  CPU, ## CPU CONTROLLED
- DUMMY, ## SPECIFIC CPU THAT ALWAYS CHOOSES EASIEST OPTION FOR DEBUGGING
+ DUMMY ## SPECIFIC CPU THAT ALWAYS CHOOSES EASIEST OPTION FOR DEBUGGING
 }
 enum SIDES {NONE, ##IGNORE FIELD AND TAKE DEFAULT
  ATTACKING,##IS FOR THE PLAYER WHOSE TURN IT IS
  DEFENDING,##IS THE OTHER GUY
  BOTH, ##TAKE IN EVERY SLOT THAT FITS SPECIFIERS
  SOURCE, ##ONLY TAKE IN WHOEVER CALLED EFFECT NO MATTER SIDE
- OTHER, ##WHICHEVER SIDE DIDN'T CALL THE EFFECT
+ OTHER ##WHICHEVER SIDE DIDN'T CALL THE EFFECT
 } 
 enum SLOTS {NONE,##Ignore and use the default
  TARGET,##Refers to  pokemon involved in attacks and effects
@@ -94,7 +95,7 @@ enum STACK_ACT{PLAY,##ALLOWED CARDS CAN BE PLAYED ONTO THE BOARD
 	DISCARD, ##ALLOWED CARDS WILL BE SENT TO DISCARD PILE
 	LOOK, ##NOT ALLOWED TO INTERACT WITH CARDS
 	REORDER, ##REARRANGE CARDS AS NECESSARY
-	ENSWAP
+	ENSWAP ##SELECT CARDS TO SWAP IN THE SWAP BOX
 }
 enum COIN_RULES{
 	REG,

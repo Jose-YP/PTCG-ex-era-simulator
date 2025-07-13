@@ -1,0 +1,100 @@
+[gd_scene load_steps=4 format=3 uid="uid://cu6ufo2qfh3pr"]
+
+[ext_resource type="Theme" uid="uid://bfw6ylcttychc" path="res://Themes/Themes/AverageButton.tres" id="1_lmn5u"]
+[ext_resource type="Script" uid="uid://g7n68ynjmwxf" path="res://Code/Scenes/UI/prompt_answer.gd" id="1_wkjr6"]
+[ext_resource type="StyleBox" uid="uid://dbxi0dyaybdu1" path="res://Themes/StyleBoxes/RED.tres" id="2_wkjr6"]
+
+[node name="ColorRect" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.615686)
+script = ExtResource("1_wkjr6")
+
+[node name="Transparency" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0.403922)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+
+[node name="PanelContainer" type="PanelContainer" parent="Transparency"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.01
+anchor_top = 0.014
+anchor_right = 0.979
+anchor_bottom = 0.082
+offset_left = 0.199999
+offset_top = -0.0799999
+offset_right = -0.320068
+offset_bottom = -0.0400009
+grow_horizontal = 2
+mouse_filter = 2
+theme = ExtResource("1_lmn5u")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Transparency/PanelContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Transparency/PanelContainer/HBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(73, 0)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("2_wkjr6")
+
+[node name="CancelText" type="RichTextLabel" parent="Transparency/PanelContainer/HBoxContainer/PanelContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 15
+bbcode_enabled = true
+text = "[center]Esc to Go Back"
+
+[node name="Instructions" type="RichTextLabel" parent="Transparency/PanelContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 33
+bbcode_enabled = true
+text = "[center]Would you?"
+horizontal_alignment = 1
+
+[node name="PromptAsks" type="MarginContainer" parent="Transparency"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.443
+anchor_right = 1.0
+anchor_bottom = 0.528
+offset_top = 0.039978
+offset_bottom = -0.160004
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_right = 64
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Transparency/PromptAsks"]
+layout_mode = 2
+theme_override_constants/separation = 93
+alignment = 1
+
+[node name="Yes" type="Button" parent="Transparency/PromptAsks/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="No" type="Button" parent="Transparency/PromptAsks/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[connection signal="pressed" from="Transparency/PromptAsks/HBoxContainer/Yes" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="Transparency/PromptAsks/HBoxContainer/No" to="." method="_on_no_pressed"]

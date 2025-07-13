@@ -92,7 +92,7 @@ func show_options() -> Node:
 func _gui_input(event):
 	if not disabled:
 		if event.is_action_pressed("A"):
-			if stack_act != Constants.STACK_ACT.LOOK:
+			if stack_act != Constants.STACK_ACT.LOOK and stack_act != Constants.STACK_ACT.ENSWAP:
 				if Globals.fundies.options:
 					await Globals.control_disapear(Globals.fundies.options, .15, global_position)
 				if not Globals.checking:

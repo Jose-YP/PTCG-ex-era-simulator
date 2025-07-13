@@ -1,6 +1,9 @@
 extends Node
 
-#STACK SIGNALS
+#--------------------------------------
+#region SIGNALS
+#--------------------------------------
+#region STACK SIGNALS
 @warning_ignore("unused_signal")
 signal show_list(whose: String, list: Constants.STACKS, act: Constants.STACK_ACT)
 @warning_ignore("unused_signal")
@@ -15,11 +18,12 @@ signal start_tutor(search: Search)
 signal tutor_card(card: Base_Card)
 @warning_ignore("unused_signal")
 signal cancel_tutor(button: Button)
-#CARD DISPLAY SIGNALS
+#endregion
+#--------------------------------------
 @warning_ignore("unused_signal")
 signal chosen_slot(showing: PokeSlot)
-#signal show_options(button: Button, card: Base_Card)
-#PLAY CARD SIGNALS
+#--------------------------------------
+#region CARD PLAY SIGNALS
 signal play_basic(card: Base_Card)
 signal play_evo(card: Base_Card)
 signal play_trainer(card: Base_Card)
@@ -28,13 +32,24 @@ signal play_tool(card: Base_Card)
 signal play_tm(card: Base_Card)
 signal play_fossil(card: Base_Card)
 signal play_energy(card: Base_Card)
-#EFFECT SIGNALS
+#endregion
+#--------------------------------------
+#--------------------------------------
+#region EFFECT SIGNALS
 @warning_ignore("unused_signal")
 signal get_candidate(pokeSlot: PokeSlot)
 @warning_ignore("unused_signal")
 signal went_back
 @warning_ignore("unused_signal")
 signal finished_coinflip()
+@warning_ignore("unused_signal")
+signal prompt_answered(answer: bool)
+
+signal begin_swap(giver: PokeSlot, reciever: PokeSlot, energy: Array[Base_Card])
+#endregion
+#--------------------------------------
+#endregion
+#--------------------------------------
 
 func call_action(action: int, card: Base_Card) -> void:
 	match action:
@@ -48,10 +63,8 @@ func call_action(action: int, card: Base_Card) -> void:
 			play_tool.emit(card)
 		6:
 			play_tm.emit(card)
-		7:
-			play_fossil.emit(card)
 		8:
-			play_basic.emit(card)
+			play_fossil.emit(card)
 		9:
 			play_energy.emit(card)
 		_:

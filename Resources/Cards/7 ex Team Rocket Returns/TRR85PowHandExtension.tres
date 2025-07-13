@@ -1,46 +1,56 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=15 format=3 uid="uid://bn4tw1p2av7gj"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=17 format=3 uid="uid://bn4tw1p2av7gj"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_gsupt"]
 [ext_resource type="Texture2D" uid="uid://cvn72gm0i2ycb" path="res://Art/Cards/7 ex Team Rocket Returns/85.jpg" id="1_tpnca"]
 [ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="3_tpnca"]
+[ext_resource type="Resource" uid="uid://botjs2x60ioqp" path="res://Resources/Components/Effects/Asks/General/DefendingPokemon.tres" id="4_okvmh"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="4_uy43t"]
-[ext_resource type="Resource" uid="uid://dqj6gq7pt3dbk" path="res://Resources/Components/Effects/Asks/General/FromSource.tres" id="5_ci705"]
+[ext_resource type="Resource" uid="uid://cw44iqotg3v3f" path="res://Resources/Components/Effects/Asks/General/FromDefending.tres" id="5_d1501"]
 [ext_resource type="Resource" uid="uid://c7itelq8jtjc2" path="res://Resources/Components/EnData/Rainbow.tres" id="5_tpnca"]
 [ext_resource type="Script" uid="uid://cimk6l7ytw7xg" path="res://Code/Resource Makers/EffectSpecific/EnMovMaker.gd" id="6_d1501"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="7_dmrxn"]
 [ext_resource type="Script" uid="uid://curklvf1517ml" path="res://Code/Resource Makers/EffectSpecific/SwapMaker.gd" id="8_uw2sm"]
 
+[sub_resource type="Resource" id="Resource_k8l2b"]
+script = ExtResource("6_d1501")
+action = 1
+chooser = 1
+givers = ExtResource("4_okvmh")
+reciever = ExtResource("5_d1501")
+to_stack = 2
+stack_direction = 2
+energy_carry_over = false
+action_ammount = 1
+energy_ammount = 1
+energy_move_type = 2
+en_type = ExtResource("5_tpnca")
+react = false
+metadata/_custom_type_script = "uid://cimk6l7ytw7xg"
+
+[sub_resource type="Resource" id="Resource_tpnca"]
+script = ExtResource("7_dmrxn")
+either_or = false
+order = Array[int]([])
+energy_movement = SubResource("Resource_k8l2b")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
 [sub_resource type="Resource" id="Resource_bu8wl"]
 script = ExtResource("3_tpnca")
-formal_ask = true
-ask_string = "Move the opponent's Energy or Pokemon? || Energy || Pokemon"
+formal_question = true
+question_string = "Move the opponent's Pokemon or Energy?"
+yes_answer = "Pokemon"
+no_answer = "Energy"
 can_reverse = true
 chooser = 0
 choose_location = "None"
 which_stack = 0
 metadata/_custom_type_script = "uid://b85jmc7067bjc"
 
-[sub_resource type="Resource" id="Resource_k8l2b"]
-script = ExtResource("6_d1501")
-action = 0
-chooser = 4
-givers = ExtResource("5_ci705")
-reciever = ExtResource("5_ci705")
-to_stack = 2
-stack_direction = 2
-energy_carry_over = false
-action_ammount = 0
-energy_ammount = 0
-energy_move_type = 2
-en_type = ExtResource("5_tpnca")
-react = false
-metadata/_custom_type_script = "uid://cimk6l7ytw7xg"
-
 [sub_resource type="Resource" id="Resource_4or8k"]
 script = ExtResource("8_uw2sm")
-choose_active = false
-chosing = 4
-affected = 5
+choose_active = true
+chosing = 1
+affected = 2
 slots = 4
 metadata/_custom_type_script = "uid://curklvf1517ml"
 
@@ -48,7 +58,6 @@ metadata/_custom_type_script = "uid://curklvf1517ml"
 script = ExtResource("7_dmrxn")
 either_or = false
 order = Array[int]([])
-energy_movement = SubResource("Resource_k8l2b")
 swap = SubResource("Resource_4or8k")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -58,6 +67,7 @@ considered = "Rocket's Secret Machine"
 specific_requirement = "You may use this card only if you have more Prize cards left than your opponent. "
 description = "Move 1 Energy card attached to the Defending Pokémon to another of your opponent's Pokémon. Or, switch 1 of your opponent's Benched Pokémon with 1 of the Defending Pokémon. Your opponent chooses the Defending Pokémon to switch. "
 prompt = SubResource("Resource_bu8wl")
+fail_effect = SubResource("Resource_tpnca")
 success_effect = SubResource("Resource_slho1")
 metadata/_custom_type_script = "uid://crx447i85kshy"
 

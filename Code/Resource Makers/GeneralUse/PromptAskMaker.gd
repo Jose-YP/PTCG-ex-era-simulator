@@ -1,11 +1,16 @@
 extends Resource
 class_name PromptAsk
 
+#region QUESTION
 ##Give a prompt asking to activate the effect?
-@export var formal_ask: bool = false
+@export var formal_question: bool = false
 ##This is the text given for context when a player must choose something
-##[br]When [member formal_ask] is [code]true[/code], seperate choices with ||
-@export_multiline var ask_string: String 
+@export_multiline var question_string: String 
+##This answer will return true for the prompt
+@export var yes_answer: String
+##This answer will return false for the prompt
+@export var no_answer: String
+#endregion
 
 ##What comparator must it pass to work? 
 @export var comparator: Comparator
@@ -16,6 +21,7 @@ class_name PromptAsk
 ##These must be performed before doing the proceeding effect/attack
 @export var effect: EffectCall
 
+#region CHOICE
 @export_group("Choice")
 ##Who decides which to choose
 @export var chooser: Constants.SIDES
@@ -27,37 +33,51 @@ class_name PromptAsk
 @export var which_stack: Constants.STACKS = Constants.STACKS.HAND
 ##Which cards are allowed in choice
 @export var which_cards: Identifier
+#endregion
 
+var formal_answer: bool
+
+#region PROMPT CHECKS
 #Any prompts that can change in the moment
 func check_prompt():
 	var result: bool = false
 	
-	if comparator:
-		print("CHECKING COMPARATOR ", comparator.first_comparison)
-		var found = comparator.start_comparision()
-		print(found)
-		result = result or found
-	
-	elif formal_ask:
-		pass
+	print("CHECKING COMPARATOR ", comparator.first_comparison)
+	var found = comparator.start_comparision()
+	print(found)
+	result = result or found
 	
 	return result
 
+func check_prompt_question():
+	SignalBus.prompt_answered.connect(return_prompt_answered)
+	
+	var prompt_ask: ColorRect = Constants.prompt_answer.instantiate()
+	prompt_ask.modulate = Color.TRANSPARENT
+	Globals.fundies.add_child(prompt_ask)
+	prompt_ask.load_answers(question_string, yes_answer, no_answer)
+	
+	await SignalBus.prompt_answered
+	SignalBus.prompt_answered.disconnect(return_prompt_answered)
+	return formal_answer
+
 #Any prompts that are checked before playing card/effects
 func before_activating() -> bool:
+	var result: bool = false
+	
 	if effect:
 		await effect.play_effect(can_reverse)
 		print("DID WE GO BACK? ", effect.went_back)
+		return effect.went_back
 	if choose_location == "Slot":
 		pass
 	elif choose_location == "Stack":
 		pass
 	
-	return effect.went_back
+	return result
+#endregion
 
-func has_before_prompt() -> bool:
-	return effect != null or choose_location != "None" or formal_ask
-
+#region HELPER FUNCTIONS
 func has_coinflip() -> bool:
 	if comparator:
 		var result: bool = comparator.first_comparison.has_coinflip()
@@ -65,3 +85,10 @@ func has_coinflip() -> bool:
 			result = result or comparator.second_counter.has_coinflip()
 		return result
 	return false
+
+func return_prompt_answered(result: bool):
+	formal_answer = result
+
+func has_before_prompt() -> bool:
+	return effect != null or choose_location != "None"
+#endregion

@@ -39,3 +39,8 @@ func find_allowed(ask: SlotAsk):
 	for node in %SlotList.get_children():
 		if node.slot:
 			node.disabled = not ask.check_ask(node.slot)
+
+func find_allowed_givers(ask: SlotAsk):
+	for node in %SlotList.get_children():
+		if node.slot:
+			node.disabled = not ask.check_ask(node.slot) or node.slot.energy_cards.size() == 0

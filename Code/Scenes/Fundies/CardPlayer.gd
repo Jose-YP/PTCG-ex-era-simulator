@@ -132,12 +132,16 @@ func play_trainer(card: Base_Card):
 				print("Nevermind")
 				return
 		
-		allowed = trainer.prompt.check_prompt()
+		if trainer.prompt.comparator:
+			allowed = trainer.prompt.check_prompt()
+			if trainer.prompt.has_coinflip():
+				await SignalBus.finished_coinflip
+				print("COINFLIP RESULT: ", allowed)
+			else: print("Prompt Result: ", allowed)
 		
-		if trainer.prompt.has_coinflip():
-			await SignalBus.finished_coinflip
-			print("COINFLIP RESULT: ", allowed)
-		else: print("Prompt Result: ", allowed)
+		if trainer.prompt.formal_question:
+			allowed = await trainer.prompt.check_prompt_question()
+		
 		print(str(card.name, " played it's ", "success effect" if allowed else "fail effect"))
 	
 	if card.is_considered("Supporter"):

@@ -11,6 +11,8 @@
 script = ExtResource("4_agjcc")
 formal_ask = false
 ask_string = ""
+yes_answer = ""
+no_answer = ""
 comparator = ExtResource("1_t4foj")
 can_reverse = true
 chooser = 0
