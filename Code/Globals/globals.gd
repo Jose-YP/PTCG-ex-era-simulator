@@ -7,7 +7,7 @@ var checked_card: Control
 var fundies: Fundies
 var full_ui: FullBoardUI
 var coinflip: Control
-var coin_rules: Constants.COIN_RULES = Constants.COIN_RULES.REG
+var coin_rules: Consts.COIN_RULES = Consts.COIN_RULES.REG
 
 signal enter_check
 signal exit_check
@@ -23,9 +23,9 @@ func show_card(card: Base_Card, parent: Node):
 			card_display = load("res://Scenes/UI/CardDisplay/PokemonCard.tscn").instantiate()
 			card_display.checking = true
 		"Trainer":
-			card_display = Constants.trainer_card.instantiate()
+			card_display = Consts.trainer_card.instantiate()
 		"Energy":
-			card_display = Constants.energy_card.instantiate()
+			card_display = Consts.energy_card.instantiate()
 	
 	card_setup(card, card_display, parent)
 

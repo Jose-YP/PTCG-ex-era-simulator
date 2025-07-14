@@ -16,7 +16,7 @@ func _ready():
 	
 	%EffectText.clear()
 	if attack.description != "":
-		var final_text: String = Conversions.reformat(attack.description)
+		var final_text: String = Convert.reformat(attack.description)
 		%EffectText.append_text(final_text)
 		%EffectText.show()
 	

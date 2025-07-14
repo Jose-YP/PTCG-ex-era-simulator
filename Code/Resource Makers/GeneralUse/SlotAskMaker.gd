@@ -4,8 +4,8 @@ class_name SlotAsk
 ##If this ask isn't met, look for the next ask
 @export var or_ask: SlotAsk
 ##Which side to pay attention to
-@export var side_target: Constants.SIDES = Constants.SIDES.BOTH
-@export var slot_target: Constants.SLOTS = Constants.SLOTS.ALL
+@export var side_target: Consts.SIDES = Consts.SIDES.BOTH
+@export var slot_target: Consts.SLOTS = Consts.SLOTS.ALL
 @export var specifically: Array[String] = []
 ##-10 means don't look at this var, 0 means must be undamaged, the rest mean x or more
 @export_enum("LessEq", "GreaterEq") var comparison_type: int = 1
@@ -95,10 +95,10 @@ func check_ask(slot: PokeSlot) -> bool:
 	print_verbose("[center]-----------------------------------------------------------")
 	print_verbose("[center]Type Flag")
 	#Check if the pokemon is type inclusive xor~ type
-	var types: Array[String] = Conversions.flags_to_type_array(slot.current_card.pokemon_properties.type)
+	var types: Array[String] = Convert.flags_to_type_array(slot.current_card.pokemon_properties.type)
 	var type_str: String = "[center]Type: "
 	for loc_type in types:
-		type_str +=  Conversions.get_type_rich_color(loc_type) + loc_type + "[/color]"
+		type_str +=  Convert.get_type_rich_color(loc_type) + loc_type + "[/color]"
 	print_verbose(type_str, "\n", slot.current_card.pokemon_properties.type && pokemon_type, 
 	 not (slot.current_card.pokemon_properties.type && pokemon_type != 0 and not type_inclusive))
 	

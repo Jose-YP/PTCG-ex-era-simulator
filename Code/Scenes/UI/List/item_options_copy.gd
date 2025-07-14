@@ -5,7 +5,7 @@ class_name ItemOptions
 @export_flags("Basic", "Evolution", "Item",
  "Supporter", "Stadium", "Tool", "TM", "RSM", "Fossil",
  "Energy") var card_flags: int = 0
-@export var stack_act: Constants.STACK_ACT = Constants.STACK_ACT.PLAY
+@export var stack_act: Consts.STACK_ACT = Consts.STACK_ACT.PLAY
 
 @onready var items: Array[Node] = $PlayAs/Items.get_children()
 
@@ -22,23 +22,23 @@ func _ready():
 	for i in range($PlayAs/Items.get_child_count() - 1): items[i].hide()
 	#Tutor and discard will also need to vary depening on card_flags
 	match stack_act:
-		Constants.STACK_ACT.PLAY:
+		Consts.STACK_ACT.PLAY:
 			#Check for every option except for check, every card should be able to do that
 			for i in range($PlayAs/Items.get_child_count() - 1):
 				if card_flags & 2 ** i:
 					items[i].show()
 					items[i].pressed.connect(emit_play_as.bind(i))
-		Constants.STACK_ACT.TUTOR:
+		Consts.STACK_ACT.TUTOR:
 			if origin_button.is_tutored():
 				%Cancel.show()
 			else:
 				%Tutor.show()
-		Constants.STACK_ACT.DISCARD:
+		Consts.STACK_ACT.DISCARD:
 			if origin_button.is_tutored():
 				%Cancel.show()
 			else:
 				%Discard.show()
-		Constants.STACK_ACT.LOOK:
+		Consts.STACK_ACT.LOOK:
 			pass
 		_: push_error(stack_act, " Not an actual stack_act")
 	
@@ -70,7 +70,7 @@ func _on_check_pressed():
 	if not Globals.checking:
 		Globals.show_card(origin_button.card, origin_button)
 
-#signal swap_card_location(card: Array[Base_Card], from: Constants.STACKS, to: String)
+#signal swap_card_location(card: Array[Base_Card], from: Consts.STACKS, to: String)
 
 #Tutor and discard record source and target on effect call
 func _on_tutor_pressed() -> void:

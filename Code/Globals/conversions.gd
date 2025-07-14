@@ -15,11 +15,11 @@ func reformat(text: String) -> String:
 	for found in matches:
 		#Specific mentions of energy types should be replaced by icon
 		var key: String = found.get_string(0).lstrip("{").rstrip("}")
-		var index: int = Constants.energy_types.find(key)
+		var index: int = Consts.energy_types.find(key)
 		var icon_path: String = str("[img={20%}x{20%}]",
-		Constants.energy_icons[index],"[/img]")
+		Consts.energy_icons[index],"[/img]")
 		
-		if index == -1: push_error(key," isn't found in Constants energy_types")
+		if index == -1: push_error(key," isn't found in Consts energy_types")
 		
 		result = result.replace(found.get_string(0), icon_path)
 	
@@ -33,8 +33,8 @@ func reformat(text: String) -> String:
 	return result
 
 func get_type_rich_color(type: String) -> String:
-	var type_int: float = Constants.energy_types.find(type)
-	var color_string: String = str("[color=",Constants.energy_colors[type_int].to_html(),"]")
+	var type_int: float = Consts.energy_types.find(type)
+	var color_string: String = str("[color=",Consts.energy_colors[type_int].to_html(),"]")
 	return color_string
 
 func flags_to_type_array(type_flags: int) -> Array[String]:
@@ -64,17 +64,17 @@ func flags_to_type_array(type_flags: int) -> Array[String]:
 func get_basic_energy() -> Array[String]:
 	var arr: Array[String]
 	for i in range(9):
-		arr.append(Constants.energy_types[i])
+		arr.append(Consts.energy_types[i])
 	return arr
 
 func flags_to_allowed_array(allowed_flags: int) -> Array[String]:
 	var allowed_array: Array[String]
 	var checking: float = allowed_flags
-	for i in range(Constants.allowed_list_flags.size()-1, -1, -1):
+	for i in range(Consts.allowed_list_flags.size()-1, -1, -1):
 		print(2 ** i, checking, checking / 2 ** i)
 		if checking / 2 ** i > 0:
 			checking -= 2 ** i
-			allowed_array.append(Constants.allowed_list_flags[i])
+			allowed_array.append(Consts.allowed_list_flags[i])
 			print("Added allowed: ", allowed_array)
 		
 		pass
@@ -84,21 +84,21 @@ func flags_to_allowed_array(allowed_flags: int) -> Array[String]:
 func get_allowed_flags(allowed: String = "All") -> int:
 	match allowed:
 		"Start":
-			return (2 ** Constants.allowed_list_flags.find("Basic")
-			 + 2 ** Constants.allowed_list_flags.rfind("Fossil"))
+			return (2 ** Consts.allowed_list_flags.find("Basic")
+			 + 2 ** Consts.allowed_list_flags.rfind("Fossil"))
 		"Pokemon":
-			return (2 ** Constants.allowed_list_flags.find("Basic")
-			+ 2 ** Constants.allowed_list_flags.find("Evolution")
-			 + 2 ** Constants.allowed_list_flags.rfind("Fossil"))
+			return (2 ** Consts.allowed_list_flags.find("Basic")
+			+ 2 ** Consts.allowed_list_flags.find("Evolution")
+			 + 2 ** Consts.allowed_list_flags.rfind("Fossil"))
 		"Trainer":
-			return (2 ** Constants.allowed_list_flags.size() - 1 -
-			 (2 ** Constants.allowed_list_flags.find("Basic")
-			+ 2 ** Constants.allowed_list_flags.find("Evolution")
-			 + 2 ** Constants.allowed_list_flags.rfind("Energy")))
+			return (2 ** Consts.allowed_list_flags.size() - 1 -
+			 (2 ** Consts.allowed_list_flags.find("Basic")
+			+ 2 ** Consts.allowed_list_flags.find("Evolution")
+			 + 2 ** Consts.allowed_list_flags.rfind("Energy")))
 		"All":
-			return 2 ** Constants.allowed_list_flags.size() - 1
+			return 2 ** Consts.allowed_list_flags.size() - 1
 		_:
-			return 2 ** Constants.allowed_list_flags.find(allowed)
+			return 2 ** Consts.allowed_list_flags.find(allowed)
 
 func get_card_flags(card: Base_Card) -> int:
 	var card_flags: int = 0
@@ -106,20 +106,20 @@ func get_card_flags(card: Base_Card) -> int:
 	if card.categories & 1:
 		
 		if card.pokemon_properties.evo_stage == "Basic":
-			card_flags += Conversions.get_allowed_flags("Basic")
+			card_flags += Convert.get_allowed_flags("Basic")
 		elif card.fossil: 
-			card_flags += Conversions.get_allowed_flags("Fossil")
+			card_flags += Convert.get_allowed_flags("Fossil")
 		else:
-			card_flags += Conversions.get_allowed_flags("Evolution")
+			card_flags += Convert.get_allowed_flags("Evolution")
 		
 	elif card.categories & 2:
 		var considered = card.trainer_properties.considered
 		if considered == "Rocket's Secret Machine": considered = "RSM"
 		if considered == "Supporter": considered = "Support"
-		card_flags += Conversions.get_allowed_flags(considered)
+		card_flags += Convert.get_allowed_flags(considered)
 	
 	if card.categories & 4:
-		card_flags += Conversions.get_allowed_flags("Energy")
+		card_flags += Convert.get_allowed_flags("Energy")
 	
 	return card_flags
 
@@ -146,19 +146,19 @@ func default_card_sort(button1: Button, button2: Button):
 	else:
 		return card1.card_priority(card2)
 
-func stack_into_string(stack: Constants.STACKS):
+func stack_into_string(stack: Consts.STACKS):
 	match stack:
-		Constants.STACKS.HAND:
+		Consts.STACKS.HAND:
 			return "Hand"
-		Constants.STACKS.DISCARD:
+		Consts.STACKS.DISCARD:
 			return "Discard"
-		Constants.STACKS.DECK:
+		Consts.STACKS.DECK:
 			return "Deck"
-		Constants.STACKS.PRIZE:
+		Consts.STACKS.PRIZE:
 			return "Prize"
-		Constants.STACKS.LOST:
+		Consts.STACKS.LOST:
 			return "Lost Zone"
-		Constants.STACKS.PLAY:
+		Consts.STACKS.PLAY:
 			return "In Play"
 		_:
 			printerr(stack, "Isn't recognized as a viable type")

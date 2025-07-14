@@ -11,8 +11,8 @@ class_name PlayingList
 @export_flags("Basic", "Evolution", "Item",
 "Supporter","Stadium", "Tool", "TM", "RSM", "Fossil",
  "Energy") var allowed_as: int = 1
-@export var stack_act: Constants.STACK_ACT = Constants.STACK_ACT.PLAY
-@export var stack: Constants.STACKS = Constants.STACKS.HAND
+@export var stack_act: Consts.STACK_ACT = Consts.STACK_ACT.PLAY
+@export var stack: Consts.STACKS = Consts.STACKS.HAND
 
 const list_item: PackedScene = preload("res://Scenes/UI/Lists/PlayingListItem_copy.tscn")
 
@@ -42,7 +42,7 @@ func set_items():
 		%CardList.add_child(making)
 		is_allowed(making)
 	
-	if stack_act != Constants.STACK_ACT.PLAY and stack_act != Constants.STACK_ACT.LOOK and %CardList.get_child_count() != 0:
+	if stack_act != Consts.STACK_ACT.PLAY and stack_act != Consts.STACK_ACT.LOOK and %CardList.get_child_count() != 0:
 		sort_items()
 
 func refresh_allowance():
@@ -53,7 +53,7 @@ func is_allowed(button: Button) -> void:
 	#print("List checking if ", button.card.name, " is allowed ", list[button.card])
 	button.stack_act = stack_act
 	match stack_act:
-		Constants.STACK_ACT.PLAY:
+		Consts.STACK_ACT.PLAY:
 			var whitelisted: bool = white_list.has(button.card.name)
 			var blacklisted: bool = black_list.has(button.card.name)
 			var can_be_played_as: int = Globals.fundies.can_be_played(button.card)
@@ -61,7 +61,7 @@ func is_allowed(button: Button) -> void:
 			 can_be_played_as & allowed_as != 0:
 				button.allow(can_be_played_as)
 			else: button.not_allowed()
-		Constants.STACK_ACT.TUTOR:
+		Consts.STACK_ACT.TUTOR:
 			prints(button.card.name ,"allowed for tutor?", par.list_allowed(button.card))
 			if par.list_allowed(button.card) and not button.card.name in black_list:
 				button.allow_move_to(stack_act)
@@ -94,9 +94,9 @@ func add_item(card: Base_Card):
 	is_allowed(making)
 
 func sort_items():
-	Conversions.all_lists = all_lists
+	Convert.all_lists = all_lists
 	var items = %CardList.get_children()
-	items.sort_custom(Conversions.default_card_sort)
+	items.sort_custom(Convert.default_card_sort)
 	for i in range(items.size()):
 		%CardList.move_child(items[i], i)
 	

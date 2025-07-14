@@ -1,9 +1,9 @@
 extends Control
 class_name DiscardList
 
-@export var stack_act: Constants.STACK_ACT = Constants.STACK_ACT.DISCARD
-@export var stack: Constants.STACKS = Constants.STACKS.HAND
-@export var destination: Constants.STACKS = Constants.STACKS.DISCARD
+@export var stack_act: Consts.STACK_ACT = Consts.STACK_ACT.DISCARD
+@export var stack: Consts.STACKS = Consts.STACKS.HAND
+@export var destination: Consts.STACKS = Consts.STACKS.DISCARD
 
 @export var discards_left: int = -1
 

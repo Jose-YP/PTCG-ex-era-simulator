@@ -43,7 +43,7 @@ var attatched_to: PokeSlot
 func print_energy() -> void:
 	var en_prov: EnData = get_current_provide()
 	print("Class: ", considered ,"
-	Types: ", Conversions.flags_to_type_array(en_prov.type),"
+	Types: ", Convert.flags_to_type_array(en_prov.type),"
 	Number Provided: ", en_prov.number,"
 	Description: ", description)
 	

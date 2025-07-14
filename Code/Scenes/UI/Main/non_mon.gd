@@ -4,8 +4,8 @@ class_name NonMonUI
 @export var player: bool = true
 @export var home: bool = true
 
-@onready var stacks: Dictionary[Constants.STACKS, StackButton] = {Constants.STACKS.DISCARD:%DiscardButton,
-Constants.STACKS.PRIZE:%PrizeButton, Constants.STACKS.DECK:%DeckButton, Constants.STACKS.HAND:%HandButton}
+@onready var stacks: Dictionary[Consts.STACKS, StackButton] = {Consts.STACKS.DISCARD:%DiscardButton,
+Consts.STACKS.PRIZE:%PrizeButton, Consts.STACKS.DECK:%DeckButton, Consts.STACKS.HAND:%HandButton}
 
 var current_supporter: Base_Card
 
@@ -20,11 +20,11 @@ func _ready() -> void:
 func print_stack_numbers() -> String:
 	var lists: String
 	for stack in stacks:
-		var stack_str: String = Conversions.stack_into_string(stack)
+		var stack_str: String = Convert.stack_into_string(stack)
 		lists = str(lists, "[", stack_str, " = ", stacks[stack].current_num, " ] ")
 	return lists
 
-func update_stack(which: Constants.STACKS, num: int) -> void:
+func update_stack(which: Consts.STACKS, num: int) -> void:
 	stacks[which].update(num)
 
 func show_supporter(card: Base_Card) -> void:

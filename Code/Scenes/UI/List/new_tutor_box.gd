@@ -1,8 +1,8 @@
 extends Control
 class_name Tutor_Box
 
-@export var stack_act: Constants.STACK_ACT
-@export var stack: Constants.STACKS = Constants.STACKS.DECK
+@export var stack_act: Consts.STACK_ACT
+@export var stack: Consts.STACKS = Consts.STACKS.DECK
 
 @onready var tutor_dock: Tutor_Dock = %tutor_dock
 @onready var playing_list: PlayingList = %PlayingList
@@ -19,7 +19,7 @@ func _ready() -> void:
 	%Footer.setup(footer_txt)
 
 func setup_tutor(search: Search):
-	if not (stack_act == Constants.STACK_ACT.TUTOR or stack_act == Constants.STACK_ACT.DISCARD):
+	if not (stack_act == Consts.STACK_ACT.TUTOR or stack_act == Consts.STACK_ACT.DISCARD):
 		printerr("Why is setup tutor being called when there's no tutor on right now?")
 		return
 	

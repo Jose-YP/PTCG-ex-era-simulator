@@ -218,7 +218,7 @@ func evaluate() -> int:
 
 func slot_evaluation(slot_data: String, ask_data: SlotAsk) -> int:
 	var result: int = 0
-	var poke_slots: Array[PokeSlot] = Globals.full_ui.get_poke_slots(Constants.SIDES.BOTH)
+	var poke_slots: Array[PokeSlot] = Globals.full_ui.get_poke_slots(Consts.SIDES.BOTH)
 	var filtered_slots: Array[PokeSlot] = []
 	for slot in poke_slots:
 		if ask_data.check_ask(slot):
@@ -256,9 +256,9 @@ func energy_card_evaluation(en_count_methods_data: String, slot: PokeSlot):
 
 func stack_evaluation(stack_data: String, ask_data: SlotAsk) -> int:
 	var fundies: Fundies = Globals.fundies
-	if ask_data.side_target == Constants.SIDES.BOTH:
-		var atk_stack: CardStacks = fundies.stack_manager.get_stacks(fundies.get_considered_home(Constants.SIDES.ATTACKING))
-		var def_stack: CardStacks = fundies.stack_manager.get_stacks(fundies.get_considered_home(Constants.SIDES.DEFENDING))
+	if ask_data.side_target == Consts.SIDES.BOTH:
+		var atk_stack: CardStacks = fundies.stack_manager.get_stacks(fundies.get_considered_home(Consts.SIDES.ATTACKING))
+		var def_stack: CardStacks = fundies.stack_manager.get_stacks(fundies.get_considered_home(Consts.SIDES.DEFENDING))
 		return atk_stack.get(stack_data).size() + def_stack.get(stack_data).size()
 	else:
 		var stacks: CardStacks = fundies.stack_manager.get_stacks(fundies.get_considered_home(ask_data.side_target))
@@ -270,9 +270,9 @@ func coinflip_evaluation(coinflip_data: CoinFlip) -> int:
 	var flip_box: Control
 	
 	if coinflip_data.until:
-		flip_box = Constants.until_flip_box.instantiate()
+		flip_box = Consts.until_flip_box.instantiate()
 	else:
-		flip_box = Constants.reg_flip_box.instantiate()
+		flip_box = Consts.reg_flip_box.instantiate()
 		flip_results.shuffle()
 	
 	flip_box.flip_results = flip_results

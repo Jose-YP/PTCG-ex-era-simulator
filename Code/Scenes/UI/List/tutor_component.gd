@@ -12,7 +12,7 @@ var choices_left: Dictionary[Dictionary, int]
 var readied: bool = false
 
 func setup_tutor(search: Search):
-	if not (par.stack_act == Constants.STACK_ACT.TUTOR or par.stack_act == Constants.STACK_ACT.DISCARD):
+	if not (par.stack_act == Consts.STACK_ACT.TUTOR or par.stack_act == Consts.STACK_ACT.DISCARD):
 		printerr("Why is setup tutor being called when there's no tutor on right now?")
 		return
 	

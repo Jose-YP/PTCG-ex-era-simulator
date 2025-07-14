@@ -12,7 +12,7 @@ signal select
 var parent: Node
 var checking_card: Node
 var disable_flags: int = 0
-var stack_act: Constants.STACK_ACT
+var stack_act: Consts.STACK_ACT
 var allowed: bool = false
 var from_id: Identifier
 
@@ -20,7 +20,7 @@ var from_id: Identifier
 #region INITALIZATION
 func _ready() -> void:
 	%Class.clear()
-	card_flags = Conversions.get_card_flags(card)
+	card_flags = Convert.get_card_flags(card)
 	
 	if card_flags & 1 or card_flags & 2: %Class.append_text(card.pokemon_properties.evo_stage)
 	elif card_flags & 8: %Class.append_text("Support")
@@ -36,7 +36,7 @@ func _ready() -> void:
 	set_name(card.name)
 
 func allow(play_as: int):
-	#var check_first: Array[String] = Conversions.flags_to_allowed_array(play_as)
+	#var check_first: Array[String] = Convert.flags_to_allowed_array(play_as)
 	#var allowed_as = Globals.fundies.can_be_played(card)
 	printt("ALLOW CHECK:",card.name,play_as & card_flags, play_as, card_flags)
 	#printt("ALLOWED AS:", allowed_as)
@@ -51,12 +51,12 @@ func not_allowed():
 	allowed = false
 	disabled = true
 
-func allow_move_to(destination: Constants.STACKS):
+func allow_move_to(destination: Consts.STACKS):
 	allowed = true
 	disabled = false
 	#match destination:
-		#Constants.STACKS.DISCARD: stack_act = Constants.STACK_ACT.DISCARD
-		#Constants.STACKS.PLAY: stack_act = Constants.STACK_ACT.TUTOR
+		#Consts.STACKS.DISCARD: stack_act = Consts.STACK_ACT.DISCARD
+		#Consts.STACKS.PLAY: stack_act = Consts.STACK_ACT.TUTOR
 
 func is_tutored() -> bool:
 	return not parent is PlayingList
@@ -76,7 +76,7 @@ func show_options() -> Node:
 	if allowed:
 		option_Display.stack_act = stack_act
 	else:
-		option_Display.stack_act = Constants.STACK_ACT.LOOK
+		option_Display.stack_act = Consts.STACK_ACT.LOOK
 	
 	if %RightSpawn.global_position.x > float(get_window().size.x) / 2:
 		option_Display.global_position = %LeftSpawn.global_position
@@ -92,12 +92,12 @@ func show_options() -> Node:
 func _gui_input(event):
 	if not disabled:
 		if event.is_action_pressed("A"):
-			if stack_act != Constants.STACK_ACT.LOOK and stack_act != Constants.STACK_ACT.ENSWAP:
+			if stack_act != Consts.STACK_ACT.LOOK and stack_act != Consts.STACK_ACT.ENSWAP:
 				if Globals.fundies.options:
 					await Globals.control_disapear(Globals.fundies.options, .15, global_position)
 				if not Globals.checking:
 					Globals.fundies.options = show_options()
-			elif stack_act == Constants.STACK_ACT.LOOK:
+			elif stack_act == Consts.STACK_ACT.LOOK:
 				Globals.show_card(card, self)
 			else:
 				select.emit()

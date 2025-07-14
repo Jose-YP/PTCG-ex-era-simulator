@@ -64,7 +64,7 @@ func print_attack() -> void:
 	print_rich("Description: ", description)
 	print_rich("[center]------------------COST------------------")
 	
-	for type in Conversions.get_basic_energy():
+	for type in Convert.get_basic_energy():
 		print_cost(type)
 	print_rich("[center]------------------DAMAGE------------------")
 	var icon: String
@@ -102,9 +102,9 @@ func print_attack() -> void:
 		print("HAS: ", contains)
 
 func print_cost(energy: String):
-	var using: int = get_cost(Constants.energy_types.find(energy))
+	var using: int = get_cost(Consts.energy_types.find(energy))
 	if using == 0: return
-	print_rich(str(Conversions.get_type_rich_color(energy), energy, ":[/color] ", using))
+	print_rich(str(Convert.get_type_rich_color(energy), energy, ":[/color] ", using))
 
 ##Returns only the specified required energy for the attack to start 
 func get_energy_cost() -> Array[String]:
@@ -114,7 +114,7 @@ func get_energy_cost() -> Array[String]:
 	var final_array: Array[String] = []
 	
 	for i in range(all_costs.size()):
-		var energy_type: String = Constants.energy_types[i]
+		var energy_type: String = Consts.energy_types[i]
 		for j in range(all_costs[i]):
 			final_array.append(energy_type)
 	
@@ -133,7 +133,7 @@ func pay_cost(slot: PokeSlot):
 	print("ENERGY SORT ", basic_energy)
 	for card in basic_energy:
 		var index = int((log(float(card.energy_properties.get_current_type())) / log(2)))
-		print("Used ", card.name, " for ", Constants.energy_types[index] if all_costs[index] > 0 else "Colorless")
+		print("Used ", card.name, " for ", Consts.energy_types[index] if all_costs[index] > 0 else "Colorless")
 		if all_costs[index] > 0: all_costs[index] -= 1
 		else: all_costs[8] -= 1
 	
@@ -150,8 +150,8 @@ func pay_cost(slot: PokeSlot):
 			var type_flag: int = 2 ** i
 			
 			if type_flag & energy_provide.type != 0\
-			 or Constants.energy_types[i] == "Colorless":
-				print(card.name, " for ", Constants.energy_types[i])
+			 or Consts.energy_types[i] == "Colorless":
+				print(card.name, " for ", Consts.energy_types[i])
 				all_costs[i] -= 1
 				energy_num -= 1
 				if energy_num == 0:
@@ -191,3 +191,6 @@ func get_cost(index: int) -> int:
 		8: return colorless_cost
 	
 	return - 11
+
+func does_no_direct_damage() -> bool:
+	return initial_main_DMG == 0 and modifier_num == 0 and self_damage == 0

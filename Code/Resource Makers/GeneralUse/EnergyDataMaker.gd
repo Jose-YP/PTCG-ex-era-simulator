@@ -34,7 +34,7 @@ func get_string():
 	elif type == 2 ** 2 + 2 ** 6: return  "Aqua"
 	
 	var index = int((log(float(type)) / log(2)))
-	return Constants.energy_types[index]
+	return Consts.energy_types[index]
 
 func same_type(compared_to: EnData):
 	#print(compared_to.type, type)

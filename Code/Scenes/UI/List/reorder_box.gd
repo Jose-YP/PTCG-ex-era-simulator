@@ -5,7 +5,7 @@ class_name ReorderList
 @export var list: Array[Base_Card]
 @export var reorder_item: PackedScene
 
-var location: Constants.STACKS
+var location: Consts.STACKS
 var placement: Placement
 var reordering: Node
 var display: Control

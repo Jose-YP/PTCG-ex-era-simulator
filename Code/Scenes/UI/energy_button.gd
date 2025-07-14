@@ -35,7 +35,7 @@ func colored_shadow() -> void:
 	var hover: StyleBoxFlat = button.get_theme_stylebox("hover")
 	var focus: StyleBoxFlat = button.get_theme_stylebox("focus")
 	var pressed: StyleBoxFlat = button.get_theme_stylebox("pressed")
-	var color: Color = Constants.energy_colors[types.get_type_index()]
+	var color: Color = Consts.energy_colors[types.get_type_index()]
 	
 	hover.shadow_color = Color(color, .25)
 	hover.border_color *= color

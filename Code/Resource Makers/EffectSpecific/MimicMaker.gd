@@ -3,8 +3,8 @@ extends Resource
 class_name Mimic
 
 ##Target for mimicry
-@export var side: Constants.SIDES = Constants.SIDES.BOTH
-@export var slots: Constants.SLOTS = Constants.SLOTS.ALL
+@export var side: Consts.SIDES = Consts.SIDES.BOTH
+@export var slots: Consts.SLOTS = Consts.SLOTS.ALL
 ##Take attacks from stated pokemon + any cards they evolved
 @export var attatched_cards: bool = false
 ##You can only use the attack if you meet the energy requirements

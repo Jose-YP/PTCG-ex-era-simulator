@@ -6,7 +6,7 @@ class_name BenchAttk
 ##Which kinds of pokemon can the attacker pick
 @export var candidates: SlotAsk
 ##This choice exists for simple choices that don't need asks
-@export var which: Constants.SIDES = Constants.SIDES.DEFENDING
+@export var which: Consts.SIDES = Consts.SIDES.DEFENDING
 ##The attacker can choose to attack an active pokemon instead
 @export var active_allowed: bool = false
 

@@ -1,45 +1,33 @@
-[gd_scene load_steps=5 format=3 uid="uid://04qgb8r1r84v"]
+[gd_scene load_steps=4 format=3 uid="uid://04qgb8r1r84v"]
 
 [ext_resource type="Script" uid="uid://cqiomk5oqbbnp" path="res://Code/Scenes/UI/Main/damage_counter.gd" id="1_ewxox"]
-[ext_resource type="Texture2D" uid="uid://cijlbc37pj4gd" path="res://icon.svg" id="2_qpobj"]
-
-[sub_resource type="Gradient" id="Gradient_cu74h"]
-interpolation_mode = 2
-offsets = PackedFloat32Array(0, 0.791086, 1)
-colors = PackedColorArray(0.697255, 0.517257, 0.0914837, 1, 0.699289, 0, 0.207227, 1, 0.53, 0, 0.494667, 1)
+[ext_resource type="Texture2D" uid="uid://dahgp30l5eylb" path="res://Art/Counters/Spiral.png" id="2_ewxox"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ewxox"]
 
-[node name="DamageCounter" type="Control"]
-layout_mode = 3
-anchors_preset = 0
-size_flags_horizontal = 3
-size_flags_vertical = 0
-script = ExtResource("1_ewxox")
-damage_gradient = SubResource("Gradient_cu74h")
-
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="PanelContainer" type="PanelContainer"]
 custom_minimum_size = Vector2(32, 32)
-layout_mode = 0
 offset_right = 32.0
 offset_bottom = 32.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_ewxox")
+script = ExtResource("1_ewxox")
 metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
 
-[node name="DmgCounter" type="TextureRect" parent="PanelContainer"]
+[node name="DmgCounter" type="TextureRect" parent="."]
 unique_name_in_owner = true
+texture_filter = 1
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("2_qpobj")
+texture = ExtResource("2_ewxox")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="DmgText" type="RichTextLabel" parent="PanelContainer"]
+[node name="DmgText" type="RichTextLabel" parent="."]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(32, 32)
+custom_minimum_size = Vector2(32, 31)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4

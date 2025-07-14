@@ -28,7 +28,7 @@ func _ready() -> void:
 func set_up(home: bool):
 	var temp_side: SideState = board_state.get_side(home).duplicate()
 	var ui: CardSideUI = full_ui.get_side(home)
-	var player_type: Constants.PLAYER_TYPES = board_state.get_player_type(home)
+	var player_type: Consts.PLAYER_TYPES = board_state.get_player_type(home)
 	var stacks: CardStacks = temp_side.card_stacks.duplicate()
 	
 	ui.player_type = player_type
@@ -57,7 +57,7 @@ func _on_button_pressed() -> void:
 func _input(event: InputEvent) -> void:
 	if event.is_action("TEST") and not test_out and test:
 		fundies.record_source_target(true, 
-		 [full_ui.get_poke_slots(Constants.SIDES.ATTACKING, Constants.SLOTS.ACTIVE)[0]],
+		 [full_ui.get_poke_slots(Consts.SIDES.ATTACKING, Consts.SLOTS.ACTIVE)[0]],
 		 [])
 		var new = test.instantiate()
 		

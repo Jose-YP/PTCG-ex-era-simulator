@@ -6,14 +6,14 @@ class_name EnMov
 ##[enum Swap] takes attatched energy and looks for a second candidate to attatch it to[br]
 ##[enum Attatch] Using energy found in [member to_stack] attatch energy to this mon 
 @export_enum("Send", "Swap", "Attatch") var action: int = 0
-##If the chooser is [enum Constants.SIDES.NONE], then default to [enum Constants.SIDES.SOURCE]
-@export var chooser: Constants.SIDES = Constants.SIDES.SOURCE
+##If the chooser is [enum Consts.SIDES.NONE], then default to [enum Consts.SIDES.SOURCE]
+@export var chooser: Consts.SIDES = Consts.SIDES.SOURCE
 @export var givers: SlotAsk = preload("res://Resources/Components/Effects/Asks/General/FromSource.tres")
 @export_group("From - To")
 ##If they targets from slot ask will determine if they're allowed
 @export var reciever: SlotAsk = preload("res://Resources/Components/Effects/Asks/General/FromSource.tres")
 ##Targets for removal
-@export var to_stack: Constants.STACKS = Constants.STACKS.DISCARD
+@export var to_stack: Consts.STACKS = Consts.STACKS.DISCARD
 @export_enum("Top", "Bottom", "Eh") var stack_direction: int = 2
 @export_group("Energy")
 ##If this is true, instead limit actions based on number of energy allowed to swap
@@ -65,14 +65,14 @@ func send_effect(reversable: bool = false) -> void:
 			en_dict[duplicated] = energy_allowed(en, false)
 		
 		var dis_box: DiscardList = Globals.fundies.stack_manager.spawn_discard_list(
-			en_dict, Constants.STACKS.PLAY, to_stack)
+			en_dict, Consts.STACKS.PLAY, to_stack)
 		
 		dis_box.pokeslot_origin = candidate
 		dis_box.home = Globals.fundies.get_considered_home(givers.side_target)
 		dis_box.discards_left = energy_ammount
 		dis_box.header_txt = str(candidate.get_card_name(),"'s Energy")
 		dis_box.footer_prefix = str("Energy Left: ")
-		dis_box.action_txt = str("Send to ",Conversions.stack_into_string(to_stack))
+		dis_box.action_txt = str("Send to ",Convert.stack_into_string(to_stack))
 		if reversable: dis_box.allow_reverse()
 		
 		Globals.fundies.add_child(dis_box)
@@ -81,7 +81,7 @@ func send_effect(reversable: bool = false) -> void:
 	finished.emit()
 
 func swap_effect(reversable: bool = false) -> void:
-	var new_box: SwapBox = Constants.swap_box.instantiate()
+	var new_box: SwapBox = Consts.swap_box.instantiate()
 	#Globals.fundies.get_considered_home(chooser)
 	new_box.swap_rules = self.duplicate()
 	new_box.side = Globals.full_ui.get_side(Globals.fundies.get_considered_home(givers.side_target))

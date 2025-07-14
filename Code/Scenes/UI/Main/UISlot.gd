@@ -13,10 +13,11 @@ class_name UI_Slot
 @onready var max_hp: RichTextLabel = %MaxHP
 @onready var tool: TextureRect = %Tool
 @onready var tm: TextureRect = %TM
+@onready var damage_counter: Control = %DamageCounter
 @onready var imprison = %Imprison
 @onready var shockwave: TextureRect = %Shockwave
 @onready var typeContainer: Array[Node] = %TypeContainer.get_children()
-@onready var energyContainer: Array[Node] = %EnergyTypes.get_children()
+@onready var energy_container: Array[Node] = %EnergyTypes.get_children()
 @onready var list_offsets: Array[Vector2] = [Vector2(-size.x / 2, 0),
  Vector2(size.x / 2,0), Vector2(0,-size.y / 2), Vector2(0,size.y / 2)]
 

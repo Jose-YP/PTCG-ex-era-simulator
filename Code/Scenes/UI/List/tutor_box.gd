@@ -110,7 +110,7 @@ func show_card(card: Base_Card, id: Identifier) -> Button:
 	var making: PlayingButton = list_item.instantiate()
 	making.card = card
 	making.parent = self
-	making.stack_act = Constants.STACK_ACT.TUTOR
+	making.stack_act = Consts.STACK_ACT.TUTOR
 	making.from_id = id
 	%CardList.add_child(making)
 	

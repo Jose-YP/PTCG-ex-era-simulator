@@ -24,13 +24,13 @@ class_name PromptAsk
 #region CHOICE
 @export_group("Choice")
 ##Who decides which to choose
-@export var chooser: Constants.SIDES
+@export var chooser: Consts.SIDES
 ##Does the user have to choose something before the effect can activate?
 @export_enum("None", "Slot", "Stack") var choose_location: String = "None"
 ##This ask is for the user to first make a choice
 @export var which_slots: SlotAsk
 ##From which stack should they make a choice
-@export var which_stack: Constants.STACKS = Constants.STACKS.HAND
+@export var which_stack: Consts.STACKS = Consts.STACKS.HAND
 ##Which cards are allowed in choice
 @export var which_cards: Identifier
 #endregion
@@ -52,7 +52,7 @@ func check_prompt():
 func check_prompt_question():
 	SignalBus.prompt_answered.connect(return_prompt_answered)
 	
-	var prompt_ask: ColorRect = Constants.prompt_answer.instantiate()
+	var prompt_ask: ColorRect = Consts.prompt_answer.instantiate()
 	prompt_ask.modulate = Color.TRANSPARENT
 	Globals.fundies.add_child(prompt_ask)
 	prompt_ask.load_answers(question_string, yes_answer, no_answer)

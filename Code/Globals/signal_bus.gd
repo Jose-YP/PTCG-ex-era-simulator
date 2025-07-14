@@ -5,11 +5,11 @@ extends Node
 #--------------------------------------
 #region STACK SIGNALS
 @warning_ignore("unused_signal")
-signal show_list(whose: String, list: Constants.STACKS, act: Constants.STACK_ACT)
+signal show_list(whose: String, list: Consts.STACKS, act: Consts.STACK_ACT)
 @warning_ignore("unused_signal")
 signal show_energy_attatched(origin: PokeSlot)
 @warning_ignore("unused_signal")
-signal swap_card_location(card: Array[Base_Card], placement: Placement, from: Constants.STACKS)
+signal swap_card_location(card: Array[Base_Card], placement: Placement, from: Consts.STACKS)
 @warning_ignore("unused_signal")
 signal reorder_cards(card: Array[Base_Card], placement: Placement,)
 @warning_ignore("unused_signal")
@@ -71,7 +71,7 @@ func call_action(action: int, card: Base_Card) -> void:
 			play_energy.emit(card)
 		_:
 			play_trainer.emit(card)
-	print("PLAY AS ", Constants.allowed_list_flags[action])
+	print("PLAY AS ", Consts.allowed_list_flags[action])
 
 func connect_to(functions: Array[Callable]) -> void:
 	var signals: Array[Signal] = [play_basic, play_evo, play_stadium,

@@ -32,14 +32,14 @@ func _ready():
 	
 	#What kind of class text should be input if any
 	if trainerData.specific_requirement == "":
-		var index: int = Constants.trainer_classes.find(trainerData.considered)
-		make_text(class_text, Constants.class_texts[index])
+		var index: int = Consts.trainer_classes.find(trainerData.considered)
+		make_text(class_text, Consts.class_texts[index])
 	else:
 		make_text(class_text, trainerData.specific_requirement)
-	var final_text: String = Conversions.reformat(trainerData.description)
+	var final_text: String = Convert.reformat(trainerData.description)
 	make_text(effect_text, final_text)
 	
-	make_text(number, str(card.number, "/", Constants.expansion_counts[card.expansion]))
+	make_text(number, str(card.number, "/", Consts.expansion_counts[card.expansion]))
 	rarity.current_tab = card.rarity
 	set_type.current_tab = card.expansion
 

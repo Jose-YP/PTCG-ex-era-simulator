@@ -17,7 +17,7 @@ func _ready() -> void:
 	SignalBus.attack.connect(before_direct_attack)
 
 func determine_play(card: Base_Card, placement: Placement = null) -> void:
-	var card_type: int = Conversions.get_card_flags(card)
+	var card_type: int = Convert.get_card_flags(card)
 	#Play fossils, basics and evolutions onto the bench
 	if card_type & 1 != 0 or (card_type & 2 != 0 and placement and not placement.evolve):
 		play_basic_pokemon(card)
@@ -42,17 +42,17 @@ func determine_play(card: Base_Card, placement: Placement = null) -> void:
 #region ADD POKEMON
 func play_basic_pokemon(card: Base_Card):
 	#Insert the card onto an active spot if there is one
-	for slot in Globals.full_ui.get_slots(Constants.SIDES.ATTACKING, Constants.SLOTS.BENCH):
+	for slot in Globals.full_ui.get_slots(Consts.SIDES.ATTACKING, Consts.SLOTS.BENCH):
 		if not slot.connected_slot:
 			Globals.fundies.hide_list()
 			slot.set_card(card)
 			slot.current_card = card
 			slot.refresh()
 			#Remove the card from hand
-			Globals.fundies.stack_manager.play_card(card, Constants.STACKS.PLAY)
+			Globals.fundies.stack_manager.play_card(card, Consts.STACKS.PLAY)
 			return
-	Conversions.get_allowed_flags("Basic")
-	start_add_choice("Where will pokemon be benched", card, Conversions.get_allowed_flags("Basic"),
+	Convert.get_allowed_flags("Basic")
+	start_add_choice("Where will pokemon be benched", card, Convert.get_allowed_flags("Basic"),
 	 func(slot: PokeSlot): return not slot.is_filled(), true)
 	await chosen
 	
@@ -67,10 +67,10 @@ func play_fossil(card: Base_Card):
 			slot.set_card(card)
 			slot.refresh()
 			#Remove the card from hand
-			Globals.fundies.stack_manager.play_card(card, Constants.STACKS.PLAY)
+			Globals.fundies.stack_manager.play_card(card, Consts.STACKS.PLAY)
 			return
 	
-	start_add_choice("Where will pokemon be benched", card, Conversions.get_allowed_flags("Fossil"),
+	start_add_choice("Where will pokemon be benched", card, Convert.get_allowed_flags("Fossil"),
 	 func(slot: PokeSlot): return not slot.is_filled(), true)
 	await chosen
 	card.print_info()
@@ -81,18 +81,18 @@ func play_evolution(card: Base_Card, placement: Placement = null):
 	
 	if placement == null:
 		start_add_choice(str("Evolve ", card.name, " from which Pokemon"), card,
-		 Conversions.get_allowed_flags("Evolution"), evo_fun, true)
+		 Convert.get_allowed_flags("Evolution"), evo_fun, true)
 	else:
 		var place_func = func placement_evo(slot):
-			if slot.is_in_slot(Constants.SIDES.SOURCE,placement.slot):
+			if slot.is_in_slot(Consts.SIDES.SOURCE,placement.slot):
 				return evo_fun.call(slot)
 			else: return false
 		
 		start_add_choice(str("Evolve ", card.name, " from which Pokemon"), card,
-		 Conversions.get_allowed_flags("Evolution"), place_func, false)
+		 Convert.get_allowed_flags("Evolution"), place_func, false)
 	
 	await chosen
-	Globals.fundies.stack_manager.play_card(card, Constants.STACKS.PLAY)
+	Globals.fundies.stack_manager.play_card(card, Consts.STACKS.PLAY)
 	print("Attatch ", card.name)
 	card.print_info()
 #endregion
@@ -111,10 +111,10 @@ func play_energy(card: Base_Card, placement:Placement = null):
 	
 	
 	start_add_choice(str("Attatch ", card.name, " to which Pokemon"), card, 
-	 Conversions.get_allowed_flags("Energy"), energy_bool, true)
+	 Convert.get_allowed_flags("Energy"), energy_bool, true)
 	
 	await chosen
-	Globals.fundies.stack_manager.play_card(card, Constants.STACKS.PLAY)
+	Globals.fundies.stack_manager.play_card(card, Consts.STACKS.PLAY)
 	print("Attatch ", card.name)
 	card.print_info()
 
@@ -163,7 +163,7 @@ func play_trainer(card: Base_Card):
 		await trainer.always_effect.play_effect()
 	
 	if not card.is_considered("Supporter"):
-		Globals.fundies.stack_manager.play_card(card, Constants.STACKS.DISCARD)
+		Globals.fundies.stack_manager.play_card(card, Consts.STACKS.DISCARD)
 	Globals.fundies.remove_top_source_target()
 
 #For tools
@@ -173,10 +173,10 @@ func play_attatch_tool(card: Base_Card):
 		 and card.trainer_properties.asks.check_ask(slot)
 	
 	start_add_choice(str("Attatch ", card.name, " to which Pokemon"), card, 
-	Conversions.get_allowed_flags("Tool"), tool_bool, true)
+	Convert.get_allowed_flags("Tool"), tool_bool, true)
 	
 	await chosen
-	Globals.fundies.stack_manager.play_card(card, Constants.STACKS.PLAY)
+	Globals.fundies.stack_manager.play_card(card, Consts.STACKS.PLAY)
 	print("Attatch ", card.name)
 	card.print_info()
 
@@ -186,10 +186,10 @@ func play_attatch_tm(card: Base_Card):
 		 and card.trainer_properties.asks.check_ask(slot)
 	
 	start_add_choice(str("Attatch ", card.name, " to which Pokemon"), card,
-	Conversions.get_allowed_flags("TM"), tm_bool, true)
+	Convert.get_allowed_flags("TM"), tm_bool, true)
 	
 	await chosen
-	Globals.fundies.stack_manager.play_card(card, Constants.STACKS.PLAY)
+	Globals.fundies.stack_manager.play_card(card, Consts.STACKS.PLAY)
 	print("Attatch ", card.name)
 	card.print_info()
 
@@ -215,7 +215,7 @@ func start_add_choice(instruction: String, card: Base_Card, play_as: int, bool_f
 	
 	if Globals.fundies.ui_actions.selected_slot:
 		var went_back: bool = false
-		if card.has_before_prompt() and not Conversions.playing_as_pokemon(play_as):
+		if card.has_before_prompt() and not Convert.playing_as_pokemon(play_as):
 			Globals.fundies.record_single_src_trg(Globals.fundies.ui_actions.selected_slot)
 			went_back = await card.play_before_prompt()
 			Globals.fundies.remove_top_source_target()
@@ -229,7 +229,7 @@ func start_add_choice(instruction: String, card: Base_Card, play_as: int, bool_f
 	Globals.fundies.ui_actions.color_tween(Color.TRANSPARENT)
 
 func get_choice_candidates(instruction: String, bool_fun: Callable, reversable: bool,
- choosing_player: Constants.PLAYER_TYPES = Constants.PLAYER_TYPES.PLAYER) -> PokeSlot:
+ choosing_player: Consts.PLAYER_TYPES = Consts.PLAYER_TYPES.PLAYER) -> PokeSlot:
 	set_reversable(reversable)
 	Globals.fundies.hide_list()
 	hold_candidate = null
@@ -244,7 +244,7 @@ func get_choice_candidates(instruction: String, bool_fun: Callable, reversable: 
 		return null
 
 func generic_choice(instruction: String, bool_fun: Callable,\
- choosing_player: Constants.PLAYER_TYPES = Constants.PLAYER_TYPES.PLAYER):
+ choosing_player: Consts.PLAYER_TYPES = Consts.PLAYER_TYPES.PLAYER):
 	var ui_act: SlotUIActions = Globals.fundies.ui_actions
 	ui_act.get_allowed_slots(bool_fun)
 	
@@ -274,17 +274,31 @@ func before_direct_attack(attacker: PokeSlot, with: Attack):
 	
 	with.print_attack()
 	
-	if not with.both_active:
-		get_choice_candidates("Who do you want to attack?", 
-		func(slot: PokeSlot): return slot.is_in_slot(Constants.SIDES.DEFENDING, Constants.SLOTS.ACTIVE),
-		true)
-		
-		if hold_candidate == null:
-			return
+	if with.does_no_direct_damage():
+		if not with.both_active:
+			get_choice_candidates("Who do you want to attack?", 
+			func(slot: PokeSlot): return slot.is_in_slot(Consts.SIDES.DEFENDING, Consts.SLOTS.ACTIVE),
+			true)
+			
+			if hold_candidate == null:
+				return
+			else:
+				Globals.fundies.record_attack_src_trg(attacker.is_home(), [attacker], [hold_candidate])
+				direct_attack(attacker, with, [hold_candidate])
 		else:
-			direct_attack(attacker, with, [hold_candidate])
-	else:
-		direct_attack(attacker, with, Globals.full_ui.get_poke_slots(Constants.SIDES.DEFENDING, Constants.SLOTS.ACTIVE))
+			var def_active: Array[PokeSlot] = Globals.full_ui.get_poke_slots(Consts.SIDES.DEFENDING, Consts.SLOTS.ACTIVE)
+			Globals.fundies.record_attack_src_trg(attacker.is_home(), [attacker], def_active)
+			direct_attack(attacker, with, def_active)
+	
+	elif with.bench_damage:
+		print("This attack does bench damage")
+		pass
+	
+	else: Globals.fundies.record_single_src_trg(attacker)
+	
+	attack_effect(attacker, with)
+	
+	Globals.fundies.remove_top_source_target()
 
 #For attacks that use main dmg + effects
 func direct_attack(attacker: PokeSlot, with: Attack, defenders: Array[PokeSlot]):
@@ -293,6 +307,9 @@ func direct_attack(attacker: PokeSlot, with: Attack, defenders: Array[PokeSlot])
 
 #For bench attacks
 func bench_attack(attacker: PokeSlot, with: BenchAttk, defenders: Array[PokeSlot]):
+	pass
+
+func attack_effect(attacker: PokeSlot, with: Attack):
 	pass
 
 #endregion

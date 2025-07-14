@@ -43,9 +43,9 @@ func _ready():
 	#To fit multiple types in
 	#--------------------------------------
 	#region ENERGY SYMBOL MANAGEMENT
-	var types: Array[String] = Conversions.flags_to_type_array(pokedata.type)
-	var weaknesses: Array[String] = Conversions.flags_to_type_array(pokedata.weak)
-	var resistances: Array[String] = Conversions.flags_to_type_array(pokedata.resist)
+	var types: Array[String] = Convert.flags_to_type_array(pokedata.type)
+	var weaknesses: Array[String] = Convert.flags_to_type_array(pokedata.weak)
+	var resistances: Array[String] = Convert.flags_to_type_array(pokedata.resist)
 	
 	for i in range(types.size()):
 		default_types[i].display_type(types[i])
@@ -66,7 +66,7 @@ func _ready():
 	
 	#--------------------------------------
 	#region ATTACK NODE
-	var list = Constants.attack_list_comp.instantiate()
+	var list = Consts.attack_list_comp.instantiate()
 	if poke_slot:
 		list.poke_slot = poke_slot
 	list.current_card = card
@@ -101,7 +101,7 @@ func _ready():
 		make_text(evoFrom, str("Evolves from ", pokedata.evolves_from))
 	else: evoFrom.clear()
 	
-	make_text(number, str("[right]",card.number, "/", Constants.expansion_counts[card.expansion]))
+	make_text(number, str("[right]",card.number, "/", Consts.expansion_counts[card.expansion]))
 	rarity.current_tab = card.rarity
 	set_type.current_tab = card.expansion
 	

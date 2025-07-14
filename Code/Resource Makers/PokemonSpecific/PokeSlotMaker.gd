@@ -81,7 +81,7 @@ func check_power_body(action: String):
 
 #--------------------------------------
 #region HELPERS
-func is_in_slot(desired_side: Constants.SIDES, desired_slot: Constants.SLOTS) -> bool:
+func is_in_slot(desired_side: Consts.SIDES, desired_slot: Consts.SLOTS) -> bool:
 	var side_bool: bool = false
 	var slot_bool: bool = false
 	
@@ -89,27 +89,27 @@ func is_in_slot(desired_side: Constants.SIDES, desired_slot: Constants.SLOTS) ->
 	
 	match desired_side:
 		#var fund: Fundies = Globals.fundies
-		Constants.SIDES.BOTH:
+		Consts.SIDES.BOTH:
 			side_bool = true
-		Constants.SIDES.ATTACKING:
+		Consts.SIDES.ATTACKING:
 			side_bool = is_attacker()
-		Constants.SIDES.DEFENDING:
+		Consts.SIDES.DEFENDING:
 			side_bool = not is_attacker()
-		Constants.SIDES.SOURCE:
+		Consts.SIDES.SOURCE:
 			side_bool = Globals.fundies.get_source_considered() == ui_slot.home
-		Constants.SIDES.OTHER:
+		Consts.SIDES.OTHER:
 			side_bool = not Globals.fundies.get_source_considered() == ui_slot.home
 	
 	match desired_slot:
-		Constants.SLOTS.ALL:
+		Consts.SLOTS.ALL:
 			slot_bool = true
-		Constants.SLOTS.ACTIVE:
+		Consts.SLOTS.ACTIVE:
 			slot_bool = is_active()
-		Constants.SLOTS.BENCH:
+		Consts.SLOTS.BENCH:
 			slot_bool = not is_active()
-		Constants.SLOTS.TARGET:
+		Consts.SLOTS.TARGET:
 			slot_bool = Globals.fundies.get_targets().has(self)
-		Constants.SLOTS.REST:
+		Consts.SLOTS.REST:
 			slot_bool = not Globals.fundies.get_targets().has(self)
 	
 	return slot_bool and side_bool
@@ -266,7 +266,7 @@ func get_energy_strings() -> Array[String]:
 	print_verbose("BEFORE SORT: ", energy_stirngs)
 	
 	energy_stirngs.sort_custom(func(a,b): #Basic + Darkness + Metal has highest priority
-		return Constants.energy_types.find(a) < Constants.energy_types.find(b))
+		return Consts.energy_types.find(a) < Consts.energy_types.find(b))
 	print_verbose("AFTER: ", energy_stirngs)
 	
 	return energy_stirngs
@@ -439,8 +439,9 @@ func refresh() -> void:
 	if current_card:
 		ui_slot.display_image(current_card)
 		ui_slot.name_section.append_text(current_card.name)
-		ui_slot.max_hp.append_text(str("HP: ",get_pokedata().HP - damage_counters, "/", get_pokedata().HP))
-		ui_slot.display_types(Conversions.flags_to_type_array(get_pokedata().type))
+		ui_slot.max_hp.append_text(str("HP: ",get_pokedata().HP))
+		ui_slot.damage_counter.set_damage(damage_counters)
+		ui_slot.display_types(Convert.flags_to_type_array(get_pokedata().type))
 	else:
 		ui_slot.display_image(null)
 		ui_slot.display_types([])

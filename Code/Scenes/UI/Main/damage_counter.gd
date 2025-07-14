@@ -1,3 +1,4 @@
+@icon("res://Art/Counters/Spiral.png")
 extends Control
 
 @export var damage_gradient: Gradient
@@ -7,7 +8,8 @@ extends Control
 func _ready() -> void:
 	set_damage(0)
 
-func set_damage(dmg: int):
+func set_damage(dmg: int) -> void:
+	visible = dmg != 0
 	%DmgText.clear()
 	%DmgText.append_text(str("[b][i][color=black]",dmg))
 	

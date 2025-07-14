@@ -31,9 +31,9 @@ class_name Base_Card
 func print_info() -> void:
 	print("-------------------------", name, "-------------------------")
 	print("Illustrator: ", illustrator, "
-	Expansion: ", Constants.expansion_abbreviations[expansion],"
-	Number: ", number, "/", Constants.expansion_counts[expansion],"
-	Rarity: ", Constants.rarity[rarity],"\n")
+	Expansion: ", Consts.expansion_abbreviations[expansion],"
+	Number: ", number, "/", Consts.expansion_counts[expansion],"
+	Rarity: ", Consts.rarity[rarity],"\n")
 	if pokemon_properties:
 		print("-------------------------POKEMON-------------------------")
 		pokemon_properties.print_pokemon()
@@ -121,8 +121,8 @@ func card_priority(compared_to: Base_Card) -> bool:
 		if trainer_properties.considered == compared_to.trainer_properties.considered:
 			return generic_sort(compared_to)
 		
-		return Constants.trainer_classes.find(trainer_properties.considered)\
-		 < Constants.trainer_classes.find(compared_to.trainer_properties.considered)
+		return Consts.trainer_classes.find(trainer_properties.considered)\
+		 < Consts.trainer_classes.find(compared_to.trainer_properties.considered)
 	elif (trainer_properties != null) != (compared_to.trainer_properties != null):
 		return trainer_properties != null
 	

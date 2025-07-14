@@ -11,8 +11,8 @@ func _ready() -> void:
 
 func use_counter(index: int):
 	Globals.fundies.record_source_target(true,
-	 Globals.full_ui.get_poke_slots(Constants.SIDES.ATTACKING, Constants.SLOTS.ACTIVE),
-	 Globals.full_ui.get_poke_slots(Constants.SIDES.DEFENDING, Constants.SLOTS.ACTIVE))
+	 Globals.full_ui.get_poke_slots(Consts.SIDES.ATTACKING, Consts.SLOTS.ACTIVE),
+	 Globals.full_ui.get_poke_slots(Consts.SIDES.DEFENDING, Consts.SLOTS.ACTIVE))
 	
 	print("FINAL RESULT: ", counters[index].evaluate())
 	

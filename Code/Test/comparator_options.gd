@@ -11,8 +11,8 @@ func _ready() -> void:
 
 func use_comparator(index: int):
 	Globals.fundies.record_source_target(true,
-	 [Globals.full_ui.get_poke_slots(Constants.SIDES.ATTACKING, Constants.SLOTS.ACTIVE)[0]],
-	 [Globals.full_ui.get_poke_slots(Constants.SIDES.DEFENDING, Constants.SLOTS.ACTIVE)[0]])
+	 [Globals.full_ui.get_poke_slots(Consts.SIDES.ATTACKING, Consts.SLOTS.ACTIVE)[0]],
+	 [Globals.full_ui.get_poke_slots(Consts.SIDES.DEFENDING, Consts.SLOTS.ACTIVE)[0]])
 	
 	print("FINAL RESULT: ", comparators[index].start_comparision())
 	

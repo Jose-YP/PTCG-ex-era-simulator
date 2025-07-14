@@ -5,7 +5,7 @@ extends PanelContainer
 
 var parent: Node
 var checking_card: Node
-var stack_act: Constants.STACK_ACT
+var stack_act: Consts.STACK_ACT
 var allowed: bool = false
 var from_id: Identifier
 var origin: Vector2

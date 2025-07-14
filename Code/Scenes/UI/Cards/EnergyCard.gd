@@ -35,10 +35,10 @@ func _ready():
 	if card.illustrator != "":
 		make_text(illustrator, str("Illus. ", card.illustrator))
 	
-	var final_text: String = Conversions.reformat(engData.description)
+	var final_text: String = Convert.reformat(engData.description)
 	make_text(effect_text, final_text)
 	
-	make_text(number, str(card.number, "/", Constants.expansion_counts[card.expansion]))
+	make_text(number, str(card.number, "/", Consts.expansion_counts[card.expansion]))
 	rarity.current_tab = card.rarity
 	set_type.current_tab = card.expansion
 

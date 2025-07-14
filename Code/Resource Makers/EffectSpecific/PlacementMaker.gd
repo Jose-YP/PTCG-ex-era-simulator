@@ -7,9 +7,9 @@ class_name Placement
 ##This variable dtermines where deck placements should go[br]
 ##Keep this as false if the deck is going to be shuffled regardless
 @export var top_deck: bool = false
-@export var stack: Constants.STACKS = Constants.STACKS.DECK
+@export var stack: Consts.STACKS = Consts.STACKS.DECK
 ##What choices does the user have when placing in slots
-@export var slot: Constants.SLOTS = Constants.SLOTS.ALL
+@export var slot: Consts.SLOTS = Consts.SLOTS.ALL
 
 @export_group("And then")
 #Might not be necessary
@@ -27,7 +27,7 @@ class_name Placement
 
 #If an action places a card on a slot, determine how that works out
 func determine_action(card: Base_Card):
-	var usage: int = Conversions.get_card_flags(card)
+	var usage: int = Convert.get_card_flags(card)
 	
 	#For basics
 	if usage && 1 or usage && 256 or usage && 2 and not evolve:

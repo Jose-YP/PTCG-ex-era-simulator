@@ -46,8 +46,8 @@ func check_starting():
 		else: hand_dict[card] = false
 	
 	if can_start:
-		instantiate_list(hand_dict, Constants.STACKS.HAND,
-		 Constants.STACK_ACT.PLAY, start_string)
+		instantiate_list(hand_dict, Consts.STACKS.HAND,
+		 Consts.STACK_ACT.PLAY, start_string)
 	else:
 		#If you can't start with current hand, mulligan
 		#record mulligans for later
@@ -59,7 +59,7 @@ func check_starting():
 func fill_prizes():
 	var stacks: CardStacks = get_stacks(operate_home)
 	while (stacks.prize_cards.size() != prize_count):
-		stacks.append_to_arrays(Constants.STACKS.PRIZE, stacks.usable_deck.pop_front())
+		stacks.append_to_arrays(Consts.STACKS.PRIZE, stacks.usable_deck.pop_front())
 
 #endregion
 #--------------------------------------
@@ -69,17 +69,17 @@ func fill_prizes():
 func draw(times: int = 1, top: bool = true): #From deck to hand
 	var stacks: CardStacks = get_stacks(operate_home)
 	for i in range(times):
-		stacks.append_to_arrays(Constants.STACKS.HAND,
+		stacks.append_to_arrays(Consts.STACKS.HAND,
 		 stacks.usable_deck.pop_front() if top else stacks.usable_deck.pop_back())
 	
 	update_lists()
 
-func play_card(card: Base_Card, destination: Constants.STACKS, home: bool = Globals.fundies.home_turn): #From hand to Y
+func play_card(card: Base_Card, destination: Consts.STACKS, home: bool = Globals.fundies.home_turn): #From hand to Y
 	print("PLAY ", card.name)
 	get_stacks(home).hand.erase(card)
 	update_lists()
 	card.print_info()
-	if destination == Constants.STACKS.DISCARD:
+	if destination == Consts.STACKS.DISCARD:
 		discard_card(card)
 	else:
 		get_stacks(home).cards_in_play.append(card)
@@ -106,7 +106,7 @@ func shuffle_hand_back():
 
 func discard_card(card: Base_Card):
 	var stack = get_stacks(operate_home)
-	stack.append_to_arrays(Constants.STACKS.DISCARD, card)
+	stack.append_to_arrays(Consts.STACKS.DISCARD, card)
 	update_lists()
 
 #endregion
@@ -116,10 +116,10 @@ func discard_card(card: Base_Card):
 #region CARD DISPLAY
 func update_lists():
 	#Needs a lot of updates
-	Globals.full_ui.update_stacks(home_stacks.sendStackDictionary(), Constants.PLAYER_TYPES.PLAYER)
-	Globals.full_ui.update_stacks(away_stacks.sendStackDictionary(), Constants.PLAYER_TYPES.CPU)
+	Globals.full_ui.update_stacks(home_stacks.sendStackDictionary(), Consts.PLAYER_TYPES.PLAYER)
+	Globals.full_ui.update_stacks(away_stacks.sendStackDictionary(), Consts.PLAYER_TYPES.CPU)
 
-func get_list(which: Constants.STACKS) -> Dictionary[Base_Card, bool]:
+func get_list(which: Consts.STACKS) -> Dictionary[Base_Card, bool]:
 	var dict: Dictionary[Base_Card, bool]
 	var allowed_as: int = determine_allowed()
 	#Everything should check if they're allowed generally, then...
@@ -129,19 +129,19 @@ func get_list(which: Constants.STACKS) -> Dictionary[Base_Card, bool]:
 	#Tool should ceck if there's any mons with nothing equipped
 	
 	for card in get_stacks(operate_home).get_array(which):
-		var flags = Conversions.get_card_flags(card)
+		var flags = Convert.get_card_flags(card)
 		dict[card] = flags && allowed_as
 	
 	return dict
 
-func spawn_list(monitor_side: bool, which: Constants.STACKS, stack_act: Constants.STACK_ACT):
+func spawn_list(monitor_side: bool, which: Consts.STACKS, stack_act: Consts.STACK_ACT):
 	operate_home = monitor_side
 	
 	instantiate_list(get_list(which), which, stack_act)
 
-func instantiate_list(specified_list: Dictionary[Base_Card, bool], which: Constants.STACKS,\
- stack_act: Constants.STACK_ACT = Constants.STACK_ACT.LOOK, instructions: String = ""):
-	var new_node = Constants.reg_list.instantiate()
+func instantiate_list(specified_list: Dictionary[Base_Card, bool], which: Consts.STACKS,\
+ stack_act: Consts.STACK_ACT = Consts.STACK_ACT.LOOK, instructions: String = ""):
+	var new_node = Consts.reg_list.instantiate()
 	
 	new_node.list = specified_list
 	
@@ -160,8 +160,8 @@ func pick_prize():
 	pass
 
 func spawn_discard_list(specified_list: Dictionary[Base_Card, bool],
- from: Constants.STACKS, to: Constants.STACKS) -> DiscardList:
-	var dis_box: DiscardList = Constants.discard_box.instantiate()
+ from: Consts.STACKS, to: Consts.STACKS) -> DiscardList:
+	var dis_box: DiscardList = Consts.discard_box.instantiate()
 	
 	dis_box.list = specified_list
 	dis_box.stack = from
@@ -178,14 +178,14 @@ func spawn_energy_list(slot: PokeSlot, allowed_fun: Callable = func(card): retur
 		var new_card: Base_Card = card.duplicate(true)
 		energy_dict[new_card] = allowed_fun.call(card)
 	
-	var new_node = Constants.reg_list.instantiate()
+	var new_node = Consts.reg_list.instantiate()
 	
 	new_node.list = energy_dict
 	new_node.top_level = true
 	new_node.home = operate_home
 	new_node.old_pos = slot.ui_slot.global_position
-	new_node.stack_act = Constants.STACK_ACT.LOOK
-	new_node.stack = Constants.STACKS.NONE
+	new_node.stack_act = Consts.STACK_ACT.LOOK
+	new_node.stack = Consts.STACKS.NONE
 	add_sibling(new_node)
 	new_node.header.setup(str(slot.current_card.name, "'s Attatched Energy"))
 	Globals.fundies.current_list = new_node
@@ -241,12 +241,12 @@ func identifier_search(list: Array[Base_Card], based_on: Array[PokeSlot],\
 
 #Redundant for the most part but if it gets the job done
 func tutor_instantiate_list(specified_list: Array[Dictionary], search: Search):
-	var new_node: Tutor_Box = Constants.tutor_box.instantiate()
+	var new_node: Tutor_Box = Consts.tutor_box.instantiate()
 	
 	new_node.top_level = true
 	new_node.footer_txt = "Choose cards to send over"
 	new_node.old_pos = Globals.full_ui.player_side.non_mon.stacks[search.where].global_position
-	new_node.stack_act = Constants.STACK_ACT.TUTOR
+	new_node.stack_act = Consts.STACK_ACT.TUTOR
 	new_node.stack = search.where
 	add_sibling(new_node)
 	new_node.playing_list.all_lists = specified_list
@@ -256,7 +256,7 @@ func tutor_instantiate_list(specified_list: Array[Dictionary], search: Search):
 	new_node.setup_tutor(search)
 
 func placement_handling(tutored_cards: Array[Base_Card], placement: Placement,\
- origin: Constants.STACKS, untutored_cards: Array[Base_Card]):
+ origin: Consts.STACKS, untutored_cards: Array[Base_Card]):
 	#Is this placement on a stack or on a slot
 	#Stack placement
 	if placement.which == 0:
@@ -284,20 +284,20 @@ func placement_handling(tutored_cards: Array[Base_Card], placement: Placement,\
 
 #region REORDERING
 func tutor_instantiate_reorder(specified_list: Array[Base_Card], placement: Placement):
-	var reorder_list: ReorderList = Constants.reorder_list.instantiate()
+	var reorder_list: ReorderList = Consts.reorder_list.instantiate()
 	
 	reorder_list.list = specified_list
-	reorder_list.location = Constants.STACKS.DECK
+	reorder_list.location = Consts.STACKS.DECK
 	reorder_list.placement = placement
-	reorder_list.old_pos = Globals.full_ui.player_side.non_mon.stacks[Constants.STACKS.DECK].global_position
+	reorder_list.old_pos = Globals.full_ui.player_side.non_mon.stacks[Consts.STACKS.DECK].global_position
 	add_sibling(reorder_list)
 	
 	return reorder_list
 
-func reorder_handling(tutored_cards: Array[Base_Card], origin: Constants.STACKS):
-	if origin != Constants.STACKS.DECK:
+func reorder_handling(tutored_cards: Array[Base_Card], origin: Consts.STACKS):
+	if origin != Consts.STACKS.DECK:
 		print()
-	var dict: Dictionary[Constants.STACKS, Array] = get_stacks(operate_home).sendStackDictionary()
+	var dict: Dictionary[Consts.STACKS, Array] = get_stacks(operate_home).sendStackDictionary()
 	for card in tutored_cards: 
 		#Remove all tutored cards from source first
 		dict[origin].pop_at(dict[origin].find(card))

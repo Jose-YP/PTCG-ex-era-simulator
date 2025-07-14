@@ -2,7 +2,7 @@ extends Resource
 class_name BoardState
 
 @export_enum("Win by taking", "Lose by Taking") var prize_rules: int = 0
-@export var coin_rules: Constants.COIN_RULES = Constants.COIN_RULES.REG
+@export var coin_rules: Consts.COIN_RULES = Consts.COIN_RULES.REG
 @export_enum("Default", "Discard to Lost Zone", "Discard to Deck") var discard_rules: int = 0
 @export_enum("Home", "Away", "Flip") var who_starts_first: int = 0
 @export var doubles: bool = false
@@ -11,12 +11,12 @@ class_name BoardState
 @export var default_start: bool = false
 @export var stadium: Base_Card
 
-@export var home_side: Constants.PLAYER_TYPES = Constants.PLAYER_TYPES.PLAYER
+@export var home_side: Consts.PLAYER_TYPES = Consts.PLAYER_TYPES.PLAYER
 @export var home: SideState
-@export var away_side: Constants.PLAYER_TYPES = Constants.PLAYER_TYPES.CPU
+@export var away_side: Consts.PLAYER_TYPES = Consts.PLAYER_TYPES.CPU
 @export var away: SideState
 
-func get_player_type(home_bool: bool) -> Constants.PLAYER_TYPES:
+func get_player_type(home_bool: bool) -> Consts.PLAYER_TYPES:
 	return home_side if home_bool else away_side
 
 func get_side(home_bool: bool) -> SideState:

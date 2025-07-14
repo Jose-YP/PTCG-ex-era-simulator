@@ -81,7 +81,7 @@ func get_choice(instruction: String):
 #region CHOICE MANAGEMENT
 #Use a lambda function to get different boolean functions
 func get_allowed_slots(condition: Callable) -> void:
-	allowed_slots = Globals.fundies.find_allowed_slots(condition, Constants.SIDES.BOTH)
+	allowed_slots = Globals.fundies.find_allowed_slots(condition, Consts.SIDES.BOTH)
 	
 	for slot in Globals.full_ui.all_slots():
 		if slot in allowed_slots:

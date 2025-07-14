@@ -17,8 +17,8 @@ var swap_rules: EnMov = null
 
 signal finished
 
-const stack = Constants.STACKS.PLAY
-const stack_act = Constants.STACK_ACT.ENSWAP
+const stack = Consts.STACKS.PLAY
+const stack_act = Consts.STACK_ACT.ENSWAP
 
 var swaps_made: int = 0
 var energy_swapping: int = 0

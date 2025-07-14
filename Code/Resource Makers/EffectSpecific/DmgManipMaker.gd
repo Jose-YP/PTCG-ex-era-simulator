@@ -11,8 +11,8 @@ class_name DamageManip
 @export var choose_from: bool = false
 @export var include_target: bool = true
 ##Who will get the counter manipulation
-@export var side: Constants.SIDES = Constants.SIDES.ATTACKING
-@export var slot: Constants.SLOTS = Constants.SLOTS.TARGET
+@export var side: Consts.SIDES = Consts.SIDES.ATTACKING
+@export var slot: Consts.SLOTS = Consts.SLOTS.TARGET
 ##Determines how many will be added/removed based on the Counter
 @export_group("Counter")
 @export var plus: bool = false

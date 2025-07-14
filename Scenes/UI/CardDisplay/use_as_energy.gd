@@ -5,5 +5,5 @@ extends PanelContainer
 
 func setup(en_prop: Energy):
 	rich_text_label.clear()
-	rich_text_label.append_text(Conversions.reformat(en_prop.description))
+	rich_text_label.append_text(Convert.reformat(en_prop.description))
 	types.display_type(en_prop.success_provide.get_string())

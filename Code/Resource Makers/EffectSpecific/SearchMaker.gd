@@ -2,13 +2,13 @@ extends Resource
 class_name Search
 
 ##Which section will the player search (yes there is defender searching)
-@export var side: Constants.SIDES = Constants.SIDES.SOURCE
-@export var where: Constants.STACKS = Constants.STACKS.DECK
+@export var side: Consts.SIDES = Consts.SIDES.SOURCE
+@export var where: Consts.STACKS = Consts.STACKS.DECK
 @export var reordering_only: bool = false
 @export var shuffle_first: bool = false
 ##Will the identifier base it's results on anything?
-@export var based_on_side: Constants.SIDES
-@export var based_on_slots: Constants.SLOTS
+@export var based_on_side: Consts.SIDES
+@export var based_on_slots: Consts.SLOTS
 @export_enum("None","Shown", "Attatched") var based_on_energy: int = 0
 ##How many cards in the desired section can you check.
 ##-1 means all cards. For certain cards that look at a bit of the top of the deck.

@@ -38,13 +38,13 @@ func current_turn_print():
 func print_simple_slot_types():
 	print("-------------------------")
 	#GET ATTACKING
-	print_slots(Constants.SIDES.ATTACKING, Constants.SLOTS.ALL, "ATTACKING SLOTS: ")
-	print_slots(Constants.SIDES.DEFENDING, Constants.SLOTS.ALL, "DEFENDING SLOTS: ")
-	print_slots(Constants.SIDES.BOTH, Constants.SLOTS.ACTIVE, "ACTIVE SLOTS: ")
-	print_slots(Constants.SIDES.BOTH, Constants.SLOTS.BENCH, "BENCH SLOTS: ")
+	print_slots(Consts.SIDES.ATTACKING, Consts.SLOTS.ALL, "ATTACKING SLOTS: ")
+	print_slots(Consts.SIDES.DEFENDING, Consts.SLOTS.ALL, "DEFENDING SLOTS: ")
+	print_slots(Consts.SIDES.BOTH, Consts.SLOTS.ACTIVE, "ACTIVE SLOTS: ")
+	print_slots(Consts.SIDES.BOTH, Consts.SLOTS.BENCH, "BENCH SLOTS: ")
 	print("-------------------------")
 
-func print_slots(sides: Constants.SIDES, slots: Constants.SLOTS, init_string: String):
+func print_slots(sides: Consts.SIDES, slots: Consts.SLOTS, init_string: String):
 	var slot_string: String = init_string
 	for slot in Globals.full_ui.get_slots(sides, slots):
 		if not slot.connected_slot.is_filled():
@@ -61,31 +61,31 @@ func hide_list() -> void:
 func get_side_ui() -> CardSideUI:
 	return Globals.full_ui.get_side(home_turn)
 
-func get_considered_home(side: Constants.SIDES):
+func get_considered_home(side: Consts.SIDES):
 	match side:
-		Constants.SIDES.ATTACKING:
+		Consts.SIDES.ATTACKING:
 			return home_turn
-		Constants.SIDES.DEFENDING:
+		Consts.SIDES.DEFENDING:
 			return not home_turn
-		Constants.SIDES.SOURCE:
+		Consts.SIDES.SOURCE:
 			return get_source_considered()
-		Constants.SIDES.OTHER:
+		Consts.SIDES.OTHER:
 			return not get_source_considered()
 
 #--------------------------------------
 #region SLOT FUNCTIONS
 func can_be_played(card: Base_Card) -> int:
-	var considered: int = Conversions.get_card_flags(card)
+	var considered: int = Convert.get_card_flags(card)
 	var allowed_to: int = 0
 	#Basic
 	if considered & 1 != 0:
 		if find_allowed_slots(func(slot: PokeSlot): return not slot.is_filled(),\
-		Constants.SIDES.ATTACKING).size() != 0:
+		Consts.SIDES.ATTACKING).size() != 0:
 			allowed_to += 1
 	#Evo
 	if considered & 2 != 0:
 		var can_evo_from = Globals.make_can_evo_from(card)
-		if find_allowed_slots(can_evo_from, Constants.SIDES.ATTACKING).size() != 0:
+		if find_allowed_slots(can_evo_from, Consts.SIDES.ATTACKING).size() != 0:
 			allowed_to += 2
 		else:
 			print(card.name, " can't evolve from any current slot")
@@ -102,7 +102,7 @@ func can_be_played(card: Base_Card) -> int:
 	#Tool
 	if considered & 32 != 0:
 		if find_allowed_slots(func (slot: PokeSlot):\
-		 return slot.tool_card == null, Constants.SIDES.ATTACKING).size() != 0:
+		 return slot.tool_card == null, Consts.SIDES.ATTACKING).size() != 0:
 			allowed_to += 32
 	#TM
 	if considered & 64 != 0:
@@ -113,20 +113,20 @@ func can_be_played(card: Base_Card) -> int:
 	#Fossil
 	if considered & 256 != 0:
 		if find_allowed_slots(func(slot: PokeSlot): return not slot.is_filled(),\
-		Constants.SIDES.ATTACKING).size() != 0:
+		Consts.SIDES.ATTACKING).size() != 0:
 			allowed_to += 256
 	#Energy
 	if considered & 512:
 		allowed_to += 512
 	return allowed_to
 
-func find_allowed_slots(condition: Callable, sides: Constants.SIDES,\
- slots: Constants.SLOTS = Constants.SLOTS.ALL) -> Array[UI_Slot]:
+func find_allowed_slots(condition: Callable, sides: Consts.SIDES,\
+ slots: Consts.SLOTS = Consts.SLOTS.ALL) -> Array[UI_Slot]:
 	return Globals.full_ui.get_slots(sides, slots).filter(func(uislot: UI_Slot):\
 	 return condition.call(uislot.connected_slot))
 
-func get_poke_slots(sides: Constants.SIDES = Constants.SIDES.BOTH, 
- slots: Constants.SLOTS = Constants.SLOTS.ALL) -> Array[PokeSlot]:
+func get_poke_slots(sides: Consts.SIDES = Consts.SIDES.BOTH, 
+ slots: Consts.SLOTS = Consts.SLOTS.ALL) -> Array[PokeSlot]:
 	var array: Array[PokeSlot]
 	for ui_slot in Globals.full_ui.get_slots(sides, slots):
 		array.append(ui_slot.connected_slot)
@@ -143,6 +143,16 @@ func check_ask_on_all(ask: SlotAsk) -> bool:
 	return false
 
 #region TARGET SOURCE MANAGEMENT
+func record_attack_src_trg(is_home: bool, atk_trg: Array, def_trg: Array):
+	source_stack.append(is_home)
+	if is_home:
+		home_targets.append(atk_trg)
+		away_targets.append(def_trg)
+	else:
+		home_targets.append(def_trg)
+		away_targets.append(atk_trg)
+	print_src_trg()
+
 #First record then print out what I can get from this, then rmeove when used up
 func record_source_target(is_home: bool, home_trg: Array, away_trg: Array):
 	source_stack.append(is_home)
@@ -172,8 +182,8 @@ func get_source_considered() -> bool:
 	return source_stack[-1]
 
 func print_src_trg():
-	print_slots(Constants.SIDES.SOURCE, Constants.SLOTS.ALL, "SOURCE SLOTS: ")
-	print_slots(Constants.SIDES.BOTH, Constants.SLOTS.TARGET, "TARGET SLOTS: ")
+	print_slots(Consts.SIDES.SOURCE, Consts.SLOTS.ALL, "SOURCE SLOTS: ")
+	print_slots(Consts.SIDES.BOTH, Consts.SLOTS.TARGET, "TARGET SLOTS: ")
 
 #endregion
 #endregion

@@ -9,7 +9,7 @@ class_name EnergyCollection
 @onready var container: HBoxContainer = %Container
 @onready var panel: PanelContainer = %Panel
 
-var energyContainer: Array[TypeContainer]
+var energy_container: Array[TypeContainer]
 var current_indexes: Array
 
 func _ready() -> void:
@@ -19,7 +19,7 @@ func _ready() -> void:
 		%Button.mouse_filter = MOUSE_FILTER_IGNORE
 	
 	for i in container.get_child_count():
-		energyContainer.append(container.get_child(i))
+		energy_container.append(container.get_child(i))
 		container.get_child(i).hide()
 	
 	if align_right:
@@ -29,20 +29,20 @@ func _ready() -> void:
 #region ENERGY DISPLAY
 func display_energy(energy_arr: Array, energy_dict: Dictionary):
 	var total_types: int = 0
-	for node in energyContainer:
+	for node in energy_container:
 		node.hide()
 		node.number = 0
 	
 	if energy_arr.size() > en_count:
 		for type in energy_dict:
 			if energy_dict[type] > 0:
-				energyContainer[total_types].add_type(type, energy_dict[type])
+				energy_container[total_types].add_type(type, energy_dict[type])
 				total_types += 1
 				if total_types > en_count:
-					energyContainer[total_types - 1].hide()
+					energy_container[total_types - 1].hide()
 	else:
 		for i in range(energy_arr.size()):
-			energyContainer[i].add_type(energy_arr[i])
+			energy_container[i].add_type(energy_arr[i])
 	
 	if total_types > en_count - 1:
 		%Timer.start()
@@ -55,7 +55,7 @@ func reset_energy():
 
 func if_nothing_in():
 	var result: bool = false
-	for node in energyContainer:
+	for node in energy_container:
 		result = result or node.number > 0
 	
 	visible = result
@@ -68,17 +68,17 @@ func _on_button_pressed() -> void:
 	SignalBus.show_energy_attatched.emit((owner as UI_Slot).connected_slot)
 
 func _on_timer_timeout() -> void:
-	var next_index: int = (current_indexes[-1] + 1) % energyContainer.size()
+	var next_index: int = (current_indexes[-1] + 1) % energy_container.size()
 	current_indexes.pop_front()
-	if energyContainer[next_index].number == 0:
+	if energy_container[next_index].number == 0:
 		next_index = 0
 	current_indexes.append(next_index)
 	
-	for node in energyContainer:
+	for node in energy_container:
 		node.hide()
 	#Move the current shown to the top based on order
 	for i in range(en_count):
-		var type: TypeContainer = energyContainer[current_indexes[i]]
+		var type: TypeContainer = energy_container[current_indexes[i]]
 		container.move_child(type, i)
 		type.show()
 #endregion

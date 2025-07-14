@@ -30,21 +30,21 @@ func make_deck():
 	usable_deck = deck.make_usable()
 	if usable_deck.size() != 60: printerr("Deck isn't thre right size ", usable_deck.size())
 	#for card in usable_deck:
-		#printt(card.name, Constants.expansion_abbreviations[card.expansion], card.number)
+		#printt(card.name, Consts.expansion_abbreviations[card.expansion], card.number)
 	
 	usable_deck.shuffle()
 	init_sync(init_deck)
 	init_sync(init_hand)
 	init_sync(init_discard)
 	init_sync(init_prize)
-	move_cards(init_hand, Constants.STACKS.DECK, Constants.STACKS.HAND)
-	move_cards(init_discard, Constants.STACKS.DECK, Constants.STACKS.DISCARD)
-	move_cards(init_prize, Constants.STACKS.DECK, Constants.STACKS.PRIZE)
+	move_cards(init_hand, Consts.STACKS.DECK, Consts.STACKS.HAND)
+	move_cards(init_discard, Consts.STACKS.DECK, Consts.STACKS.DISCARD)
+	move_cards(init_prize, Consts.STACKS.DECK, Consts.STACKS.PRIZE)
 
 func setup():
 	if init_deck.size() != 0:
-		move_cards(usable_deck, Constants.STACKS.DECK, Constants.STACKS.DISCARD)
-		move_cards(init_deck, Constants.STACKS.DISCARD, Constants.STACKS.DECK)
+		move_cards(usable_deck, Consts.STACKS.DECK, Consts.STACKS.DISCARD)
+		move_cards(init_deck, Consts.STACKS.DISCARD, Consts.STACKS.DECK)
 
 func account_for_slot(slot: PokeSlot):
 	init_remove_deck(slot.current_card)
@@ -74,40 +74,40 @@ func init_sync(list: Array[Base_Card]):
 
 #--------------------------------------
 #region DURING PLAY
-func sendStackDictionary() -> Dictionary[Constants.STACKS, Array]:
+func sendStackDictionary() -> Dictionary[Consts.STACKS, Array]:
 	return {
- Constants.STACKS.HAND: hand, Constants.STACKS.DECK: usable_deck,
- Constants.STACKS.DISCARD: discard_pile, Constants.STACKS.PRIZE: prize_cards,
- Constants.STACKS.PLAY: cards_in_play, Constants.STACKS.LOST: lost_zone}
+ Consts.STACKS.HAND: hand, Consts.STACKS.DECK: usable_deck,
+ Consts.STACKS.DISCARD: discard_pile, Consts.STACKS.PRIZE: prize_cards,
+ Consts.STACKS.PLAY: cards_in_play, Consts.STACKS.LOST: lost_zone}
 
-func append_to_arrays(type: Constants.STACKS, card: Base_Card, top_deck: bool = false):
-	#Constants.STACKS.DECK and bottom_stack
+func append_to_arrays(type: Consts.STACKS, card: Base_Card, top_deck: bool = false):
+	#Consts.STACKS.DECK and bottom_stack
 	match type:
-		Constants.STACKS.HAND:
+		Consts.STACKS.HAND:
 			hand.append(card)
-		Constants.STACKS.DECK:
+		Consts.STACKS.DECK:
 			if top_deck: #This is generally slower so only when top deck is important
 				usable_deck.push_front(card)
 			else:
 				usable_deck.append(card)
 			
-		Constants.STACKS.DISCARD:
+		Consts.STACKS.DISCARD:
 			discard_pile.append(card)
-		Constants.STACKS.PRIZE:
+		Consts.STACKS.PRIZE:
 			prize_cards.append(card)
 		_:
 			push_error(type, " is not in ", self)
 			hand.append(card)
 
-func get_array(type: Constants.STACKS) -> Array[Base_Card]:
+func get_array(type: Consts.STACKS) -> Array[Base_Card]:
 	match type:
-		Constants.STACKS.HAND:
+		Consts.STACKS.HAND:
 			return hand
-		Constants.STACKS.DECK:
+		Consts.STACKS.DECK:
 			return usable_deck
-		Constants.STACKS.DISCARD:
+		Consts.STACKS.DISCARD:
 			return discard_pile
-		Constants.STACKS.PRIZE:
+		Consts.STACKS.PRIZE:
 			return prize_cards
 		_:
 			push_error(type, " is not in ", self)
@@ -123,9 +123,9 @@ func none_lost() -> bool:
 	
 	return total == 60
 
-func move_cards(cards: Array[Base_Card], from: Constants.STACKS, towards: Constants.STACKS,
+func move_cards(cards: Array[Base_Card], from: Consts.STACKS, towards: Consts.STACKS,
  shuffle: bool = true, top_deck: bool = false):
-	var dict: Dictionary[Constants.STACKS, Array] = sendStackDictionary()
+	var dict: Dictionary[Consts.STACKS, Array] = sendStackDictionary()
 	for i in range(cards.size() - 1, -1, -1):
 		var card: Base_Card = cards[i]
 		#Remove all tutored cards from source first
@@ -140,17 +140,17 @@ func move_cards(cards: Array[Base_Card], from: Constants.STACKS, towards: Consta
 		append_to_arrays(towards, adding_card, top_deck)
 	
 	#The deck is the only one that needs to be shuffled
-	if (from == Constants.STACKS.DECK or towards == Constants.STACKS.DECK) and shuffle:
+	if (from == Consts.STACKS.DECK or towards == Consts.STACKS.DECK) and shuffle:
 		usable_deck.shuffle()
 	else:
-		print(Conversions.stack_into_string(from), Conversions.stack_into_string(towards), shuffle)
+		print(Convert.stack_into_string(from), Convert.stack_into_string(towards), shuffle)
 	
 	none_lost()
 
 #endregion
 #--------------------------------------
 
-#func mark_as_played(card: Base_Card, from: Constants.STACKS):
+#func mark_as_played(card: Base_Card, from: Consts.STACKS):
 	#var array = get_array(from)
 	#
 	#

@@ -22,7 +22,7 @@ func add_type(type: String, ammount: int = 1):
 		$Number.hide()
 
 func display_type(type: String):
-	$Tabs.current_tab = Constants.energy_types.find(type)
+	$Tabs.current_tab = Consts.energy_types.find(type)
 
 func remove_type():
 	number -= 1

@@ -14,7 +14,7 @@ func _ready():
 	
 	%EffectText.clear()
 	if power.description != "":
-		var final_text: String = Conversions.reformat(power.description)
+		var final_text: String = Convert.reformat(power.description)
 		%EffectText.append_text(final_text)
 		%EffectText.show()
 
