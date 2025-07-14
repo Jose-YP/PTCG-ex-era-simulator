@@ -150,6 +150,8 @@ func get_targets(atk: PokeSlot, def: Array[PokeSlot]) -> Array[Array]:
 	
 	return targets
 
+#func is_same_type(type_atk: int, type_def: int)
+
 func get_pokedata() -> Pokemon:
 	return current_card.pokemon_properties
 
@@ -211,8 +213,19 @@ func remove_cards(cards: Array[Base_Card]) -> void:
 func should_ko() -> bool:
 	return (get_pokedata().HP - damage_counters) < 0
 
-func add_damage(_base_ammount) -> int:
-	return 0
+func add_damage(attacker: PokeSlot, base_ammount: int) -> void:
+	var final_ammount = base_ammount
+	
+	if attacker.current_card.pokemon_properties.type & current_card.pokemon_properties.weak != 0:
+		print(get_card_name(), " is weak to ", attacker.get_card_name())
+		final_ammount *= 2
+	if attacker.current_card.pokemon_properties.type & current_card.pokemon_properties.resist != 0:
+		print(get_card_name(), " is resists to ", attacker.get_card_name())
+		final_ammount -= 30
+	
+	print(get_card_name(), " TAKES: ", final_ammount, " DAMAGE!")
+	damage_counters += clamp(final_ammount, 0, final_ammount)
+	refresh()
 
 func bench_add_damage(_ammount) -> int:
 	return 0

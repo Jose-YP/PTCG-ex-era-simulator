@@ -34,7 +34,7 @@ func show_slot_card(slot: PokeSlot):
 		remove_card()
 	var card_display = load("res://Scenes/UI/CardDisplay/PokemonCard.tscn").instantiate()
 	card_display.checking = true
-	
+	card_display.old_pos = slot.ui_slot.global_position
 	card_display.poke_slot = slot
 	
 	card_setup(slot.current_card, card_display, slot.ui_slot)

@@ -50,7 +50,7 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(64, 46)
 layout_mode = 2
 bbcode_enabled = true
-text = "[u]HP[/u] 200/200"
+text = "[u]HP[/u] 200"
 
 [node name="ArtButton" parent="Main" instance=ExtResource("3_nyxqq")]
 unique_name_in_owner = true
@@ -139,20 +139,19 @@ layout_mode = 2
 [node name="Conditions" type="GridContainer" parent="."]
 layout_mode = 0
 offset_left = 138.0
-offset_top = 41.0
+offset_top = 32.0
 offset_right = 206.0
-offset_bottom = 145.0
+offset_bottom = 136.0
+mouse_filter = 2
 columns = 2
 metadata/_edit_group_ = true
 
 [node name="DamageCounter" parent="Conditions" instance=ExtResource("8_0ajf4")]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
 
 [node name="Poison" type="TextureRect" parent="Conditions"]
 unique_name_in_owner = true
-visible = false
 modulate = Color(0.415686, 0.00784314, 0.494118, 1)
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
@@ -164,7 +163,6 @@ expand_mode = 4
 
 [node name="Burn" type="TextureRect" parent="Conditions"]
 unique_name_in_owner = true
-visible = false
 modulate = Color(0.882353, 0.211765, 0.298039, 1)
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
@@ -176,7 +174,6 @@ expand_mode = 4
 
 [node name="TurnConditions" type="TabContainer" parent="Conditions"]
 unique_name_in_owner = true
-visible = false
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -216,7 +213,6 @@ metadata/_tab_index = 2
 
 [node name="Imprison" type="TextureRect" parent="Conditions"]
 unique_name_in_owner = true
-visible = false
 modulate = Color(0.984314, 0.498039, 0.745098, 1)
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
@@ -228,7 +224,6 @@ expand_mode = 4
 
 [node name="Shockwave" type="TextureRect" parent="Conditions"]
 unique_name_in_owner = true
-visible = false
 modulate = Color(0.921569, 0.384314, 0, 1)
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2

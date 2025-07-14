@@ -274,9 +274,9 @@ func before_direct_attack(attacker: PokeSlot, with: Attack):
 	
 	with.print_attack()
 	
-	if with.does_no_direct_damage():
+	if with.does_direct_damage():
 		if not with.both_active:
-			get_choice_candidates("Who do you want to attack?", 
+			await get_choice_candidates("Who do you want to attack?", 
 			func(slot: PokeSlot): return slot.is_in_slot(Consts.SIDES.DEFENDING, Consts.SLOTS.ACTIVE),
 			true)
 			
@@ -303,6 +303,10 @@ func before_direct_attack(attacker: PokeSlot, with: Attack):
 #For attacks that use main dmg + effects
 func direct_attack(attacker: PokeSlot, with: Attack, defenders: Array[PokeSlot]):
 	print()
+	var base_damage = with.get_damage()
+	for slot in defenders:
+		slot.add_damage(attacker, base_damage)
+	
 	pass
 
 #For bench attacks

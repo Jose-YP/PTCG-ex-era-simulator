@@ -145,9 +145,9 @@ en_count = 6
 [node name="Conditions" type="VBoxContainer" parent="."]
 layout_mode = 0
 offset_left = 128.0
-offset_top = 42.0
+offset_top = 24.0
 offset_right = 160.0
-offset_bottom = 110.0
+offset_bottom = 92.0
 mouse_filter = 2
 metadata/_edit_group_ = true
 

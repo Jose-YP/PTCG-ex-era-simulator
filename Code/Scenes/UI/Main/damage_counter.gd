@@ -10,6 +10,7 @@ func _ready() -> void:
 
 func set_damage(dmg: int) -> void:
 	visible = dmg != 0
+	
 	%DmgText.clear()
 	%DmgText.append_text(str("[b][i][color=black]",dmg))
 	

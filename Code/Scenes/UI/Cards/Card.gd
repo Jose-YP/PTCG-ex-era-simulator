@@ -29,6 +29,7 @@ extends Control
 @onready var movable: Button = %Movable
 @onready var close_button: Close_Button = %CloseButton
 
+var old_pos: Vector2
 var attack_size: int
 var attack_scroll: ScrollContainer
 var on_card: bool = false
@@ -39,6 +40,7 @@ var on_card: bool = false
 func _ready():
 	if poke_slot: 
 		card = poke_slot.current_card
+		SignalBus.force_disapear.connect(force_disapear)
 	pokedata = card.pokemon_properties
 	#To fit multiple types in
 	#--------------------------------------
@@ -123,3 +125,6 @@ func make_text(node: RichTextLabel, text: String):
 
 #endregion
 #--------------------------------------
+
+func force_disapear():
+	Globals.control_disapear(self, .1, old_pos)

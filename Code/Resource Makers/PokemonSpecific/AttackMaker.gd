@@ -106,6 +106,28 @@ func print_cost(energy: String):
 	if using == 0: return
 	print_rich(str(Convert.get_type_rich_color(energy), energy, ":[/color] ", using))
 
+func get_damage() -> int:
+	var final_damage: int = initial_main_DMG
+	var modifier_result: int = 0
+	
+	if prompt_reliant:
+		print("Has prompt reliant damage")
+		if not prompt.check_prompt():
+			print_rich("That you [color=red][b]FAILED!!![/b][/color] LOLOL")
+			return 0
+	if comparator:
+		print("HAS A MODIFIER WITH THE RESULT OF ", comparator.start_comparision(), " * ", modifier_num)
+		modifier = modifier_num * comparator.start_comparision()
+		match modifier:
+			1:
+				final_damage += modifier_result
+			3:
+				final_damage -= modifier_result
+			_:
+				final_damage = modifier_result
+	
+	return final_damage
+
 ##Returns only the specified required energy for the attack to start 
 func get_energy_cost() -> Array[String]:
 	var all_costs: Array[int] = [grass_cost, fire_cost, water_cost,
@@ -134,8 +156,9 @@ func pay_cost(slot: PokeSlot):
 	for card in basic_energy:
 		var index = int((log(float(card.energy_properties.get_current_type())) / log(2)))
 		print("Used ", card.name, " for ", Consts.energy_types[index] if all_costs[index] > 0 else "Colorless")
-		if all_costs[index] > 0: all_costs[index] -= 1
-		else: all_costs[8] -= 1
+		
+		if all_costs[index] > 0: all_costs[index] = clamp(all_costs[index]-1, 0, all_costs[index])
+		else: all_costs[8] = clamp(all_costs[8]-1, 0, all_costs[8])
 	
 	#Maybe sort based on flag size
 	special_energy.sort_custom(func(a: Base_Card,b: Base_Card):\
@@ -192,5 +215,5 @@ func get_cost(index: int) -> int:
 	
 	return - 11
 
-func does_no_direct_damage() -> bool:
-	return initial_main_DMG == 0 and modifier_num == 0 and self_damage == 0
+func does_direct_damage() -> bool:
+	return initial_main_DMG != 0 or modifier_num != 0 or self_damage != 0

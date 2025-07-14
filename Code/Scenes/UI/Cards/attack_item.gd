@@ -48,3 +48,4 @@ func _on_focus_entered():
 
 func _on_attack_button_pressed() -> void:
 	SignalBus.attack.emit(slot, attack)
+	SignalBus.force_disapear.emit()

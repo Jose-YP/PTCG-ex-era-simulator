@@ -1,16 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://04qgb8r1r84v"]
+[gd_scene load_steps=5 format=3 uid="uid://04qgb8r1r84v"]
 
 [ext_resource type="Script" uid="uid://cqiomk5oqbbnp" path="res://Code/Scenes/UI/Main/damage_counter.gd" id="1_ewxox"]
 [ext_resource type="Texture2D" uid="uid://dahgp30l5eylb" path="res://Art/Counters/Spiral.png" id="2_ewxox"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ewxox"]
 
+[sub_resource type="Gradient" id="Gradient_ewxox"]
+offsets = PackedFloat32Array(0, 0.778098, 1)
+colors = PackedColorArray(0.85, 0.5134, 0.102, 1, 0.844164, 0.064592, 0.257473, 1, 0.63, 0.1197, 0.468405, 1)
+
 [node name="PanelContainer" type="PanelContainer"]
 custom_minimum_size = Vector2(32, 32)
 offset_right = 32.0
 offset_bottom = 32.0
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_ewxox")
 script = ExtResource("1_ewxox")
+damage_gradient = SubResource("Gradient_ewxox")
 metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
 

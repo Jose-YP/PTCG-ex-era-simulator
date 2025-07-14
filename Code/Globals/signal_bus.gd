@@ -24,6 +24,8 @@ signal cancel_tutor(button: Button)
 signal chosen_slot(showing: PokeSlot)
 @warning_ignore("unused_signal")
 signal attack(slot: PokeSlot, attack: Attack)
+@warning_ignore("unused_signal")
+signal force_disapear()
 #--------------------------------------
 #region CARD PLAY SIGNALS
 signal play_basic(card: Base_Card)
