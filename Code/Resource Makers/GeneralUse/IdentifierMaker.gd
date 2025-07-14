@@ -30,7 +30,7 @@ class_name Identifier
 
 @export_group("Energy Categories")
 @export_flags("Basic", "Special") var energy_class: int = 3
-@export var energy_provides: EnData
+@export var energy_provides: EnData = load("res://Resources/Components/EnData/Rainbow.tres")
 
 func identifier_bool(card: Base_Card, based_on: Array[PokeSlot]) -> bool:
 	print("----------------------------------------------------")
@@ -71,20 +71,24 @@ func identifier_bool(card: Base_Card, based_on: Array[PokeSlot]) -> bool:
 				print(" I don't care what this is just say it's good enogh")
 				return true
 		else:
-			print(energy_provides.type, " ", card.energy_properties.fail_provide.type)
+			var default_prop: EnData = card.energy_properties.fail_provide
+			print(energy_provides.type, " ", default_prop.type)
 			
-			if energy_provides.type != 511 and not energy_provides.same_type(card.energy_properties.fail_provide):
+			#If looking for any type at all, check if it contains said type
+			if energy_provides.type != 511 and not energy_provides.same_type(default_prop):
 				print("Not considered the right type")
 				return false
 			
 			print(card.name, " is ", card.energy_properties.considered, " looking for ", energy_class)
+			if energy_class == 3: return true
+			
 			print(energy_class && 1, energy_class && 2, energy_class & 1, energy_class & 2)
 			if card.energy_properties.considered == "Basic Energy" and energy_class & 1 != 0:
 				print("Looking for Basic so ", energy_class && 1)
-				return energy_class && 1
+				return card.energy_properties.considered == "Basic Energy"
 			elif energy_class & 2 != 0:
 				print("Looking for Special so ", energy_class && 2)
-				return card.energy_properties.considered != "Special Energy"
+				return card.energy_properties.considered == "Special Energy"
 			else:
 				return false
 	
@@ -162,18 +166,6 @@ func and_poke_bool(card: Base_Card, based_on: Array[PokeSlot]):
 		if not stage & evo == 0: return false
 	
 	return true
-
-#func or_trainer_bool(card: Base_Card, based_on: Base_Card):
-	#pass
-#
-#func and_trainer_bool(card: Base_Card, based_on: Base_Card):
-	#pass
-#
-#func or_energy_bool(card: Base_Card, based_on: Base_Card):
-	#pass
-#
-#func and_energy_bool(card: Base_Card, based_on: Base_Card):
-	#pass
 
 func edit_in_type(type_flags: int):
 	type = 0

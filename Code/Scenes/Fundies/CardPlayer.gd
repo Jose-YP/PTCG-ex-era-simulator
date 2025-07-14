@@ -299,6 +299,7 @@ func before_direct_attack(attacker: PokeSlot, with: Attack):
 	attack_effect(attacker, with)
 	
 	Globals.fundies.remove_top_source_target()
+	Globals.fundies.next_turn()
 
 #For attacks that use main dmg + effects
 func direct_attack(attacker: PokeSlot, with: Attack, defenders: Array[PokeSlot]):
@@ -315,7 +316,14 @@ func bench_attack(attacker: PokeSlot, with: BenchAttk, defenders: Array[PokeSlot
 	pass
 
 func attack_effect(attacker: PokeSlot, with: Attack):
-	pass
+	if with.prompt:
+		if with.prompt.check_prompt():
+			await with.success_effect.play_effect()
+		else:
+			await with.fail_effect.play_effect()
+	
+	if with.always_effect:
+		await with.always_effect.play_effect()
 
 #endregion
 #--------------------------------------

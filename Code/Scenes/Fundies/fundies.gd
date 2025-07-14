@@ -10,6 +10,7 @@ class_name Fundies
 @onready var ui_actions: SlotUIActions = $UIActions
 @onready var stack_manager: StackManager = $StackManager
 @onready var card_player: CardPlayer = $CardPlayer
+@onready var pass_turn_graphic: Control = $PassTurnGraphic
 
 var turn_number: int = 1
 var home_turn: bool = true
@@ -132,9 +133,6 @@ func get_poke_slots(sides: Consts.SIDES = Consts.SIDES.BOTH,
 		array.append(ui_slot.connected_slot)
 	return array
 
-func pass_turn() -> void:
-	pass
-
 func check_ask_on_all(ask: SlotAsk) -> bool:
 	for slot in get_poke_slots():
 		if ask.check_ask(slot):
@@ -188,3 +186,8 @@ func print_src_trg():
 #endregion
 #endregion
 #--------------------------------------
+
+func next_turn():
+	home_turn = not home_turn
+	turn_number += 1
+	pass_turn_graphic.turn_change()

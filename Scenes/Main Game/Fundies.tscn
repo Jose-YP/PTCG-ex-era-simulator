@@ -1,12 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://cni7lmrv7r06c"]
+[gd_scene load_steps=6 format=3 uid="uid://cni7lmrv7r06c"]
 
 [ext_resource type="Script" uid="uid://xvfv7i868cvg" path="res://Code/Scenes/Fundies/fundies.gd" id="1_fh4v4"]
 [ext_resource type="PackedScene" uid="uid://c2dyutb22u6x8" path="res://Scenes/Components/UIActions.tscn" id="1_xxoqv"]
+[ext_resource type="PackedScene" uid="uid://b8byf16paeoaj" path="res://Scenes/UI/UIComponents/pass_turn_graphic.tscn" id="2_6hj6q"]
 [ext_resource type="PackedScene" uid="uid://bm07a7wgsaxxp" path="res://Scenes/Components/CardPlayer.tscn" id="2_fh4v4"]
 [ext_resource type="PackedScene" uid="uid://cobenwsotye1q" path="res://Scenes/Components/StackManager.tscn" id="3_eym7l"]
 
 [node name="Fundies" type="Node"]
 script = ExtResource("1_fh4v4")
+
+[node name="PassTurnGraphic" parent="." instance=ExtResource("2_6hj6q")]
 
 [node name="UIActions" parent="." instance=ExtResource("1_xxoqv")]
 

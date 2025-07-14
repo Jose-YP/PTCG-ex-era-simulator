@@ -6,6 +6,7 @@ class_name BoardNode
 @export var board_state: BoardState
 @export var fundies: Fundies
 @export var doubles: bool = true
+@export var debug_turns: bool = true
 @export var test: PackedScene
 
 var full_ui: FullBoardUI
