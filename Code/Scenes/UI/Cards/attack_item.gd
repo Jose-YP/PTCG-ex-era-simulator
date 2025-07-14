@@ -38,7 +38,10 @@ func _ready():
 				%Damage.append_text(str("-",attack.initial_main_DMG))
 
 func check_usability():
-	attackButton.disabled = false if attack.pay_cost(slot) == 0 else true
+	attackButton.disabled = false if attack.can_pay(slot) else true
+
+func make_unusable():
+	attackButton.disabled = true
 
 func _on_focus_entered():
 	attackButton.grab_focus()

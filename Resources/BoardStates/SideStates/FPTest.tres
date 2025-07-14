@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SideState" load_steps=28 format=3 uid="uid://3mi21qf5xxe4"]
+[gd_resource type="Resource" script_class="SideState" load_steps=30 format=3 uid="uid://3mi21qf5xxe4"]
 
 [ext_resource type="Resource" uid="uid://d3qd7r6gwfitd" path="res://Resources/Decks/TestDeckFP.tres" id="1_3fosg"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_67esg"]
@@ -20,8 +20,10 @@
 [ext_resource type="Resource" uid="uid://xvauv8yfopfw" path="res://Resources/Cards/2 ex Sandstorm/SS93MultiEnergy.tres" id="19_3fosg"]
 [ext_resource type="Script" uid="uid://calm3n7va5yjo" path="res://Code/Resource Makers/GeneralUse/CardStacksMaker.gd" id="20_rx5tr"]
 [ext_resource type="Script" uid="uid://dgqpurnuh14t1" path="res://Code/Resource Makers/GeneralUse/SideStateMaker.gd" id="21_wmcmf"]
+[ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/BuffMaker.gd" id="22_67esg"]
 [ext_resource type="Script" uid="uid://cs70ix831b5g4" path="res://Code/Resource Makers/PokemonSpecific/PokeSlotMaker.gd" id="22_ti8fa"]
 [ext_resource type="Resource" uid="uid://cpk1v504xejvf" path="res://Resources/Cards/1 ex Ruby & Saphire/RS66Ralts.tres" id="23_j8pkl"]
+[ext_resource type="Script" uid="uid://c0ishgbxk63dg" path="res://Code/Resource Makers/EffectSpecific/DisableMaker.gd" id="23_nsat6"]
 [ext_resource type="Resource" uid="uid://dqknf3vfxe3hp" path="res://Resources/Cards/1 ex Ruby & Saphire/RS73Torchic.tres" id="24_ugwbi"]
 [ext_resource type="Resource" uid="uid://dq5yc7aoltpwf" path="res://Resources/Cards/1 ex Ruby & Saphire/RS27Combusken.tres" id="25_vaap6"]
 
@@ -36,106 +38,34 @@ metadata/_custom_type_script = "uid://calm3n7va5yjo"
 
 [sub_resource type="Resource" id="Resource_wudh5"]
 script = ExtResource("22_ti8fa")
-player_type = 0
 current_card = ExtResource("4_udrok")
+damage_counters = 0
 evolution_ready = false
 evolved_this_turn = false
 evolved_from = Array[ExtResource("2_67esg")]([ExtResource("23_j8pkl")])
 energy_cards = Array[ExtResource("2_67esg")]([])
-attached_energy = {
-"Aqua": 0,
-"Colorless": 0,
-"Dark Metal": 0,
-"Darkness": 0,
-"Fighting": 0,
-"Fire": 0,
-"Grass": 0,
-"Holon FF": 0,
-"Holon GL": 0,
-"Holon WP": 0,
-"Lightning": 0,
-"Magma": 0,
-"Metal": 0,
-"Psychic": 0,
-"Rainbow": 0,
-"React": 0,
-"Water": 0
-}
 tm_cards = Array[ExtResource("2_67esg")]([])
-use_weakness = true
-use_resistance = true
+applied_buffs = Array[ExtResource("22_67esg")]([])
+applied_disable = Array[ExtResource("23_nsat6")]([])
 type = 0
 weak = 0
 resist = 0
-attack_buff = 0
-defense_buff = 0
-use_body = true
-ex_immune = false
-use_power = false
-use_attack = true
-in_attacking_turn = true
-damage_counters = 0
-benched = false
-poison_condition = 0
-burn_condition = 0
-turn_condition = 0
-imprison = false
-shockwave = false
-readied = false
-knocked_out = false
-is_target = false
 metadata/_custom_type_script = "uid://cs70ix831b5g4"
 
 [sub_resource type="Resource" id="Resource_3fcng"]
 script = ExtResource("22_ti8fa")
-player_type = 0
 current_card = ExtResource("14_xl8qu")
+damage_counters = 0
 evolution_ready = false
 evolved_this_turn = false
 evolved_from = Array[ExtResource("2_67esg")]([ExtResource("24_ugwbi"), ExtResource("25_vaap6")])
 energy_cards = Array[ExtResource("2_67esg")]([ExtResource("8_eib0e"), ExtResource("8_eib0e")])
-attached_energy = {
-"Aqua": 0,
-"Colorless": 0,
-"Dark Metal": 0,
-"Darkness": 0,
-"Fighting": 0,
-"Fire": 0,
-"Grass": 0,
-"Holon FF": 0,
-"Holon GL": 0,
-"Holon WP": 0,
-"Lightning": 0,
-"Magma": 0,
-"Metal": 0,
-"Psychic": 0,
-"Rainbow": 0,
-"React": 0,
-"Water": 0
-}
 tm_cards = Array[ExtResource("2_67esg")]([])
-use_weakness = true
-use_resistance = true
+applied_buffs = Array[ExtResource("22_67esg")]([])
+applied_disable = Array[ExtResource("23_nsat6")]([])
 type = 0
 weak = 0
 resist = 0
-attack_buff = 0
-defense_buff = 0
-use_body = true
-ex_immune = false
-use_power = false
-use_attack = true
-in_attacking_turn = true
-damage_counters = 0
-benched = false
-poison_condition = 0
-burn_condition = 0
-turn_condition = 0
-imprison = false
-shockwave = false
-readied = false
-knocked_out = false
-is_target = false
 metadata/_custom_type_script = "uid://cs70ix831b5g4"
 
 [resource]

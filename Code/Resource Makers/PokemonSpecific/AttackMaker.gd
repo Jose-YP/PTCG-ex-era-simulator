@@ -59,14 +59,12 @@ class_name Attack
 ##This effect will always occur no matter [member prompt] and [member ask]
 @export var always_effect: EffectCall
 
-var costs: Array[int] = [grass_cost, fire_cost, water_cost, lightning_cost,
- psychic_cost, fighting_cost, darkness_cost, metal_cost, colorless_cost]
-
 func print_attack() -> void:
 	print_rich("[center]------------------",name,"------------------")
 	print_rich("Description: ", description)
 	print_rich("[center]------------------COST------------------")
-	for type in Constants.energy_types:
+	
+	for type in Conversions.get_basic_energy():
 		print_cost(type)
 	print_rich("[center]------------------DAMAGE------------------")
 	var icon: String
@@ -104,7 +102,7 @@ func print_attack() -> void:
 		print("HAS: ", contains)
 
 func print_cost(energy: String):
-	var using: int = costs[Constants.energy_types.find(energy)]
+	var using: int = get_cost(Constants.energy_types.find(energy))
 	if using == 0: return
 	print_rich(str(Conversions.get_type_rich_color(energy), energy, ":[/color] ", using))
 
@@ -123,6 +121,7 @@ func get_energy_cost() -> Array[String]:
 	return final_array
 
 func pay_cost(slot: PokeSlot):
+	print("CHECK COSTS FOR ", name)
 	var all_costs: Array[int] = [grass_cost, fire_cost, water_cost,
 	lightning_cost, psychic_cost, fighting_cost, darkness_cost,
 	metal_cost, colorless_cost]
@@ -134,7 +133,7 @@ func pay_cost(slot: PokeSlot):
 	print("ENERGY SORT ", basic_energy)
 	for card in basic_energy:
 		var index = int((log(float(card.energy_properties.get_current_type())) / log(2)))
-		print(index)
+		print("Used ", card.name, " for ", Constants.energy_types[index] if all_costs[index] > 0 else "Colorless")
 		if all_costs[index] > 0: all_costs[index] -= 1
 		else: all_costs[8] -= 1
 	
@@ -145,6 +144,7 @@ func pay_cost(slot: PokeSlot):
 	for card in special_energy:
 		var energy_provide = card.energy_properties.get_current_provide()
 		var energy_num: int = energy_provide.number
+		print("Using ", card.name, " with ", energy_num, " Energy")
 		for i in range(all_costs.size()):
 			if all_costs[i] == 0: continue
 			var type_flag: int = 2 ** i
@@ -177,3 +177,17 @@ func pay_cost(slot: PokeSlot):
 ##Special energy is sorted based on how many colors it can fill in Rainbow > Aqua & Magma
 func can_pay(slot: PokeSlot) -> bool:
 	return true if pay_cost(slot) == 0 else false
+
+func get_cost(index: int) -> int:
+	match index:
+		0: return grass_cost
+		1: return fire_cost
+		2: return water_cost
+		3: return lightning_cost
+		4: return psychic_cost
+		5: return fighting_cost
+		6: return darkness_cost
+		7: return metal_cost
+		8: return colorless_cost
+	
+	return - 11

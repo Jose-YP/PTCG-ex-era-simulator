@@ -28,6 +28,10 @@ var lost_zone: Array[Base_Card]
 #region INITALIZATION
 func make_deck():
 	usable_deck = deck.make_usable()
+	if usable_deck.size() != 60: printerr("Deck isn't thre right size ", usable_deck.size())
+	#for card in usable_deck:
+		#printt(card.name, Constants.expansion_abbreviations[card.expansion], card.number)
+	
 	usable_deck.shuffle()
 	init_sync(init_deck)
 	init_sync(init_hand)
@@ -54,6 +58,7 @@ func account_for_slot(slot: PokeSlot):
 		init_remove_deck(card)
 
 func init_remove_deck(card: Base_Card):
+	
 	usable_deck.remove_at(usable_deck.find_custom(card.same_card))
 	#usable_deck.erase(card)
 	cards_in_play.append(card)

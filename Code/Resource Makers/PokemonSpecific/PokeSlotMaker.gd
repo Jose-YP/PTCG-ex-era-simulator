@@ -7,7 +7,7 @@ class_name PokeSlot
 #--------------------------------------
 #region BASIC
 @export var current_card: Base_Card
-@export var damage_counters: int = 0
+@export_range(0,400,10) var damage_counters: int = 0
 #endregion
 #--------------------------------------
 #--------------------------------------

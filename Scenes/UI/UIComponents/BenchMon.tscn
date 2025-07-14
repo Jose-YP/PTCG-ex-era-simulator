@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://df8x227c7a8q4"]
+[gd_scene load_steps=11 format=3 uid="uid://df8x227c7a8q4"]
 
 [ext_resource type="Script" uid="uid://wt6o27vmhuas" path="res://Code/Scenes/UI/Main/UISlot.gd" id="1_ktjfi"]
 [ext_resource type="Texture2D" uid="uid://ct7oa74jhqcwq" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/74.jpg" id="2_m52es"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bs3ila6cpt8n1" path="res://Scenes/UI/UIComponents/types.tscn" id="4_nhrrd"]
 [ext_resource type="Texture2D" uid="uid://cijlbc37pj4gd" path="res://icon.svg" id="5_r3j25"]
 [ext_resource type="PackedScene" uid="uid://dph43kayde03u" path="res://Scenes/UI/UIComponents/energy_types.tscn" id="7_lj5ts"]
+[ext_resource type="PackedScene" uid="uid://04qgb8r1r84v" path="res://Scenes/UI/UIComponents/damage_counter.tscn" id="8_e8fxk"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lj5ts"]
 resource_local_to_scene = true
@@ -148,6 +149,12 @@ offset_top = 42.0
 offset_right = 160.0
 offset_bottom = 110.0
 mouse_filter = 2
+metadata/_edit_group_ = true
+
+[node name="DamageCounter" parent="Conditions" instance=ExtResource("8_e8fxk")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
 
 [node name="Imprison" type="TextureRect" parent="Conditions"]
 unique_name_in_owner = true

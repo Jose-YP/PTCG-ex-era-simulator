@@ -61,6 +61,12 @@ func flags_to_type_array(type_flags: int) -> Array[String]:
 	
 	return types
 
+func get_basic_energy() -> Array[String]:
+	var arr: Array[String]
+	for i in range(9):
+		arr.append(Constants.energy_types[i])
+	return arr
+
 func flags_to_allowed_array(allowed_flags: int) -> Array[String]:
 	var allowed_array: Array[String]
 	var checking: float = allowed_flags

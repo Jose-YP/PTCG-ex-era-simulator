@@ -288,6 +288,7 @@ func before_direct_attack(attacker: PokeSlot, with: Attack):
 
 #For attacks that use main dmg + effects
 func direct_attack(attacker: PokeSlot, with: Attack, defenders: Array[PokeSlot]):
+	print()
 	pass
 
 #For bench attacks

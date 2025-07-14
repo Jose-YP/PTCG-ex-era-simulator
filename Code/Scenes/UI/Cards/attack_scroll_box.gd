@@ -72,8 +72,9 @@ func set_items() -> void:
 		making.slot = poke_slot
 		%CardList.add_child(making)
 		if check: making.focus_mode = FocusMode.FOCUS_NONE
-		if poke_slot: #only try this when attatched to a pokeslot
+		if poke_slot and poke_slot.is_active(): #only try this when attatched to a pokeslot
 			making.check_usability()
+		else: making.make_unusable()
 	
 	items = %CardList.get_children()
 

@@ -5,8 +5,10 @@
 
 [resource]
 script = ExtResource("3_0ldrp")
-formal_ask = false
-ask_string = ""
+formal_question = false
+question_string = ""
+yes_answer = ""
+no_answer = ""
 comparator = ExtResource("1_bqwdo")
 can_reverse = true
 chooser = 0

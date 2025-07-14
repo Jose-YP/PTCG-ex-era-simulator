@@ -5,20 +5,20 @@
 [ext_resource type="Script" uid="uid://caj1pm8erar2a" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="2_50l8q"]
 [ext_resource type="Resource" uid="uid://vk18jkchsq3v" path="res://Resources/Components/EnData/Colorless.tres" id="2_ykgg5"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="4_7o04u"]
+[ext_resource type="Resource" uid="uid://cfvxvq4wbo1td" path="res://Resources/Components/EnData/DoubleRainbow.tres" id="5_7o04u"]
 [ext_resource type="Texture2D" uid="uid://c0xc5okx3j7by" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/88.jpg" id="5_717jw"]
-[ext_resource type="Resource" uid="uid://c7itelq8jtjc2" path="res://Resources/Components/EnData/Rainbow.tres" id="6_717jw"]
 
 [sub_resource type="Resource" id="Resource_blg67"]
 script = ExtResource("2_50l8q")
 considered = "Special Energy"
-description = " Double Rainbow Energy can be attached only to an Evolved Pokémon (excluding Pokémon-ex). While in play, Double Rainbow Energy provides every type of Energy but provides 2 Energy at a time. (Doesn't count as a basic Energy when not in play and has no effect other than providing Energy.) Damage done to your opponent's Pokémon by the Pokémon Double Rainbow Energy is attached to is reduced by 10 (after applying Weakness and Resistance). When the Pokémon Double Rainbow Energy is attached to is no longer an Evolved Pokémon, discard Double Rainbow Energy."
+description = "Double Rainbow Energy can be attached only to an Evolved Pokémon (excluding Pokémon-ex). While in play, Double Rainbow Energy provides every type of Energy but provides 2 Energy at a time. (Doesn't count as a basic Energy when not in play and has no effect other than providing Energy.) Damage done to your opponent's Pokémon by the Pokémon Double Rainbow Energy is attached to is reduced by 10 (after applying Weakness and Resistance). When the Pokémon Double Rainbow Energy is attached to is no longer an Evolved Pokémon, discard Double Rainbow Energy."
 asks = ExtResource("1_qq2ix")
 has_fail_provide = false
 has_fail_prevent = false
 attatch_effect = ExtResource("2_7o04u")
 turns = -1
 fail_provide = ExtResource("2_ykgg5")
-success_provide = ExtResource("6_717jw")
+success_provide = ExtResource("5_7o04u")
 metadata/_custom_type_script = "uid://caj1pm8erar2a"
 
 [resource]

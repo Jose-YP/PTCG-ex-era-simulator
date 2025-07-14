@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="PromptAsk" load_steps=3 format=3 uid="uid://dlaamywxf5pjo"]
+
+[ext_resource type="Resource" uid="uid://bpkoaqj3ra6yo" path="res://Resources/Components/Counters/Comparator/OthHasGrThn1Mon.tres" id="1_sldit"]
+[ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="2_lberj"]
+
+[resource]
+script = ExtResource("2_lberj")
+formal_question = false
+question_string = ""
+yes_answer = ""
+no_answer = ""
+comparator = ExtResource("1_sldit")
+can_reverse = true
+chooser = 0
+choose_location = "None"
+which_stack = 0
+metadata/_custom_type_script = "uid://b85jmc7067bjc"
