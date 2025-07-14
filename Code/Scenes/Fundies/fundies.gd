@@ -77,36 +77,45 @@ func get_considered_home(side: Constants.SIDES):
 func can_be_played(card: Base_Card) -> int:
 	var considered: int = Conversions.get_card_flags(card)
 	var allowed_to: int = 0
-	
+	#Basic
 	if considered & 1 != 0:
 		if find_allowed_slots(func(slot: PokeSlot): return not slot.is_filled(),\
 		Constants.SIDES.ATTACKING).size() != 0:
 			allowed_to += 1
+	#Evo
 	if considered & 2 != 0:
 		var can_evo_from = Globals.make_can_evo_from(card)
 		if find_allowed_slots(can_evo_from, Constants.SIDES.ATTACKING).size() != 0:
 			allowed_to += 2
 		else:
 			print(card.name, " can't evolve from any current slot")
+	#Item
 	if considered & 4 != 0:
 		allowed_to += 4
+	#Supporter
 	if considered & 8 != 0:
 		if not Globals.full_ui.get_side(home_turn).supporter_played():
 			allowed_to += 8
+	#Stadium
 	if considered & 16 != 0:
 		allowed_to += 16
+	#Tool
 	if considered & 32 != 0:
 		if find_allowed_slots(func (slot: PokeSlot):\
-		 return slot.tool_card, Constants.SIDES.ATTACKING).size() != 0:
+		 return slot.tool_card == null, Constants.SIDES.ATTACKING).size() != 0:
 			allowed_to += 32
+	#TM
 	if considered & 64 != 0:
 		allowed_to += 64
+	#RSM
 	if considered & 128 != 0:
 		allowed_to += 128
+	#Fossil
 	if considered & 256 != 0:
 		if find_allowed_slots(func(slot: PokeSlot): return not slot.is_filled(),\
 		Constants.SIDES.ATTACKING).size() != 0:
 			allowed_to += 256
+	#Energy
 	if considered & 512:
 		allowed_to += 512
 	return allowed_to

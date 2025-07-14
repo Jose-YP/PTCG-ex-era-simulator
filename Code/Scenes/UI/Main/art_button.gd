@@ -43,7 +43,7 @@ func _gui_input(event):
 		if connected_ui and connected_ui.z_index > 0:
 			SignalBus.chosen_slot.emit(connected_ui.connected_slot)
 		elif current_card:
-			Globals.show_card(current_card, self)
+			Globals.show_slot_card(connected_ui.connected_slot)
 
 func _on_pressed() -> void:
 	if pokemon:

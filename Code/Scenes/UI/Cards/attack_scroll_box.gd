@@ -1,5 +1,6 @@
 extends ScrollContainer
 
+@export var check: bool = true
 @export var attackItem: PackedScene
 @export var powerItem: PackedScene
 @export var bodyItem: PackedScene
@@ -55,23 +56,26 @@ func set_items() -> void:
 	if body:
 		var body_making = bodyItem.instantiate()
 		body_making.body = body
+		if check: body_making.focus_mode = FocusMode.FOCUS_NONE
 		%CardList.add_child(body_making)
 	
 	#Get Pokepower
 	if power:
 		var power_making = powerItem.instantiate()
 		power_making.power = power
+		if check: power_making.focus_mode = FocusMode.FOCUS_NONE
 		%CardList.add_child(power_making)
 	
 	for item in attacks:
 		var making = attackItem.instantiate()
 		making.attack = item
+		making.slot = poke_slot
 		%CardList.add_child(making)
+		if check: making.focus_mode = FocusMode.FOCUS_NONE
 		if poke_slot: #only try this when attatched to a pokeslot
-			making.check_usability(poke_slot.get_energy_strings())
+			making.check_usability()
 	
 	items = %CardList.get_children()
-
 
 func size_default() -> void:
 	size = Vector2(max_size.x, current_height)

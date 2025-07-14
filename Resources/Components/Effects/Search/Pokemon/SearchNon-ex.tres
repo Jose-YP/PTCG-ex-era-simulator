@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Search" load_steps=5 format=3 uid="uid://3aws6dg4buk5"]
+
+[ext_resource type="Resource" uid="uid://bl4qnrkh3kxdl" path="res://Resources/Components/Effects/Placement/PutIntoHand.tres" id="1_58i85"]
+[ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="2_j12ry"]
+[ext_resource type="Resource" uid="uid://ccyylno0d5ync" path="res://Resources/Components/Effects/Identifiers/Pokemon/non-ex.tres" id="3_giuqq"]
+[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="4_j4ftu"]
+
+[resource]
+script = ExtResource("4_j4ftu")
+side = 4
+where = 1
+reordering_only = false
+shuffle_first = false
+based_on_side = 0
+based_on_slots = 0
+based_on_energy = 0
+portion = -1
+how_many = Array[int]([1])
+of_this = Array[ExtResource("2_j12ry")]([ExtResource("3_giuqq")])
+and_then = ExtResource("1_58i85")
+reveal = true
+metadata/_custom_type_script = "uid://cw3yr1k040kw7"

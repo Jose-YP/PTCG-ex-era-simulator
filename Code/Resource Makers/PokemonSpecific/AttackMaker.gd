@@ -20,7 +20,7 @@ class_name Attack
 ##Don't check any of these if they're checked
 @export_flags("Body", "Weakness", "Resistance", "Effects") var defender_properties: int = 0
 ##The pokemon can use this attack even if it has these conditions
-@export_flags("Alseep", "Paralysis", "Confusion") var ignore_condition: int = 0
+@export_flags("Alseep", "Paralysis", "Confusion") var condition: int = 0
 
 @export_group("Damage")
 ##If this is true, then the [member prompt] must be true before dealing any dmg 
@@ -49,7 +49,6 @@ class_name Attack
 @export var both_active: bool = false
 @export var bench_damage: BenchAttk
 
-
 @export_group("Effects")
 @export var prompt: PromptAsk
 @export var ask: SlotAsk
@@ -59,6 +58,55 @@ class_name Attack
 @export var fail_effect: EffectCall
 ##This effect will always occur no matter [member prompt] and [member ask]
 @export var always_effect: EffectCall
+
+var costs: Array[int] = [grass_cost, fire_cost, water_cost, lightning_cost,
+ psychic_cost, fighting_cost, darkness_cost, metal_cost, colorless_cost]
+
+func print_attack() -> void:
+	print_rich("[center]------------------",name,"------------------")
+	print_rich("Description: ", description)
+	print_rich("[center]------------------COST------------------")
+	for type in Constants.energy_types:
+		print_cost(type)
+	print_rich("[center]------------------DAMAGE------------------")
+	var icon: String
+	match modifier:
+		1: icon = "+"
+		2: icon = "x"
+		3: icon = "-"
+	print_rich("DAMAGE: ", initial_main_DMG,icon)
+	if both_active:
+		print_rich("[i]Hits both Active Defending Pokemon")
+	if self_damage != 0:
+		print_rich("HAS SELF DAMAGE: ", self_damage)
+	if bench_damage:
+		print_rich("HAS BENCH DAMAGE")
+	
+	print_rich("[center]------------------IGNORE------------------")
+	if defender_properties & 1 != 0: print_rich("Ignore any body effects")
+	if defender_properties & 2 != 0: print_rich("Ignore weakness")
+	if defender_properties & 4 != 0: print_rich("Ignore resistance")
+	if defender_properties & 8 != 0: print_rich("Ignore Applied effects")
+	
+	if condition & 1 != 0: print_rich("Can use when Asleep")
+	if condition & 2 != 0: print_rich("Can use when Paralyzed")
+	if condition & 4 != 0: print_rich("Can use when Confused")
+	
+	var contains: String = ""
+	if fail_effect:
+		contains += "A Fail Effect\n"
+	if success_effect:
+		contains += "A Success Effect\n"
+	if always_effect:
+		contains += "An Always Effect\n"
+	if contains != "":
+		print_rich("[center]------------------EFFECTS------------------")
+		print("HAS: ", contains)
+
+func print_cost(energy: String):
+	var using: int = costs[Constants.energy_types.find(energy)]
+	if using == 0: return
+	print_rich(str(Conversions.get_type_rich_color(energy), energy, ":[/color] ", using))
 
 ##Returns only the specified required energy for the attack to start 
 func get_energy_cost() -> Array[String]:
@@ -94,22 +142,30 @@ func pay_cost(slot: PokeSlot):
 	special_energy.sort_custom(func(a: Base_Card,b: Base_Card):\
 	 return a.energy_properties.get_current_type() < b.energy_properties.get_current_type())
 	print("SPECIAL SORT: ", special_energy)
-	for i in range(all_costs.size()):
-		for card in special_energy:
-			if i ** 2 & card.energy_properties.get_current_type():
-				print(card, " for ", i)
+	for card in special_energy:
+		var energy_provide = card.energy_properties.get_current_provide()
+		var energy_num: int = energy_provide.number
+		for i in range(all_costs.size()):
+			if all_costs[i] == 0: continue
+			var type_flag: int = 2 ** i
+			
+			if type_flag & energy_provide.type != 0\
+			 or Constants.energy_types[i] == "Colorless":
+				print(card.name, " for ", Constants.energy_types[i])
 				all_costs[i] -= 1
-				special_energy.erase(card)
-			if all_costs[i] == 0: 
-				print("Satisfied ", i)
-				break
+				energy_num -= 1
+				if energy_num == 0:
+					print("Used up ", card.name)
+					special_energy.erase(card)
+					break
 	
 	var final_cost: int = 0
 	#How to consider special energy later
 	for cost in all_costs:
 		final_cost += cost
-		if cost > 0:
-			print(cost, " LEFTOVER: ", all_costs.find(cost))
+	
+	if final_cost > 0:
+		print(" LEFTOVER: ", final_cost)
 	
 	return final_cost
 

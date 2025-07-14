@@ -1,0 +1,120 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=17 format=3 uid="uid://cunrp0t6mbn45"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_4lmt0"]
+[ext_resource type="Texture2D" uid="uid://c42p2sjgb7yar" path="res://Art/Cards/1 ex Ruby & Saphire/18.jpg" id="1_5kvuk"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_dtigs"]
+[ext_resource type="Resource" uid="uid://bt4usjxfai6od" path="res://Resources/Components/Effects/Prompts/OthHasEvoAct.tres" id="3_eomtv"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_a7nbm"]
+[ext_resource type="Resource" uid="uid://cdex8l5yqfstv" path="res://Resources/Components/Effects/Search/AnySearch.tres" id="5_hhkog"]
+[ext_resource type="Resource" uid="uid://ekj1myy642kh" path="res://Resources/Components/Effects/Prompts/PromptHeads.tres" id="6_mkraj"]
+[ext_resource type="Resource" uid="uid://bkt6ry7vyha70" path="res://Resources/Components/Effects/Asks/General/Other.tres" id="7_vbv8m"]
+[ext_resource type="Script" uid="uid://8sh5p3leflla" path="res://Code/Resource Makers/EffectSpecific/CardDisruptMaker.gd" id="8_7qm0m"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="9_5e01i"]
+
+[sub_resource type="Resource" id="Resource_xp3sp"]
+script = ExtResource("4_a7nbm")
+either_or = false
+order = Array[int]([])
+search = ExtResource("5_hhkog")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_2rmnp"]
+script = ExtResource("2_dtigs")
+name = "Invisible Hand"
+description = "If any of your opponent's Active Pokémon are Evolved Pokémon, search your deck for any 1 card and put it into your hand. Shuffle your deck afterward."
+grass_cost = 0
+fire_cost = 0
+water_cost = 0
+lightning_cost = 0
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 1
+defender_properties = 0
+condition = 0
+prompt_reliant = false
+initial_main_DMG = 0
+conditional_self_dmg = false
+self_damage = 0
+modifier = 0
+modifier_num = 0
+both_active = false
+prompt = ExtResource("3_eomtv")
+success_effect = SubResource("Resource_xp3sp")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_eqchr"]
+script = ExtResource("8_7qm0m")
+send = 0
+from = 1
+send_to = 0
+bottom_of_stack = false
+shuffle = false
+card_ammount = 1
+reveal = false
+side = 5
+from_stack = 0
+in_play_options = ExtResource("7_vbv8m")
+pokemon_disrupt = 0
+metadata/_custom_type_script = "uid://8sh5p3leflla"
+
+[sub_resource type="Resource" id="Resource_2ayq4"]
+script = ExtResource("4_a7nbm")
+either_or = false
+order = Array[int]([])
+card_disrupt = SubResource("Resource_eqchr")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_clivt"]
+script = ExtResource("2_dtigs")
+name = "Repulsion"
+description = "Flip a coin. If heads, your opponent returns the Defending Pokémon and all cards attached to it to his or her hand. (If your opponent doesn't have any Benched Pokémon or other Active Pokémon, this attack does nothing.)"
+grass_cost = 0
+fire_cost = 0
+water_cost = 0
+lightning_cost = 0
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 2
+defender_properties = 0
+condition = 0
+prompt_reliant = false
+initial_main_DMG = 0
+conditional_self_dmg = false
+self_damage = 0
+modifier = 0
+modifier_num = 0
+both_active = false
+prompt = ExtResource("6_mkraj")
+success_effect = SubResource("Resource_2ayq4")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_3c7vi"]
+script = ExtResource("9_5e01i")
+HP = 60
+retreat = 1
+attacks = Array[ExtResource("2_dtigs")]([SubResource("Resource_2rmnp"), SubResource("Resource_clivt")])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 1
+owner = 0
+type = 32
+weak = 4
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_4lmt0")
+name = "Nosepass"
+image = ExtResource("1_5kvuk")
+illustrator = "Mitsuhiro Arita"
+number = 18
+rarity = 2
+expansion = 0
+categories = 1
+pokemon_properties = SubResource("Resource_3c7vi")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

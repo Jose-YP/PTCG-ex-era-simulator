@@ -3,7 +3,7 @@ extends Control
 
 @export var poke_slot: PokeSlot
 @export var card: Base_Card
-@export var checking: bool = false
+@export var checking: bool = true
 
 #--------------------------------------
 #region ONREADY VARIABLES
@@ -69,8 +69,8 @@ func _ready():
 	var list = Constants.attack_list_comp.instantiate()
 	if poke_slot:
 		list.poke_slot = poke_slot
-	else:
-		list.current_card = card
+	list.current_card = card
+	list.check = checking
 	%Attacks.add_child(list)
 	list.readied.connect(edit_attack_size)
 	list.size_flags_horizontal = Control.SIZE_EXPAND_FILL

@@ -7,6 +7,8 @@ extends MarginContainer
 @onready var energy_icons: Array[Node] = %Types.get_children()
 @onready var attackButton: Button = $AttackButton
 
+var slot: PokeSlot
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	%Name.clear()
@@ -34,34 +36,12 @@ func _ready():
 			3:
 				%Damage.clear()
 				%Damage.append_text(str("-",attack.initial_main_DMG))
-	
-	$AttackButton/Marker2D.position.y = size.y/2
 
-func check_usability(energy_array: Array[String]):
-	var count_cost: Array[String] = final_cost
-	print("CHECKING USABILITY OF ", attack.name, energy_array)
-	print(final_cost, count_cost)
-	
-	#Check basic energy
-	for element in energy_array:
-		if element in count_cost:
-			count_cost.erase(element)
-		match element:
-			"Rainbow":
-				count_cost.pop_front()
-			"Magma":
-				print("MAGMA")
-			"Aqua":
-				print("AQUA")
-			"Dark Metal":
-				print("DARK METAL")
-		#The other energies are colorless or single types
-		#Any energy type can remove colorless
-		if "Colorless" in count_cost:
-			count_cost.erase("Colorless")
-	
-	print(count_cost)
-	attackButton.disabled = true if count_cost else false
+func check_usability():
+	attackButton.disabled = false if attack.pay_cost(slot) == 0 else true
 
 func _on_focus_entered():
 	attackButton.grab_focus()
+
+func _on_attack_button_pressed() -> void:
+	SignalBus.attack.emit(slot, attack)

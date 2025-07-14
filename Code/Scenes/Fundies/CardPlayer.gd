@@ -14,6 +14,7 @@ var hold_candidate: PokeSlot
 func _ready() -> void:
 	SignalBus.connect_to(play_functions)
 	SignalBus.get_candidate.connect(record_candidate)
+	SignalBus.attack.connect(before_direct_attack)
 
 func determine_play(card: Base_Card, placement: Placement = null) -> void:
 	var card_type: int = Conversions.get_card_flags(card)
@@ -167,18 +168,28 @@ func play_trainer(card: Base_Card):
 
 #For tools
 func play_attatch_tool(card: Base_Card):
+	var tool_bool: Callable = func (slot: PokeSlot) -> bool:
+		return slot.is_filled() and slot.is_attacker()\
+		 and card.trainer_properties.asks.check_ask(slot)
+	
 	start_add_choice(str("Attatch ", card.name, " to which Pokemon"), card, 
-	Conversions.get_allowed_flags("Tool"), tool_boolean, true)
+	Conversions.get_allowed_flags("Tool"), tool_bool, true)
 	
 	await chosen
+	Globals.fundies.stack_manager.play_card(card, Constants.STACKS.PLAY)
 	print("Attatch ", card.name)
 	card.print_info()
 
 func play_attatch_tm(card: Base_Card):
+	var tm_bool: Callable = func (slot: PokeSlot) -> bool:
+		return slot.is_filled() and slot.is_attacker()\
+		 and card.trainer_properties.asks.check_ask(slot)
+	
 	start_add_choice(str("Attatch ", card.name, " to which Pokemon"), card,
-	Conversions.get_allowed_flags("TM"), tool_boolean, true)
+	Conversions.get_allowed_flags("TM"), tm_bool, true)
 	
 	await chosen
+	Globals.fundies.stack_manager.play_card(card, Constants.STACKS.PLAY)
 	print("Attatch ", card.name)
 	card.print_info()
 
@@ -218,7 +229,7 @@ func start_add_choice(instruction: String, card: Base_Card, play_as: int, bool_f
 	Globals.fundies.ui_actions.color_tween(Color.TRANSPARENT)
 
 func get_choice_candidates(instruction: String, bool_fun: Callable, reversable: bool,
- choosing_player: Constants.PLAYER_TYPES = Constants.PLAYER_TYPES.PLAYER,) -> PokeSlot:
+ choosing_player: Constants.PLAYER_TYPES = Constants.PLAYER_TYPES.PLAYER) -> PokeSlot:
 	set_reversable(reversable)
 	Globals.fundies.hide_list()
 	hold_candidate = null
@@ -231,7 +242,6 @@ func get_choice_candidates(instruction: String, bool_fun: Callable, reversable: 
 		print("Nevermind")
 		SignalBus.went_back.emit()
 		return null
-	
 
 func generic_choice(instruction: String, bool_fun: Callable,\
  choosing_player: Constants.PLAYER_TYPES = Constants.PLAYER_TYPES.PLAYER):
@@ -258,27 +268,39 @@ func set_reversable(reversable: bool):
 #--------------------------------------
 
 #--------------------------------------
-#region DETERMINING EFFECTS
-func scope_effect():
+#region ATTACKING
+func before_direct_attack(attacker: PokeSlot, with: Attack):
+	print("Now before ", with.name, " from ", attacker.get_card_name())
+	
+	with.print_attack()
+	
+	if not with.both_active:
+		get_choice_candidates("Who do you want to attack?", 
+		func(slot: PokeSlot): return slot.is_in_slot(Constants.SIDES.DEFENDING, Constants.SLOTS.ACTIVE),
+		true)
+		
+		if hold_candidate == null:
+			return
+		else:
+			direct_attack(attacker, with, [hold_candidate])
+	else:
+		direct_attack(attacker, with, Globals.full_ui.get_poke_slots(Constants.SIDES.DEFENDING, Constants.SLOTS.ACTIVE))
+
+#For attacks that use main dmg + effects
+func direct_attack(attacker: PokeSlot, with: Attack, defenders: Array[PokeSlot]):
+	pass
+
+#For bench attacks
+func bench_attack(attacker: PokeSlot, with: BenchAttk, defenders: Array[PokeSlot]):
 	pass
 
 #endregion
 #--------------------------------------
 
-#Make these functions now so they can be expanded for edge cases later
 #--------------------------------------
-#region BOOLEAN FUNCTIONS
-func tool_boolean(slot: PokeSlot) -> bool:
-	if slot.is_filled():
-		return slot.tool_card == null
-	
-	else: return false
-
-func tm_boolean(slot: PokeSlot) -> bool:
-	if slot.is_filled():
-		return true
-	
-	else: return false
+#region DETERMINING EFFECTS
+func scope_effect():
+	pass
 
 #endregion
 #--------------------------------------

@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://dvvv8k1g6tgog"]
+[gd_scene load_steps=5 format=3 uid="uid://dvvv8k1g6tgog"]
 
 [ext_resource type="Script" uid="uid://b1iip1rqoy2v3" path="res://Code/Scenes/UI/Cards/attack_item.gd" id="1_cuu5a"]
-[ext_resource type="Texture2D" uid="uid://cijlbc37pj4gd" path="res://icon.svg" id="1_fpj2i"]
 [ext_resource type="Resource" uid="uid://cydxe57j5nudo" path="res://Resources/Components/Pokemon/Attacks/DoubleLariat.tres" id="2_h1533"]
 [ext_resource type="Theme" uid="uid://bfw6ylcttychc" path="res://Themes/Themes/AverageButton.tres" id="3_tgt8s"]
 [ext_resource type="PackedScene" uid="uid://bs3ila6cpt8n1" path="res://Scenes/UI/UIComponents/types.tscn" id="3_tiejp"]
@@ -21,15 +20,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_default_cursor_shape = 2
 theme = ExtResource("3_tgt8s")
-
-[node name="Marker2D" type="Marker2D" parent="AttackButton"]
-position = Vector2(369, 28)
-
-[node name="TextureRect" type="Sprite2D" parent="AttackButton/Marker2D"]
-visible = false
-position = Vector2(-2.47359e-06, 4.76837e-07)
-scale = Vector2(0.203125, 0.34375)
-texture = ExtResource("1_fpj2i")
 
 [node name="AllText" type="VBoxContainer" parent="."]
 layout_mode = 2
@@ -151,5 +141,4 @@ layout_mode = 2
 mouse_filter = 2
 
 [connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
-[connection signal="minimum_size_changed" from="AttackButton" to="." method="_on_attack_button_minimum_size_changed"]
-[connection signal="resized" from="AttackButton" to="." method="_on_attack_button_resized"]
+[connection signal="pressed" from="AttackButton" to="." method="_on_attack_button_pressed"]

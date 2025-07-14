@@ -1,0 +1,83 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=9 format=3 uid="uid://dg351i4lgea8b"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_modh5"]
+[ext_resource type="Texture2D" uid="uid://r6xwbe3voqoh" path="res://Art/Cards/1 ex Ruby & Saphire/16.jpg" id="1_ulxcj"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_6c4g7"]
+[ext_resource type="Resource" uid="uid://dg2qsdfqryhb3" path="res://Resources/Components/Counters/Comparator/ReturnSelfFEn.tres" id="3_tewxn"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="4_tp364"]
+
+[sub_resource type="Resource" id="Resource_yvfsv"]
+script = ExtResource("2_6c4g7")
+name = "Headbutt"
+description = ""
+grass_cost = 0
+fire_cost = 0
+water_cost = 0
+lightning_cost = 0
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 2
+defender_properties = 0
+condition = 0
+prompt_reliant = false
+initial_main_DMG = 20
+conditional_self_dmg = false
+self_damage = 0
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_vf4gr"]
+script = ExtResource("2_6c4g7")
+name = "Battle Blast"
+description = "Does 40 damage plus 10 more damage for each {Fighting} Energy attached to Breloom."
+grass_cost = 1
+fire_cost = 0
+water_cost = 0
+lightning_cost = 0
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 2
+defender_properties = 0
+condition = 0
+prompt_reliant = false
+initial_main_DMG = 40
+conditional_self_dmg = false
+self_damage = 0
+modifier = 1
+modifier_num = 10
+comparator = ExtResource("3_tewxn")
+both_active = false
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_3cmwm"]
+script = ExtResource("4_tp364")
+HP = 70
+retreat = 1
+attacks = Array[ExtResource("2_6c4g7")]([SubResource("Resource_yvfsv"), SubResource("Resource_vf4gr")])
+evo_stage = "Stage 1"
+evolves_from = "Shroomish"
+considered = 1
+owner = 0
+type = 1
+weak = 2
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_modh5")
+name = "Breloom"
+image = ExtResource("1_ulxcj")
+illustrator = "Ken Sugimori"
+number = 16
+rarity = 2
+expansion = 0
+categories = 1
+pokemon_properties = SubResource("Resource_3cmwm")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

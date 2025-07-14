@@ -1,0 +1,85 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://c78ivjwwygc3i"]
+
+[ext_resource type="Texture2D" uid="uid://dqxppyjgl3lgn" path="res://Art/Cards/1 ex Ruby & Saphire/17.jpg" id="1_bi41r"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_w6dgb"]
+[ext_resource type="Resource" uid="uid://cujau35uwuskq" path="res://Resources/Components/Counters/Comparator/OtherTookDmg.tres" id="3_kv6u1"]
+[ext_resource type="Resource" uid="uid://e706qq8o0hri" path="res://Resources/Components/Counters/Comparator/Return2Flip.tres" id="4_yfpum"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_dvxvh"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="6_ukmff"]
+
+[sub_resource type="Resource" id="Resource_uran7"]
+script = ExtResource("2_w6dgb")
+name = "Rend"
+description = "If the Defending Pokémon has any damage counters on it, this attack does 20 damage plus 20 more damage."
+grass_cost = 0
+fire_cost = 0
+water_cost = 0
+lightning_cost = 0
+psychic_cost = 0
+fighting_cost = 1
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 1
+defender_properties = 0
+condition = 0
+prompt_reliant = false
+initial_main_DMG = 20
+conditional_self_dmg = false
+self_damage = 0
+modifier = 1
+modifier_num = 20
+comparator = ExtResource("3_kv6u1")
+both_active = false
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_6ktpq"]
+script = ExtResource("2_w6dgb")
+name = "Double Spin"
+description = "Flip 2 coins. This attack does 60 damage times the number of heads."
+grass_cost = 0
+fire_cost = 0
+water_cost = 0
+lightning_cost = 0
+psychic_cost = 0
+fighting_cost = 1
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 3
+defender_properties = 0
+condition = 0
+prompt_reliant = false
+initial_main_DMG = 60
+conditional_self_dmg = false
+self_damage = 0
+modifier = 2
+modifier_num = 60
+comparator = ExtResource("4_yfpum")
+both_active = false
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_ep4ng"]
+script = ExtResource("5_dvxvh")
+HP = 80
+retreat = 1
+attacks = Array[ExtResource("2_w6dgb")]([SubResource("Resource_uran7"), SubResource("Resource_6ktpq")])
+evo_stage = "Stage 1"
+evolves_from = "Phanpy"
+considered = 1
+owner = 0
+type = 32
+weak = 1
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("6_ukmff")
+name = "Donphan"
+image = ExtResource("1_bi41r")
+illustrator = "Kagemaru Himeno"
+number = 17
+rarity = 2
+expansion = 0
+categories = 1
+pokemon_properties = SubResource("Resource_ep4ng")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

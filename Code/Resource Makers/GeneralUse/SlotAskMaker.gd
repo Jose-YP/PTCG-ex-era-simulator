@@ -98,10 +98,7 @@ func check_ask(slot: PokeSlot) -> bool:
 	var types: Array[String] = Conversions.flags_to_type_array(slot.current_card.pokemon_properties.type)
 	var type_str: String = "[center]Type: "
 	for loc_type in types:
-		var type_int: float = Constants.energy_types.find(loc_type)
-		var type_color: String = str("[color=",Constants.energy_colors[type_int].to_html(),"]")
-		
-		type_str += type_color + loc_type + "[/color]"
+		type_str +=  Conversions.get_type_rich_color(loc_type) + loc_type + "[/color]"
 	print_verbose(type_str, "\n", slot.current_card.pokemon_properties.type && pokemon_type, 
 	 not (slot.current_card.pokemon_properties.type && pokemon_type != 0 and not type_inclusive))
 	

@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Search" load_steps=5 format=3 uid="uid://dpga1rw11a4yh"]
+
+[ext_resource type="Resource" uid="uid://bl4qnrkh3kxdl" path="res://Resources/Components/Effects/Placement/PutIntoHand.tres" id="1_6yv45"]
+[ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="2_28fi0"]
+[ext_resource type="Resource" uid="uid://d2vm6chtedrum" path="res://Resources/Components/Effects/Identifiers/Energy/BasicEnergy.tres" id="3_h8v7f"]
+[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="4_uqlr8"]
+
+[resource]
+script = ExtResource("4_uqlr8")
+side = 4
+where = 2
+reordering_only = false
+shuffle_first = false
+based_on_side = 0
+based_on_slots = 0
+based_on_energy = 0
+portion = -1
+how_many = Array[int]([1])
+of_this = Array[ExtResource("2_28fi0")]([ExtResource("3_h8v7f")])
+and_then = ExtResource("1_6yv45")
+reveal = true
+metadata/_custom_type_script = "uid://cw3yr1k040kw7"

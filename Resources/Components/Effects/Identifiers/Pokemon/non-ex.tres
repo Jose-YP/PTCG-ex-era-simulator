@@ -4,6 +4,7 @@
 
 [resource]
 script = ExtResource("1_vtieb")
+description = "Pokemon (excluding Pokemon-ex)"
 must_be_different = false
 broad_class = 1
 exactly = false
@@ -11,7 +12,8 @@ contains = ""
 type = 0
 evolves_from = false
 rare_candy = false
-poke_class = 1
+inclusive_class = false
+poke_class = 2
 owner = 0
 stage = 0
 trainer_classes = 0

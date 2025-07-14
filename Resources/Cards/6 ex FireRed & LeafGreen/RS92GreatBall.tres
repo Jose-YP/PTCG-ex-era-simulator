@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=4 format=3 uid="uid://bfu4fsjw6gv0e"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_o2g6c"]
+[ext_resource type="Texture2D" uid="uid://bxm1vv1q1ysd4" path="res://Art/Cards/6 ex FireRed & LeafGreen/92.jpg" id="1_wb8rl"]
+[ext_resource type="Resource" uid="uid://c0oeeh1qgr7xx" path="res://Resources/Components/Trainers/ReprintTrainers/GreatBall.tres" id="3_mva7o"]
+
+[resource]
+script = ExtResource("1_o2g6c")
+name = "Great Ball"
+image = ExtResource("1_wb8rl")
+illustrator = "Nakaoka"
+number = 92
+rarity = 1
+expansion = 5
+categories = 2
+trainer_properties = ExtResource("3_mva7o")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

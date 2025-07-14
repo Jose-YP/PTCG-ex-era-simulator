@@ -17,7 +17,6 @@ func show_card(card: Base_Card, parent: Node):
 		remove_card()
 	
 	var considered: String = card.card_display()
-	var node_tween: Tween = get_tree().create_tween().set_parallel(true)
 	var card_display: Node
 	match considered:
 		"Pokemon":
@@ -27,6 +26,21 @@ func show_card(card: Base_Card, parent: Node):
 			card_display = Constants.trainer_card.instantiate()
 		"Energy":
 			card_display = Constants.energy_card.instantiate()
+	
+	card_setup(card, card_display, parent)
+
+func show_slot_card(slot: PokeSlot):
+	if checked_card:
+		remove_card()
+	var card_display = load("res://Scenes/UI/CardDisplay/PokemonCard.tscn").instantiate()
+	card_display.checking = true
+	
+	card_display.poke_slot = slot
+	
+	card_setup(slot.current_card, card_display, slot.ui_slot)
+
+func card_setup(card: Base_Card, card_display: Node, parent: Node):
+	var node_tween: Tween = get_tree().create_tween().set_parallel(true)
 	
 	card_display.card = card
 	card_display.top_level = true

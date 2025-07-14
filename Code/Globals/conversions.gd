@@ -32,6 +32,11 @@ func reformat(text: String) -> String:
 	
 	return result
 
+func get_type_rich_color(type: String) -> String:
+	var type_int: float = Constants.energy_types.find(type)
+	var color_string: String = str("[color=",Constants.energy_colors[type_int].to_html(),"]")
+	return color_string
+
 func flags_to_type_array(type_flags: int) -> Array[String]:
 	var types: Array[String] = []
 	

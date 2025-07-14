@@ -6,6 +6,7 @@ class_name SwapBox
 #region VARIABLES
 @export var side: CardSideUI
 @export var singles: bool = true
+ #Should probably work on replacing this with somethig that prevents circular reference
 var swap_rules: EnMov = null
 
 @onready var playing_list: PlayingList = %PlayingList

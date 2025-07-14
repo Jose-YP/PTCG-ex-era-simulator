@@ -4,10 +4,10 @@
 
 [resource]
 script = ExtResource("1_nq611")
-which = 0
+which = 1
 top_deck = false
 stack = 1
-slot = 4
+slot = 5
 use_as = 0
 reorder_type = 0
 shuffle = true

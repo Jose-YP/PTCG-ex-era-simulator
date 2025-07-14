@@ -5,10 +5,10 @@
 [ext_resource type="Resource" uid="uid://dyqdhaov0ywxk" path="res://Resources/Cards/1 ex Ruby & Saphire/RS92Switch.tres" id="4_h4sxn"]
 [ext_resource type="Resource" uid="uid://bpyb5rd3indje" path="res://Resources/Cards/1 ex Ruby & Saphire/RS94MetalEnergy.tres" id="5_ttukk"]
 [ext_resource type="Resource" uid="uid://b5ukqf6xmn6vv" path="res://Resources/Cards/1 ex Ruby & Saphire/RS109LightningEnergy.tres" id="6_ee8sx"]
-[ext_resource type="Resource" uid="uid://cc3kjnmsj4pr3" path="res://Resources/Cards/1 ex Ruby & Saphire/RS80EnergyRemoval2.tres" id="7_nvyqg"]
-[ext_resource type="Resource" uid="uid://c2tk6qy8h57lw" path="res://Resources/Cards/1 ex Ruby & Saphire/RS82EnergySwitch.tres" id="7_pm8od"]
 [ext_resource type="Resource" uid="uid://cm0tjkff2o52" path="res://Resources/Cards/1 ex Ruby & Saphire/RS83LadyOuting.tres" id="8_bqy12"]
+[ext_resource type="Resource" uid="uid://bmvatu4cfwe4n" path="res://Resources/Cards/4 ex Team Magma VS Team Aqua/MA81TeamMagmaBelt.tres" id="8_ttukk"]
 [ext_resource type="Script" uid="uid://calm3n7va5yjo" path="res://Code/Resource Makers/GeneralUse/CardStacksMaker.gd" id="9_7p35y"]
+[ext_resource type="Resource" uid="uid://bidyxkb8ygjhl" path="res://Resources/Cards/4 ex Team Magma VS Team Aqua/MA84TeamMagmaTechnicalMachine01.tres" id="9_ee8sx"]
 [ext_resource type="Resource" uid="uid://nwmfrwp7fuwu" path="res://Resources/Cards/4 ex Team Magma VS Team Aqua/MA87MagmaEnergy.tres" id="9_ttukk"]
 [ext_resource type="Script" uid="uid://dgqpurnuh14t1" path="res://Code/Resource Makers/GeneralUse/SideStateMaker.gd" id="10_2qa6b"]
 [ext_resource type="Script" uid="uid://cs70ix831b5g4" path="res://Code/Resource Makers/PokemonSpecific/PokeSlotMaker.gd" id="11_ixewp"]
@@ -22,7 +22,7 @@
 script = ExtResource("9_7p35y")
 deck = ExtResource("1_nvyqg")
 init_deck = Array[ExtResource("2_bqy12")]([])
-init_hand = Array[ExtResource("2_bqy12")]([ExtResource("5_ttukk"), ExtResource("6_ee8sx"), ExtResource("4_h4sxn"), ExtResource("7_pm8od"), ExtResource("7_nvyqg"), ExtResource("8_bqy12"), ExtResource("9_ttukk")])
+init_hand = Array[ExtResource("2_bqy12")]([ExtResource("5_ttukk"), ExtResource("6_ee8sx"), ExtResource("4_h4sxn"), ExtResource("8_bqy12"), ExtResource("9_ttukk"), ExtResource("8_ttukk"), ExtResource("9_ee8sx")])
 init_discard = Array[ExtResource("2_bqy12")]([])
 init_prize = Array[ExtResource("2_bqy12")]([])
 metadata/_custom_type_script = "uid://calm3n7va5yjo"
