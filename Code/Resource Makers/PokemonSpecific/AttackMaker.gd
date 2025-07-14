@@ -116,8 +116,15 @@ func get_damage() -> int:
 			print_rich("That you [color=red][b]FAILED!!![/b][/color] LOLOL")
 			return 0
 	if comparator:
-		print("HAS A MODIFIER WITH THE RESULT OF ", comparator.start_comparision(), " * ", modifier_num)
-		modifier = modifier_num * comparator.start_comparision()
+		var mod_times: Variant = comparator.start_comparision()
+		print("HAS A MODIFIER WITH THE RESULT OF ", mod_times, " * ", modifier_num)
+		if comparator.has_coinflip():
+			await SignalBus.finished_coinflip
+		
+		if mod_times is bool:
+			mod_times = 1 if mod_times else 0
+		
+		modifier_result = modifier_num * mod_times
 		match modifier:
 			1:
 				final_damage += modifier_result

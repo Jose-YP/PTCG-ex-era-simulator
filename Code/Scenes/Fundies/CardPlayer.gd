@@ -303,7 +303,8 @@ func before_direct_attack(attacker: PokeSlot, with: Attack):
 #For attacks that use main dmg + effects
 func direct_attack(attacker: PokeSlot, with: Attack, defenders: Array[PokeSlot]):
 	print()
-	var base_damage = with.get_damage()
+	var base_damage = await with.get_damage()
+	
 	for slot in defenders:
 		slot.add_damage(attacker, base_damage)
 	

@@ -44,15 +44,15 @@ func left_button_actions(target: PokeSlot):
 		
 		target.refresh()
 		reset_ui()
-	else:
-		if target.current_card == null: return
-		#Check if there's a display on any of the UI SLots
-		#Despawn any that are present, spawn the current one
-		for slot in Globals.full_ui.all_slots():
-			if slot.current_display:
-				slot.despawn_card()
-			elif target.ui_slot == slot:
-				slot.spawn_card()
+	#else:
+		#if target.current_card == null: return
+		##Check if there's a display on any of the UI SLots
+		##Despawn any that are present, spawn the current one
+		#for slot in Globals.full_ui.all_slots():
+			#if slot.current_display:
+				#slot.despawn_card()
+			#elif target.ui_slot == slot:
+				#slot.spawn_card()
 
 func right_button_actions(target: PokeSlot):
 	pass
