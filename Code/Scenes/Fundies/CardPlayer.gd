@@ -115,6 +115,7 @@ func play_energy(card: Base_Card, placement:Placement = null):
 	
 	await chosen
 	Globals.fundies.stack_manager.play_card(card, Consts.STACKS.PLAY)
+	Globals.fundies.attatched_energy = true
 	print("Attatch ", card.name)
 	card.print_info()
 

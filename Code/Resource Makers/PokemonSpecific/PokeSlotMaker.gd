@@ -19,7 +19,7 @@ var attached_energy: Dictionary = {"Grass": 0, "Fire": 0, "Water": 0,
 	"Lightning": 0, "Psychic":0, "Fighting":0 ,"Darkness":0, "Metal":0,
 	"Colorless":0, "Magma":0, "Aqua":0, "Dark Metal":0, "React": 0, 
 	"Holon FF": 0, "Holon GL": 0, "Holon WP": 0, "Rainbow":0}
-
+var energy_timers: Dictionary = {}
 enum poison_type{NONE, NORMAL, HEAVY}
 enum burn_type{NONE, NORMAL, HEAVY}
 enum turn_type{NONE, PARALYSIS, ASLEEP, CONFUSION}
@@ -66,6 +66,14 @@ func pokemon_checkup() -> void:
 	
 	if applied_condition.mutually_exclusive_conditions == turn_type.PARALYSIS:
 		applied_condition.mutually_exclusive_conditions = turn_type.NONE
+	
+	for card in energy_timers:
+		if energy_timers[card] == 0:
+			energy_timers.erase(card)
+			remove_energy(card)
+		else:
+			energy_timers[card] -= 1
+	
 
 func action_checkup(action: String):
 	var targets = get_targets(self, [])
@@ -238,6 +246,7 @@ func add_energy(energy_card: Base_Card):
 	var energy_string: String = energy_card.energy_properties.get_current_string()
 	energy_cards.append(energy_card)
 	energy_card.energy_properties.attatched_to = self
+	register_energy_timer(energy_card)
 	refresh()
 	action_checkup(str("EN ", energy_string))
 
@@ -249,6 +258,10 @@ func remove_energy(removing: Base_Card):
 			return
 	
 	printerr("Couldn't find ", removing.name, " in array ", energy_cards)
+
+func register_energy_timer(card: Base_Card):
+	if card.energy_properties.turns != -1:
+		energy_timers[card] = card.energy_properties.turns
 
 func count_energy() -> void:
 	#Count if energy cars provided give the right energy for each attack

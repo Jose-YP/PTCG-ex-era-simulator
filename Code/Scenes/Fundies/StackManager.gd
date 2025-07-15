@@ -2,18 +2,13 @@
 extends Node
 class_name StackManager
 
-@export var first_turn: bool = false
-@export var attatched_energy: bool = false
-@export var supporter_played: bool = false
 @export_range(1,6) var prize_count: int = 6
 
-#var reveal_stack: Array[Base_Card]
 var operate_home: bool = true
 var home_stacks: CardStacks
 var away_stacks: CardStacks
 var mulligans: int = 0
 var mulligan_array: Array[Array]
-var supporter_used: bool = false
 
 #--------------------------------------
 #region INITALIZATION
@@ -323,11 +318,6 @@ func get_stacks(side: bool) -> CardStacks:
 
 func determine_allowed() -> int:
 	var allowed: int = 1023
-	
-	if first_turn:
-		allowed -= 8
-	if attatched_energy:
-		allowed -= 512
 	
 	return allowed
 #endregion

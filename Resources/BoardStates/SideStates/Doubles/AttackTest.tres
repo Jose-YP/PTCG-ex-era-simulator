@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SideState" load_steps=25 format=3 uid="uid://coyme4e730bf3"]
+[gd_resource type="Resource" script_class="SideState" load_steps=26 format=3 uid="uid://coyme4e730bf3"]
 
 [ext_resource type="Script" uid="uid://dgqpurnuh14t1" path="res://Code/Resource Makers/GeneralUse/SideStateMaker.gd" id="1_52y1s"]
 [ext_resource type="Resource" uid="uid://3rtbllahksdd" path="res://Resources/Decks/BasicAttacking.tres" id="1_rcj6x"]
@@ -10,6 +10,7 @@
 [ext_resource type="Resource" uid="uid://b8bgctg57in7h" path="res://Resources/Cards/6 ex FireRed & LeafGreen/RG88Celio'sNetwork.tres" id="6_xc2j3"]
 [ext_resource type="Resource" uid="uid://eahd8tk8osi7" path="res://Resources/Cards/3 ex Dragon/DR84EnergyRecycleSystem.tres" id="7_45ony"]
 [ext_resource type="Script" uid="uid://calm3n7va5yjo" path="res://Code/Resource Makers/GeneralUse/CardStacksMaker.gd" id="8_atjym"]
+[ext_resource type="Resource" uid="uid://cjxwqcnfm20fq" path="res://Resources/Cards/1 ex Ruby & Saphire/RS104GrassEnergy.tres" id="8_i22iy"]
 [ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/BuffMaker.gd" id="11_5l7bb"]
 [ext_resource type="Script" uid="uid://c0ishgbxk63dg" path="res://Code/Resource Makers/EffectSpecific/DisableMaker.gd" id="12_wpliy"]
 [ext_resource type="Resource" uid="uid://pijetboi2e10" path="res://Resources/Cards/1 ex Ruby & Saphire/RS8Hariyama.tres" id="13_kdjuo"]
@@ -24,7 +25,7 @@
 script = ExtResource("8_atjym")
 deck = ExtResource("1_rcj6x")
 init_deck = Array[ExtResource("2_i22iy")]([])
-init_hand = Array[ExtResource("2_i22iy")]([ExtResource("3_j7rwv"), ExtResource("4_ko8sg"), ExtResource("5_xnkje"), ExtResource("6_xc2j3"), ExtResource("7_45ony")])
+init_hand = Array[ExtResource("2_i22iy")]([ExtResource("3_j7rwv"), ExtResource("4_ko8sg"), ExtResource("5_xnkje"), ExtResource("6_xc2j3"), ExtResource("7_45ony"), ExtResource("8_i22iy")])
 init_discard = Array[ExtResource("2_i22iy")]([])
 init_prize = Array[ExtResource("2_i22iy")]([])
 metadata/_custom_type_script = "uid://calm3n7va5yjo"

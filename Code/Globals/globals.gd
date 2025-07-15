@@ -3,6 +3,7 @@ extends Node
 #For any node that can bring up the check card display
 var checking: bool = false
 var dragging: bool = false
+var debug_unlimit: bool = false
 var checked_card: Control
 var fundies: Fundies
 var full_ui: FullBoardUI

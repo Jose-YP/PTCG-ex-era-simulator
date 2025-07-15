@@ -31,7 +31,10 @@ func sync_stacks():
 	for stack in stacks:
 		if stack == Consts.STACKS.DISCARD:
 			continue
-		stacks[stack].button.disabled = Globals.fundies.home_turn != home
+		if stack == Consts.STACKS.HAND:
+			stacks[stack].button.disabled = Globals.fundies.home_turn != home
+		else:
+			stacks[stack].button.disabled = true
 
 func show_supporter(card: Base_Card) -> void:
 	%ArtButton.current_card = card

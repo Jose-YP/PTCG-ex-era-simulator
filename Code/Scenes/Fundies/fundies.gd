@@ -6,6 +6,8 @@ class_name Fundies
 #--------------------------------------
 #region VARIABLES
 @export var board: BoardNode
+@export var first_turn: bool = false
+@export var attatched_energy: bool = false
 
 @onready var ui_actions: SlotUIActions = $UIActions
 @onready var stack_manager: StackManager = $StackManager
@@ -83,14 +85,12 @@ func is_home_side_player() -> bool:
 	
 	return check_side == Consts.PLAYER_TYPES.PLAYER
 
-#--------------------------------------
-#region SLOT FUNCTIONS
 func can_be_played(card: Base_Card) -> int:
 	var considered: int = Convert.get_card_flags(card)
 	var allowed_to: int = 0
 	#Basic
-	if considered & 1 != 0:
-		if find_allowed_slots(func(slot: PokeSlot): return not slot.is_filled(),\
+	if considered & 1 != 0 and find_allowed_slots(func(slot: PokeSlot): 
+		return not slot.is_filled(),
 		Consts.SIDES.ATTACKING).size() != 0:
 			allowed_to += 1
 	#Evo
@@ -105,7 +105,8 @@ func can_be_played(card: Base_Card) -> int:
 		allowed_to += 4
 	#Supporter
 	if considered & 8 != 0:
-		if not Globals.full_ui.get_side(home_turn).supporter_played():
+		if (not Globals.full_ui.get_side(home_turn).supporter_played() and not first_turn)\
+		 or Globals.debug_unlimit:
 			allowed_to += 8
 	#Stadium
 	if considered & 16 != 0:
@@ -122,15 +123,17 @@ func can_be_played(card: Base_Card) -> int:
 	if considered & 128 != 0:
 		allowed_to += 128
 	#Fossil
-	if considered & 256 != 0:
-		if find_allowed_slots(func(slot: PokeSlot): return not slot.is_filled(),\
+	if considered & 256 != 0 and find_allowed_slots(func(slot: PokeSlot):
+		return not slot.is_filled(),
 		Consts.SIDES.ATTACKING).size() != 0:
 			allowed_to += 256
 	#Energy
-	if considered & 512:
+	if (considered & 512 and not attatched_energy) or Globals.debug_unlimit:
 		allowed_to += 512
 	return allowed_to
 
+#--------------------------------------
+#region SLOT FUNCTIONS
 func find_allowed_slots(condition: Callable, sides: Consts.SIDES,\
  slots: Consts.SLOTS = Consts.SLOTS.ALL) -> Array[UI_Slot]:
 	return Globals.full_ui.get_slots(sides, slots).filter(func(uislot: UI_Slot):\
@@ -199,11 +202,12 @@ func print_src_trg():
 
 func next_turn():
 	home_turn = not home_turn
+	attatched_energy = false
 	turn_number += 1
 	Globals.full_ui.set_between_turns()
 	pass_turn_graphic.turn_change()
+	print("TURN: ", turn_number)
 	await pass_turn_graphic.animation_player.animation_finished
 	
 	for player in cpu_players:
-		if player.can_operate():
-			pass
+		player.can_operate()

@@ -4,8 +4,6 @@ extends Control
 @onready var turn_graphic: TabContainer = %TurnGraphic
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
-signal finished
-
 func turn_change():
 	if Globals.fundies.home_turn:
 		turn_graphic.current_tab = 0
