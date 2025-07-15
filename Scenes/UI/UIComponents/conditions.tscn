@@ -1,0 +1,106 @@
+[gd_scene load_steps=8 format=3 uid="uid://bcuwyo6u5h2fw"]
+
+[ext_resource type="Texture2D" uid="uid://dj7jl64ubjq3r" path="res://Art/Counters/Poison.png" id="1_ews76"]
+[ext_resource type="Texture2D" uid="uid://cd6l3wcjbqj0q" path="res://Art/Counters/Fire.png" id="2_wtp2w"]
+[ext_resource type="Texture2D" uid="uid://2d5wox7ruhx6" path="res://Art/Counters/Paralysis.png" id="3_rnfnf"]
+[ext_resource type="Texture2D" uid="uid://pgjbr5a5mvw7" path="res://Art/Counters/Sleep.png" id="4_nwnu7"]
+[ext_resource type="Texture2D" uid="uid://drxnepvq60j3v" path="res://Art/Counters/Confusion.png" id="5_a7s5w"]
+[ext_resource type="Texture2D" uid="uid://cijlbc37pj4gd" path="res://icon.svg" id="6_cy1lv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_puvo2"]
+
+[node name="Conditions" type="VBoxContainer"]
+offset_left = 167.0
+offset_top = 38.0
+offset_right = 271.0
+offset_bottom = 214.0
+scale = Vector2(0.5, 0.5)
+mouse_filter = 2
+metadata/_edit_group_ = true
+
+[node name="Poison" type="TextureRect" parent="."]
+unique_name_in_owner = true
+modulate = Color(0.485267, 0.0116, 0.58, 1)
+texture_filter = 1
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+texture = ExtResource("1_ews76")
+expand_mode = 4
+
+[node name="Burn" type="TextureRect" parent="."]
+unique_name_in_owner = true
+modulate = Color(0.882353, 0.211765, 0.298039, 1)
+texture_filter = 1
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+texture = ExtResource("2_wtp2w")
+expand_mode = 4
+
+[node name="TurnConditions" type="TabContainer" parent="."]
+unique_name_in_owner = true
+texture_filter = 1
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_puvo2")
+current_tab = 1
+tabs_visible = false
+
+[node name="Paralysis" type="TextureRect" parent="TurnConditions"]
+visible = false
+modulate = Color(1, 1, 0.0901961, 1)
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("3_rnfnf")
+expand_mode = 4
+metadata/_tab_index = 0
+
+[node name="Sleep" type="TextureRect" parent="TurnConditions"]
+modulate = Color(0.22, 1, 1, 1)
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("4_nwnu7")
+expand_mode = 4
+metadata/_tab_index = 1
+
+[node name="Confusion" type="TextureRect" parent="TurnConditions"]
+visible = false
+modulate = Color(0.406415, 0.858788, 0, 1)
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("5_a7s5w")
+expand_mode = 4
+metadata/_tab_index = 2
+
+[node name="Imprison" type="TextureRect" parent="."]
+unique_name_in_owner = true
+modulate = Color(0.984314, 0.498039, 0.745098, 1)
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+texture = ExtResource("6_cy1lv")
+expand_mode = 4
+
+[node name="Shockwave" type="TextureRect" parent="."]
+unique_name_in_owner = true
+modulate = Color(0.443262, 0.520605, 1, 1)
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+texture = ExtResource("6_cy1lv")
+expand_mode = 4

@@ -1,16 +1,14 @@
 [gd_resource type="Resource" script_class="Draw" load_steps=7 format=3 uid="uid://vj0he73ngf2s"]
 
+[ext_resource type="Resource" uid="uid://bns8h72u2hxqo" path="res://Resources/Components/Effects/Asks/General/AnyMon.tres" id="1_xwg80"]
 [ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="2_qihbw"]
 [ext_resource type="Script" uid="uid://bgtwlw1edjwyc" path="res://Code/Resource Makers/EffectSpecific/DrawMaker.gd" id="2_t8f0g"]
 [ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="3_ciqid"]
 
-[sub_resource type="Resource" id="Resource_t8f0g"]
-metadata/__load_path__ = "res://Resources/Components/Effects/Asks/FromOther.tres"
-
 [sub_resource type="Resource" id="Resource_kfno7"]
 script = ExtResource("2_qihbw")
 which = "Slot"
-ask = SubResource("Resource_t8f0g")
+ask = ExtResource("1_xwg80")
 slot_vars = "current_card"
 cap = -1
 metadata/_custom_type_script = "uid://vjn146j3ayd6"

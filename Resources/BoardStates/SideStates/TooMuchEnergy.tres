@@ -34,9 +34,6 @@ energy_cards = Array[ExtResource("2_w3gu5")]([])
 tm_cards = Array[ExtResource("2_w3gu5")]([])
 applied_buffs = Array[ExtResource("11_h8qln")]([])
 applied_disable = Array[ExtResource("12_gimbx")]([])
-type = 0
-weak = 0
-resist = 0
 metadata/_custom_type_script = "uid://cs70ix831b5g4"
 
 [resource]

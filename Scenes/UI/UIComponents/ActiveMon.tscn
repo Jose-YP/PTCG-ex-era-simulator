@@ -6,9 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://d3nrajtlwbvgh" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/84.jpg" id="3_bcik8"]
 [ext_resource type="PackedScene" uid="uid://dp781vdb5kvc7" path="res://Scenes/UI/UIComponents/art_button.tscn" id="3_nyxqq"]
 [ext_resource type="PackedScene" uid="uid://bs3ila6cpt8n1" path="res://Scenes/UI/UIComponents/types.tscn" id="4_5yd0i"]
-[ext_resource type="Texture2D" uid="uid://cijlbc37pj4gd" path="res://icon.svg" id="5_12v7q"]
 [ext_resource type="PackedScene" uid="uid://dph43kayde03u" path="res://Scenes/UI/UIComponents/energy_types.tscn" id="6_nykcf"]
 [ext_resource type="PackedScene" uid="uid://04qgb8r1r84v" path="res://Scenes/UI/UIComponents/damage_counter.tscn" id="8_0ajf4"]
+[ext_resource type="PackedScene" uid="uid://bcuwyo6u5h2fw" path="res://Scenes/UI/UIComponents/conditions.tscn" id="9_0ajf4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nykcf"]
 resource_local_to_scene = true
@@ -136,99 +136,15 @@ layout_mode = 2
 visible = false
 layout_mode = 2
 
-[node name="Conditions" type="GridContainer" parent="."]
+[node name="DamageCounter" parent="." instance=ExtResource("8_0ajf4")]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 152.0
+offset_top = 24.0
+offset_right = 184.0
+offset_bottom = 56.0
+
+[node name="Conditions" parent="." instance=ExtResource("9_0ajf4")]
 layout_mode = 0
-offset_left = 138.0
-offset_top = 32.0
-offset_right = 206.0
-offset_bottom = 136.0
-mouse_filter = 2
-columns = 2
-metadata/_edit_group_ = true
-
-[node name="DamageCounter" parent="Conditions" instance=ExtResource("8_0ajf4")]
-unique_name_in_owner = true
-layout_mode = 2
-
-[node name="Poison" type="TextureRect" parent="Conditions"]
-unique_name_in_owner = true
-modulate = Color(0.415686, 0.00784314, 0.494118, 1)
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-mouse_filter = 2
-texture = ExtResource("5_12v7q")
-expand_mode = 4
-
-[node name="Burn" type="TextureRect" parent="Conditions"]
-unique_name_in_owner = true
-modulate = Color(0.882353, 0.211765, 0.298039, 1)
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-mouse_filter = 2
-texture = ExtResource("5_12v7q")
-expand_mode = 4
-
-[node name="TurnConditions" type="TabContainer" parent="Conditions"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-mouse_filter = 2
-current_tab = 2
-tabs_visible = false
-
-[node name="Paralysis" type="TextureRect" parent="Conditions/TurnConditions"]
-visible = false
-modulate = Color(1, 1, 0.0901961, 1)
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-mouse_filter = 2
-texture = ExtResource("5_12v7q")
-expand_mode = 4
-metadata/_tab_index = 0
-
-[node name="Sleep" type="TextureRect" parent="Conditions/TurnConditions"]
-visible = false
-modulate = Color(0, 1, 1, 1)
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-mouse_filter = 2
-texture = ExtResource("5_12v7q")
-expand_mode = 4
-metadata/_tab_index = 1
-
-[node name="Confusion" type="TextureRect" parent="Conditions/TurnConditions"]
-modulate = Color(0.196078, 0.529412, 0, 1)
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-mouse_filter = 2
-texture = ExtResource("5_12v7q")
-expand_mode = 4
-metadata/_tab_index = 2
-
-[node name="Imprison" type="TextureRect" parent="Conditions"]
-unique_name_in_owner = true
-modulate = Color(0.984314, 0.498039, 0.745098, 1)
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-mouse_filter = 2
-texture = ExtResource("5_12v7q")
-expand_mode = 4
-
-[node name="Shockwave" type="TextureRect" parent="Conditions"]
-unique_name_in_owner = true
-modulate = Color(0.921569, 0.384314, 0, 1)
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-mouse_filter = 2
-texture = ExtResource("5_12v7q")
-expand_mode = 4
+offset_left = 187.0
+offset_right = 219.0
