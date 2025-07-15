@@ -16,6 +16,7 @@ var home_side: Consts.PLAYER_TYPES
 func _ready() -> void:
 	%ArtButton.get_child(0).size = %ArtButton.size
 	%ArtButton.current_card = null
+	Globals.full_ui = self
 
 func _gui_input(event: InputEvent) -> void:
 	if event.is_action_pressed("A") and Globals.checking:

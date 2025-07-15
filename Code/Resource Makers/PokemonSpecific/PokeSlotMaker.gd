@@ -4,12 +4,9 @@ class_name PokeSlot
 
 #--------------------------------------
 #region VARIABLES
-#--------------------------------------
-#region BASIC
+
 @export var current_card: Base_Card
 @export_range(0,400,10) var damage_counters: int = 0
-#endregion
-#--------------------------------------
 #--------------------------------------
 #region NON EXPORT
 var ui_slot: UI_Slot
@@ -39,36 +36,21 @@ enum turn_type{NONE, PARALYSIS, ASLEEP, CONFUSION}
 @export var applied_condition: Condition = Condition.new()
 #endregion
 #--------------------------------------
-#--------------------------------------
-#region TYPE VARIABLES
-@export_group("Type")
-@export_subgroup("Temp Types")
-@export_flags("Grass","Fire","Water",
-"Lightning","Psychic","Fighting",
-"Darkness","Metal","Colorless") var type: int = 0
-@export_flags("Grass","Fire","Water",
-"Lightning","Psychic","Fighting",
-"Darkness","Metal","Colorless") var weak: int = 0
-@export_flags("Grass","Fire","Water",
-"Lightning","Psychic","Fighting",
-"Darkness","Metal","Colorless") var resist: int = 0
-#endregion
-#--------------------------------------
-
 #endregion
 #--------------------------------------
 
 #--------------------------------------
 #region CHECKUP & POWER/BODY
 func pokemon_checkup() -> void:
+	if not is_filled(): return
 	evolved_this_turn = false
 	evolution_ready = true
 	
 	if applied_condition.mutually_exclusive_conditions == turn_type.PARALYSIS:
 		applied_condition.mutually_exclusive_conditions = turn_type.NONE
 	
-	for card in energy_timers:
-		if energy_timers[card] == 0:
+	for card in energy_timers.keys():
+		if energy_timers[card] == 0 and not Globals.debug_unlimit:
 			energy_timers.erase(card)
 			remove_energy(card)
 		else:
@@ -141,7 +123,8 @@ func is_attacker() -> bool:
 	return ui_slot.home == Globals.fundies.home_turn
 
 func can_evolve_into(evolution: Base_Card) -> bool:
-	return current_card.name == evolution.pokemon_properties.evolves_from and not evolved_this_turn
+	return current_card.name == evolution.pokemon_properties.evolves_from\
+	 and not evolved_this_turn and evolution_ready
 
 func can_devolve() -> bool:
 	return evolved_from.size()
@@ -458,6 +441,7 @@ func slot_into(destination: UI_Slot):
 	refresh()
 
 func refresh() -> void:
+	if not is_filled(): return
 	#Change slot's card display
 	ui_slot.name_section.clear()
 	ui_slot.max_hp.clear()

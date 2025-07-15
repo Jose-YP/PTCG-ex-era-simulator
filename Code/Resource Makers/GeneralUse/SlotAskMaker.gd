@@ -170,8 +170,8 @@ func check_ask(slot: PokeSlot) -> bool:
 		
 		result = affected and result
 	
-	#Check if any pokemon has been knocked out
-	result = result and slot.knocked_out if knocked_out else result
+	##Check if any pokemon has been knocked out
+	#result = result and slot.knocked_out if knocked_out else result
 	
 	if not result and or_ask: return or_ask.check_ask(slot)
 	else: return result

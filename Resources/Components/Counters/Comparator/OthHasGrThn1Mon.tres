@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Comparator" load_steps=3 format=3 uid="uid://bpkoaqj3ra6yo"]
 
-[ext_resource type="Resource" uid="uid://bkyitfrtqgn2q" path="res://Resources/Components/Counters/Indv/OtherMons.tres" id="1_rm87j"]
+[ext_resource type="Resource" uid="uid://bkyitfrtqgn2q" path="res://Resources/Components/Counters/INdv/OtherMons.tres" id="1_rm87j"]
 [ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="2_y2ci4"]
 
 [resource]

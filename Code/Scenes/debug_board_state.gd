@@ -19,8 +19,6 @@ func _ready() -> void:
 	add_child(full_ui)
 	full_ui.home_side = board_state.home_side
 	Globals.coin_rules = board_state.coin_rules
-	Globals.fundies = fundies
-	Globals.full_ui = full_ui
 	Globals.debug_unlimit = debug_unlimit
 	set_up(true)
 	set_up(false)
@@ -49,10 +47,11 @@ func set_up(home: bool):
 		var new_slot: PokeSlot = slot.duplicate()
 		
 		#I don't know if this works, the duplicated resources don't seem to last
-		for en in slot.energy_cards:
+		for en in new_slot.energy_cards:
 			var duplicated: Base_Card = en.duplicate()
+			new_slot.register_energy_timer(duplicated)
 			new_arr.append(duplicated)
-		slot.energy_cards = new_arr
+		new_slot.energy_cards = new_arr
 		ui.insert_slot(new_slot, temp_side.slots[slot])
 		stacks.account_for_slot(new_slot)
 	

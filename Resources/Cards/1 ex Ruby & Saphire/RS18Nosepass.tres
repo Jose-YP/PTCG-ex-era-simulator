@@ -7,7 +7,6 @@
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_a7nbm"]
 [ext_resource type="Resource" uid="uid://cdex8l5yqfstv" path="res://Resources/Components/Effects/Search/AnySearch.tres" id="5_hhkog"]
 [ext_resource type="Resource" uid="uid://ekj1myy642kh" path="res://Resources/Components/Effects/Prompts/PromptHeads.tres" id="6_mkraj"]
-[ext_resource type="Resource" uid="uid://bkt6ry7vyha70" path="res://Resources/Components/Effects/Asks/General/Other.tres" id="7_vbv8m"]
 [ext_resource type="Script" uid="uid://8sh5p3leflla" path="res://Code/Resource Makers/EffectSpecific/CardDisruptMaker.gd" id="8_7qm0m"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="9_5e01i"]
 [ext_resource type="Resource" uid="uid://dlaamywxf5pjo" path="res://Resources/Components/Effects/Prompts/IfOthHasMoreThan1Mon.tres" id="9_dtigs"]
@@ -45,6 +44,9 @@ prompt = ExtResource("3_eomtv")
 success_effect = SubResource("Resource_xp3sp")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
+[sub_resource type="Resource" id="Resource_5kvuk"]
+metadata/__load_path__ = "res://Resources/Components/Effects/Asks/Other.tres"
+
 [sub_resource type="Resource" id="Resource_eqchr"]
 script = ExtResource("8_7qm0m")
 send = 0
@@ -56,7 +58,7 @@ card_ammount = 1
 reveal = false
 side = 5
 from_stack = 0
-in_play_options = ExtResource("7_vbv8m")
+in_play_options = SubResource("Resource_5kvuk")
 pokemon_disrupt = 0
 metadata/_custom_type_script = "uid://8sh5p3leflla"
 

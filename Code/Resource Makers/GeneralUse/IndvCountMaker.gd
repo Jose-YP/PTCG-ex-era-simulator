@@ -16,10 +16,10 @@ var slot_instance = pokeSlot.new()
 var stack_instance = stackRes.new()
 var internal_data = {"which" : "Slot",
  "slot_vars" : "current_card", "stack_vars" : "None",
- "coin_flip" : load("res://Resources/Components/CoinFlip/FlipOnce.tres"),
- "ask" : load("res://Resources/Components/Effects/Asks/General/AnyMon.tres"),
+ "coin_flip" : load("res://Resources/Components/CoinFlip/FlipOnce.tres") as CoinFlip,
+ "ask" : load("res://Resources/Components/Effects/Asks/General/AnyMon.tres") as SlotAsk,
  "en_count_methods" : "Total", "en_categories" : "Any",
- "en_counting" : load("res://Resources/Components/EnData/Rainbow.tres")
+ "en_counting" : load("res://Resources/Components/EnData/Rainbow.tres") as EnData
  ,"cap" : -1}
 #endregion
 #--------------------------------------
@@ -131,11 +131,13 @@ func _get(property):
 		"which": return internal_data["which"]
 		"slot_vars": return internal_data["slot_vars"]
 		"stack_vars": return internal_data["stack_vars"]
-		"coin_flip": return internal_data["coin_flip"]
-		"ask": return internal_data["ask"]
+		"coin_flip": return internal_data["coin_flip"] as CoinFlip
+		"ask":
+			#print(internal_data["ask"])
+			return internal_data["ask"] as SlotAsk
 		"en_count_methods": return internal_data["en_count_methods"]
 		"en_categories": return internal_data["en_categories"]
-		"en_counting": return internal_data["en_counting"]
+		"en_counting": return internal_data["en_counting"] as EnData
 		"cap": return internal_data["cap"]
 	
 	return null
@@ -152,11 +154,11 @@ func _property_get_revert(property: StringName) -> Variant:
 		"which": return "Slot"
 		"slot_vars": return "current_card"
 		"stack_vars": return "None"
-		"coin_flip": return load("res://Resources/Components/CoinFlip/FlipOnce.tres")
-		"ask": return load("res://Resources/Components/Effects/Asks/General/AnyMon.tres")
+		"coin_flip": return load("res://Resources/Components/CoinFlip/FlipOnce.tres") as CoinFlip
+		"ask": return load("res://Resources/Components/Effects/Asks/General/AnyMon.tres") as SlotAsk
 		"en_count_methods": return "Total"
 		"en_categories": return "Any"
-		"en_counting": return load("res://Resources/Components/EnData/Rainbow.tres")
+		"en_counting": return load("res://Resources/Components/EnData/Rainbow.tres") as EnData
 		"cap": return -1
 	return null
 #endregion
@@ -177,9 +179,13 @@ func _set(property, value):
 			internal_data["stack_vars"] = value
 			return true
 		"coin_flip":
-			internal_data["coin_flip"] = value
+			if not value is CoinFlip:
+				return false
+			internal_data["coin_flip"] = value as CoinFlip
 		"ask": 
-			internal_data["ask"] = value
+			if not value is SlotAsk:
+				return false
+			internal_data["ask"] = value as SlotAsk
 			return true
 		"en_count_methods": 
 			internal_data["en_count_methods"] = value
@@ -189,7 +195,9 @@ func _set(property, value):
 			internal_data["en_categories"] = value
 			return true
 		"en_counting":
-			internal_data["en_counting"] = value
+			if not value is EnData:
+				return false
+			internal_data["en_counting"] = value as EnData
 			return true
 		"cap": 
 			internal_data["cap"] = value
@@ -203,16 +211,16 @@ func _set(property, value):
 func evaluate() -> int:
 	var result: int = 0
 	
-	match internal_data["which"]:
+	match _get("which"):
 		"Slot":
-			result = slot_evaluation(internal_data["slot_vars"], internal_data["ask"])
+			result = slot_evaluation(_get("slot_vars"), _get("ask"))
 		"Stack":
-			result = stack_evaluation(internal_data["stack_vars"], internal_data["ask"])
+			result = stack_evaluation(_get("stack_vars"), _get("ask"))
 		"Coinflip":
-			result = coinflip_evaluation(internal_data["coin_flip"])
+			result = coinflip_evaluation(_get("coin_flip"))
 	
-	if internal_data["cap"] != -1:
-		result = clamp(result, 0, internal_data["cap"])
+	if _get("cap") != -1:
+		result = clamp(result, 0, _get("cap"))
 	
 	return result
 
@@ -230,7 +238,7 @@ func slot_evaluation(slot_data: String, ask_data: SlotAsk) -> int:
 	for slot in filtered_slots:
 		#print(slot, slot.get(slot_data))
 		if slot_data == "energy_cards":
-			result += energy_card_evaluation(internal_data["en_count_methods"], slot)
+			result += energy_card_evaluation(_get("en_count_methods"), slot)
 		else:
 			var data = slot.get(slot_data)
 			if data is Array:
@@ -246,13 +254,13 @@ func slot_evaluation(slot_data: String, ask_data: SlotAsk) -> int:
 func energy_card_evaluation(en_count_methods_data: String, slot: PokeSlot):
 	match en_count_methods_data:
 		"Total":
-			return slot.get_total_energy(internal_data["en_counting"])
+			return slot.get_total_energy(_get("en_counting"))
 		"Excess":
 			return slot.get_energy_excess()
 		"Diff Types":
 			return slot.count_diff_energy()
 		"Categories":
-			return slot.get_total_en_categories(internal_data["en_categories"]).size()
+			return slot.get_total_en_categories(_get("en_categories")).size()
 
 func stack_evaluation(stack_data: String, ask_data: SlotAsk) -> int:
 	var fundies: Fundies = Globals.fundies

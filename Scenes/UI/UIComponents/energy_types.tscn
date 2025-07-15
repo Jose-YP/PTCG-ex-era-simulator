@@ -6,6 +6,7 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3xx0f"]
 
 [node name="EnergyTypes" type="Control"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 size_flags_vertical = 3

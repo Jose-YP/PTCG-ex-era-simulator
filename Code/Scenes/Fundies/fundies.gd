@@ -1,4 +1,3 @@
-@tool
 @icon("res://Art/ProjectSpecific/cards.png")
 extends Node
 class_name Fundies
@@ -27,6 +26,7 @@ var options: ItemOptions
 #--------------------------------------
 
 func _ready() -> void:
+	Globals.fundies = self
 	SignalBus.end_turn.connect(next_turn)
 
 #--------------------------------------
@@ -205,8 +205,10 @@ func next_turn():
 	attatched_energy = false
 	turn_number += 1
 	Globals.full_ui.set_between_turns()
-	pass_turn_graphic.turn_change()
+	#When animations and other stuff are added for checkups, remove this
+	await get_tree().create_timer(.1).timeout
 	print("TURN: ", turn_number)
+	pass_turn_graphic.turn_change()
 	await pass_turn_graphic.animation_player.animation_finished
 	
 	for player in cpu_players:
