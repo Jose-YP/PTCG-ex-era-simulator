@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bwtrs2phbtohv"]
+[gd_scene load_steps=8 format=3 uid="uid://bwtrs2phbtohv"]
 
 [ext_resource type="Script" uid="uid://b6qi20o3p32gq" path="res://Code/Scenes/UI/Main/full_ui.gd" id="1_g3lbb"]
 [ext_resource type="PackedScene" uid="uid://vt2rp442knte" path="res://Scenes/UI/UICollections/OpponentSide_Doubles.tscn" id="2_g3lbb"]
 [ext_resource type="PackedScene" uid="uid://bc4kcgiwhgyub" path="res://Scenes/UI/UICollections/PlayerSide_Doubles.tscn" id="3_qhmdr"]
 [ext_resource type="PackedScene" uid="uid://dp781vdb5kvc7" path="res://Scenes/UI/UIComponents/art_button.tscn" id="4_1sovm"]
 [ext_resource type="Shader" uid="uid://chaingl03cnx1" path="res://Shaders/Shine2D.gdshader" id="5_6nn1f"]
+[ext_resource type="PackedScene" uid="uid://5yyxqg0lp3x8" path="res://Scenes/UI/UIComponents/end_turn.tscn" id="6_qhmdr"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_43axb"]
 resource_local_to_scene = true
@@ -64,3 +65,17 @@ layout_mode = 2
 unique_name_in_owner = true
 material = SubResource("ShaderMaterial_43axb")
 layout_mode = 2
+
+[node name="EndTurn" parent="." instance=ExtResource("6_qhmdr")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 26.975
+anchor_top = 9.162
+anchor_right = 26.975
+anchor_bottom = 9.162
+offset_left = -120.0
+offset_top = -20.48
+offset_right = -2.0
+offset_bottom = 24.52
+grow_horizontal = 2
+grow_vertical = 0

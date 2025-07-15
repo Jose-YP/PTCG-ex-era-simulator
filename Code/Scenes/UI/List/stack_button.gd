@@ -2,11 +2,12 @@ extends PanelContainer
 class_name StackButton
 
 @export var icon: CompressedTexture2D
-@export var player: bool = true
+@export var home: bool = true
 @export var list: Consts.STACKS = Consts.STACKS.HAND
 
 @onready var texture_rect: TextureRect = %TextureRect
 @onready var rich_text_label: RichTextLabel = %RichTextLabel
+@onready var button: Button = $Button
 
 var  current_num: int
 
@@ -23,4 +24,4 @@ func update(num: int):
 func _on_button_pressed() -> void:
 	print("Bring up ", list)
 	print()
-	SignalBus.show_list.emit(player, list, Consts.STACK_ACT.PLAY if list == Consts.STACKS.HAND else Consts.STACK_ACT.LOOK)
+	SignalBus.show_list.emit(home, list, Consts.STACK_ACT.PLAY if list == Consts.STACKS.HAND else Consts.STACK_ACT.LOOK)

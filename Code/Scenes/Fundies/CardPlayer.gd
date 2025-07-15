@@ -299,7 +299,7 @@ func before_direct_attack(attacker: PokeSlot, with: Attack):
 	attack_effect(attacker, with)
 	
 	Globals.fundies.remove_top_source_target()
-	Globals.fundies.next_turn()
+	SignalBus.end_turn.emit()
 
 #For attacks that use main dmg + effects
 func direct_attack(attacker: PokeSlot, with: Attack, defenders: Array[PokeSlot]):

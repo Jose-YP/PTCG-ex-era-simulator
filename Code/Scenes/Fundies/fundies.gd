@@ -18,10 +18,14 @@ var current_list: Control
 var home_targets: Array[Array]
 var away_targets: Array[Array]
 var source_stack: Array[bool]
+var cpu_players: Array[CPU_Player]
 var options: ItemOptions
 
 #endregion
 #--------------------------------------
+
+func _ready() -> void:
+	SignalBus.end_turn.connect(next_turn)
 
 #--------------------------------------
 #region PRINT
@@ -72,6 +76,12 @@ func get_considered_home(side: Consts.SIDES):
 			return get_source_considered()
 		Consts.SIDES.OTHER:
 			return not get_source_considered()
+
+func is_home_side_player() -> bool:
+	var check_side = board.board_state.home_side\
+	 if home_turn else board.board_state.away_side
+	
+	return check_side == Consts.PLAYER_TYPES.PLAYER
 
 #--------------------------------------
 #region SLOT FUNCTIONS
@@ -190,4 +200,10 @@ func print_src_trg():
 func next_turn():
 	home_turn = not home_turn
 	turn_number += 1
+	Globals.full_ui.set_between_turns()
 	pass_turn_graphic.turn_change()
+	await pass_turn_graphic.animation_player.animation_finished
+	
+	for player in cpu_players:
+		if player.can_operate():
+			pass

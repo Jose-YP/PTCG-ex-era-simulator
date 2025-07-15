@@ -5,16 +5,24 @@ class_name FullBoardUI
 
 var current_card: Control
 
+@onready var end_turn: Button = $EndTurn
 @onready var player_side: CardSideUI = $PlayerSide
 @onready var opponent_side: CardSideUI = $OpponentSide
 @onready var stadium: Button = %ArtButton
 
 var home_side: Consts.PLAYER_TYPES
 
+#region INITALIZATION & PROCESSING
 func _ready() -> void:
 	%ArtButton.get_child(0).size = %ArtButton.size
 	%ArtButton.current_card = null
 
+func _gui_input(event: InputEvent) -> void:
+	if event.is_action_pressed("A") and Globals.checking:
+		remove_card()
+#endregion
+
+#region HELPERS
 func get_side(home: bool) -> CardSideUI:
 	return player_side if home else opponent_side
 
@@ -33,6 +41,7 @@ func get_poke_slots(side: Consts.SIDES,
 			poke.append(ui_slot.connected_slot)
 	
 	return poke
+#endregion
 
 func remove_card() -> void:
 	print("IHJBEFDI")
@@ -44,6 +53,10 @@ func update_stacks(dict: Dictionary[Consts.STACKS,Array],
 		if stack == Consts.STACKS.PLAY: break
 		temp_side.non_mon.update_stack(stack, dict[stack].size())
 
-func _gui_input(event: InputEvent) -> void:
-	if event.is_action_pressed("A") and Globals.checking:
-		remove_card()
+func set_between_turns():
+	player_side.non_mon.sync_stacks()
+	opponent_side.non_mon.sync_stacks()
+	end_turn.disabled = not Globals.fundies.is_home_side_player()
+	
+	for slot in all_slots():
+		slot.connected_slot.pokemon_checkup()

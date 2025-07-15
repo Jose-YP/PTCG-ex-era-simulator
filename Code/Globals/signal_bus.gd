@@ -5,7 +5,7 @@ extends Node
 #--------------------------------------
 #region STACK SIGNALS
 @warning_ignore("unused_signal")
-signal show_list(whose: String, list: Consts.STACKS, act: Consts.STACK_ACT)
+signal show_list(home: bool, list: Consts.STACKS, act: Consts.STACK_ACT)
 @warning_ignore("unused_signal")
 signal show_energy_attatched(origin: PokeSlot)
 @warning_ignore("unused_signal")
@@ -26,6 +26,8 @@ signal chosen_slot(showing: PokeSlot)
 signal attack(slot: PokeSlot, attack: Attack)
 @warning_ignore("unused_signal")
 signal force_disapear()
+@warning_ignore("unused_signal")
+signal end_turn()
 #--------------------------------------
 #region CARD PLAY SIGNALS
 signal play_basic(card: Base_Card)

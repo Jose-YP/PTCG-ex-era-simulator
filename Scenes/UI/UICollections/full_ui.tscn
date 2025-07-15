@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bsad85ywgca3d"]
+[gd_scene load_steps=8 format=3 uid="uid://bsad85ywgca3d"]
 
 [ext_resource type="Script" uid="uid://b6qi20o3p32gq" path="res://Code/Scenes/UI/Main/full_ui.gd" id="1_2n6bm"]
 [ext_resource type="PackedScene" uid="uid://dognokjork36j" path="res://Scenes/UI/UICollections/PlayerSide.tscn" id="1_wioh2"]
 [ext_resource type="PackedScene" uid="uid://dvpkx1fqkwvd7" path="res://Scenes/UI/UICollections/OpponentSide.tscn" id="2_2n6bm"]
+[ext_resource type="PackedScene" uid="uid://5yyxqg0lp3x8" path="res://Scenes/UI/UIComponents/end_turn.tscn" id="3_r2ex1"]
 [ext_resource type="PackedScene" uid="uid://dp781vdb5kvc7" path="res://Scenes/UI/UIComponents/art_button.tscn" id="3_tcktg"]
 [ext_resource type="Shader" uid="uid://chaingl03cnx1" path="res://Shaders/Shine2D.gdshader" id="4_r2ex1"]
 
@@ -28,6 +29,17 @@ offset_left = 54.88
 offset_top = 340.0
 offset_right = 55.12
 offset_bottom = 340.0
+
+[node name="EndTurn" parent="PlayerSide" instance=ExtResource("3_r2ex1")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 26.6
+anchor_right = 26.6
+offset_left = -117.992
+offset_top = -4.0
+offset_right = 0.00811768
+offset_bottom = 41.0
+grow_horizontal = 0
 
 [node name="OpponentSide" parent="." instance=ExtResource("2_2n6bm")]
 layout_mode = 1

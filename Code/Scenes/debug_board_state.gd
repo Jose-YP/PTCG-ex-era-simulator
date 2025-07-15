@@ -33,6 +33,12 @@ func set_up(home: bool):
 	var stacks: CardStacks = temp_side.card_stacks.duplicate()
 	
 	ui.player_type = player_type
+	if player_type == Consts.PLAYER_TYPES.CPU:
+		var adding_cpu = Consts.cpu_scene.instantiate()
+		adding_cpu.home_side = home
+		fundies.cpu_players.append(adding_cpu)
+		fundies.add_child(adding_cpu)
+	
 	fundies.stack_manager.assign_card_stacks(stacks, home)
 	stacks.make_deck()
 	
@@ -51,9 +57,6 @@ func set_up(home: bool):
 	
 	stacks.setup()
 	full_ui.update_stacks(stacks.sendStackDictionary(),player_type)
-
-func _on_button_pressed() -> void:
-	pass # Replace with function body.
 
 func _input(event: InputEvent) -> void:
 	if event.is_action("TEST") and not test_out and test:

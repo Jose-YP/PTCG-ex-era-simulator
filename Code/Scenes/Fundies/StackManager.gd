@@ -129,8 +129,11 @@ func get_list(which: Consts.STACKS) -> Dictionary[Base_Card, bool]:
 	#Tool should ceck if there's any mons with nothing equipped
 	
 	for card in get_stacks(operate_home).get_array(which):
-		var flags = Convert.get_card_flags(card)
-		dict[card] = flags && allowed_as
+		if Globals.fundies.home_turn != operate_home:
+			dict[card] = false
+		else:
+			var flags = Convert.get_card_flags(card)
+			dict[card] = flags && allowed_as
 	
 	return dict
 

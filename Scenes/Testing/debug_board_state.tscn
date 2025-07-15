@@ -35,6 +35,7 @@ board_state = SubResource("Resource_myyen")
 fundies = NodePath("Fundies")
 
 [node name="DebugButton" parent="." instance=ExtResource("4_t8we2")]
+visible = false
 self_modulate = Color(1, 1, 1, 0.0784314)
 layout_mode = 1
 spawning_debug = ExtResource("6_43axb")

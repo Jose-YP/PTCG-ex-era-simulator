@@ -58,6 +58,7 @@ const discard_box: PackedScene = preload("res://Scenes/UI/Lists/discard_list.tsc
 const reg_flip_box: PackedScene = preload("res://Scenes/UI/Coins/coinflip_box.tscn")
 const until_flip_box: PackedScene = preload("res://Scenes/UI/Coins/until_box.tscn")
 const prompt_answer: PackedScene = preload("res://Scenes/UI/ETC/PromptAnswer.tscn")
+const cpu_scene: PackedScene = preload("res://Scenes/Main Game/cpu.tscn")
 #endregion
 #--------------------------------------
 

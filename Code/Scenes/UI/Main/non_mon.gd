@@ -1,7 +1,6 @@
 extends HBoxContainer
 class_name NonMonUI
 
-@export var player: bool = true
 @export var home: bool = true
 
 @onready var stacks: Dictionary[Consts.STACKS, StackButton] = {Consts.STACKS.DISCARD:%DiscardButton,
@@ -11,8 +10,9 @@ var current_supporter: Base_Card
 
 func _ready() -> void:
 	for button in stacks:
-		stacks[button].player = player
-	if not player:
+		stacks[button].home = home
+	#So I don't have tow make two Non_Mon scenes for each side
+	if not home:
 		$Stacks.move_to_front()
 	%ArtButton.get_child(0).size = %ArtButton.size
 	clear_supporter()
@@ -26,6 +26,12 @@ func print_stack_numbers() -> String:
 
 func update_stack(which: Consts.STACKS, num: int) -> void:
 	stacks[which].update(num)
+
+func sync_stacks():
+	for stack in stacks:
+		if stack == Consts.STACKS.DISCARD:
+			continue
+		stacks[stack].button.disabled = Globals.fundies.home_turn != home
 
 func show_supporter(card: Base_Card) -> void:
 	%ArtButton.current_card = card
