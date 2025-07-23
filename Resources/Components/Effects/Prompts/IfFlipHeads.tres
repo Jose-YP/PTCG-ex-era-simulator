@@ -5,8 +5,8 @@
 
 [resource]
 script = ExtResource("2_xaal5")
-formal_ask = false
-ask_string = ""
+formal_question = false
+question_string = ""
 yes_answer = ""
 no_answer = ""
 comparator = ExtResource("1_2q7ju")

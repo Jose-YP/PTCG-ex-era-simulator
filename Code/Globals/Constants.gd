@@ -137,8 +137,8 @@ const rarity: Array[String] = ["Common", "Uncommon", "Rare",
 const allowed_list_flags: Array[String] = ["Basic", "Evolution",
  "Item", "Support","Stadium", "Tool", "TM", "RSM", "Fossil", "Energy"]
 
-const coinflip_once: Comparator = preload("res://Resources/Components/Counters/Comparator/CoinflipHeads.tres")
-const coinflip_twice: Comparator = preload("res://Resources/Components/Counters/Comparator/CoinflipHeads.tres")
+var coinflip_once: Comparator = load("res://Resources/Components/Counters/Comparator/CoinflipHeads.tres")
+var coinflip_twice: Comparator = load("res://Resources/Components/Counters/Comparator/CoinflipHeads.tres")
 
 #endregion
 #--------------------------------------

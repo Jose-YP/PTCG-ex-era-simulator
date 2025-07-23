@@ -29,8 +29,8 @@ metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [resource]
 script = ExtResource("4_teu5e")
-formal_ask = false
-ask_string = "Which energy card will you discard?"
+formal_question = false
+question_string = ""
 yes_answer = ""
 no_answer = ""
 can_reverse = true

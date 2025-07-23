@@ -8,10 +8,10 @@ class_name EnMov
 @export_enum("Send", "Swap", "Attatch") var action: int = 0
 ##If the chooser is [enum Consts.SIDES.NONE], then default to [enum Consts.SIDES.SOURCE]
 @export var chooser: Consts.SIDES = Consts.SIDES.SOURCE
-@export var givers: SlotAsk = preload("res://Resources/Components/Effects/Asks/General/FromSource.tres")
+@export var givers: SlotAsk = load("res://Resources/Components/Effects/Asks/General/FromSource.tres")
 @export_group("From - To")
 ##If they targets from slot ask will determine if they're allowed
-@export var reciever: SlotAsk = preload("res://Resources/Components/Effects/Asks/General/FromSource.tres")
+@export var reciever: SlotAsk = load("res://Resources/Components/Effects/Asks/General/FromSource.tres")
 ##Targets for removal
 @export var to_stack: Consts.STACKS = Consts.STACKS.DISCARD
 @export_enum("Top", "Bottom", "Eh") var stack_direction: int = 2

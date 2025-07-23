@@ -7,9 +7,9 @@ class_name Condition
 @export var slot: Consts.SLOTS = Consts.SLOTS.TARGET
 
 @export var choose_condition: bool = false
-@export var poison: Consts.POISON = 0
-@export var burn: Consts.BURN = 0
-@export var turn_cond: Consts.TURN_COND = 0
+@export var poison: Consts.POISON = Consts.POISON.NONE
+@export var burn: Consts.BURN = Consts.BURN.NONE
+@export var turn_cond: Consts.TURN_COND = Consts.TURN_COND.NONE
 @export var imprision: bool = false
 @export var shockwave: bool = false
 @export var knockOut: bool = false

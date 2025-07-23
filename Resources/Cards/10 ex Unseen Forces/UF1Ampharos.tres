@@ -21,8 +21,8 @@ metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_1e1le"]
 script = ExtResource("5_kd6vc")
-formal_ask = true
-ask_string = "Discard all {Lightning} Energy?"
+formal_question = false
+question_string = ""
 yes_answer = ""
 no_answer = ""
 can_reverse = true
@@ -39,8 +39,9 @@ slot = 1
 choose_condition = false
 poison = 0
 burn = 1
-addable_effects = 0
-mutually_exclusive_conditions = 3
+turn_cond = 0
+imprision = false
+shockwave = false
 knockOut = false
 metadata/_custom_type_script = "uid://8s3m1dar3r33"
 

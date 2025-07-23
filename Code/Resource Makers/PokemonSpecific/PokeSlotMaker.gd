@@ -42,7 +42,8 @@ func pokemon_checkup() -> void:
 	if not is_filled(): return
 	evolved_this_turn = false
 	evolution_ready = true
-	checkup_conditions()
+	
+	await checkup_conditions()
 	
 	for card in energy_timers.keys():
 		if energy_timers[card] == 0 and not Globals.debug_unlimit:
@@ -400,23 +401,35 @@ func checkup_conditions():
 	if applied_condition.burn != Consts.BURN.NONE:
 		print("Burn", applied_condition.burn)
 		damage_counters += 20 * applied_condition.burn
+		var result: bool = await condition_rule_utilize(Globals.burn_rules)
+		if result:
+			applied_condition.burn = Consts.BURN.NONE
 		
 	if applied_condition.turn_cond == Consts.TURN_COND.PARALYSIS:
 		print("Paralysis")
 		applied_condition.turn_cond = Consts.TURN_COND.NONE
+		var result: bool = await condition_rule_utilize(Consts.COND_RULES.TURN_PASS)
+		if result:
+			applied_condition.turn_cond = Consts.TURN_COND.NONE
 		
 	if applied_condition.turn_cond == Consts.TURN_COND.ASLEEP:
 		print("Sleep")
-		pass
+		var result: bool = await condition_rule_utilize(Globals.sleep_rules)
+		if result:
+			applied_condition.turn_cond = Consts.TURN_COND.NONE
 
 func condition_rule_utilize(using: Consts.COND_RULES):
 	match using:
 		Consts.COND_RULES.NONE:
 			return false
 		Consts.COND_RULES.FLIP:
-			pass
+			var result: int = Consts.coinflip_once.start_comparision()
+			await SignalBus.finished_coinflip
+			return result != 0
 		Consts.COND_RULES.TWOFLIP:
-			pass
+			var result: int = Consts.coinflip_once.start_comparision()
+			await SignalBus.finished_coinflip
+			return result
 		Consts.COND_RULES.TURN_PASS:
 			return Globals.fundies.home_turn == is_home()
 

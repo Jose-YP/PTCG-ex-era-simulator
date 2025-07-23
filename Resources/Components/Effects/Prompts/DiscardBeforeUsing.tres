@@ -27,8 +27,8 @@ metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [resource]
 script = ExtResource("3_hjnbi")
-formal_ask = false
-ask_string = ""
+formal_question = false
+question_string = ""
 yes_answer = ""
 no_answer = ""
 can_reverse = true

@@ -204,7 +204,7 @@ func next_turn():
 	home_turn = not home_turn
 	attatched_energy = false
 	turn_number += 1
-	Globals.full_ui.set_between_turns()
+	await Globals.full_ui.set_between_turns()
 	#When animations and other stuff are added for checkups, remove this
 	await get_tree().create_timer(.1).timeout
 	print("TURN: ", turn_number)

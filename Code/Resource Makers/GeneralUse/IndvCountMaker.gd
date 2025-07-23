@@ -12,6 +12,7 @@ const which_vars: PackedStringArray = ["Slot", "Stack", "Coinflip"]
 const en_methods: PackedStringArray = ["Total", "Excess", "Diff Types", "Categories"]
 const en_category_enum: PackedStringArray = ["Any", "Basic Energy", "Special Energy"]
 
+var ters = PokeSlot.new()
 var slot_instance = pokeSlot.new()
 var stack_instance = stackRes.new()
 var internal_data = {"which" : "Slot",
@@ -27,6 +28,8 @@ var internal_data = {"which" : "Slot",
 #--------------------------------------
 func _get_property_list() -> Array[Dictionary]:
 	#region GATHER INFO
+	print(typeof(pokeSlot))
+	print(pokeSlot)
 	var props: Array[Dictionary] = []
 	var slot_array_names: PackedStringArray = []
 	var stack_array_names: PackedStringArray = ["None"]

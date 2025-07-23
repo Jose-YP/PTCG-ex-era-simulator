@@ -60,4 +60,4 @@ func set_between_turns():
 	end_turn.disabled = not Globals.fundies.is_home_side_player()
 	
 	for slot in all_slots():
-		slot.connected_slot.pokemon_checkup()
+		await slot.connected_slot.pokemon_checkup()

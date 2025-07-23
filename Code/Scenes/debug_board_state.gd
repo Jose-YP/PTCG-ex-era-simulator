@@ -31,6 +31,9 @@ func set_up(home: bool):
 	var player_type: Consts.PLAYER_TYPES = board_state.get_player_type(home)
 	var stacks: CardStacks = temp_side.card_stacks.duplicate()
 	
+	Globals.burn_rules = board_state.burn_rules
+	Globals.sleep_rules = board_state.sleep_rules
+	
 	ui.player_type = player_type
 	if player_type == Consts.PLAYER_TYPES.CPU:
 		var adding_cpu = Consts.cpu_scene.instantiate()

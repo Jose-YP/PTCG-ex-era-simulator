@@ -49,8 +49,8 @@ metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
 [resource]
 script = ExtResource("2_c1lbv")
-formal_ask = false
-ask_string = ""
+formal_question = false
+question_string = ""
 yes_answer = ""
 no_answer = ""
 comparator = SubResource("Resource_hkj2g")

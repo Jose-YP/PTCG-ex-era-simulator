@@ -9,8 +9,8 @@
 
 [sub_resource type="Resource" id="Resource_to7ul"]
 script = ExtResource("6_oax0i")
-formal_ask = false
-ask_string = ""
+formal_question = false
+question_string = ""
 yes_answer = ""
 no_answer = ""
 can_reverse = true

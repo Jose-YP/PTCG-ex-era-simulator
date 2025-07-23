@@ -1,32 +1,22 @@
 extends Node
 
+@warning_ignore_start("unused_signal")
 #--------------------------------------
 #region SIGNALS
 #--------------------------------------
 #region STACK SIGNALS
-@warning_ignore("unused_signal")
 signal show_list(home: bool, list: Consts.STACKS, act: Consts.STACK_ACT)
-@warning_ignore("unused_signal")
 signal show_energy_attatched(origin: PokeSlot)
-@warning_ignore("unused_signal")
 signal swap_card_location(card: Array[Base_Card], placement: Placement, from: Consts.STACKS)
-@warning_ignore("unused_signal")
 signal reorder_cards(card: Array[Base_Card], placement: Placement,)
-@warning_ignore("unused_signal")
 signal start_tutor(search: Search)
-@warning_ignore("unused_signal")
 signal tutor_card(card: Base_Card)
-@warning_ignore("unused_signal")
 signal cancel_tutor(button: Button)
 #endregion
 #--------------------------------------
-@warning_ignore("unused_signal")
 signal chosen_slot(showing: PokeSlot)
-@warning_ignore("unused_signal")
 signal attack(slot: PokeSlot, attack: Attack)
-@warning_ignore("unused_signal")
 signal force_disapear()
-@warning_ignore("unused_signal")
 signal end_turn()
 #--------------------------------------
 #region CARD PLAY SIGNALS
@@ -42,20 +32,16 @@ signal play_energy(card: Base_Card)
 #--------------------------------------
 #--------------------------------------
 #region EFFECT SIGNALS
-@warning_ignore("unused_signal")
 signal get_candidate(pokeSlot: PokeSlot)
-@warning_ignore("unused_signal")
 signal went_back
-@warning_ignore("unused_signal")
 signal finished_coinflip()
-@warning_ignore("unused_signal")
 signal prompt_answered(answer: bool)
-
 signal begin_swap(giver: PokeSlot, reciever: PokeSlot, energy: Array[Base_Card])
 #endregion
 #--------------------------------------
 #endregion
 #--------------------------------------
+@warning_ignore_restore("unused_signal")
 
 func call_action(action: int, card: Base_Card) -> void:
 	match action:
