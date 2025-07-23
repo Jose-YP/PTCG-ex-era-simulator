@@ -17,9 +17,6 @@ var attached_energy: Dictionary = {"Grass": 0, "Fire": 0, "Water": 0,
 	"Colorless":0, "Magma":0, "Aqua":0, "Dark Metal":0, "React": 0, 
 	"Holon FF": 0, "Holon GL": 0, "Holon WP": 0, "Rainbow":0}
 var energy_timers: Dictionary = {}
-enum poison_type{NONE, NORMAL, HEAVY}
-enum burn_type{NONE, NORMAL, HEAVY}
-enum turn_type{NONE, PARALYSIS, ASLEEP, CONFUSION}
 #endregion
 #--------------------------------------
 #--------------------------------------
@@ -45,9 +42,7 @@ func pokemon_checkup() -> void:
 	if not is_filled(): return
 	evolved_this_turn = false
 	evolution_ready = true
-	
-	if applied_condition.mutually_exclusive_conditions == turn_type.PARALYSIS:
-		applied_condition.mutually_exclusive_conditions = turn_type.NONE
+	checkup_conditions()
 	
 	for card in energy_timers.keys():
 		if energy_timers[card] == 0 and not Globals.debug_unlimit:
@@ -56,6 +51,7 @@ func pokemon_checkup() -> void:
 		else:
 			energy_timers[card] -= 1
 	
+	refresh()
 
 func action_checkup(action: String):
 	var targets = get_targets(self, [])
@@ -375,8 +371,8 @@ func add_condition(adding: Condition) -> void:
 	applied_condition.poison = max(adding.poison, applied_condition.poison)
 	applied_condition.burn = max(adding.burn, applied_condition.burn)
 	
-	if adding.mutually_exclusive_conditions != 0:
-		applied_condition.mutually_exclusive_conditions = adding.mutually_exclusive_conditions
+	if adding.turn_cond != 0:
+		applied_condition.turn_cond = adding.turn_cond
 	
 	applied_condition.imprision = adding.imprision or applied_condition.imprision
 	applied_condition.shockwave = adding.shockwave or applied_condition.shockwave
@@ -384,17 +380,45 @@ func add_condition(adding: Condition) -> void:
 	refresh()
 
 func affected_by_condition() -> bool:
-	var poisioned: bool = applied_condition.poison != poison_type.NONE
-	var burnt: bool = applied_condition.burn != burn_type.NONE
-	var turnt: bool = applied_condition.mutually_exclusive_conditions != turn_type.NONE
+	var poisioned: bool = applied_condition.poison != Consts.POISON.NONE
+	var burnt: bool = applied_condition.burn != Consts.BURN.NONE
+	var turnt: bool = applied_condition.turn_cond != Consts.TURN_COND.NONE
 	
 	return poisioned or burnt or turnt
 
 func heal_status() -> void:
-	applied_condition.poison = poison_type.NONE
-	applied_condition.burn = burn_type.NONE
-	applied_condition.mutually_exclusive_conditions = turn_type.NONE
+	applied_condition.poison = Consts.POISON.NONE
+	applied_condition.burn = Consts.BURN.NONE
+	applied_condition.turn_cond = Consts.TURN_COND.NONE
 	refresh()
+
+func checkup_conditions():
+	if applied_condition.poison != Consts.POISON.NONE:
+		print("Poison", applied_condition.poison)
+		damage_counters += 10 * applied_condition.poison
+		
+	if applied_condition.burn != Consts.BURN.NONE:
+		print("Burn", applied_condition.burn)
+		damage_counters += 20 * applied_condition.burn
+		
+	if applied_condition.turn_cond == Consts.TURN_COND.PARALYSIS:
+		print("Paralysis")
+		applied_condition.turn_cond = Consts.TURN_COND.NONE
+		
+	if applied_condition.turn_cond == Consts.TURN_COND.ASLEEP:
+		print("Sleep")
+		pass
+
+func condition_rule_utilize(using: Consts.COND_RULES):
+	match using:
+		Consts.COND_RULES.NONE:
+			return false
+		Consts.COND_RULES.FLIP:
+			pass
+		Consts.COND_RULES.TWOFLIP:
+			pass
+		Consts.COND_RULES.TURN_PASS:
+			return Globals.fundies.home_turn == is_home()
 
 #endregion
 #--------------------------------------

@@ -2,16 +2,14 @@
 extends Resource
 class_name Condition
 
-@export_group("Conditions")
 ##imprision/shockwave will ignore this
 @export var side: Consts.SIDES = Consts.SIDES.DEFENDING
 @export var slot: Consts.SLOTS = Consts.SLOTS.TARGET
 
 @export var choose_condition: bool = false
-@export_enum("None", "Normal", "Heavy") var poison: int = 0
-@export_enum("None", "Normal", "Heavy") var burn: int = 0
-@export_enum("None","Asleep",
-"Paralyze", "Confused") var mutually_exclusive_conditions: int = 0
+@export var poison: Consts.POISON = 0
+@export var burn: Consts.BURN = 0
+@export var turn_cond: Consts.TURN_COND = 0
 @export var imprision: bool = false
 @export var shockwave: bool = false
 @export var knockOut: bool = false

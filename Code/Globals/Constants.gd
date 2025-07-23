@@ -104,6 +104,29 @@ enum COIN_RULES{
 	TAILS,
 	ALTERNATE
 }
+
+enum POISON{
+	NONE,
+	NORMAL,
+	HEAVY
+}
+enum BURN{
+	NONE,
+	NORMAL,
+	HEAVY
+}
+enum TURN_COND{
+	NONE,
+	PARALYSIS,
+	ASLEEP,
+	CONFUSION
+}
+
+enum COND_RULES{NONE, ##Condition doesn't clear on it's own
+	TURN_PASS, ##Condition clears at the end of the target side's turn
+	FLIP, ##Coinflip heads once in order to clear condition
+	TWOFLIP ##Coinflip heads twice in order to clear condition
+}
 #endregion
 #--------------------------------------
 
@@ -113,6 +136,9 @@ const rarity: Array[String] = ["Common", "Uncommon", "Rare",
  "Holofoil Rare", "ex Rare", "Ultra Rare", "Star Rare", "Promo Rare"]
 const allowed_list_flags: Array[String] = ["Basic", "Evolution",
  "Item", "Support","Stadium", "Tool", "TM", "RSM", "Fossil", "Energy"]
+
+const coinflip_once: Comparator = preload("res://Resources/Components/Counters/Comparator/CoinflipHeads.tres")
+const coinflip_twice: Comparator = preload("res://Resources/Components/Counters/Comparator/CoinflipHeads.tres")
 
 #endregion
 #--------------------------------------

@@ -50,7 +50,8 @@ func print_energy() -> void:
 	print("-------------------------------------------------------------")
 
 func get_current_provide() -> EnData:
-	if (not prompt or not has_fail_provide) or fail_provide == success_provide:
+	if (not prompt or not has_fail_provide)\
+	 or fail_provide == success_provide or attatched_to == null:
 		return success_provide
 	
 	Globals.fundies.record_single_src_trg(attatched_to)

@@ -59,14 +59,14 @@ applied_buffs = Array[ExtResource("13_s64pf")]([])
 applied_disable = Array[ExtResource("14_c5xxw")]([])
 metadata/_custom_type_script = "uid://cs70ix831b5g4"
 
-[sub_resource type="Resource" id="Resource_ebxpc"]
+[sub_resource type="Resource" id="Resource_c5qlx"]
 script = ExtResource("2_ot1eh")
-current_card = ExtResource("16_fcuve")
+current_card = ExtResource("5_s64pf")
 damage_counters = 0
 evolution_ready = false
 evolved_this_turn = false
-evolved_from = Array[ExtResource("2_5ih3w")]([ExtResource("17_h7xhs")])
-energy_cards = Array[ExtResource("2_5ih3w")]([ExtResource("4_mepvs"), ExtResource("4_mepvs"), ExtResource("4_mepvs"), ExtResource("4_mepvs"), ExtResource("17_5ih3w"), ExtResource("4_mepvs")])
+evolved_from = Array[ExtResource("2_5ih3w")]([ExtResource("17_h7xhs"), ExtResource("16_fcuve")])
+energy_cards = Array[ExtResource("2_5ih3w")]([ExtResource("4_mepvs"), ExtResource("4_mepvs"), ExtResource("4_mepvs")])
 tm_cards = Array[ExtResource("2_5ih3w")]([])
 applied_buffs = Array[ExtResource("13_s64pf")]([])
 applied_disable = Array[ExtResource("14_c5xxw")]([])
@@ -80,6 +80,6 @@ bench_size = 5
 slots = Dictionary[ExtResource("2_ot1eh"), bool]({
 SubResource("Resource_slk46"): false,
 SubResource("Resource_oeine"): false,
-SubResource("Resource_ebxpc"): true
+SubResource("Resource_c5qlx"): true
 })
 metadata/_custom_type_script = "uid://dgqpurnuh14t1"

@@ -5,11 +5,12 @@
 [resource]
 script = ExtResource("1_iljdy")
 side = 2
-slot = 2
+slot = 1
 choose_condition = false
 poison = 0
 burn = 1
-addable_effects = 0
-mutually_exclusive_conditions = 0
+turn_cond = 0
+imprision = false
+shockwave = false
 knockOut = false
 metadata/_custom_type_script = "uid://8s3m1dar3r33"

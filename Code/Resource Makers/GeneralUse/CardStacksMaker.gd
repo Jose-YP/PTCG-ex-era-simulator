@@ -58,7 +58,6 @@ func account_for_slot(slot: PokeSlot):
 		init_remove_deck(card)
 
 func init_remove_deck(card: Base_Card):
-	
 	usable_deck.remove_at(usable_deck.find_custom(card.same_card))
 	#usable_deck.erase(card)
 	cards_in_play.append(card)

@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="PokeSlot" load_steps=9 format=3 uid="uid://dwjxlivvb7qiw"]
+
+[ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/BuffMaker.gd" id="1_boj2k"]
+[ext_resource type="Script" uid="uid://c0ishgbxk63dg" path="res://Code/Resource Makers/EffectSpecific/DisableMaker.gd" id="2_hsja7"]
+[ext_resource type="Resource" uid="uid://dpvdlrumqivuv" path="res://Resources/Cards/1 ex Ruby & Saphire/RS11Sceptile.tres" id="3_63mfe"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="4_6cfjs"]
+[ext_resource type="Resource" uid="uid://cjxwqcnfm20fq" path="res://Resources/Cards/1 ex Ruby & Saphire/RS104GrassEnergy.tres" id="5_qxksr"]
+[ext_resource type="Resource" uid="uid://dx17bi2e0sqkj" path="res://Resources/Cards/1 ex Ruby & Saphire/RS75Treecko.tres" id="6_kc8fn"]
+[ext_resource type="Resource" uid="uid://x137dggkdklo" path="res://Resources/Cards/1 ex Ruby & Saphire/RS31Grovyle.tres" id="7_l5xix"]
+[ext_resource type="Script" uid="uid://cs70ix831b5g4" path="res://Code/Resource Makers/PokemonSpecific/PokeSlotMaker.gd" id="8_yt6sp"]
+
+[resource]
+script = ExtResource("8_yt6sp")
+current_card = ExtResource("3_63mfe")
+damage_counters = 0
+evolution_ready = false
+evolved_this_turn = false
+evolved_from = Array[ExtResource("4_6cfjs")]([ExtResource("6_kc8fn"), ExtResource("7_l5xix")])
+energy_cards = Array[ExtResource("4_6cfjs")]([ExtResource("5_qxksr"), ExtResource("5_qxksr"), ExtResource("5_qxksr")])
+tm_cards = Array[ExtResource("4_6cfjs")]([])
+applied_buffs = Array[ExtResource("1_boj2k")]([])
+applied_disable = Array[ExtResource("2_hsja7")]([])
+metadata/_custom_type_script = "uid://cs70ix831b5g4"

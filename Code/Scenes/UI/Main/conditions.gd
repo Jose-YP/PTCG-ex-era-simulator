@@ -20,20 +20,20 @@ func _ready() -> void:
 	readied = true
 
 func display_condition():
-	if condition.poison != 0:
+	if condition.poison != Consts.POISON.NONE:
 		%Poison.show()
 		color_poison(condition.poison - 1)
 		
 	else: %Poison.hide()
 	
-	if condition.burn != 0:
+	if condition.burn != Consts.BURN.NONE:
 		%Burn.show()
 		color_burn(condition.burn - 1)
 	else: %Burn.hide()
 	
-	if condition.mutually_exclusive_conditions != 0:
+	if condition.turn_cond != Consts.TURN_COND.NONE:
 		%TurnConditions.show()
-		%TurnConditions.current_tab = condition.mutually_exclusive_conditions
+		%TurnConditions.current_tab = condition.turn_cond - 1
 	else: %TurnConditions.hide()
 	
 	if condition.imprision:

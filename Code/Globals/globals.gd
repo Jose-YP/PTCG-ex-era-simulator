@@ -8,6 +8,8 @@ var checked_card: Control
 var fundies: Fundies
 var full_ui: FullBoardUI
 var coinflip: Control
+var burn_rules: Consts.COND_RULES
+var sleep_rules: Consts.COND_RULES
 var coin_rules: Consts.COIN_RULES = Consts.COIN_RULES.REG
 
 signal enter_check

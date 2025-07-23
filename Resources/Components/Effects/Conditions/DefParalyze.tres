@@ -5,10 +5,11 @@
 [resource]
 script = ExtResource("1_r741y")
 side = 2
-slot = 2
+slot = 1
 choose_condition = false
 poison = 0
 burn = 0
-addable_effects = 0
-mutually_exclusive_conditions = 2
+turn_cond = 1
+imprision = false
+shockwave = false
 knockOut = false

@@ -76,8 +76,6 @@ func play_effect(reversable: bool = false):
 	finished.emit()
 
 func handle_component(comp, reversable: bool = false):
-	if comp == extra_effect and prompt_extra.check_prompt():
-		pass
 	if (comp == extra_effect and prompt_extra.check_prompt())\
 	 or comp != extra_effect:
 		await comp.play_effect(reversable)
