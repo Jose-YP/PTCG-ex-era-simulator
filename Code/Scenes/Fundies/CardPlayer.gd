@@ -272,6 +272,7 @@ func set_reversable(reversable: bool):
 #region ATTACKING
 func before_direct_attack(attacker: PokeSlot, with: Attack):
 	var direct_bool: bool = with.does_direct_damage()
+	var pass_prompt
 	print("Now before ", with.name, " from ", attacker.get_card_name())
 	
 	with.print_attack()
@@ -283,15 +284,19 @@ func before_direct_attack(attacker: PokeSlot, with: Attack):
 			func(slot: PokeSlot): return slot.is_in_slot(Consts.SIDES.DEFENDING, Consts.SLOTS.ACTIVE),
 			true)
 			
+			pass_prompt = await check_prompt_reliant(with.prompt)
+			
 			if hold_candidate == null:
 				return
 			else:
 				Globals.fundies.record_attack_src_trg(attacker.is_home(), [attacker], [hold_candidate])
-				if direct_bool: direct_attack(attacker, with, [hold_candidate])
+				if pass_prompt != false: direct_attack(attacker, with, [hold_candidate])
 		else:
 			var def_active: Array[PokeSlot] = Globals.full_ui.get_poke_slots(Consts.SIDES.DEFENDING, Consts.SLOTS.ACTIVE)
+			pass_prompt = await check_prompt_reliant(with.prompt)
+			
 			Globals.fundies.record_attack_src_trg(attacker.is_home(), [attacker], def_active)
-			direct_attack(attacker, with, def_active)
+			if pass_prompt != false: direct_attack(attacker, with, def_active)
 	
 	elif with.bench_damage:
 		print("This attack does bench damage")
@@ -299,7 +304,7 @@ func before_direct_attack(attacker: PokeSlot, with: Attack):
 	
 	else: Globals.fundies.record_single_src_trg(attacker)
 	
-	attack_effect(attacker, with)
+	attack_effect(attacker, with, pass_prompt)
 	
 	Globals.fundies.remove_top_source_target()
 	SignalBus.end_turn.emit()
@@ -311,22 +316,32 @@ func direct_attack(attacker: PokeSlot, with: Attack, defenders: Array[PokeSlot])
 	
 	for slot in defenders:
 		slot.add_damage(attacker, base_damage)
-	
-	pass
 
-#For bench attacks
 func bench_attack(attacker: PokeSlot, with: BenchAttk, defenders: Array[PokeSlot]):
 	pass
 
-func attack_effect(attacker: PokeSlot, with: Attack):
+func attack_effect(attacker: PokeSlot, with: Attack, predefined = null):
 	if with.prompt:
-		if with.prompt.check_prompt():
+		print(predefined == null)
+		var succeed: bool = predefined == true or \
+		 (predefined == null and with.prompt.check_prompt())
+		
+		if succeed and with.success_effect:
 			await with.success_effect.play_effect()
-		else:
+		
+		elif not succeed and with.fail_effect:
 			await with.fail_effect.play_effect()
 	
 	if with.always_effect:
 		await with.always_effect.play_effect()
+
+func check_prompt_reliant(prompt: PromptAsk):
+	if prompt:
+		var result: bool = prompt.check_prompt()
+		if prompt.has_coinflip():
+			await SignalBus.finished_coinflip
+		return result
+	return null
 
 #endregion
 #--------------------------------------

@@ -2,6 +2,7 @@
 extends Control
 class_name BoardNode
 
+#For easy access: PokeSlot
 @export_enum("None", "Fail", "Success", "All") var debug_prompt: int = 0
 @export var board_state: BoardState
 @export var fundies: Fundies

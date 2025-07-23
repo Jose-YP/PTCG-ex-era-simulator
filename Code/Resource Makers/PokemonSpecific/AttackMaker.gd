@@ -20,7 +20,7 @@ class_name Attack
 ##Don't check any of these if they're checked
 @export_flags("Body", "Weakness", "Resistance", "Effects") var defender_properties: int = 0
 ##The pokemon can use this attack even if it has these conditions
-@export_flags("Alseep", "Paralysis", "Confusion") var condition: int = 0
+@export_flags("None", "Paralysis", "Alseep", "Confusion") var condition: int = 1
 
 @export_group("Damage")
 ##If this is true, then the [member prompt] must be true before dealing any dmg 
@@ -110,11 +110,11 @@ func get_damage() -> int:
 	var final_damage: int = initial_main_DMG
 	var modifier_result: int = 0
 	
-	if prompt_reliant:
-		print("Has prompt reliant damage")
-		if not prompt.check_prompt():
-			print_rich("That you [color=red][b]FAILED!!![/b][/color] LOLOL")
-			return 0
+	#if pass_prompt != null:
+		#print("Has prompt reliant damage")
+		#if not pass_prompt:
+			#print_rich("That you [color=red][b]FAILED!!![/b][/color] LOLOL")
+			#return 0
 	if comparator:
 		var mod_times: Variant = comparator.start_comparision()
 		print("HAS A MODIFIER WITH THE RESULT OF ", mod_times, " * ", modifier_num)
@@ -224,3 +224,17 @@ func get_cost(index: int) -> int:
 
 func does_direct_damage() -> bool:
 	return initial_main_DMG != 0 or modifier_num != 0 or self_damage != 0
+
+#Check if you're allowed to attack while having this condition
+func condition_allows(turn_cond: Consts.TURN_COND) -> bool:
+	match turn_cond:
+		Consts.TURN_COND.PARALYSIS:
+			print(condition && 2, condition & 2)
+			return condition & 2 != 0
+		Consts.TURN_COND.ASLEEP:
+			return condition & 4 != 0
+		_:
+			print(condition && 1, condition & 1)
+		#For now confusion doesn't block anything,
+		#just check if they can attack without condition
+			return condition & 1 != 0

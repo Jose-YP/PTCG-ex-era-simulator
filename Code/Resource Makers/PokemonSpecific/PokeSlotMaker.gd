@@ -372,7 +372,7 @@ func add_condition(adding: Condition) -> void:
 	applied_condition.poison = max(adding.poison, applied_condition.poison)
 	applied_condition.burn = max(adding.burn, applied_condition.burn)
 	
-	if adding.turn_cond != 0:
+	if adding.turn_cond != Consts.TURN_COND.NONE:
 		applied_condition.turn_cond = adding.turn_cond
 	
 	applied_condition.imprision = adding.imprision or applied_condition.imprision
@@ -427,11 +427,14 @@ func condition_rule_utilize(using: Consts.COND_RULES):
 			await SignalBus.finished_coinflip
 			return result != 0
 		Consts.COND_RULES.TWOFLIP:
-			var result: int = Consts.coinflip_once.start_comparision()
+			var result = Consts.coinflip_twice.start_comparision()
 			await SignalBus.finished_coinflip
+			print(result)
 			return result
 		Consts.COND_RULES.TURN_PASS:
-			return Globals.fundies.home_turn == is_home()
+			#Remove after thier side's turn ends
+			print(get_card_name(), Globals.fundies.home_turn, is_home(), not is_attacker())
+			return not is_attacker()
 
 #endregion
 #--------------------------------------

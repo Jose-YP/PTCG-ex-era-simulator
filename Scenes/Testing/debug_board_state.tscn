@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://j57m0tmwtg4n" path="res://Code/Scenes/debug_board_state.gd" id="1_auq40"]
 [ext_resource type="Resource" uid="uid://cbga37453a4ca" path="res://Resources/BoardStates/SideStates/Doubles/ElecAquaTest.tres" id="3_43axb"]
-[ext_resource type="Resource" uid="uid://bafa2bpj2n8u0" path="res://Resources/BoardStates/SideStates/GrassTrans.tres" id="3_yhhmj"]
+[ext_resource type="Resource" uid="uid://dx5mipmcbkkwn" path="res://Resources/BoardStates/SideStates/Doubles/FirstDTest.tres" id="3_yhhmj"]
 [ext_resource type="PackedScene" uid="uid://bmhba1mua5n81" path="res://Scenes/Testing/debug_button.tscn" id="4_t8we2"]
 [ext_resource type="PackedScene" uid="uid://b2f8g5a5evnv4" path="res://Scenes/Testing/comparator_options.tscn" id="6_43axb"]
 [ext_resource type="PackedScene" uid="uid://cni7lmrv7r06c" path="res://Scenes/Main Game/Fundies.tscn" id="6_iquab"]
@@ -11,7 +11,7 @@
 [sub_resource type="Resource" id="Resource_myyen"]
 script = ExtResource("28_7d1mi")
 prize_rules = 0
-coin_rules = 0
+coin_rules = 2
 discard_rules = 0
 who_starts_first = 0
 doubles = false
