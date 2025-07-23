@@ -149,24 +149,8 @@ func check_ask(slot: PokeSlot) -> bool:
 	if desired_condition != null:
 		print_verbose("[center]-----------------------------------------------------------")
 		print_verbose("[center]Conditions")
-		print_verbose(slot.applied_condition)
-		var affected: bool = true
-		#if slot.poison_condition != 0:
-			#print_verbose("Is ", slot.name, " Poisioned? ", condition & 1)
-			#affected = condition & 1 or affected
-		#if slot.burn_condition != 0:
-			#print_verbose("Is ", slot.name, " Burnt? ", condition & 2)
-			#affected = condition & 2 or affected
-		#if slot.turn_condition != 0:
-			#if condition & 4:
-				#print_verbose("Is ", slot.name, " Paralyzed? ", slot.turn_condition == 1)
-				#affected = slot.turn_condition == 1 or affected
-			#if condition & 8:
-				#print_verbose("Is ", slot.name, " Asleep? ", slot.turn_condition == 2)
-				#affected = slot.turn_condition == 2 or affected
-			#if condition & 16:
-				#print_verbose("Is ", slot.name, " Confused? ", slot.turn_condition == 3)
-				#affected = slot.turn_condition == 3 or affected
+		print_verbose(slot.affected_by_condition())
+		var affected: bool = slot.affected_by_condition()
 		
 		result = affected and result
 	

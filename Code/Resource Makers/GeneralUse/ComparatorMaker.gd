@@ -23,10 +23,10 @@ func start_comparision() -> Variant:
 		"None":
 			return first_return
 		"Const":
-			printt("CONST CHECK:", first_return, second_constant)
+			printt("CONST CHECK:", first_return, get_symbol(), second_constant)
 			return make_comparision(first_return, second_constant)
 		"Second":
-			printt("DUAL COUNTER CHECK:",first_return, second_counter.evaluate())
+			printt("DUAL COUNTER CHECK:",first_return, get_symbol(), second_counter.evaluate())
 			return make_comparision(first_return, second_counter.evaluate())
 	return false
 
@@ -45,3 +45,13 @@ func has_coinflip() -> bool:
 	if second_counter:
 		result = result or second_counter.has_coinflip()
 	return result
+
+func get_symbol() -> String:
+	match comparision_type:
+		"Return": return "How did I get here?"
+		"Difference": return "-"
+		"Equals": return "=="
+		"Not Equal": return "!="
+		"Greater": return ">"
+		"Lesser": return "<"
+	return ":("

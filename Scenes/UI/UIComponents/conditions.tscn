@@ -1,11 +1,34 @@
-[gd_scene load_steps=8 format=3 uid="uid://bcuwyo6u5h2fw"]
+[gd_scene load_steps=13 format=3 uid="uid://bcuwyo6u5h2fw"]
 
 [ext_resource type="Texture2D" uid="uid://dj7jl64ubjq3r" path="res://Art/Counters/Poison.png" id="1_ews76"]
+[ext_resource type="Script" uid="uid://jyexkd2w417g" path="res://Code/Scenes/UI/Main/conditions.gd" id="1_wtp2w"]
+[ext_resource type="Script" uid="uid://8s3m1dar3r33" path="res://Code/Resource Makers/EffectSpecific/ConditionMaker.gd" id="2_rnfnf"]
 [ext_resource type="Texture2D" uid="uid://cd6l3wcjbqj0q" path="res://Art/Counters/Fire.png" id="2_wtp2w"]
 [ext_resource type="Texture2D" uid="uid://2d5wox7ruhx6" path="res://Art/Counters/Paralysis.png" id="3_rnfnf"]
 [ext_resource type="Texture2D" uid="uid://pgjbr5a5mvw7" path="res://Art/Counters/Sleep.png" id="4_nwnu7"]
 [ext_resource type="Texture2D" uid="uid://drxnepvq60j3v" path="res://Art/Counters/Confusion.png" id="5_a7s5w"]
 [ext_resource type="Texture2D" uid="uid://cijlbc37pj4gd" path="res://icon.svg" id="6_cy1lv"]
+
+[sub_resource type="Gradient" id="Gradient_rnfnf"]
+offsets = PackedFloat32Array(0.00576369, 0.201729, 0.498559, 0.757925, 1)
+colors = PackedColorArray(0.582746, 0.37002, 0.99199, 1, 0.517054, 0.176393, 0.976442, 1, 0.497993, 0.0744404, 0.731173, 1, 0.486275, 0.0117647, 0.580392, 1, 0.299407, 0.0071619, 0.357829, 1)
+
+[sub_resource type="Gradient" id="Gradient_nwnu7"]
+offsets = PackedFloat32Array(0, 0.244957, 0.458213, 0.73487, 1)
+colors = PackedColorArray(0.990871, 0.301054, 0.243597, 1, 0.984314, 0.133333, 0.105882, 1, 0.882755, 0.0701493, 0.0982771, 1, 0.817181, 0.0293532, 0.0933666, 1, 0.525343, 0, 0.0468674, 1)
+
+[sub_resource type="Resource" id="Resource_nwnu7"]
+script = ExtResource("2_rnfnf")
+side = 2
+slot = 1
+choose_condition = false
+poison = 0
+burn = 0
+mutually_exclusive_conditions = 0
+imprision = false
+shockwave = false
+knockOut = false
+metadata/_custom_type_script = "uid://8s3m1dar3r33"
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_puvo2"]
 
@@ -16,6 +39,10 @@ offset_right = 271.0
 offset_bottom = 214.0
 scale = Vector2(0.5, 0.5)
 mouse_filter = 2
+script = ExtResource("1_wtp2w")
+poison_gradient = SubResource("Gradient_rnfnf")
+burn_gradient = SubResource("Gradient_nwnu7")
+condition = SubResource("Resource_nwnu7")
 metadata/_edit_group_ = true
 
 [node name="Poison" type="TextureRect" parent="."]
@@ -32,7 +59,7 @@ expand_mode = 4
 
 [node name="Burn" type="TextureRect" parent="."]
 unique_name_in_owner = true
-modulate = Color(0.882353, 0.211765, 0.298039, 1)
+modulate = Color(0.958834, 0.187258, 0.253602, 1)
 texture_filter = 1
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
@@ -51,11 +78,10 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_puvo2")
-current_tab = 1
+current_tab = 0
 tabs_visible = false
 
 [node name="Paralysis" type="TextureRect" parent="TurnConditions"]
-visible = false
 modulate = Color(1, 1, 0.0901961, 1)
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
@@ -65,6 +91,7 @@ expand_mode = 4
 metadata/_tab_index = 0
 
 [node name="Sleep" type="TextureRect" parent="TurnConditions"]
+visible = false
 modulate = Color(0.22, 1, 1, 1)
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
@@ -104,3 +131,16 @@ size_flags_vertical = 4
 mouse_filter = 2
 texture = ExtResource("6_cy1lv")
 expand_mode = 4
+
+[node name="HSlider" type="HSlider" parent="."]
+visible = false
+layout_mode = 2
+max_value = 4.0
+
+[node name="HSlider2" type="HSlider" parent="."]
+visible = false
+layout_mode = 2
+max_value = 4.0
+
+[connection signal="value_changed" from="HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="value_changed" from="HSlider2" to="." method="_on_h_slider_2_value_changed"]

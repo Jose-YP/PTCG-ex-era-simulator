@@ -271,11 +271,13 @@ func set_reversable(reversable: bool):
 #--------------------------------------
 #region ATTACKING
 func before_direct_attack(attacker: PokeSlot, with: Attack):
+	var direct_bool: bool = with.does_direct_damage()
 	print("Now before ", with.name, " from ", attacker.get_card_name())
 	
 	with.print_attack()
 	
-	if with.does_direct_damage():
+	if direct_bool or with.always_effect.has_effect_type(["Condition",
+	 "Alleviate", "DamageManip", "Disable", "CardDisrupt"]):
 		if not with.both_active:
 			await get_choice_candidates("Who do you want to attack?", 
 			func(slot: PokeSlot): return slot.is_in_slot(Consts.SIDES.DEFENDING, Consts.SLOTS.ACTIVE),
@@ -285,7 +287,7 @@ func before_direct_attack(attacker: PokeSlot, with: Attack):
 				return
 			else:
 				Globals.fundies.record_attack_src_trg(attacker.is_home(), [attacker], [hold_candidate])
-				direct_attack(attacker, with, [hold_candidate])
+				if direct_bool: direct_attack(attacker, with, [hold_candidate])
 		else:
 			var def_active: Array[PokeSlot] = Globals.full_ui.get_poke_slots(Consts.SIDES.DEFENDING, Consts.SLOTS.ACTIVE)
 			Globals.fundies.record_attack_src_trg(attacker.is_home(), [attacker], def_active)

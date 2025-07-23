@@ -76,8 +76,24 @@ func play_effect(reversable: bool = false):
 	finished.emit()
 
 func handle_component(comp, reversable: bool = false):
-	await comp.play_effect(reversable)
+	if comp == extra_effect and prompt_extra.check_prompt():
+		pass
+	if (comp == extra_effect and prompt_extra.check_prompt())\
+	 or comp != extra_effect:
+		await comp.play_effect(reversable)
+
 
 func just_reversed():
 	went_back = true
 	SignalBus.went_back.disconnect(just_reversed)
+
+func has_effect_type(comps: Array[String]):
+	var default_order: Array[Object] = [condition, buff, card_disrupt, disable, 
+	 energy_movement, dmgManip, search, swap, draw_ammount, alleviate, mimic, extra_effect]
+	
+	for comp in comps:
+		for current_comps in default_order:
+			if current_comps and current_comps.get_script().get_global_name() == comp:
+				return true
+	
+	return false

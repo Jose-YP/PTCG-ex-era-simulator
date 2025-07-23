@@ -145,6 +145,9 @@ offset_right = 184.0
 offset_bottom = 56.0
 
 [node name="Conditions" parent="." instance=ExtResource("9_0ajf4")]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 187.0
+offset_top = 40.0
 offset_right = 219.0
+offset_bottom = 216.0

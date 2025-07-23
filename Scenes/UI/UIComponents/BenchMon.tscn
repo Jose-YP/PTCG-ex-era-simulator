@@ -6,9 +6,9 @@
 [ext_resource type="Shader" uid="uid://chaingl03cnx1" path="res://Shaders/Shine2D.gdshader" id="3_dkwm5"]
 [ext_resource type="Texture2D" uid="uid://d3nrajtlwbvgh" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/84.jpg" id="3_pjvm0"]
 [ext_resource type="PackedScene" uid="uid://bs3ila6cpt8n1" path="res://Scenes/UI/UIComponents/types.tscn" id="4_nhrrd"]
-[ext_resource type="Texture2D" uid="uid://cijlbc37pj4gd" path="res://icon.svg" id="5_r3j25"]
 [ext_resource type="PackedScene" uid="uid://dph43kayde03u" path="res://Scenes/UI/UIComponents/energy_types.tscn" id="7_lj5ts"]
 [ext_resource type="PackedScene" uid="uid://04qgb8r1r84v" path="res://Scenes/UI/UIComponents/damage_counter.tscn" id="8_e8fxk"]
+[ext_resource type="PackedScene" uid="uid://bcuwyo6u5h2fw" path="res://Scenes/UI/UIComponents/conditions.tscn" id="8_lj5ts"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lj5ts"]
 resource_local_to_scene = true
@@ -36,9 +36,13 @@ layout_mode = 0
 offset_right = 147.0
 offset_bottom = 133.0
 theme_override_constants/separation = -12
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Main"]
 layout_mode = 2
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
 
 [node name="Name" type="RichTextLabel" parent="Main/HBoxContainer"]
 unique_name_in_owner = true
@@ -142,40 +146,16 @@ offset_right = 212.0
 offset_bottom = 142.0
 en_count = 6
 
-[node name="Conditions" type="VBoxContainer" parent="."]
+[node name="Conditions" parent="." instance=ExtResource("8_lj5ts")]
+unique_name_in_owner = true
 layout_mode = 0
-offset_left = 128.0
-offset_top = 24.0
-offset_right = 160.0
-offset_bottom = 92.0
-mouse_filter = 2
-metadata/_edit_group_ = true
+offset_top = 33.0
+offset_bottom = 209.0
 
-[node name="DamageCounter" parent="Conditions" instance=ExtResource("8_e8fxk")]
+[node name="DamageCounter" parent="." instance=ExtResource("8_e8fxk")]
 unique_name_in_owner = true
-visible = false
-layout_mode = 2
-
-[node name="Imprison" type="TextureRect" parent="Conditions"]
-unique_name_in_owner = true
-visible = false
-modulate = Color(0.984314, 0.498039, 0.745098, 1)
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-mouse_filter = 2
-texture = ExtResource("5_r3j25")
-expand_mode = 4
-
-[node name="Shockwave" type="TextureRect" parent="Conditions"]
-unique_name_in_owner = true
-visible = false
-modulate = Color(0.921569, 0.384314, 0, 1)
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-mouse_filter = 2
-texture = ExtResource("5_r3j25")
-expand_mode = 4
+layout_mode = 0
+offset_left = 152.0
+offset_top = 32.0
+offset_right = 184.0
+offset_bottom = 64.0

@@ -371,51 +371,16 @@ func remove_tms() -> void:
 
 #--------------------------------------
 #region CONDITION HANDLERS
-func add_condition(condition: String, severe: bool = false) -> void:
-	match condition:
-		"Poison":
-			add_poison(severe)
-		"Burn":
-			add_burn(severe)
-		"Imprison":
-			set_imprison(true)
-		"Shockwave":
-			set_shockwave(true)
-		_:
-			add_turn(condition)
-	refresh()
-
-func add_poison(severe: bool = false) -> void:
-	if not is_active():
-		applied_condition.poison = poison_type.HEAVY if severe else poison_type.NORMAL
-	else:
-		print(current_card.name)
-		push_error("Adding Poision to a benched mon")
-
-func add_burn(severe: bool = false) -> void:
-	if not is_active():
-		applied_condition.burn = burn_type.HEAVY if severe else burn_type.NORMAL
-	else:
-		push_error("Adding Poision to a benched mon")
-
-func add_turn(which) -> void:
-	if not is_active():
-		match which:
-			"Paralysis":
-				applied_condition.mutually_exclusive_conditions = turn_type.PARALYSIS
-			"Asleep":
-				applied_condition.mutually_exclusive_conditions = turn_type.ASLEEP
-			"Confusion":
-				applied_condition.mutually_exclusive_conditions = turn_type.CONFUSION
-			_:
-				push_error("add_turn can't add ", which)
-
-func set_imprison(result: bool) -> void:
-	applied_condition.imprison = result
-	refresh()
-
-func set_shockwave(result: bool) -> void:
-	applied_condition.shockwave = result
+func add_condition(adding: Condition) -> void:
+	applied_condition.poison = max(adding.poison, applied_condition.poison)
+	applied_condition.burn = max(adding.burn, applied_condition.burn)
+	
+	if adding.mutually_exclusive_conditions != 0:
+		applied_condition.mutually_exclusive_conditions = adding.mutually_exclusive_conditions
+	
+	applied_condition.imprision = adding.imprision or applied_condition.imprision
+	applied_condition.shockwave = adding.shockwave or applied_condition.shockwave
+	
 	refresh()
 
 func affected_by_condition() -> bool:
@@ -452,28 +417,29 @@ func refresh() -> void:
 		ui_slot.max_hp.append_text(str("HP: ",get_pokedata().HP))
 		ui_slot.damage_counter.set_damage(damage_counters)
 		ui_slot.display_types(Convert.flags_to_type_array(get_pokedata().type))
+		
+		ui_slot.display_condition()
+		
+		#check for any attatched cards/conditions
+		count_energy()
+		ui_slot.display_energy(get_energy_strings(), attached_energy)
+		ui_slot.display_condition()
+		
+		if tm_cards.size():
+			ui_slot.tm.texture = tm_cards[0].image
+			ui_slot.tm.show()
+		else: ui_slot.tm.hide()
+		if tool_card:
+			ui_slot.tool.show()
+			ui_slot.tool.texture = tool_card.image
+		else: ui_slot.tool.hide()
+		
 	else:
 		ui_slot.display_image(null)
 		ui_slot.display_types([])
 	
 	#recognize position of slot
 	ui_slot.connected_slot = self
-	
-	#check for any attatched cards/conditions
-	count_energy()
-	ui_slot.display_energy(get_energy_strings(), attached_energy)
-	ui_slot.display_condition()
-	ui_slot.display_imprision(applied_condition.addable_effects & 1)
-	ui_slot.display_shockwave(applied_condition.addable_effects & 2)
-	
-	if tm_cards.size():
-		ui_slot.tm.texture = tm_cards[0].image
-		ui_slot.tm.show()
-	else: ui_slot.tm.hide()
-	if tool_card:
-		ui_slot.tool.show()
-		ui_slot.tool.texture = tool_card.image
-	else: ui_slot.tool.hide()
 
 #endregion
 #--------------------------------------

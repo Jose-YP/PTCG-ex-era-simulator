@@ -1,32 +1,72 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=18 format=3 uid="uid://dpvdlrumqivuv"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=22 format=3 uid="uid://dpvdlrumqivuv"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_6qsu5"]
 [ext_resource type="Texture2D" uid="uid://djxbrnlywgq35" path="res://Art/Cards/1 ex Ruby & Saphire/11.jpg" id="1_ry2bs"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_xuiss"]
-[ext_resource type="Resource" uid="uid://cbomu70kytlcn" path="res://Resources/Components/Effects/Asks/Stats/AtkSelfHas2Enrg.tres" id="3_xuiss"]
 [ext_resource type="Resource" uid="uid://dew25qfxkag73" path="res://Resources/Components/Effects/Conditions/DefPoison.tres" id="4_dpoqi"]
-[ext_resource type="Resource" uid="uid://wb16g381c2tv" path="res://Resources/Components/Effects/Asks/Stats/AtkSelfHas3Energ.tres" id="5_e07y2"]
+[ext_resource type="Resource" uid="uid://dbvoacgaygcdj" path="res://Resources/Components/Counters/Comparator/SelfGE2En.tres" id="4_e07y2"]
+[ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="5_dpoqi"]
 [ext_resource type="Resource" uid="uid://hbbi3hqk47gs" path="res://Resources/Components/Effects/Conditions/DefSleep.tres" id="5_u0wp7"]
-[ext_resource type="Resource" uid="uid://jmwl80udefh7" path="res://Resources/Components/Effects/Asks/Stats/AtkSlefHas4Enrg.tres" id="7_dpoqi"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="7_pi6dd"]
+[ext_resource type="Resource" uid="uid://yitg2k7gl3rq" path="res://Resources/Components/Counters/Comparator/SelfGE4En.tres" id="9_dpoqi"]
 [ext_resource type="Resource" uid="uid://cqw2kwbgcwgvb" path="res://Resources/Components/Effects/Conditions/BasicSleep.tres" id="9_mqkhh"]
 [ext_resource type="Resource" uid="uid://bext0mocufqgp" path="res://Resources/Components/Effects/Conditions/BasicBurn.tres" id="9_u0wp7"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="10_77a3r"]
+[ext_resource type="Resource" uid="uid://bccpcvahw5m4f" path="res://Resources/Components/Counters/Comparator/SelfGE3En.tres" id="11_u0wp7"]
+
+[sub_resource type="Resource" id="Resource_u0wp7"]
+script = ExtResource("5_dpoqi")
+formal_question = false
+question_string = ""
+yes_answer = ""
+no_answer = ""
+comparator = ExtResource("4_e07y2")
+can_reverse = true
+chooser = 0
+choose_location = "None"
+which_stack = 0
+metadata/_custom_type_script = "uid://b85jmc7067bjc"
+
+[sub_resource type="Resource" id="Resource_aqyw1"]
+script = ExtResource("5_dpoqi")
+formal_question = false
+question_string = ""
+yes_answer = ""
+no_answer = ""
+comparator = ExtResource("9_dpoqi")
+can_reverse = true
+chooser = 0
+choose_location = "None"
+which_stack = 0
+metadata/_custom_type_script = "uid://b85jmc7067bjc"
 
 [sub_resource type="Resource" id="Resource_ubvli"]
 script = ExtResource("7_pi6dd")
 either_or = false
 order = Array[int]([])
 condition = ExtResource("5_u0wp7")
-ask_extra = ExtResource("7_dpoqi")
+prompt_extra = SubResource("Resource_aqyw1")
 extra_effect = ExtResource("9_u0wp7")
+
+[sub_resource type="Resource" id="Resource_mqkhh"]
+script = ExtResource("5_dpoqi")
+formal_question = false
+question_string = ""
+yes_answer = ""
+no_answer = ""
+comparator = ExtResource("11_u0wp7")
+can_reverse = true
+chooser = 0
+choose_location = "None"
+which_stack = 0
+metadata/_custom_type_script = "uid://b85jmc7067bjc"
 
 [sub_resource type="Resource" id="Resource_pi6dd"]
 script = ExtResource("7_pi6dd")
 either_or = false
 order = Array[int]([])
 condition = ExtResource("4_dpoqi")
-ask_extra = ExtResource("5_e07y2")
+prompt_extra = SubResource("Resource_mqkhh")
 extra_effect = SubResource("Resource_ubvli")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -52,7 +92,7 @@ self_damage = 0
 modifier = 0
 modifier_num = 0
 both_active = false
-ask = ExtResource("3_xuiss")
+prompt = SubResource("Resource_u0wp7")
 success_effect = SubResource("Resource_pi6dd")
 fail_effect = ExtResource("9_mqkhh")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

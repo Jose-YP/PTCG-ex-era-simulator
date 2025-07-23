@@ -14,8 +14,7 @@ class_name UI_Slot
 @onready var tool: TextureRect = %Tool
 @onready var tm: TextureRect = %TM
 @onready var damage_counter: Control = %DamageCounter
-@onready var imprison = %Imprison
-@onready var shockwave: TextureRect = %Shockwave
+@onready var cond_display: ConditionDisplay = %Conditions
 @onready var typeContainer: Array[Node] = %TypeContainer.get_children()
 @onready var energy_container: Array[Node] = %EnergyTypes.get_children()
 @onready var list_offsets: Array[Vector2] = [Vector2(-size.x / 2, 0),
@@ -23,10 +22,6 @@ class_name UI_Slot
 
 #Unfinished, doesn't account for special energy
 var connected_slot: PokeSlot = PokeSlot.new()
-var attached_energy: Dictionary = {"Grass": 0, "Fire": 0, "Water": 0,
- "Lightning": 0, "Psychic":0, "Darkness":0, "Metal":0, "Colorless":0,
- "Rainbow":0, "Magma":0, "Aqua":0, "Dark Metal":0, "React": 0,
- "Holon FF": 0, "Holon GL": 0, "Holon WP": 0}
 var current_display: Node
 
 #endregion
@@ -83,28 +78,11 @@ func display_energy(energy_arr: Array, energy_dict: Dictionary):
 
 #--------------------------------------
 #region CONDITION DISPLAY
-func display_condition() -> void:
-	if connected_slot.applied_condition.poison != 0:
-		%Poison.show()
-	elif active: %Poison.hide()
-	
-	if connected_slot.applied_condition.burn != 0:
-		%Burn.show()
-	elif active: %Burn.hide()
-	
-	if connected_slot.applied_condition.mutually_exclusive_conditions != 0:
-		%TurnConditions.show()
-		%TurnConditions.current_tab = connected_slot.applied_condition.mutually_exclusive_conditions - 1
-
-	elif active: %TurnConditions.hide()
-
-func display_imprision(truth: bool = true) -> void:
-	if truth: %Imprison.show()
-	else: %Imprison.hide()
-
-func display_shockwave(truth: bool = true) -> void:
-	if truth: %Shockwave.show()
-	else: %Shockwave.hide()
+func display_condition():
+	if connected_slot.is_filled():
+		cond_display.show()
+		cond_display.condition = connected_slot.applied_condition
+	else: cond_display.hide()
 
 #endregion
 #--------------------------------------
@@ -126,5 +104,4 @@ func clear():
 	tm.hide()
 	tool.hide()
 	display_condition()
-	display_imprision(false)
-	display_shockwave(false)
+	cond_display.condition = Condition.new()

@@ -1,27 +1,30 @@
-[gd_resource type="Resource" script_class="SlotAsk" load_steps=2 format=3 uid="uid://wb16g381c2tv"]
+[gd_resource type="Resource" script_class="SlotAsk" load_steps=3 format=3 uid="uid://wb16g381c2tv"]
 
+[ext_resource type="Resource" uid="uid://c7itelq8jtjc2" path="res://Resources/Components/EnData/Rainbow.tres" id="1_jpikp"]
 [ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="1_uw10e"]
 
 [resource]
 script = ExtResource("1_uw10e")
 side_target = 1
 slot_target = 1
+specifically = Array[String]([])
 comparison_type = 1
 max_hp = -10
 damage_taken = -10
 retreat_cost = -1
-energy_attatched = 3
 knocked_out = false
-condition = 0
-location = 4
+tool_attatched = false
 stage = 7
 rare_candy = false
 class_inclusive = true
 pokemon_class = 63
 owner_inclusive = true
 pokemon_owner = 15
-bench_size = -1
 type_inclusive = true
-type = 1023
-type_size = -1
+pokemon_type = 1023
+energy_inclusive = true
+check_cards = true
+energy_attatched = 3
+energy_class = "Any"
+energy_type = ExtResource("1_jpikp")
 metadata/_custom_type_script = "uid://mkjynqda7q5g"
