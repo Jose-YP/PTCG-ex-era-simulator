@@ -195,15 +195,16 @@ fit_content = true
 [node name="Ruleboxes" type="HBoxContainer" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/DragArea/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-size_flags_vertical = 0
-theme_override_constants/separation = 24
+size_flags_vertical = 4
+theme_override_constants/separation = 8
 alignment = 1
 
 [node name="exRulebox" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/DragArea/VBoxContainer/Ruleboxes" instance=ExtResource("7_87yqa")]
 visible = false
 layout_mode = 2
+size_flags_vertical = 1
 
-[node name="exRulebox2" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/DragArea/VBoxContainer/Ruleboxes" instance=ExtResource("8_8f7l3")]
+[node name="StarRulebox" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/DragArea/VBoxContainer/Ruleboxes" instance=ExtResource("8_8f7l3")]
 visible = false
 layout_mode = 2
 
@@ -303,13 +304,13 @@ unique_name_in_owner = true
 layout_mode = 2
 
 [node name="RetreatCost" type="VBoxContainer" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties"]
+unique_name_in_owner = true
 visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 alignment = 1
 
 [node name="RichTextLabel4" type="RichTextLabel" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/RetreatCost"]
-visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 8
@@ -319,7 +320,6 @@ fit_content = true
 
 [node name="RetreatContainer" type="HBoxContainer" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Other/VBoxContainer/OtherProperties/RetreatCost"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
 alignment = 1
 
@@ -667,4 +667,5 @@ metadata/_tab_index = 21
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Other"]
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/margin_bottom = 58

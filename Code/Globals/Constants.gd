@@ -129,5 +129,6 @@ const allowed_list_flags: Array[String] = ["Basic", "Evolution",
 var coinflip_once: Comparator = load("res://Resources/Components/Counters/Comparator/CoinflipHeads.tres")
 var coinflip_twice: Comparator = load("res://Resources/Components/Counters/Comparator/CoinflipHeads.tres")
 
+var retreat_swap: PokeSwap = load("res://Resources/Components/Effects/Swap/SwapSelf.tres")
 #endregion
 #--------------------------------------

@@ -26,7 +26,7 @@ func reformat(text: String) -> String:
 	for found in italics:
 		#Anything in parenthesis should be italisized
 		var original: String = found.get_string(0)
-		var wrapped: String = "\n[i]" + original + "[/i]"
+		var wrapped: String = "[i]" + original + "[/i]"
 		
 		result = result.replace(original, wrapped)
 	

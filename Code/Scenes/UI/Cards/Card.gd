@@ -23,6 +23,7 @@ extends Control
 @onready var rarity: TabContainer = %Rarity
 @onready var set_type: TabContainer = %Set
 @onready var retreat_button: Control = %RetreatButton
+@onready var retreat_container: HBoxContainer = %RetreatContainer
 @onready var art: TextureRect = %Art
 @onready var use_as_energy: PanelContainer = %UseAsEnergy
 
@@ -61,8 +62,14 @@ func _ready():
 		resistance_nodes[i].display_type(resistances[i])
 		resistance_nodes[i].show()
 	
-	retreat_button.set_retreat(pokedata.retreat)
-	
+	if poke_slot:
+		retreat_button.set_retreat(poke_slot)
+		retreat_button.allow_retreat()
+	else:
+		retreat_button.hide()
+		%RetreatCost.show()
+		for i in range(pokedata.retreat):
+			retreat_container.get_child(i).show()
 	#endregion
 	#--------------------------------------
 	

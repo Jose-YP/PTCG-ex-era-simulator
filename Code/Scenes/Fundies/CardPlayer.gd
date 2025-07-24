@@ -3,8 +3,8 @@ extends Node
 class_name CardPlayer
 
 signal chosen
-#signal back
 
+var retreat_discard: EnMov = load("res://Resources/Components/Effects/EnergyMovement/RetreatDis.tres")
 var play_functions: Array[Callable] = [play_basic_pokemon, play_evolution, 
 play_place_stadium, play_attatch_tool, play_attatch_tm, play_fossil, 
 play_energy, play_trainer]
@@ -15,6 +15,7 @@ func _ready() -> void:
 	SignalBus.connect_to(play_functions)
 	SignalBus.get_candidate.connect(record_candidate)
 	SignalBus.attack.connect(before_direct_attack)
+	SignalBus.retreat.connect(retreating)
 
 func determine_play(card: Base_Card, placement: Placement = null) -> void:
 	var card_type: int = Convert.get_card_flags(card)
@@ -347,6 +348,19 @@ func check_prompt_reliant(prompt: PromptAsk):
 
 #endregion
 #--------------------------------------
+
+func retreating(retreater: PokeSlot):
+	Consts.retreat_swap.finished.connect(call_retreat_discard.bind(retreater))
+	retreat_discard.energy_ammount = retreater.get_pokedata().retreat
+	Globals.fundies.record_single_src_trg(retreater)
+	
+	await Consts.retreat_swap.switch(Consts.SIDES.ATTACKING, true)
+	
+	Consts.retreat_swap.finished.disconnect(call_retreat_discard)
+
+func call_retreat_discard(retreater: PokeSlot):
+	retreat_discard.send_effect()
+	Globals.fundies.remove_top_source_target()
 
 #--------------------------------------
 #region DETERMINING EFFECTS

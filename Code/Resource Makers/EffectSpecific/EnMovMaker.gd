@@ -37,6 +37,7 @@ func play_effect(reversable: bool = false) -> void:
 		1:
 			await swap_effect(reversable)
 		2:
+			@warning_ignore("redundant_await")
 			await attatch_effect(reversable)
 	
 	finished.emit()

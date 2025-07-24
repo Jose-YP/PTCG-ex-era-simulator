@@ -30,11 +30,13 @@ layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="Text" type="RichTextLabel" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 8
+mouse_filter = 2
 bbcode_enabled = true
 text = "[center]Retreat"
 fit_content = true
@@ -42,6 +44,7 @@ fit_content = true
 [node name="RetreatContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+mouse_filter = 2
 alignment = 1
 
 [node name="Types" parent="PanelContainer/VBoxContainer/RetreatContainer" instance=ExtResource("1_hgo2m")]

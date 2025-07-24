@@ -4,23 +4,20 @@ extends Control
 @onready var retreat_display: Array[Node] = %RetreatContainer.get_children()
 @onready var button: Button = $PanelContainer/Button
 
-var cost: int = 0
+var slot: PokeSlot
 
-signal retreating
-
-func set_retreat(set_cost: int):
-	cost = set_cost
-	
+func set_retreat(new_slot: PokeSlot):
+	slot = new_slot
 	for i in range(retreat_display.size()):
-		if i <= cost:
+		if i < slot.get_pokedata().retreat:
 			retreat_display[i].show()
 		else: retreat_display[i].hide()
 
-func allow_retreat(energy: int):
-	button.disabled = not energy >= cost
-	return energy >= cost
+func allow_retreat():
+	button.disabled = not slot.get_total_energy() >= slot.get_pokedata().retreat
 
 func _on_button_pressed() -> void:
-	retreating.emit()
+	Globals.control_disapear(Globals.checked_card, .1, Globals.checked_card.old_pos)
+	SignalBus.retreat.emit(slot)
 
 # May 8th 2025: I found the Emotacon section of the godot editor ᕦò_óˇ)ᕤ lol

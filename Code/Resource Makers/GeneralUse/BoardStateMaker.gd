@@ -13,6 +13,7 @@ class_name BoardState
 ##Should the two players go through regular rules start?
 ##[br] Add a basic to active after drawing 7 cards
 @export var default_start: bool = false
+@export var debug_unlimit: bool = false
 @export var stadium: Base_Card
 
 @export var home_side: Consts.PLAYER_TYPES = Consts.PLAYER_TYPES.PLAYER

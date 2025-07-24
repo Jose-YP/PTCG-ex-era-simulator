@@ -92,15 +92,15 @@ func show_options() -> Node:
 func _gui_input(event):
 	if not disabled:
 		if event.is_action_pressed("A"):
-			if stack_act != Consts.STACK_ACT.LOOK and stack_act != Consts.STACK_ACT.ENSWAP:
+			if stack_act == Consts.STACK_ACT.DISCARD or stack_act == Consts.STACK_ACT.ENSWAP:
+				select.emit()
+			elif stack_act != Consts.STACK_ACT.LOOK:
 				if Globals.fundies.options:
 					await Globals.control_disapear(Globals.fundies.options, .15, global_position)
 				if not Globals.checking:
 					Globals.fundies.options = show_options()
 			elif stack_act == Consts.STACK_ACT.LOOK:
 				Globals.show_card(card, self)
-			else:
-				select.emit()
 	if event.is_action_pressed("Check"):
 		Globals.show_card(card, self)
 
