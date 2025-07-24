@@ -7,25 +7,25 @@
 [ext_resource type="Resource" uid="uid://dyqdhaov0ywxk" path="res://Resources/Cards/1 ex Ruby & Saphire/RS92Switch.tres" id="5_octn8"]
 [ext_resource type="Resource" uid="uid://c2tk6qy8h57lw" path="res://Resources/Cards/1 ex Ruby & Saphire/RS82EnergySwitch.tres" id="6_xynjr"]
 [ext_resource type="Resource" uid="uid://1ktns5k8q1q5" path="res://Resources/Cards/1 ex Ruby & Saphire/RS44Skitty.tres" id="8_go4v7"]
-[ext_resource type="Resource" uid="uid://22c17vtu70b3" path="res://Resources/Cards/4 ex Team Magma VS Team Aqua/MA37TeamMagma'sMightyena.tres" id="9_31kmx"]
+[ext_resource type="Resource" uid="uid://22c17vtu70b3" path="res://Resources/Cards/4 ex Team Magma VS Team Aqua/MA37TeamMagma'sMightyena.tres" id="8_xynjr"]
 [ext_resource type="Script" uid="uid://calm3n7va5yjo" path="res://Code/Resource Makers/GeneralUse/CardStacksMaker.gd" id="9_hgkfh"]
 [ext_resource type="Resource" uid="uid://ben8fxv5hw5hb" path="res://Resources/Cards/1 ex Ruby & Saphire/RS87PokemonReversal.tres" id="9_xhhn1"]
 [ext_resource type="Script" uid="uid://dgqpurnuh14t1" path="res://Code/Resource Makers/GeneralUse/SideStateMaker.gd" id="10_f4ycl"]
 [ext_resource type="Script" uid="uid://cs70ix831b5g4" path="res://Code/Resource Makers/PokemonSpecific/PokeSlotMaker.gd" id="11_4h0ra"]
 [ext_resource type="Resource" uid="uid://oa7r3igevgqi" path="res://Resources/Cards/1 ex Ruby & Saphire/RS49Aron.tres" id="12_kiik6"]
-[ext_resource type="Resource" uid="uid://c3tip8v6djvro" path="res://Resources/Cards/4 ex Team Magma VS Team Aqua/MA65TeamMagma'sPoochyena.tres" id="13_fgkwm"]
 [ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/BuffMaker.gd" id="13_xynjr"]
 [ext_resource type="Resource" uid="uid://b45smf3ecldmx" path="res://Resources/Cards/1 ex Ruby & Saphire/RS103Sneasel-ex.tres" id="14_64mus"]
 [ext_resource type="Script" uid="uid://c0ishgbxk63dg" path="res://Code/Resource Makers/EffectSpecific/DisableMaker.gd" id="14_hl4js"]
 [ext_resource type="Resource" uid="uid://s0xeoyp6jtsa" path="res://Resources/Cards/1 ex Ruby & Saphire/RS84LumBerry.tres" id="15_ejiat"]
 [ext_resource type="Script" uid="uid://8s3m1dar3r33" path="res://Code/Resource Makers/EffectSpecific/ConditionMaker.gd" id="17_hp0s7"]
+[ext_resource type="Resource" uid="uid://c3tip8v6djvro" path="res://Resources/Cards/4 ex Team Magma VS Team Aqua/MA65TeamMagma'sPoochyena.tres" id="18_hl4js"]
 [ext_resource type="Resource" uid="uid://dipr5ie1kx7v8" path="res://Resources/Cards/1 ex Ruby & Saphire/RS93DarknessEnergy.tres" id="19_hgkfh"]
 
 [sub_resource type="Resource" id="Resource_yn0ge"]
 script = ExtResource("9_hgkfh")
 deck = ExtResource("1_go4v7")
 init_deck = Array[ExtResource("2_31kmx")]([])
-init_hand = Array[ExtResource("2_31kmx")]([ExtResource("3_xhhn1"), ExtResource("4_xqkcm"), ExtResource("5_octn8"), ExtResource("6_xynjr"), ExtResource("8_go4v7"), ExtResource("9_31kmx"), ExtResource("9_xhhn1")])
+init_hand = Array[ExtResource("2_31kmx")]([ExtResource("3_xhhn1"), ExtResource("4_xqkcm"), ExtResource("5_octn8"), ExtResource("6_xynjr"), ExtResource("8_go4v7"), ExtResource("8_xynjr"), ExtResource("9_xhhn1")])
 init_discard = Array[ExtResource("2_31kmx")]([])
 init_prize = Array[ExtResource("2_31kmx")]([])
 metadata/_custom_type_script = "uid://calm3n7va5yjo"
@@ -59,7 +59,7 @@ metadata/_custom_type_script = "uid://8s3m1dar3r33"
 
 [sub_resource type="Resource" id="Resource_4h0ra"]
 script = ExtResource("11_4h0ra")
-current_card = ExtResource("13_fgkwm")
+current_card = ExtResource("18_hl4js")
 damage_counters = 0
 evolution_ready = false
 evolved_this_turn = false
@@ -78,13 +78,13 @@ slot = 1
 choose_condition = false
 poison = 0
 burn = 0
-turn_cond = 2
+turn_cond = 3
 imprision = false
 shockwave = false
 knockOut = false
 metadata/_custom_type_script = "uid://8s3m1dar3r33"
 
-[sub_resource type="Resource" id="Resource_fgkwm"]
+[sub_resource type="Resource" id="Resource_hp0s7"]
 script = ExtResource("11_4h0ra")
 current_card = ExtResource("12_kiik6")
 damage_counters = 0
@@ -106,6 +106,6 @@ bench_size = 5
 slots = Dictionary[ExtResource("11_4h0ra"), bool]({
 SubResource("Resource_8k1af"): false,
 SubResource("Resource_4h0ra"): true,
-SubResource("Resource_fgkwm"): true
+SubResource("Resource_hp0s7"): true
 })
 metadata/_custom_type_script = "uid://dgqpurnuh14t1"

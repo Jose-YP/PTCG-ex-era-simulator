@@ -7,8 +7,10 @@ class_name Condition
 @export var slot: Consts.SLOTS = Consts.SLOTS.TARGET
 
 @export var choose_condition: bool = false
-@export var poison: Consts.POISON = Consts.POISON.NONE
-@export var burn: Consts.BURN = Consts.BURN.NONE
+##Number of dmg Counters added from this effect, multiplied by 10 on implementation
+@export_range(0,20,1) var poison: int = 0
+##Number of dmg Counters added from this effect, multiplied by 10 on implementation
+@export_range(0,20,1) var burn: int = 0
 @export var turn_cond: Consts.TURN_COND = Consts.TURN_COND.NONE
 @export var imprision: bool = false
 @export var shockwave: bool = false

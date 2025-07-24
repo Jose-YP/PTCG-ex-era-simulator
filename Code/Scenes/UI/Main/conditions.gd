@@ -20,14 +20,16 @@ func _ready() -> void:
 	readied = true
 
 func display_condition():
-	if condition.poison != Consts.POISON.NONE:
+	if condition.poison != 0:
 		%Poison.show()
+		@warning_ignore("integer_division")
 		color_poison(condition.poison - 1)
 		
 	else: %Poison.hide()
 	
-	if condition.burn != Consts.BURN.NONE:
+	if condition.burn != 0:
 		%Burn.show()
+		@warning_ignore("integer_division")
 		color_burn(condition.burn - 1)
 	else: %Burn.hide()
 	

@@ -234,7 +234,7 @@ func condition_allows(turn_cond: Consts.TURN_COND) -> bool:
 		Consts.TURN_COND.ASLEEP:
 			return condition & 4 != 0
 		_:
-			print(condition && 1, condition & 1)
 		#For now confusion doesn't block anything,
 		#just check if they can attack without condition
+			print(condition && 1, condition & 1, condition)
 			return condition & 1 != 0

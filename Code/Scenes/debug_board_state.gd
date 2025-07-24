@@ -19,8 +19,7 @@ func _ready() -> void:
 	full_ui = doubles_ui.instantiate() if doubles else singles_ui.instantiate()
 	add_child(full_ui)
 	full_ui.home_side = board_state.home_side
-	Globals.coin_rules = board_state.coin_rules
-	Globals.debug_unlimit = debug_unlimit
+	Globals.board_state = board_state
 	set_up(true)
 	set_up(false)
 	
@@ -32,8 +31,7 @@ func set_up(home: bool):
 	var player_type: Consts.PLAYER_TYPES = board_state.get_player_type(home)
 	var stacks: CardStacks = temp_side.card_stacks.duplicate()
 	
-	Globals.burn_rules = board_state.burn_rules
-	Globals.sleep_rules = board_state.sleep_rules
+	Globals.board_state = board_state
 	
 	ui.player_type = player_type
 	if player_type == Consts.PLAYER_TYPES.CPU:

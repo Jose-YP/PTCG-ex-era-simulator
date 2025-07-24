@@ -104,17 +104,6 @@ enum COIN_RULES{
 	TAILS,
 	ALTERNATE
 }
-
-enum POISON{
-	NONE,
-	NORMAL,
-	HEAVY
-}
-enum BURN{
-	NONE,
-	NORMAL,
-	HEAVY
-}
 enum TURN_COND{
 	NONE,
 	PARALYSIS,

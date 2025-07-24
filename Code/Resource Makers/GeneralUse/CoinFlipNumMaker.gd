@@ -30,7 +30,7 @@ func activate_CF() -> Dictionary[String, int]:
 		var tails: bool = false
 		while not tails:
 			#Safeguard to prevent infinite flips
-			if Globals.coin_rules == Consts.COIN_RULES.HEADS:
+			if Globals.board_state.coin_rules == Consts.COIN_RULES.HEADS:
 				if results["Heads"] > 10: return results
 			
 			single_flip()
@@ -60,7 +60,7 @@ func get_flip_array(dict: Dictionary) -> Array[bool]:
 
 func single_flip() -> void:
 	var flip: int
-	match Globals.coin_rules:
+	match Globals.board_state.coin_rules:
 		Consts.COIN_RULES.REG:
 			flip = randi_range(0,1)
 		Consts.COIN_RULES.HEADS:

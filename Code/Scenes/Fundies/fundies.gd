@@ -106,7 +106,7 @@ func can_be_played(card: Base_Card) -> int:
 	#Supporter
 	if considered & 8 != 0:
 		if (not Globals.full_ui.get_side(home_turn).supporter_played() and not first_turn)\
-		 or Globals.debug_unlimit:
+		 or Globals.board_state.debug_unlimit:
 			allowed_to += 8
 	#Stadium
 	if considered & 16 != 0:
@@ -128,7 +128,7 @@ func can_be_played(card: Base_Card) -> int:
 		Consts.SIDES.ATTACKING).size() != 0:
 			allowed_to += 256
 	#Energy
-	if (considered & 512 and not attatched_energy) or Globals.debug_unlimit:
+	if (considered & 512 and not attatched_energy) or Globals.board_state.debug_unlimit:
 		allowed_to += 512
 	return allowed_to
 
@@ -201,14 +201,14 @@ func print_src_trg():
 #--------------------------------------
 
 func next_turn():
+	print_rich("[center]--------------------------END TURN-------------------------")
 	home_turn = not home_turn
 	attatched_energy = false
 	turn_number += 1
-	print_rich("[center]--------------------------TURN ", turn_number, "-------------------------")
 	await Globals.full_ui.set_between_turns()
 	#When animations and other stuff are added for checkups, remove this
 	await get_tree().create_timer(.1).timeout
-	print("TURN: ", turn_number)
+	print_rich("[center]--------------------------TURN ", turn_number, "-------------------------")
 	pass_turn_graphic.turn_change()
 	await pass_turn_graphic.animation_player.animation_finished
 	

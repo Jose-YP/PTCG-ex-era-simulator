@@ -3,14 +3,11 @@ extends Node
 #For any node that can bring up the check card display
 var checking: bool = false
 var dragging: bool = false
-var debug_unlimit: bool = false
 var checked_card: Control
 var fundies: Fundies
 var full_ui: FullBoardUI
 var coinflip: Control
-var burn_rules: Consts.COND_RULES
-var sleep_rules: Consts.COND_RULES
-var coin_rules: Consts.COIN_RULES = Consts.COIN_RULES.REG
+var board_state: BoardState
 
 signal enter_check
 signal exit_check

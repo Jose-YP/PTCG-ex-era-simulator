@@ -276,6 +276,8 @@ func before_direct_attack(attacker: PokeSlot, with: Attack):
 	print("Now before ", with.name, " from ", attacker.get_card_name())
 	
 	with.print_attack()
+	if await attacker.confusion_check():
+		return
 	
 	if direct_bool or with.always_effect.has_effect_type(["Condition",
 	 "Alleviate", "DamageManip", "Disable", "CardDisrupt"]):

@@ -46,7 +46,7 @@ func pokemon_checkup() -> void:
 	await checkup_conditions()
 	
 	for card in energy_timers.keys():
-		if energy_timers[card] == 0 and not Globals.debug_unlimit:
+		if energy_timers[card] == 0 and not Globals.board_state.debug_unlimit:
 			energy_timers.erase(card)
 			remove_energy(card)
 		else:
@@ -217,6 +217,12 @@ func add_damage(attacker: PokeSlot, base_ammount: int) -> void:
 
 func bench_add_damage(_ammount) -> int:
 	return 0
+
+#Won't trigger anything that happens on direct damage
+func dmg_manip(dmg_change: int) -> void:
+	damage_counters += clamp(dmg_change, 0, dmg_change)
+	refresh()
+
 #endregion
 #--------------------------------------
 
@@ -381,29 +387,29 @@ func add_condition(adding: Condition) -> void:
 	refresh()
 
 func affected_by_condition() -> bool:
-	var poisioned: bool = applied_condition.poison != Consts.POISON.NONE
-	var burnt: bool = applied_condition.burn != Consts.BURN.NONE
+	var poisioned: bool = applied_condition.poison != 0
+	var burnt: bool = applied_condition.burn != 0
 	var turnt: bool = applied_condition.turn_cond != Consts.TURN_COND.NONE
 	
 	return poisioned or burnt or turnt
 
 func heal_status() -> void:
-	applied_condition.poison = Consts.POISON.NONE
-	applied_condition.burn = Consts.BURN.NONE
+	applied_condition.poison = 0
+	applied_condition.burn = 0
 	applied_condition.turn_cond = Consts.TURN_COND.NONE
 	refresh()
 
 func checkup_conditions():
-	if applied_condition.poison != Consts.POISON.NONE:
-		print("Poison", applied_condition.poison)
-		damage_counters += 10 * applied_condition.poison
+	if applied_condition.poison != 0:
+		prints("Poison", applied_condition.poison)
+		damage_counters += applied_condition.poison * 10
 		
-	if applied_condition.burn != Consts.BURN.NONE:
-		print("Burn", applied_condition.burn)
-		damage_counters += 20 * applied_condition.burn
-		var result: bool = await condition_rule_utilize(Globals.burn_rules)
+	if applied_condition.burn != 0:
+		prints("Burn", applied_condition.burn)
+		damage_counters += applied_condition.burn * 10
+		var result: bool = await condition_rule_utilize(Globals.board_state.burn_rules)
 		if result:
-			applied_condition.burn = Consts.BURN.NONE
+			applied_condition.burn = 0
 		
 	if applied_condition.turn_cond == Consts.TURN_COND.PARALYSIS:
 		print("Paralysis")
@@ -414,7 +420,7 @@ func checkup_conditions():
 		
 	if applied_condition.turn_cond == Consts.TURN_COND.ASLEEP:
 		print("Sleep")
-		var result: bool = await condition_rule_utilize(Globals.sleep_rules)
+		var result: bool = await condition_rule_utilize(Globals.board_state.sleep_rules)
 		if result:
 			applied_condition.turn_cond = Consts.TURN_COND.NONE
 
@@ -435,6 +441,17 @@ func condition_rule_utilize(using: Consts.COND_RULES):
 			#Remove after thier side's turn ends
 			print(get_card_name(), Globals.fundies.home_turn, is_home(), not is_attacker())
 			return not is_attacker()
+
+func confusion_check() -> bool:
+	if applied_condition.turn_cond != Consts.TURN_COND.CONFUSION:
+		return false
+	
+	var confused: bool = not await condition_rule_utilize(Globals.board_state.confusion_rules)
+	
+	if confused:
+		dmg_manip(Globals.board_state.confusion_damage)
+	
+	return confused
 
 #endregion
 #--------------------------------------
