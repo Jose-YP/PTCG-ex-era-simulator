@@ -2,6 +2,8 @@
 extends Resource
 class_name Condition
 
+@export var ask: SlotAsk
+
 ##imprision/shockwave will ignore this
 @export var side: Consts.SIDES = Consts.SIDES.DEFENDING
 @export var slot: Consts.SLOTS = Consts.SLOTS.TARGET

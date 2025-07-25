@@ -56,16 +56,17 @@ func _get_property_list() -> Array[Dictionary]:
 		"hint_string" : ",".join(which_vars),
 		"usage" : PROPERTY_USAGE_DEFAULT
 	})
-	#I'll always need ask for at least defining side to check
-	props.append({
-			"name" : "ask",
-			"type" : TYPE_OBJECT,
-			"hint" : PROPERTY_HINT_RESOURCE_TYPE,
-			"hint_string" : "SlotAsk",
-			"usage" : PROPERTY_USAGE_DEFAULT
-	})
+	if _get("which") != "Coinflip":
+		#I'll always need ask for at least defining side to check
+		props.append({
+				"name" : "ask",
+				"type" : TYPE_OBJECT,
+				"hint" : PROPERTY_HINT_RESOURCE_TYPE,
+				"hint_string" : "SlotAsk",
+				"usage" : PROPERTY_USAGE_DEFAULT
+		})
 	#Find slot_vars
-	if internal_data["which"] == "Slot":
+	if _get("which") == "Slot":
 		#Append their names into an enum to select from
 		props.append({
 			"name" : "slot_vars",
@@ -74,7 +75,7 @@ func _get_property_list() -> Array[Dictionary]:
 			"hint_string" : ",".join(slot_array_names),
 			"usage" : PROPERTY_USAGE_DEFAULT
 			})
-		if internal_data["slot_vars"] == "energy_cards":
+		if _get("slot_vars") == "energy_cards":
 			#Slot specific count methods
 			props.append({
 				"name" : "en_count_methods",
@@ -83,7 +84,7 @@ func _get_property_list() -> Array[Dictionary]:
 				"hint_string" : ",".join(en_methods),
 				"usage" : PROPERTY_USAGE_DEFAULT
 			})
-			if internal_data["en_count_methods"] == "Categories":
+			if _get("en_count_methods") == "Categories":
 				props.append({
 					"name" : "en_categories",
 					"type" : TYPE_STRING,
@@ -91,7 +92,8 @@ func _get_property_list() -> Array[Dictionary]:
 					"hint_string" : ",".join(en_category_enum),
 					"usage" : PROPERTY_USAGE_DEFAULT
 				})
-			if internal_data["en_count_methods"] == "Total":
+			if _get("en_count_methods") == "Total"\
+			 or _get("en_count_methods") == "Excess":
 				props.append({
 					"name" : "en_counting",
 					"type" : TYPE_OBJECT,
@@ -100,7 +102,7 @@ func _get_property_list() -> Array[Dictionary]:
 					"usage" : PROPERTY_USAGE_DEFAULT
 					})
 	#Find Stack vars
-	elif internal_data["which"] == "Stack":
+	elif _get("which") == "Stack":
 		props.append({
 			"name" : "stack_vars",
 			"type" : TYPE_STRING,
@@ -109,7 +111,7 @@ func _get_property_list() -> Array[Dictionary]:
 			"usage" : PROPERTY_USAGE_DEFAULT
 		})
 	#Find Coin flip
-	elif internal_data["which"] == "Coinflip":
+	elif _get("which") == "Coinflip":
 		props.append({
 			"name" : "coin_flip",
 			"type" : TYPE_OBJECT,
@@ -259,7 +261,7 @@ func energy_card_evaluation(en_count_methods_data: String, slot: PokeSlot):
 		"Total":
 			return slot.get_total_energy(_get("en_counting"))
 		"Excess":
-			return slot.get_energy_excess()
+			return slot.get_energy_excess(_get("en_counting"))
 		"Diff Types":
 			return slot.count_diff_energy()
 		"Categories":

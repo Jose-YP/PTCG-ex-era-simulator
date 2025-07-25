@@ -348,9 +348,11 @@ func get_total_en_categories(category_filter: String = "Any") -> Array[Base_Card
 			final.append(card)
 	return final
 
-func get_energy_excess() -> int:
-	var test_attack: Attack = current_card.pokemon_properties.attacks[-1]
-	return get_total_energy() + test_attack.pay_cost(self)
+#Has a lot of work to do before ready
+func get_energy_excess(enData_filter: EnData = null) -> int:
+	print(current_attack.pay_cost(self))
+	pass
+	return get_total_energy(enData_filter) + current_attack.pay_cost(self)
 
 #endregion
 #--------------------------------------

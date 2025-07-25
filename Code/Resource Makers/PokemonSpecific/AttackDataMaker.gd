@@ -42,3 +42,39 @@ class_name AttackData
 @export var fail_effect: EffectCall
 ##This effect will always occur no matter [member prompt] and [member ask]
 @export var always_effect: EffectCall
+
+func print_data():
+	print_rich("[center]------------------DAMAGE------------------")
+	var icon: String
+	match modifier:
+		1: icon = "+"
+		2: icon = "x"
+		3: icon = "-"
+	print_rich("DAMAGE: ", initial_main_DMG,icon)
+	if both_active:
+		print_rich("[i]Hits both Active Defending Pokemon")
+	if self_damage != 0:
+		print_rich("HAS SELF DAMAGE: ", self_damage)
+	if bench_damage:
+		print_rich("HAS BENCH DAMAGE")
+	
+	print_rich("[center]------------------IGNORE------------------")
+	if defender_properties & 1 != 0: print_rich("Ignore any body effects")
+	if defender_properties & 2 != 0: print_rich("Ignore weakness")
+	if defender_properties & 4 != 0: print_rich("Ignore resistance")
+	if defender_properties & 8 != 0: print_rich("Ignore Applied effects")
+	
+	if condition & 1 != 0: print_rich("Can use when Asleep")
+	if condition & 2 != 0: print_rich("Can use when Paralyzed")
+	if condition & 4 != 0: print_rich("Can use when Confused")
+	
+	var contains: String = ""
+	if fail_effect:
+		contains += "A Fail Effect\n"
+	if success_effect:
+		contains += "A Success Effect\n"
+	if always_effect:
+		contains += "An Always Effect\n"
+	if contains != "":
+		print_rich("[center]------------------EFFECTS------------------")
+		print("HAS: ", contains)

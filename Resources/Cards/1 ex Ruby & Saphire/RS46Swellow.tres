@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=5 format=3 uid="uid://rx248wf8bnrl"]
+
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_5jrob"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="2_ahhkg"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_3adek"]
+
+[sub_resource type="Resource" id="Resource_ph38x"]
+script = ExtResource("2_ahhkg")
+HP = 30
+retreat = 0
+attacks = Array[ExtResource("1_5jrob")]([])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 1
+owner = 0
+type = 1
+weak = 0
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("3_3adek")
+name = ""
+illustrator = ""
+number = 46
+rarity = 1
+expansion = 0
+categories = 1
+pokemon_properties = SubResource("Resource_ph38x")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

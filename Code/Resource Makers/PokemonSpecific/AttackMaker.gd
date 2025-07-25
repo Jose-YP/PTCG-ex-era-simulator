@@ -68,40 +68,7 @@ func print_attack() -> void:
 	
 	for type in Convert.get_basic_energy():
 		print_cost(type)
-	print_rich("[center]------------------DAMAGE------------------")
-	var icon: String
-	match modifier:
-		1: icon = "+"
-		2: icon = "x"
-		3: icon = "-"
-	print_rich("DAMAGE: ", initial_main_DMG,icon)
-	if both_active:
-		print_rich("[i]Hits both Active Defending Pokemon")
-	if self_damage != 0:
-		print_rich("HAS SELF DAMAGE: ", self_damage)
-	if bench_damage:
-		print_rich("HAS BENCH DAMAGE")
-	
-	print_rich("[center]------------------IGNORE------------------")
-	if defender_properties & 1 != 0: print_rich("Ignore any body effects")
-	if defender_properties & 2 != 0: print_rich("Ignore weakness")
-	if defender_properties & 4 != 0: print_rich("Ignore resistance")
-	if defender_properties & 8 != 0: print_rich("Ignore Applied effects")
-	
-	if condition & 1 != 0: print_rich("Can use when Asleep")
-	if condition & 2 != 0: print_rich("Can use when Paralyzed")
-	if condition & 4 != 0: print_rich("Can use when Confused")
-	
-	var contains: String = ""
-	if fail_effect:
-		contains += "A Fail Effect\n"
-	if success_effect:
-		contains += "A Success Effect\n"
-	if always_effect:
-		contains += "An Always Effect\n"
-	if contains != "":
-		print_rich("[center]------------------EFFECTS------------------")
-		print("HAS: ", contains)
+	attack_data.print_data()
 
 func print_cost(energy: String):
 	var using: int = get_cost(Consts.energy_types.find(energy))
@@ -109,18 +76,13 @@ func print_cost(energy: String):
 	print_rich(str(Convert.get_type_rich_color(energy), energy, ":[/color] ", using))
 
 func get_damage() -> int:
-	var final_damage: int = initial_main_DMG
+	var final_damage: int = attack_data.initial_main_DMG
 	var modifier_result: int = 0
 	
-	#if pass_prompt != null:
-		#print("Has prompt reliant damage")
-		#if not pass_prompt:
-			#print_rich("That you [color=red][b]FAILED!!![/b][/color] LOLOL")
-			#return 0
-	if comparator:
-		var mod_times: Variant = comparator.start_comparision()
+	if attack_data.comparator:
+		var mod_times: Variant = attack_data.comparator.start_comparision()
 		print("HAS A MODIFIER WITH THE RESULT OF ", mod_times, " * ", modifier_num)
-		if comparator.has_coinflip():
+		if attack_data.comparator.has_coinflip():
 			await SignalBus.finished_coinflip
 		
 		if mod_times is bool:
@@ -139,9 +101,7 @@ func get_damage() -> int:
 
 ##Returns only the specified required energy for the attack to start 
 func get_energy_cost() -> Array[String]:
-	var all_costs: Array[int] = [grass_cost, fire_cost, water_cost,
-	lightning_cost, psychic_cost, fighting_cost, darkness_cost,
-	metal_cost, colorless_cost]
+	var all_costs: Array[int] = attack_cost.get_energy_cost_int()
 	var final_array: Array[String] = []
 	
 	for i in range(all_costs.size()):
@@ -153,9 +113,7 @@ func get_energy_cost() -> Array[String]:
 
 func pay_cost(slot: PokeSlot):
 	print("CHECK COSTS FOR ", name)
-	var all_costs: Array[int] = [grass_cost, fire_cost, water_cost,
-	lightning_cost, psychic_cost, fighting_cost, darkness_cost,
-	metal_cost, colorless_cost]
+	var all_costs: Array[int] = attack_cost.get_energy_cost_int()
 	var basic_energy: Array[Base_Card] = slot.get_energy_considered()
 	var special_energy: Array[Base_Card] = slot.get_energy_considered(false)
 	
@@ -198,6 +156,8 @@ func pay_cost(slot: PokeSlot):
 	
 	if final_cost > 0:
 		print(" LEFTOVER: ", final_cost)
+	else:
+		print(basic_energy, special_energy)
 	
 	return final_cost
 
@@ -212,31 +172,32 @@ func can_pay(slot: PokeSlot) -> bool:
 
 func get_cost(index: int) -> int:
 	match index:
-		0: return grass_cost
-		1: return fire_cost
-		2: return water_cost
-		3: return lightning_cost
-		4: return psychic_cost
-		5: return fighting_cost
-		6: return darkness_cost
-		7: return metal_cost
-		8: return colorless_cost
+		0: return attack_cost.grass_cost
+		1: return attack_cost.fire_cost
+		2: return attack_cost.water_cost
+		3: return attack_cost.lightning_cost
+		4: return attack_cost.psychic_cost
+		5: return attack_cost.fighting_cost
+		6: return attack_cost.darkness_cost
+		7: return attack_cost.metal_cost
+		8: return attack_cost.colorless_cost
 	
-	return - 11
+	return -1
 
 func does_direct_damage() -> bool:
-	return initial_main_DMG != 0 or modifier_num != 0 or self_damage != 0
+	return attack_data.initial_main_DMG != 0 \
+	or attack_data.modifier_num != 0 or attack_data.self_damage != 0
 
 #Check if you're allowed to attack while having this condition
 func condition_allows(turn_cond: Consts.TURN_COND) -> bool:
 	match turn_cond:
 		Consts.TURN_COND.PARALYSIS:
 			print(condition && 2, condition & 2)
-			return condition & 2 != 0
+			return attack_data.condition & 2 != 0
 		Consts.TURN_COND.ASLEEP:
-			return condition & 4 != 0
+			return attack_data.condition & 4 != 0
 		_:
 		#For now confusion doesn't block anything,
 		#just check if they can attack without condition
-			print(condition && 1, condition & 1, condition)
-			return condition & 1 != 0
+			print(attack_data.condition && 1, attack_data.condition & 1, attack_data.condition)
+			return attack_data.condition & 1 != 0

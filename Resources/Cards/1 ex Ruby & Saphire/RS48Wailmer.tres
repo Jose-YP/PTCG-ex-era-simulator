@@ -1,0 +1,142 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=21 format=3 uid="uid://dsquifthl6mj2"]
+
+[ext_resource type="Texture2D" uid="uid://d003r2iow8knh" path="res://Art/Cards/1 ex Ruby & Saphire/48.jpg" id="1_ulqrn"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_w3d0l"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_2owa8"]
+[ext_resource type="Resource" uid="uid://b1rwmggf7a4do" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless2.tres" id="3_2a6mg"]
+[ext_resource type="Resource" uid="uid://cxsmsqpp50x7f" path="res://Resources/Components/Effects/ETC/HealCondition.tres" id="4_5hsy2"]
+[ext_resource type="Resource" uid="uid://p7v7t2uptmme" path="res://Resources/Components/Effects/Conditions/SleepSelf.tres" id="5_kaj8s"]
+[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="6_q03r5"]
+[ext_resource type="Script" uid="uid://scca13hg4k1l" path="res://Code/Resource Makers/EffectSpecific/DmgManipMaker.gd" id="7_jab6k"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="8_jqjp7"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="9_akdno"]
+[ext_resource type="Resource" uid="uid://fcpa5aqhgy0e" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/W1C1.tres" id="10_jq24c"]
+[ext_resource type="Resource" uid="uid://bt5aihftk3wnk" path="res://Resources/Components/Counters/Comparator/SelfWEnCap2.tres" id="11_vwjj8"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="12_aakui"]
+
+[sub_resource type="Resource" id="Resource_dwx6k"]
+script = ExtResource("7_jab6k")
+mode = "Remove"
+how_many = 4
+choosing = 4
+choose_num = -1
+ask = ExtResource("6_q03r5")
+plus = false
+modifier = 1
+metadata/_custom_type_script = "uid://scca13hg4k1l"
+
+[sub_resource type="Resource" id="Resource_5ywka"]
+script = ExtResource("8_jqjp7")
+either_or = false
+order = Array[int]([9, 5, 0])
+condition = ExtResource("5_kaj8s")
+dmgManip = SubResource("Resource_dwx6k")
+alleviate = ExtResource("4_5hsy2")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_lolcc"]
+script = ExtResource("9_akdno")
+prompt_reliant = false
+initial_main_DMG = 0
+conditional_self_dmg = false
+self_damage = 0
+modifier = 0
+modifier_num = 0
+both_active = false
+defender_properties = 0
+condition = 1
+always_effect = SubResource("Resource_5ywka")
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_cqw6w"]
+script = ExtResource("2_2owa8")
+name = "Rest"
+description = "Remove all Special Conditions and 4 damage counters from Wailmer (all if there are less than 4). Wailmer is now Asleep."
+attack_cost = ExtResource("3_2a6mg")
+attack_data = SubResource("Resource_lolcc")
+grass_cost = 0
+fire_cost = 0
+water_cost = 0
+lightning_cost = 0
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 1
+defender_properties = 0
+condition = 1
+prompt_reliant = false
+initial_main_DMG = 0
+conditional_self_dmg = false
+self_damage = 0
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_5go4u"]
+script = ExtResource("9_akdno")
+prompt_reliant = false
+initial_main_DMG = 20
+conditional_self_dmg = false
+self_damage = 0
+modifier = 1
+modifier_num = 10
+comparator = ExtResource("11_vwjj8")
+both_active = false
+defender_properties = 0
+condition = 1
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_3y537"]
+script = ExtResource("2_2owa8")
+name = "Water Gun"
+description = "This attack does 20 damage plus 10 more damage for each {Water} Energy attached to {name} but not used to pay for this attack's Energy cost. You can't add more than 20 damage in this way."
+attack_cost = ExtResource("10_jq24c")
+attack_data = SubResource("Resource_5go4u")
+grass_cost = 0
+fire_cost = 0
+water_cost = 0
+lightning_cost = 0
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 1
+defender_properties = 0
+condition = 1
+prompt_reliant = false
+initial_main_DMG = 0
+conditional_self_dmg = false
+self_damage = 0
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_ph38x"]
+script = ExtResource("12_aakui")
+HP = 80
+retreat = 3
+attacks = Array[ExtResource("2_2owa8")]([SubResource("Resource_cqw6w"), SubResource("Resource_3y537")])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 1
+owner = 0
+type = 4
+weak = 8
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_w3d0l")
+name = "Wailmer"
+image = ExtResource("1_ulqrn")
+illustrator = "Mitsuhiro Arita"
+number = 48
+rarity = 1
+expansion = 0
+categories = 1
+pokemon_properties = SubResource("Resource_ph38x")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

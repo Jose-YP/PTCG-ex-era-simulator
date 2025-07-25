@@ -3,10 +3,9 @@ extends Resource
 class_name DamageManip
 
 @export_enum("Add", "Remove", "Swap") var mode: String = "Remove"
-##Add Counters if this is false
-@export var remove: bool = true
 ##-1 means remove/add max ammount
 @export_range(-1,20) var how_many: int = 1
+@export var choosing: Consts.SIDES = Consts.SIDES.SOURCE
 ##If this not -1, the player must choose between the choices for how_many times.
 @export_range(-1,5) var choose_num: int = -1
 ##Who will get the counter manipulation
@@ -15,6 +14,7 @@ class_name DamageManip
 @export_group("Counter")
 @export var plus: bool = false
 @export var comparator: Comparator
+@export var modifier: int = 1
 
 signal finished
 
@@ -26,9 +26,9 @@ func play_effect(reversable: bool = false):
 	var counters: int = how_many 
 	if comparator:
 		if plus:
-			counters += comparator.start_comparision()
+			counters += comparator.start_comparision() * modifier
 		else:
-			counters -= comparator.start_comparision()
+			counters -= comparator.start_comparision() * modifier
 	counters *= -1 if mode == "Remove" else 1
 	
 	#Choose from candidates shown by ask
