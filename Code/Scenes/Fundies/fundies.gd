@@ -85,6 +85,8 @@ func is_home_side_player() -> bool:
 	
 	return check_side == Consts.PLAYER_TYPES.PLAYER
 
+func get_current_player():pass
+
 func can_be_played(card: Base_Card) -> int:
 	var considered: int = Convert.get_card_flags(card)
 	var allowed_to: int = 0

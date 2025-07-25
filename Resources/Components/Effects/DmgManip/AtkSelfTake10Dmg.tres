@@ -1,12 +1,13 @@
-[gd_resource type="Resource" script_class="DamageManip" load_steps=2 format=3 uid="uid://choi8otbipw57"]
+[gd_resource type="Resource" script_class="DamageManip" load_steps=3 format=3 uid="uid://choi8otbipw57"]
 
+[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="1_autiv"]
 [ext_resource type="Script" uid="uid://scca13hg4k1l" path="res://Code/Resource Makers/EffectSpecific/DmgManipMaker.gd" id="1_drvrs"]
 
 [resource]
 script = ExtResource("1_drvrs")
 remove = false
 how_many = 1
-choose_from = false
-which = 1
+choose_num = -1
+ask = ExtResource("1_autiv")
 plus = false
 metadata/_custom_type_script = "uid://scca13hg4k1l"

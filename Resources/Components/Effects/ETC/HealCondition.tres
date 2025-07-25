@@ -1,11 +1,11 @@
-[gd_resource type="Resource" script_class="Alleviate" load_steps=2 format=3 uid="uid://cxsmsqpp50x7f"]
+[gd_resource type="Resource" script_class="Alleviate" load_steps=3 format=3 uid="uid://cxsmsqpp50x7f"]
 
 [ext_resource type="Script" uid="uid://b4g5of14m3hj5" path="res://Code/Resource Makers/EffectSpecific/AlleviateMaker.gd" id="1_etrcf"]
+[ext_resource type="Resource" uid="uid://dqj6gq7pt3dbk" path="res://Resources/Components/Effects/Asks/General/FromSource.tres" id="1_n4lrt"]
 
 [resource]
 script = ExtResource("1_etrcf")
-side = 4
-slot = 1
+ask = ExtResource("1_n4lrt")
 remove_conditions = true
 remove_shockwave = false
 remove_imprison = false

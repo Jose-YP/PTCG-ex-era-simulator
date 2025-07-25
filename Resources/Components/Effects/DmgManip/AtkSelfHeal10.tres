@@ -1,12 +1,14 @@
-[gd_resource type="Resource" script_class="DamageManip" load_steps=2 format=3 uid="uid://r3gc6e1u0elh"]
+[gd_resource type="Resource" script_class="DamageManip" load_steps=3 format=3 uid="uid://r3gc6e1u0elh"]
 
+[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="1_gs22o"]
 [ext_resource type="Script" uid="uid://scca13hg4k1l" path="res://Code/Resource Makers/EffectSpecific/DmgManipMaker.gd" id="1_gunei"]
 
 [resource]
 script = ExtResource("1_gunei")
+mode = null
 remove = true
 how_many = 1
-choose_from = false
-which = 1
+choose_num = -1
+ask = ExtResource("1_gs22o")
 plus = false
 metadata/_custom_type_script = "uid://scca13hg4k1l"
