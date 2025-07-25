@@ -350,16 +350,16 @@ func check_prompt_reliant(prompt: PromptAsk):
 #--------------------------------------
 
 func retreating(retreater: PokeSlot):
-	Consts.retreat_swap.finished.connect(call_retreat_discard.bind(retreater))
+	retreat_discard.finished.connect(call_retreat_discard.bind(retreater))
 	retreat_discard.energy_ammount = retreater.get_pokedata().retreat
 	Globals.fundies.record_single_src_trg(retreater)
 	
-	await Consts.retreat_swap.switch(Consts.SIDES.ATTACKING, true)
+	await retreat_discard.send_effect(true)
 	
-	Consts.retreat_swap.finished.disconnect(call_retreat_discard)
+	retreat_discard.finished.disconnect(call_retreat_discard)
 
 func call_retreat_discard(retreater: PokeSlot):
-	retreat_discard.send_effect()
+	await Consts.retreat_swap.switch(Consts.SIDES.ATTACKING, false)
 	Globals.fundies.remove_top_source_target()
 
 #--------------------------------------

@@ -7,5 +7,5 @@ script = ExtResource("1_w4tcp")
 choose_active = false
 chosing = 1
 affected = 1
-slots = 4
+autofill = "Active"
 metadata/_custom_type_script = "uid://curklvf1517ml"

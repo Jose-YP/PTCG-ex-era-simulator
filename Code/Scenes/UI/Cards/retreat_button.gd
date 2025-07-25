@@ -14,7 +14,10 @@ func set_retreat(new_slot: PokeSlot):
 		else: retreat_display[i].hide()
 
 func allow_retreat():
-	button.disabled = not slot.get_total_energy() >= slot.get_pokedata().retreat
+	var result: bool = (slot.get_total_energy() < slot.get_pokedata().retreat or 
+	slot.has_condition([Consts.TURN_COND.PARALYSIS, Consts.TURN_COND.ASLEEP]))
+	
+	button.disabled = result
 
 func _on_button_pressed() -> void:
 	Globals.control_disapear(Globals.checked_card, .1, Globals.checked_card.old_pos)

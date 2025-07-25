@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="EnMov" load_steps=4 format=3 uid="uid://c4j67ltnrq087"]
+[gd_resource type="Resource" script_class="EnMov" load_steps=5 format=3 uid="uid://c4j67ltnrq087"]
 
 [ext_resource type="Resource" uid="uid://c7itelq8jtjc2" path="res://Resources/Components/EnData/Rainbow.tres" id="1_yn3k4"]
+[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="2_0yc3v"]
 [ext_resource type="Resource" uid="uid://dqj6gq7pt3dbk" path="res://Resources/Components/Effects/Asks/General/FromSource.tres" id="2_xrb3w"]
 [ext_resource type="Script" uid="uid://cimk6l7ytw7xg" path="res://Code/Resource Makers/EffectSpecific/EnMovMaker.gd" id="3_0yc3v"]
 
@@ -8,7 +9,7 @@
 script = ExtResource("3_0yc3v")
 action = 0
 chooser = 4
-givers = ExtResource("2_xrb3w")
+givers = ExtResource("2_0yc3v")
 reciever = ExtResource("2_xrb3w")
 to_stack = 2
 stack_direction = 2

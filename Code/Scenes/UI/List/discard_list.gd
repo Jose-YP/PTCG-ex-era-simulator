@@ -30,8 +30,14 @@ func _ready():
 
 func set_info():
 	header.setup(header_txt)
-	footer.setup(str(footer_prefix,discarding.size(),"/",discards_left))
+	footer.setup(str(footer_prefix,get_enegry_discarding(),"/",discards_left))
 	%Action.text = action_txt
+
+func get_enegry_discarding() -> int:
+	var disc_num: int = 0
+	for card in discarding:
+		disc_num += card.energy_properties.get_current_provide().number
+	return disc_num
 
 func allow_reverse():
 	%Header.closable = true
@@ -50,8 +56,10 @@ func manage_pressed(button: PlayingButton):
 func update():
 	set_info()
 	
+	%Action.disabled = discarding.size() == 0
+	
 	for button in playing_list.get_items():
-		button.disabled = discarding.size() == discards_left and not button.flat
+		button.disabled = get_enegry_discarding() == discards_left and not button.flat
 
 func _on_discard_pressed() -> void:
 	Globals.fundies.stack_manager.get_stacks(home).\

@@ -126,6 +126,28 @@ func can_evolve_into(evolution: Base_Card) -> bool:
 func can_devolve() -> bool:
 	return evolved_from.size()
 
+func has_condition(conditions: Array = ["Poison", "Burn",
+ Consts.TURN_COND.PARALYSIS, Consts.TURN_COND.ASLEEP, Consts.TURN_COND.CONFUSION]):
+	for cond in conditions:
+		match cond:
+			"Poison":
+				if applied_condition.poison > 0:
+					return true
+			"Burn":
+				if applied_condition.burn > 0:
+					return true
+			"Imprison":
+				if applied_condition.imprision:
+					return true
+			"Shockwave":
+				if applied_condition.shockwave:
+					return true
+			_:
+				if applied_condition.turn_cond == cond:
+					return true
+	
+	return false
+
 func get_targets(atk: PokeSlot, def: Array[PokeSlot]) -> Array[Array]:
 	var targets: Array[Array] = [[],[]]
 	

@@ -9,8 +9,8 @@ class_name PokeSwap
 @export var chosing: Consts.SIDES = Consts.SIDES.DEFENDING
 ##Which side are they switching
 @export var affected: Consts.SIDES = Consts.SIDES.DEFENDING
-##What are thier options on this side
-@export var slots: Consts.SLOTS = Consts.SLOTS.ALL
+##Which of Active/Bench should be autofilled with target, if any?
+@export_enum("None", "Active", "Bench") var autofill: String = "None"
 
 signal finished
 
@@ -29,9 +29,10 @@ func play_effect(reversable: bool = false):
 func switch(aff: Consts.SIDES, reversable: bool):
 	var first_candidate: Callable = func(slot: PokeSlot):
 		return slot.is_in_slot(aff, Consts.SLOTS.BENCH\
-		 if choose_active else Consts.SLOTS.TARGET)
+		 if autofill != "Bench" else Consts.SLOTS.TARGET)
 	var second_candidate: Callable = func(slot: PokeSlot):
-		return slot.is_in_slot(aff, Consts.SLOTS.ACTIVE)
+		return slot.is_in_slot(aff, Consts.SLOTS.ACTIVE\
+		if autofill != "Active" else Consts.SLOTS.TARGET)
 	
 	#Get whichever active pokemon are allowed to switch
 	first = await Globals.fundies.card_player.get_choice_candidates(\
