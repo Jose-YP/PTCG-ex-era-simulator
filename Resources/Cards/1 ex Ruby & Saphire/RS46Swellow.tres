@@ -1,27 +1,80 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=5 format=3 uid="uid://rx248wf8bnrl"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=14 format=3 uid="uid://rx248wf8bnrl"]
 
+[ext_resource type="Texture2D" uid="uid://ms6i36ta5ij6" path="res://Art/Cards/1 ex Ruby & Saphire/46.jpg" id="1_0s5yi"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_5jrob"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="2_ahhkg"]
+[ext_resource type="Resource" uid="uid://b1rwmggf7a4do" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless2.tres" id="3_2syf6"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_3adek"]
+[ext_resource type="Resource" uid="uid://ceo3bpqlglf5o" path="res://Resources/Components/Pokemon/Attacks/AttackData/30Dmg.tres" id="4_a6hkx"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="5_sfkfj"]
+[ext_resource type="Resource" uid="uid://y5ggbiiapsx7" path="res://Resources/Components/Effects/Swap/DefSwapTarget.tres" id="6_4xjsk"]
+[ext_resource type="Script" uid="uid://b58015mafcw2v" path="res://Code/Resource Makers/PokemonSpecific/PowerMaker.gd" id="7_3lxeq"]
+
+[sub_resource type="Resource" id="Resource_12qs1"]
+script = ExtResource("1_5jrob")
+name = "Wing Attack"
+description = ""
+attack_cost = ExtResource("3_2syf6")
+attack_data = ExtResource("4_a6hkx")
+grass_cost = 0
+fire_cost = 0
+water_cost = 0
+lightning_cost = 0
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 1
+defender_properties = 0
+condition = 1
+prompt_reliant = false
+initial_main_DMG = 0
+conditional_self_dmg = false
+self_damage = 0
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_n00n6"]
+script = ExtResource("5_sfkfj")
+either_or = false
+order = Array[int]([])
+swap = ExtResource("6_4xjsk")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_p30fo"]
+script = ExtResource("7_3lxeq")
+name = ""
+description = "Once during your turn (before your attack), if {name} is your Active Pokémon, you may switch 1 of the Defending Pokémon with 1 of your opponent's Benched Pokémon. Your opponent picks the Benched Pokémon to switch. This power can't be used if Swellow is affected by a Special Condition."
+affected_by_condition = true
+active = true
+when_condition = "Whenever"
+when_position = 4
+how_often = 0
+effect = SubResource("Resource_n00n6")
+metadata/_custom_type_script = "uid://b58015mafcw2v"
 
 [sub_resource type="Resource" id="Resource_ph38x"]
 script = ExtResource("2_ahhkg")
-HP = 30
+HP = 70
 retreat = 0
-attacks = Array[ExtResource("1_5jrob")]([])
-evo_stage = "Basic"
-evolves_from = ""
+power = SubResource("Resource_p30fo")
+attacks = Array[ExtResource("1_5jrob")]([SubResource("Resource_12qs1")])
+evo_stage = "Stage 1"
+evolves_from = "Taillow"
 considered = 1
 owner = 0
-type = 1
-weak = 0
-resist = 0
+type = 256
+weak = 8
+resist = 32
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
 script = ExtResource("3_3adek")
-name = ""
-illustrator = ""
+name = "Swellow"
+image = ExtResource("1_0s5yi")
+illustrator = "Ken Sugimori"
 number = 46
 rarity = 1
 expansion = 0

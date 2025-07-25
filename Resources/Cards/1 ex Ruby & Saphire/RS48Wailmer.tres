@@ -74,7 +74,7 @@ modifier_num = 0
 both_active = false
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
-[sub_resource type="Resource" id="Resource_5go4u"]
+[sub_resource type="Resource" id="Resource_ulqrn"]
 script = ExtResource("9_akdno")
 prompt_reliant = false
 initial_main_DMG = 20
@@ -93,7 +93,7 @@ script = ExtResource("2_2owa8")
 name = "Water Gun"
 description = "This attack does 20 damage plus 10 more damage for each {Water} Energy attached to {name} but not used to pay for this attack's Energy cost. You can't add more than 20 damage in this way."
 attack_cost = ExtResource("10_jq24c")
-attack_data = SubResource("Resource_5go4u")
+attack_data = SubResource("Resource_ulqrn")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0
