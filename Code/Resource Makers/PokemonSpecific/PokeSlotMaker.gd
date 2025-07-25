@@ -415,7 +415,7 @@ func affected_by_condition() -> bool:
 	
 	return poisioned or burnt or turnt
 
-func heal_status() -> void:
+func alleviate_all() -> void:
 	applied_condition.poison = 0
 	applied_condition.burn = 0
 	applied_condition.turn_cond = Consts.TURN_COND.NONE

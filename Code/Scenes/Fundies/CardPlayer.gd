@@ -354,7 +354,10 @@ func retreating(retreater: PokeSlot):
 	retreat_discard.energy_ammount = retreater.get_pokedata().retreat
 	Globals.fundies.record_single_src_trg(retreater)
 	
-	await retreat_discard.send_effect(true)
+	if retreat_discard.energy_ammount == 0:
+		call_retreat_discard(retreater)
+	else:
+		await retreat_discard.send_effect(true)
 	
 	retreat_discard.finished.disconnect(call_retreat_discard)
 

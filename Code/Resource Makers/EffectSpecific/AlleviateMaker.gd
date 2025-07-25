@@ -2,6 +2,7 @@
 extends Resource
 class_name Alleviate
 
+@export var ask: SlotAsk
 @export var side: Consts.SIDES = Consts.SIDES.ATTACKING
 @export var slot: Consts.SLOTS = Consts.SLOTS.TARGET
 
@@ -13,4 +14,7 @@ signal finished
 
 func play_effect(reversable: bool = false):
 	print("PLAY ALLEVIATE")
+	var slots: Array[PokeSlot] = Globals.full_ui.get_poke_slots()
+		
+	
 	finished.emit()

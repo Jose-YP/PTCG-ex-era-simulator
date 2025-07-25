@@ -14,8 +14,8 @@ class_name PokeSwap
 
 signal finished
 
-var first: PokeSlot
-var second: PokeSlot
+var bench_swap: PokeSlot
+var active_swap: PokeSlot
 
 func play_effect(reversable: bool = false):
 	if affected == Consts.SIDES.BOTH:
@@ -27,25 +27,26 @@ func play_effect(reversable: bool = false):
 	finished.emit()
 
 func switch(aff: Consts.SIDES, reversable: bool):
-	var first_candidate: Callable = func(slot: PokeSlot):
+	var bench_candidate: Callable = func(slot: PokeSlot):
 		return slot.is_in_slot(aff, Consts.SLOTS.BENCH\
 		 if autofill != "Bench" else Consts.SLOTS.TARGET)
-	var second_candidate: Callable = func(slot: PokeSlot):
+	var active_candidate: Callable = func(slot: PokeSlot):
 		return slot.is_in_slot(aff, Consts.SLOTS.ACTIVE\
 		if autofill != "Active" else Consts.SLOTS.TARGET)
 	
 	#Get whichever active pokemon are allowed to switch
-	first = await Globals.fundies.card_player.get_choice_candidates(\
-	"Choose a benched Pokemon to switch", first_candidate, reversable)
-	if first == null: return
-	second = await Globals.fundies.card_player.get_choice_candidates(\
-	"Choose an active Pokemon to switch", second_candidate, reversable)
-	if second == null: return
+	bench_swap = await Globals.fundies.card_player.get_choice_candidates(\
+	"Choose a benched Pokemon to switch", bench_candidate, reversable)
+	if bench_swap == null: return
+	active_swap = await Globals.fundies.card_player.get_choice_candidates(\
+	"Choose an active Pokemon to switch", active_candidate, reversable)
+	if active_swap == null: return
 	#Get whichever benched pokemon are allowed to switch
 	
 	#Swap the data between eachother
-	var temp_slot: UI_Slot = second.ui_slot
-	second.slot_into(first.ui_slot)
-	first.slot_into(temp_slot)
+	var temp_slot: UI_Slot = active_swap.ui_slot
+	active_swap.alleviate_all()
+	active_swap.slot_into(bench_swap.ui_slot)
+	bench_swap.slot_into(temp_slot)
 	
 	finished.emit()
