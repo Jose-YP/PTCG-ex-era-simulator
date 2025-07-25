@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="AttackData" load_steps=4 format=3 uid="uid://dred0wmkveh7k"]
+
+[ext_resource type="Resource" uid="uid://ekj1myy642kh" path="res://Resources/Components/Effects/Prompts/PromptHeads.tres" id="1_jk1lx"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="2_hhfn3"]
+[ext_resource type="Resource" uid="uid://dr35h5ltr0i6r" path="res://Resources/Components/Effects/Conditions/BasicPoison.tres" id="3_vym1g"]
+
+[resource]
+script = ExtResource("2_hhfn3")
+prompt_reliant = false
+initial_main_DMG = 0
+conditional_self_dmg = false
+self_damage = 0
+modifier = 0
+modifier_num = 0
+both_active = false
+defender_properties = 0
+condition = 1
+prompt = ExtResource("1_jk1lx")
+success_effect = ExtResource("3_vym1g")
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"

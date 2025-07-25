@@ -11,7 +11,7 @@ script = ExtResource("4_jgrt0")
 choose_active = true
 chosing = 3
 affected = 3
-slots = 4
+autofill = "None"
 metadata/_custom_type_script = "uid://curklvf1517ml"
 
 [sub_resource type="Resource" id="Resource_x077e"]

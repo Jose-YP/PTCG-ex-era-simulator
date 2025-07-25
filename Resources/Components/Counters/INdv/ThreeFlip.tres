@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="IndvCounter" load_steps=4 format=3 uid="uid://dn1q2n7s3ot0l"]
+
+[ext_resource type="Resource" uid="uid://bns8h72u2hxqo" path="res://Resources/Components/Effects/Asks/General/AnyMon.tres" id="1_ffgmm"]
+[ext_resource type="Resource" uid="uid://hhfvl581osej" path="res://Resources/Components/CoinFlip/FlipThrice.tres" id="2_et40q"]
+[ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="3_cfns8"]
+
+[resource]
+script = ExtResource("3_cfns8")
+which = "Coinflip"
+ask = ExtResource("1_ffgmm")
+coin_flip = ExtResource("2_et40q")
+cap = -1
+metadata/_custom_type_script = "uid://vjn146j3ayd6"

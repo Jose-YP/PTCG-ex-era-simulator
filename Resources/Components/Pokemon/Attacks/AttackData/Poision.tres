@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="AttackData" load_steps=3 format=3 uid="uid://bxpfuxfuoeiri"]
+
+[ext_resource type="Resource" uid="uid://dr35h5ltr0i6r" path="res://Resources/Components/Effects/Conditions/BasicPoison.tres" id="1_k65bw"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="2_bv7wu"]
+
+[resource]
+script = ExtResource("2_bv7wu")
+grass_cost = 1
+fire_cost = 0
+water_cost = 0
+lightning_cost = 0
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 0
+defender_properties = 0
+condition = 1
+prompt_reliant = false
+initial_main_DMG = 0
+conditional_self_dmg = false
+self_damage = 0
+modifier = 0
+modifier_num = 0
+both_active = false
+always_effect = ExtResource("1_k65bw")
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"

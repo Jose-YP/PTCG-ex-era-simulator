@@ -51,7 +51,7 @@ script = ExtResource("8_uw2sm")
 choose_active = false
 chosing = 1
 affected = 2
-slots = 4
+autofill = "None"
 metadata/_custom_type_script = "uid://curklvf1517ml"
 
 [sub_resource type="Resource" id="Resource_slho1"]

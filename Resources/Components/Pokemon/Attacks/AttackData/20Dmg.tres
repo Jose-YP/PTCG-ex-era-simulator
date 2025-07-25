@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="AttackData" load_steps=2 format=3 uid="uid://bnsrs2a5hnvkb"]
+
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="1_etwi2"]
+
+[resource]
+script = ExtResource("1_etwi2")
+prompt_reliant = false
+initial_main_DMG = 20
+conditional_self_dmg = false
+self_damage = 0
+modifier = 0
+modifier_num = 0
+both_active = false
+defender_properties = 0
+condition = 1
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"

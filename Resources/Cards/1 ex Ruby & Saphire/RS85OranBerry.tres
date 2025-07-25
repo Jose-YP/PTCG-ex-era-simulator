@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=14 format=3 uid="uid://cikspsque6rym"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=15 format=3 uid="uid://cikspsque6rym"]
 
 [ext_resource type="Texture2D" uid="uid://diera1jn3813v" path="res://Art/Cards/1 ex Ruby & Saphire/85.jpg" id="1_2xwq7"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_hcmcm"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="4_blq1p"]
 [ext_resource type="Script" uid="uid://dj5isddeswaa4" path="res://Code/Resource Makers/CardResources/ToolMaker.gd" id="5_85iqr"]
 [ext_resource type="Script" uid="uid://scca13hg4k1l" path="res://Code/Resource Makers/EffectSpecific/DmgManipMaker.gd" id="6_kl0j4"]
+[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="7_3i14i"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="7_8s2co"]
 
 [sub_resource type="Resource" id="Resource_4klen"]
@@ -36,12 +37,11 @@ energy_type = ExtResource("4_57sig")
 
 [sub_resource type="Resource" id="Resource_yweta"]
 script = ExtResource("6_kl0j4")
+mode = "Remove"
 remove = true
 how_many = 2
-choose_from = false
-include_target = true
-side = 4
-slot = 1
+choose_num = -1
+ask = ExtResource("7_3i14i")
 plus = false
 
 [sub_resource type="Resource" id="Resource_40hbl"]

@@ -1,0 +1,59 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=8 format=3 uid="uid://cys52w6allqtv"]
+
+[ext_resource type="Texture2D" uid="uid://d1n7nevo5560i" path="res://Art/Cards/1 ex Ruby & Saphire/79.jpg" id="1_bvscc"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_ih88q"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_32yqy"]
+[ext_resource type="Resource" uid="uid://bbbndq8gi7dg0" path="res://Resources/Components/Counters/Comparator/ThreeFlipHead.tres" id="3_e38we"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="4_3wal6"]
+
+[sub_resource type="Resource" id="Resource_vseso"]
+script = ExtResource("2_32yqy")
+name = "Fury Swipes"
+description = "Flip 3 coins. This attack does 10 damage times the number of heads."
+grass_cost = null
+fire_cost = null
+water_cost = null
+lightning_cost = null
+psychic_cost = null
+fighting_cost = null
+darkness_cost = null
+metal_cost = null
+colorless_cost = null
+defender_properties = null
+condition = null
+prompt_reliant = null
+initial_main_DMG = 10
+conditional_self_dmg = null
+self_damage = null
+modifier = 2
+modifier_num = 10
+comparator = ExtResource("3_e38we")
+both_active = null
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_8b8fp"]
+script = ExtResource("4_3wal6")
+HP = 40
+retreat = 1
+attacks = Array[ExtResource("2_32yqy")]([SubResource("Resource_vseso")])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 1
+owner = 0
+type = 256
+weak = 32
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_ih88q")
+name = "Zigzagoon"
+image = ExtResource("1_bvscc")
+illustrator = "Atsuko Nishida"
+number = 79
+rarity = 0
+expansion = 0
+categories = 1
+pokemon_properties = SubResource("Resource_8b8fp")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

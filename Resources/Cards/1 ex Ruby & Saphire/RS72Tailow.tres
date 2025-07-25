@@ -1,0 +1,81 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=8 format=3 uid="uid://dc7psiqx30xv0"]
+
+[ext_resource type="Texture2D" uid="uid://0m2uh7jswd8r" path="res://Art/Cards/1 ex Ruby & Saphire/72.jpg" id="1_hmuv7"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_nmim4"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_ns8rs"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="3_g7ytk"]
+
+[sub_resource type="Resource" id="Resource_gu2rx"]
+script = ExtResource("2_ns8rs")
+name = "Peck"
+description = ""
+grass_cost = 0
+fire_cost = 0
+water_cost = 0
+lightning_cost = 0
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 1
+defender_properties = 0
+condition = 1
+prompt_reliant = false
+initial_main_DMG = 10
+conditional_self_dmg = false
+self_damage = 0
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_wu7cx"]
+script = ExtResource("2_ns8rs")
+name = "Wing Attack"
+description = ""
+grass_cost = 0
+fire_cost = 0
+water_cost = 0
+lightning_cost = 0
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 2
+defender_properties = 0
+condition = 1
+prompt_reliant = false
+initial_main_DMG = 20
+conditional_self_dmg = false
+self_damage = 0
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_mwcuw"]
+script = ExtResource("3_g7ytk")
+HP = 40
+retreat = 1
+attacks = Array[ExtResource("2_ns8rs")]([SubResource("Resource_gu2rx"), SubResource("Resource_wu7cx")])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 1
+owner = 0
+type = 256
+weak = 0
+resist = 32
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_nmim4")
+name = "Taillow"
+image = ExtResource("1_hmuv7")
+illustrator = "Kagemaru Himeno"
+number = 72
+rarity = 0
+expansion = 0
+categories = 1
+pokemon_properties = SubResource("Resource_mwcuw")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

@@ -2,7 +2,7 @@
 extends Resource
 class_name DamageManip
 
-@export_enum("Add", "Remove", "Swap") var mode
+@export_enum("Add", "Remove", "Swap") var mode: String = "Remove"
 ##Add Counters if this is false
 @export var remove: bool = true
 ##-1 means remove/add max ammount
@@ -20,13 +20,16 @@ signal finished
 
 func play_effect(reversable: bool = false):
 	print("PLAY DAMAGE MANIPULATION")
+	if mode == "Swap":
+		pass
+	
 	var counters: int = how_many 
 	if comparator:
 		if plus:
 			counters += comparator.start_comparision()
 		else:
 			counters -= comparator.start_comparision()
-	counters *= -1 if remove else 1
+	counters *= -1 if mode == "Remove" else 1
 	
 	#Choose from candidates shown by ask
 	if choose_num != -1:

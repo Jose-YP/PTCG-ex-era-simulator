@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=11 format=3 uid="uid://bekwoaj06a44c"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://bekwoaj06a44c"]
 
+[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="1_qxfu1"]
 [ext_resource type="Script" uid="uid://caj1pm8erar2a" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="1_s231q"]
 [ext_resource type="Script" uid="uid://scca13hg4k1l" path="res://Code/Resource Makers/EffectSpecific/DmgManipMaker.gd" id="1_w8o02"]
 [ext_resource type="Texture2D" uid="uid://cufnu32r0miyy" path="res://Art/Cards/1 ex Ruby & Saphire/95.jpg" id="2_4kkrd"]
@@ -10,12 +11,11 @@
 
 [sub_resource type="Resource" id="Resource_4accq"]
 script = ExtResource("1_w8o02")
+mode = "Remove"
 remove = false
 how_many = 1
-choose_from = false
-include_target = true
-side = 1
-slot = 1
+choose_num = -1
+ask = ExtResource("1_qxfu1")
 plus = false
 
 [sub_resource type="Resource" id="Resource_mysds"]

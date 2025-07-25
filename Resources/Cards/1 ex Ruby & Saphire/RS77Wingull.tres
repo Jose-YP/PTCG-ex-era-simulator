@@ -1,0 +1,59 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=8 format=3 uid="uid://cykq8hvtlu6wv"]
+
+[ext_resource type="Texture2D" uid="uid://brxx0l4vfq7q3" path="res://Art/Cards/1 ex Ruby & Saphire/77.jpg" id="1_1fbe0"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_11pvo"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_1gn0r"]
+[ext_resource type="Resource" uid="uid://ekj1myy642kh" path="res://Resources/Components/Effects/Prompts/PromptHeads.tres" id="3_8jmh1"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="4_a2gfk"]
+
+[sub_resource type="Resource" id="Resource_y12k7"]
+script = ExtResource("2_1gn0r")
+name = "Surprise Attack"
+description = "Flip a coin. If tails, this attack does nothing."
+grass_cost = null
+fire_cost = null
+water_cost = 1
+lightning_cost = null
+psychic_cost = null
+fighting_cost = null
+darkness_cost = null
+metal_cost = null
+colorless_cost = 0
+defender_properties = null
+condition = null
+prompt_reliant = true
+initial_main_DMG = 20
+conditional_self_dmg = null
+self_damage = null
+modifier = null
+modifier_num = null
+both_active = null
+prompt = ExtResource("3_8jmh1")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_dfu47"]
+script = ExtResource("4_a2gfk")
+HP = 40
+retreat = 1
+attacks = Array[ExtResource("2_1gn0r")]([SubResource("Resource_y12k7")])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 1
+owner = 0
+type = 4
+weak = 8
+resist = 32
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_11pvo")
+name = "Wingull"
+image = ExtResource("1_1fbe0")
+illustrator = "Kouki Saitou"
+number = 77
+rarity = 0
+expansion = 0
+categories = 1
+pokemon_properties = SubResource("Resource_dfu47")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

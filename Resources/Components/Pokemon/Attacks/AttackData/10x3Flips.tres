@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="AttackData" load_steps=3 format=3 uid="uid://v2sk6tm4t31"]
+
+[ext_resource type="Resource" uid="uid://bbbndq8gi7dg0" path="res://Resources/Components/Counters/Comparator/ThreeFlipHead.tres" id="1_tmedx"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="2_mp0ue"]
+
+[resource]
+script = ExtResource("2_mp0ue")
+grass_cost = 0
+fire_cost = 0
+water_cost = 0
+lightning_cost = 0
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 1
+defender_properties = 0
+condition = 1
+prompt_reliant = false
+initial_main_DMG = 10
+conditional_self_dmg = false
+self_damage = 0
+modifier = 2
+modifier_num = 10
+comparator = ExtResource("1_tmedx")
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"

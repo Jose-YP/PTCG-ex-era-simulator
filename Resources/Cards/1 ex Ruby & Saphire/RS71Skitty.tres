@@ -1,0 +1,83 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=9 format=3 uid="uid://disf1pvnvh7pt"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_mct2e"]
+[ext_resource type="Texture2D" uid="uid://0o5wdh7onmyl" path="res://Art/Cards/1 ex Ruby & Saphire/71.jpg" id="1_v1fx6"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_oqfaj"]
+[ext_resource type="Resource" uid="uid://ekj1myy642kh" path="res://Resources/Components/Effects/Prompts/PromptHeads.tres" id="3_v7ck1"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="4_dend7"]
+
+[sub_resource type="Resource" id="Resource_a66b0"]
+script = ExtResource("2_oqfaj")
+name = "Tackle"
+description = ""
+grass_cost = 0
+fire_cost = 0
+water_cost = 0
+lightning_cost = 0
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 1
+defender_properties = 0
+condition = 1
+prompt_reliant = false
+initial_main_DMG = 10
+conditional_self_dmg = false
+self_damage = 0
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_hwx7w"]
+script = ExtResource("2_oqfaj")
+name = "Lunge"
+description = "Flip a coin. If tails, this attack does nothing."
+grass_cost = 0
+fire_cost = 0
+water_cost = 0
+lightning_cost = 0
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 2
+defender_properties = 0
+condition = 1
+prompt_reliant = true
+initial_main_DMG = 30
+conditional_self_dmg = false
+self_damage = 0
+modifier = 0
+modifier_num = 0
+both_active = false
+prompt = ExtResource("3_v7ck1")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_yieie"]
+script = ExtResource("4_dend7")
+HP = 50
+retreat = 1
+attacks = Array[ExtResource("2_oqfaj")]([SubResource("Resource_a66b0"), SubResource("Resource_hwx7w")])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 1
+owner = 0
+type = 256
+weak = 32
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_mct2e")
+name = "Skitty"
+image = ExtResource("1_v1fx6")
+illustrator = "Atsuko Nishida"
+number = 71
+rarity = 0
+expansion = 0
+categories = 1
+pokemon_properties = SubResource("Resource_yieie")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

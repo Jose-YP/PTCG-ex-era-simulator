@@ -4,6 +4,7 @@ class_name Attack
 #@export_group("Information")
 @export var name: String
 @export_multiline var description: String
+@export var attack_data: AttackData
 
 @export_group("Costs")
 @export_range(0,20,1) var grass_cost: int = 0
