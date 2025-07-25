@@ -1,0 +1,62 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://c5e02k0jttjsq"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_5pd0i"]
+[ext_resource type="Texture2D" uid="uid://cqr3e25mn32b7" path="res://Art/Cards/1 ex Ruby & Saphire/54.jpg" id="1_dyesa"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_o4eol"]
+[ext_resource type="Resource" uid="uid://cugd2g6gy4gda" path="res://Resources/Components/Pokemon/Attacks/Tackle1-10.tres" id="3_pl1xs"]
+[ext_resource type="Resource" uid="uid://c2gawfb472bm" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/G1C1.tres" id="4_gvgux"]
+[ext_resource type="Resource" uid="uid://cyvs4hb5sx6it" path="res://Resources/Components/Pokemon/Attacks/AttackData/30DmgSelfDmg10.tres" id="5_cnu2c"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="6_u1xol"]
+
+[sub_resource type="Resource" id="Resource_oq0yy"]
+script = ExtResource("2_o4eol")
+name = "Double-edge"
+description = ""
+attack_cost = ExtResource("4_gvgux")
+attack_data = ExtResource("5_cnu2c")
+grass_cost = 0
+fire_cost = 0
+water_cost = 0
+lightning_cost = 0
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 1
+defender_properties = 0
+condition = 1
+prompt_reliant = false
+initial_main_DMG = 0
+conditional_self_dmg = false
+self_damage = 0
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_tuwfl"]
+script = ExtResource("6_u1xol")
+HP = 50
+retreat = 1
+attacks = Array[ExtResource("2_o4eol")]([ExtResource("3_pl1xs"), SubResource("Resource_oq0yy")])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 1
+owner = 0
+type = 1
+weak = 16
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_5pd0i")
+name = "Koffing"
+image = ExtResource("1_dyesa")
+illustrator = "Atsuko Nishida"
+number = 54
+rarity = 0
+expansion = 0
+categories = 1
+pokemon_properties = SubResource("Resource_tuwfl")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

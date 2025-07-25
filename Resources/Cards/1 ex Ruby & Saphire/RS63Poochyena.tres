@@ -1,14 +1,18 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=7 format=3 uid="uid://d3oqllkeh61wl"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=9 format=3 uid="uid://d3oqllkeh61wl"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_dhwyu"]
 [ext_resource type="Texture2D" uid="uid://bihi1fpan0fl" path="res://Art/Cards/1 ex Ruby & Saphire/63.jpg" id="1_iihip"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_mq2dl"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="3_qauc4"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_wmo8r"]
+[ext_resource type="Resource" uid="uid://bep36omnenbc8" path="res://Resources/Components/Pokemon/Attacks/AttackData/10Dmg.tres" id="4_ro4nc"]
 
 [sub_resource type="Resource" id="Resource_2k3r2"]
 script = ExtResource("2_mq2dl")
 name = "Bite"
 description = ""
+attack_cost = ExtResource("3_wmo8r")
+attack_data = ExtResource("4_ro4nc")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0
@@ -19,7 +23,7 @@ darkness_cost = 0
 metal_cost = 0
 colorless_cost = 1
 defender_properties = 0
-condition = 0
+condition = 1
 prompt_reliant = false
 initial_main_DMG = 10
 conditional_self_dmg = false
@@ -35,7 +39,7 @@ retreat = 1
 attacks = Array[ExtResource("2_mq2dl")]([SubResource("Resource_2k3r2")])
 evo_stage = "Basic"
 evolves_from = ""
-considered = 0
+considered = 1
 owner = 0
 type = 64
 weak = 32

@@ -1,15 +1,19 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=8 format=3 uid="uid://ca2kwg3wpu8b8"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://ca2kwg3wpu8b8"]
 
 [ext_resource type="Texture2D" uid="uid://jejjwgk6c7m" path="res://Art/Cards/1 ex Ruby & Saphire/69.jpg" id="1_2dd6m"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_wlf46"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_1x3bv"]
 [ext_resource type="Resource" uid="uid://cqw2kwbgcwgvb" path="res://Resources/Components/Effects/Conditions/BasicSleep.tres" id="3_sl0fp"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="4_61x3k"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="4_sl0fp"]
+[ext_resource type="Resource" uid="uid://gbxomf46y0lr" path="res://Resources/Components/Pokemon/Attacks/AttackData/Sleep.tres" id="5_61x3k"]
 
 [sub_resource type="Resource" id="Resource_wa44v"]
 script = ExtResource("2_1x3bv")
 name = "Sleep Powder"
 description = "The Defending Pokémon is now Asleep."
+attack_cost = ExtResource("4_sl0fp")
+attack_data = ExtResource("5_61x3k")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0

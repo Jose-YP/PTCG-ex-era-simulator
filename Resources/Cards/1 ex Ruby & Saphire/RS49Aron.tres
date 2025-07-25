@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=11 format=3 uid="uid://oa7r3igevgqi"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=14 format=3 uid="uid://oa7r3igevgqi"]
 
 [ext_resource type="Texture2D" uid="uid://c2o5amlj16doj" path="res://Art/Cards/1 ex Ruby & Saphire/49.jpg" id="1_ianho"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="3_mit06"]
@@ -6,6 +6,9 @@
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_1cqic"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="4_nbcu4"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="5_1yo3i"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="5_a7vst"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="6_2q6mk"]
+[ext_resource type="Resource" uid="uid://carj70w3pyx05" path="res://Resources/Components/Pokemon/Attacks/Ram2-20.tres" id="7_n800m"]
 
 [sub_resource type="Resource" id="Resource_hi6hn"]
 script = ExtResource("4_1cqic")
@@ -14,10 +17,26 @@ order = Array[int]([])
 buff = ExtResource("3_vai4j")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
+[sub_resource type="Resource" id="Resource_7rvt1"]
+script = ExtResource("6_2q6mk")
+prompt_reliant = false
+initial_main_DMG = 0
+conditional_self_dmg = false
+self_damage = 0
+modifier = 0
+modifier_num = 0
+both_active = false
+defender_properties = 0
+condition = 1
+always_effect = SubResource("Resource_hi6hn")
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
 [sub_resource type="Resource" id="Resource_iubtr"]
 script = ExtResource("3_mit06")
 name = "Teary Eyes"
-description = "During your opponent's next turn, any damage done to Aron by attacks is reduced by 10."
+description = "During your opponent's next turn, any damage done to {name} by attacks is reduced by 10."
+attack_cost = ExtResource("5_a7vst")
+attack_data = SubResource("Resource_7rvt1")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0
@@ -38,34 +57,11 @@ modifier_num = 0
 both_active = false
 always_effect = SubResource("Resource_hi6hn")
 
-[sub_resource type="Resource" id="Resource_1g2nc"]
-script = ExtResource("3_mit06")
-name = "Ram"
-description = ""
-grass_cost = 0
-fire_cost = 0
-water_cost = 0
-lightning_cost = 0
-psychic_cost = 0
-fighting_cost = 0
-darkness_cost = 0
-metal_cost = 0
-colorless_cost = 2
-defender_properties = 0
-condition = 1
-prompt_reliant = false
-initial_main_DMG = 20
-conditional_self_dmg = false
-self_damage = 0
-modifier = 0
-modifier_num = 0
-both_active = false
-
 [sub_resource type="Resource" id="Resource_82lgu"]
 script = ExtResource("4_nbcu4")
 HP = 40
 retreat = 1
-attacks = Array[ExtResource("3_mit06")]([SubResource("Resource_iubtr"), SubResource("Resource_1g2nc")])
+attacks = Array[ExtResource("3_mit06")]([SubResource("Resource_iubtr"), ExtResource("7_n800m")])
 evo_stage = "Basic"
 evolves_from = ""
 considered = 1

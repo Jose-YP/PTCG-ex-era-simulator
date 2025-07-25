@@ -1,7 +1,6 @@
 extends Resource
 class_name AttackCost
 
-@export_group("Costs")
 @export_range(0,20,1) var grass_cost: int = 0
 @export_range(0,20,1) var fire_cost: int = 0
 @export_range(0,20,1) var water_cost: int = 0

@@ -4,7 +4,8 @@ class_name Attack
 #@export_group("Information")
 @export var name: String
 @export_multiline var description: String
-@export var attack_data: AttackData
+@export var attack_cost: AttackCost = preload("res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres")
+@export var attack_data: AttackData = preload("res://Resources/Components/Pokemon/Attacks/AttackData/10Dmg.tres")
 
 @export_group("Costs")
 @export_range(0,20,1) var grass_cost: int = 0

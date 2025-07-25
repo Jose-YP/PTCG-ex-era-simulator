@@ -1,11 +1,15 @@
-[gd_resource type="Resource" script_class="Attack" load_steps=2 format=3 uid="uid://srojhh5idedm"]
+[gd_resource type="Resource" script_class="Attack" load_steps=4 format=3 uid="uid://srojhh5idedm"]
 
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_6mrqw"]
+[ext_resource type="Resource" uid="uid://b1rwmggf7a4do" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless2.tres" id="1_nri0m"]
+[ext_resource type="Resource" uid="uid://bnsrs2a5hnvkb" path="res://Resources/Components/Pokemon/Attacks/AttackData/20Dmg.tres" id="2_qktb2"]
 
 [resource]
 script = ExtResource("1_6mrqw")
 name = "Tackle"
 description = ""
+attack_cost = ExtResource("1_nri0m")
+attack_data = ExtResource("2_qktb2")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0
@@ -16,7 +20,7 @@ darkness_cost = 0
 metal_cost = 0
 colorless_cost = 2
 defender_properties = 0
-ignore_condition = 0
+condition = 1
 prompt_reliant = false
 initial_main_DMG = 20
 conditional_self_dmg = false

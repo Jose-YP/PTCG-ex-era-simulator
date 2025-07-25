@@ -1,0 +1,73 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=11 format=3 uid="uid://c8xqucy03ngb6"]
+
+[ext_resource type="Texture2D" uid="uid://r7j65mcjsuh8" path="res://Art/Cards/1 ex Ruby & Saphire/51.jpg" id="1_g8f6k"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_o8f7p"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_88kre"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_u3s1u"]
+[ext_resource type="Resource" uid="uid://8cvarib60ven" path="res://Resources/Components/Pokemon/Attacks/AttackData/10DmgDisabRetr.tres" id="4_f2fxk"]
+[ext_resource type="Script" uid="uid://b2tlqpng7fq25" path="res://Code/Resource Makers/PokemonSpecific/BodyMaker.gd" id="5_6lt8o"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="6_ua6fm"]
+
+[sub_resource type="Resource" id="Resource_0ul3b"]
+script = ExtResource("2_88kre")
+name = "Big Bite"
+description = "The Defending Pokémon can't retreat until the end of your opponent's next turn."
+attack_cost = ExtResource("3_u3s1u")
+attack_data = ExtResource("4_f2fxk")
+grass_cost = 0
+fire_cost = 0
+water_cost = 0
+lightning_cost = 0
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 1
+defender_properties = 0
+condition = 1
+prompt_reliant = false
+initial_main_DMG = 0
+conditional_self_dmg = false
+self_damage = 0
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_s5htt"]
+script = ExtResource("5_6lt8o")
+when_active = true
+name = "Rough Skin"
+description = "If {name} is your Active Pokémon and is damaged by an opponent's attack (even if {name} is Knocked Out), put 1 damage counter on the Attacking Pokémon."
+affected_by_condition = true
+attatched_energy = 0
+energy_ammount = 1
+metadata/_custom_type_script = "uid://b2tlqpng7fq25"
+
+[sub_resource type="Resource" id="Resource_gbbiv"]
+script = ExtResource("6_ua6fm")
+HP = 40
+retreat = 0
+body = SubResource("Resource_s5htt")
+attacks = Array[ExtResource("2_88kre")]([SubResource("Resource_0ul3b")])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 1
+owner = 0
+type = 1
+weak = 0
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_o8f7p")
+name = "Carvanha"
+image = ExtResource("1_g8f6k")
+illustrator = "Hajime Kusajima"
+number = 51
+rarity = 0
+expansion = 0
+categories = 1
+pokemon_properties = SubResource("Resource_gbbiv")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

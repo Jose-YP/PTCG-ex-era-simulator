@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="AttackData" load_steps=3 format=3 uid="uid://v724fytl6d2v"]
+
+[ext_resource type="Resource" uid="uid://nco7wk2vhhx6" path="res://Resources/Components/Counters/Comparator/ForSelfDmgCounters.tres" id="1_malc1"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="2_buimu"]
+
+[resource]
+script = ExtResource("2_buimu")
+prompt_reliant = false
+initial_main_DMG = 10
+conditional_self_dmg = false
+self_damage = 0
+modifier = 2
+modifier_num = 10
+comparator = ExtResource("1_malc1")
+both_active = false
+defender_properties = 0
+condition = 1
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"

@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=7 format=3 uid="uid://b1hn3attpb83u"]
+
+[ext_resource type="Texture2D" uid="uid://bdrbpdwf1c1bp" path="res://Art/Cards/1 ex Ruby & Saphire/50.jpg" id="1_qyb8l"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_ulry7"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_p3qtj"]
+[ext_resource type="Resource" uid="uid://cew56irclkinq" path="res://Resources/Components/Pokemon/Attacks/Gnaw1-10.tres" id="3_naat2"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="4_wqvjc"]
+
+[sub_resource type="Resource" id="Resource_30cf1"]
+script = ExtResource("4_wqvjc")
+HP = 50
+retreat = 2
+attacks = Array[ExtResource("2_p3qtj")]([ExtResource("3_naat2")])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 1
+owner = 0
+type = 128
+weak = 2
+resist = 1
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_ulry7")
+name = "Aron"
+image = ExtResource("1_qyb8l")
+illustrator = "Ken Sugimori"
+number = 50
+rarity = 0
+expansion = 0
+categories = 1
+pokemon_properties = SubResource("Resource_30cf1")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

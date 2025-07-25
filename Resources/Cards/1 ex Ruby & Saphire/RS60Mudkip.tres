@@ -1,15 +1,19 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=8 format=3 uid="uid://c6hkbplnm1lm1"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://c6hkbplnm1lm1"]
 
 [ext_resource type="Texture2D" uid="uid://d0gvmgd8nn8nv" path="res://Art/Cards/1 ex Ruby & Saphire/60.jpg" id="1_a3txu"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_2xrk8"]
 [ext_resource type="Resource" uid="uid://dkt5ik78wtijs" path="res://Resources/Components/Pokemon/Attacks/Pound.tres" id="3_g6vjq"]
+[ext_resource type="Resource" uid="uid://b1rwmggf7a4do" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless2.tres" id="4_a3txu"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="4_g6vjq"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="5_dsduk"]
+[ext_resource type="Resource" uid="uid://v2sk6tm4t31" path="res://Resources/Components/Pokemon/Attacks/AttackData/10x3Flips.tres" id="5_g6vjq"]
 
 [sub_resource type="Resource" id="Resource_hmkxe"]
 script = ExtResource("2_2xrk8")
 name = "Fury Swipes"
 description = "Flip 3 coins. This attack does 10 damage times the number of heads."
+attack_cost = ExtResource("4_a3txu")
+attack_data = ExtResource("5_g6vjq")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0
@@ -20,7 +24,7 @@ darkness_cost = 0
 metal_cost = 0
 colorless_cost = 2
 defender_properties = 0
-condition = 0
+condition = 1
 prompt_reliant = false
 initial_main_DMG = 10
 conditional_self_dmg = false

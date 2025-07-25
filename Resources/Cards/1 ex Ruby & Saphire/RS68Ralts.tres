@@ -1,15 +1,34 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=8 format=3 uid="uid://vnimvixfy8o8"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://vnimvixfy8o8"]
 
 [ext_resource type="Texture2D" uid="uid://cjyhgdkf1puxk" path="res://Art/Cards/1 ex Ruby & Saphire/68.jpg" id="1_300wg"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_543m5"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="3_300wg"]
 [ext_resource type="Resource" uid="uid://dkt5ik78wtijs" path="res://Resources/Components/Pokemon/Attacks/Pound.tres" id="3_af76r"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="4_af76r"]
+[ext_resource type="Resource" uid="uid://cvrbxqvsyxt6t" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/P1C1.tres" id="4_ywu17"]
+[ext_resource type="Resource" uid="uid://dh4vjjy6e5xbi" path="res://Resources/Components/Counters/Comparator/TrgEnEqual.tres" id="5_4y1w6"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="6_805mt"]
+
+[sub_resource type="Resource" id="Resource_ari4w"]
+script = ExtResource("6_805mt")
+prompt_reliant = false
+initial_main_DMG = 40
+conditional_self_dmg = false
+self_damage = 0
+modifier = 0
+modifier_num = 10
+comparator = ExtResource("5_4y1w6")
+both_active = false
+defender_properties = 0
+condition = 1
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_805mt"]
 script = ExtResource("2_543m5")
 name = "Link Blast"
 description = "If Ralts and the Defending Pokémon have a different amount of Energy attached to them, this attack's base damage is 10 instead of 40."
+attack_cost = ExtResource("4_ywu17")
+attack_data = SubResource("Resource_ari4w")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0
@@ -20,13 +39,14 @@ darkness_cost = 0
 metal_cost = 0
 colorless_cost = 1
 defender_properties = 0
-condition = 0
+condition = 1
 prompt_reliant = false
 initial_main_DMG = 40
 conditional_self_dmg = false
 self_damage = 0
 modifier = 0
-modifier_num = 0
+modifier_num = 10
+comparator = ExtResource("5_4y1w6")
 both_active = false
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 

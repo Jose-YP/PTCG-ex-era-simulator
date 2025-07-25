@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://4i21swlwvmti"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://4i21swlwvmti"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_fjgfl"]
 [ext_resource type="Texture2D" uid="uid://c2hb2kll7n10f" path="res://Art/Cards/1 ex Ruby & Saphire/65.jpg" id="1_thbs0"]
@@ -6,6 +6,8 @@
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="3_o4ni8"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_0m7vu"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="4_rj823"]
+[ext_resource type="Resource" uid="uid://bgqnsjskgne2u" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Darkness1.tres" id="5_65c7g"]
+[ext_resource type="Resource" uid="uid://8cvarib60ven" path="res://Resources/Components/Pokemon/Attacks/AttackData/10DmgDisabRetr.tres" id="6_l2djy"]
 
 [sub_resource type="Resource" id="Resource_65c7g"]
 script = ExtResource("4_0m7vu")
@@ -18,6 +20,8 @@ metadata/_custom_type_script = "uid://dmulm3x3dj842"
 script = ExtResource("3_o4ni8")
 name = "Shadow Bind"
 description = "The Defending Pokémon can't retreat until the end of your opponent's next turn."
+attack_cost = ExtResource("5_65c7g")
+attack_data = ExtResource("6_l2djy")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0
@@ -28,7 +32,7 @@ darkness_cost = 1
 metal_cost = 0
 colorless_cost = 0
 defender_properties = 0
-condition = 0
+condition = 1
 prompt_reliant = false
 initial_main_DMG = 10
 conditional_self_dmg = false

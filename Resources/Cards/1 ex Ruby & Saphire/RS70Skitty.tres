@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=11 format=3 uid="uid://cfvsqh7wq2rev"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=14 format=3 uid="uid://cfvsqh7wq2rev"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_7l8fn"]
 [ext_resource type="Texture2D" uid="uid://dq6ctyisaa3jy" path="res://Art/Cards/1 ex Ruby & Saphire/70.jpg" id="1_jrsmu"]
@@ -6,6 +6,9 @@
 [ext_resource type="Resource" uid="uid://d14xfa5qlqxyr" path="res://Resources/Components/Effects/EnergyMovement/Attatch1Basic.tres" id="3_a2rfn"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_ok6hf"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_b5ut1"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="5_ok6hf"]
+[ext_resource type="Resource" uid="uid://tf51jsvkdale" path="res://Resources/Components/Pokemon/Attacks/AttackData/EnAttchHand1.tres" id="6_b5ut1"]
+[ext_resource type="Resource" uid="uid://bep36omnenbc8" path="res://Resources/Components/Pokemon/Attacks/AttackData/10Dmg.tres" id="7_ex5cx"]
 
 [sub_resource type="Resource" id="Resource_ex5cx"]
 script = ExtResource("4_ok6hf")
@@ -18,6 +21,8 @@ metadata/_custom_type_script = "uid://dmulm3x3dj842"
 script = ExtResource("2_de7xk")
 name = "Plus Energy"
 description = "Attach a basic Energy card from your hand to 1 of your Pokémon."
+attack_cost = ExtResource("5_ok6hf")
+attack_data = ExtResource("6_b5ut1")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0
@@ -43,6 +48,8 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 script = ExtResource("2_de7xk")
 name = "Scratch"
 description = ""
+attack_cost = ExtResource("5_ok6hf")
+attack_data = ExtResource("7_ex5cx")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0

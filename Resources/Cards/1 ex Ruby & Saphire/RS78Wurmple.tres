@@ -1,15 +1,19 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=23 format=3 uid="uid://cbrv0ftymjhbj"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=28 format=3 uid="uid://cbrv0ftymjhbj"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_fufby"]
 [ext_resource type="Texture2D" uid="uid://bkcx8mdj0b2ne" path="res://Art/Cards/1 ex Ruby & Saphire/78.jpg" id="1_kcvhr"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_qb5u4"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_tpouj"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_wia63"]
 [ext_resource type="Resource" uid="uid://bl4qnrkh3kxdl" path="res://Resources/Components/Effects/Placement/PutIntoHand.tres" id="4_qb5u4"]
 [ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="4_sfbeu"]
 [ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="5_jctry"]
 [ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="6_wia63"]
 [ext_resource type="Resource" uid="uid://dr35h5ltr0i6r" path="res://Resources/Components/Effects/Conditions/BasicPoison.tres" id="7_x6msc"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="8_gknmg"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="9_x6msc"]
+[ext_resource type="Resource" uid="uid://c63wb1xvpkbi8" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Grass1.tres" id="11_gknmg"]
+[ext_resource type="Resource" uid="uid://bxpfuxfuoeiri" path="res://Resources/Components/Pokemon/Attacks/AttackData/Poision.tres" id="12_clm34"]
 
 [sub_resource type="Resource" id="Resource_clm34"]
 script = ExtResource("4_sfbeu")
@@ -141,28 +145,46 @@ order = Array[int]([])
 search = SubResource("Resource_g437b")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
+[sub_resource type="Resource" id="Resource_kcbdi"]
+script = ExtResource("9_x6msc")
+prompt_reliant = false
+initial_main_DMG = 0
+conditional_self_dmg = false
+self_damage = 0
+modifier = 0
+modifier_num = 0
+both_active = false
+defender_properties = 0
+condition = 1
+prompt = SubResource("Resource_58hgl")
+success_effect = SubResource("Resource_c4vsc")
+fail_effect = SubResource("Resource_wcep4")
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
 [sub_resource type="Resource" id="Resource_8m2jj"]
 script = ExtResource("2_qb5u4")
 name = "Signs of Evolution"
 description = "Search your deck for Silcoon and Beautifly, or Cascoon and Dustox cards. Show 1 card or both cards of a pair to your opponent and put them into your hand. Shuffle your deck afterward."
-grass_cost = null
-fire_cost = null
-water_cost = null
-lightning_cost = null
-psychic_cost = null
-fighting_cost = null
-darkness_cost = null
-metal_cost = null
-colorless_cost = null
-defender_properties = null
-condition = null
-prompt_reliant = null
-initial_main_DMG = null
-conditional_self_dmg = null
-self_damage = null
-modifier = null
-modifier_num = null
-both_active = null
+attack_cost = ExtResource("3_wia63")
+attack_data = SubResource("Resource_kcbdi")
+grass_cost = 0
+fire_cost = 0
+water_cost = 0
+lightning_cost = 0
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 1
+defender_properties = 0
+condition = 1
+prompt_reliant = false
+initial_main_DMG = 0
+conditional_self_dmg = false
+self_damage = 0
+modifier = 0
+modifier_num = 0
+both_active = false
 prompt = SubResource("Resource_58hgl")
 success_effect = SubResource("Resource_c4vsc")
 fail_effect = SubResource("Resource_wcep4")
@@ -172,24 +194,26 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 script = ExtResource("2_qb5u4")
 name = "Poison Barb"
 description = "The Defending Pokémon is now Poisoned."
+attack_cost = ExtResource("11_gknmg")
+attack_data = ExtResource("12_clm34")
 grass_cost = 1
-fire_cost = null
-water_cost = null
-lightning_cost = null
-psychic_cost = null
-fighting_cost = null
-darkness_cost = null
-metal_cost = null
+fire_cost = 0
+water_cost = 0
+lightning_cost = 0
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
 colorless_cost = 0
-defender_properties = null
-condition = null
-prompt_reliant = null
-initial_main_DMG = null
-conditional_self_dmg = null
-self_damage = null
-modifier = null
-modifier_num = null
-both_active = null
+defender_properties = 0
+condition = 1
+prompt_reliant = false
+initial_main_DMG = 0
+conditional_self_dmg = false
+self_damage = 0
+modifier = 0
+modifier_num = 0
+both_active = false
 always_effect = ExtResource("7_x6msc")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 

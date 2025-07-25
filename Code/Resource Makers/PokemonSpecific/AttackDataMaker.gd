@@ -1,13 +1,6 @@
 extends Resource
 class_name AttackData
 
-@export_group("Ignore")
-##Don't check any of these if they're checked
-@export_flags("Body", "Weakness", "Resistance", "Effects") var defender_properties: int = 0
-##The pokemon can use this attack even if it has these conditions
-@export_flags("None", "Paralysis", "Alseep", "Confusion") var condition: int = 1
-
-@export_group("Damage")
 ##If this is true, then the [member prompt] must be true before dealing any dmg 
 @export var prompt_reliant: bool = false
 ##Dmg that displays on the main card info next to name
@@ -33,6 +26,12 @@ class_name AttackData
 ##Does this attack hit both defending pokemon in doubles?
 @export var both_active: bool = false
 @export var bench_damage: BenchAttk
+
+@export_group("Ignore")
+##Don't check any of these if they're checked
+@export_flags("Body", "Weakness", "Resistance", "Effects") var defender_properties: int = 0
+##The pokemon can use this attack even if it has these conditions
+@export_flags("None", "Paralysis", "Alseep", "Confusion") var condition: int = 1
 
 @export_group("Effects")
 @export var prompt: PromptAsk

@@ -1,16 +1,22 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://c38teiq8jwir0"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=15 format=3 uid="uid://c38teiq8jwir0"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_cendl"]
 [ext_resource type="Texture2D" uid="uid://bwgwrr50owgu1" path="res://Art/Cards/1 ex Ruby & Saphire/61.jpg" id="1_svn3g"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_ac0ve"]
 [ext_resource type="Resource" uid="uid://lfhu3xyr0wpo" path="res://Resources/Components/Effects/Prompts/IfFlipHeads.tres" id="3_e5n67"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_ufae1"]
+[ext_resource type="Resource" uid="uid://bep36omnenbc8" path="res://Resources/Components/Pokemon/Attacks/AttackData/10Dmg.tres" id="4_4ohrg"]
 [ext_resource type="Resource" uid="uid://bext0mocufqgp" path="res://Resources/Components/Effects/Conditions/BasicBurn.tres" id="4_7r0g3"]
+[ext_resource type="Resource" uid="uid://bpgsrqt47evh0" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/R1C1.tres" id="5_d5vkb"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_ufae1"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="7_hr3sm"]
 
 [sub_resource type="Resource" id="Resource_4ohrg"]
 script = ExtResource("2_ac0ve")
 name = "Headbutt"
 description = ""
+attack_cost = ExtResource("3_ufae1")
+attack_data = ExtResource("4_4ohrg")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0
@@ -21,7 +27,7 @@ darkness_cost = 0
 metal_cost = 0
 colorless_cost = 1
 defender_properties = 0
-condition = 0
+condition = 1
 prompt_reliant = false
 initial_main_DMG = 10
 conditional_self_dmg = false
@@ -31,12 +37,29 @@ modifier_num = 0
 both_active = false
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
+[sub_resource type="Resource" id="Resource_pb47g"]
+script = ExtResource("7_hr3sm")
+prompt_reliant = false
+initial_main_DMG = 0
+conditional_self_dmg = false
+self_damage = 0
+modifier = 0
+modifier_num = 0
+both_active = true
+defender_properties = 0
+condition = 1
+prompt = ExtResource("3_e5n67")
+success_effect = ExtResource("4_7r0g3")
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
 [sub_resource type="Resource" id="Resource_d5vkb"]
 script = ExtResource("2_ac0ve")
 name = "Burn Off"
 description = "Flip a coin. If heads, each Defending Pokémon is now Burned."
+attack_cost = ExtResource("5_d5vkb")
+attack_data = SubResource("Resource_pb47g")
 grass_cost = 0
-fire_cost = 0
+fire_cost = 1
 water_cost = 0
 lightning_cost = 0
 psychic_cost = 0
@@ -45,14 +68,14 @@ darkness_cost = 0
 metal_cost = 0
 colorless_cost = 1
 defender_properties = 0
-condition = 0
+condition = 1
 prompt_reliant = false
 initial_main_DMG = 0
 conditional_self_dmg = false
 self_damage = 0
 modifier = 0
 modifier_num = 0
-both_active = false
+both_active = true
 prompt = ExtResource("3_e5n67")
 success_effect = ExtResource("4_7r0g3")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

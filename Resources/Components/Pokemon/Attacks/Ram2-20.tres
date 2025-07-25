@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="Attack" load_steps=4 format=3 uid="uid://carj70w3pyx05"]
+
+[ext_resource type="Resource" uid="uid://b1rwmggf7a4do" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless2.tres" id="1_6vxbs"]
+[ext_resource type="Resource" uid="uid://bnsrs2a5hnvkb" path="res://Resources/Components/Pokemon/Attacks/AttackData/20Dmg.tres" id="2_vv7mu"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="3_cml2c"]
+
+[resource]
+script = ExtResource("3_cml2c")
+name = "Ram"
+description = ""
+attack_cost = ExtResource("1_6vxbs")
+attack_data = ExtResource("2_vv7mu")
+grass_cost = 0
+fire_cost = 0
+water_cost = 0
+lightning_cost = 0
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 2
+defender_properties = 0
+condition = 1
+prompt_reliant = false
+initial_main_DMG = 20
+conditional_self_dmg = false
+self_damage = 0
+modifier = 0
+modifier_num = 0
+both_active = false

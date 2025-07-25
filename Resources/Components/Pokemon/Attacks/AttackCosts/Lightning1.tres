@@ -6,8 +6,8 @@
 script = ExtResource("1_tm5ye")
 grass_cost = 0
 fire_cost = 0
-water_cost = 1
-lightning_cost = 0
+water_cost = 0
+lightning_cost = 1
 psychic_cost = 0
 fighting_cost = 0
 darkness_cost = 0

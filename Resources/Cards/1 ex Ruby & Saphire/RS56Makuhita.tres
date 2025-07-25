@@ -1,14 +1,20 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=8 format=3 uid="uid://dt7204up834v0"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://dt7204up834v0"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_748g6"]
 [ext_resource type="Texture2D" uid="uid://csjy73bqhynv4" path="res://Art/Cards/1 ex Ruby & Saphire/56.jpg" id="1_bdjdj"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_npjpr"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_gg827"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="3_lr7ot"]
+[ext_resource type="Resource" uid="uid://bep36omnenbc8" path="res://Resources/Components/Pokemon/Attacks/AttackData/10Dmg.tres" id="4_ui2xk"]
+[ext_resource type="Resource" uid="uid://b1rwmggf7a4do" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless2.tres" id="5_4cmrj"]
+[ext_resource type="Resource" uid="uid://bnsrs2a5hnvkb" path="res://Resources/Components/Pokemon/Attacks/AttackData/20Dmg.tres" id="6_3sysq"]
 
 [sub_resource type="Resource" id="Resource_gcdy1"]
 script = ExtResource("2_npjpr")
 name = "Slap Push"
 description = ""
+attack_cost = ExtResource("3_gg827")
+attack_data = ExtResource("4_ui2xk")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0
@@ -19,9 +25,9 @@ darkness_cost = 0
 metal_cost = 0
 colorless_cost = 1
 defender_properties = 0
-condition = 0
+condition = 1
 prompt_reliant = false
-initial_main_DMG = 0
+initial_main_DMG = 10
 conditional_self_dmg = false
 self_damage = 0
 modifier = 0
@@ -33,6 +39,8 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 script = ExtResource("2_npjpr")
 name = "Lunge Out"
 description = ""
+attack_cost = ExtResource("5_4cmrj")
+attack_data = ExtResource("6_3sysq")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0
@@ -43,7 +51,7 @@ darkness_cost = 0
 metal_cost = 0
 colorless_cost = 2
 defender_properties = 0
-condition = 0
+condition = 1
 prompt_reliant = false
 initial_main_DMG = 20
 conditional_self_dmg = false
