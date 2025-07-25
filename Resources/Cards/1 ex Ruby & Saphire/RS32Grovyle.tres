@@ -1,16 +1,21 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://dno2q4q3waycq"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://dno2q4q3waycq"]
 
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_2o7ai"]
 [ext_resource type="Texture2D" uid="uid://5lw8ud8rj6f4" path="res://Art/Cards/1 ex Ruby & Saphire/32.jpg" id="1_djxdv"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="2_i0y5q"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_26blq"]
 [ext_resource type="Resource" uid="uid://d0in7vtooxjm1" path="res://Resources/Components/Effects/ETC/AtkSelfHealCond.tres" id="3_htg7f"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_nk0ad"]
 [ext_resource type="Script" uid="uid://b2tlqpng7fq25" path="res://Code/Resource Makers/PokemonSpecific/BodyMaker.gd" id="4_nk0ad"]
+
+[sub_resource type="Resource" id="Resource_wt5p1"]
 
 [sub_resource type="Resource" id="Resource_5v3xg"]
 script = ExtResource("1_2o7ai")
 name = "Slash"
 description = ""
+attack_cost = ExtResource("3_nk0ad")
+attack_data = SubResource("Resource_wt5p1")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0

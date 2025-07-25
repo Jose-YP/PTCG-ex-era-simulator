@@ -1,16 +1,21 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=9 format=3 uid="uid://bfs5itna2x8k5"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=11 format=3 uid="uid://bfs5itna2x8k5"]
 
 [ext_resource type="Texture2D" uid="uid://cvu5pwin8deo3" path="res://Art/Cards/11 ex Delta Species/22.jpg" id="1_kerir"]
 [ext_resource type="Resource" uid="uid://ddhtth12ohjx5" path="res://Resources/Components/Energy/SpecialEnergy/Holon'sDR.tres" id="1_koap8"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_ybbn3"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="3_bekoi"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="4_bekoi"]
 [ext_resource type="Resource" uid="uid://cqtgiv5p6suee" path="res://Resources/Components/Counters/Comparator/DefSelfEX.tres" id="4_i8fwd"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_i8dod"]
+
+[sub_resource type="Resource" id="Resource_wt5p1"]
 
 [sub_resource type="Resource" id="Resource_psiqs"]
 script = ExtResource("3_bekoi")
 name = "Extra Ball"
 description = "If the Defending Pokémon is Pokémon-ex, this attack does 30 damage plus 20 more damage."
+attack_cost = ExtResource("4_bekoi")
+attack_data = SubResource("Resource_wt5p1")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0

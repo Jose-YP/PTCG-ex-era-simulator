@@ -273,6 +273,7 @@ func set_reversable(reversable: bool):
 #region ATTACKING
 func before_direct_attack(attacker: PokeSlot, with: Attack):
 	var direct_bool: bool = with.does_direct_damage()
+	var attack_data: AttackData = with.attack_data
 	var pass_prompt
 	print("Now before ", with.name, " from ", attacker.get_card_name())
 	
@@ -280,14 +281,14 @@ func before_direct_attack(attacker: PokeSlot, with: Attack):
 	if await attacker.confusion_check():
 		return
 	
-	if direct_bool or with.always_effect.has_effect_type(["Condition",
+	if direct_bool or attack_data.always_effect.has_effect_type(["Condition",
 	 "Alleviate", "DamageManip", "Disable", "CardDisrupt"]):
-		if not with.both_active:
+		if not attack_data.both_active:
 			await get_choice_candidates("Who do you want to attack?", 
 			func(slot: PokeSlot): return slot.is_in_slot(Consts.SIDES.DEFENDING, Consts.SLOTS.ACTIVE),
 			true)
 			
-			pass_prompt = await check_prompt_reliant(with.prompt)
+			pass_prompt = await check_prompt_reliant(attack_data.prompt)
 			
 			if hold_candidate == null:
 				return
@@ -296,18 +297,18 @@ func before_direct_attack(attacker: PokeSlot, with: Attack):
 				if pass_prompt != false: direct_attack(attacker, with, [hold_candidate])
 		else:
 			var def_active: Array[PokeSlot] = Globals.full_ui.get_poke_slots(Consts.SIDES.DEFENDING, Consts.SLOTS.ACTIVE)
-			pass_prompt = await check_prompt_reliant(with.prompt)
+			pass_prompt = await check_prompt_reliant(attack_data.prompt)
 			
 			Globals.fundies.record_attack_src_trg(attacker.is_home(), [attacker], def_active)
 			if pass_prompt != false: direct_attack(attacker, with, def_active)
 	
-	elif with.bench_damage:
+	elif attack_data.bench_damage:
 		print("This attack does bench damage")
 		pass
 	
 	else: Globals.fundies.record_single_src_trg(attacker)
 	
-	attack_effect(attacker, with, pass_prompt)
+	attack_effect(attacker, with.attack_data, pass_prompt)
 	
 	Globals.fundies.remove_top_source_target()
 	SignalBus.end_turn.emit()
@@ -323,7 +324,7 @@ func direct_attack(attacker: PokeSlot, with: Attack, defenders: Array[PokeSlot])
 func bench_attack(attacker: PokeSlot, with: BenchAttk, defenders: Array[PokeSlot]):
 	pass
 
-func attack_effect(attacker: PokeSlot, with: Attack, predefined = null):
+func attack_effect(attacker: PokeSlot, with: AttackData, predefined = null):
 	if with.prompt:
 		print(predefined == null)
 		var succeed: bool = predefined == true or \

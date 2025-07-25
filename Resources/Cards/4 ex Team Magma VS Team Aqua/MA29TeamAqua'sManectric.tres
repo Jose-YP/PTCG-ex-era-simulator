@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=13 format=3 uid="uid://ov65eileuo4o"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=15 format=3 uid="uid://ov65eileuo4o"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_dwtlt"]
 [ext_resource type="Texture2D" uid="uid://df02g0rwr5yl1" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/29.jpg" id="1_gl86o"]
@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://c7itelq8jtjc2" path="res://Resources/Components/EnData/Rainbow.tres" id="3_1uuvq"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="4_0g86g"]
 [ext_resource type="Resource" uid="uid://d4bi0kdblesdq" path="res://Resources/Components/Effects/Asks/Conditions/DefIsConfused.tres" id="5_1uuvq"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="5_gdiu5"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="6_ea6gi"]
 [ext_resource type="Resource" uid="uid://l48hjm27w6e6" path="res://Resources/Components/Effects/EnergyMovement/DefSelfDisAny.tres" id="6_gdiu5"]
 
@@ -34,10 +35,14 @@ energy_attatched = -1
 energy_class = "Any"
 energy_type = ExtResource("3_1uuvq")
 
+[sub_resource type="Resource" id="Resource_wt5p1"]
+
 [sub_resource type="Resource" id="Resource_kg1j7"]
 script = ExtResource("4_0g86g")
 name = "Aqua Beam"
 description = "If the Defending Pokémon has Team Magma in its name, the Defending Pokémon is now Confused."
+attack_cost = ExtResource("5_gdiu5")
+attack_data = SubResource("Resource_wt5p1")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0
@@ -62,6 +67,8 @@ ask = SubResource("Resource_owb8s")
 script = ExtResource("4_0g86g")
 name = "Chaos Crush"
 description = "If the Defending Pokémon is Confused, discard an Energy card attached to the Defending Pokémon."
+attack_cost = ExtResource("5_gdiu5")
+attack_data = SubResource("Resource_wt5p1")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0

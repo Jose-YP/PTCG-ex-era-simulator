@@ -2,15 +2,18 @@ extends Node
 
 var all_lists: Array[Dictionary]
 
-func reformat(text: String) -> String:
+func reformat(text: String, user: String = "<null>") -> String:
 	var result: String = text
 	var icon_search = RegEx.new()
 	var italics_search = RegEx.new()
+	var name_search = RegEx.new()
 	icon_search.compile(r"\{.*?\}")
 	italics_search.compile(r"\(.*?\)")
+	name_search.compile(r"\[name\]")
 	
 	var matches = icon_search.search_all(text)
 	var italics = italics_search.search_all(text)
+	var names = name_search.search_all(text)
 	
 	for found in matches:
 		#Specific mentions of energy types should be replaced by icon
@@ -29,6 +32,11 @@ func reformat(text: String) -> String:
 		var wrapped: String = "[i]" + original + "[/i]"
 		
 		result = result.replace(original, wrapped)
+	
+	for found in names:
+		var original: String = found.get_string(0)
+		var replaced: String = user
+		result = result.replace(original, replaced)
 	
 	return result
 

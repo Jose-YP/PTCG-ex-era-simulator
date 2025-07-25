@@ -1,15 +1,35 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=9 format=3 uid="uid://co4rk4hqixy8b"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=15 format=3 uid="uid://co4rk4hqixy8b"]
 
 [ext_resource type="Texture2D" uid="uid://bc5arw2wcqfke" path="res://Art/Cards/1 ex Ruby & Saphire/37.jpg" id="1_6wwaw"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="3_7vheh"]
+[ext_resource type="Resource" uid="uid://c242583wbr6wx" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Metal1.tres" id="3_tq5ox"]
 [ext_resource type="Resource" uid="uid://tjr3g1g7t1l4" path="res://Resources/Components/Pokemon/BenchAttack/HurtAll.tres" id="3_ufb8t"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="5_66hpu"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="6_6s8s0"]
+[ext_resource type="Resource" uid="uid://dm6f2nxeh8yqx" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless4.tres" id="6_bwk4t"]
+[ext_resource type="Resource" uid="uid://e706qq8o0hri" path="res://Resources/Components/Counters/Comparator/Return2Flip.tres" id="7_1f8fy"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="7_a8f8x"]
+
+[sub_resource type="Resource" id="Resource_5wvq8"]
+script = ExtResource("5_66hpu")
+prompt_reliant = false
+initial_main_DMG = 20
+conditional_self_dmg = false
+self_damage = 0
+modifier = 0
+modifier_num = 0
+both_active = false
+bench_damage = ExtResource("3_ufb8t")
+defender_properties = 0
+condition = 1
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_r1kb1"]
 script = ExtResource("3_7vheh")
 name = "Magnitude"
 description = "Does 10 damage to each Benched Pokémon (both yours and your opponent's). (Don't apply Weakness and Resistance for Benched Pokémon.)"
+attack_cost = ExtResource("3_tq5ox")
+attack_data = SubResource("Resource_5wvq8")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0
@@ -20,7 +40,7 @@ darkness_cost = 0
 metal_cost = 1
 colorless_cost = 0
 defender_properties = 0
-condition = 0
+condition = 1
 prompt_reliant = false
 initial_main_DMG = 20
 conditional_self_dmg = false
@@ -30,10 +50,26 @@ modifier_num = 0
 both_active = false
 bench_damage = ExtResource("3_ufb8t")
 
+[sub_resource type="Resource" id="Resource_h1t1l"]
+script = ExtResource("5_66hpu")
+prompt_reliant = false
+initial_main_DMG = 0
+conditional_self_dmg = false
+self_damage = 0
+modifier = 1
+modifier_num = 20
+comparator = ExtResource("7_1f8fy")
+both_active = false
+defender_properties = 0
+condition = 1
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
 [sub_resource type="Resource" id="Resource_c3a7t"]
 script = ExtResource("3_7vheh")
 name = "One-Two Strike"
 description = "Flip 2 coins. This attack does 30 damage plus 20 more damage for each heads."
+attack_cost = ExtResource("6_bwk4t")
+attack_data = SubResource("Resource_h1t1l")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0
@@ -44,13 +80,13 @@ darkness_cost = 0
 metal_cost = 0
 colorless_cost = 4
 defender_properties = 0
-condition = 0
+condition = 1
 prompt_reliant = false
 initial_main_DMG = 30
 conditional_self_dmg = false
 self_damage = 0
 modifier = 1
-modifier_num = 0
+modifier_num = 20
 both_active = false
 
 [sub_resource type="Resource" id="Resource_iq16m"]

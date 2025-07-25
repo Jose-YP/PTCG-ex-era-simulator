@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=16 format=3 uid="uid://8aluya3mraht"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=18 format=3 uid="uid://8aluya3mraht"]
 
 [ext_resource type="Texture2D" uid="uid://d1f55128uj06q" path="res://Art/Cards/2 ex Sandstorm/54.jpg" id="1_fluui"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_htrw8"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="5_f7r4u"]
 [ext_resource type="Resource" uid="uid://b3q5vmepfee8k" path="res://Resources/Components/Effects/Identifiers/Pokemon/AnyPokemon.tres" id="6_8at0n"]
 [ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="7_ceahv"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="8_fluui"]
 [ext_resource type="Resource" uid="uid://be8lljnc031ab" path="res://Resources/Components/Pokemon/Powers/WynautBabyEvo.tres" id="9_0hmp5"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="10_k6hc2"]
 
@@ -38,10 +39,14 @@ order = Array[int]([])
 search = SubResource("Resource_0tb8t")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
+[sub_resource type="Resource" id="Resource_wt5p1"]
+
 [sub_resource type="Resource" id="Resource_rihj7"]
 script = ExtResource("2_fluui")
 name = "Alluring Smile"
 description = "Search your deck for a Basic Pokémon card or Evolution card for each Energy attached to Wynaut, show them to your opponent, and put them into your hand. Shuffle your deck afterward."
+attack_cost = ExtResource("8_fluui")
+attack_data = SubResource("Resource_wt5p1")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0

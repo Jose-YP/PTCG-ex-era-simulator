@@ -1,38 +1,19 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=8 format=3 uid="uid://j7jgo5r8p4ce"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://j7jgo5r8p4ce"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_q4y1k"]
 [ext_resource type="Texture2D" uid="uid://cr585aqidohri" path="res://Art/Cards/1 ex Ruby & Saphire/36.jpg" id="1_usrt4"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_ash2e"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="3_htpoo"]
-
-[sub_resource type="Resource" id="Resource_tokt4"]
-script = ExtResource("2_ash2e")
-name = "Ram"
-description = ""
-grass_cost = 0
-fire_cost = 0
-water_cost = 0
-lightning_cost = 0
-psychic_cost = 0
-fighting_cost = 0
-darkness_cost = 0
-metal_cost = 0
-colorless_cost = 2
-defender_properties = 0
-condition = 0
-prompt_reliant = false
-initial_main_DMG = 20
-conditional_self_dmg = false
-self_damage = 0
-modifier = 0
-modifier_num = 0
-both_active = false
-metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+[ext_resource type="Resource" uid="uid://carj70w3pyx05" path="res://Resources/Components/Pokemon/Attacks/Ram2-20.tres" id="3_tokt4"]
+[ext_resource type="Resource" uid="uid://b4p6bn3ei1onu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/M1C2.tres" id="4_bw660"]
+[ext_resource type="Resource" uid="uid://dnnekosklb3ar" path="res://Resources/Components/Pokemon/Attacks/AttackData/40Dmg.tres" id="5_ytfqf"]
 
 [sub_resource type="Resource" id="Resource_bw660"]
 script = ExtResource("2_ash2e")
 name = "Metal Claw"
 description = ""
+attack_cost = ExtResource("4_bw660")
+attack_data = ExtResource("5_ytfqf")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0
@@ -43,7 +24,7 @@ darkness_cost = 0
 metal_cost = 1
 colorless_cost = 2
 defender_properties = 0
-condition = 0
+condition = 1
 prompt_reliant = false
 initial_main_DMG = 40
 conditional_self_dmg = false
@@ -57,7 +38,7 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 script = ExtResource("3_htpoo")
 HP = 70
 retreat = 2
-attacks = Array[ExtResource("2_ash2e")]([SubResource("Resource_tokt4"), SubResource("Resource_bw660")])
+attacks = Array[ExtResource("2_ash2e")]([ExtResource("3_tokt4"), SubResource("Resource_bw660")])
 evo_stage = "Stage 1"
 evolves_from = "Aron"
 considered = 1

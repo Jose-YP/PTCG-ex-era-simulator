@@ -1,14 +1,19 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=8 format=3 uid="uid://c6lxuqvu4fr1h"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://c6lxuqvu4fr1h"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_0conx"]
 [ext_resource type="Texture2D" uid="uid://bl7o8s2qxsfat" path="res://Art/Cards/1 ex Ruby & Saphire/14.jpg" id="1_o2uv4"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_wnx27"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="3_dv4na"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_wnx27"]
+
+[sub_resource type="Resource" id="Resource_wt5p1"]
 
 [sub_resource type="Resource" id="Resource_l8sw6"]
 script = ExtResource("2_wnx27")
 name = "Take Down"
 description = "Wailord does 20 damage to itself."
+attack_cost = ExtResource("3_wnx27")
+attack_data = SubResource("Resource_wt5p1")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0
@@ -33,6 +38,8 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 script = ExtResource("2_wnx27")
 name = "Surf"
 description = ""
+attack_cost = ExtResource("3_wnx27")
+attack_data = SubResource("Resource_wt5p1")
 grass_cost = 0
 fire_cost = 0
 water_cost = 3

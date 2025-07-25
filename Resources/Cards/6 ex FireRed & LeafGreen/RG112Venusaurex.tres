@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=16 format=3 uid="uid://cgm3sofk1dkq3"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=18 format=3 uid="uid://cgm3sofk1dkq3"]
 
 [ext_resource type="Texture2D" uid="uid://cl7o34ormv6eq" path="res://Art/Cards/6 ex FireRed & LeafGreen/112.jpg" id="1_312hq"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_plo0f"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://b58015mafcw2v" path="res://Code/Resource Makers/PokemonSpecific/PowerMaker.gd" id="4_qf1x1"]
 [ext_resource type="Resource" uid="uid://ddxy8mght077d" path="res://Resources/Components/Effects/EnergyMovement/EnergyTrans.tres" id="5_eyg63"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_hal7e"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="5_qf1x1"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="6_eyg63"]
 
 [sub_resource type="Resource" id="Resource_tbvw2"]
@@ -29,10 +30,14 @@ order = Array[int]([])
 condition = SubResource("Resource_tbvw2")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
+[sub_resource type="Resource" id="Resource_wt5p1"]
+
 [sub_resource type="Resource" id="Resource_hgbw6"]
 script = ExtResource("2_plo0f")
 name = "Pollen Hazard"
 description = "The Defending Pokémon is now Poisoned, Burned, and Confused."
+attack_cost = ExtResource("5_qf1x1")
+attack_data = SubResource("Resource_wt5p1")
 grass_cost = 1
 fire_cost = 0
 water_cost = 0
@@ -58,6 +63,8 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 script = ExtResource("2_plo0f")
 name = "Solarbeam"
 description = ""
+attack_cost = ExtResource("5_qf1x1")
+attack_data = SubResource("Resource_wt5p1")
 grass_cost = 3
 fire_cost = 0
 water_cost = 0

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://2gbttee2ievi"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=14 format=3 uid="uid://2gbttee2ievi"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_khsbn"]
 [ext_resource type="Resource" uid="uid://ddhtth12ohjx5" path="res://Resources/Components/Energy/SpecialEnergy/Holon'sDR.tres" id="1_m7xdt"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_kh6h8"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_oe5pn"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="3_45r76"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="6_4nuec"]
 [ext_resource type="Script" uid="uid://bgtwlw1edjwyc" path="res://Code/Resource Makers/EffectSpecific/DrawMaker.gd" id="9_x1qkv"]
 
 [sub_resource type="Resource" id="Resource_scy87"]
@@ -23,10 +24,14 @@ order = Array[int]([])
 draw_ammount = SubResource("Resource_scy87")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
+[sub_resource type="Resource" id="Resource_wt5p1"]
+
 [sub_resource type="Resource" id="Resource_gfvgc"]
 script = ExtResource("2_oe5pn")
 name = "Delta Draw"
 description = "Count the number of Pokémon you have in play that has δ on its card. Draw up to that many cards."
+attack_cost = ExtResource("6_4nuec")
+attack_data = SubResource("Resource_wt5p1")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0

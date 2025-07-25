@@ -1,48 +1,8 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=8 format=3 uid="uid://cct84fq6ebs2d"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=4 format=3 uid="uid://cct84fq6ebs2d"]
 
 [ext_resource type="Texture2D" uid="uid://b84payuyyh5di" path="res://Art/Cards/1 ex Ruby & Saphire/40.jpg" id="1_2l816"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_5sy4r"]
-[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_u2jhv"]
-[ext_resource type="Resource" uid="uid://bfhbpclxag538" path="res://Resources/Components/Pokemon/Attacks/Bubble.tres" id="3_gfkaa"]
-[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="4_i3m2u"]
-
-[sub_resource type="Resource" id="Resource_joqya"]
-script = ExtResource("2_u2jhv")
-name = "Slash"
-description = ""
-grass_cost = 0
-fire_cost = 0
-water_cost = 0
-lightning_cost = 0
-psychic_cost = 0
-fighting_cost = 0
-darkness_cost = 0
-metal_cost = 0
-colorless_cost = 3
-defender_properties = 0
-condition = 0
-prompt_reliant = false
-initial_main_DMG = 40
-conditional_self_dmg = false
-self_damage = 0
-modifier = 0
-modifier_num = 0
-both_active = false
-metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
-
-[sub_resource type="Resource" id="Resource_47vqs"]
-script = ExtResource("4_i3m2u")
-HP = 70
-retreat = 1
-attacks = Array[ExtResource("2_u2jhv")]([ExtResource("3_gfkaa"), SubResource("Resource_joqya")])
-evo_stage = "Stage 1"
-evolves_from = "Mudkip"
-considered = 1
-owner = 0
-type = 4
-weak = 8
-resist = 0
-metadata/_custom_type_script = "uid://dkximshow1pao"
+[ext_resource type="Resource" uid="uid://bt03lr8uojbaf" path="res://Resources/Components/Pokemon/ReprintPokemon/SlashMarshtomp.tres" id="2_2w1s8"]
 
 [resource]
 script = ExtResource("1_5sy4r")
@@ -53,6 +13,6 @@ number = 40
 rarity = 1
 expansion = 0
 categories = 1
-pokemon_properties = SubResource("Resource_47vqs")
+pokemon_properties = ExtResource("2_2w1s8")
 fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

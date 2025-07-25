@@ -1,18 +1,23 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=13 format=3 uid="uid://bopcqetuha2jo"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=15 format=3 uid="uid://bopcqetuha2jo"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_rgg13"]
 [ext_resource type="Texture2D" uid="uid://dm88a7rr1ys2c" path="res://Art/Cards/1 ex Ruby & Saphire/5.jpg" id="1_swy3d"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_xs5ae"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_swy3d"]
 [ext_resource type="Resource" uid="uid://dmb635n2d0erk" path="res://Resources/Components/Effects/Draw/Draw3.tres" id="4_swy3d"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="5_sxqrh"]
 [ext_resource type="Resource" uid="uid://chc757fk4t8pm" path="res://Resources/Components/Effects/Prompts/Discard1EnTo.tres" id="6_xs5ae"]
 [ext_resource type="Script" uid="uid://b58015mafcw2v" path="res://Code/Resource Makers/PokemonSpecific/PowerMaker.gd" id="7_mgxj5"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="8_unyar"]
 
+[sub_resource type="Resource" id="Resource_wt5p1"]
+
 [sub_resource type="Resource" id="Resource_jg3lb"]
 script = ExtResource("2_xs5ae")
 name = "Max Energy Source"
 description = "Does 10 damage times the amount of Energy attached to all of your active Pokemon"
+attack_cost = ExtResource("3_swy3d")
+attack_data = SubResource("Resource_wt5p1")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0

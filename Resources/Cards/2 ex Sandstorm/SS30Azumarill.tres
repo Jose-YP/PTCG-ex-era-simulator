@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=15 format=3 uid="uid://btetlfpnc0pgh"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=17 format=3 uid="uid://btetlfpnc0pgh"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_1d60h"]
 [ext_resource type="Texture2D" uid="uid://b6db2ua3lcrpy" path="res://Art/Cards/2 ex Sandstorm/30.jpg" id="1_op54d"]
@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://c7itelq8jtjc2" path="res://Resources/Components/EnData/Rainbow.tres" id="3_7v2tk"]
 [ext_resource type="Script" uid="uid://cimk6l7ytw7xg" path="res://Code/Resource Makers/EffectSpecific/EnMovMaker.gd" id="3_prlnf"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_5exig"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="6_7v2tk"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="7_p7lid"]
 
 [sub_resource type="Resource" id="Resource_kjlrb"]
@@ -37,10 +38,14 @@ order = Array[int]([])
 energy_movement = SubResource("Resource_teul3")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
+[sub_resource type="Resource" id="Resource_wt5p1"]
+
 [sub_resource type="Resource" id="Resource_pifp0"]
 script = ExtResource("2_7v2tk")
 name = "Drizzle"
 description = "If you have {Water} Energy cards in your hand, attach as many {Water} Energy cards as you like to any of your Active Pokémon."
+attack_cost = ExtResource("6_7v2tk")
+attack_data = SubResource("Resource_wt5p1")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0
@@ -66,6 +71,8 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 script = ExtResource("2_7v2tk")
 name = "Max Bubbles"
 description = "Flip a coin for each Energy attached to all of your Active Pokémon. This attack does 30 damage times the number of heads."
+attack_cost = ExtResource("6_7v2tk")
+attack_data = SubResource("Resource_wt5p1")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0

@@ -1,0 +1,41 @@
+[gd_resource type="Resource" script_class="Attack" load_steps=7 format=3 uid="uid://cbuayikamt13j"]
+
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="1_f1mtl"]
+[ext_resource type="Resource" uid="uid://6u0bocijrq4m" path="res://Resources/Components/Effects/Search/Search2BasicEnergy.tres" id="2_x2g28"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_lcj47"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="4_8opyj"]
+
+[sub_resource type="Resource" id="Resource_6a84p"]
+script = ExtResource("1_f1mtl")
+either_or = false
+order = Array[int]([])
+search = ExtResource("2_x2g28")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_wt5p1"]
+
+[resource]
+script = ExtResource("4_8opyj")
+name = "Minor Errand-Running"
+description = "Search your deck for 2 basic Energy cards, show them to your opponent, and put them into your hand. Shuffle your deck afterward."
+attack_cost = ExtResource("3_lcj47")
+attack_data = SubResource("Resource_wt5p1")
+grass_cost = 0
+fire_cost = 0
+water_cost = 0
+lightning_cost = 0
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 1
+defender_properties = 0
+condition = 0
+prompt_reliant = false
+initial_main_DMG = 0
+conditional_self_dmg = false
+self_damage = 0
+modifier = 0
+modifier_num = 0
+both_active = false
+always_effect = SubResource("Resource_6a84p")

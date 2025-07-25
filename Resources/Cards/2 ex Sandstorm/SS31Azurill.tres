@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=16 format=3 uid="uid://dcs5eukk81si7"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=18 format=3 uid="uid://dcs5eukk81si7"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_f2otf"]
 [ext_resource type="Texture2D" uid="uid://br8ajn5ib0fb2" path="res://Art/Cards/2 ex Sandstorm/31.jpg" id="1_fg7hy"]
@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://c5l2nrpmptwuh" path="res://Resources/Components/Effects/DmgManip/SelfHealALL.tres" id="3_my7mo"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_0ehm3"]
 [ext_resource type="Resource" uid="uid://d4oev64lrs7x" path="res://Resources/Components/Effects/Search/SearchOneTrainerRev.tres" id="4_my7mo"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="5_0ehm3"]
 [ext_resource type="Script" uid="uid://b58015mafcw2v" path="res://Code/Resource Makers/PokemonSpecific/PowerMaker.gd" id="5_ltygs"]
 [ext_resource type="Script" uid="uid://cg3m7vpqxf2t6" path="res://Code/Resource Makers/EffectSpecific/OverrideMaker.gd" id="6_0ehm3"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="6_gmk3x"]
@@ -17,10 +18,14 @@ order = Array[int]([])
 search = ExtResource("4_my7mo")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
+[sub_resource type="Resource" id="Resource_wt5p1"]
+
 [sub_resource type="Resource" id="Resource_t1x7p"]
 script = ExtResource("2_tqd1y")
 name = "Jump Catch"
 description = "Search your deck for a Trainer card, show it to your opponent, and put it into your hand. Shuffle your deck afterward."
+attack_cost = ExtResource("5_0ehm3")
+attack_data = SubResource("Resource_wt5p1")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0

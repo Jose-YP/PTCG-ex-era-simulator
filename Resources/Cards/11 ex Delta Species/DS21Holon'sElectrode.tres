@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=9 format=3 uid="uid://d4nyotd6k6lrq"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=11 format=3 uid="uid://d4nyotd6k6lrq"]
 
 [ext_resource type="Resource" uid="uid://ddhtth12ohjx5" path="res://Resources/Components/Energy/SpecialEnergy/Holon'sDR.tres" id="1_0h2eg"]
 [ext_resource type="Texture2D" uid="uid://d05hye2peb5vm" path="res://Art/Cards/11 ex Delta Species/21.jpg" id="2_5tfdv"]
@@ -6,11 +6,16 @@
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="3_tctwf"]
 [ext_resource type="Resource" uid="uid://nx1kc1vsm4ia" path="res://Resources/Components/Effects/Conditions/BasicConfusion.tres" id="4_fby8h"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="4_vw06b"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="5_fby8h"]
+
+[sub_resource type="Resource" id="Resource_wt5p1"]
 
 [sub_resource type="Resource" id="Resource_44gyq"]
 script = ExtResource("2_17cmj")
 name = "Dazzle Blast"
 description = "The Defending Pokémon is now Confused."
+attack_cost = ExtResource("5_fby8h")
+attack_data = SubResource("Resource_wt5p1")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0

@@ -1,15 +1,20 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=9 format=3 uid="uid://ct34kdqkmfsuu"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=11 format=3 uid="uid://ct34kdqkmfsuu"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_kx2j1"]
 [ext_resource type="Texture2D" uid="uid://dk0qq1ksrtpfn" path="res://Art/Cards/6 ex FireRed & LeafGreen/35.jpg" id="1_uy5du"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_asv4v"]
 [ext_resource type="Resource" uid="uid://dr35h5ltr0i6r" path="res://Resources/Components/Effects/Conditions/BasicPoison.tres" id="3_rtwas"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="4_6blw1"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="4_asv4v"]
+
+[sub_resource type="Resource" id="Resource_wt5p1"]
 
 [sub_resource type="Resource" id="Resource_5u42e"]
 script = ExtResource("2_asv4v")
 name = "Poison Seed"
 description = "The Defending Pokémon is now Poisoned."
+attack_cost = ExtResource("4_asv4v")
+attack_data = SubResource("Resource_wt5p1")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0
@@ -35,6 +40,8 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 script = ExtResource("2_asv4v")
 name = "Razor Leaf"
 description = ""
+attack_cost = ExtResource("4_asv4v")
+attack_data = SubResource("Resource_wt5p1")
 grass_cost = 2
 fire_cost = 0
 water_cost = 0

@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=19 format=3 uid="uid://cunrp0t6mbn45"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=21 format=3 uid="uid://cunrp0t6mbn45"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_4lmt0"]
 [ext_resource type="Texture2D" uid="uid://c42p2sjgb7yar" path="res://Art/Cards/1 ex Ruby & Saphire/18.jpg" id="1_5kvuk"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_dtigs"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_dtigs"]
 [ext_resource type="Resource" uid="uid://bt4usjxfai6od" path="res://Resources/Components/Effects/Prompts/OthHasEvoAct.tres" id="3_eomtv"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_a7nbm"]
 [ext_resource type="Resource" uid="uid://cdex8l5yqfstv" path="res://Resources/Components/Effects/Search/AnySearch.tres" id="5_hhkog"]
@@ -10,6 +11,8 @@
 [ext_resource type="Script" uid="uid://8sh5p3leflla" path="res://Code/Resource Makers/EffectSpecific/CardDisruptMaker.gd" id="8_7qm0m"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="9_5e01i"]
 [ext_resource type="Resource" uid="uid://dlaamywxf5pjo" path="res://Resources/Components/Effects/Prompts/IfOthHasMoreThan1Mon.tres" id="9_dtigs"]
+
+[sub_resource type="Resource" id="Resource_wt5p1"]
 
 [sub_resource type="Resource" id="Resource_xp3sp"]
 script = ExtResource("4_a7nbm")
@@ -22,6 +25,8 @@ metadata/_custom_type_script = "uid://dmulm3x3dj842"
 script = ExtResource("2_dtigs")
 name = "Invisible Hand"
 description = "If any of your opponent's Active Pokémon are Evolved Pokémon, search your deck for any 1 card and put it into your hand. Shuffle your deck afterward."
+attack_cost = ExtResource("3_dtigs")
+attack_data = SubResource("Resource_wt5p1")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0
@@ -81,6 +86,8 @@ metadata/_custom_type_script = "uid://dmulm3x3dj842"
 script = ExtResource("2_dtigs")
 name = "Repulsion"
 description = "Flip a coin. If heads, your opponent returns the Defending Pokémon and all cards attached to it to his or her hand. (If your opponent doesn't have any Benched Pokémon or other Active Pokémon, this attack does nothing.)"
+attack_cost = ExtResource("3_dtigs")
+attack_data = SubResource("Resource_wt5p1")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0

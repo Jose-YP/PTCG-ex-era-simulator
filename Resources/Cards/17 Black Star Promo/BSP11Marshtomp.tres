@@ -1,15 +1,20 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=8 format=3 uid="uid://b45wy6r0cpldd"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://b45wy6r0cpldd"]
 
 [ext_resource type="Texture2D" uid="uid://dwft0k7ram2ti" path="res://Art/Cards/Black Star Promo/11.jpg" id="1_0j7js"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_irfhp"]
 [ext_resource type="Resource" uid="uid://bfhbpclxag538" path="res://Resources/Components/Pokemon/Attacks/Bubble.tres" id="3_0j7js"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="4_wlste"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_ddddi"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="6_ava80"]
+
+[sub_resource type="Resource" id="Resource_wt5p1"]
 
 [sub_resource type="Resource" id="Resource_joqya"]
 script = ExtResource("2_irfhp")
 name = "Slash"
 description = ""
+attack_cost = ExtResource("4_wlste")
+attack_data = SubResource("Resource_wt5p1")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0

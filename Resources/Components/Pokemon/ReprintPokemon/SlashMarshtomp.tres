@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="Pokemon" load_steps=7 format=3 uid="uid://bt03lr8uojbaf"]
+
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_ftmnk"]
+[ext_resource type="Resource" uid="uid://bfhbpclxag538" path="res://Resources/Components/Pokemon/Attacks/Bubble.tres" id="2_jcire"]
+[ext_resource type="Resource" uid="uid://dpovjlfpsypwe" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless3.tres" id="3_vjvd4"]
+[ext_resource type="Resource" uid="uid://dnnekosklb3ar" path="res://Resources/Components/Pokemon/Attacks/AttackData/40Dmg.tres" id="4_d0j2x"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_k7aqv"]
+
+[sub_resource type="Resource" id="Resource_joqya"]
+script = ExtResource("1_ftmnk")
+name = "Slash"
+description = ""
+attack_cost = ExtResource("3_vjvd4")
+attack_data = ExtResource("4_d0j2x")
+grass_cost = 0
+fire_cost = 0
+water_cost = 0
+lightning_cost = 0
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 3
+defender_properties = 0
+condition = 1
+prompt_reliant = false
+initial_main_DMG = 40
+conditional_self_dmg = false
+self_damage = 0
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[resource]
+script = ExtResource("5_k7aqv")
+HP = 70
+retreat = 1
+attacks = Array[ExtResource("1_ftmnk")]([ExtResource("2_jcire"), SubResource("Resource_joqya")])
+evo_stage = "Stage 1"
+evolves_from = "Mudkip"
+considered = 1
+owner = 0
+type = 4
+weak = 8
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"

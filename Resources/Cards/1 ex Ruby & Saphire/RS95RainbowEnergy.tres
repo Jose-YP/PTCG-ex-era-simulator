@@ -12,11 +12,12 @@
 [sub_resource type="Resource" id="Resource_4accq"]
 script = ExtResource("1_w8o02")
 mode = "Remove"
-remove = false
 how_many = 1
+choosing = 4
 choose_num = -1
 ask = ExtResource("1_qxfu1")
 plus = false
+modifier = 1
 
 [sub_resource type="Resource" id="Resource_mysds"]
 script = ExtResource("2_sn5e8")

@@ -51,7 +51,7 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_cqw6w"]
 script = ExtResource("2_2owa8")
 name = "Rest"
-description = "Remove all Special Conditions and 4 damage counters from Wailmer (all if there are less than 4). Wailmer is now Asleep."
+description = "Remove all Special Conditions and 4 damage counters from [name] (all if there are less than 4). [name] is now Asleep."
 attack_cost = ExtResource("3_2a6mg")
 attack_data = SubResource("Resource_lolcc")
 grass_cost = 0
@@ -91,7 +91,7 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_3y537"]
 script = ExtResource("2_2owa8")
 name = "Water Gun"
-description = "This attack does 20 damage plus 10 more damage for each {Water} Energy attached to {name} but not used to pay for this attack's Energy cost. You can't add more than 20 damage in this way."
+description = "This attack does 20 damage plus 10 more damage for each {Water} Energy attached to [name] but not used to pay for this attack's Energy cost. You can't add more than 20 damage in this way."
 attack_cost = ExtResource("10_jq24c")
 attack_data = SubResource("Resource_ulqrn")
 grass_cost = 0

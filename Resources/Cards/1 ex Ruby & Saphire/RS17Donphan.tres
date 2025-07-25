@@ -1,16 +1,21 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://c78ivjwwygc3i"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://c78ivjwwygc3i"]
 
 [ext_resource type="Texture2D" uid="uid://dqxppyjgl3lgn" path="res://Art/Cards/1 ex Ruby & Saphire/17.jpg" id="1_bi41r"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_w6dgb"]
 [ext_resource type="Resource" uid="uid://cujau35uwuskq" path="res://Resources/Components/Counters/Comparator/OtherTookDmg.tres" id="3_kv6u1"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_w6dgb"]
 [ext_resource type="Resource" uid="uid://e706qq8o0hri" path="res://Resources/Components/Counters/Comparator/Return2Flip.tres" id="4_yfpum"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_dvxvh"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="6_ukmff"]
+
+[sub_resource type="Resource" id="Resource_wt5p1"]
 
 [sub_resource type="Resource" id="Resource_uran7"]
 script = ExtResource("2_w6dgb")
 name = "Rend"
 description = "If the Defending Pokémon has any damage counters on it, this attack does 20 damage plus 20 more damage."
+attack_cost = ExtResource("3_w6dgb")
+attack_data = SubResource("Resource_wt5p1")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0
@@ -36,6 +41,8 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 script = ExtResource("2_w6dgb")
 name = "Double Spin"
 description = "Flip 2 coins. This attack does 60 damage times the number of heads."
+attack_cost = ExtResource("3_w6dgb")
+attack_data = SubResource("Resource_wt5p1")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0

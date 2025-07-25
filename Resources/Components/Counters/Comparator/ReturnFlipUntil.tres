@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Comparator" load_steps=5 format=3 uid="uid://cogdxbe4l1jku"]
+
+[ext_resource type="Resource" uid="uid://hm0c4sb0wg6v" path="res://Resources/Components/CoinFlip/FlipUntil.tres" id="1_vsl7i"]
+[ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="2_2bqhb"]
+[ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="3_4udv1"]
+
+[sub_resource type="Resource" id="Resource_igjry"]
+script = ExtResource("2_2bqhb")
+which = "Coinflip"
+coin_flip = ExtResource("1_vsl7i")
+cap = -1
+metadata/_custom_type_script = "uid://vjn146j3ayd6"
+
+[resource]
+script = ExtResource("3_4udv1")
+comparision_type = "Return"
+first_comparison = SubResource("Resource_igjry")
+compare_to = "None"
+second_constant = 0
+metadata/_custom_type_script = "uid://b65jx8u5cgcgl"

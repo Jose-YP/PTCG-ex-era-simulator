@@ -1,16 +1,21 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=9 format=3 uid="uid://dtsigftjtx3ai"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=11 format=3 uid="uid://dtsigftjtx3ai"]
 
 [ext_resource type="Resource" uid="uid://v2wh22nj2iy3" path="res://Resources/Components/Energy/SpecialEnergy/HolonColorless.tres" id="1_1k63p"]
 [ext_resource type="Texture2D" uid="uid://dw1g1pg013t7n" path="res://Art/Cards/11 ex Delta Species/70.jpg" id="1_r0k0t"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_wi2v4"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="3_vmj0d"]
 [ext_resource type="Resource" uid="uid://dbwecye8at3u0" path="res://Resources/Components/Pokemon/BenchAttack/10DefAny.tres" id="4_7tom3"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="4_vmj0d"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_ryjc3"]
+
+[sub_resource type="Resource" id="Resource_wt5p1"]
 
 [sub_resource type="Resource" id="Resource_puj2g"]
 script = ExtResource("3_vmj0d")
 name = "Linear Attack"
 description = "Choose 1 of your opponent's Pokémon. This attack does 10 damage to that Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
+attack_cost = ExtResource("4_vmj0d")
+attack_data = SubResource("Resource_wt5p1")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0

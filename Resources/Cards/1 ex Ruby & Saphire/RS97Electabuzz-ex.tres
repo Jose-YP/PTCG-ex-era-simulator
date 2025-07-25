@@ -1,16 +1,21 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://cht2g100xfwct"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://cht2g100xfwct"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_hw0hl"]
 [ext_resource type="Texture2D" uid="uid://cit0gp8cbga1f" path="res://Art/Cards/1 ex Ruby & Saphire/97.jpg" id="1_y7skg"]
 [ext_resource type="Resource" uid="uid://6xmw13js5xd3" path="res://Resources/Components/Effects/Conditions/BasicParalyze.tres" id="3_uh1kh"]
 [ext_resource type="Resource" uid="uid://lfhu3xyr0wpo" path="res://Resources/Components/Effects/Prompts/IfFlipHeads.tres" id="3_uho2u"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_y6j54"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="4_4dib8"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="7_6e4ya"]
+
+[sub_resource type="Resource" id="Resource_wt5p1"]
 
 [sub_resource type="Resource" id="Resource_50am0"]
 script = ExtResource("4_4dib8")
 name = "Thundershock"
 description = "Flip a coin. If heads, the Defending Pokémon is now Paralyzed."
+attack_cost = ExtResource("3_y6j54")
+attack_data = SubResource("Resource_wt5p1")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0
@@ -36,6 +41,8 @@ success_effect = ExtResource("3_uh1kh")
 script = ExtResource("4_4dib8")
 name = "Quick Attack"
 description = "Flip a coin. If heads, this attack does 40 damage plus 20 more damage."
+attack_cost = ExtResource("3_y6j54")
+attack_data = SubResource("Resource_wt5p1")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0

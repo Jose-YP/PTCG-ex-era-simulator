@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=13 format=3 uid="uid://vao0s41ukeix"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=15 format=3 uid="uid://vao0s41ukeix"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_uuq4o"]
 [ext_resource type="Texture2D" uid="uid://dya0qtd6xlfpk" path="res://Art/Cards/1 ex Ruby & Saphire/96.jpg" id="1_yoln1"]
@@ -7,15 +7,17 @@
 [ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="3_g7ndq"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="4_e8roy"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_8d2mj"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="6_utwnq"]
 
 [sub_resource type="Resource" id="Resource_enm5x"]
 script = ExtResource("2_3unk6")
 mode = "Remove"
-remove = true
 how_many = 2
+choosing = 4
 choose_num = -1
 ask = ExtResource("3_g7ndq")
 plus = false
+modifier = 1
 metadata/_custom_type_script = "uid://scca13hg4k1l"
 
 [sub_resource type="Resource" id="Resource_g7ndq"]
@@ -25,10 +27,14 @@ order = Array[int]([])
 dmgManip = SubResource("Resource_enm5x")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
+[sub_resource type="Resource" id="Resource_wt5p1"]
+
 [sub_resource type="Resource" id="Resource_fb5g2"]
 script = ExtResource("4_e8roy")
 name = "Healing Egg"
 description = "Remove 2 damage counters (1 if there is only 1) from each of your Pokémon. Remove no damage counters from Chansey ex."
+attack_cost = ExtResource("6_utwnq")
+attack_data = SubResource("Resource_wt5p1")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0
@@ -53,6 +59,8 @@ always_effect = SubResource("Resource_g7ndq")
 script = ExtResource("4_e8roy")
 name = "Double-edge"
 description = "Chansey ex does 60 damage to itself."
+attack_cost = ExtResource("6_utwnq")
+attack_data = SubResource("Resource_wt5p1")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0

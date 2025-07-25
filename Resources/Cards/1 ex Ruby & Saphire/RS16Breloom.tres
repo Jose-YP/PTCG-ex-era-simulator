@@ -1,15 +1,20 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=9 format=3 uid="uid://dg351i4lgea8b"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=11 format=3 uid="uid://dg351i4lgea8b"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_modh5"]
 [ext_resource type="Texture2D" uid="uid://r6xwbe3voqoh" path="res://Art/Cards/1 ex Ruby & Saphire/16.jpg" id="1_ulxcj"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_6c4g7"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_6c4g7"]
 [ext_resource type="Resource" uid="uid://dg2qsdfqryhb3" path="res://Resources/Components/Counters/Comparator/ReturnSelfFEn.tres" id="3_tewxn"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="4_tp364"]
+
+[sub_resource type="Resource" id="Resource_wt5p1"]
 
 [sub_resource type="Resource" id="Resource_yvfsv"]
 script = ExtResource("2_6c4g7")
 name = "Headbutt"
 description = ""
+attack_cost = ExtResource("3_6c4g7")
+attack_data = SubResource("Resource_wt5p1")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0
@@ -34,6 +39,8 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 script = ExtResource("2_6c4g7")
 name = "Battle Blast"
 description = "Does 40 damage plus 10 more damage for each {Fighting} Energy attached to Breloom."
+attack_cost = ExtResource("3_6c4g7")
+attack_data = SubResource("Resource_wt5p1")
 grass_cost = 1
 fire_cost = 0
 water_cost = 0

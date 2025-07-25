@@ -34,7 +34,7 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_iubtr"]
 script = ExtResource("3_mit06")
 name = "Teary Eyes"
-description = "During your opponent's next turn, any damage done to {name} by attacks is reduced by 10."
+description = "During your opponent's next turn, any damage done to [name] by attacks is reduced by 10."
 attack_cost = ExtResource("5_a7vst")
 attack_data = SubResource("Resource_7rvt1")
 grass_cost = 0

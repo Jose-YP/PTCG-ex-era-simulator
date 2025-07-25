@@ -1,14 +1,18 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=15 format=3 uid="uid://cbntiqyor7rbl"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=21 format=3 uid="uid://cbntiqyor7rbl"]
 
 [ext_resource type="Texture2D" uid="uid://dkgi6j136u7ei" path="res://Art/Cards/1 ex Ruby & Saphire/38.jpg" id="1_hkjvh"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_nty2o"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_c7ykk"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_euni5"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_hc8gr"]
 [ext_resource type="Resource" uid="uid://bl4qnrkh3kxdl" path="res://Resources/Components/Effects/Placement/PutIntoHand.tres" id="4_ojowl"]
 [ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="5_43h4u"]
 [ext_resource type="Resource" uid="uid://dm2i7spst0qpp" path="res://Resources/Components/Effects/Identifiers/AnyCard.tres" id="6_e3j6n"]
 [ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="7_pmwlk"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="9_hc8gr"]
+[ext_resource type="Resource" uid="uid://b1rwmggf7a4do" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless2.tres" id="10_ojowl"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="10_wenki"]
+[ext_resource type="Resource" uid="uid://cogdxbe4l1jku" path="res://Resources/Components/Counters/Comparator/ReturnFlipUntil.tres" id="11_43h4u"]
 
 [sub_resource type="Resource" id="Resource_47ysl"]
 script = ExtResource("7_pmwlk")
@@ -33,10 +37,26 @@ order = Array[int]([])
 search = SubResource("Resource_47ysl")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
+[sub_resource type="Resource" id="Resource_e3j6n"]
+script = ExtResource("9_hc8gr")
+prompt_reliant = false
+initial_main_DMG = 0
+conditional_self_dmg = false
+self_damage = 0
+modifier = 0
+modifier_num = 0
+both_active = false
+defender_properties = 0
+condition = 1
+always_effect = SubResource("Resource_f88l4")
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
 [sub_resource type="Resource" id="Resource_h8f3k"]
 script = ExtResource("2_c7ykk")
 name = "Seek Out"
 description = "Search your deck for up to 2 cards and put them into your hand. Shuffle your deck afterward."
+attack_cost = ExtResource("3_euni5")
+attack_data = SubResource("Resource_e3j6n")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0
@@ -47,7 +67,7 @@ darkness_cost = 0
 metal_cost = 0
 colorless_cost = 1
 defender_properties = 0
-condition = 0
+condition = 1
 prompt_reliant = false
 initial_main_DMG = 0
 conditional_self_dmg = false
@@ -55,13 +75,29 @@ self_damage = 0
 modifier = 0
 modifier_num = 0
 both_active = false
-success_effect = SubResource("Resource_f88l4")
+always_effect = SubResource("Resource_f88l4")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_pmwlk"]
+script = ExtResource("9_hc8gr")
+prompt_reliant = false
+initial_main_DMG = 40
+conditional_self_dmg = false
+self_damage = 0
+modifier = 2
+modifier_num = 40
+comparator = ExtResource("11_43h4u")
+both_active = false
+defender_properties = 0
+condition = 1
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_wgkdp"]
 script = ExtResource("2_c7ykk")
 name = "Continuous Headbutt"
 description = "Flip a coin until you get tails. This attack does 40 damage times the number of heads."
+attack_cost = ExtResource("10_ojowl")
+attack_data = SubResource("Resource_pmwlk")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0
@@ -72,13 +108,14 @@ darkness_cost = 0
 metal_cost = 0
 colorless_cost = 2
 defender_properties = 0
-condition = 0
+condition = 1
 prompt_reliant = false
 initial_main_DMG = 40
 conditional_self_dmg = false
 self_damage = 0
 modifier = 2
-modifier_num = 0
+modifier_num = 40
+comparator = ExtResource("11_43h4u")
 both_active = false
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 

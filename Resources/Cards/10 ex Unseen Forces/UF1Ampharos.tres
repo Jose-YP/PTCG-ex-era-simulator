@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=23 format=3 uid="uid://ca4fvk1kp65a5"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=25 format=3 uid="uid://ca4fvk1kp65a5"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_2qfob"]
 [ext_resource type="Texture2D" uid="uid://vl54ey1wgkdd" path="res://Art/Cards/10 ex Unseen Forces/1.jpg" id="1_246m0"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_xck7i"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_246m0"]
 [ext_resource type="Resource" uid="uid://bgrhgxjnv4xo5" path="res://Resources/Components/Effects/EnergyMovement/DisSelfAllLightning.tres" id="3_vx7in"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_x6q3b"]
 [ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="5_kd6vc"]
@@ -11,6 +12,8 @@
 [ext_resource type="Script" uid="uid://cimk6l7ytw7xg" path="res://Code/Resource Makers/EffectSpecific/EnMovMaker.gd" id="9_u7a6q"]
 [ext_resource type="Script" uid="uid://b58015mafcw2v" path="res://Code/Resource Makers/PokemonSpecific/PowerMaker.gd" id="10_4xr6q"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="11_veuta"]
+
+[sub_resource type="Resource" id="Resource_wt5p1"]
 
 [sub_resource type="Resource" id="Resource_ujupi"]
 script = ExtResource("4_x6q3b")
@@ -56,6 +59,8 @@ metadata/_custom_type_script = "uid://dmulm3x3dj842"
 script = ExtResource("2_xck7i")
 name = "Miraculous Thunder"
 description = " You may discard all {Lightning} Energy attached to Ampharos. If you do, the Defending Pokémon is now Burned and Confused."
+attack_cost = ExtResource("3_246m0")
+attack_data = SubResource("Resource_wt5p1")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0

@@ -1,14 +1,19 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=8 format=3 uid="uid://b45smf3ecldmx"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://b45smf3ecldmx"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_awq2c"]
 [ext_resource type="Texture2D" uid="uid://4io7x213u2ui" path="res://Art/Cards/1 ex Ruby & Saphire/103.jpg" id="1_sakby"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_wogcr"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="4_p1pt7"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_pr7l4"]
+
+[sub_resource type="Resource" id="Resource_wt5p1"]
 
 [sub_resource type="Resource" id="Resource_xrmox"]
 script = ExtResource("4_p1pt7")
 name = "Double Scratch"
 description = "Flip 2 coins. This attack does 10 damage times the number of heads."
+attack_cost = ExtResource("3_wogcr")
+attack_data = SubResource("Resource_wt5p1")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0
@@ -32,6 +37,8 @@ both_active = false
 script = ExtResource("4_p1pt7")
 name = "Beat Up"
 description = "Flip a coin for each of your Pokémon in play (including Sneasel ex). This attack does 20 damage times the number of heads."
+attack_cost = ExtResource("3_wogcr")
+attack_data = SubResource("Resource_wt5p1")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0

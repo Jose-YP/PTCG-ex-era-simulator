@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=18 format=3 uid="uid://cfjddps750f64"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=20 format=3 uid="uid://cfjddps750f64"]
 
 [ext_resource type="Texture2D" uid="uid://cw52mctmfhy2h" path="res://Art/Cards/1 ex Ruby & Saphire/12.jpg" id="1_6m76f"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_iidg0"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_0biyp"]
 [ext_resource type="Resource" uid="uid://b533us6s4x0oj" path="res://Resources/Components/Effects/Disable/AtkSelfNoAttack1Turn.tres" id="3_6m76f"]
 [ext_resource type="Resource" uid="uid://ctxwoioa8hgif" path="res://Resources/Components/Effects/EnergyMovement/AtkSelfDisBasic.tres" id="4_muafc"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="5_0biyp"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="5_jk4hl"]
 [ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="6_0biyp"]
 [ext_resource type="Resource" uid="uid://b4eq6v7x2qaxd" path="res://Resources/Components/Effects/Disable/DefNoPowers.tres" id="7_qjm50"]
@@ -17,6 +18,8 @@ either_or = false
 order = Array[int]([])
 disable = ExtResource("3_6m76f")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_wt5p1"]
 
 [sub_resource type="Resource" id="Resource_muafc"]
 script = ExtResource("5_jk4hl")
@@ -42,6 +45,8 @@ metadata/_custom_type_script = "uid://b85jmc7067bjc"
 script = ExtResource("2_0biyp")
 name = "Critical Move"
 description = "Discard a basic Energy card attached to Slaking or this attack does nothing. Slaking can't attack during your next turn."
+attack_cost = ExtResource("5_0biyp")
+attack_data = SubResource("Resource_wt5p1")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0

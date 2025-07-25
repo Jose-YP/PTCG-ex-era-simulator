@@ -1,18 +1,23 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=14 format=3 uid="uid://cg7qhfrgw5lmh"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=16 format=3 uid="uid://cg7qhfrgw5lmh"]
 
 [ext_resource type="Texture2D" uid="uid://cc6y666c76foi" path="res://Art/Cards/7 ex Team Rocket Returns/50.jpg" id="1_ojje2"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_s6osv"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_emyr2"]
 [ext_resource type="Resource" uid="uid://cqw2kwbgcwgvb" path="res://Resources/Components/Effects/Conditions/BasicSleep.tres" id="3_rud0l"]
 [ext_resource type="Resource" uid="uid://lfhu3xyr0wpo" path="res://Resources/Components/Effects/Prompts/IfFlipHeads.tres" id="4_738mo"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="4_emyr2"]
 [ext_resource type="Script" uid="uid://dtv1d2u2kvixy" path="res://Code/Resource Makers/EffectSpecific/MimicMaker.gd" id="5_3seaf"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="6_mw7hy"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="7_2b0yu"]
+
+[sub_resource type="Resource" id="Resource_wt5p1"]
 
 [sub_resource type="Resource" id="Resource_ky0p2"]
 script = ExtResource("2_emyr2")
 name = "Yawn"
 description = "The Defending Pokémon is now Asleep."
+attack_cost = ExtResource("4_emyr2")
+attack_data = SubResource("Resource_wt5p1")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0
@@ -54,6 +59,8 @@ metadata/_custom_type_script = "uid://dmulm3x3dj842"
 script = ExtResource("2_emyr2")
 name = "Mini-Metronome"
 description = "Flip a coin. If heads, choose 1 of the Defending Pokémon's attacks. Mini-Metronome copies that attack except for its Energy cost. (You must still do anything else required for that attack.) (No matter what type that Pokémon is, Togepi's type is still Colorless.) Togepi performs that attack."
+attack_cost = ExtResource("4_emyr2")
+attack_data = SubResource("Resource_wt5p1")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0

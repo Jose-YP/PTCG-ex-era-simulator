@@ -1,14 +1,19 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=8 format=3 uid="uid://c0kbwsboq8b5x"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://c0kbwsboq8b5x"]
 
 [ext_resource type="Texture2D" uid="uid://ceasya7uuo5vr" path="res://Art/Cards/6 ex FireRed & LeafGreen/55.jpg" id="1_27r6r"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_jyoji"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_i2mn5"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_27r6r"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="4_gvs0k"]
+
+[sub_resource type="Resource" id="Resource_wt5p1"]
 
 [sub_resource type="Resource" id="Resource_kdkar"]
 script = ExtResource("2_i2mn5")
 name = "Ram"
 description = ""
+attack_cost = ExtResource("3_27r6r")
+attack_data = SubResource("Resource_wt5p1")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0
@@ -33,6 +38,8 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 script = ExtResource("2_i2mn5")
 name = "Gouge"
 description = "Flip a coin. If heads, this attack does 20 damage plus 10 more damage."
+attack_cost = ExtResource("3_27r6r")
+attack_data = SubResource("Resource_wt5p1")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0

@@ -27,15 +27,15 @@ func _ready():
 		energy_icons[i].show()
 	
 	%Damage.clear()
-	print(attack.initial_main_DMG, attack.modifier)
-	if attack.initial_main_DMG > 0:
-		%Damage.append_text(str(attack.initial_main_DMG))
-		match attack.modifier:
+	print(attack.attack_data.initial_main_DMG, attack.attack_data.modifier)
+	if attack.attack_data.initial_main_DMG > 0:
+		%Damage.append_text(str(attack.attack_data.initial_main_DMG))
+		match attack.attack_data.modifier:
 			1: %Damage.append_text("+")
 			2: %Damage.append_text("x")
 			3:
 				%Damage.clear()
-				%Damage.append_text(str("-",attack.initial_main_DMG))
+				%Damage.append_text(str("-",attack.attack_data.initial_main_DMG))
 
 func check_usability():
 	var result: bool = attack.condition_allows(slot.applied_condition.turn_cond)\

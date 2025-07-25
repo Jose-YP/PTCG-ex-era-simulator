@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=14 format=3 uid="uid://cfvsqh7wq2rev"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=13 format=3 uid="uid://cfvsqh7wq2rev"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_7l8fn"]
 [ext_resource type="Texture2D" uid="uid://dq6ctyisaa3jy" path="res://Art/Cards/1 ex Ruby & Saphire/70.jpg" id="1_jrsmu"]
@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_b5ut1"]
 [ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="5_ok6hf"]
 [ext_resource type="Resource" uid="uid://tf51jsvkdale" path="res://Resources/Components/Pokemon/Attacks/AttackData/EnAttchHand1.tres" id="6_b5ut1"]
-[ext_resource type="Resource" uid="uid://bep36omnenbc8" path="res://Resources/Components/Pokemon/Attacks/AttackData/10Dmg.tres" id="7_ex5cx"]
+[ext_resource type="Resource" uid="uid://26n17bil6qem" path="res://Resources/Components/Pokemon/Attacks/EffectlessAttacks/Scratch1-10.tres" id="7_ok6hf"]
 
 [sub_resource type="Resource" id="Resource_ex5cx"]
 script = ExtResource("4_ok6hf")
@@ -44,37 +44,11 @@ both_active = false
 always_effect = SubResource("Resource_ex5cx")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
-[sub_resource type="Resource" id="Resource_05ebn"]
-script = ExtResource("2_de7xk")
-name = "Scratch"
-description = ""
-attack_cost = ExtResource("5_ok6hf")
-attack_data = ExtResource("7_ex5cx")
-grass_cost = 0
-fire_cost = 0
-water_cost = 0
-lightning_cost = 0
-psychic_cost = 0
-fighting_cost = 0
-darkness_cost = 0
-metal_cost = 0
-colorless_cost = 1
-defender_properties = 0
-condition = 1
-prompt_reliant = false
-initial_main_DMG = 10
-conditional_self_dmg = false
-self_damage = 0
-modifier = 0
-modifier_num = 0
-both_active = false
-metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
-
 [sub_resource type="Resource" id="Resource_23pbd"]
 script = ExtResource("5_b5ut1")
 HP = 40
 retreat = 1
-attacks = Array[ExtResource("2_de7xk")]([SubResource("Resource_6a5q7"), SubResource("Resource_05ebn")])
+attacks = Array[ExtResource("2_de7xk")]([SubResource("Resource_6a5q7"), ExtResource("7_ok6hf")])
 evo_stage = "Basic"
 evolves_from = ""
 considered = 1
@@ -86,8 +60,7 @@ metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
 script = ExtResource("1_7l8fn")
-name = "Skitty
-"
+name = "Skittty"
 image = ExtResource("1_jrsmu")
 illustrator = "Ken Sugimori"
 number = 70

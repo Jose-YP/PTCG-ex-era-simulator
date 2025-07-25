@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=11 format=3 uid="uid://cervqyyl0dqf2"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=13 format=3 uid="uid://cervqyyl0dqf2"]
 
 [ext_resource type="Texture2D" uid="uid://b6qd05q5xmb33" path="res://Art/Cards/1 ex Ruby & Saphire/33.jpg" id="1_7j12q"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_1pnys"]
 [ext_resource type="Resource" uid="uid://ekj1myy642kh" path="res://Resources/Components/Effects/Prompts/PromptHeads.tres" id="3_33e7q"]
 [ext_resource type="Resource" uid="uid://6xmw13js5xd3" path="res://Resources/Components/Effects/Conditions/BasicParalyze.tres" id="3_axcwr"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="4_6dlgm"]
@@ -8,10 +9,14 @@
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="7_i2uvt"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="8_wcw0t"]
 
+[sub_resource type="Resource" id="Resource_wt5p1"]
+
 [sub_resource type="Resource" id="Resource_o6r1d"]
 script = ExtResource("4_6dlgm")
 name = "Shove"
 description = "Flip a coin. If heads, the Defending Pokémon is now Paralyzed."
+attack_cost = ExtResource("3_1pnys")
+attack_data = SubResource("Resource_wt5p1")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0
@@ -37,6 +42,8 @@ success_effect = ExtResource("3_axcwr")
 script = ExtResource("4_6dlgm")
 name = "Slap Down"
 description = "Flip 2 coins. This attack does 40 damage plus 10 more damage for each heads."
+attack_cost = ExtResource("3_1pnys")
+attack_data = SubResource("Resource_wt5p1")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0
