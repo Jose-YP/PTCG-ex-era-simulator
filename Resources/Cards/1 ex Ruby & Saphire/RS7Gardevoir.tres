@@ -32,24 +32,6 @@ name = "Energy Burst"
 description = "Does 10 damage times the total amount of Energy attached to [name] and the Defending Pokémon."
 attack_cost = ExtResource("3_13xxk")
 attack_data = SubResource("Resource_mamwr")
-grass_cost = 0
-fire_cost = 0
-water_cost = 0
-lightning_cost = 0
-psychic_cost = 1
-fighting_cost = 0
-darkness_cost = 0
-metal_cost = 0
-colorless_cost = 0
-defender_properties = 0
-condition = 1
-prompt_reliant = false
-initial_main_DMG = 10
-conditional_self_dmg = false
-self_damage = 0
-modifier = 2
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_jt5ow"]

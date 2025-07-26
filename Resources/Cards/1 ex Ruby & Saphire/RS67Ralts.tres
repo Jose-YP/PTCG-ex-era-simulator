@@ -1,10 +1,9 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=13 format=3 uid="uid://dso1ico2qb1px"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://dso1ico2qb1px"]
 
 [ext_resource type="Texture2D" uid="uid://ccdc5myqqn1wq" path="res://Art/Cards/1 ex Ruby & Saphire/67.jpg" id="1_0260g"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_0260g"]
 [ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_007wa"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="3_ls80p"]
-[ext_resource type="Resource" uid="uid://cqw2kwbgcwgvb" path="res://Resources/Components/Effects/Conditions/BasicSleep.tres" id="3_whhdi"]
 [ext_resource type="Resource" uid="uid://bep36omnenbc8" path="res://Resources/Components/Pokemon/Attacks/AttackData/10Dmg.tres" id="4_ej5ig"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="4_whhdi"]
 [ext_resource type="Resource" uid="uid://cvrbxqvsyxt6t" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/P1C1.tres" id="6_8x71n"]
@@ -16,24 +15,6 @@ name = "Headbutt"
 description = ""
 attack_cost = ExtResource("3_007wa")
 attack_data = ExtResource("4_ej5ig")
-grass_cost = 0
-fire_cost = 0
-water_cost = 0
-lightning_cost = 0
-psychic_cost = 0
-fighting_cost = 0
-darkness_cost = 0
-metal_cost = 0
-colorless_cost = 1
-defender_properties = 0
-condition = 1
-prompt_reliant = false
-initial_main_DMG = 10
-conditional_self_dmg = false
-self_damage = 0
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_ej5ig"]
@@ -42,25 +23,6 @@ name = "Hypnoblast"
 description = "The Defending Pokémon is now Asleep."
 attack_cost = ExtResource("6_8x71n")
 attack_data = ExtResource("7_fjwji")
-grass_cost = 0
-fire_cost = 0
-water_cost = 0
-lightning_cost = 0
-psychic_cost = 1
-fighting_cost = 0
-darkness_cost = 0
-metal_cost = 0
-colorless_cost = 1
-defender_properties = 0
-condition = 1
-prompt_reliant = false
-initial_main_DMG = 20
-conditional_self_dmg = false
-self_damage = 0
-modifier = 0
-modifier_num = 0
-both_active = false
-always_effect = ExtResource("3_whhdi")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_ncwsx"]

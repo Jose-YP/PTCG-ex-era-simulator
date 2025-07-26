@@ -1,10 +1,9 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=11 format=3 uid="uid://dtsigftjtx3ai"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://dtsigftjtx3ai"]
 
 [ext_resource type="Resource" uid="uid://v2wh22nj2iy3" path="res://Resources/Components/Energy/SpecialEnergy/HolonColorless.tres" id="1_1k63p"]
 [ext_resource type="Texture2D" uid="uid://dw1g1pg013t7n" path="res://Art/Cards/11 ex Delta Species/70.jpg" id="1_r0k0t"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_wi2v4"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="3_vmj0d"]
-[ext_resource type="Resource" uid="uid://dbwecye8at3u0" path="res://Resources/Components/Pokemon/BenchAttack/10DefAny.tres" id="4_7tom3"]
 [ext_resource type="Resource" uid="uid://c242583wbr6wx" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Metal1.tres" id="4_ryjc3"]
 [ext_resource type="Resource" uid="uid://bhs6bq3gobv5j" path="res://Resources/Components/Pokemon/Attacks/AttackData/10DmgAny.tres" id="5_puj2g"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_ryjc3"]
@@ -15,25 +14,6 @@ name = "Linear Attack"
 description = "Choose 1 of your opponent's Pokémon. This attack does 10 damage to that Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
 attack_cost = ExtResource("4_ryjc3")
 attack_data = ExtResource("5_puj2g")
-grass_cost = 0
-fire_cost = 0
-water_cost = 0
-lightning_cost = 0
-psychic_cost = 0
-fighting_cost = 0
-darkness_cost = 0
-metal_cost = 1
-colorless_cost = 0
-defender_properties = 0
-condition = 1
-prompt_reliant = false
-initial_main_DMG = 0
-conditional_self_dmg = false
-self_damage = 0
-modifier = 0
-modifier_num = 0
-both_active = false
-bench_damage = ExtResource("4_7tom3")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_hhdqy"]

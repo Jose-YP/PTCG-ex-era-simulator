@@ -28,24 +28,6 @@ name = "Flip Over"
 description = "[name] does 10 damage to itself, and don't apply Weakness and Resistance to this damage."
 attack_cost = ExtResource("2_apedi")
 attack_data = SubResource("Resource_3krnc")
-grass_cost = 0
-fire_cost = 0
-water_cost = 0
-lightning_cost = 0
-psychic_cost = 1
-fighting_cost = 0
-darkness_cost = 0
-metal_cost = 0
-colorless_cost = 2
-defender_properties = 6
-condition = 0
-prompt_reliant = false
-initial_main_DMG = 50
-conditional_self_dmg = false
-self_damage = 10
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_j03mb"]

@@ -1,13 +1,11 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=11 format=3 uid="uid://dx17bi2e0sqkj"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=9 format=3 uid="uid://dx17bi2e0sqkj"]
 
 [ext_resource type="Texture2D" uid="uid://bybpjtgivtmr" path="res://Art/Cards/1 ex Ruby & Saphire/75.jpg" id="1_lr447"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_q7p2d"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="2_cqpvj"]
 [ext_resource type="Resource" uid="uid://c63wb1xvpkbi8" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Grass1.tres" id="3_0owpv"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_4sqlt"]
-[ext_resource type="Resource" uid="uid://dr35h5ltr0i6r" path="res://Resources/Components/Effects/Conditions/BasicPoison.tres" id="4_0owpv"]
 [ext_resource type="Resource" uid="uid://dred0wmkveh7k" path="res://Resources/Components/Pokemon/Attacks/AttackData/PoisionFlipHeads.tres" id="4_0tgco"]
-[ext_resource type="Resource" uid="uid://ekj1myy642kh" path="res://Resources/Components/Effects/Prompts/PromptHeads.tres" id="5_arnye"]
 
 [sub_resource type="Resource" id="Resource_0tgco"]
 script = ExtResource("1_q7p2d")
@@ -15,26 +13,6 @@ name = "Poison Breath"
 description = "Flip a coin. If heads, the Defending Pokémon is now Poisoned."
 attack_cost = ExtResource("3_0owpv")
 attack_data = ExtResource("4_0tgco")
-grass_cost = 1
-fire_cost = 0
-water_cost = 0
-lightning_cost = 0
-psychic_cost = 0
-fighting_cost = 0
-darkness_cost = 0
-metal_cost = 0
-colorless_cost = 0
-defender_properties = 0
-condition = 1
-prompt_reliant = false
-initial_main_DMG = 0
-conditional_self_dmg = false
-self_damage = 0
-modifier = 0
-modifier_num = 0
-both_active = false
-prompt = ExtResource("5_arnye")
-success_effect = ExtResource("4_0owpv")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_0bypi"]

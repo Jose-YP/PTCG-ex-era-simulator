@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=20 format=3 uid="uid://by8ynv4fc500g"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=19 format=3 uid="uid://by8ynv4fc500g"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_qrwoa"]
 [ext_resource type="Texture2D" uid="uid://b7muex4lsbyin" path="res://Art/Cards/1 ex Ruby & Saphire/43.jpg" id="1_vkyqs"]
@@ -11,13 +11,6 @@
 [ext_resource type="Resource" uid="uid://lfhu3xyr0wpo" path="res://Resources/Components/Effects/Prompts/IfFlipHeads.tres" id="6_yj6uk"]
 [ext_resource type="Script" uid="uid://b2tlqpng7fq25" path="res://Code/Resource Makers/PokemonSpecific/BodyMaker.gd" id="7_vdnjw"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="8_upxcc"]
-
-[sub_resource type="Resource" id="Resource_lkjkl"]
-script = ExtResource("4_opply")
-either_or = false
-order = Array[int]([])
-disable = ExtResource("3_iwaip")
-metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_65c7g"]
 script = ExtResource("4_opply")
@@ -47,25 +40,6 @@ name = "Gooey Thread"
 description = "The Defending Pokémon can't retreat until the end of your opponent's next turn."
 attack_cost = ExtResource("5_1wrtr")
 attack_data = SubResource("Resource_opply")
-grass_cost = 0
-fire_cost = 0
-water_cost = 0
-lightning_cost = 0
-psychic_cost = 0
-fighting_cost = 0
-darkness_cost = 0
-metal_cost = 0
-colorless_cost = 1
-defender_properties = 0
-condition = 0
-prompt_reliant = false
-initial_main_DMG = 10
-conditional_self_dmg = false
-self_damage = 0
-modifier = 0
-modifier_num = 0
-both_active = false
-always_effect = SubResource("Resource_lkjkl")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_jgabk"]

@@ -1,8 +1,6 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=16 format=3 uid="uid://cervqyyl0dqf2"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=14 format=3 uid="uid://cervqyyl0dqf2"]
 
 [ext_resource type="Texture2D" uid="uid://b6qd05q5xmb33" path="res://Art/Cards/1 ex Ruby & Saphire/33.jpg" id="1_7j12q"]
-[ext_resource type="Resource" uid="uid://ekj1myy642kh" path="res://Resources/Components/Effects/Prompts/PromptHeads.tres" id="3_33e7q"]
-[ext_resource type="Resource" uid="uid://6xmw13js5xd3" path="res://Resources/Components/Effects/Conditions/BasicParalyze.tres" id="3_axcwr"]
 [ext_resource type="Resource" uid="uid://djhcfglsc14fn" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/F1C1.tres" id="3_gyoku"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="4_6dlgm"]
 [ext_resource type="Resource" uid="uid://n2tq4jfo7hw1" path="res://Resources/Components/Pokemon/Attacks/AttackData/20DmgParaIfHeads.tres" id="4_ou3qf"]
@@ -18,26 +16,6 @@ name = "Shove"
 description = "Flip a coin. If heads, the Defending Pokémon is now Paralyzed."
 attack_cost = ExtResource("3_gyoku")
 attack_data = ExtResource("4_ou3qf")
-grass_cost = 0
-fire_cost = 0
-water_cost = 0
-lightning_cost = 0
-psychic_cost = 0
-fighting_cost = 1
-darkness_cost = 0
-metal_cost = 0
-colorless_cost = 1
-defender_properties = 0
-condition = 0
-prompt_reliant = false
-initial_main_DMG = 20
-conditional_self_dmg = false
-self_damage = 0
-modifier = 0
-modifier_num = 0
-both_active = false
-prompt = ExtResource("3_33e7q")
-success_effect = ExtResource("3_axcwr")
 
 [sub_resource type="Resource" id="Resource_0wt8d"]
 script = ExtResource("9_l2qun")
@@ -60,25 +38,6 @@ name = "Slap Down"
 description = "Flip 2 coins. This attack does 40 damage plus 10 more damage for each heads."
 attack_cost = ExtResource("7_mxuf4")
 attack_data = SubResource("Resource_0wt8d")
-grass_cost = 0
-fire_cost = 0
-water_cost = 0
-lightning_cost = 0
-psychic_cost = 0
-fighting_cost = 1
-darkness_cost = 0
-metal_cost = 0
-colorless_cost = 2
-defender_properties = 0
-condition = 1
-prompt_reliant = false
-initial_main_DMG = 40
-conditional_self_dmg = false
-self_damage = 0
-modifier = 1
-modifier_num = 10
-comparator = ExtResource("5_1pnys")
-both_active = false
 
 [sub_resource type="Resource" id="Resource_guupo"]
 script = ExtResource("7_i2uvt")

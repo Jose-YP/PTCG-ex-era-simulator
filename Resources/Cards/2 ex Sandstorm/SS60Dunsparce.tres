@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=22 format=3 uid="uid://c3f1stq37lffi"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=20 format=3 uid="uid://c3f1stq37lffi"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_7ojbq"]
 [ext_resource type="Texture2D" uid="uid://dehlp6lbio4cm" path="res://Art/Cards/2 ex Sandstorm/60.jpg" id="1_jogs8"]
@@ -10,10 +10,8 @@
 [ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="7_myqy4"]
 [ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="8_fbbjl"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="9_13no0"]
-[ext_resource type="Resource" uid="uid://6xmw13js5xd3" path="res://Resources/Components/Effects/Conditions/BasicParalyze.tres" id="9_sqv58"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="10_334gx"]
 [ext_resource type="Resource" uid="uid://dducvbjohbp4x" path="res://Resources/Components/Pokemon/Attacks/AttackData/10DmgParaIfHeads.tres" id="10_fi1rr"]
-[ext_resource type="Resource" uid="uid://ekj1myy642kh" path="res://Resources/Components/Effects/Prompts/PromptHeads.tres" id="11_4o8g3"]
 
 [sub_resource type="Resource" id="Resource_i2ut4"]
 script = ExtResource("4_13no0")
@@ -71,25 +69,6 @@ name = "Strike and Run"
 description = "Search your deck for up to 3 Basic Pokémon and put them onto your Bench. Then, shuffle your deck. If you put any Pokémon onto your Bench in this way, you may switch this Pokémon with 1 of your Benched Pokémon."
 attack_cost = ExtResource("8_fbbjl")
 attack_data = SubResource("Resource_myqy4")
-grass_cost = 0
-fire_cost = 0
-water_cost = 0
-lightning_cost = 0
-psychic_cost = 0
-fighting_cost = 0
-darkness_cost = 0
-metal_cost = 0
-colorless_cost = 1
-defender_properties = 0
-condition = 1
-prompt_reliant = false
-initial_main_DMG = 0
-conditional_self_dmg = false
-self_damage = 0
-modifier = 0
-modifier_num = 0
-both_active = false
-always_effect = SubResource("Resource_fltea")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_fem0p"]
@@ -98,26 +77,6 @@ name = "Sudden Flash"
 description = "Flip a coin. If heads, your opponent's Active Pokémon is now Paralyzed."
 attack_cost = ExtResource("8_fbbjl")
 attack_data = ExtResource("10_fi1rr")
-grass_cost = 0
-fire_cost = 0
-water_cost = 0
-lightning_cost = 0
-psychic_cost = 0
-fighting_cost = 0
-darkness_cost = 0
-metal_cost = 0
-colorless_cost = 1
-defender_properties = 0
-condition = 0
-prompt_reliant = false
-initial_main_DMG = 10
-conditional_self_dmg = false
-self_damage = 0
-modifier = 0
-modifier_num = 0
-both_active = false
-prompt = ExtResource("11_4o8g3")
-success_effect = ExtResource("9_sqv58")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_46tow"]

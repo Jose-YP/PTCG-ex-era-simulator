@@ -1,9 +1,8 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=13 format=3 uid="uid://x137dggkdklo"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://x137dggkdklo"]
 
 [ext_resource type="Texture2D" uid="uid://betflv6skhm3j" path="res://Art/Cards/1 ex Ruby & Saphire/31.jpg" id="1_h8rbs"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_ntf41"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="2_71i1s"]
-[ext_resource type="Resource" uid="uid://dr35h5ltr0i6r" path="res://Resources/Components/Effects/Conditions/BasicPoison.tres" id="3_c2tj1"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_h8rbs"]
 [ext_resource type="Resource" uid="uid://b1rwmggf7a4do" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless2.tres" id="4_8v2iw"]
 [ext_resource type="Resource" uid="uid://bxpfuxfuoeiri" path="res://Resources/Components/Pokemon/Attacks/AttackData/Poision.tres" id="5_ggyeq"]
@@ -16,25 +15,6 @@ name = "Poison Breath"
 description = "The Defending Pokémon is now Poisoned."
 attack_cost = ExtResource("4_8v2iw")
 attack_data = ExtResource("5_ggyeq")
-grass_cost = 0
-fire_cost = 0
-water_cost = 0
-lightning_cost = 0
-psychic_cost = 0
-fighting_cost = 0
-darkness_cost = 0
-metal_cost = 0
-colorless_cost = 2
-defender_properties = 0
-condition = 1
-prompt_reliant = false
-initial_main_DMG = 0
-conditional_self_dmg = false
-self_damage = 0
-modifier = 0
-modifier_num = 0
-both_active = false
-always_effect = ExtResource("3_c2tj1")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_jctg4"]
@@ -43,24 +23,6 @@ name = "Swift"
 description = "This attack's damage isn't affected by Weakness, Resistance, Poké-Powers, Poké-Bodies, or any other effects on the Defending Pokémon."
 attack_cost = ExtResource("6_yfc8f")
 attack_data = ExtResource("7_5ykb3")
-grass_cost = 1
-fire_cost = 0
-water_cost = 0
-lightning_cost = 0
-psychic_cost = 0
-fighting_cost = 0
-darkness_cost = 0
-metal_cost = 0
-colorless_cost = 2
-defender_properties = 15
-condition = 1
-prompt_reliant = false
-initial_main_DMG = 30
-conditional_self_dmg = false
-self_damage = 0
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_0bypi"]

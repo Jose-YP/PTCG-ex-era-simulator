@@ -1,8 +1,7 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=16 format=3 uid="uid://b3jodptuurv2f"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=15 format=3 uid="uid://b3jodptuurv2f"]
 
 [ext_resource type="Texture2D" uid="uid://c2oup521fm36u" path="res://Art/Cards/1 ex Ruby & Saphire/62.jpg" id="1_qik4e"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_ugk1n"]
-[ext_resource type="Resource" uid="uid://lfhu3xyr0wpo" path="res://Resources/Components/Effects/Prompts/IfFlipHeads.tres" id="3_5rxrg"]
 [ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_jihga"]
 [ext_resource type="Resource" uid="uid://6xmw13js5xd3" path="res://Resources/Components/Effects/Conditions/BasicParalyze.tres" id="4_2dn5u"]
 [ext_resource type="Resource" uid="uid://bep36omnenbc8" path="res://Resources/Components/Pokemon/Attacks/AttackData/10Dmg.tres" id="4_vycv3"]
@@ -18,24 +17,6 @@ name = "Stampede"
 description = ""
 attack_cost = ExtResource("3_jihga")
 attack_data = ExtResource("4_vycv3")
-grass_cost = 0
-fire_cost = 0
-water_cost = 0
-lightning_cost = 0
-psychic_cost = 0
-fighting_cost = 0
-darkness_cost = 0
-metal_cost = 0
-colorless_cost = 1
-defender_properties = 0
-condition = 1
-prompt_reliant = false
-initial_main_DMG = 10
-conditional_self_dmg = false
-self_damage = 0
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_4qwmm"]
@@ -60,26 +41,6 @@ name = "Trembler"
 description = "Flip a coin. If heads, this attack does 10 damage to each Defending Pokémon, and each Defending Pokémon is now Paralyzed."
 attack_cost = ExtResource("5_3n1u2")
 attack_data = SubResource("Resource_4qwmm")
-grass_cost = 0
-fire_cost = 0
-water_cost = 0
-lightning_cost = 0
-psychic_cost = 0
-fighting_cost = 1
-darkness_cost = 0
-metal_cost = 0
-colorless_cost = 1
-defender_properties = 0
-condition = 1
-prompt_reliant = true
-initial_main_DMG = 10
-conditional_self_dmg = false
-self_damage = 0
-modifier = 0
-modifier_num = 0
-both_active = true
-prompt = ExtResource("3_5rxrg")
-success_effect = ExtResource("4_2dn5u")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_iws17"]

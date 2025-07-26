@@ -1,6 +1,5 @@
-[gd_resource type="Resource" script_class="Pokemon" load_steps=17 format=3 uid="uid://dvteh4sj66jw4"]
+[gd_resource type="Resource" script_class="Pokemon" load_steps=15 format=3 uid="uid://dvteh4sj66jw4"]
 
-[ext_resource type="Script" uid="uid://br15mnap82upq" path="res://Code/Resource Makers/PokemonSpecific/BenchAttackMaker.gd" id="1_npbj7"]
 [ext_resource type="Resource" uid="uid://b86uut4qajrgg" path="res://Resources/Components/Effects/EnergyMovement/AtkSelfDisFire.tres" id="2_nrfu7"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="3_08wec"]
 [ext_resource type="Resource" uid="uid://be6718keco2mu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/R1C2.tres" id="3_nrfu7"]
@@ -27,41 +26,12 @@ both_active = false
 bench_damage = ExtResource("4_3mj0j")
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
-[sub_resource type="Resource" id="Resource_c7gir"]
-script = ExtResource("1_npbj7")
-how_many = -1
-which = 1
-active_allowed = false
-apply_weak_res = false
-initial_main_DMG = 10
-modifier = 0
-
 [sub_resource type="Resource" id="Resource_ld6ej"]
 script = ExtResource("3_08wec")
 name = "Fire Stream"
 description = "Discard a {Fire} Energy card attached to [name]. This attack does 10 damage to each of your opponent's Benched Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
 attack_cost = ExtResource("3_nrfu7")
 attack_data = SubResource("Resource_6620x")
-grass_cost = 0
-fire_cost = 1
-water_cost = 0
-lightning_cost = 0
-psychic_cost = 0
-fighting_cost = 0
-darkness_cost = 0
-metal_cost = 0
-colorless_cost = 2
-defender_properties = 0
-condition = 1
-prompt_reliant = false
-initial_main_DMG = 50
-conditional_self_dmg = false
-self_damage = 0
-modifier = 0
-modifier_num = 0
-both_active = false
-bench_damage = SubResource("Resource_c7gir")
-always_effect = ExtResource("2_nrfu7")
 
 [sub_resource type="Resource" id="Resource_4ym1n"]
 script = ExtResource("4_gr0cy")

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=19 format=3 uid="uid://bw4sp04ye7jyx"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=17 format=3 uid="uid://bw4sp04ye7jyx"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_wcs6r"]
 [ext_resource type="Texture2D" uid="uid://cs7gj0dy6jykj" path="res://Art/Cards/1 ex Ruby & Saphire/6.jpg" id="1_wqkxb"]
@@ -12,41 +12,12 @@
 [ext_resource type="Script" uid="uid://b2tlqpng7fq25" path="res://Code/Resource Makers/PokemonSpecific/BodyMaker.gd" id="7_w0s73"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="8_1sw32"]
 
-[sub_resource type="Resource" id="Resource_a701k"]
-metadata/__load_path__ = "res://Resources/Components/Effects/EnergyMovement/DefSelfMorePoi.tres"
-
-[sub_resource type="Resource" id="Resource_wqkxb"]
-script = ExtResource("4_7qmw3")
-either_or = false
-order = Array[int]([])
-condition = SubResource("Resource_a701k")
-metadata/_custom_type_script = "uid://dmulm3x3dj842"
-
 [sub_resource type="Resource" id="Resource_fuvu7"]
 script = ExtResource("2_684l4")
 name = "Toxic"
 description = "The Defending Pokémon is now Poisoned. Put 2 damage counters instead of 1 on the Defending Pokémon between turns."
 attack_cost = ExtResource("4_rwpko")
 attack_data = ExtResource("5_7qmw3")
-grass_cost = 1
-fire_cost = 0
-water_cost = 0
-lightning_cost = 0
-psychic_cost = 0
-fighting_cost = 0
-darkness_cost = 0
-metal_cost = 0
-colorless_cost = 1
-defender_properties = 0
-condition = 1
-prompt_reliant = false
-initial_main_DMG = 0
-conditional_self_dmg = false
-self_damage = 0
-modifier = 0
-modifier_num = 0
-both_active = false
-always_effect = SubResource("Resource_wqkxb")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_w3yai"]
@@ -55,24 +26,6 @@ name = "Gust"
 description = ""
 attack_cost = ExtResource("6_anyyy")
 attack_data = ExtResource("7_tg8f0")
-grass_cost = 1
-fire_cost = 0
-water_cost = 0
-lightning_cost = 0
-psychic_cost = 0
-fighting_cost = 0
-darkness_cost = 0
-metal_cost = 0
-colorless_cost = 2
-defender_properties = 0
-condition = 0
-prompt_reliant = false
-initial_main_DMG = 50
-conditional_self_dmg = false
-self_damage = 0
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_dk53k"]

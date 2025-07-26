@@ -1,12 +1,10 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://dl0nmvq0hpu6a"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://dl0nmvq0hpu6a"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_3b78y"]
 [ext_resource type="Texture2D" uid="uid://4fb1mqmrjcyy" path="res://Art/Cards/1 ex Ruby & Saphire/53.jpg" id="1_ewy4q"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_k3tgj"]
 [ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_v1nb7"]
 [ext_resource type="Resource" uid="uid://ce334rrjyq1n1" path="res://Resources/Components/Pokemon/Attacks/AttackData/ParaBothIfHeads.tres" id="4_gow71"]
-[ext_resource type="Resource" uid="uid://6xmw13js5xd3" path="res://Resources/Components/Effects/Conditions/BasicParalyze.tres" id="4_lg46j"]
-[ext_resource type="Resource" uid="uid://ekj1myy642kh" path="res://Resources/Components/Effects/Prompts/PromptHeads.tres" id="5_pra87"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="6_pra87"]
 [ext_resource type="Resource" uid="uid://srojhh5idedm" path="res://Resources/Components/Pokemon/Attacks/EffectlessAttacks/Tackle2-20.tres" id="7_v1nb7"]
 
@@ -16,26 +14,6 @@ name = "Super Thunder Wave"
 description = "Flip a coin. If heads, each Defending Pokémon is now Paralyzed."
 attack_cost = ExtResource("3_v1nb7")
 attack_data = ExtResource("4_gow71")
-grass_cost = 0
-fire_cost = 0
-water_cost = 0
-lightning_cost = 0
-psychic_cost = 0
-fighting_cost = 0
-darkness_cost = 0
-metal_cost = 0
-colorless_cost = 1
-defender_properties = 0
-condition = 1
-prompt_reliant = false
-initial_main_DMG = 0
-conditional_self_dmg = false
-self_damage = 0
-modifier = 0
-modifier_num = 0
-both_active = true
-prompt = ExtResource("5_pra87")
-success_effect = ExtResource("4_lg46j")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_u70e5"]

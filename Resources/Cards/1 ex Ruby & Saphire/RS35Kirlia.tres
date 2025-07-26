@@ -1,9 +1,8 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=21 format=3 uid="uid://gvd588t8jyxg"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=20 format=3 uid="uid://gvd588t8jyxg"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_d5rsf"]
 [ext_resource type="Texture2D" uid="uid://dh7j434ehlpw4" path="res://Art/Cards/1 ex Ruby & Saphire/35.jpg" id="1_t854o"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_xo8sa"]
-[ext_resource type="Resource" uid="uid://lfhu3xyr0wpo" path="res://Resources/Components/Effects/Prompts/IfFlipHeads.tres" id="3_1pf5i"]
 [ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_obvev"]
 [ext_resource type="Resource" uid="uid://nx1kc1vsm4ia" path="res://Resources/Components/Effects/Conditions/BasicConfusion.tres" id="4_obvev"]
 [ext_resource type="Script" uid="uid://scca13hg4k1l" path="res://Code/Resource Makers/EffectSpecific/DmgManipMaker.gd" id="5_22ruy"]
@@ -36,26 +35,6 @@ name = "Dazzle Dance"
 description = "Flip a coin. If heads, each Defending Pokémon is now Confused."
 attack_cost = ExtResource("3_obvev")
 attack_data = SubResource("Resource_pm8uh")
-grass_cost = 0
-fire_cost = 0
-water_cost = 0
-lightning_cost = 0
-psychic_cost = 0
-fighting_cost = 0
-darkness_cost = 0
-metal_cost = 0
-colorless_cost = 1
-defender_properties = 0
-condition = 0
-prompt_reliant = false
-initial_main_DMG = 0
-conditional_self_dmg = false
-self_damage = 0
-modifier = 0
-modifier_num = 0
-both_active = false
-prompt = ExtResource("3_1pf5i")
-success_effect = ExtResource("4_obvev")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_gpint"]
@@ -97,26 +76,6 @@ name = "Life Drain"
 description = "Flip a coin. If heads, put damage counters on the Defending Pokémon until it is 10 HP away from being Knocked Out."
 attack_cost = ExtResource("7_rxpsm")
 attack_data = SubResource("Resource_nmuih")
-grass_cost = 0
-fire_cost = 0
-water_cost = 0
-lightning_cost = 0
-psychic_cost = 0
-fighting_cost = 0
-darkness_cost = 0
-metal_cost = 0
-colorless_cost = 1
-defender_properties = 0
-condition = 1
-prompt_reliant = false
-initial_main_DMG = 0
-conditional_self_dmg = false
-self_damage = 0
-modifier = 0
-modifier_num = 0
-both_active = false
-prompt = ExtResource("8_gpint")
-success_effect = SubResource("Resource_oouox")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_gec3m"]

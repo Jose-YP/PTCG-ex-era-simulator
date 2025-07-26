@@ -281,6 +281,8 @@ func before_direct_attack(attacker: PokeSlot, with: Attack):
 	if await attacker.confusion_check():
 		return
 	
+	attacker.current_attack = with
+	
 	if direct_bool or attack_data.always_effect.has_effect_type(["Condition",
 	 "Alleviate", "DamageManip", "Disable", "CardDisrupt"]):
 		if not attack_data.both_active:
@@ -310,6 +312,7 @@ func before_direct_attack(attacker: PokeSlot, with: Attack):
 	
 	attack_effect(attacker, with.attack_data, pass_prompt)
 	
+	attacker.current_attack = null
 	Globals.fundies.remove_top_source_target()
 	SignalBus.end_turn.emit()
 

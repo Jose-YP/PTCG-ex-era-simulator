@@ -1,23 +1,13 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=16 format=3 uid="uid://dliic77tptn8j"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://dliic77tptn8j"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_d43q5"]
 [ext_resource type="Texture2D" uid="uid://cic2us1g4kskj" path="res://Art/Cards/1 ex Ruby & Saphire/34.jpg" id="1_hw4cd"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_n1wjk"]
 [ext_resource type="Resource" uid="uid://cu817ymtejglx" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Psychic1.tres" id="3_cix5o"]
-[ext_resource type="Resource" uid="uid://lfhu3xyr0wpo" path="res://Resources/Components/Effects/Prompts/IfFlipHeads.tres" id="3_rmk0s"]
-[ext_resource type="Resource" uid="uid://crqyosanwd1v7" path="res://Resources/Components/Effects/EnergyMovement/DefSelfDiscard.tres" id="4_7stng"]
 [ext_resource type="Resource" uid="uid://h1rh6m2x1iqq" path="res://Resources/Components/Pokemon/Attacks/AttackData/10DmgDefEnDiscIfHead.tres" id="4_kte8o"]
-[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="5_cix5o"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="6_kte8o"]
 [ext_resource type="Resource" uid="uid://cqnppbwtvby4u" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/P1C2.tres" id="8_t0ir0"]
 [ext_resource type="Resource" uid="uid://cj4j56m7hrxpe" path="res://Resources/Components/Pokemon/Attacks/AttackData/50Dmg.tres" id="9_733yk"]
-
-[sub_resource type="Resource" id="Resource_t0ir0"]
-script = ExtResource("5_cix5o")
-either_or = false
-order = Array[int]([])
-energy_movement = ExtResource("4_7stng")
-metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_733yk"]
 script = ExtResource("2_n1wjk")
@@ -25,26 +15,6 @@ name = "Removal Beam"
 description = "Flip a coin. If heads, discard 1 Energy card attached to the Defending Pokémon."
 attack_cost = ExtResource("3_cix5o")
 attack_data = ExtResource("4_kte8o")
-grass_cost = 0
-fire_cost = 0
-water_cost = 0
-lightning_cost = 0
-psychic_cost = 1
-fighting_cost = 0
-darkness_cost = 0
-metal_cost = 0
-colorless_cost = 0
-defender_properties = 0
-condition = 1
-prompt_reliant = false
-initial_main_DMG = 10
-conditional_self_dmg = false
-self_damage = 0
-modifier = 0
-modifier_num = 0
-both_active = false
-prompt = ExtResource("3_rmk0s")
-success_effect = SubResource("Resource_t0ir0")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_61rkf"]
@@ -53,24 +23,6 @@ name = "Super Psy"
 description = ""
 attack_cost = ExtResource("8_t0ir0")
 attack_data = ExtResource("9_733yk")
-grass_cost = 0
-fire_cost = 0
-water_cost = 0
-lightning_cost = 0
-psychic_cost = 1
-fighting_cost = 0
-darkness_cost = 0
-metal_cost = 0
-colorless_cost = 2
-defender_properties = 0
-condition = 0
-prompt_reliant = false
-initial_main_DMG = 50
-conditional_self_dmg = false
-self_damage = 0
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_dujg8"]

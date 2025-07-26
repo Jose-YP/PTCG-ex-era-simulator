@@ -66,25 +66,6 @@ name = "Delta Draw"
 description = "Count the number of Pokémon you have in play that has δ on its card. Draw up to that many cards."
 attack_cost = ExtResource("6_4nuec")
 attack_data = SubResource("Resource_uhfbr")
-grass_cost = 0
-fire_cost = 0
-water_cost = 0
-lightning_cost = 0
-psychic_cost = 0
-fighting_cost = 0
-darkness_cost = 0
-metal_cost = 0
-colorless_cost = 1
-defender_properties = 0
-condition = 0
-prompt_reliant = false
-initial_main_DMG = 0
-conditional_self_dmg = false
-self_damage = 0
-modifier = 0
-modifier_num = 0
-both_active = false
-always_effect = SubResource("Resource_cfi5g")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_4nuec"]

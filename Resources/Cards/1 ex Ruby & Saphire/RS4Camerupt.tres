@@ -1,9 +1,8 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=21 format=3 uid="uid://d0hrsib15ou18"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=19 format=3 uid="uid://d0hrsib15ou18"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_8c3j4"]
 [ext_resource type="Texture2D" uid="uid://cfi8etto8kypp" path="res://Art/Cards/1 ex Ruby & Saphire/4.jpg" id="1_a4xqq"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_0lg5k"]
-[ext_resource type="Script" uid="uid://br15mnap82upq" path="res://Code/Resource Makers/PokemonSpecific/BenchAttackMaker.gd" id="3_causi"]
 [ext_resource type="Resource" uid="uid://bpgsrqt47evh0" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/R1C1.tres" id="3_xcuij"]
 [ext_resource type="Resource" uid="uid://db88bt3bf8nix" path="res://Resources/Components/Effects/EnergyMovement/AtkSelfDis2Basic.tres" id="4_13v8e"]
 [ext_resource type="Resource" uid="uid://r4xgk0bkj0br" path="res://Resources/Components/Pokemon/BenchAttack/10DefBench.tres" id="4_t8nao"]
@@ -28,41 +27,12 @@ both_active = false
 bench_damage = ExtResource("4_t8nao")
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
-[sub_resource type="Resource" id="Resource_3gb0p"]
-script = ExtResource("3_causi")
-how_many = 1
-which = 2
-active_allowed = false
-apply_weak_res = false
-initial_main_DMG = 10
-modifier = 0
-metadata/_custom_type_script = "uid://br15mnap82upq"
-
 [sub_resource type="Resource" id="Resource_fh4bi"]
 script = ExtResource("2_0lg5k")
 name = "Lava Burn"
 description = "Choose 1 of your opponent's Benched Pokémon. This attack does 10 damage to that Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
 attack_cost = ExtResource("3_xcuij")
 attack_data = SubResource("Resource_jcni4")
-grass_cost = 0
-fire_cost = 1
-water_cost = 0
-lightning_cost = 0
-psychic_cost = 0
-fighting_cost = 0
-darkness_cost = 0
-metal_cost = 0
-colorless_cost = 1
-defender_properties = 0
-condition = 1
-prompt_reliant = false
-initial_main_DMG = 20
-conditional_self_dmg = false
-self_damage = 0
-modifier = 0
-modifier_num = 0
-both_active = false
-bench_damage = SubResource("Resource_3gb0p")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_a4xqq"]
@@ -106,25 +76,6 @@ name = "Fire Spin"
 description = "Discard 2 basic Energy cards attached to [name] or this attack does nothing."
 attack_cost = ExtResource("9_3gb0p")
 attack_data = SubResource("Resource_253vf")
-grass_cost = 0
-fire_cost = 2
-water_cost = 0
-lightning_cost = 0
-psychic_cost = 0
-fighting_cost = 0
-darkness_cost = 0
-metal_cost = 0
-colorless_cost = 2
-defender_properties = 0
-condition = 1
-prompt_reliant = false
-initial_main_DMG = 100
-conditional_self_dmg = false
-self_damage = 0
-modifier = 0
-modifier_num = 0
-both_active = false
-always_effect = SubResource("Resource_a4xqq")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_eh264"]

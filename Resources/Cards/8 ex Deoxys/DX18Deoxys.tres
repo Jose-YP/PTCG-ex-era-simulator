@@ -55,25 +55,6 @@ name = "Barrier Attack"
 description = "During your opponent's next turn, any damage done to [name] by attacks is reduced by 30 (after applying Weakness and Resistance)."
 attack_cost = ExtResource("5_sw4il")
 attack_data = SubResource("Resource_fhsxn")
-grass_cost = 0
-fire_cost = 0
-water_cost = 0
-lightning_cost = 0
-psychic_cost = 1
-fighting_cost = 0
-darkness_cost = 0
-metal_cost = 0
-colorless_cost = 1
-defender_properties = 0
-condition = 1
-prompt_reliant = false
-initial_main_DMG = 20
-conditional_self_dmg = false
-self_damage = 0
-modifier = 0
-modifier_num = 0
-both_active = false
-always_effect = SubResource("Resource_lfmb5")
 
 [sub_resource type="Resource" id="Resource_rp3gj"]
 script = ExtResource("3_tnm6h")

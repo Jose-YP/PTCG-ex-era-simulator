@@ -7,60 +7,6 @@ class_name Attack
 @export var attack_cost: AttackCost = preload("res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres")
 @export var attack_data: AttackData = preload("res://Resources/Components/Pokemon/Attacks/AttackData/10Dmg.tres")
 
-@export_group("Costs")
-@export_range(0,20,1) var grass_cost: int = 0
-@export_range(0,20,1) var fire_cost: int = 0
-@export_range(0,20,1) var water_cost: int = 0
-@export_range(0,20,1) var lightning_cost: int = 0
-@export_range(0,20,1) var psychic_cost: int = 0
-@export_range(0,20,1) var fighting_cost: int = 0
-@export_range(0,20,1) var darkness_cost: int = 0
-@export_range(0,20,1) var metal_cost: int = 0
-@export_range(0,20,1) var colorless_cost: int = 1
-
-@export_group("Ignore")
-##Don't check any of these if they're checked
-@export_flags("Body", "Weakness", "Resistance", "Effects") var defender_properties: int = 0
-##The pokemon can use this attack even if it has these conditions
-@export_flags("None", "Paralysis", "Alseep", "Confusion") var condition: int = 1
-
-@export_group("Damage")
-##If this is true, then the [member prompt] must be true before dealing any dmg 
-@export var prompt_reliant: bool = false
-##Dmg that displays on the main card info next to name
-@export_range(0,200,10) var initial_main_DMG: int = 0
-@export_subgroup("Self Damage")
-##If this is true then dmg can be increased/activated depending on [member prompt] and [member ask]
-##[br]Otherwise the pokemon will take this dmg after attacking
-@export var conditional_self_dmg: bool = false
-@export_range(0,200,10) var self_damage: int = 0
-@export_subgroup("Modifier")
-##[member comparator] * [member prompt] will be multiplied by [member modifier_num] then...
-##[br][enum None] - Use [member initial_main_DMG] as is or modified damage if prompt fails
-##[br][enum Add] - use [member initial_main_DMG] then add damage depending from modified damage
-##[br][enum Multiply] - use modified damage as the result
-##[br][enum Subtract] - use [member initial_main_DMG] then subtract damage depending from modified damage
-@export_enum("None", "Add", "Multiply", "Subtract") var modifier: int = 0
-##When the comparator returns, how much will it be multiplied by?
-@export_range(0,200,10) var modifier_num: int = 0
-##Determines how damage should be changed
-##[br][i]If modifieer is none, this can replace [member initial_main_DMG]
-@export var comparator: Comparator
-@export_subgroup("Alt Targetting")
-##Does this attack hit both defending pokemon in doubles?
-@export var both_active: bool = false
-@export var bench_damage: BenchAttk
-
-@export_group("Effects")
-@export var prompt: PromptAsk
-@export var ask: SlotAsk
-##If [member prompt] and [member ask] are true then this effect will occur
-@export var success_effect: EffectCall
-##If [member prompt] and [member ask] are false then this effect will occur
-@export var fail_effect: EffectCall
-##This effect will always occur no matter [member prompt] and [member ask]
-@export var always_effect: EffectCall
-
 func print_attack() -> void:
 	print_rich("[center]------------------",name,"------------------")
 	print_rich("Description: ", description)
@@ -76,26 +22,27 @@ func print_cost(energy: String):
 	print_rich(str(Convert.get_type_rich_color(energy), energy, ":[/color] ", using))
 
 func get_damage() -> int:
-	var final_damage: int = attack_data.initial_main_DMG
+	var data: AttackData = attack_data
+	var final_damage: int = data.initial_main_DMG
 	var modifier_result: int = 0
 	
-	if attack_data.comparator:
-		var mod_times: Variant = attack_data.comparator.start_comparision()
-		print("HAS A MODIFIER WITH THE RESULT OF ", mod_times, " * ", modifier_num)
-		if attack_data.comparator.has_coinflip():
+	if data.comparator:
+		var mod_times: Variant = data.comparator.start_comparision()
+		print("HAS A MODIFIER WITH THE RESULT OF ", data.mod_times, " * ", data.modifier_num)
+		if data.comparator.has_coinflip():
 			await SignalBus.finished_coinflip
 		
 		if mod_times is bool:
 			mod_times = 1 if mod_times else 0
 		
-		modifier_result = modifier_num * mod_times
-		match modifier:
+		data.modifier_result = data.modifier_num * data.mod_times
+		match data.modifier:
 			1:
-				final_damage += modifier_result
+				final_damage += data.modifier_result
 			3:
-				final_damage -= modifier_result
+				final_damage -= data.modifier_result
 			_:
-				final_damage = modifier_result
+				final_damage = data.modifier_result
 	
 	return final_damage
 
@@ -192,7 +139,7 @@ func does_direct_damage() -> bool:
 func condition_allows(turn_cond: Consts.TURN_COND) -> bool:
 	match turn_cond:
 		Consts.TURN_COND.PARALYSIS:
-			print(condition && 2, condition & 2)
+			print(attack_data.condition && 2, attack_data.condition & 2)
 			return attack_data.condition & 2 != 0
 		Consts.TURN_COND.ASLEEP:
 			return attack_data.condition & 4 != 0

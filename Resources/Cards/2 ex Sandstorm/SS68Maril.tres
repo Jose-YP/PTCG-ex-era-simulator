@@ -45,26 +45,6 @@ name = "Double Bubble"
 description = "Flip 2 coins. This attack does 10 damage times the number of heads. If either of the coins is heads, the Defending Pokémon is now Paralyzed."
 attack_cost = ExtResource("3_mh6c5")
 attack_data = SubResource("Resource_goaxk")
-grass_cost = 0
-fire_cost = 0
-water_cost = 1
-lightning_cost = 0
-psychic_cost = 0
-fighting_cost = 0
-darkness_cost = 0
-metal_cost = 0
-colorless_cost = 1
-defender_properties = 0
-condition = 1
-prompt_reliant = true
-initial_main_DMG = 10
-conditional_self_dmg = false
-self_damage = 0
-modifier = 2
-modifier_num = 0
-both_active = false
-prompt = SubResource("Resource_to7ul")
-fail_effect = ExtResource("3_goaxk")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_vbdkb"]

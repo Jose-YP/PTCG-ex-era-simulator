@@ -30,25 +30,6 @@ name = "Dazzle Blast"
 description = "The Defending Pokémon is now Confused."
 attack_cost = ExtResource("5_44gyq")
 attack_data = SubResource("Resource_86uxx")
-grass_cost = 0
-fire_cost = 0
-water_cost = 0
-lightning_cost = 1
-psychic_cost = 0
-fighting_cost = 0
-darkness_cost = 0
-metal_cost = 0
-colorless_cost = 1
-defender_properties = 0
-condition = 1
-prompt_reliant = false
-initial_main_DMG = 30
-conditional_self_dmg = false
-self_damage = 0
-modifier = 0
-modifier_num = 0
-both_active = false
-always_effect = ExtResource("4_fby8h")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_oi6pe"]

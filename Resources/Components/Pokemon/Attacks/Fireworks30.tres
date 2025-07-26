@@ -1,9 +1,7 @@
-[gd_resource type="Resource" script_class="Attack" load_steps=6 format=3 uid="uid://bfubgj8baciol"]
+[gd_resource type="Resource" script_class="Attack" load_steps=4 format=3 uid="uid://bfubgj8baciol"]
 
 [ext_resource type="Resource" uid="uid://bpgsrqt47evh0" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/R1C1.tres" id="1_t1l2h"]
 [ext_resource type="Resource" uid="uid://v7w80masledg" path="res://Resources/Components/Pokemon/Attacks/AttackData/30DisFireTails.tres" id="2_aaaww"]
-[ext_resource type="Resource" uid="uid://b86uut4qajrgg" path="res://Resources/Components/Effects/EnergyMovement/AtkSelfDisFire.tres" id="3_d1gwu"]
-[ext_resource type="Resource" uid="uid://ekj1myy642kh" path="res://Resources/Components/Effects/Prompts/PromptHeads.tres" id="4_vdc5k"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="5_ipq5w"]
 
 [resource]
@@ -12,23 +10,3 @@ name = "Fireworks"
 description = "Flip a coin. If tails, discard a {Fire} Energy card attached to [name]."
 attack_cost = ExtResource("1_t1l2h")
 attack_data = ExtResource("2_aaaww")
-grass_cost = 0
-fire_cost = 1
-water_cost = 0
-lightning_cost = 0
-psychic_cost = 0
-fighting_cost = 0
-darkness_cost = 0
-metal_cost = 0
-colorless_cost = 1
-defender_properties = 0
-condition = 1
-prompt_reliant = false
-initial_main_DMG = 30
-conditional_self_dmg = false
-self_damage = 0
-modifier = 0
-modifier_num = 0
-both_active = false
-prompt = ExtResource("4_vdc5k")
-fail_effect = ExtResource("3_d1gwu")

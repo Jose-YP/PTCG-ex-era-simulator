@@ -41,26 +41,6 @@ name = "Shakedown"
 description = "Flip a coin. If heads, choose 1 card from your opponent's hand without looking and discard it."
 attack_cost = ExtResource("3_7n5p1")
 attack_data = SubResource("Resource_nryx3")
-grass_cost = 0
-fire_cost = 0
-water_cost = 0
-lightning_cost = 0
-psychic_cost = 0
-fighting_cost = 0
-darkness_cost = 1
-metal_cost = 0
-colorless_cost = 2
-defender_properties = 0
-condition = 1
-prompt_reliant = false
-initial_main_DMG = 40
-conditional_self_dmg = false
-self_damage = 0
-modifier = 0
-modifier_num = 0
-both_active = false
-prompt = ExtResource("4_j7mx2")
-success_effect = SubResource("Resource_2q26m")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_gi0ni"]

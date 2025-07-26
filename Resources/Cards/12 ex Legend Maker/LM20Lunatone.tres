@@ -1,12 +1,10 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=26 format=3 uid="uid://cdlsj0xlgu0n"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=24 format=3 uid="uid://cdlsj0xlgu0n"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_c0dsq"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_tp1gn"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_ncs6m"]
 [ext_resource type="Resource" uid="uid://7bruqpkp3r4x" path="res://Resources/Components/Effects/Search/TrainerNotSupport.tres" id="3_k8vd7"]
-[ext_resource type="Resource" uid="uid://lfhu3xyr0wpo" path="res://Resources/Components/Effects/Prompts/IfFlipHeads.tres" id="4_gbcfq"]
 [ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="4_s35fu"]
-[ext_resource type="Resource" uid="uid://6xmw13js5xd3" path="res://Resources/Components/Effects/Conditions/BasicParalyze.tres" id="5_f6d3x"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="5_hxbuf"]
 [ext_resource type="Resource" uid="uid://c7itelq8jtjc2" path="res://Resources/Components/EnData/Rainbow.tres" id="6_lujju"]
 [ext_resource type="Resource" uid="uid://cu817ymtejglx" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Psychic1.tres" id="6_opu8w"]
@@ -44,25 +42,6 @@ name = "Moon Guidance"
 description = "Search your deck for a Trainer card (excluding Supporter cards), show it to your opponent, and put it into your hand. Shuffle your deck afterward. "
 attack_cost = ExtResource("4_s35fu")
 attack_data = SubResource("Resource_yrpea")
-grass_cost = 0
-fire_cost = 0
-water_cost = 0
-lightning_cost = 0
-psychic_cost = 0
-fighting_cost = 0
-darkness_cost = 0
-metal_cost = 0
-colorless_cost = 1
-defender_properties = 0
-condition = 1
-prompt_reliant = false
-initial_main_DMG = 0
-conditional_self_dmg = false
-self_damage = 0
-modifier = 0
-modifier_num = 0
-both_active = false
-always_effect = SubResource("Resource_r8rjj")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_hjkuo"]
@@ -71,26 +50,6 @@ name = "Psyshock"
 description = " Flip a coin. If heads, the Defending Pokémon is now Paralyzed. "
 attack_cost = ExtResource("6_opu8w")
 attack_data = ExtResource("7_le6pv")
-grass_cost = 0
-fire_cost = 0
-water_cost = 0
-lightning_cost = 0
-psychic_cost = 1
-fighting_cost = 0
-darkness_cost = 0
-metal_cost = 0
-colorless_cost = 0
-defender_properties = 0
-condition = 1
-prompt_reliant = false
-initial_main_DMG = 10
-conditional_self_dmg = false
-self_damage = 0
-modifier = 0
-modifier_num = 0
-both_active = false
-prompt = ExtResource("4_gbcfq")
-success_effect = ExtResource("5_f6d3x")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_qafc1"]

@@ -1,13 +1,11 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=11 format=3 uid="uid://dy3acigvmuog1"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=9 format=3 uid="uid://dy3acigvmuog1"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_3w1wo"]
 [ext_resource type="Texture2D" uid="uid://c54ccmgr8sg0" path="res://Art/Cards/1 ex Ruby & Saphire/74.jpg" id="1_30iyp"]
-[ext_resource type="Resource" uid="uid://bext0mocufqgp" path="res://Resources/Components/Effects/Conditions/BasicBurn.tres" id="2_8y5q6"]
 [ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_36bho"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="3_ynd82"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="4_42as6"]
 [ext_resource type="Resource" uid="uid://bx4msn26ymyv8" path="res://Resources/Components/Pokemon/Attacks/AttackData/BurnFlipHeads.tres" id="4_h27pu"]
-[ext_resource type="Resource" uid="uid://ekj1myy642kh" path="res://Resources/Components/Effects/Prompts/PromptHeads.tres" id="5_vxfhb"]
 
 [sub_resource type="Resource" id="Resource_t1n52"]
 script = ExtResource("3_ynd82")
@@ -15,26 +13,6 @@ name = "Singe"
 description = "Flip a coin. If heads, the Defending Pokémon is now Burned."
 attack_cost = ExtResource("3_36bho")
 attack_data = ExtResource("4_h27pu")
-grass_cost = 0
-fire_cost = 0
-water_cost = 0
-lightning_cost = 0
-psychic_cost = 0
-fighting_cost = 0
-darkness_cost = 0
-metal_cost = 0
-colorless_cost = 1
-defender_properties = 0
-condition = 1
-prompt_reliant = false
-initial_main_DMG = 0
-conditional_self_dmg = false
-self_damage = 0
-modifier = 0
-modifier_num = 0
-both_active = false
-prompt = ExtResource("5_vxfhb")
-success_effect = ExtResource("2_8y5q6")
 
 [sub_resource type="Resource" id="Resource_rlsw1"]
 script = ExtResource("4_42as6")

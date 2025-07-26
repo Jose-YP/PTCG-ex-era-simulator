@@ -1,10 +1,9 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=13 format=3 uid="uid://c3tip8v6djvro"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://c3tip8v6djvro"]
 
 [ext_resource type="Texture2D" uid="uid://mj8t5qbg754t" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/65.jpg" id="1_g4aa4"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_j8bvu"]
 [ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_j8bvu"]
 [ext_resource type="Resource" uid="uid://6xmw13js5xd3" path="res://Resources/Components/Effects/Conditions/BasicParalyze.tres" id="3_v2ads"]
-[ext_resource type="Resource" uid="uid://lfhu3xyr0wpo" path="res://Resources/Components/Effects/Prompts/IfFlipHeads.tres" id="4_yacn8"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_iwy5m"]
 [ext_resource type="Resource" uid="uid://ekj1myy642kh" path="res://Resources/Components/Effects/Prompts/PromptHeads.tres" id="5_yacn8"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="6_ahgdl"]
@@ -32,26 +31,6 @@ name = "Snarl"
 description = "Flip a coin. If heads, this attack does 10 damage to the Defending Pokémon. If tails, the Defending Pokémon is now Paralyzed."
 attack_cost = ExtResource("3_j8bvu")
 attack_data = SubResource("Resource_ahgdl")
-grass_cost = 0
-fire_cost = 0
-water_cost = 0
-lightning_cost = 0
-psychic_cost = 0
-fighting_cost = 0
-darkness_cost = 0
-metal_cost = 0
-colorless_cost = 1
-defender_properties = 0
-condition = 1
-prompt_reliant = true
-initial_main_DMG = 10
-conditional_self_dmg = false
-self_damage = 0
-modifier = 0
-modifier_num = 0
-both_active = false
-prompt = ExtResource("4_yacn8")
-fail_effect = ExtResource("3_v2ads")
 
 [sub_resource type="Resource" id="Resource_vy1eo"]
 script = ExtResource("5_iwy5m")

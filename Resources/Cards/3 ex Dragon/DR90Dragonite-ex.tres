@@ -14,6 +14,19 @@
 [ext_resource type="Resource" uid="uid://dm6f2nxeh8yqx" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless4.tres" id="8_ur7nu"]
 [ext_resource type="Resource" uid="uid://ekj1myy642kh" path="res://Resources/Components/Effects/Prompts/PromptHeads.tres" id="9_mdixv"]
 
+[sub_resource type="Resource" id="Resource_mv2ox"]
+script = ExtResource("6_imidg")
+grass_cost = 0
+fire_cost = 0
+water_cost = 1
+lightning_cost = 1
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 0
+metadata/_custom_type_script = "uid://crscwhvugaoxa"
+
 [sub_resource type="Resource" id="Resource_imidg"]
 script = ExtResource("6_mpcq0")
 either_or = false
@@ -28,19 +41,6 @@ order = Array[int]([])
 energy_movement = ExtResource("3_2hwsj")
 extra_effect = SubResource("Resource_imidg")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
-
-[sub_resource type="Resource" id="Resource_mv2ox"]
-script = ExtResource("6_imidg")
-grass_cost = 0
-fire_cost = 0
-water_cost = 1
-lightning_cost = 1
-psychic_cost = 0
-fighting_cost = 0
-darkness_cost = 0
-metal_cost = 0
-colorless_cost = 0
-metadata/_custom_type_script = "uid://crscwhvugaoxa"
 
 [sub_resource type="Resource" id="Resource_7x50r"]
 script = ExtResource("7_mpcq0")
@@ -63,25 +63,6 @@ name = "Dragon Wave"
 description = " Discard a {Water} Energy card and a {Lightning} Energy card attached to Dragonite ex. "
 attack_cost = SubResource("Resource_mv2ox")
 attack_data = SubResource("Resource_7x50r")
-grass_cost = 0
-fire_cost = 0
-water_cost = 1
-lightning_cost = 1
-psychic_cost = 0
-fighting_cost = 0
-darkness_cost = 0
-metal_cost = 0
-colorless_cost = 0
-defender_properties = 0
-condition = 1
-prompt_reliant = false
-initial_main_DMG = 70
-conditional_self_dmg = false
-self_damage = 0
-modifier = 0
-modifier_num = 0
-both_active = false
-always_effect = SubResource("Resource_mpcq0")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_htnr7"]
@@ -105,25 +86,6 @@ name = "Giant Tail"
 description = " Flip a coin. If tails, this attack does nothing."
 attack_cost = ExtResource("8_ur7nu")
 attack_data = SubResource("Resource_htnr7")
-grass_cost = 0
-fire_cost = 0
-water_cost = 0
-lightning_cost = 0
-psychic_cost = 0
-fighting_cost = 0
-darkness_cost = 0
-metal_cost = 0
-colorless_cost = 4
-defender_properties = 0
-condition = 1
-prompt_reliant = true
-initial_main_DMG = 120
-conditional_self_dmg = false
-self_damage = 0
-modifier = 0
-modifier_num = 0
-both_active = false
-prompt = ExtResource("9_mdixv")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_n8rdp"]

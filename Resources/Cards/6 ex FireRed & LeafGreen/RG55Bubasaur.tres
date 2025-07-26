@@ -14,24 +14,6 @@ name = "Gouge"
 description = "Flip a coin. If heads, this attack does 20 damage plus 10 more damage."
 attack_cost = ExtResource("4_kdkar")
 attack_data = ExtResource("5_u8fkt")
-grass_cost = 0
-fire_cost = 0
-water_cost = 0
-lightning_cost = 0
-psychic_cost = 0
-fighting_cost = 0
-darkness_cost = 0
-metal_cost = 0
-colorless_cost = 1
-defender_properties = 0
-condition = 0
-prompt_reliant = false
-initial_main_DMG = 20
-conditional_self_dmg = false
-self_damage = 0
-modifier = 1
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_ofxcy"]

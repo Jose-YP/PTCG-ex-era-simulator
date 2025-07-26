@@ -30,25 +30,6 @@ name = "Link Blast"
 description = "If [name] and the Defending Pokémon have a different amount of Energy attached to them, this attack's base damage is 10 instead of 40."
 attack_cost = ExtResource("4_ywu17")
 attack_data = SubResource("Resource_ari4w")
-grass_cost = 0
-fire_cost = 0
-water_cost = 0
-lightning_cost = 0
-psychic_cost = 1
-fighting_cost = 0
-darkness_cost = 0
-metal_cost = 0
-colorless_cost = 1
-defender_properties = 0
-condition = 1
-prompt_reliant = false
-initial_main_DMG = 40
-conditional_self_dmg = false
-self_damage = 0
-modifier = 0
-modifier_num = 10
-comparator = ExtResource("5_4y1w6")
-both_active = false
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_ncwsx"]

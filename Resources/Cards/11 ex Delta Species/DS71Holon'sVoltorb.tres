@@ -1,13 +1,11 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://dja82vdsanhj7"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://dja82vdsanhj7"]
 
 [ext_resource type="Resource" uid="uid://v2wh22nj2iy3" path="res://Resources/Components/Energy/SpecialEnergy/HolonColorless.tres" id="1_dkpvg"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_mykrm"]
 [ext_resource type="Texture2D" uid="uid://e0ob27m6yiic" path="res://Art/Cards/11 ex Delta Species/71.jpg" id="2_y6qs1"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="3_b3vl0"]
 [ext_resource type="Resource" uid="uid://duyf6uncjts05" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Lightning1.tres" id="4_b3vl0"]
-[ext_resource type="Resource" uid="uid://lfhu3xyr0wpo" path="res://Resources/Components/Effects/Prompts/IfFlipHeads.tres" id="4_kqnt8"]
 [ext_resource type="Resource" uid="uid://dducvbjohbp4x" path="res://Resources/Components/Pokemon/Attacks/AttackData/10DmgParaIfHeads.tres" id="5_kqnt8"]
-[ext_resource type="Resource" uid="uid://6xmw13js5xd3" path="res://Resources/Components/Effects/Conditions/BasicParalyze.tres" id="5_n8e5x"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="6_3jscl"]
 
 [sub_resource type="Resource" id="Resource_c3iqn"]
@@ -16,26 +14,6 @@ name = "Thundershock"
 description = "Flip a coin. If heads, the Defending Pokémon is now Paralyzed."
 attack_cost = ExtResource("4_b3vl0")
 attack_data = ExtResource("5_kqnt8")
-grass_cost = 0
-fire_cost = 0
-water_cost = 0
-lightning_cost = 1
-psychic_cost = 0
-fighting_cost = 0
-darkness_cost = 0
-metal_cost = 0
-colorless_cost = 0
-defender_properties = 0
-condition = 1
-prompt_reliant = false
-initial_main_DMG = 10
-conditional_self_dmg = false
-self_damage = 0
-modifier = 0
-modifier_num = 0
-both_active = false
-prompt = ExtResource("4_kqnt8")
-success_effect = ExtResource("5_n8e5x")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_l8m6a"]

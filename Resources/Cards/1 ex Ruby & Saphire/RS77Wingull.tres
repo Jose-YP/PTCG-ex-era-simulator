@@ -1,9 +1,8 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://cykq8hvtlu6wv"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=9 format=3 uid="uid://cykq8hvtlu6wv"]
 
 [ext_resource type="Texture2D" uid="uid://brxx0l4vfq7q3" path="res://Art/Cards/1 ex Ruby & Saphire/77.jpg" id="1_1fbe0"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_11pvo"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_1gn0r"]
-[ext_resource type="Resource" uid="uid://ekj1myy642kh" path="res://Resources/Components/Effects/Prompts/PromptHeads.tres" id="3_8jmh1"]
 [ext_resource type="Resource" uid="uid://dsslhipk3ix2o" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Water1.tres" id="3_a2gfk"]
 [ext_resource type="Resource" uid="uid://bjya0weq05sic" path="res://Resources/Components/Pokemon/Attacks/AttackData/20IfHeads.tres" id="4_8jmh1"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="4_a2gfk"]
@@ -14,25 +13,6 @@ name = "Surprise Attack"
 description = "Flip a coin. If tails, this attack does nothing."
 attack_cost = ExtResource("3_a2gfk")
 attack_data = ExtResource("4_8jmh1")
-grass_cost = 0
-fire_cost = 0
-water_cost = 1
-lightning_cost = 0
-psychic_cost = 0
-fighting_cost = 0
-darkness_cost = 0
-metal_cost = 0
-colorless_cost = 0
-defender_properties = 0
-condition = 1
-prompt_reliant = true
-initial_main_DMG = 20
-conditional_self_dmg = false
-self_damage = 0
-modifier = 0
-modifier_num = 0
-both_active = false
-prompt = ExtResource("3_8jmh1")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_dfu47"]

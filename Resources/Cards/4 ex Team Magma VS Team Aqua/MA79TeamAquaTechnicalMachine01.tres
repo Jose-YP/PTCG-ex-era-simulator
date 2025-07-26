@@ -51,25 +51,6 @@ name = "Miracle"
 description = "Choose 1 Special Condition. The Defending Pokémon is now affected by that Special Condition."
 attack_cost = ExtResource("6_10jvr")
 attack_data = SubResource("Resource_dagok")
-grass_cost = 0
-fire_cost = 0
-water_cost = 0
-lightning_cost = 0
-psychic_cost = 0
-fighting_cost = 0
-darkness_cost = 0
-metal_cost = 0
-colorless_cost = 1
-defender_properties = 0
-condition = 1
-prompt_reliant = false
-initial_main_DMG = 10
-conditional_self_dmg = false
-self_damage = 0
-modifier = 0
-modifier_num = 0
-both_active = false
-always_effect = SubResource("Resource_10jvr")
 
 [sub_resource type="Resource" id="Resource_dojqq"]
 script = ExtResource("6_6xmn3")
