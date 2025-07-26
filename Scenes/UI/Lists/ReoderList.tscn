@@ -61,7 +61,6 @@ fit_content = true
 horizontal_alignment = 1
 
 [node name="MinimizeButton" parent="PanelContainer/VBoxContainer/Header/HBoxContainer" node_paths=PackedStringArray("shrinkNodes", "hideNodes") instance=ExtResource("14_jdmvj")]
-custom_minimum_size = Vector2(25, 0)
 layout_mode = 2
 shrinkNodes = [NodePath("../../../PanelContainer/ScrollContainer"), NodePath("../../../PanelContainer/ScrollContainer/ItemList")]
 hideNodes = [NodePath("../../../Footer")]

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="AttackCost" load_steps=2 format=3 uid="uid://b5h5yekm4jaw4"]
+
+[ext_resource type="Script" uid="uid://crscwhvugaoxa" path="res://Code/Resource Makers/PokemonSpecific/AttackCostMaker.gd" id="1_b11ji"]
+
+[resource]
+script = ExtResource("1_b11ji")
+grass_cost = 0
+fire_cost = 0
+water_cost = 0
+lightning_cost = 0
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 1
+colorless_cost = 1
+metadata/_custom_type_script = "uid://crscwhvugaoxa"

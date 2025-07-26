@@ -1,22 +1,57 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=14 format=3 uid="uid://bd5udpyw50p8k"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=20 format=3 uid="uid://bd5udpyw50p8k"]
 
 [ext_resource type="Texture2D" uid="uid://ds5ewico7h0ff" path="res://Art/Cards/10 ex Unseen Forces/104.jpg" id="1_f6oj6"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_e84ng"]
 [ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_f6oj6"]
 [ext_resource type="Resource" uid="uid://obi5wbrc3am1" path="res://Resources/Components/Effects/EnergyMovement/GoldenWing.tres" id="4_5thtl"]
+[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="4_r18xf"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="5_r18xf"]
+[ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="5_ysloh"]
+[ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="6_hite6"]
 [ext_resource type="Script" uid="uid://b58015mafcw2v" path="res://Code/Resource Makers/PokemonSpecific/PowerMaker.gd" id="6_ysloh"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="7_6kdro"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="7_hite6"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="8_6kdro"]
 
-[sub_resource type="Resource" id="Resource_wt5p1"]
+[sub_resource type="Resource" id="Resource_iim6h"]
+script = ExtResource("5_ysloh")
+which = "Slot"
+ask = ExtResource("4_r18xf")
+slot_vars = "energy_cards"
+en_count_methods = "Diff Types"
+en_categories = "Basic Energy"
+cap = -1
+metadata/_custom_type_script = "uid://vjn146j3ayd6"
+
+[sub_resource type="Resource" id="Resource_qkerg"]
+script = ExtResource("6_hite6")
+comparision_type = "Return"
+first_comparison = SubResource("Resource_iim6h")
+compare_to = "None"
+second_constant = 0
+metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
+
+[sub_resource type="Resource" id="Resource_rjiuk"]
+script = ExtResource("7_6kdro")
+prompt_reliant = false
+initial_main_DMG = 10
+defender_properties = 0
+condition = 1
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 1
+modifier_num = 20
+comparator = SubResource("Resource_qkerg")
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_aw5mk"]
 script = ExtResource("2_e84ng")
 name = "Rainbow Burn"
-description = "Does 10 damage plus 20 more damage for each type of basic Energy card attached to Ho-Oh ex."
+description = "Does 10 damage plus 20 more damage for each type of basic Energy card attached to [name]."
 attack_cost = ExtResource("3_f6oj6")
-attack_data = SubResource("Resource_wt5p1")
+attack_data = SubResource("Resource_rjiuk")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0

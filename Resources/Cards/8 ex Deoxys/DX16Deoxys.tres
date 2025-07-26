@@ -1,20 +1,35 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://cb1v7n822h87e"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://cb1v7n822h87e"]
 
 [ext_resource type="Texture2D" uid="uid://7bxyvuwtxyns" path="res://Art/Cards/8 ex Deoxys/16.jpg" id="1_q6m2g"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_u75df"]
-[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_e6881"]
+[ext_resource type="Resource" uid="uid://cvrbxqvsyxt6t" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/P1C1.tres" id="3_gsmpp"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="3_re3fn"]
 [ext_resource type="Resource" uid="uid://6qr7q3qdfbsf" path="res://Resources/Components/Pokemon/Powers/FormChangeDeoxys.tres" id="4_5wcjw"]
+[ext_resource type="Resource" uid="uid://dh4vjjy6e5xbi" path="res://Resources/Components/Counters/Comparator/TrgEnEqual.tres" id="4_22yei"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_hjcee"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="5_k4uw5"]
 
-[sub_resource type="Resource" id="Resource_wt5p1"]
+[sub_resource type="Resource" id="Resource_jijnb"]
+script = ExtResource("5_k4uw5")
+prompt_reliant = false
+initial_main_DMG = 40
+defender_properties = 0
+condition = 1
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 20
+comparator = ExtResource("4_22yei")
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_w1d7j"]
 script = ExtResource("3_re3fn")
 name = "Link Blast"
-description = "If Deoxys and the Defending Pokémon have a different amount of Energy attached to them, this attack's base damage is 20 instead of 40."
-attack_cost = ExtResource("3_e6881")
-attack_data = SubResource("Resource_wt5p1")
+description = "If [name] and the Defending Pokémon have a different amount of Energy attached to them, this attack's base damage is 20 instead of 40."
+attack_cost = ExtResource("3_gsmpp")
+attack_data = SubResource("Resource_jijnb")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0

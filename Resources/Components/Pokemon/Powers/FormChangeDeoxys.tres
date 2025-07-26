@@ -49,7 +49,7 @@ search = SubResource("Resource_0ykxt")
 [resource]
 script = ExtResource("1_53c32")
 name = "Form Change"
-description = "Once during your turn (before your attack), you may search your deck for another Deoxys and switch it with Deoxys. (Any cards attached to Deoxys, damage counters, Special Conditions, and effects on it are now on the new Pokémon.) If you do, put Deoxys on top of your deck. Shuffle your deck afterward. You can't use more than 1 Form Change Poké-Power each turn."
+description = "Once during your turn (before your attack), you may search your deck for another Deoxys and switch it with [name]. (Any cards attached to [name], damage counters, Special Conditions, and effects on it are now on the new Pokémon.) If you do, put [name] on top of your deck. Shuffle your deck afterward. You can't use more than 1 Form Change Poké-Power each turn."
 affected_by_condition = false
 active = false
 when_condition = "Whenever"

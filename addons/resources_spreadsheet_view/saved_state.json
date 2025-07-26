@@ -11,7 +11,7 @@
         "visibility": 0.0
       },
       "pokemon_properties": {
-        "visibility": 1
+        "visibility": 1.0
       },
       "resource_local_to_scene": {
         "visibility": 0.0
@@ -79,7 +79,7 @@
   ],
   "table_functions": {
     "filter": [
-      "return res.pokemon_properties != null"
+      "return true"
     ],
     "process": [
       "return value"

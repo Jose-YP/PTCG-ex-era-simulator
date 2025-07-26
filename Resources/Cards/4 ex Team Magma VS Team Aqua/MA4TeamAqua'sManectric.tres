@@ -5,19 +5,18 @@
 [ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="2_aml44"]
 [ext_resource type="Script" uid="uid://br15mnap82upq" path="res://Code/Resource Makers/PokemonSpecific/BenchAttackMaker.gd" id="3_bgqi1"]
 [ext_resource type="Resource" uid="uid://c7itelq8jtjc2" path="res://Resources/Components/EnData/Rainbow.tres" id="3_jf1rb"]
-[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_ribmh"]
+[ext_resource type="Resource" uid="uid://ch31rb2s75yst" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/L1C2.tres" id="3_ribmh"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="4_5ptpl"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="5_5fqb1"]
 [ext_resource type="Script" uid="uid://cimk6l7ytw7xg" path="res://Code/Resource Makers/EffectSpecific/EnMovMaker.gd" id="5_no1xd"]
 [ext_resource type="Script" uid="uid://b58015mafcw2v" path="res://Code/Resource Makers/PokemonSpecific/PowerMaker.gd" id="6_0moyj"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="7_5jpak"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="7_ur4yg"]
 
-[sub_resource type="Resource" id="Resource_wt5p1"]
-
-[sub_resource type="Resource" id="Resource_sxuxa"]
+[sub_resource type="Resource" id="Resource_favp4"]
 script = ExtResource("2_aml44")
 side_target = 3
-slot_target = 4
+slot_target = 3
 specifically = Array[String]([])
 comparison_type = 1
 max_hp = -10
@@ -28,34 +27,9 @@ tool_attatched = false
 stage = 7
 rare_candy = false
 class_inclusive = true
-pokemon_class = 0
+pokemon_class = 63
 owner_inclusive = true
-pokemon_owner = 15
-type_inclusive = true
-pokemon_type = 1023
-energy_inclusive = true
-check_cards = true
-energy_attatched = 1
-energy_class = "Any"
-energy_type = ExtResource("3_jf1rb")
-
-[sub_resource type="Resource" id="Resource_br7ny"]
-script = ExtResource("2_aml44")
-side_target = 3
-slot_target = 4
-specifically = Array[String]([])
-comparison_type = 1
-max_hp = -10
-damage_taken = -10
-retreat_cost = -1
-knocked_out = false
-tool_attatched = false
-stage = 7
-rare_candy = false
-class_inclusive = true
-pokemon_class = 0
-owner_inclusive = true
-pokemon_owner = 15
+pokemon_owner = 31
 type_inclusive = true
 pokemon_type = 1023
 energy_inclusive = true
@@ -67,20 +41,34 @@ energy_type = ExtResource("3_jf1rb")
 [sub_resource type="Resource" id="Resource_8qhfr"]
 script = ExtResource("3_bgqi1")
 how_many = -1
-candidates = SubResource("Resource_br7ny")
-which = 2
+candidates = SubResource("Resource_favp4")
+which = 3
 active_allowed = false
 apply_weak_res = false
 initial_main_DMG = 10
 modifier = 0
-ask = SubResource("Resource_sxuxa")
+
+[sub_resource type="Resource" id="Resource_c52f0"]
+script = ExtResource("7_5jpak")
+prompt_reliant = false
+initial_main_DMG = 50
+defender_properties = 0
+condition = 1
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+bench_damage = SubResource("Resource_8qhfr")
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_11udr"]
 script = ExtResource("4_5ptpl")
 name = "Thunderspark"
 description = "Does 10 damage to each Benched Pokémon (both yours and your opponent's) that has Energy cards attached to it. (Don't apply Weakness and Resistance for Benched Pokémon.)"
 attack_cost = ExtResource("3_ribmh")
-attack_data = SubResource("Resource_wt5p1")
+attack_data = SubResource("Resource_c52f0")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0

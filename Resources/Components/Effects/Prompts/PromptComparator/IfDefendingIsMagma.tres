@@ -1,0 +1,61 @@
+[gd_resource type="Resource" script_class="PromptAsk" load_steps=9 format=3 uid="uid://oucf200x3u40"]
+
+[ext_resource type="Resource" uid="uid://c7itelq8jtjc2" path="res://Resources/Components/EnData/Rainbow.tres" id="1_veuwl"]
+[ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="2_r3nn3"]
+[ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="3_smht3"]
+[ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="4_p52ux"]
+[ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="5_y41mm"]
+
+[sub_resource type="Resource" id="Resource_al5dh"]
+script = ExtResource("2_r3nn3")
+side_target = 2
+slot_target = 1
+specifically = Array[String]([])
+comparison_type = 1
+max_hp = -10
+damage_taken = -10
+retreat_cost = -1
+knocked_out = false
+tool_attatched = false
+stage = 7
+rare_candy = false
+class_inclusive = true
+pokemon_class = 63
+owner_inclusive = true
+pokemon_owner = 4
+type_inclusive = true
+pokemon_type = 1023
+energy_inclusive = true
+check_cards = true
+energy_attatched = -1
+energy_class = "Any"
+energy_type = ExtResource("1_veuwl")
+
+[sub_resource type="Resource" id="Resource_sayjc"]
+script = ExtResource("3_smht3")
+which = "Slot"
+ask = SubResource("Resource_al5dh")
+slot_vars = "current_card"
+cap = -1
+metadata/_custom_type_script = "uid://vjn146j3ayd6"
+
+[sub_resource type="Resource" id="Resource_n3ndl"]
+script = ExtResource("4_p52ux")
+comparision_type = "Equals"
+first_comparison = SubResource("Resource_sayjc")
+compare_to = "Const"
+second_constant = 1
+metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
+
+[resource]
+script = ExtResource("5_y41mm")
+formal_question = false
+question_string = ""
+yes_answer = ""
+no_answer = ""
+comparator = SubResource("Resource_n3ndl")
+can_reverse = false
+chooser = 0
+choose_location = "None"
+which_stack = 0
+metadata/_custom_type_script = "uid://b85jmc7067bjc"

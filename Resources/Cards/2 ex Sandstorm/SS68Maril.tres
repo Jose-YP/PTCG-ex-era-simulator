@@ -1,14 +1,14 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://cnmxonj4m81n1"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=14 format=3 uid="uid://cnmxonj4m81n1"]
 
 [ext_resource type="Texture2D" uid="uid://c4apwfoy8tjkd" path="res://Art/Cards/2 ex Sandstorm/68.jpg" id="1_mh6c5"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_x6qfw"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_8p0sp"]
 [ext_resource type="Resource" uid="uid://6xmw13js5xd3" path="res://Resources/Components/Effects/Conditions/BasicParalyze.tres" id="3_goaxk"]
-[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_pdngh"]
+[ext_resource type="Resource" uid="uid://fcpa5aqhgy0e" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/W1C1.tres" id="3_mh6c5"]
+[ext_resource type="Resource" uid="uid://e706qq8o0hri" path="res://Resources/Components/Counters/Comparator/Return2Flip.tres" id="4_8p0sp"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="5_8p0sp"]
 [ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="6_oax0i"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="7_j5xge"]
-
-[sub_resource type="Resource" id="Resource_wt5p1"]
 
 [sub_resource type="Resource" id="Resource_to7ul"]
 script = ExtResource("6_oax0i")
@@ -16,18 +16,35 @@ formal_question = false
 question_string = ""
 yes_answer = ""
 no_answer = ""
+comparator = ExtResource("4_8p0sp")
 can_reverse = true
 chooser = 0
 choose_location = "None"
 which_stack = 0
 metadata/_custom_type_script = "uid://b85jmc7067bjc"
 
+[sub_resource type="Resource" id="Resource_goaxk"]
+script = ExtResource("5_8p0sp")
+prompt_reliant = false
+prompt = SubResource("Resource_to7ul")
+initial_main_DMG = 10
+defender_properties = 0
+condition = 1
+success_effect = ExtResource("3_goaxk")
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = true
+modifier = 2
+modifier_num = 10
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
 [sub_resource type="Resource" id="Resource_p6nwg"]
 script = ExtResource("2_8p0sp")
 name = "Double Bubble"
 description = "Flip 2 coins. This attack does 10 damage times the number of heads. If either of the coins is heads, the Defending Pokémon is now Paralyzed."
-attack_cost = ExtResource("3_pdngh")
-attack_data = SubResource("Resource_wt5p1")
+attack_cost = ExtResource("3_mh6c5")
+attack_data = SubResource("Resource_goaxk")
 grass_cost = 0
 fire_cost = 0
 water_cost = 1
@@ -38,7 +55,7 @@ darkness_cost = 0
 metal_cost = 0
 colorless_cost = 1
 defender_properties = 0
-condition = 0
+condition = 1
 prompt_reliant = true
 initial_main_DMG = 10
 conditional_self_dmg = false

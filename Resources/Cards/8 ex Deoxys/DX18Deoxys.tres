@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=14 format=3 uid="uid://m4swjbtpd58w"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=15 format=3 uid="uid://m4swjbtpd58w"]
 
 [ext_resource type="Texture2D" uid="uid://cyd63koguem6a" path="res://Art/Cards/8 ex Deoxys/18.jpg" id="1_0bgjh"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_c6rfu"]
@@ -7,7 +7,8 @@
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_lvm7k"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="3_rawb0"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="3_tnm6h"]
-[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="5_lfmb5"]
+[ext_resource type="Resource" uid="uid://cvrbxqvsyxt6t" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/P1C1.tres" id="5_sw4il"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="6_rddwv"]
 
 [sub_resource type="Resource" id="Resource_cd2t0"]
 script = ExtResource("2_ousds")
@@ -33,14 +34,27 @@ order = Array[int]([])
 buff = SubResource("Resource_cd2t0")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
-[sub_resource type="Resource" id="Resource_wt5p1"]
+[sub_resource type="Resource" id="Resource_fhsxn"]
+script = ExtResource("6_rddwv")
+prompt_reliant = false
+initial_main_DMG = 20
+defender_properties = 0
+condition = 1
+always_effect = SubResource("Resource_lfmb5")
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_qyf6n"]
 script = ExtResource("3_rawb0")
 name = "Barrier Attack"
-description = "During your opponent's next turn, any damage done to Deoxys by attacks is reduced by 30 (after applying Weakness and Resistance)."
-attack_cost = ExtResource("5_lfmb5")
-attack_data = SubResource("Resource_wt5p1")
+description = "During your opponent's next turn, any damage done to [name] by attacks is reduced by 30 (after applying Weakness and Resistance)."
+attack_cost = ExtResource("5_sw4il")
+attack_data = SubResource("Resource_fhsxn")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0
@@ -51,7 +65,7 @@ darkness_cost = 0
 metal_cost = 0
 colorless_cost = 1
 defender_properties = 0
-condition = 0
+condition = 1
 prompt_reliant = false
 initial_main_DMG = 20
 conditional_self_dmg = false

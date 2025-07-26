@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=14 format=3 uid="uid://f51ar25ws7av"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=15 format=3 uid="uid://f51ar25ws7av"]
 
 [ext_resource type="Texture2D" uid="uid://batwggrxck3rc" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/79.jpg" id="1_362yo"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_i2j72"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="5_exr3x"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="6_6xmn3"]
 [ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="6_10jvr"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="7_0ulgf"]
 
 [sub_resource type="Resource" id="Resource_ov5dn"]
 script = ExtResource("4_rmk35")
@@ -29,14 +30,27 @@ order = Array[int]([])
 condition = SubResource("Resource_ov5dn")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
-[sub_resource type="Resource" id="Resource_wt5p1"]
+[sub_resource type="Resource" id="Resource_dagok"]
+script = ExtResource("7_0ulgf")
+prompt_reliant = false
+initial_main_DMG = 10
+defender_properties = 0
+condition = 1
+always_effect = SubResource("Resource_10jvr")
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_3el55"]
 script = ExtResource("5_exr3x")
 name = "Miracle"
 description = "Choose 1 Special Condition. The Defending Pokémon is now affected by that Special Condition."
 attack_cost = ExtResource("6_10jvr")
-attack_data = SubResource("Resource_wt5p1")
+attack_data = SubResource("Resource_dagok")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0
@@ -47,7 +61,7 @@ darkness_cost = 0
 metal_cost = 0
 colorless_cost = 1
 defender_properties = 0
-condition = 0
+condition = 1
 prompt_reliant = false
 initial_main_DMG = 10
 conditional_self_dmg = false

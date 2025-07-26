@@ -1,74 +1,8 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=14 format=3 uid="uid://dcgvxv02mymn0"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=4 format=3 uid="uid://dcgvxv02mymn0"]
 
 [ext_resource type="Texture2D" uid="uid://rvjhu45dufsf" path="res://Art/Cards/2 ex Sandstorm/26.jpg" id="1_ycqvd"]
-[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_8f0rs"]
-[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_8f0rs"]
-[ext_resource type="Resource" uid="uid://1siwtrlhj518" path="res://Resources/Components/Effects/Buff/Immu2ex.tres" id="3_qluil"]
-[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_edv5j"]
-[ext_resource type="Script" uid="uid://b2tlqpng7fq25" path="res://Code/Resource Makers/PokemonSpecific/BodyMaker.gd" id="5_rcpnu"]
-[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="6_8r4re"]
+[ext_resource type="Resource" uid="uid://c46i4g51ud54o" path="res://Resources/Components/Pokemon/ReprintPokemon/FlipOverWobbuffet.tres" id="2_v5q5e"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="7_04btx"]
-
-[sub_resource type="Resource" id="Resource_wt5p1"]
-
-[sub_resource type="Resource" id="Resource_q0c5m"]
-script = ExtResource("2_8f0rs")
-name = "Flip Over"
-description = "Wobbuffet does 10 damage to itself, and don't apply Weakness and Resistance to this damage."
-attack_cost = ExtResource("3_8f0rs")
-attack_data = SubResource("Resource_wt5p1")
-grass_cost = 0
-fire_cost = 0
-water_cost = 0
-lightning_cost = 0
-psychic_cost = 1
-fighting_cost = 0
-darkness_cost = 0
-metal_cost = 0
-colorless_cost = 2
-defender_properties = 6
-condition = 0
-prompt_reliant = false
-initial_main_DMG = 50
-conditional_self_dmg = false
-self_damage = 10
-modifier = 0
-modifier_num = 0
-both_active = false
-metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
-
-[sub_resource type="Resource" id="Resource_j03mb"]
-script = ExtResource("4_edv5j")
-either_or = false
-order = Array[int]([])
-buff = ExtResource("3_qluil")
-metadata/_custom_type_script = "uid://dmulm3x3dj842"
-
-[sub_resource type="Resource" id="Resource_np3pj"]
-script = ExtResource("5_rcpnu")
-when_active = false
-name = "Safeguard"
-description = "Prevent all effects of attacks, including damage, done to Wobbuffet by your opponent's Pokémon-ex."
-affected_by_condition = true
-attatched_energy = 0
-energy_ammount = 1
-effect = SubResource("Resource_j03mb")
-metadata/_custom_type_script = "uid://b2tlqpng7fq25"
-
-[sub_resource type="Resource" id="Resource_vyrtp"]
-script = ExtResource("6_8r4re")
-HP = 80
-retreat = 2
-body = SubResource("Resource_np3pj")
-attacks = Array[ExtResource("2_8f0rs")]([SubResource("Resource_q0c5m")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
-type = 16
-weak = 16
-resist = 0
-metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
 script = ExtResource("7_04btx")
@@ -79,6 +13,6 @@ number = 26
 rarity = 2
 expansion = 1
 categories = 1
-pokemon_properties = SubResource("Resource_vyrtp")
+pokemon_properties = ExtResource("2_v5q5e")
 fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

@@ -148,17 +148,18 @@ metadata/_custom_type_script = "uid://dmulm3x3dj842"
 [sub_resource type="Resource" id="Resource_kcbdi"]
 script = ExtResource("9_x6msc")
 prompt_reliant = false
+prompt = SubResource("Resource_58hgl")
 initial_main_DMG = 0
+defender_properties = 0
+condition = 1
+success_effect = SubResource("Resource_c4vsc")
+fail_effect = SubResource("Resource_wcep4")
 conditional_self_dmg = false
 self_damage = 0
+mod_prompt = false
 modifier = 0
 modifier_num = 0
 both_active = false
-defender_properties = 0
-condition = 1
-prompt = SubResource("Resource_58hgl")
-success_effect = SubResource("Resource_c4vsc")
-fail_effect = SubResource("Resource_wcep4")
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_8m2jj"]

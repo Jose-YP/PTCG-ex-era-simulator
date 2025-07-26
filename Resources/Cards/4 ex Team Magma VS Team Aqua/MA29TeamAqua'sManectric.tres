@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=15 format=3 uid="uid://ov65eileuo4o"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=26 format=3 uid="uid://ov65eileuo4o"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_dwtlt"]
 [ext_resource type="Texture2D" uid="uid://df02g0rwr5yl1" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/29.jpg" id="1_gl86o"]
@@ -6,9 +6,16 @@
 [ext_resource type="Resource" uid="uid://c7itelq8jtjc2" path="res://Resources/Components/EnData/Rainbow.tres" id="3_1uuvq"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="4_0g86g"]
 [ext_resource type="Resource" uid="uid://d4bi0kdblesdq" path="res://Resources/Components/Effects/Asks/Conditions/DefIsConfused.tres" id="5_1uuvq"]
-[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="5_gdiu5"]
+[ext_resource type="Resource" uid="uid://cesjkvsi5c6jb" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/L1C1.tres" id="5_los0h"]
+[ext_resource type="Resource" uid="uid://oucf200x3u40" path="res://Resources/Components/Effects/Prompts/PromptComparator/IfDefendingIsMagma.tres" id="6_550tl"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="6_ea6gi"]
 [ext_resource type="Resource" uid="uid://l48hjm27w6e6" path="res://Resources/Components/Effects/EnergyMovement/DefSelfDisAny.tres" id="6_gdiu5"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="7_3sxtk"]
+[ext_resource type="Resource" uid="uid://nx1kc1vsm4ia" path="res://Resources/Components/Effects/Conditions/BasicConfusion.tres" id="8_xuidg"]
+[ext_resource type="Resource" uid="uid://ch31rb2s75yst" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/L1C2.tres" id="10_3hv5w"]
+[ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="11_gwsny"]
+[ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="12_rujbu"]
+[ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="13_0qiec"]
 
 [sub_resource type="Resource" id="Resource_owb8s"]
 script = ExtResource("2_auni2")
@@ -35,14 +42,28 @@ energy_attatched = -1
 energy_class = "Any"
 energy_type = ExtResource("3_1uuvq")
 
-[sub_resource type="Resource" id="Resource_wt5p1"]
+[sub_resource type="Resource" id="Resource_rnd1u"]
+script = ExtResource("7_3sxtk")
+prompt_reliant = false
+prompt = ExtResource("6_550tl")
+initial_main_DMG = 20
+defender_properties = 0
+condition = 1
+success_effect = ExtResource("8_xuidg")
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_kg1j7"]
 script = ExtResource("4_0g86g")
 name = "Aqua Beam"
 description = "If the Defending Pokémon has Team Magma in its name, the Defending Pokémon is now Confused."
-attack_cost = ExtResource("5_gdiu5")
-attack_data = SubResource("Resource_wt5p1")
+attack_cost = ExtResource("5_los0h")
+attack_data = SubResource("Resource_rnd1u")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0
@@ -53,7 +74,7 @@ darkness_cost = 0
 metal_cost = 0
 colorless_cost = 1
 defender_properties = 0
-condition = 0
+condition = 1
 prompt_reliant = false
 initial_main_DMG = 20
 conditional_self_dmg = false
@@ -63,12 +84,57 @@ modifier_num = 0
 both_active = false
 ask = SubResource("Resource_owb8s")
 
+[sub_resource type="Resource" id="Resource_2naku"]
+script = ExtResource("11_gwsny")
+which = "Slot"
+ask = ExtResource("5_1uuvq")
+slot_vars = "current_card"
+cap = -1
+metadata/_custom_type_script = "uid://vjn146j3ayd6"
+
+[sub_resource type="Resource" id="Resource_0c4yo"]
+script = ExtResource("12_rujbu")
+comparision_type = "Equals"
+first_comparison = SubResource("Resource_2naku")
+compare_to = "Const"
+second_constant = 1
+metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
+
+[sub_resource type="Resource" id="Resource_va2mh"]
+script = ExtResource("13_0qiec")
+formal_question = false
+question_string = ""
+yes_answer = ""
+no_answer = ""
+comparator = SubResource("Resource_0c4yo")
+can_reverse = true
+chooser = 0
+choose_location = "None"
+which_stack = 0
+metadata/_custom_type_script = "uid://b85jmc7067bjc"
+
+[sub_resource type="Resource" id="Resource_mo7ko"]
+script = ExtResource("7_3sxtk")
+prompt_reliant = false
+prompt = SubResource("Resource_va2mh")
+initial_main_DMG = 50
+defender_properties = 0
+condition = 1
+success_effect = ExtResource("6_gdiu5")
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
 [sub_resource type="Resource" id="Resource_je666"]
 script = ExtResource("4_0g86g")
 name = "Chaos Crush"
 description = "If the Defending Pokémon is Confused, discard an Energy card attached to the Defending Pokémon."
-attack_cost = ExtResource("5_gdiu5")
-attack_data = SubResource("Resource_wt5p1")
+attack_cost = ExtResource("10_3hv5w")
+attack_data = SubResource("Resource_mo7ko")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0
@@ -79,7 +145,7 @@ darkness_cost = 0
 metal_cost = 0
 colorless_cost = 2
 defender_properties = 0
-condition = 0
+condition = 1
 prompt_reliant = false
 initial_main_DMG = 50
 conditional_self_dmg = false

@@ -1,42 +1,12 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=14 format=3 uid="uid://cht2g100xfwct"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://cht2g100xfwct"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_hw0hl"]
 [ext_resource type="Texture2D" uid="uid://cit0gp8cbga1f" path="res://Art/Cards/1 ex Ruby & Saphire/97.jpg" id="1_y7skg"]
-[ext_resource type="Resource" uid="uid://6xmw13js5xd3" path="res://Resources/Components/Effects/Conditions/BasicParalyze.tres" id="3_uh1kh"]
-[ext_resource type="Resource" uid="uid://duyf6uncjts05" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Lightning1.tres" id="3_vpxn8"]
+[ext_resource type="Resource" uid="uid://b6tm52bvi4k5u" path="res://Resources/Components/Pokemon/Attacks/CoinFlipCondition/Tundershock1-10.tres" id="3_y6j54"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="4_4dib8"]
-[ext_resource type="Resource" uid="uid://dducvbjohbp4x" path="res://Resources/Components/Pokemon/Attacks/AttackData/10DmgParaIfHeads.tres" id="4_admn0"]
-[ext_resource type="Resource" uid="uid://ekj1myy642kh" path="res://Resources/Components/Effects/Prompts/PromptHeads.tres" id="5_v2dwd"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="7_6e4ya"]
 [ext_resource type="Resource" uid="uid://8444rgut4s83" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/L2C1.tres" id="7_bxare"]
 [ext_resource type="Resource" uid="uid://dyn04nofc714f" path="res://Resources/Components/Pokemon/Attacks/AttackData/40Plus20Heads.tres" id="8_jpiun"]
-
-[sub_resource type="Resource" id="Resource_50am0"]
-script = ExtResource("4_4dib8")
-name = "Thundershock"
-description = "Flip a coin. If heads, the Defending Pokémon is now Paralyzed."
-attack_cost = ExtResource("3_vpxn8")
-attack_data = ExtResource("4_admn0")
-grass_cost = 0
-fire_cost = 0
-water_cost = 0
-lightning_cost = 1
-psychic_cost = 0
-fighting_cost = 0
-darkness_cost = 0
-metal_cost = 0
-colorless_cost = 0
-defender_properties = 0
-condition = 1
-prompt_reliant = false
-initial_main_DMG = 10
-conditional_self_dmg = false
-self_damage = 0
-modifier = 0
-modifier_num = 0
-both_active = false
-prompt = ExtResource("5_v2dwd")
-success_effect = ExtResource("3_uh1kh")
 
 [sub_resource type="Resource" id="Resource_u11vq"]
 script = ExtResource("4_4dib8")
@@ -67,7 +37,7 @@ both_active = false
 script = ExtResource("7_6e4ya")
 HP = 90
 retreat = 2
-attacks = Array[ExtResource("4_4dib8")]([SubResource("Resource_50am0"), SubResource("Resource_u11vq")])
+attacks = Array[ExtResource("4_4dib8")]([ExtResource("3_y6j54"), SubResource("Resource_u11vq")])
 evo_stage = "Basic"
 evolves_from = ""
 considered = 2

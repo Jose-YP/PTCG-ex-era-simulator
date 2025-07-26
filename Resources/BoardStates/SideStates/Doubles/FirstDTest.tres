@@ -42,6 +42,7 @@ tm_cards = Array[ExtResource("2_31kmx")]([])
 tool_card = ExtResource("15_ejiat")
 applied_buffs = Array[ExtResource("13_xynjr")]([])
 applied_disable = Array[ExtResource("14_hl4js")]([])
+dealt_damage = 0
 metadata/_custom_type_script = "uid://cs70ix831b5g4"
 
 [sub_resource type="Resource" id="Resource_f4ycl"]
@@ -69,6 +70,7 @@ tm_cards = Array[ExtResource("2_31kmx")]([])
 applied_buffs = Array[ExtResource("13_xynjr")]([])
 applied_disable = Array[ExtResource("14_hl4js")]([])
 applied_condition = SubResource("Resource_f4ycl")
+dealt_damage = 0
 metadata/_custom_type_script = "uid://cs70ix831b5g4"
 
 [sub_resource type="Resource" id="Resource_kiik6"]
@@ -96,6 +98,7 @@ tm_cards = Array[ExtResource("2_31kmx")]([])
 applied_buffs = Array[ExtResource("13_xynjr")]([])
 applied_disable = Array[ExtResource("14_hl4js")]([])
 applied_condition = SubResource("Resource_kiik6")
+dealt_damage = 0
 metadata/_custom_type_script = "uid://cs70ix831b5g4"
 
 [resource]

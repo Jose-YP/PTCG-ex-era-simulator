@@ -13,14 +13,15 @@
 script = ExtResource("5_frehc")
 prompt_reliant = false
 initial_main_DMG = 20
+defender_properties = 0
+condition = 1
 conditional_self_dmg = false
 self_damage = 0
+mod_prompt = false
 modifier = 1
 modifier_num = 10
 comparator = ExtResource("4_spdqf")
 both_active = false
-defender_properties = 0
-condition = 1
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_rqr6v"]

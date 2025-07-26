@@ -12,6 +12,7 @@ class_name PromptAsk
 @export var no_answer: String
 #endregion
 
+#@export var inherit_outside_comparator: bool = false
 ##What comparator must it pass to work? 
 @export var comparator: Comparator
 ##For before activating prompts: 

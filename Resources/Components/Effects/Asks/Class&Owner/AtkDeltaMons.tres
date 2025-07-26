@@ -1,11 +1,11 @@
-[gd_resource type="Resource" script_class="SlotAsk" load_steps=3 format=3 uid="uid://c6ydfl8wqi0hs"]
+[gd_resource type="Resource" script_class="SlotAsk" load_steps=3 format=3 uid="uid://beu3aq6pkdwdp"]
 
-[ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="1_2kkaq"]
-[ext_resource type="Resource" uid="uid://c7itelq8jtjc2" path="res://Resources/Components/EnData/Rainbow.tres" id="1_3l1pj"]
+[ext_resource type="Resource" uid="uid://c7itelq8jtjc2" path="res://Resources/Components/EnData/Rainbow.tres" id="1_7vfwl"]
+[ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="2_teeid"]
 
 [resource]
-script = ExtResource("1_2kkaq")
-side_target = 3
+script = ExtResource("2_teeid")
+side_target = 1
 slot_target = 4
 specifically = Array[String]([])
 comparison_type = 1
@@ -26,5 +26,5 @@ energy_inclusive = true
 check_cards = true
 energy_attatched = -1
 energy_class = "Any"
-energy_type = ExtResource("1_3l1pj")
+energy_type = ExtResource("1_7vfwl")
 metadata/_custom_type_script = "uid://mkjynqda7q5g"

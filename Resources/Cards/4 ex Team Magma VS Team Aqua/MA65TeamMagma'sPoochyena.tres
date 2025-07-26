@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=11 format=3 uid="uid://c3tip8v6djvro"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=13 format=3 uid="uid://c3tip8v6djvro"]
 
 [ext_resource type="Texture2D" uid="uid://mj8t5qbg754t" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/65.jpg" id="1_g4aa4"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_j8bvu"]
@@ -6,16 +6,32 @@
 [ext_resource type="Resource" uid="uid://6xmw13js5xd3" path="res://Resources/Components/Effects/Conditions/BasicParalyze.tres" id="3_v2ads"]
 [ext_resource type="Resource" uid="uid://lfhu3xyr0wpo" path="res://Resources/Components/Effects/Prompts/IfFlipHeads.tres" id="4_yacn8"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_iwy5m"]
+[ext_resource type="Resource" uid="uid://ekj1myy642kh" path="res://Resources/Components/Effects/Prompts/PromptHeads.tres" id="5_yacn8"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="6_ahgdl"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="6_iwy5m"]
 
-[sub_resource type="Resource" id="Resource_wt5p1"]
+[sub_resource type="Resource" id="Resource_ahgdl"]
+script = ExtResource("6_iwy5m")
+prompt_reliant = true
+prompt = ExtResource("5_yacn8")
+initial_main_DMG = 10
+defender_properties = 0
+condition = 1
+fail_effect = ExtResource("3_v2ads")
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_1qf44"]
 script = ExtResource("2_j8bvu")
 name = "Snarl"
 description = "Flip a coin. If heads, this attack does 10 damage to the Defending Pokémon. If tails, the Defending Pokémon is now Paralyzed."
 attack_cost = ExtResource("3_j8bvu")
-attack_data = SubResource("Resource_wt5p1")
+attack_data = SubResource("Resource_ahgdl")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0

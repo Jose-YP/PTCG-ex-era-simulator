@@ -86,7 +86,8 @@ func _get_property_list() -> Array[Dictionary]:
 				"hint_string" : ",".join(en_methods),
 				"usage" : PROPERTY_USAGE_DEFAULT
 			})
-			if _get("en_count_methods") == "Categories":
+			if _get("en_count_methods") == "Categories"\
+			or _get("en_count_methods") == "Diff Types":
 				props.append({
 					"name" : "en_categories",
 					"type" : TYPE_STRING,

@@ -38,14 +38,15 @@ metadata/_custom_type_script = "uid://dmulm3x3dj842"
 script = ExtResource("9_akdno")
 prompt_reliant = false
 initial_main_DMG = 0
-conditional_self_dmg = false
-self_damage = 0
-modifier = 0
-modifier_num = 0
-both_active = false
 defender_properties = 0
 condition = 1
 always_effect = SubResource("Resource_5ywka")
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_cqw6w"]
@@ -78,14 +79,15 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 script = ExtResource("9_akdno")
 prompt_reliant = false
 initial_main_DMG = 20
+defender_properties = 0
+condition = 1
 conditional_self_dmg = false
 self_damage = 0
+mod_prompt = false
 modifier = 1
 modifier_num = 10
 comparator = ExtResource("11_vwjj8")
 both_active = false
-defender_properties = 0
-condition = 1
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_3y537"]

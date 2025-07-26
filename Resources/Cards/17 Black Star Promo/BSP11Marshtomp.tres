@@ -1,53 +1,8 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://b45wy6r0cpldd"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=4 format=3 uid="uid://b45wy6r0cpldd"]
 
 [ext_resource type="Texture2D" uid="uid://dwft0k7ram2ti" path="res://Art/Cards/Black Star Promo/11.jpg" id="1_0j7js"]
-[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_irfhp"]
-[ext_resource type="Resource" uid="uid://bfhbpclxag538" path="res://Resources/Components/Pokemon/Attacks/Bubble.tres" id="3_0j7js"]
-[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="4_wlste"]
-[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_ddddi"]
+[ext_resource type="Resource" uid="uid://bt03lr8uojbaf" path="res://Resources/Components/Pokemon/ReprintPokemon/SlashMarshtomp.tres" id="2_hleal"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="6_ava80"]
-
-[sub_resource type="Resource" id="Resource_wt5p1"]
-
-[sub_resource type="Resource" id="Resource_joqya"]
-script = ExtResource("2_irfhp")
-name = "Slash"
-description = ""
-attack_cost = ExtResource("4_wlste")
-attack_data = SubResource("Resource_wt5p1")
-grass_cost = 0
-fire_cost = 0
-water_cost = 0
-lightning_cost = 0
-psychic_cost = 0
-fighting_cost = 0
-darkness_cost = 0
-metal_cost = 0
-colorless_cost = 3
-defender_properties = 0
-condition = 0
-prompt_reliant = false
-initial_main_DMG = 40
-conditional_self_dmg = false
-self_damage = 0
-modifier = 0
-modifier_num = 0
-both_active = false
-metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
-
-[sub_resource type="Resource" id="Resource_47vqs"]
-script = ExtResource("5_ddddi")
-HP = 70
-retreat = 1
-attacks = Array[ExtResource("2_irfhp")]([ExtResource("3_0j7js"), SubResource("Resource_joqya")])
-evo_stage = "Stage 1"
-evolves_from = "Mudkip"
-considered = 0
-owner = 0
-type = 4
-weak = 8
-resist = 0
-metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
 script = ExtResource("6_ava80")
@@ -58,6 +13,6 @@ number = 11
 rarity = 7
 expansion = 16
 categories = 1
-pokemon_properties = SubResource("Resource_47vqs")
+pokemon_properties = ExtResource("2_hleal")
 fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"
