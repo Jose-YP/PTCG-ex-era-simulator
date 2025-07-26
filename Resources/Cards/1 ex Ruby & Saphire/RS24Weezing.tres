@@ -1,0 +1,107 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=15 format=3 uid="uid://buag2hyfml2wt"]
+
+[ext_resource type="Texture2D" uid="uid://7l473m7v6e0n" path="res://Art/Cards/1 ex Ruby & Saphire/24.jpg" id="1_d5qqw"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_p5sbf"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_1u2xo"]
+[ext_resource type="Resource" uid="uid://c63wb1xvpkbi8" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Grass1.tres" id="3_5roqo"]
+[ext_resource type="Resource" uid="uid://dno5ph6s0pw54" path="res://Resources/Components/Pokemon/Attacks/AttackData/10DmgConfuse.tres" id="4_6jk14"]
+[ext_resource type="Resource" uid="uid://c2gawfb472bm" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/G1C1.tres" id="5_nfus7"]
+[ext_resource type="Resource" uid="uid://dr35h5ltr0i6r" path="res://Resources/Components/Effects/Conditions/BasicPoison.tres" id="6_q64pm"]
+[ext_resource type="Resource" uid="uid://cieejm6j3oh5n" path="res://Resources/Components/Pokemon/BenchAttack/10AllDef.tres" id="7_duhcl"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="8_6gdba"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="9_u2ec6"]
+
+[sub_resource type="Resource" id="Resource_5jfgs"]
+script = ExtResource("2_1u2xo")
+name = "Confusion Gas"
+description = ""
+attack_cost = ExtResource("3_5roqo")
+attack_data = ExtResource("4_6jk14")
+grass_cost = 0
+fire_cost = 0
+water_cost = 0
+lightning_cost = 0
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 1
+defender_properties = 0
+condition = 1
+prompt_reliant = false
+initial_main_DMG = 0
+conditional_self_dmg = false
+self_damage = 0
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_fg5ir"]
+script = ExtResource("8_6gdba")
+prompt_reliant = false
+initial_main_DMG = 0
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = true
+bench_damage = ExtResource("7_duhcl")
+defender_properties = 0
+condition = 1
+always_effect = ExtResource("6_q64pm")
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_fevx1"]
+script = ExtResource("2_1u2xo")
+name = "Poison Smog"
+description = "Each Defending Pokémon is now Poisoned. Does 10 damage to each of your opponent's Benched Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
+attack_cost = ExtResource("5_nfus7")
+attack_data = SubResource("Resource_fg5ir")
+grass_cost = 0
+fire_cost = 0
+water_cost = 0
+lightning_cost = 0
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 1
+defender_properties = 0
+condition = 1
+prompt_reliant = false
+initial_main_DMG = 0
+conditional_self_dmg = false
+self_damage = 0
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_lvogu"]
+script = ExtResource("9_u2ec6")
+HP = 80
+retreat = 2
+attacks = Array[ExtResource("2_1u2xo")]([SubResource("Resource_5jfgs"), SubResource("Resource_fevx1")])
+evo_stage = "Stage 1"
+evolves_from = "Koffing"
+considered = 1
+owner = 0
+type = 1
+weak = 16
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_p5sbf")
+name = "Weezing"
+image = ExtResource("1_d5qqw")
+illustrator = "Atsuko Nishida"
+number = 24
+rarity = 1
+expansion = 0
+categories = 1
+pokemon_properties = SubResource("Resource_lvogu")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

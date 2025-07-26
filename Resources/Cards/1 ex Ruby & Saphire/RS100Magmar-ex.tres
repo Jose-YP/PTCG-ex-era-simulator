@@ -1,21 +1,36 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://cmng7od1imklg"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=15 format=3 uid="uid://cmng7od1imklg"]
 
 [ext_resource type="Texture2D" uid="uid://cpga03iao7kos" path="res://Art/Cards/1 ex Ruby & Saphire/100.jpg" id="1_461p5"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_g74x1"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="3_a8nkb"]
 [ext_resource type="Resource" uid="uid://crhjbsphfbwr" path="res://Resources/Components/Effects/Disable/DefFlipAtk.tres" id="3_a68bx"]
-[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="4_0wjgh"]
 [ext_resource type="Resource" uid="uid://bext0mocufqgp" path="res://Resources/Components/Effects/Conditions/BasicBurn.tres" id="4_g1df8"]
+[ext_resource type="Resource" uid="uid://dytd2agmtnhwi" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Fire1.tres" id="4_p3u2r"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="5_qhn2r"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_ym6l2"]
+[ext_resource type="Resource" uid="uid://ci64ae1aqhomq" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/R2C1.tres" id="7_3prqa"]
 
-[sub_resource type="Resource" id="Resource_wt5p1"]
+[sub_resource type="Resource" id="Resource_8kdcf"]
+script = ExtResource("5_qhn2r")
+prompt_reliant = false
+initial_main_DMG = 10
+defender_properties = 0
+condition = 1
+always_effect = ExtResource("3_a68bx")
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_j7sr5"]
 script = ExtResource("3_a8nkb")
 name = "Smokescreen"
 description = "If the Defending Pokémon tries to attack during your opponent's next turn, your opponent flips a coin. If tails, that attack does nothing."
-attack_cost = ExtResource("4_0wjgh")
-attack_data = SubResource("Resource_wt5p1")
+attack_cost = ExtResource("4_p3u2r")
+attack_data = SubResource("Resource_8kdcf")
 grass_cost = 0
 fire_cost = 1
 water_cost = 0
@@ -26,7 +41,7 @@ darkness_cost = 0
 metal_cost = 0
 colorless_cost = 0
 defender_properties = 0
-condition = 0
+condition = 1
 prompt_reliant = false
 initial_main_DMG = 10
 conditional_self_dmg = false
@@ -36,12 +51,27 @@ modifier_num = 0
 both_active = false
 always_effect = ExtResource("3_a68bx")
 
+[sub_resource type="Resource" id="Resource_r1wiw"]
+script = ExtResource("5_qhn2r")
+prompt_reliant = false
+initial_main_DMG = 40
+defender_properties = 0
+condition = 1
+always_effect = ExtResource("4_g1df8")
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
 [sub_resource type="Resource" id="Resource_vaxts"]
 script = ExtResource("3_a8nkb")
 name = "Super Singe"
 description = "The Defending Pokémon is now Burned."
-attack_cost = ExtResource("4_0wjgh")
-attack_data = SubResource("Resource_wt5p1")
+attack_cost = ExtResource("7_3prqa")
+attack_data = SubResource("Resource_r1wiw")
 grass_cost = 0
 fire_cost = 2
 water_cost = 0
@@ -52,7 +82,7 @@ darkness_cost = 0
 metal_cost = 0
 colorless_cost = 1
 defender_properties = 0
-condition = 0
+condition = 1
 prompt_reliant = false
 initial_main_DMG = 40
 conditional_self_dmg = false

@@ -1,23 +1,86 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=19 format=3 uid="uid://bigbvtmdvobb8"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=29 format=3 uid="uid://bigbvtmdvobb8"]
 
 [ext_resource type="Texture2D" uid="uid://pxoft1wbeuxl" path="res://Art/Cards/12 ex Legend Maker/22.jpg" id="1_653qw"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_13wr1"]
 [ext_resource type="Resource" uid="uid://c7itelq8jtjc2" path="res://Resources/Components/EnData/Rainbow.tres" id="3_653qw"]
-[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_sxs77"]
+[ext_resource type="Resource" uid="uid://cesjkvsi5c6jb" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/L1C1.tres" id="3_kpec7"]
+[ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="5_ad1mx"]
+[ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="6_0chr7"]
 [ext_resource type="Script" uid="uid://cimk6l7ytw7xg" path="res://Code/Resource Makers/EffectSpecific/EnMovMaker.gd" id="6_0ya0c"]
+[ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="7_feaad"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="7_kpec7"]
 [ext_resource type="Script" uid="uid://b58015mafcw2v" path="res://Code/Resource Makers/PokemonSpecific/PowerMaker.gd" id="8_ad1mx"]
+[ext_resource type="Resource" uid="uid://wsbn5mutuaqv" path="res://Resources/Components/Effects/Prompts/PromptComparator/PromptSelfHasReact.tres" id="8_v5ngv"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="9_0chr7"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="9_w06bv"]
+[ext_resource type="Resource" uid="uid://dln27118sw0f0" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/L1C3.tres" id="10_ckcqc"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="10_feaad"]
+[ext_resource type="Resource" uid="uid://cjlv4ltu2gptf" path="res://Resources/Components/Pokemon/Attacks/AttackData/60Dmg.tres" id="11_ano3c"]
 
-[sub_resource type="Resource" id="Resource_wt5p1"]
+[sub_resource type="Resource" id="Resource_sxcfq"]
+script = ExtResource("5_ad1mx")
+side_target = 3
+slot_target = 4
+specifically = Array[String](["Magnemite", "Magneton"])
+comparison_type = 1
+max_hp = -10
+damage_taken = -10
+retreat_cost = -1
+knocked_out = false
+tool_attatched = false
+stage = 7
+rare_candy = false
+class_inclusive = true
+pokemon_class = 63
+owner_inclusive = true
+pokemon_owner = 31
+type_inclusive = true
+pokemon_type = 1023
+energy_inclusive = true
+check_cards = true
+energy_attatched = -1
+energy_class = "Any"
+energy_type = ExtResource("3_653qw")
+metadata/_custom_type_script = "uid://mkjynqda7q5g"
+
+[sub_resource type="Resource" id="Resource_i17pt"]
+script = ExtResource("6_0chr7")
+which = "Slot"
+ask = SubResource("Resource_sxcfq")
+slot_vars = "current_card"
+cap = -1
+metadata/_custom_type_script = "uid://vjn146j3ayd6"
+
+[sub_resource type="Resource" id="Resource_flkvf"]
+script = ExtResource("7_feaad")
+comparision_type = "Return"
+first_comparison = SubResource("Resource_i17pt")
+compare_to = "None"
+second_constant = 0
+metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
+
+[sub_resource type="Resource" id="Resource_srd2b"]
+script = ExtResource("9_w06bv")
+prompt_reliant = false
+prompt = ExtResource("8_v5ngv")
+initial_main_DMG = 30
+defender_properties = 0
+condition = 1
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = true
+modifier = 1
+modifier_num = 10
+comparator = SubResource("Resource_flkvf")
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_w06bv"]
 script = ExtResource("2_13wr1")
 name = "Multiple Force"
-description = "If Magneton has any React Energy cards attached to it, this attack does 30 damage plus 10 more damage for each Magnemite and Magneton (both yours and your opponent's) in play."
-attack_cost = ExtResource("3_sxs77")
-attack_data = SubResource("Resource_wt5p1")
+description = "If [name] has any React Energy cards attached to it, this attack does 30 damage plus 10 more damage for each Magnemite and Magneton (both yours and your opponent's) in play."
+attack_cost = ExtResource("3_kpec7")
+attack_data = SubResource("Resource_srd2b")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0
@@ -28,7 +91,7 @@ darkness_cost = 0
 metal_cost = 0
 colorless_cost = 1
 defender_properties = 0
-condition = 0
+condition = 1
 prompt_reliant = false
 initial_main_DMG = 30
 conditional_self_dmg = false
@@ -42,8 +105,8 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 script = ExtResource("2_13wr1")
 name = "Magnetic Blast"
 description = ""
-attack_cost = ExtResource("3_sxs77")
-attack_data = SubResource("Resource_wt5p1")
+attack_cost = ExtResource("10_ckcqc")
+attack_data = ExtResource("11_ano3c")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0
@@ -54,7 +117,7 @@ darkness_cost = 0
 metal_cost = 0
 colorless_cost = 3
 defender_properties = 0
-condition = 0
+condition = 1
 prompt_reliant = false
 initial_main_DMG = 60
 conditional_self_dmg = false

@@ -1,17 +1,16 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=17 format=3 uid="uid://dnwi6a5kx4bvn"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=18 format=3 uid="uid://dnwi6a5kx4bvn"]
 
 [ext_resource type="Texture2D" uid="uid://bwl6enwy315cl" path="res://Art/Cards/1 ex Ruby & Saphire/10.jpg" id="1_2q26m"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_y3sj6"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_7n5p1"]
-[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_2q26m"]
-[ext_resource type="Resource" uid="uid://lfhu3xyr0wpo" path="res://Resources/Components/Effects/Prompts/IfFlipHeads.tres" id="3_kojgq"]
+[ext_resource type="Resource" uid="uid://kf3pkpvcb8tk" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/D1C2.tres" id="3_7n5p1"]
 [ext_resource type="Resource" uid="uid://duqgoatke7nio" path="res://Resources/Components/Effects/CardDisrupt/DiscardOppUnseen.tres" id="4_04ran"]
+[ext_resource type="Resource" uid="uid://ekj1myy642kh" path="res://Resources/Components/Effects/Prompts/PromptHeads.tres" id="4_j7mx2"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="5_04ran"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="5_nryx3"]
 [ext_resource type="Resource" uid="uid://cmj80wa0ybso5" path="res://Resources/Components/Effects/Buff/Intimidate.tres" id="7_h7drc"]
 [ext_resource type="Script" uid="uid://b2tlqpng7fq25" path="res://Code/Resource Makers/PokemonSpecific/BodyMaker.gd" id="8_xfy48"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="9_2j1kh"]
-
-[sub_resource type="Resource" id="Resource_wt5p1"]
 
 [sub_resource type="Resource" id="Resource_2q26m"]
 script = ExtResource("5_nryx3")
@@ -20,12 +19,28 @@ order = Array[int]([])
 card_disrupt = ExtResource("4_04ran")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
+[sub_resource type="Resource" id="Resource_nryx3"]
+script = ExtResource("5_04ran")
+prompt_reliant = false
+prompt = ExtResource("4_j7mx2")
+initial_main_DMG = 40
+defender_properties = 0
+condition = 1
+success_effect = SubResource("Resource_2q26m")
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
 [sub_resource type="Resource" id="Resource_t4kj7"]
 script = ExtResource("2_7n5p1")
 name = "Shakedown"
 description = "Flip a coin. If heads, choose 1 card from your opponent's hand without looking and discard it."
-attack_cost = ExtResource("3_2q26m")
-attack_data = SubResource("Resource_wt5p1")
+attack_cost = ExtResource("3_7n5p1")
+attack_data = SubResource("Resource_nryx3")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0
@@ -36,7 +51,7 @@ darkness_cost = 1
 metal_cost = 0
 colorless_cost = 2
 defender_properties = 0
-condition = 0
+condition = 1
 prompt_reliant = false
 initial_main_DMG = 40
 conditional_self_dmg = false
@@ -44,7 +59,7 @@ self_damage = 0
 modifier = 0
 modifier_num = 0
 both_active = false
-prompt = ExtResource("3_kojgq")
+prompt = ExtResource("4_j7mx2")
 success_effect = SubResource("Resource_2q26m")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 

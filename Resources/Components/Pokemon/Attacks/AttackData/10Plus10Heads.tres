@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="AttackData" load_steps=3 format=3 uid="uid://cukg5pr0n6cq1"]
+
+[ext_resource type="Resource" uid="uid://b45cmbaixh154" path="res://Resources/Components/Counters/Comparator/OneFlipHead.tres" id="1_velj7"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="2_rf3ec"]
+
+[resource]
+script = ExtResource("2_rf3ec")
+prompt_reliant = false
+initial_main_DMG = 10
+defender_properties = 0
+condition = 1
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 1
+modifier_num = 10
+comparator = ExtResource("1_velj7")
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"

@@ -1,0 +1,71 @@
+[gd_resource type="Resource" script_class="Pokemon" load_steps=9 format=3 uid="uid://cajgsj1t4jjw4"]
+
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_snygy"]
+[ext_resource type="Resource" uid="uid://dytd2agmtnhwi" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Fire1.tres" id="2_aqspb"]
+[ext_resource type="Resource" uid="uid://bnsrs2a5hnvkb" path="res://Resources/Components/Pokemon/Attacks/AttackData/20Dmg.tres" id="3_33h4c"]
+[ext_resource type="Resource" uid="uid://dpovjlfpsypwe" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless3.tres" id="4_0dxvk"]
+[ext_resource type="Resource" uid="uid://d3ldw0oh07p2m" path="res://Resources/Components/Pokemon/Attacks/AttackData/40x2Flips.tres" id="5_u3hni"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="6_k6dsx"]
+
+[sub_resource type="Resource" id="Resource_60dvo"]
+script = ExtResource("1_snygy")
+name = "Flare"
+description = ""
+attack_cost = ExtResource("2_aqspb")
+attack_data = ExtResource("3_33h4c")
+grass_cost = 0
+fire_cost = 1
+water_cost = 0
+lightning_cost = 0
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 0
+defender_properties = 0
+condition = 1
+prompt_reliant = false
+initial_main_DMG = 20
+conditional_self_dmg = false
+self_damage = 0
+modifier = 0
+modifier_num = 0
+both_active = false
+
+[sub_resource type="Resource" id="Resource_hq0qi"]
+script = ExtResource("1_snygy")
+name = "Double Kick"
+description = "Flip 2 coins. This attack does 40 damage times the number of heads."
+attack_cost = ExtResource("4_0dxvk")
+attack_data = ExtResource("5_u3hni")
+grass_cost = 0
+fire_cost = 0
+water_cost = 0
+lightning_cost = 0
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 3
+defender_properties = 0
+condition = 1
+prompt_reliant = false
+initial_main_DMG = 40
+conditional_self_dmg = false
+self_damage = 0
+modifier = 2
+modifier_num = 0
+both_active = false
+
+[resource]
+script = ExtResource("6_k6dsx")
+HP = 70
+retreat = 0
+attacks = Array[ExtResource("1_snygy")]([SubResource("Resource_60dvo"), SubResource("Resource_hq0qi")])
+evo_stage = "Stage 1"
+evolves_from = "Torchic"
+considered = 1
+owner = 0
+type = 2
+weak = 4
+resist = 0

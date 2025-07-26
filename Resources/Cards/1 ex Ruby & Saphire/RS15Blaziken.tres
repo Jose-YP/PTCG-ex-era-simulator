@@ -1,19 +1,36 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://bgvaiul2mfsxf"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=15 format=3 uid="uid://bgvaiul2mfsxf"]
 
 [ext_resource type="Texture2D" uid="uid://x2sfdmhe2ojl" path="res://Art/Cards/1 ex Ruby & Saphire/15.jpg" id="1_vwl4b"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_x5maj"]
-[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_iwk46"]
+[ext_resource type="Resource" uid="uid://b1rwmggf7a4do" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless2.tres" id="3_1vw1p"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="3_j3xow"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="4_3bvi0"]
+[ext_resource type="Resource" uid="uid://c8sjke0awg8n7" path="res://Resources/Components/Effects/Disable/DefNoRetreat.tres" id="4_xomi4"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="5_fmns8"]
+[ext_resource type="Resource" uid="uid://btgpcmwpxnrwy" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/R1C3.tres" id="6_hb2on"]
+[ext_resource type="Resource" uid="uid://b86uut4qajrgg" path="res://Resources/Components/Effects/EnergyMovement/AtkSelfDisFire.tres" id="7_chjva"]
 
-[sub_resource type="Resource" id="Resource_wt5p1"]
+[sub_resource type="Resource" id="Resource_2wtcj"]
+script = ExtResource("5_fmns8")
+prompt_reliant = false
+initial_main_DMG = 20
+defender_properties = 0
+condition = 1
+always_effect = ExtResource("4_xomi4")
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_sfxu2"]
 script = ExtResource("3_j3xow")
 name = "Clutch"
 description = "The Defending Pokémon can't retreat until the end of your opponent's next turn."
-attack_cost = ExtResource("3_iwk46")
-attack_data = SubResource("Resource_wt5p1")
+attack_cost = ExtResource("3_1vw1p")
+attack_data = SubResource("Resource_2wtcj")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0
@@ -24,7 +41,7 @@ darkness_cost = 0
 metal_cost = 0
 colorless_cost = 2
 defender_properties = 0
-condition = 0
+condition = 1
 prompt_reliant = false
 initial_main_DMG = 20
 conditional_self_dmg = false
@@ -33,12 +50,27 @@ modifier = 0
 modifier_num = 0
 both_active = false
 
+[sub_resource type="Resource" id="Resource_135ew"]
+script = ExtResource("5_fmns8")
+prompt_reliant = false
+initial_main_DMG = 80
+defender_properties = 0
+condition = 1
+always_effect = ExtResource("7_chjva")
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
 [sub_resource type="Resource" id="Resource_qq3bc"]
 script = ExtResource("3_j3xow")
 name = "Flamethrower"
-description = "Discard a {Fire} Energy card attached to Blaziken."
-attack_cost = ExtResource("3_iwk46")
-attack_data = SubResource("Resource_wt5p1")
+description = "Discard a {Fire} Energy card attached to [name]."
+attack_cost = ExtResource("6_hb2on")
+attack_data = SubResource("Resource_135ew")
 grass_cost = 0
 fire_cost = 1
 water_cost = 0
@@ -49,7 +81,7 @@ darkness_cost = 0
 metal_cost = 0
 colorless_cost = 3
 defender_properties = 0
-condition = 0
+condition = 1
 prompt_reliant = false
 initial_main_DMG = 80
 conditional_self_dmg = false

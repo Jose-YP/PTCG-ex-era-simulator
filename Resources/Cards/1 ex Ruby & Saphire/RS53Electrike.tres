@@ -6,9 +6,9 @@
 [ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_v1nb7"]
 [ext_resource type="Resource" uid="uid://ce334rrjyq1n1" path="res://Resources/Components/Pokemon/Attacks/AttackData/ParaBothIfHeads.tres" id="4_gow71"]
 [ext_resource type="Resource" uid="uid://6xmw13js5xd3" path="res://Resources/Components/Effects/Conditions/BasicParalyze.tres" id="4_lg46j"]
-[ext_resource type="Resource" uid="uid://srojhh5idedm" path="res://Resources/Components/Pokemon/Attacks/Tackle2-20.tres" id="5_gow71"]
 [ext_resource type="Resource" uid="uid://ekj1myy642kh" path="res://Resources/Components/Effects/Prompts/PromptHeads.tres" id="5_pra87"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="6_pra87"]
+[ext_resource type="Resource" uid="uid://srojhh5idedm" path="res://Resources/Components/Pokemon/Attacks/EffectlessAttacks/Tackle2-20.tres" id="7_v1nb7"]
 
 [sub_resource type="Resource" id="Resource_wvyg7"]
 script = ExtResource("2_k3tgj")
@@ -42,7 +42,7 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 script = ExtResource("6_pra87")
 HP = 50
 retreat = 0
-attacks = Array[ExtResource("2_k3tgj")]([SubResource("Resource_wvyg7"), ExtResource("5_gow71")])
+attacks = Array[ExtResource("2_k3tgj")]([SubResource("Resource_wvyg7"), ExtResource("7_v1nb7")])
 evo_stage = "Basic"
 evolves_from = ""
 considered = 1

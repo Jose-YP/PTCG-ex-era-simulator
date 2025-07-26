@@ -9,6 +9,7 @@
 [ext_resource type="Resource" uid="uid://dsyn2o57xkb0h" path="res://Resources/Components/Effects/Asks/Class&Owner/DefEvolvedMon.tres" id="6_qoj0b"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="6_uou67"]
 [ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="7_ab5fh"]
+[ext_resource type="Resource" uid="uid://c35ffmruy2a6c" path="res://Resources/Components/Pokemon/Attacks/AttackData/PullDown.tres" id="8_fga1e"]
 
 [sub_resource type="Resource" id="Resource_kj4ty"]
 script = ExtResource("5_fga1e")
@@ -17,14 +18,12 @@ order = Array[int]([])
 card_disrupt = ExtResource("4_ab5fh")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
-[sub_resource type="Resource" id="Resource_wt5p1"]
-
 [sub_resource type="Resource" id="Resource_s63jm"]
 script = ExtResource("5_rs7ch")
 name = "Stone Generator"
 description = "If your opponent has any Evolved Pokémon in play, remove the highest Stage Evolution card from each of them and put those cards back into his or her hand."
 attack_cost = ExtResource("7_ab5fh")
-attack_data = SubResource("Resource_wt5p1")
+attack_data = ExtResource("8_fga1e")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0
@@ -35,7 +34,7 @@ darkness_cost = 0
 metal_cost = 0
 colorless_cost = 1
 defender_properties = 0
-condition = 0
+condition = 1
 prompt_reliant = false
 initial_main_DMG = 0
 conditional_self_dmg = false

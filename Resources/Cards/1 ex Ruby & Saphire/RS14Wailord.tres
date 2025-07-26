@@ -1,19 +1,34 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://c6lxuqvu4fr1h"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=13 format=3 uid="uid://c6lxuqvu4fr1h"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_0conx"]
 [ext_resource type="Texture2D" uid="uid://bl7o8s2qxsfat" path="res://Art/Cards/1 ex Ruby & Saphire/14.jpg" id="1_o2uv4"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_wnx27"]
+[ext_resource type="Resource" uid="uid://dpovjlfpsypwe" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless3.tres" id="3_7fwhs"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="3_dv4na"]
-[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_wnx27"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="4_chvin"]
+[ext_resource type="Resource" uid="uid://brdx5wiqjl640" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/W3C2.tres" id="5_yftd1"]
+[ext_resource type="Resource" uid="uid://vufsihxj4h1r" path="res://Resources/Components/Pokemon/Attacks/AttackData/70Dmg.tres" id="6_0dtfu"]
 
-[sub_resource type="Resource" id="Resource_wt5p1"]
+[sub_resource type="Resource" id="Resource_pusdj"]
+script = ExtResource("4_chvin")
+prompt_reliant = false
+initial_main_DMG = 50
+defender_properties = 0
+condition = 1
+conditional_self_dmg = false
+self_damage = 20
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_l8sw6"]
 script = ExtResource("2_wnx27")
 name = "Take Down"
-description = "Wailord does 20 damage to itself."
-attack_cost = ExtResource("3_wnx27")
-attack_data = SubResource("Resource_wt5p1")
+description = "[name] does 20 damage to itself."
+attack_cost = ExtResource("3_7fwhs")
+attack_data = SubResource("Resource_pusdj")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0
@@ -24,7 +39,7 @@ darkness_cost = 0
 metal_cost = 0
 colorless_cost = 3
 defender_properties = 0
-condition = 0
+condition = 1
 prompt_reliant = false
 initial_main_DMG = 50
 conditional_self_dmg = false
@@ -38,8 +53,8 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 script = ExtResource("2_wnx27")
 name = "Surf"
 description = ""
-attack_cost = ExtResource("3_wnx27")
-attack_data = SubResource("Resource_wt5p1")
+attack_cost = ExtResource("5_yftd1")
+attack_data = ExtResource("6_0dtfu")
 grass_cost = 0
 fire_cost = 0
 water_cost = 3
@@ -50,7 +65,7 @@ darkness_cost = 0
 metal_cost = 0
 colorless_cost = 2
 defender_properties = 0
-condition = 0
+condition = 1
 prompt_reliant = false
 initial_main_DMG = 70
 conditional_self_dmg = false

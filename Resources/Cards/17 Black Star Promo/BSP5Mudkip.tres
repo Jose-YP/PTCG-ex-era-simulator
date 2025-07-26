@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cyirn6ch71adw" path="res://Art/Cards/Black Star Promo/5.jpg" id="1_0gm4f"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_6lepo"]
-[ext_resource type="Resource" uid="uid://dkt5ik78wtijs" path="res://Resources/Components/Pokemon/Attacks/Pound.tres" id="3_5o8yj"]
+[ext_resource type="Resource" uid="uid://dkt5ik78wtijs" path="res://Resources/Components/Pokemon/Attacks/EffectlessAttacks/Pound.tres" id="3_5o8yj"]
 [ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="4_bej6n"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="6_26n5m"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="7_me6to"]

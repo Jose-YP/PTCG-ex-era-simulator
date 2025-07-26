@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="AttackData" load_steps=3 format=3 uid="uid://lnqxjpwlc83l"]
+
+[ext_resource type="Resource" uid="uid://ekj1myy642kh" path="res://Resources/Components/Effects/Prompts/PromptHeads.tres" id="1_rmuc3"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="2_m0ar5"]
+
+[resource]
+script = ExtResource("2_m0ar5")
+prompt_reliant = true
+prompt = ExtResource("1_rmuc3")
+initial_main_DMG = 50
+defender_properties = 0
+condition = 1
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"

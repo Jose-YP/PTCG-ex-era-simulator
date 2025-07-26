@@ -1,0 +1,84 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=13 format=3 uid="uid://b1fwhx6td0u27"]
+
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_8igxm"]
+[ext_resource type="Texture2D" uid="uid://cjpx1g0xovmg8" path="res://Art/Cards/1 ex Ruby & Saphire/21.jpg" id="1_wt1li"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="2_wt1li"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_18ero"]
+[ext_resource type="Resource" uid="uid://2nifekhevrbw" path="res://Resources/Components/Pokemon/Attacks/EffectlessAttacks/WaterArrow1-20.tres" id="3_fn6o8"]
+[ext_resource type="Resource" uid="uid://b1rwmggf7a4do" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless2.tres" id="4_sv4fu"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="5_72gut"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="6_xn1xe"]
+
+[sub_resource type="Resource" id="Resource_rxp53"]
+script = ExtResource("5_72gut")
+either_or = false
+order = Array[int]([])
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_876u4"]
+script = ExtResource("6_xn1xe")
+prompt_reliant = false
+initial_main_DMG = 30
+defender_properties = 0
+condition = 1
+always_effect = SubResource("Resource_rxp53")
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_1tsea"]
+script = ExtResource("1_8igxm")
+name = "Fast Stream"
+description = "Move 1 Energy card attached to the Defending Pokémon to the other Defending Pokémon. (Ignore this effect if your opponent has only 1 Defending Pokémon.)"
+attack_cost = ExtResource("4_sv4fu")
+attack_data = SubResource("Resource_876u4")
+grass_cost = 0
+fire_cost = 0
+water_cost = 0
+lightning_cost = 0
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 1
+defender_properties = 0
+condition = 1
+prompt_reliant = false
+initial_main_DMG = 0
+conditional_self_dmg = false
+self_damage = 0
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_v0xfh"]
+script = ExtResource("2_wt1li")
+HP = 70
+retreat = 0
+attacks = Array[ExtResource("1_8igxm")]([ExtResource("3_fn6o8"), SubResource("Resource_1tsea")])
+evo_stage = "Stage 1"
+evolves_from = "Goldeen"
+considered = 1
+owner = 0
+type = 4
+weak = 8
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("3_18ero")
+name = "Seaking"
+image = ExtResource("1_wt1li")
+illustrator = "Hajime Kusajima"
+number = 21
+rarity = 2
+expansion = 0
+categories = 1
+pokemon_properties = SubResource("Resource_v0xfh")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

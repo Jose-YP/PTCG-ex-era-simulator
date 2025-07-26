@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="Pokemon" load_steps=7 format=3 uid="uid://3d88w3tr0ers"]
+
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_8kfbf"]
+[ext_resource type="Resource" uid="uid://b1ebpxwo4lry7" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/G1C2.tres" id="2_ls2mf"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="2_xc0qu"]
+[ext_resource type="Resource" uid="uid://spwlad81krn" path="res://Resources/Components/Pokemon/Attacks/AttackData/50x2Flip.tres" id="3_y26s1"]
+[ext_resource type="Resource" uid="uid://dtvm1orbhluly" path="res://Resources/Components/Pokemon/Powers/EnergyTrans.tres" id="5_brteb"]
+
+[sub_resource type="Resource" id="Resource_0xdaf"]
+script = ExtResource("1_8kfbf")
+name = "Tail Rap"
+description = ""
+attack_cost = ExtResource("2_ls2mf")
+attack_data = ExtResource("3_y26s1")
+grass_cost = 0
+fire_cost = 0
+water_cost = 0
+lightning_cost = 0
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 1
+defender_properties = 0
+condition = 1
+prompt_reliant = false
+initial_main_DMG = 0
+conditional_self_dmg = false
+self_damage = 0
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[resource]
+script = ExtResource("2_xc0qu")
+HP = 100
+retreat = 3
+power = ExtResource("5_brteb")
+attacks = Array[ExtResource("1_8kfbf")]([SubResource("Resource_0xdaf")])
+evo_stage = "Stage 2"
+evolves_from = "Grovyle"
+considered = 1
+owner = 0
+type = 1
+weak = 2
+resist = 4
+metadata/_custom_type_script = "uid://dkximshow1pao"

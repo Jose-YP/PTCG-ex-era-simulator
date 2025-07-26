@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="BenchAttk" load_steps=3 format=3 uid="uid://chqeva57ci4v1"]
+
+[ext_resource type="Resource" uid="uid://1fenqvtwlaji" path="res://Resources/Components/Effects/Asks/General/DefhasBenchMons.tres" id="1_3x78t"]
+[ext_resource type="Script" uid="uid://br15mnap82upq" path="res://Code/Resource Makers/PokemonSpecific/BenchAttackMaker.gd" id="2_4fips"]
+
+[resource]
+script = ExtResource("2_4fips")
+how_many = -1
+candidates = ExtResource("1_3x78t")
+which = 2
+active_allowed = false
+apply_weak_res = false
+initial_main_DMG = 10
+modifier = 0
+metadata/_custom_type_script = "uid://br15mnap82upq"

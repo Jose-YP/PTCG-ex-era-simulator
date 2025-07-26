@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=14 format=3 uid="uid://6xnw5siylvv7"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=17 format=3 uid="uid://6xnw5siylvv7"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_c4a4f"]
 [ext_resource type="Texture2D" uid="uid://bjr2w5kv86n26" path="res://Art/Cards/1 ex Ruby & Saphire/30.jpg" id="1_qdtyb"]
@@ -6,7 +6,9 @@
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_oqe5b"]
 [ext_resource type="Resource" uid="uid://cbvai25ndykp2" path="res://Resources/Components/Effects/Search/LigENFromDiscard.tres" id="4_c0257"]
 [ext_resource type="Resource" uid="uid://i3dimt0ebxnk" path="res://Resources/Components/Effects/Prompts/IfFlipTails.tres" id="5_itarg"]
-[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="5_qdtyb"]
+[ext_resource type="Resource" uid="uid://duyf6uncjts05" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Lightning1.tres" id="5_oqe5b"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="6_c0257"]
+[ext_resource type="Resource" uid="uid://cesjkvsi5c6jb" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/L1C1.tres" id="7_lrr1f"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="7_uniyw"]
 
 [sub_resource type="Resource" id="Resource_yt2pr"]
@@ -16,14 +18,27 @@ order = Array[int]([])
 search = ExtResource("4_c0257")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
-[sub_resource type="Resource" id="Resource_wt5p1"]
+[sub_resource type="Resource" id="Resource_o558d"]
+script = ExtResource("6_c0257")
+prompt_reliant = false
+initial_main_DMG = 0
+defender_properties = 0
+condition = 1
+always_effect = SubResource("Resource_yt2pr")
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_wugrw"]
 script = ExtResource("2_8agjp")
 name = "Charge"
-description = "Attach a {Lightning} Energy card from your discard pile to Electrike."
-attack_cost = ExtResource("5_qdtyb")
-attack_data = SubResource("Resource_wt5p1")
+description = "Attach a {Lightning} Energy card from your discard pile to [name]."
+attack_cost = ExtResource("5_oqe5b")
+attack_data = SubResource("Resource_o558d")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0
@@ -34,7 +49,7 @@ darkness_cost = 0
 metal_cost = 0
 colorless_cost = 0
 defender_properties = 0
-condition = 0
+condition = 1
 prompt_reliant = false
 initial_main_DMG = 0
 conditional_self_dmg = false
@@ -45,12 +60,27 @@ both_active = false
 always_effect = SubResource("Resource_yt2pr")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
+[sub_resource type="Resource" id="Resource_uniyw"]
+script = ExtResource("6_c0257")
+prompt_reliant = false
+prompt = ExtResource("5_itarg")
+initial_main_DMG = 30
+defender_properties = 0
+condition = 1
+conditional_self_dmg = true
+self_damage = 10
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
 [sub_resource type="Resource" id="Resource_41dnb"]
 script = ExtResource("2_8agjp")
 name = "Thunder Jolt"
 description = "Flip a coin. If tails, Electrike does 10 damage to itself."
-attack_cost = ExtResource("5_qdtyb")
-attack_data = SubResource("Resource_wt5p1")
+attack_cost = ExtResource("7_lrr1f")
+attack_data = SubResource("Resource_uniyw")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0
@@ -61,7 +91,7 @@ darkness_cost = 0
 metal_cost = 0
 colorless_cost = 1
 defender_properties = 0
-condition = 0
+condition = 1
 prompt_reliant = false
 initial_main_DMG = 30
 conditional_self_dmg = true

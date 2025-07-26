@@ -1,30 +1,14 @@
-[gd_resource type="Resource" script_class="PromptAsk" load_steps=7 format=3 uid="uid://chc757fk4t8pm"]
+[gd_resource type="Resource" script_class="PromptAsk" load_steps=5 format=3 uid="uid://chc757fk4t8pm"]
 
-[ext_resource type="Resource" uid="uid://366upf662brq" path="res://Resources/Components/Effects/Identifiers/Energy/IsEnergy.tres" id="1_g16nq"]
-[ext_resource type="Script" uid="uid://8sh5p3leflla" path="res://Code/Resource Makers/EffectSpecific/CardDisruptMaker.gd" id="2_mlaxb"]
+[ext_resource type="Resource" uid="uid://cw7gick8j52mr" path="res://Resources/Components/Effects/EnergyMovement/Send/SelfDisc1Darkness.tres" id="1_c62pf"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_hqttu"]
 [ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="4_teu5e"]
-
-[sub_resource type="Resource" id="Resource_cjcvs"]
-script = ExtResource("2_mlaxb")
-send = 0
-from = 0
-send_to = 2
-bottom_of_stack = false
-shuffle = false
-card_ammount = 1
-reveal = false
-side = 1
-from_stack = 0
-card_options = ExtResource("1_g16nq")
-pokemon_disrupt = 0
-metadata/_custom_type_script = "uid://8sh5p3leflla"
 
 [sub_resource type="Resource" id="Resource_gm1a6"]
 script = ExtResource("3_hqttu")
 either_or = false
 order = Array[int]([])
-card_disrupt = SubResource("Resource_cjcvs")
+energy_movement = ExtResource("1_c62pf")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [resource]

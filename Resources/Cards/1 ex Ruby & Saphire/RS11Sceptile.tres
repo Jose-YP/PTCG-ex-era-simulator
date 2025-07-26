@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=24 format=3 uid="uid://dpvdlrumqivuv"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=27 format=3 uid="uid://dpvdlrumqivuv"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_6qsu5"]
 [ext_resource type="Texture2D" uid="uid://djxbrnlywgq35" path="res://Art/Cards/1 ex Ruby & Saphire/11.jpg" id="1_ry2bs"]
@@ -8,14 +8,15 @@
 [ext_resource type="Resource" uid="uid://dbvoacgaygcdj" path="res://Resources/Components/Counters/Comparator/SelfGE2En.tres" id="4_e07y2"]
 [ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="5_dpoqi"]
 [ext_resource type="Resource" uid="uid://hbbi3hqk47gs" path="res://Resources/Components/Effects/Conditions/DefSleep.tres" id="5_u0wp7"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="7_aqyw1"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="7_pi6dd"]
 [ext_resource type="Resource" uid="uid://yitg2k7gl3rq" path="res://Resources/Components/Counters/Comparator/SelfGE4En.tres" id="9_dpoqi"]
 [ext_resource type="Resource" uid="uid://cqw2kwbgcwgvb" path="res://Resources/Components/Effects/Conditions/BasicSleep.tres" id="9_mqkhh"]
 [ext_resource type="Resource" uid="uid://bext0mocufqgp" path="res://Resources/Components/Effects/Conditions/BasicBurn.tres" id="9_u0wp7"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="10_77a3r"]
 [ext_resource type="Resource" uid="uid://bccpcvahw5m4f" path="res://Resources/Components/Counters/Comparator/SelfGE3En.tres" id="11_u0wp7"]
-
-[sub_resource type="Resource" id="Resource_wt5p1"]
+[ext_resource type="Resource" uid="uid://bjt4vcuigghvj" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/G2C3.tres" id="14_mqkhh"]
+[ext_resource type="Resource" uid="uid://vufsihxj4h1r" path="res://Resources/Components/Pokemon/Attacks/AttackData/70Dmg.tres" id="15_77a3r"]
 
 [sub_resource type="Resource" id="Resource_u0wp7"]
 script = ExtResource("5_dpoqi")
@@ -73,12 +74,29 @@ prompt_extra = SubResource("Resource_mqkhh")
 extra_effect = SubResource("Resource_ubvli")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
+[sub_resource type="Resource" id="Resource_tnff2"]
+script = ExtResource("7_aqyw1")
+prompt_reliant = false
+prompt = SubResource("Resource_u0wp7")
+initial_main_DMG = 20
+defender_properties = 0
+condition = 1
+success_effect = SubResource("Resource_pi6dd")
+fail_effect = ExtResource("9_mqkhh")
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
 [sub_resource type="Resource" id="Resource_aa30r"]
 script = ExtResource("2_xuiss")
 name = "Lizard Poison"
 description = "If 1 Energy is attached to Sceptile, the Defending Pokémon is now Asleep. If 2 Energy is attached to Sceptile, the Defending Pokémon is now Poisoned. If 3 Energy is attached to Sceptile, the Defending Pokémon is now Asleep and Poisoned. If 4 or more Energy is attached to Sceptile, the Defending Pokémon is now Asleep, Burned, and Poisoned."
 attack_cost = ExtResource("3_dpoqi")
-attack_data = SubResource("Resource_wt5p1")
+attack_data = SubResource("Resource_tnff2")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0
@@ -89,7 +107,7 @@ darkness_cost = 0
 metal_cost = 0
 colorless_cost = 1
 defender_properties = 0
-condition = 0
+condition = 1
 prompt_reliant = false
 initial_main_DMG = 20
 conditional_self_dmg = false
@@ -106,8 +124,8 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 script = ExtResource("2_xuiss")
 name = "Solarbeam"
 description = ""
-attack_cost = ExtResource("3_dpoqi")
-attack_data = SubResource("Resource_wt5p1")
+attack_cost = ExtResource("14_mqkhh")
+attack_data = ExtResource("15_77a3r")
 grass_cost = 2
 fire_cost = 0
 water_cost = 0
@@ -118,7 +136,7 @@ darkness_cost = 0
 metal_cost = 0
 colorless_cost = 3
 defender_properties = 0
-condition = 0
+condition = 1
 prompt_reliant = false
 initial_main_DMG = 70
 conditional_self_dmg = false

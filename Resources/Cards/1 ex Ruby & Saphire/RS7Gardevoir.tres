@@ -1,22 +1,37 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=14 format=3 uid="uid://b6mgd7a47n0iv"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=16 format=3 uid="uid://b6mgd7a47n0iv"]
 
 [ext_resource type="Texture2D" uid="uid://b55mvy488l2pm" path="res://Art/Cards/1 ex Ruby & Saphire/7.jpg" id="1_dljrv"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_x305h"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_mamwr"]
-[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_k252l"]
+[ext_resource type="Resource" uid="uid://cu817ymtejglx" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Psychic1.tres" id="3_13xxk"]
+[ext_resource type="Resource" uid="uid://dh4vjjy6e5xbi" path="res://Resources/Components/Counters/Comparator/TrgEnEqual.tres" id="4_0i37o"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="5_dljrv"]
 [ext_resource type="Resource" uid="uid://buofx3y8opwf" path="res://Resources/Components/Effects/Search/PsyshadowSearch.tres" id="5_k252l"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="5_o1pkv"]
 [ext_resource type="Script" uid="uid://b58015mafcw2v" path="res://Code/Resource Makers/PokemonSpecific/PowerMaker.gd" id="10_61n4a"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="11_e1xak"]
 
-[sub_resource type="Resource" id="Resource_wt5p1"]
+[sub_resource type="Resource" id="Resource_mamwr"]
+script = ExtResource("5_dljrv")
+prompt_reliant = false
+initial_main_DMG = 10
+defender_properties = 0
+condition = 1
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 2
+modifier_num = 10
+comparator = ExtResource("4_0i37o")
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_apf0q"]
 script = ExtResource("2_mamwr")
 name = "Energy Burst"
-description = "Does 10 damage times the total amount of Energy attached to Gardevoir and the Defending Pokémon."
-attack_cost = ExtResource("3_k252l")
-attack_data = SubResource("Resource_wt5p1")
+description = "Does 10 damage times the total amount of Energy attached to [name] and the Defending Pokémon."
+attack_cost = ExtResource("3_13xxk")
+attack_data = SubResource("Resource_mamwr")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0
@@ -27,7 +42,7 @@ darkness_cost = 0
 metal_cost = 0
 colorless_cost = 0
 defender_properties = 0
-condition = 0
+condition = 1
 prompt_reliant = false
 initial_main_DMG = 10
 conditional_self_dmg = false

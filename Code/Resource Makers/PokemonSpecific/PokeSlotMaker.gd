@@ -10,8 +10,6 @@ class_name PokeSlot
 #--------------------------------------
 #region NON EXPORT
 var ui_slot: UI_Slot
-var in_attacking_turn: bool = true
-var current_attack: Attack
 var attached_energy: Dictionary = {"Grass": 0, "Fire": 0, "Water": 0,
 	"Lightning": 0, "Psychic":0, "Fighting":0 ,"Darkness":0, "Metal":0,
 	"Colorless":0, "Magma":0, "Aqua":0, "Dark Metal":0, "React": 0, 
@@ -33,6 +31,8 @@ var energy_timers: Dictionary = {}
 @export var applied_condition: Condition = Condition.new()
 #endregion
 #--------------------------------------
+@export var current_attack: Attack
+@export var dealt_damage: int = 0
 #endregion
 #--------------------------------------
 

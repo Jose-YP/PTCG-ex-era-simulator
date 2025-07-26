@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=11 format=3 uid="uid://cgpbak8d8l71g"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://cgpbak8d8l71g"]
 
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_vv164"]
+[ext_resource type="Texture2D" uid="uid://dkyjyvmcmvp54" path="res://Art/Cards/1 ex Ruby & Saphire/47.jpg" id="1_yibvf"]
 [ext_resource type="Resource" uid="uid://b0q34ff87k14e" path="res://Resources/Components/Pokemon/Attacks/AttackData/Fury Swipes 2-20.tres" id="2_3ov5i"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="2_mn3q5"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_mdo6i"]
@@ -64,8 +65,9 @@ metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
 script = ExtResource("3_mdo6i")
-name = ""
-illustrator = ""
+name = "Vigoroth"
+image = ExtResource("1_yibvf")
+illustrator = "Kagemaru Himeno"
 number = 47
 rarity = 1
 expansion = 0

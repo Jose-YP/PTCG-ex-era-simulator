@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("2_yaknp")
-side_target = 5
+side_target = 2
 slot_target = 4
 specifically = Array[String]([])
 comparison_type = 1

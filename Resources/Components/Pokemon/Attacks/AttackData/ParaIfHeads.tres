@@ -7,14 +7,15 @@
 [resource]
 script = ExtResource("2_ydsqi")
 prompt_reliant = false
+prompt = ExtResource("1_bjvhp")
 initial_main_DMG = 0
+defender_properties = 0
+condition = 1
+success_effect = ExtResource("3_yonjx")
 conditional_self_dmg = false
 self_damage = 0
+mod_prompt = false
 modifier = 0
 modifier_num = 0
 both_active = false
-defender_properties = 0
-condition = 1
-prompt = ExtResource("1_bjvhp")
-success_effect = ExtResource("3_yonjx")
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"

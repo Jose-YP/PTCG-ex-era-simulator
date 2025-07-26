@@ -1,0 +1,89 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://bl2gsv60rdxtj"]
+
+[ext_resource type="Texture2D" uid="uid://dfa34xxh8hqxp" path="res://Art/Cards/1 ex Ruby & Saphire/25.jpg" id="1_4su5e"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_7b4b1"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_76k8i"]
+[ext_resource type="Resource" uid="uid://c242583wbr6wx" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Metal1.tres" id="3_g1p28"]
+[ext_resource type="Resource" uid="uid://bep36omnenbc8" path="res://Resources/Components/Pokemon/Attacks/AttackData/10Dmg.tres" id="4_fywum"]
+[ext_resource type="Resource" uid="uid://b1rwmggf7a4do" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless2.tres" id="5_cytm5"]
+[ext_resource type="Resource" uid="uid://di63v5yvwp4wr" path="res://Resources/Components/Pokemon/Attacks/AttackData/20x2Flips.tres" id="6_su2yn"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="7_qd43f"]
+
+[sub_resource type="Resource" id="Resource_otfm3"]
+script = ExtResource("2_76k8i")
+name = "Rollout"
+description = ""
+attack_cost = ExtResource("3_g1p28")
+attack_data = ExtResource("4_fywum")
+grass_cost = 0
+fire_cost = 0
+water_cost = 0
+lightning_cost = 0
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 1
+defender_properties = 0
+condition = 1
+prompt_reliant = false
+initial_main_DMG = 0
+conditional_self_dmg = false
+self_damage = 0
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_7h57d"]
+script = ExtResource("2_76k8i")
+name = "Double Stab"
+description = ""
+attack_cost = ExtResource("5_cytm5")
+attack_data = ExtResource("6_su2yn")
+grass_cost = 0
+fire_cost = 0
+water_cost = 0
+lightning_cost = 0
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 1
+defender_properties = 0
+condition = 1
+prompt_reliant = false
+initial_main_DMG = 0
+conditional_self_dmg = false
+self_damage = 0
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_nkg2b"]
+script = ExtResource("7_qd43f")
+HP = 50
+retreat = 1
+attacks = Array[ExtResource("2_76k8i")]([SubResource("Resource_otfm3"), SubResource("Resource_7h57d")])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 1
+owner = 0
+type = 128
+weak = 2
+resist = 1
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_7b4b1")
+name = "Aron"
+image = ExtResource("1_4su5e")
+illustrator = "Midori Harada"
+number = 25
+rarity = 1
+expansion = 0
+categories = 1
+pokemon_properties = SubResource("Resource_nkg2b")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

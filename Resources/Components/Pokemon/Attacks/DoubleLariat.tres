@@ -1,11 +1,31 @@
-[gd_resource type="Resource" script_class="Attack" load_steps=2 format=3 uid="uid://cydxe57j5nudo"]
+[gd_resource type="Resource" script_class="Attack" load_steps=6 format=3 uid="uid://cydxe57j5nudo"]
 
+[ext_resource type="Resource" uid="uid://b253cojfcbneb" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/M2C3.tres" id="1_cnm2c"]
+[ext_resource type="Resource" uid="uid://e706qq8o0hri" path="res://Resources/Components/Counters/Comparator/Return2Flip.tres" id="2_3ocgq"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="3_i0ipf"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="3_jxbff"]
+
+[sub_resource type="Resource" id="Resource_1stg2"]
+script = ExtResource("3_i0ipf")
+prompt_reliant = false
+initial_main_DMG = 70
+defender_properties = 0
+condition = 1
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 2
+modifier_num = 60
+comparator = ExtResource("2_3ocgq")
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [resource]
 script = ExtResource("3_jxbff")
 name = "Double Lariat"
 description = "Flip 2 coins. This attack does 70 damage times the number of heads."
+attack_cost = ExtResource("1_cnm2c")
+attack_data = SubResource("Resource_1stg2")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0
@@ -16,7 +36,7 @@ darkness_cost = 0
 metal_cost = 2
 colorless_cost = 3
 defender_properties = 0
-condition = 0
+condition = 1
 prompt_reliant = false
 initial_main_DMG = 70
 conditional_self_dmg = false

@@ -2,6 +2,8 @@
 extends Resource
 class_name PokeSwap
 
+##If this is true then the effect can be cancelled no matter what, move onto next effect
+@export var force_reversable: bool = false
 ##Does the target choose which active mon to switch out?
 ##If not it's target
 @export var choose_active: bool = false

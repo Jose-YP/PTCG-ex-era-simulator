@@ -3,43 +3,17 @@
 [ext_resource type="Texture2D" uid="uid://ceasya7uuo5vr" path="res://Art/Cards/6 ex FireRed & LeafGreen/55.jpg" id="1_27r6r"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_jyoji"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_i2mn5"]
-[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_27r6r"]
+[ext_resource type="Resource" uid="uid://bs6b2prk06rqj" path="res://Resources/Components/Pokemon/Attacks/EffectlessAttacks/Ram1-10.tres" id="3_25njs"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="4_gvs0k"]
-
-[sub_resource type="Resource" id="Resource_wt5p1"]
-
-[sub_resource type="Resource" id="Resource_kdkar"]
-script = ExtResource("2_i2mn5")
-name = "Ram"
-description = ""
-attack_cost = ExtResource("3_27r6r")
-attack_data = SubResource("Resource_wt5p1")
-grass_cost = 0
-fire_cost = 0
-water_cost = 0
-lightning_cost = 0
-psychic_cost = 0
-fighting_cost = 0
-darkness_cost = 0
-metal_cost = 0
-colorless_cost = 1
-defender_properties = 0
-condition = 0
-prompt_reliant = false
-initial_main_DMG = 10
-conditional_self_dmg = false
-self_damage = 0
-modifier = 0
-modifier_num = 0
-both_active = false
-metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+[ext_resource type="Resource" uid="uid://c2gawfb472bm" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/G1C1.tres" id="4_kdkar"]
+[ext_resource type="Resource" uid="uid://btwcrdfufmf7u" path="res://Resources/Components/Pokemon/Attacks/AttackData/20Plus10OnHeads.tres" id="5_u8fkt"]
 
 [sub_resource type="Resource" id="Resource_u8fkt"]
 script = ExtResource("2_i2mn5")
 name = "Gouge"
 description = "Flip a coin. If heads, this attack does 20 damage plus 10 more damage."
-attack_cost = ExtResource("3_27r6r")
-attack_data = SubResource("Resource_wt5p1")
+attack_cost = ExtResource("4_kdkar")
+attack_data = ExtResource("5_u8fkt")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0
@@ -64,7 +38,7 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 script = ExtResource("4_gvs0k")
 HP = 50
 retreat = 1
-attacks = Array[ExtResource("2_i2mn5")]([SubResource("Resource_kdkar"), SubResource("Resource_u8fkt")])
+attacks = Array[ExtResource("2_i2mn5")]([ExtResource("3_25njs"), SubResource("Resource_u8fkt")])
 evo_stage = "Basic"
 evolves_from = ""
 considered = 1

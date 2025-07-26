@@ -1,19 +1,24 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://b45smf3ecldmx"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=20 format=3 uid="uid://b45smf3ecldmx"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_awq2c"]
 [ext_resource type="Texture2D" uid="uid://4io7x213u2ui" path="res://Art/Cards/1 ex Ruby & Saphire/103.jpg" id="1_sakby"]
-[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_wogcr"]
+[ext_resource type="Resource" uid="uid://bgqnsjskgne2u" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Darkness1.tres" id="3_rx8xo"]
+[ext_resource type="Resource" uid="uid://cmu10734rt4h5" path="res://Resources/Components/Pokemon/Attacks/AttackData/10x2Flip.tres" id="4_asy8n"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="4_p1pt7"]
+[ext_resource type="Resource" uid="uid://ubb6msopnbmq" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/D2C1.tres" id="5_e2yom"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_pr7l4"]
-
-[sub_resource type="Resource" id="Resource_wt5p1"]
+[ext_resource type="Script" uid="uid://y0v42qaa35wt" path="res://Code/Resource Makers/GeneralUse/CoinFlipNumMaker.gd" id="6_iiwx6"]
+[ext_resource type="Resource" uid="uid://cmg7a0erceiaq" path="res://Resources/Components/Counters/Indv/Slots/SrcMons.tres" id="7_gw8ll"]
+[ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="8_q2if7"]
+[ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="9_swqy7"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="10_hc2mc"]
 
 [sub_resource type="Resource" id="Resource_xrmox"]
 script = ExtResource("4_p1pt7")
 name = "Double Scratch"
 description = "Flip 2 coins. This attack does 10 damage times the number of heads."
-attack_cost = ExtResource("3_wogcr")
-attack_data = SubResource("Resource_wt5p1")
+attack_cost = ExtResource("3_rx8xo")
+attack_data = ExtResource("4_asy8n")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0
@@ -24,7 +29,7 @@ darkness_cost = 1
 metal_cost = 0
 colorless_cost = 0
 defender_properties = 0
-condition = 0
+condition = 1
 prompt_reliant = false
 initial_main_DMG = 10
 conditional_self_dmg = false
@@ -33,12 +38,50 @@ modifier = 2
 modifier_num = 0
 both_active = false
 
+[sub_resource type="Resource" id="Resource_4y4ea"]
+script = ExtResource("6_iiwx6")
+heads = true
+varying_flip_times = ExtResource("7_gw8ll")
+until = false
+const_flip_times = 1
+metadata/_custom_type_script = "uid://y0v42qaa35wt"
+
+[sub_resource type="Resource" id="Resource_o8heo"]
+script = ExtResource("8_q2if7")
+which = "Coinflip"
+coin_flip = SubResource("Resource_4y4ea")
+cap = -1
+metadata/_custom_type_script = "uid://vjn146j3ayd6"
+
+[sub_resource type="Resource" id="Resource_ob76w"]
+script = ExtResource("9_swqy7")
+comparision_type = "Return"
+first_comparison = SubResource("Resource_o8heo")
+compare_to = "None"
+second_constant = 0
+metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
+
+[sub_resource type="Resource" id="Resource_hx20c"]
+script = ExtResource("10_hc2mc")
+prompt_reliant = false
+initial_main_DMG = 20
+defender_properties = 0
+condition = 1
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 2
+modifier_num = 20
+comparator = SubResource("Resource_ob76w")
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
 [sub_resource type="Resource" id="Resource_ju8be"]
 script = ExtResource("4_p1pt7")
 name = "Beat Up"
-description = "Flip a coin for each of your Pokémon in play (including Sneasel ex). This attack does 20 damage times the number of heads."
-attack_cost = ExtResource("3_wogcr")
-attack_data = SubResource("Resource_wt5p1")
+description = "Flip a coin for each of your Pokémon in play (including [name]). This attack does 20 damage times the number of heads."
+attack_cost = ExtResource("5_e2yom")
+attack_data = SubResource("Resource_hx20c")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0
@@ -49,13 +92,13 @@ darkness_cost = 2
 metal_cost = 0
 colorless_cost = 1
 defender_properties = 0
-condition = 0
+condition = 1
 prompt_reliant = false
 initial_main_DMG = 20
 conditional_self_dmg = false
 self_damage = 0
 modifier = 2
-modifier_num = 0
+modifier_num = 20
 both_active = false
 
 [sub_resource type="Resource" id="Resource_kh1cl"]

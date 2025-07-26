@@ -1,23 +1,24 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=16 format=3 uid="uid://cg7qhfrgw5lmh"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=19 format=3 uid="uid://cg7qhfrgw5lmh"]
 
 [ext_resource type="Texture2D" uid="uid://cc6y666c76foi" path="res://Art/Cards/7 ex Team Rocket Returns/50.jpg" id="1_ojje2"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_s6osv"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_emyr2"]
 [ext_resource type="Resource" uid="uid://cqw2kwbgcwgvb" path="res://Resources/Components/Effects/Conditions/BasicSleep.tres" id="3_rud0l"]
-[ext_resource type="Resource" uid="uid://lfhu3xyr0wpo" path="res://Resources/Components/Effects/Prompts/IfFlipHeads.tres" id="4_738mo"]
 [ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="4_emyr2"]
 [ext_resource type="Script" uid="uid://dtv1d2u2kvixy" path="res://Code/Resource Makers/EffectSpecific/MimicMaker.gd" id="5_3seaf"]
+[ext_resource type="Resource" uid="uid://gbxomf46y0lr" path="res://Resources/Components/Pokemon/Attacks/AttackData/Sleep.tres" id="5_mw7hy"]
+[ext_resource type="Resource" uid="uid://b1rwmggf7a4do" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless2.tres" id="6_2b0yu"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="6_mw7hy"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="7_2b0yu"]
-
-[sub_resource type="Resource" id="Resource_wt5p1"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="7_ky0p2"]
+[ext_resource type="Resource" uid="uid://ekj1myy642kh" path="res://Resources/Components/Effects/Prompts/PromptHeads.tres" id="10_pj4ld"]
 
 [sub_resource type="Resource" id="Resource_ky0p2"]
 script = ExtResource("2_emyr2")
 name = "Yawn"
 description = "The Defending Pokémon is now Asleep."
 attack_cost = ExtResource("4_emyr2")
-attack_data = SubResource("Resource_wt5p1")
+attack_data = ExtResource("5_mw7hy")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0
@@ -28,7 +29,7 @@ darkness_cost = 0
 metal_cost = 0
 colorless_cost = 1
 defender_properties = 0
-condition = 0
+condition = 1
 prompt_reliant = false
 initial_main_DMG = 0
 conditional_self_dmg = false
@@ -55,12 +56,27 @@ order = Array[int]([])
 mimic = SubResource("Resource_pj4ld")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
+[sub_resource type="Resource" id="Resource_kkp1i"]
+script = ExtResource("7_ky0p2")
+prompt_reliant = false
+initial_main_DMG = 10
+defender_properties = 0
+condition = 1
+success_effect = SubResource("Resource_min8w")
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
 [sub_resource type="Resource" id="Resource_0cf72"]
 script = ExtResource("2_emyr2")
 name = "Mini-Metronome"
-description = "Flip a coin. If heads, choose 1 of the Defending Pokémon's attacks. Mini-Metronome copies that attack except for its Energy cost. (You must still do anything else required for that attack.) (No matter what type that Pokémon is, Togepi's type is still Colorless.) Togepi performs that attack."
-attack_cost = ExtResource("4_emyr2")
-attack_data = SubResource("Resource_wt5p1")
+description = "Flip a coin. If heads, choose 1 of the Defending Pokémon's attacks. Mini-Metronome copies that attack except for its Energy cost. (You must still do anything else required for that attack.) (No matter what type that Pokémon is, [name]'s type is still {Colorless}.) [name] performs that attack."
+attack_cost = ExtResource("6_2b0yu")
+attack_data = SubResource("Resource_kkp1i")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0
@@ -71,7 +87,7 @@ darkness_cost = 0
 metal_cost = 0
 colorless_cost = 2
 defender_properties = 0
-condition = 0
+condition = 1
 prompt_reliant = false
 initial_main_DMG = 0
 conditional_self_dmg = false
@@ -79,7 +95,7 @@ self_damage = 0
 modifier = 0
 modifier_num = 0
 both_active = false
-prompt = ExtResource("4_738mo")
+prompt = ExtResource("10_pj4ld")
 success_effect = SubResource("Resource_min8w")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 

@@ -1,20 +1,21 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=11 format=3 uid="uid://bgdym04a78y12"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=13 format=3 uid="uid://bgdym04a78y12"]
 
 [ext_resource type="Texture2D" uid="uid://dvtexggcwt056" path="res://Art/Cards/1 ex Ruby & Saphire/98.jpg" id="1_o7tas"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_wduvi"]
-[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_3a5f2"]
+[ext_resource type="Resource" uid="uid://d3ibul3ofuenc" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Fighting1.tres" id="3_1reo7"]
 [ext_resource type="Resource" uid="uid://bd4hrrpnhl4gq" path="res://Resources/Components/Counters/Indv/CoinFlip.tres" id="3_idfhp"]
+[ext_resource type="Resource" uid="uid://cukg5pr0n6cq1" path="res://Resources/Components/Pokemon/Attacks/AttackData/10Plus10Heads.tres" id="4_gcr84"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="4_tikk5"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_n0j4e"]
-
-[sub_resource type="Resource" id="Resource_wt5p1"]
+[ext_resource type="Resource" uid="uid://d3mbrhxvdupx6" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/F2C1.tres" id="6_g8niy"]
+[ext_resource type="Resource" uid="uid://1ib15c7peyrj" path="res://Resources/Components/Pokemon/Attacks/AttackData/50DmgNoRes.tres" id="7_10bu1"]
 
 [sub_resource type="Resource" id="Resource_3lp3d"]
 script = ExtResource("4_tikk5")
 name = "Steady Punch"
 description = "Flip a coin. If heads, this attack does 10 damage plus 10 more damage."
-attack_cost = ExtResource("3_3a5f2")
-attack_data = SubResource("Resource_wt5p1")
+attack_cost = ExtResource("3_1reo7")
+attack_data = ExtResource("4_gcr84")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0
@@ -25,7 +26,7 @@ darkness_cost = 0
 metal_cost = 0
 colorless_cost = 0
 defender_properties = 0
-condition = 0
+condition = 1
 prompt_reliant = false
 initial_main_DMG = 10
 conditional_self_dmg = false
@@ -39,8 +40,8 @@ both_active = false
 script = ExtResource("4_tikk5")
 name = "Sky Uppercut"
 description = "This attack's damage is not affected by Resistance."
-attack_cost = ExtResource("3_3a5f2")
-attack_data = SubResource("Resource_wt5p1")
+attack_cost = ExtResource("6_g8niy")
+attack_data = ExtResource("7_10bu1")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0
@@ -51,7 +52,7 @@ darkness_cost = 0
 metal_cost = 0
 colorless_cost = 1
 defender_properties = 4
-condition = 0
+condition = 1
 prompt_reliant = false
 initial_main_DMG = 50
 conditional_self_dmg = false

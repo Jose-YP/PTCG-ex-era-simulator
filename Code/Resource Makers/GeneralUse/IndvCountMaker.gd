@@ -28,17 +28,19 @@ var internal_data = {"which" : "Slot",
 #--------------------------------------
 func _get_property_list() -> Array[Dictionary]:
 	#region GATHER INFO
-	print(typeof(pokeSlot))
-	print(pokeSlot)
 	var props: Array[Dictionary] = []
 	var slot_array_names: PackedStringArray = []
 	var stack_array_names: PackedStringArray = ["None"]
 	var res_prop_list = ClassDB.class_get_property_list("Resource")
 	#Collect the name of every property that's in a poke_slot
+	#Will not include any non-export variables
 	for p in slot_instance.get_property_list():
 		if (p.has("usage") and p.usage & PROPERTY_USAGE_DEFAULT
 		 and p.name not in slot_array_names and not p in res_prop_list):
 			slot_array_names.append(p.name)
+		#else:
+			#print(p.name, p.has("usage"), p.usage ,p.usage & PROPERTY_USAGE_DEFAULT,
+			#p.name not in slot_array_names, not p in res_prop_list)
 	
 	#Only get the variables that are defined as variables without exports
 	#These are the stacks that get used during play

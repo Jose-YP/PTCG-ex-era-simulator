@@ -17,16 +17,17 @@
 [sub_resource type="Resource" id="Resource_pm8uh"]
 script = ExtResource("5_po7pa")
 prompt_reliant = false
+prompt = ExtResource("8_gpint")
 initial_main_DMG = 0
+defender_properties = 0
+condition = 1
+success_effect = ExtResource("4_obvev")
 conditional_self_dmg = false
 self_damage = 0
+mod_prompt = false
 modifier = 0
 modifier_num = 0
 both_active = true
-defender_properties = 0
-condition = 1
-prompt = ExtResource("3_1pf5i")
-success_effect = ExtResource("4_obvev")
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_rxpsm"]
@@ -79,15 +80,15 @@ metadata/_custom_type_script = "uid://dmulm3x3dj842"
 script = ExtResource("5_po7pa")
 prompt_reliant = false
 initial_main_DMG = 0
+defender_properties = 0
+condition = 1
+success_effect = SubResource("Resource_oouox")
 conditional_self_dmg = false
 self_damage = 0
+mod_prompt = false
 modifier = 0
 modifier_num = 0
 both_active = false
-defender_properties = 0
-condition = 1
-prompt = ExtResource("8_gpint")
-success_effect = SubResource("Resource_oouox")
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_io3te"]

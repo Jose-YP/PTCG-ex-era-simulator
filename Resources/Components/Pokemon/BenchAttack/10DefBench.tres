@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="BenchAttk" load_steps=2 format=3 uid="uid://r4xgk0bkj0br"]
+
+[ext_resource type="Script" uid="uid://br15mnap82upq" path="res://Code/Resource Makers/PokemonSpecific/BenchAttackMaker.gd" id="1_2ybd6"]
+
+[resource]
+script = ExtResource("1_2ybd6")
+how_many = 1
+which = 2
+active_allowed = false
+apply_weak_res = false
+initial_main_DMG = 10
+modifier = 0
+metadata/_custom_type_script = "uid://br15mnap82upq"

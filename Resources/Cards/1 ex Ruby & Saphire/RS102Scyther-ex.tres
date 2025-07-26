@@ -1,21 +1,38 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://idwdorik15vd"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=15 format=3 uid="uid://idwdorik15vd"]
 
 [ext_resource type="Texture2D" uid="uid://dpkus6tgwiwt" path="res://Art/Cards/1 ex Ruby & Saphire/102.jpg" id="1_bpg55"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_vv51n"]
-[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_2cqp0"]
-[ext_resource type="Resource" uid="uid://lfhu3xyr0wpo" path="res://Resources/Components/Effects/Prompts/IfFlipHeads.tres" id="3_ckevj"]
 [ext_resource type="Resource" uid="uid://dnr7ljin1eclj" path="res://Resources/Components/Effects/Buff/FullImmunity1Turn.tres" id="3_pja2x"]
+[ext_resource type="Resource" uid="uid://c63wb1xvpkbi8" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Grass1.tres" id="3_y1gw1"]
+[ext_resource type="Resource" uid="uid://ekj1myy642kh" path="res://Resources/Components/Effects/Prompts/PromptHeads.tres" id="4_dwsah"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="4_h2ci7"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_58n71"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="5_xv1i5"]
+[ext_resource type="Resource" uid="uid://bdwp1hpi4q83j" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/G2C1.tres" id="7_3o3ku"]
+[ext_resource type="Resource" uid="uid://cj4j56m7hrxpe" path="res://Resources/Components/Pokemon/Attacks/AttackData/50Dmg.tres" id="8_vgcjx"]
 
-[sub_resource type="Resource" id="Resource_wt5p1"]
+[sub_resource type="Resource" id="Resource_extvf"]
+script = ExtResource("5_xv1i5")
+prompt_reliant = false
+prompt = ExtResource("4_dwsah")
+initial_main_DMG = 10
+defender_properties = 0
+condition = 1
+success_effect = ExtResource("3_pja2x")
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_5dn7d"]
 script = ExtResource("4_h2ci7")
 name = "Agility"
-description = "Flip a coin. If heads, prevent all effects of an attack, including damage, done to Scyther ex during your opponent's next turn."
-attack_cost = ExtResource("3_2cqp0")
-attack_data = SubResource("Resource_wt5p1")
+description = "Flip a coin. If heads, prevent all effects of an attack, including damage, done to [name] during your opponent's next turn."
+attack_cost = ExtResource("3_y1gw1")
+attack_data = SubResource("Resource_extvf")
 grass_cost = 1
 fire_cost = 0
 water_cost = 0
@@ -26,7 +43,7 @@ darkness_cost = 0
 metal_cost = 0
 colorless_cost = 0
 defender_properties = 0
-condition = 0
+condition = 1
 prompt_reliant = false
 initial_main_DMG = 10
 conditional_self_dmg = false
@@ -34,15 +51,15 @@ self_damage = 0
 modifier = 0
 modifier_num = 0
 both_active = false
-prompt = ExtResource("3_ckevj")
+prompt = ExtResource("4_dwsah")
 success_effect = ExtResource("3_pja2x")
 
 [sub_resource type="Resource" id="Resource_4yjhr"]
 script = ExtResource("4_h2ci7")
 name = "Slash"
 description = ""
-attack_cost = ExtResource("3_2cqp0")
-attack_data = SubResource("Resource_wt5p1")
+attack_cost = ExtResource("7_3o3ku")
+attack_data = ExtResource("8_vgcjx")
 grass_cost = 2
 fire_cost = 0
 water_cost = 0
@@ -53,7 +70,7 @@ darkness_cost = 0
 metal_cost = 0
 colorless_cost = 1
 defender_properties = 0
-condition = 0
+condition = 1
 prompt_reliant = false
 initial_main_DMG = 50
 conditional_self_dmg = false

@@ -1,0 +1,154 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=19 format=3 uid="uid://cmflui8icmsht"]
+
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_pn1bd"]
+[ext_resource type="Texture2D" uid="uid://dm23fojfx7svi" path="res://Art/Cards/1 ex Ruby & Saphire/19.jpg" id="1_pt4v8"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="2_pt4v8"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_4qtd1"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_v3oh7"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="4_f5dxt"]
+[ext_resource type="Resource" uid="uid://fcpa5aqhgy0e" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/W1C1.tres" id="5_qarbw"]
+[ext_resource type="Resource" uid="uid://ceo3bpqlglf5o" path="res://Resources/Components/Pokemon/Attacks/AttackData/30Dmg.tres" id="6_6wn4a"]
+[ext_resource type="Resource" uid="uid://dkvbrahlcnjmi" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/W1C2.tres" id="7_0rawh"]
+[ext_resource type="Resource" uid="uid://bsuopi541rs72" path="res://Resources/Components/Effects/DmgManip/Remove/SelfDrain.tres" id="8_xl488"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="12_gfpq3"]
+
+[sub_resource type="Resource" id="Resource_hmbk8"]
+script = ExtResource("4_f5dxt")
+prompt_reliant = false
+initial_main_DMG = 0
+defender_properties = 0
+condition = 1
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_h51y2"]
+script = ExtResource("1_pn1bd")
+name = "Stockpile"
+description = "During your next turn, Spit Up's base damage is 70 instead of 30, and Swallow's base damage is 60 instead of 20."
+attack_cost = ExtResource("3_4qtd1")
+attack_data = SubResource("Resource_hmbk8")
+grass_cost = 0
+fire_cost = 0
+water_cost = 0
+lightning_cost = 0
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 1
+defender_properties = 0
+condition = 1
+prompt_reliant = false
+initial_main_DMG = 0
+conditional_self_dmg = false
+self_damage = 0
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_671sk"]
+script = ExtResource("1_pn1bd")
+name = "Spit Up"
+description = ""
+attack_cost = ExtResource("5_qarbw")
+attack_data = ExtResource("6_6wn4a")
+grass_cost = 0
+fire_cost = 0
+water_cost = 0
+lightning_cost = 0
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 1
+defender_properties = 0
+condition = 1
+prompt_reliant = false
+initial_main_DMG = 0
+conditional_self_dmg = false
+self_damage = 0
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_veevm"]
+script = ExtResource("12_gfpq3")
+either_or = false
+order = Array[int]([])
+dmgManip = ExtResource("8_xl488")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_vclto"]
+script = ExtResource("4_f5dxt")
+prompt_reliant = false
+initial_main_DMG = 20
+defender_properties = 0
+condition = 1
+always_effect = SubResource("Resource_veevm")
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_wgs01"]
+script = ExtResource("1_pn1bd")
+name = "Swallow"
+description = "After your attack, remove from [name] the number of damage counters equal to the damage you did to the Defending Pokémon. If [name] has fewer damage counters than that, remove all of them."
+attack_cost = ExtResource("7_0rawh")
+attack_data = SubResource("Resource_vclto")
+grass_cost = 0
+fire_cost = 0
+water_cost = 0
+lightning_cost = 0
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 1
+defender_properties = 0
+condition = 1
+prompt_reliant = false
+initial_main_DMG = 0
+conditional_self_dmg = false
+self_damage = 0
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_v0xfh"]
+script = ExtResource("2_pt4v8")
+HP = 70
+retreat = 1
+attacks = Array[ExtResource("1_pn1bd")]([SubResource("Resource_h51y2"), SubResource("Resource_671sk"), SubResource("Resource_wgs01")])
+evo_stage = "Stage 1"
+evolves_from = "Wingull"
+considered = 1
+owner = 0
+type = 4
+weak = 8
+resist = 32
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("3_v3oh7")
+name = "Peliper"
+image = ExtResource("1_pt4v8")
+illustrator = "Kouki Saitou"
+number = 19
+rarity = 2
+expansion = 0
+categories = 1
+pokemon_properties = SubResource("Resource_v0xfh")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

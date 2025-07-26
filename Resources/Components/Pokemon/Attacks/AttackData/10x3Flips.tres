@@ -5,21 +5,13 @@
 
 [resource]
 script = ExtResource("2_mp0ue")
-grass_cost = 0
-fire_cost = 0
-water_cost = 0
-lightning_cost = 0
-psychic_cost = 0
-fighting_cost = 0
-darkness_cost = 0
-metal_cost = 0
-colorless_cost = 1
-defender_properties = 0
-condition = 1
 prompt_reliant = false
 initial_main_DMG = 10
+defender_properties = 0
+condition = 1
 conditional_self_dmg = false
 self_damage = 0
+mod_prompt = false
 modifier = 2
 modifier_num = 10
 comparator = ExtResource("1_tmedx")

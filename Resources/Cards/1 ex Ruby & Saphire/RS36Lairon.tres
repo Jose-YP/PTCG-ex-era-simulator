@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cr585aqidohri" path="res://Art/Cards/1 ex Ruby & Saphire/36.jpg" id="1_usrt4"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_ash2e"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="3_htpoo"]
-[ext_resource type="Resource" uid="uid://carj70w3pyx05" path="res://Resources/Components/Pokemon/Attacks/Ram2-20.tres" id="3_tokt4"]
+[ext_resource type="Resource" uid="uid://carj70w3pyx05" path="res://Resources/Components/Pokemon/Attacks/EffectlessAttacks/Ram2-20.tres" id="3_tokt4"]
 [ext_resource type="Resource" uid="uid://b4p6bn3ei1onu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/M1C2.tres" id="4_bw660"]
 [ext_resource type="Resource" uid="uid://dnnekosklb3ar" path="res://Resources/Components/Pokemon/Attacks/AttackData/40Dmg.tres" id="5_ytfqf"]
 

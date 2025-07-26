@@ -1,14 +1,19 @@
-[gd_resource type="Resource" script_class="CardDisrupt" load_steps=2 format=3 uid="uid://c1o42idl5v6xc"]
+[gd_resource type="Resource" script_class="CardDisrupt" load_steps=3 format=3 uid="uid://c1o42idl5v6xc"]
 
+[ext_resource type="Resource" uid="uid://dsyn2o57xkb0h" path="res://Resources/Components/Effects/Asks/Class&Owner/DefEvolvedMon.tres" id="1_ddti0"]
 [ext_resource type="Script" uid="uid://8sh5p3leflla" path="res://Code/Resource Makers/EffectSpecific/CardDisruptMaker.gd" id="1_olnyr"]
 
 [resource]
 script = ExtResource("1_olnyr")
-side = 2
-disrupting = 1
-pokemon_disrupt = 4
 send = 1
+from = 0
 send_to = 3
+bottom_of_stack = false
+shuffle = false
 card_ammount = 0
 reveal = false
+side = 2
+from_stack = 0
+in_play_options = ExtResource("1_ddti0")
+pokemon_disrupt = 4
 metadata/_custom_type_script = "uid://8sh5p3leflla"

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://yjages2tp857"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=16 format=3 uid="uid://yjages2tp857"]
 
 [ext_resource type="Texture2D" uid="uid://b817pn5octfv6" path="res://Art/Cards/1 ex Ruby & Saphire/1.jpg" id="1_i5pwl"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="2_5623o"]
@@ -6,16 +6,34 @@
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_q1vs7"]
 [ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_webo0"]
 [ext_resource type="Resource" uid="uid://cydxe57j5nudo" path="res://Resources/Components/Pokemon/Attacks/DoubleLariat.tres" id="4_7impx"]
-[ext_resource type="Resource" uid="uid://lfhu3xyr0wpo" path="res://Resources/Components/Effects/Prompts/IfFlipHeads.tres" id="4_webo0"]
+[ext_resource type="Resource" uid="uid://nco7wk2vhhx6" path="res://Resources/Components/Counters/Comparator/ForSelfDmgCounters.tres" id="4_q0jl6"]
+[ext_resource type="Resource" uid="uid://ekj1myy642kh" path="res://Resources/Components/Effects/Prompts/PromptHeads.tres" id="5_wclxl"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="6_3opih"]
+[ext_resource type="Resource" uid="uid://dpovjlfpsypwe" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless3.tres" id="7_qgyyk"]
+[ext_resource type="Resource" uid="uid://dnnekosklb3ar" path="res://Resources/Components/Pokemon/Attacks/AttackData/40Dmg.tres" id="8_31rwn"]
 
-[sub_resource type="Resource" id="Resource_wt5p1"]
+[sub_resource type="Resource" id="Resource_wgi83"]
+script = ExtResource("6_3opih")
+prompt_reliant = false
+prompt = ExtResource("5_wclxl")
+initial_main_DMG = 10
+defender_properties = 0
+condition = 1
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 2
+modifier_num = 10
+comparator = ExtResource("4_q0jl6")
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_jpj5i"]
 script = ExtResource("2_cfam6")
 name = "Retaliate"
-description = "Flip a coin. If heads, this attack does 10 damage times the number of damage counters on Aggron."
+description = "Flip a coin. If heads, this attack does 10 damage times the number of damage counters on [name]."
 attack_cost = ExtResource("3_webo0")
-attack_data = SubResource("Resource_wt5p1")
+attack_data = SubResource("Resource_wgi83")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0
@@ -34,14 +52,14 @@ self_damage = 0
 modifier = 2
 modifier_num = 0
 both_active = false
-prompt = ExtResource("4_webo0")
+prompt = ExtResource("5_wclxl")
 
 [sub_resource type="Resource" id="Resource_3cg3j"]
 script = ExtResource("2_cfam6")
 name = "Mega Punch"
 description = ""
-attack_cost = ExtResource("3_webo0")
-attack_data = SubResource("Resource_wt5p1")
+attack_cost = ExtResource("7_qgyyk")
+attack_data = ExtResource("8_31rwn")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0

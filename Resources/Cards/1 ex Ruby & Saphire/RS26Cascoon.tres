@@ -5,19 +5,18 @@
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_gptfo"]
 [ext_resource type="Resource" uid="uid://dr35h5ltr0i6r" path="res://Resources/Components/Effects/Conditions/BasicPoison.tres" id="3_eaot2"]
 [ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/BuffMaker.gd" id="4_7sytn"]
-[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="4_gptfo"]
+[ext_resource type="Resource" uid="uid://c63wb1xvpkbi8" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Grass1.tres" id="4_eaot2"]
+[ext_resource type="Resource" uid="uid://bxpfuxfuoeiri" path="res://Resources/Components/Pokemon/Attacks/AttackData/Poision.tres" id="5_7sytn"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="5_a4vvr"]
 [ext_resource type="Script" uid="uid://b2tlqpng7fq25" path="res://Code/Resource Makers/PokemonSpecific/BodyMaker.gd" id="6_8j53m"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="7_pix7g"]
-
-[sub_resource type="Resource" id="Resource_wt5p1"]
 
 [sub_resource type="Resource" id="Resource_k6wpo"]
 script = ExtResource("2_gptfo")
 name = "Poison Thread"
 description = "The Defending Pokémon is now Poisoned."
-attack_cost = ExtResource("4_gptfo")
-attack_data = SubResource("Resource_wt5p1")
+attack_cost = ExtResource("4_eaot2")
+attack_data = ExtResource("5_7sytn")
 grass_cost = 1
 fire_cost = 0
 water_cost = 0
@@ -28,7 +27,7 @@ darkness_cost = 0
 metal_cost = 0
 colorless_cost = 0
 defender_properties = 0
-condition = 0
+condition = 1
 prompt_reliant = false
 initial_main_DMG = 0
 conditional_self_dmg = false

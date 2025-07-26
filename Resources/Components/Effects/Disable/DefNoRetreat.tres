@@ -6,7 +6,7 @@
 [sub_resource type="Resource" id="Resource_e08sc"]
 script = ExtResource("1_b6leg")
 side = 2
-slot = 5
+slot = 1
 duration = -1
 no_weakness = false
 no_resistance = false
@@ -19,5 +19,6 @@ disable_retreat = true
 
 [resource]
 script = ExtResource("2_fdrur")
+either_or = false
 order = Array[int]([])
 disable = SubResource("Resource_e08sc")

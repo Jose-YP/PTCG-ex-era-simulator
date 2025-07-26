@@ -1,20 +1,21 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=11 format=3 uid="uid://dxrduwpe540go"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=14 format=3 uid="uid://dxrduwpe540go"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_70xxw"]
 [ext_resource type="Texture2D" uid="uid://bf7b3we0s6a0p" path="res://Art/Cards/1 ex Ruby & Saphire/99.jpg" id="1_xkacn"]
 [ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_27utq"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="3_bb8ip"]
 [ext_resource type="Resource" uid="uid://nx1kc1vsm4ia" path="res://Resources/Components/Effects/Conditions/BasicConfusion.tres" id="4_jwpb3"]
+[ext_resource type="Resource" uid="uid://bep36omnenbc8" path="res://Resources/Components/Pokemon/Attacks/AttackData/10Dmg.tres" id="4_wtncw"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_f5leu"]
-
-[sub_resource type="Resource" id="Resource_wt5p1"]
+[ext_resource type="Resource" uid="uid://bmao1r3c5hfr5" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/W2C1.tres" id="6_wtncw"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="7_tupf3"]
 
 [sub_resource type="Resource" id="Resource_8a8we"]
 script = ExtResource("3_bb8ip")
 name = "Energy Ball"
 description = "Does 10 damage plus 10 more damage for each Energy attached to Lapras ex but not used to pay for this attack's Energy cost. You can't add more than 20 damage in this way."
 attack_cost = ExtResource("3_27utq")
-attack_data = SubResource("Resource_wt5p1")
+attack_data = ExtResource("4_wtncw")
 grass_cost = 0
 fire_cost = 0
 water_cost = 1
@@ -34,12 +35,27 @@ modifier = 1
 modifier_num = 0
 both_active = false
 
+[sub_resource type="Resource" id="Resource_esapc"]
+script = ExtResource("7_tupf3")
+prompt_reliant = false
+initial_main_DMG = 30
+defender_properties = 0
+condition = 1
+always_effect = ExtResource("4_jwpb3")
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
 [sub_resource type="Resource" id="Resource_kpk3t"]
 script = ExtResource("3_bb8ip")
 name = "Confuse Ray"
 description = "The Defending Pokémon is now Confused."
-attack_cost = ExtResource("3_27utq")
-attack_data = SubResource("Resource_wt5p1")
+attack_cost = ExtResource("6_wtncw")
+attack_data = SubResource("Resource_esapc")
 grass_cost = 0
 fire_cost = 0
 water_cost = 2
@@ -50,7 +66,7 @@ darkness_cost = 0
 metal_cost = 0
 colorless_cost = 1
 defender_properties = 0
-condition = 0
+condition = 1
 prompt_reliant = false
 initial_main_DMG = 30
 conditional_self_dmg = false

@@ -1,19 +1,35 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://cw4vwt5frfm53"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://cw4vwt5frfm53"]
 
 [ext_resource type="Texture2D" uid="uid://dryoto85mwrxc" path="res://Art/Cards/1 ex Ruby & Saphire/42.jpg" id="1_82iwa"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_dyxps"]
-[ext_resource type="Resource" uid="uid://bfsj0nkq56jov" path="res://Resources/Components/Pokemon/Attacks/Bite.tres" id="2_rb4ji"]
+[ext_resource type="Resource" uid="uid://bfsj0nkq56jov" path="res://Resources/Components/Pokemon/Attacks/EffectlessAttacks/Bite.tres" id="3_5a8tj"]
 [ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="4_8tlbr"]
+[ext_resource type="Resource" uid="uid://b45cmbaixh154" path="res://Resources/Components/Counters/Comparator/OneFlipHead.tres" id="5_0cyaq"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="5_c47ie"]
-[ext_resource type="Resource" uid="uid://bep36omnenbc8" path="res://Resources/Components/Pokemon/Attacks/AttackData/10Dmg.tres" id="5_m128h"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="6_1xnba"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="6_fq3rn"]
+
+[sub_resource type="Resource" id="Resource_1nwew"]
+script = ExtResource("6_1xnba")
+prompt_reliant = false
+initial_main_DMG = 30
+defender_properties = 0
+condition = 1
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 1
+modifier_num = 30
+comparator = ExtResource("5_0cyaq")
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_l301p"]
 script = ExtResource("5_c47ie")
 name = "Ambush"
 description = "Flip a coin. If heads, this attack does 30 damage plus 30 more damage."
 attack_cost = ExtResource("4_8tlbr")
-attack_data = ExtResource("5_m128h")
+attack_data = SubResource("Resource_1nwew")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0
@@ -37,7 +53,7 @@ both_active = false
 script = ExtResource("6_fq3rn")
 HP = 70
 retreat = 1
-attacks = Array[ExtResource("5_c47ie")]([ExtResource("2_rb4ji"), SubResource("Resource_l301p")])
+attacks = Array[ExtResource("5_c47ie")]([ExtResource("3_5a8tj"), SubResource("Resource_l301p")])
 evo_stage = "Stage 1"
 evolves_from = "Poochyena"
 considered = 1

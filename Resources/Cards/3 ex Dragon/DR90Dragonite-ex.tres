@@ -1,16 +1,18 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=20 format=3 uid="uid://blgwu6rviyvhh"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=24 format=3 uid="uid://blgwu6rviyvhh"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_6nbak"]
 [ext_resource type="Texture2D" uid="uid://bwy02si5cv6mh" path="res://Art/Cards/3 ex Dragon/90.jpg" id="1_i3arf"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_2hwsj"]
 [ext_resource type="Resource" uid="uid://hbftp7wc0ueo" path="res://Resources/Components/Effects/EnergyMovement/SelfDis1Water.tres" id="3_2hwsj"]
-[ext_resource type="Resource" uid="uid://lfhu3xyr0wpo" path="res://Resources/Components/Effects/Prompts/IfFlipHeads.tres" id="3_hslfc"]
 [ext_resource type="Resource" uid="uid://c67aj5gpaamgd" path="res://Resources/Components/Effects/EnergyMovement/SelfDis1Lightning.tres" id="4_hslfc"]
-[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="6_hslfc"]
+[ext_resource type="Script" uid="uid://crscwhvugaoxa" path="res://Code/Resource Makers/PokemonSpecific/AttackCostMaker.gd" id="6_imidg"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="6_mpcq0"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="7_mpcq0"]
 [ext_resource type="Script" uid="uid://b58015mafcw2v" path="res://Code/Resource Makers/PokemonSpecific/PowerMaker.gd" id="7_ur7nu"]
 [ext_resource type="Resource" uid="uid://dmpx0flrt2hxl" path="res://Resources/Components/Effects/EnergyMovement/LendMeYourEnergy.tres" id="7_x717q"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="8_mdixv"]
+[ext_resource type="Resource" uid="uid://dm6f2nxeh8yqx" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless4.tres" id="8_ur7nu"]
+[ext_resource type="Resource" uid="uid://ekj1myy642kh" path="res://Resources/Components/Effects/Prompts/PromptHeads.tres" id="9_mdixv"]
 
 [sub_resource type="Resource" id="Resource_imidg"]
 script = ExtResource("6_mpcq0")
@@ -27,14 +29,40 @@ energy_movement = ExtResource("3_2hwsj")
 extra_effect = SubResource("Resource_imidg")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
-[sub_resource type="Resource" id="Resource_wt5p1"]
+[sub_resource type="Resource" id="Resource_mv2ox"]
+script = ExtResource("6_imidg")
+grass_cost = 0
+fire_cost = 0
+water_cost = 1
+lightning_cost = 1
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 0
+metadata/_custom_type_script = "uid://crscwhvugaoxa"
+
+[sub_resource type="Resource" id="Resource_7x50r"]
+script = ExtResource("7_mpcq0")
+prompt_reliant = false
+initial_main_DMG = 70
+defender_properties = 0
+condition = 1
+always_effect = SubResource("Resource_mpcq0")
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_bmkne"]
 script = ExtResource("2_2hwsj")
 name = "Dragon Wave"
 description = " Discard a {Water} Energy card and a {Lightning} Energy card attached to Dragonite ex. "
-attack_cost = ExtResource("6_hslfc")
-attack_data = SubResource("Resource_wt5p1")
+attack_cost = SubResource("Resource_mv2ox")
+attack_data = SubResource("Resource_7x50r")
 grass_cost = 0
 fire_cost = 0
 water_cost = 1
@@ -45,7 +73,7 @@ darkness_cost = 0
 metal_cost = 0
 colorless_cost = 0
 defender_properties = 0
-condition = 0
+condition = 1
 prompt_reliant = false
 initial_main_DMG = 70
 conditional_self_dmg = false
@@ -56,12 +84,27 @@ both_active = false
 always_effect = SubResource("Resource_mpcq0")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
+[sub_resource type="Resource" id="Resource_htnr7"]
+script = ExtResource("7_mpcq0")
+prompt_reliant = true
+prompt = ExtResource("9_mdixv")
+initial_main_DMG = 120
+defender_properties = 0
+condition = 1
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
 [sub_resource type="Resource" id="Resource_o5ava"]
 script = ExtResource("2_2hwsj")
 name = "Giant Tail"
 description = " Flip a coin. If tails, this attack does nothing."
-attack_cost = ExtResource("6_hslfc")
-attack_data = SubResource("Resource_wt5p1")
+attack_cost = ExtResource("8_ur7nu")
+attack_data = SubResource("Resource_htnr7")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0
@@ -72,7 +115,7 @@ darkness_cost = 0
 metal_cost = 0
 colorless_cost = 4
 defender_properties = 0
-condition = 0
+condition = 1
 prompt_reliant = true
 initial_main_DMG = 120
 conditional_self_dmg = false
@@ -80,7 +123,7 @@ self_damage = 0
 modifier = 0
 modifier_num = 0
 both_active = false
-prompt = ExtResource("3_hslfc")
+prompt = ExtResource("9_mdixv")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_n8rdp"]

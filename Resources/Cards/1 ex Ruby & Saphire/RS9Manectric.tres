@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=20 format=3 uid="uid://55w4gcnt7ldd"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=23 format=3 uid="uid://55w4gcnt7ldd"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_j4udd"]
 [ext_resource type="Texture2D" uid="uid://bj0gaak878hpw" path="res://Art/Cards/1 ex Ruby & Saphire/9.jpg" id="1_nd5q3"]
@@ -10,7 +10,10 @@
 [ext_resource type="Resource" uid="uid://dt0pi71xuk6ih" path="res://Resources/Components/Effects/Identifiers/Energy/LightningEnergy.tres" id="7_0j7pm"]
 [ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="8_nd5q3"]
 [ext_resource type="Resource" uid="uid://choi8otbipw57" path="res://Resources/Components/Effects/DmgManip/AtkSelfTake10Dmg.tres" id="9_tiyuh"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="9_vg802"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="10_u1bw3"]
+[ext_resource type="Resource" uid="uid://8444rgut4s83" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/L2C1.tres" id="10_vn0b8"]
+[ext_resource type="Resource" uid="uid://i3dimt0ebxnk" path="res://Resources/Components/Effects/Prompts/IfFlipTails.tres" id="11_it85k"]
 
 [sub_resource type="Resource" id="Resource_lxccs"]
 script = ExtResource("4_vg802")
@@ -35,14 +38,27 @@ order = Array[int]([])
 search = SubResource("Resource_lxccs")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
-[sub_resource type="Resource" id="Resource_wt5p1"]
+[sub_resource type="Resource" id="Resource_0j7pm"]
+script = ExtResource("9_vg802")
+prompt_reliant = false
+initial_main_DMG = 10
+defender_properties = 0
+condition = 1
+always_effect = SubResource("Resource_x808d")
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_766ft"]
 script = ExtResource("2_lxccs")
 name = "Attract Current"
 description = "Search your deck for a {Lightning} Energy card and attach it to 1 of your Pokémon. Shuffle your deck afterward."
 attack_cost = ExtResource("8_nd5q3")
-attack_data = SubResource("Resource_wt5p1")
+attack_data = SubResource("Resource_0j7pm")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0
@@ -53,7 +69,7 @@ darkness_cost = 0
 metal_cost = 0
 colorless_cost = 1
 defender_properties = 0
-condition = 0
+condition = 1
 prompt_reliant = false
 initial_main_DMG = 10
 conditional_self_dmg = false
@@ -64,8 +80,20 @@ both_active = false
 always_effect = SubResource("Resource_x808d")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
-[sub_resource type="Resource" id="Resource_0ke2p"]
-metadata/__load_path__ = "res://Resources/Components/Effects/Asks/AskSingleFlip.tres"
+[sub_resource type="Resource" id="Resource_odr78"]
+script = ExtResource("9_vg802")
+prompt_reliant = false
+prompt = ExtResource("11_it85k")
+initial_main_DMG = 50
+defender_properties = 0
+condition = 1
+conditional_self_dmg = true
+self_damage = 10
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_q1c6f"]
 script = ExtResource("3_x808d")
@@ -77,9 +105,9 @@ metadata/_custom_type_script = "uid://dmulm3x3dj842"
 [sub_resource type="Resource" id="Resource_dwn3d"]
 script = ExtResource("2_lxccs")
 name = "Thunder Jolt"
-description = "Flip a coin. If tails, Manectric does 10 damage to itself."
-attack_cost = ExtResource("8_nd5q3")
-attack_data = SubResource("Resource_wt5p1")
+description = "Flip a coin. If tails, [name] does 10 damage to itself."
+attack_cost = ExtResource("10_vn0b8")
+attack_data = SubResource("Resource_odr78")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0
@@ -90,15 +118,14 @@ darkness_cost = 0
 metal_cost = 0
 colorless_cost = 1
 defender_properties = 0
-condition = 0
+condition = 1
 prompt_reliant = false
 initial_main_DMG = 50
-conditional_self_dmg = false
-self_damage = 0
+conditional_self_dmg = true
+self_damage = 10
 modifier = 0
 modifier_num = 0
 both_active = false
-ask = SubResource("Resource_0ke2p")
 fail_effect = SubResource("Resource_q1c6f")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 

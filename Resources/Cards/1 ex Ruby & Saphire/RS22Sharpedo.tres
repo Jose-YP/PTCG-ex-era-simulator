@@ -1,0 +1,89 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=13 format=3 uid="uid://bd3x4rf00qjqr"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_jkipr"]
+[ext_resource type="Texture2D" uid="uid://ceq4w3dpfkpjf" path="res://Art/Cards/1 ex Ruby & Saphire/22.jpg" id="1_pxig1"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_ahb0c"]
+[ext_resource type="Resource" uid="uid://dkvbrahlcnjmi" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/W1C2.tres" id="3_tof2u"]
+[ext_resource type="Resource" uid="uid://den0x238enm5n" path="res://Resources/Components/Effects/Prompts/PromptEffects/PromptDisc1SelfDarkness.tres" id="4_ahb0c"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="4_ifd1e"]
+[ext_resource type="Script" uid="uid://b2tlqpng7fq25" path="res://Code/Resource Makers/PokemonSpecific/BodyMaker.gd" id="5_yp0m0"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="6_544qj"]
+
+[sub_resource type="Resource" id="Resource_86nuf"]
+script = ExtResource("4_ifd1e")
+prompt_reliant = false
+prompt = ExtResource("4_ahb0c")
+initial_main_DMG = 40
+defender_properties = 0
+condition = 1
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = true
+modifier = 1
+modifier_num = 30
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_cmt8m"]
+script = ExtResource("2_ahb0c")
+name = "Dark Slash"
+description = "You may discard a {Darkness} Energy card attached to [name]. If you do, this attack does 40 damage plus 30 more damage."
+attack_cost = ExtResource("3_tof2u")
+attack_data = SubResource("Resource_86nuf")
+grass_cost = 0
+fire_cost = 0
+water_cost = 0
+lightning_cost = 0
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 1
+defender_properties = 0
+condition = 1
+prompt_reliant = false
+initial_main_DMG = 0
+conditional_self_dmg = false
+self_damage = 0
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_7a6ot"]
+script = ExtResource("5_yp0m0")
+when_active = false
+name = "Rough Skin"
+description = "If [name] is your Active Pokémon and is damaged by an opponent's attack (even if [name] is Knocked Out), put 2 damage counters on the Attacking Pokémon."
+affected_by_condition = true
+attatched_energy = 0
+energy_ammount = 1
+metadata/_custom_type_script = "uid://b2tlqpng7fq25"
+
+[sub_resource type="Resource" id="Resource_v0xfh"]
+script = ExtResource("6_544qj")
+HP = 70
+retreat = 1
+body = SubResource("Resource_7a6ot")
+attacks = Array[ExtResource("2_ahb0c")]([SubResource("Resource_cmt8m")])
+evo_stage = "Stage 1"
+evolves_from = "Carvanha"
+considered = 1
+owner = 0
+type = 4
+weak = 8
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_jkipr")
+name = "Sharpedo"
+image = ExtResource("1_pxig1")
+illustrator = "Hajime Kusajima"
+number = 22
+rarity = 2
+expansion = 0
+categories = 1
+pokemon_properties = SubResource("Resource_v0xfh")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="AttackData" load_steps=3 format=3 uid="uid://di63v5yvwp4wr"]
+
+[ext_resource type="Resource" uid="uid://e706qq8o0hri" path="res://Resources/Components/Counters/Comparator/Return2Flip.tres" id="1_1egw2"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="2_0ietf"]
+
+[resource]
+script = ExtResource("2_0ietf")
+prompt_reliant = false
+initial_main_DMG = 20
+conditional_self_dmg = false
+self_damage = 0
+modifier = 2
+modifier_num = 20
+comparator = ExtResource("1_1egw2")
+both_active = false
+defender_properties = 0
+condition = 1
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"

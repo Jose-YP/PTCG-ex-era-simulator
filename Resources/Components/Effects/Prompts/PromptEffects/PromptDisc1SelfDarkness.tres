@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="PromptAsk" load_steps=5 format=3 uid="uid://den0x238enm5n"]
+
+[ext_resource type="Resource" uid="uid://cw7gick8j52mr" path="res://Resources/Components/Effects/EnergyMovement/Send/SelfDisc1Darkness.tres" id="1_g0u6o"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_63ihm"]
+[ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="3_oxjlb"]
+
+[sub_resource type="Resource" id="Resource_gm1a6"]
+script = ExtResource("2_63ihm")
+either_or = false
+order = Array[int]([])
+energy_movement = ExtResource("1_g0u6o")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[resource]
+script = ExtResource("3_oxjlb")
+formal_question = false
+question_string = ""
+yes_answer = ""
+no_answer = ""
+can_reverse = true
+effect = SubResource("Resource_gm1a6")
+chooser = 0
+choose_location = "None"
+which_stack = 0
+metadata/_custom_type_script = "uid://b85jmc7067bjc"
