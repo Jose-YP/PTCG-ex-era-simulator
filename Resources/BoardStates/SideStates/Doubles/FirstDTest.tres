@@ -7,7 +7,7 @@
 [ext_resource type="Resource" uid="uid://dyqdhaov0ywxk" path="res://Resources/Cards/1 ex Ruby & Saphire/RS92Switch.tres" id="5_octn8"]
 [ext_resource type="Resource" uid="uid://c2tk6qy8h57lw" path="res://Resources/Cards/1 ex Ruby & Saphire/RS82EnergySwitch.tres" id="6_xynjr"]
 [ext_resource type="Resource" uid="uid://1ktns5k8q1q5" path="res://Resources/Cards/1 ex Ruby & Saphire/RS44Skitty.tres" id="8_go4v7"]
-[ext_resource type="Resource" uid="uid://22c17vtu70b3" path="res://Resources/Cards/4 ex Team Magma VS Team Aqua/MA37TeamMagma'sMightyena.tres" id="8_xynjr"]
+[ext_resource type="Resource" uid="uid://22c17vtu70b3" path="res://Resources/Cards/4 ex Team Magma VS Team Aqua/MA37MagmaMightyena.tres" id="8_xynjr"]
 [ext_resource type="Script" uid="uid://calm3n7va5yjo" path="res://Code/Resource Makers/GeneralUse/CardStacksMaker.gd" id="9_hgkfh"]
 [ext_resource type="Resource" uid="uid://ben8fxv5hw5hb" path="res://Resources/Cards/1 ex Ruby & Saphire/RS87PokemonReversal.tres" id="9_xhhn1"]
 [ext_resource type="Script" uid="uid://dgqpurnuh14t1" path="res://Code/Resource Makers/GeneralUse/SideStateMaker.gd" id="10_f4ycl"]
@@ -18,7 +18,7 @@
 [ext_resource type="Script" uid="uid://c0ishgbxk63dg" path="res://Code/Resource Makers/EffectSpecific/DisableMaker.gd" id="14_hl4js"]
 [ext_resource type="Resource" uid="uid://s0xeoyp6jtsa" path="res://Resources/Cards/1 ex Ruby & Saphire/RS84LumBerry.tres" id="15_ejiat"]
 [ext_resource type="Script" uid="uid://8s3m1dar3r33" path="res://Code/Resource Makers/EffectSpecific/ConditionMaker.gd" id="17_hp0s7"]
-[ext_resource type="Resource" uid="uid://c3tip8v6djvro" path="res://Resources/Cards/4 ex Team Magma VS Team Aqua/MA65TeamMagma'sPoochyena.tres" id="18_hl4js"]
+[ext_resource type="Resource" uid="uid://c3tip8v6djvro" path="res://Resources/Cards/4 ex Team Magma VS Team Aqua/MA65MagmaPoochyena.tres" id="18_hl4js"]
 [ext_resource type="Resource" uid="uid://dipr5ie1kx7v8" path="res://Resources/Cards/1 ex Ruby & Saphire/RS93DarknessEnergy.tres" id="19_hgkfh"]
 
 [sub_resource type="Resource" id="Resource_yn0ge"]

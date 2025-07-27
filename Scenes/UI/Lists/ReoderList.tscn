@@ -1,15 +1,13 @@
-[gd_scene load_steps=16 format=3 uid="uid://u1576g11rakh"]
+[gd_scene load_steps=14 format=3 uid="uid://u1576g11rakh"]
 
 [ext_resource type="Theme" uid="uid://bfw6ylcttychc" path="res://Themes/Themes/AverageButton.tres" id="1_vfu45"]
 [ext_resource type="Script" uid="uid://coc5ucyg548yj" path="res://Code/Scenes/UI/List/reorder_box.gd" id="2_bgbqr"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_68v0d"]
 [ext_resource type="Resource" uid="uid://d3oqllkeh61wl" path="res://Resources/Cards/1 ex Ruby & Saphire/RS63Poochyena.tres" id="4_djwkv"]
-[ext_resource type="Resource" uid="uid://dnwi6a5kx4bvn" path="res://Resources/Cards/1 ex Ruby & Saphire/RS10Mightyena.tres" id="5_p8if0"]
 [ext_resource type="Resource" uid="uid://dyqdhaov0ywxk" path="res://Resources/Cards/1 ex Ruby & Saphire/RS92Switch.tres" id="6_chh4k"]
 [ext_resource type="Resource" uid="uid://cm0tjkff2o52" path="res://Resources/Cards/1 ex Ruby & Saphire/RS83LadyOuting.tres" id="7_bgbqr"]
-[ext_resource type="Resource" uid="uid://bmvatu4cfwe4n" path="res://Resources/Cards/4 ex Team Magma VS Team Aqua/MA81TeamMagmaBelt.tres" id="8_qytal"]
+[ext_resource type="Resource" uid="uid://bmvatu4cfwe4n" path="res://Resources/Cards/4 ex Team Magma VS Team Aqua/MA81MagmaBelt.tres" id="8_qytal"]
 [ext_resource type="Resource" uid="uid://nwmfrwp7fuwu" path="res://Resources/Cards/4 ex Team Magma VS Team Aqua/MA87MagmaEnergy.tres" id="9_h60wi"]
-[ext_resource type="Resource" uid="uid://bidyxkb8ygjhl" path="res://Resources/Cards/4 ex Team Magma VS Team Aqua/MA84TeamMagmaTechnicalMachine01.tres" id="10_oeo6a"]
 [ext_resource type="StyleBox" uid="uid://hb14mew2o8sf" path="res://Themes/StyleBoxes/translucent.tres" id="11_p8if0"]
 [ext_resource type="PackedScene" uid="uid://bp1vuamf6uoxr" path="res://Scenes/UI/Lists/reorderItem.tscn" id="12_djwkv"]
 [ext_resource type="PackedScene" uid="uid://cmmds4boaksl7" path="res://Scenes/UI/UIComponents/movable.tscn" id="13_chh4k"]
@@ -27,7 +25,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource("1_vfu45")
 script = ExtResource("2_bgbqr")
-list = Array[ExtResource("3_68v0d")]([ExtResource("4_djwkv"), ExtResource("5_p8if0"), ExtResource("6_chh4k"), ExtResource("7_bgbqr"), ExtResource("8_qytal"), ExtResource("9_h60wi"), ExtResource("10_oeo6a")])
+list = Array[ExtResource("3_68v0d")]([ExtResource("4_djwkv"), ExtResource("6_chh4k"), ExtResource("7_bgbqr"), ExtResource("8_qytal"), ExtResource("9_h60wi")])
 reorder_item = ExtResource("12_djwkv")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]

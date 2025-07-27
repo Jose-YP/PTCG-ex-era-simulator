@@ -14,6 +14,12 @@ class_name AttackData
 @export_flags("None", "Paralysis", "Alseep", "Confusion") var condition: int = 1
 
 @export_group("Effects")
+##If this is [code]true[/code], whatever is returned from [member comparator] will be used as
+## [member EffectCall.replace_num] for all effects, which will replace[br]
+##[member DamageManip.how_many] for [member EffectCall.dmgManip]
+##[br][i]Future ones will be added when needed
+##[br]Not recommended for use unless counter needs to be shared between dmg and effects
+@export var replace_num: bool = false
 @export var ask: SlotAsk
 ##If [member prompt] and [member ask] are true then this effect will occur
 @export var success_effect: EffectCall

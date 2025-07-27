@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=24 format=3 uid="uid://cdlsj0xlgu0n"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=25 format=3 uid="uid://cdlsj0xlgu0n"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_c0dsq"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_tp1gn"]
+[ext_resource type="Texture2D" uid="uid://b4k38kbahgic1" path="res://Art/Cards/12 ex Legend Maker/20.jpg" id="1_uevmg"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_ncs6m"]
 [ext_resource type="Resource" uid="uid://7bruqpkp3r4x" path="res://Resources/Components/Effects/Search/TrainerNotSupport.tres" id="3_k8vd7"]
 [ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="4_s35fu"]
@@ -57,12 +58,14 @@ script = ExtResource("6_tqtg3")
 side_target = 4
 slot_target = 4
 specifically = Array[String](["Solrock"])
+check_ability = false
+contained_abilities = 3
+knocked_out = false
+tool_attatched = false
 comparison_type = 1
 max_hp = -10
 damage_taken = -10
 retreat_cost = -1
-knocked_out = false
-tool_attatched = false
 stage = 7
 rare_candy = false
 class_inclusive = true
@@ -83,12 +86,14 @@ script = ExtResource("6_tqtg3")
 side_target = 3
 slot_target = 4
 specifically = Array[String]([])
+check_ability = false
+contained_abilities = 3
+knocked_out = false
+tool_attatched = false
 comparison_type = 1
 max_hp = -10
 damage_taken = -10
 retreat_cost = -1
-knocked_out = false
-tool_attatched = false
 stage = 7
 rare_candy = false
 class_inclusive = false
@@ -158,6 +163,7 @@ metadata/_custom_type_script = "uid://dkximshow1pao"
 resource_name = "LM20Lunatone"
 script = ExtResource("1_c0dsq")
 name = "Lunatone"
+image = ExtResource("1_uevmg")
 illustrator = "Hisao Nakamura"
 number = 20
 rarity = 2

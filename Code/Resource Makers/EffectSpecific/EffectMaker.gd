@@ -45,9 +45,10 @@ ENMOV, DMGMANIP, SEARCH, SWAP, DRAW, ALLEVIATE, MIMIC, OTHER}
 signal finished
 
 var went_back: bool = false
+var replace_num: int = -1
 
 #These are params since the indivdual call knows best which is what
-func play_effect(reversable: bool = false):
+func play_effect(reversable: bool = false) -> void:
 	var default_order = [condition, buff, card_disrupt, disable, 
 	 energy_movement, dmgManip, search, swap, draw_ammount, alleviate, mimic, extra_effect]
 	#var enum_dict: Dictionary = {effect_types.CONDITION:condition, effect_types.BUFF:buff,
@@ -78,7 +79,7 @@ func play_effect(reversable: bool = false):
 func handle_component(comp, reversable: bool = false):
 	if (comp == extra_effect and prompt_extra.check_prompt())\
 	 or comp != extra_effect:
-		await comp.play_effect(reversable)
+		await comp.play_effect(reversable, replace_num)
 
 
 func just_reversed():

@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://okxu6caq50xw"]
+[gd_scene load_steps=4 format=3 uid="uid://okxu6caq50xw"]
 
 [ext_resource type="Script" uid="uid://w2idg45qhb74" path="res://Code/Scenes/UI/List/reorder_button.gd" id="1_7mofp"]
-[ext_resource type="Resource" uid="uid://bidyxkb8ygjhl" path="res://Resources/Cards/4 ex Team Magma VS Team Aqua/MA84TeamMagmaTechnicalMachine01.tres" id="2_7mofp"]
 [ext_resource type="PackedScene" uid="uid://cmmds4boaksl7" path="res://Scenes/UI/UIComponents/movable.tscn" id="3_tg4hw"]
 [ext_resource type="Texture2D" uid="uid://cj4eckcnktq41" path="res://Art/Cards/1 ex Ruby & Saphire/109.jpg" id="4_vmj5b"]
 
@@ -21,7 +20,6 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_7mofp")
-card = ExtResource("2_7mofp")
 
 [node name="Movable" parent="." node_paths=PackedStringArray("dragging_node") instance=ExtResource("3_tg4hw")]
 show_behind_parent = false

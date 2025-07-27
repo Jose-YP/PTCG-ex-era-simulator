@@ -21,6 +21,8 @@ class_name PromptAsk
 @export var can_reverse: bool = true
 ##These must be performed before doing the proceeding effect/attack
 @export var effect: EffectCall
+##This is to be filled later, need to implement occurance resource and slot signals
+@export var occurance: bool
 
 #region CHOICE
 @export_group("Choice")
@@ -35,6 +37,8 @@ class_name PromptAsk
 ##Which cards are allowed in choice
 @export var which_cards: Identifier
 #endregion
+
+
 
 var formal_answer: bool
 

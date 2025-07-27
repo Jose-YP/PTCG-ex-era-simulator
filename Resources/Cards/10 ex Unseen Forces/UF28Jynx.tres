@@ -1,0 +1,164 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=27 format=3 uid="uid://k4e01k751mpn"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_5sb5e"]
+[ext_resource type="Texture2D" uid="uid://crv3nmkicj6si" path="res://Art/Cards/10 ex Unseen Forces/28.jpg" id="1_lai6i"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_he504"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_jseaf"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_jseaf"]
+[ext_resource type="Resource" uid="uid://bext0mocufqgp" path="res://Resources/Components/Effects/Conditions/BasicBurn.tres" id="4_kd3wa"]
+[ext_resource type="Resource" uid="uid://ekj1myy642kh" path="res://Resources/Components/Effects/Prompts/PromptHeads.tres" id="5_0ycnm"]
+[ext_resource type="Resource" uid="uid://6xmw13js5xd3" path="res://Resources/Components/Effects/Conditions/BasicParalyze.tres" id="7_c435i"]
+[ext_resource type="Script" uid="uid://crscwhvugaoxa" path="res://Code/Resource Makers/PokemonSpecific/AttackCostMaker.gd" id="8_0ppqk"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="8_87fu4"]
+[ext_resource type="Resource" uid="uid://cw44iqotg3v3f" path="res://Resources/Components/Effects/Asks/General/FromDefending.tres" id="9_y5xf5"]
+[ext_resource type="Script" uid="uid://scca13hg4k1l" path="res://Code/Resource Makers/EffectSpecific/DmgManipMaker.gd" id="10_y5xf5"]
+[ext_resource type="Script" uid="uid://b2tlqpng7fq25" path="res://Code/Resource Makers/PokemonSpecific/BodyMaker.gd" id="11_0x2n6"]
+[ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/BuffMaker.gd" id="12_0x2n6"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="12_sj7iq"]
+
+[sub_resource type="Resource" id="Resource_sj7iq"]
+script = ExtResource("8_87fu4")
+prompt_reliant = false
+prompt = ExtResource("5_0ycnm")
+initial_main_DMG = 0
+defender_properties = 0
+condition = 1
+replace_num = false
+success_effect = ExtResource("7_c435i")
+fail_effect = ExtResource("4_kd3wa")
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_xvftv"]
+script = ExtResource("2_he504")
+name = "Freeze Light"
+description = "Flip a coin. If heads, the Defending Pokémon is now Paralyzed. If tails, the Defending Pokémon is now Burned."
+attack_cost = ExtResource("3_jseaf")
+attack_data = SubResource("Resource_sj7iq")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_0matq"]
+script = ExtResource("8_0ppqk")
+grass_cost = 0
+fire_cost = 0
+water_cost = 1
+lightning_cost = 0
+psychic_cost = 1
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 1
+metadata/_custom_type_script = "uid://crscwhvugaoxa"
+
+[sub_resource type="Resource" id="Resource_uflnk"]
+script = ExtResource("10_y5xf5")
+turn_delay = -1
+prevent_KO = false
+mode = "Add"
+how_many = 4
+choosing = 4
+anyway_u_like = true
+choose_num = 1
+ask = ExtResource("9_y5xf5")
+plus = true
+modifier = 1
+metadata/_custom_type_script = "uid://scca13hg4k1l"
+
+[sub_resource type="Resource" id="Resource_0dhaj"]
+script = ExtResource("4_jseaf")
+either_or = false
+order = Array[int]([])
+dmgManip = SubResource("Resource_uflnk")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_j1gr8"]
+script = ExtResource("8_87fu4")
+prompt_reliant = false
+initial_main_DMG = 0
+defender_properties = 0
+condition = 1
+replace_num = false
+always_effect = SubResource("Resource_0dhaj")
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_oqscs"]
+script = ExtResource("2_he504")
+name = "Pure Power"
+description = "Put 4 damage counters on your opponent's Pokémon in any way you like."
+attack_cost = SubResource("Resource_0matq")
+attack_data = SubResource("Resource_j1gr8")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_cmuqy"]
+script = ExtResource("12_0x2n6")
+side = 4
+slot = 1
+duration = -1
+attack_damage = 0
+defense = 0
+retreat_change = 0
+after_weak_res = true
+ignore_res_other = false
+ignore_weak_self = true
+immunities = 2
+immune_to_special_conditions = false
+immune_to_effects = true
+immune_to_damage = false
+metadata/_custom_type_script = "uid://coojhwe6m20gd"
+
+[sub_resource type="Resource" id="Resource_nbhf5"]
+script = ExtResource("4_jseaf")
+either_or = false
+order = Array[int]([])
+buff = SubResource("Resource_cmuqy")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_sijf8"]
+script = ExtResource("11_0x2n6")
+when_active = false
+name = "Stages of Evolution"
+description = "As long as [name] is an Evolved Pokémon, prevent all effects of opponent's attacks, except damage, done to [name], and [name] has no Weakness."
+affected_by_condition = true
+attatched_energy = 0
+energy_ammount = 1
+effect = SubResource("Resource_nbhf5")
+metadata/_custom_type_script = "uid://b2tlqpng7fq25"
+
+[sub_resource type="Resource" id="Resource_prnr0"]
+script = ExtResource("12_sj7iq")
+HP = 70
+retreat = 1
+body = SubResource("Resource_sijf8")
+attacks = Array[ExtResource("2_he504")]([SubResource("Resource_xvftv"), SubResource("Resource_oqscs")])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 1
+owner = 0
+type = 4
+weak = 128
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_5sb5e")
+name = "Jynx"
+image = ExtResource("1_lai6i")
+illustrator = "Yukiko Baba"
+number = 28
+rarity = 2
+expansion = 9
+categories = 1
+pokemon_properties = SubResource("Resource_prnr0")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

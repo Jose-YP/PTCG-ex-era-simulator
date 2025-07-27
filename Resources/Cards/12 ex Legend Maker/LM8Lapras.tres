@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=13 format=3 uid="uid://dvpjo4nwfa1xi"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=14 format=3 uid="uid://dvpjo4nwfa1xi"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_6ptis"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_6u46t"]
+[ext_resource type="Texture2D" uid="uid://rlff536g5p1k" path="res://Art/Cards/12 ex Legend Maker/8.jpg" id="1_ithq0"]
 [ext_resource type="Resource" uid="uid://fcpa5aqhgy0e" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/W1C1.tres" id="2_5rgal"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_wukec"]
 [ext_resource type="Resource" uid="uid://knu14juippx8" path="res://Resources/Components/Effects/Search/SupporterSearch.tres" id="3_8d8s2"]
@@ -54,6 +55,7 @@ metadata/_custom_type_script = "uid://dkximshow1pao"
 [resource]
 script = ExtResource("1_6ptis")
 name = "Lapras"
+image = ExtResource("1_ithq0")
 illustrator = "Kagemaru Himeno"
 number = 8
 rarity = 3

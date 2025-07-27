@@ -7,16 +7,20 @@ class_name SlotAsk
 @export var side_target: Consts.SIDES = Consts.SIDES.BOTH
 @export var slot_target: Consts.SLOTS = Consts.SLOTS.ALL
 @export var specifically: Array[String] = []
-##-10 means don't look at this var, 0 means must be undamaged, the rest mean x or more
-@export_enum("LessEq", "GreaterEq") var comparison_type: int = 1
-@export_range(-10,200,10) var max_hp: int = -10
-@export_range(-10,200,10) var damage_taken: int = -10
-##-1 means don't look at it
-@export_range(-1, 6, 1) var retreat_cost: int = -1
+@export var check_ability: bool = false
+@export_flags("Body", "Power") var contained_abilities: int = 3
 @export var knocked_out: bool = false
 @export var desired_condition: Condition
 ##Self means the attacking/defending pokemon, Active is for doubles
 @export var tool_attatched: bool = false
+##-10 means don't look at this var, 0 means must be undamaged, the rest mean x or more
+@export_enum("LessEq", "GreaterEq") var comparison_type: int = 1
+
+@export_subgroup("Stats")
+@export_range(-10,200,10) var max_hp: int = -10
+@export_range(-10,200,10) var damage_taken: int = -10
+##-1 means don't look at it
+@export_range(-1, 6, 1) var retreat_cost: int = -1
 
 @export_subgroup("Class")
 @export_flags("Basic", "Stage 1", "Stage 2") var stage: int = 7
@@ -45,7 +49,6 @@ class_name SlotAsk
 @export var energy_attatched: int = -1
 @export_enum("Basic Energy","Special Energy","Any") var energy_class: String = "Any"
 @export var energy_type: EnData = preload("res://Resources/Components/EnData/Rainbow.tres")
-
 
 #Checks if one slot is 
 func check_ask(slot: PokeSlot) -> bool:

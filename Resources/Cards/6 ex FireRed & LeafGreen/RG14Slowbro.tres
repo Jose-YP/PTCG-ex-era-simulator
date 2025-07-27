@@ -1,0 +1,83 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=17 format=3 uid="uid://dp2qu3pkoldmi"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_et5jw"]
+[ext_resource type="Texture2D" uid="uid://dsvtf86uyq2o3" path="res://Art/Cards/6 ex FireRed & LeafGreen/14.jpg" id="1_so5g5"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_w7aot"]
+[ext_resource type="Resource" uid="uid://cvrbxqvsyxt6t" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/P1C1.tres" id="3_y67vy"]
+[ext_resource type="Resource" uid="uid://dsncmneiiyq18" path="res://Resources/Components/Pokemon/Attacks/AttackData/30ParaIfHeads.tres" id="4_d2ug4"]
+[ext_resource type="Resource" uid="uid://dqj6gq7pt3dbk" path="res://Resources/Components/Effects/Asks/General/FromSource.tres" id="5_2l41v"]
+[ext_resource type="Script" uid="uid://scca13hg4k1l" path="res://Code/Resource Makers/EffectSpecific/DmgManipMaker.gd" id="6_etfw1"]
+[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="7_888bh"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="8_gwxer"]
+[ext_resource type="Script" uid="uid://b58015mafcw2v" path="res://Code/Resource Makers/PokemonSpecific/PowerMaker.gd" id="9_o204e"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="10_kwtxr"]
+
+[sub_resource type="Resource" id="Resource_opqxn"]
+script = ExtResource("2_w7aot")
+name = "Psyshock"
+description = ""
+attack_cost = ExtResource("3_y67vy")
+attack_data = ExtResource("4_d2ug4")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_puw2w"]
+script = ExtResource("6_etfw1")
+turn_delay = -1
+prevent_KO = true
+mode = "Swap"
+how_many = 1
+choosing = 4
+anyway_u_like = false
+choose_num = 1
+ask = ExtResource("5_2l41v")
+plus = true
+modifier = 1
+takers = ExtResource("7_888bh")
+metadata/_custom_type_script = "uid://scca13hg4k1l"
+
+[sub_resource type="Resource" id="Resource_4iif7"]
+script = ExtResource("8_gwxer")
+either_or = false
+order = Array[int]([])
+dmgManip = SubResource("Resource_puw2w")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_curd7"]
+script = ExtResource("9_o204e")
+name = "Strange Behavior"
+description = "As often as you like during your turn (before your attack), you may move 1 damage counter from 1 of your Pokémon to [name] as long as you don't Knock Out [name]. This power can't be used if Slowbro is affected by a Special Condition."
+affected_by_condition = true
+active = false
+when_condition = "Whenever"
+when_position = 4
+how_often = 0
+effect = SubResource("Resource_4iif7")
+metadata/_custom_type_script = "uid://b58015mafcw2v"
+
+[sub_resource type="Resource" id="Resource_yeibv"]
+script = ExtResource("10_kwtxr")
+HP = 60
+retreat = 1
+power = SubResource("Resource_curd7")
+attacks = Array[ExtResource("2_w7aot")]([SubResource("Resource_opqxn")])
+evo_stage = "Stage 1"
+evolves_from = "Slowpoke"
+considered = 1
+owner = 0
+type = 16
+weak = 16
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_et5jw")
+name = "Slowbro"
+image = ExtResource("1_so5g5")
+illustrator = "Yuka Morii"
+number = 14
+rarity = 3
+expansion = 5
+categories = 1
+pokemon_properties = SubResource("Resource_yeibv")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

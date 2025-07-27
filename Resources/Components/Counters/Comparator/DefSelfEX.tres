@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Comparator" load_steps=5 format=3 uid="uid://cqtgiv5p6suee"]
 
-[ext_resource type="Resource" uid="uid://bns8h72u2hxqo" path="res://Resources/Components/Effects/Asks/General/AnyMon.tres" id="1_0gk06"]
+[ext_resource type="Resource" uid="uid://dck0aw0wiqcpw" path="res://Resources/Components/Effects/Asks/Class&Owner/Other'sTrgEXMon.tres" id="1_0gk06"]
 [ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="2_in8uv"]
 [ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="3_6h0ox"]
 
@@ -14,8 +14,8 @@ metadata/_custom_type_script = "uid://vjn146j3ayd6"
 
 [resource]
 script = ExtResource("3_6h0ox")
-comparision_type = "Return"
+comparision_type = "Equals"
 first_comparison = SubResource("Resource_m00ho")
-compare_to = "None"
-second_constant = 0
+compare_to = "Const"
+second_constant = 1
 metadata/_custom_type_script = "uid://b65jx8u5cgcgl"

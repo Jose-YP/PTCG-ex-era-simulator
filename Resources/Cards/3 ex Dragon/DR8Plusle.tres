@@ -1,0 +1,76 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=16 format=3 uid="uid://c0x1x1jxrmf64"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_vj0n6"]
+[ext_resource type="Texture2D" uid="uid://bp0j272pcgcfj" path="res://Art/Cards/3 ex Dragon/8.jpg" id="1_x1x78"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_8yo28"]
+[ext_resource type="Resource" uid="uid://e2siihge8nvy" path="res://Resources/Components/Pokemon/Attacks/PureEffectAttacks/Cheer On.tres" id="3_fa2ne"]
+[ext_resource type="Resource" uid="uid://cesjkvsi5c6jb" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/L1C1.tres" id="4_12kuy"]
+[ext_resource type="Resource" uid="uid://cw44iqotg3v3f" path="res://Resources/Components/Effects/Asks/General/FromDefending.tres" id="5_bs661"]
+[ext_resource type="Resource" uid="uid://dabjstl6kl88i" path="res://Resources/Components/Pokemon/Bodies/Chain of Events.tres" id="5_fa2ne"]
+[ext_resource type="Resource" uid="uid://cqtgiv5p6suee" path="res://Resources/Components/Counters/Comparator/DefSelfEX.tres" id="6_6yu30"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="6_12kuy"]
+[ext_resource type="Script" uid="uid://br15mnap82upq" path="res://Code/Resource Makers/PokemonSpecific/BenchAttackMaker.gd" id="7_l51ip"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="8_403sh"]
+
+[sub_resource type="Resource" id="Resource_uk0sh"]
+script = ExtResource("7_l51ip")
+how_many = 1
+candidates = ExtResource("5_bs661")
+active_allowed = true
+apply_weak_res = false
+initial_main_DMG = 20
+modifier = 1
+modifier_num = 20
+comparator = ExtResource("6_6yu30")
+metadata/_custom_type_script = "uid://br15mnap82upq"
+
+[sub_resource type="Resource" id="Resource_deeph"]
+script = ExtResource("8_403sh")
+prompt_reliant = false
+initial_main_DMG = 0
+defender_properties = 0
+condition = 1
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+bench_damage = SubResource("Resource_uk0sh")
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_ortis"]
+script = ExtResource("2_8yo28")
+name = "Extra Circuit"
+description = "Choose 1 of your opponent's Pokémon. This attack does 20 damage to that Pokémon. If you choose Pokémon-ex, this attack does 40 damage instead. (Don't apply Weakness and Resistance for Benched Pokémon.)"
+attack_cost = ExtResource("4_12kuy")
+attack_data = SubResource("Resource_deeph")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_6yu30"]
+script = ExtResource("6_12kuy")
+HP = 50
+retreat = 1
+body = ExtResource("5_fa2ne")
+attacks = Array[ExtResource("2_8yo28")]([ExtResource("3_fa2ne"), SubResource("Resource_ortis")])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 1
+owner = 0
+type = 8
+weak = 32
+resist = 128
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_vj0n6")
+name = "Plusle"
+image = ExtResource("1_x1x78")
+illustrator = "Atsuko Nishida"
+number = 8
+rarity = 3
+expansion = 2
+categories = 1
+pokemon_properties = SubResource("Resource_6yu30")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

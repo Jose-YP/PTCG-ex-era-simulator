@@ -1,0 +1,93 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=18 format=3 uid="uid://dtt6j0828sxy6"]
+
+[ext_resource type="Texture2D" uid="uid://clkdfogvw0n3o" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/32.jpg" id="1_sp5ng"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_hr55n"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_88a3h"]
+[ext_resource type="Resource" uid="uid://cw44iqotg3v3f" path="res://Resources/Components/Effects/Asks/General/FromDefending.tres" id="4_o4bs1"]
+[ext_resource type="Resource" uid="uid://e706qq8o0hri" path="res://Resources/Components/Counters/Comparator/Return2Flip.tres" id="5_jq5tw"]
+[ext_resource type="Script" uid="uid://scca13hg4k1l" path="res://Code/Resource Makers/EffectSpecific/DmgManipMaker.gd" id="6_yr2hq"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="7_fundw"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="8_kxtxb"]
+[ext_resource type="Resource" uid="uid://bep36omnenbc8" path="res://Resources/Components/Pokemon/Attacks/AttackData/10Dmg.tres" id="9_7l1ov"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="10_c8qcg"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="11_ro88b"]
+
+[sub_resource type="Resource" id="Resource_ii52m"]
+script = ExtResource("6_yr2hq")
+turn_delay = -1
+prevent_KO = false
+mode = "Add"
+how_many = 0
+choosing = 4
+anyway_u_like = false
+choose_num = 1
+ask = ExtResource("4_o4bs1")
+plus = true
+comparator = ExtResource("5_jq5tw")
+modifier = 1
+metadata/_custom_type_script = "uid://scca13hg4k1l"
+
+[sub_resource type="Resource" id="Resource_5gebk"]
+script = ExtResource("7_fundw")
+either_or = false
+order = Array[int]([])
+dmgManip = SubResource("Resource_ii52m")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_n77ks"]
+script = ExtResource("8_kxtxb")
+prompt_reliant = false
+initial_main_DMG = 0
+defender_properties = 0
+condition = 1
+always_effect = SubResource("Resource_5gebk")
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_mj05r"]
+script = ExtResource("2_hr55n")
+name = "Psymist"
+description = "Flip 2 coins. For each heads, choose 1 of your opponent's Pokémon and put 1 damage counter on that Pokémon."
+attack_cost = ExtResource("3_88a3h")
+attack_data = SubResource("Resource_n77ks")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_lsewu"]
+script = ExtResource("2_hr55n")
+name = ""
+description = ""
+attack_cost = ExtResource("3_88a3h")
+attack_data = ExtResource("9_7l1ov")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_b8iye"]
+script = ExtResource("10_c8qcg")
+HP = 50
+retreat = 1
+attacks = Array[ExtResource("2_hr55n")]([SubResource("Resource_mj05r"), SubResource("Resource_lsewu")])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 1
+owner = 2
+type = 16
+weak = 16
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("11_ro88b")
+name = " Team Magma's Baltoy"
+image = ExtResource("1_sp5ng")
+illustrator = "Atsuko Ujiie"
+number = 32
+rarity = 1
+expansion = 3
+categories = 1
+pokemon_properties = SubResource("Resource_b8iye")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

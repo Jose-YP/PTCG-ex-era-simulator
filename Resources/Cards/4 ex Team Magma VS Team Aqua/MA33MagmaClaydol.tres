@@ -1,0 +1,109 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=19 format=3 uid="uid://dny81go0lfie2"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_28pd5"]
+[ext_resource type="Texture2D" uid="uid://cr2oermvuclin" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/33.jpg" id="1_wudcu"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_5wkmv"]
+[ext_resource type="Resource" uid="uid://b1rwmggf7a4do" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless2.tres" id="3_bc0pq"]
+[ext_resource type="Resource" uid="uid://cw44iqotg3v3f" path="res://Resources/Components/Effects/Asks/General/FromDefending.tres" id="4_ocm5a"]
+[ext_resource type="Script" uid="uid://scca13hg4k1l" path="res://Code/Resource Makers/EffectSpecific/DmgManipMaker.gd" id="5_gapec"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="6_cwo05"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="7_x780m"]
+[ext_resource type="Resource" uid="uid://d3mbrhxvdupx6" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/F2C1.tres" id="8_h8xkt"]
+[ext_resource type="Resource" uid="uid://dhvoug8onmcnf" path="res://Resources/Components/Pokemon/BenchAttack/10DefBenchDamaged.tres" id="9_wudcu"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="10_kyebv"]
+
+[sub_resource type="Resource" id="Resource_3fdt1"]
+script = ExtResource("5_gapec")
+turn_delay = -1
+prevent_KO = false
+mode = "Add"
+how_many = 2
+choosing = 4
+anyway_u_like = true
+choose_num = 1
+ask = ExtResource("4_ocm5a")
+plus = true
+modifier = 1
+metadata/_custom_type_script = "uid://scca13hg4k1l"
+
+[sub_resource type="Resource" id="Resource_xuf6v"]
+script = ExtResource("6_cwo05")
+either_or = false
+order = Array[int]([])
+dmgManip = SubResource("Resource_3fdt1")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_22mru"]
+script = ExtResource("7_x780m")
+prompt_reliant = false
+initial_main_DMG = 0
+defender_properties = 0
+condition = 1
+replace_num = false
+always_effect = SubResource("Resource_xuf6v")
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_33sqn"]
+script = ExtResource("2_5wkmv")
+name = "Clay Curse"
+description = "Put 2 damage counters on your opponent's Pokémon in any way you like."
+attack_cost = ExtResource("3_bc0pq")
+attack_data = SubResource("Resource_22mru")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_matcw"]
+script = ExtResource("7_x780m")
+prompt_reliant = false
+initial_main_DMG = 50
+defender_properties = 0
+condition = 1
+replace_num = false
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+bench_damage = ExtResource("9_wudcu")
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_pbiwv"]
+script = ExtResource("2_5wkmv")
+name = "Clay Pulse"
+description = "Does 10 damage to each of your opponent's Benched Pokémon that has any damage counters on it. (Don't apply Weakness and Resistance for Benched Pokémon.)"
+attack_cost = ExtResource("8_h8xkt")
+attack_data = SubResource("Resource_matcw")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_wog4x"]
+script = ExtResource("10_kyebv")
+HP = 80
+retreat = 1
+attacks = Array[ExtResource("2_5wkmv")]([SubResource("Resource_33sqn"), SubResource("Resource_pbiwv")])
+evo_stage = "Stage 1"
+evolves_from = "Team Magma's Baltoy"
+considered = 1
+owner = 2
+type = 32
+weak = 1
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_28pd5")
+name = " Team Magma's Claydol"
+image = ExtResource("1_wudcu")
+illustrator = "Zu-ka"
+number = 33
+rarity = 1
+expansion = 3
+categories = 1
+pokemon_properties = SubResource("Resource_wog4x")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

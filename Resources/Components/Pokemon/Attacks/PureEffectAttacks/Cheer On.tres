@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="Attack" load_steps=8 format=3 uid="uid://e2siihge8nvy"]
+
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="1_n5j2j"]
+[ext_resource type="Resource" uid="uid://vmk4e17o42c2" path="res://Resources/Components/Effects/DmgManip/Remove/Heal1AllSrc.tres" id="2_t087k"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_eijvg"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="4_tk0xw"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="5_cylrm"]
+
+[sub_resource type="Resource" id="Resource_cab50"]
+script = ExtResource("3_eijvg")
+either_or = false
+order = Array[int]([])
+dmgManip = ExtResource("2_t087k")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_q4a0m"]
+script = ExtResource("4_tk0xw")
+prompt_reliant = false
+initial_main_DMG = 0
+defender_properties = 0
+condition = 1
+always_effect = SubResource("Resource_cab50")
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[resource]
+script = ExtResource("5_cylrm")
+name = "Cheer On"
+description = "Remove 1 damage counter from each of your Pokémon (including [name])."
+attack_cost = ExtResource("1_n5j2j")
+attack_data = SubResource("Resource_q4a0m")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

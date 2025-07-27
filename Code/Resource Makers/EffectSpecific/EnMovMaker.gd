@@ -29,7 +29,7 @@ class_name EnMov
 
 signal finished
 
-func play_effect(reversable: bool = false) -> void:
+func play_effect(reversable: bool = false, replace_num: int = -1) -> void:
 	print("PLAY ENMOV")
 	match action:
 		0:

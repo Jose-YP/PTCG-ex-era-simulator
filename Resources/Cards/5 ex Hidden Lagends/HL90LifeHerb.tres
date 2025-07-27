@@ -1,0 +1,52 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=11 format=3 uid="uid://dun1tnvh1beg2"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_c2xtn"]
+[ext_resource type="Texture2D" uid="uid://d28x0rsvtdd7l" path="res://Art/Cards/5 ex Hidden Legends/90.jpg" id="1_sxdj7"]
+[ext_resource type="Resource" uid="uid://ekj1myy642kh" path="res://Resources/Components/Effects/Prompts/PromptHeads.tres" id="3_fvwym"]
+[ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="4_xjtbk"]
+[ext_resource type="Resource" uid="uid://dqj6gq7pt3dbk" path="res://Resources/Components/Effects/Asks/General/FromSource.tres" id="5_y7kg0"]
+[ext_resource type="Script" uid="uid://scca13hg4k1l" path="res://Code/Resource Makers/EffectSpecific/DmgManipMaker.gd" id="6_7luqp"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="7_3km8i"]
+
+[sub_resource type="Resource" id="Resource_podxu"]
+script = ExtResource("6_7luqp")
+turn_delay = -1
+prevent_KO = false
+mode = "Remove"
+how_many = 6
+choosing = 4
+anyway_u_like = false
+choose_num = 1
+ask = ExtResource("5_y7kg0")
+plus = true
+modifier = 1
+metadata/_custom_type_script = "uid://scca13hg4k1l"
+
+[sub_resource type="Resource" id="Resource_wmad5"]
+script = ExtResource("7_3km8i")
+either_or = false
+order = Array[int]([])
+dmgManip = SubResource("Resource_podxu")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_jxw2x"]
+script = ExtResource("4_xjtbk")
+considered = "Item"
+specific_requirement = ""
+description = "Flip a coin. If heads, choose 1 of your Pokémon (excluding Pokémon-ex). Remove all Special Conditions and 6 damage counters from that Pokémon (all if there are less than 6). "
+prompt = ExtResource("3_fvwym")
+success_effect = SubResource("Resource_wmad5")
+metadata/_custom_type_script = "uid://crx447i85kshy"
+
+[resource]
+script = ExtResource("1_c2xtn")
+name = "Life Herb"
+image = ExtResource("1_sxdj7")
+illustrator = "Ryo Ueda"
+number = 90
+rarity = 1
+expansion = 4
+categories = 2
+trainer_properties = SubResource("Resource_jxw2x")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

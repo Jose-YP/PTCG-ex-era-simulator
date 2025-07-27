@@ -8,7 +8,7 @@ class_name IndvCounter
 #script constants
 const pokeSlot = preload("res://Code/Resource Makers/PokemonSpecific/PokeSlotMaker.gd")
 const stackRes = preload("res://Code/Resource Makers/GeneralUse/CardStacksMaker.gd")
-const which_vars: PackedStringArray = ["Slot", "Stack", "Coinflip"]
+const which_vars: PackedStringArray = ["Slot", "Stack", "Coinflip", "Input"]
 const en_methods: PackedStringArray = ["Total", "Excess", "Diff Types", "Categories"]
 const en_category_enum: PackedStringArray = ["Any", "Basic Energy", "Special Energy"]
 
@@ -20,8 +20,8 @@ var internal_data = {"which" : "Slot",
  "coin_flip" : load("res://Resources/Components/CoinFlip/FlipOnce.tres") as CoinFlip,
  "ask" : load("res://Resources/Components/Effects/Asks/General/AnyMon.tres") as SlotAsk,
  "en_count_methods" : "Total", "en_categories" : "Any",
- "en_counting" : load("res://Resources/Components/EnData/Rainbow.tres") as EnData
- ,"cap" : -1}
+ "en_counting" : load("res://Resources/Components/EnData/Rainbow.tres") as EnData 
+ ,"Effect" : null ,"cap" : -1}
 #endregion
 #--------------------------------------
 
@@ -58,7 +58,7 @@ func _get_property_list() -> Array[Dictionary]:
 		"hint_string" : ",".join(which_vars),
 		"usage" : PROPERTY_USAGE_DEFAULT
 	})
-	if _get("which") != "Coinflip":
+	if _get("which") != "Coinflip" and _get("which") != "Input":
 		#I'll always need ask for at least defining side to check
 		props.append({
 				"name" : "ask",
@@ -122,6 +122,7 @@ func _get_property_list() -> Array[Dictionary]:
 			"hint_string" : "CoinFlip",
 			"usage" : PROPERTY_USAGE_DEFAULT
 		})
+	
 	props.append({
 		"name" : "cap",
 		"type" : TYPE_INT,
@@ -226,6 +227,8 @@ func evaluate() -> int:
 			result = stack_evaluation(_get("stack_vars"), _get("ask"))
 		"Coinflip":
 			result = coinflip_evaluation(_get("coin_flip"))
+		"Input":
+			result = input_evaluation()
 	
 	if _get("cap") != -1:
 		result = clamp(result, 0, _get("cap"))
@@ -296,6 +299,12 @@ func coinflip_evaluation(coinflip_data: CoinFlip) -> int:
 	Globals.fundies.add_child(flip_box)
 	
 	return flip_data["Heads"] if coinflip_data.heads else flip_data["Tails"]
+
+func input_evaluation() -> int:
+	var input_return: int = 0
+	
+	return input_return
+
 #endregion
 #--------------------------------------
 

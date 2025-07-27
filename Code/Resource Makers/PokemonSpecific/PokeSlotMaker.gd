@@ -31,8 +31,12 @@ var energy_timers: Dictionary = {}
 @export var applied_condition: Condition = Condition.new()
 #endregion
 #--------------------------------------
+#region HISTORY
+@export_group("History")
 @export var current_attack: Attack
 @export var dealt_damage: int = 0
+@export var energy_discarded: int = 0
+#endregion
 #endregion
 #--------------------------------------
 

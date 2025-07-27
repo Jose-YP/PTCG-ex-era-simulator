@@ -1,0 +1,119 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=22 format=3 uid="uid://cwm50lliwuxgr"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_av14u"]
+[ext_resource type="Texture2D" uid="uid://bkixvvnwbglm2" path="res://Art/Cards/10 ex Unseen Forces/9.jpg" id="1_b8f7a"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_uaib2"]
+[ext_resource type="Resource" uid="uid://bdwp1hpi4q83j" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/G2C1.tres" id="3_6ro4m"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_wmae1"]
+[ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="6_6lcpf"]
+[ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="7_ai77k"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="8_7mess"]
+[ext_resource type="Resource" uid="uid://c08tcl1tywrqe" path="res://Resources/Components/Effects/Asks/Class&Owner/BothNon-ex.tres" id="9_rpbfj"]
+[ext_resource type="Script" uid="uid://scca13hg4k1l" path="res://Code/Resource Makers/EffectSpecific/DmgManipMaker.gd" id="10_fryll"]
+[ext_resource type="Script" uid="uid://b2tlqpng7fq25" path="res://Code/Resource Makers/PokemonSpecific/BodyMaker.gd" id="11_uehyq"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="12_iblgg"]
+
+[sub_resource type="Resource" id="Resource_xvftv"]
+script = ExtResource("4_wmae1")
+either_or = false
+order = Array[int]([])
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_0matq"]
+script = ExtResource("6_6lcpf")
+which = "Input"
+cap = 5
+metadata/_custom_type_script = "uid://vjn146j3ayd6"
+
+[sub_resource type="Resource" id="Resource_uflnk"]
+script = ExtResource("7_ai77k")
+comparision_type = "Return"
+first_comparison = SubResource("Resource_0matq")
+compare_to = "None"
+second_constant = 0
+metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
+
+[sub_resource type="Resource" id="Resource_0dhaj"]
+script = ExtResource("8_7mess")
+prompt_reliant = false
+initial_main_DMG = 50
+defender_properties = 0
+condition = 1
+replace_num = true
+always_effect = SubResource("Resource_xvftv")
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 1
+modifier_num = 10
+comparator = SubResource("Resource_uflnk")
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_j1gr8"]
+script = ExtResource("2_uaib2")
+name = "Bouncy Move"
+description = "You may put up to 5 damage counters on [name]. If you do, this attack does 50 damage plus 10 more damage for each damage counter you put on [name] in this way."
+attack_cost = ExtResource("3_6ro4m")
+attack_data = SubResource("Resource_0dhaj")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_oqscs"]
+script = ExtResource("10_fryll")
+turn_delay = -1
+prevent_KO = false
+mode = "Remove"
+how_many = 1
+choosing = 4
+anyway_u_like = false
+choose_num = 1
+ask = ExtResource("9_rpbfj")
+plus = true
+modifier = 1
+metadata/_custom_type_script = "uid://scca13hg4k1l"
+
+[sub_resource type="Resource" id="Resource_cmuqy"]
+script = ExtResource("4_wmae1")
+either_or = false
+order = Array[int]([])
+dmgManip = SubResource("Resource_oqscs")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_nbhf5"]
+script = ExtResource("11_uehyq")
+when_active = true
+name = "Healing Aroma"
+description = "As long as [name] is your Active Pokémon, remove 1 damage counter from each Pokémon (excluding Pokémon-ex) (both yours and your opponent's) between turns."
+affected_by_condition = true
+attatched_energy = 0
+energy_ammount = 1
+effect = SubResource("Resource_cmuqy")
+metadata/_custom_type_script = "uid://b2tlqpng7fq25"
+
+[sub_resource type="Resource" id="Resource_sijf8"]
+script = ExtResource("12_iblgg")
+HP = 100
+retreat = 3
+body = SubResource("Resource_nbhf5")
+attacks = Array[ExtResource("2_uaib2")]([SubResource("Resource_j1gr8")])
+evo_stage = "Stage 2"
+evolves_from = "Bayleef"
+considered = 1
+owner = 0
+type = 1
+weak = 2
+resist = 4
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_av14u")
+name = "Meganium"
+image = ExtResource("1_b8f7a")
+illustrator = "Bayleef"
+number = 9
+rarity = 3
+expansion = 9
+categories = 1
+pokemon_properties = SubResource("Resource_sijf8")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

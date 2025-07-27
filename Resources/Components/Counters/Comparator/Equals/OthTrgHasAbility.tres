@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Comparator" load_steps=5 format=3 uid="uid://b653q2whxtyr2"]
+
+[ext_resource type="Resource" uid="uid://dqbromrlgrofb" path="res://Resources/Components/Effects/Asks/Ability/OthTgtHasAbility.tres" id="1_s7f68"]
+[ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="2_q51c6"]
+[ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="3_6tbab"]
+
+[sub_resource type="Resource" id="Resource_3nf1v"]
+script = ExtResource("2_q51c6")
+which = "Slot"
+ask = ExtResource("1_s7f68")
+slot_vars = "current_card"
+cap = -1
+metadata/_custom_type_script = "uid://vjn146j3ayd6"
+
+[resource]
+script = ExtResource("3_6tbab")
+comparision_type = "Equals"
+first_comparison = SubResource("Resource_3nf1v")
+compare_to = "Const"
+second_constant = 1
+metadata/_custom_type_script = "uid://b65jx8u5cgcgl"

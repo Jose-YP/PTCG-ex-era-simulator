@@ -1,0 +1,68 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=13 format=3 uid="uid://bn45remvr7fmu"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_76vmp"]
+[ext_resource type="Texture2D" uid="uid://b4i867c6f3d1y" path="res://Art/Cards/3 ex Dragon/68.jpg" id="1_tcfc7"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_qmke1"]
+[ext_resource type="Resource" uid="uid://c63wb1xvpkbi8" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Grass1.tres" id="3_hcg8i"]
+[ext_resource type="Resource" uid="uid://bsuopi541rs72" path="res://Resources/Components/Effects/DmgManip/Remove/SelfDrain.tres" id="4_5mm17"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="5_1n7bc"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="6_cuwhc"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="7_3absq"]
+
+[sub_resource type="Resource" id="Resource_s0168"]
+script = ExtResource("5_1n7bc")
+either_or = false
+order = Array[int]([])
+dmgManip = ExtResource("4_5mm17")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_0b6ve"]
+script = ExtResource("6_cuwhc")
+prompt_reliant = false
+initial_main_DMG = 10
+defender_properties = 0
+condition = 1
+replace_num = false
+always_effect = SubResource("Resource_s0168")
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_saaro"]
+script = ExtResource("2_qmke1")
+name = "Leech Life"
+description = ""
+attack_cost = ExtResource("3_hcg8i")
+attack_data = SubResource("Resource_0b6ve")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_ml1vl"]
+script = ExtResource("7_3absq")
+HP = 50
+retreat = 1
+attacks = Array[ExtResource("2_qmke1")]([SubResource("Resource_saaro")])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 1
+owner = 0
+type = 1
+weak = 2
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_76vmp")
+name = "Nincada"
+image = ExtResource("1_tcfc7")
+illustrator = "Hajime Kusajima"
+number = 68
+rarity = 0
+expansion = 2
+categories = 1
+pokemon_properties = SubResource("Resource_ml1vl")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

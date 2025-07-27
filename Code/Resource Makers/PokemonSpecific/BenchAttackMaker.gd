@@ -4,9 +4,7 @@ class_name BenchAttk
 ##How many benched pokemon should take this damage, if it's -1 ignore and hurt everyone
 @export_range(-1,5) var how_many: int = 1
 ##Which kinds of pokemon can the attacker pick
-@export var candidates: SlotAsk
-##This choice exists for simple choices that don't need asks
-@export var which: Consts.SIDES = Consts.SIDES.DEFENDING
+@export var candidates: SlotAsk = preload("res://Resources/Components/Effects/Asks/General/FromDefending.tres")
 ##The attacker can choose to attack an active pokemon instead
 @export var active_allowed: bool = false
 
@@ -20,6 +18,7 @@ class_name BenchAttk
 ##[br]Multiply - use [member initial_main_DMG] times the result found with [member counter] and [member prompt], allows 0 as a result
 ##[br]Subtract - use [member initial_main_DMG] then add damage depending on [member counter] and [member prompt]
 @export_enum("None", "Add", "Multiply", "Subtract") var modifier: int = 0
+@export_range(0,200,10) var modifier_num: int = 0
 @export var comparator: Comparator
 
 @export_group("Effects")

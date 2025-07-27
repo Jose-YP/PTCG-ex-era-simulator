@@ -1,0 +1,109 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=19 format=3 uid="uid://d2y3sugoh0afg"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_6qq3e"]
+[ext_resource type="Texture2D" uid="uid://bx8ogc7daapja" path="res://Art/Cards/13 ex Holon Phantoms/2.jpg" id="1_18hv8"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_xexyg"]
+[ext_resource type="Resource" uid="uid://cif1lb0agms18" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/D1C1.tres" id="3_xhaw3"]
+[ext_resource type="Resource" uid="uid://bkt6ry7vyha70" path="res://Resources/Components/Effects/Asks/General/Other.tres" id="4_r5mel"]
+[ext_resource type="Script" uid="uid://scca13hg4k1l" path="res://Code/Resource Makers/EffectSpecific/DmgManipMaker.gd" id="5_wp6it"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="6_mciaj"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="7_3n3j3"]
+[ext_resource type="Resource" uid="uid://b4p6bn3ei1onu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/M1C2.tres" id="8_so0l1"]
+[ext_resource type="Resource" uid="uid://dr35h5ltr0i6r" path="res://Resources/Components/Effects/Conditions/BasicPoison.tres" id="9_kbvcy"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="10_tuilv"]
+
+[sub_resource type="Resource" id="Resource_h8prn"]
+script = ExtResource("5_wp6it")
+turn_delay = 1
+prevent_KO = false
+mode = "Add"
+how_many = 5
+choosing = 4
+anyway_u_like = false
+choose_num = 1
+ask = ExtResource("4_r5mel")
+plus = true
+modifier = 1
+metadata/_custom_type_script = "uid://scca13hg4k1l"
+
+[sub_resource type="Resource" id="Resource_4h5qt"]
+script = ExtResource("6_mciaj")
+either_or = false
+order = Array[int]([])
+dmgManip = SubResource("Resource_h8prn")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_wo8fp"]
+script = ExtResource("7_3n3j3")
+prompt_reliant = false
+initial_main_DMG = 20
+defender_properties = 0
+condition = 1
+replace_num = false
+always_effect = SubResource("Resource_4h5qt")
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_ro2ig"]
+script = ExtResource("2_xexyg")
+name = "Harsh Fluid"
+description = "Put 5 damage counters on the Defending Pokémon at the end of your opponent's next turn."
+attack_cost = ExtResource("3_xhaw3")
+attack_data = SubResource("Resource_wo8fp")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_r15t4"]
+script = ExtResource("7_3n3j3")
+prompt_reliant = false
+initial_main_DMG = 50
+defender_properties = 0
+condition = 1
+replace_num = false
+always_effect = ExtResource("9_kbvcy")
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_xsvtt"]
+script = ExtResource("2_xexyg")
+name = "Poison Tentacles"
+description = "The Defending Pokémon is now Poisoned."
+attack_cost = ExtResource("8_so0l1")
+attack_data = SubResource("Resource_r15t4")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_80iua"]
+script = ExtResource("10_tuilv")
+HP = 100
+retreat = 2
+attacks = Array[ExtResource("2_xexyg")]([SubResource("Resource_ro2ig"), SubResource("Resource_xsvtt")])
+evo_stage = "Stage 2"
+evolves_from = "Lileep"
+considered = 9
+owner = 0
+type = 192
+weak = 2
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_6qq3e")
+name = "Cradily"
+image = ExtResource("1_18hv8")
+illustrator = "Kouki Saitou"
+number = 2
+rarity = 3
+expansion = 12
+categories = 1
+pokemon_properties = SubResource("Resource_80iua")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

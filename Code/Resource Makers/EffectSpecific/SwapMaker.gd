@@ -19,7 +19,7 @@ signal finished
 var bench_swap: PokeSlot
 var active_swap: PokeSlot
 
-func play_effect(reversable: bool = false):
+func play_effect(reversable: bool = false, replace_num: int = -1) -> void:
 	if affected == Consts.SIDES.BOTH:
 		await switch(Consts.SIDES.ATTACKING, reversable)
 		await switch(Consts.SIDES.DEFENDING, reversable)

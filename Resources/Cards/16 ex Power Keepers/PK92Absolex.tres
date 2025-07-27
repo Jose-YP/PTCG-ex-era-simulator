@@ -1,0 +1,99 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=18 format=3 uid="uid://b7vajyscyemon"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_7put2"]
+[ext_resource type="Texture2D" uid="uid://wg7lemxlwju4" path="res://Art/Cards/16 ex Power Keepers/92.jpg" id="1_xh32m"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_hh85g"]
+[ext_resource type="Resource" uid="uid://cif1lb0agms18" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/D1C1.tres" id="3_7nwh2"]
+[ext_resource type="Resource" uid="uid://dhvoug8onmcnf" path="res://Resources/Components/Pokemon/BenchAttack/10DefBenchDamaged.tres" id="4_fuowa"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="5_ppox0"]
+[ext_resource type="Resource" uid="uid://crhg4u3yu2cso" path="res://Resources/Components/Effects/Asks/General/FromOther.tres" id="6_huhk4"]
+[ext_resource type="Script" uid="uid://scca13hg4k1l" path="res://Code/Resource Makers/EffectSpecific/DmgManipMaker.gd" id="7_l86lt"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="8_1qcnk"]
+[ext_resource type="Script" uid="uid://b58015mafcw2v" path="res://Code/Resource Makers/PokemonSpecific/PowerMaker.gd" id="9_afjfo"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="10_5crxm"]
+
+[sub_resource type="Resource" id="Resource_hx6us"]
+script = ExtResource("5_ppox0")
+prompt_reliant = false
+initial_main_DMG = 30
+defender_properties = 0
+condition = 1
+replace_num = false
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+bench_damage = ExtResource("4_fuowa")
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_mptms"]
+script = ExtResource("2_hh85g")
+name = "Psychic Pulse"
+description = "Does 10 damage to each of your opponent's Benched Pokémon that has any damage counters on it. (Don't apply Weakness and Resistance for Benched Pokémon.)"
+attack_cost = ExtResource("3_7nwh2")
+attack_data = SubResource("Resource_hx6us")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_u4tnp"]
+script = ExtResource("7_l86lt")
+turn_delay = -1
+prevent_KO = false
+mode = "Swap"
+how_many = 3
+choosing = 4
+anyway_u_like = false
+choose_num = 1
+ask = ExtResource("6_huhk4")
+plus = true
+modifier = 1
+takers = ExtResource("6_huhk4")
+metadata/_custom_type_script = "uid://scca13hg4k1l"
+
+[sub_resource type="Resource" id="Resource_ru1we"]
+script = ExtResource("8_1qcnk")
+either_or = false
+order = Array[int]([])
+dmgManip = SubResource("Resource_u4tnp")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_abrnv"]
+script = ExtResource("9_afjfo")
+name = "Cursed Eyes"
+description = "Once during your turn, when you put [name] from your hand onto your Bench, you may move 3 damage counters from 1 of your opponent's Pokémon to another of his or her Pokémon. "
+affected_by_condition = true
+active = false
+when_condition = "Whenever"
+when_position = 4
+how_often = 0
+effect = SubResource("Resource_ru1we")
+metadata/_custom_type_script = "uid://b58015mafcw2v"
+
+[sub_resource type="Resource" id="Resource_am8y3"]
+script = ExtResource("10_5crxm")
+HP = 100
+retreat = 1
+power = SubResource("Resource_abrnv")
+attacks = Array[ExtResource("2_hh85g")]([SubResource("Resource_mptms")])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 2
+owner = 0
+type = 64
+weak = 32
+resist = 16
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_7put2")
+name = "Absol ex"
+image = ExtResource("1_xh32m")
+illustrator = "Ryo Ueda"
+number = 92
+rarity = 4
+expansion = 15
+categories = 1
+pokemon_properties = SubResource("Resource_am8y3")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

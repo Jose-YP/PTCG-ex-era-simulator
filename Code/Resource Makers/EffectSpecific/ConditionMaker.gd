@@ -1,12 +1,8 @@
-@icon("res://Art/ProjectSpecific/poison.png")
+@icon("res://Art/Counters/Poison.png")
 extends Resource
 class_name Condition
 
-@export var ask: SlotAsk
-
-##imprision/shockwave will ignore this
-@export var side: Consts.SIDES = Consts.SIDES.DEFENDING
-@export var slot: Consts.SLOTS = Consts.SLOTS.TARGET
+@export var ask: SlotAsk = preload("res://Resources/Components/Effects/Asks/General/Other.tres")
 
 @export var choose_condition: bool = false
 ##Number of dmg Counters added from this effect, multiplied by 10 on implementation
@@ -20,13 +16,13 @@ class_name Condition
 
 signal finished
 
-func play_effect(reversable: bool = false):
+func play_effect(reversable: bool = false, replace_num: int = -1) -> void:
 	print("PLAYING CONDITION")
 	if choose_condition:
 		print()
 	else:
-		var slots: Array[PokeSlot] = Globals.fundies.get_poke_slots(side, slot)
-	
+		var slots: Array[PokeSlot] = Globals.full_ui.get_ask_slots(ask)
+		
 		for filtered in slots:
 			filtered.add_condition(self)
 	

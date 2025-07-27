@@ -14,7 +14,7 @@ class_name Draw
 
 signal finished
 
-func play_effect(reversable: bool = false):
+func play_effect(reversable: bool = false, replace_num: int = -1) -> void:
 	print("PLAY DRAW")
 	var num_draw = simple_constant
 	var old_val = Globals.fundies.stack_manager.operate_home
