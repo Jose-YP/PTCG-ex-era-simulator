@@ -5,6 +5,9 @@ class_name PokeSlotButton
 @export var slot: PokeSlot
 
 @onready var energy_types: EnergyCollection = %EnergyTypes
+@onready var counter_change: PanelContainer = %CounterChange
+
+var additional_counters: int = 0
 
 func _ready() -> void:
 	empty()
@@ -20,6 +23,7 @@ func setup(new: PokeSlot):
 	%HP.clear()
 	%HP.append_text(str("HP: ", card.pokemon_properties.HP - slot.damage_counters, "/", card.pokemon_properties.HP))
 	set_energy()
+	reset_counters()
 
 func empty():
 	%Art.texture = null
@@ -27,6 +31,7 @@ func empty():
 	%HP.clear()
 	energy_types.hide()
 	disabled = true
+	reset_counters()
 	
 	%SlotNum.clear()
 
@@ -37,3 +42,19 @@ func set_energy():
 func set_slotNum(slotNum: String):
 	%SlotNum.clear()
 	%SlotNum.append_text(slotNum)
+
+func manip_counters(ammount: int):
+	additional_counters += ammount
+	%CounterChange.set_damage(additional_counters * 10)
+	check_counter_visibility()
+
+func reset_counters():
+	additional_counters = 0
+	%CounterChange.set_damage(additional_counters)
+	check_counter_visibility()
+
+func check_counter_visibility():
+	if additional_counters == 0:
+		%CounterChange.modulate = Color(%CounterChange.modulate, 0)
+	else:
+		%CounterChange.modulate = Color(%CounterChange.modulate, 1)
