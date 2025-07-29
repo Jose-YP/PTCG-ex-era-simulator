@@ -15,6 +15,7 @@ var attached_energy: Dictionary = {"Grass": 0, "Fire": 0, "Water": 0,
 	"Colorless":0, "Magma":0, "Aqua":0, "Dark Metal":0, "React": 0, 
 	"Holon FF": 0, "Holon GL": 0, "Holon WP": 0, "Rainbow":0}
 var energy_timers: Dictionary = {}
+var damage_timers: Array[Dictionary]
 #endregion
 #--------------------------------------
 #--------------------------------------
@@ -55,6 +56,13 @@ func pokemon_checkup() -> void:
 			remove_energy(card)
 		else:
 			energy_timers[card] -= 1
+	
+	for dmg_timer in damage_timers:
+		dmg_timer["Timer"] -= 1
+		if dmg_timer["Timer"] == 0:
+			dmg_manip(dmg_timer["Damage"])
+		else:
+			print(dmg_timer)
 	
 	refresh()
 
@@ -247,8 +255,11 @@ func bench_add_damage(_ammount) -> int:
 	return 0
 
 #Won't trigger anything that happens on direct damage
-func dmg_manip(dmg_change: int) -> void:
-	damage_counters += clamp(dmg_change, 0, dmg_change)
+func dmg_manip(dmg_change: int, timer: int = -1) -> void:
+	if timer == -1:
+		damage_counters += clamp(dmg_change, 0, dmg_change)
+	else:
+		damage_timers.append({"Damage" : dmg_change, "Timer" : timer})
 	refresh()
 
 #endregion

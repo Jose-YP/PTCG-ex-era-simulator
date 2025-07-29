@@ -1,0 +1,76 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=15 format=3 uid="uid://04jo8v2wih4i"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_wdvy0"]
+[ext_resource type="Texture2D" uid="uid://bob0xksoj4dmu" path="res://Art/Cards/3 ex Dragon/14.jpg" id="1_xmgka"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_0207o"]
+[ext_resource type="Resource" uid="uid://cesjkvsi5c6jb" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/L1C1.tres" id="3_2ivix"]
+[ext_resource type="Resource" uid="uid://n2tq4jfo7hw1" path="res://Resources/Components/Pokemon/Attacks/AttackData/20DmgParaIfHeads.tres" id="4_lfm50"]
+[ext_resource type="Resource" uid="uid://dkvbrahlcnjmi" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/W1C2.tres" id="5_j62rm"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="6_udpcv"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="7_b2nqx"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="8_61x6v"]
+
+[sub_resource type="Resource" id="Resource_s4ydi"]
+script = ExtResource("2_0207o")
+name = "Dazzle Blast"
+description = " Flip a coin. If heads, the Defending Pokémon is now Confused."
+attack_cost = ExtResource("3_2ivix")
+attack_data = ExtResource("4_lfm50")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_calre"]
+script = ExtResource("6_udpcv")
+either_or = false
+order = Array[int]([])
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_iggwp"]
+script = ExtResource("7_b2nqx")
+prompt_reliant = false
+initial_main_DMG = 30
+defender_properties = 0
+condition = 1
+replace_num = false
+always_effect = SubResource("Resource_calre")
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_ksdea"]
+script = ExtResource("2_0207o")
+name = "Healing Wave"
+description = ""
+attack_cost = ExtResource("5_j62rm")
+attack_data = SubResource("Resource_iggwp")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_fr11s"]
+script = ExtResource("8_61x6v")
+HP = 70
+retreat = 2
+attacks = Array[ExtResource("2_0207o")]([SubResource("Resource_s4ydi"), SubResource("Resource_ksdea")])
+evo_stage = "Stage 1"
+evolves_from = "Dratini"
+considered = 1
+owner = 0
+type = 256
+weak = 256
+resist = 33
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_wdvy0")
+name = "Dragonair"
+image = ExtResource("1_xmgka")
+illustrator = "Aya Kusube"
+number = 14
+rarity = 2
+expansion = 2
+categories = 1
+pokemon_properties = SubResource("Resource_fr11s")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

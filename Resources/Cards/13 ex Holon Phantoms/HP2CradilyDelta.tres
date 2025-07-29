@@ -14,16 +14,17 @@
 
 [sub_resource type="Resource" id="Resource_h8prn"]
 script = ExtResource("5_wp6it")
-turn_delay = 1
-prevent_KO = false
+turn_delay = 2
+prevent_KO = null
 mode = "Add"
 how_many = 5
-choosing = 4
-anyway_u_like = false
-choose_num = 1
+choosing = null
+anyway_u_like = null
+choose_num = null
 ask = ExtResource("4_r5mel")
-plus = true
-modifier = 1
+vary_choose_num = null
+plus = null
+modifier = null
 metadata/_custom_type_script = "uid://scca13hg4k1l"
 
 [sub_resource type="Resource" id="Resource_4h5qt"]

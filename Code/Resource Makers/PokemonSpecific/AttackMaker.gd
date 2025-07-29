@@ -37,14 +37,15 @@ func get_damage() -> int:
 	if mod_times is bool:
 		mod_times *= 1 if mod_times else 0
 	
-	data.modifier_result = data.modifier_num * mod_times
-	match data.modifier:
-		1:
-			final_damage += data.modifier_result
-		3:
-			final_damage -= data.modifier_result
-		_:
-			final_damage = data.modifier_result
+	if mod_times != null:
+		modifier_result = data.modifier_num * mod_times
+		match data.modifier:
+			1:
+				final_damage += modifier_result
+			3:
+				final_damage -= modifier_result
+			_:
+				final_damage = modifier_result
 	
 	return final_damage
 

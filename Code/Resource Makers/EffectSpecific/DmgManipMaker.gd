@@ -70,13 +70,13 @@ func simple_manip(reversable: bool = false, replace_num: int = -1):
 			
 			if manip_candidate == null: return
 			
-			manip_candidate.dmg_manip(counters)
+			manip_candidate.dmg_manip(counters, turn_delay)
 	
 	#Apply manip on all ask candidates
 	else:
 		for slot in Globals.full_ui.get_ask_slots(ask):
-			slot.dmg_manip(counters)
-	
+			slot.dmg_manip(counters, turn_delay)
+	 
 	finished.emit()
 
 func dmg_manip_box(reversable: bool = false, replace_num: int = -1):
