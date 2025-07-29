@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="2_mn3q5"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_mdo6i"]
 [ext_resource type="Resource" uid="uid://dpovjlfpsypwe" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless3.tres" id="3_yibvf"]
-[ext_resource type="Resource" uid="uid://nco7wk2vhhx6" path="res://Resources/Components/Counters/Comparator/ForSelfDmgCounters.tres" id="4_spdqf"]
+[ext_resource type="Resource" uid="uid://nco7wk2vhhx6" path="res://Resources/Components/Counters/Comparator/Return/ForSelfDmgCounters.tres" id="4_spdqf"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="5_frehc"]
 
 [sub_resource type="Resource" id="Resource_onjvd"]
@@ -15,6 +15,7 @@ prompt_reliant = false
 initial_main_DMG = 20
 defender_properties = 0
 condition = 1
+replace_num = false
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false

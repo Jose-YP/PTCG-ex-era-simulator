@@ -1,0 +1,136 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=24 format=3 uid="uid://dw80ljc0ni3p7"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_js14u"]
+[ext_resource type="Texture2D" uid="uid://dk00ekpljldth" path="res://Art/Cards/2 ex Sandstorm/42.jpg" id="1_xhd16"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_7d3xu"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_hxnhf"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_yuuq4"]
+[ext_resource type="Resource" uid="uid://pjf2smqkwutg" path="res://Resources/Components/Effects/Search/Pokemon/InfluenceSearch.tres" id="5_n66i8"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="6_gopoq"]
+[ext_resource type="Resource" uid="uid://b1rwmggf7a4do" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless2.tres" id="7_p7hyh"]
+[ext_resource type="Resource" uid="uid://b45cmbaixh154" path="res://Resources/Components/Counters/Comparator/Equals/OneFlipHead.tres" id="8_xhd16"]
+[ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="9_vuxad"]
+[ext_resource type="Resource" uid="uid://dsyn2o57xkb0h" path="res://Resources/Components/Effects/Asks/Class&Owner/DefEvolvedMon.tres" id="10_m8hh4"]
+[ext_resource type="Resource" uid="uid://crhg4u3yu2cso" path="res://Resources/Components/Effects/Asks/General/FromOther.tres" id="11_gu5sk"]
+[ext_resource type="Script" uid="uid://8sh5p3leflla" path="res://Code/Resource Makers/EffectSpecific/CardDisruptMaker.gd" id="12_4h72t"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="13_mdppl"]
+
+[sub_resource type="Resource" id="Resource_ohjxw"]
+script = ExtResource("4_yuuq4")
+either_or = false
+order = Array[int]([])
+search = ExtResource("5_n66i8")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_gtrua"]
+script = ExtResource("6_gopoq")
+prompt_reliant = false
+initial_main_DMG = 0
+defender_properties = 0
+condition = 1
+replace_num = false
+always_effect = SubResource("Resource_ohjxw")
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_m5brw"]
+script = ExtResource("2_7d3xu")
+name = "Influence"
+description = "Search your deck for Omanyte, Kabuto, Aerodactyl, Lileep, or Anorith and put 2 of them onto your Bench. Shuffle your deck afterward. Treat the new Benched Pokémon as Basic Pokémon."
+attack_cost = ExtResource("3_hxnhf")
+attack_data = SubResource("Resource_gtrua")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_nypme"]
+script = ExtResource("9_vuxad")
+formal_question = false
+question_string = ""
+yes_answer = ""
+no_answer = ""
+comparator = ExtResource("8_xhd16")
+can_reverse = false
+occurance = false
+chooser = 1
+choose_location = "Slot"
+which_slots = ExtResource("10_m8hh4")
+which_stack = 0
+metadata/_custom_type_script = "uid://b85jmc7067bjc"
+
+[sub_resource type="Resource" id="Resource_1yysy"]
+script = ExtResource("12_4h72t")
+send = 1
+from = 1
+send_to = 1
+bottom_of_stack = false
+shuffle = true
+card_ammount = 0
+reveal = false
+side = 5
+from_stack = 0
+in_play_options = ExtResource("11_gu5sk")
+pokemon_disrupt = 4
+metadata/_custom_type_script = "uid://8sh5p3leflla"
+
+[sub_resource type="Resource" id="Resource_gp64k"]
+script = ExtResource("4_yuuq4")
+either_or = false
+order = Array[int]([])
+card_disrupt = SubResource("Resource_1yysy")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_s43ci"]
+script = ExtResource("6_gopoq")
+prompt_reliant = false
+prompt = SubResource("Resource_nypme")
+initial_main_DMG = 0
+defender_properties = 0
+condition = 1
+replace_num = false
+success_effect = SubResource("Resource_gp64k")
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_1vqv4"]
+script = ExtResource("2_7d3xu")
+name = "Time Spiral"
+description = "If your opponent has any Evolved Pokémon in play, choose 1 of them and flip a coin. If heads, remove the highest Stage Evolution card on that Pokémon and have your opponent shuffle it into his or her deck."
+attack_cost = ExtResource("7_p7hyh")
+attack_data = SubResource("Resource_s43ci")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_q5i0w"]
+script = ExtResource("13_mdppl")
+HP = 80
+retreat = 2
+attacks = Array[ExtResource("2_7d3xu")]([SubResource("Resource_m5brw"), SubResource("Resource_1vqv4")])
+evo_stage = "Stage 1"
+evolves_from = "Root Fossil"
+considered = 1
+owner = 0
+type = 1
+weak = 2
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_js14u")
+name = "Lileep"
+image = ExtResource("1_xhd16")
+illustrator = "Midori Harada"
+number = 42
+rarity = 1
+expansion = 1
+categories = 1
+pokemon_properties = SubResource("Resource_q5i0w")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

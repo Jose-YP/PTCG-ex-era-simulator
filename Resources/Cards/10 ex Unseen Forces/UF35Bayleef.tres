@@ -1,0 +1,44 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://smakkaqjg0ll"]
+
+[ext_resource type="Texture2D" uid="uid://wt0ilnjelwgf" path="res://Art/Cards/10 ex Unseen Forces/35.jpg" id="1_lrait"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_ouqp6"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_3ps86"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_mmikr"]
+[ext_resource type="Resource" uid="uid://bep36omnenbc8" path="res://Resources/Components/Pokemon/Attacks/AttackData/10Dmg.tres" id="4_eamdw"]
+[ext_resource type="Resource" uid="uid://baxet3revq7v8" path="res://Resources/Components/Pokemon/Attacks/EffectlessAttacks/Razor Leaf 3-50.tres" id="5_khw65"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="6_p2vxg"]
+
+[sub_resource type="Resource" id="Resource_aiqev"]
+script = ExtResource("2_3ps86")
+name = ""
+description = ""
+attack_cost = ExtResource("3_mmikr")
+attack_data = ExtResource("4_eamdw")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_hqfw1"]
+script = ExtResource("6_p2vxg")
+HP = 70
+retreat = 1
+attacks = Array[ExtResource("2_3ps86")]([SubResource("Resource_aiqev"), ExtResource("5_khw65")])
+evo_stage = "Stage 1"
+evolves_from = "Chikorita"
+considered = 1
+owner = 0
+type = 1
+weak = 2
+resist = 4
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_ouqp6")
+name = "Bayleef"
+image = ExtResource("1_lrait")
+illustrator = "Atsuko Nishida"
+number = 35
+rarity = 1
+expansion = 9
+categories = 1
+pokemon_properties = SubResource("Resource_hqfw1")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

@@ -1,20 +1,15 @@
-[gd_resource type="Resource" script_class="SideState" load_steps=33 format=3 uid="uid://dge18p0in3cyo"]
+[gd_resource type="Resource" script_class="SideState" load_steps=29 format=3 uid="uid://dge18p0in3cyo"]
 
 [ext_resource type="Resource" uid="uid://d3qd7r6gwfitd" path="res://Resources/Decks/TestDeckFP.tres" id="1_6pulm"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_6yda8"]
 [ext_resource type="Resource" uid="uid://gvd588t8jyxg" path="res://Resources/Cards/1 ex Ruby & Saphire/RS35Kirlia.tres" id="3_s1i7m"]
 [ext_resource type="Resource" uid="uid://dliic77tptn8j" path="res://Resources/Cards/1 ex Ruby & Saphire/RS34Kirlia.tres" id="4_nxave"]
-[ext_resource type="Resource" uid="uid://dy3acigvmuog1" path="res://Resources/Cards/1 ex Ruby & Saphire/RS74Torchic.tres" id="5_rif2t"]
 [ext_resource type="Resource" uid="uid://c2tk6qy8h57lw" path="res://Resources/Cards/1 ex Ruby & Saphire/RS82EnergySwitch.tres" id="6_jiqsc"]
 [ext_resource type="Resource" uid="uid://dxq22uwxelttj" path="res://Resources/Cards/1 ex Ruby & Saphire/RS107PsychicEnergy.tres" id="7_ymgto"]
 [ext_resource type="Resource" uid="uid://cvjyyq2lad5k5" path="res://Resources/Cards/1 ex Ruby & Saphire/RS108FireEnergy.tres" id="8_7rmjj"]
-[ext_resource type="Resource" uid="uid://cfps337rtsmpi" path="res://Resources/Cards/11 ex Delta Species/DS92HolonLass.tres" id="9_6yda8"]
-[ext_resource type="Resource" uid="uid://b1xaqtaovjo0b" path="res://Resources/Cards/8 ex Deoxys/DX94HealEnergy.tres" id="10_2lgin"]
-[ext_resource type="Resource" uid="uid://gyk46ghjiejq" path="res://Resources/Cards/1 ex Ruby & Saphire/RS101Mewtwo-ex.tres" id="12_4t3wo"]
 [ext_resource type="Resource" uid="uid://ben8fxv5hw5hb" path="res://Resources/Cards/1 ex Ruby & Saphire/RS87PokemonReversal.tres" id="13_t157j"]
 [ext_resource type="Resource" uid="uid://b8kt4i4jgosm8" path="res://Resources/Cards/1 ex Ruby & Saphire/RS3Blaziken.tres" id="14_ms4b8"]
 [ext_resource type="Resource" uid="uid://b6mgd7a47n0iv" path="res://Resources/Cards/1 ex Ruby & Saphire/RS7Gardevoir.tres" id="15_fx773"]
-[ext_resource type="Resource" uid="uid://dyqdhaov0ywxk" path="res://Resources/Cards/1 ex Ruby & Saphire/RS92Switch.tres" id="16_hyhr3"]
 [ext_resource type="Resource" uid="uid://2gbttee2ievi" path="res://Resources/Cards/13 ex Holon Phantoms/HP44Holon'sCastform.tres" id="17_47ikc"]
 [ext_resource type="Resource" uid="uid://vnimvixfy8o8" path="res://Resources/Cards/1 ex Ruby & Saphire/RS68Ralts.tres" id="18_iehmd"]
 [ext_resource type="Resource" uid="uid://xvauv8yfopfw" path="res://Resources/Cards/2 ex Sandstorm/SS93MultiEnergy.tres" id="19_s1i7m"]
@@ -32,8 +27,8 @@
 [sub_resource type="Resource" id="Resource_ai8fb"]
 script = ExtResource("20_th0o3")
 deck = ExtResource("1_6pulm")
-init_deck = Array[ExtResource("2_6yda8")]([ExtResource("3_s1i7m"), ExtResource("4_nxave"), ExtResource("5_rif2t"), ExtResource("6_jiqsc"), ExtResource("7_ymgto"), ExtResource("7_ymgto"), ExtResource("8_7rmjj"), ExtResource("8_7rmjj"), ExtResource("9_6yda8"), ExtResource("10_2lgin"), ExtResource("12_4t3wo"), ExtResource("13_t157j"), ExtResource("14_ms4b8"), ExtResource("14_ms4b8"), ExtResource("15_fx773"), ExtResource("15_fx773"), ExtResource("16_hyhr3"), ExtResource("17_47ikc"), ExtResource("17_47ikc"), ExtResource("20_s1i7m")])
-init_hand = Array[ExtResource("2_6yda8")]([ExtResource("18_iehmd"), ExtResource("7_ymgto"), ExtResource("8_7rmjj"), ExtResource("6_jiqsc"), ExtResource("13_t157j"), ExtResource("19_s1i7m"), ExtResource("20_s1i7m"), ExtResource("17_47ikc")])
+init_deck = Array[ExtResource("2_6yda8")]([])
+init_hand = Array[ExtResource("2_6yda8")]([ExtResource("7_ymgto"), ExtResource("8_7rmjj"), ExtResource("6_jiqsc"), ExtResource("13_t157j"), ExtResource("19_s1i7m"), ExtResource("20_s1i7m"), ExtResource("17_47ikc")])
 init_discard = Array[ExtResource("2_6yda8")]([])
 init_prize = Array[ExtResource("2_6yda8")]([])
 metadata/_custom_type_script = "uid://calm3n7va5yjo"
@@ -49,9 +44,8 @@ energy_cards = Array[ExtResource("2_6yda8")]([])
 tm_cards = Array[ExtResource("2_6yda8")]([])
 applied_buffs = Array[ExtResource("24_rif2t")]([])
 applied_disable = Array[ExtResource("25_jiqsc")]([])
-type = 0
-weak = 0
-resist = 0
+dealt_damage = 0
+energy_discarded = 0
 metadata/_custom_type_script = "uid://cs70ix831b5g4"
 
 [sub_resource type="Resource" id="Resource_3fcng"]
@@ -65,9 +59,8 @@ energy_cards = Array[ExtResource("2_6yda8")]([ExtResource("8_7rmjj"), ExtResourc
 tm_cards = Array[ExtResource("2_6yda8")]([])
 applied_buffs = Array[ExtResource("24_rif2t")]([])
 applied_disable = Array[ExtResource("25_jiqsc")]([])
-type = 0
-weak = 0
-resist = 0
+dealt_damage = 0
+energy_discarded = 0
 metadata/_custom_type_script = "uid://cs70ix831b5g4"
 
 [sub_resource type="Resource" id="Resource_nxave"]
@@ -81,9 +74,23 @@ energy_cards = Array[ExtResource("2_6yda8")]([ExtResource("19_s1i7m")])
 tm_cards = Array[ExtResource("2_6yda8")]([])
 applied_buffs = Array[ExtResource("24_rif2t")]([])
 applied_disable = Array[ExtResource("25_jiqsc")]([])
-type = 0
-weak = 0
-resist = 0
+dealt_damage = 0
+energy_discarded = 0
+metadata/_custom_type_script = "uid://cs70ix831b5g4"
+
+[sub_resource type="Resource" id="Resource_rif2t"]
+script = ExtResource("22_koj16")
+current_card = ExtResource("3_s1i7m")
+damage_counters = 0
+evolution_ready = false
+evolved_this_turn = false
+evolved_from = Array[ExtResource("2_6yda8")]([ExtResource("18_iehmd")])
+energy_cards = Array[ExtResource("2_6yda8")]([ExtResource("19_s1i7m")])
+tm_cards = Array[ExtResource("2_6yda8")]([])
+applied_buffs = Array[ExtResource("24_rif2t")]([])
+applied_disable = Array[ExtResource("25_jiqsc")]([])
+dealt_damage = 0
+energy_discarded = 0
 metadata/_custom_type_script = "uid://cs70ix831b5g4"
 
 [resource]
@@ -94,6 +101,7 @@ bench_size = 5
 slots = Dictionary[ExtResource("22_koj16"), bool]({
 SubResource("Resource_wudh5"): true,
 SubResource("Resource_3fcng"): true,
-SubResource("Resource_nxave"): false
+SubResource("Resource_nxave"): false,
+SubResource("Resource_rif2t"): false
 })
 metadata/_custom_type_script = "uid://dgqpurnuh14t1"

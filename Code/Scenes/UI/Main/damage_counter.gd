@@ -21,6 +21,6 @@ func set_damage(dmg: int) -> void:
 	if dmg > 0 and dmg < max_practical:
 		%DmgCounter.modulate = damage_gradient.sample(float(dmg/max_practical) * damage_gradient.get_offset(1))
 	elif dmg < 0:
-		%DmgCounter.modulate = heal_gradient.sample(float(dmg/max_practical) * damage_gradient.get_offset(1))
+		%DmgCounter.modulate = heal_gradient.sample(float(dmg/max_practical) * heal_gradient.get_offset(1))
 	else:
 		%DmgCounter.modulate = damage_gradient.sample(float(clamp(dmg,0,300)/max_purple))

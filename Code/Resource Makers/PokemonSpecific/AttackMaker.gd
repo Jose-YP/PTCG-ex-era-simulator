@@ -1,7 +1,6 @@
 extends Resource
 class_name Attack
 
-#@export_group("Information")
 @export var name: String
 @export_multiline var description: String
 @export var attack_cost: AttackCost = preload("res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres")
@@ -24,25 +23,28 @@ func print_cost(energy: String):
 func get_damage() -> int:
 	var data: AttackData = attack_data
 	var final_damage: int = data.initial_main_DMG
+	var mod_times: Variant
 	var modifier_result: int = 0
 	
 	if data.comparator:
-		var mod_times: Variant = data.comparator.start_comparision()
+		mod_times = data.comparator.start_comparision()
 		print("HAS A MODIFIER WITH THE RESULT OF ", data.mod_times, " * ", data.modifier_num)
 		if data.comparator.has_coinflip():
 			await SignalBus.finished_coinflip
-		
-		if mod_times is bool:
-			mod_times = 1 if mod_times else 0
-		
-		data.modifier_result = data.modifier_num * data.mod_times
-		match data.modifier:
-			1:
-				final_damage += data.modifier_result
-			3:
-				final_damage -= data.modifier_result
-			_:
-				final_damage = data.modifier_result
+	if data.mod_prompt:
+		mod_times = data.prompt_hold
+	
+	if mod_times is bool:
+		mod_times *= 1 if mod_times else 0
+	
+	data.modifier_result = data.modifier_num * mod_times
+	match data.modifier:
+		1:
+			final_damage += data.modifier_result
+		3:
+			final_damage -= data.modifier_result
+		_:
+			final_damage = data.modifier_result
 	
 	return final_damage
 

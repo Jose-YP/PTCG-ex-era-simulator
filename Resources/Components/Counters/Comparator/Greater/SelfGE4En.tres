@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Comparator" load_steps=3 format=3 uid="uid://yitg2k7gl3rq"]
 
-[ext_resource type="Resource" uid="uid://co05gpcetkfki" path="res://Resources/Components/Counters/Indv/SelfEnergyTotal.tres" id="1_2igas"]
+[ext_resource type="Resource" uid="uid://co05gpcetkfki" path="res://Resources/Components/Counters/Indv/Slots/SelfEnergyTotal.tres" id="1_2igas"]
 [ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="2_4igrj"]
 
 [resource]

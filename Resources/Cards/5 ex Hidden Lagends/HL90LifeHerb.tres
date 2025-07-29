@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://d28x0rsvtdd7l" path="res://Art/Cards/5 ex Hidden Legends/90.jpg" id="1_sxdj7"]
 [ext_resource type="Resource" uid="uid://ekj1myy642kh" path="res://Resources/Components/Effects/Prompts/PromptHeads.tres" id="3_fvwym"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="4_xjtbk"]
-[ext_resource type="Resource" uid="uid://dqj6gq7pt3dbk" path="res://Resources/Components/Effects/Asks/General/FromSource.tres" id="5_y7kg0"]
+[ext_resource type="Resource" uid="uid://bcs15wj2goif7" path="res://Resources/Components/Effects/Asks/Stats/AtkDamaged.tres" id="5_sxdj7"]
 [ext_resource type="Script" uid="uid://scca13hg4k1l" path="res://Code/Resource Makers/EffectSpecific/DmgManipMaker.gd" id="6_7luqp"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="7_3km8i"]
 
@@ -17,7 +17,7 @@ how_many = 6
 choosing = 4
 anyway_u_like = false
 choose_num = 1
-ask = ExtResource("5_y7kg0")
+ask = ExtResource("5_sxdj7")
 plus = true
 modifier = 1
 metadata/_custom_type_script = "uid://scca13hg4k1l"

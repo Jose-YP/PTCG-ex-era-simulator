@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="Deck" load_steps=22 format=3 uid="uid://ctg0srgyjkens"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_17lys"]
+[ext_resource type="Resource" uid="uid://cwm50lliwuxgr" path="res://Resources/Cards/10 ex Unseen Forces/UF9Meganium.tres" id="2_a5hf8"]
+[ext_resource type="Resource" uid="uid://smakkaqjg0ll" path="res://Resources/Cards/10 ex Unseen Forces/UF35Bayleef.tres" id="3_1ypxt"]
+[ext_resource type="Resource" uid="uid://rlrdilkux8at" path="res://Resources/Cards/10 ex Unseen Forces/UF51Chikorita.tres" id="4_18uc4"]
+[ext_resource type="Resource" uid="uid://cjxwqcnfm20fq" path="res://Resources/Cards/1 ex Ruby & Saphire/RS104GrassEnergy.tres" id="5_d4dl8"]
+[ext_resource type="Resource" uid="uid://jhipo8gr7d04" path="res://Resources/Cards/3 ex Dragon/DR88TVReporter.tres" id="6_sxcdw"]
+[ext_resource type="Resource" uid="uid://30ov4tahogne" path="res://Resources/Cards/5 ex Hidden Lagends/HL92Steven'sAdvice.tres" id="7_x8vgl"]
+[ext_resource type="Resource" uid="uid://c357yy7k4yvv3" path="res://Resources/Cards/1 ex Ruby & Saphire/RS2Beautifly.tres" id="8_fjoc5"]
+[ext_resource type="Resource" uid="uid://by8ynv4fc500g" path="res://Resources/Cards/1 ex Ruby & Saphire/RS43Silcoon.tres" id="9_mq624"]
+[ext_resource type="Resource" uid="uid://cbrv0ftymjhbj" path="res://Resources/Cards/1 ex Ruby & Saphire/RS78Wurmple.tres" id="10_gi60f"]
+[ext_resource type="Resource" uid="uid://dw80ljc0ni3p7" path="res://Resources/Cards/2 ex Sandstorm/SS42Lileep.tres" id="11_lv4y0"]
+[ext_resource type="Resource" uid="uid://bc7e6cec30ccx" path="res://Resources/Cards/2 ex Sandstorm/SS3Cradily.tres" id="12_mu3rl"]
+[ext_resource type="Resource" uid="uid://d2y3sugoh0afg" path="res://Resources/Cards/13 ex Holon Phantoms/HP2CradilyDelta.tres" id="13_gai85"]
+[ext_resource type="Resource" uid="uid://bhe83148fdiet" path="res://Resources/Cards/2 ex Sandstorm/SS88RareCandy.tres" id="14_ay5ri"]
+[ext_resource type="Resource" uid="uid://bok1dv0p7mo4d" path="res://Resources/Cards/1 ex Ruby & Saphire/RS86Pokeball.tres" id="15_nju78"]
+[ext_resource type="Resource" uid="uid://dxgh8i8vloevn" path="res://Resources/Cards/4 ex Team Magma VS Team Aqua/MA88DoubleRainbowEnergy.tres" id="16_xtium"]
+[ext_resource type="Resource" uid="uid://cqr3tfc8nry8w" path="res://Resources/Cards/11 ex Delta Species/DS105GLHolonEnergy.tres" id="17_dc32k"]
+[ext_resource type="Resource" uid="uid://cys52w6allqtv" path="res://Resources/Cards/1 ex Ruby & Saphire/RS79Zigzagoon.tres" id="18_1xl74"]
+[ext_resource type="Resource" uid="uid://cbntiqyor7rbl" path="res://Resources/Cards/1 ex Ruby & Saphire/RS38Linoone.tres" id="19_lpi4o"]
+[ext_resource type="Resource" uid="uid://c0h3lvn0v74y" path="res://Resources/Cards/2 ex Sandstorm/SS92RootFossil.tres" id="20_3kxvy"]
+[ext_resource type="Script" uid="uid://e660iomt5e76" path="res://Code/Resource Makers/CardResources/DeckMaker.gd" id="21_hkr7c"]
+
+[resource]
+script = ExtResource("21_hkr7c")
+cards = Dictionary[ExtResource("1_17lys"), int]({
+ExtResource("20_3kxvy"): 3,
+ExtResource("19_lpi4o"): 2,
+ExtResource("18_1xl74"): 2,
+ExtResource("17_dc32k"): 2,
+ExtResource("16_xtium"): 3,
+ExtResource("15_nju78"): 3,
+ExtResource("14_ay5ri"): 3,
+ExtResource("13_gai85"): 2,
+ExtResource("12_mu3rl"): 2,
+ExtResource("11_lv4y0"): 3,
+ExtResource("10_gi60f"): 2,
+ExtResource("9_mq624"): 2,
+ExtResource("8_fjoc5"): 2,
+ExtResource("7_x8vgl"): 4,
+ExtResource("6_sxcdw"): 3,
+ExtResource("5_d4dl8"): 10,
+ExtResource("4_18uc4"): 4,
+ExtResource("3_1ypxt"): 4,
+ExtResource("2_a5hf8"): 4
+})
+metadata/_custom_type_script = "uid://e660iomt5e76"

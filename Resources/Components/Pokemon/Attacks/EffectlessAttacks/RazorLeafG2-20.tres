@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Attack" load_steps=4 format=3 uid="uid://cl8mepce5n66y"]
+
+[ext_resource type="Resource" uid="uid://c2gawfb472bm" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/G1C1.tres" id="1_n4lvi"]
+[ext_resource type="Resource" uid="uid://bnsrs2a5hnvkb" path="res://Resources/Components/Pokemon/Attacks/AttackData/20Dmg.tres" id="2_tgvmj"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="3_bb444"]
+
+[resource]
+script = ExtResource("3_bb444")
+name = "Razor Leaf"
+description = ""
+attack_cost = ExtResource("1_n4lvi")
+attack_data = ExtResource("2_tgvmj")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

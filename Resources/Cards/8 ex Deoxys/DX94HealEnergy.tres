@@ -3,7 +3,7 @@
 [ext_resource type="Resource" uid="uid://vk18jkchsq3v" path="res://Resources/Components/EnData/Colorless.tres" id="1_k24tu"]
 [ext_resource type="Resource" uid="uid://1wsc5djtni2" path="res://Resources/Components/Effects/Prompts/PromptSelfNonex.tres" id="2_27bls"]
 [ext_resource type="Script" uid="uid://caj1pm8erar2a" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="2_gb4dl"]
-[ext_resource type="Resource" uid="uid://r3gc6e1u0elh" path="res://Resources/Components/Effects/DmgManip/AtkSelfHeal10.tres" id="3_27bls"]
+[ext_resource type="Resource" uid="uid://r3gc6e1u0elh" path="res://Resources/Components/Effects/DmgManip/Remove/AtkSelfHeal10.tres" id="3_27bls"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_j8yei"]
 [ext_resource type="Texture2D" uid="uid://ckmtw4r1dh5es" path="res://Art/Cards/8 ex Deoxys/94.jpg" id="5_mtuyk"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="6_24dry"]

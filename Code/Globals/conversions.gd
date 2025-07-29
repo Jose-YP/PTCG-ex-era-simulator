@@ -35,7 +35,7 @@ func reformat(text: String, user: String = "<null>") -> String:
 	
 	for found in names:
 		var original: String = found.get_string(0)
-		var replaced: String = user
+		var replaced: String = "[u]" + user + "[/u]"
 		result = result.replace(original, replaced)
 	
 	return result

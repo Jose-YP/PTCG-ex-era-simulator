@@ -54,6 +54,13 @@ func check_prompt():
 	
 	return result
 
+func num_input_prompt():
+	print("CHECKING COMPARATOR ", comparator.first_comparison)
+	var found = await comparator.input_comparison()
+	print(found)
+	
+	return found
+
 func check_prompt_question():
 	SignalBus.prompt_answered.connect(return_prompt_answered)
 	
@@ -85,10 +92,12 @@ func before_activating() -> bool:
 #region HELPER FUNCTIONS
 func has_coinflip() -> bool:
 	if comparator:
-		var result: bool = comparator.first_comparison.has_coinflip()
-		if comparator.second_counter:
-			result = result or comparator.second_counter.has_coinflip()
-		return result
+		return comparator.has_coinflip()
+	return false
+
+func has_num_input() -> bool:
+	if comparator:
+		return comparator.has_input()
 	return false
 
 func return_prompt_answered(result: bool):

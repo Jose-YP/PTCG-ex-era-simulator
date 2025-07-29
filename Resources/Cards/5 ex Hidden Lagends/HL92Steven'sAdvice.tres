@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_q3ye2"]
 [ext_resource type="Resource" uid="uid://vj0he73ngf2s" path="res://Resources/Components/Effects/Draw/StevenDraw.tres" id="3_qi5s1"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_u52if"]
-[ext_resource type="Resource" uid="uid://dy4k02ewyav5j" path="res://Resources/Components/Counters/Indv/AtkHandSize.tres" id="5_qi5s1"]
+[ext_resource type="Resource" uid="uid://dy4k02ewyav5j" path="res://Resources/Components/Counters/Indv/Stacks/AtkHandSize.tres" id="5_qi5s1"]
 [ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="6_7ycbh"]
 [ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="6_u52if"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="7_sapsk"]

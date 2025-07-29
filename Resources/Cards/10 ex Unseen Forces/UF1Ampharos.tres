@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=26 format=3 uid="uid://ca4fvk1kp65a5"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=27 format=3 uid="uid://ca4fvk1kp65a5"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_2qfob"]
 [ext_resource type="Texture2D" uid="uid://vl54ey1wgkdd" path="res://Art/Cards/10 ex Unseen Forces/1.jpg" id="1_246m0"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://8s3m1dar3r33" path="res://Code/Resource Makers/EffectSpecific/ConditionMaker.gd" id="6_sl773"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="7_vx7in"]
 [ext_resource type="Resource" uid="uid://c7itelq8jtjc2" path="res://Resources/Components/EnData/Rainbow.tres" id="7_xck7i"]
+[ext_resource type="Resource" uid="uid://bkt6ry7vyha70" path="res://Resources/Components/Effects/Asks/General/Other.tres" id="8_vx7in"]
 [ext_resource type="Script" uid="uid://cimk6l7ytw7xg" path="res://Code/Resource Makers/EffectSpecific/EnMovMaker.gd" id="9_u7a6q"]
 [ext_resource type="Script" uid="uid://b58015mafcw2v" path="res://Code/Resource Makers/PokemonSpecific/PowerMaker.gd" id="10_4xr6q"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="11_veuta"]
@@ -36,8 +37,7 @@ metadata/_custom_type_script = "uid://b85jmc7067bjc"
 
 [sub_resource type="Resource" id="Resource_1cpy3"]
 script = ExtResource("6_sl773")
-side = 2
-slot = 1
+ask = ExtResource("8_vx7in")
 choose_condition = false
 poison = 0
 burn = 1
@@ -61,6 +61,7 @@ prompt = SubResource("Resource_1e1le")
 initial_main_DMG = 50
 defender_properties = 0
 condition = 1
+replace_num = false
 success_effect = SubResource("Resource_lbqj1")
 conditional_self_dmg = false
 self_damage = 0

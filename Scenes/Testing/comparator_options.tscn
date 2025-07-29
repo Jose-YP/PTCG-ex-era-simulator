@@ -2,14 +2,14 @@
 
 [ext_resource type="Script" uid="uid://dugwlyyu4d5ji" path="res://Code/Test/comparator_options.gd" id="1_x6ib3"]
 [ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="2_727dm"]
-[ext_resource type="Resource" uid="uid://uoutqhe11742" path="res://Resources/Components/Counters/Comparator/CountAllEn.tres" id="3_i1rn0"]
-[ext_resource type="Resource" uid="uid://co4fwj0wi5dob" path="res://Resources/Components/Counters/Comparator/SelfVsOtherEN.tres" id="4_0hm4c"]
-[ext_resource type="Resource" uid="uid://bny1ix4regvyv" path="res://Resources/Components/Counters/Comparator/Has2DiffTypes.tres" id="5_tjxgr"]
-[ext_resource type="Resource" uid="uid://crlxvia0kynq" path="res://Resources/Components/Counters/Comparator/DiscardsUnequal.tres" id="6_ce0ei"]
-[ext_resource type="Resource" uid="uid://ddeij66cuqx7d" path="res://Resources/Components/Counters/Comparator/AtkGreaterHand.tres" id="7_hruce"]
-[ext_resource type="Resource" uid="uid://1yahyklj3y7s" path="res://Resources/Components/Counters/INdv/AtkBenchCount.tres" id="8_51sfc"]
-[ext_resource type="Resource" uid="uid://bujld5756sv01" path="res://Resources/Components/Counters/INdv/DefBenchCount.tres" id="9_kkr3x"]
-[ext_resource type="Resource" uid="uid://c8ugmpvetg8xj" path="res://Resources/Components/Counters/Comparator/CoinflipHeads.tres" id="10_0hm4c"]
+[ext_resource type="Resource" uid="uid://uoutqhe11742" path="res://Resources/Components/Counters/Comparator/Return/CountAllEn.tres" id="3_i1rn0"]
+[ext_resource type="Resource" uid="uid://co4fwj0wi5dob" path="res://Resources/Components/Counters/Comparator/Difference/SelfVsOtherEN.tres" id="4_0hm4c"]
+[ext_resource type="Resource" uid="uid://bny1ix4regvyv" path="res://Resources/Components/Counters/Comparator/Equals/Has2DiffTypes.tres" id="5_tjxgr"]
+[ext_resource type="Resource" uid="uid://crlxvia0kynq" path="res://Resources/Components/Counters/Comparator/Not Equal/DiscardsUnequal.tres" id="6_ce0ei"]
+[ext_resource type="Resource" uid="uid://ddeij66cuqx7d" path="res://Resources/Components/Counters/Comparator/Greater/AtkGreaterHand.tres" id="7_hruce"]
+[ext_resource type="Resource" uid="uid://1yahyklj3y7s" path="res://Resources/Components/Counters/Indv/Slots/AtkBenchCount.tres" id="8_51sfc"]
+[ext_resource type="Resource" uid="uid://bujld5756sv01" path="res://Resources/Components/Counters/Indv/Slots/DefBenchCount.tres" id="9_kkr3x"]
+[ext_resource type="Resource" uid="uid://c8ugmpvetg8xj" path="res://Resources/Components/Counters/Comparator/Equals/CoinflipHeads.tres" id="10_0hm4c"]
 
 [sub_resource type="Resource" id="Resource_tjxgr"]
 script = ExtResource("2_727dm")

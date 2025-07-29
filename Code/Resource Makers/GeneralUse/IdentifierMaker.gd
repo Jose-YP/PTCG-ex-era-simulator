@@ -9,7 +9,7 @@ class_name Identifier
 @export_flags("Pokemon", "Trainer", "Energy") var broad_class
 ##Check for exactly contains or just has contains
 @export var exactly: bool = false
-@export var contains: String = ""
+@export var name_array: Array[String] = []
 @export_flags("Grass","Fire","Water",
 "Lightning","Psychic","Fighting",
 "Darkness","Metal","Colorless") var type: int = 0 #0 means search doesn't care about type
@@ -35,6 +35,13 @@ class_name Identifier
 func identifier_bool(card: Base_Card, based_on: Array[PokeSlot]) -> bool:
 	print("----------------------------------------------------")
 	print(card.name, "\n", card.categories)
+	var valid: bool = false
+	if name_array.size() != 0:
+		for name in name_array:
+			if name == card.name:
+				valid = true
+		if not valid: return false
+	
 	#Only move forward if the card is the correct kind
 	if card.categories & broad_class:
 		print("Yes it's considered the right class ")

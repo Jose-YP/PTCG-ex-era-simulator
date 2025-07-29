@@ -40,6 +40,7 @@ prompt_reliant = false
 initial_main_DMG = 10
 defender_properties = 0
 condition = 1
+replace_num = false
 always_effect = SubResource("Resource_fgddn")
 conditional_self_dmg = false
 self_damage = 0

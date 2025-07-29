@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_uwrik"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_uiro2"]
 [ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_xdiwn"]
-[ext_resource type="Resource" uid="uid://1yahyklj3y7s" path="res://Resources/Components/Counters/Indv/AtkBenchCount.tres" id="4_xywad"]
+[ext_resource type="Resource" uid="uid://1yahyklj3y7s" path="res://Resources/Components/Counters/Indv/Slots/AtkBenchCount.tres" id="4_xywad"]
 [ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="5_juimu"]
 [ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="6_1181b"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="7_oruyu"]
@@ -12,7 +12,7 @@
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="9_n6mil"]
 [ext_resource type="Resource" uid="uid://elvciehl4doh" path="res://Resources/Components/Effects/Swap/SwapSelf.tres" id="10_qpxuo"]
 [ext_resource type="Resource" uid="uid://o7q7n7186tk4" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/W3C1.tres" id="11_q0ohq"]
-[ext_resource type="Resource" uid="uid://nco7wk2vhhx6" path="res://Resources/Components/Counters/Comparator/ForSelfDmgCounters.tres" id="12_0mp32"]
+[ext_resource type="Resource" uid="uid://nco7wk2vhhx6" path="res://Resources/Components/Counters/Comparator/Return/ForSelfDmgCounters.tres" id="12_0mp32"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="13_fvaaj"]
 
 [sub_resource type="Resource" id="Resource_omhu0"]

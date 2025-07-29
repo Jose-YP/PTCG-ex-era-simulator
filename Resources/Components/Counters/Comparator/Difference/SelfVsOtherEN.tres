@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="Comparator" load_steps=4 format=3 uid="uid://co4fwj0wi5dob"]
 
-[ext_resource type="Resource" uid="uid://2akjc8w7fe7q" path="res://Resources/Components/Counters/Indv/SelfEnNum.tres" id="1_83wqr"]
+[ext_resource type="Resource" uid="uid://2akjc8w7fe7q" path="res://Resources/Components/Counters/Indv/Slots/SelfEnNum.tres" id="1_83wqr"]
 [ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="2_07cle"]
-[ext_resource type="Resource" uid="uid://d2p2fnqi11g87" path="res://Resources/Components/Counters/Indv/OtherEnNum.tres" id="3_qfw85"]
+[ext_resource type="Resource" uid="uid://d2p2fnqi11g87" path="res://Resources/Components/Counters/Indv/Slots/OtherEnNum.tres" id="3_qfw85"]
 
 [resource]
 script = ExtResource("2_07cle")

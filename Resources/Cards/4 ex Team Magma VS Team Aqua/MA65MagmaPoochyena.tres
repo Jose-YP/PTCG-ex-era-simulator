@@ -16,6 +16,7 @@ prompt = ExtResource("5_yacn8")
 initial_main_DMG = 10
 defender_properties = 0
 condition = 1
+replace_num = false
 fail_effect = ExtResource("3_v2ads")
 conditional_self_dmg = false
 self_damage = 0

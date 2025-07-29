@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Comparator" load_steps=3 format=3 uid="uid://uoutqhe11742"]
 
-[ext_resource type="Resource" uid="uid://en7n610f58x5" path="res://Resources/Components/Counters/Indv/AllEnNum.tres" id="1_s1gsi"]
+[ext_resource type="Resource" uid="uid://en7n610f58x5" path="res://Resources/Components/Counters/Indv/Slots/AllEnNum.tres" id="1_s1gsi"]
 [ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="2_0ghxi"]
 
 [resource]
@@ -8,5 +8,5 @@ script = ExtResource("2_0ghxi")
 comparision_type = "Return"
 first_comparison = ExtResource("1_s1gsi")
 compare_to = "None"
-second_constant = 0
+second_constant = null
 metadata/_custom_type_script = "uid://b65jx8u5cgcgl"

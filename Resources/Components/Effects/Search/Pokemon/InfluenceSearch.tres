@@ -1,0 +1,39 @@
+[gd_resource type="Resource" script_class="Search" load_steps=5 format=3 uid="uid://pjf2smqkwutg"]
+
+[ext_resource type="Resource" uid="uid://dvdnbmg1kbbmb" path="res://Resources/Components/Effects/Placement/PlaceOnBench.tres" id="1_bndgx"]
+[ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="2_w51ky"]
+[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="3_h6yxb"]
+
+[sub_resource type="Resource" id="Resource_w51ky"]
+script = ExtResource("2_w51ky")
+description = "Omanyte, Kabuto, Aerodactyl, Lileep, or Anorith"
+must_be_different = false
+broad_class = 1
+exactly = false
+name_array = Array[String](["Omanyte", "Kabuto", "Aerodactyl", "Lileep", "Anorith"])
+type = 0
+evolves_from = false
+rare_candy = false
+inclusive_class = true
+poke_class = 0
+owner = 0
+stage = 0
+trainer_classes = 0
+energy_class = 3
+metadata/_custom_type_script = "uid://uplawvwcwl8y"
+
+[resource]
+script = ExtResource("3_h6yxb")
+side = 4
+where = 1
+reordering_only = false
+shuffle_first = false
+based_on_side = 0
+based_on_slots = 0
+based_on_energy = 0
+portion = -1
+how_many = Array[int]([2])
+of_this = Array[ExtResource("2_w51ky")]([SubResource("Resource_w51ky")])
+and_then = ExtResource("1_bndgx")
+reveal = false
+metadata/_custom_type_script = "uid://cw3yr1k040kw7"

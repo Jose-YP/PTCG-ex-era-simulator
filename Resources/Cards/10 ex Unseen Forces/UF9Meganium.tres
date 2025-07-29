@@ -1,41 +1,75 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=22 format=3 uid="uid://cwm50lliwuxgr"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=26 format=3 uid="uid://cwm50lliwuxgr"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_av14u"]
 [ext_resource type="Texture2D" uid="uid://bkixvvnwbglm2" path="res://Art/Cards/10 ex Unseen Forces/9.jpg" id="1_b8f7a"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_uaib2"]
 [ext_resource type="Resource" uid="uid://bdwp1hpi4q83j" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/G2C1.tres" id="3_6ro4m"]
+[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="4_uaib2"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_wmae1"]
 [ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="6_6lcpf"]
 [ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="7_ai77k"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="8_7mess"]
+[ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="9_6ro4m"]
 [ext_resource type="Resource" uid="uid://c08tcl1tywrqe" path="res://Resources/Components/Effects/Asks/Class&Owner/BothNon-ex.tres" id="9_rpbfj"]
 [ext_resource type="Script" uid="uid://scca13hg4k1l" path="res://Code/Resource Makers/EffectSpecific/DmgManipMaker.gd" id="10_fryll"]
 [ext_resource type="Script" uid="uid://b2tlqpng7fq25" path="res://Code/Resource Makers/PokemonSpecific/BodyMaker.gd" id="11_uehyq"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="12_iblgg"]
 
+[sub_resource type="Resource" id="Resource_wmae1"]
+script = ExtResource("10_fryll")
+turn_delay = -1
+prevent_KO = false
+mode = "Add"
+how_many = 1
+choosing = 4
+anyway_u_like = false
+choose_num = -1
+ask = ExtResource("4_uaib2")
+vary_choose_num = false
+plus = true
+modifier = 1
+metadata/_custom_type_script = "uid://scca13hg4k1l"
+
 [sub_resource type="Resource" id="Resource_xvftv"]
 script = ExtResource("4_wmae1")
 either_or = false
 order = Array[int]([])
+dmgManip = SubResource("Resource_wmae1")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
-[sub_resource type="Resource" id="Resource_0matq"]
+[sub_resource type="Resource" id="Resource_uaib2"]
 script = ExtResource("6_6lcpf")
 which = "Input"
+input_title = "Add Counters"
 cap = 5
 metadata/_custom_type_script = "uid://vjn146j3ayd6"
 
-[sub_resource type="Resource" id="Resource_uflnk"]
+[sub_resource type="Resource" id="Resource_6ro4m"]
 script = ExtResource("7_ai77k")
 comparision_type = "Return"
-first_comparison = SubResource("Resource_0matq")
+first_comparison = SubResource("Resource_uaib2")
 compare_to = "None"
-second_constant = 0
+second_constant = null
 metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
+
+[sub_resource type="Resource" id="Resource_pb52n"]
+script = ExtResource("9_6ro4m")
+formal_question = false
+question_string = ""
+yes_answer = ""
+no_answer = ""
+comparator = SubResource("Resource_6ro4m")
+can_reverse = true
+occurance = false
+chooser = 0
+choose_location = "None"
+which_stack = 0
+metadata/_custom_type_script = "uid://b85jmc7067bjc"
 
 [sub_resource type="Resource" id="Resource_0dhaj"]
 script = ExtResource("8_7mess")
 prompt_reliant = false
+prompt = SubResource("Resource_pb52n")
 initial_main_DMG = 50
 defender_properties = 0
 condition = 1
@@ -43,10 +77,9 @@ replace_num = true
 always_effect = SubResource("Resource_xvftv")
 conditional_self_dmg = false
 self_damage = 0
-mod_prompt = false
+mod_prompt = true
 modifier = 1
 modifier_num = 10
-comparator = SubResource("Resource_uflnk")
 both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
@@ -68,6 +101,7 @@ choosing = 4
 anyway_u_like = false
 choose_num = 1
 ask = ExtResource("9_rpbfj")
+vary_choose_num = false
 plus = true
 modifier = 1
 metadata/_custom_type_script = "uid://scca13hg4k1l"

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Attack" load_steps=6 format=3 uid="uid://cydxe57j5nudo"]
 
 [ext_resource type="Resource" uid="uid://b253cojfcbneb" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/M2C3.tres" id="1_cnm2c"]
-[ext_resource type="Resource" uid="uid://e706qq8o0hri" path="res://Resources/Components/Counters/Comparator/Return2Flip.tres" id="2_3ocgq"]
+[ext_resource type="Resource" uid="uid://e706qq8o0hri" path="res://Resources/Components/Counters/Comparator/Return/Return2Flip.tres" id="2_3ocgq"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="3_i0ipf"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="3_jxbff"]
 
@@ -11,6 +11,7 @@ prompt_reliant = false
 initial_main_DMG = 70
 defender_properties = 0
 condition = 1
+replace_num = false
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false

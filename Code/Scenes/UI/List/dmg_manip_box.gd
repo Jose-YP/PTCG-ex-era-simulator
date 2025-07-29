@@ -17,11 +17,6 @@ var second_ask: SlotAsk
 var mode: String
 var max_counters: int = 0
 var counters_left: int = 0
-var counters_taken: int = 0
-var counters_moved: int = 0
-var giver: PokeSlotButton
-var reciever: PokeSlotButton
-var swap_history: Array[Dictionary] = []
 #endregion
 #--------------------------------------
 #DamageManip
@@ -37,7 +32,7 @@ func _ready() -> void:
 	
 	counters_left = max_counters
 	update_info()
-	header.setup(str("COUNTER ",mode," BOX"))
+	header.setup(str("COUNTER ",mode.capitalize()," BOX"))
 	footer.setup("PRESS ESC TO UNDO")
 	slot_list.find_allowed_givers(first_ask)
 
@@ -73,7 +68,6 @@ func anymore_actions_allowed():
 
 func reset():
 	counters_left = max_counters
-	counters_taken = 0
 	
 	for slot in slot_list.slots:
 		slot.empty()

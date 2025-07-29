@@ -5,11 +5,10 @@ class_name CardPlayer
 signal chosen
 
 var retreat_discard: EnMov = load("res://Resources/Components/Effects/EnergyMovement/RetreatDis.tres")
+var hold_candidate: PokeSlot
 var play_functions: Array[Callable] = [play_basic_pokemon, play_evolution, 
 play_place_stadium, play_attatch_tool, play_attatch_tm, play_fossil, 
 play_energy, play_trainer]
-
-var hold_candidate: PokeSlot
 
 func _ready() -> void:
 	SignalBus.connect_to(play_functions)
@@ -274,17 +273,23 @@ func set_reversable(reversable: bool):
 func before_direct_attack(attacker: PokeSlot, with: Attack):
 	var direct_bool: bool = with.does_direct_damage()
 	var attack_data: AttackData = with.attack_data
-	var pass_prompt
+	var pass_prompt: Variant
+	var replace_num: int = -1
+	
 	print("Now before ", with.name, " from ", attacker.get_card_name())
 	
 	with.print_attack()
 	if await attacker.confusion_check():
 		return
 	
+	if attack_data.prompt and attack_data.prompt.has_num_input():
+		replace_num = await attack_data.prompt.num_input_prompt()
+		with.attack_data.prompt_hold = replace_num
+	
 	attacker.current_attack = with
 	
 	if direct_bool or attack_data.always_effect.has_effect_type(["Condition",
-	 "Alleviate", "DamageManip", "Disable", "CardDisrupt"]):
+	 "Disable", "CardDisrupt"]):
 		if not attack_data.both_active:
 			await get_choice_candidates("Who do you want to attack?", 
 			func(slot: PokeSlot): return slot.is_in_slot(Consts.SIDES.DEFENDING, Consts.SLOTS.ACTIVE),
@@ -296,7 +301,8 @@ func before_direct_attack(attacker: PokeSlot, with: Attack):
 				return
 			else:
 				Globals.fundies.record_attack_src_trg(attacker.is_home(), [attacker], [hold_candidate])
-				if pass_prompt != false: direct_attack(attacker, with, [hold_candidate])
+				if pass_prompt != false:
+					direct_attack(attacker, with, [hold_candidate])
 		else:
 			var def_active: Array[PokeSlot] = Globals.full_ui.get_poke_slots(Consts.SIDES.DEFENDING, Consts.SLOTS.ACTIVE)
 			pass_prompt = await check_prompt_reliant(attack_data.prompt)
@@ -310,7 +316,7 @@ func before_direct_attack(attacker: PokeSlot, with: Attack):
 	
 	else: Globals.fundies.record_single_src_trg(attacker)
 	
-	attack_effect(attacker, with.attack_data, pass_prompt)
+	attack_effect(attacker, with.attack_data, pass_prompt, replace_num)
 	
 	attacker.current_attack = null
 	Globals.fundies.remove_top_source_target()
@@ -327,32 +333,43 @@ func direct_attack(attacker: PokeSlot, with: Attack, defenders: Array[PokeSlot])
 func bench_attack(attacker: PokeSlot, with: BenchAttk, defenders: Array[PokeSlot]):
 	pass
 
-func attack_effect(attacker: PokeSlot, with: AttackData, predefined = null):
+func attack_effect(attacker: PokeSlot, with: AttackData,
+ predefined: Variant = null, replace_num: int = -1):
 	if with.prompt:
-		print(predefined == null)
-		var succeed: bool = predefined == true or \
-		 (predefined == null and with.prompt.check_prompt())
+		var succeed: bool = predefined or \
+		 (predefined != false and with.prompt.check_prompt())
 		
 		if succeed and with.success_effect:
+			with.success_effect.replace_num = replace_num
 			await with.success_effect.play_effect()
 		
 		elif not succeed and with.fail_effect:
+			with.fail_effect.replace_num = replace_num
 			await with.fail_effect.play_effect()
 	
 	if with.always_effect:
+		with.always_effect.replace_num = replace_num
 		await with.always_effect.play_effect()
 
 func check_prompt_reliant(prompt: PromptAsk):
-	if prompt:
-		var result: bool = prompt.check_prompt()
+	if prompt and not prompt.has_num_input():
+		var result = prompt.check_prompt()
 		if prompt.has_coinflip():
 			await SignalBus.finished_coinflip
 		return result
 	return null
 
+func prompt_input(prompt: PromptAsk) -> int:
+	var result
+	if prompt.has_num_input():
+		result = await prompt.num_input_prompt()
+	return result
+
 #endregion
 #--------------------------------------
 
+#--------------------------------------
+#region RETREATING
 func retreating(retreater: PokeSlot):
 	retreat_discard.finished.connect(call_retreat_discard.bind(retreater))
 	retreat_discard.energy_ammount = retreater.get_pokedata().retreat
@@ -368,6 +385,8 @@ func retreating(retreater: PokeSlot):
 func call_retreat_discard(retreater: PokeSlot):
 	await Consts.retreat_swap.switch(Consts.SIDES.ATTACKING, false)
 	Globals.fundies.remove_top_source_target()
+#endregion
+#--------------------------------------
 
 #--------------------------------------
 #region DETERMINING EFFECTS

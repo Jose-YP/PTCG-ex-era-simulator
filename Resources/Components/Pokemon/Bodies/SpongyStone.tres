@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="PokeBody" load_steps=2 format=3 uid="uid://b4idxuksnlp54"]
+
+[ext_resource type="Script" uid="uid://b2tlqpng7fq25" path="res://Code/Resource Makers/PokemonSpecific/BodyMaker.gd" id="1_wicxc"]
+
+[resource]
+script = ExtResource("1_wicxc")
+when_active = false
+name = "Spongy Stone"
+description = "At any time between turns, remove 1 damage counter from [name]."
+affected_by_condition = true
+attatched_energy = 0
+energy_ammount = 1
+metadata/_custom_type_script = "uid://b2tlqpng7fq25"

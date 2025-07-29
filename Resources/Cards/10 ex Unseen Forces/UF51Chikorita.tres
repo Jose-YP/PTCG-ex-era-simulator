@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=8 format=3 uid="uid://rlrdilkux8at"]
+
+[ext_resource type="Texture2D" uid="uid://8dih8468wd32" path="res://Art/Cards/10 ex Unseen Forces/51.jpg" id="1_h1ibd"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_xqvi8"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_vy62p"]
+[ext_resource type="Resource" uid="uid://cy2rqr8mk2lb7" path="res://Resources/Components/Pokemon/Attacks/EffectlessAttacks/Headbutt10.tres" id="3_5hps0"]
+[ext_resource type="Resource" uid="uid://cl8mepce5n66y" path="res://Resources/Components/Pokemon/Attacks/EffectlessAttacks/RazorLeafG2-20.tres" id="4_dt3p1"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_qerbh"]
+
+[sub_resource type="Resource" id="Resource_b0kyd"]
+script = ExtResource("5_qerbh")
+HP = 50
+retreat = 1
+attacks = Array[ExtResource("2_vy62p")]([ExtResource("3_5hps0"), ExtResource("4_dt3p1")])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 1
+owner = 0
+type = 1
+weak = 2
+resist = 4
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_xqvi8")
+name = "CHikorita"
+image = ExtResource("1_h1ibd")
+illustrator = "Atsuko Nishida"
+number = 51
+rarity = 0
+expansion = 9
+categories = 1
+pokemon_properties = SubResource("Resource_b0kyd")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

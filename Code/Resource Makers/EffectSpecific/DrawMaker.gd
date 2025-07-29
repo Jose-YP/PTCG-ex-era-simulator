@@ -20,9 +20,10 @@ func play_effect(reversable: bool = false, replace_num: int = -1) -> void:
 	var old_val = Globals.fundies.stack_manager.operate_home
 	Globals.fundies.stack_manager.operate_home = Globals.fundies.get_considered_home(side)
 	if comparator != null:
-		pass
+		num_draw = await comparator.start_comparision()
 	
 	if shuffle_back_first:
+		Globals.fundies.stack_manager.operate_home = Globals.fundies.get_considered_home(side)
 		Globals.fundies.stack_manager.shuffle_hand_back()
 	
 	Globals.fundies.stack_manager.draw(num_draw, not bottom_deck)

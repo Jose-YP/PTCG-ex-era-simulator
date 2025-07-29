@@ -54,6 +54,8 @@ class_name AttackData
 @export var both_active: bool = false
 @export var bench_damage: BenchAttk
 
+var prompt_hold: Variant
+
 func print_data():
 	print_rich("[center]------------------DAMAGE------------------")
 	var icon: String

@@ -12,7 +12,7 @@
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="9_hc8gr"]
 [ext_resource type="Resource" uid="uid://b1rwmggf7a4do" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless2.tres" id="10_ojowl"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="10_wenki"]
-[ext_resource type="Resource" uid="uid://cogdxbe4l1jku" path="res://Resources/Components/Counters/Comparator/ReturnFlipUntil.tres" id="11_43h4u"]
+[ext_resource type="Resource" uid="uid://cogdxbe4l1jku" path="res://Resources/Components/Counters/Comparator/Return/ReturnFlipUntil.tres" id="11_43h4u"]
 
 [sub_resource type="Resource" id="Resource_47ysl"]
 script = ExtResource("7_pmwlk")
@@ -43,6 +43,7 @@ prompt_reliant = false
 initial_main_DMG = 0
 defender_properties = 0
 condition = 1
+replace_num = false
 always_effect = SubResource("Resource_f88l4")
 conditional_self_dmg = false
 self_damage = 0
@@ -66,6 +67,7 @@ prompt_reliant = false
 initial_main_DMG = 40
 defender_properties = 0
 condition = 1
+replace_num = false
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false

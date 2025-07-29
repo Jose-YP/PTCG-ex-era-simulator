@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://c0lenryrao7ol" path="res://Art/Cards/1 ex Ruby & Saphire/89.jpg" id="1_m8l7g"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_nyl4q"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_qsc0s"]
-[ext_resource type="Resource" uid="uid://dy4k02ewyav5j" path="res://Resources/Components/Counters/Indv/AtkHandSize.tres" id="3_uq1k3"]
+[ext_resource type="Resource" uid="uid://dy4k02ewyav5j" path="res://Resources/Components/Counters/Indv/Stacks/AtkHandSize.tres" id="3_uq1k3"]
 [ext_resource type="Script" uid="uid://bgtwlw1edjwyc" path="res://Code/Resource Makers/EffectSpecific/DrawMaker.gd" id="4_m8l7g"]
 [ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="4_sxuyp"]
 [ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="5_l36f4"]

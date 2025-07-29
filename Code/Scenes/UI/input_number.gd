@@ -8,10 +8,13 @@ class_name InputNum
 @onready var spin_box: SpinBox = $PanelContainer/VBoxContainer/SpinBox
 @onready var confirm: Button = $PanelContainer/VBoxContainer/Confirm
 
+signal return_num(num: int)
+signal finished
+
 var old_pos: Vector2 = Vector2.ZERO
+var test: String
 #Consts
 func _ready() -> void:
-	Consts
 	rich_text_label.clear()
 	rich_text_label.append_text(title)
 	
@@ -19,5 +22,5 @@ func _ready() -> void:
 		spin_box.max_value = cap
 
 func _on_confirm_pressed() -> void:
+	finished.emit()
 	print("Return num: ", spin_box.value)
-	Globals.control_disapear(self, .1, old_pos)

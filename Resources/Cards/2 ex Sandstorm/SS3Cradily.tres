@@ -1,0 +1,154 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=26 format=3 uid="uid://bc7e6cec30ccx"]
+
+[ext_resource type="Texture2D" uid="uid://cjr07xcqb68a0" path="res://Art/Cards/2 ex Sandstorm/3.jpg" id="1_hyb6k"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_42jkt"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_ya3fu"]
+[ext_resource type="Resource" uid="uid://dr35h5ltr0i6r" path="res://Resources/Components/Effects/Conditions/BasicPoison.tres" id="4_2mrhd"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="5_5g1fb"]
+[ext_resource type="Resource" uid="uid://cw72iu2d81vo5" path="res://Resources/Components/Effects/Swap/Optional/RecordGust.tres" id="6_777gh"]
+[ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="7_gbmow"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="8_tjdgf"]
+[ext_resource type="Resource" uid="uid://b1ebpxwo4lry7" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/G1C2.tres" id="9_oklb8"]
+[ext_resource type="Resource" uid="uid://byyujdycsbwrg" path="res://Resources/Components/Effects/DmgManip/Remove/SelfHeal20.tres" id="10_pnj3y"]
+[ext_resource type="Script" uid="uid://c0ishgbxk63dg" path="res://Code/Resource Makers/EffectSpecific/DisableMaker.gd" id="11_moc4a"]
+[ext_resource type="Script" uid="uid://b2tlqpng7fq25" path="res://Code/Resource Makers/PokemonSpecific/BodyMaker.gd" id="12_dn4jo"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="13_d6ih4"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="14_p3k15"]
+
+[sub_resource type="Resource" id="Resource_bqb5e"]
+script = ExtResource("5_5g1fb")
+either_or = false
+order = Array[int]([])
+swap = ExtResource("6_777gh")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_roksj"]
+script = ExtResource("7_gbmow")
+formal_question = false
+question_string = ""
+yes_answer = ""
+no_answer = ""
+can_reverse = true
+effect = SubResource("Resource_bqb5e")
+occurance = false
+chooser = 0
+choose_location = "None"
+which_stack = 0
+metadata/_custom_type_script = "uid://b85jmc7067bjc"
+
+[sub_resource type="Resource" id="Resource_5cgq3"]
+script = ExtResource("8_tjdgf")
+prompt_reliant = false
+prompt = SubResource("Resource_roksj")
+initial_main_DMG = 0
+defender_properties = 0
+condition = 1
+replace_num = false
+always_effect = ExtResource("4_2mrhd")
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_kyci5"]
+script = ExtResource("2_42jkt")
+name = "Lure Poison"
+description = "Before using this effect, you may switch the Defending Pokémon with 1 of your opponent's Benched Pokémon, if any. The Defending Pokémon is now Poisoned."
+attack_cost = ExtResource("3_ya3fu")
+attack_data = SubResource("Resource_5cgq3")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_t3atv"]
+script = ExtResource("5_5g1fb")
+either_or = false
+order = Array[int]([])
+dmgManip = ExtResource("10_pnj3y")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_defyy"]
+script = ExtResource("8_tjdgf")
+prompt_reliant = false
+initial_main_DMG = 50
+defender_properties = 0
+condition = 1
+replace_num = false
+always_effect = SubResource("Resource_t3atv")
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_r5hek"]
+script = ExtResource("2_42jkt")
+name = "Spiral Drain"
+description = "Remove 2 damage counters from [name] (remove 1 if there is only 1)."
+attack_cost = ExtResource("9_oklb8")
+attack_data = SubResource("Resource_defyy")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_ikgoj"]
+script = ExtResource("11_moc4a")
+side = 2
+slot = 2
+duration = -1
+no_weakness = false
+no_resistance = false
+instead_of_damage = false
+do_nothing = false
+attack = 0
+power = 0
+retreat_duration = -1
+disable_retreat = true
+metadata/_custom_type_script = "uid://c0ishgbxk63dg"
+
+[sub_resource type="Resource" id="Resource_eaxr4"]
+script = ExtResource("5_5g1fb")
+either_or = false
+order = Array[int]([])
+disable = SubResource("Resource_ikgoj")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_8oets"]
+script = ExtResource("12_dn4jo")
+when_active = true
+name = "Super Suction Cups"
+description = "As long as [name] is your Active Pokémon, your opponent's Pokémon can't retreat."
+affected_by_condition = true
+attatched_energy = 0
+energy_ammount = 1
+effect = SubResource("Resource_eaxr4")
+metadata/_custom_type_script = "uid://b2tlqpng7fq25"
+
+[sub_resource type="Resource" id="Resource_0de7v"]
+script = ExtResource("13_d6ih4")
+HP = 100
+retreat = 2
+body = SubResource("Resource_8oets")
+attacks = Array[ExtResource("2_42jkt")]([SubResource("Resource_kyci5"), SubResource("Resource_r5hek")])
+evo_stage = "Stage 2"
+evolves_from = "Lileep"
+considered = 1
+owner = 0
+type = 1
+weak = 2
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("14_p3k15")
+name = "Cradily"
+image = ExtResource("1_hyb6k")
+illustrator = "Midori Harada"
+number = 3
+rarity = 3
+expansion = 1
+categories = 1
+pokemon_properties = SubResource("Resource_0de7v")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

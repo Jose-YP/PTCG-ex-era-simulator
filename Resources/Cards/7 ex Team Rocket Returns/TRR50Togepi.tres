@@ -41,6 +41,7 @@ prompt_reliant = false
 initial_main_DMG = 10
 defender_properties = 0
 condition = 1
+replace_num = false
 success_effect = SubResource("Resource_min8w")
 conditional_self_dmg = false
 self_damage = 0

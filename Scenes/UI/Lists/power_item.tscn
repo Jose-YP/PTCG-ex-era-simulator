@@ -98,6 +98,7 @@ text = "HUGE EFFECT TEX LIKE SUPER HUGE, JUST SAY EVERYTHING YOU EVER WANTED TO 
 fit_content = true
 
 [node name="MarginContainer" type="MarginContainer" parent="AllText/EffectContainer"]
+visible = false
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/margin_left = 10

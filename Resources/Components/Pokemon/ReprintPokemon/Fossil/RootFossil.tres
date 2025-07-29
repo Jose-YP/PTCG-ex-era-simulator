@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Pokemon" load_steps=4 format=3 uid="uid://yqd8e305sht1"]
+
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_b7jp4"]
+[ext_resource type="Resource" uid="uid://b4idxuksnlp54" path="res://Resources/Components/Pokemon/Bodies/SpongyStone.tres" id="2_r2cxa"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="3_ma4te"]
+
+[resource]
+script = ExtResource("3_ma4te")
+HP = 40
+retreat = 0
+body = ExtResource("2_r2cxa")
+attacks = Array[ExtResource("1_b7jp4")]([])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 1
+owner = 0
+type = 256
+weak = 0
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"

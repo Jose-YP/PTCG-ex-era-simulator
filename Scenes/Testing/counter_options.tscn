@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://mrrj0ntkwam1" path="res://Code/Test/counter_options.gd" id="1_4a7yd"]
 [ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="2_8bw3b"]
-[ext_resource type="Resource" uid="uid://en7n610f58x5" path="res://Resources/Components/Counters/Indv/AllEnNum.tres" id="3_qwh4v"]
-[ext_resource type="Resource" uid="uid://1yahyklj3y7s" path="res://Resources/Components/Counters/Indv/AtkBenchCount.tres" id="4_758vm"]
-[ext_resource type="Resource" uid="uid://cbyca7hirj7et" path="res://Resources/Components/Counters/Indv/AllTotalStack.tres" id="5_6a18g"]
-[ext_resource type="Resource" uid="uid://dy4k02ewyav5j" path="res://Resources/Components/Counters/Indv/AtkHandSize.tres" id="6_crrno"]
-[ext_resource type="Resource" uid="uid://cngepehpfnug8" path="res://Resources/Components/Counters/Indv/SelfEnergyExcess.tres" id="7_l5ypp"]
+[ext_resource type="Resource" uid="uid://en7n610f58x5" path="res://Resources/Components/Counters/Indv/Slots/AllEnNum.tres" id="3_qwh4v"]
+[ext_resource type="Resource" uid="uid://1yahyklj3y7s" path="res://Resources/Components/Counters/Indv/Slots/AtkBenchCount.tres" id="4_758vm"]
+[ext_resource type="Resource" uid="uid://cbyca7hirj7et" path="res://Resources/Components/Counters/Indv/Stacks/AllTotalStack.tres" id="5_6a18g"]
+[ext_resource type="Resource" uid="uid://dy4k02ewyav5j" path="res://Resources/Components/Counters/Indv/Stacks/AtkHandSize.tres" id="6_crrno"]
+[ext_resource type="Resource" uid="uid://cngepehpfnug8" path="res://Resources/Components/Counters/Indv/Slots/SelfEnergyExcess.tres" id="7_l5ypp"]
 
 [node name="CounterOptions" type="Control"]
 layout_mode = 3

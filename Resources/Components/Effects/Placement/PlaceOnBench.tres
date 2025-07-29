@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Placement" load_steps=2 format=3 uid="uid://dvdnbmg1kbbmb"]
+
+[ext_resource type="Script" uid="uid://cdyba0wadidwb" path="res://Code/Resource Makers/EffectSpecific/PlacementMaker.gd" id="1_hck7p"]
+
+[resource]
+script = ExtResource("1_hck7p")
+which = 1
+top_deck = false
+stack = 1
+slot = 3
+use_as = 1
+reorder_type = 0
+shuffle = true
+evolve = false
+metadata/_custom_type_script = "uid://cdyba0wadidwb"

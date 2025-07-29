@@ -56,6 +56,7 @@ func set_items() -> void:
 	if body:
 		var body_making = bodyItem.instantiate()
 		body_making.body = body
+		body_making.slot = poke_slot
 		if check: body_making.focus_mode = FocusMode.FOCUS_NONE
 		%CardList.add_child(body_making)
 	
@@ -63,6 +64,7 @@ func set_items() -> void:
 	if power:
 		var power_making = powerItem.instantiate()
 		power_making.power = power
+		power_making.slot = poke_slot
 		if check: power_making.focus_mode = FocusMode.FOCUS_NONE
 		%CardList.add_child(power_making)
 	

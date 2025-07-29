@@ -1,0 +1,68 @@
+[gd_resource type="Resource" script_class="SideState" load_steps=20 format=3 uid="uid://cwuydo8vg3ei2"]
+
+[ext_resource type="Resource" uid="uid://ctg0srgyjkens" path="res://Resources/Decks/MeganiumFossil.tres" id="1_cbcgu"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_js88r"]
+[ext_resource type="Resource" uid="uid://jhipo8gr7d04" path="res://Resources/Cards/3 ex Dragon/DR88TVReporter.tres" id="3_21yej"]
+[ext_resource type="Resource" uid="uid://30ov4tahogne" path="res://Resources/Cards/5 ex Hidden Lagends/HL92Steven'sAdvice.tres" id="4_6d6jp"]
+[ext_resource type="Resource" uid="uid://cjxwqcnfm20fq" path="res://Resources/Cards/1 ex Ruby & Saphire/RS104GrassEnergy.tres" id="5_awhd4"]
+[ext_resource type="Resource" uid="uid://c0h3lvn0v74y" path="res://Resources/Cards/2 ex Sandstorm/SS92RootFossil.tres" id="6_afe8w"]
+[ext_resource type="Resource" uid="uid://dw80ljc0ni3p7" path="res://Resources/Cards/2 ex Sandstorm/SS42Lileep.tres" id="7_embkr"]
+[ext_resource type="Script" uid="uid://calm3n7va5yjo" path="res://Code/Resource Makers/GeneralUse/CardStacksMaker.gd" id="8_t5na3"]
+[ext_resource type="Script" uid="uid://dgqpurnuh14t1" path="res://Code/Resource Makers/GeneralUse/SideStateMaker.gd" id="9_whni0"]
+[ext_resource type="Script" uid="uid://cs70ix831b5g4" path="res://Code/Resource Makers/PokemonSpecific/PokeSlotMaker.gd" id="10_360a4"]
+[ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/BuffMaker.gd" id="11_d3oss"]
+[ext_resource type="Script" uid="uid://c0ishgbxk63dg" path="res://Code/Resource Makers/EffectSpecific/DisableMaker.gd" id="12_6oa8x"]
+[ext_resource type="Resource" uid="uid://cwm50lliwuxgr" path="res://Resources/Cards/10 ex Unseen Forces/UF9Meganium.tres" id="13_nbbly"]
+[ext_resource type="Resource" uid="uid://smakkaqjg0ll" path="res://Resources/Cards/10 ex Unseen Forces/UF35Bayleef.tres" id="14_phlc2"]
+[ext_resource type="Resource" uid="uid://d2y3sugoh0afg" path="res://Resources/Cards/13 ex Holon Phantoms/HP2CradilyDelta.tres" id="15_4qumd"]
+[ext_resource type="Resource" uid="uid://dxgh8i8vloevn" path="res://Resources/Cards/4 ex Team Magma VS Team Aqua/MA88DoubleRainbowEnergy.tres" id="16_yuhiq"]
+
+[sub_resource type="Resource" id="Resource_dhwmr"]
+script = ExtResource("8_t5na3")
+deck = ExtResource("1_cbcgu")
+init_deck = Array[ExtResource("2_js88r")]([])
+init_hand = Array[ExtResource("2_js88r")]([ExtResource("3_21yej"), ExtResource("4_6d6jp"), ExtResource("5_awhd4"), ExtResource("6_afe8w"), ExtResource("7_embkr")])
+init_discard = Array[ExtResource("2_js88r")]([])
+init_prize = Array[ExtResource("2_js88r")]([])
+metadata/_custom_type_script = "uid://calm3n7va5yjo"
+
+[sub_resource type="Resource" id="Resource_73jf3"]
+script = ExtResource("10_360a4")
+current_card = ExtResource("13_nbbly")
+damage_counters = 10
+evolution_ready = false
+evolved_this_turn = false
+evolved_from = Array[ExtResource("2_js88r")]([ExtResource("14_phlc2"), ExtResource("13_nbbly")])
+energy_cards = Array[ExtResource("2_js88r")]([ExtResource("5_awhd4"), ExtResource("5_awhd4"), ExtResource("5_awhd4"), ExtResource("5_awhd4"), ExtResource("5_awhd4")])
+tm_cards = Array[ExtResource("2_js88r")]([])
+applied_buffs = Array[ExtResource("11_d3oss")]([])
+applied_disable = Array[ExtResource("12_6oa8x")]([])
+dealt_damage = 0
+energy_discarded = 0
+metadata/_custom_type_script = "uid://cs70ix831b5g4"
+
+[sub_resource type="Resource" id="Resource_84ffy"]
+script = ExtResource("10_360a4")
+current_card = ExtResource("15_4qumd")
+damage_counters = 10
+evolution_ready = false
+evolved_this_turn = false
+evolved_from = Array[ExtResource("2_js88r")]([ExtResource("6_afe8w")])
+energy_cards = Array[ExtResource("2_js88r")]([ExtResource("16_yuhiq"), ExtResource("5_awhd4")])
+tm_cards = Array[ExtResource("2_js88r")]([])
+applied_buffs = Array[ExtResource("11_d3oss")]([])
+applied_disable = Array[ExtResource("12_6oa8x")]([])
+dealt_damage = 0
+energy_discarded = 0
+metadata/_custom_type_script = "uid://cs70ix831b5g4"
+
+[resource]
+script = ExtResource("9_whni0")
+card_stacks = SubResource("Resource_dhwmr")
+prize_cards = 6
+bench_size = 5
+slots = Dictionary[ExtResource("10_360a4"), bool]({
+SubResource("Resource_73jf3"): true,
+SubResource("Resource_84ffy"): true
+})
+metadata/_custom_type_script = "uid://dgqpurnuh14t1"

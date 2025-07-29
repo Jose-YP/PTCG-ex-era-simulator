@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Comparator" load_steps=3 format=3 uid="uid://b45cmbaixh154"]
 
-[ext_resource type="Resource" uid="uid://dnugestsmtlk" path="res://Resources/Components/Counters/Indv/OneFlip.tres" id="1_bqdqv"]
+[ext_resource type="Resource" uid="uid://dnugestsmtlk" path="res://Resources/Components/Counters/Indv/Coinflip/OneFlip.tres" id="1_bqdqv"]
 [ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="2_m01s6"]
 
 [resource]

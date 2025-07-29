@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Trainer" load_steps=2 format=3 uid="uid://cboufkbld87v0"]
+
+[ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="1_axvcb"]
+
+[resource]
+script = ExtResource("1_axvcb")
+considered = "Item"
+specific_requirement = "Play Root Fossil as if it were a Basic Pokémon. While in play, Root Fossil counts as a Colorless Pokémon (as well as a Trainer card). Root Fossil has no attacks of its own, can't retreat, and can't be affected by any Special Conditions. If Root Fossil is Knocked Out, it doesn't count as a Knocked Out Pokémon. (Discard it anyway.) At any time during your turn before your attack, you may discard Root Fossil from play. "
+description = ""
+metadata/_custom_type_script = "uid://crx447i85kshy"

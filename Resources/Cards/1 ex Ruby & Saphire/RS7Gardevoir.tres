@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_x305h"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_mamwr"]
 [ext_resource type="Resource" uid="uid://cu817ymtejglx" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Psychic1.tres" id="3_13xxk"]
-[ext_resource type="Resource" uid="uid://dh4vjjy6e5xbi" path="res://Resources/Components/Counters/Comparator/TrgEnEqual.tres" id="4_0i37o"]
+[ext_resource type="Resource" uid="uid://dh4vjjy6e5xbi" path="res://Resources/Components/Counters/Comparator/Equals/TrgEnEqual.tres" id="4_0i37o"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="5_dljrv"]
 [ext_resource type="Resource" uid="uid://buofx3y8opwf" path="res://Resources/Components/Effects/Search/PsyshadowSearch.tres" id="5_k252l"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="5_o1pkv"]
@@ -17,6 +17,7 @@ prompt_reliant = false
 initial_main_DMG = 10
 defender_properties = 0
 condition = 1
+replace_num = false
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false

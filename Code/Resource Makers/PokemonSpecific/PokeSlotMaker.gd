@@ -239,6 +239,8 @@ func add_damage(attacker: PokeSlot, base_ammount: int) -> void:
 	
 	print(get_card_name(), " TAKES: ", final_ammount, " DAMAGE!")
 	damage_counters += clamp(final_ammount, 0, final_ammount)
+	@warning_ignore("integer_division")
+	attacker.dealt_damage = clamp(final_ammount/10, 0, final_ammount/10)
 	refresh()
 
 func bench_add_damage(_ammount) -> int:

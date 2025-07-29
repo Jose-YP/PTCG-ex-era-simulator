@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=5 format=3 uid="uid://c0h3lvn0v74y"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_4h8af"]
+[ext_resource type="Texture2D" uid="uid://doxowty2moog1" path="res://Art/Cards/2 ex Sandstorm/92.jpg" id="1_bn8fw"]
+[ext_resource type="Resource" uid="uid://yqd8e305sht1" path="res://Resources/Components/Pokemon/ReprintPokemon/Fossil/RootFossil.tres" id="2_d6a6v"]
+[ext_resource type="Resource" uid="uid://tu3yotq0ogyx" path="res://Resources/Components/Trainers/ReprintTrainers/Fossil.tres" id="4_vplgx"]
+
+[resource]
+script = ExtResource("1_4h8af")
+name = "Root Fossil"
+image = ExtResource("1_bn8fw")
+illustrator = "Ryo Ueda"
+number = 92
+rarity = 0
+expansion = 1
+categories = 3
+pokemon_properties = ExtResource("2_d6a6v")
+trainer_properties = ExtResource("4_vplgx")
+fossil = true
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

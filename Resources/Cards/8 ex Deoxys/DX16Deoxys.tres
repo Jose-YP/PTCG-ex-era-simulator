@@ -5,7 +5,7 @@
 [ext_resource type="Resource" uid="uid://cvrbxqvsyxt6t" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/P1C1.tres" id="3_gsmpp"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="3_re3fn"]
 [ext_resource type="Resource" uid="uid://6qr7q3qdfbsf" path="res://Resources/Components/Pokemon/Powers/FormChangeDeoxys.tres" id="4_5wcjw"]
-[ext_resource type="Resource" uid="uid://dh4vjjy6e5xbi" path="res://Resources/Components/Counters/Comparator/TrgEnEqual.tres" id="4_22yei"]
+[ext_resource type="Resource" uid="uid://dh4vjjy6e5xbi" path="res://Resources/Components/Counters/Comparator/Equals/TrgEnEqual.tres" id="4_22yei"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_hjcee"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="5_k4uw5"]
 
@@ -15,6 +15,7 @@ prompt_reliant = false
 initial_main_DMG = 40
 defender_properties = 0
 condition = 1
+replace_num = false
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false

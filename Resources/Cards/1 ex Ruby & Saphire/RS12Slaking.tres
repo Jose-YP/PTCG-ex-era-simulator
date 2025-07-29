@@ -18,6 +18,7 @@ prompt = ExtResource("6_jk4hl")
 initial_main_DMG = 100
 defender_properties = 0
 condition = 1
+replace_num = false
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false

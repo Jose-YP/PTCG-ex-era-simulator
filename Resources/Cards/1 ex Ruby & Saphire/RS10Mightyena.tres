@@ -26,6 +26,7 @@ prompt = ExtResource("4_j7mx2")
 initial_main_DMG = 40
 defender_properties = 0
 condition = 1
+replace_num = false
 success_effect = SubResource("Resource_2q26m")
 conditional_self_dmg = false
 self_damage = 0

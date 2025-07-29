@@ -18,7 +18,7 @@ class_name Comparator
 @export var second_counter: IndvCounter
 
 func start_comparision() -> Variant:
-	var first_return = first_comparison.evaluate()
+	var first_return: int = first_comparison.evaluate()
 	match compare_to:
 		"None":
 			return first_return
@@ -28,6 +28,20 @@ func start_comparision() -> Variant:
 		"Second":
 			printt("DUAL COUNTER CHECK:",first_return, get_symbol(), second_counter.evaluate())
 			return make_comparision(first_return, second_counter.evaluate())
+	return false
+
+func input_comparison() -> Variant:
+	var first_return: int = await first_comparison.input_evaluation()
+	match compare_to:
+		"None":
+			return first_return
+		"Const":
+			printt("CONST CHECK:", first_return, get_symbol(), second_constant)
+			return make_comparision(first_return, second_constant)
+		"Second":
+			printt("DUAL COUNTER CHECK:")
+			var second: int = await second_counter.input_evaluation()
+			return make_comparision(first_return, second)
 	return false
 
 func make_comparision(first: int, second: int) -> Variant:
@@ -44,6 +58,12 @@ func has_coinflip() -> bool:
 	var result: bool = first_comparison.has_coinflip()
 	if second_counter:
 		result = result or second_counter.has_coinflip()
+	return result
+
+func has_input() -> bool:
+	var result: bool = first_comparison.has_input()
+	if second_counter:
+		result = result or second_counter.has_input()
 	return result
 
 func get_symbol() -> String:

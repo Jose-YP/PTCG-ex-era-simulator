@@ -81,7 +81,6 @@ func handle_component(comp, reversable: bool = false):
 	 or comp != extra_effect:
 		await comp.play_effect(reversable, replace_num)
 
-
 func just_reversed():
 	went_back = true
 	SignalBus.went_back.disconnect(just_reversed)

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_f2otf"]
 [ext_resource type="Texture2D" uid="uid://br8ajn5ib0fb2" path="res://Art/Cards/2 ex Sandstorm/31.jpg" id="1_fg7hy"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_tqd1y"]
-[ext_resource type="Resource" uid="uid://c5l2nrpmptwuh" path="res://Resources/Components/Effects/DmgManip/SelfHealALL.tres" id="3_my7mo"]
+[ext_resource type="Resource" uid="uid://c5l2nrpmptwuh" path="res://Resources/Components/Effects/DmgManip/Remove/SelfHealALL.tres" id="3_my7mo"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_0ehm3"]
 [ext_resource type="Resource" uid="uid://d4oev64lrs7x" path="res://Resources/Components/Effects/Search/SearchOneTrainerRev.tres" id="4_my7mo"]
 [ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="5_0ehm3"]
@@ -25,6 +25,7 @@ prompt_reliant = false
 initial_main_DMG = 0
 defender_properties = 0
 condition = 1
+replace_num = false
 always_effect = SubResource("Resource_ltygs")
 conditional_self_dmg = false
 self_damage = 0

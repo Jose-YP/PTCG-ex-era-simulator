@@ -128,8 +128,8 @@ const rarity: Array[String] = ["Common", "Uncommon", "Rare",
 const allowed_list_flags: Array[String] = ["Basic", "Evolution",
  "Item", "Support","Stadium", "Tool", "TM", "RSM", "Fossil", "Energy"]
 
-var coinflip_once: Comparator = load("res://Resources/Components/Counters/Comparator/CoinflipHeads.tres")
-var coinflip_twice: Comparator = load("res://Resources/Components/Counters/Comparator/CoinflipHeads.tres")
+var coinflip_once: Comparator = load("res://Resources/Components/Counters/Comparator/Equals/CoinflipHeads.tres")
+var coinflip_twice: Comparator = load("res://Resources/Components/Counters/Comparator/Equals/CoinflipHeads.tres")
 
 var retreat_swap: PokeSwap = load("res://Resources/Components/Effects/Swap/SwapSelf.tres")
 #endregion

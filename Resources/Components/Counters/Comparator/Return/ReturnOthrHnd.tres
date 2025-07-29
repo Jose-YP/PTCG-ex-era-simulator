@@ -17,5 +17,5 @@ script = ExtResource("3_ebqtg")
 comparision_type = "Return"
 first_comparison = SubResource("Resource_7kp0m")
 compare_to = "None"
-second_constant = 0
+second_constant = null
 metadata/_custom_type_script = "uid://b65jx8u5cgcgl"

@@ -7,7 +7,7 @@
 [ext_resource type="Resource" uid="uid://cesjkvsi5c6jb" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/L1C1.tres" id="4_12kuy"]
 [ext_resource type="Resource" uid="uid://cw44iqotg3v3f" path="res://Resources/Components/Effects/Asks/General/FromDefending.tres" id="5_bs661"]
 [ext_resource type="Resource" uid="uid://dabjstl6kl88i" path="res://Resources/Components/Pokemon/Bodies/Chain of Events.tres" id="5_fa2ne"]
-[ext_resource type="Resource" uid="uid://cqtgiv5p6suee" path="res://Resources/Components/Counters/Comparator/DefSelfEX.tres" id="6_6yu30"]
+[ext_resource type="Resource" uid="uid://cqtgiv5p6suee" path="res://Resources/Components/Counters/Comparator/Equals/DefSelfEX.tres" id="6_6yu30"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="6_12kuy"]
 [ext_resource type="Script" uid="uid://br15mnap82upq" path="res://Code/Resource Makers/PokemonSpecific/BenchAttackMaker.gd" id="7_l51ip"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="8_403sh"]
@@ -30,6 +30,7 @@ prompt_reliant = false
 initial_main_DMG = 0
 defender_properties = 0
 condition = 1
+replace_num = false
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false

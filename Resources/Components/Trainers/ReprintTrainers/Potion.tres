@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Trainer" load_steps=9 format=3 uid="uid://dksma8geevncm"]
 
-[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="1_281m1"]
+[ext_resource type="Resource" uid="uid://bcs15wj2goif7" path="res://Resources/Components/Effects/Asks/Stats/AtkDamaged.tres" id="1_281m1"]
 [ext_resource type="Script" uid="uid://scca13hg4k1l" path="res://Code/Resource Makers/EffectSpecific/DmgManipMaker.gd" id="1_obrrg"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_jtlhn"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="4_hf1ww"]
@@ -8,10 +8,13 @@
 
 [sub_resource type="Resource" id="Resource_eomgd"]
 script = ExtResource("1_obrrg")
+turn_delay = -1
+prevent_KO = false
 mode = "Remove"
 how_many = 2
 choosing = 4
-choose_num = -1
+anyway_u_like = false
+choose_num = 1
 ask = ExtResource("1_281m1")
 plus = false
 modifier = 1

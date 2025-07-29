@@ -52,6 +52,7 @@ prompt = ExtResource("7_b3c60")
 initial_main_DMG = 10
 defender_properties = 0
 condition = 1
+replace_num = false
 success_effect = SubResource("Resource_bogk1")
 conditional_self_dmg = false
 self_damage = 0

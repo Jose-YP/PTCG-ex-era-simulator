@@ -18,6 +18,7 @@ prompt = ExtResource("4_dwsah")
 initial_main_DMG = 10
 defender_properties = 0
 condition = 1
+replace_num = false
 success_effect = ExtResource("3_pja2x")
 conditional_self_dmg = false
 self_damage = 0

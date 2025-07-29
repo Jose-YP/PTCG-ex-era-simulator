@@ -41,9 +41,8 @@ energy_cards = Array[ExtResource("2_i22iy")]([ExtResource("3_j7rwv"), ExtResourc
 tm_cards = Array[ExtResource("2_i22iy")]([])
 applied_buffs = Array[ExtResource("11_5l7bb")]([])
 applied_disable = Array[ExtResource("12_wpliy")]([])
-type = 0
-weak = 0
-resist = 0
+dealt_damage = 0
+energy_discarded = 0
 metadata/_custom_type_script = "uid://cs70ix831b5g4"
 
 [sub_resource type="Resource" id="Resource_qphm0"]
@@ -57,9 +56,8 @@ energy_cards = Array[ExtResource("2_i22iy")]([ExtResource("3_j7rwv"), ExtResourc
 tm_cards = Array[ExtResource("2_i22iy")]([])
 applied_buffs = Array[ExtResource("11_5l7bb")]([])
 applied_disable = Array[ExtResource("12_wpliy")]([])
-type = 0
-weak = 0
-resist = 0
+dealt_damage = 0
+energy_discarded = 0
 metadata/_custom_type_script = "uid://cs70ix831b5g4"
 
 [sub_resource type="Resource" id="Resource_i22iy"]
@@ -73,9 +71,8 @@ energy_cards = Array[ExtResource("2_i22iy")]([ExtResource("3_j7rwv"), ExtResourc
 tm_cards = Array[ExtResource("2_i22iy")]([])
 applied_buffs = Array[ExtResource("11_5l7bb")]([])
 applied_disable = Array[ExtResource("12_wpliy")]([])
-type = 0
-weak = 0
-resist = 0
+dealt_damage = 0
+energy_discarded = 0
 metadata/_custom_type_script = "uid://cs70ix831b5g4"
 
 [sub_resource type="Resource" id="Resource_rcj6x"]
@@ -89,9 +86,8 @@ energy_cards = Array[ExtResource("2_i22iy")]([ExtResource("3_j7rwv"), ExtResourc
 tm_cards = Array[ExtResource("2_i22iy")]([])
 applied_buffs = Array[ExtResource("11_5l7bb")]([])
 applied_disable = Array[ExtResource("12_wpliy")]([])
-type = 0
-weak = 0
-resist = 0
+dealt_damage = 0
+energy_discarded = 0
 metadata/_custom_type_script = "uid://cs70ix831b5g4"
 
 [resource]

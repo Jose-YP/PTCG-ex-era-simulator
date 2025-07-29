@@ -21,7 +21,7 @@ var internal_data = {"which" : "Slot",
  "ask" : load("res://Resources/Components/Effects/Asks/General/AnyMon.tres") as SlotAsk,
  "en_count_methods" : "Total", "en_categories" : "Any",
  "en_counting" : load("res://Resources/Components/EnData/Rainbow.tres") as EnData 
- ,"Effect" : null ,"cap" : -1}
+ ,"input_title" : "Input Number" ,"cap" : -1}
 #endregion
 #--------------------------------------
 
@@ -123,6 +123,14 @@ func _get_property_list() -> Array[Dictionary]:
 			"usage" : PROPERTY_USAGE_DEFAULT
 		})
 	
+	elif _get("which") == "Input":
+		props.append({
+				"name" : "input_title",
+				"type" : TYPE_STRING,
+				"usage" : PROPERTY_USAGE_DEFAULT
+		})
+		
+	
 	props.append({
 		"name" : "cap",
 		"type" : TYPE_INT,
@@ -147,6 +155,7 @@ func _get(property):
 		"en_count_methods": return internal_data["en_count_methods"]
 		"en_categories": return internal_data["en_categories"]
 		"en_counting": return internal_data["en_counting"] as EnData
+		"input_title": return internal_data["input_title"]
 		"cap": return internal_data["cap"]
 	
 	return null
@@ -154,7 +163,8 @@ func _get(property):
 func _property_can_revert(property: StringName):
 	if (property == "which" or property == "slot_vars" or property == "stack_vars"
 	or property == "coin_flip" or property == "ask" or property == "en_count_methods"
-	or property == "en_categories" or property == "en_counting" or property == "cap"):
+	or property == "en_categories" or property == "en_counting" or
+	property == "input_title" or property == "cap"):
 		return true
 	return false
 
@@ -168,6 +178,7 @@ func _property_get_revert(property: StringName) -> Variant:
 		"en_count_methods": return "Total"
 		"en_categories": return "Any"
 		"en_counting": return load("res://Resources/Components/EnData/Rainbow.tres") as EnData
+		"input_title": return "Input Number"
 		"cap": return -1
 	return null
 #endregion
@@ -208,6 +219,9 @@ func _set(property, value):
 				return false
 			internal_data["en_counting"] = value as EnData
 			return true
+		"input_title":
+			internal_data["input_title"] = value
+			return true
 		"cap": 
 			internal_data["cap"] = value
 			return true
@@ -227,9 +241,6 @@ func evaluate() -> int:
 			result = stack_evaluation(_get("stack_vars"), _get("ask"))
 		"Coinflip":
 			result = coinflip_evaluation(_get("coin_flip"))
-		"Input":
-			result = input_evaluation()
-	
 	if _get("cap") != -1:
 		result = clamp(result, 0, _get("cap"))
 	
@@ -302,7 +313,18 @@ func coinflip_evaluation(coinflip_data: CoinFlip) -> int:
 
 func input_evaluation() -> int:
 	var input_return: int = 0
+	var input_box: InputNum = Consts.input_number.instantiate()
 	
+	input_box.title = _get("input_title")
+	input_box.cap = _get("cap")
+	
+	Globals.fundies.add_child(input_box)
+	
+	await input_box.finished
+	input_return = int(input_box.spin_box.value)
+	
+	Globals.control_disapear(input_box, .1, input_box.old_pos)
+	print("INPUT: ", input_return)
 	return input_return
 
 #endregion
@@ -310,3 +332,6 @@ func input_evaluation() -> int:
 
 func has_coinflip() -> bool:
 	return _get("which") == "Coinflip"
+
+func has_input() -> bool:
+	return _get("which") == "Input"

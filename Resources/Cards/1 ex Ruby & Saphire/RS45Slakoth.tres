@@ -8,7 +8,7 @@
 [ext_resource type="Resource" uid="uid://bjya0weq05sic" path="res://Resources/Components/Pokemon/Attacks/AttackData/20IfHeads.tres" id="4_dqdd0"]
 [ext_resource type="Resource" uid="uid://b1rwmggf7a4do" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless2.tres" id="5_wkou4"]
 [ext_resource type="Resource" uid="uid://b533us6s4x0oj" path="res://Resources/Components/Effects/Disable/AtkSelfNoAttack1Turn.tres" id="6_b08mv"]
-[ext_resource type="Resource" uid="uid://c5l2nrpmptwuh" path="res://Resources/Components/Effects/DmgManip/SelfHealALL.tres" id="7_s72ae"]
+[ext_resource type="Resource" uid="uid://c5l2nrpmptwuh" path="res://Resources/Components/Effects/DmgManip/Remove/SelfHealALL.tres" id="7_s72ae"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="8_fjlid"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="9_5tlla"]
 
@@ -34,6 +34,7 @@ prompt_reliant = false
 initial_main_DMG = 0
 defender_properties = 0
 condition = 1
+replace_num = false
 always_effect = SubResource("Resource_71qd2")
 conditional_self_dmg = false
 self_damage = 0

@@ -151,6 +151,7 @@ prompt = SubResource("Resource_58hgl")
 initial_main_DMG = 0
 defender_properties = 0
 condition = 1
+replace_num = false
 success_effect = SubResource("Resource_c4vsc")
 fail_effect = SubResource("Resource_wcep4")
 conditional_self_dmg = false

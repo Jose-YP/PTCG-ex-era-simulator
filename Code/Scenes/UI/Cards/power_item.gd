@@ -5,6 +5,8 @@ extends MarginContainer
 
 @onready var bodyButton: Button = $PowerButton
 
+var slot: PokeSlot
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	%Name.clear()
@@ -14,7 +16,7 @@ func _ready():
 	
 	%EffectText.clear()
 	if power.description != "":
-		var final_text: String = Convert.reformat(power.description)
+		var final_text: String = Convert.reformat(power.description, slot.get_card_name())
 		%EffectText.append_text(final_text)
 		%EffectText.show()
 

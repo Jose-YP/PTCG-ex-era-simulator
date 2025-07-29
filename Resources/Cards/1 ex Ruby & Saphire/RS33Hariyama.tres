@@ -4,7 +4,7 @@
 [ext_resource type="Resource" uid="uid://djhcfglsc14fn" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/F1C1.tres" id="3_gyoku"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="4_6dlgm"]
 [ext_resource type="Resource" uid="uid://n2tq4jfo7hw1" path="res://Resources/Components/Pokemon/Attacks/AttackData/20DmgParaIfHeads.tres" id="4_ou3qf"]
-[ext_resource type="Resource" uid="uid://e706qq8o0hri" path="res://Resources/Components/Counters/Comparator/Return2Flip.tres" id="5_1pnys"]
+[ext_resource type="Resource" uid="uid://e706qq8o0hri" path="res://Resources/Components/Counters/Comparator/Return/Return2Flip.tres" id="5_1pnys"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="7_i2uvt"]
 [ext_resource type="Resource" uid="uid://ddar4dlschhmr" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/F1C2.tres" id="7_mxuf4"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="8_wcw0t"]
@@ -23,6 +23,7 @@ prompt_reliant = false
 initial_main_DMG = 40
 defender_properties = 0
 condition = 1
+replace_num = false
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false

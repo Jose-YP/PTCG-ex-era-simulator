@@ -143,6 +143,9 @@ func generic_sort(compared_to: Base_Card) -> bool:
 		return number > compared_to.number
 	return compared_to.expansion > expansion
 
+func get_formal_name():
+	return str(name, Consts.expansion_abbreviations[expansion], number)
+
 ##This function can find the same card regardless of locality
 ##[br] The same card will always have a unique expansion & number
 func same_card(comparing_to: Base_Card) -> bool:
