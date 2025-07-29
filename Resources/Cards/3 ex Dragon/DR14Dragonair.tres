@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=15 format=3 uid="uid://04jo8v2wih4i"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=18 format=3 uid="uid://04jo8v2wih4i"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_wdvy0"]
 [ext_resource type="Texture2D" uid="uid://bob0xksoj4dmu" path="res://Art/Cards/3 ex Dragon/14.jpg" id="1_xmgka"]
@@ -6,8 +6,10 @@
 [ext_resource type="Resource" uid="uid://cesjkvsi5c6jb" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/L1C1.tres" id="3_2ivix"]
 [ext_resource type="Resource" uid="uid://n2tq4jfo7hw1" path="res://Resources/Components/Pokemon/Attacks/AttackData/20DmgParaIfHeads.tres" id="4_lfm50"]
 [ext_resource type="Resource" uid="uid://dkvbrahlcnjmi" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/W1C2.tres" id="5_j62rm"]
+[ext_resource type="Resource" uid="uid://bnv2dkudpcueo" path="res://Resources/Components/Effects/Asks/General/SrcActive.tres" id="6_2ivix"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="6_udpcv"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="7_b2nqx"]
+[ext_resource type="Script" uid="uid://scca13hg4k1l" path="res://Code/Resource Makers/EffectSpecific/DmgManipMaker.gd" id="7_lfm50"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="8_61x6v"]
 
 [sub_resource type="Resource" id="Resource_s4ydi"]
@@ -18,10 +20,26 @@ attack_cost = ExtResource("3_2ivix")
 attack_data = ExtResource("4_lfm50")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
+[sub_resource type="Resource" id="Resource_j62rm"]
+script = ExtResource("7_lfm50")
+turn_delay = -1
+prevent_KO = false
+mode = "Remove"
+how_many = 1
+choosing = 4
+anyway_u_like = false
+choose_num = -1
+ask = ExtResource("6_2ivix")
+vary_choose_num = false
+plus = true
+modifier = 1
+metadata/_custom_type_script = "uid://scca13hg4k1l"
+
 [sub_resource type="Resource" id="Resource_calre"]
 script = ExtResource("6_udpcv")
 either_or = false
 order = Array[int]([])
+dmgManip = SubResource("Resource_j62rm")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_iggwp"]

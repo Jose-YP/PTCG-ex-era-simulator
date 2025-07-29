@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="1_ndwjy"]
 [ext_resource type="Script" uid="uid://caj1pm8erar2a" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="2_cuf6k"]
 [ext_resource type="Resource" uid="uid://vk18jkchsq3v" path="res://Resources/Components/EnData/Colorless.tres" id="3_amwxe"]
-[ext_resource type="Resource" uid="uid://ck80jky0mu4ta" path="res://Resources/Components/Effects/Prompts/PromptSelfHasSpecialEnergy.tres" id="4_vrqwi"]
+[ext_resource type="Resource" uid="uid://ck80jky0mu4ta" path="res://Resources/Components/Effects/Prompts/PromptSelfMultipleSpEn.tres" id="4_vrqwi"]
 
 [sub_resource type="Resource" id="Resource_kky8u"]
 script = ExtResource("1_ndwjy")

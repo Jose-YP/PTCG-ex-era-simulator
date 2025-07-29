@@ -4,7 +4,6 @@ class_name PokeSlot
 
 #--------------------------------------
 #region VARIABLES
-
 @export var current_card: Base_Card
 @export_range(0,400,10) var damage_counters: int = 0
 #--------------------------------------
@@ -27,8 +26,8 @@ var damage_timers: Array[Dictionary]
 @export var energy_cards: Array[Base_Card] = []
 @export var tm_cards: Array[Base_Card] = []
 @export var tool_card: Base_Card
-@export var applied_buffs: Array[Buff] = []
-@export var applied_disable: Array[Disable] = []
+@export var buffs: Array[Dictionary]
+@export var disables: Array[Dictionary]
 @export var applied_condition: Condition = Condition.new()
 #endregion
 #--------------------------------------
@@ -40,6 +39,9 @@ var damage_timers: Array[Dictionary]
 #endregion
 #endregion
 #--------------------------------------
+
+func _init() -> void:
+	pass
 
 #--------------------------------------
 #region CHECKUP & POWER/BODY

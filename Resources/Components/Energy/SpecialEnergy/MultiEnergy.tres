@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Energy" load_steps=5 format=3 uid="uid://dvjuu7nr3hi0w"]
 
 [ext_resource type="Resource" uid="uid://vk18jkchsq3v" path="res://Resources/Components/EnData/Colorless.tres" id="2_71x56"]
-[ext_resource type="Resource" uid="uid://ck80jky0mu4ta" path="res://Resources/Components/Effects/Prompts/PromptSelfHasSpecialEnergy.tres" id="2_qx1v3"]
+[ext_resource type="Resource" uid="uid://ck80jky0mu4ta" path="res://Resources/Components/Effects/Prompts/PromptSelfMultipleSpEn.tres" id="2_qx1v3"]
 [ext_resource type="Script" uid="uid://caj1pm8erar2a" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="2_yw3tb"]
 [ext_resource type="Resource" uid="uid://c7itelq8jtjc2" path="res://Resources/Components/EnData/Rainbow.tres" id="5_wmapm"]
 

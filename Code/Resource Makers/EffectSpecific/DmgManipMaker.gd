@@ -48,18 +48,20 @@ func simple_manip(reversable: bool = false, replace_num: int = -1):
 	var counters: int = how_many if replace_num == -1 else replace_num
 	var mod_by: int
 	
-	if comparator:
-		mod_by = await comparator.start_comparision() * modifier
-		mod_by *= 1 if plus else -1
-		if comparator.has_coinflip():
-			await SignalBus.finished_coinflip
-		
-	
-	if vary_choose_num:
-		choose_num += mod_by
-	else:
-		counters += mod_by
-	counters *= -10 if mode == "Remove" else 10
+	#If anything other than max ammount
+	if counters != -1:
+		if comparator:
+			mod_by = await comparator.start_comparision() * modifier
+			mod_by *= 1 if plus else -1
+			if comparator.has_coinflip():
+				await SignalBus.finished_coinflip
+			
+
+		if vary_choose_num:
+			choose_num += mod_by
+		else:
+			counters += mod_by
+		counters *= -10 if mode == "Remove" else 10
 	
 	#Choose from candidates shown by ask
 	if choose_num != -1:
@@ -70,13 +72,14 @@ func simple_manip(reversable: bool = false, replace_num: int = -1):
 			
 			if manip_candidate == null: return
 			
-			manip_candidate.dmg_manip(counters, turn_delay)
+			manip_candidate.dmg_manip(get_final_ammount(counters, manip_candidate), turn_delay)
 	
 	#Apply manip on all ask candidates
 	else:
 		for slot in Globals.full_ui.get_ask_slots(ask):
-			slot.dmg_manip(counters, turn_delay)
-	 
+			
+			slot.dmg_manip(get_final_ammount(counters, slot), turn_delay)
+	
 	finished.emit()
 
 func dmg_manip_box(reversable: bool = false, replace_num: int = -1):
@@ -101,3 +104,11 @@ func dmg_manip_box(reversable: bool = false, replace_num: int = -1):
 
 func swap_manip(reversable: bool = false, replace_num: int = -1):
 	pass
+
+func get_final_ammount(counters: int, slot: PokeSlot) -> int:
+	var ammount: int = counters
+	if counters == -1:
+		ammount = slot.get_pokedata().HP - slot.damage_counters
+		if prevent_KO:
+			ammount -= 10
+	return ammount

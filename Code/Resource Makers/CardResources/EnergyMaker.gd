@@ -56,6 +56,8 @@ func get_current_provide() -> EnData:
 	
 	Globals.fundies.record_single_src_trg(attatched_to)
 	var result = prompt.check_prompt()
+	if not result:
+		print()
 	Globals.fundies.remove_top_source_target()
 	
 	return success_provide if result else fail_provide

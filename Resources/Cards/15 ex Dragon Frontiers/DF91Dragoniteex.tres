@@ -1,14 +1,76 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=2 format=3 uid="uid://nlegu1su4wtj"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=15 format=3 uid="uid://nlegu1su4wtj"]
 
+[ext_resource type="Texture2D" uid="uid://rhkjicwvnt" path="res://Art/Cards/15 ex Dragon Frontiers/91.jpg" id="1_c0rv0"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_ihegg"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_n2hqj"]
+[ext_resource type="Resource" uid="uid://b1rwmggf7a4do" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless2.tres" id="3_x72h8"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_gci62"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="5_poekm"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="6_1bi78"]
+[ext_resource type="Resource" uid="uid://bep36omnenbc8" path="res://Resources/Components/Pokemon/Attacks/AttackData/10Dmg.tres" id="7_40nk2"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="8_bhiu5"]
+
+[sub_resource type="Resource" id="Resource_gfg3p"]
+script = ExtResource("4_gci62")
+either_or = false
+order = Array[int]([])
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_gr24l"]
+script = ExtResource("5_poekm")
+prompt_reliant = false
+initial_main_DMG = 40
+defender_properties = 0
+condition = 1
+replace_num = false
+always_effect = SubResource("Resource_gfg3p")
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_x71s5"]
+script = ExtResource("2_n2hqj")
+name = "Deafen"
+description = "Your opponent can't play any Trainer cards (except for Supporter cards) from his or her hand during your opponent's next turn."
+attack_cost = ExtResource("3_x72h8")
+attack_data = SubResource("Resource_gr24l")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_kuskb"]
+script = ExtResource("2_n2hqj")
+name = "Dragon Roar"
+description = "Put 8 damage counters on the Defending Pokémon. If that Pokémon would be Knocked Out by this attack, put any damage counters not necessary to Knock Out the Defending Pokémon on your opponent's Benched Pokémon in any way you like."
+attack_cost = ExtResource("6_1bi78")
+attack_data = ExtResource("7_40nk2")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_8342s"]
+script = ExtResource("8_bhiu5")
+HP = 150
+retreat = 2
+attacks = Array[ExtResource("2_n2hqj")]([SubResource("Resource_x71s5"), SubResource("Resource_kuskb")])
+evo_stage = "Stage 2"
+evolves_from = "Dragonair"
+considered = 10
+owner = 0
+type = 1
+weak = 0
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
 script = ExtResource("1_ihegg")
-name = ""
-illustrator = ""
-number = 0
-rarity = 0
-expansion = 0
-categories = 0
+name = "Dragonite ex"
+image = ExtResource("1_c0rv0")
+illustrator = "Ryo Ueda"
+number = 91
+rarity = 4
+expansion = 14
+categories = 1
+pokemon_properties = SubResource("Resource_8342s")
 fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

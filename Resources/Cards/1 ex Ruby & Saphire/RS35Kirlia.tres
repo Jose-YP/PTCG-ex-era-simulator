@@ -7,10 +7,10 @@
 [ext_resource type="Resource" uid="uid://nx1kc1vsm4ia" path="res://Resources/Components/Effects/Conditions/BasicConfusion.tres" id="4_obvev"]
 [ext_resource type="Script" uid="uid://scca13hg4k1l" path="res://Code/Resource Makers/EffectSpecific/DmgManipMaker.gd" id="5_22ruy"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="5_po7pa"]
-[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="5_xo8sa"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="6_po7pa"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="7_12pwx"]
 [ext_resource type="Resource" uid="uid://cu817ymtejglx" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Psychic1.tres" id="7_rxpsm"]
+[ext_resource type="Resource" uid="uid://c2ujs102gu8qn" path="res://Resources/Components/Effects/Asks/General/OthActive.tres" id="8_22ruy"]
 [ext_resource type="Resource" uid="uid://ekj1myy642kh" path="res://Resources/Components/Effects/Prompts/PromptHeads.tres" id="8_gpint"]
 
 [sub_resource type="Resource" id="Resource_pm8uh"]
@@ -41,15 +41,15 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_gpint"]
 script = ExtResource("5_22ruy")
 turn_delay = -1
-prevent_KO = false
-mode = "Remove"
+prevent_KO = true
+mode = "Add"
 how_many = -1
 choosing = 4
 anyway_u_like = false
-choose_num = -1
-ask = ExtResource("5_xo8sa")
+choose_num = 1
+ask = ExtResource("8_22ruy")
 vary_choose_num = false
-plus = false
+plus = true
 modifier = 1
 metadata/_custom_type_script = "uid://scca13hg4k1l"
 
@@ -67,7 +67,7 @@ initial_main_DMG = 0
 defender_properties = 0
 condition = 1
 replace_num = false
-success_effect = SubResource("Resource_oouox")
+always_effect = SubResource("Resource_oouox")
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false
