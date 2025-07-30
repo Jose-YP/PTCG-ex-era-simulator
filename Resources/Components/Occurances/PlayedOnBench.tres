@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Occurance" load_steps=3 format=3 uid="uid://chfsi6o3xwpee"]
+
+[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="1_jik47"]
+[ext_resource type="Script" uid="uid://bics3dumv7avj" path="res://Code/Resource Makers/GeneralUse/OccuranceMaker.gd" id="2_aafkg"]
+
+[resource]
+script = ExtResource("2_aafkg")
+from_ask = ExtResource("1_jik47")
+signal = "played"
+metadata/_custom_type_script = "uid://bics3dumv7avj"

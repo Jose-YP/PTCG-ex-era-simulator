@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=13 format=3 uid="uid://bd3x4rf00qjqr"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=24 format=3 uid="uid://bd3x4rf00qjqr"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_jkipr"]
 [ext_resource type="Texture2D" uid="uid://ceq4w3dpfkpjf" path="res://Art/Cards/1 ex Ruby & Saphire/22.jpg" id="1_pxig1"]
@@ -8,6 +8,13 @@
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="4_ifd1e"]
 [ext_resource type="Script" uid="uid://b2tlqpng7fq25" path="res://Code/Resource Makers/PokemonSpecific/BodyMaker.gd" id="5_yp0m0"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="6_544qj"]
+[ext_resource type="Resource" uid="uid://bkt6ry7vyha70" path="res://Resources/Components/Effects/Asks/General/Other.tres" id="7_7a6ot"]
+[ext_resource type="Script" uid="uid://scca13hg4k1l" path="res://Code/Resource Makers/EffectSpecific/DmgManipMaker.gd" id="8_5ows5"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="9_8ns45"]
+[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="10_d4m7u"]
+[ext_resource type="Resource" uid="uid://crhg4u3yu2cso" path="res://Resources/Components/Effects/Asks/General/FromOther.tres" id="11_ew8vf"]
+[ext_resource type="Script" uid="uid://bics3dumv7avj" path="res://Code/Resource Makers/GeneralUse/OccuranceMaker.gd" id="12_odvua"]
+[ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="13_051yb"]
 
 [sub_resource type="Resource" id="Resource_86nuf"]
 script = ExtResource("4_ifd1e")
@@ -43,10 +50,53 @@ attatched_energy = 0
 energy_ammount = 1
 metadata/_custom_type_script = "uid://b2tlqpng7fq25"
 
+[sub_resource type="Resource" id="Resource_ivndt"]
+script = ExtResource("8_5ows5")
+turn_delay = -1
+prevent_KO = false
+mode = "Add"
+how_many = 2
+choosing = 4
+anyway_u_like = false
+choose_num = -1
+ask = ExtResource("7_7a6ot")
+vary_choose_num = false
+plus = true
+modifier = 1
+metadata/_custom_type_script = "uid://scca13hg4k1l"
+
+[sub_resource type="Resource" id="Resource_ikewq"]
+script = ExtResource("9_8ns45")
+either_or = false
+order = Array[int]([])
+dmgManip = SubResource("Resource_ivndt")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_g3w05"]
+script = ExtResource("12_odvua")
+from_ask = ExtResource("10_d4m7u")
+signal = "take_dmg"
+must_be_ask = ExtResource("11_ew8vf")
+metadata/_custom_type_script = "uid://bics3dumv7avj"
+
+[sub_resource type="Resource" id="Resource_6ppf6"]
+script = ExtResource("13_051yb")
+category = "Body"
+name = "Rough Skin"
+description = "If [name] is your Active Pokémon and is damaged by an opponent's attack (even if [name] is Knocked Out), put 2 damage counters on the Attacking Pokémon."
+affected_by_condition = true
+active = false
+how_often = 0
+on_occurance = false
+occurance = SubResource("Resource_g3w05")
+effect = SubResource("Resource_ikewq")
+metadata/_custom_type_script = "uid://bs2y8ocljilv8"
+
 [sub_resource type="Resource" id="Resource_v0xfh"]
 script = ExtResource("6_544qj")
 HP = 70
 retreat = 1
+pokebody = SubResource("Resource_6ppf6")
 body = SubResource("Resource_7a6ot")
 attacks = Array[ExtResource("2_ahb0c")]([SubResource("Resource_cmt8m")])
 evo_stage = "Stage 1"

@@ -80,6 +80,7 @@ question_string = ""
 yes_answer = ""
 no_answer = ""
 can_reverse = true
+occurance = false
 chooser = 0
 choose_location = "None"
 which_stack = 0

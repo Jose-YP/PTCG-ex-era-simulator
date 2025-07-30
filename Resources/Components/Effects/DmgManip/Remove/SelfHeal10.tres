@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="DamageManip" load_steps=3 format=3 uid="uid://dllyof1ddnq7w"]
+
+[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="1_ja1hh"]
+[ext_resource type="Script" uid="uid://scca13hg4k1l" path="res://Code/Resource Makers/EffectSpecific/DmgManipMaker.gd" id="2_klu6c"]
+
+[resource]
+script = ExtResource("2_klu6c")
+turn_delay = -1
+prevent_KO = false
+mode = "Remove"
+how_many = 1
+choosing = 4
+anyway_u_like = false
+choose_num = -1
+ask = ExtResource("1_ja1hh")
+vary_choose_num = false
+plus = true
+modifier = 1
+metadata/_custom_type_script = "uid://scca13hg4k1l"

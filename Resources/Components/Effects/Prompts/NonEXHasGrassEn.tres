@@ -57,6 +57,7 @@ yes_answer = ""
 no_answer = ""
 comparator = SubResource("Resource_miw3i")
 can_reverse = true
+occurance = false
 chooser = 0
 choose_location = "None"
 which_stack = 0

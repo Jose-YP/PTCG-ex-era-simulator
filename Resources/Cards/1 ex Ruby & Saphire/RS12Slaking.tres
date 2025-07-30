@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=16 format=3 uid="uid://cfjddps750f64"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=18 format=3 uid="uid://cfjddps750f64"]
 
 [ext_resource type="Texture2D" uid="uid://cw52mctmfhy2h" path="res://Art/Cards/1 ex Ruby & Saphire/12.jpg" id="1_6m76f"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_iidg0"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="7_6gfio"]
 [ext_resource type="Resource" uid="uid://b4eq6v7x2qaxd" path="res://Resources/Components/Effects/Disable/DefNoPowers.tres" id="7_qjm50"]
 [ext_resource type="Script" uid="uid://b2tlqpng7fq25" path="res://Code/Resource Makers/PokemonSpecific/BodyMaker.gd" id="8_i8crq"]
+[ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="9_0biyp"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="9_pjbqk"]
 
 [sub_resource type="Resource" id="Resource_qjm50"]
@@ -53,10 +54,23 @@ energy_ammount = 1
 effect = SubResource("Resource_wheg7")
 metadata/_custom_type_script = "uid://b2tlqpng7fq25"
 
+[sub_resource type="Resource" id="Resource_em8ff"]
+script = ExtResource("9_0biyp")
+category = "Body"
+name = "Lazy"
+description = "As long as [name] is your Active Pokémon, your opponent's Pokémon can't use any Poké-Powers."
+affected_by_condition = false
+active = true
+how_often = 0
+on_occurance = false
+effect = SubResource("Resource_wheg7")
+metadata/_custom_type_script = "uid://bs2y8ocljilv8"
+
 [sub_resource type="Resource" id="Resource_obdab"]
 script = ExtResource("9_pjbqk")
 HP = 120
 retreat = 3
+pokebody = SubResource("Resource_em8ff")
 body = SubResource("Resource_3a8om")
 attacks = Array[ExtResource("2_0biyp")]([SubResource("Resource_xtfpm")])
 evo_stage = "Stage 2"

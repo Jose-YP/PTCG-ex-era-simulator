@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=20 format=3 uid="uid://ybxbqon28r0p"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=22 format=3 uid="uid://ybxbqon28r0p"]
 
 [ext_resource type="Texture2D" uid="uid://cnw6bdjck41qb" path="res://Art/Cards/1 ex Ruby & Saphire/23.jpg" id="1_4bc6d"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_ypdm2"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="5_wv0a4"]
 [ext_resource type="Script" uid="uid://b58015mafcw2v" path="res://Code/Resource Makers/PokemonSpecific/PowerMaker.gd" id="7_et187"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="8_keycm"]
+[ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="9_agkb0"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="9_b0bc6"]
 
 [sub_resource type="Resource" id="Resource_et187"]
@@ -65,6 +66,18 @@ order = Array[int]([])
 energy_movement = SubResource("Resource_ifthe")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
+[sub_resource type="Resource" id="Resource_e1px8"]
+script = ExtResource("9_agkb0")
+category = "Power"
+name = "Water Call"
+description = "Once during your turn (before your attack), you may attach a {Water} Energy card from your hand to your Active Pokémon. This power can't be used if [name] is affected by a Special Condition."
+affected_by_condition = true
+active = false
+how_often = 1
+on_occurance = false
+effect = SubResource("Resource_gcqqh")
+metadata/_custom_type_script = "uid://bs2y8ocljilv8"
+
 [sub_resource type="Resource" id="Resource_orc67"]
 script = ExtResource("7_et187")
 name = "Water Call"
@@ -81,6 +94,7 @@ metadata/_custom_type_script = "uid://b58015mafcw2v"
 script = ExtResource("8_keycm")
 HP = 100
 retreat = 2
+pokepower = SubResource("Resource_e1px8")
 power = SubResource("Resource_orc67")
 attacks = Array[ExtResource("2_ypdm2")]([SubResource("Resource_xh15o")])
 evo_stage = "Stage 2"

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Pokemon" load_steps=15 format=3 uid="uid://dvteh4sj66jw4"]
+[gd_resource type="Resource" script_class="Pokemon" load_steps=17 format=3 uid="uid://dvteh4sj66jw4"]
 
 [ext_resource type="Resource" uid="uid://b86uut4qajrgg" path="res://Resources/Components/Effects/EnergyMovement/AtkSelfDisFire.tres" id="2_nrfu7"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="3_08wec"]
@@ -8,6 +8,7 @@
 [ext_resource type="Resource" uid="uid://c4wnoevyvagqq" path="res://Resources/Components/Effects/Search/FirestarterSearch.tres" id="5_bsvf6"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="5_le3tc"]
 [ext_resource type="Script" uid="uid://b58015mafcw2v" path="res://Code/Resource Makers/PokemonSpecific/PowerMaker.gd" id="8_4485v"]
+[ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="8_nrfu7"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="9_8uu16"]
 
 [sub_resource type="Resource" id="Resource_6620x"]
@@ -40,6 +41,18 @@ either_or = false
 order = Array[int]([])
 search = ExtResource("5_bsvf6")
 
+[sub_resource type="Resource" id="Resource_3mj0j"]
+script = ExtResource("8_nrfu7")
+category = "Power"
+name = "Firestarter"
+description = "Once during your turn (before your attack), you may attach a {Fire} Energy card from your discard pile to 1 of your Benched Pokémon. This power can't be used if [name] is affected by a Special Condition."
+affected_by_condition = true
+active = false
+how_often = 1
+on_occurance = false
+effect = SubResource("Resource_4ym1n")
+metadata/_custom_type_script = "uid://bs2y8ocljilv8"
+
 [sub_resource type="Resource" id="Resource_xrpmq"]
 metadata/__load_path__ = "res://Resources/Components/Effects/Asks/AtkHasBenchMons.tres"
 
@@ -59,6 +72,7 @@ effect = SubResource("Resource_4ym1n")
 script = ExtResource("9_8uu16")
 HP = 100
 retreat = 2
+pokepower = SubResource("Resource_3mj0j")
 power = SubResource("Resource_wvak6")
 attacks = Array[ExtResource("3_08wec")]([SubResource("Resource_ld6ej")])
 evo_stage = "Stage 2"

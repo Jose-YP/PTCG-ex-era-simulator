@@ -17,7 +17,7 @@
         "visibility": 0.0
       },
       "resource_name": {
-        "visibility": 0.0
+        "visibility": 0
       },
       "resource_path": {
         "visibility": 0.0
@@ -79,6 +79,8 @@
   ],
   "table_functions": {
     "filter": [
+      "return true",
+      "if res.pokemon_properties:\n\tvar result = res.pokemon_properties.body or res.pokemon_properties.power\n\treturn result\nreturn false",
       "return true"
     ],
     "process": [

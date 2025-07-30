@@ -5,12 +5,10 @@ class_name Ability
 @export var name: String = ""
 @export_multiline var description: String = ""
 
-@export_group("Prerequisites")
 @export var affected_by_condition: bool = true
 @export var active: bool = false
 @export_enum("Passive", "Once per Mon", "Once per turn", "Infinite") var how_often: int = 0
-
-@export_group("Action")
+@export var on_occurance: bool = false
 @export var prompt: PromptAsk
 @export var occurance: Occurance
 @export var effect: EffectCall

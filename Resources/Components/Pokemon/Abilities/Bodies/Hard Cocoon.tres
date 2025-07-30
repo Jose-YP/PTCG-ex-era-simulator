@@ -1,0 +1,45 @@
+[gd_resource type="Resource" script_class="Ability" load_steps=8 format=3 uid="uid://vjh7yrpr7ien"]
+
+[ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/BuffMaker.gd" id="1_6807i"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_74dg0"]
+[ext_resource type="Resource" uid="uid://bessnawi8b2ct" path="res://Resources/Components/Occurance/AttackedByOpponent.tres" id="3_sp7lv"]
+[ext_resource type="Resource" uid="uid://ekj1myy642kh" path="res://Resources/Components/Effects/Prompts/PromptHeads.tres" id="4_6ba1n"]
+[ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="5_dab6w"]
+
+[sub_resource type="Resource" id="Resource_llrqx"]
+script = ExtResource("1_6807i")
+side = 1
+slot = 1
+duration = 0
+attack_damage = 0
+defense = 30
+retreat_change = 0
+after_weak_res = true
+ignore_res_other = false
+ignore_weak_self = false
+immunities = 0
+immune_to_special_conditions = false
+immune_to_effects = false
+immune_to_damage = false
+metadata/_custom_type_script = "uid://coojhwe6m20gd"
+
+[sub_resource type="Resource" id="Resource_fytfx"]
+script = ExtResource("2_74dg0")
+either_or = false
+order = Array[int]([])
+buff = SubResource("Resource_llrqx")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[resource]
+script = ExtResource("5_dab6w")
+category = "Body"
+name = "Hard Cocoon"
+description = "During your opponent's turn, if [name] would be damaged by an opponent's attack (after applying Weakness and Resistance), flip a coin. If heads, reduce that damage by 30."
+affected_by_condition = false
+active = false
+how_often = 0
+on_occurance = true
+prompt = ExtResource("4_6ba1n")
+occurance = ExtResource("3_sp7lv")
+effect = SubResource("Resource_fytfx")
+metadata/_custom_type_script = "uid://bs2y8ocljilv8"

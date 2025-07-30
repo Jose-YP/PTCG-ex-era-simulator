@@ -30,6 +30,7 @@ yes_answer = ""
 no_answer = ""
 can_reverse = true
 effect = SubResource("Resource_ujupi")
+occurance = false
 chooser = 0
 choose_location = "None"
 which_stack = 0

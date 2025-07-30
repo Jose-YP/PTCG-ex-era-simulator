@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=13 format=3 uid="uid://c357yy7k4yvv3"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=19 format=3 uid="uid://c357yy7k4yvv3"]
 
 [ext_resource type="Texture2D" uid="uid://8v21sphmsmhb" path="res://Art/Cards/1 ex Ruby & Saphire/2.jpg" id="1_p1ioh"]
 [ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_ojoto"]
@@ -6,9 +6,12 @@
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="4_dmlyy"]
 [ext_resource type="Resource" uid="uid://n2tq4jfo7hw1" path="res://Resources/Components/Pokemon/Attacks/AttackData/20DmgParaIfHeads.tres" id="4_lbrm8"]
 [ext_resource type="Resource" uid="uid://2p0hc22v0g1o" path="res://Resources/Components/Pokemon/Bodies/WitheringDust.tres" id="7_edvno"]
+[ext_resource type="Script" uid="uid://c0ishgbxk63dg" path="res://Code/Resource Makers/EffectSpecific/DisableMaker.gd" id="8_eha0c"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="8_pq48o"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="9_t2qls"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="9_xms5s"]
 [ext_resource type="Resource" uid="uid://bep36omnenbc8" path="res://Resources/Components/Pokemon/Attacks/AttackData/10Dmg.tres" id="10_82rx7"]
+[ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="10_lbrm8"]
 
 [sub_resource type="Resource" id="Resource_xtjel"]
 script = ExtResource("4_dmlyy")
@@ -24,10 +27,43 @@ description = "Remove 1 damage counter from each of your Pokémon, including Bea
 attack_cost = ExtResource("3_ojoto")
 attack_data = ExtResource("10_82rx7")
 
+[sub_resource type="Resource" id="Resource_rd3xr"]
+script = ExtResource("8_eha0c")
+side = 2
+slot = 5
+duration = -1
+no_weakness = false
+no_resistance = true
+instead_of_damage = false
+do_nothing = false
+attack = 0
+power = 0
+retreat_duration = 1
+disable_retreat = false
+
+[sub_resource type="Resource" id="Resource_fbclb"]
+script = ExtResource("9_xms5s")
+either_or = false
+order = Array[int]([3])
+disable = SubResource("Resource_rd3xr")
+
+[sub_resource type="Resource" id="Resource_u0sgg"]
+script = ExtResource("10_lbrm8")
+category = "Body"
+name = "Withering Dust"
+description = "As long as [name] is in play, do not apply Resistance for all Active Pokémon."
+affected_by_condition = false
+active = true
+how_often = 0
+on_occurance = false
+effect = SubResource("Resource_fbclb")
+metadata/_custom_type_script = "uid://bs2y8ocljilv8"
+
 [sub_resource type="Resource" id="Resource_wpldu"]
 script = ExtResource("8_pq48o")
 HP = 80
 retreat = 0
+pokebody = SubResource("Resource_u0sgg")
 body = ExtResource("7_edvno")
 attacks = Array[ExtResource("4_dmlyy")]([SubResource("Resource_xtjel"), SubResource("Resource_gb01l")])
 evo_stage = "Stage 2"

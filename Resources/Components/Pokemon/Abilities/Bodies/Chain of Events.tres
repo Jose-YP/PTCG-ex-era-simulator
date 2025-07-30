@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="Ability" load_steps=5 format=3 uid="uid://c0y58oaysjrpt"]
+
+[ext_resource type="Resource" uid="uid://dv5gbkvk3uxtj" path="res://Resources/Components/Effects/Asks/General/SrcTheRest.tres" id="1_eewr7"]
+[ext_resource type="Script" uid="uid://bics3dumv7avj" path="res://Code/Resource Makers/GeneralUse/OccuranceMaker.gd" id="2_dlkox"]
+[ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="3_ck56x"]
+
+[sub_resource type="Resource" id="Resource_kg0np"]
+script = ExtResource("2_dlkox")
+from_ask = ExtResource("1_eewr7")
+signal = "attacks"
+metadata/_custom_type_script = "uid://bics3dumv7avj"
+
+[resource]
+script = ExtResource("3_ck56x")
+category = "Body"
+name = "Chain of Events"
+description = "As long as [name] is your Active Pokémon, whenever your other Active Pokémon, if any, attacks, you may use Cheer On after the first attack (you still need the necessary Energy to use Cheer On). You can't use Cheer On more than once in this way even if your other Active Pokémon has the Chain of Events Poké-Body."
+affected_by_condition = false
+active = true
+how_often = 0
+on_occurance = false
+occurance = SubResource("Resource_kg0np")
+metadata/_custom_type_script = "uid://bs2y8ocljilv8"

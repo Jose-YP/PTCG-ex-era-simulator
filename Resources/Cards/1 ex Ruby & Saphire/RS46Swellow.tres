@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=14 format=3 uid="uid://rx248wf8bnrl"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=16 format=3 uid="uid://rx248wf8bnrl"]
 
 [ext_resource type="Texture2D" uid="uid://ms6i36ta5ij6" path="res://Art/Cards/1 ex Ruby & Saphire/46.jpg" id="1_0s5yi"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_5jrob"]
@@ -8,6 +8,7 @@
 [ext_resource type="Resource" uid="uid://ceo3bpqlglf5o" path="res://Resources/Components/Pokemon/Attacks/AttackData/30Dmg.tres" id="4_a6hkx"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="5_sfkfj"]
 [ext_resource type="Resource" uid="uid://y5ggbiiapsx7" path="res://Resources/Components/Effects/Swap/DefSwapTarget.tres" id="6_4xjsk"]
+[ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="7_2syf6"]
 [ext_resource type="Script" uid="uid://b58015mafcw2v" path="res://Code/Resource Makers/PokemonSpecific/PowerMaker.gd" id="7_3lxeq"]
 
 [sub_resource type="Resource" id="Resource_12qs1"]
@@ -25,6 +26,18 @@ order = Array[int]([])
 swap = ExtResource("6_4xjsk")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
+[sub_resource type="Resource" id="Resource_a6hkx"]
+script = ExtResource("7_2syf6")
+category = "Power"
+name = "Drive Off"
+description = "Once during your turn (before your attack), if [name] is your Active Pokémon, you may switch 1 of the Defending Pokémon with 1 of your opponent's Benched Pokémon. Your opponent picks the Benched Pokémon to switch. This power can't be used if [name] is affected by a Special Condition."
+affected_by_condition = true
+active = true
+how_often = 1
+on_occurance = false
+effect = SubResource("Resource_n00n6")
+metadata/_custom_type_script = "uid://bs2y8ocljilv8"
+
 [sub_resource type="Resource" id="Resource_p30fo"]
 script = ExtResource("7_3lxeq")
 name = ""
@@ -41,6 +54,7 @@ metadata/_custom_type_script = "uid://b58015mafcw2v"
 script = ExtResource("2_ahhkg")
 HP = 70
 retreat = 0
+pokepower = SubResource("Resource_a6hkx")
 power = SubResource("Resource_p30fo")
 attacks = Array[ExtResource("1_5jrob")]([SubResource("Resource_12qs1")])
 evo_stage = "Stage 1"

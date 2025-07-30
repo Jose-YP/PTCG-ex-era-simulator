@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=18 format=3 uid="uid://dnwi6a5kx4bvn"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=20 format=3 uid="uid://dnwi6a5kx4bvn"]
 
 [ext_resource type="Texture2D" uid="uid://bwl6enwy315cl" path="res://Art/Cards/1 ex Ruby & Saphire/10.jpg" id="1_2q26m"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_y3sj6"]
@@ -11,6 +11,7 @@
 [ext_resource type="Resource" uid="uid://cmj80wa0ybso5" path="res://Resources/Components/Effects/Buff/Intimidate.tres" id="7_h7drc"]
 [ext_resource type="Script" uid="uid://b2tlqpng7fq25" path="res://Code/Resource Makers/PokemonSpecific/BodyMaker.gd" id="8_xfy48"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="9_2j1kh"]
+[ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="10_j7mx2"]
 
 [sub_resource type="Resource" id="Resource_2q26m"]
 script = ExtResource("5_nryx3")
@@ -62,10 +63,23 @@ energy_ammount = 1
 effect = SubResource("Resource_gi0ni")
 metadata/_custom_type_script = "uid://b2tlqpng7fq25"
 
+[sub_resource type="Resource" id="Resource_04ran"]
+script = ExtResource("10_j7mx2")
+category = "Body"
+name = "Intimidating Fang"
+description = "As long as [name] is your Active Pokémon, any damage done to your Pokémon by an opponent's attack is reduced by 10 (before applying Weakness and Resistance)."
+affected_by_condition = false
+active = true
+how_often = 0
+on_occurance = false
+effect = SubResource("Resource_gi0ni")
+metadata/_custom_type_script = "uid://bs2y8ocljilv8"
+
 [sub_resource type="Resource" id="Resource_jmu1c"]
 script = ExtResource("9_2j1kh")
 HP = 70
 retreat = 1
+pokebody = SubResource("Resource_04ran")
 body = SubResource("Resource_jvtsy")
 attacks = Array[ExtResource("2_7n5p1")]([SubResource("Resource_t4kj7")])
 evo_stage = "Stage 1"
