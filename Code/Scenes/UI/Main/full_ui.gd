@@ -24,8 +24,19 @@ func _gui_input(event: InputEvent) -> void:
 #endregion
 
 #region HELPERS
-func get_side(home: bool) -> CardSideUI:
+func get_home_side(home: bool) -> CardSideUI:
 	return player_side if home else opponent_side
+
+func get_const_side(side: Consts.SIDES) -> CardSideUI:
+	match side:
+		Consts.SIDES.SOURCE:
+			return get_home_side(true)
+		Consts.SIDES.OTHER:
+			return get_home_side(false)
+		_:
+			return get_home_side(Globals.fundies.get_considered_home(side))
+	
+	return null
 
 func all_slots() -> Array[UI_Slot]:
 	return player_side.get_slots() + opponent_side.get_slots()
@@ -57,7 +68,7 @@ func remove_card() -> void:
 
 func update_stacks(dict: Dictionary[Consts.STACKS,Array],
  side: Consts.PLAYER_TYPES):
-	var temp_side: CardSideUI = get_side(home_side == side)
+	var temp_side: CardSideUI = get_home_side(home_side == side)
 	for stack in dict:
 		if stack == Consts.STACKS.PLAY: break
 		temp_side.non_mon.update_stack(stack, dict[stack].size())

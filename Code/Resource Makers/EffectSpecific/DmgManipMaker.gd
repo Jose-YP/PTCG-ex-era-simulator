@@ -100,7 +100,8 @@ func dmg_manip_box(reversable: bool = false, replace_num: int = -1):
 	Globals.fundies.add_child(dmg_manip)
 	
 	await dmg_manip.finished
-	print("Done")
+	
+	Globals.control_disapear(dmg_manip, .1)
 
 func swap_manip(reversable: bool = false, replace_num: int = -1):
 	pass

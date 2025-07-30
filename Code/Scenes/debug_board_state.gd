@@ -6,7 +6,6 @@ class_name BoardNode
 @export_enum("None", "Fail", "Success", "All") var debug_prompt: int = 0
 @export var board_state: BoardState
 @export var fundies: Fundies
-@export var doubles: bool = true
 @export var test: PackedScene
 
 var full_ui: FullBoardUI
@@ -15,7 +14,7 @@ var doubles_ui: PackedScene = load("res://Scenes/UI/UICollections/full_ui_double
 var test_out: bool = false
 
 func _ready() -> void:
-	full_ui = doubles_ui.instantiate() if doubles else singles_ui.instantiate()
+	full_ui = doubles_ui.instantiate() if board_state.doubles else singles_ui.instantiate()
 	add_child(full_ui)
 	full_ui.home_side = board_state.home_side
 	Globals.board_state = board_state
@@ -26,7 +25,7 @@ func _ready() -> void:
 
 func set_up(home: bool):
 	var temp_side: SideState = board_state.get_side(home).duplicate()
-	var ui: CardSideUI = full_ui.get_side(home)
+	var ui: CardSideUI = full_ui.get_home_side(home)
 	var player_type: Consts.PLAYER_TYPES = board_state.get_player_type(home)
 	var stacks: CardStacks = temp_side.card_stacks.duplicate()
 	
@@ -67,7 +66,7 @@ func _input(event: InputEvent) -> void:
 		var new = test.instantiate()
 		
 		#region EDIT WITH WHATEVER
-		new.side = full_ui.get_side(true)
+		new.side = full_ui.get_home_side(true)
 		new.singles = false
 		#endregion
 		

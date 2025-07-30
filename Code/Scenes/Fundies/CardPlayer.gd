@@ -384,6 +384,7 @@ func retreating(retreater: PokeSlot):
 
 func call_retreat_discard(retreater: PokeSlot):
 	await Consts.retreat_swap.switch(Consts.SIDES.ATTACKING, false)
+	retreater.retreat.emit()
 	Globals.fundies.remove_top_source_target()
 #endregion
 #--------------------------------------

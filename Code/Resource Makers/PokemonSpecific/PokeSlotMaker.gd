@@ -40,8 +40,25 @@ var damage_timers: Array[Dictionary]
 #endregion
 #--------------------------------------
 
-func _init() -> void:
-	pass
+#--------------------------------------
+#region SIGNALS
+@warning_ignore("unused_signal")
+signal swap(slot: Consts.SLOTS)
+signal take_dmg(attacker: PokeSlot)
+signal condition_applied(condition: Condition)
+signal attatch_en_signal(card: Base_Card)
+signal discard_en_signal(card: Base_Card)
+signal played(slot: Consts.SLOTS)
+signal evolved(slot: PokeSlot)
+signal attacks(slot: PokeSlot)
+signal used_power()
+signal checked_up()
+@warning_ignore("unused_signal")
+signal retreat()
+signal ko()
+
+#endregion
+#--------------------------------------
 
 #--------------------------------------
 #region CHECKUP & POWER/BODY
@@ -65,6 +82,8 @@ func pokemon_checkup() -> void:
 			dmg_manip(dmg_timer["Damage"])
 		else:
 			print(dmg_timer)
+	
+	checked_up.emit()
 	
 	refresh()
 
@@ -162,6 +181,16 @@ func has_condition(conditions: Array = ["Poison", "Burn",
 	
 	return false
 
+func get_side() -> Consts.SIDES:
+	if is_attacker():
+		return Consts.SIDES.ATTACKING
+	return Consts.SIDES.DEFENDING
+
+func get_slot_pos() -> Consts.SLOTS:
+	if is_active():
+		return Consts.SLOTS.ACTIVE
+	return Consts.SLOTS.BENCH
+
 func get_targets(atk: PokeSlot, def: Array[PokeSlot]) -> Array[Array]:
 	var targets: Array[Array] = [[],[]]
 	
@@ -173,8 +202,6 @@ func get_targets(atk: PokeSlot, def: Array[PokeSlot]) -> Array[Array]:
 		targets[0] = def
 	
 	return targets
-
-#func is_same_type(type_atk: int, type_def: int)
 
 func get_pokedata() -> Pokemon:
 	return current_card.pokemon_properties
@@ -207,6 +234,7 @@ func set_card(card: Base_Card) -> void:
 	current_card = card
 	ui_slot.make_allowed(true)
 	action_checkup("Set")
+	played.emit(get_slot_pos())
 
 #General use function, use specific ones if possible
 func remove_cards(cards: Array[Base_Card]) -> void:
@@ -237,6 +265,9 @@ func remove_cards(cards: Array[Base_Card]) -> void:
 func should_ko() -> bool:
 	return (get_pokedata().HP - damage_counters) < 0
 
+func knock_out() -> void:
+	ko.emit()
+
 func add_damage(attacker: PokeSlot, base_ammount: int) -> void:
 	var final_ammount = base_ammount
 	
@@ -247,10 +278,12 @@ func add_damage(attacker: PokeSlot, base_ammount: int) -> void:
 		print(get_card_name(), " is resists to ", attacker.get_card_name())
 		final_ammount -= 30
 	
+	final_ammount = clamp(final_ammount, 0, final_ammount)
 	print(get_card_name(), " TAKES: ", final_ammount, " DAMAGE!")
-	damage_counters += clamp(final_ammount, 0, final_ammount)
+	damage_counters += final_ammount
 	@warning_ignore("integer_division")
-	attacker.dealt_damage = clamp(final_ammount/10, 0, final_ammount/10)
+	attacker.dealt_damage = final_ammount
+	take_dmg.emit(attacker)
 	refresh()
 
 func bench_add_damage(_ammount) -> int:
@@ -274,6 +307,7 @@ func add_energy(energy_card: Base_Card):
 	energy_cards.append(energy_card)
 	energy_card.energy_properties.attatched_to = self
 	register_energy_timer(energy_card)
+	attatch_en_signal.emit(energy_card)
 	refresh()
 	action_checkup(str("EN ", energy_string))
 
@@ -284,6 +318,7 @@ func remove_energy(removing: Base_Card):
 			refresh()
 			return
 	
+	discard_en_signal.emit(removing)
 	printerr("Couldn't find ", removing.name, " in array ", energy_cards)
 
 func register_energy_timer(card: Base_Card):
@@ -381,6 +416,7 @@ func get_energy_excess(enData_filter: EnData = null) -> int:
 func evolve_card(evolution: Base_Card) -> void:
 	evolved_from.append(current_card)
 	current_card = evolution
+	evolved.emit(self)
 	refresh()
 	action_checkup("Evo")
 
@@ -426,6 +462,8 @@ func add_condition(adding: Condition) -> void:
 	
 	applied_condition.imprision = adding.imprision or applied_condition.imprision
 	applied_condition.shockwave = adding.shockwave or applied_condition.shockwave
+	
+	condition_applied.emit(applied_condition)
 	
 	refresh()
 

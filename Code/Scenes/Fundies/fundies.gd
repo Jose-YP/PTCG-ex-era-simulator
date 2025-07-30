@@ -34,11 +34,11 @@ func _ready() -> void:
 func current_turn_print():
 	#Get the side that's attacking
 	print("CURRENT ATTACKER")
-	Globals.full_ui.get_side(home_turn).print_status()
+	Globals.full_ui.get_home_side(home_turn).print_status()
 	
 	#Get the side that's defending
 	print("CURRENT DEFENDER")
-	Globals.full_ui.get_side(not home_turn).print_status()
+	Globals.full_ui.get_home_side(not home_turn).print_status()
 	
 	print_simple_slot_types()
 
@@ -66,7 +66,7 @@ func hide_list() -> void:
 	if current_list: Globals.control_disapear(current_list, .1, current_list.old_pos)
 
 func get_side_ui() -> CardSideUI:
-	return Globals.full_ui.get_side(home_turn)
+	return Globals.full_ui.get_home_side(home_turn)
 
 func get_considered_home(side: Consts.SIDES):
 	match side:
@@ -107,7 +107,7 @@ func can_be_played(card: Base_Card) -> int:
 		allowed_to += 4
 	#Supporter
 	if considered & 8 != 0:
-		if (not Globals.full_ui.get_side(home_turn).supporter_played() and not first_turn)\
+		if (not Globals.full_ui.get_home_side(home_turn).supporter_played() and not first_turn)\
 		 or Globals.board_state.debug_unlimit:
 			allowed_to += 8
 	#Stadium

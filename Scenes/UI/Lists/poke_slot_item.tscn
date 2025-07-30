@@ -30,18 +30,20 @@ colors = PackedColorArray(0.607966, 0.88179, 0.354105, 1, 0.302797, 0.646137, 0.
 
 [node name="PokeSlotItem" type="Button"]
 clip_contents = true
+custom_minimum_size = Vector2(398, 60)
 anchors_preset = -1
 anchor_left = 0.316
 anchor_top = 0.458
 anchor_right = 0.686
-anchor_bottom = 0.558
+anchor_bottom = 0.542
 offset_left = -0.280029
 offset_top = 0.23999
-offset_right = 0.119995
-offset_bottom = 0.23999
+offset_right = 0.119934
+offset_bottom = -0.240051
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
+size_flags_vertical = 4
 mouse_default_cursor_shape = 2
 theme_override_styles/hover = SubResource("StyleBoxFlat_yloa2")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_auhmd")
@@ -68,7 +70,6 @@ alignment = 1
 
 [node name="CounterChange" parent="VBoxContainer/HBoxContainer" instance=ExtResource("3_4j8ma")]
 unique_name_in_owner = true
-modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 slot_item = true
 heal_gradient = SubResource("Gradient_4r1ij")
@@ -89,6 +90,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 12
 bbcode_enabled = true
 text = "Team Magma's Mightyena"
 fit_content = true

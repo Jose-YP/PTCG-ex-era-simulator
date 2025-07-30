@@ -22,6 +22,7 @@ choosing = 4
 anyway_u_like = true
 choose_num = 1
 ask = ExtResource("4_ocm5a")
+vary_choose_num = false
 plus = true
 modifier = 1
 metadata/_custom_type_script = "uid://scca13hg4k1l"

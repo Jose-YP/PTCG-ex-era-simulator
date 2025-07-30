@@ -1,9 +1,11 @@
+@icon("res://Art/Counters/Spiral.png")
 extends Control
 class_name DmgManipBox
 
 #--------------------------------------
 #region VARIABLES
 @export var side: CardSideUI
+@export var second_side: CardSideUI
 @export var singles: bool = true
 
 @onready var slot_list: SlotList = %SlotList
@@ -23,8 +25,9 @@ var counters_left: int = 0
 #For now this is only used with Add dmg so only worry about that
 #Test this with DF91, UF28, MA33, SS4, LM5, CG56
 func _ready() -> void:
+	side = Globals.full_ui.get_const_side(first_ask.side_target)
 	slot_list.side = side
-	slot_list.singles = singles
+	slot_list.singles = not Globals.board_state.doubles
 	slot_list.setup()
 	
 	for button in slot_list.slots:
@@ -32,7 +35,7 @@ func _ready() -> void:
 	
 	counters_left = max_counters
 	update_info()
-	header.setup(str("COUNTER ",mode.capitalize()," BOX"))
+	header.setup(str("COUNTER ",mode.to_upper()," BOX"))
 	footer.setup("PRESS ESC TO UNDO")
 	slot_list.find_allowed_givers(first_ask)
 
@@ -41,30 +44,30 @@ func make_closable() -> void:
 	%Header.closable = true
 
 func handle_pressed_slot(slot_button: PokeSlotButton):
-	print(mode)
-	#Once I find a card that uses Remove/Swap in 'anyway you like', I'll make those two
-	match mode:
-		"Add":
-			counters_left -= 1
-			slot_button.manip_counters(1)
-		"Remove":
-			pass
-		"Swap":
-			pass
-	
-	update_info()
-	anymore_actions_allowed()
+	if counters_left != 0:
+		#Once I find a card that uses Remove/Swap in 'anyway you like', I'll make those two
+		match mode:
+			"Add":
+				counters_left -= 1
+				slot_button.manip_counters(1)
+			"Remove":
+				counters_left -= 1
+				slot_button.manip_counters(-1)
+			"Swap":
+				pass
+		
+		update_info()
+		anymore_actions_allowed()
 
 func update_info():
 	%Instructions.clear()
 	#Only add to this when mode is swap
 	%indSwapNum.clear()
 	
-	%Instructions.append(str(mode, " counters remaining: ", counters_left, "/", max_counters))
+	%Instructions.append_text(str(mode, " counters remaining: ", counters_left, "/", max_counters))
 
 func anymore_actions_allowed():
-	if counters_left == 0:
-		%End.disabled = false
+	%End.disabled = counters_left != 0
 
 func reset():
 	counters_left = max_counters
@@ -74,3 +77,17 @@ func reset():
 	
 	slot_list.find_allowed_givers(first_ask)
 	update_info()
+	anymore_actions_allowed()
+
+func _on_clear_pressed() -> void:
+	reset()
+
+func _on_end_pressed() -> void:
+	%End.disabled = true
+	
+	for slot_button in slot_list.slots:
+		if not slot_button.slot:
+			continue
+		slot_button.slot.dmg_manip(slot_button.counter_change.current_dmg)
+	
+	finished.emit()

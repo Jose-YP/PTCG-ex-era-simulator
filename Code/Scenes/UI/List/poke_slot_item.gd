@@ -46,15 +46,7 @@ func set_slotNum(slotNum: String):
 func manip_counters(ammount: int):
 	additional_counters += ammount
 	%CounterChange.set_damage(additional_counters * 10)
-	check_counter_visibility()
 
 func reset_counters():
 	additional_counters = 0
 	%CounterChange.set_damage(additional_counters)
-	check_counter_visibility()
-
-func check_counter_visibility():
-	if additional_counters == 0:
-		%CounterChange.modulate = Color(%CounterChange.modulate, 0)
-	else:
-		%CounterChange.modulate = Color(%CounterChange.modulate, 1)

@@ -30,6 +30,7 @@ choosing = 4
 anyway_u_like = false
 choose_num = 1
 ask = ExtResource("5_2l41v")
+vary_choose_num = false
 plus = true
 modifier = 1
 takers = ExtResource("7_888bh")

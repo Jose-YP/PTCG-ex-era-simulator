@@ -23,6 +23,7 @@ metadata/_custom_type_script = "uid://b85jmc7067bjc"
 [sub_resource type="Resource" id="Resource_4or8k"]
 script = ExtResource("8_uw2sm")
 force_reversable = false
+record_target = false
 choose_active = false
 chosing = 1
 affected = 2

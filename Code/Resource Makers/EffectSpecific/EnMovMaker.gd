@@ -85,7 +85,7 @@ func swap_effect(reversable: bool = false) -> void:
 	var new_box: SwapBox = Consts.swap_box.instantiate()
 	#Globals.fundies.get_considered_home(chooser)
 	new_box.swap_rules = self.duplicate()
-	new_box.side = Globals.full_ui.get_side(Globals.fundies.get_considered_home(givers.side_target))
+	new_box.side = Globals.full_ui.get_const_side(givers.side_target)
 	new_box.singles = Globals.full_ui.singles
 	
 	if reversable: new_box.make_closable()

@@ -12,7 +12,6 @@ const which_vars: PackedStringArray = ["Slot", "Stack", "Coinflip", "Input"]
 const en_methods: PackedStringArray = ["Total", "Excess", "Diff Types", "Categories"]
 const en_category_enum: PackedStringArray = ["Any", "Basic Energy", "Special Energy"]
 
-var ters = PokeSlot.new()
 var slot_instance = pokeSlot.new()
 var stack_instance = stackRes.new()
 var internal_data = {"which" : "Slot",

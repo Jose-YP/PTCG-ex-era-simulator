@@ -27,6 +27,7 @@ custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+mouse_filter = 2
 texture = ExtResource("2_ewxox")
 expand_mode = 2
 stretch_mode = 5
@@ -37,6 +38,7 @@ custom_minimum_size = Vector2(32, 31)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+mouse_filter = 2
 theme_override_font_sizes/bold_italics_font_size = 20
 bbcode_enabled = true
 text = "[b][i][color=black]200"

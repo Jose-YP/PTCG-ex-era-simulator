@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Occurance" load_steps=3 format=3 uid="uid://bqifjs5h6jfmg"]
+
+[ext_resource type="Script" uid="uid://bics3dumv7avj" path="res://Code/Resource Makers/GeneralUse/OccuranceMaker.gd" id="1_7c75d"]
+[ext_resource type="Resource" uid="uid://bns8h72u2hxqo" path="res://Resources/Components/Effects/Asks/General/AnyMon.tres" id="1_igxmo"]
+
+[resource]
+script = ExtResource("1_7c75d")
+from_ask = ExtResource("1_igxmo")
+signal = "checked_up"
+metadata/_custom_type_script = "uid://bics3dumv7avj"

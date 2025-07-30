@@ -81,7 +81,7 @@ func play_card(card: Base_Card, destination: Consts.STACKS, home: bool = Globals
 	Globals.fundies.ui_actions.reset_ui()
 
 func play_supporter(card: Base_Card, home: bool):
-	var side: CardSideUI = Globals.full_ui.get_side(home)
+	var side: CardSideUI = Globals.full_ui.get_home_side(home)
 	var stack: CardStacks = get_stacks(home)
 	side.non_mon.show_supporter(card)
 	#Whichever one works stays

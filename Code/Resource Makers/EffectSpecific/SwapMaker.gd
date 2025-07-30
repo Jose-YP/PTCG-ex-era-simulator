@@ -53,4 +53,7 @@ func switch(aff: Consts.SIDES, reversable: bool):
 	active_swap.slot_into(bench_swap.ui_slot)
 	bench_swap.slot_into(temp_slot)
 	
+	active_swap.swap.emit(active_swap.get_slot_pos())
+	bench_swap.swap.emit(active_swap.get_slot_pos())
+	
 	finished.emit()
