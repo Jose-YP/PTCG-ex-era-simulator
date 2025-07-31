@@ -61,6 +61,13 @@ func get_ask_slots(ask: SlotAsk) -> Array[PokeSlot]:
 			pokeslots.append(ui_slot.connected_slot)
 	return pokeslots
 
+func get_occurance_slots() -> Array[PokeSlot]:
+	var pokeslots: Array[PokeSlot]
+	for ui_slot in all_slots():
+		if ui_slot.connected_slot.is_filled() and ui_slot.connected_slot.has_occurance():
+			pokeslots.append(ui_slot.connected_slot)
+	return pokeslots
+
 #endregion
 
 func remove_card() -> void:

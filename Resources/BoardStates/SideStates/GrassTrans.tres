@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SideState" load_steps=28 format=3 uid="uid://bafa2bpj2n8u0"]
+[gd_resource type="Resource" script_class="SideState" load_steps=26 format=3 uid="uid://bafa2bpj2n8u0"]
 
 [ext_resource type="Script" uid="uid://dgqpurnuh14t1" path="res://Code/Resource Makers/GeneralUse/SideStateMaker.gd" id="1_058ln"]
 [ext_resource type="Resource" uid="uid://c73v0ww8k8rg2" path="res://Resources/Decks/GrassTransDeck.tres" id="1_rwwha"]
@@ -16,8 +16,6 @@
 [ext_resource type="Resource" uid="uid://d10tfnmvnup6w" path="res://Resources/Cards/1 ex Ruby & Saphire/RS26Cascoon.tres" id="11_tbqu3"]
 [ext_resource type="Resource" uid="uid://cbrv0ftymjhbj" path="res://Resources/Cards/1 ex Ruby & Saphire/RS78Wurmple.tres" id="12_wd7ae"]
 [ext_resource type="Resource" uid="uid://cgm3sofk1dkq3" path="res://Resources/Cards/6 ex FireRed & LeafGreen/RG112Venusaurex.tres" id="13_gmg8j"]
-[ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/BuffMaker.gd" id="13_s64pf"]
-[ext_resource type="Script" uid="uid://c0ishgbxk63dg" path="res://Code/Resource Makers/EffectSpecific/DisableMaker.gd" id="14_c5xxw"]
 [ext_resource type="Resource" uid="uid://c0kbwsboq8b5x" path="res://Resources/Cards/6 ex FireRed & LeafGreen/RG55Bubasaur.tres" id="14_qoyrj"]
 [ext_resource type="Resource" uid="uid://ct34kdqkmfsuu" path="res://Resources/Cards/6 ex FireRed & LeafGreen/RG35Ivysaur.tres" id="15_a5eex"]
 [ext_resource type="Resource" uid="uid://x137dggkdklo" path="res://Resources/Cards/1 ex Ruby & Saphire/RS31Grovyle.tres" id="16_fcuve"]
@@ -36,40 +34,49 @@ metadata/_custom_type_script = "uid://calm3n7va5yjo"
 [sub_resource type="Resource" id="Resource_slk46"]
 script = ExtResource("2_ot1eh")
 current_card = ExtResource("12_wd7ae")
+max_HP = 0
 damage_counters = 0
 evolution_ready = false
 evolved_this_turn = false
 evolved_from = Array[ExtResource("2_5ih3w")]([])
 energy_cards = Array[ExtResource("2_5ih3w")]([ExtResource("4_mepvs")])
 tm_cards = Array[ExtResource("2_5ih3w")]([])
-applied_buffs = Array[ExtResource("13_s64pf")]([])
-applied_disable = Array[ExtResource("14_c5xxw")]([])
+buffs = Array[Dictionary]([])
+disables = Array[Dictionary]([])
+dealt_damage = 0
+energy_discarded = 0
 metadata/_custom_type_script = "uid://cs70ix831b5g4"
 
 [sub_resource type="Resource" id="Resource_oeine"]
 script = ExtResource("2_ot1eh")
 current_card = ExtResource("13_gmg8j")
+max_HP = 0
 damage_counters = 0
 evolution_ready = false
 evolved_this_turn = false
 evolved_from = Array[ExtResource("2_5ih3w")]([ExtResource("14_qoyrj"), ExtResource("15_a5eex")])
 energy_cards = Array[ExtResource("2_5ih3w")]([ExtResource("3_6pujo"), ExtResource("4_mepvs"), ExtResource("4_mepvs")])
 tm_cards = Array[ExtResource("2_5ih3w")]([])
-applied_buffs = Array[ExtResource("13_s64pf")]([])
-applied_disable = Array[ExtResource("14_c5xxw")]([])
+buffs = Array[Dictionary]([])
+disables = Array[Dictionary]([])
+dealt_damage = 0
+energy_discarded = 0
 metadata/_custom_type_script = "uid://cs70ix831b5g4"
 
 [sub_resource type="Resource" id="Resource_c5qlx"]
 script = ExtResource("2_ot1eh")
 current_card = ExtResource("5_s64pf")
+max_HP = 0
 damage_counters = 0
 evolution_ready = false
 evolved_this_turn = false
 evolved_from = Array[ExtResource("2_5ih3w")]([ExtResource("17_h7xhs"), ExtResource("16_fcuve")])
 energy_cards = Array[ExtResource("2_5ih3w")]([ExtResource("4_mepvs"), ExtResource("4_mepvs"), ExtResource("4_mepvs")])
 tm_cards = Array[ExtResource("2_5ih3w")]([])
-applied_buffs = Array[ExtResource("13_s64pf")]([])
-applied_disable = Array[ExtResource("14_c5xxw")]([])
+buffs = Array[Dictionary]([])
+disables = Array[Dictionary]([])
+dealt_damage = 0
+energy_discarded = 0
 metadata/_custom_type_script = "uid://cs70ix831b5g4"
 
 [resource]

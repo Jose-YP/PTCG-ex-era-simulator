@@ -11,7 +11,7 @@
         "visibility": 0.0
       },
       "pokemon_properties": {
-        "visibility": 0.0
+        "visibility": 1
       },
       "resource_local_to_scene": {
         "visibility": 0.0
@@ -79,7 +79,7 @@
   ],
   "table_functions": {
     "filter": [
-      "if res.pokemon_properties:\n\t\n\tif res.pokemon_properties.body:\n\t\tprint(res.pokemon_properties.body.name)\n\t\treturn true\n\telse:\n\t\treturn false\nreturn false",
+      "return true",
       "if res.pokemon_properties:\n\treturn res.pokemon_properties.body is Object\nreturn false",
       "return true",
       "return res.pokemon_properties",

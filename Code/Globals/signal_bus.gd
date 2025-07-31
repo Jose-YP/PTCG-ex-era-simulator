@@ -17,6 +17,7 @@ signal cancel_tutor(button: Button)
 signal chosen_slot(showing: PokeSlot)
 signal attack(slot: PokeSlot, attack: Attack)
 signal retreat(slot: PokeSlot)
+signal ability_activated()
 signal force_disapear()
 signal end_turn()
 #--------------------------------------

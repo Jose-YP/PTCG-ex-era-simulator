@@ -21,6 +21,7 @@ comparision_type = "Lesser"
 first_comparison = SubResource("Resource_qtcqf")
 compare_to = "Const"
 second_constant = 2
+operate_w_constant = "None"
 metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
 [resource]

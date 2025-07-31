@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SideState" load_steps=16 format=3 uid="uid://cu2ksi0icg1cg"]
+[gd_resource type="Resource" script_class="SideState" load_steps=14 format=3 uid="uid://cu2ksi0icg1cg"]
 
 [ext_resource type="Resource" uid="uid://bsbo6s5jo87t2" path="res://Resources/Decks/EnergysDeck.tres" id="1_xrlcv"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_w3gu5"]
@@ -7,8 +7,6 @@
 [ext_resource type="Resource" uid="uid://c2tk6qy8h57lw" path="res://Resources/Cards/1 ex Ruby & Saphire/RS82EnergySwitch.tres" id="5_mbehl"]
 [ext_resource type="Resource" uid="uid://dcgvxv02mymn0" path="res://Resources/Cards/2 ex Sandstorm/SS26Wobbuffet.tres" id="6_syeol"]
 [ext_resource type="Resource" uid="uid://8aluya3mraht" path="res://Resources/Cards/2 ex Sandstorm/SS54Wynaut.tres" id="10_h8qln"]
-[ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/BuffMaker.gd" id="11_h8qln"]
-[ext_resource type="Script" uid="uid://c0ishgbxk63dg" path="res://Code/Resource Makers/EffectSpecific/DisableMaker.gd" id="12_gimbx"]
 [ext_resource type="Script" uid="uid://calm3n7va5yjo" path="res://Code/Resource Makers/GeneralUse/CardStacksMaker.gd" id="21_6pic0"]
 [ext_resource type="Script" uid="uid://dgqpurnuh14t1" path="res://Code/Resource Makers/GeneralUse/SideStateMaker.gd" id="22_ema4h"]
 [ext_resource type="Script" uid="uid://cs70ix831b5g4" path="res://Code/Resource Makers/PokemonSpecific/PokeSlotMaker.gd" id="23_gp3on"]
@@ -26,14 +24,17 @@ metadata/_custom_type_script = "uid://calm3n7va5yjo"
 [sub_resource type="Resource" id="Resource_gimbx"]
 script = ExtResource("23_gp3on")
 current_card = ExtResource("10_h8qln")
+max_HP = 0
 damage_counters = 0
 evolution_ready = false
 evolved_this_turn = false
 evolved_from = Array[ExtResource("2_w3gu5")]([])
 energy_cards = Array[ExtResource("2_w3gu5")]([])
 tm_cards = Array[ExtResource("2_w3gu5")]([])
-applied_buffs = Array[ExtResource("11_h8qln")]([])
-applied_disable = Array[ExtResource("12_gimbx")]([])
+buffs = Array[Dictionary]([])
+disables = Array[Dictionary]([])
+dealt_damage = 0
+energy_discarded = 0
 metadata/_custom_type_script = "uid://cs70ix831b5g4"
 
 [resource]

@@ -12,8 +12,6 @@ class_name Pokemon
 ##While a power is allowed to be inserted here, bodies do appear abover powers when both are present
 ##[br]ex. DF10 Snorlax
 @export var pokepower: Ability
-@export var body: PokeBody
-@export var power: PokePower
 @export var attacks: Array[Attack] = []
 
 @export_group("Properties")

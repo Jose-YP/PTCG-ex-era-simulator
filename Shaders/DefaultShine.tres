@@ -1,0 +1,12 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://c60xa0l57yvax"]
+
+[ext_resource type="Shader" uid="uid://chaingl03cnx1" path="res://Shaders/Shine2D.gdshader" id="1_4inaq"]
+
+[resource]
+resource_local_to_scene = true
+shader = ExtResource("1_4inaq")
+shader_parameter/shine_color = Color(0.98, 0.925, 0.231, 1)
+shader_parameter/base_color = Color(0.180736, 0.120593, 0.350483, 1)
+shader_parameter/shine_speed = 7.0
+shader_parameter/shine_size = 0.07
+shader_parameter/shine_bool = true

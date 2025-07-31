@@ -25,19 +25,11 @@ func _ready():
 	check_pressable()
 
 func check_pressable():
-	if ability.occurance:
+	if ability.occurance or ability.category == "Body":
 		ability_button.disabled = true
 		return
-	
-	match ability.how_often:
-		"Passive":
-			ability_button.disabled = true
-		"Once Per Mon":
-			ability_button.disabled = slot.power_exhaust or not check_allowed()
-		"Once Per Turn":
-			ability_button.disabled = Globals.fundies.used_ability(ability.name) or not check_allowed()
-		"Infinite":
-			ability_button.disabled = check_allowed()
+	else:
+		ability_button.disabled = not slot.power_ready
 
 func check_allowed():
 	if ability.prompt:
@@ -45,3 +37,7 @@ func check_allowed():
 
 func _on_focus_entered():
 	ability_button.grab_focus()
+
+func _on_ability_button_pressed() -> void:
+	print("Press!")
+	slot.use_ability(ability)

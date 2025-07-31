@@ -1,7 +1,6 @@
-[gd_resource type="Resource" script_class="Pokemon" load_steps=10 format=3 uid="uid://yqd8e305sht1"]
+[gd_resource type="Resource" script_class="Pokemon" load_steps=9 format=3 uid="uid://yqd8e305sht1"]
 
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_b7jp4"]
-[ext_resource type="Resource" uid="uid://b4idxuksnlp54" path="res://Resources/Components/Pokemon/Bodies/SpongyStone.tres" id="2_r2cxa"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="3_ma4te"]
 [ext_resource type="Resource" uid="uid://dllyof1ddnq7w" path="res://Resources/Components/Effects/DmgManip/Remove/SelfHeal10.tres" id="3_qb8f0"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_qop60"]
@@ -22,8 +21,7 @@ name = "Spongy Stone"
 description = "At any time between turns, remove 1 damage counter from [name]."
 affected_by_condition = true
 active = false
-how_often = 0
-on_occurance = true
+how_often = "Once per Mon"
 occurance = ExtResource("5_m8d88")
 effect = SubResource("Resource_my7tf")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
@@ -33,7 +31,6 @@ script = ExtResource("3_ma4te")
 HP = 40
 retreat = 0
 pokebody = SubResource("Resource_aqiq7")
-body = ExtResource("2_r2cxa")
 attacks = Array[ExtResource("1_b7jp4")]([])
 evo_stage = "Basic"
 evolves_from = ""

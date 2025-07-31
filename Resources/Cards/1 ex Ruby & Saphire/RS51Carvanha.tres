@@ -1,11 +1,10 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=19 format=3 uid="uid://c8xqucy03ngb6"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=17 format=3 uid="uid://c8xqucy03ngb6"]
 
 [ext_resource type="Texture2D" uid="uid://r7j65mcjsuh8" path="res://Art/Cards/1 ex Ruby & Saphire/51.jpg" id="1_g8f6k"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_o8f7p"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_88kre"]
 [ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_u3s1u"]
 [ext_resource type="Resource" uid="uid://8cvarib60ven" path="res://Resources/Components/Pokemon/Attacks/AttackData/10DmgDisabRetr.tres" id="4_f2fxk"]
-[ext_resource type="Script" uid="uid://b2tlqpng7fq25" path="res://Code/Resource Makers/PokemonSpecific/BodyMaker.gd" id="5_6lt8o"]
 [ext_resource type="Resource" uid="uid://bkt6ry7vyha70" path="res://Resources/Components/Effects/Asks/General/Other.tres" id="6_0ul3b"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="6_ua6fm"]
 [ext_resource type="Script" uid="uid://scca13hg4k1l" path="res://Code/Resource Makers/EffectSpecific/DmgManipMaker.gd" id="7_s5htt"]
@@ -20,16 +19,6 @@ description = "The Defending Pokémon can't retreat until the end of your oppone
 attack_cost = ExtResource("3_u3s1u")
 attack_data = ExtResource("4_f2fxk")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
-
-[sub_resource type="Resource" id="Resource_s5htt"]
-script = ExtResource("5_6lt8o")
-when_active = true
-name = "Rough Skin"
-description = "If {name} is your Active Pokémon and is damaged by an opponent's attack (even if {name} is Knocked Out), put 1 damage counter on the Attacking Pokémon."
-affected_by_condition = true
-attatched_energy = 0
-energy_ammount = 1
-metadata/_custom_type_script = "uid://b2tlqpng7fq25"
 
 [sub_resource type="Resource" id="Resource_24e0r"]
 script = ExtResource("7_s5htt")
@@ -60,8 +49,7 @@ name = "Rough Skin"
 description = "If [name] is your Active Pokémon and is damaged by an opponent's attack (even if [name] is Knocked Out), put 1 damage counter on the Attacking Pokémon."
 affected_by_condition = false
 active = false
-how_often = 0
-on_occurance = true
+how_often = "Infinite"
 occurance = ExtResource("9_nu7sk")
 effect = SubResource("Resource_wsfqf")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
@@ -71,7 +59,6 @@ script = ExtResource("6_ua6fm")
 HP = 40
 retreat = 0
 pokebody = SubResource("Resource_e8q37")
-body = SubResource("Resource_s5htt")
 attacks = Array[ExtResource("2_88kre")]([SubResource("Resource_0ul3b")])
 evo_stage = "Basic"
 evolves_from = ""

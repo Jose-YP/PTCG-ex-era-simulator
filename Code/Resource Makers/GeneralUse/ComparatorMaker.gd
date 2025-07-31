@@ -16,6 +16,8 @@ class_name Comparator
 @export_group("Compare To Vars")
 @export var second_constant: int = 0
 @export var second_counter: IndvCounter
+##Only usable with [member second_counter] while [member compare_to] is set to [enum Second]
+@export_enum("None", "Plus", "Mult") var operate_w_constant: String = "None"
 
 func start_comparision() -> Variant:
 	var first_return: int = first_comparison.evaluate()
@@ -41,6 +43,13 @@ func input_comparison() -> Variant:
 		"Second":
 			printt("DUAL COUNTER CHECK:")
 			var second: int = await second_counter.input_evaluation()
+			
+			match operate_w_constant:
+				"Plus":
+					second += second_constant
+				"Mult":
+					second *= second_constant
+			
 			return make_comparision(first_return, second)
 	return false
 

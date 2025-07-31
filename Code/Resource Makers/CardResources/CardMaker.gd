@@ -172,9 +172,4 @@ func play_before_prompt() -> bool:
 	#Return whether or not the prompt was done
 	return result
 
-func has_ability() -> bool:
-	if pokemon_properties:
-		var result = pokemon_properties.body or pokemon_properties.power
-		return result
-	return false
 #endregion

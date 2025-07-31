@@ -19,6 +19,7 @@ comparision_type = "Equals"
 first_comparison = SubResource("Resource_ofh8l")
 compare_to = "Const"
 second_constant = 1
+operate_w_constant = "None"
 metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
 [resource]
@@ -29,6 +30,7 @@ yes_answer = ""
 no_answer = ""
 comparator = SubResource("Resource_tpgwn")
 can_reverse = true
+occurance = false
 chooser = 0
 choose_location = "None"
 which_stack = 0

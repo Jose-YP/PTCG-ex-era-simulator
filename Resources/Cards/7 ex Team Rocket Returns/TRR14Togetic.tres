@@ -51,12 +51,11 @@ metadata/_custom_type_script = "uid://b2tlqpng7fq25"
 script = ExtResource("10_kjfcm")
 category = "Body"
 name = "Holy Shield"
-description = "Prevent all effects of attacks, including damage, done to Togetic by your opponent's Pokémon that has Dark in its name."
+description = "Prevent all effects of attacks, including damage, done to [name] by your opponent's Pokémon that has Dark in its name."
 affected_by_condition = false
 active = false
-how_often = 0
-on_occurance = false
-effect = SubResource("Resource_u1d53")
+how_often = "Infinite"
+passive = SubResource("Resource_u1d53")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 
 [sub_resource type="Resource" id="Resource_whdb2"]

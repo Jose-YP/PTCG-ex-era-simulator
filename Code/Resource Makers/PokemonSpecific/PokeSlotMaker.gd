@@ -5,6 +5,7 @@ class_name PokeSlot
 #--------------------------------------
 #region VARIABLES
 @export var current_card: Base_Card
+@export_range(0,400,10) var max_HP: int = 0
 @export_range(0,400,10) var damage_counters: int = 0
 #--------------------------------------
 #region NON EXPORT
@@ -17,6 +18,8 @@ var energy_timers: Dictionary = {}
 var damage_timers: Array[Dictionary]
 var body_exhaust: bool
 var power_exhaust: bool
+var body_activated: bool
+var power_ready: bool
 #endregion
 #--------------------------------------
 #--------------------------------------
@@ -44,21 +47,26 @@ var power_exhaust: bool
 
 #--------------------------------------
 #region SIGNALS
-@warning_ignore("unused_signal")
+@warning_ignore_start("unused_signal")
 signal swap(slot: Consts.SLOTS)
+signal retreat()
+
 signal take_dmg(attacker: PokeSlot)
-signal condition_applied(condition: Condition)
+signal ko()
+
+signal attatched_tm(card: Base_Card)
+signal attatched_tool(card: Base_Card)
+signal evolved(slot: PokeSlot)
+signal evolving()
 signal attatch_en_signal(card: Base_Card)
 signal discard_en_signal(card: Base_Card)
 signal played(slot: Consts.SLOTS)
-signal evolved(slot: PokeSlot)
+
+signal condition_applied(condition: Condition)
+
 signal attacks(slot: PokeSlot)
 signal used_power()
 signal checked_up()
-@warning_ignore("unused_signal")
-signal retreat()
-signal ko()
-
 #endregion
 #--------------------------------------
 
@@ -85,9 +93,9 @@ func pokemon_checkup() -> void:
 		else:
 			print(dmg_timer)
 	
-	checked_up.emit()
-	
 	refresh()
+	
+	await ability_emit(checked_up)
 
 func setup_abilities():
 	if get_pokedata().pokebody:
@@ -95,14 +103,56 @@ func setup_abilities():
 	if get_pokedata().pokepower:
 		get_pokedata().pokepower.prep_ability()
 
-func action_checkup(action: String):
-	var targets = get_targets(self, [])
-	Globals.fundies.record_source_target(ui_slot.home, targets[0], targets[1])
-	check_power_body(action)
+func disconnect_abilities():
+	if get_pokedata().pokebody:
+		get_pokedata().pokebody.disconnect_ability()
+	if get_pokedata().pokepower:
+		get_pokedata().pokepower.disconnect_ability()
 
-func check_power_body(action: String):
-	print("Check ", current_card.name, "'s power/body after ", action)
+func check_power_body():
+	var pokedata: Pokemon = get_pokedata()
+	Globals.fundies.record_single_src_trg(self)
+	#Ability
+	print("Check ", current_card.name, "'s power/body")
+	if pokedata.pokebody:
+		if pokedata.pokebody.passive:
+			body_activated = pokedata.pokebody.activate_passive()
+			
+	if pokedata.pokepower:
+		if pokedata.pokepower.passive:
+			pokedata.pokepower.activate_passive()
+		
+		power_ready = pokedata.pokepower.does_press_activate(self)
+	
 	Globals.fundies.remove_top_source_target()
+
+func use_ability(ability: Ability):
+	if get_pokedata().power == ability:
+		if ability.category == "Once Per Mon":
+			power_exhaust = true
+		elif ability.category == "Once Per Turn":
+			Globals.fundies.used_ability(ability.name)
+	
+	await ability.activate_ability()
+	refresh()
+
+func ability_emit(sig: Signal, param: Variant = null):
+	if sig.has_connections():
+		print(sig.get_connections())
+		sig.emit(param)
+		await SignalBus.ability_activated
+		
+		refresh()
+
+func occurance_account_for():
+	for slot in Globals.full_ui.get_occurance_slots():
+		if get_pokedata().pokebody:
+			get_pokedata().pokebody.single_prep(self)
+		if get_pokedata().pokepower:
+			get_pokedata().pokepower.single_prep(self)
+
+func refresh_connections():
+	occurance_account_for()
 
 #endregion
 #--------------------------------------
@@ -214,6 +264,13 @@ func get_targets(atk: PokeSlot, def: Array[PokeSlot]) -> Array[Array]:
 func get_pokedata() -> Pokemon:
 	return current_card.pokemon_properties
 
+func has_occurance() -> bool:
+	if get_pokedata().pokebody and get_pokedata().pokebody.occurance:
+		return true
+	if get_pokedata().pokepower and get_pokedata().pokepower.occurance:
+		return true
+	return false
+
 #endregion
 #--------------------------------------
 
@@ -241,8 +298,9 @@ func use_card(card: Base_Card, play_as: int) -> void:
 func set_card(card: Base_Card) -> void:
 	current_card = card
 	ui_slot.make_allowed(true)
-	action_checkup("Set")
-	played.emit(get_slot_pos())
+	
+	await ability_emit(played, get_slot_pos())
+	refresh_current_card()
 
 #General use function, use specific ones if possible
 func remove_cards(cards: Array[Base_Card]) -> void:
@@ -274,7 +332,7 @@ func should_ko() -> bool:
 	return (get_pokedata().HP - damage_counters) < 0
 
 func knock_out() -> void:
-	ko.emit()
+	await ability_emit(ko)
 
 func add_damage(attacker: PokeSlot, base_ammount: int) -> void:
 	var final_ammount = base_ammount
@@ -291,8 +349,10 @@ func add_damage(attacker: PokeSlot, base_ammount: int) -> void:
 	damage_counters += final_ammount
 	@warning_ignore("integer_division")
 	attacker.dealt_damage = final_ammount
-	take_dmg.emit(attacker)
+	
 	refresh()
+	
+	await ability_emit(take_dmg, attacker)
 
 func bench_add_damage(_ammount) -> int:
 	return 0
@@ -311,13 +371,13 @@ func dmg_manip(dmg_change: int, timer: int = -1) -> void:
 #--------------------------------------
 #region ENERGY HANDLERS
 func add_energy(energy_card: Base_Card):
-	var energy_string: String = energy_card.energy_properties.get_current_string()
 	energy_cards.append(energy_card)
 	energy_card.energy_properties.attatched_to = self
+	
 	register_energy_timer(energy_card)
-	attatch_en_signal.emit(energy_card)
 	refresh()
-	action_checkup(str("EN ", energy_string))
+	
+	await ability_emit(attatch_en_signal, energy_card)
 
 func remove_energy(removing: Base_Card):
 	for card in energy_cards:
@@ -326,7 +386,7 @@ func remove_energy(removing: Base_Card):
 			refresh()
 			return
 	
-	discard_en_signal.emit(removing)
+	await ability_emit(discard_en_signal, removing)
 	printerr("Couldn't find ", removing.name, " in array ", energy_cards)
 
 func register_energy_timer(card: Base_Card):
@@ -422,16 +482,25 @@ func get_energy_excess(enData_filter: EnData = null) -> int:
 #--------------------------------------
 #region OTHER ATTATCHMENTS
 func evolve_card(evolution: Base_Card) -> void:
+	await ability_emit(evolving)
+	disconnect_abilities()
+	
 	evolved_from.append(current_card)
 	current_card = evolution
-	evolved.emit(self)
-	refresh()
-	action_checkup("Evo")
+	refresh_current_card()
+	setup_abilities()
+	
+	alleviate_all()
+	await ability_emit(evolved, self)
 
 func devolve_card() -> Base_Card:
 	var old_card: Base_Card = current_card
+	
+	disconnect_abilities()
 	current_card = evolved_from.pop_back()
-	refresh()
+	setup_abilities()
+	refresh_current_card()
+	
 	return old_card
 
 func attatch_tool(new_tool: Base_Card) -> void:
@@ -440,7 +509,8 @@ func attatch_tool(new_tool: Base_Card) -> void:
 	else:
 		push_error(current_card.name, " already has tool attatched")
 	refresh()
-	action_checkup("Tool")
+	
+	await ability_emit(attatched_tool, new_tool)
 
 func remove_tool() -> void:
 	tool_card = null
@@ -450,7 +520,8 @@ func attatch_tm(new_tm: Base_Card) -> void:
 	tm_cards.push_front(new_tm)
 	print("TMS: ",tm_cards)
 	refresh()
-	action_checkup("TM")
+	
+	await ability_emit(attatched_tm, new_tm)
 
 func remove_tms() -> void:
 	tm_cards.clear()
@@ -471,9 +542,9 @@ func add_condition(adding: Condition) -> void:
 	applied_condition.imprision = adding.imprision or applied_condition.imprision
 	applied_condition.shockwave = adding.shockwave or applied_condition.shockwave
 	
-	condition_applied.emit(applied_condition)
-	
 	refresh()
+	
+	await ability_emit(condition_applied, applied_condition)
 
 func affected_by_condition() -> bool:
 	var poisioned: bool = applied_condition.poison != 0
@@ -551,6 +622,14 @@ func slot_into(destination: UI_Slot):
 	ui_slot = destination
 	refresh()
 
+func refresh_current_card():
+	ui_slot.name_section.clear()
+	ui_slot.max_hp.clear()
+	
+	ui_slot.display_image(current_card)
+	ui_slot.name_section.append_text(current_card.name)
+	ui_slot.max_hp.append_text(str("HP: ",get_pokedata().HP))
+
 func refresh() -> void:
 	if not is_filled(): return
 	#Change slot's card display
@@ -569,7 +648,6 @@ func refresh() -> void:
 		#check for any attatched cards/conditions
 		count_energy()
 		ui_slot.display_energy(get_energy_strings(), attached_energy)
-		ui_slot.display_condition()
 		
 		if tm_cards.size():
 			ui_slot.tm.texture = tm_cards[0].image
@@ -579,6 +657,10 @@ func refresh() -> void:
 			ui_slot.tool.show()
 			ui_slot.tool.texture = tool_card.image
 		else: ui_slot.tool.hide()
+		
+		refresh_connections()
+		check_power_body()
+		ui_slot.check_ability_activation()
 		
 	else:
 		ui_slot.display_image(null)

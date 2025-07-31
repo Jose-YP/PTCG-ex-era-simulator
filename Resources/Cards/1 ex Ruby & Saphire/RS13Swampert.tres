@@ -71,10 +71,9 @@ script = ExtResource("9_agkb0")
 category = "Power"
 name = "Water Call"
 description = "Once during your turn (before your attack), you may attach a {Water} Energy card from your hand to your Active Pokémon. This power can't be used if [name] is affected by a Special Condition."
-affected_by_condition = true
-active = false
-how_often = 1
-on_occurance = false
+affected_by_condition = null
+active = null
+how_often = null
 effect = SubResource("Resource_gcqqh")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 

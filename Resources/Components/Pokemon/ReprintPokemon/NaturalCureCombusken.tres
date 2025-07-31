@@ -1,0 +1,83 @@
+[gd_resource type="Resource" script_class="Pokemon" load_steps=17 format=3 uid="uid://dcxpyr6d3omf7"]
+
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_23xl6"]
+[ext_resource type="Resource" uid="uid://b1rwmggf7a4do" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless2.tres" id="2_qg207"]
+[ext_resource type="Resource" uid="uid://lnqxjpwlc83l" path="res://Resources/Components/Pokemon/Attacks/AttackData/50IfHeads.tres" id="3_nn817"]
+[ext_resource type="Resource" uid="uid://d0in7vtooxjm1" path="res://Resources/Components/Effects/ETC/AtkSelfHealCond.tres" id="4_jxjhv"]
+[ext_resource type="Script" uid="uid://b2tlqpng7fq25" path="res://Code/Resource Makers/PokemonSpecific/BodyMaker.gd" id="5_vxjvu"]
+[ext_resource type="Resource" uid="uid://mregpmlqoyvy" path="res://Resources/Components/EnData/Fire.tres" id="6_euf6j"]
+[ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="7_n1nhs"]
+[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="8_k64wy"]
+[ext_resource type="Script" uid="uid://bics3dumv7avj" path="res://Code/Resource Makers/GeneralUse/OccuranceMaker.gd" id="9_2yvqv"]
+[ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="10_4whhc"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="11_pjamb"]
+
+[sub_resource type="Resource" id="Resource_60dvo"]
+script = ExtResource("1_23xl6")
+name = "Lunge"
+description = "Flip a coin. If tails, this attack does nothing."
+attack_cost = ExtResource("2_qg207")
+attack_data = ExtResource("3_nn817")
+
+[sub_resource type="Resource" id="Resource_q28ps"]
+script = ExtResource("5_vxjvu")
+when_active = false
+name = "Natural Cure"
+description = "When you attach a {Fire} Energy card from your hand to Combusken, remove all Special Conditions from Combusken."
+affected_by_condition = false
+attatched_energy = 2
+energy_ammount = 1
+effect = ExtResource("4_jxjhv")
+
+[sub_resource type="Resource" id="Resource_lr3d4"]
+script = ExtResource("7_n1nhs")
+description = ""
+must_be_different = false
+broad_class = 4
+exactly = false
+name_array = Array[String]([])
+type = 0
+evolves_from = false
+rare_candy = false
+inclusive_class = true
+poke_class = 0
+owner = 0
+stage = 0
+trainer_classes = 0
+energy_class = 3
+energy_provides = ExtResource("6_euf6j")
+metadata/_custom_type_script = "uid://uplawvwcwl8y"
+
+[sub_resource type="Resource" id="Resource_xg3gf"]
+script = ExtResource("9_2yvqv")
+from_ask = ExtResource("8_k64wy")
+signal = "attatch_en_signal"
+card_type = SubResource("Resource_lr3d4")
+metadata/_custom_type_script = "uid://bics3dumv7avj"
+
+[sub_resource type="Resource" id="Resource_h6v5j"]
+script = ExtResource("10_4whhc")
+category = "Body"
+name = "Natural Cure"
+description = "When you attach a {Fire} Energy card from your hand to [name], remove all Special Conditions from [name]."
+affected_by_condition = false
+active = false
+how_often = "Once per Mon"
+occurance = SubResource("Resource_xg3gf")
+effect = ExtResource("4_jxjhv")
+metadata/_custom_type_script = "uid://bs2y8ocljilv8"
+
+[resource]
+script = ExtResource("11_pjamb")
+HP = 80
+retreat = 1
+pokebody = SubResource("Resource_h6v5j")
+body = SubResource("Resource_q28ps")
+attacks = Array[ExtResource("1_23xl6")]([SubResource("Resource_60dvo")])
+evo_stage = "Stage 1"
+evolves_from = "Torchic"
+considered = 1
+owner = 0
+type = 2
+weak = 4
+resist = 0

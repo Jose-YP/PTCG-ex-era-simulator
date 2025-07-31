@@ -1,9 +1,9 @@
+@icon("res://Art/Energy/48px-Psychic-attack.png")
 extends ScrollContainer
 
 @export var check: bool = true
 @export var attackItem: PackedScene
-@export var powerItem: PackedScene
-@export var bodyItem: PackedScene
+@export var ability_item: PackedScene
 @export var poke_slot: PokeSlot
 @export var current_card: Base_Card
 @export var max_size: Vector2 = Vector2(420, 400)
@@ -17,19 +17,11 @@ var items: Array[Node] = []
 var display_text: String = ""
 var final_size: int = 0
 var attacks: Array[Attack] = []
-var power: PokePower
-var body: PokeBody
 
 func _ready() -> void:
 	#So it can be sued on a poke slot or not
 	attacks = (poke_slot.get_pokedata().attacks if poke_slot 
 	else current_card.pokemon_properties.attacks)
-	
-	power = (poke_slot.get_pokedata().power if poke_slot 
-	else current_card.pokemon_properties.power)
-	
-	body = (poke_slot.get_pokedata().body if poke_slot 
-	else current_card.pokemon_properties.body)
 	
 	set_items()
 	size_default()
@@ -53,20 +45,8 @@ func reset_items() -> void:
 
 func set_items() -> void:
 	#Get PokeBody
-	if body:
-		var body_making = bodyItem.instantiate()
-		body_making.body = body
-		body_making.slot = poke_slot
-		if check: body_making.focus_mode = FocusMode.FOCUS_NONE
-		%CardList.add_child(body_making)
-	
-	#Get Pokepower
-	if power:
-		var power_making = powerItem.instantiate()
-		power_making.power = power
-		power_making.slot = poke_slot
-		if check: power_making.focus_mode = FocusMode.FOCUS_NONE
-		%CardList.add_child(power_making)
+	set_ability(poke_slot.get_pokedata().pokebody)
+	set_ability(poke_slot.get_pokedata().pokepower)
 	
 	for item in attacks:
 		var making = attackItem.instantiate()
@@ -79,6 +59,14 @@ func set_items() -> void:
 		else: making.make_unusable()
 	
 	items = %CardList.get_children()
+
+func set_ability(ability: Ability):
+	if ability:
+		var ability_making = ability_item.instantiate()
+		ability_making.ability = ability
+		ability_making.slot = poke_slot
+		if check: ability_making.focus_mode = FocusMode.FOCUS_NONE
+		%CardList.add_child(ability_making)
 
 func size_default() -> void:
 	size = Vector2(max_size.x, current_height)

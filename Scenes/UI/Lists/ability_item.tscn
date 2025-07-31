@@ -109,4 +109,5 @@ mouse_filter = 2
 
 [connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
 [connection signal="minimum_size_changed" from="AbilityButton" to="." method="_on_attack_button_minimum_size_changed"]
+[connection signal="pressed" from="AbilityButton" to="." method="_on_ability_button_pressed"]
 [connection signal="resized" from="AbilityButton" to="." method="_on_attack_button_resized"]

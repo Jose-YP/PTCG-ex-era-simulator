@@ -117,6 +117,20 @@ func connect_occurance():
 	for slot in slots:
 		slot.connect(_get("signal"), should_occur)
 
+func disconnect_occurance():
+	var slots: Array[PokeSlot] = Globals.full_ui.get_ask_slots(_get("from_ask"))
+	
+	for slot in slots:
+		slot.disconnect(_get("signal"), should_occur)
+
+func single_connect(slot: PokeSlot):
+	if _get("from_ask").check_ask(slot):
+		slot.connect(_get("signal"), should_occur)
+
+func single_disconnect(slot: PokeSlot):
+	if _get("from_ask").check_ask(slot):
+		slot.disconnect(_get("signal"), should_occur)
+
 func should_occur(param: Variant = null):
 	if param is PokeSlot:
 		if _get("must_be_ask").check_ask(param):

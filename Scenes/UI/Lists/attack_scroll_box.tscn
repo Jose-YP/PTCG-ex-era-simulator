@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cj0k023dhlha"]
+[gd_scene load_steps=6 format=3 uid="uid://cj0k023dhlha"]
 
 [ext_resource type="Script" uid="uid://ce4xa4cuper2p" path="res://Code/Scenes/UI/Cards/attack_scroll_box.gd" id="1_abqb4"]
 [ext_resource type="PackedScene" uid="uid://dvvv8k1g6tgog" path="res://Scenes/UI/Lists/attack_item.tscn" id="2_25ylk"]
-[ext_resource type="PackedScene" uid="uid://beymnk0kvpnut" path="res://Scenes/UI/Lists/power_item.tscn" id="3_wwxct"]
-[ext_resource type="PackedScene" uid="uid://cidor8csiohus" path="res://Scenes/UI/Lists/body_item.tscn" id="4_h32eo"]
+[ext_resource type="PackedScene" uid="uid://bos4qlgett1th" path="res://Scenes/UI/Lists/ability_item.tscn" id="3_fthyh"]
 [ext_resource type="Resource" uid="uid://jq2ng1vyif34" path="res://Resources/Cards/1 ex Ruby & Saphire/RS28Combusken.tres" id="5_0hwij"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ud5dv"]
@@ -20,8 +19,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_ud5dv")
 follow_focus = true
 script = ExtResource("1_abqb4")
 attackItem = ExtResource("2_25ylk")
-powerItem = ExtResource("3_wwxct")
-bodyItem = ExtResource("4_h32eo")
+ability_item = ExtResource("3_fthyh")
 current_card = ExtResource("5_0hwij")
 max_size = Vector2(415, 400)
 

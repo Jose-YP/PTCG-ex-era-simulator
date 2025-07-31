@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Pokemon" load_steps=15 format=3 uid="uid://beysggoxxjyps"]
+[gd_resource type="Resource" script_class="Pokemon" load_steps=13 format=3 uid="uid://beysggoxxjyps"]
 
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_svcbl"]
 [ext_resource type="Resource" uid="uid://cu817ymtejglx" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Psychic1.tres" id="2_wc4pn"]
@@ -7,7 +7,6 @@
 [ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="5_kjilk"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="6_laaf6"]
 [ext_resource type="Resource" uid="uid://buofx3y8opwf" path="res://Resources/Components/Effects/Search/PsyshadowSearch.tres" id="7_lhy54"]
-[ext_resource type="Script" uid="uid://b58015mafcw2v" path="res://Code/Resource Makers/PokemonSpecific/PowerMaker.gd" id="8_i247v"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="9_bl7d2"]
 
 [sub_resource type="Resource" id="Resource_mamwr"]
@@ -34,17 +33,6 @@ attack_cost = ExtResource("2_wc4pn")
 attack_data = SubResource("Resource_mamwr")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
-[sub_resource type="Resource" id="Resource_307qu"]
-script = ExtResource("5_kjilk")
-category = "Power"
-name = "Psy Shadow"
-description = "Once during your turn (before your attack), you may search your deck for a {Psychic} Energy card and attach it to 1 of your Pokémon. Put 2 damage counters on that Pokémon. Shuffle your deck afterward. This power can't be used if [name] is affected by a Special Condition."
-affected_by_condition = true
-active = false
-how_often = 1
-on_occurance = false
-metadata/_custom_type_script = "uid://bs2y8ocljilv8"
-
 [sub_resource type="Resource" id="Resource_jt5ow"]
 script = ExtResource("6_laaf6")
 either_or = false
@@ -52,24 +40,22 @@ order = Array[int]([])
 search = ExtResource("7_lhy54")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
-[sub_resource type="Resource" id="Resource_0dh5a"]
-script = ExtResource("8_i247v")
+[sub_resource type="Resource" id="Resource_307qu"]
+script = ExtResource("5_kjilk")
+category = "Power"
 name = "Psy Shadow"
-description = "Once during your turn (before your attack), you may search your deck for a {Psychic} Energy card and attach it to 1 of your Pokémon. Put 2 damage counters on that Pokémon. Shuffle your deck afterward. This power can't be used if Gardevoir is affected by a Special Condition."
+description = "Once during your turn (before your attack), you may search your deck for a {Psychic} Energy card and attach it to 1 of your Pokémon. Put 2 damage counters on that Pokémon. Shuffle your deck afterward. This power can't be used if [name] is affected by a Special Condition."
 affected_by_condition = true
 active = false
-when_condition = "Whenever"
-when_position = 4
-how_often = 0
+how_often = "Once per Mon"
 effect = SubResource("Resource_jt5ow")
-metadata/_custom_type_script = "uid://b58015mafcw2v"
+metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 
 [resource]
 script = ExtResource("9_bl7d2")
 HP = 100
 retreat = 2
 pokepower = SubResource("Resource_307qu")
-power = SubResource("Resource_0dh5a")
 attacks = Array[ExtResource("1_svcbl")]([SubResource("Resource_apf0q")])
 evo_stage = "Stage 2"
 evolves_from = "Kirlia"

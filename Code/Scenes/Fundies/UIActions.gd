@@ -54,9 +54,6 @@ func left_button_actions(target: PokeSlot):
 			#elif target.ui_slot == slot:
 				#slot.spawn_card()
 
-func right_button_actions(target: PokeSlot):
-	pass
-
 func _input(event: InputEvent) -> void:
 	if event.is_action("Back") and can_reverse:
 		reset_ui()

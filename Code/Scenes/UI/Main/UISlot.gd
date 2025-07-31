@@ -87,6 +87,9 @@ func display_condition():
 #endregion
 #--------------------------------------
 
+func check_ability_activation():
+	%ArtButton.ability_show(connected_slot)
+
 func switch_shine(value: bool):
 	%ArtButton.material.set_shader_parameter("shine_bool", value)
 

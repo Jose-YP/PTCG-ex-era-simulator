@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=22 format=3 uid="uid://8aluya3mraht"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=21 format=3 uid="uid://8aluya3mraht"]
 
 [ext_resource type="Texture2D" uid="uid://d1f55128uj06q" path="res://Art/Cards/2 ex Sandstorm/54.jpg" id="1_fluui"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_htrw8"]
@@ -9,7 +9,6 @@
 [ext_resource type="Resource" uid="uid://b3q5vmepfee8k" path="res://Resources/Components/Effects/Identifiers/Pokemon/AnyPokemon.tres" id="6_8at0n"]
 [ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="7_ceahv"]
 [ext_resource type="Resource" uid="uid://cu817ymtejglx" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Psychic1.tres" id="8_3wq4p"]
-[ext_resource type="Resource" uid="uid://be8lljnc031ab" path="res://Resources/Components/Pokemon/Powers/WynautBabyEvo.tres" id="9_0hmp5"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="9_vjsvb"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="10_k6hc2"]
 [ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="10_vjsvb"]
@@ -78,8 +77,7 @@ name = "Baby Evolution"
 description = "Once during your turn (before your attack), you may put Wobbuffet from your hand onto [name] (this counts as evolving [name]), and remove all damage counters from [name]."
 affected_by_condition = false
 active = false
-how_often = 0
-on_occurance = false
+how_often = "Once per Mon"
 effect = SubResource("Resource_ncww0")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 
@@ -88,7 +86,6 @@ script = ExtResource("10_k6hc2")
 HP = 50
 retreat = 1
 pokepower = SubResource("Resource_8at0n")
-power = ExtResource("9_0hmp5")
 attacks = Array[ExtResource("2_fluui")]([SubResource("Resource_rihj7")])
 evo_stage = "Basic"
 evolves_from = ""

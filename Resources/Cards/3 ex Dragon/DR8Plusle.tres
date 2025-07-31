@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=17 format=3 uid="uid://c0x1x1jxrmf64"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=16 format=3 uid="uid://c0x1x1jxrmf64"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_vj0n6"]
 [ext_resource type="Texture2D" uid="uid://bp0j272pcgcfj" path="res://Art/Cards/3 ex Dragon/8.jpg" id="1_x1x78"]
@@ -6,7 +6,6 @@
 [ext_resource type="Resource" uid="uid://e2siihge8nvy" path="res://Resources/Components/Pokemon/Attacks/PureEffectAttacks/Cheer On.tres" id="3_fa2ne"]
 [ext_resource type="Resource" uid="uid://cesjkvsi5c6jb" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/L1C1.tres" id="4_12kuy"]
 [ext_resource type="Resource" uid="uid://cw44iqotg3v3f" path="res://Resources/Components/Effects/Asks/General/FromDefending.tres" id="5_bs661"]
-[ext_resource type="Resource" uid="uid://dabjstl6kl88i" path="res://Resources/Components/Pokemon/Bodies/Chain of Events.tres" id="5_fa2ne"]
 [ext_resource type="Resource" uid="uid://cqtgiv5p6suee" path="res://Resources/Components/Counters/Comparator/Equals/DefSelfEX.tres" id="6_6yu30"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="6_12kuy"]
 [ext_resource type="Script" uid="uid://br15mnap82upq" path="res://Code/Resource Makers/PokemonSpecific/BenchAttackMaker.gd" id="7_l51ip"]
@@ -54,7 +53,6 @@ script = ExtResource("6_12kuy")
 HP = 50
 retreat = 1
 pokebody = ExtResource("10_12kuy")
-body = ExtResource("5_fa2ne")
 attacks = Array[ExtResource("2_8yo28")]([ExtResource("3_fa2ne"), SubResource("Resource_ortis")])
 evo_stage = "Basic"
 evolves_from = ""

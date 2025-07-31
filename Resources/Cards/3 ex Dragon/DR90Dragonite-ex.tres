@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=26 format=3 uid="uid://blgwu6rviyvhh"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=24 format=3 uid="uid://blgwu6rviyvhh"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_6nbak"]
 [ext_resource type="Texture2D" uid="uid://bwy02si5cv6mh" path="res://Art/Cards/3 ex Dragon/90.jpg" id="1_i3arf"]
@@ -8,7 +8,6 @@
 [ext_resource type="Script" uid="uid://crscwhvugaoxa" path="res://Code/Resource Makers/PokemonSpecific/AttackCostMaker.gd" id="6_imidg"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="6_mpcq0"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="7_mpcq0"]
-[ext_resource type="Script" uid="uid://b58015mafcw2v" path="res://Code/Resource Makers/PokemonSpecific/PowerMaker.gd" id="7_ur7nu"]
 [ext_resource type="Resource" uid="uid://dmpx0flrt2hxl" path="res://Resources/Components/Effects/EnergyMovement/LendMeYourEnergy.tres" id="7_x717q"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="8_mdixv"]
 [ext_resource type="Resource" uid="uid://dm6f2nxeh8yqx" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless4.tres" id="8_ur7nu"]
@@ -105,29 +104,15 @@ name = "Call for Power"
 description = "As often as you like during your turn, you may move an Energy card attached to 1 of your Pokémon to  [name]. This power can't be used if [name] is affected by a Special Condition."
 affected_by_condition = true
 active = false
-how_often = 3
-on_occurance = false
+how_often = "Infinite"
 effect = SubResource("Resource_n8rdp")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
-
-[sub_resource type="Resource" id="Resource_krkpn"]
-script = ExtResource("7_ur7nu")
-name = "Call for Power"
-description = " As often as you like during your turn, you may move an Energy card attached to 1 of your Pokémon to Dragonite ex. This power can't be used if Dragonite ex is affected by a Special Condition."
-affected_by_condition = true
-active = false
-when_condition = "Whenever"
-when_position = 4
-how_often = 2
-effect = SubResource("Resource_n8rdp")
-metadata/_custom_type_script = "uid://b58015mafcw2v"
 
 [sub_resource type="Resource" id="Resource_ysok2"]
 script = ExtResource("8_mdixv")
 HP = 30
 retreat = 0
 pokepower = SubResource("Resource_ur7nu")
-power = SubResource("Resource_krkpn")
 attacks = Array[ExtResource("2_2hwsj")]([SubResource("Resource_bmkne"), SubResource("Resource_o5ava")])
 evo_stage = "Stage 2"
 evolves_from = "Dragonair"
