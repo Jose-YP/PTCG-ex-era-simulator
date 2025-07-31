@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=26 format=3 uid="uid://cwm50lliwuxgr"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=31 format=3 uid="uid://cwm50lliwuxgr"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_av14u"]
 [ext_resource type="Texture2D" uid="uid://bkixvvnwbglm2" path="res://Art/Cards/10 ex Unseen Forces/9.jpg" id="1_b8f7a"]
@@ -14,6 +14,8 @@
 [ext_resource type="Script" uid="uid://scca13hg4k1l" path="res://Code/Resource Makers/EffectSpecific/DmgManipMaker.gd" id="10_fryll"]
 [ext_resource type="Script" uid="uid://b2tlqpng7fq25" path="res://Code/Resource Makers/PokemonSpecific/BodyMaker.gd" id="11_uehyq"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="12_iblgg"]
+[ext_resource type="Resource" uid="uid://tgm35ahd5evj" path="res://Resources/Components/Occurances/SelfBetweenTurns.tres" id="13_wmae1"]
+[ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="14_pb52n"]
 
 [sub_resource type="Resource" id="Resource_wmae1"]
 script = ExtResource("10_fryll")
@@ -124,10 +126,46 @@ energy_ammount = 1
 effect = SubResource("Resource_cmuqy")
 metadata/_custom_type_script = "uid://b2tlqpng7fq25"
 
+[sub_resource type="Resource" id="Resource_6lcpf"]
+script = ExtResource("10_fryll")
+turn_delay = -1
+prevent_KO = false
+mode = "Remove"
+how_many = 1
+choosing = 4
+anyway_u_like = false
+choose_num = -1
+ask = ExtResource("9_rpbfj")
+vary_choose_num = false
+plus = true
+modifier = 1
+metadata/_custom_type_script = "uid://scca13hg4k1l"
+
+[sub_resource type="Resource" id="Resource_ai77k"]
+script = ExtResource("4_wmae1")
+either_or = false
+order = Array[int]([])
+dmgManip = SubResource("Resource_6lcpf")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_7mess"]
+script = ExtResource("14_pb52n")
+category = "Body"
+name = "Healing Aroma"
+description = "As long as [name] is your Active Pokémon, remove 1 damage counter from each Pokémon (excluding Pokémon-ex) (both yours and your opponent's) between turns."
+affected_by_condition = false
+active = true
+how_often = 0
+on_occurance = true
+occurance = ExtResource("13_wmae1")
+effect = SubResource("Resource_ai77k")
+metadata/_custom_type_script = "uid://bs2y8ocljilv8"
+
 [sub_resource type="Resource" id="Resource_sijf8"]
 script = ExtResource("12_iblgg")
 HP = 100
 retreat = 3
+pokebody = SubResource("Resource_7mess")
 body = SubResource("Resource_nbhf5")
 attacks = Array[ExtResource("2_uaib2")]([SubResource("Resource_j1gr8")])
 evo_stage = "Stage 2"

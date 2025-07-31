@@ -17,7 +17,7 @@
         "visibility": 0.0
       },
       "resource_name": {
-        "visibility": 0
+        "visibility": 0.0
       },
       "resource_path": {
         "visibility": 0.0
@@ -79,9 +79,12 @@
   ],
   "table_functions": {
     "filter": [
+      "if res.pokemon_properties:\n\t\n\tif res.pokemon_properties.body:\n\t\tprint(res.pokemon_properties.body.name)\n\t\treturn true\n\telse:\n\t\treturn false\nreturn false",
+      "if res.pokemon_properties:\n\treturn res.pokemon_properties.body is Object\nreturn false",
       "return true",
-      "if res.pokemon_properties:\n\tvar result = res.pokemon_properties.body or res.pokemon_properties.power\n\treturn result\nreturn false",
-      "return true"
+      "return res.pokemon_properties",
+      "if res.pokemon_properties:\n\treturn res.pokemon_properties.HP > 50\nreturn false",
+      "if res.pokemon_properties:\n\treturn res.pokemon_properties.attacks.size() > 1\nreturn false"
     ],
     "process": [
       "return value"

@@ -34,52 +34,15 @@ fossil = false
 
 [resource]
 script = ExtResource("7_o332v")
-player_type = 0
 current_card = ExtResource("1_j0klf")
+damage_counters = 0
 evolution_ready = false
 evolved_this_turn = false
 evolved_from = Array[ExtResource("2_br7xd")]([ExtResource("5_vh3hf"), ExtResource("6_pttkb")])
 energy_cards = Array[ExtResource("2_br7xd")]([SubResource("Resource_0tjgr"), SubResource("Resource_xbexa")])
-attached_energy = {
-"Aqua": 0,
-"Colorless": 0,
-"Dark Metal": 0,
-"Darkness": 0,
-"Fighting": 0,
-"Fire": 0,
-"Grass": 0,
-"Holon FF": 0,
-"Holon GL": 0,
-"Holon WP": 0,
-"Lightning": 0,
-"Magma": 0,
-"Metal": 0,
-"Psychic": 0,
-"Rainbow": 0,
-"React": 0,
-"Water": 0
-}
 tm_cards = Array[ExtResource("2_br7xd")]([])
-use_weakness = true
-use_resistance = true
-type = 0
-weak = 0
-resist = 0
-attack_buff = 0
-defense_buff = 0
-use_body = true
-ex_immune = false
-use_power = false
-use_attack = true
-in_attacking_turn = true
-damage_counters = 0
-benched = false
-poison_condition = 0
-burn_condition = 0
-turn_condition = 0
-imprison = false
-shockwave = false
-readied = false
-knocked_out = false
-is_target = false
+buffs = Array[Dictionary]([])
+disables = Array[Dictionary]([])
+dealt_damage = 0
+energy_discarded = 0
 metadata/_custom_type_script = "uid://cs70ix831b5g4"

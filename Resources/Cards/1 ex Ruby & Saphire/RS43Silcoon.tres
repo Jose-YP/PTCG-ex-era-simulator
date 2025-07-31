@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=21 format=3 uid="uid://by8ynv4fc500g"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=20 format=3 uid="uid://by8ynv4fc500g"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_qrwoa"]
 [ext_resource type="Texture2D" uid="uid://b7muex4lsbyin" path="res://Art/Cards/1 ex Ruby & Saphire/43.jpg" id="1_vkyqs"]
@@ -11,7 +11,7 @@
 [ext_resource type="Script" uid="uid://b2tlqpng7fq25" path="res://Code/Resource Makers/PokemonSpecific/BodyMaker.gd" id="7_vdnjw"]
 [ext_resource type="Resource" uid="uid://ekj1myy642kh" path="res://Resources/Components/Effects/Prompts/PromptHeads.tres" id="8_iwaip"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="8_upxcc"]
-[ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="10_opply"]
+[ext_resource type="Resource" uid="uid://vjh7yrpr7ien" path="res://Resources/Components/Pokemon/Abilities/Bodies/Hard Cocoon.tres" id="10_opply"]
 
 [sub_resource type="Resource" id="Resource_65c7g"]
 script = ExtResource("4_opply")
@@ -80,22 +80,11 @@ energy_ammount = 0
 effect = SubResource("Resource_4qb3d")
 metadata/_custom_type_script = "uid://b2tlqpng7fq25"
 
-[sub_resource type="Resource" id="Resource_je7tc"]
-script = ExtResource("10_opply")
-category = "Body"
-name = "Hard Cocoon"
-description = "During your opponent's turn, if [name] would be damaged by an opponent's attack (after applying Weakness and Resistance), flip a coin. If heads, reduce that damage by 30."
-affected_by_condition = true
-active = false
-how_often = 0
-on_occurance = false
-metadata/_custom_type_script = "uid://bs2y8ocljilv8"
-
 [sub_resource type="Resource" id="Resource_qybx1"]
 script = ExtResource("8_upxcc")
 HP = 60
 retreat = 2
-pokebody = SubResource("Resource_je7tc")
+pokebody = ExtResource("10_opply")
 body = SubResource("Resource_5d4ud")
 attacks = Array[ExtResource("2_1wrtr")]([SubResource("Resource_b0l7j")])
 evo_stage = "Stage 1"

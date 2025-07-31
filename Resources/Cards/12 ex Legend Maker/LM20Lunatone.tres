@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=25 format=3 uid="uid://cdlsj0xlgu0n"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=28 format=3 uid="uid://cdlsj0xlgu0n"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_c0dsq"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_tp1gn"]
@@ -14,6 +14,8 @@
 [ext_resource type="Resource" uid="uid://dducvbjohbp4x" path="res://Resources/Components/Pokemon/Attacks/AttackData/10DmgParaIfHeads.tres" id="7_le6pv"]
 [ext_resource type="Script" uid="uid://b2tlqpng7fq25" path="res://Code/Resource Makers/PokemonSpecific/BodyMaker.gd" id="8_oftqn"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="9_iq553"]
+[ext_resource type="Resource" uid="uid://cx7v8cyxlierr" path="res://Resources/Components/Effects/Prompts/PromptComparator/IsSolrockInPlay.tres" id="13_opu8w"]
+[ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="14_le6pv"]
 
 [sub_resource type="Resource" id="Resource_r8rjj"]
 script = ExtResource("2_ncs6m")
@@ -145,10 +147,24 @@ energy_ammount = 1
 effect = SubResource("Resource_wpc3u")
 metadata/_custom_type_script = "uid://b2tlqpng7fq25"
 
+[sub_resource type="Resource" id="Resource_18faj"]
+script = ExtResource("14_le6pv")
+category = "Body"
+name = "Sol Shade"
+description = " As long as you have Solrock in play, each player's {Fire} Pokémon (excluding Pokémon-ex) can't use any Poké-Powers. "
+affected_by_condition = false
+active = false
+how_often = 0
+on_occurance = false
+prompt = ExtResource("13_opu8w")
+effect = SubResource("Resource_wpc3u")
+metadata/_custom_type_script = "uid://bs2y8ocljilv8"
+
 [sub_resource type="Resource" id="Resource_15uuj"]
 script = ExtResource("9_iq553")
 HP = 60
 retreat = 1
+pokebody = SubResource("Resource_18faj")
 body = SubResource("Resource_gqqt8")
 attacks = Array[ExtResource("1_tp1gn")]([SubResource("Resource_0l0mh"), SubResource("Resource_hjkuo")])
 evo_stage = "Basic"

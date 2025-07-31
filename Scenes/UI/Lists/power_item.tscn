@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://beymnk0kvpnut"]
+[gd_scene load_steps=4 format=3 uid="uid://beymnk0kvpnut"]
 
 [ext_resource type="Script" uid="uid://b5124mvoehedo" path="res://Code/Scenes/UI/Cards/power_item.gd" id="1_y7yv4"]
-[ext_resource type="Resource" uid="uid://dpppa2iiky1ct" path="res://Resources/Components/Pokemon/Powers/Firestarter.tres" id="2_2mmmf"]
-[ext_resource type="Theme" uid="uid://bgn3jjlbvn1xq" path="res://Themes/Themes/PowerButton.tres" id="2_t1bre"]
+[ext_resource type="Theme" uid="uid://bfw6ylcttychc" path="res://Themes/Themes/AverageButton.tres" id="3_0p0ba"]
 [ext_resource type="Texture2D" uid="uid://ct1rslwcfpy1y" path="res://Art/ETCIcons/Pokepower.png" id="3_of7gp"]
 
 [node name="AttackItem" type="MarginContainer"]
@@ -12,7 +11,6 @@ offset_right = 421.0
 offset_bottom = 71.0
 mouse_filter = 2
 script = ExtResource("1_y7yv4")
-power = ExtResource("2_2mmmf")
 
 [node name="PowerButton" type="Button" parent="."]
 self_modulate = Color(0.895007, 0.582781, 0.624828, 1)
@@ -20,7 +18,8 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_default_cursor_shape = 2
-theme = ExtResource("2_t1bre")
+theme = ExtResource("3_0p0ba")
+theme_type_variation = &"PowerButton"
 
 [node name="AllText" type="VBoxContainer" parent="."]
 layout_mode = 2

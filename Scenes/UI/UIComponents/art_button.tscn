@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dp781vdb5kvc7"]
+[gd_scene load_steps=6 format=3 uid="uid://dp781vdb5kvc7"]
 
 [ext_resource type="Shader" uid="uid://chaingl03cnx1" path="res://Shaders/Shine2D.gdshader" id="1_dsc7g"]
 [ext_resource type="Theme" uid="uid://bfw6ylcttychc" path="res://Themes/Themes/AverageButton.tres" id="2_q565r"]
@@ -14,23 +14,12 @@ shader_parameter/shine_speed = 7.0
 shader_parameter/shine_size = 0.07
 shader_parameter/shine_bool = false
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dvhpw"]
-bg_color = Color(0.180736, 0.120593, 0.350483, 1)
-border_width_left = 1
-border_width_top = 2
-border_width_right = 1
-border_width_bottom = 2
-border_color = Color(0.286275, 0.00392157, 0.611765, 1)
-border_blend = true
-
 [node name="ArtButton" type="Button"]
 material = SubResource("ShaderMaterial_q565r")
 custom_minimum_size = Vector2(195, 120)
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("2_q565r")
-theme_override_styles/normal = SubResource("StyleBoxFlat_dvhpw")
-disabled = true
 button_mask = 3
 script = ExtResource("2_vikux")
 pokemon = false
@@ -38,7 +27,7 @@ benched = true
 
 [node name="PanelContainer" type="CenterContainer" parent="."]
 layout_mode = 2
-offset_right = 198.0
+offset_right = 195.0
 offset_bottom = 120.0
 
 [node name="Art" type="TextureRect" parent="PanelContainer"]

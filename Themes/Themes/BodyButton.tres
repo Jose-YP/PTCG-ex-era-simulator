@@ -1,7 +1,16 @@
-[gd_resource type="Theme" load_steps=3 format=3 uid="uid://crahea8fl2d3s"]
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://crahea8fl2d3s"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yag2c"]
+bg_color = Color(0.062103, 0.160448, 0.149229, 1)
+border_width_left = 1
+border_width_top = 2
+border_width_right = 1
+border_width_bottom = 2
+border_color = Color(0, 0.145098, 0.0431373, 1)
+border_blend = true
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_751hu"]
-bg_color = Color(0.109804, 0.247059, 0.231373, 1)
+bg_color = Color(0.11887, 0.26337, 0.246849, 1)
 border_width_left = 1
 border_width_top = 2
 border_width_right = 1
@@ -10,16 +19,16 @@ border_color = Color(0, 0.145098, 0.0431373, 1)
 border_blend = true
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_auhmd"]
-bg_color = Color(0.137255, 0.141176, 0.278431, 1)
+bg_color = Color(0.0172287, 0.1831, 0.200674, 1)
 border_width_left = 1
 border_width_top = 2
 border_width_right = 1
 border_width_bottom = 2
-border_color = Color(0.286275, 0.00392157, 0.611765, 1)
+border_color = Color(1.03481e-06, 0.27114, 0.357022, 1)
 border_blend = true
 
 [resource]
-Button/styles/disabled = SubResource("StyleBoxFlat_751hu")
+Button/styles/disabled = SubResource("StyleBoxFlat_yag2c")
 Button/styles/hover = SubResource("StyleBoxFlat_751hu")
 Button/styles/normal = SubResource("StyleBoxFlat_751hu")
 Button/styles/pressed = SubResource("StyleBoxFlat_auhmd")

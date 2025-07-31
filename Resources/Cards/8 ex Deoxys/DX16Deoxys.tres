@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://cb1v7n822h87e"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=13 format=3 uid="uid://cb1v7n822h87e"]
 
 [ext_resource type="Texture2D" uid="uid://7bxyvuwtxyns" path="res://Art/Cards/8 ex Deoxys/16.jpg" id="1_q6m2g"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_u75df"]
@@ -8,6 +8,7 @@
 [ext_resource type="Resource" uid="uid://dh4vjjy6e5xbi" path="res://Resources/Components/Counters/Comparator/Equals/TrgEnEqual.tres" id="4_22yei"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_hjcee"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="5_k4uw5"]
+[ext_resource type="Resource" uid="uid://bwgc3etush7hc" path="res://Resources/Components/Pokemon/Abilities/Powers/FormChangeDeoxys.tres" id="6_22yei"]
 
 [sub_resource type="Resource" id="Resource_jijnb"]
 script = ExtResource("5_k4uw5")
@@ -36,6 +37,7 @@ attack_data = SubResource("Resource_jijnb")
 script = ExtResource("5_hjcee")
 HP = 70
 retreat = 1
+pokepower = ExtResource("6_22yei")
 power = ExtResource("4_5wcjw")
 attacks = Array[ExtResource("3_re3fn")]([SubResource("Resource_w1d7j")])
 evo_stage = "Basic"

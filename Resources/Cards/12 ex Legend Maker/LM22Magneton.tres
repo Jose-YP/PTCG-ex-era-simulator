@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=29 format=3 uid="uid://bigbvtmdvobb8"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=37 format=3 uid="uid://bigbvtmdvobb8"]
 
 [ext_resource type="Texture2D" uid="uid://pxoft1wbeuxl" path="res://Art/Cards/12 ex Legend Maker/22.jpg" id="1_653qw"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_13wr1"]
@@ -16,6 +16,11 @@
 [ext_resource type="Resource" uid="uid://dln27118sw0f0" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/L1C3.tres" id="10_ckcqc"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="10_feaad"]
 [ext_resource type="Resource" uid="uid://cjlv4ltu2gptf" path="res://Resources/Components/Pokemon/Attacks/AttackData/60Dmg.tres" id="11_ano3c"]
+[ext_resource type="Resource" uid="uid://b7fdar1wf5suh" path="res://Resources/Components/EnData/React.tres" id="12_w06bv"]
+[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="13_ckcqc"]
+[ext_resource type="Resource" uid="uid://dv5gbkvk3uxtj" path="res://Resources/Components/Effects/Asks/General/SrcTheRest.tres" id="14_ano3c"]
+[ext_resource type="Resource" uid="uid://cq66mwg0r64ga" path="res://Resources/Components/Occurances/OnSelfKO.tres" id="17_snhq1"]
+[ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="18_ncrm3"]
 
 [sub_resource type="Resource" id="Resource_sxcfq"]
 script = ExtResource("5_ad1mx")
@@ -94,6 +99,42 @@ attack_cost = ExtResource("10_ckcqc")
 attack_data = ExtResource("11_ano3c")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
+[sub_resource type="Resource" id="Resource_gmkqs"]
+script = ExtResource("6_0ya0c")
+action = 1
+chooser = 4
+givers = ExtResource("13_ckcqc")
+reciever = ExtResource("14_ano3c")
+to_stack = 2
+stack_direction = 2
+energy_carry_over = false
+action_ammount = -1
+energy_ammount = -1
+energy_move_type = 2
+en_type = ExtResource("12_w06bv")
+react = true
+metadata/_custom_type_script = "uid://cimk6l7ytw7xg"
+
+[sub_resource type="Resource" id="Resource_gdo84"]
+script = ExtResource("7_kpec7")
+either_or = false
+order = Array[int]([])
+energy_movement = SubResource("Resource_gmkqs")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_7pk77"]
+script = ExtResource("18_ncrm3")
+category = "Power"
+name = "Reactive Recharge"
+description = "If [name] would be Knocked Out by damage from an opponent's attack, you may move any number of React Energy cards from [name] to your Pokémon in any way you like."
+affected_by_condition = false
+active = false
+how_often = 0
+on_occurance = true
+occurance = ExtResource("17_snhq1")
+effect = SubResource("Resource_gdo84")
+metadata/_custom_type_script = "uid://bs2y8ocljilv8"
+
 [sub_resource type="Resource" id="Resource_8vait"]
 metadata/__load_path__ = "res://Resources/Components/Effects/Asks/Self.tres"
 
@@ -139,6 +180,7 @@ metadata/_custom_type_script = "uid://b58015mafcw2v"
 script = ExtResource("9_0chr7")
 HP = 70
 retreat = 1
+pokepower = SubResource("Resource_7pk77")
 power = SubResource("Resource_ncrm3")
 attacks = Array[ExtResource("2_13wr1")]([SubResource("Resource_w06bv"), SubResource("Resource_ckcqc")])
 evo_stage = "Stage 1"

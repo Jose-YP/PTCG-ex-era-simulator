@@ -1,36 +1,32 @@
-[gd_scene load_steps=5 format=3 uid="uid://cidor8csiohus"]
+[gd_scene load_steps=5 format=3 uid="uid://bos4qlgett1th"]
 
-[ext_resource type="Script" uid="uid://baqpldf3atlrp" path="res://Code/Scenes/UI/Cards/body_item.gd" id="1_3ej87"]
-[ext_resource type="Resource" uid="uid://2p0hc22v0g1o" path="res://Resources/Components/Pokemon/Bodies/WitheringDust.tres" id="2_loqau"]
-[ext_resource type="Theme" uid="uid://bfw6ylcttychc" path="res://Themes/Themes/AverageButton.tres" id="3_ng5d8"]
-[ext_resource type="Texture2D" uid="uid://dmlnngpyb3if" path="res://Art/ETCIcons/Pokebody.png" id="5_07ss0"]
+[ext_resource type="Script" uid="uid://b5124mvoehedo" path="res://Code/Scenes/UI/Cards/power_item.gd" id="1_eb561"]
+[ext_resource type="Resource" uid="uid://s8mcx8qnuqkw" path="res://Resources/Components/Pokemon/Abilities/Bodies/AzurillBabyEvo.tres" id="2_ts83y"]
+[ext_resource type="Theme" uid="uid://bfw6ylcttychc" path="res://Themes/Themes/AverageButton.tres" id="3_g2tyk"]
+[ext_resource type="Texture2D" uid="uid://ct1rslwcfpy1y" path="res://Art/ETCIcons/Pokepower.png" id="4_akvy3"]
 
-[node name="Body" type="MarginContainer"]
-offset_left = 1.0
-offset_top = -1.0
-offset_right = 401.0
-offset_bottom = 59.0
+[node name="AbilityItem" type="MarginContainer"]
+offset_left = 21.0
+offset_top = 11.0
+offset_right = 421.0
+offset_bottom = 71.0
 mouse_filter = 2
-script = ExtResource("1_3ej87")
-body = ExtResource("2_loqau")
-metadata/_edit_group_ = true
+script = ExtResource("1_eb561")
+ability = ExtResource("2_ts83y")
 
-[node name="BodyButton" type="Button" parent="."]
+[node name="AbilityButton" type="Button" parent="."]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-focus_mode = 0
 mouse_default_cursor_shape = 2
-theme = ExtResource("3_ng5d8")
-theme_type_variation = &"BodyButton"
-disabled = true
-metadata/_edit_group_ = true
-metadata/_edit_lock_ = true
+theme = ExtResource("3_g2tyk")
+theme_type_variation = &"PowerButton"
 
 [node name="AllText" type="VBoxContainer" parent="."]
 layout_mode = 2
 mouse_filter = 2
 metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
 
 [node name="MarginContainer" type="MarginContainer" parent="AllText"]
 layout_mode = 2
@@ -46,14 +42,14 @@ layout_mode = 2
 mouse_filter = 2
 theme_override_constants/margin_right = 20
 
-[node name="PokeBodyIcon" type="TextureRect" parent="AllText/Base Text"]
+[node name="Icon" type="TextureRect" parent="AllText/Base Text"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_filter = 2
-texture = ExtResource("5_07ss0")
+texture = ExtResource("4_akvy3")
 
 [node name="Name" type="RichTextLabel" parent="AllText/Base Text"]
 unique_name_in_owner = true
@@ -102,6 +98,7 @@ text = "HUGE EFFECT TEX LIKE SUPER HUGE, JUST SAY EVERYTHING YOU EVER WANTED TO 
 fit_content = true
 
 [node name="MarginContainer" type="MarginContainer" parent="AllText/EffectContainer"]
+visible = false
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/margin_left = 10
@@ -111,4 +108,5 @@ layout_mode = 2
 mouse_filter = 2
 
 [connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
-[connection signal="minimum_size_changed" from="BodyButton" to="." method="_on_attack_button_minimum_size_changed"]
+[connection signal="minimum_size_changed" from="AbilityButton" to="." method="_on_attack_button_minimum_size_changed"]
+[connection signal="resized" from="AbilityButton" to="." method="_on_attack_button_resized"]

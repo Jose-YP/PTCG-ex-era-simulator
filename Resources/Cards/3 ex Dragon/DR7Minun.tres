@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=16 format=3 uid="uid://bjwm1cveh0cpy"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=17 format=3 uid="uid://bjwm1cveh0cpy"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_enauw"]
 [ext_resource type="Texture2D" uid="uid://c3ca465on2f80" path="res://Art/Cards/3 ex Dragon/7.jpg" id="1_krfcg"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://br15mnap82upq" path="res://Code/Resource Makers/PokemonSpecific/BenchAttackMaker.gd" id="7_xxmag"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="8_r5uj8"]
 [ext_resource type="Resource" uid="uid://dabjstl6kl88i" path="res://Resources/Components/Pokemon/Bodies/Chain of Events.tres" id="9_1gkmj"]
+[ext_resource type="Resource" uid="uid://c0y58oaysjrpt" path="res://Resources/Components/Pokemon/Abilities/Bodies/Chain of Events.tres" id="10_gjx7l"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="10_qcxwa"]
 
 [sub_resource type="Resource" id="Resource_8yyij"]
@@ -52,6 +53,7 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 script = ExtResource("10_qcxwa")
 HP = 50
 retreat = 1
+pokebody = ExtResource("10_gjx7l")
 body = ExtResource("9_1gkmj")
 attacks = Array[ExtResource("2_gjx7l")]([ExtResource("3_7aspk"), SubResource("Resource_8k4ea")])
 evo_stage = "Basic"

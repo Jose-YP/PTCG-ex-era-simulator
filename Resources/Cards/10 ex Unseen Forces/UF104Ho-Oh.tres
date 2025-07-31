@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=20 format=3 uid="uid://bd5udpyw50p8k"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=23 format=3 uid="uid://bd5udpyw50p8k"]
 
 [ext_resource type="Texture2D" uid="uid://ds5ewico7h0ff" path="res://Art/Cards/10 ex Unseen Forces/104.jpg" id="1_f6oj6"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_e84ng"]
@@ -12,6 +12,8 @@
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="7_6kdro"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="7_hite6"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="8_6kdro"]
+[ext_resource type="Resource" uid="uid://cq66mwg0r64ga" path="res://Resources/Components/Occurances/OnSelfKO.tres" id="10_hite6"]
+[ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="11_6kdro"]
 
 [sub_resource type="Resource" id="Resource_iim6h"]
 script = ExtResource("5_ysloh")
@@ -62,6 +64,19 @@ order = Array[int]([])
 energy_movement = ExtResource("4_5thtl")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
+[sub_resource type="Resource" id="Resource_uuksg"]
+script = ExtResource("11_6kdro")
+category = "Power"
+name = "Golden Wing"
+description = "If [name] would be Knocked Out by damage from an opponent's attack, you may move up to 2 Energy attached to [name] to your Pokémon in any way you like."
+affected_by_condition = false
+active = false
+how_often = 1
+on_occurance = true
+occurance = ExtResource("10_hite6")
+effect = SubResource("Resource_xt3om")
+metadata/_custom_type_script = "uid://bs2y8ocljilv8"
+
 [sub_resource type="Resource" id="Resource_gkrpm"]
 script = ExtResource("6_ysloh")
 name = "Golden Wing"
@@ -78,6 +93,7 @@ metadata/_custom_type_script = "uid://b58015mafcw2v"
 script = ExtResource("7_hite6")
 HP = 110
 retreat = 2
+pokepower = SubResource("Resource_uuksg")
 power = SubResource("Resource_gkrpm")
 attacks = Array[ExtResource("2_e84ng")]([SubResource("Resource_aw5mk")])
 evo_stage = "Basic"

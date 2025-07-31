@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=19 format=3 uid="uid://ch7qqjhkbd26n"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=21 format=3 uid="uid://ch7qqjhkbd26n"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_7067e"]
 [ext_resource type="Texture2D" uid="uid://bafhv636s8u00" path="res://Art/Cards/12 ex Legend Maker/88.jpg" id="1_v3s2v"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://b2tlqpng7fq25" path="res://Code/Resource Makers/PokemonSpecific/BodyMaker.gd" id="7_1u4ny"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="7_pfer2"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="8_twkj3"]
+[ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="10_pfer2"]
 
 [sub_resource type="Resource" id="Resource_vdiw8"]
 script = ExtResource("3_p1awv")
@@ -71,10 +72,23 @@ energy_ammount = 1
 effect = SubResource("Resource_efonp")
 metadata/_custom_type_script = "uid://b2tlqpng7fq25"
 
+[sub_resource type="Resource" id="Resource_2fy54"]
+script = ExtResource("10_pfer2")
+category = "Body"
+name = "Versatile"
+description = "[name] can use the attacks of all Pokémon in play as its own. (You still need the necessary Energy to use each attack.)"
+affected_by_condition = false
+active = false
+how_often = 0
+on_occurance = false
+effect = SubResource("Resource_efonp")
+metadata/_custom_type_script = "uid://bs2y8ocljilv8"
+
 [sub_resource type="Resource" id="Resource_c0bsp"]
 script = ExtResource("8_twkj3")
 HP = 90
 retreat = 1
+pokebody = SubResource("Resource_2fy54")
 body = SubResource("Resource_8tf80")
 attacks = Array[ExtResource("2_gfhju")]([SubResource("Resource_qrale")])
 evo_stage = "Basic"

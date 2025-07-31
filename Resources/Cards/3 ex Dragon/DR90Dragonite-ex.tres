@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=24 format=3 uid="uid://blgwu6rviyvhh"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=26 format=3 uid="uid://blgwu6rviyvhh"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_6nbak"]
 [ext_resource type="Texture2D" uid="uid://bwy02si5cv6mh" path="res://Art/Cards/3 ex Dragon/90.jpg" id="1_i3arf"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="8_mdixv"]
 [ext_resource type="Resource" uid="uid://dm6f2nxeh8yqx" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless4.tres" id="8_ur7nu"]
 [ext_resource type="Resource" uid="uid://ekj1myy642kh" path="res://Resources/Components/Effects/Prompts/PromptHeads.tres" id="9_mdixv"]
+[ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="11_mpcq0"]
 
 [sub_resource type="Resource" id="Resource_mv2ox"]
 script = ExtResource("6_imidg")
@@ -97,6 +98,18 @@ order = Array[int]([])
 energy_movement = ExtResource("7_x717q")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
+[sub_resource type="Resource" id="Resource_ur7nu"]
+script = ExtResource("11_mpcq0")
+category = "Power"
+name = "Call for Power"
+description = "As often as you like during your turn, you may move an Energy card attached to 1 of your Pokémon to  [name]. This power can't be used if [name] is affected by a Special Condition."
+affected_by_condition = true
+active = false
+how_often = 3
+on_occurance = false
+effect = SubResource("Resource_n8rdp")
+metadata/_custom_type_script = "uid://bs2y8ocljilv8"
+
 [sub_resource type="Resource" id="Resource_krkpn"]
 script = ExtResource("7_ur7nu")
 name = "Call for Power"
@@ -113,6 +126,7 @@ metadata/_custom_type_script = "uid://b58015mafcw2v"
 script = ExtResource("8_mdixv")
 HP = 30
 retreat = 0
+pokepower = SubResource("Resource_ur7nu")
 power = SubResource("Resource_krkpn")
 attacks = Array[ExtResource("2_2hwsj")]([SubResource("Resource_bmkne"), SubResource("Resource_o5ava")])
 evo_stage = "Stage 2"

@@ -31,7 +31,7 @@ var current_card: Base_Card:
 #--------------------------------------
 #region INITALIZATION & PROCESSING
 func _ready():
-	get_child(0).size = %ArtButton.size
+	get_child(0).size = size
 	if benched: 
 		custom_minimum_size = Vector2(149, 96)
 		art.custom_minimum_size = Vector2(142, 87)
@@ -50,3 +50,17 @@ func _on_pressed() -> void:
 		SignalBus.chosen_slot.emit(owner.connected_slot)
 #endregion
 #--------------------------------------
+
+func ability_show(slot: PokeSlot):
+	if slot.current_card.has_ability():
+		var poke_data: Pokemon = slot.get_pokedata()
+		if poke_data.pokebody:
+			if poke_data.pokebody.does_press_activate(slot):
+				theme_type_variation = "BodyButton"
+			else:
+				theme_type_variation = ""
+		elif poke_data.pokepower:
+			if poke_data.pokepower.does_press_activate(slot):
+				theme_type_variation = "PowerButton"
+			else:
+				theme_type_variation = ""

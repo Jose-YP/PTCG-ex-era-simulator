@@ -19,6 +19,7 @@ var current_list: Control
 var home_targets: Array[Array]
 var away_targets: Array[Array]
 var source_stack: Array[bool]
+var used_abilities: Array[String]
 var cpu_players: Array[CPU_Player]
 var options: ItemOptions
 
@@ -62,6 +63,8 @@ func print_slots(sides: Consts.SIDES, slots: Consts.SLOTS, init_string: String):
 #endregion
 #--------------------------------------
 
+#--------------------------------------
+#region HELPERS
 func hide_list() -> void:
 	if current_list: Globals.control_disapear(current_list, .1, current_list.old_pos)
 
@@ -133,6 +136,16 @@ func can_be_played(card: Base_Card) -> int:
 	if (considered & 512 and not attatched_energy) or Globals.board_state.debug_unlimit:
 		allowed_to += 512
 	return allowed_to
+
+func used_ability(ability_name: String) -> bool:
+	for ability in used_abilities:
+		if ability == ability_name:
+			return true
+	
+	return false
+
+#endregion
+#--------------------------------------
 
 #--------------------------------------
 #region SLOT FUNCTIONS

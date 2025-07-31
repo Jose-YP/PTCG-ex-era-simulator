@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=27 format=3 uid="uid://ca4fvk1kp65a5"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=29 format=3 uid="uid://ca4fvk1kp65a5"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_2qfob"]
 [ext_resource type="Texture2D" uid="uid://vl54ey1wgkdd" path="res://Art/Cards/10 ex Unseen Forces/1.jpg" id="1_246m0"]
@@ -14,6 +14,7 @@
 [ext_resource type="Script" uid="uid://cimk6l7ytw7xg" path="res://Code/Resource Makers/EffectSpecific/EnMovMaker.gd" id="9_u7a6q"]
 [ext_resource type="Script" uid="uid://b58015mafcw2v" path="res://Code/Resource Makers/PokemonSpecific/PowerMaker.gd" id="10_4xr6q"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="11_veuta"]
+[ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="12_x6q3b"]
 
 [sub_resource type="Resource" id="Resource_ujupi"]
 script = ExtResource("4_x6q3b")
@@ -109,6 +110,18 @@ order = Array[int]([])
 energy_movement = SubResource("Resource_ws3ge")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
+[sub_resource type="Resource" id="Resource_kd6vc"]
+script = ExtResource("12_x6q3b")
+category = "Power"
+name = "Energy Connect"
+description = "As often as you like during your turn (before your attack), you may move a basic Energy card attached to 1 of your Benched Pokémon to your Active Pokémon. This power can't be used if Ampharos is affected by a Special Condition."
+affected_by_condition = true
+active = false
+how_often = 3
+on_occurance = false
+effect = SubResource("Resource_0m8xk")
+metadata/_custom_type_script = "uid://bs2y8ocljilv8"
+
 [sub_resource type="Resource" id="Resource_c772x"]
 script = ExtResource("10_4xr6q")
 name = "Energy Connect"
@@ -125,6 +138,7 @@ metadata/_custom_type_script = "uid://b58015mafcw2v"
 script = ExtResource("11_veuta")
 HP = 120
 retreat = 2
+pokepower = SubResource("Resource_kd6vc")
 power = SubResource("Resource_c772x")
 attacks = Array[ExtResource("2_xck7i")]([SubResource("Resource_1gwnj")])
 evo_stage = "Stage 2"

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=24 format=3 uid="uid://d3y3ggocst4r0"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=26 format=3 uid="uid://d3y3ggocst4r0"]
 
 [ext_resource type="Texture2D" uid="uid://kon0844bkmke" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/4.jpg" id="1_4ox76"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_gh7dm"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://b58015mafcw2v" path="res://Code/Resource Makers/PokemonSpecific/PowerMaker.gd" id="6_0moyj"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="7_5jpak"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="7_ur4yg"]
+[ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="10_bkafw"]
 
 [sub_resource type="Resource" id="Resource_favp4"]
 script = ExtResource("2_aml44")
@@ -100,6 +101,18 @@ either_or = false
 order = Array[int]([])
 energy_movement = SubResource("Resource_xmkch")
 
+[sub_resource type="Resource" id="Resource_nwboy"]
+script = ExtResource("10_bkafw")
+category = "Power"
+name = "Power Shift"
+description = "Once during your turn (before your attack), you may move any number of basic Energy cards attached to 1 of your Pokémon with Team Aqua in its name to another of your Pokémon. This power can't be used if [name] is affected by a Special Condition."
+affected_by_condition = true
+active = false
+how_often = 1
+on_occurance = false
+effect = SubResource("Resource_ys2ao")
+metadata/_custom_type_script = "uid://bs2y8ocljilv8"
+
 [sub_resource type="Resource" id="Resource_3kpah"]
 script = ExtResource("2_aml44")
 side_target = 3
@@ -143,6 +156,7 @@ effect = SubResource("Resource_ys2ao")
 script = ExtResource("7_ur4yg")
 HP = 70
 retreat = 1
+pokepower = SubResource("Resource_nwboy")
 power = SubResource("Resource_h5vvk")
 attacks = Array[ExtResource("4_5ptpl")]([SubResource("Resource_11udr")])
 evo_stage = "Stage 1"

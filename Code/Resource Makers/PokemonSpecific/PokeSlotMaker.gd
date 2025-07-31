@@ -15,6 +15,8 @@ var attached_energy: Dictionary = {"Grass": 0, "Fire": 0, "Water": 0,
 	"Holon FF": 0, "Holon GL": 0, "Holon WP": 0, "Rainbow":0}
 var energy_timers: Dictionary = {}
 var damage_timers: Array[Dictionary]
+var body_exhaust: bool
+var power_exhaust: bool
 #endregion
 #--------------------------------------
 #--------------------------------------
@@ -86,6 +88,12 @@ func pokemon_checkup() -> void:
 	checked_up.emit()
 	
 	refresh()
+
+func setup_abilities():
+	if get_pokedata().pokebody:
+		get_pokedata().pokebody.prep_ability()
+	if get_pokedata().pokepower:
+		get_pokedata().pokepower.prep_ability()
 
 func action_checkup(action: String):
 	var targets = get_targets(self, [])
@@ -256,7 +264,7 @@ func remove_cards(cards: Array[Base_Card]) -> void:
 			if evo.same_card(card):
 				devolve_card()
 				removed = true
-	
+
 #endregion
 #--------------------------------------
 
