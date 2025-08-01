@@ -8,7 +8,6 @@ class_name InputNum
 @onready var spin_box: SpinBox = $PanelContainer/VBoxContainer/SpinBox
 @onready var confirm: Button = $PanelContainer/VBoxContainer/Confirm
 
-signal return_num(num: int)
 signal finished
 
 var old_pos: Vector2 = Vector2.ZERO

@@ -41,13 +41,19 @@ func does_press_activate(slot: PokeSlot) -> bool:
 	if occurance:
 		return false
 	
+	var quick_result: bool = true
+	if active:
+		quick_result = slot.is_active()
+	if affected_by_condition:
+		quick_result = quick_result and not slot.has_condition()
+	
 	match how_often:
 		"Once per Mon":
-			return not slot.power_exhaust and check_allowed(slot)
+			return not slot.power_exhaust and check_allowed(slot) and quick_result
 		"Once per Turn":
-			return  not Globals.fundies.used_ability(name) and check_allowed(slot)
+			return  not Globals.fundies.used_ability(name) and check_allowed(slot) and quick_result
 		"Infinite":
-			return check_allowed(slot)
+			return check_allowed(slot) and quick_result
 	
 	return false
 

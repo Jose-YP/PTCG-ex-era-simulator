@@ -54,6 +54,7 @@ func set_up(home: bool):
 		new_slot.energy_cards = new_arr
 		ui.insert_slot(new_slot, temp_side.slots[slot])
 		stacks.account_for_slot(new_slot)
+		new_slot.setup_abilities()
 	
 	stacks.setup()
 	full_ui.update_stacks(stacks.sendStackDictionary(),player_type)

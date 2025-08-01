@@ -78,13 +78,16 @@ func check_ask(slot: PokeSlot) -> bool:
 	#Check if the pokemon is in the defined class
 	print_verbose("[center]-----------------------------------------------------------")
 	print_verbose("[center]Class Flag\nCONSIDERED & OWNER:",
-	slot.current_card.pokemon_properties.considered, 2 ** slot.current_card.pokemon_properties.owner)
+	slot.current_card.pokemon_properties.considered, "|", 2 ** slot.current_card.pokemon_properties.owner)
 	print_verbose("OWNER CHECK: ", pokemon_owner, " CLASS CHECK: ", pokemon_class)
+	
 	print_verbose(slot.current_card.pokemon_properties.owner, 2 ** slot.current_card.pokemon_properties.owner)
+	print_verbose(pokemon_class & slot.current_card.pokemon_properties.considered)
 	print_verbose(2 ** slot.current_card.pokemon_properties.owner & pokemon_owner != 0)
 	#This is because godot has no xor/xnor :(
-	var class_flag = (pokemon_class && slot.current_card.pokemon_properties.considered) == class_inclusive
+	var class_flag = (pokemon_class & slot.current_card.pokemon_properties.considered != 0) == class_inclusive
 	var owner_flag = (2 ** slot.current_card.pokemon_properties.owner & pokemon_owner != 0) == owner_inclusive
+	
 	print_verbose("CLASS FLAG: ",class_flag)
 	print_verbose("OWNER FLAG: ", owner_flag)
 	result = result and class_flag and owner_flag
@@ -159,6 +162,7 @@ func check_ask(slot: PokeSlot) -> bool:
 	
 	##Check if any pokemon has been knocked out
 	#result = result and slot.knocked_out if knocked_out else result
+	print_verbose("\nFINAL RESULT FOR ", slot.get_card_name(), result,"\n")
 	
 	if not result and or_ask: return or_ask.check_ask(slot)
 	else: return result

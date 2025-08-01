@@ -77,8 +77,8 @@ func simple_manip(reversable: bool = false, replace_num: int = -1):
 	#Apply manip on all ask candidates
 	else:
 		for slot in Globals.full_ui.get_ask_slots(ask):
-			
-			slot.dmg_manip(get_final_ammount(counters, slot), turn_delay)
+			if slot.damage_counters != 0:
+				slot.dmg_manip(get_final_ammount(counters, slot), turn_delay)
 	
 	finished.emit()
 

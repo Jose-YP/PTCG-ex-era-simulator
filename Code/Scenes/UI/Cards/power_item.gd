@@ -1,6 +1,7 @@
 @icon("res://Art/Energy/48px-Water-attack.png")
 extends MarginContainer
 
+@export var body_icon: CompressedTexture2D
 @export var ability: Ability
 @export var slot: PokeSlot
 
@@ -10,17 +11,20 @@ extends MarginContainer
 func _ready():
 	%Name.clear()
 	%Name.append_text("[center]")
-	%Name.push_color(Color(0.895, 0.583, 0.625))
-	%Name.append_text(ability.name)
 	
+	if ability.category == "Body":
+		%Icon.texture = body_icon
+		%Name.push_color(Color(0.639, 0.875, 0.447))
+		ability_button.set_theme_type_variation("BodyButton")
+	else:
+		%Name.push_color(Color(0.895, 0.583, 0.625))
+	
+	%Name.append_text(ability.name)
 	%EffectText.clear()
 	if ability.description != "":
 		var final_text: String = Convert.reformat(ability.description, slot.get_card_name())
 		%EffectText.append_text(final_text)
 		%EffectText.show()
-	
-	if ability.category == "Body":
-		ability_button.set_theme_type_variation("BodyButton")
 	
 	check_pressable()
 

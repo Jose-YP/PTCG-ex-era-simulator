@@ -25,4 +25,5 @@ class_name Placement
 @export var evolve: bool = false
 @export var effect_to_mon: EffectCall
 
+@warning_ignore("unused_signal")
 signal finished

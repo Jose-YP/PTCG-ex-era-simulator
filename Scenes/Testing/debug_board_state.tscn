@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://j57m0tmwtg4n" path="res://Code/Scenes/debug_board_state.gd" id="1_auq40"]
 [ext_resource type="Resource" uid="uid://bafa2bpj2n8u0" path="res://Resources/BoardStates/SideStates/GrassTrans.tres" id="2_yhhmj"]
-[ext_resource type="Resource" uid="uid://dge18p0in3cyo" path="res://Resources/BoardStates/SideStates/Doubles/FPDTest.tres" id="3_43axb"]
+[ext_resource type="Resource" uid="uid://cwuydo8vg3ei2" path="res://Resources/BoardStates/SideStates/Doubles/MeganiumFossilD.tres" id="3_43axb"]
 [ext_resource type="PackedScene" uid="uid://bmhba1mua5n81" path="res://Scenes/Testing/debug_button.tscn" id="4_t8we2"]
 [ext_resource type="PackedScene" uid="uid://b2f8g5a5evnv4" path="res://Scenes/Testing/comparator_options.tscn" id="6_43axb"]
 [ext_resource type="PackedScene" uid="uid://cni7lmrv7r06c" path="res://Scenes/Main Game/Fundies.tscn" id="6_iquab"]
@@ -22,9 +22,9 @@ confusion_damage = 10
 default_start = false
 debug_unlimit = false
 home_side = 0
-home = ExtResource("3_43axb")
+home = ExtResource("2_yhhmj")
 away_side = 1
-away = ExtResource("2_yhhmj")
+away = ExtResource("3_43axb")
 metadata/_custom_type_script = "uid://c7ucx36aubnh8"
 
 [node name="DebugBoardState" type="Control" node_paths=PackedStringArray("fundies")]

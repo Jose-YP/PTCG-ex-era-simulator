@@ -98,10 +98,13 @@ func pokemon_checkup() -> void:
 	await ability_emit(checked_up)
 
 func setup_abilities():
+	Globals.fundies.record_single_src_trg(self)
 	if get_pokedata().pokebody:
 		get_pokedata().pokebody.prep_ability()
 	if get_pokedata().pokepower:
 		get_pokedata().pokepower.prep_ability()
+	Globals.fundies.remove_top_source_target()
+
 
 func disconnect_abilities():
 	if get_pokedata().pokebody:
@@ -135,15 +138,19 @@ func use_ability(ability: Ability):
 	
 	Globals.fundies.record_single_src_trg(self)
 	await ability.activate_ability()
+	used_power.emit()
 	Globals.fundies.remove_top_source_target()
 	
 	refresh()
 
 func ability_emit(sig: Signal, param: Variant = null):
+	print("Does ", get_card_name(), " have connections in ", sig, "? ", sig.has_connections())
+	
 	if sig.has_connections():
-		print(sig.get_connections())
+		Globals.fundies.record_single_src_trg(self)
 		sig.emit(param)
 		await SignalBus.ability_activated
+		Globals.fundies.remove_top_source_target()
 		
 		refresh()
 
@@ -155,7 +162,9 @@ func occurance_account_for():
 			get_pokedata().pokepower.single_prep(self)
 
 func refresh_connections():
+	Globals.fundies.record_single_src_trg(self)
 	occurance_account_for()
+	Globals.fundies.remove_top_source_target()
 
 #endregion
 #--------------------------------------

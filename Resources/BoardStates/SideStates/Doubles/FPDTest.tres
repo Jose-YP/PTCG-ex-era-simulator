@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SideState" load_steps=28 format=3 uid="uid://dge18p0in3cyo"]
+[gd_resource type="Resource" script_class="SideState" load_steps=25 format=3 uid="uid://dge18p0in3cyo"]
 
 [ext_resource type="Resource" uid="uid://d3qd7r6gwfitd" path="res://Resources/Decks/TestDeckFP.tres" id="1_6pulm"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_6yda8"]
@@ -8,19 +8,17 @@
 [ext_resource type="Resource" uid="uid://dxq22uwxelttj" path="res://Resources/Cards/1 ex Ruby & Saphire/RS107PsychicEnergy.tres" id="7_ymgto"]
 [ext_resource type="Resource" uid="uid://cvjyyq2lad5k5" path="res://Resources/Cards/1 ex Ruby & Saphire/RS108FireEnergy.tres" id="8_7rmjj"]
 [ext_resource type="Resource" uid="uid://ben8fxv5hw5hb" path="res://Resources/Cards/1 ex Ruby & Saphire/RS87PokemonReversal.tres" id="13_t157j"]
-[ext_resource type="Resource" uid="uid://b8kt4i4jgosm8" path="res://Resources/Cards/1 ex Ruby & Saphire/RS3Blaziken.tres" id="14_ms4b8"]
 [ext_resource type="Resource" uid="uid://b6mgd7a47n0iv" path="res://Resources/Cards/1 ex Ruby & Saphire/RS7Gardevoir.tres" id="15_fx773"]
 [ext_resource type="Resource" uid="uid://dyqdhaov0ywxk" path="res://Resources/Cards/1 ex Ruby & Saphire/RS92Switch.tres" id="16_hyhr3"]
 [ext_resource type="Resource" uid="uid://2gbttee2ievi" path="res://Resources/Cards/13 ex Holon Phantoms/HP44Holon'sCastform.tres" id="17_47ikc"]
 [ext_resource type="Resource" uid="uid://vnimvixfy8o8" path="res://Resources/Cards/1 ex Ruby & Saphire/RS68Ralts.tres" id="18_iehmd"]
 [ext_resource type="Resource" uid="uid://xvauv8yfopfw" path="res://Resources/Cards/2 ex Sandstorm/SS93MultiEnergy.tres" id="19_s1i7m"]
+[ext_resource type="Resource" uid="uid://cbbgtypsmc1a2" path="res://Resources/BoardStates/PokeSlots/BlazikenFirestarter.tres" id="20_p8p13"]
 [ext_resource type="Resource" uid="uid://deq0ap6i1b46v" path="res://Resources/Cards/4 ex Team Magma VS Team Aqua/MA85WarpPoint.tres" id="20_s1i7m"]
 [ext_resource type="Script" uid="uid://calm3n7va5yjo" path="res://Code/Resource Makers/GeneralUse/CardStacksMaker.gd" id="20_th0o3"]
 [ext_resource type="Script" uid="uid://dgqpurnuh14t1" path="res://Code/Resource Makers/GeneralUse/SideStateMaker.gd" id="21_pcl6i"]
 [ext_resource type="Script" uid="uid://cs70ix831b5g4" path="res://Code/Resource Makers/PokemonSpecific/PokeSlotMaker.gd" id="22_koj16"]
 [ext_resource type="Resource" uid="uid://cpk1v504xejvf" path="res://Resources/Cards/1 ex Ruby & Saphire/RS66Ralts.tres" id="23_mn8ds"]
-[ext_resource type="Resource" uid="uid://dqknf3vfxe3hp" path="res://Resources/Cards/1 ex Ruby & Saphire/RS73Torchic.tres" id="24_i0056"]
-[ext_resource type="Resource" uid="uid://dq5yc7aoltpwf" path="res://Resources/Cards/1 ex Ruby & Saphire/RS27Combusken.tres" id="25_8x2q6"]
 [ext_resource type="Resource" uid="uid://dso1ico2qb1px" path="res://Resources/Cards/1 ex Ruby & Saphire/RS67Ralts.tres" id="26_6yda8"]
 
 [sub_resource type="Resource" id="Resource_ai8fb"]
@@ -41,22 +39,6 @@ evolution_ready = false
 evolved_this_turn = false
 evolved_from = Array[ExtResource("2_6yda8")]([ExtResource("23_mn8ds")])
 energy_cards = Array[ExtResource("2_6yda8")]([])
-tm_cards = Array[ExtResource("2_6yda8")]([])
-buffs = Array[Dictionary]([])
-disables = Array[Dictionary]([])
-dealt_damage = 0
-energy_discarded = 0
-metadata/_custom_type_script = "uid://cs70ix831b5g4"
-
-[sub_resource type="Resource" id="Resource_3fcng"]
-script = ExtResource("22_koj16")
-current_card = ExtResource("14_ms4b8")
-max_HP = 0
-damage_counters = 0
-evolution_ready = false
-evolved_this_turn = false
-evolved_from = Array[ExtResource("2_6yda8")]([ExtResource("24_i0056"), ExtResource("25_8x2q6")])
-energy_cards = Array[ExtResource("2_6yda8")]([ExtResource("8_7rmjj"), ExtResource("8_7rmjj")])
 tm_cards = Array[ExtResource("2_6yda8")]([])
 buffs = Array[Dictionary]([])
 disables = Array[Dictionary]([])
@@ -103,8 +85,8 @@ prize_cards = 6
 bench_size = 5
 slots = Dictionary[ExtResource("22_koj16"), bool]({
 SubResource("Resource_wudh5"): true,
-SubResource("Resource_3fcng"): true,
 SubResource("Resource_nxave"): false,
-SubResource("Resource_rif2t"): false
+SubResource("Resource_rif2t"): false,
+ExtResource("20_p8p13"): true
 })
 metadata/_custom_type_script = "uid://dgqpurnuh14t1"

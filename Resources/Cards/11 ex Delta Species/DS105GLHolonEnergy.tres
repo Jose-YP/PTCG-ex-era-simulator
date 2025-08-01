@@ -71,6 +71,7 @@ comparision_type = "Greater"
 first_comparison = SubResource("Resource_4mowb")
 compare_to = "Const"
 second_constant = 0
+operate_w_constant = "None"
 metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
 [sub_resource type="Resource" id="Resource_jbfea"]

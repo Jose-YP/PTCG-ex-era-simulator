@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bos4qlgett1th"]
+[gd_scene load_steps=6 format=3 uid="uid://bos4qlgett1th"]
 
 [ext_resource type="Script" uid="uid://b5124mvoehedo" path="res://Code/Scenes/UI/Cards/power_item.gd" id="1_eb561"]
+[ext_resource type="Texture2D" uid="uid://dmlnngpyb3if" path="res://Art/ETCIcons/Pokebody.png" id="2_g2tyk"]
 [ext_resource type="Resource" uid="uid://s8mcx8qnuqkw" path="res://Resources/Components/Pokemon/Abilities/Bodies/AzurillBabyEvo.tres" id="2_ts83y"]
 [ext_resource type="Theme" uid="uid://bfw6ylcttychc" path="res://Themes/Themes/AverageButton.tres" id="3_g2tyk"]
 [ext_resource type="Texture2D" uid="uid://ct1rslwcfpy1y" path="res://Art/ETCIcons/Pokepower.png" id="4_akvy3"]
@@ -12,6 +13,7 @@ offset_right = 421.0
 offset_bottom = 71.0
 mouse_filter = 2
 script = ExtResource("1_eb561")
+body_icon = ExtResource("2_g2tyk")
 ability = ExtResource("2_ts83y")
 
 [node name="AbilityButton" type="Button" parent="."]

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=21 format=3 uid="uid://cgm3sofk1dkq3"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=20 format=3 uid="uid://cgm3sofk1dkq3"]
 
 [ext_resource type="Texture2D" uid="uid://cl7o34ormv6eq" path="res://Art/Cards/6 ex FireRed & LeafGreen/112.jpg" id="1_312hq"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_plo0f"]
@@ -10,7 +10,6 @@
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="6_eyg63"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="6_tbvw2"]
 [ext_resource type="Script" uid="uid://crscwhvugaoxa" path="res://Code/Resource Makers/PokemonSpecific/AttackCostMaker.gd" id="7_84f6i"]
-[ext_resource type="Resource" uid="uid://dtvm1orbhluly" path="res://Resources/Components/Pokemon/Powers/EnergyTrans.tres" id="8_hgbw6"]
 [ext_resource type="Resource" uid="uid://cmyfqgbgoq0lj" path="res://Resources/Components/Pokemon/Abilities/Powers/EnergyTrans.tres" id="9_tbvw2"]
 
 [sub_resource type="Resource" id="Resource_tbvw2"]
@@ -97,7 +96,6 @@ script = ExtResource("5_hal7e")
 HP = 150
 retreat = 3
 pokepower = ExtResource("9_tbvw2")
-power = ExtResource("8_hgbw6")
 attacks = Array[ExtResource("2_plo0f")]([SubResource("Resource_hgbw6"), SubResource("Resource_ycijx")])
 evo_stage = "Stage 2"
 evolves_from = "Ivysaur"
