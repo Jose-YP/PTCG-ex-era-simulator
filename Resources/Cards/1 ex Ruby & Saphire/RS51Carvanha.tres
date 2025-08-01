@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="6_ua6fm"]
 [ext_resource type="Script" uid="uid://scca13hg4k1l" path="res://Code/Resource Makers/EffectSpecific/DmgManipMaker.gd" id="7_s5htt"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="8_gbbiv"]
-[ext_resource type="Resource" uid="uid://bessnawi8b2ct" path="res://Resources/Components/Occurance/AttackedByOpponent.tres" id="9_nu7sk"]
+[ext_resource type="Resource" uid="uid://bessnawi8b2ct" path="res://Resources/Components/Occurances/AttackedByOpponent.tres" id="9_nu7sk"]
 [ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="10_ih051"]
 
 [sub_resource type="Resource" id="Resource_0ul3b"]
@@ -57,15 +57,15 @@ metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 [sub_resource type="Resource" id="Resource_gbbiv"]
 script = ExtResource("6_ua6fm")
 HP = 40
-retreat = 0
+retreat = 1
 pokebody = SubResource("Resource_e8q37")
 attacks = Array[ExtResource("2_88kre")]([SubResource("Resource_0ul3b")])
 evo_stage = "Basic"
 evolves_from = ""
 considered = 1
 owner = 0
-type = 1
-weak = 0
+type = 4
+weak = 8
 resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 

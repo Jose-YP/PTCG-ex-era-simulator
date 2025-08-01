@@ -6,8 +6,8 @@ class_name PokeSwap
 @export var force_reversable: bool = false
 ##If this is true the swapped in slot will be treated as the new target
 @export var record_target: bool = false
-##Does the target choose which active mon to switch out?
-##If not it's target
+##Does the source choose which active mon to switch out?
+##If not it's the affected side
 @export var choose_active: bool = false
 ##Who switches according to who
 @export var chosing: Consts.SIDES = Consts.SIDES.DEFENDING

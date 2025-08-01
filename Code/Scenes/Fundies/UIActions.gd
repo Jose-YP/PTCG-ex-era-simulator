@@ -114,14 +114,18 @@ func reset_ui():
 	choosing = false
 	can_reverse = false
 	chosen.emit()
+	await choice_ready
 
 #endregion
 #--------------------------------------
 
 func play_ability_activate(slot: PokeSlot, ability: Ability):
-	var animation_tween: Tween = get_tree().create_tween().set_ease(Tween.EASE_OUT).set_parallel(true)
-	var base_pos: Vector2 = slot.ui_slot.global_position + Vector2(0,64)
+	var animation_tween: Tween = get_tree().create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_OUT).set_parallel(true)
+	var base_pos: Vector2 = slot.ui_slot.global_position
 	%AbilityName.clear()
+	%AbilityName.visible_ratio = 0
+	%AbilityActivate.position = base_pos + ability_ani_offset * 2
+	%AbilityActivate.modulate = Color.TRANSPARENT
 	
 	if ability.category == "Body":
 		%AbilityTab.current_tab = 0
@@ -131,19 +135,21 @@ func play_ability_activate(slot: PokeSlot, ability: Ability):
 		%AbilityName.push_color(Color(0.895, 0.583, 0.625))
 	
 	%AbilityName.append_text(str(slot.get_card_name(), "'s\n", ability.name))
-	%AbilityName.visible_ratio = 0
-	%AbilityActivate.position = base_pos - ability_ani_offset * 2
-	%AbilityActivate.modulate = Color.TRANSPARENT
 	%AbilityActivate.show()
 	
-	slot.ui_slot.ability_occured(slot.get_pokedata().pokebody == ability, ability_ani_time)
+	animation_tween.tween_property(%AbilityName, "visible_ratio", 1.0, ability_ani_time * 1/4)
 	animation_tween.tween_property($ColorRect, "modulate", Color.WHITE, ability_ani_time * 3/4)
 	animation_tween.tween_property(%AbilityActivate, "modulate", Color.WHITE, ability_ani_time * 3/4)
 	animation_tween.tween_property(%AbilityActivate, "position", base_pos, ability_ani_time * 3/4)
-	animation_tween.tween_property(%AbilityName, "visible_ratio", 1.0, ability_ani_time * 3/4)
+	slot.ui_slot.ability_occured(slot.get_pokedata().pokebody == ability, ability_ani_time)
 	
-	animation_tween.chain().tween_property(%AbilityActivate, "position", base_pos + ability_ani_offset, ability_ani_time * 1/4)
-	animation_tween.chain().tween_property($ColorRect, "modulate", Color.TRANSPARENT, ability_ani_time * 1/4)
+	await animation_tween.finished
+	
+	animation_tween.stop()
+	animation_tween.set_ease(Tween.EASE_IN)
+	animation_tween.tween_property($ColorRect, "modulate", Color.TRANSPARENT, ability_ani_time/8)
+	animation_tween.tween_property(%AbilityActivate, "position", base_pos - ability_ani_offset, ability_ani_time/4)
+	animation_tween.play()
 	
 	await animation_tween.finished
 	%AbilityActivate.hide()

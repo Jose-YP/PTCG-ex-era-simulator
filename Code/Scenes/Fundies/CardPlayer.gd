@@ -57,13 +57,14 @@ func play_basic_pokemon(card: Base_Card):
 			#Remove the card from hand
 			Globals.fundies.stack_manager.play_card(card, Consts.STACKS.PLAY)
 			return
-	Convert.get_allowed_flags("Basic")
-	start_add_choice("Where will pokemon be benched", card, Convert.get_allowed_flags("Basic"),
-	 func(slot: PokeSlot): return not slot.is_filled(), true)
-	await chosen
 	
 	#Otherwise tell sLot UI actions to prompt the user into placing the bench mon
+	#Convert.get_allowed_flags("Basic")
 	print("Active slots full")
+	start_add_choice("Where will pokemon be benched", card, Convert.get_allowed_flags("Basic"),
+	 func(slot: PokeSlot): return not slot.is_filled() and slot.is_attacker(), true)
+	await chosen
+	
 	card.print_info()
 
 func play_fossil(card: Base_Card):
@@ -320,13 +321,14 @@ func before_direct_attack(attacker: PokeSlot, with: Attack):
 			else:
 				Globals.fundies.record_attack_src_trg(attacker.is_home(), [attacker], [hold_candidate])
 				if pass_prompt != false:
-					direct_attack(attacker, with, [hold_candidate])
+					await direct_attack(attacker, with, [hold_candidate])
 		else:
 			var def_active: Array[PokeSlot] = Globals.full_ui.get_poke_slots(Consts.SIDES.DEFENDING, Consts.SLOTS.ACTIVE)
 			pass_prompt = await check_prompt_reliant(attack_data.prompt)
 			
 			Globals.fundies.record_attack_src_trg(attacker.is_home(), [attacker], def_active)
-			if pass_prompt != false: direct_attack(attacker, with, def_active)
+			if pass_prompt != false:
+				await direct_attack(attacker, with, def_active)
 	
 	elif attack_data.bench_damage:
 		print("This attack does bench damage")
@@ -346,7 +348,7 @@ func direct_attack(attacker: PokeSlot, with: Attack, defenders: Array[PokeSlot])
 	var base_damage = await with.get_damage()
 	
 	for slot in defenders:
-		slot.add_damage(attacker, base_damage)
+		await slot.add_damage(attacker, base_damage)
 
 func bench_attack(attacker: PokeSlot, with: BenchAttk, defenders: Array[PokeSlot]):
 	pass
@@ -404,13 +406,5 @@ func call_retreat_discard(retreater: PokeSlot):
 	await Consts.retreat_swap.switch(Consts.SIDES.ATTACKING, false)
 	retreater.retreat.emit()
 	Globals.fundies.remove_top_source_target()
-#endregion
-#--------------------------------------
-
-#--------------------------------------
-#region DETERMINING EFFECTS
-func scope_effect():
-	pass
-
 #endregion
 #--------------------------------------

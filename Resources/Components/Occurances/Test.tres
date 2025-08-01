@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Occurance" load_steps=4 format=3 uid="uid://bqifjs5h6jfmg"]
 
-[ext_resource type="Resource" uid="uid://dm2i7spst0qpp" path="res://Resources/Components/Effects/Identifiers/AnyCard.tres" id="1_3wirs"]
+[ext_resource type="Resource" uid="uid://c7itelq8jtjc2" path="res://Resources/Components/EnData/Rainbow.tres" id="1_3wirs"]
 [ext_resource type="Script" uid="uid://bics3dumv7avj" path="res://Code/Resource Makers/GeneralUse/OccuranceMaker.gd" id="1_7c75d"]
 [ext_resource type="Resource" uid="uid://bns8h72u2hxqo" path="res://Resources/Components/Effects/Asks/General/AnyMon.tres" id="1_igxmo"]
 
@@ -8,5 +8,5 @@
 script = ExtResource("1_7c75d")
 from_ask = ExtResource("1_igxmo")
 signal = "attatch_en_signal"
-card_type = ExtResource("1_3wirs")
+energy_type = ExtResource("1_3wirs")
 metadata/_custom_type_script = "uid://bics3dumv7avj"

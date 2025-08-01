@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bics3dumv7avj" path="res://Code/Resource Makers/GeneralUse/OccuranceMaker.gd" id="2_aafkg"]
 
 [resource]
+resource_local_to_scene = true
 script = ExtResource("2_aafkg")
 from_ask = ExtResource("1_jik47")
 signal = "played"

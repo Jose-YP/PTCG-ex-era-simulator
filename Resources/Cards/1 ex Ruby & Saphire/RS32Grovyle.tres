@@ -45,6 +45,7 @@ script = ExtResource("10_leihw")
 from_ask = ExtResource("9_3pkas")
 signal = "attatch_en_signal"
 card_type = SubResource("Resource_2qvfq")
+energy_type = ExtResource("6_8tbfc")
 metadata/_custom_type_script = "uid://bics3dumv7avj"
 
 [sub_resource type="Resource" id="Resource_lxr0i"]

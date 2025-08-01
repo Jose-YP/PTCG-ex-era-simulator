@@ -77,9 +77,9 @@ func print_data():
 	if defender_properties & 4 != 0: print_rich("Ignore resistance")
 	if defender_properties & 8 != 0: print_rich("Ignore Applied effects")
 	
-	if condition & 1 != 0: print_rich("Can use when Asleep")
-	if condition & 2 != 0: print_rich("Can use when Paralyzed")
-	if condition & 4 != 0: print_rich("Can use when Confused")
+	if condition & 2 != 0: print_rich("Can use when Asleep")
+	if condition & 4 != 0: print_rich("Can use when Paralyzed")
+	if condition & 8 != 0: print_rich("Can use when Confused")
 	
 	var contains: String = ""
 	if fail_effect:

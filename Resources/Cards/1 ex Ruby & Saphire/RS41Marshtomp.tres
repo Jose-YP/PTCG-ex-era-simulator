@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=19 format=3 uid="uid://xe7261xpp7ne"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=14 format=3 uid="uid://xe7261xpp7ne"]
 
 [ext_resource type="Texture2D" uid="uid://crlqxi6rgaygu" path="res://Art/Cards/1 ex Ruby & Saphire/41.jpg" id="1_q03ri"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_7tnrc"]
@@ -7,10 +7,7 @@
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="4_jub7c"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_jub7c"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="6_8f4wk"]
-[ext_resource type="Resource" uid="uid://bufxq7qfe3kv2" path="res://Resources/Components/EnData/Water.tres" id="7_sfrmo"]
-[ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="8_u87it"]
-[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="9_2pilj"]
-[ext_resource type="Script" uid="uid://bics3dumv7avj" path="res://Code/Resource Makers/GeneralUse/OccuranceMaker.gd" id="10_y2kbp"]
+[ext_resource type="Resource" uid="uid://uv5l54w5bpfr" path="res://Resources/Components/Occurances/AttatchWater.tres" id="6_bgt0y"]
 [ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="11_o7hfo"]
 
 [sub_resource type="Resource" id="Resource_8f4wk"]
@@ -36,32 +33,6 @@ attack_cost = ExtResource("3_bgt0y")
 attack_data = SubResource("Resource_8f4wk")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
-[sub_resource type="Resource" id="Resource_m2npy"]
-script = ExtResource("8_u87it")
-description = "Water Energy"
-must_be_different = false
-broad_class = 4
-exactly = false
-name_array = Array[String]([])
-type = 0
-evolves_from = false
-rare_candy = false
-inclusive_class = true
-poke_class = 0
-owner = 0
-stage = 0
-trainer_classes = 0
-energy_class = 3
-energy_provides = ExtResource("7_sfrmo")
-metadata/_custom_type_script = "uid://uplawvwcwl8y"
-
-[sub_resource type="Resource" id="Resource_y730m"]
-script = ExtResource("10_y2kbp")
-from_ask = ExtResource("9_2pilj")
-signal = "attatch_en_signal"
-card_type = SubResource("Resource_m2npy")
-metadata/_custom_type_script = "uid://bics3dumv7avj"
-
 [sub_resource type="Resource" id="Resource_xrbpf"]
 script = ExtResource("11_o7hfo")
 category = "Body"
@@ -71,7 +42,7 @@ description = "When you attach a {Water} Energy card from your hand to [name], r
 affected_by_condition = false
 active = false
 how_often = "Once per Mon"
-occurance = SubResource("Resource_y730m")
+occurance = ExtResource("6_bgt0y")
 effect = ExtResource("3_jkfog")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 

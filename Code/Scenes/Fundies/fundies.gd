@@ -194,6 +194,12 @@ func record_single_src_trg(slot: PokeSlot):
 	
 	record_source_target(is_home, home_trg, away_trg)
 
+##This function will record a src_trg stack with a new source item that equals the caller's side
+func record_prev_src_trg_from_self(slot: PokeSlot):
+	source_stack.append(slot.is_home())
+	home_targets.append(home_targets[-1])
+	away_targets.append(away_targets[-1])
+
 func remove_top_source_target():
 	source_stack.pop_back()
 	home_targets.pop_back()

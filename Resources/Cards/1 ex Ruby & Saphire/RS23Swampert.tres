@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=21 format=3 uid="uid://cppmiu7in05y6"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=16 format=3 uid="uid://cppmiu7in05y6"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_ecphi"]
 [ext_resource type="Texture2D" uid="uid://cnw6bdjck41qb" path="res://Art/Cards/1 ex Ruby & Saphire/23.jpg" id="1_gvnyk"]
@@ -9,10 +9,7 @@
 [ext_resource type="Resource" uid="uid://dkvbrahlcnjmi" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/W1C2.tres" id="6_t4i2e"]
 [ext_resource type="Resource" uid="uid://cj4j56m7hrxpe" path="res://Resources/Components/Pokemon/Attacks/AttackData/50Dmg.tres" id="7_c8si6"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="7_gq5fo"]
-[ext_resource type="Resource" uid="uid://bufxq7qfe3kv2" path="res://Resources/Components/EnData/Water.tres" id="9_c8si6"]
-[ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="10_p27p5"]
-[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="11_7l16b"]
-[ext_resource type="Script" uid="uid://bics3dumv7avj" path="res://Code/Resource Makers/GeneralUse/OccuranceMaker.gd" id="12_8qkd3"]
+[ext_resource type="Resource" uid="uid://uv5l54w5bpfr" path="res://Resources/Components/Occurances/AttatchWater.tres" id="8_f5wi8"]
 [ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="13_a2psr"]
 
 [sub_resource type="Resource" id="Resource_p27p5"]
@@ -30,41 +27,15 @@ order = Array[int]([])
 dmgManip = ExtResource("4_hfd77")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
-[sub_resource type="Resource" id="Resource_8e33u"]
-script = ExtResource("10_p27p5")
-description = ""
-must_be_different = false
-broad_class = 4
-exactly = false
-name_array = Array[String]([])
-type = 0
-evolves_from = false
-rare_candy = false
-inclusive_class = true
-poke_class = 0
-owner = 0
-stage = 0
-trainer_classes = 0
-energy_class = 3
-energy_provides = ExtResource("9_c8si6")
-metadata/_custom_type_script = "uid://uplawvwcwl8y"
-
-[sub_resource type="Resource" id="Resource_awsmk"]
-script = ExtResource("12_8qkd3")
-from_ask = ExtResource("11_7l16b")
-signal = "attatch_en_signal"
-card_type = SubResource("Resource_8e33u")
-metadata/_custom_type_script = "uid://bics3dumv7avj"
-
 [sub_resource type="Resource" id="Resource_ebip0"]
 script = ExtResource("13_a2psr")
 category = "Body"
 name = "Natural Remedy"
 description = "Once during your turn (before your attack), when you attach a {Water} Energy card from your hand to [name], remove 1 damage counter from [name]."
-affected_by_condition = null
-active = null
+affected_by_condition = true
+active = false
 how_often = "Once per Mon"
-occurance = SubResource("Resource_awsmk")
+occurance = ExtResource("8_f5wi8")
 effect = SubResource("Resource_7l16b")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 

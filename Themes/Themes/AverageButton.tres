@@ -10,12 +10,12 @@
 [ext_resource type="FontFile" uid="uid://cnijxelwvfmy8" path="res://Themes/Fonts/AdobeClean-It.ttf" id="6_i36k3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i36k3"]
-bg_color = Color(0.109804, 0.247059, 0.231373, 1)
+bg_color = Color(0, 0.145098, 0.0431373, 1)
 border_width_left = 1
 border_width_top = 2
 border_width_right = 1
 border_width_bottom = 2
-border_color = Color(0, 0.145098, 0.0431373, 1)
+border_color = Color(9.02452e-07, 0.413035, 0.174546, 1)
 border_blend = true
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gux6n"]
@@ -50,9 +50,9 @@ border_blend = true
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_roxb8"]
 bg_color = Color(0.109804, 0.247059, 0.231373, 1)
-border_width_left = 1
+border_width_left = 2
 border_width_top = 2
-border_width_right = 1
+border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0, 0.145098, 0.0431373, 1)
 border_blend = true

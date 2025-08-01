@@ -58,8 +58,8 @@ signal attatched_tm(card: Base_Card)
 signal attatched_tool(card: Base_Card)
 signal evolved(slot: PokeSlot)
 signal evolving()
-signal attatch_en_signal(card: Base_Card)
-signal discard_en_signal(card: Base_Card)
+signal attatch_en_signal(card: EnData)
+signal discard_en_signal(card: EnData)
 signal played(slot: Consts.SLOTS)
 
 signal condition_applied(condition: Condition)
@@ -95,7 +95,9 @@ func pokemon_checkup() -> void:
 	
 	refresh()
 	
+	Globals.fundies.record_single_src_trg(self)
 	await ability_emit(checked_up)
+	Globals.fundies.remove_top_source_target()
 
 func setup_abilities():
 	Globals.fundies.record_single_src_trg(self)
@@ -104,7 +106,6 @@ func setup_abilities():
 	if get_pokedata().pokepower:
 		get_pokedata().pokepower.prep_ability(self)
 	Globals.fundies.remove_top_source_target()
-
 
 func disconnect_abilities():
 	if get_pokedata().pokebody:
@@ -116,7 +117,6 @@ func check_power_body():
 	var pokedata: Pokemon = get_pokedata()
 	Globals.fundies.record_single_src_trg(self)
 	#Ability
-	print("Check ", current_card.name, "'s power/body")
 	if pokedata.pokebody:
 		if pokedata.pokebody.passive:
 			body_activated = pokedata.pokebody.activate_passive()
@@ -145,13 +145,14 @@ func use_ability(ability: Ability):
 
 func ability_emit(sig: Signal, param: Variant = null):
 	print("Does ", get_card_name(), " have connections in ", sig, "? ", sig.has_connections())
-	
+	#Globals.fundies.print_src_trg()
 	if sig.has_connections():
-		Globals.fundies.record_single_src_trg(self)
+		
+		Globals.fundies.record_prev_src_trg_from_self(self)
+		Globals.fundies.print_src_trg()
 		sig.emit(param)
 		await SignalBus.ability_checked
 		Globals.fundies.remove_top_source_target()
-		
 		refresh()
 
 func occurance_account_for():
@@ -175,7 +176,7 @@ func is_in_slot(desired_side: Consts.SIDES, desired_slot: Consts.SLOTS) -> bool:
 	var side_bool: bool = false
 	var slot_bool: bool = false
 	
-	if not is_filled(): return false
+	#if not is_filled(): return false
 	
 	match desired_side:
 		#var fund: Fundies = Globals.fundies
@@ -311,7 +312,9 @@ func set_card(card: Base_Card) -> void:
 	current_card = card
 	ui_slot.make_allowed(true)
 	
+	Globals.fundies.record_single_src_trg(self)
 	await ability_emit(played, get_slot_pos())
+	Globals.fundies.remove_top_source_target()
 	refresh_current_card()
 
 #General use function, use specific ones if possible
@@ -389,16 +392,21 @@ func add_energy(energy_card: Base_Card):
 	register_energy_timer(energy_card)
 	refresh()
 	
-	await ability_emit(attatch_en_signal, energy_card)
+	Globals.fundies.record_single_src_trg(self)
+	await ability_emit(attatch_en_signal, energy_card.energy_properties.get_current_provide())
+	Globals.fundies.remove_top_source_target()
 
 func remove_energy(removing: Base_Card):
+	var provide: EnData = removing.energy_properties.get_current_provide()
 	for card in energy_cards:
 		if card.same_card(removing):
 			energy_cards.erase(card)
 			refresh()
 			return
 	
-	await ability_emit(discard_en_signal, removing)
+	Globals.fundies.record_single_src_trg(self)
+	await ability_emit(discard_en_signal, provide)
+	Globals.fundies.remove_top_source_target()
 	printerr("Couldn't find ", removing.name, " in array ", energy_cards)
 
 func register_energy_timer(card: Base_Card):
@@ -494,6 +502,7 @@ func get_energy_excess(enData_filter: EnData = null) -> int:
 #--------------------------------------
 #region OTHER ATTATCHMENTS
 func evolve_card(evolution: Base_Card) -> void:
+	Globals.fundies.record_single_src_trg(self)
 	await ability_emit(evolving)
 	disconnect_abilities()
 	
@@ -504,6 +513,7 @@ func evolve_card(evolution: Base_Card) -> void:
 	
 	alleviate_all()
 	await ability_emit(evolved, self)
+	Globals.fundies.remove_top_source_target()
 
 func devolve_card() -> Base_Card:
 	var old_card: Base_Card = current_card
@@ -522,7 +532,9 @@ func attatch_tool(new_tool: Base_Card) -> void:
 		push_error(current_card.name, " already has tool attatched")
 	refresh()
 	
+	Globals.fundies.record_single_src_trg(self)
 	await ability_emit(attatched_tool, new_tool)
+	Globals.fundies.remove_top_source_target()
 
 func remove_tool() -> void:
 	tool_card = null
@@ -533,7 +545,9 @@ func attatch_tm(new_tm: Base_Card) -> void:
 	print("TMS: ",tm_cards)
 	refresh()
 	
+	Globals.fundies.record_single_src_trg(self)
 	await ability_emit(attatched_tm, new_tm)
+	Globals.fundies.remove_top_source_target()
 
 func remove_tms() -> void:
 	tm_cards.clear()
@@ -647,6 +661,8 @@ func refresh() -> void:
 	#Change slot's card display
 	ui_slot.name_section.clear()
 	ui_slot.max_hp.clear()
+	#recognize position of slot
+	ui_slot.connected_slot = self
 	
 	if current_card:
 		ui_slot.display_image(current_card)
@@ -677,9 +693,6 @@ func refresh() -> void:
 	else:
 		ui_slot.display_image(null)
 		ui_slot.display_types([])
-	
-	#recognize position of slot
-	ui_slot.connected_slot = self
 
 #endregion
 #--------------------------------------

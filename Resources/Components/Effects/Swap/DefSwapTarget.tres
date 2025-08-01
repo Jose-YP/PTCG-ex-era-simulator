@@ -4,6 +4,8 @@
 
 [resource]
 script = ExtResource("1_wx5td")
+force_reversable = false
+record_target = false
 choose_active = false
 chosing = 2
 affected = 2

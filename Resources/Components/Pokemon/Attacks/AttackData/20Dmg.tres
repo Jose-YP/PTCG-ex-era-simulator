@@ -6,11 +6,13 @@
 script = ExtResource("1_etwi2")
 prompt_reliant = false
 initial_main_DMG = 20
+defender_properties = 0
+condition = 1
+replace_num = false
 conditional_self_dmg = false
 self_damage = 0
+mod_prompt = false
 modifier = 0
 modifier_num = 0
 both_active = false
-defender_properties = 0
-condition = 1
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"

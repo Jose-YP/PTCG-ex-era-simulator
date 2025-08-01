@@ -10,7 +10,9 @@ var slot_instance = pokeSlot.new()
 var internal_data = { "signal": "checked_up",
  "from_ask" : load("res://Resources/Components/Effects/Asks/General/AnyMon.tres") as SlotAsk,
  "must_be_ask": load("res://Resources/Components/Effects/Asks/General/AnyMon.tres") as SlotAsk,
- "card_type" : load("res://Resources/Components/Effects/Identifiers/AnyCard.tres") as Identifier}
+ "card_type" : load("res://Resources/Components/Effects/Identifiers/AnyCard.tres") as Identifier,
+ "energy_type": load("res://Resources/Components/EnData/Rainbow.tres") as EnData,
+ "condition" : load("res://Resources/Components/Effects/Conditions/EverythingHurts.tres") as Condition}
 
 #--------------------------------------
 func _get_property_list() -> Array[Dictionary]:
@@ -41,11 +43,18 @@ func _get_property_list() -> Array[Dictionary]:
 	})
 	
 	if _get("signal") == "attatch_en_signal" or _get("signal") == "discard_en_signal":
+		#props.append({
+			#"name" : "card_type",
+			#"type" : TYPE_OBJECT,
+			#"hint" : PROPERTY_HINT_RESOURCE_TYPE,
+			#"hint_string" : "Identifier",
+			#"usage" : PROPERTY_USAGE_DEFAULT
+		#})
 		props.append({
-			"name" : "card_type",
+			"name" : "energy_type",
 			"type" : TYPE_OBJECT,
 			"hint" : PROPERTY_HINT_RESOURCE_TYPE,
-			"hint_string" : "Identifier",
+			"hint_string" : "EnData",
 			"usage" : PROPERTY_USAGE_DEFAULT
 		})
 	
@@ -58,6 +67,14 @@ func _get_property_list() -> Array[Dictionary]:
 			"usage" : PROPERTY_USAGE_DEFAULT
 		})
 	
+	if _get("signal") == "condition_applied":
+		props.append({
+			"name" : "condition",
+			"type" : TYPE_OBJECT,
+			"hint" : PROPERTY_HINT_RESOURCE_TYPE,
+			"hint_string" : "Condition",
+			"usage" : PROPERTY_USAGE_DEFAULT
+		})
 	return props
 #--------------------------------------
 
@@ -69,12 +86,14 @@ func _get(property):
 		"signal": return internal_data["signal"]
 		"must_be_ask": return internal_data["must_be_ask"] as SlotAsk
 		"card_type": return internal_data["card_type"] as Identifier
-	
+		"energy_type": return internal_data["energy_type"] as EnData
+		"condition": return internal_data["condition"] as Condition
 	return null
 
 func _property_can_revert(property: StringName):
 	if (property == "from_ask" or property == "signal"
-	or property == "must_be_ask" or property == "card_type"):
+	or property == "must_be_ask" or property == "card_type"
+	or property == "energy_type" or property == "condition"):
 		return true
 	return false
 
@@ -84,6 +103,8 @@ func _property_get_revert(property: StringName) -> Variant:
 		"from_ask": return load("res://Resources/Components/Effects/Asks/General/AnyMon.tres") as SlotAsk
 		"must_be_ask": return load("res://Resources/Components/Effects/Asks/General/AnyMon.tres") as SlotAsk
 		"card_type": return load("res://Resources/Components/Effects/Identifiers/AnyCard.tres") as Identifier
+		"condition": return load("res://Resources/Components/Effects/Conditions/EverythingHurts.tres") as Condition
+		"energy_type": return load("res://Resources/Components/EnData/Rainbow.tres") as EnData
 	return null
 #endregion
 #--------------------------------------
@@ -105,6 +126,12 @@ func _set(property, value):
 			return true
 		"card_type":
 			internal_data["card_type"] = value
+			return true
+		"energy_type":
+			internal_data["energy_type"] = value
+			return true
+		"condition":
+			internal_data["condition"] = value
 			return true
 	return false
 #--------------------------------------
@@ -138,8 +165,8 @@ func should_occur(param: Variant = null):
 		if _get("must_be_ask").check_ask(param):
 			occur.emit()
 			return
-	elif param is Base_Card:
-		if _get("card_type").identifier_bool(param):
+	elif param is EnData:
+		if _get("energy_type").same_type(param):
 			occur.emit()
 			return
 	else:
