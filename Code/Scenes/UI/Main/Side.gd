@@ -36,13 +36,13 @@ func print_status():
 	
 	if non_mon.current_supporter:
 		support = str("[",non_mon.current_supporter,"]")
-	else: support = "[]"
+	else: support = "SUPPORT: []"
 	
 	if home:
 		status = str("HOME STATUS
 		",line,"
 		", stack_status,"
-		", active_mons, support, "
+		", active_mons, "\t\t", support, "
 		", benched_mons, "
 		", line)
 	else:
@@ -50,7 +50,7 @@ func print_status():
 		",line,"
 		", stack_status,"
 		", benched_mons, "
-		", support, active_mons,"
+		", support,"\t\t", active_mons,"
 		", line)
 	
 	print(status)

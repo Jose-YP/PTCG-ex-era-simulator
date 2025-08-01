@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://c3lvjf2086efq" path="res://Code/Scenes/UI/List/header.gd" id="1_nss2a"]
 [ext_resource type="PackedScene" uid="uid://cmmds4boaksl7" path="res://Scenes/UI/UIComponents/movable.tscn" id="2_nss2a"]
 [ext_resource type="PackedScene" uid="uid://dmhjt2wuanymf" path="res://Scenes/UI/UIComponents/minimize_button.tscn" id="4_h08pk"]
-[ext_resource type="Theme" uid="uid://bgn3jjlbvn1xq" path="res://Themes/Themes/PowerButton.tres" id="5_i38dm"]
+[ext_resource type="Theme" uid="uid://bfw6ylcttychc" path="res://Themes/Themes/AverageButton.tres" id="5_h08pk"]
 [ext_resource type="Script" uid="uid://cqy27ta3ov66b" path="res://Code/Scenes/UI/List/close_button.gd" id="6_jxl0u"]
 
 [node name="Header" type="HBoxContainer" node_paths=PackedStringArray("based_on")]
@@ -41,7 +41,8 @@ unique_name_in_owner = true
 visible = false
 layout_mode = 2
 size_flags_horizontal = 3
-theme = ExtResource("5_i38dm")
+theme = ExtResource("5_h08pk")
+theme_type_variation = &"PowerButton"
 text = "X"
 script = ExtResource("6_jxl0u")
 metadata/_custom_type_script = "uid://cqy27ta3ov66b"

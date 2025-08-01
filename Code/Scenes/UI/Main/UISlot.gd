@@ -90,6 +90,9 @@ func display_condition():
 func check_ability_activation():
 	%ArtButton.ability_show(connected_slot)
 
+func ability_occured(is_body: bool):
+	%ArtButton.ability_occur(is_body)
+
 func switch_shine(value: bool):
 	%ArtButton.material.set_shader_parameter("shine_bool", value)
 

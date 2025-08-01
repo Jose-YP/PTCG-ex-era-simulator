@@ -7,6 +7,7 @@ class_name SlotUIActions
 @export var preload_debug: bool = false
 @export var cancel_txt: String = "Esc to go back"
 @export var no_return_txt: String = "No going back"
+@export var ability_ani_offset: Vector2
 
 signal chosen
 signal choice_ready
@@ -60,6 +61,7 @@ func _input(event: InputEvent) -> void:
 
 func get_choice(instruction: String):
 	color_tween(Color.WHITE)
+	%AskInstructions.show()
 	%Instructions.clear()
 	%Instructions.append_text(str("[center]",instruction))
 	%CancelText.clear()
@@ -96,7 +98,7 @@ func color_tween(destination: Color):
 
 func reset_ui():
 	color_tween(Color.TRANSPARENT)
-	
+	%AskInstructions.hide()
 	#Check every previously allowed slot
 	#Reset them to look and display like the rest
 	for ui_slot in allowed_slots:
@@ -114,3 +116,30 @@ func reset_ui():
 
 #endregion
 #--------------------------------------
+
+func play_ability_activate(slot: PokeSlot, ability: Ability):
+	var animation_tween: Tween = get_tree().create_tween().set_ease(Tween.EASE_OUT).set_parallel(true)
+	var base_pos: Vector2 = slot.ui_slot.global_position + Vector2(0,64)
+	%AbilityName.clear()
+	
+	if ability.category == "Body":
+		%AbilityTab.current_tab = 0
+		%AbilityName.push_color(Color(0.639, 0.875, 0.447))
+	else:
+		%AbilityTab.current_tab = 1
+		%AbilityName.push_color(Color(0.895, 0.583, 0.625))
+	
+	%AbilityName.append_text(ability.name)
+	%AbilityName.visible_ratio = 0
+	%AbilityActivate.position = base_pos - ability_ani_offset
+	%AbilityActivate.show()
+	
+	animation_tween.tween_property($ColorRect, "modulate", Color.WHITE, .25)
+	animation_tween.tween_property(%AbilityActivate, "position", base_pos, .75)
+	animation_tween.tween_property(%AbilityName, "visible_ratio", 1.0, .75)
+	
+	animation_tween.chain().tween_property(%AbilityActivate, "position", base_pos + ability_ani_offset, .25)
+	animation_tween.chain().tween_property($ColorRect, "modulate", Color.TRANSPARENT, .25)
+	
+	await animation_tween.finished
+	%AbilityActivate.hide()

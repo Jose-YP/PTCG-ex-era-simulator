@@ -1,11 +1,10 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=15 format=3 uid="uid://e6y35wd23gkh"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=14 format=3 uid="uid://e6y35wd23gkh"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_1gsj4"]
 [ext_resource type="Texture2D" uid="uid://cc7b4dc2yji7w" path="res://Art/Cards/8 ex Deoxys/17.jpg" id="1_363i5"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="3_750iv"]
 [ext_resource type="Resource" uid="uid://cqnppbwtvby4u" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/P1C2.tres" id="3_w3jlf"]
 [ext_resource type="Resource" uid="uid://cy8opcq82ffqe" path="res://Resources/Components/Counters/Indv/Slots/OtherAllEnergyNum.tres" id="4_nrbw8"]
-[ext_resource type="Resource" uid="uid://6qr7q3qdfbsf" path="res://Resources/Components/Pokemon/Powers/FormChangeDeoxys.tres" id="4_w0n5n"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_mujcc"]
 [ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="5_q1esd"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="6_tehvb"]
@@ -17,6 +16,7 @@ comparision_type = "Return"
 first_comparison = ExtResource("4_nrbw8")
 compare_to = "None"
 second_constant = 0
+operate_w_constant = "None"
 metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
 [sub_resource type="Resource" id="Resource_p77gp"]
@@ -47,7 +47,6 @@ script = ExtResource("5_mujcc")
 HP = 70
 retreat = 1
 pokepower = ExtResource("7_nrbw8")
-power = ExtResource("4_w0n5n")
 attacks = Array[ExtResource("3_750iv")]([SubResource("Resource_21b2l")])
 evo_stage = "Basic"
 evolves_from = ""

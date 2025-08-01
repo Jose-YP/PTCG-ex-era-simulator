@@ -1,8 +1,7 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=16 format=3 uid="uid://m4swjbtpd58w"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=15 format=3 uid="uid://m4swjbtpd58w"]
 
 [ext_resource type="Texture2D" uid="uid://cyd63koguem6a" path="res://Art/Cards/8 ex Deoxys/18.jpg" id="1_0bgjh"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_c6rfu"]
-[ext_resource type="Resource" uid="uid://6qr7q3qdfbsf" path="res://Resources/Components/Pokemon/Powers/FormChangeDeoxys.tres" id="2_g2p84"]
 [ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/BuffMaker.gd" id="2_ousds"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_lvm7k"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="3_rawb0"]
@@ -63,7 +62,6 @@ script = ExtResource("3_tnm6h")
 HP = 70
 retreat = 1
 pokepower = ExtResource("7_rddwv")
-power = ExtResource("2_g2p84")
 attacks = Array[ExtResource("3_rawb0")]([SubResource("Resource_qyf6n")])
 evo_stage = "Basic"
 evolves_from = ""

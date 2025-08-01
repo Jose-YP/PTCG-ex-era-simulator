@@ -57,4 +57,5 @@ first_comparison = SubResource("Resource_uanf6")
 compare_to = "Second"
 second_constant = 0
 second_counter = SubResource("Resource_4ejse")
+operate_w_constant = "None"
 metadata/_custom_type_script = "uid://b65jx8u5cgcgl"

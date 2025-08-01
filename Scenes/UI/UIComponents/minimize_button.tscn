@@ -11,6 +11,7 @@ offset_top = 1.0
 offset_right = 31.0
 offset_bottom = 28.0
 theme = ExtResource("1_8wy7t")
+theme_type_variation = &"DragButton"
 theme_override_styles/normal = ExtResource("2_v3vjs")
 text = "-"
 script = ExtResource("2_ie3vv")

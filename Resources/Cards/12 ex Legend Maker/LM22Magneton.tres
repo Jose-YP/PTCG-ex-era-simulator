@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=37 format=3 uid="uid://bigbvtmdvobb8"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=31 format=3 uid="uid://bigbvtmdvobb8"]
 
 [ext_resource type="Texture2D" uid="uid://pxoft1wbeuxl" path="res://Art/Cards/12 ex Legend Maker/22.jpg" id="1_653qw"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_13wr1"]
@@ -9,7 +9,6 @@
 [ext_resource type="Script" uid="uid://cimk6l7ytw7xg" path="res://Code/Resource Makers/EffectSpecific/EnMovMaker.gd" id="6_0ya0c"]
 [ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="7_feaad"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="7_kpec7"]
-[ext_resource type="Script" uid="uid://b58015mafcw2v" path="res://Code/Resource Makers/PokemonSpecific/PowerMaker.gd" id="8_ad1mx"]
 [ext_resource type="Resource" uid="uid://wsbn5mutuaqv" path="res://Resources/Components/Effects/Prompts/PromptComparator/PromptSelfHasReact.tres" id="8_v5ngv"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="9_0chr7"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="9_w06bv"]
@@ -64,6 +63,7 @@ comparision_type = "Return"
 first_comparison = SubResource("Resource_i17pt")
 compare_to = "None"
 second_constant = 0
+operate_w_constant = "None"
 metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
 [sub_resource type="Resource" id="Resource_srd2b"]
@@ -134,53 +134,11 @@ occurance = ExtResource("17_snhq1")
 effect = SubResource("Resource_gdo84")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 
-[sub_resource type="Resource" id="Resource_8vait"]
-metadata/__load_path__ = "res://Resources/Components/Effects/Asks/Self.tres"
-
-[sub_resource type="Resource" id="Resource_sxs77"]
-metadata/__load_path__ = "res://Resources/Components/Effects/Asks/FromSource.tres"
-
-[sub_resource type="Resource" id="Resource_ano3c"]
-script = ExtResource("6_0ya0c")
-action = 1
-chooser = 4
-givers = SubResource("Resource_8vait")
-reciever = SubResource("Resource_sxs77")
-to_stack = 2
-stack_direction = 2
-energy_carry_over = false
-action_ammount = -1
-energy_ammount = -1
-energy_move_type = 2
-en_type = ExtResource("3_653qw")
-react = true
-metadata/_custom_type_script = "uid://cimk6l7ytw7xg"
-
-[sub_resource type="Resource" id="Resource_snhq1"]
-script = ExtResource("7_kpec7")
-either_or = false
-order = Array[int]([])
-energy_movement = SubResource("Resource_ano3c")
-metadata/_custom_type_script = "uid://dmulm3x3dj842"
-
-[sub_resource type="Resource" id="Resource_ncrm3"]
-script = ExtResource("8_ad1mx")
-name = "Reactive Recharge"
-description = " If Magneton would be Knocked Out by damage from an opponent's attack, you may move any number of React Energy cards from Magneton to your Pokémon in any way you like."
-affected_by_condition = true
-active = false
-when_condition = "Whenever"
-when_position = 4
-how_often = 0
-effect = SubResource("Resource_snhq1")
-metadata/_custom_type_script = "uid://b58015mafcw2v"
-
 [sub_resource type="Resource" id="Resource_4alir"]
 script = ExtResource("9_0chr7")
 HP = 70
 retreat = 1
 pokepower = SubResource("Resource_7pk77")
-power = SubResource("Resource_ncrm3")
 attacks = Array[ExtResource("2_13wr1")]([SubResource("Resource_w06bv"), SubResource("Resource_ckcqc")])
 evo_stage = "Stage 1"
 evolves_from = "Magnemite"

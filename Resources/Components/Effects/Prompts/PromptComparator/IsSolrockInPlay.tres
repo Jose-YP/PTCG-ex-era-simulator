@@ -48,6 +48,7 @@ comparision_type = "Return"
 first_comparison = SubResource("Resource_belgc")
 compare_to = "None"
 second_constant = 0
+operate_w_constant = "None"
 metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
 [resource]

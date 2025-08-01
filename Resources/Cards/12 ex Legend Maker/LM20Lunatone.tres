@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=28 format=3 uid="uid://cdlsj0xlgu0n"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=25 format=3 uid="uid://cdlsj0xlgu0n"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_c0dsq"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_tp1gn"]
@@ -12,7 +12,6 @@
 [ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="6_tqtg3"]
 [ext_resource type="Script" uid="uid://c0ishgbxk63dg" path="res://Code/Resource Makers/EffectSpecific/DisableMaker.gd" id="7_65xpm"]
 [ext_resource type="Resource" uid="uid://dducvbjohbp4x" path="res://Resources/Components/Pokemon/Attacks/AttackData/10DmgParaIfHeads.tres" id="7_le6pv"]
-[ext_resource type="Script" uid="uid://b2tlqpng7fq25" path="res://Code/Resource Makers/PokemonSpecific/BodyMaker.gd" id="8_oftqn"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="9_iq553"]
 [ext_resource type="Resource" uid="uid://cx7v8cyxlierr" path="res://Resources/Components/Effects/Prompts/PromptComparator/IsSolrockInPlay.tres" id="13_opu8w"]
 [ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="14_le6pv"]
@@ -55,34 +54,6 @@ description = " Flip a coin. If heads, the Defending Pokémon is now Paralyzed. 
 attack_cost = ExtResource("6_opu8w")
 attack_data = ExtResource("7_le6pv")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
-
-[sub_resource type="Resource" id="Resource_qafc1"]
-script = ExtResource("6_tqtg3")
-side_target = 4
-slot_target = 4
-specifically = Array[String](["Solrock"])
-check_ability = false
-contained_abilities = 3
-knocked_out = false
-tool_attatched = false
-comparison_type = 1
-max_hp = -10
-damage_taken = -10
-retreat_cost = -1
-stage = 7
-rare_candy = false
-class_inclusive = true
-pokemon_class = 63
-owner_inclusive = true
-pokemon_owner = 15
-type_inclusive = true
-pokemon_type = 1023
-energy_inclusive = true
-check_cards = true
-energy_attatched = -1
-energy_class = "Any"
-energy_type = ExtResource("6_lujju")
-metadata/_custom_type_script = "uid://mkjynqda7q5g"
 
 [sub_resource type="Resource" id="Resource_05a84"]
 script = ExtResource("6_tqtg3")
@@ -135,18 +106,6 @@ order = Array[int]([])
 disable = SubResource("Resource_5ld0q")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
-[sub_resource type="Resource" id="Resource_gqqt8"]
-script = ExtResource("8_oftqn")
-when_active = false
-name = "Sol Shade"
-description = " As long as you have Solrock in play, each player's {Fire} Pokémon (excluding Pokémon-ex) can't use any Poké-Powers. "
-ask = SubResource("Resource_qafc1")
-affected_by_condition = false
-attatched_energy = 0
-energy_ammount = 1
-effect = SubResource("Resource_wpc3u")
-metadata/_custom_type_script = "uid://b2tlqpng7fq25"
-
 [sub_resource type="Resource" id="Resource_18faj"]
 script = ExtResource("14_le6pv")
 category = null
@@ -164,7 +123,6 @@ script = ExtResource("9_iq553")
 HP = 60
 retreat = 1
 pokebody = SubResource("Resource_18faj")
-body = SubResource("Resource_gqqt8")
 attacks = Array[ExtResource("1_tp1gn")]([SubResource("Resource_0l0mh"), SubResource("Resource_hjkuo")])
 evo_stage = "Basic"
 evolves_from = ""

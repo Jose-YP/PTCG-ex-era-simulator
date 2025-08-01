@@ -177,14 +177,12 @@ func record_attack_src_trg(is_home: bool, atk_trg: Array, def_trg: Array):
 	else:
 		home_targets.append(def_trg)
 		away_targets.append(atk_trg)
-	print_src_trg()
 
 #First record then print out what I can get from this, then rmeove when used up
 func record_source_target(is_home: bool, home_trg: Array, away_trg: Array):
 	source_stack.append(is_home)
 	home_targets.append(home_trg)
 	away_targets.append(away_trg)
-	print_src_trg()
 
 func record_single_src_trg(slot: PokeSlot):
 	var home_trg: Array = []

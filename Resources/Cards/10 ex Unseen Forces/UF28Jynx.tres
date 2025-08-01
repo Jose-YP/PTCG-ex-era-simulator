@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=30 format=3 uid="uid://k4e01k751mpn"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=28 format=3 uid="uid://k4e01k751mpn"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_5sb5e"]
 [ext_resource type="Texture2D" uid="uid://crv3nmkicj6si" path="res://Art/Cards/10 ex Unseen Forces/28.jpg" id="1_lai6i"]
@@ -12,7 +12,6 @@
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="8_87fu4"]
 [ext_resource type="Resource" uid="uid://crhg4u3yu2cso" path="res://Resources/Components/Effects/Asks/General/FromOther.tres" id="9_lai6i"]
 [ext_resource type="Script" uid="uid://scca13hg4k1l" path="res://Code/Resource Makers/EffectSpecific/DmgManipMaker.gd" id="10_y5xf5"]
-[ext_resource type="Script" uid="uid://b2tlqpng7fq25" path="res://Code/Resource Makers/PokemonSpecific/BodyMaker.gd" id="11_0x2n6"]
 [ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/BuffMaker.gd" id="12_0x2n6"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="12_sj7iq"]
 [ext_resource type="Resource" uid="uid://bmtmv17focn2u" path="res://Resources/Components/Effects/Prompts/PromptComparator/PromptSelfEvolved.tres" id="14_kd3wa"]
@@ -127,17 +126,6 @@ order = Array[int]([])
 buff = SubResource("Resource_cmuqy")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
-[sub_resource type="Resource" id="Resource_sijf8"]
-script = ExtResource("11_0x2n6")
-when_active = false
-name = "Stages of Evolution"
-description = "As long as [name] is an Evolved Pokémon, prevent all effects of opponent's attacks, except damage, done to [name], and [name] has no Weakness."
-affected_by_condition = true
-attatched_energy = 0
-energy_ammount = 1
-effect = SubResource("Resource_nbhf5")
-metadata/_custom_type_script = "uid://b2tlqpng7fq25"
-
 [sub_resource type="Resource" id="Resource_c435i"]
 script = ExtResource("15_0ycnm")
 category = "Body"
@@ -155,7 +143,6 @@ script = ExtResource("12_sj7iq")
 HP = 70
 retreat = 1
 pokebody = SubResource("Resource_c435i")
-body = SubResource("Resource_sijf8")
 attacks = Array[ExtResource("2_he504")]([SubResource("Resource_xvftv"), SubResource("Resource_oqscs")])
 evo_stage = "Basic"
 evolves_from = ""

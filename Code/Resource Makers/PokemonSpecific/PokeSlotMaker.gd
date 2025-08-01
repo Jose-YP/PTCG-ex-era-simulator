@@ -100,9 +100,9 @@ func pokemon_checkup() -> void:
 func setup_abilities():
 	Globals.fundies.record_single_src_trg(self)
 	if get_pokedata().pokebody:
-		get_pokedata().pokebody.prep_ability()
+		get_pokedata().pokebody.prep_ability(self)
 	if get_pokedata().pokepower:
-		get_pokedata().pokepower.prep_ability()
+		get_pokedata().pokepower.prep_ability(self)
 	Globals.fundies.remove_top_source_target()
 
 
@@ -149,7 +149,7 @@ func ability_emit(sig: Signal, param: Variant = null):
 	if sig.has_connections():
 		Globals.fundies.record_single_src_trg(self)
 		sig.emit(param)
-		await SignalBus.ability_activated
+		await SignalBus.ability_checked
 		Globals.fundies.remove_top_source_target()
 		
 		refresh()

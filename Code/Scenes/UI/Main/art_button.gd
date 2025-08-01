@@ -74,3 +74,15 @@ func ability_show(slot: PokeSlot):
 		theme_type_variation = ""
 		material.set_shader_parameter("base_color", Color(0.181, 0.121, 0.35))
 		%AnimationPlayer.play("RESET")
+
+func ability_occur(body: bool):
+	%AnimationPlayer.speed_scale = 6.0
+	if body:
+		%AnimationPlayer.play("BodyLoop")
+	else:
+		%AnimationPlayer.play("PowerLoop")
+	
+	await get_tree().create_timer(1).timeout
+	
+	%AnimationPlayer.speed_scale = 1.0
+	%AnimationPlayer.play("RESET")

@@ -38,8 +38,6 @@ class_name PromptAsk
 @export var which_cards: Identifier
 #endregion
 
-
-
 var formal_answer: bool
 
 #region PROMPT CHECKS
@@ -102,6 +100,9 @@ func has_num_input() -> bool:
 
 func return_prompt_answered(result: bool):
 	formal_answer = result
+
+func has_check_prompt() -> bool:
+	return comparator != null
 
 func has_before_prompt() -> bool:
 	return effect != null or choose_location != "None"

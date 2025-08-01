@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=19 format=3 uid="uid://bsk4yge3w701c"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=17 format=3 uid="uid://bsk4yge3w701c"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_qhfrj"]
 [ext_resource type="Texture2D" uid="uid://ds2iwf8genpse" path="res://Art/Cards/7 ex Team Rocket Returns/14.jpg" id="1_qitxc"]
@@ -8,7 +8,6 @@
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_n4tqw"]
 [ext_resource type="Resource" uid="uid://ceo3bpqlglf5o" path="res://Resources/Components/Pokemon/Attacks/AttackData/30Dmg.tres" id="4_nq5u1"]
 [ext_resource type="Resource" uid="uid://c2uvm38pnk5uy" path="res://Resources/Components/Effects/Buff/Immune2DarkName.tres" id="5_kjfcm"]
-[ext_resource type="Script" uid="uid://b2tlqpng7fq25" path="res://Code/Resource Makers/PokemonSpecific/BodyMaker.gd" id="6_nq5u1"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="7_wy6b1"]
 [ext_resource type="Resource" uid="uid://bep36omnenbc8" path="res://Resources/Components/Pokemon/Attacks/AttackData/10Dmg.tres" id="8_wy6b1"]
 [ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="10_kjfcm"]
@@ -36,17 +35,6 @@ order = Array[int]([])
 buff = ExtResource("5_kjfcm")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
-[sub_resource type="Resource" id="Resource_8q024"]
-script = ExtResource("6_nq5u1")
-when_active = false
-name = "Holy Shield"
-description = "Prevent all effects of attacks, including damage, done to Togetic by your opponent's Pokémon that has Dark in its name."
-affected_by_condition = true
-attatched_energy = 0
-energy_ammount = 1
-effect = SubResource("Resource_u1d53")
-metadata/_custom_type_script = "uid://b2tlqpng7fq25"
-
 [sub_resource type="Resource" id="Resource_nq5u1"]
 script = ExtResource("10_kjfcm")
 category = "Body"
@@ -63,7 +51,6 @@ script = ExtResource("7_wy6b1")
 HP = 70
 retreat = 1
 pokebody = SubResource("Resource_nq5u1")
-body = SubResource("Resource_8q024")
 attacks = Array[ExtResource("2_5assg")]([SubResource("Resource_nvprp"), SubResource("Resource_2lbwc")])
 evo_stage = "Stage 1"
 evolves_from = "Togepi"

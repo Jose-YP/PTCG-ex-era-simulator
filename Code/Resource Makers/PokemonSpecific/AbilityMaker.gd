@@ -13,10 +13,11 @@ class_name Ability
 @export var passive: EffectCall
 @export var effect: EffectCall
 
-var allowed: bool
+var attatched_to: PokeSlot
 
 #region INITALIZATION
-func prep_ability():
+func prep_ability(slot: PokeSlot):
+	attatched_to = slot
 	if occurance:
 		occurance.connect_occurance()
 		occurance.occur.connect(activate_ability)
@@ -78,9 +79,21 @@ func activate_passive() -> bool:
 	return false
 
 func activate_ability():
-	if prompt and prompt.has_before_prompt():
-		var went_back: bool = await prompt.before_activating()
-		if went_back: return
+	if prompt:
+		if prompt.has_check_prompt():
+			var result: bool = await prompt.check_prompt()
+			if not result:
+				SignalBus.ability_checked.emit()
+				return
+		
+		if prompt.has_before_prompt():
+			var went_back: bool = await prompt.before_activating()
+			if went_back:
+				SignalBus.ability_checked.emit()
+				return
 	
+	attatched_to.ui_slot.ability_occured(attatched_to.get_pokedata().pokebody == self)
+	await Globals.fundies.ui_actions.play_ability_activate(attatched_to, self)
 	await effect.play_effect()
+	SignalBus.ability_checked.emit()
 	SignalBus.ability_activated.emit()

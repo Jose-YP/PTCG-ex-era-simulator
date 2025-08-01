@@ -18,6 +18,7 @@ signal chosen_slot(showing: PokeSlot)
 signal attack(slot: PokeSlot, attack: Attack)
 signal retreat(slot: PokeSlot)
 signal ability_activated()
+signal ability_checked()
 signal force_disapear()
 signal end_turn()
 #--------------------------------------

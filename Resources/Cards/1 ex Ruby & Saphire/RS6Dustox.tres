@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=19 format=3 uid="uid://bw4sp04ye7jyx"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=17 format=3 uid="uid://bw4sp04ye7jyx"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_wcs6r"]
 [ext_resource type="Texture2D" uid="uid://cs7gj0dy6jykj" path="res://Art/Cards/1 ex Ruby & Saphire/6.jpg" id="1_wqkxb"]
@@ -9,7 +9,6 @@
 [ext_resource type="Resource" uid="uid://b1ebpxwo4lry7" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/G1C2.tres" id="6_anyyy"]
 [ext_resource type="Resource" uid="uid://dx17fn4esx8qm" path="res://Resources/Components/Effects/Buff/Immune2Effect.tres" id="6_tg8f0"]
 [ext_resource type="Resource" uid="uid://cj4j56m7hrxpe" path="res://Resources/Components/Pokemon/Attacks/AttackData/50Dmg.tres" id="7_tg8f0"]
-[ext_resource type="Script" uid="uid://b2tlqpng7fq25" path="res://Code/Resource Makers/PokemonSpecific/BodyMaker.gd" id="7_w0s73"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="8_1sw32"]
 [ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="10_7qmw3"]
 
@@ -36,17 +35,6 @@ order = Array[int]([])
 buff = ExtResource("6_tg8f0")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
-[sub_resource type="Resource" id="Resource_jw3ns"]
-script = ExtResource("7_w0s73")
-when_active = false
-name = "Protective Dust"
-description = "Prevent all effects of attacks, except damage, done to Dustox by the Attacking Pokémon."
-affected_by_condition = true
-attatched_energy = 1
-energy_ammount = 1
-effect = SubResource("Resource_dk53k")
-metadata/_custom_type_script = "uid://b2tlqpng7fq25"
-
 [sub_resource type="Resource" id="Resource_anyyy"]
 script = ExtResource("10_7qmw3")
 category = null
@@ -63,7 +51,6 @@ script = ExtResource("8_1sw32")
 HP = 90
 retreat = 0
 pokebody = SubResource("Resource_anyyy")
-body = SubResource("Resource_jw3ns")
 attacks = Array[ExtResource("2_684l4")]([SubResource("Resource_fuvu7"), SubResource("Resource_w3yai")])
 evo_stage = "Stage 2"
 evolves_from = "Cascoon"
