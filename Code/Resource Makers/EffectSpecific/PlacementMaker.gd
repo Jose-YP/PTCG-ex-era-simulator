@@ -9,7 +9,7 @@ class_name Placement
 @export var top_deck: bool = false
 @export var stack: Consts.STACKS = Consts.STACKS.DECK
 ##What choices does the user have when placing in slots
-@export var slot: Consts.SLOTS = Consts.SLOTS.ALL
+@export var slot_ask: SlotAsk
 
 @export_group("And then")
 #Might not be necessary
@@ -25,28 +25,4 @@ class_name Placement
 @export var evolve: bool = false
 @export var effect_to_mon: EffectCall
 
-#If an action places a card on a slot, determine how that works out
-func determine_action(card: Base_Card):
-	var usage: int = Convert.get_card_flags(card)
-	
-	#For basics
-	if usage && 1 or usage && 256 or usage && 2 and not evolve:
-		pass
-	#If evolution
-	elif usage && 2 and evolve:
-		pass
-	#If stadium
-	elif usage && 16:
-		pass
-	#If Tool
-	elif usage && 32:
-		pass
-	#If TM
-	elif usage && 64:
-		pass
-	#If energy
-	elif usage && 512:
-		pass
-	#For all else
-	else:
-		pass
+signal finished

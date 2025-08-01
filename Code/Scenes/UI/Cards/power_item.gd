@@ -29,7 +29,8 @@ func check_pressable():
 		ability_button.disabled = true
 		return
 	else:
-		ability_button.disabled = not slot.power_ready
+		print(slot.power_ready, slot.power_exhaust)
+		ability_button.disabled = not slot.power_ready or slot.power_exhaust
 
 func check_allowed():
 	if ability.prompt:
@@ -40,4 +41,5 @@ func _on_focus_entered():
 
 func _on_ability_button_pressed() -> void:
 	print("Press!")
+	Globals.remove_card()
 	slot.use_ability(ability)

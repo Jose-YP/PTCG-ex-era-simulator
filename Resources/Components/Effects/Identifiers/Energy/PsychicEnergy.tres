@@ -1,18 +1,22 @@
-[gd_resource type="Resource" script_class="Identifier" load_steps=2 format=3 uid="uid://cbcxks3mto640"]
+[gd_resource type="Resource" script_class="Identifier" load_steps=3 format=3 uid="uid://cbcxks3mto640"]
 
 [ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="1_3s1ue"]
+[ext_resource type="Resource" uid="uid://b0lup3upo6m4f" path="res://Resources/Components/EnData/Psychic.tres" id="1_pn688"]
 
 [resource]
 script = ExtResource("1_3s1ue")
+description = "Psychic Energy"
 must_be_different = false
 broad_class = 4
 exactly = false
-contains = ""
+name_array = Array[String]([])
 type = 16
 evolves_from = false
 rare_candy = false
+inclusive_class = true
 poke_class = null
 owner = 0
 stage = null
 trainer_classes = null
 energy_class = 3
+energy_provides = ExtResource("1_pn688")

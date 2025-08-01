@@ -265,7 +265,7 @@ func placement_handling(tutored_cards: Array[Base_Card], placement: Placement,\
 	
 	#Where are these cards going?
 	else: 
-		Globals.fundies.card_player.manage_tutored(tutored_cards, placement)
+		await Globals.fundies.card_player.manage_tutored(tutored_cards, placement)
 		print()
 	
 	print(placement.reorder_type)
@@ -279,6 +279,8 @@ func placement_handling(tutored_cards: Array[Base_Card], placement: Placement,\
 			var reorder_node = tutor_instantiate_reorder(untutored_cards, placement)
 			await SignalBus.reorder_cards
 			Globals.control_disapear(reorder_node, .1, reorder_node.old_pos)
+	
+	placement.finished.emit()
 
 #region REORDERING
 func tutor_instantiate_reorder(specified_list: Array[Base_Card], placement: Placement):

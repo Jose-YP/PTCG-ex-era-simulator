@@ -35,10 +35,10 @@ func set_up_tutor():
 	for i in range(search.of_this.size()):
 		max_tutor += search.how_many[i]
 		tutor_requiremnts[search.of_this[i]] = []
-	update_status()
+	update_requirements()
 	
-	req_text.clear()
-	req_text.append_text(str("[center]Tutor Number: 0 / ", max_tutor, "\n"))
+	status.clear()
+	status.append_text(str("[center]Tutor Number: 0 / ", max_tutor, "\n"))
 
 #endregion
 #--------------------------------------
@@ -46,28 +46,28 @@ func set_up_tutor():
 func update_tutor():
 	var current_num: int = 0
 	#Check how may cards are added in the tutor
-	update_status()
+	update_requirements()
 	for id in tutor_requiremnts:
 		current_num += tutor_requiremnts[id].size()
 	
-	req_text.clear()
-	req_text.append_text(str("[center]Tutor Number: ", current_num," / ", max_tutor))
+	status.clear()
+	status.append_text(str("[center]Tutor Number: ", current_num," / ", max_tutor))
 
-func update_status():
-	var stat_text: String = ""
+func update_requirements():
+	var requirements: String = ""
 	
 	for i in range(search.of_this.size()):
 		var desc: String = str(search.of_this[i].description,"s") if search.how_many[i] != 1 else search.of_this[i].description
 		var ammount: String = "Inf" if search.how_many[i] == -1 else str(search.how_many[i])
 		var currently: int = tutor_requiremnts[search.of_this[i]].size()
 		
-		if stat_text == "":
-			stat_text = str(stat_text, currently," / ", ammount, " ", desc)
+		if requirements == "":
+			requirements = str(requirements, currently," / ", ammount, " ", desc)
 		else:
-			stat_text = str(stat_text, "\n", currently, " / ", ammount, " ", desc)
+			requirements = str(requirements, "\n", currently, " / ", ammount, " ", desc)
 	
-	status.clear()
-	status.append_text(str("[center]",stat_text))
+	req_text.clear()
+	req_text.append_text(str("[center]",requirements))
 
 #--------------------------------------
 #region CARDS DISPLAYED
@@ -132,7 +132,9 @@ func _on_confirm_pressed() -> void:
 			all_tutored.append(button.card)
 			rest.erase(button.card)
 	
-	print("Moving ", all_tutored, " from ", search.and_then.stack, " to ", search.where)
+	print("Moving ", all_tutored, " from ", Convert.stack_into_string(search.and_then.stack),
+	 " to ", Convert.stack_into_string(search.where))
+	#Sends signal over to StackManager.placement_handling()
 	SignalBus.swap_card_location.emit(all_tutored, search.and_then, search.where, rest)
 	disapear.emit()
 

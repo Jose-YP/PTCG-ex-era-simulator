@@ -72,9 +72,9 @@ func activate_passive() -> bool:
 	return false
 
 func activate_ability():
-	if prompt.has_before_prompt():
+	if prompt and prompt.has_before_prompt():
 		var went_back: bool = await prompt.before_activating()
 		if went_back: return
 	
-	effect.play_effect()
+	await effect.play_effect()
 	SignalBus.ability_activated.emit()

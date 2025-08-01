@@ -127,13 +127,16 @@ func check_power_body():
 	Globals.fundies.remove_top_source_target()
 
 func use_ability(ability: Ability):
-	if get_pokedata().power == ability:
-		if ability.category == "Once Per Mon":
+	if get_pokedata().pokepower == ability:
+		if ability.how_often == "Once per Mon":
 			power_exhaust = true
-		elif ability.category == "Once Per Turn":
+		elif ability.how_often == "Once per Turn":
 			Globals.fundies.used_ability(ability.name)
 	
+	Globals.fundies.record_single_src_trg(self)
 	await ability.activate_ability()
+	Globals.fundies.remove_top_source_target()
+	
 	refresh()
 
 func ability_emit(sig: Signal, param: Variant = null):

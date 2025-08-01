@@ -44,4 +44,6 @@ func play_effect(reversable: bool = false, replace_num: int = -1) -> void:
 		stack_mana.tutor_instantiate_list(search_for, self)
 		await SignalBus.swap_card_location
 	
+	await and_then.finished
+	
 	finished.emit()

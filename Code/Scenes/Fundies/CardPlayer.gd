@@ -20,21 +20,27 @@ func determine_play(card: Base_Card, placement: Placement = null) -> void:
 	var card_type: int = Convert.get_card_flags(card)
 	#Play fossils, basics and evolutions onto the bench
 	if card_type & 1 != 0 or (card_type & 2 != 0 and placement and not placement.evolve):
-		play_basic_pokemon(card)
+		await play_basic_pokemon(card)
 	elif card_type & 2 != 0 and placement and placement.evolve:
-		play_evolution(card, placement)
+		await play_evolution(card, placement)
 	#play stadiums onto the stadium slot
 	elif card_type & 32 != 0 :
-		play_place_stadium(card)
+		await play_place_stadium(card)
 	elif card_type & 256 != 0:
-		play_fossil(card)
+		await play_fossil(card)
 	#play energy onto any pokemon defined by placement
 	elif card_type & 512 != 0:
-		play_energy(card, placement)
+		await play_energy(card, placement)
 	
 	#play trainers
 	else:
-		play_trainer(card)
+		await play_trainer(card)
+	
+	if placement and placement.effect_to_mon:
+		Globals.fundies.print_src_trg()
+		placement.effect_to_mon.play_effect()
+		Globals.fundies.remove_top_source_target()
+	
 
 #--------------------------------------
 #region MANAGING CARD PLAY
@@ -97,27 +103,39 @@ func play_evolution(card: Base_Card, placement: Placement = null):
 	card.print_info()
 #endregion
 #For energy cards
-func play_energy(card: Base_Card, placement:Placement = null):
-	if placement == null:
-		pass
-	else:
-		pass
-	var energy_bool: Callable = func(slot: PokeSlot) -> bool:
-		var result: bool = slot.is_filled() and slot.is_attacker()
-		if card.energy_properties.asks:
-			result = result and card.energy_properties.asks.check_ask(slot)
-		printt(result, slot.get_card_name())
-		return result
+func play_energy(card: Base_Card, placement: Placement = null):
+	var energy_bool: Callable
 	
+	if placement:
+		energy_bool = func(slot: PokeSlot) -> bool:
+			var result: bool = placement.slot_ask.check_ask(slot) and slot.is_attacker()
+			if card.energy_properties.asks:
+				result = result and card.energy_properties.asks.check_ask(slot)
+			
+			printt(result, slot.get_card_name())
+			return result
+	else:
+		energy_bool = func(slot: PokeSlot) -> bool:
+			var result: bool = slot.is_filled() and slot.is_attacker()
+			if card.energy_properties.asks:
+				result = result and card.energy_properties.asks.check_ask(slot)
+			
+			printt(result, slot.get_card_name())
+			return result
 	
 	start_add_choice(str("Attatch ", card.name, " to which Pokemon"), card, 
-	 Convert.get_allowed_flags("Energy"), energy_bool, true)
+	 Convert.get_allowed_flags("Energy"), energy_bool, placement == null)
 	
 	await chosen
+	Globals.fundies.record_single_src_trg(hold_candidate)
 	Globals.fundies.stack_manager.play_card(card, Consts.STACKS.PLAY)
-	Globals.fundies.attatched_energy = true
+	
 	print("Attatch ", card.name)
 	card.print_info()
+	
+	if not placement:
+		Globals.fundies.attatched_energy = true
+		Globals.fundies.remove_top_source_target()
 
 #region TRAINERS
 func play_trainer(card: Base_Card):
@@ -201,7 +219,7 @@ func play_place_stadium(card: Base_Card):
 
 func manage_tutored(tutored_cards: Array[Base_Card], placement: Placement):
 	for card in tutored_cards:
-		determine_play(card, placement)
+		await determine_play(card, placement)
 
 #endregion
 #--------------------------------------
