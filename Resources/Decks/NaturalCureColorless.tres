@@ -1,0 +1,50 @@
+[gd_resource type="Resource" script_class="Deck" load_steps=23 format=3 uid="uid://cqfbtyyxr8sud"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_x1bby"]
+[ext_resource type="Resource" uid="uid://bopcqetuha2jo" path="res://Resources/Cards/1 ex Ruby & Saphire/RS5Delcatty.tres" id="2_my64c"]
+[ext_resource type="Resource" uid="uid://disf1pvnvh7pt" path="res://Resources/Cards/1 ex Ruby & Saphire/RS71Skitty.tres" id="3_gekd8"]
+[ext_resource type="Resource" uid="uid://1ktns5k8q1q5" path="res://Resources/Cards/1 ex Ruby & Saphire/RS44Skitty.tres" id="4_eh888"]
+[ext_resource type="Resource" uid="uid://rx248wf8bnrl" path="res://Resources/Cards/1 ex Ruby & Saphire/RS46Swellow.tres" id="5_7sup3"]
+[ext_resource type="Resource" uid="uid://dc7psiqx30xv0" path="res://Resources/Cards/1 ex Ruby & Saphire/RS72Tailow.tres" id="6_edrrj"]
+[ext_resource type="Resource" uid="uid://b7vajyscyemon" path="res://Resources/Cards/16 ex Power Keepers/PK92Absolex.tres" id="7_awwt0"]
+[ext_resource type="Resource" uid="uid://c3f1stq37lffi" path="res://Resources/Cards/2 ex Sandstorm/SS60Dunsparce.tres" id="8_tg0gm"]
+[ext_resource type="Resource" uid="uid://dipr5ie1kx7v8" path="res://Resources/Cards/1 ex Ruby & Saphire/RS93DarknessEnergy.tres" id="9_4c63o"]
+[ext_resource type="Resource" uid="uid://cvjyyq2lad5k5" path="res://Resources/Cards/1 ex Ruby & Saphire/RS108FireEnergy.tres" id="10_pwfep"]
+[ext_resource type="Resource" uid="uid://cjxwqcnfm20fq" path="res://Resources/Cards/1 ex Ruby & Saphire/RS104GrassEnergy.tres" id="11_oys5i"]
+[ext_resource type="Resource" uid="uid://xe7261xpp7ne" path="res://Resources/Cards/1 ex Ruby & Saphire/RS41Marshtomp.tres" id="12_3pbk4"]
+[ext_resource type="Resource" uid="uid://bsqvv4tq4rqsl" path="res://Resources/Cards/1 ex Ruby & Saphire/RS59Mudkip.tres" id="13_hhri1"]
+[ext_resource type="Resource" uid="uid://c6hkbplnm1lm1" path="res://Resources/Cards/1 ex Ruby & Saphire/RS60Mudkip.tres" id="14_k2adp"]
+[ext_resource type="Resource" uid="uid://jq2ng1vyif34" path="res://Resources/Cards/1 ex Ruby & Saphire/RS28Combusken.tres" id="15_6vq0g"]
+[ext_resource type="Resource" uid="uid://dqknf3vfxe3hp" path="res://Resources/Cards/1 ex Ruby & Saphire/RS73Torchic.tres" id="16_rj8d4"]
+[ext_resource type="Resource" uid="uid://bekwoaj06a44c" path="res://Resources/Cards/1 ex Ruby & Saphire/RS95RainbowEnergy.tres" id="17_etaaq"]
+[ext_resource type="Resource" uid="uid://b0lfj4blf1nv4" path="res://Resources/Cards/3 ex Dragon/DR87MrBriney'sCompassion.tres" id="19_nbv0x"]
+[ext_resource type="Resource" uid="uid://dyqdhaov0ywxk" path="res://Resources/Cards/1 ex Ruby & Saphire/RS92Switch.tres" id="20_ch1xo"]
+[ext_resource type="Resource" uid="uid://dx17bi2e0sqkj" path="res://Resources/Cards/1 ex Ruby & Saphire/RS75Treecko.tres" id="21_x1bby"]
+[ext_resource type="Resource" uid="uid://dno2q4q3waycq" path="res://Resources/Cards/1 ex Ruby & Saphire/RS32Grovyle.tres" id="21_xfu2i"]
+[ext_resource type="Script" uid="uid://e660iomt5e76" path="res://Code/Resource Makers/CardResources/DeckMaker.gd" id="22_nrn6f"]
+
+[resource]
+script = ExtResource("22_nrn6f")
+cards = Dictionary[ExtResource("1_x1bby"), int]({
+ExtResource("21_x1bby"): 3,
+ExtResource("21_xfu2i"): 3,
+ExtResource("20_ch1xo"): 2,
+ExtResource("19_nbv0x"): 2,
+ExtResource("17_etaaq"): 4,
+ExtResource("16_rj8d4"): 3,
+ExtResource("15_6vq0g"): 3,
+ExtResource("14_k2adp"): 1,
+ExtResource("13_hhri1"): 2,
+ExtResource("12_3pbk4"): 3,
+ExtResource("11_oys5i"): 4,
+ExtResource("10_pwfep"): 6,
+ExtResource("9_4c63o"): 2,
+ExtResource("8_tg0gm"): 4,
+ExtResource("7_awwt0"): 4,
+ExtResource("6_edrrj"): 4,
+ExtResource("5_7sup3"): 4,
+ExtResource("4_eh888"): 2,
+ExtResource("3_gekd8"): 1,
+ExtResource("2_my64c"): 3
+})
+metadata/_custom_type_script = "uid://e660iomt5e76"

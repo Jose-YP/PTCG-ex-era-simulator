@@ -37,7 +37,7 @@ metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_anyyy"]
 script = ExtResource("10_7qmw3")
-category = null
+category = "Body"
 name = "Protective Dust"
 description = "Prevent all effects of attacks, except damage, done to [name] by the Attacking Pokémon."
 affected_by_condition = false

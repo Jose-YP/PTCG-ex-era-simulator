@@ -1,0 +1,53 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://wggw0k631uu4"]
+
+[ext_resource type="Texture2D" uid="uid://h1n271yfpx3i" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/45.jpg" id="1_2f4j4"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_33a2w"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_wspbw"]
+[ext_resource type="Resource" uid="uid://cu817ymtejglx" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Psychic1.tres" id="3_gxk4p"]
+[ext_resource type="Resource" uid="uid://jvrhw4xiabef" path="res://Resources/Components/Pokemon/Attacks/AttackData/AmnesiaEffect.tres" id="4_wspbw"]
+[ext_resource type="Resource" uid="uid://b1rwmggf7a4do" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless2.tres" id="5_gxk4p"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="6_efnlo"]
+[ext_resource type="Resource" uid="uid://de73yn4vw6app" path="res://Resources/Components/Pokemon/Attacks/AttackData/10+1Flip.tres" id="6_wspbw"]
+
+[sub_resource type="Resource" id="Resource_jjmjt"]
+script = ExtResource("2_wspbw")
+name = "Amnesia"
+description = "Choose 1 of the Defending Pokémon's attacks. That Pokémon can't use that attack during your opponent's next turn. "
+attack_cost = ExtResource("3_gxk4p")
+attack_data = ExtResource("4_wspbw")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_b05hm"]
+script = ExtResource("2_wspbw")
+name = "Tail Strike"
+description = "Flip a coin. If heads, this attack does 10 damage plus 10 more damage. "
+attack_cost = ExtResource("5_gxk4p")
+attack_data = ExtResource("6_wspbw")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_ohthd"]
+script = ExtResource("6_efnlo")
+HP = 50
+retreat = 1
+attacks = Array[ExtResource("2_wspbw")]([SubResource("Resource_jjmjt"), SubResource("Resource_b05hm")])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 1
+owner = 0
+type = 16
+weak = 16
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_33a2w")
+name = "Slowpoke"
+image = ExtResource("1_2f4j4")
+illustrator = "Ken Sugimori"
+number = 45
+rarity = 0
+expansion = 3
+categories = 1
+pokemon_properties = SubResource("Resource_ohthd")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

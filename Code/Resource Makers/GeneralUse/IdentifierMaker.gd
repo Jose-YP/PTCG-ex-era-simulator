@@ -32,7 +32,7 @@ class_name Identifier
 @export_flags("Basic", "Special") var energy_class: int = 3
 @export var energy_provides: EnData = load("res://Resources/Components/EnData/Rainbow.tres")
 
-func identifier_bool(card: Base_Card, based_on: Array[PokeSlot]) -> bool:
+func identifier_bool(card: Base_Card, based_on: Array[PokeSlot] = []) -> bool:
 	print("----------------------------------------------------")
 	print(card.name, "\n", card.categories)
 	var valid: bool = false

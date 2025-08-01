@@ -58,7 +58,7 @@ name = "Intimidating Fang"
 description = "As long as [name] is your Active Pokémon, any damage done to your Pokémon by an opponent's attack is reduced by 10 (before applying Weakness and Resistance)."
 affected_by_condition = false
 active = true
-how_often = "Once per Mon"
+how_often = null
 passive = SubResource("Resource_gi0ni")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 

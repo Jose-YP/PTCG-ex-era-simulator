@@ -62,7 +62,7 @@ metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_2fy54"]
 script = ExtResource("10_pfer2")
-category = null
+category = "Body"
 name = "Versatile"
 description = "[name] can use the attacks of all Pokémon in play as its own. (You still need the necessary Energy to use each attack.)"
 affected_by_condition = false

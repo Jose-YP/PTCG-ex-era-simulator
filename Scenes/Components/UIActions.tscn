@@ -11,6 +11,7 @@
 [node name="UIActions" type="Node"]
 script = ExtResource("1_ddjd7")
 ability_ani_offset = Vector2(-24, 0)
+ability_ani_time = 2.5
 
 [node name="ColorRect" type="ColorRect" parent="."]
 modulate = Color(1, 1, 1, 0)

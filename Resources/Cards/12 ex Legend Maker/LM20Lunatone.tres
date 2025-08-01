@@ -108,7 +108,7 @@ metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_18faj"]
 script = ExtResource("14_le6pv")
-category = null
+category = "Body"
 name = "Sol Shade"
 description = " As long as you have Solrock in play, each player's {Fire} Pokémon (excluding Pokémon-ex) can't use any Poké-Powers. "
 affected_by_condition = false

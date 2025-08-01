@@ -38,7 +38,7 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_m2npy"]
 script = ExtResource("8_u87it")
-description = ""
+description = "Water Energy"
 must_be_different = false
 broad_class = 4
 exactly = false

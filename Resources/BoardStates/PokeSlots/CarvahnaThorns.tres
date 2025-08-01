@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="PokeSlot" load_steps=4 format=3 uid="uid://bd1cu2oiwcs46"]
+
+[ext_resource type="Resource" uid="uid://c8xqucy03ngb6" path="res://Resources/Cards/1 ex Ruby & Saphire/RS51Carvanha.tres" id="1_77a5r"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_67ube"]
+[ext_resource type="Script" uid="uid://cs70ix831b5g4" path="res://Code/Resource Makers/PokemonSpecific/PokeSlotMaker.gd" id="3_scg5c"]
+
+[resource]
+script = ExtResource("3_scg5c")
+current_card = ExtResource("1_77a5r")
+max_HP = 0
+damage_counters = 0
+evolution_ready = false
+evolved_this_turn = false
+evolved_from = Array[ExtResource("2_67ube")]([])
+energy_cards = Array[ExtResource("2_67ube")]([])
+tm_cards = Array[ExtResource("2_67ube")]([])
+buffs = Array[Dictionary]([])
+disables = Array[Dictionary]([])
+dealt_damage = 0
+energy_discarded = 0
+metadata/_custom_type_script = "uid://cs70ix831b5g4"

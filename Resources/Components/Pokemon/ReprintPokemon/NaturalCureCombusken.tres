@@ -1,11 +1,10 @@
-[gd_resource type="Resource" script_class="Pokemon" load_steps=15 format=3 uid="uid://dcxpyr6d3omf7"]
+[gd_resource type="Resource" script_class="Pokemon" load_steps=13 format=3 uid="uid://dcxpyr6d3omf7"]
 
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_23xl6"]
 [ext_resource type="Resource" uid="uid://b1rwmggf7a4do" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless2.tres" id="2_qg207"]
 [ext_resource type="Resource" uid="uid://lnqxjpwlc83l" path="res://Resources/Components/Pokemon/Attacks/AttackData/50IfHeads.tres" id="3_nn817"]
 [ext_resource type="Resource" uid="uid://d0in7vtooxjm1" path="res://Resources/Components/Effects/ETC/AtkSelfHealCond.tres" id="4_jxjhv"]
-[ext_resource type="Resource" uid="uid://mregpmlqoyvy" path="res://Resources/Components/EnData/Fire.tres" id="6_euf6j"]
-[ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="7_n1nhs"]
+[ext_resource type="Resource" uid="uid://dies0ymvth17j" path="res://Resources/Components/Effects/Identifiers/Energy/IsFireEnergy.tres" id="5_npple"]
 [ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="8_k64wy"]
 [ext_resource type="Script" uid="uid://bics3dumv7avj" path="res://Code/Resource Makers/GeneralUse/OccuranceMaker.gd" id="9_2yvqv"]
 [ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="10_4whhc"]
@@ -18,30 +17,11 @@ description = "Flip a coin. If tails, this attack does nothing."
 attack_cost = ExtResource("2_qg207")
 attack_data = ExtResource("3_nn817")
 
-[sub_resource type="Resource" id="Resource_lr3d4"]
-script = ExtResource("7_n1nhs")
-description = ""
-must_be_different = false
-broad_class = 4
-exactly = false
-name_array = Array[String]([])
-type = 0
-evolves_from = false
-rare_candy = false
-inclusive_class = true
-poke_class = 0
-owner = 0
-stage = 0
-trainer_classes = 0
-energy_class = 3
-energy_provides = ExtResource("6_euf6j")
-metadata/_custom_type_script = "uid://uplawvwcwl8y"
-
 [sub_resource type="Resource" id="Resource_xg3gf"]
 script = ExtResource("9_2yvqv")
 from_ask = ExtResource("8_k64wy")
 signal = "attatch_en_signal"
-card_type = SubResource("Resource_lr3d4")
+card_type = ExtResource("5_npple")
 metadata/_custom_type_script = "uid://bics3dumv7avj"
 
 [sub_resource type="Resource" id="Resource_h6v5j"]

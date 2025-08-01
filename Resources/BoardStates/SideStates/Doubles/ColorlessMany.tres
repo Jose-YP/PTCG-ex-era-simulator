@@ -1,0 +1,127 @@
+[gd_resource type="Resource" script_class="SideState" load_steps=27 format=3 uid="uid://bb5hshrf0e1y4"]
+
+[ext_resource type="Resource" uid="uid://cqfbtyyxr8sud" path="res://Resources/Decks/NaturalCureColorless.tres" id="1_in7rn"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_qm4aq"]
+[ext_resource type="Resource" uid="uid://bekwoaj06a44c" path="res://Resources/Cards/1 ex Ruby & Saphire/RS95RainbowEnergy.tres" id="3_3hnc3"]
+[ext_resource type="Resource" uid="uid://b0lfj4blf1nv4" path="res://Resources/Cards/3 ex Dragon/DR87MrBriney'sCompassion.tres" id="4_q0d6x"]
+[ext_resource type="Resource" uid="uid://dyqdhaov0ywxk" path="res://Resources/Cards/1 ex Ruby & Saphire/RS92Switch.tres" id="5_b6361"]
+[ext_resource type="Resource" uid="uid://cvjyyq2lad5k5" path="res://Resources/Cards/1 ex Ruby & Saphire/RS108FireEnergy.tres" id="6_rp7ng"]
+[ext_resource type="Resource" uid="uid://cjxwqcnfm20fq" path="res://Resources/Cards/1 ex Ruby & Saphire/RS104GrassEnergy.tres" id="7_i6u6p"]
+[ext_resource type="Resource" uid="uid://b7vajyscyemon" path="res://Resources/Cards/16 ex Power Keepers/PK92Absolex.tres" id="8_crr11"]
+[ext_resource type="Script" uid="uid://calm3n7va5yjo" path="res://Code/Resource Makers/GeneralUse/CardStacksMaker.gd" id="9_7bxh5"]
+[ext_resource type="Script" uid="uid://dgqpurnuh14t1" path="res://Code/Resource Makers/GeneralUse/SideStateMaker.gd" id="10_7kpg6"]
+[ext_resource type="Script" uid="uid://cs70ix831b5g4" path="res://Code/Resource Makers/PokemonSpecific/PokeSlotMaker.gd" id="11_a515p"]
+[ext_resource type="Resource" uid="uid://dno2q4q3waycq" path="res://Resources/Cards/1 ex Ruby & Saphire/RS32Grovyle.tres" id="12_kviqn"]
+[ext_resource type="Resource" uid="uid://dx17bi2e0sqkj" path="res://Resources/Cards/1 ex Ruby & Saphire/RS75Treecko.tres" id="13_yp6dg"]
+[ext_resource type="Resource" uid="uid://dqknf3vfxe3hp" path="res://Resources/Cards/1 ex Ruby & Saphire/RS73Torchic.tres" id="14_d7vnk"]
+[ext_resource type="Resource" uid="uid://b34c7yxt7qoxd" path="res://Resources/Components/Effects/Conditions/DefParalyze.tres" id="15_3hnc3"]
+[ext_resource type="Resource" uid="uid://bopcqetuha2jo" path="res://Resources/Cards/1 ex Ruby & Saphire/RS5Delcatty.tres" id="15_j8vtf"]
+[ext_resource type="Resource" uid="uid://1ktns5k8q1q5" path="res://Resources/Cards/1 ex Ruby & Saphire/RS44Skitty.tres" id="16_vhg7d"]
+[ext_resource type="Resource" uid="uid://xe7261xpp7ne" path="res://Resources/Cards/1 ex Ruby & Saphire/RS41Marshtomp.tres" id="17_pa6qe"]
+[ext_resource type="Resource" uid="uid://bsqvv4tq4rqsl" path="res://Resources/Cards/1 ex Ruby & Saphire/RS59Mudkip.tres" id="18_0bksn"]
+[ext_resource type="Resource" uid="uid://dew25qfxkag73" path="res://Resources/Components/Effects/Conditions/DefPoison.tres" id="18_q0d6x"]
+
+[sub_resource type="Resource" id="Resource_84ffy"]
+script = ExtResource("9_7bxh5")
+deck = ExtResource("1_in7rn")
+init_deck = Array[ExtResource("2_qm4aq")]([])
+init_hand = Array[ExtResource("2_qm4aq")]([ExtResource("3_3hnc3"), ExtResource("4_q0d6x"), ExtResource("5_b6361"), ExtResource("6_rp7ng"), ExtResource("7_i6u6p"), ExtResource("8_crr11"), ExtResource("6_rp7ng")])
+init_discard = Array[ExtResource("2_qm4aq")]([])
+init_prize = Array[ExtResource("2_qm4aq")]([])
+metadata/_custom_type_script = "uid://calm3n7va5yjo"
+
+[sub_resource type="Resource" id="Resource_x8ar4"]
+script = ExtResource("11_a515p")
+current_card = ExtResource("14_d7vnk")
+max_HP = 0
+damage_counters = 0
+evolution_ready = false
+evolved_this_turn = false
+evolved_from = Array[ExtResource("2_qm4aq")]([])
+energy_cards = Array[ExtResource("2_qm4aq")]([])
+tm_cards = Array[ExtResource("2_qm4aq")]([])
+buffs = Array[Dictionary]([])
+disables = Array[Dictionary]([])
+dealt_damage = 0
+energy_discarded = 0
+metadata/_custom_type_script = "uid://cs70ix831b5g4"
+
+[sub_resource type="Resource" id="Resource_e0i5b"]
+script = ExtResource("11_a515p")
+current_card = ExtResource("15_j8vtf")
+max_HP = 0
+damage_counters = 0
+evolution_ready = false
+evolved_this_turn = false
+evolved_from = Array[ExtResource("2_qm4aq")]([ExtResource("16_vhg7d")])
+energy_cards = Array[ExtResource("2_qm4aq")]([])
+tm_cards = Array[ExtResource("2_qm4aq")]([])
+buffs = Array[Dictionary]([])
+disables = Array[Dictionary]([])
+dealt_damage = 0
+energy_discarded = 0
+metadata/_custom_type_script = "uid://cs70ix831b5g4"
+
+[sub_resource type="Resource" id="Resource_n0vm7"]
+script = ExtResource("11_a515p")
+current_card = ExtResource("16_vhg7d")
+max_HP = 0
+damage_counters = 0
+evolution_ready = false
+evolved_this_turn = false
+evolved_from = Array[ExtResource("2_qm4aq")]([])
+energy_cards = Array[ExtResource("2_qm4aq")]([])
+tm_cards = Array[ExtResource("2_qm4aq")]([])
+buffs = Array[Dictionary]([])
+disables = Array[Dictionary]([])
+dealt_damage = 0
+energy_discarded = 0
+metadata/_custom_type_script = "uid://cs70ix831b5g4"
+
+[sub_resource type="Resource" id="Resource_b6361"]
+script = ExtResource("11_a515p")
+current_card = ExtResource("12_kviqn")
+max_HP = 0
+damage_counters = 0
+evolution_ready = false
+evolved_this_turn = false
+evolved_from = Array[ExtResource("2_qm4aq")]([ExtResource("13_yp6dg")])
+energy_cards = Array[ExtResource("2_qm4aq")]([ExtResource("7_i6u6p")])
+tm_cards = Array[ExtResource("2_qm4aq")]([])
+buffs = Array[Dictionary]([])
+disables = Array[Dictionary]([])
+applied_condition = ExtResource("15_3hnc3")
+dealt_damage = 0
+energy_discarded = 0
+metadata/_custom_type_script = "uid://cs70ix831b5g4"
+
+[sub_resource type="Resource" id="Resource_rp7ng"]
+script = ExtResource("11_a515p")
+current_card = ExtResource("17_pa6qe")
+max_HP = 0
+damage_counters = 0
+evolution_ready = false
+evolved_this_turn = false
+evolved_from = Array[ExtResource("2_qm4aq")]([ExtResource("18_0bksn")])
+energy_cards = Array[ExtResource("2_qm4aq")]([])
+tm_cards = Array[ExtResource("2_qm4aq")]([])
+buffs = Array[Dictionary]([])
+disables = Array[Dictionary]([])
+applied_condition = ExtResource("18_q0d6x")
+dealt_damage = 0
+energy_discarded = 0
+metadata/_custom_type_script = "uid://cs70ix831b5g4"
+
+[resource]
+script = ExtResource("10_7kpg6")
+card_stacks = SubResource("Resource_84ffy")
+prize_cards = 6
+bench_size = 5
+slots = Dictionary[ExtResource("11_a515p"), bool]({
+SubResource("Resource_x8ar4"): false,
+SubResource("Resource_e0i5b"): false,
+SubResource("Resource_n0vm7"): false,
+SubResource("Resource_b6361"): true,
+SubResource("Resource_rp7ng"): true
+})
+metadata/_custom_type_script = "uid://dgqpurnuh14t1"

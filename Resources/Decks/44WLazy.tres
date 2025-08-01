@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Deck" load_steps=8 format=3 uid="uid://b74rxfxcx76bx"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_ujr71"]
+[ext_resource type="Resource" uid="uid://dp2qu3pkoldmi" path="res://Resources/Cards/6 ex FireRed & LeafGreen/RG14Slowbro.tres" id="2_j10wv"]
+[ext_resource type="Resource" uid="uid://wggw0k631uu4" path="res://Resources/Cards/4 ex Team Magma VS Team Aqua/MA45Slowpoke.tres" id="3_ppveq"]
+[ext_resource type="Resource" uid="uid://c8xqucy03ngb6" path="res://Resources/Cards/1 ex Ruby & Saphire/RS51Carvanha.tres" id="4_pouqn"]
+[ext_resource type="Resource" uid="uid://bd3x4rf00qjqr" path="res://Resources/Cards/1 ex Ruby & Saphire/RS22Sharpedo.tres" id="5_qtxrj"]
+[ext_resource type="Resource" uid="uid://d3wqsrtlqtlqm" path="res://Resources/Cards/1 ex Ruby & Saphire/RS106WaterEnergy.tres" id="6_gjclh"]
+[ext_resource type="Script" uid="uid://e660iomt5e76" path="res://Code/Resource Makers/CardResources/DeckMaker.gd" id="7_8o8s2"]
+
+[resource]
+script = ExtResource("7_8o8s2")
+cards = Dictionary[ExtResource("1_ujr71"), int]({
+ExtResource("2_j10wv"): 4,
+ExtResource("3_ppveq"): 4,
+ExtResource("4_pouqn"): 4,
+ExtResource("5_qtxrj"): 4,
+ExtResource("6_gjclh"): 44
+})
+metadata/_custom_type_script = "uid://e660iomt5e76"

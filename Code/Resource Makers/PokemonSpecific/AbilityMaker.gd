@@ -59,7 +59,7 @@ func does_press_activate(slot: PokeSlot) -> bool:
 	return false
 
 func check_allowed(slot: PokeSlot) -> bool:
-	if prompt:
+	if prompt and prompt.has_check_prompt():
 		Globals.fundies.record_single_src_trg(slot)
 		var result: bool = prompt.check_prompt()
 		Globals.fundies.remove_top_source_target()
@@ -92,7 +92,6 @@ func activate_ability():
 				SignalBus.ability_checked.emit()
 				return
 	
-	attatched_to.ui_slot.ability_occured(attatched_to.get_pokedata().pokebody == self)
 	await Globals.fundies.ui_actions.play_ability_activate(attatched_to, self)
 	await effect.play_effect()
 	SignalBus.ability_checked.emit()

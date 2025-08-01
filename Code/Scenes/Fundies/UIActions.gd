@@ -8,6 +8,7 @@ class_name SlotUIActions
 @export var cancel_txt: String = "Esc to go back"
 @export var no_return_txt: String = "No going back"
 @export var ability_ani_offset: Vector2
+@export var ability_ani_time: float
 
 signal chosen
 signal choice_ready
@@ -129,17 +130,20 @@ func play_ability_activate(slot: PokeSlot, ability: Ability):
 		%AbilityTab.current_tab = 1
 		%AbilityName.push_color(Color(0.895, 0.583, 0.625))
 	
-	%AbilityName.append_text(ability.name)
+	%AbilityName.append_text(str(slot.get_card_name(), "'s\n", ability.name))
 	%AbilityName.visible_ratio = 0
-	%AbilityActivate.position = base_pos - ability_ani_offset
+	%AbilityActivate.position = base_pos - ability_ani_offset * 2
+	%AbilityActivate.modulate = Color.TRANSPARENT
 	%AbilityActivate.show()
 	
-	animation_tween.tween_property($ColorRect, "modulate", Color.WHITE, .25)
-	animation_tween.tween_property(%AbilityActivate, "position", base_pos, .75)
-	animation_tween.tween_property(%AbilityName, "visible_ratio", 1.0, .75)
+	slot.ui_slot.ability_occured(slot.get_pokedata().pokebody == ability, ability_ani_time)
+	animation_tween.tween_property($ColorRect, "modulate", Color.WHITE, ability_ani_time * 3/4)
+	animation_tween.tween_property(%AbilityActivate, "modulate", Color.WHITE, ability_ani_time * 3/4)
+	animation_tween.tween_property(%AbilityActivate, "position", base_pos, ability_ani_time * 3/4)
+	animation_tween.tween_property(%AbilityName, "visible_ratio", 1.0, ability_ani_time * 3/4)
 	
-	animation_tween.chain().tween_property(%AbilityActivate, "position", base_pos + ability_ani_offset, .25)
-	animation_tween.chain().tween_property($ColorRect, "modulate", Color.TRANSPARENT, .25)
+	animation_tween.chain().tween_property(%AbilityActivate, "position", base_pos + ability_ani_offset, ability_ani_time * 1/4)
+	animation_tween.chain().tween_property($ColorRect, "modulate", Color.TRANSPARENT, ability_ani_time * 1/4)
 	
 	await animation_tween.finished
 	%AbilityActivate.hide()

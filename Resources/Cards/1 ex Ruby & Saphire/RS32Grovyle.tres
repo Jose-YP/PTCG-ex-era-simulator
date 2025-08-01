@@ -7,7 +7,7 @@
 [ext_resource type="Resource" uid="uid://d0in7vtooxjm1" path="res://Resources/Components/Effects/ETC/AtkSelfHealCond.tres" id="3_htg7f"]
 [ext_resource type="Resource" uid="uid://b1rwmggf7a4do" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless2.tres" id="3_nk0ad"]
 [ext_resource type="Resource" uid="uid://bnsrs2a5hnvkb" path="res://Resources/Components/Pokemon/Attacks/AttackData/20Dmg.tres" id="4_5v3xg"]
-[ext_resource type="Resource" uid="uid://mregpmlqoyvy" path="res://Resources/Components/EnData/Fire.tres" id="7_bhank"]
+[ext_resource type="Resource" uid="uid://d1b5din1lvjqo" path="res://Resources/Components/EnData/Grass.tres" id="6_8tbfc"]
 [ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="8_ls7nv"]
 [ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="9_3pkas"]
 [ext_resource type="Script" uid="uid://bics3dumv7avj" path="res://Code/Resource Makers/GeneralUse/OccuranceMaker.gd" id="10_leihw"]
@@ -23,7 +23,7 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_2qvfq"]
 script = ExtResource("8_ls7nv")
-description = ""
+description = "Grass Energy"
 must_be_different = false
 broad_class = 4
 exactly = false
@@ -37,7 +37,7 @@ owner = 0
 stage = 0
 trainer_classes = 0
 energy_class = 3
-energy_provides = ExtResource("7_bhank")
+energy_provides = ExtResource("6_8tbfc")
 metadata/_custom_type_script = "uid://uplawvwcwl8y"
 
 [sub_resource type="Resource" id="Resource_c0fdy"]
