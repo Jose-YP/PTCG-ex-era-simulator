@@ -20,7 +20,7 @@ func determine_play(card: Base_Card, placement: Placement = null) -> void:
 	var card_type: int = Convert.get_card_flags(card)
 	#Play fossils, basics and evolutions onto the bench
 	if card_type & 1 != 0 or (card_type & 2 != 0 and placement and not placement.evolve):
-		await play_basic_pokemon(card)
+		await play_basic_pokemon(card, placement)
 	elif card_type & 2 != 0 and placement and placement.evolve:
 		await play_evolution(card, placement)
 	#play stadiums onto the stadium slot
@@ -46,7 +46,7 @@ func determine_play(card: Base_Card, placement: Placement = null) -> void:
 #region MANAGING CARD PLAY
 #For basic mons & fossils
 #region ADD POKEMON
-func play_basic_pokemon(card: Base_Card):
+func play_basic_pokemon(card: Base_Card, placement: Placement = null):
 	#Insert the card onto an active spot if there is one
 	for slot in Globals.full_ui.get_slots(Consts.SIDES.ATTACKING, Consts.SLOTS.BENCH):
 		if not slot.connected_slot:
@@ -61,8 +61,9 @@ func play_basic_pokemon(card: Base_Card):
 	#Otherwise tell sLot UI actions to prompt the user into placing the bench mon
 	#Convert.get_allowed_flags("Basic")
 	print("Active slots full")
+	
 	start_add_choice("Where will pokemon be benched", card, Convert.get_allowed_flags("Basic"),
-	 func(slot: PokeSlot): return not slot.is_filled() and slot.is_attacker(), true)
+	 func(slot: PokeSlot): return not slot.is_filled() and slot.is_attacker(), placement == null)
 	await chosen
 	
 	card.print_info()
@@ -227,7 +228,8 @@ func manage_tutored(tutored_cards: Array[Base_Card], placement: Placement):
 
 #--------------------------------------
 #region CHOICE MANAGEMENT
-func start_add_choice(instruction: String, card: Base_Card, play_as: int, bool_fun: Callable, reversable: bool):
+func start_add_choice(instruction: String, card: Base_Card, play_as: int,
+ bool_fun: Callable, reversable: bool):
 	Globals.fundies.hide_list()
 	Globals.fundies.ui_actions.set_adding_card(card)
 	set_reversable(reversable)
@@ -239,13 +241,16 @@ func start_add_choice(instruction: String, card: Base_Card, play_as: int, bool_f
 			Globals.fundies.record_single_src_trg(Globals.fundies.ui_actions.selected_slot)
 			went_back = await card.play_before_prompt()
 			Globals.fundies.remove_top_source_target()
+		
 		if not went_back:
-			hold_candidate.use_card(card, play_as)
+			hold_candidate.use_card(card, play_as, reversable)
 			hold_candidate = null
 			print("Attatch ", card.name)
+		
 		else: print("I changed my mind")
 	else:
 		print("Nevermind")
+	
 	Globals.fundies.ui_actions.color_tween(Color.TRANSPARENT)
 
 func get_choice_candidates(instruction: String, bool_fun: Callable, reversable: bool,
@@ -358,6 +363,9 @@ func attack_effect(attacker: PokeSlot, with: AttackData,
 	if with.prompt:
 		var succeed: bool = predefined or \
 		 (predefined != false and with.prompt.check_prompt())
+		
+		if with.prompt.has_prompt_question():
+			succeed = await with.prompt.check_prompt_question()
 		
 		if succeed and with.success_effect:
 			with.success_effect.replace_num = replace_num

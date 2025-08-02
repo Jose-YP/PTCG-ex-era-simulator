@@ -2,6 +2,7 @@
 extends MarginContainer
 
 @export var attack: Attack
+@export var card_name: String
 
 @onready var final_cost:Array[String] = attack.get_energy_cost()
 @onready var energy_icons: Array[Node] = %Types.get_children()
@@ -16,7 +17,7 @@ func _ready():
 	
 	%EffectText.clear()
 	if attack.description != "":
-		var final_text: String = Convert.reformat(attack.description, slot.get_card_name())
+		var final_text: String = Convert.reformat(attack.description, card_name)
 		%EffectText.append_text(final_text)
 		%EffectText.show()
 	

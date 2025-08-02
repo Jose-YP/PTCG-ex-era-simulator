@@ -14,7 +14,6 @@
 [ext_resource type="Script" uid="uid://cs70ix831b5g4" path="res://Code/Resource Makers/PokemonSpecific/PokeSlotMaker.gd" id="11_a515p"]
 [ext_resource type="Resource" uid="uid://dno2q4q3waycq" path="res://Resources/Cards/1 ex Ruby & Saphire/RS32Grovyle.tres" id="12_kviqn"]
 [ext_resource type="Resource" uid="uid://dx17bi2e0sqkj" path="res://Resources/Cards/1 ex Ruby & Saphire/RS75Treecko.tres" id="13_yp6dg"]
-[ext_resource type="Resource" uid="uid://dqknf3vfxe3hp" path="res://Resources/Cards/1 ex Ruby & Saphire/RS73Torchic.tres" id="14_d7vnk"]
 [ext_resource type="Resource" uid="uid://b34c7yxt7qoxd" path="res://Resources/Components/Effects/Conditions/DefParalyze.tres" id="15_3hnc3"]
 [ext_resource type="Resource" uid="uid://bopcqetuha2jo" path="res://Resources/Cards/1 ex Ruby & Saphire/RS5Delcatty.tres" id="15_j8vtf"]
 [ext_resource type="Resource" uid="uid://1ktns5k8q1q5" path="res://Resources/Cards/1 ex Ruby & Saphire/RS44Skitty.tres" id="16_vhg7d"]
@@ -23,6 +22,7 @@
 [ext_resource type="Resource" uid="uid://dew25qfxkag73" path="res://Resources/Components/Effects/Conditions/DefPoison.tres" id="18_q0d6x"]
 [ext_resource type="Resource" uid="uid://rx248wf8bnrl" path="res://Resources/Cards/1 ex Ruby & Saphire/RS46Swellow.tres" id="22_i6u6p"]
 [ext_resource type="Resource" uid="uid://dc7psiqx30xv0" path="res://Resources/Cards/1 ex Ruby & Saphire/RS72Tailow.tres" id="23_crr11"]
+[ext_resource type="Resource" uid="uid://c3f1stq37lffi" path="res://Resources/Cards/2 ex Sandstorm/SS60Dunsparce.tres" id="23_rp7ng"]
 
 [sub_resource type="Resource" id="Resource_84ffy"]
 script = ExtResource("9_7bxh5")
@@ -32,22 +32,6 @@ init_hand = Array[ExtResource("2_qm4aq")]([ExtResource("3_3hnc3"), ExtResource("
 init_discard = Array[ExtResource("2_qm4aq")]([])
 init_prize = Array[ExtResource("2_qm4aq")]([])
 metadata/_custom_type_script = "uid://calm3n7va5yjo"
-
-[sub_resource type="Resource" id="Resource_x8ar4"]
-script = ExtResource("11_a515p")
-current_card = ExtResource("14_d7vnk")
-max_HP = 0
-damage_counters = 0
-evolution_ready = false
-evolved_this_turn = false
-evolved_from = Array[ExtResource("2_qm4aq")]([])
-energy_cards = Array[ExtResource("2_qm4aq")]([])
-tm_cards = Array[ExtResource("2_qm4aq")]([])
-buffs = Array[Dictionary]([])
-disables = Array[Dictionary]([])
-dealt_damage = 0
-energy_discarded = 0
-metadata/_custom_type_script = "uid://cs70ix831b5g4"
 
 [sub_resource type="Resource" id="Resource_e0i5b"]
 script = ExtResource("11_a515p")
@@ -115,16 +99,32 @@ dealt_damage = 0
 energy_discarded = 0
 metadata/_custom_type_script = "uid://cs70ix831b5g4"
 
+[sub_resource type="Resource" id="Resource_i6u6p"]
+script = ExtResource("11_a515p")
+current_card = ExtResource("23_rp7ng")
+max_HP = 0
+damage_counters = 0
+evolution_ready = false
+evolved_this_turn = false
+evolved_from = Array[ExtResource("2_qm4aq")]([])
+energy_cards = Array[ExtResource("2_qm4aq")]([ExtResource("6_rp7ng")])
+tm_cards = Array[ExtResource("2_qm4aq")]([])
+buffs = Array[Dictionary]([])
+disables = Array[Dictionary]([])
+dealt_damage = 0
+energy_discarded = 0
+metadata/_custom_type_script = "uid://cs70ix831b5g4"
+
 [resource]
 script = ExtResource("10_7kpg6")
 card_stacks = SubResource("Resource_84ffy")
 prize_cards = 6
 bench_size = 5
 slots = Dictionary[ExtResource("11_a515p"), bool]({
-SubResource("Resource_x8ar4"): false,
 SubResource("Resource_e0i5b"): false,
 SubResource("Resource_b6361"): true,
-SubResource("Resource_rp7ng"): true,
-SubResource("Resource_7bxh5"): false
+SubResource("Resource_rp7ng"): false,
+SubResource("Resource_7bxh5"): false,
+SubResource("Resource_i6u6p"): true
 })
 metadata/_custom_type_script = "uid://dgqpurnuh14t1"

@@ -289,15 +289,17 @@ func has_occurance() -> bool:
 
 #--------------------------------------
 #region SLOTTING IN
-func use_card(card: Base_Card, play_as: int) -> void:
+#If the choice was reversablee, it's likely because it was played from the hand
+#If I find examples that break this, I'll have to find another way
+func use_card(card: Base_Card, play_as: int, from_hand: bool) -> void:
 	#Play fossils, basics and evolutions onto the bench
 	if play_as & 1 != 0 or play_as & 256 != 0:
-		set_card(card)
+		set_card(card, from_hand)
 	elif play_as & 2 != 0:
 		if current_card:
 			evolve_card(card)
 		else:
-			set_card(card)
+			set_card(card, from_hand)
 	elif play_as & 32 != 0:
 		attatch_tool(card)
 	elif play_as & 64 != 0:
@@ -308,14 +310,18 @@ func use_card(card: Base_Card, play_as: int) -> void:
 	else:
 		printerr("You probably can't pay ", card, " on a pokeslot as ", play_as)
 
-func set_card(card: Base_Card) -> void:
+func set_card(card: Base_Card, from_hand: bool) -> void:
 	current_card = card
 	ui_slot.make_allowed(true)
+	refresh_current_card()
+	
+	setup_abilities()
 	
 	Globals.fundies.record_single_src_trg(self)
-	await ability_emit(played, get_slot_pos())
+	if from_hand:
+		await ability_emit(played, get_slot_pos())
 	Globals.fundies.remove_top_source_target()
-	refresh_current_card()
+	
 
 #General use function, use specific ones if possible
 func remove_cards(cards: Array[Base_Card]) -> void:

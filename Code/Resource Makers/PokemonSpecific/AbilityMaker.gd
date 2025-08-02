@@ -92,6 +92,11 @@ func activate_ability():
 			if went_back:
 				SignalBus.ability_checked.emit()
 				return
+		if prompt.has_prompt_question():
+			var confirmed: bool = await prompt.check_prompt_question()
+			if not confirmed:
+				SignalBus.ability_checked.emit()
+				return
 	
 	await Globals.fundies.ui_actions.play_ability_activate(attatched_to, self)
 	await effect.play_effect()

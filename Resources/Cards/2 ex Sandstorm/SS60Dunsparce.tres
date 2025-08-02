@@ -1,17 +1,39 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=20 format=3 uid="uid://c3f1stq37lffi"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=24 format=3 uid="uid://c3f1stq37lffi"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_7ojbq"]
 [ext_resource type="Texture2D" uid="uid://dehlp6lbio4cm" path="res://Art/Cards/2 ex Sandstorm/60.jpg" id="1_jogs8"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_fbbjl"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_ubkor"]
 [ext_resource type="Script" uid="uid://cdyba0wadidwb" path="res://Code/Resource Makers/EffectSpecific/PlacementMaker.gd" id="4_13no0"]
+[ext_resource type="Resource" uid="uid://elvciehl4doh" path="res://Resources/Components/Effects/Swap/SwapSelf.tres" id="5_13no0"]
 [ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="5_fi1rr"]
 [ext_resource type="Resource" uid="uid://bsrtmv3udqjav" path="res://Resources/Components/Effects/Identifiers/Pokemon/BasicPokemon.tres" id="6_4o8g3"]
+[ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="6_fi1rr"]
 [ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="7_myqy4"]
 [ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="8_fbbjl"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="9_13no0"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="10_334gx"]
 [ext_resource type="Resource" uid="uid://dducvbjohbp4x" path="res://Resources/Components/Pokemon/Attacks/AttackData/10DmgParaIfHeads.tres" id="10_fi1rr"]
+
+[sub_resource type="Resource" id="Resource_4o8g3"]
+script = ExtResource("3_ubkor")
+either_or = false
+order = Array[int]([])
+swap = ExtResource("5_13no0")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_q6yow"]
+script = ExtResource("6_fi1rr")
+formal_question = true
+question_string = "Will you switch the attacking pokemon?"
+yes_answer = "Yes"
+no_answer = "No"
+can_reverse = true
+occurance = false
+chooser = 0
+choose_location = "None"
+which_stack = 0
+metadata/_custom_type_script = "uid://b85jmc7067bjc"
 
 [sub_resource type="Resource" id="Resource_i2ut4"]
 script = ExtResource("4_13no0")
@@ -45,6 +67,8 @@ script = ExtResource("3_ubkor")
 either_or = false
 order = Array[int]([])
 search = SubResource("Resource_gl41l")
+prompt_extra = SubResource("Resource_q6yow")
+extra_effect = SubResource("Resource_4o8g3")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_myqy4"]
@@ -66,7 +90,7 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_nxntw"]
 script = ExtResource("2_fbbjl")
 name = "Strike and Run"
-description = "Search your deck for up to 3 Basic Pokémon and put them onto your Bench. Then, shuffle your deck. If you put any Pokémon onto your Bench in this way, you may switch this Pokémon with 1 of your Benched Pokémon."
+description = "Search your deck for up to 3 Basic Pokémon and put them onto your Bench. Shuffle your deck afterward. You may switch [name] with 1 of your Benched Pokémon."
 attack_cost = ExtResource("8_fbbjl")
 attack_data = SubResource("Resource_myqy4")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

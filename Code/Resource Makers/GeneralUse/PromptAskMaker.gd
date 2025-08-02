@@ -106,4 +106,7 @@ func has_check_prompt() -> bool:
 
 func has_before_prompt() -> bool:
 	return effect != null or choose_location != "None"
+
+func has_prompt_question() -> bool:
+	return formal_question
 #endregion

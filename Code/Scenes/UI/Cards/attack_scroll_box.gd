@@ -45,13 +45,18 @@ func reset_items() -> void:
 
 func set_items() -> void:
 	#Get PokeBody
-	set_ability(poke_slot.get_pokedata().pokebody)
-	set_ability(poke_slot.get_pokedata().pokepower)
+	if poke_slot:
+		set_ability(poke_slot.get_pokedata().pokebody)
+		set_ability(poke_slot.get_pokedata().pokepower)
+	else:
+		set_ability(current_card.pokemon_properties.pokebody)
+		set_ability(current_card.pokemon_properties.pokepower)
 	
 	for item in attacks:
 		var making = attackItem.instantiate()
 		making.attack = item
 		making.slot = poke_slot
+		making.card_name = poke_slot.get_card_name() if poke_slot else current_card.name
 		%CardList.add_child(making)
 		if check: making.focus_mode = FocusMode.FOCUS_NONE
 		if poke_slot and poke_slot.is_active(): #only try this when attatched to a pokeslot
@@ -65,6 +70,7 @@ func set_ability(ability: Ability):
 		var ability_making = ability_item.instantiate()
 		ability_making.ability = ability
 		ability_making.slot = poke_slot
+		ability_making.card_name = poke_slot.get_card_name() if poke_slot else current_card.name
 		if check: ability_making.focus_mode = FocusMode.FOCUS_NONE
 		%CardList.add_child(ability_making)
 

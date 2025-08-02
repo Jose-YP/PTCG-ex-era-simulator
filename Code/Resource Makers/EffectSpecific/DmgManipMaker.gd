@@ -104,7 +104,29 @@ func dmg_manip_box(reversable: bool = false, replace_num: int = -1):
 	Globals.control_disapear(dmg_manip, .1)
 
 func swap_manip(reversable: bool = false, replace_num: int = -1):
-	pass
+	var first: PokeSlot = await Globals.fundies.card_player.get_choice_candidates(
+	str("Choose a damaged pokemon [Swap", how_many," Counters]"), func(slot: PokeSlot):
+		if slot.damage_counters > 0:
+			return ask.check_ask(slot)
+		,reversable)
+	if first == null:
+		return
+	
+	print()
+	#var final_ammount: int = clamp(how_many * 10, 0, first.get_pokedata().HP - first.damage_counters)
+	var final_ammount: int = how_many * 10
+	
+	@warning_ignore("integer_division")
+	var second: PokeSlot = await Globals.fundies.card_player.get_choice_candidates(
+	str("Place ", how_many," Counter(s) onto which pokemon?"), func(slot: PokeSlot):
+		if slot != first:
+			return takers.check_ask(slot)
+		,reversable)
+	if second == null:
+		return
+	
+	first.dmg_manip(-1 * final_ammount, turn_delay)
+	second.dmg_manip(final_ammount, turn_delay)
 
 func get_final_ammount(counters: int, slot: PokeSlot) -> int:
 	var ammount: int = counters
@@ -112,4 +134,5 @@ func get_final_ammount(counters: int, slot: PokeSlot) -> int:
 		ammount = slot.get_pokedata().HP - slot.damage_counters
 		if prevent_KO:
 			ammount -= 10
+	
 	return ammount

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SideState" load_steps=10 format=3 uid="uid://dg0a5trv0lgph"]
+[gd_resource type="Resource" script_class="SideState" load_steps=11 format=3 uid="uid://dg0a5trv0lgph"]
 
 [ext_resource type="Resource" uid="uid://b74rxfxcx76bx" path="res://Resources/Decks/44WLazy.tres" id="1_o6umv"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_m74eh"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://cs70ix831b5g4" path="res://Code/Resource Makers/PokemonSpecific/PokeSlotMaker.gd" id="6_8btb1"]
 [ext_resource type="Resource" uid="uid://cul22q2pxomfh" path="res://Resources/BoardStates/PokeSlots/SharpedoThorns.tres" id="8_grkdd"]
 [ext_resource type="Resource" uid="uid://bd1cu2oiwcs46" path="res://Resources/BoardStates/PokeSlots/CarvahnaThorns.tres" id="9_heho6"]
+[ext_resource type="Resource" uid="uid://b4tum5jq02bud" path="res://Resources/BoardStates/PokeSlots/StrangeBehaviorSlowbro.tres" id="9_o6umv"]
 
 [sub_resource type="Resource" id="Resource_olmqo"]
 script = ExtResource("4_3lehc")
@@ -25,6 +26,7 @@ prize_cards = 6
 bench_size = 5
 slots = Dictionary[ExtResource("6_8btb1"), bool]({
 ExtResource("9_heho6"): false,
-ExtResource("8_grkdd"): true
+ExtResource("8_grkdd"): true,
+ExtResource("9_o6umv"): false
 })
 metadata/_custom_type_script = "uid://dgqpurnuh14t1"

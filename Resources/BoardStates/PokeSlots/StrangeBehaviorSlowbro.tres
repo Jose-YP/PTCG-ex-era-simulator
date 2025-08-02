@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="PokeSlot" load_steps=5 format=3 uid="uid://b4tum5jq02bud"]
+
+[ext_resource type="Resource" uid="uid://dp2qu3pkoldmi" path="res://Resources/Cards/6 ex FireRed & LeafGreen/RG14Slowbro.tres" id="1_866ka"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_8bvqm"]
+[ext_resource type="Resource" uid="uid://wggw0k631uu4" path="res://Resources/Cards/4 ex Team Magma VS Team Aqua/MA45Slowpoke.tres" id="3_dnbid"]
+[ext_resource type="Script" uid="uid://cs70ix831b5g4" path="res://Code/Resource Makers/PokemonSpecific/PokeSlotMaker.gd" id="4_wi023"]
+
+[resource]
+script = ExtResource("4_wi023")
+current_card = ExtResource("1_866ka")
+max_HP = 0
+damage_counters = 10
+evolution_ready = false
+evolved_this_turn = false
+evolved_from = Array[ExtResource("2_8bvqm")]([ExtResource("3_dnbid")])
+energy_cards = Array[ExtResource("2_8bvqm")]([])
+tm_cards = Array[ExtResource("2_8bvqm")]([])
+buffs = Array[Dictionary]([])
+disables = Array[Dictionary]([])
+dealt_damage = 0
+energy_discarded = 0
+metadata/_custom_type_script = "uid://cs70ix831b5g4"

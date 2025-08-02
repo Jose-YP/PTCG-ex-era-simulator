@@ -4,6 +4,7 @@ extends MarginContainer
 @export var body_icon: CompressedTexture2D
 @export var ability: Ability
 @export var slot: PokeSlot
+@export var card_name: String
 
 @onready var ability_button: Button = $AbilityButton
 
@@ -22,7 +23,7 @@ func _ready():
 	%Name.append_text(ability.name)
 	%EffectText.clear()
 	if ability.description != "":
-		var final_text: String = Convert.reformat(ability.description, slot.get_card_name())
+		var final_text: String = Convert.reformat(ability.description, card_name)
 		%EffectText.append_text(final_text)
 		%EffectText.show()
 	
