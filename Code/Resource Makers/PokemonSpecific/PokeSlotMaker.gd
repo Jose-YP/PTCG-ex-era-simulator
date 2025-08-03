@@ -140,7 +140,12 @@ func ability_emit(sig: Signal, param: Variant = null):
 	print("Does ", get_card_name(), " have connections in ", sig, "? ", sig.has_connections())
 	#Globals.fundies.print_src_trg()
 	if sig.has_connections():
-		
+		#var connections: Array = sig.get_connections()
+		#print(connections)
+		#print(connections[0]["callable"])
+		#connections[0]["callable"]
+		#print("Occurance: ", get_pokedata().pokebody.occurance)
+		#print(get_pokedata().pokebody.occurance.should_occur == connections[0]["callable"])
 		Globals.fundies.record_prev_src_trg_from_self(self)
 		Globals.fundies.print_src_trg()
 		sig.emit(param)
@@ -157,7 +162,7 @@ func occurance_account_for():
 
 func refresh_connections():
 	Globals.fundies.record_single_src_trg(self)
-	occurance_account_for()
+	#occurance_account_for()
 	Globals.fundies.remove_top_source_target()
 
 #endregion

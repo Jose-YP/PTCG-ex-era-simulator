@@ -62,7 +62,8 @@ func general_allowed(slot: PokeSlot) -> bool:
 	
 	match how_often:
 		"Once per Mon":
-			return not slot.power_exhaust and check_allowed(slot) and quick_result
+			var exhaust: bool = slot.body_exhaust if category == "Body" else slot.power_exhaust
+			return not exhaust and check_allowed(slot) and quick_result
 		"Once per Turn":
 			return  not Globals.fundies.used_ability(name) and check_allowed(slot) and quick_result
 		"Infinite":
