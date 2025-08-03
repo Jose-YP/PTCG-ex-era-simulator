@@ -1,11 +1,11 @@
-[gd_resource type="Resource" script_class="Condition" load_steps=2 format=3 uid="uid://cm5vc71rhtxny"]
+[gd_resource type="Resource" script_class="Condition" load_steps=3 format=3 uid="uid://cm5vc71rhtxny"]
 
 [ext_resource type="Script" uid="uid://8s3m1dar3r33" path="res://Code/Resource Makers/EffectSpecific/ConditionMaker.gd" id="1_lgs7e"]
+[ext_resource type="Resource" uid="uid://bkt6ry7vyha70" path="res://Resources/Components/Effects/Asks/General/Other.tres" id="1_oo2j7"]
 
 [resource]
 script = ExtResource("1_lgs7e")
-side = 2
-slot = 1
+ask = ExtResource("1_oo2j7")
 choose_condition = false
 poison = 0
 burn = 0

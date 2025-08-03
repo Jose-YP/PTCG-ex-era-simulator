@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://csg20ychy0epa"]
+[gd_scene load_steps=3 format=3 uid="uid://dnk7pe6vmdplw"]
 
-[ext_resource type="Script" uid="uid://bidony3vw3glr" path="res://Code/Scenes/UI/List/playing_list_item_copy.gd" id="1_55nu4"]
-[ext_resource type="Texture2D" uid="uid://cj4eckcnktq41" path="res://Art/Cards/1 ex Ruby & Saphire/109.jpg" id="2_4q2jr"]
+[ext_resource type="Script" uid="uid://k5ijlu1agxlo" path="res://Code/Scenes/UI/List/play_button.gd" id="1_xeue6"]
+[ext_resource type="Texture2D" uid="uid://cj4eckcnktq41" path="res://Art/Cards/1 ex Ruby & Saphire/109.jpg" id="2_7ejy0"]
 
-[node name="PlayingListItem" type="Button"]
+[node name="PlayButton" type="Button"]
 clip_contents = true
 custom_minimum_size = Vector2(400, 60)
 anchors_preset = -1
@@ -19,8 +19,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_default_cursor_shape = 2
 disabled = true
-script = ExtResource("1_55nu4")
-option_offset = Vector2(30, 50)
+script = ExtResource("1_xeue6")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
@@ -58,7 +57,7 @@ clip_contents = true
 custom_minimum_size = Vector2(90, 52)
 layout_mode = 2
 mouse_filter = 2
-texture = ExtResource("2_4q2jr")
+texture = ExtResource("2_7ejy0")
 expand_mode = 2
 stretch_mode = 5
 

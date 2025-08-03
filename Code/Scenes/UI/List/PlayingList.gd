@@ -14,8 +14,6 @@ class_name PlayingList
 @export var stack_act: Consts.STACK_ACT = Consts.STACK_ACT.PLAY
 @export var stack: Consts.STACKS = Consts.STACKS.HAND
 
-const list_item: PackedScene = preload("res://Scenes/UI/Lists/PlayingListItem_copy.tscn")
-
 @warning_ignore("unused_signal")
 signal finished
 
@@ -38,7 +36,7 @@ func set_items():
 	for item in list:
 		print("Consts.playing_button:", Consts.playing_button)
 		print("Type:", typeof(Consts.playing_button))
-		var making: PlayingButton = Consts.playing_button.instantiate()
+		var making = Consts.playing_button.instantiate()
 		print(Consts.playing_button, making)
 		making.card = item
 		making.parent = self

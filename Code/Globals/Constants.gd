@@ -46,8 +46,8 @@ const energy_colors: Array[Color] = [Color.GREEN, Color.RED, Color.AQUA,
 
 #--------------------------------------
 #region SCENES
-const playing_button: PackedScene = preload("res://Scenes/UI/Lists/PlayingListItem_copy.tscn")
-const reg_list: PackedScene = preload("res://Scenes/UI/Lists/RegList.tscn")
+var playing_button: PackedScene = load("res://Scenes/UI/Lists/play_button.tscn")
+var reg_list: PackedScene = load("res://Scenes/UI/Lists/RegList.tscn")
 const attack_list_comp: PackedScene = preload("res://Scenes/UI/Lists/attack_scroll_box.tscn")
 const poke_card : PackedScene = preload("res://Scenes/UI/CardDisplay/PokemonCard.tscn")
 const trainer_card: PackedScene = preload("res://Scenes/UI/CardDisplay/TrainerCard.tscn")

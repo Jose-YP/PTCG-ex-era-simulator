@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=27 format=3 uid="uid://cbrv0ftymjhbj"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=28 format=3 uid="uid://cbrv0ftymjhbj"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_fufby"]
 [ext_resource type="Texture2D" uid="uid://bkcx8mdj0b2ne" path="res://Art/Cards/1 ex Ruby & Saphire/78.jpg" id="1_kcvhr"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="4_sfbeu"]
 [ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="5_jctry"]
 [ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="6_wia63"]
+[ext_resource type="Resource" uid="uid://c7itelq8jtjc2" path="res://Resources/Components/EnData/Rainbow.tres" id="7_wia63"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="8_gknmg"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="9_x6msc"]
 [ext_resource type="Resource" uid="uid://c63wb1xvpkbi8" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Grass1.tres" id="11_gknmg"]
@@ -30,6 +31,7 @@ owner = 0
 stage = 0
 trainer_classes = 0
 energy_class = 3
+energy_provides = ExtResource("7_wia63")
 metadata/_custom_type_script = "uid://uplawvwcwl8y"
 
 [sub_resource type="Resource" id="Resource_nm5pd"]
@@ -48,6 +50,7 @@ owner = 0
 stage = 0
 trainer_classes = 0
 energy_class = 3
+energy_provides = ExtResource("7_wia63")
 metadata/_custom_type_script = "uid://uplawvwcwl8y"
 
 [sub_resource type="Resource" id="Resource_3bd7f"]
@@ -102,6 +105,7 @@ owner = 0
 stage = 0
 trainer_classes = 0
 energy_class = 3
+energy_provides = ExtResource("7_wia63")
 metadata/_custom_type_script = "uid://uplawvwcwl8y"
 
 [sub_resource type="Resource" id="Resource_feg0g"]
@@ -120,6 +124,7 @@ owner = 0
 stage = 0
 trainer_classes = 0
 energy_class = 3
+energy_provides = ExtResource("7_wia63")
 metadata/_custom_type_script = "uid://uplawvwcwl8y"
 
 [sub_resource type="Resource" id="Resource_g437b"]

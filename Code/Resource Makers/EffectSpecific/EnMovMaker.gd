@@ -110,6 +110,7 @@ func attatch_effect(reversable: bool = false) -> void:
 	attatch_box.singles = Globals.full_ui.singles
 	attatch_box.action_ammount = action_ammount
 	attatch_box.energy_ammount = energy_ammount
+	attatch_box.reciever_ask = reciever
 	
 	Globals.fundies.add_child(attatch_box)
 	await  attatch_box.finished

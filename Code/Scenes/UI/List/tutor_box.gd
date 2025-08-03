@@ -106,7 +106,7 @@ func remove_card(button: Button):
 	update_tutor()
 
 func show_card(card: Base_Card, id: Identifier) -> Button:
-	var making: PlayingButton = Consts.playing_button.instantiate()
+	var making = Consts.playing_button.instantiate()
 	making.card = card
 	making.parent = self
 	making.stack_act = Consts.STACK_ACT.TUTOR

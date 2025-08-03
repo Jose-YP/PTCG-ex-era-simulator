@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="Search" load_steps=5 format=3 uid="uid://ctasha828kh0t"]
+[gd_resource type="Resource" script_class="Search" load_steps=6 format=3 uid="uid://ctasha828kh0t"]
 
 [ext_resource type="Resource" uid="uid://bl4qnrkh3kxdl" path="res://Resources/Components/Effects/Placement/PutIntoHand.tres" id="1_1pdqu"]
 [ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="2_3bjhw"]
 [ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="3_2pyyy"]
+[ext_resource type="Resource" uid="uid://c7itelq8jtjc2" path="res://Resources/Components/EnData/Rainbow.tres" id="3_3bjhw"]
 
 [sub_resource type="Resource" id="Resource_eqnsd"]
 script = ExtResource("2_3bjhw")
@@ -20,6 +21,7 @@ owner = 0
 stage = 0
 trainer_classes = 0
 energy_class = 1
+energy_provides = ExtResource("3_3bjhw")
 metadata/_custom_type_script = "uid://uplawvwcwl8y"
 
 [resource]

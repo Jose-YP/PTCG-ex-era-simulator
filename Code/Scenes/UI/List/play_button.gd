@@ -1,4 +1,5 @@
 extends Button
+class_name PlayingButton
 
 @export var card: Base_Card
 @export var option_offset: Vector2 = Vector2(30, 100)
@@ -9,6 +10,8 @@ extends Button
 signal select
 
 var parent: Node
+var checking_card: Node
+var disable_flags: int = 0
 var stack_act: Consts.STACK_ACT
 var allowed: bool = false
 var from_id: Identifier
@@ -39,6 +42,8 @@ func allow(play_as: int):
 	#printt("ALLOWED AS:", allowed_as)
 	card_flags = play_as & card_flags
 	
+	#if allowed_as != card_flags:
+		#disable_flags = card_flags - allowed_as
 	allowed = true
 	disabled = false
 
