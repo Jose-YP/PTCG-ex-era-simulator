@@ -96,6 +96,10 @@ func append_to_arrays(type: Consts.STACKS, card: Base_Card, top_deck: bool = fal
 			discard_pile.append(card)
 		Consts.STACKS.PRIZE:
 			prize_cards.append(card)
+		Consts.STACKS.PLAY:
+			cards_in_play.append(card)
+		Consts.STACKS.LOST:
+			lost_zone.append(card)
 		_:
 			push_error(type, " is not in ", self)
 			hand.append(card)

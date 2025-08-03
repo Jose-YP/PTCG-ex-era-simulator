@@ -60,21 +60,29 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_type_variation = &"DeepPannel"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="EnergyUI/PanelContainer/Lists/Slots/Actions"]
+[node name="MarginContainer" type="MarginContainer" parent="EnergyUI/PanelContainer/Lists/Slots/Actions"]
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="EnergyUI/PanelContainer/Lists/Slots/Actions/MarginContainer"]
 layout_mode = 2
 
-[node name="Info" type="VBoxContainer" parent="EnergyUI/PanelContainer/Lists/Slots/Actions/HBoxContainer"]
+[node name="Info" type="VBoxContainer" parent="EnergyUI/PanelContainer/Lists/Slots/Actions/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="EnergyTypes" parent="EnergyUI/PanelContainer/Lists/Slots/Actions/HBoxContainer/Info" instance=ExtResource("5_wyeha")]
+[node name="EnergyTypes" parent="EnergyUI/PanelContainer/Lists/Slots/Actions/MarginContainer/HBoxContainer/Info" instance=ExtResource("5_wyeha")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 2
+size_flags_vertical = 6
 en_count = 6
 disabled = true
 
-[node name="Instructions" type="RichTextLabel" parent="EnergyUI/PanelContainer/Lists/Slots/Actions/HBoxContainer/Info"]
+[node name="Instructions" type="RichTextLabel" parent="EnergyUI/PanelContainer/Lists/Slots/Actions/MarginContainer/HBoxContainer/Info"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 10
@@ -82,15 +90,15 @@ text = "Attatchments Left: 99 / 99
 Reciever: Team Magma's Poochyena"
 fit_content = true
 
-[node name="Buttons" type="VBoxContainer" parent="EnergyUI/PanelContainer/Lists/Slots/Actions/HBoxContainer"]
+[node name="Buttons" type="VBoxContainer" parent="EnergyUI/PanelContainer/Lists/Slots/Actions/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="EnergyUI/PanelContainer/Lists/Slots/Actions/HBoxContainer/Buttons"]
+[node name="HBoxContainer" type="HBoxContainer" parent="EnergyUI/PanelContainer/Lists/Slots/Actions/MarginContainer/HBoxContainer/Buttons"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Reset" type="Button" parent="EnergyUI/PanelContainer/Lists/Slots/Actions/HBoxContainer/Buttons/HBoxContainer"]
+[node name="Reset" type="Button" parent="EnergyUI/PanelContainer/Lists/Slots/Actions/MarginContainer/HBoxContainer/Buttons/HBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
@@ -99,7 +107,7 @@ size_flags_vertical = 3
 disabled = true
 text = "Reset"
 
-[node name="Attatch" type="Button" parent="EnergyUI/PanelContainer/Lists/Slots/Actions/HBoxContainer/Buttons/HBoxContainer"]
+[node name="Attatch" type="Button" parent="EnergyUI/PanelContainer/Lists/Slots/Actions/MarginContainer/HBoxContainer/Buttons/HBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
@@ -108,7 +116,7 @@ size_flags_vertical = 3
 disabled = true
 text = "Attatch"
 
-[node name="End" type="Button" parent="EnergyUI/PanelContainer/Lists/Slots/Actions/HBoxContainer/Buttons"]
+[node name="End" type="Button" parent="EnergyUI/PanelContainer/Lists/Slots/Actions/MarginContainer/HBoxContainer/Buttons"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -119,6 +127,6 @@ unique_name_in_owner = true
 layout_mode = 2
 dragging_node = NodePath("../..")
 
-[connection signal="pressed" from="EnergyUI/PanelContainer/Lists/Slots/Actions/HBoxContainer/Buttons/HBoxContainer/Reset" to="." method="_on_reset_pressed"]
-[connection signal="pressed" from="EnergyUI/PanelContainer/Lists/Slots/Actions/HBoxContainer/Buttons/HBoxContainer/Attatch" to="." method="_on_attatch_pressed"]
-[connection signal="pressed" from="EnergyUI/PanelContainer/Lists/Slots/Actions/HBoxContainer/Buttons/End" to="." method="_on_end_pressed"]
+[connection signal="pressed" from="EnergyUI/PanelContainer/Lists/Slots/Actions/MarginContainer/HBoxContainer/Buttons/HBoxContainer/Reset" to="." method="_on_reset_pressed"]
+[connection signal="pressed" from="EnergyUI/PanelContainer/Lists/Slots/Actions/MarginContainer/HBoxContainer/Buttons/HBoxContainer/Attatch" to="." method="_on_attatch_pressed"]
+[connection signal="pressed" from="EnergyUI/PanelContainer/Lists/Slots/Actions/MarginContainer/HBoxContainer/Buttons/End" to="." method="_on_end_pressed"]

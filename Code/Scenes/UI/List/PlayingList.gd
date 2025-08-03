@@ -103,5 +103,14 @@ func get_items() -> Array[PlayingButton]:
 		items.append(item)
 	
 	return items
+
+func connect_to_select(funct: Callable):
+	for item in get_items():
+		item.select.connect(funct.bind(item))
+
+func disable_items(value: bool = true):
+	for item in get_items():
+		item.disabled = value
+
 #endregion
 #--------------------------------------

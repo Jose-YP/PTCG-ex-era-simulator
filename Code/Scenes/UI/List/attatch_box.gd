@@ -42,8 +42,8 @@ func _ready() -> void:
 	
 	for button in slot_list.slots:
 		button.pressed.connect(handle_pressed_slot.bind(button))
-	for button in playing_list.get_items():
-		button.select.connect(select_energy.bind(button))
+	
+	playing_list.connect_to_select(select_energy)
 	update_info()
 	header.setup("[center]ATTATCH BOX")
 	footer.setup("PRESS ESC TO UNDO")
@@ -133,15 +133,20 @@ func update_info():
 	display_current_attatch()
 
 func anymore_attatchments_allowed():
-	print("NO MORE SWAPS")
+	if actions_made == action_ammount:
+		slot_list.disable_all()
+		playing_list.disable_items()
 
 func refresh():
+	energy_giving.clear()
 	slot_list.refresh_energy()
+	energy_types.reset_energy()
 	
 	if reciever != null:
 		reciever.theme_type_variation = ""
 		reciever = null
 	
+	allowed_more_energy()
 	slot_list.find_allowed_givers(reciever_ask, "")
 	update_info()
 
@@ -149,8 +154,7 @@ func reset():
 	actions_made = 0
 	playing_list.reset_items()
 	playing_list.set_items()
-	for button in playing_list.get_items():
-		button.select.connect(select_energy.bind(button))
+	playing_list.connect_to_select(select_energy)
 	
 	refresh()
 #endregion
@@ -160,7 +164,7 @@ func reset():
 #region SIGNALS
 func _on_end_pressed() -> void:
 	print(attatch_history)
-	Globals.control_hide(self)
+	Globals.control_hide(self, .05)
 	
 	for attatchment in attatch_history:
 		Globals.fundies.stack_manager.get_stacks(side.home).move_cards(
@@ -173,7 +177,8 @@ func _on_end_pressed() -> void:
 
 func _on_attatch_pressed() -> void:
 	print("Attatch")
-	var attatch_log: Dictionary = {"Slot" : reciever.slot, "Energy" : []}
+	var attatch_log: Dictionary = {"Slot" : reciever.slot as PokeSlot,
+	 "Energy" : [] as Array[Base_Card]}
 	
 	for en in energy_giving:
 		reciever.slot.signaless_attatch_energy(en.card)
@@ -192,7 +197,6 @@ func _on_reset_pressed() -> void:
 			playing_list.add_item(en)
 	reset()
 	
-	print(attatch_history)
 	attatch_history.clear()
 #endregion
 #--------------------------------------

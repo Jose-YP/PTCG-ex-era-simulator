@@ -96,7 +96,9 @@ func activate_ability():
 		return
 	if prompt:
 		if prompt.has_check_prompt():
-			var result: bool = await prompt.check_prompt()
+			var result: bool = prompt.check_prompt()
+			if prompt.has_coinflip():
+				await SignalBus.finished_coinflip
 			if not result:
 				SignalBus.ability_checked.emit()
 				return
