@@ -34,10 +34,7 @@ func set_items():
 	stack_act = par.stack_act
 	
 	for item in list:
-		print("Consts.playing_button:", Consts.playing_button)
-		print("Type:", typeof(Consts.playing_button))
 		var making = Consts.playing_button.instantiate()
-		print(Consts.playing_button, making)
 		making.card = item
 		making.parent = self
 		%CardList.add_child(making)
@@ -80,7 +77,6 @@ func is_allowed(button: Button) -> void:
 func reset_items():
 	for item in %CardList.get_children():
 		%CardList.remove_child(item)
-		print(item)
 
 func remove_item(card: Base_Card):
 	for item in %CardList.get_children():
@@ -100,8 +96,6 @@ func sort_items():
 	items.sort_custom(Convert.default_card_sort)
 	for i in range(items.size()):
 		%CardList.move_child(items[i], i)
-	
-	pass
 
 func get_items() -> Array[PlayingButton]:
 	var items: Array[PlayingButton]

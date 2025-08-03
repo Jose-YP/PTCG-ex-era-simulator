@@ -396,12 +396,37 @@ func set_max_hp():
 
 #--------------------------------------
 #region ENERGY HANDLERS
-func add_energy(energy_card: Base_Card):
+func signaless_attatch_energy(energy_card: Base_Card):
 	energy_cards.append(energy_card)
 	energy_card.energy_properties.attatched_to = self
 	
 	register_energy_timer(energy_card)
 	refresh()
+
+func signaless_remove_energy(removing: Base_Card):
+	for card in energy_cards:
+		if card.same_card(removing):
+			energy_cards.erase(card)
+			refresh()
+			return
+
+func count_en_attatch_signals(en_cards: Array[Base_Card]):
+	for card in en_cards:
+		if card in energy_cards:
+			Globals.fundies.record_single_src_trg(self)
+			await ability_emit(attatch_en_signal, card.energy_properties.get_current_provide())
+			Globals.fundies.remove_top_source_target()
+		else:
+			printerr(card.name, " isnt in ", get_card_name())
+
+func count_en_remove_signals(en_provides: Array[EnData]):
+	for prov in en_provides:
+		Globals.fundies.record_single_src_trg(self)
+		await ability_emit(discard_en_signal, prov)
+		Globals.fundies.remove_top_source_target()
+
+func add_energy(energy_card: Base_Card):
+	signaless_attatch_energy(energy_card)
 	
 	Globals.fundies.record_single_src_trg(self)
 	await ability_emit(attatch_en_signal, energy_card.energy_properties.get_current_provide())
@@ -409,16 +434,11 @@ func add_energy(energy_card: Base_Card):
 
 func remove_energy(removing: Base_Card):
 	var provide: EnData = removing.energy_properties.get_current_provide()
-	for card in energy_cards:
-		if card.same_card(removing):
-			energy_cards.erase(card)
-			refresh()
-			return
+	signaless_remove_energy(removing)
 	
 	Globals.fundies.record_single_src_trg(self)
 	await ability_emit(discard_en_signal, provide)
 	Globals.fundies.remove_top_source_target()
-	printerr("Couldn't find ", removing.name, " in array ", energy_cards)
 
 func register_energy_timer(card: Base_Card):
 	if card.energy_properties.turns != -1:

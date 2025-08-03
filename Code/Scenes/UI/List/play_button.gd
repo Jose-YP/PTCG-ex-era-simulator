@@ -9,12 +9,20 @@ class_name PlayingButton
 
 signal select
 
+var from_id: Identifier
 var parent: Node
 var checking_card: Node
-var disable_flags: int = 0
 var stack_act: Consts.STACK_ACT
+var disable_flags: int = 0
 var allowed: bool = false
-var from_id: Identifier
+var selected: bool = false:
+	set(value):
+		selected = value
+		if value:
+			theme_type_variation = "DragButton"
+		else:
+			theme_type_variation = ""
+
 
 #--------------------------------------
 #region INITALIZATION

@@ -22,10 +22,11 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Header" parent="EnergyUI" node_paths=PackedStringArray("based_on", "shrinkNodes", "hideNodes") instance=ExtResource("2_1ro7h")]
+[node name="Header" parent="EnergyUI" node_paths=PackedStringArray("dragging_node", "based_on", "shrinkNodes", "hideNodes") instance=ExtResource("2_1ro7h")]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(836, 0)
 layout_mode = 2
+dragging_node = NodePath("../..")
 based_on = NodePath(".")
 shrinkNodes = [NodePath("../PanelContainer/Lists/Slots/SlotList"), NodePath("../PanelContainer/Lists/PlayingList")]
 hideNodes = [NodePath("../Footer"), NodePath("../PanelContainer/Lists/Slots/Actions")]
@@ -59,63 +60,65 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_type_variation = &"DeepPannel"
 
-[node name="InfoSection" type="VBoxContainer" parent="EnergyUI/PanelContainer/Lists/Slots/Actions"]
+[node name="HBoxContainer" type="HBoxContainer" parent="EnergyUI/PanelContainer/Lists/Slots/Actions"]
 layout_mode = 2
 
-[node name="IndSwap" type="HBoxContainer" parent="EnergyUI/PanelContainer/Lists/Slots/Actions/InfoSection"]
-layout_mode = 2
-
-[node name="indSwapNum" type="RichTextLabel" parent="EnergyUI/PanelContainer/Lists/Slots/Actions/InfoSection/IndSwap"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(39, 0)
+[node name="Info" type="VBoxContainer" parent="EnergyUI/PanelContainer/Lists/Slots/Actions/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "99/99"
-fit_content = true
 
-[node name="HBoxContainer" type="HBoxContainer" parent="EnergyUI/PanelContainer/Lists/Slots/Actions/InfoSection/IndSwap"]
-layout_mode = 2
-size_flags_vertical = 3
-alignment = 2
-
-[node name="EnergyTypes" parent="EnergyUI/PanelContainer/Lists/Slots/Actions/InfoSection/IndSwap/HBoxContainer" instance=ExtResource("5_wyeha")]
+[node name="EnergyTypes" parent="EnergyUI/PanelContainer/Lists/Slots/Actions/HBoxContainer/Info" instance=ExtResource("5_wyeha")]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(186, 0)
 layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 2
+size_flags_horizontal = 2
 en_count = 6
 disabled = true
 
-[node name="Reset" type="Button" parent="EnergyUI/PanelContainer/Lists/Slots/Actions/InfoSection/IndSwap/HBoxContainer"]
+[node name="Instructions" type="RichTextLabel" parent="EnergyUI/PanelContainer/Lists/Slots/Actions/HBoxContainer/Info"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(166, 25)
 layout_mode = 2
+size_flags_vertical = 10
+text = "Attatchments Left: 99 / 99
+Reciever: Team Magma's Poochyena"
+fit_content = true
+
+[node name="Buttons" type="VBoxContainer" parent="EnergyUI/PanelContainer/Lists/Slots/Actions/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="EnergyUI/PanelContainer/Lists/Slots/Actions/HBoxContainer/Buttons"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Reset" type="Button" parent="EnergyUI/PanelContainer/Lists/Slots/Actions/HBoxContainer/Buttons/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 3
 disabled = true
 text = "Reset"
 
-[node name="Info&End" type="HBoxContainer" parent="EnergyUI/PanelContainer/Lists/Slots/Actions/InfoSection"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Instructions" type="RichTextLabel" parent="EnergyUI/PanelContainer/Lists/Slots/Actions/InfoSection/Info&End"]
+[node name="Attatch" type="Button" parent="EnergyUI/PanelContainer/Lists/Slots/Actions/HBoxContainer/Buttons/HBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(236, 0)
+custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Reciever: Team Magma's Poochyena"
-fit_content = true
+disabled = true
+text = "Attatch"
 
-[node name="End" type="Button" parent="EnergyUI/PanelContainer/Lists/Slots/Actions/InfoSection/Info&End"]
+[node name="End" type="Button" parent="EnergyUI/PanelContainer/Lists/Slots/Actions/HBoxContainer/Buttons"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Finish"
 
-[node name="Footer" parent="EnergyUI" instance=ExtResource("6_kd201")]
+[node name="Footer" parent="EnergyUI" node_paths=PackedStringArray("dragging_node") instance=ExtResource("6_kd201")]
 unique_name_in_owner = true
 layout_mode = 2
+dragging_node = NodePath("../..")
 
-[connection signal="pressed" from="EnergyUI/PanelContainer/Lists/Slots/Actions/InfoSection/Info&End/End" to="." method="_on_end_pressed"]
+[connection signal="pressed" from="EnergyUI/PanelContainer/Lists/Slots/Actions/HBoxContainer/Buttons/HBoxContainer/Reset" to="." method="_on_reset_pressed"]
+[connection signal="pressed" from="EnergyUI/PanelContainer/Lists/Slots/Actions/HBoxContainer/Buttons/HBoxContainer/Attatch" to="." method="_on_attatch_pressed"]
+[connection signal="pressed" from="EnergyUI/PanelContainer/Lists/Slots/Actions/HBoxContainer/Buttons/End" to="." method="_on_end_pressed"]

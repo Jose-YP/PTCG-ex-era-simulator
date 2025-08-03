@@ -1,28 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://bmhljiqag6upw"]
+[gd_scene load_steps=6 format=3 uid="uid://bmhljiqag6upw"]
 
-[ext_resource type="StyleBox" uid="uid://duhmik1loeema" path="res://Themes/StyleBoxes/GBABox.tres" id="1_4j8ma"]
 [ext_resource type="Script" uid="uid://cr1fsv0gkmwb0" path="res://Code/Scenes/UI/List/poke_slot_item.gd" id="2_4r1ij"]
 [ext_resource type="PackedScene" uid="uid://04qgb8r1r84v" path="res://Scenes/UI/UIComponents/damage_counter.tscn" id="3_4j8ma"]
 [ext_resource type="PackedScene" uid="uid://dph43kayde03u" path="res://Scenes/UI/UIComponents/energy_types.tscn" id="4_8evmm"]
 [ext_resource type="Texture2D" uid="uid://cj4eckcnktq41" path="res://Art/Cards/1 ex Ruby & Saphire/109.jpg" id="5_lyayy"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yloa2"]
-bg_color = Color(0.301961, 0.215686, 0.556863, 1)
-border_width_left = 1
-border_width_top = 2
-border_width_right = 1
-border_width_bottom = 2
-border_color = Color(0.286275, 0.00392157, 0.611765, 1)
-border_blend = true
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_auhmd"]
-bg_color = Color(0.129649, 0.0483941, 0.353005, 1)
-border_width_left = 1
-border_width_top = 2
-border_width_right = 1
-border_width_bottom = 2
-border_color = Color(0.286275, 0.00392157, 0.611765, 1)
-border_blend = true
 
 [sub_resource type="Gradient" id="Gradient_4r1ij"]
 offsets = PackedFloat32Array(0, 0.492795, 0.841499, 1)
@@ -45,9 +26,6 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 mouse_default_cursor_shape = 2
-theme_override_styles/hover = SubResource("StyleBoxFlat_yloa2")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_auhmd")
-theme_override_styles/normal = ExtResource("1_4j8ma")
 disabled = true
 script = ExtResource("2_4r1ij")
 

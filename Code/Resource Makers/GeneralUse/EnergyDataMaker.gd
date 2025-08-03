@@ -40,5 +40,5 @@ func same_type(compared_to: EnData):
 	# 2 & 2  2 && 2
 	# 2 & 1  2 && 1
 	# 2 & 1023  2 && 1023
-	printt(compared_to.type, type, compared_to.type & type, compared_to.type && type)
+	#printt(compared_to.type, type, compared_to.type & type, compared_to.type && type)
 	return compared_to.type & type != 0

@@ -232,8 +232,6 @@ func _on_swap_pressed() -> void:
 		energy_swapped += energy_swapping
 	reset()
 	anymore_swaps_allowed()
-#endregion
-#--------------------------------------
 
 #Reverse any changes made if closed prematurely
 func _on_header_close_button_pressed() -> void:
@@ -242,3 +240,6 @@ func _on_header_close_button_pressed() -> void:
 		for swap_log in swap_history:
 			undo_swap()
 	else: push_error("Closed when shouldn't be able to")
+
+#endregion
+#--------------------------------------

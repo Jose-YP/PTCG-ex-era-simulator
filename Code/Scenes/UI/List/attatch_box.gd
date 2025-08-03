@@ -13,6 +13,7 @@ class_name AttatchBox
 @onready var footer: PanelContainer = %Footer
 @onready var slot_list: SlotList = %SlotList
 @onready var playing_list: PlayingList = %PlayingList
+@onready var energy_types: EnergyCollection = %EnergyTypes
 
 signal finished
 
@@ -41,9 +42,10 @@ func _ready() -> void:
 	
 	for button in slot_list.slots:
 		button.pressed.connect(handle_pressed_slot.bind(button))
-	
+	for button in playing_list.get_items():
+		button.select.connect(select_energy.bind(button))
 	update_info()
-	header.setup("ATTATCH BOX")
+	header.setup("[center]ATTATCH BOX")
 	footer.setup("PRESS ESC TO UNDO")
 	slot_list.find_allowed_givers(reciever_ask, "")
 
@@ -57,7 +59,19 @@ func make_closable() -> void:
 #--------------------------------------
 #region GIVE/RECIEVE
 func handle_pressed_slot(slot_button: PokeSlotButton):
+	if reciever != slot_button:
+		reciever = replace_with_button(reciever, slot_button)
+	else:
+		reciever = replace_with_button(reciever, null)
+	
 	update_info()
+
+func replace_with_button(orig: PokeSlotButton, new: PokeSlotButton) -> PokeSlotButton:
+	if orig != null:
+		orig.theme_type_variation = ""
+	if new != null:
+		new.theme_type_variation = "DragButton"
+	return new
 
 #endregion
 #--------------------------------------
@@ -65,9 +79,12 @@ func handle_pressed_slot(slot_button: PokeSlotButton):
 #--------------------------------------
 #region ENERGY SELECTION
 func select_energy(button: PlayingButton):
-	button.flat = not button.flat
-	if button.flat:
+	
+	button.selected = not button.selected
+	if button.selected:
 		energy_giving.append(button)
+	elif button in energy_giving:
+		energy_giving.erase(button)
 	
 	allowed_more_energy()
 	update_info()
@@ -75,11 +92,27 @@ func select_energy(button: PlayingButton):
 func allowed_more_energy():
 	if energy_giving.size() == energy_ammount:
 		for button in playing_list.get_items():
-			if button.flat: continue
+			if button.selected: continue
 			button.disabled = true
 	else:
 		for button in playing_list.get_items():
 			button.disabled = not playing_list.list[button.card]
+
+func display_current_attatch():
+	var energy_dict: Dictionary[String, int] = {"Grass": 0, "Fire": 0, "Water": 0,
+	 "Lightning": 0, "Psychic":0, "Fighting":0 ,"Darkness":0, "Metal":0,
+	 "Colorless":0, "Magma":0, "Aqua":0, "Dark Metal":0, "React": 0, 
+	 "FF": 0, "GL": 0, "WP": 0, "Rainbow":0}
+	var energy_names: Array[String]
+	
+	for button in energy_giving:
+		var en_provide: EnData = button.card.energy_properties.get_current_provide()
+		var energy_name: String = en_provide.get_string()
+		energy_names.append(energy_name)
+		energy_dict[energy_name] += en_provide.number
+	
+	energy_types.display_energy(energy_names, energy_dict)
+
 #endregion
 #--------------------------------------
 
@@ -87,32 +120,79 @@ func allowed_more_energy():
 #region UI UPDATES
 func update_info():
 	energy_attatch_num = energy_giving.size()
-	%indSwapNum.clear()
 	%Instructions.clear()
 	
 	var actions_left: String = str("Attatchments Left: ",actions_made,"/",
 	action_ammount if action_ammount != -1 else "X")
+	var reciever_txt: String = str("\nReciever: ", reciever.slot.get_card_name() if reciever else "")
 	
-	%Instructions.append_text(actions_left)
+	%Instructions.append_text(str(actions_left,reciever_txt))
 	%Reset.disabled = actions_made == 0
+	%Attatch.disabled = energy_giving.size() == 0 or reciever == null
+	
+	display_current_attatch()
 
-func anymore_swaps_allowed():
+func anymore_attatchments_allowed():
 	print("NO MORE SWAPS")
 
-func reset():
-	actions_made = 0
-	playing_list.reset_items()
+func refresh():
 	slot_list.refresh_energy()
 	
 	if reciever != null:
-		reciever.flat = false
+		reciever.theme_type_variation = ""
 		reciever = null
 	
 	slot_list.find_allowed_givers(reciever_ask, "")
 	update_info()
+
+func reset():
+	actions_made = 0
+	playing_list.reset_items()
+	playing_list.set_items()
+	for button in playing_list.get_items():
+		button.select.connect(select_energy.bind(button))
+	
+	refresh()
 #endregion
 #--------------------------------------
 
+#--------------------------------------
+#region SIGNALS
 func _on_end_pressed() -> void:
+	print(attatch_history)
+	Globals.control_hide(self)
+	
+	for attatchment in attatch_history:
+		Globals.fundies.stack_manager.get_stacks(side.home).move_cards(
+			attatchment["Energy"], Consts.STACKS.HAND, Consts.STACKS.PLAY)
+		
+		await attatchment["Slot"].count_en_attatch_signals(attatchment["Energy"])
+	
 	finished.emit()
 	Globals.control_disapear(self, .1)
+
+func _on_attatch_pressed() -> void:
+	print("Attatch")
+	var attatch_log: Dictionary = {"Slot" : reciever.slot, "Energy" : []}
+	
+	for en in energy_giving:
+		reciever.slot.signaless_attatch_energy(en.card)
+		attatch_log["Energy"].append(en.card)
+		playing_list.remove_item(en.card)
+	
+	attatch_history.append(attatch_log)
+	actions_made += 1
+	refresh()
+	anymore_attatchments_allowed()
+
+func _on_reset_pressed() -> void:
+	for attatchment in attatch_history:
+		for en in attatchment["Energy"]:
+			attatchment["Slot"].signaless_remove_energy(en)
+			playing_list.add_item(en)
+	reset()
+	
+	print(attatch_history)
+	attatch_history.clear()
+#endregion
+#--------------------------------------

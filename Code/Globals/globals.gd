@@ -68,6 +68,11 @@ func reset_check():
 	checking = false
 	exit_check.emit()
 
+func control_hide(node: Node, timing: float = .1):
+	var hide_tween: Tween = get_tree().create_tween()
+	
+	hide_tween.tween_property(node, "modulate", Color.TRANSPARENT, timing)
+
 func control_disapear(node: Node, timing: float, old_position: Vector2 = Vector2.ZERO):
 	var disapear_tween: Tween = get_tree().create_tween().set_parallel()
 	
