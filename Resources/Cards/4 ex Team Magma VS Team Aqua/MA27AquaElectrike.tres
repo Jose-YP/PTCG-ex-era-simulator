@@ -1,10 +1,9 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=21 format=3 uid="uid://2ps0sakw53cw"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=19 format=3 uid="uid://2ps0sakw53cw"]
 
 [ext_resource type="Texture2D" uid="uid://bbdpkwr5sxe4f" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/27.jpg" id="1_l0n2v"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_l4jxc"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="3_dfgxb"]
-[ext_resource type="Resource" uid="uid://duyf6uncjts05" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Lightning1.tres" id="3_n3jgw"]
-[ext_resource type="Resource" uid="uid://bhs6bq3gobv5j" path="res://Resources/Components/Pokemon/Attacks/AttackData/10DmgAny.tres" id="4_olpls"]
+[ext_resource type="Resource" uid="uid://xj6xcs7j67hl" path="res://Resources/Components/Pokemon/Attacks/BenchAttacks/RandomSpark.tres" id="3_up8c8"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="5_xpfcg"]
 [ext_resource type="Resource" uid="uid://c8vs2wowmlhne" path="res://Resources/Components/Effects/Placement/PutOnSelf.tres" id="6_f3p2r"]
 [ext_resource type="Resource" uid="uid://b1rwmggf7a4do" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless2.tres" id="6_hw4dm"]
@@ -14,13 +13,6 @@
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="8_fa4or"]
 [ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="8_qqky0"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="9_vm2o3"]
-
-[sub_resource type="Resource" id="Resource_ko0lf"]
-script = ExtResource("3_dfgxb")
-name = "Random Spark"
-description = "Choose 1 of your opponent's Pokémon. This attack does 10 damage to that Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
-attack_cost = ExtResource("3_n3jgw")
-attack_data = ExtResource("4_olpls")
 
 [sub_resource type="Resource" id="Resource_ffvxl"]
 script = ExtResource("8_qqky0")
@@ -73,7 +65,7 @@ attack_data = SubResource("Resource_mgt8s")
 script = ExtResource("9_vm2o3")
 HP = 50
 retreat = 1
-attacks = Array[ExtResource("3_dfgxb")]([SubResource("Resource_ko0lf"), SubResource("Resource_nvcnk")])
+attacks = Array[ExtResource("3_dfgxb")]([ExtResource("3_up8c8"), SubResource("Resource_nvcnk")])
 evo_stage = "Basic"
 evolves_from = ""
 considered = 1

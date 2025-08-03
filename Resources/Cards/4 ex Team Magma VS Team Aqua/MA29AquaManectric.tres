@@ -53,6 +53,7 @@ comparision_type = "Equals"
 first_comparison = SubResource("Resource_2naku")
 compare_to = "Const"
 second_constant = 1
+operate_w_constant = "None"
 metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
 [sub_resource type="Resource" id="Resource_va2mh"]

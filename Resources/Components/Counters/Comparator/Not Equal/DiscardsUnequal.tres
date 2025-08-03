@@ -16,6 +16,7 @@ metadata/_custom_type_script = "uid://vjn146j3ayd6"
 
 [sub_resource type="Resource" id="Resource_ljd7k"]
 script = ExtResource("4_77qmt")
+previous_src_trg = false
 side_target = 5
 slot_target = 2
 specifically = Array[String]([])

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Deck" load_steps=8 format=3 uid="uid://b74rxfxcx76bx"]
+[gd_resource type="Resource" script_class="Deck" load_steps=14 format=3 uid="uid://b74rxfxcx76bx"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_ujr71"]
 [ext_resource type="Resource" uid="uid://dp2qu3pkoldmi" path="res://Resources/Cards/6 ex FireRed & LeafGreen/RG14Slowbro.tres" id="2_j10wv"]
@@ -7,6 +7,12 @@
 [ext_resource type="Resource" uid="uid://bd3x4rf00qjqr" path="res://Resources/Cards/1 ex Ruby & Saphire/RS22Sharpedo.tres" id="5_qtxrj"]
 [ext_resource type="Resource" uid="uid://d3wqsrtlqtlqm" path="res://Resources/Cards/1 ex Ruby & Saphire/RS106WaterEnergy.tres" id="6_gjclh"]
 [ext_resource type="Script" uid="uid://e660iomt5e76" path="res://Code/Resource Makers/CardResources/DeckMaker.gd" id="7_8o8s2"]
+[ext_resource type="Resource" uid="uid://ybxbqon28r0p" path="res://Resources/Cards/1 ex Ruby & Saphire/RS13Swampert.tres" id="7_ig7vb"]
+[ext_resource type="Resource" uid="uid://cppmiu7in05y6" path="res://Resources/Cards/1 ex Ruby & Saphire/RS23Swampert.tres" id="8_c6h0c"]
+[ext_resource type="Resource" uid="uid://xe7261xpp7ne" path="res://Resources/Cards/1 ex Ruby & Saphire/RS41Marshtomp.tres" id="9_3ufeq"]
+[ext_resource type="Resource" uid="uid://cct84fq6ebs2d" path="res://Resources/Cards/1 ex Ruby & Saphire/RS40Marshtomp.tres" id="10_3ujd4"]
+[ext_resource type="Resource" uid="uid://bsqvv4tq4rqsl" path="res://Resources/Cards/1 ex Ruby & Saphire/RS59Mudkip.tres" id="11_tr4mi"]
+[ext_resource type="Resource" uid="uid://c6hkbplnm1lm1" path="res://Resources/Cards/1 ex Ruby & Saphire/RS60Mudkip.tres" id="12_luorb"]
 
 [resource]
 script = ExtResource("7_8o8s2")
@@ -15,6 +21,12 @@ ExtResource("2_j10wv"): 4,
 ExtResource("3_ppveq"): 4,
 ExtResource("4_pouqn"): 4,
 ExtResource("5_qtxrj"): 4,
-ExtResource("6_gjclh"): 44
+ExtResource("6_gjclh"): 32,
+ExtResource("7_ig7vb"): 2,
+ExtResource("8_c6h0c"): 2,
+ExtResource("9_3ufeq"): 2,
+ExtResource("10_3ujd4"): 2,
+ExtResource("11_tr4mi"): 2,
+ExtResource("12_luorb"): 2
 })
 metadata/_custom_type_script = "uid://e660iomt5e76"

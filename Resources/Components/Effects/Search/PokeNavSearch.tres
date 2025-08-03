@@ -9,7 +9,6 @@ script = ExtResource("1_oodrf")
 which = 0
 top_deck = false
 stack = 0
-slot = 4
 use_as = 0
 reorder_type = 2
 shuffle = false

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Deck" load_steps=24 format=3 uid="uid://c73v0ww8k8rg2"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_hfsv0"]
-[ext_resource type="Resource" uid="uid://cgm3sofk1dkq3" path="res://Resources/Cards/6 ex FireRed & LeafGreen/RG112Venusaurex.tres" id="2_jo5kh"]
+[ext_resource type="Resource" uid="uid://cgm3sofk1dkq3" path="res://Resources/Cards/6 ex FireRed & LeafGreen/RG112Venusaur-ex.tres" id="2_jo5kh"]
 [ext_resource type="Resource" uid="uid://ct34kdqkmfsuu" path="res://Resources/Cards/6 ex FireRed & LeafGreen/RG35Ivysaur.tres" id="3_swbub"]
 [ext_resource type="Resource" uid="uid://c0kbwsboq8b5x" path="res://Resources/Cards/6 ex FireRed & LeafGreen/RG55Bubasaur.tres" id="4_xap5f"]
 [ext_resource type="Resource" uid="uid://dpvdlrumqivuv" path="res://Resources/Cards/1 ex Ruby & Saphire/RS11Sceptile.tres" id="5_1n57e"]

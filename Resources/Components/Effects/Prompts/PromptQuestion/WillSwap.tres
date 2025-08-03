@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="PromptAsk" load_steps=2 format=3 uid="uid://ssgmwhjsdq4b"]
+
+[ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="1_tfq8y"]
+
+[resource]
+script = ExtResource("1_tfq8y")
+formal_question = true
+question_string = "Will you switch the attacking pokemon?"
+yes_answer = "Yes"
+no_answer = "No"
+can_reverse = true
+occurance = false
+chooser = 0
+choose_location = "None"
+which_stack = 0
+metadata/_custom_type_script = "uid://b85jmc7067bjc"

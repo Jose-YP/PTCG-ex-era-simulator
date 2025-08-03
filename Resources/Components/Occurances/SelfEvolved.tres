@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Occurance" load_steps=3 format=3 uid="uid://b5venyeeni54e"]
+
+[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="1_o2ql6"]
+[ext_resource type="Script" uid="uid://bics3dumv7avj" path="res://Code/Resource Makers/GeneralUse/OccuranceMaker.gd" id="2_cdhi7"]
+
+[resource]
+script = ExtResource("2_cdhi7")
+from_ask = ExtResource("1_o2ql6")
+signal = "evolved"
+metadata/_custom_type_script = "uid://bics3dumv7avj"

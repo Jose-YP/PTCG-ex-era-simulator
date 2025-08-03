@@ -137,11 +137,11 @@ func play_ability_activate(slot: PokeSlot, ability: Ability):
 	%AbilityName.append_text(str(slot.get_card_name(), "'s\n", ability.name))
 	%AbilityActivate.show()
 	
-	animation_tween.tween_property(%AbilityName, "visible_ratio", 1.0, ability_ani_time * 1/4)
+	animation_tween.tween_property(%AbilityName, "visible_ratio", 1.0, ability_ani_time * 2/3)
 	animation_tween.tween_property($ColorRect, "modulate", Color.WHITE, ability_ani_time * 3/4)
 	animation_tween.tween_property(%AbilityActivate, "modulate", Color.WHITE, ability_ani_time * 3/4)
 	animation_tween.tween_property(%AbilityActivate, "position", base_pos, ability_ani_time * 3/4)
-	slot.ui_slot.ability_occured(slot.get_pokedata().pokebody == ability, ability_ani_time)
+	slot.ui_slot.ability_occured(slot.get_pokedata().pokebody == ability, ability_ani_time * 1.75)
 	
 	await animation_tween.finished
 	

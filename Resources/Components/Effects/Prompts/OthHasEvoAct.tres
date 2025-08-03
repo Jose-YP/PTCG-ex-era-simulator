@@ -19,6 +19,7 @@ comparision_type = "Not Equal"
 first_comparison = SubResource("Resource_hi82u")
 compare_to = "None"
 second_constant = 0
+operate_w_constant = "None"
 metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
 [resource]

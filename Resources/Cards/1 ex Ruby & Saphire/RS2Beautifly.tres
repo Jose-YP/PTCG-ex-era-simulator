@@ -52,8 +52,8 @@ category = "Body"
 name = "Withering Dust"
 description = "As long as [name] is in play, do not apply Resistance for all Active Pokémon."
 affected_by_condition = false
-active = null
-how_often = null
+active = false
+how_often = "Once per Mon"
 passive = SubResource("Resource_fbclb")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 

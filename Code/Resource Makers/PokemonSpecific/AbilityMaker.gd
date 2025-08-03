@@ -5,12 +5,19 @@ class_name Ability
 @export var name: String = ""
 @export_multiline var description: String = ""
 
+##If they're affected by a condition they cannot use the ability as long as this is true
 @export var affected_by_condition: bool = true
+##Mon must be in active slot to use this ability
 @export var active: bool = false
+##How often can this ability be used in a per turn basis
 @export_enum("Once per Mon", "Once per turn", "Infinite") var how_often: String = "Once per Mon"
+##Any conditions to pass to activate the effect?
 @export var prompt: PromptAsk
+##If this ability activates at a certain time, when is that time? Uses signals from [member PokeSlot]
 @export var occurance: Occurance
+##This effects will activate without calling for any reactions from other slots
 @export var passive: EffectCall
+##This will call an ability activation
 @export var effect: EffectCall
 
 var attatched_to: PokeSlot
@@ -38,11 +45,15 @@ func single_disconnect(slot: PokeSlot):
 
 #endregion
 
+#region BOOLEANS
 ##Passives will activate on thier own
 func does_press_activate(slot: PokeSlot) -> bool:
 	if occurance:
 		return false
 	
+	return general_allowed(slot)
+
+func general_allowed(slot: PokeSlot) -> bool:
 	var quick_result: bool = true
 	if active:
 		quick_result = slot.is_active()
@@ -67,6 +78,7 @@ func check_allowed(slot: PokeSlot) -> bool:
 		return result
 	else:
 		return true
+#endregion
 
 func activate_passive() -> bool:
 	if prompt:
@@ -80,6 +92,8 @@ func activate_passive() -> bool:
 	return false
 
 func activate_ability():
+	if not general_allowed(attatched_to):
+		return
 	if prompt:
 		if prompt.has_check_prompt():
 			var result: bool = await prompt.check_prompt()
@@ -100,5 +114,15 @@ func activate_ability():
 	
 	await Globals.fundies.ui_actions.play_ability_activate(attatched_to, self)
 	await effect.play_effect()
+	
+	match how_often:
+		"Once per Mon":
+			if category == "Body":
+				attatched_to.body_exhaust = true
+			else:
+				attatched_to.power_exhaust = true
+		"Once per Turn":
+			Globals.fundies.used_ability(name)
+	
 	SignalBus.ability_checked.emit()
 	SignalBus.ability_activated.emit()

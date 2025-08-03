@@ -7,7 +7,7 @@
 [ext_resource type="Resource" uid="uid://dyqdhaov0ywxk" path="res://Resources/Cards/1 ex Ruby & Saphire/RS92Switch.tres" id="5_b6361"]
 [ext_resource type="Resource" uid="uid://cvjyyq2lad5k5" path="res://Resources/Cards/1 ex Ruby & Saphire/RS108FireEnergy.tres" id="6_rp7ng"]
 [ext_resource type="Resource" uid="uid://cjxwqcnfm20fq" path="res://Resources/Cards/1 ex Ruby & Saphire/RS104GrassEnergy.tres" id="7_i6u6p"]
-[ext_resource type="Resource" uid="uid://b7vajyscyemon" path="res://Resources/Cards/16 ex Power Keepers/PK92Absolex.tres" id="8_crr11"]
+[ext_resource type="Resource" uid="uid://b7vajyscyemon" path="res://Resources/Cards/16 ex Power Keepers/PK92Absol-ex.tres" id="8_rp7ng"]
 [ext_resource type="Script" uid="uid://calm3n7va5yjo" path="res://Code/Resource Makers/GeneralUse/CardStacksMaker.gd" id="9_7bxh5"]
 [ext_resource type="Resource" uid="uid://jq2ng1vyif34" path="res://Resources/Cards/1 ex Ruby & Saphire/RS28Combusken.tres" id="9_rp7ng"]
 [ext_resource type="Script" uid="uid://dgqpurnuh14t1" path="res://Code/Resource Makers/GeneralUse/SideStateMaker.gd" id="10_7kpg6"]
@@ -28,7 +28,7 @@
 script = ExtResource("9_7bxh5")
 deck = ExtResource("1_in7rn")
 init_deck = Array[ExtResource("2_qm4aq")]([])
-init_hand = Array[ExtResource("2_qm4aq")]([ExtResource("3_3hnc3"), ExtResource("4_q0d6x"), ExtResource("5_b6361"), ExtResource("6_rp7ng"), ExtResource("7_i6u6p"), ExtResource("8_crr11"), ExtResource("6_rp7ng"), ExtResource("9_rp7ng")])
+init_hand = Array[ExtResource("2_qm4aq")]([ExtResource("3_3hnc3"), ExtResource("4_q0d6x"), ExtResource("5_b6361"), ExtResource("6_rp7ng"), ExtResource("7_i6u6p"), ExtResource("8_rp7ng"), ExtResource("6_rp7ng"), ExtResource("9_rp7ng")])
 init_discard = Array[ExtResource("2_qm4aq")]([])
 init_prize = Array[ExtResource("2_qm4aq")]([])
 metadata/_custom_type_script = "uid://calm3n7va5yjo"

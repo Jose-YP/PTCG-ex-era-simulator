@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("1_51axq")
+previous_src_trg = false
 side_target = 5
 slot_target = 1
 specifically = Array[String]([])

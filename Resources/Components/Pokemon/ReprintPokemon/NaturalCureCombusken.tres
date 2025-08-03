@@ -1,10 +1,9 @@
-[gd_resource type="Resource" script_class="Pokemon" load_steps=14 format=3 uid="uid://dcxpyr6d3omf7"]
+[gd_resource type="Resource" script_class="Pokemon" load_steps=13 format=3 uid="uid://dcxpyr6d3omf7"]
 
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_23xl6"]
 [ext_resource type="Resource" uid="uid://b1rwmggf7a4do" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless2.tres" id="2_qg207"]
 [ext_resource type="Resource" uid="uid://lnqxjpwlc83l" path="res://Resources/Components/Pokemon/Attacks/AttackData/50IfHeads.tres" id="3_nn817"]
 [ext_resource type="Resource" uid="uid://d0in7vtooxjm1" path="res://Resources/Components/Effects/ETC/AtkSelfHealCond.tres" id="4_jxjhv"]
-[ext_resource type="Resource" uid="uid://dies0ymvth17j" path="res://Resources/Components/Effects/Identifiers/Energy/IsFireEnergy.tres" id="5_npple"]
 [ext_resource type="Resource" uid="uid://mregpmlqoyvy" path="res://Resources/Components/EnData/Fire.tres" id="6_euf6j"]
 [ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="8_k64wy"]
 [ext_resource type="Script" uid="uid://bics3dumv7avj" path="res://Code/Resource Makers/GeneralUse/OccuranceMaker.gd" id="9_2yvqv"]
@@ -22,7 +21,6 @@ attack_data = ExtResource("3_nn817")
 script = ExtResource("9_2yvqv")
 from_ask = ExtResource("8_k64wy")
 signal = "attatch_en_signal"
-card_type = ExtResource("5_npple")
 energy_type = ExtResource("6_euf6j")
 metadata/_custom_type_script = "uid://bics3dumv7avj"
 

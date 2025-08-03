@@ -40,7 +40,39 @@ func find_allowed(ask: SlotAsk):
 		if node.slot:
 			node.disabled = not ask.check_ask(node.slot)
 
-func find_allowed_givers(ask: SlotAsk):
+func find_allowed_givers(ask: SlotAsk, box: String = "Swap"):
 	for node in %SlotList.get_children():
 		if node.slot:
-			node.disabled = not ask.check_ask(node.slot) or node.slot.energy_cards.size() == 0
+			print("Is ", node.slot.get_card_name(), " allowed?", ask.check_ask(node.slot), safeguard)
+			node.disabled = not ask.check_ask(node.slot) or safeguard(node.slot, box)
+
+func find_allowed_either(ask_giv: SlotAsk, ask_take: SlotAsk, box = "DmgGive"):
+	var allowed_as: Dictionary[int, String]
+	for node in %SlotList.get_children():
+		if node.slot:
+			#Would the card be valid if it was a giver?
+			var giver: bool = not safeguard(node.slot, box) and ask_giv.check_ask(node.slot) 
+			var taker: bool = ask_take.check_ask(node.slot)
+			
+			if giver and taker:
+				allowed_as[node.get_instance_id()] = "Both"
+			elif giver:
+				allowed_as[node.get_instance_id()] = "Giver"
+			elif taker:
+				allowed_as[node.get_instance_id()] = "Taker"
+			else:
+				allowed_as[node.get_instance_id()] = "None"
+			
+			
+			node.disabled = not (giver or taker)
+	
+	return allowed_as
+
+func safeguard(slot: PokeSlot, box: String):
+	match box:
+		"Swap":
+			return slot.energy_cards.size() == 0
+		"DmgGive":
+			return slot.damage_counters == 0
+	
+	return false

@@ -23,6 +23,7 @@
 
 [sub_resource type="Resource" id="Resource_sxcfq"]
 script = ExtResource("5_ad1mx")
+previous_src_trg = false
 side_target = 3
 slot_target = 4
 specifically = Array[String](["Magnemite", "Magneton"])
@@ -128,7 +129,7 @@ category = "Power"
 name = "Reactive Recharge"
 description = "If [name] would be Knocked Out by damage from an opponent's attack, you may move any number of React Energy cards from [name] to your Pokémon in any way you like."
 affected_by_condition = false
-active = null
+active = false
 how_often = "Infinite"
 occurance = ExtResource("17_snhq1")
 effect = SubResource("Resource_gdo84")

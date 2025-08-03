@@ -1,13 +1,14 @@
-[gd_resource type="Resource" script_class="Placement" load_steps=2 format=3 uid="uid://c8vs2wowmlhne"]
+[gd_resource type="Resource" script_class="Placement" load_steps=3 format=3 uid="uid://c8vs2wowmlhne"]
 
 [ext_resource type="Script" uid="uid://cdyba0wadidwb" path="res://Code/Resource Makers/EffectSpecific/PlacementMaker.gd" id="1_6klis"]
+[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="2_jvlo4"]
 
 [resource]
 script = ExtResource("1_6klis")
 which = 1
 top_deck = false
 stack = 1
-slot = 1
+slot_ask = ExtResource("2_jvlo4")
 use_as = 0
 reorder_type = 0
 shuffle = true

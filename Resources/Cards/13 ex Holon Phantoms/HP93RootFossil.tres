@@ -9,7 +9,7 @@
 script = ExtResource("1_vtdm4")
 name = "Root Fossil"
 image = ExtResource("1_uu5ho")
-illustrator = ""
+illustrator = "Ryo Ueda"
 number = 93
 rarity = 1
 expansion = 12

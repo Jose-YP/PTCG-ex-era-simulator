@@ -15,7 +15,7 @@
 [ext_resource type="Resource" uid="uid://by8ynv4fc500g" path="res://Resources/Cards/1 ex Ruby & Saphire/RS43Silcoon.tres" id="10_c5qlx"]
 [ext_resource type="Resource" uid="uid://d10tfnmvnup6w" path="res://Resources/Cards/1 ex Ruby & Saphire/RS26Cascoon.tres" id="11_tbqu3"]
 [ext_resource type="Resource" uid="uid://cbrv0ftymjhbj" path="res://Resources/Cards/1 ex Ruby & Saphire/RS78Wurmple.tres" id="12_wd7ae"]
-[ext_resource type="Resource" uid="uid://cgm3sofk1dkq3" path="res://Resources/Cards/6 ex FireRed & LeafGreen/RG112Venusaurex.tres" id="13_gmg8j"]
+[ext_resource type="Resource" uid="uid://cgm3sofk1dkq3" path="res://Resources/Cards/6 ex FireRed & LeafGreen/RG112Venusaur-ex.tres" id="13_gmg8j"]
 [ext_resource type="Resource" uid="uid://c0kbwsboq8b5x" path="res://Resources/Cards/6 ex FireRed & LeafGreen/RG55Bubasaur.tres" id="14_qoyrj"]
 [ext_resource type="Resource" uid="uid://ct34kdqkmfsuu" path="res://Resources/Cards/6 ex FireRed & LeafGreen/RG35Ivysaur.tres" id="15_a5eex"]
 [ext_resource type="Resource" uid="uid://x137dggkdklo" path="res://Resources/Cards/1 ex Ruby & Saphire/RS31Grovyle.tres" id="16_fcuve"]

@@ -16,7 +16,7 @@
 [ext_resource type="Resource" uid="uid://dun1tnvh1beg2" path="res://Resources/Cards/5 ex Hidden Lagends/HL90LifeHerb.tres" id="14_org5a"]
 [ext_resource type="Resource" uid="uid://dyqdhaov0ywxk" path="res://Resources/Cards/1 ex Ruby & Saphire/RS92Switch.tres" id="15_jxe66"]
 [ext_resource type="Resource" uid="uid://bxksrioa4tn37" path="res://Resources/Cards/7 ex Team Rocket Returns/TRR83CopyCat.tres" id="16_mgeqb"]
-[ext_resource type="Resource" uid="uid://b42bvfsjoe0d" path="res://Resources/Cards/2 ex Sandstorm/SS100Wailordex.tres" id="17_51qud"]
+[ext_resource type="Resource" uid="uid://b42bvfsjoe0d" path="res://Resources/Cards/2 ex Sandstorm/SS100Wailord-ex.tres" id="17_51qud"]
 [ext_resource type="Script" uid="uid://e660iomt5e76" path="res://Code/Resource Makers/CardResources/DeckMaker.gd" id="18_tbear"]
 
 [resource]

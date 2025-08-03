@@ -21,4 +21,5 @@ comparision_type = "Return"
 first_comparison = SubResource("Resource_4ea72")
 compare_to = "None"
 second_constant = null
+operate_w_constant = "None"
 metadata/_custom_type_script = "uid://b65jx8u5cgcgl"

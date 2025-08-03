@@ -1,0 +1,160 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=29 format=3 uid="uid://5g5ban7l633b"]
+
+[ext_resource type="Texture2D" uid="uid://bvvn5sfttmcip" path="res://Art/Cards/3 ex Dragon/18.jpg" id="1_utp21"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_adtio"]
+[ext_resource type="Resource" uid="uid://b1rwmggf7a4do" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless2.tres" id="3_nbhn7"]
+[ext_resource type="Resource" uid="uid://ssgmwhjsdq4b" path="res://Resources/Components/Effects/Prompts/PromptQuestion/WillSwap.tres" id="4_85c17"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="5_lptg0"]
+[ext_resource type="Resource" uid="uid://d1b5din1lvjqo" path="res://Resources/Components/EnData/Grass.tres" id="6_gseeo"]
+[ext_resource type="Resource" uid="uid://ba0r8f1bi6iwl" path="res://Resources/Components/Effects/Asks/General/PreviousSelf.tres" id="7_eemmu"]
+[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="8_gu4j2"]
+[ext_resource type="Script" uid="uid://cimk6l7ytw7xg" path="res://Code/Resource Makers/EffectSpecific/EnMovMaker.gd" id="9_f84oo"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="10_kmcin"]
+[ext_resource type="Script" uid="uid://curklvf1517ml" path="res://Code/Resource Makers/EffectSpecific/SwapMaker.gd" id="11_3oyw5"]
+[ext_resource type="Resource" uid="uid://dvdnbmg1kbbmb" path="res://Resources/Components/Effects/Placement/PlaceOnBench.tres" id="12_q53k5"]
+[ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="13_e6h7m"]
+[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="14_kepxc"]
+[ext_resource type="Resource" uid="uid://b5venyeeni54e" path="res://Resources/Components/Occurances/SelfEvolved.tres" id="15_27lis"]
+[ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="16_4fcbq"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="17_gyplg"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="18_dudpk"]
+
+[sub_resource type="Resource" id="Resource_hjipc"]
+script = ExtResource("9_f84oo")
+action = 1
+chooser = 4
+givers = ExtResource("7_eemmu")
+reciever = ExtResource("8_gu4j2")
+to_stack = 2
+stack_direction = 2
+energy_carry_over = false
+action_ammount = 1
+energy_ammount = -1
+energy_move_type = 0
+en_type = ExtResource("6_gseeo")
+react = false
+metadata/_custom_type_script = "uid://cimk6l7ytw7xg"
+
+[sub_resource type="Resource" id="Resource_1csst"]
+script = ExtResource("11_3oyw5")
+force_reversable = false
+record_target = true
+choose_active = false
+chosing = 1
+affected = 1
+autofill = "Active"
+metadata/_custom_type_script = "uid://curklvf1517ml"
+
+[sub_resource type="Resource" id="Resource_fo38g"]
+script = ExtResource("10_kmcin")
+either_or = false
+order = Array[int]([7, 4])
+energy_movement = SubResource("Resource_hjipc")
+swap = SubResource("Resource_1csst")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_jpmu7"]
+script = ExtResource("5_lptg0")
+prompt_reliant = false
+prompt = ExtResource("4_85c17")
+initial_main_DMG = 30
+defender_properties = 0
+condition = 1
+replace_num = false
+success_effect = SubResource("Resource_fo38g")
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_usqn5"]
+script = ExtResource("2_adtio")
+name = "Quick Touch"
+description = "You may switch [name] with 1 of your Benched Pokémon. If you do, you may move any number of {Grass} Energy cards attached to [name] to the new Active Pokémon. "
+attack_cost = ExtResource("3_nbhn7")
+attack_data = SubResource("Resource_jpmu7")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_p3v4m"]
+script = ExtResource("13_e6h7m")
+description = "Shedinja"
+must_be_different = false
+broad_class = 1
+exactly = false
+name_array = Array[String](["Shedinja"])
+type = 0
+evolves_from = false
+rare_candy = false
+inclusive_class = true
+poke_class = 0
+owner = 0
+stage = 0
+trainer_classes = 0
+energy_class = 3
+metadata/_custom_type_script = "uid://uplawvwcwl8y"
+
+[sub_resource type="Resource" id="Resource_pe6uw"]
+script = ExtResource("14_kepxc")
+side = 4
+where = 1
+reordering_only = false
+shuffle_first = false
+based_on_side = 0
+based_on_slots = 0
+based_on_energy = 0
+portion = -1
+how_many = Array[int]([1])
+of_this = Array[ExtResource("13_e6h7m")]([SubResource("Resource_p3v4m")])
+and_then = ExtResource("12_q53k5")
+reveal = true
+metadata/_custom_type_script = "uid://cw3yr1k040kw7"
+
+[sub_resource type="Resource" id="Resource_weyjf"]
+script = ExtResource("10_kmcin")
+either_or = false
+order = Array[int]([])
+search = SubResource("Resource_pe6uw")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_bbrau"]
+script = ExtResource("16_4fcbq")
+category = "Power"
+name = "Loose Shell"
+description = "Once during your turn, when you play [name] from your hand to evolve 1 of your Pokémon, you may search your deck for Shedinja and put it onto your Bench. Treat the new Benched Pokémon as a Basic Pokémon. Shuffle your deck afterward."
+affected_by_condition = false
+active = false
+how_often = "Once per Mon"
+occurance = ExtResource("15_27lis")
+effect = SubResource("Resource_weyjf")
+metadata/_custom_type_script = "uid://bs2y8ocljilv8"
+
+[sub_resource type="Resource" id="Resource_buy7s"]
+script = ExtResource("17_gyplg")
+HP = 70
+retreat = 0
+pokepower = SubResource("Resource_bbrau")
+attacks = Array[ExtResource("2_adtio")]([SubResource("Resource_usqn5")])
+evo_stage = "Stage 1"
+evolves_from = "Nincada"
+considered = 1
+owner = 0
+type = 1
+weak = 2
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("18_dudpk")
+name = "Ninjask"
+image = ExtResource("1_utp21")
+illustrator = "Hajime Kusajima"
+number = 8
+rarity = 2
+expansion = 2
+categories = 1
+pokemon_properties = SubResource("Resource_buy7s")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

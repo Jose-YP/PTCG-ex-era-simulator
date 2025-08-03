@@ -277,6 +277,9 @@ func get_targets(atk: PokeSlot, def: Array[PokeSlot]) -> Array[Array]:
 func get_pokedata() -> Pokemon:
 	return current_card.pokemon_properties
 
+func get_max_hp() -> int:
+	return max_HP
+
 func has_occurance() -> bool:
 	if get_pokedata().pokebody and get_pokedata().pokebody.occurance:
 		return true
@@ -315,13 +318,10 @@ func set_card(card: Base_Card, from_hand: bool) -> void:
 	ui_slot.make_allowed(true)
 	refresh_current_card()
 	
-	setup_abilities()
-	
 	Globals.fundies.record_single_src_trg(self)
 	if from_hand:
 		await ability_emit(played, get_slot_pos())
 	Globals.fundies.remove_top_source_target()
-	
 
 #General use function, use specific ones if possible
 func remove_cards(cards: Array[Base_Card]) -> void:
@@ -385,6 +385,9 @@ func dmg_manip(dmg_change: int, timer: int = -1) -> void:
 	else:
 		damage_timers.append({"Damage" : dmg_change, "Timer" : timer})
 	refresh()
+
+func set_max_hp():
+	max_HP = get_pokedata().HP
 
 #endregion
 #--------------------------------------
@@ -515,7 +518,6 @@ func evolve_card(evolution: Base_Card) -> void:
 	evolved_from.append(current_card)
 	current_card = evolution
 	refresh_current_card()
-	setup_abilities()
 	
 	alleviate_all()
 	await ability_emit(evolved, self)
@@ -526,7 +528,7 @@ func devolve_card() -> Base_Card:
 	
 	disconnect_abilities()
 	current_card = evolved_from.pop_back()
-	setup_abilities()
+	
 	refresh_current_card()
 	
 	return old_card
@@ -657,10 +659,12 @@ func slot_into(destination: UI_Slot):
 func refresh_current_card():
 	ui_slot.name_section.clear()
 	ui_slot.max_hp.clear()
+	set_max_hp()
 	
 	ui_slot.display_image(current_card)
 	ui_slot.name_section.append_text(current_card.name)
-	ui_slot.max_hp.append_text(str("HP: ",get_pokedata().HP))
+	ui_slot.max_hp.append_text(str("HP: ",get_max_hp()))
+	setup_abilities()
 
 func refresh() -> void:
 	if not is_filled(): return

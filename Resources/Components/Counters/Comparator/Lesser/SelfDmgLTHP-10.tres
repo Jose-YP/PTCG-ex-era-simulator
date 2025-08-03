@@ -9,7 +9,7 @@
 script = ExtResource("4_ie3l1")
 which = "Slot"
 ask = ExtResource("3_s2md1")
-slot_vars = "damage_counters"
+slot_vars = "max_HP"
 cap = -1
 metadata/_custom_type_script = "uid://vjn146j3ayd6"
 

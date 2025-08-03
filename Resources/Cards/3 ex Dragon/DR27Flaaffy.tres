@@ -1,0 +1,97 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=20 format=3 uid="uid://c3oea3y5rj5fy"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_b1g7c"]
+[ext_resource type="Texture2D" uid="uid://bor6bavd00dl4" path="res://Art/Cards/3 ex Dragon/27.jpg" id="1_xkq3q"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_kyluj"]
+[ext_resource type="Resource" uid="uid://duyf6uncjts05" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Lightning1.tres" id="3_uk8ej"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_v7g4y"]
+[ext_resource type="Resource" uid="uid://c8vs2wowmlhne" path="res://Resources/Components/Effects/Placement/PutOnSelf.tres" id="5_gvhyl"]
+[ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="6_gsrw1"]
+[ext_resource type="Resource" uid="uid://d2vm6chtedrum" path="res://Resources/Components/Effects/Identifiers/Energy/BasicEnergy.tres" id="7_ytx1o"]
+[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="8_rlh0o"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="9_awqk8"]
+[ext_resource type="Resource" uid="uid://cesjkvsi5c6jb" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/L1C1.tres" id="10_l4wtl"]
+[ext_resource type="Resource" uid="uid://ceo3bpqlglf5o" path="res://Resources/Components/Pokemon/Attacks/AttackData/30Dmg.tres" id="11_uh85t"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="12_aqwew"]
+
+[sub_resource type="Resource" id="Resource_egke4"]
+script = ExtResource("8_rlh0o")
+side = 4
+where = 1
+reordering_only = false
+shuffle_first = false
+based_on_side = 0
+based_on_slots = 0
+based_on_energy = 0
+portion = -1
+how_many = Array[int]([2])
+of_this = Array[ExtResource("6_gsrw1")]([ExtResource("7_ytx1o")])
+and_then = ExtResource("5_gvhyl")
+reveal = true
+metadata/_custom_type_script = "uid://cw3yr1k040kw7"
+
+[sub_resource type="Resource" id="Resource_8tsfw"]
+script = ExtResource("4_v7g4y")
+either_or = false
+order = Array[int]([])
+search = SubResource("Resource_egke4")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_k5rht"]
+script = ExtResource("9_awqk8")
+prompt_reliant = false
+initial_main_DMG = 0
+defender_properties = 0
+condition = 1
+replace_num = false
+always_effect = SubResource("Resource_8tsfw")
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_rxdhg"]
+script = ExtResource("2_kyluj")
+name = "Energy Recall"
+description = "Attach up to 2 basic Energy cards from your discard pile to Flaaffy."
+attack_cost = ExtResource("3_uk8ej")
+attack_data = SubResource("Resource_k5rht")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_usena"]
+script = ExtResource("2_kyluj")
+name = "Lightning Ball"
+description = ""
+attack_cost = ExtResource("10_l4wtl")
+attack_data = ExtResource("11_uh85t")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_htmu2"]
+script = ExtResource("12_aqwew")
+HP = 80
+retreat = 1
+attacks = Array[ExtResource("2_kyluj")]([SubResource("Resource_rxdhg"), SubResource("Resource_usena")])
+evo_stage = "Stage 1"
+evolves_from = "Flaaffy"
+considered = 1
+owner = 0
+type = 8
+weak = 32
+resist = 128
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_b1g7c")
+name = "Flaaffy"
+image = ExtResource("1_xkq3q")
+illustrator = "Miki Tanaka"
+number = 27
+rarity = 1
+expansion = 2
+categories = 1
+pokemon_properties = SubResource("Resource_htmu2")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

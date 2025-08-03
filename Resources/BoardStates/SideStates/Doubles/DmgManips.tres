@@ -7,7 +7,7 @@
 [ext_resource type="Resource" uid="uid://mfam4db5asvt" path="res://Resources/Cards/1 ex Ruby & Saphire/RS91Potion.tres" id="5_wmo8o"]
 [ext_resource type="Resource" uid="uid://dyqdhaov0ywxk" path="res://Resources/Cards/1 ex Ruby & Saphire/RS92Switch.tres" id="6_16ot6"]
 [ext_resource type="Resource" uid="uid://dun1tnvh1beg2" path="res://Resources/Cards/5 ex Hidden Lagends/HL90LifeHerb.tres" id="7_f6x85"]
-[ext_resource type="Resource" uid="uid://b42bvfsjoe0d" path="res://Resources/Cards/2 ex Sandstorm/SS100Wailordex.tres" id="8_wq0rc"]
+[ext_resource type="Resource" uid="uid://b42bvfsjoe0d" path="res://Resources/Cards/2 ex Sandstorm/SS100Wailord-ex.tres" id="8_wq0rc"]
 [ext_resource type="Resource" uid="uid://d3wqsrtlqtlqm" path="res://Resources/Cards/1 ex Ruby & Saphire/RS106WaterEnergy.tres" id="9_dpylr"]
 [ext_resource type="Resource" uid="uid://bxksrioa4tn37" path="res://Resources/Cards/7 ex Team Rocket Returns/TRR83CopyCat.tres" id="10_ttjql"]
 [ext_resource type="Script" uid="uid://calm3n7va5yjo" path="res://Code/Resource Makers/GeneralUse/CardStacksMaker.gd" id="11_cvwkj"]

@@ -3,6 +3,8 @@ class_name SlotAsk
 
 ##If this ask isn't met, look for the next ask
 @export var or_ask: SlotAsk
+##Check thee last source target stack for whatever they have
+@export var previous_src_trg: bool = false
 ##Which side to pay attention to
 @export var side_target: Consts.SIDES = Consts.SIDES.BOTH
 @export var slot_target: Consts.SLOTS = Consts.SLOTS.ALL

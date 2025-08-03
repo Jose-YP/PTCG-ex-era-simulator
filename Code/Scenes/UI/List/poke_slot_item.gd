@@ -21,7 +21,7 @@ func setup(new: PokeSlot):
 	%Name.clear()
 	%Name.append_text(card.name)
 	%HP.clear()
-	%HP.append_text(str("HP: ", card.pokemon_properties.HP - slot.damage_counters, "/", card.pokemon_properties.HP))
+	%HP.append_text(str("HP: ", slot.get_max_hp() - slot.damage_counters, "/", slot.get_max_hp()))
 	set_energy()
 	reset_counters()
 
@@ -46,6 +46,9 @@ func set_slotNum(slotNum: String):
 func manip_counters(ammount: int):
 	additional_counters += ammount
 	%CounterChange.set_damage(additional_counters * 10)
+
+#func clamp_counters(ammount: int, minus: int):
+	#
 
 func reset_counters():
 	additional_counters = 0

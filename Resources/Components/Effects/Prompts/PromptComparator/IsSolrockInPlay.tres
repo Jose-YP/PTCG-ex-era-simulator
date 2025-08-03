@@ -8,6 +8,7 @@
 
 [sub_resource type="Resource" id="Resource_qafc1"]
 script = ExtResource("2_6gglr")
+previous_src_trg = false
 side_target = 4
 slot_target = 4
 specifically = Array[String](["Solrock"])

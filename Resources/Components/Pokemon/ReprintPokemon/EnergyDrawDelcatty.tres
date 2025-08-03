@@ -1,26 +1,38 @@
-[gd_resource type="Resource" script_class="Pokemon" load_steps=16 format=3 uid="uid://shjh1uruhgm6"]
+[gd_resource type="Resource" script_class="Pokemon" load_steps=19 format=3 uid="uid://shjh1uruhgm6"]
 
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_4ukwe"]
 [ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="2_m0tgu"]
-[ext_resource type="Resource" uid="uid://dh5tduq3l54ee" path="res://Resources/Components/Counters/Indv/Slots/ActiveEnAttatched.tres" id="3_nafqp"]
+[ext_resource type="Resource" uid="uid://bnv2dkudpcueo" path="res://Resources/Components/Effects/Asks/General/SrcActive.tres" id="3_m0tgu"]
 [ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="4_ktdfq"]
+[ext_resource type="Resource" uid="uid://c7itelq8jtjc2" path="res://Resources/Components/EnData/Rainbow.tres" id="4_nafqp"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="5_7vbis"]
+[ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="5_ktdfq"]
 [ext_resource type="Resource" uid="uid://dmb635n2d0erk" path="res://Resources/Components/Effects/Draw/Draw3.tres" id="6_wpewd"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="7_hndol"]
 [ext_resource type="Resource" uid="uid://chc757fk4t8pm" path="res://Resources/Components/Effects/Prompts/Discard1EnTo.tres" id="8_qksfq"]
 [ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="9_doupy"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="11_hoke0"]
 
+[sub_resource type="Resource" id="Resource_7vbis"]
+script = ExtResource("5_ktdfq")
+which = "Slot"
+ask = ExtResource("3_m0tgu")
+slot_vars = "energy_cards"
+en_count_methods = "Total"
+en_counting = ExtResource("4_nafqp")
+cap = -1
+metadata/_custom_type_script = "uid://vjn146j3ayd6"
+
 [sub_resource type="Resource" id="Resource_unyar"]
 script = ExtResource("4_ktdfq")
 comparision_type = "Return"
-first_comparison = ExtResource("3_nafqp")
+first_comparison = SubResource("Resource_7vbis")
 compare_to = "None"
 second_constant = 0
 operate_w_constant = "None"
 metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
-[sub_resource type="Resource" id="Resource_8e6qy"]
+[sub_resource type="Resource" id="Resource_wpewd"]
 script = ExtResource("5_7vbis")
 prompt_reliant = false
 initial_main_DMG = 10
@@ -41,7 +53,7 @@ script = ExtResource("1_4ukwe")
 name = "Max Energy Source"
 description = "Does 10 damage times the amount of Energy attached to all of your active Pokemon"
 attack_cost = ExtResource("2_m0tgu")
-attack_data = SubResource("Resource_8e6qy")
+attack_data = SubResource("Resource_wpewd")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_ffdua"]

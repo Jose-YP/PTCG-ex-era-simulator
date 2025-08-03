@@ -8,6 +8,7 @@
 
 [sub_resource type="Resource" id="Resource_al5dh"]
 script = ExtResource("2_r3nn3")
+previous_src_trg = false
 side_target = 2
 slot_target = 1
 specifically = Array[String]([])
@@ -47,6 +48,7 @@ comparision_type = "Equals"
 first_comparison = SubResource("Resource_sayjc")
 compare_to = "Const"
 second_constant = 1
+operate_w_constant = "None"
 metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
 [resource]

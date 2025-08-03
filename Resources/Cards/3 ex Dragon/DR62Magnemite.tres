@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=7 format=3 uid="uid://vccq2yda8ah1"]
+
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_7f247"]
+[ext_resource type="Texture2D" uid="uid://dwrl6g4m2hhqd" path="res://Art/Cards/3 ex Dragon/62.jpg" id="1_nipau"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="2_73tqj"]
+[ext_resource type="Resource" uid="uid://xj6xcs7j67hl" path="res://Resources/Components/Pokemon/Attacks/BenchAttacks/RandomSpark.tres" id="3_1g36l"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_nipau"]
+
+[sub_resource type="Resource" id="Resource_1g36l"]
+script = ExtResource("2_73tqj")
+HP = 50
+retreat = 1
+attacks = Array[ExtResource("1_7f247")]([ExtResource("3_1g36l")])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 1
+owner = 0
+type = 8
+weak = 32
+resist = 128
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("3_nipau")
+name = "Magnemite"
+image = ExtResource("1_nipau")
+illustrator = "Midori Harada"
+number = 62
+rarity = 0
+expansion = 2
+categories = 1
+pokemon_properties = SubResource("Resource_1g36l")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

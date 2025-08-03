@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=9 format=3 uid="uid://ngxvnxswv6j"]
+
+[ext_resource type="Texture2D" uid="uid://c2p1cpneeteek" path="res://Art/Cards/3 ex Dragon/64.jpg" id="1_c0nmx"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_hlc3r"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_uoket"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_v0416"]
+[ext_resource type="Resource" uid="uid://dsretfiieomka" path="res://Resources/Components/Pokemon/Attacks/AttackData/ParaIfHeads.tres" id="4_204uf"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_ut45d"]
+
+[sub_resource type="Resource" id="Resource_ut2hx"]
+script = ExtResource("2_uoket")
+name = "Jolt"
+description = "Flip a coin. If heads, the Defending Pokémon is now Paralyzed."
+attack_cost = ExtResource("3_v0416")
+attack_data = ExtResource("4_204uf")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_tlo3k"]
+script = ExtResource("5_ut45d")
+HP = 50
+retreat = 1
+attacks = Array[ExtResource("2_uoket")]([SubResource("Resource_ut2hx")])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 1
+owner = 0
+type = 8
+weak = 32
+resist = 128
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_hlc3r")
+name = "Mareep"
+image = ExtResource("1_c0nmx")
+illustrator = "Miki Tanaka"
+number = 64
+rarity = 0
+expansion = 2
+categories = 1
+pokemon_properties = SubResource("Resource_tlo3k")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

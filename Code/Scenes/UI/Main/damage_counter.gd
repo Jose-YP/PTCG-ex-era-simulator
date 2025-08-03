@@ -15,7 +15,7 @@ func _ready() -> void:
 
 func set_damage(dmg: int) -> void:
 	%DmgText.clear()
-	%DmgText.append_text(str("[b][i][color=black]", dmg))
+	%DmgText.append_text(str("[b][i][color=black]", abs(dmg)))
 	
 	if dmg > 0 and dmg < max_practical:
 		%DmgCounter.modulate = damage_gradient.sample(float(dmg/max_practical) * damage_gradient.get_offset(1))

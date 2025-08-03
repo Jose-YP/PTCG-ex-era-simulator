@@ -86,6 +86,13 @@ func dmg_manip_box(reversable: bool = false, replace_num: int = -1):
 	var dmg_manip: DmgManipBox = Consts.dmg_manip_box.instantiate()
 	var counters: int = how_many if replace_num == -1 else replace_num
 	
+	if counters == -1:
+		counters = 0
+		for slot in Globals.full_ui.get_ask_slots(takers):
+			printt(counters, slot.get_max_hp(), slot.damage_counters)
+			counters += slot.get_max_hp() - slot.damage_counters - 10
+		counters /= 10
+	
 	if comparator:
 		if plus:
 			counters += comparator.start_comparision() * modifier
@@ -96,6 +103,7 @@ func dmg_manip_box(reversable: bool = false, replace_num: int = -1):
 	dmg_manip.first_ask = ask
 	dmg_manip.second_ask = takers
 	dmg_manip.mode = mode
+	dmg_manip.prevent_ko = prevent_KO
 	
 	Globals.fundies.add_child(dmg_manip)
 	
@@ -105,7 +113,7 @@ func dmg_manip_box(reversable: bool = false, replace_num: int = -1):
 
 func swap_manip(reversable: bool = false, replace_num: int = -1):
 	var first: PokeSlot = await Globals.fundies.card_player.get_choice_candidates(
-	str("Choose a damaged pokemon [Swap", how_many," Counters]"), func(slot: PokeSlot):
+	str("Choose a damaged pokemon [Swap ", how_many," Counter(s)]"), func(slot: PokeSlot):
 		if slot.damage_counters > 0:
 			return ask.check_ask(slot)
 		,reversable)
@@ -131,7 +139,7 @@ func swap_manip(reversable: bool = false, replace_num: int = -1):
 func get_final_ammount(counters: int, slot: PokeSlot) -> int:
 	var ammount: int = counters
 	if counters == -1:
-		ammount = slot.get_pokedata().HP - slot.damage_counters
+		ammount = slot.get_max_hp() - slot.damage_counters
 		if prevent_KO:
 			ammount -= 10
 	

@@ -1,0 +1,44 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://b1aj67torhhal"]
+
+[ext_resource type="Texture2D" uid="uid://daxk6llk8ilj3" path="res://Art/Cards/3 ex Dragon/61.jpg" id="1_00fnc"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_uq1r7"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="2_it3oe"]
+[ext_resource type="Resource" uid="uid://bjprwsb8clw3o" path="res://Resources/Components/Pokemon/Attacks/EffectlessAttacks/Rollout1-10.tres" id="3_2v3uh"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_us6b0"]
+[ext_resource type="Resource" uid="uid://b1rwmggf7a4do" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless2.tres" id="4_glpkm"]
+[ext_resource type="Resource" uid="uid://bnsrs2a5hnvkb" path="res://Resources/Components/Pokemon/Attacks/AttackData/20Dmg.tres" id="5_7eorp"]
+
+[sub_resource type="Resource" id="Resource_ch73f"]
+script = ExtResource("1_uq1r7")
+name = "Hook"
+description = ""
+attack_cost = ExtResource("4_glpkm")
+attack_data = ExtResource("5_7eorp")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_1g36l"]
+script = ExtResource("2_it3oe")
+HP = 40
+retreat = 1
+attacks = Array[ExtResource("1_uq1r7")]([ExtResource("3_2v3uh"), SubResource("Resource_ch73f")])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 1
+owner = 0
+type = 8
+weak = 32
+resist = 128
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("3_us6b0")
+name = "Magnemite"
+image = ExtResource("1_00fnc")
+illustrator = "Tomokazu Komiya"
+number = 61
+rarity = 0
+expansion = 2
+categories = 1
+pokemon_properties = SubResource("Resource_1g36l")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

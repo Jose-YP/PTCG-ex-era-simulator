@@ -21,6 +21,7 @@ comparision_type = "Equals"
 first_comparison = ExtResource("4_xywad")
 compare_to = "None"
 second_constant = 1
+operate_w_constant = "None"
 metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
 [sub_resource type="Resource" id="Resource_tpqxm"]
