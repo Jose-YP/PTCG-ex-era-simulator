@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://ccy4qililt3t3"]
+[gd_scene load_steps=5 format=3 uid="uid://ccy4qililt3t3"]
 
 [ext_resource type="Theme" uid="uid://bfw6ylcttychc" path="res://Themes/Themes/AverageButton.tres" id="1_7726x"]
 [ext_resource type="Script" uid="uid://masdq75k62tf" path="res://Code/Scenes/UI/List/tutor_box.gd" id="2_g0t8c"]
 [ext_resource type="Resource" uid="uid://dbbymvfonstmf" path="res://Resources/Components/Effects/Search/CastawaySearch.tres" id="3_kc6ps"]
-[ext_resource type="PackedScene" uid="uid://dguolqe6u3fe3" path="res://Scenes/UI/Lists/PlayingListItem_copy.tscn" id="4_j0u0r"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kclru"]
 bg_color = Color(0.12549, 0.109804, 0.117647, 0.780392)
@@ -24,7 +23,6 @@ theme = ExtResource("1_7726x")
 script = ExtResource("2_g0t8c")
 search = ExtResource("3_kc6ps")
 start_text = "[center]"
-list_item = ExtResource("4_j0u0r")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 0

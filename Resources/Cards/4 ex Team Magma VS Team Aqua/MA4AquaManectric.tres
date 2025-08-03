@@ -93,7 +93,6 @@ action_ammount = 0
 energy_ammount = -1
 energy_move_type = 0
 en_type = ExtResource("3_jf1rb")
-react = false
 
 [sub_resource type="Resource" id="Resource_ys2ao"]
 script = ExtResource("5_5fqb1")

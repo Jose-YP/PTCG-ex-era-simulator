@@ -2,7 +2,7 @@
 extends Resource
 class_name Condition
 
-@export var ask: SlotAsk = preload("res://Resources/Components/Effects/Asks/General/Other.tres")
+@export var ask: SlotAsk = load("res://Resources/Components/Effects/Asks/General/Other.tres")
 
 @export var choose_condition: bool = false
 ##Number of dmg Counters added from this effect, multiplied by 10 on implementation

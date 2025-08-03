@@ -8,7 +8,7 @@ class_name SlotUIActions
 @export var cancel_txt: String = "Esc to go back"
 @export var no_return_txt: String = "No going back"
 @export var ability_ani_offset: Vector2
-@export var ability_ani_time: float
+@export var ability_ani_time: float = 1
 
 signal chosen
 signal choice_ready
@@ -141,7 +141,7 @@ func play_ability_activate(slot: PokeSlot, ability: Ability):
 	animation_tween.tween_property($ColorRect, "modulate", Color.WHITE, ability_ani_time * 3/4)
 	animation_tween.tween_property(%AbilityActivate, "modulate", Color.WHITE, ability_ani_time * 3/4)
 	animation_tween.tween_property(%AbilityActivate, "position", base_pos, ability_ani_time * 3/4)
-	slot.ui_slot.ability_occured(slot.get_pokedata().pokebody == ability, ability_ani_time * 1.75)
+	slot.ui_slot.ability_occured(slot.get_pokedata().pokebody == ability, ability_ani_time * 5/3)
 	
 	await animation_tween.finished
 	

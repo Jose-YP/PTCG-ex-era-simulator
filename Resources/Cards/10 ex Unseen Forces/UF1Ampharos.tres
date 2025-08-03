@@ -99,7 +99,6 @@ action_ammount = -1
 energy_ammount = -1
 energy_move_type = 0
 en_type = ExtResource("7_xck7i")
-react = false
 metadata/_custom_type_script = "uid://cimk6l7ytw7xg"
 
 [sub_resource type="Resource" id="Resource_0m8xk"]

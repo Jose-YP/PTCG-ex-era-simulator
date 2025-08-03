@@ -1,15 +1,14 @@
 [gd_resource type="Resource" script_class="EnMov" load_steps=4 format=3 uid="uid://xqsdx183jrto"]
 
-[ext_resource type="Resource" uid="uid://dqj6gq7pt3dbk" path="res://Resources/Components/Effects/Asks/General/FromSource.tres" id="1_75yvf"]
 [ext_resource type="Resource" uid="uid://mregpmlqoyvy" path="res://Resources/Components/EnData/Fire.tres" id="1_dn48b"]
 [ext_resource type="Script" uid="uid://cimk6l7ytw7xg" path="res://Code/Resource Makers/EffectSpecific/EnMovMaker.gd" id="1_y78tm"]
+[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="2_dn48b"]
 
 [resource]
 script = ExtResource("1_y78tm")
 action = 0
 chooser = 4
-givers = ExtResource("1_75yvf")
-reciever = ExtResource("1_75yvf")
+givers = ExtResource("2_dn48b")
 to_stack = 2
 stack_direction = 2
 energy_carry_over = false
@@ -17,4 +16,3 @@ action_ammount = 0
 energy_ammount = 1
 energy_move_type = 2
 en_type = ExtResource("1_dn48b")
-react = false

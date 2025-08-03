@@ -113,7 +113,6 @@ action_ammount = -1
 energy_ammount = -1
 energy_move_type = 2
 en_type = ExtResource("12_w06bv")
-react = true
 metadata/_custom_type_script = "uid://cimk6l7ytw7xg"
 
 [sub_resource type="Resource" id="Resource_gdo84"]

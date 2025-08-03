@@ -1,0 +1,121 @@
+[gd_scene load_steps=7 format=3 uid="uid://de4ao144ctqav"]
+
+[ext_resource type="Script" uid="uid://ccv7dy114eo4x" path="res://Code/Scenes/UI/List/attatch_box.gd" id="1_xp7tn"]
+[ext_resource type="PackedScene" uid="uid://bttlpdvhmocn3" path="res://Scenes/UI/Lists/header.tscn" id="2_1ro7h"]
+[ext_resource type="PackedScene" uid="uid://dwn2qsmdqyhiw" path="res://Scenes/UI/Lists/playing_list.tscn" id="3_r2xbd"]
+[ext_resource type="PackedScene" uid="uid://forsjrvfnym2" path="res://Scenes/UI/Lists/slot_list.tscn" id="4_13buk"]
+[ext_resource type="PackedScene" uid="uid://dph43kayde03u" path="res://Scenes/UI/UIComponents/energy_types.tscn" id="5_wyeha"]
+[ext_resource type="PackedScene" uid="uid://c28rtuj3kak48" path="res://Scenes/UI/Lists/Footer.tscn" id="6_kd201"]
+
+[node name="AttatchBox" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xp7tn")
+stack_act = 5
+
+[node name="EnergyUI" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Header" parent="EnergyUI" node_paths=PackedStringArray("based_on", "shrinkNodes", "hideNodes") instance=ExtResource("2_1ro7h")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(836, 0)
+layout_mode = 2
+based_on = NodePath(".")
+shrinkNodes = [NodePath("../PanelContainer/Lists/Slots/SlotList"), NodePath("../PanelContainer/Lists/PlayingList")]
+hideNodes = [NodePath("../Footer"), NodePath("../PanelContainer/Lists/Slots/Actions")]
+
+[node name="PanelContainer" type="PanelContainer" parent="EnergyUI"]
+layout_mode = 2
+
+[node name="Lists" type="HBoxContainer" parent="EnergyUI/PanelContainer"]
+layout_mode = 2
+
+[node name="PlayingList" parent="EnergyUI/PanelContainer/Lists" node_paths=PackedStringArray("par") instance=ExtResource("3_r2xbd")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+par = NodePath("../../../..")
+allowed_as = 512
+stack_act = 5
+stack = 4
+
+[node name="Slots" type="VBoxContainer" parent="EnergyUI/PanelContainer/Lists"]
+layout_mode = 2
+
+[node name="SlotList" parent="EnergyUI/PanelContainer/Lists/Slots" instance=ExtResource("4_13buk")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="Actions" type="PanelContainer" parent="EnergyUI/PanelContainer/Lists/Slots"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_type_variation = &"DeepPannel"
+
+[node name="InfoSection" type="VBoxContainer" parent="EnergyUI/PanelContainer/Lists/Slots/Actions"]
+layout_mode = 2
+
+[node name="IndSwap" type="HBoxContainer" parent="EnergyUI/PanelContainer/Lists/Slots/Actions/InfoSection"]
+layout_mode = 2
+
+[node name="indSwapNum" type="RichTextLabel" parent="EnergyUI/PanelContainer/Lists/Slots/Actions/InfoSection/IndSwap"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(39, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "99/99"
+fit_content = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="EnergyUI/PanelContainer/Lists/Slots/Actions/InfoSection/IndSwap"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 2
+
+[node name="EnergyTypes" parent="EnergyUI/PanelContainer/Lists/Slots/Actions/InfoSection/IndSwap/HBoxContainer" instance=ExtResource("5_wyeha")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(186, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 2
+en_count = 6
+disabled = true
+
+[node name="Reset" type="Button" parent="EnergyUI/PanelContainer/Lists/Slots/Actions/InfoSection/IndSwap/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(166, 25)
+layout_mode = 2
+size_flags_vertical = 3
+disabled = true
+text = "Reset"
+
+[node name="Info&End" type="HBoxContainer" parent="EnergyUI/PanelContainer/Lists/Slots/Actions/InfoSection"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Instructions" type="RichTextLabel" parent="EnergyUI/PanelContainer/Lists/Slots/Actions/InfoSection/Info&End"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(236, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Reciever: Team Magma's Poochyena"
+fit_content = true
+
+[node name="End" type="Button" parent="EnergyUI/PanelContainer/Lists/Slots/Actions/InfoSection/Info&End"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Finish"
+
+[node name="Footer" parent="EnergyUI" instance=ExtResource("6_kd201")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[connection signal="pressed" from="EnergyUI/PanelContainer/Lists/Slots/Actions/InfoSection/Info&End/End" to="." method="_on_end_pressed"]

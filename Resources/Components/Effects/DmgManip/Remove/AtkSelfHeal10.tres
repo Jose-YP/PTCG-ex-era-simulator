@@ -5,10 +5,15 @@
 
 [resource]
 script = ExtResource("1_gunei")
-mode = null
-remove = true
+turn_delay = -1
+prevent_KO = false
+mode = "Remove"
 how_many = 1
+choosing = 4
+anyway_u_like = false
 choose_num = -1
 ask = ExtResource("1_gs22o")
+vary_choose_num = false
 plus = false
+modifier = 1
 metadata/_custom_type_script = "uid://scca13hg4k1l"

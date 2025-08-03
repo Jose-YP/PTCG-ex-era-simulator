@@ -3,11 +3,13 @@
 [ext_resource type="Texture2D" uid="uid://bfh2eoygthjgk" path="res://Art/Cards/1 ex Ruby & Saphire/13.jpg" id="1_02xd6"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_ypdm2"]
 [ext_resource type="Resource" uid="uid://buwg7u82cya7t" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/W2C2.tres" id="3_02xd6"]
-[ext_resource type="Resource" uid="uid://c7itelq8jtjc2" path="res://Resources/Components/EnData/Rainbow.tres" id="3_4bc6d"]
 [ext_resource type="Script" uid="uid://cimk6l7ytw7xg" path="res://Code/Resource Makers/EffectSpecific/EnMovMaker.gd" id="4_agkb0"]
 [ext_resource type="Resource" uid="uid://cqw2kwbgcwgvb" path="res://Resources/Components/Effects/Conditions/BasicSleep.tres" id="4_e1px8"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="5_e1px8"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="5_wv0a4"]
+[ext_resource type="Resource" uid="uid://bufxq7qfe3kv2" path="res://Resources/Components/EnData/Water.tres" id="6_e1px8"]
+[ext_resource type="Resource" uid="uid://dqj6gq7pt3dbk" path="res://Resources/Components/Effects/Asks/General/FromSource.tres" id="7_wv0a4"]
+[ext_resource type="Resource" uid="uid://bnv2dkudpcueo" path="res://Resources/Components/Effects/Asks/General/SrcActive.tres" id="8_et187"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="8_keycm"]
 [ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="9_agkb0"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="9_b0bc6"]
@@ -36,26 +38,19 @@ attack_cost = ExtResource("3_02xd6")
 attack_data = SubResource("Resource_et187")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
-[sub_resource type="Resource" id="Resource_6y18b"]
-metadata/__load_path__ = "res://Resources/Components/Effects/Asks/FromSource.tres"
-
-[sub_resource type="Resource" id="Resource_4bc6d"]
-metadata/__load_path__ = "res://Resources/Components/Effects/Asks/FromSource.tres"
-
 [sub_resource type="Resource" id="Resource_ifthe"]
 script = ExtResource("4_agkb0")
-action = 4
-chooser = 0
-givers = SubResource("Resource_6y18b")
-reciever = SubResource("Resource_4bc6d")
+action = 2
+chooser = 4
+givers = ExtResource("7_wv0a4")
+reciever = ExtResource("8_et187")
 to_stack = 2
 stack_direction = 2
 energy_carry_over = false
-action_ammount = 0
+action_ammount = 1
 energy_ammount = 1
 energy_move_type = 2
-en_type = ExtResource("3_4bc6d")
-react = false
+en_type = ExtResource("6_e1px8")
 metadata/_custom_type_script = "uid://cimk6l7ytw7xg"
 
 [sub_resource type="Resource" id="Resource_gcqqh"]

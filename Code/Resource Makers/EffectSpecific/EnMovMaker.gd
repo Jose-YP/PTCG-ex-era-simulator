@@ -8,10 +8,10 @@ class_name EnMov
 @export_enum("Send", "Swap", "Attatch") var action: int = 0
 ##If the chooser is [enum Consts.SIDES.NONE], then default to [enum Consts.SIDES.SOURCE]
 @export var chooser: Consts.SIDES = Consts.SIDES.SOURCE
-@export var givers: SlotAsk = preload("res://Resources/Components/Effects/Asks/General/FromSource.tres")
+@export var givers: SlotAsk = load("res://Resources/Components/Effects/Asks/General/FromSource.tres")
 @export_group("From - To")
 ##If they targets from slot ask will determine if they're allowed
-@export var reciever: SlotAsk = preload("res://Resources/Components/Effects/Asks/General/FromSource.tres")
+@export var reciever: SlotAsk = load("res://Resources/Components/Effects/Asks/General/FromSource.tres")
 ##Targets for removal
 @export var to_stack: Consts.STACKS = Consts.STACKS.DISCARD
 @export_enum("Top", "Bottom", "Eh") var stack_direction: int = 2
@@ -25,7 +25,6 @@ class_name EnMov
 @export_enum("Basic", "Special", "Any") var energy_move_type: int = 0
 ##If any energy is currently considered
 @export var en_type: EnData = preload("res://Resources/Components/EnData/Rainbow.tres")
-@export var react: bool = false
 
 signal finished
 
@@ -37,7 +36,6 @@ func play_effect(reversable: bool = false, replace_num: int = -1) -> void:
 		1:
 			await swap_effect(reversable)
 		2:
-			@warning_ignore("redundant_await")
 			await attatch_effect(reversable)
 	
 	finished.emit()
@@ -96,6 +94,26 @@ func swap_effect(reversable: bool = false) -> void:
 	finished.emit()
 
 func attatch_effect(reversable: bool = false) -> void:
+	var attatch_box: AttatchBox = Consts.attatch_box.instantiate()
+	var hand_dict: Dictionary[Base_Card, bool]
+	var hand: Array[Base_Card] = Globals.fundies.stack_manager.get_stacks(
+		Globals.fundies.get_considered_home(reciever.side_target)).hand
+	
+	for card in hand:
+		if card.energy_properties and not card.pokemon_properties:
+			hand_dict[card] = en_type.same_type(card.energy_properties.fail_provide)
+		else:
+			hand_dict[card] = false
+	
+	attatch_box.list = hand_dict
+	attatch_box.side = Globals.full_ui.get_const_side(reciever.side_target)
+	attatch_box.singles = Globals.full_ui.singles
+	attatch_box.action_ammount = action_ammount
+	attatch_box.energy_ammount = energy_ammount
+	
+	Globals.fundies.add_child(attatch_box)
+	await  attatch_box.finished
+	
 	finished.emit()
 #endregion
 
@@ -120,7 +138,7 @@ func swap(giver: PokeSlot, rec: PokeSlot, energy_giving: Array[Base_Card]):
 #region BOOL RETURNS
 func energy_allowed(card: Base_Card, fail: bool) -> bool:
 	var current_en: EnData = card.energy_properties.get_current_provide()
-	var is_react: bool = (react and react == current_en.react) or not react
+	var is_react: bool = (en_type.react and en_type.react == current_en.react) or not en_type.react
 	var same: bool = energy_move_type == 2 or\
 	 (energy_move_type == 1 and card.energy_properties.considered == "Special Energy")\
 	 or (energy_move_type == 0 and card.energy_properties.considered == "Basic Energy")

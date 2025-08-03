@@ -36,7 +36,10 @@ func set_items():
 	stack_act = par.stack_act
 	
 	for item in list:
-		var making = list_item.instantiate()
+		print("Consts.playing_button:", Consts.playing_button)
+		print("Type:", typeof(Consts.playing_button))
+		var making: PlayingButton = Consts.playing_button.instantiate()
+		print(Consts.playing_button, making)
 		making.card = item
 		making.parent = self
 		%CardList.add_child(making)
@@ -87,7 +90,7 @@ func remove_item(card: Base_Card):
 			%CardList.remove_child(item)
 
 func add_item(card: Base_Card):
-	var making = list_item.instantiate()
+	var making = Consts.playing_button.instantiate()
 	making.card = card
 	making.parent = self
 	%CardList.add_child(making)

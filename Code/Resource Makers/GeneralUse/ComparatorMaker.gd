@@ -17,6 +17,7 @@ class_name Comparator
 @export var second_constant: int = 0
 @export var second_counter: IndvCounter
 ##Only usable with [member second_counter] while [member compare_to] is set to [enum Second]
+##[br] Tip: When working with damage counters here use multiples of 10
 @export_enum("None", "Plus", "Mult") var operate_w_constant: String = "None"
 
 func start_comparision() -> Variant:
@@ -28,8 +29,9 @@ func start_comparision() -> Variant:
 			printt("CONST CHECK:", first_return, get_symbol(), second_constant)
 			return make_comparision(first_return, second_constant)
 		"Second":
-			printt("DUAL COUNTER CHECK:",first_return, get_symbol(), second_counter.evaluate())
-			return make_comparision(first_return, second_counter.evaluate())
+			var second_return: int = second_arithmetic(second_counter.evaluate())
+			printt("DUAL COUNTER CHECK:",first_return, get_symbol(), second_return)
+			return make_comparision(first_return, second_return)
 	return false
 
 func input_comparison() -> Variant:
@@ -43,12 +45,7 @@ func input_comparison() -> Variant:
 		"Second":
 			printt("DUAL COUNTER CHECK:")
 			var second: int = await second_counter.input_evaluation()
-			
-			match operate_w_constant:
-				"Plus":
-					second += second_constant
-				"Mult":
-					second *= second_constant
+			second_arithmetic(second)
 			
 			return make_comparision(first_return, second)
 	return false
@@ -62,6 +59,14 @@ func make_comparision(first: int, second: int) -> Variant:
 		"Greater": return first > second
 		"Lesser": return first < second
 	return ":("
+
+func second_arithmetic(second: int):
+	match operate_w_constant:
+		"Plus":
+			second += second_constant
+		"Mult":
+			second *= second_constant
+	return second
 
 func has_coinflip() -> bool:
 	var result: bool = first_comparison.has_coinflip()

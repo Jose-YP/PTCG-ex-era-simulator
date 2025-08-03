@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="SideState" load_steps=17 format=3 uid="uid://dg0a5trv0lgph"]
+[gd_resource type="Resource" script_class="SideState" load_steps=18 format=3 uid="uid://dg0a5trv0lgph"]
 
 [ext_resource type="Resource" uid="uid://b74rxfxcx76bx" path="res://Resources/Decks/44WLazy.tres" id="1_o6umv"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_m74eh"]
 [ext_resource type="Resource" uid="uid://d3wqsrtlqtlqm" path="res://Resources/Cards/1 ex Ruby & Saphire/RS106WaterEnergy.tres" id="3_lwrip"]
 [ext_resource type="Script" uid="uid://calm3n7va5yjo" path="res://Code/Resource Makers/GeneralUse/CardStacksMaker.gd" id="4_3lehc"]
+[ext_resource type="Resource" uid="uid://cppmiu7in05y6" path="res://Resources/Cards/1 ex Ruby & Saphire/RS23Swampert.tres" id="4_8btb1"]
 [ext_resource type="Script" uid="uid://dgqpurnuh14t1" path="res://Code/Resource Makers/GeneralUse/SideStateMaker.gd" id="5_banuf"]
 [ext_resource type="Script" uid="uid://cs70ix831b5g4" path="res://Code/Resource Makers/PokemonSpecific/PokeSlotMaker.gd" id="6_8btb1"]
 [ext_resource type="Resource" uid="uid://cul22q2pxomfh" path="res://Resources/BoardStates/PokeSlots/SharpedoThorns.tres" id="8_grkdd"]
@@ -18,7 +19,7 @@
 script = ExtResource("4_3lehc")
 deck = ExtResource("1_o6umv")
 init_deck = Array[ExtResource("2_m74eh")]([])
-init_hand = Array[ExtResource("2_m74eh")]([ExtResource("3_lwrip"), ExtResource("3_lwrip"), ExtResource("3_lwrip"), ExtResource("3_lwrip"), ExtResource("3_lwrip"), ExtResource("3_lwrip"), ExtResource("3_lwrip"), ExtResource("3_lwrip"), ExtResource("3_lwrip"), ExtResource("3_lwrip"), ExtResource("3_lwrip"), ExtResource("3_lwrip"), ExtResource("3_lwrip"), ExtResource("3_lwrip"), ExtResource("3_lwrip"), ExtResource("3_lwrip"), ExtResource("3_lwrip")])
+init_hand = Array[ExtResource("2_m74eh")]([ExtResource("3_lwrip"), ExtResource("3_lwrip"), ExtResource("3_lwrip"), ExtResource("3_lwrip"), ExtResource("3_lwrip"), ExtResource("3_lwrip"), ExtResource("3_lwrip"), ExtResource("3_lwrip"), ExtResource("3_lwrip"), ExtResource("3_lwrip"), ExtResource("3_lwrip"), ExtResource("3_lwrip"), ExtResource("3_lwrip"), ExtResource("3_lwrip"), ExtResource("3_lwrip"), ExtResource("3_lwrip"), ExtResource("3_lwrip"), ExtResource("4_8btb1")])
 init_discard = Array[ExtResource("2_m74eh")]([])
 init_prize = Array[ExtResource("2_m74eh")]([])
 metadata/_custom_type_script = "uid://calm3n7va5yjo"

@@ -4,7 +4,7 @@ class_name BenchAttk
 ##How many benched pokemon should take this damage, if it's -1 ignore and hurt everyone
 @export_range(-1,5) var how_many: int = 1
 ##Which kinds of pokemon can the attacker pick
-@export var candidates: SlotAsk = preload("res://Resources/Components/Effects/Asks/General/FromDefending.tres")
+@export var candidates: SlotAsk = load("res://Resources/Components/Effects/Asks/General/FromDefending.tres")
 ##The attacker can choose to attack an active pokemon instead
 @export var active_allowed: bool = false
 

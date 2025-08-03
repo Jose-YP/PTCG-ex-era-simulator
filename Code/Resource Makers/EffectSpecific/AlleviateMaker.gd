@@ -2,7 +2,7 @@
 extends Resource
 class_name Alleviate
 
-@export var ask: SlotAsk = preload("res://Resources/Components/Effects/Asks/General/FromSource.tres")
+@export var ask: SlotAsk = load("res://Resources/Components/Effects/Asks/General/FromSource.tres")
 
 @export var remove_conditions: bool = false
 @export var remove_shockwave: bool = false

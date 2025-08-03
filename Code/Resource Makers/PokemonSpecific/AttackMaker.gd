@@ -4,7 +4,7 @@ class_name Attack
 @export var name: String
 @export_multiline var description: String
 @export var attack_cost: AttackCost = preload("res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres")
-@export var attack_data: AttackData = preload("res://Resources/Components/Pokemon/Attacks/AttackData/10Dmg.tres")
+@export var attack_data: AttackData
 
 func print_attack() -> void:
 	print_rich("[center]------------------",name,"------------------")

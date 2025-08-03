@@ -1,9 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://u1576g11rakh"]
+[gd_scene load_steps=13 format=3 uid="uid://u1576g11rakh"]
 
 [ext_resource type="Theme" uid="uid://bfw6ylcttychc" path="res://Themes/Themes/AverageButton.tres" id="1_vfu45"]
 [ext_resource type="Script" uid="uid://coc5ucyg548yj" path="res://Code/Scenes/UI/List/reorder_box.gd" id="2_bgbqr"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_68v0d"]
-[ext_resource type="Resource" uid="uid://d3oqllkeh61wl" path="res://Resources/Cards/1 ex Ruby & Saphire/RS63Poochyena.tres" id="4_djwkv"]
 [ext_resource type="Resource" uid="uid://dyqdhaov0ywxk" path="res://Resources/Cards/1 ex Ruby & Saphire/RS92Switch.tres" id="6_chh4k"]
 [ext_resource type="Resource" uid="uid://cm0tjkff2o52" path="res://Resources/Cards/1 ex Ruby & Saphire/RS83LadyOuting.tres" id="7_bgbqr"]
 [ext_resource type="Resource" uid="uid://bmvatu4cfwe4n" path="res://Resources/Cards/4 ex Team Magma VS Team Aqua/MA81MagmaBelt.tres" id="8_qytal"]
@@ -25,7 +24,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource("1_vfu45")
 script = ExtResource("2_bgbqr")
-list = Array[ExtResource("3_68v0d")]([ExtResource("4_djwkv"), ExtResource("6_chh4k"), ExtResource("7_bgbqr"), ExtResource("8_qytal"), ExtResource("9_h60wi")])
+list = Array[ExtResource("3_68v0d")]([ExtResource("6_chh4k"), ExtResource("7_bgbqr"), ExtResource("8_qytal"), ExtResource("9_h60wi")])
 reorder_item = ExtResource("12_djwkv")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]

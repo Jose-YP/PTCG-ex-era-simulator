@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Attack" load_steps=4 format=3 uid="uid://2nifekhevrbw"]
+
+[ext_resource type="Resource" uid="uid://dsslhipk3ix2o" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Water1.tres" id="1_uu5y4"]
+[ext_resource type="Resource" uid="uid://b34qgidgmdwp" path="res://Resources/Components/Pokemon/BenchAttack/BenchDmg20.tres" id="2_0xpbv"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="3_aynch"]
+
+[resource]
+script = ExtResource("3_aynch")
+name = "Water Arrow"
+description = "Choose 1 of your opponent's Pokémon. This attack does 20 damage to that Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
+attack_cost = ExtResource("1_uu5y4")
+attack_data = ExtResource("2_0xpbv")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

@@ -6,7 +6,6 @@ class_name Tutor_Dock
 @export var connected_list: PlayingList
 @export var search: Search
 @export var start_text: String
-@export var list_item: PackedScene
 @export var disapear_timing: float = .1
 
 @onready var req_text: RichTextLabel = %ReqText
@@ -107,7 +106,7 @@ func remove_card(button: Button):
 	update_tutor()
 
 func show_card(card: Base_Card, id: Identifier) -> Button:
-	var making: PlayingButton = list_item.instantiate()
+	var making: PlayingButton = Consts.playing_button.instantiate()
 	making.card = card
 	making.parent = self
 	making.stack_act = Consts.STACK_ACT.TUTOR

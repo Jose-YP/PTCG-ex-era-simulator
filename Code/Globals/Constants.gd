@@ -46,7 +46,8 @@ const energy_colors: Array[Color] = [Color.GREEN, Color.RED, Color.AQUA,
 
 #--------------------------------------
 #region SCENES
-var reg_list: PackedScene = load("res://Scenes/UI/Lists/RegList.tscn")
+const playing_button: PackedScene = preload("res://Scenes/UI/Lists/PlayingListItem_copy.tscn")
+const reg_list: PackedScene = preload("res://Scenes/UI/Lists/RegList.tscn")
 const attack_list_comp: PackedScene = preload("res://Scenes/UI/Lists/attack_scroll_box.tscn")
 const poke_card : PackedScene = preload("res://Scenes/UI/CardDisplay/PokemonCard.tscn")
 const trainer_card: PackedScene = preload("res://Scenes/UI/CardDisplay/TrainerCard.tscn")
@@ -54,6 +55,7 @@ const energy_card: PackedScene = preload("res://Scenes/UI/CardDisplay/EnergyCard
 const tutor_box: PackedScene = preload("res://Scenes/UI/Lists/new_tutor_box.tscn")
 const reorder_list: PackedScene = preload("res://Scenes/UI/Lists/ReoderList.tscn")
 var swap_box: PackedScene = load("res://Scenes/UI/Lists/swap_box.tscn")
+const attatch_box: PackedScene = preload("res://Scenes/UI/Lists/attatch_box.tscn")
 const discard_box: PackedScene = preload("res://Scenes/UI/Lists/discard_list.tscn")
 const reg_flip_box: PackedScene = preload("res://Scenes/UI/Coins/coinflip_box.tscn")
 const until_flip_box: PackedScene = preload("res://Scenes/UI/Coins/until_box.tscn")

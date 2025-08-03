@@ -5,15 +5,14 @@
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_mq2dl"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="3_qauc4"]
 [ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_wmo8r"]
-
-[sub_resource type="Resource" id="Resource_naifs"]
+[ext_resource type="Resource" uid="uid://bep36omnenbc8" path="res://Resources/Components/Pokemon/Attacks/AttackData/10Dmg.tres" id="4_wmo8r"]
 
 [sub_resource type="Resource" id="Resource_wmo8r"]
 script = ExtResource("2_mq2dl")
 name = "Bite"
 description = ""
 attack_cost = ExtResource("3_wmo8r")
-attack_data = SubResource("Resource_naifs")
+attack_data = ExtResource("4_wmo8r")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_bwlnc"]
