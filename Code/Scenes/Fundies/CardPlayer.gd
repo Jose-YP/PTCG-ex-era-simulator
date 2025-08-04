@@ -66,7 +66,9 @@ func play_basic_pokemon(card: Base_Card, placement: Placement = null):
 	 func(slot: PokeSlot): return not slot.is_filled() and slot.is_attacker(), placement == null)
 	await chosen
 	
-	card.print_info()
+	
+	if placement == null and hold_candidate != null:
+		Globals.fundies.stack_manager.play_card(card, Consts.STACKS.PLAY)
 
 func play_fossil(card: Base_Card):
 	for slot in Globals.fundies.active_slots:
@@ -129,6 +131,9 @@ func play_energy(card: Base_Card, placement: Placement = null):
 	 Convert.get_allowed_flags("Energy"), energy_bool, placement == null)
 	
 	await chosen
+	if hold_candidate == null:
+		return
+	
 	Globals.fundies.record_single_src_trg(hold_candidate)
 	Globals.fundies.stack_manager.play_card(card, Consts.STACKS.PLAY)
 	
@@ -250,8 +255,6 @@ func start_add_choice(instruction: String, card: Base_Card, play_as: int,
 		else: print("I changed my mind")
 	else:
 		print("Nevermind")
-	
-	Globals.fundies.ui_actions.color_tween(Color.TRANSPARENT)
 
 func get_choice_candidates(instruction: String, bool_fun: Callable, reversable: bool,
  choosing_player: Consts.PLAYER_TYPES = Consts.PLAYER_TYPES.PLAYER) -> PokeSlot:
@@ -280,7 +283,7 @@ func generic_choice(instruction: String, bool_fun: Callable,\
 		ui_act.left_button_actions(allow_slots[0].connected_slot)
 	#Otherwise wait for player to choose
 	else:
-		ui_act.get_choice(instruction)
+		await ui_act.get_choice(instruction)
 		await ui_act.chosen
 	chosen.emit()
 
@@ -416,3 +419,29 @@ func call_retreat_discard(retreater: PokeSlot):
 	Globals.fundies.remove_top_source_target()
 #endregion
 #--------------------------------------
+##Apparently this is how multiple abilities  activate
+##[url] https://compendium.pokegym.net/ruling/58/ [/url]
+func decide_ability_order(connections: Array, param: Variant ,chooser: Consts.PLAYER_TYPES):
+	print(connections)
+	var activating_slots: Array[PokeSlot]
+	var occurances: Array[Callable]
+	for connection in connections:
+		#Only under this specific cicumpstance will it return the owner
+		#I don't like doing this but I gotta do something
+		activating_slots.append(connection["callable"].call("CheckingMultiples"))
+		occurances.append(connection["callable"])
+	
+	while activating_slots.size() != 0:
+		await get_choice_candidates("Choose which Power/Body to activate next",
+		func(slot: PokeSlot): return slot in activating_slots,
+		chooser)
+		
+		var index: int = activating_slots.find(hold_candidate)
+		print(hold_candidate, index)
+		if index == -1:
+			printerr("Uh oh can't find ", hold_candidate.get_card_name(), " in activating_slots")
+		occurances[index].call(param)
+		await SignalBus.ability_activated
+		
+		activating_slots.erase(hold_candidate)
+		occurances.erase(occurances[index])

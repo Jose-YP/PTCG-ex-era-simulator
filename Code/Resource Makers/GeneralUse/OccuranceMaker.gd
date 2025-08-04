@@ -13,7 +13,7 @@ var internal_data = { "signal": "checked_up",
  "card_type" : load("res://Resources/Components/Effects/Identifiers/AnyCard.tres") as Identifier,
  "energy_type": load("res://Resources/Components/EnData/Rainbow.tres") as EnData,
  "condition" : load("res://Resources/Components/Effects/Conditions/EverythingHurts.tres") as Condition}
-
+var owner: PokeSlot
 #--------------------------------------
 func _get_property_list() -> Array[Dictionary]:
 	var props: Array[Dictionary] = []
@@ -161,17 +161,19 @@ func single_disconnect(slot: PokeSlot):
 		slot.disconnect(_get("signal"), should_occur)
 
 func should_occur(param: Variant = null):
-	if param is PokeSlot:
-		if _get("must_be_ask").check_ask(param):
-			occur.emit()
-			return
-	elif param is EnData:
-		if _get("energy_type").same_type(param):
-			occur.emit()
-			return
-	else:
+	if param is String and param == "CheckingMultiples":
+		return owner
+	elif is_allowed(param):
 		occur.emit()
 		return
+
+func is_allowed(param: Variant = null):
+	if param is PokeSlot:
+		return _get("must_be_ask").check_ask(param)
+	elif param is EnData:
+		return _get("energy_type").same_type(param)
+	else:
+		return true
 
 func connected_to_this(slot: PokeSlot) -> bool:
 	for connection in slot.get(_get("signal")).get_connections():

@@ -139,33 +139,36 @@ func use_ability(ability: Ability):
 
 func ability_emit(sig: Signal, param: Variant = null):
 	print("Does ", get_card_name(), " have connections in ", sig, "? ", sig.has_connections())
-	#Globals.fundies.print_src_trg()
 	if sig.has_connections():
-		var connections: Array = sig.get_connections()
-		print()
-		print(connections)
-		print(connections[0]["callable"])
-		#connections[0]["callable"]
-		print("Occurance: ", get_pokedata().pokebody.occurance)
-		print(get_pokedata().pokebody.occurance.connected_to_this(self))
+		
+		
 		Globals.fundies.record_prev_src_trg_from_self(self)
 		Globals.fundies.print_src_trg()
-		sig.emit(param)
-		await SignalBus.ability_checked
+		#This feels wrong but it works if multiple abilities connect to the same signal
+		if sig.get_connections().size() > 1:
+			print("Source chooses the activation order")
+			await Globals.fundies.card_player.decide_ability_order(sig.get_connections(), 
+			param, Consts.PLAYER_TYPES.PLAYER)
+		else:
+			await ability_single_emit(sig, param)
 		Globals.fundies.remove_top_source_target()
 		refresh()
 
+func ability_single_emit(sig: Signal, param: Variant = null):
+	#This feels wrong but it works if multiple abilities connect to the same signal
+	sig.emit(param)
+	await SignalBus.ability_checked
+	
+	Globals.fundies.remove_top_source_target()
+
 func occurance_account_for():
 	for slot in Globals.full_ui.get_occurance_slots():
-		if get_pokedata().pokebody:
-			get_pokedata().pokebody.single_prep(self)
-		if get_pokedata().pokepower:
-			get_pokedata().pokepower.single_prep(self)
-
-func refresh_connections():
-	Globals.fundies.record_single_src_trg(self)
-	occurance_account_for()
-	Globals.fundies.remove_top_source_target()
+		Globals.fundies.record_single_src_trg(slot)
+		if slot.get_pokedata().pokebody != null:
+			slot.get_pokedata().pokebody.single_prep(self)
+		if slot.get_pokedata().pokepower != null:
+			slot.get_pokedata().pokepower.single_prep(self)
+		Globals.fundies.remove_top_source_target()
 
 #endregion
 #--------------------------------------
@@ -685,6 +688,7 @@ func refresh_current_card():
 	ui_slot.name_section.append_text(current_card.name)
 	ui_slot.max_hp.append_text(str("HP: ",get_max_hp()))
 	setup_abilities()
+	occurance_account_for()
 
 func refresh() -> void:
 	if not is_filled(): return
@@ -716,7 +720,6 @@ func refresh() -> void:
 			ui_slot.tool.texture = tool_card.image
 		else: ui_slot.tool.hide()
 		
-		refresh_connections()
 		check_power_body()
 		ui_slot.check_ability_activation()
 		

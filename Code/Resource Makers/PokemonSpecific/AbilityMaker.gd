@@ -27,7 +27,11 @@ func prep_ability(slot: PokeSlot):
 	attatched_to = slot
 	if occurance:
 		occurance.connect_occurance()
-		occurance.occur.connect(activate_ability)
+		occurance.owner = slot
+		if not occurance.occur.has_connections():
+			occurance.occur.connect(activate_ability)
+		else:
+			pass
 
 func disconnect_ability():
 	if occurance:

@@ -9,6 +9,7 @@ class_name SlotUIActions
 @export var no_return_txt: String = "No going back"
 @export var ability_ani_offset: Vector2
 @export var ability_ani_time: float = 1
+@export var color_tween_timing: float = .1
 
 signal chosen
 signal choice_ready
@@ -61,14 +62,12 @@ func _input(event: InputEvent) -> void:
 		reset_ui()
 
 func get_choice(instruction: String):
-	color_tween(Color.WHITE)
 	%AskInstructions.show()
 	%Instructions.clear()
 	%Instructions.append_text(str("[center]",instruction))
 	%CancelText.clear()
 	%CancelText.append_text(cancel_txt if can_reverse else no_return_txt)
-	
-	await choice_ready
+	await color_tween(Color.WHITE)
 	
 	choosing = true
 	for slot in allowed_slots:
@@ -93,12 +92,11 @@ func get_allowed_slots(condition: Callable) -> void:
 
 func color_tween(destination: Color):
 	var color_tweener: Tween = create_tween().set_parallel()
-	color_tweener.tween_property($ColorRect, "modulate", destination, .5)
+	color_tweener.tween_property($ColorRect, "modulate", destination, color_tween_timing)
 	await color_tweener.finished
 	choice_ready.emit()
 
 func reset_ui():
-	color_tween(Color.TRANSPARENT)
 	%AskInstructions.hide()
 	#Check every previously allowed slot
 	#Reset them to look and display like the rest
@@ -113,8 +111,8 @@ func reset_ui():
 	
 	choosing = false
 	can_reverse = false
+	await color_tween(Color.TRANSPARENT)
 	chosen.emit()
-	await choice_ready
 
 #endregion
 #--------------------------------------
