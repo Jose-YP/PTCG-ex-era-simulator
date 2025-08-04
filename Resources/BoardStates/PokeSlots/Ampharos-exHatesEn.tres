@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="PokeSlot" load_steps=7 format=3 uid="uid://d1gc6vc7vfpsi"]
+
+[ext_resource type="Resource" uid="uid://vpfl1laggt2y" path="res://Resources/Cards/3 ex Dragon/DR89Ampharos-ex.tres" id="1_84y6e"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_fon1j"]
+[ext_resource type="Resource" uid="uid://b5ukqf6xmn6vv" path="res://Resources/Cards/1 ex Ruby & Saphire/RS109LightningEnergy.tres" id="3_8k734"]
+[ext_resource type="Resource" uid="uid://ngxvnxswv6j" path="res://Resources/Cards/3 ex Dragon/DR64Mareep.tres" id="4_ymge0"]
+[ext_resource type="Resource" uid="uid://c3oea3y5rj5fy" path="res://Resources/Cards/3 ex Dragon/DR27Flaaffy.tres" id="5_juo0l"]
+[ext_resource type="Script" uid="uid://cs70ix831b5g4" path="res://Code/Resource Makers/PokemonSpecific/PokeSlotMaker.gd" id="6_jl310"]
+
+[resource]
+script = ExtResource("6_jl310")
+current_card = ExtResource("1_84y6e")
+max_HP = 0
+damage_counters = 0
+evolution_ready = false
+evolved_this_turn = false
+evolved_from = Array[ExtResource("2_fon1j")]([ExtResource("4_ymge0"), ExtResource("5_juo0l")])
+energy_cards = Array[ExtResource("2_fon1j")]([ExtResource("3_8k734")])
+tm_cards = Array[ExtResource("2_fon1j")]([])
+buffs = Array[Dictionary]([])
+disables = Array[Dictionary]([])
+dealt_damage = 0
+energy_discarded = 0
+metadata/_custom_type_script = "uid://cs70ix831b5g4"

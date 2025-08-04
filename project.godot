@@ -36,6 +36,7 @@ Globals="*res://Code/Globals/globals.gd"
 Database="*res://Code/Globals/database.gd"
 SignalBus="*res://Code/Globals/signal_bus.gd"
 Convert="*res://Code/Globals/conversions.gd"
+ToolBool="*res://Code/Globals/ToolBool.gd"
 
 [debug]
 

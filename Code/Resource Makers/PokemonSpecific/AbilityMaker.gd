@@ -26,7 +26,6 @@ var attatched_to: PokeSlot
 func prep_ability(slot: PokeSlot):
 	attatched_to = slot
 	if occurance:
-		occurance = occurance.duplicate()
 		occurance.connect_occurance()
 		occurance.occur.connect(activate_ability)
 
@@ -64,7 +63,7 @@ func general_allowed(slot: PokeSlot) -> bool:
 		"Once per Mon":
 			var exhaust: bool = slot.body_exhaust if category == "Body" else slot.power_exhaust
 			return not exhaust and check_allowed(slot) and quick_result
-		"Once per Turn":
+		"Once per turn":
 			return  not Globals.fundies.used_ability(name) and check_allowed(slot) and quick_result
 		"Infinite":
 			return check_allowed(slot) and quick_result
