@@ -10,7 +10,7 @@ class_name Ability
 ##Mon must be in active slot to use this ability
 @export var active: bool = false
 ##How often can this ability be used in a per turn basis
-@export_enum("Once per Mon", "Once per turn", "Infinite") var how_often: String = "Once per Mon"
+@export_enum("Once per Mon", "Once per turn", "Once per Emit", "Infinite") var how_often: String = "Once per Mon"
 ##Any conditions to pass to activate the effect?
 @export var prompt: PromptAsk
 ##If this ability activates at a certain time, when is that time? Uses signals from [member PokeSlot]
@@ -69,6 +69,8 @@ func general_allowed(slot: PokeSlot) -> bool:
 			return not exhaust and check_allowed(slot) and quick_result
 		"Once per turn":
 			return  not Globals.fundies.used_ability(name) and check_allowed(slot) and quick_result
+		"Once per Emit":
+			return  not Globals.fundies.used_emit_ability(name) and check_allowed(slot) and quick_result
 		"Infinite":
 			return check_allowed(slot) and quick_result
 	
@@ -84,6 +86,7 @@ func check_allowed(slot: PokeSlot) -> bool:
 		return true
 #endregion
 
+#region ACTIVATION
 func activate_passive() -> bool:
 	if prompt:
 		if prompt.check_prompt():
@@ -128,7 +131,10 @@ func activate_ability():
 			else:
 				attatched_to.power_exhaust = true
 		"Once per Turn":
-			Globals.fundies.used_ability(name)
+			Globals.fundies.used_abilities.append(name)
+		"Once per Emit":
+			Globals.fundies.used_emit_abilities.append(name)
 	
 	SignalBus.ability_checked.emit()
 	SignalBus.ability_activated.emit()
+#endregion

@@ -20,6 +20,7 @@ var home_targets: Array[Array]
 var away_targets: Array[Array]
 var source_stack: Array[bool]
 var used_abilities: Array[String]
+var used_emit_abilities: Array[String]
 var cpu_players: Array[CPU_Player]
 var options: ItemOptions
 
@@ -139,10 +140,18 @@ func can_be_played(card: Base_Card) -> int:
 
 func used_ability(ability_name: String) -> bool:
 	for ability in used_abilities:
-		if ability == ability_name:
-			return true
+		return true
 	
 	return false
+
+func used_emit_ability(ability_name: String) -> bool:
+	for ability in used_emit_abilities:
+		return true
+	
+	return false
+
+func clear_emit_abilities() -> void:
+	used_emit_abilities.clear()
 
 #endregion
 #--------------------------------------

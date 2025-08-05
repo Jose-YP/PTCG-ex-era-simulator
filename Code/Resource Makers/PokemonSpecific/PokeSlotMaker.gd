@@ -103,8 +103,10 @@ func pokemon_checkup() -> void:
 func setup_abilities():
 	Globals.fundies.record_single_src_trg(self)
 	if get_pokedata().pokebody:
+		get_pokedata().pokebody = get_pokedata().pokebody.duplicate(true)
 		get_pokedata().pokebody.prep_ability(self)
 	if get_pokedata().pokepower:
+		get_pokedata().pokepower = get_pokedata().pokepower.duplicate(true)
 		get_pokedata().pokepower.prep_ability(self)
 	Globals.fundies.remove_top_source_target()
 
@@ -151,6 +153,8 @@ func ability_emit(sig: Signal, param: Variant = null):
 			param, Consts.PLAYER_TYPES.PLAYER)
 		else:
 			await ability_single_emit(sig, param)
+		
+		Globals.fundies.clear_emit_abilities()
 		Globals.fundies.remove_top_source_target()
 		refresh()
 
@@ -165,8 +169,12 @@ func occurance_account_for():
 	for slot in Globals.full_ui.get_occurance_slots():
 		Globals.fundies.record_single_src_trg(slot)
 		if slot.get_pokedata().pokebody != null:
+			if slot.get_pokedata().pokebody == get_pokedata().pokebody and slot != self:
+				printerr("Uh oh")
 			slot.get_pokedata().pokebody.single_prep(self)
 		if slot.get_pokedata().pokepower != null:
+			if slot.get_pokedata().pokepower == get_pokedata().pokepower and slot != self:
+				printerr("Uh oh")
 			slot.get_pokedata().pokepower.single_prep(self)
 		Globals.fundies.remove_top_source_target()
 
