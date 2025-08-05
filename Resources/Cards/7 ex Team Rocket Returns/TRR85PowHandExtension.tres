@@ -15,6 +15,7 @@ question_string = "Move the opponent's Pokemon or Energy?"
 yes_answer = "Pokemon"
 no_answer = "Energy"
 can_reverse = true
+occurance = false
 chooser = 0
 choose_location = "None"
 which_stack = 0

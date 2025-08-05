@@ -3,11 +3,11 @@
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_h7g2q"]
 [ext_resource type="Texture2D" uid="uid://dnx1q44k1rhj6" path="res://Art/Cards/1 ex Ruby & Saphire/8.jpg" id="1_xbi6n"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_ct2ad"]
-[ext_resource type="Resource" uid="uid://drqlm28p36dby" path="res://Resources/Components/Counters/Comparator/Equals/OtherTrgisEX.tres" id="3_ch1dx"]
 [ext_resource type="Resource" uid="uid://d3ibul3ofuenc" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Fighting1.tres" id="3_cjih5"]
 [ext_resource type="Resource" uid="uid://b7vjoubm08aj" path="res://Resources/Components/Pokemon/Attacks/AttackData/20BothActive.tres" id="4_etinu"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_etinu"]
 [ext_resource type="Resource" uid="uid://ddar4dlschhmr" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/F1C2.tres" id="5_xtvra"]
+[ext_resource type="Resource" uid="uid://drqlm28p36dby" path="res://Resources/Components/Counters/Comparator/Equals/OtherTrgisEX.tres" id="6_cjih5"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="7_y0ea6"]
 
 [sub_resource type="Resource" id="Resource_xtvra"]
@@ -30,7 +30,7 @@ self_damage = 0
 mod_prompt = false
 modifier = 1
 modifier_num = 40
-comparator = ExtResource("3_ch1dx")
+comparator = ExtResource("6_cjih5")
 both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 

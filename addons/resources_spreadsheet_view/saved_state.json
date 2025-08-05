@@ -11,10 +11,10 @@
         "visibility": 0.0
       },
       "pokemon_properties": {
-        "visibility": 1.0
+        "visibility": 0
       },
       "resource_local_to_scene": {
-        "visibility": 0.0
+        "visibility": 0
       },
       "resource_name": {
         "visibility": 0.0

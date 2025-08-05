@@ -10,12 +10,16 @@ class_name Ability
 ##Mon must be in active slot to use this ability
 @export var active: bool = false
 ##How often can this ability be used in a per turn basis
+##[br][enum Once per Mon] Each pokeslot that has this ability can play it once per turn
+##[br][enum Once per turn] Abilities with this [member name] can only be used once per turn
+##[br][enum Once per Emit] Abilities with this [member name] can only be triggered once per [member occurance] emit
+##[br][enum Infinite] No limits to how often this ability can be used
 @export_enum("Once per Mon", "Once per turn", "Once per Emit", "Infinite") var how_often: String = "Once per Mon"
 ##Any conditions to pass to activate the effect?
 @export var prompt: PromptAsk
 ##If this ability activates at a certain time, when is that time? Uses signals from [member PokeSlot]
 @export var occurance: Occurance
-##This effects will activate without calling for any reactions from other slots
+##As long as the prompt is passed this effect will activate without calling for any occurances from other slots
 @export var passive: EffectCall
 ##This will call an ability activation
 @export var effect: EffectCall
@@ -68,7 +72,7 @@ func general_allowed(slot: PokeSlot) -> bool:
 			var exhaust: bool = slot.body_exhaust if category == "Body" else slot.power_exhaust
 			return not exhaust and check_allowed(slot) and quick_result
 		"Once per turn":
-			return  not Globals.fundies.used_ability(name) and check_allowed(slot) and quick_result
+			return  not Globals.fundies.used_turn_ability(name) and check_allowed(slot) and quick_result
 		"Once per Emit":
 			return  not Globals.fundies.used_emit_ability(name) and check_allowed(slot) and quick_result
 		"Infinite":
@@ -84,6 +88,15 @@ func check_allowed(slot: PokeSlot) -> bool:
 		return result
 	else:
 		return true
+
+func has_effect(effect_types: Array[String]):
+	if passive:
+		if passive.has_effect_type(effect_types):
+			return true
+	if effect:
+		if effect.has_effect_type(effect_types):
+			return true
+	return false
 #endregion
 
 #region ACTIVATION
@@ -131,7 +144,7 @@ func activate_ability():
 			else:
 				attatched_to.power_exhaust = true
 		"Once per Turn":
-			Globals.fundies.used_abilities.append(name)
+			Globals.fundies.used_turn_abilities.append(name)
 		"Once per Emit":
 			Globals.fundies.used_emit_abilities.append(name)
 	

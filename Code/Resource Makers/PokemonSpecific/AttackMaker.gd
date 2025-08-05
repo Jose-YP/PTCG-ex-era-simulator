@@ -151,3 +151,32 @@ func condition_allows(turn_cond: Consts.TURN_COND) -> bool:
 		#just check if they can attack without condition
 			print(attack_data.condition && 1, attack_data.condition & 1, attack_data.condition)
 			return attack_data.condition & 1 != 0
+
+func has_effect(effect_type: Array[String]) -> bool:
+	if attack_data.fail_effect:
+		if effect_type:
+			if attack_data.fail_effect.has_effect_type(effect_type):
+				return true
+		else:
+			return true
+	if attack_data.success_effect:
+		if effect_type:
+			if attack_data.success_effect.has_effect_type(effect_type):
+				return true
+		else:
+			return true
+	if attack_data.always_effect:
+		if effect_type:
+			if attack_data.always_effect.has_effect_type(effect_type):
+				return true
+		else:
+			return true
+	if attack_data.prompt and attack_data.prompt.effect:
+		if effect_type:
+			if attack_data.prompt.effect.has_effect_type(effect_type):
+				return true
+		else:
+			return true
+	if attack_data.bench_damage:
+		print("Make this later")
+	return false

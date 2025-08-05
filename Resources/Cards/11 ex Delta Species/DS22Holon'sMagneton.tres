@@ -5,8 +5,8 @@
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_ybbn3"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="3_bekoi"]
 [ext_resource type="Resource" uid="uid://b5h5yekm4jaw4" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/M1C1.tres" id="4_i8dod"]
-[ext_resource type="Resource" uid="uid://cqtgiv5p6suee" path="res://Resources/Components/Counters/Comparator/Equals/DefSelfEX.tres" id="4_i8fwd"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_i8dod"]
+[ext_resource type="Resource" uid="uid://cqtgiv5p6suee" path="res://Resources/Components/Counters/Comparator/Equals/DefSelfEX.tres" id="5_i8fwd"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="6_psiqs"]
 
 [sub_resource type="Resource" id="Resource_a7xe4"]
@@ -21,7 +21,7 @@ self_damage = 0
 mod_prompt = false
 modifier = 1
 modifier_num = 20
-comparator = ExtResource("4_i8fwd")
+comparator = ExtResource("5_i8fwd")
 both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 

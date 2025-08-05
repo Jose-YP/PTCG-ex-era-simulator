@@ -4,13 +4,13 @@
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_543m5"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="3_300wg"]
 [ext_resource type="Resource" uid="uid://dkt5ik78wtijs" path="res://Resources/Components/Pokemon/Attacks/EffectlessAttacks/Pound.tres" id="3_ywu17"]
+[ext_resource type="Resource" uid="uid://cvrbxqvsyxt6t" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/P1C1.tres" id="4_4y1w6"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="4_af76r"]
-[ext_resource type="Resource" uid="uid://cvrbxqvsyxt6t" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/P1C1.tres" id="4_ywu17"]
-[ext_resource type="Resource" uid="uid://dh4vjjy6e5xbi" path="res://Resources/Components/Counters/Comparator/Equals/TrgEnEqual.tres" id="5_4y1w6"]
-[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="6_805mt"]
+[ext_resource type="Resource" uid="uid://dh4vjjy6e5xbi" path="res://Resources/Components/Counters/Comparator/Equals/TrgEnEqual.tres" id="5_805mt"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="6_ari4w"]
 
-[sub_resource type="Resource" id="Resource_ari4w"]
-script = ExtResource("6_805mt")
+[sub_resource type="Resource" id="Resource_tuk58"]
+script = ExtResource("6_ari4w")
 prompt_reliant = false
 initial_main_DMG = 40
 defender_properties = 0
@@ -21,23 +21,23 @@ self_damage = 0
 mod_prompt = false
 modifier = 0
 modifier_num = 10
-comparator = ExtResource("5_4y1w6")
+comparator = ExtResource("5_805mt")
 both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
-[sub_resource type="Resource" id="Resource_805mt"]
+[sub_resource type="Resource" id="Resource_fr1ws"]
 script = ExtResource("2_543m5")
 name = "Link Blast"
 description = "If [name] and the Defending Pokémon have a different amount of Energy attached to them, this attack's base damage is 10 instead of 40."
-attack_cost = ExtResource("4_ywu17")
-attack_data = SubResource("Resource_ari4w")
+attack_cost = ExtResource("4_4y1w6")
+attack_data = SubResource("Resource_tuk58")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_ncwsx"]
 script = ExtResource("3_300wg")
 HP = 50
 retreat = 1
-attacks = Array[ExtResource("2_543m5")]([ExtResource("3_ywu17"), SubResource("Resource_805mt")])
+attacks = Array[ExtResource("2_543m5")]([ExtResource("3_ywu17"), SubResource("Resource_fr1ws")])
 evo_stage = "Basic"
 evolves_from = ""
 considered = 1

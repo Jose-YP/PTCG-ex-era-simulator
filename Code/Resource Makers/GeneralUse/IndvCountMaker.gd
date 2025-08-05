@@ -26,7 +26,7 @@ var internal_data = {"which" : "Slot",
 
 #--------------------------------------
 func _get_property_list() -> Array[Dictionary]:
-	#region GATHER INFO
+	#region GATHERINFO
 	var props: Array[Dictionary] = []
 	var slot_array_names: PackedStringArray = []
 	var stack_array_names: PackedStringArray = ["None"]

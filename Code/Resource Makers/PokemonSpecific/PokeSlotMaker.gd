@@ -170,11 +170,11 @@ func occurance_account_for():
 		Globals.fundies.record_single_src_trg(slot)
 		if slot.get_pokedata().pokebody != null:
 			if slot.get_pokedata().pokebody == get_pokedata().pokebody and slot != self:
-				printerr("Uh oh")
+				printerr("Uh oh body same. Slot card comparison ", slot.current_card == current_card)
 			slot.get_pokedata().pokebody.single_prep(self)
 		if slot.get_pokedata().pokepower != null:
 			if slot.get_pokedata().pokepower == get_pokedata().pokepower and slot != self:
-				printerr("Uh oh")
+				printerr("Uh oh powers same. Slot card comparison", slot.current_card == current_card)
 			slot.get_pokedata().pokepower.single_prep(self)
 		Globals.fundies.remove_top_source_target()
 

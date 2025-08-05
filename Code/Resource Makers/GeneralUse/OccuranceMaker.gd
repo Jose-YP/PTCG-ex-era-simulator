@@ -179,7 +179,6 @@ func connected_to_this(slot: PokeSlot) -> bool:
 	for connection in slot.get(_get("signal")).get_connections():
 		if connection["callable"] == should_occur:
 			return true
-	print(slot.get(_get("signal")).get_connections())
 	return false
 
 #endregion

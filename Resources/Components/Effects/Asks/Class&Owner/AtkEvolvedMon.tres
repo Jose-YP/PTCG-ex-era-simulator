@@ -5,15 +5,18 @@
 
 [resource]
 script = ExtResource("1_eswes")
+previous_src_trg = false
 side_target = 1
 slot_target = 4
 specifically = Array[String]([])
+check_ability = false
+contained_abilities = 3
+knocked_out = false
+tool_attatched = false
 comparison_type = 1
 max_hp = -10
 damage_taken = -10
 retreat_cost = -1
-knocked_out = false
-tool_attatched = false
 stage = 6
 rare_candy = false
 class_inclusive = true

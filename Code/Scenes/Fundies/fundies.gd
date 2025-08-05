@@ -19,7 +19,7 @@ var current_list: Control
 var home_targets: Array[Array]
 var away_targets: Array[Array]
 var source_stack: Array[bool]
-var used_abilities: Array[String]
+var used_turn_abilities: Array[String]
 var used_emit_abilities: Array[String]
 var cpu_players: Array[CPU_Player]
 var options: ItemOptions
@@ -139,16 +139,13 @@ func can_be_played(card: Base_Card) -> int:
 	return allowed_to
 
 func used_ability(ability_name: String) -> bool:
-	for ability in used_abilities:
-		return true
-	
-	return false
+	return used_turn_ability(ability_name) or used_emit_ability(ability_name)
+
+func used_turn_ability(ability_name: String) -> bool:
+	return ability_name in used_turn_abilities
 
 func used_emit_ability(ability_name: String) -> bool:
-	for ability in used_emit_abilities:
-		return true
-	
-	return false
+	return ability_name in used_emit_abilities
 
 func clear_emit_abilities() -> void:
 	used_emit_abilities.clear()

@@ -64,6 +64,7 @@ yes_answer = ""
 no_answer = ""
 comparator = SubResource("Resource_0c4yo")
 can_reverse = true
+occurance = false
 chooser = 0
 choose_location = "None"
 which_stack = 0

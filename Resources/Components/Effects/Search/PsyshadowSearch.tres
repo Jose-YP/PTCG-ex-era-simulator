@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Search" load_steps=10 format=3 uid="uid://buofx3y8opwf"]
 
-[ext_resource type="Resource" uid="uid://5xgqdwmsc8c1" path="res://Resources/Components/Effects/DmgManip/Add/AtkSelfTake20Dmg.tres" id="1_pf7s7"]
+[ext_resource type="Resource" uid="uid://5xgqdwmsc8c1" path="res://Resources/Components/Effects/DmgManip/Add/AtkSelfTake20Dmg.tres" id="1_06bqb"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_06bqb"]
 [ext_resource type="Script" uid="uid://cdyba0wadidwb" path="res://Code/Resource Makers/EffectSpecific/PlacementMaker.gd" id="3_vd5hw"]
 [ext_resource type="Resource" uid="uid://dqj6gq7pt3dbk" path="res://Resources/Components/Effects/Asks/General/FromSource.tres" id="4_06bqb"]
@@ -12,7 +12,7 @@
 script = ExtResource("2_06bqb")
 either_or = false
 order = Array[int]([])
-dmgManip = ExtResource("1_pf7s7")
+dmgManip = ExtResource("1_06bqb")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_vnprs"]

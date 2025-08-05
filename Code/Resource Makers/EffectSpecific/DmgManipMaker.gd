@@ -17,7 +17,7 @@ class_name DamageManip
 @export var choose_num: int = 1
 ##Who will get the counter manipulation[br]
 ##On [enum Swap] this determines who gives dmg counters
-@export var ask: SlotAsk = load("res://Resources/Components/Effects/Asks/General/Self.tres")
+@export var ask: SlotAsk
 ##For DF9 Dragonite ex who uses a second type of DmgManip using leftovers
 @export var with_leftover: DamageManip
 ##Determines how many will be added/removed based on the Counter

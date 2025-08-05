@@ -3,15 +3,15 @@
 [ext_resource type="Texture2D" uid="uid://8dih8468wd32" path="res://Art/Cards/10 ex Unseen Forces/51.jpg" id="1_h1ibd"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_xqvi8"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_vy62p"]
-[ext_resource type="Resource" uid="uid://cy2rqr8mk2lb7" path="res://Resources/Components/Pokemon/Attacks/EffectlessAttacks/Headbutt10.tres" id="3_5hps0"]
-[ext_resource type="Resource" uid="uid://cl8mepce5n66y" path="res://Resources/Components/Pokemon/Attacks/EffectlessAttacks/RazorLeafG2-20.tres" id="4_dt3p1"]
+[ext_resource type="Resource" uid="uid://cy2rqr8mk2lb7" path="res://Resources/Components/Pokemon/Attacks/EffectlessAttacks/Headbutt10.tres" id="3_h1ibd"]
+[ext_resource type="Resource" uid="uid://cl8mepce5n66y" path="res://Resources/Components/Pokemon/Attacks/EffectlessAttacks/RazorLeafG2-20.tres" id="4_vy62p"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_qerbh"]
 
 [sub_resource type="Resource" id="Resource_b0kyd"]
 script = ExtResource("5_qerbh")
 HP = 50
 retreat = 1
-attacks = Array[ExtResource("2_vy62p")]([ExtResource("3_5hps0"), ExtResource("4_dt3p1")])
+attacks = Array[ExtResource("2_vy62p")]([ExtResource("3_h1ibd"), ExtResource("4_vy62p")])
 evo_stage = "Basic"
 evolves_from = ""
 considered = 1

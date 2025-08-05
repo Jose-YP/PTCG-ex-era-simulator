@@ -422,7 +422,6 @@ func call_retreat_discard(retreater: PokeSlot):
 ##Apparently this is how multiple abilities  activate
 ##[url] https://compendium.pokegym.net/ruling/58/ [/url]
 func decide_ability_order(connections: Array, param: Variant ,chooser: Consts.PLAYER_TYPES):
-	print(connections)
 	var activating_slots: Array[PokeSlot]
 	var occurances: Array[Callable]
 	for connection in connections:
@@ -445,3 +444,19 @@ func decide_ability_order(connections: Array, param: Variant ,chooser: Consts.PL
 		
 		activating_slots.erase(hold_candidate)
 		occurances.erase(occurances[index])
+		
+		#Check if any slot has an already emited ability
+		for slot in activating_slots:
+			var should_remove: bool = false
+			var mon: Pokemon = slot.get_pokedata()
+			if mon.pokebody:
+				should_remove = Globals.fundies.used_ability(mon.pokebody.name)
+			if mon.pokepower:
+				should_remove = should_remove or Globals.fundies.used_ability(mon.pokepower.name)
+			
+			if should_remove:
+				occurances.remove_at(activating_slots.find(slot))
+				activating_slots.erase(slot)
+			#else:
+				#print(Globals.fundies.used_turn_abilities, Globals.fundies.used_emit_abilities)
+				#print(slot.get_card_name())

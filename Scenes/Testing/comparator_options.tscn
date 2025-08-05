@@ -7,8 +7,8 @@
 [ext_resource type="Resource" uid="uid://bny1ix4regvyv" path="res://Resources/Components/Counters/Comparator/Equals/Has2DiffTypes.tres" id="5_tjxgr"]
 [ext_resource type="Resource" uid="uid://crlxvia0kynq" path="res://Resources/Components/Counters/Comparator/Not Equal/DiscardsUnequal.tres" id="6_ce0ei"]
 [ext_resource type="Resource" uid="uid://ddeij66cuqx7d" path="res://Resources/Components/Counters/Comparator/Greater/AtkGreaterHand.tres" id="7_hruce"]
-[ext_resource type="Resource" uid="uid://1yahyklj3y7s" path="res://Resources/Components/Counters/Indv/Slots/AtkBenchCount.tres" id="8_51sfc"]
-[ext_resource type="Resource" uid="uid://bujld5756sv01" path="res://Resources/Components/Counters/Indv/Slots/DefBenchCount.tres" id="9_kkr3x"]
+[ext_resource type="Resource" uid="uid://1yahyklj3y7s" path="res://Resources/Components/Counters/INdv/Slots/AtkBenchCount.tres" id="8_51sfc"]
+[ext_resource type="Resource" uid="uid://bujld5756sv01" path="res://Resources/Components/Counters/INdv/Slots/DefBenchCount.tres" id="9_kkr3x"]
 [ext_resource type="Resource" uid="uid://c8ugmpvetg8xj" path="res://Resources/Components/Counters/Comparator/Equals/CoinflipHeads.tres" id="10_0hm4c"]
 
 [sub_resource type="Resource" id="Resource_tjxgr"]
@@ -18,6 +18,7 @@ first_comparison = ExtResource("8_51sfc")
 compare_to = "Second"
 second_constant = 0
 second_counter = ExtResource("9_kkr3x")
+operate_w_constant = "None"
 metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
 [sub_resource type="Resource" id="Resource_pbgpp"]
@@ -26,6 +27,7 @@ comparision_type = "Equals"
 first_comparison = ExtResource("8_51sfc")
 compare_to = "Const"
 second_constant = 2
+operate_w_constant = "None"
 metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
 [node name="Comparator_Options" type="Control"]

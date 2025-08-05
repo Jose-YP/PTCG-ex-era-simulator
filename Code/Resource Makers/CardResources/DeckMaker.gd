@@ -32,6 +32,14 @@ func make_usable() -> Array[Base_Card]:
 	for card in cards:
 		for i in cards[card]:
 			#These have to be unique to make search function
-			usable.append(card.duplicate())
+			usable.append(card.duplicate(true))
+	
+	for card in usable:
+		var how_often: int = 0
+		for other in usable:
+			if card == other:
+				how_often += 1
+		if how_often > 1:
+			printerr("A the same instance of a card shows up multiple times ", card.get_formal_name())
 	
 	return usable

@@ -11,7 +11,7 @@
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="7_teul3"]
 [ext_resource type="Resource" uid="uid://fcpa5aqhgy0e" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/W1C1.tres" id="8_r2wsf"]
 [ext_resource type="Script" uid="uid://y0v42qaa35wt" path="res://Code/Resource Makers/GeneralUse/CoinFlipNumMaker.gd" id="9_pifp0"]
-[ext_resource type="Resource" uid="uid://nievgtbmu7ke" path="res://Resources/Components/Counters/Indv/Slots/SrcActiveEnergyAttatch.tres" id="10_s4o6s"]
+[ext_resource type="Resource" uid="uid://nievgtbmu7ke" path="res://Resources/Components/Counters/INdv/Slots/SrcActiveEnergyAttatch.tres" id="10_s4o6s"]
 [ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="11_qef3v"]
 [ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="12_46hn3"]
 

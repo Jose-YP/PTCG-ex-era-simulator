@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="Energy" load_steps=10 format=3 uid="uid://cf28iibs06s23"]
 
 [ext_resource type="Resource" uid="uid://d2ts8ex3x0duw" path="res://Resources/Components/EnData/Darkness.tres" id="1_phikd"]
-[ext_resource type="Resource" uid="uid://mjfv8j8x80lx" path="res://Resources/Components/Counters/Comparator/Equals/BoolSelfDarkness.tres" id="1_t4foj"]
 [ext_resource type="Script" uid="uid://caj1pm8erar2a" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="2_ipvd8"]
+[ext_resource type="Resource" uid="uid://mjfv8j8x80lx" path="res://Resources/Components/Counters/Comparator/Equals/BoolSelfDarkness.tres" id="2_phikd"]
 [ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/BuffMaker.gd" id="3_v07w8"]
 [ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="4_agjcc"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_rhnr6"]
@@ -13,7 +13,7 @@ formal_question = false
 question_string = ""
 yes_answer = ""
 no_answer = ""
-comparator = ExtResource("1_t4foj")
+comparator = ExtResource("2_phikd")
 can_reverse = true
 occurance = false
 chooser = 0
