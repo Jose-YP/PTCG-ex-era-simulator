@@ -2,6 +2,7 @@ extends Control
 class_name FullBoardUI
 
 @export var singles: bool = true
+@export var disapear_timing: float = .2
 
 var current_card: Control
 
@@ -11,16 +12,13 @@ var current_card: Control
 @onready var stadium: Button = %ArtButton
 
 var home_side: Consts.PLAYER_TYPES
+var ui_stack: Array[Control] = [self]
 
 #region INITALIZATION & PROCESSING
 func _ready() -> void:
 	%ArtButton.get_child(0).size = %ArtButton.size
 	%ArtButton.current_card = null
 	Globals.full_ui = self
-
-func _gui_input(event: InputEvent) -> void:
-	if event.is_action_pressed("A") and Globals.checking:
-		remove_card()
 #endregion
 
 #region HELPERS
@@ -68,6 +66,7 @@ func get_occurance_slots() -> Array[PokeSlot]:
 
 #endregion
 
+#region CARD MANAGEMENT
 func remove_card() -> void:
 	print("IHJBEFDI")
 
@@ -77,6 +76,43 @@ func update_stacks(dict: Dictionary[Consts.STACKS,Array],
 	for stack in dict:
 		if stack == Consts.STACKS.PLAY: break
 		temp_side.non_mon.update_stack(stack, dict[stack].size())
+#endregion
+
+#region UI MANAGEMENT
+#Send inputs only to the top UI
+func _input(event: InputEvent) -> void:
+	if ui_stack[-1].has("manage_input"):
+		ui_stack[-1].manage_input(event)
+	if event.is_action_pressed("A") and Globals.checking:
+		remove_card()
+
+#Set top ui every time a new one is created
+func set_top_ui(node: Control):
+	add_child(node)
+	
+
+#Set the top UI for removal 
+func remove_top_ui():
+	pass
+
+func enable_sides():
+	control_disapear(ui_stack.pop_back())
+
+func disable_sides():
+	pass
+
+func control_disapear(node: Node):
+	var disapear_tween: Tween = get_tree().create_tween().set_parallel()
+	
+	disapear_tween.tween_property(node, "position", ui_stack[-1].global_position, disapear_timing)
+	disapear_tween.tween_property(node, "modulate", Color.TRANSPARENT, disapear_timing)
+	disapear_tween.tween_property(node, "scale", Vector2(.1,.1), disapear_timing)
+	
+	await disapear_tween.finished
+	
+	node.queue_free()
+
+#endregion
 
 func set_between_turns():
 	player_side.non_mon.sync_stacks()

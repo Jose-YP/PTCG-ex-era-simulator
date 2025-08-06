@@ -151,7 +151,7 @@ func instantiate_list(specified_list: Dictionary[Base_Card, bool], which: Consts
 	new_node.allowed_as = determine_allowed()
 	new_node.instruction_text = instructions
 	
-	add_sibling(new_node)
+	Globals.full_ui.set_top_ui(new_node)
 	Globals.fundies.current_list = new_node
 
 func pick_prize():
@@ -184,7 +184,7 @@ func spawn_energy_list(slot: PokeSlot, allowed_fun: Callable = func(card): retur
 	new_node.old_pos = slot.ui_slot.global_position
 	new_node.stack_act = Consts.STACK_ACT.LOOK
 	new_node.stack = Consts.STACKS.NONE
-	add_sibling(new_node)
+	Globals.full_ui.set_top_ui(new_node)
 	new_node.header.setup(str(slot.current_card.name, "'s Attatched Energy"))
 	Globals.fundies.current_list = new_node
 
@@ -246,7 +246,7 @@ func tutor_instantiate_list(specified_list: Array[Dictionary], search: Search):
 	new_node.old_pos = Globals.full_ui.player_side.non_mon.stacks[search.where].global_position
 	new_node.stack_act = Consts.STACK_ACT.TUTOR
 	new_node.stack = search.where
-	add_sibling(new_node)
+	Globals.full_ui.set_top_ui(new_node)
 	new_node.playing_list.all_lists = specified_list
 	new_node.playing_list.list = specified_list[0]
 	new_node.playing_list.stack = search.where
@@ -272,13 +272,13 @@ func placement_handling(tutored_cards: Array[Base_Card], placement: Placement,\
 	#"None", "Reorder Chosen", "Reorder Nonchosen", "Both" reorder_type: int = 0
 	if placement.reorder_type != 0:
 		if placement.reorder_type != 2:
-			var reorder_node = tutor_instantiate_reorder(tutored_cards, placement)
+			tutor_instantiate_reorder(tutored_cards, placement)
 			await SignalBus.reorder_cards
-			Globals.control_disapear(reorder_node, .1, reorder_node.old_pos)
+			Globals.full_ui.remove_top_ui()
 		if placement.reorder_type != 1:
-			var reorder_node = tutor_instantiate_reorder(untutored_cards, placement)
+			tutor_instantiate_reorder(untutored_cards, placement)
 			await SignalBus.reorder_cards
-			Globals.control_disapear(reorder_node, .1, reorder_node.old_pos)
+			Globals.full_ui.remove_top_ui()
 	
 	placement.finished.emit()
 
@@ -290,9 +290,7 @@ func tutor_instantiate_reorder(specified_list: Array[Base_Card], placement: Plac
 	reorder_list.location = Consts.STACKS.DECK
 	reorder_list.placement = placement
 	reorder_list.old_pos = Globals.full_ui.player_side.non_mon.stacks[Consts.STACKS.DECK].global_position
-	add_sibling(reorder_list)
-	
-	return reorder_list
+	Globals.full_ui.set_top_ui(reorder_list)
 
 func reorder_handling(tutored_cards: Array[Base_Card], origin: Consts.STACKS):
 	if origin != Consts.STACKS.DECK:

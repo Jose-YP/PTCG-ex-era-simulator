@@ -134,4 +134,4 @@ func make_text(node: RichTextLabel, text: String):
 #--------------------------------------
 
 func force_disapear():
-	Globals.control_disapear(self, .1, old_pos)
+	Globals.full_ui.remove_top_ui()

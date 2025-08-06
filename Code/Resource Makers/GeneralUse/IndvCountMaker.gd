@@ -306,7 +306,7 @@ func coinflip_evaluation(coinflip_data: CoinFlip) -> int:
 	
 	flip_box.flip_results = flip_results
 	flip_box.top_level = true
-	Globals.fundies.add_child(flip_box)
+	Globals.full_ui.set_top_ui(flip_box)
 	
 	return flip_data["Heads"] if coinflip_data.heads else flip_data["Tails"]
 
@@ -317,12 +317,12 @@ func input_evaluation() -> int:
 	input_box.title = _get("input_title")
 	input_box.cap = _get("cap")
 	
-	Globals.fundies.add_child(input_box)
+	Globals.full_ui.set_top_ui(input_box)
 	
 	await input_box.finished
 	input_return = int(input_box.spin_box.value)
 	
-	Globals.control_disapear(input_box, .1, input_box.old_pos)
+	Globals.full_ui.remove_top_ui()
 	print("INPUT: ", input_return)
 	return input_return
 

@@ -63,6 +63,6 @@ prize_cards = 6
 bench_size = 5
 slots = Dictionary[ExtResource("10_360a4"), bool]({
 SubResource("Resource_73jf3"): true,
-SubResource("Resource_84ffy"): true
+SubResource("Resource_84ffy"): false
 })
 metadata/_custom_type_script = "uid://dgqpurnuh14t1"

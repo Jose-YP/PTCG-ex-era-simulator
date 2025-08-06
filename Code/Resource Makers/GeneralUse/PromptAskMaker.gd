@@ -64,7 +64,7 @@ func check_prompt_question():
 	
 	var prompt_ask: ColorRect = Consts.prompt_answer.instantiate()
 	prompt_ask.modulate = Color.TRANSPARENT
-	Globals.fundies.add_child(prompt_ask)
+	Globals.full_ui.set_top_ui(prompt_ask)
 	prompt_ask.load_answers(question_string, yes_answer, no_answer)
 	
 	await SignalBus.prompt_answered

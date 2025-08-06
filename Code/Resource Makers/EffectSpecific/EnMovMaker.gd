@@ -74,7 +74,7 @@ func send_effect(reversable: bool = false) -> void:
 		dis_box.action_txt = str("Send to ",Convert.stack_into_string(to_stack))
 		if reversable: dis_box.allow_reverse()
 		
-		Globals.fundies.add_child(dis_box)
+		Globals.full_ui.set_top_ui(dis_box)
 		await dis_box.tree_exited
 	
 	finished.emit()
@@ -88,7 +88,7 @@ func swap_effect(reversable: bool = false) -> void:
 	
 	if reversable: new_box.make_closable()
 	
-	Globals.fundies.add_child(new_box)
+	Globals.full_ui.set_top_ui(new_box)
 	await new_box.tree_exited
 	
 	finished.emit()
@@ -112,7 +112,7 @@ func attatch_effect(reversable: bool = false) -> void:
 	attatch_box.energy_ammount = energy_ammount
 	attatch_box.reciever_ask = reciever
 	
-	Globals.fundies.add_child(attatch_box)
+	Globals.full_ui.set_top_ui(attatch_box)
 	await  attatch_box.finished
 	
 	finished.emit()

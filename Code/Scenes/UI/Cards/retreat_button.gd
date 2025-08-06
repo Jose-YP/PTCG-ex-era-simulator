@@ -20,7 +20,7 @@ func allow_retreat():
 	button.disabled = result
 
 func _on_button_pressed() -> void:
-	Globals.control_disapear(Globals.checked_card, .1, Globals.checked_card.old_pos)
+	Globals.full_ui.remove_top_ui()
 	SignalBus.retreat.emit(slot)
 
 # May 8th 2025: I found the Emotacon section of the godot editor ᕦò_óˇ)ᕤ lol

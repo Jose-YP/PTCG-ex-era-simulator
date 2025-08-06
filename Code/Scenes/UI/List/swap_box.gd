@@ -49,7 +49,7 @@ func _ready() -> void:
 func make_closable() -> void:
 	%Header.closable = true
 
-func _input(event: InputEvent) -> void:
+func manage_input(event: InputEvent) -> void:
 	if event.is_action_pressed("Back"):
 		if reciever != null:
 			reciever = null
@@ -215,7 +215,7 @@ func undo_swap():
 #region SIGNALS
 func _on_end_pressed() -> void:
 	finished.emit()
-	Globals.control_disapear(self, .1)
+	Globals.full_ui.remove_top_ui()
 
 func _on_swap_pressed() -> void:
 	#First convert the list into a list of base_cards

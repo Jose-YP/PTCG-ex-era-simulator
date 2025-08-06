@@ -105,11 +105,11 @@ func dmg_manip_box(reversable: bool = false, replace_num: int = -1):
 	dmg_manip.mode = mode
 	dmg_manip.prevent_ko = prevent_KO
 	
-	Globals.fundies.add_child(dmg_manip)
+	Globals.full_ui.set_top_ui(dmg_manip)
 	
 	await dmg_manip.finished
 	
-	Globals.control_disapear(dmg_manip, .1)
+	Globals.full_ui.remove_top_ui()
 
 func swap_manip(reversable: bool = false, replace_num: int = -1):
 	var first: PokeSlot = await Globals.fundies.card_player.get_choice_candidates(

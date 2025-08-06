@@ -48,7 +48,7 @@ func card_setup(card: Base_Card, card_display: Node, parent: Node):
 	card_display.scale = Vector2(.05, .05)
 	card_display.modulate = Color.TRANSPARENT
 	card_display.name = str(card.name, " Card")
-	parent.add_child(card_display)
+	full_ui.set_top_ui(card_display)
 	
 	node_tween.tween_property(card_display, "scale", Vector2.ONE, .1)
 	node_tween.tween_property(card_display, "modulate", Color.WHITE, .1)
