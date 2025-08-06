@@ -2,7 +2,7 @@ extends Control
 class_name FullBoardUI
 
 @export var singles: bool = true
-@export var disapear_timing: float = .2
+@export var disapear_timing: float = .075
 
 var current_card: Control
 
@@ -81,25 +81,36 @@ func update_stacks(dict: Dictionary[Consts.STACKS,Array],
 #region UI MANAGEMENT
 #Send inputs only to the top UI
 func _input(event: InputEvent) -> void:
-	if ui_stack[-1].has("manage_input"):
+	#This is only for button inputs, mouse inputs are supported through node built in functions
+	if event is InputEventMouse or not event.is_pressed():
+		return
+	if ui_stack[-1].has_method("manage_input"):
 		ui_stack[-1].manage_input(event)
 	if event.is_action_pressed("A") and Globals.checking:
 		remove_card()
 
 #Set top ui every time a new one is created
-func set_top_ui(node: Control):
-	add_child(node)
-	
+func set_top_ui(node: Control, par: Node = self):
+	node.z_index = ui_stack[-1].z_index + 1
+	par.add_child(node)
+	ui_stack.append(node)
+	disable_sides()
+	print("Just added, so now ", ui_stack)
 
 #Set the top UI for removal 
 func remove_top_ui():
-	pass
+	control_disapear(ui_stack.pop_back())
+	print("Just removed so now: ", ui_stack)
+	if ui_stack.size() == 1:
+		enable_sides()
 
 func enable_sides():
-	control_disapear(ui_stack.pop_back())
+	for slot in Globals.full_ui.all_slots():
+		slot.make_allowed(slot.connected_slot.is_filled())
 
 func disable_sides():
-	pass
+	for slot in all_slots():
+		slot.make_allowed(false)
 
 func control_disapear(node: Node):
 	var disapear_tween: Tween = get_tree().create_tween().set_parallel()

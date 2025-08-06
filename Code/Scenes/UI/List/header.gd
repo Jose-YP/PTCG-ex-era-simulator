@@ -1,4 +1,5 @@
 extends HBoxContainer
+class_name UIHeader
 
 @export var closable: bool = false
 ##Which node will this component drag around?
@@ -34,6 +35,10 @@ func setup(txt: String):
 		hide()
 	else: show()
 
+func handle_back(event: InputEvent):
+	if closable and event.is_action("Back"):
+		_on_close_button_pressed()
+
 func has_text() -> bool:
 	return identifier.text != ""
 
@@ -43,4 +48,5 @@ func _on_movable_pressed() -> void:
 
 func _on_close_button_pressed() -> void:
 	close_button_pressed.emit()
-	owner.queue_free()
+	Globals.full_ui.remove_top_ui()
+	#owner.queue_free()

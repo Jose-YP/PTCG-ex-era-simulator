@@ -3,8 +3,7 @@ extends Button
 class_name Close_Button
 
 func _on_pressed() -> void:
-	await closing_animation()
-	owner.queue_free()
+	Globals.full_ui.remove_top_ui()
 
 func closing_animation() -> void:
 	disabled = true

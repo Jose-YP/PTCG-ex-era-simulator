@@ -50,7 +50,6 @@ func play_basic_pokemon(card: Base_Card, placement: Placement = null):
 	#Insert the card onto an active spot if there is one
 	for slot in Globals.full_ui.get_slots(Consts.SIDES.ATTACKING, Consts.SLOTS.BENCH):
 		if not slot.connected_slot:
-			Globals.fundies.hide_list()
 			slot.set_card(card)
 			slot.current_card = card
 			slot.refresh()
@@ -73,7 +72,6 @@ func play_basic_pokemon(card: Base_Card, placement: Placement = null):
 func play_fossil(card: Base_Card):
 	for slot in Globals.fundies.active_slots:
 		if not slot.is_filled():
-			Globals.fundies.hide_list()
 			slot.set_card(card)
 			slot.refresh()
 			#Remove the card from hand
@@ -235,7 +233,6 @@ func manage_tutored(tutored_cards: Array[Base_Card], placement: Placement):
 #region CHOICE MANAGEMENT
 func start_add_choice(instruction: String, card: Base_Card, play_as: int,
  bool_fun: Callable, reversable: bool):
-	Globals.fundies.hide_list()
 	Globals.fundies.ui_actions.set_adding_card(card)
 	set_reversable(reversable)
 	await generic_choice(instruction, bool_fun)
@@ -259,7 +256,6 @@ func start_add_choice(instruction: String, card: Base_Card, play_as: int,
 func get_choice_candidates(instruction: String, bool_fun: Callable, reversable: bool,
  choosing_player: Consts.PLAYER_TYPES = Consts.PLAYER_TYPES.PLAYER) -> PokeSlot:
 	set_reversable(reversable)
-	Globals.fundies.hide_list()
 	hold_candidate = null
 	await generic_choice(instruction, bool_fun)
 	if hold_candidate:

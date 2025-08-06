@@ -72,30 +72,37 @@ func is_tutored() -> bool:
 #endregion
 #--------------------------------------
 
+func deselect():
+	selected = false
+
 #--------------------------------------
 #region ACTIONS
 #probably should add a way to check if closer to left or right
 func show_options() -> Node:
 	var option_Display = load("res://Scenes/UI/Lists/item_options_copy.tscn").instantiate()
 	option_Display.card_flags = card_flags
-	option_Display.global_position = %RightSpawn.global_position + option_offset
 	option_Display.scale = Vector2(.05, .05)
 	option_Display.modulate = Color.TRANSPARENT
-	if allowed:
-		option_Display.stack_act = stack_act
-	else:
-		option_Display.stack_act = Consts.STACK_ACT.LOOK
-	
-	if %RightSpawn.global_position.x > float(get_window().size.x) / 2:
-		option_Display.global_position = %LeftSpawn.global_position
-		option_Display.global_position.x -= option_offset.x
-		option_Display.global_position.y += option_offset.y
-	
 	option_Display.origin_button = self
-	Globals.fundies.current_list.add_child(option_Display)
+	option_Display.stack_act = stack_act if allowed else Consts.STACK_ACT.LOOK
+	
+	Globals.full_ui.set_top_ui(option_Display, Globals.full_ui.ui_stack[-1])
+	option_Display.tree_exited.connect(deselect)
+	option_Display.position = get_option_position(option_Display)
 	option_Display.bring_up()
 	
 	return option_Display
+
+func get_option_position(option: ItemOptions) -> Vector2:
+	var set_pos: Vector2 = Vector2.ZERO
+	
+	set_pos.y = %LeftSpawn.global_position.y - parent.par.global_position.y
+	if %RightSpawn.global_position.x > float(get_window().size.x) / 2:
+		set_pos.x = %LeftSpawn.position.x - option_offset.x
+	else:
+		set_pos.x = %RightSpawn.position.x
+	
+	return set_pos
 
 func _gui_input(event):
 	if not disabled:
@@ -104,7 +111,7 @@ func _gui_input(event):
 				select.emit()
 			elif stack_act != Consts.STACK_ACT.LOOK:
 				if Globals.fundies.options:
-					await Globals.control_disapear(Globals.fundies.options, .15, global_position)
+					await Globals.full_ui.remove_top_ui()
 				if not Globals.checking:
 					Globals.fundies.options = show_options()
 			elif stack_act == Consts.STACK_ACT.LOOK:

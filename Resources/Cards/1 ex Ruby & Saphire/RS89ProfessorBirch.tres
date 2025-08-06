@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="4_sxuyp"]
 [ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="5_l36f4"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="6_j8dp4"]
-[ext_resource type="Resource" uid="uid://dy4k02ewyav5j" path="res://Resources/Components/Counters/INdv/Stacks/AtkHandSize.tres" id="6_uq1k3"]
+[ext_resource type="Resource" uid="uid://dy4k02ewyav5j" path="res://Resources/Components/Counters/Indv/Stacks/AtkHandSize.tres" id="6_uq1k3"]
 
 [sub_resource type="Resource" id="Resource_lbeju"]
 metadata/__load_path__ = "res://Resources/Components/Counters/INdv/AtkHandSize.tres"

@@ -1,4 +1,4 @@
-extends PanelContainer
+extends Control
 class_name RegList
 
 @export var stack_act: Consts.STACK_ACT = Consts.STACK_ACT.PLAY
@@ -7,7 +7,7 @@ class_name RegList
 "Supporter","Stadium", "Tool", "TM", "RSM", "Fossil",
  "Energy") var allowed_as: int = 1
 
-@onready var header: HBoxContainer = %Header
+@onready var header: UIHeader = %Header
 @onready var playing_list: PlayingList = %PlayingList
 @onready var footer: PanelContainer = %Footer
 @onready var old_size: Vector2 = size
@@ -44,6 +44,12 @@ func _ready() -> void:
 	playing_list.list = list
 	playing_list.allowed_as = allowed_as
 	playing_list.set_items()
+
+func manage_input(event: InputEvent):
+	if event.is_action("Back"):
+		var opt: ItemOptions = playing_list.options
+		if opt == null:
+			header.handle_back(event)
 
 func _on_playing_list_finished() -> void:
 	Globals.control_disapear(self, .1, old_pos)

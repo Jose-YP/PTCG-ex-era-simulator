@@ -28,24 +28,24 @@
 [sub_resource type="Resource" id="Resource_7xd6i"]
 script = ExtResource("20_wf4qr")
 cards = Dictionary[ExtResource("1_es6ac"), int]({
-ExtResource("19_188wq"): 3,
-ExtResource("18_odqvw"): 3,
-ExtResource("17_ajbsx"): 3,
-ExtResource("16_mw0se"): 3,
-ExtResource("15_rjudy"): 2,
-ExtResource("14_710pd"): 3,
-ExtResource("13_xdx04"): 4,
-ExtResource("12_45bih"): 11,
-ExtResource("11_4vvbk"): 3,
-ExtResource("10_621ue"): 3,
-ExtResource("9_sdmk3"): 2,
-ExtResource("8_auaqu"): 1,
-ExtResource("7_ntqf7"): 2,
-ExtResource("6_pq7qd"): 1,
-ExtResource("5_b1aku"): 4,
-ExtResource("4_737la"): 4,
+ExtResource("2_c5ibv"): 4,
 ExtResource("3_leidc"): 4,
-ExtResource("2_c5ibv"): 4
+ExtResource("4_737la"): 4,
+ExtResource("5_b1aku"): 4,
+ExtResource("6_pq7qd"): 1,
+ExtResource("7_ntqf7"): 2,
+ExtResource("8_auaqu"): 1,
+ExtResource("9_sdmk3"): 2,
+ExtResource("10_621ue"): 3,
+ExtResource("11_4vvbk"): 3,
+ExtResource("12_45bih"): 11,
+ExtResource("13_xdx04"): 4,
+ExtResource("14_710pd"): 3,
+ExtResource("15_rjudy"): 2,
+ExtResource("16_mw0se"): 3,
+ExtResource("17_ajbsx"): 3,
+ExtResource("18_odqvw"): 3,
+ExtResource("19_188wq"): 3
 })
 metadata/_custom_type_script = "uid://e660iomt5e76"
 

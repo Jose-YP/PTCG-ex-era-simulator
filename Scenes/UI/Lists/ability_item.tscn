@@ -7,10 +7,16 @@
 [ext_resource type="Texture2D" uid="uid://ct1rslwcfpy1y" path="res://Art/ETCIcons/Pokepower.png" id="4_akvy3"]
 
 [node name="AbilityItem" type="MarginContainer"]
-offset_left = 21.0
-offset_top = 11.0
-offset_right = 421.0
-offset_bottom = 71.0
+custom_minimum_size = Vector2(396, 0)
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -27.0
+offset_bottom = 27.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
 mouse_filter = 2
 script = ExtResource("1_eb561")
 body_icon = ExtResource("2_g2tyk")

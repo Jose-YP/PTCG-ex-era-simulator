@@ -8,7 +8,7 @@
 [ext_resource type="Resource" uid="uid://ubb6msopnbmq" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/D2C1.tres" id="5_e2yom"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_pr7l4"]
 [ext_resource type="Script" uid="uid://y0v42qaa35wt" path="res://Code/Resource Makers/GeneralUse/CoinFlipNumMaker.gd" id="6_iiwx6"]
-[ext_resource type="Resource" uid="uid://cmg7a0erceiaq" path="res://Resources/Components/Counters/INdv/Slots/SrcMons.tres" id="7_gw8ll"]
+[ext_resource type="Resource" uid="uid://cmg7a0erceiaq" path="res://Resources/Components/Counters/Indv/Slots/SrcMons.tres" id="7_gw8ll"]
 [ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="8_q2if7"]
 [ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="9_swqy7"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="10_hc2mc"]

@@ -44,16 +44,17 @@ func card_setup(card: Base_Card, card_display: Node, parent: Node):
 	
 	card_display.card = card
 	card_display.top_level = true
-	#card_display.position = get_window().size / 2 #Put on center of screen
 	card_display.scale = Vector2(.05, .05)
 	card_display.modulate = Color.TRANSPARENT
 	card_display.name = str(card.name, " Card")
+	if full_ui.ui_stack.size() != 1:
+		card_display.position = full_ui.ui_stack[-1].global_position
+	
 	full_ui.set_top_ui(card_display)
 	
 	node_tween.tween_property(card_display, "scale", Vector2.ONE, .1)
 	node_tween.tween_property(card_display, "modulate", Color.WHITE, .1)
 	checked_card = card_display
-	checked_card.z_index = 1
 	checked_card.connect("tree_exiting", reset_check)
 	checking_card()
 

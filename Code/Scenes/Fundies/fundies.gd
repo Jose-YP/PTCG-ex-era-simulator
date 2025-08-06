@@ -15,7 +15,6 @@ class_name Fundies
 
 var turn_number: int = 1
 var home_turn: bool = true
-var current_list: Control
 var home_targets: Array[Array]
 var away_targets: Array[Array]
 var source_stack: Array[bool]
@@ -66,9 +65,6 @@ func print_slots(sides: Consts.SIDES, slots: Consts.SLOTS, init_string: String):
 
 #--------------------------------------
 #region HELPERS
-func hide_list() -> void:
-	if current_list: Globals.control_disapear(current_list, .1, current_list.old_pos)
-
 func get_side_ui() -> CardSideUI:
 	return Globals.full_ui.get_home_side(home_turn)
 

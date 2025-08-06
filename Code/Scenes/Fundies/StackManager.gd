@@ -152,7 +152,6 @@ func instantiate_list(specified_list: Dictionary[Base_Card, bool], which: Consts
 	new_node.instruction_text = instructions
 	
 	Globals.full_ui.set_top_ui(new_node)
-	Globals.fundies.current_list = new_node
 
 func pick_prize():
 	pass
@@ -186,7 +185,6 @@ func spawn_energy_list(slot: PokeSlot, allowed_fun: Callable = func(card): retur
 	new_node.stack = Consts.STACKS.NONE
 	Globals.full_ui.set_top_ui(new_node)
 	new_node.header.setup(str(slot.current_card.name, "'s Attatched Energy"))
-	Globals.fundies.current_list = new_node
 
 func show_reveal_stack(reveal_slot):
 	var stacks = get_stacks(operate_home)
@@ -250,7 +248,6 @@ func tutor_instantiate_list(specified_list: Array[Dictionary], search: Search):
 	new_node.playing_list.all_lists = specified_list
 	new_node.playing_list.list = specified_list[0]
 	new_node.playing_list.stack = search.where
-	Globals.fundies.current_list = new_node
 	new_node.setup_tutor(search)
 
 func placement_handling(tutored_cards: Array[Base_Card], placement: Placement,\

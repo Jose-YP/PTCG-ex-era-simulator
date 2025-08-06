@@ -87,6 +87,8 @@ func display_condition():
 #endregion
 #--------------------------------------
 
+#--------------------------------------
+#region ART BUTTON FUNCTIONS
 func check_ability_activation():
 	%ArtButton.ability_show(connected_slot)
 
@@ -101,6 +103,8 @@ func make_allowed(is_allowed: bool):
 
 func display_image(card: Base_Card):
 	%ArtButton.current_card = card
+#endregion
+#--------------------------------------
 
 func clear():
 	name_section.clear()

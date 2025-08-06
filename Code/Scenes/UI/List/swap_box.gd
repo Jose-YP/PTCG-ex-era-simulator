@@ -11,7 +11,7 @@ var swap_rules: EnMov = null
 
 @onready var playing_list: PlayingList = %PlayingList
 @onready var slot_list: SlotList = %SlotList
-@onready var header: HBoxContainer = %Header
+@onready var header: UIHeader = %Header
 @onready var footer: PanelContainer = %Footer
 @onready var energy_types: EnergyCollection = %EnergyTypes
 
@@ -50,7 +50,7 @@ func make_closable() -> void:
 	%Header.closable = true
 
 func manage_input(event: InputEvent) -> void:
-	if event.is_action_pressed("Back"):
+	if event.is_action_just_pressed("Back"):
 		if reciever != null:
 			reciever = null
 			slot_list.find_allowed(swap_rules.reciever)
@@ -62,6 +62,9 @@ func manage_input(event: InputEvent) -> void:
 			giver = null
 			playing_list.reset_items()
 			slot_list.find_allowed_givers(swap_rules.givers)
+		else:
+			header.handle_back(event)
+
 #endregion
 #--------------------------------------
 

@@ -20,11 +20,12 @@ grow_vertical = 2
 mouse_default_cursor_shape = 2
 disabled = true
 script = ExtResource("1_xeue6")
+option_offset = Vector2(-8, -32)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_right = 407.0
-offset_bottom = 84.0
+offset_right = 405.0
+offset_bottom = 59.0
 mouse_filter = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]

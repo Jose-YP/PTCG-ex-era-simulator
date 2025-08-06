@@ -20,7 +20,7 @@ signal finished
 var black_list: Array[String] = []
 var white_list: Array[String] = []
 var display: Node
-var options: Node
+var options: ItemOptions
 var on_card: bool = false
 var home: bool = true
 
