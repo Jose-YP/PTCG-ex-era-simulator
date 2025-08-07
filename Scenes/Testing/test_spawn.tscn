@@ -10,6 +10,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_3rsg5")
+directory = "res://Resources/Cards/1 ex Ruby & Saphire"
+effect_types = Array[String](["CardDisrupt"])
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 1

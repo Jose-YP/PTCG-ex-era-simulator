@@ -49,6 +49,21 @@ func print_energy() -> void:
 	
 	print("-------------------------------------------------------------")
 
+func has_effect(effect_type: Array[String]):
+	if success_effect:
+		if success_effect.has_effect_type(effect_type):
+			return true
+	if fail_effect:
+		if fail_effect.has_effect_type(effect_type):
+			return true
+	if attatch_effect:
+		if attatch_effect.has_effect_type(effect_type):
+			return true
+	if prompt and prompt.effect:
+		if prompt.effect.has_effect_type(effect_type):
+			return true
+	return false
+
 func get_current_provide() -> EnData:
 	if (not prompt or not has_fail_provide)\
 	 or fail_provide == success_provide or attatched_to == null:

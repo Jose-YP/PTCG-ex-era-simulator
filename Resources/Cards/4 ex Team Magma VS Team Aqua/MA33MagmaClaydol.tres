@@ -98,7 +98,7 @@ metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
 script = ExtResource("1_28pd5")
-name = " Team Magma's Claydol"
+name = "Team Magma's Claydol"
 image = ExtResource("1_wudcu")
 illustrator = "Zu-ka"
 number = 33

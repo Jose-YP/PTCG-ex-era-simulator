@@ -110,8 +110,8 @@ metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 
 [sub_resource type="Resource" id="Resource_ysok2"]
 script = ExtResource("8_mdixv")
-HP = 30
-retreat = 0
+HP = 150
+retreat = 2
 pokepower = SubResource("Resource_ur7nu")
 attacks = Array[ExtResource("2_2hwsj")]([SubResource("Resource_bmkne"), SubResource("Resource_o5ava")])
 evo_stage = "Stage 2"

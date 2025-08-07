@@ -35,6 +35,10 @@ func disable_all():
 	for node in %SlotList.get_children():
 		node.disabled = true
 
+func deselect_all():
+	for node in %SlotList.get_children():
+		node.selected = false
+
 func find_allowed(ask: SlotAsk):
 	for node in %SlotList.get_children():
 		if node.slot:

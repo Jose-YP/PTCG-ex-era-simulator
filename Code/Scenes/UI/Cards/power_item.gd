@@ -46,5 +46,5 @@ func _on_focus_entered():
 
 func _on_ability_button_pressed() -> void:
 	print("Press!")
-	Globals.remove_card()
+	Globals.full_ui.remove_top_ui()
 	slot.use_ability(ability)

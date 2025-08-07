@@ -1,7 +1,23 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=3 format=3 uid="uid://b7ayufc1njjxh"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=6 format=3 uid="uid://b7ayufc1njjxh"]
 
 [ext_resource type="Texture2D" uid="uid://2l8ia23r5jfi" path="res://Art/Cards/1 ex Ruby & Saphire/29.jpg" id="1_ef6w3"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_n4213"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="3_jworm"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="9_q5nhk"]
+
+[sub_resource type="Resource" id="Resource_mln2t"]
+script = ExtResource("3_jworm")
+HP = 30
+retreat = 0
+attacks = Array[ExtResource("2_n4213")]([])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 1
+owner = 0
+type = 1
+weak = 0
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
 script = ExtResource("9_q5nhk")
@@ -12,4 +28,5 @@ number = 29
 rarity = 1
 expansion = 0
 categories = 1
+pokemon_properties = SubResource("Resource_mln2t")
 fossil = false

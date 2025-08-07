@@ -41,7 +41,7 @@ func _ready() -> void:
 		button.pressed.connect(handle_pressed_slot.bind(button))
 	
 	update_info()
-	header.setup("SWAP BOX")
+	header.setup("[center]SWAP BOX")
 	footer.setup("PRESS ESC TO UNDO")
 	slot_list.find_allowed_givers(swap_rules.givers)
 
@@ -50,20 +50,25 @@ func make_closable() -> void:
 	%Header.closable = true
 
 func manage_input(event: InputEvent) -> void:
-	if event.is_action_just_pressed("Back"):
-		if reciever != null:
-			reciever = null
-			slot_list.find_allowed(swap_rules.reciever)
-		elif energy_given.size() > 0:
-			energy_given.pop_back().flat = false
-			allowed_more_energy()
-			display_current_swap()
-		elif giver != null:
+	if event.is_action("Back"):
+		if giver != null:
+			giver.selected = false
 			giver = null
 			playing_list.reset_items()
 			slot_list.find_allowed_givers(swap_rules.givers)
+		elif reciever != null:
+			reciever.selected = false
+			reciever = null
+			slot_list.find_allowed(swap_rules.reciever)
+		elif energy_given.size() > 0:
+			energy_given.pop_back().selected = false
+			allowed_more_energy()
+			display_current_swap()
+		elif swap_history.size() != 0:
+			undo_swap()
 		else:
 			header.handle_back(event)
+		update_info()
 
 #endregion
 #--------------------------------------
@@ -91,9 +96,9 @@ func handle_pressed_slot(slot_button: PokeSlotButton):
 
 func replace_with_button(which: PokeSlotButton, with: PokeSlotButton) -> PokeSlotButton:
 	if which != null:
-		which.flat = false
+		which.selected = false
 	if with != null:
-		with.flat = true
+		with.selected = true
 	return with
 
 func get_swappable(slot_button: PokeSlotButton):
@@ -116,8 +121,8 @@ func get_swappable(slot_button: PokeSlotButton):
 #--------------------------------------
 #region ENERGY SELECTION
 func select_energy(button: PlayingButton):
-	button.flat = not button.flat
-	if button.flat:
+	button.selected = not button.selected
+	if button.selected:
 		energy_given.append(button)
 	else:
 		energy_given.erase(button)
@@ -129,7 +134,7 @@ func select_energy(button: PlayingButton):
 func allowed_more_energy():
 	if swap_rules.enough_energy(energy_given.size() + energy_swapped):
 		for button in playing_list.get_items():
-			if button.flat: continue
+			if button.selected: continue
 			button.disabled = true
 	else:
 		for button in playing_list.get_items():
@@ -186,12 +191,14 @@ func reset():
 	energy_types.reset_energy()
 	energy_types.hide()
 	slot_list.refresh_energy()
-	
-	giver.flat = false
-	giver = null
 	energy_given.clear()
+	slot_list.deselect_all()
+	
+	if giver != null:
+		giver.selected = false
+		giver = null
 	if reciever != null:
-		reciever.flat = false
+		reciever.selected = false
 		reciever = null
 	
 	slot_list.find_allowed_givers(swap_rules.givers)
@@ -203,7 +210,7 @@ func record_swap(giv: PokeSlot, rec: PokeSlot, cards: Array[Base_Card]):
 	var swap_log: Dictionary = {"Giver": null, "Reciever": null, "Cards": null}
 	
 	swap_log["Giver"] = giv
-	swap_log["Reciever"] = reciever
+	swap_log["Reciever"] = rec
 	swap_log["Cards"] = cards
 	
 	swap_history.append(swap_log)
@@ -213,6 +220,9 @@ func undo_swap():
 	var latest_log = swap_history.pop_back()
 	print("REVERSING: ", latest_log)
 	swap_rules.swap(latest_log["Reciever"], latest_log["Giver"], latest_log["Cards"])
+	swaps_made -= 1
+	reset()
+	anymore_swaps_allowed()
 
 #--------------------------------------
 #region SIGNALS

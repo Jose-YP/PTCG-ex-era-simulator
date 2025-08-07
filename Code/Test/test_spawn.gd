@@ -1,7 +1,20 @@
 extends Control
 
+@export_dir var directory: String
+@export var effect_types: Array[String]
+
+var cards_path: PackedStringArray
+var cards: Array[Base_Card]
 
 func _on_button_pressed() -> void:
-	var option_scene := load("res://Scenes/UI/Lists/play_button.tscn") as PackedScene
-	var option_display := option_scene.instantiate() as Node
-	add_child(option_display)
+	var card_filter: Array[Base_Card]
+	cards_path = ResourceLoader.list_directory(directory)
+	for path in cards_path:
+		var card: Base_Card = load(directory+"/"+path)
+		cards.append(card)
+		if card.name == "Delcatty":
+			pass
+		
+		if ToolBool.has_effect(card, effect_types):
+			card_filter.append(card)
+			print(card.name)

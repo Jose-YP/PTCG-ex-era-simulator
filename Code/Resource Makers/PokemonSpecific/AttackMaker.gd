@@ -91,9 +91,11 @@ func pay_cost(slot: PokeSlot):
 			
 			if type_flag & energy_provide.type != 0\
 			 or Consts.energy_types[i] == "Colorless":
+				var difference = all_costs[i] - energy_num
+				all_costs[i] = clamp(difference, 0, all_costs[i])
+				energy_num  = clamp(difference * -1, 0, energy_num)
 				print(card.name, " for ", Consts.energy_types[i])
-				all_costs[i] -= 1
-				energy_num -= 1
+				print("Difference: ", difference)
 				if energy_num == 0:
 					print("Used up ", card.name)
 					special_energy.erase(card)
@@ -154,28 +156,16 @@ func condition_allows(turn_cond: Consts.TURN_COND) -> bool:
 
 func has_effect(effect_type: Array[String]) -> bool:
 	if attack_data.fail_effect:
-		if effect_type:
-			if attack_data.fail_effect.has_effect_type(effect_type):
-				return true
-		else:
+		if attack_data.fail_effect.has_effect_type(effect_type):
 			return true
 	if attack_data.success_effect:
-		if effect_type:
-			if attack_data.success_effect.has_effect_type(effect_type):
-				return true
-		else:
+		if attack_data.success_effect.has_effect_type(effect_type):
 			return true
 	if attack_data.always_effect:
-		if effect_type:
-			if attack_data.always_effect.has_effect_type(effect_type):
-				return true
-		else:
+		if attack_data.always_effect.has_effect_type(effect_type):
 			return true
 	if attack_data.prompt and attack_data.prompt.effect:
-		if effect_type:
-			if attack_data.prompt.effect.has_effect_type(effect_type):
-				return true
-		else:
+		if attack_data.prompt.effect.has_effect_type(effect_type):
 			return true
 	if attack_data.bench_damage:
 		print("Make this later")

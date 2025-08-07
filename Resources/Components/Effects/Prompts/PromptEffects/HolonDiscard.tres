@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="PromptAsk" load_steps=2 format=3 uid="uid://mcn7y4o7q2uf"]
+
+[ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="1_de768"]
+
+[resource]
+script = ExtResource("1_de768")
+formal_question = false
+question_string = ""
+yes_answer = ""
+no_answer = ""
+can_reverse = true
+occurance = false
+chooser = 0
+choose_location = "None"
+which_stack = 0
+metadata/_custom_type_script = "uid://b85jmc7067bjc"

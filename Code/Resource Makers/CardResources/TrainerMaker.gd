@@ -42,6 +42,28 @@ func play_card():
 	if always_effect:
 		always_effect.play_effect()
 
+func has_effect(effect_type: Array[String]):
+	if success_effect:
+		if success_effect.has_effect_type(effect_type):
+			return true
+	if fail_effect:
+		if fail_effect.has_effect_type(effect_type):
+			return true
+	if always_effect:
+		if always_effect.has_effect_type(effect_type):
+			return true
+	if prompt and prompt.effect:
+		if prompt.effect.has_effect_type(effect_type):
+			return true
+	if provided_attack:
+		if provided_attack.has_effect(effect_type):
+			return true
+	if tool_properties:
+		pass
+	if stadium_properties:
+		pass
+	return false
+
 func print_trainer() -> void:
 	print("Class: ", considered,"
 	Description: ", description)

@@ -75,6 +75,7 @@ func manage_input(event: InputEvent):
 func emit_play_as(flag: int):
 	if not Globals.checking:
 		Globals.full_ui.remove_top_ui()
+		Globals.full_ui.remove_top_ui()
 		play_as.emit(flag, origin_button.card)
 		origin_button.parent.finished.emit()
 

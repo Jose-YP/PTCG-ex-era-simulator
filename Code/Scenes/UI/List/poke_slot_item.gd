@@ -8,6 +8,13 @@ class_name PokeSlotButton
 @onready var counter_change: PanelContainer = %CounterChange
 
 var additional_counters: int = 0
+var selected: bool = false:
+	set(value):
+		selected = value
+		if value:
+			theme_type_variation = "DragButton"
+		else:
+			theme_type_variation = ""
 
 func _ready() -> void:
 	empty()
