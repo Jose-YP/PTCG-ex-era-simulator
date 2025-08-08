@@ -1,15 +1,52 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=3 format=3 uid="uid://dm65her8yjguh"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://dm65her8yjguh"]
 
 [ext_resource type="Texture2D" uid="uid://dh336vxtkqmov" path="res://Art/Cards/13 ex Holon Phantoms/68.jpg" id="1_iyc00"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_omdqw"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_bw2wq"]
+[ext_resource type="Resource" uid="uid://bgqnsjskgne2u" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Darkness1.tres" id="3_fsknx"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="3_u22ep"]
+[ext_resource type="Resource" uid="uid://bxpfuxfuoeiri" path="res://Resources/Components/Pokemon/Attacks/AttackData/Poision.tres" id="4_m6rb3"]
+[ext_resource type="Resource" uid="uid://b1rwmggf7a4do" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless2.tres" id="5_dtcvb"]
+[ext_resource type="Resource" uid="uid://bnsrs2a5hnvkb" path="res://Resources/Components/Pokemon/Attacks/AttackData/20Dmg.tres" id="6_wbndo"]
+
+[sub_resource type="Resource" id="Resource_xy3u0"]
+script = ExtResource("2_bw2wq")
+name = "Poison Tentacles"
+description = "The Defending Pokémon is now Poisoned."
+attack_cost = ExtResource("3_fsknx")
+attack_data = ExtResource("4_m6rb3")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_ofg6o"]
+script = ExtResource("2_bw2wq")
+name = "Mud Shot"
+description = ""
+attack_cost = ExtResource("5_dtcvb")
+attack_data = ExtResource("6_wbndo")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_vlbp8"]
+script = ExtResource("3_u22ep")
+HP = 80
+retreat = 2
+attacks = Array[ExtResource("2_bw2wq")]([SubResource("Resource_xy3u0"), SubResource("Resource_ofg6o")])
+evo_stage = "Stage 1"
+evolves_from = "Root Fossil"
+considered = 9
+owner = 0
+type = 64
+weak = 2
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
 script = ExtResource("1_omdqw")
 name = "Lileep"
 image = ExtResource("1_iyc00")
-illustrator = ""
+illustrator = "Kagemaru Himeno"
 number = 68
 rarity = 1
 expansion = 12
 categories = 1
+pokemon_properties = SubResource("Resource_vlbp8")
 fossil = false

@@ -26,6 +26,7 @@ based_on_side = 0
 based_on_slots = 0
 based_on_energy = 0
 portion = -1
+identifier_allowed = -1
 how_many = Array[int]([1])
 variable_ammount = SubResource("Resource_tuxjm")
 of_this = Array[ExtResource("5_f7r4u")]([ExtResource("6_8at0n")])

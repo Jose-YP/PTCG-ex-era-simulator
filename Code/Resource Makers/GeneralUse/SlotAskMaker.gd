@@ -15,7 +15,6 @@ class_name SlotAsk
 @export var desired_condition: Condition
 ##Self means the attacking/defending pokemon, Active is for doubles
 @export var tool_attatched: bool = false
-##-10 means don't look at this var, 0 means must be undamaged, the rest mean x or more
 @export_enum("LessEq", "GreaterEq") var comparison_type: int = 1
 
 @export_subgroup("Stats")

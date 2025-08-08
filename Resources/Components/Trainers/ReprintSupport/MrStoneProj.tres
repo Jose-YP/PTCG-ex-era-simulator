@@ -1,0 +1,80 @@
+[gd_resource type="Resource" script_class="Trainer" load_steps=13 format=3 uid="uid://b21iobw0hdknx"]
+
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="1_p5owb"]
+[ext_resource type="Resource" uid="uid://bl4qnrkh3kxdl" path="res://Resources/Components/Effects/Placement/PutIntoHand.tres" id="2_exwbn"]
+[ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="3_ygacn"]
+[ext_resource type="Resource" uid="uid://d2vm6chtedrum" path="res://Resources/Components/Effects/Identifiers/Energy/BasicEnergy.tres" id="4_kpjkk"]
+[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="5_6n5mt"]
+[ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="6_cgk4a"]
+[ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="7_iq3it"]
+
+[sub_resource type="Resource" id="Resource_ijn54"]
+script = ExtResource("5_6n5mt")
+side = 4
+where = 2
+reordering_only = false
+shuffle_first = false
+based_on_side = 0
+based_on_slots = 0
+based_on_energy = 0
+portion = -1
+identifier_allowed = -1
+how_many = Array[int]([2])
+of_this = Array[ExtResource("3_ygacn")]([ExtResource("4_kpjkk")])
+and_then = ExtResource("2_exwbn")
+reveal = true
+metadata/_custom_type_script = "uid://cw3yr1k040kw7"
+
+[sub_resource type="Resource" id="Resource_42lnl"]
+script = ExtResource("1_p5owb")
+either_or = false
+order = Array[int]([])
+search = SubResource("Resource_ijn54")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_vwo4h"]
+script = ExtResource("6_cgk4a")
+formal_question = true
+question_string = "Search from Deck or Discard Pile"
+yes_answer = "Deck"
+no_answer = "Discard Pile"
+can_reverse = true
+occurance = false
+chooser = 0
+choose_location = "None"
+which_stack = 0
+metadata/_custom_type_script = "uid://b85jmc7067bjc"
+
+[sub_resource type="Resource" id="Resource_teysv"]
+script = ExtResource("5_6n5mt")
+side = 4
+where = 1
+reordering_only = false
+shuffle_first = false
+based_on_side = 0
+based_on_slots = 0
+based_on_energy = 0
+portion = -1
+identifier_allowed = -1
+how_many = Array[int]([2])
+of_this = Array[ExtResource("3_ygacn")]([ExtResource("4_kpjkk")])
+and_then = ExtResource("2_exwbn")
+reveal = true
+metadata/_custom_type_script = "uid://cw3yr1k040kw7"
+
+[sub_resource type="Resource" id="Resource_2nldm"]
+script = ExtResource("1_p5owb")
+either_or = false
+order = Array[int]([])
+search = SubResource("Resource_teysv")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[resource]
+script = ExtResource("7_iq3it")
+considered = "Supporter"
+specific_requirement = ""
+description = "Search your deck for up to 2 Basic Energy cards, show them to your opponent, and put them into your hand. Shuffle your deck afterward. Or, search your discard pile for up to 2 Basic cards, show them to your opponent, and put them into your hand. "
+prompt = SubResource("Resource_vwo4h")
+fail_effect = SubResource("Resource_42lnl")
+success_effect = SubResource("Resource_2nldm")
+metadata/_custom_type_script = "uid://crx447i85kshy"

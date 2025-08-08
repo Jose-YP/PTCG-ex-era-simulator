@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Pokemon" load_steps=3 format=3 uid="uid://cfscq16ydjfaj"]
+
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_rhcka"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="2_l0h5j"]
+
+[resource]
+script = ExtResource("2_l0h5j")
+HP = 50
+retreat = 0
+attacks = Array[ExtResource("1_rhcka")]([])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 1
+owner = 0
+type = 256
+weak = 0
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"

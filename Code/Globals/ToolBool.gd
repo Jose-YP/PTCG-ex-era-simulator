@@ -109,7 +109,7 @@ func effect_has_effect_type(effect: EffectCall, comps: Array[String]):
 	
 	var gathered_comps: Array = []
 	for comp in comps:
-		match effect:
+		match comp:
 			"Condition":
 				if effect.condition:
 					gathered_comps.append(effect.condition)
@@ -118,8 +118,6 @@ func effect_has_effect_type(effect: EffectCall, comps: Array[String]):
 					gathered_comps.append(effect.buff)
 			"CardDisrupt":
 				if effect.card_disrupt:
-					
-					print("AAAA")
 					gathered_comps.append(effect.card_disrupt)
 					return true
 			"Disable":

@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="IndvCounter" load_steps=3 format=3 uid="uid://dy4k02ewyav5j"]
+[gd_resource type="Resource" script_class="IndvCounter" load_steps=4 format=3 uid="uid://dy4k02ewyav5j"]
 
 [ext_resource type="Resource" uid="uid://b2bdagwhfrmbo" path="res://Resources/Components/Effects/Asks/General/AtkHasBenchMons.tres" id="1_p2jt7"]
+[ext_resource type="Resource" uid="uid://dm2i7spst0qpp" path="res://Resources/Components/Effects/Identifiers/AnyCard.tres" id="2_jodl4"]
 [ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="2_ymcyl"]
 
 [resource]
@@ -8,5 +9,6 @@ script = ExtResource("2_ymcyl")
 which = "Stack"
 ask = ExtResource("1_p2jt7")
 stack_vars = "hand"
+identifier = ExtResource("2_jodl4")
 cap = -1
 metadata/_custom_type_script = "uid://vjn146j3ayd6"

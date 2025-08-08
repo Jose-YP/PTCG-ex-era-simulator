@@ -1,15 +1,69 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=3 format=3 uid="uid://dsniqxxtqasj7"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=14 format=3 uid="uid://dsniqxxtqasj7"]
 
 [ext_resource type="Texture2D" uid="uid://dwvdybdgtfpw8" path="res://Art/Cards/13 ex Holon Phantoms/67.jpg" id="1_8b6ya"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_uc2un"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_dse6n"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="3_dndui"]
+[ext_resource type="Resource" uid="uid://duyf6uncjts05" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Lightning1.tres" id="3_pca58"]
+[ext_resource type="Resource" uid="uid://nx1kc1vsm4ia" path="res://Resources/Components/Effects/Conditions/BasicConfusion.tres" id="4_ek1h5"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="5_4ifaa"]
+[ext_resource type="Resource" uid="uid://b1rwmggf7a4do" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless2.tres" id="6_ixs0s"]
+[ext_resource type="Resource" uid="uid://bnsrs2a5hnvkb" path="res://Resources/Components/Pokemon/Attacks/AttackData/20Dmg.tres" id="7_fu7cq"]
+
+[sub_resource type="Resource" id="Resource_xe22y"]
+script = ExtResource("5_4ifaa")
+prompt_reliant = false
+initial_main_DMG = 0
+defender_properties = 0
+condition = 1
+replace_num = false
+always_effect = ExtResource("4_ek1h5")
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_fwmyj"]
+script = ExtResource("2_dse6n")
+name = "Eerie Light"
+description = "The Defending Pokemon is now Confused"
+attack_cost = ExtResource("3_pca58")
+attack_data = SubResource("Resource_xe22y")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_g3hkg"]
+script = ExtResource("2_dse6n")
+name = "Shell Attack"
+description = ""
+attack_cost = ExtResource("6_ixs0s")
+attack_data = ExtResource("7_fu7cq")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_cu646"]
+script = ExtResource("3_dndui")
+HP = 70
+retreat = 2
+attacks = Array[ExtResource("2_dse6n")]([SubResource("Resource_fwmyj"), SubResource("Resource_g3hkg")])
+evo_stage = "Stage 1"
+evolves_from = "Mysterious Fossil"
+considered = 9
+owner = 0
+type = 8
+weak = 1
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
 script = ExtResource("1_uc2un")
 name = "Kabuto"
 image = ExtResource("1_8b6ya")
-illustrator = ""
+illustrator = "Hajime Kusajima"
 number = 67
 rarity = 1
 expansion = 12
 categories = 1
+pokemon_properties = SubResource("Resource_cu646")
 fossil = false

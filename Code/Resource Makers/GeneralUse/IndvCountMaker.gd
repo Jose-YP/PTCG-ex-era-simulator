@@ -18,6 +18,7 @@ var internal_data = {"which" : "Slot",
  "slot_vars" : "current_card", "stack_vars" : "None",
  "coin_flip" : load("res://Resources/Components/CoinFlip/FlipOnce.tres") as CoinFlip,
  "ask" : load("res://Resources/Components/Effects/Asks/General/AnyMon.tres") as SlotAsk,
+ "identifier": load("res://Resources/Components/Effects/Identifiers/AnyCard.tres") as Identifier, 
  "en_count_methods" : "Total", "en_categories" : "Any",
  "en_counting" : load("res://Resources/Components/EnData/Rainbow.tres") as EnData 
  ,"input_title" : "Input Number" ,"cap" : -1}
@@ -112,6 +113,13 @@ func _get_property_list() -> Array[Dictionary]:
 			"hint_string" : ",".join(stack_array_names),
 			"usage" : PROPERTY_USAGE_DEFAULT
 		})
+		props.append({
+				"name" : "identifier",
+				"type" : TYPE_OBJECT,
+				"hint" : PROPERTY_HINT_RESOURCE_TYPE,
+				"hint_string" : "Identifier",
+				"usage" : PROPERTY_USAGE_DEFAULT
+		})
 	#Find Coin flip
 	elif _get("which") == "Coinflip":
 		props.append({
@@ -143,14 +151,17 @@ func _get_property_list() -> Array[Dictionary]:
 #--------------------------------------
 #region GET FUNCTIONS
 func _get(property):
+	if not internal_data.has(property):
+		if _property_can_revert(property):
+			internal_data[property] = _property_get_revert(property)
+	
 	match property:
 		"which": return internal_data["which"]
 		"slot_vars": return internal_data["slot_vars"]
 		"stack_vars": return internal_data["stack_vars"]
 		"coin_flip": return internal_data["coin_flip"] as CoinFlip
-		"ask":
-			#print(internal_data["ask"])
-			return internal_data["ask"] as SlotAsk
+		"ask": return internal_data["ask"] as SlotAsk
+		"identifier": return internal_data["identifier"] as Identifier
 		"en_count_methods": return internal_data["en_count_methods"]
 		"en_categories": return internal_data["en_categories"]
 		"en_counting": return internal_data["en_counting"] as EnData
@@ -161,9 +172,10 @@ func _get(property):
 
 func _property_can_revert(property: StringName):
 	if (property == "which" or property == "slot_vars" or property == "stack_vars"
-	or property == "coin_flip" or property == "ask" or property == "en_count_methods"
-	or property == "en_categories" or property == "en_counting" or
-	property == "input_title" or property == "cap"):
+	or property == "coin_flip" or property == "ask" or property == "identifier"
+	or property == "en_count_methods" or property == "en_categories" or
+	property == "en_counting" or property == "input_title" or
+	property == "cap"):
 		return true
 	return false
 
@@ -174,6 +186,7 @@ func _property_get_revert(property: StringName) -> Variant:
 		"stack_vars": return "None"
 		"coin_flip": return load("res://Resources/Components/CoinFlip/FlipOnce.tres") as CoinFlip
 		"ask": return load("res://Resources/Components/Effects/Asks/General/AnyMon.tres") as SlotAsk
+		"identifier": return load("res://Resources/Components/Effects/Identifiers/AnyCard.tres") as Identifier
 		"en_count_methods": return "Total"
 		"en_categories": return "Any"
 		"en_counting": return load("res://Resources/Components/EnData/Rainbow.tres") as EnData
@@ -205,6 +218,11 @@ func _set(property, value):
 			if not value is SlotAsk:
 				return false
 			internal_data["ask"] = value as SlotAsk
+			return true
+		"identifier":
+			if not value is Identifier:
+				return false
+			internal_data["identifier"] = value as Identifier
 			return true
 		"en_count_methods": 
 			internal_data["en_count_methods"] = value
@@ -288,6 +306,7 @@ func stack_evaluation(stack_data: String, ask_data: SlotAsk) -> int:
 	if ask_data.side_target == Consts.SIDES.BOTH:
 		var atk_stack: CardStacks = fundies.stack_manager.get_stacks(fundies.get_considered_home(Consts.SIDES.ATTACKING))
 		var def_stack: CardStacks = fundies.stack_manager.get_stacks(fundies.get_considered_home(Consts.SIDES.DEFENDING))
+		
 		return atk_stack.get(stack_data).size() + def_stack.get(stack_data).size()
 	else:
 		var stacks: CardStacks = fundies.stack_manager.get_stacks(fundies.get_considered_home(ask_data.side_target))

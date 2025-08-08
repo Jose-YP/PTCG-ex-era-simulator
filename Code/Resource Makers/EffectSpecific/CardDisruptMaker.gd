@@ -8,10 +8,10 @@ class_name CardDisrupt
 @export var send_to: Consts.STACKS
 @export var bottom_of_stack: bool = false
 @export var shuffle: bool = false
-@export var card_ammount: int = 0
+@export var card_ammount: int = 1
 @export var reveal: bool = false
 
-@export_group("Type")
+@export_group("Choose From")
 @export var side: Consts.SIDES = Consts.SIDES.DEFENDING
 @export_subgroup("Stack")
 @export var from_stack: Consts.STACKS = Consts.STACKS.HAND

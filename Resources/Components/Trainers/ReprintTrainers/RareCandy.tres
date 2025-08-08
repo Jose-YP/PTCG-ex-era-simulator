@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Trainer" load_steps=2 format=3 uid="uid://cw0e2wqoptjag"]
+
+[ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="1_1owdt"]
+
+[resource]
+script = ExtResource("1_1owdt")
+considered = "Item"
+specific_requirement = ""
+description = "Choose 1 of your Basic Pokémon in play. If you have a Stage 2 card in your hand that evolves from that Pokémon, put that card on the Basic Pokémon. (This counts as evolving that Pokémon.) You can't use this card during your first turn or on a Basic Pokémon that was put into play this turn."
+metadata/_custom_type_script = "uid://crx447i85kshy"

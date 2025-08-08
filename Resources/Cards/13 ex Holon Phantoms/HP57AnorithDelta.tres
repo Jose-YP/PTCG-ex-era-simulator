@@ -1,15 +1,52 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=3 format=3 uid="uid://dftf1xlbpme3"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://dftf1xlbpme3"]
 
 [ext_resource type="Texture2D" uid="uid://byjpc7wvr276n" path="res://Art/Cards/13 ex Holon Phantoms/57.jpg" id="1_n8iux"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_vuvn5"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_dlrvm"]
+[ext_resource type="Resource" uid="uid://c242583wbr6wx" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Metal1.tres" id="3_rba8o"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="3_x6jki"]
+[ext_resource type="Resource" uid="uid://bnsrs2a5hnvkb" path="res://Resources/Components/Pokemon/Attacks/AttackData/20Dmg.tres" id="4_tw74j"]
+[ext_resource type="Resource" uid="uid://dpovjlfpsypwe" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless3.tres" id="5_iljur"]
+[ext_resource type="Resource" uid="uid://ce5ds7gu3pqvv" path="res://Resources/Components/Pokemon/Attacks/AttackData/30Plus20Head.tres" id="6_o6lfy"]
+
+[sub_resource type="Resource" id="Resource_h68pq"]
+script = ExtResource("2_dlrvm")
+name = "Metal Claw"
+description = ""
+attack_cost = ExtResource("3_rba8o")
+attack_data = ExtResource("4_tw74j")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_5uyip"]
+script = ExtResource("2_dlrvm")
+name = "Rising Lunge"
+description = "Flip a coin. If heads, this attack does 30 damage plus 20 more damage. "
+attack_cost = ExtResource("5_iljur")
+attack_data = ExtResource("6_o6lfy")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_g4gij"]
+script = ExtResource("3_x6jki")
+HP = 70
+retreat = 1
+attacks = Array[ExtResource("2_dlrvm")]([SubResource("Resource_h68pq"), SubResource("Resource_5uyip")])
+evo_stage = "Stage 1"
+evolves_from = "Claw Fossil"
+considered = 9
+owner = 0
+type = 128
+weak = 1
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
 script = ExtResource("1_vuvn5")
 name = "Anorith"
 image = ExtResource("1_n8iux")
-illustrator = ""
+illustrator = "Hajime Kusajima"
 number = 57
 rarity = 1
 expansion = 12
 categories = 1
+pokemon_properties = SubResource("Resource_g4gij")
 fossil = false

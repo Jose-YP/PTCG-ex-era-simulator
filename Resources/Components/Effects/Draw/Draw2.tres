@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Draw" load_steps=2 format=3 uid="uid://cygbn16c17nf5"]
+
+[ext_resource type="Script" uid="uid://bgtwlw1edjwyc" path="res://Code/Resource Makers/EffectSpecific/DrawMaker.gd" id="1_1snew"]
+
+[resource]
+script = ExtResource("1_1snew")
+shuffle_back_first = false
+side = 1
+bottom_deck = false
+simple_constant = 2
+metadata/_custom_type_script = "uid://bgtwlw1edjwyc"

@@ -1,15 +1,89 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=3 format=3 uid="uid://ssf0yvm562c6"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=19 format=3 uid="uid://ssf0yvm562c6"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_pvu1y"]
 [ext_resource type="Texture2D" uid="uid://cl73mmr3c1bhp" path="res://Art/Cards/13 ex Holon Phantoms/87.jpg" id="1_u4y58"]
+[ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="3_c4y1i"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_kyw37"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_ni0es"]
+[ext_resource type="Resource" uid="uid://bl4qnrkh3kxdl" path="res://Resources/Components/Effects/Placement/PutIntoHand.tres" id="5_lru8w"]
+[ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="6_wkp24"]
+[ext_resource type="Resource" uid="uid://bd5tln3evqv7l" path="res://Resources/Components/Effects/Identifiers/Pokemon/DeltaPokemon.tres" id="7_w53cy"]
+[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="8_m6lmd"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="9_k81h8"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="10_85o5a"]
+[ext_resource type="Script" uid="uid://b8kvis7rgg3j4" path="res://Code/Resource Makers/CardResources/StadiumMaker.gd" id="12_3q2f7"]
+
+[sub_resource type="Resource" id="Resource_gpuif"]
+script = ExtResource("8_m6lmd")
+side = 4
+where = 1
+reordering_only = false
+shuffle_first = false
+based_on_side = 0
+based_on_slots = 0
+based_on_energy = 0
+portion = -1
+identifier_allowed = -1
+how_many = Array[int]([1])
+of_this = Array[ExtResource("6_wkp24")]([ExtResource("7_w53cy")])
+and_then = ExtResource("5_lru8w")
+reveal = true
+metadata/_custom_type_script = "uid://cw3yr1k040kw7"
+
+[sub_resource type="Resource" id="Resource_kvgc7"]
+script = ExtResource("4_ni0es")
+either_or = false
+order = Array[int]([])
+search = SubResource("Resource_gpuif")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_iq0qi"]
+script = ExtResource("9_k81h8")
+prompt_reliant = false
+initial_main_DMG = 0
+defender_properties = 0
+condition = 1
+replace_num = false
+always_effect = SubResource("Resource_kvgc7")
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_q7ncl"]
+script = ExtResource("10_85o5a")
+name = "Delta Call"
+description = "Search your deck for a Pokémon that has δ on its card, show it to your opponent, and put it into your hand. Shuffle your deck afterward. "
+attack_cost = ExtResource("3_kyw37")
+attack_data = SubResource("Resource_iq0qi")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_sv32v"]
+script = ExtResource("12_3q2f7")
+when_to_check = 0
+bench_size = -1
+metadata/_custom_type_script = "uid://b8kvis7rgg3j4"
+
+[sub_resource type="Resource" id="Resource_ha8jt"]
+script = ExtResource("3_c4y1i")
+considered = "Stadium"
+specific_requirement = ""
+description = "Each player's Pokémon that has δ on its card can use attacks on this card instead of its own. "
+stadium_properties = SubResource("Resource_sv32v")
+provided_attack = SubResource("Resource_q7ncl")
+metadata/_custom_type_script = "uid://crx447i85kshy"
 
 [resource]
 script = ExtResource("1_pvu1y")
 name = "Holon Lake"
 image = ExtResource("1_u4y58")
-illustrator = ""
+illustrator = "Ryo Ueda"
 number = 87
 rarity = 1
 expansion = 12
 categories = 2
+trainer_properties = SubResource("Resource_ha8jt")
 fossil = false

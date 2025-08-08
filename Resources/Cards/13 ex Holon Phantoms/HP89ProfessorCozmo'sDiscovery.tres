@@ -1,15 +1,17 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=3 format=3 uid="uid://dq6xc53v7w4sf"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=4 format=3 uid="uid://dq6xc53v7w4sf"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_h2t15"]
 [ext_resource type="Texture2D" uid="uid://dj7vg0u8repnd" path="res://Art/Cards/13 ex Holon Phantoms/89.jpg" id="1_njdm5"]
+[ext_resource type="Resource" uid="uid://djhu8r2p78vg" path="res://Resources/Components/Trainers/ReprintSupport/ProfCozmo.tres" id="3_x51py"]
 
 [resource]
 script = ExtResource("1_h2t15")
 name = "Professor Cosmo's Discovery"
 image = ExtResource("1_njdm5")
-illustrator = ""
+illustrator = "Ken Sugimori"
 number = 89
 rarity = 1
 expansion = 12
 categories = 2
+trainer_properties = ExtResource("3_x51py")
 fossil = false

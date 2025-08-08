@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bod0fqwhmiour" path="res://Art/Cards/13 ex Holon Phantoms/93.jpg" id="1_uu5ho"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_vtdm4"]
 [ext_resource type="Resource" uid="uid://yqd8e305sht1" path="res://Resources/Components/Pokemon/ReprintPokemon/Fossil/RootFossil.tres" id="2_mcsqr"]
-[ext_resource type="Resource" uid="uid://cboufkbld87v0" path="res://Resources/Components/Trainers/ReprintTrainers/ReprintFossil.tres" id="4_ytjxp"]
+[ext_resource type="Resource" uid="uid://tu3yotq0ogyx" path="res://Resources/Components/Trainers/ReprintTrainers/Fossil.tres" id="4_mcsqr"]
 
 [resource]
 script = ExtResource("1_vtdm4")
@@ -15,5 +15,5 @@ rarity = 1
 expansion = 12
 categories = 3
 pokemon_properties = ExtResource("2_mcsqr")
-trainer_properties = ExtResource("4_ytjxp")
+trainer_properties = ExtResource("4_mcsqr")
 fossil = true

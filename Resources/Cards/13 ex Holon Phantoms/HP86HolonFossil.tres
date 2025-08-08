@@ -1,15 +1,65 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=3 format=3 uid="uid://b6rg0l5hxpcd8"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=15 format=3 uid="uid://b6rg0l5hxpcd8"]
 
 [ext_resource type="Texture2D" uid="uid://d2ipluxk0nn6g" path="res://Art/Cards/13 ex Holon Phantoms/86.jpg" id="1_cmoiq"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_dug0u"]
+[ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="3_0wf0p"]
+[ext_resource type="Resource" uid="uid://cbil5em5bxs0o" path="res://Resources/Components/Effects/CardDisrupt/Play/PlayS1F.tres" id="3_fgon1"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_0gqx7"]
+[ext_resource type="Resource" uid="uid://ekj1myy642kh" path="res://Resources/Components/Effects/Prompts/PromptHeads.tres" id="5_0a0jp"]
+[ext_resource type="Resource" uid="uid://dvdnbmg1kbbmb" path="res://Resources/Components/Effects/Placement/PlaceOnBench.tres" id="7_vivdh"]
+[ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="8_6upvr"]
+[ext_resource type="Resource" uid="uid://b1wwaec6lhamv" path="res://Resources/Components/Effects/Identifiers/Pokemon/Stage1Fossil.tres" id="9_io022"]
+[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="10_ufkdp"]
+
+[sub_resource type="Resource" id="Resource_wgyow"]
+script = ExtResource("4_0gqx7")
+either_or = false
+order = Array[int]([])
+card_disrupt = ExtResource("3_fgon1")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_p8axi"]
+script = ExtResource("10_ufkdp")
+side = 4
+where = 1
+reordering_only = false
+shuffle_first = false
+based_on_side = 0
+based_on_slots = 0
+based_on_energy = 0
+portion = -1
+identifier_allowed = -1
+how_many = Array[int]([1])
+of_this = Array[ExtResource("8_6upvr")]([ExtResource("9_io022")])
+and_then = ExtResource("7_vivdh")
+reveal = true
+metadata/_custom_type_script = "uid://cw3yr1k040kw7"
+
+[sub_resource type="Resource" id="Resource_rbomm"]
+script = ExtResource("4_0gqx7")
+either_or = false
+order = Array[int]([])
+search = SubResource("Resource_p8axi")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_o6fe0"]
+script = ExtResource("3_0wf0p")
+considered = "Item"
+specific_requirement = ""
+description = "Flip a coin. If heads, search your deck for an Omanyte, Kabuto, Aerodactyl, Aerodactyl ex, Lileep, or Anorith and put it onto your Bench. Shuffle your deck afterward. If tails, put an Omanyte, Kabuto, Aerodactyl, Aerodactyl ex, Lileep, or Anorith from your hand onto your Bench. Treat the new Benched Pokémon as a Basic Pokémon."
+prompt = ExtResource("5_0a0jp")
+fail_effect = SubResource("Resource_wgyow")
+success_effect = SubResource("Resource_rbomm")
+metadata/_custom_type_script = "uid://crx447i85kshy"
 
 [resource]
 script = ExtResource("1_dug0u")
 name = "Holon Fossil"
 image = ExtResource("1_cmoiq")
-illustrator = ""
+illustrator = "Mitsuhiro Arita"
 number = 86
 rarity = 1
 expansion = 12
 categories = 2
+trainer_properties = SubResource("Resource_o6fe0")
 fossil = false

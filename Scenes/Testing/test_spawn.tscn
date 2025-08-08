@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b1uigrus87nja"]
+[gd_scene load_steps=3 format=3 uid="uid://b1uigrus87nja"]
 
 [ext_resource type="Script" uid="uid://b7ocmjax253te" path="res://Code/Test/test_spawn.gd" id="1_3rsg5"]
+[ext_resource type="Resource" uid="uid://wggw0k631uu4" path="res://Resources/Cards/4 ex Team Magma VS Team Aqua/MA45Slowpoke.tres" id="2_vqbto"]
 
 [node name="TestSpawn" type="Control"]
 layout_mode = 3
@@ -12,6 +13,7 @@ grow_vertical = 2
 script = ExtResource("1_3rsg5")
 directory = "res://Resources/Cards/1 ex Ruby & Saphire"
 effect_types = Array[String](["CardDisrupt"])
+other_test = ExtResource("2_vqbto")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 1

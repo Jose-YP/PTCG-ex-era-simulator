@@ -2,19 +2,19 @@ extends Resource
 class_name Identifier
 
 @export_multiline var description: String
-
-@export_category("Specific Categories")
 ##If this is true, remember what has been searched
 @export var must_be_different: bool = false
 @export_flags("Pokemon", "Trainer", "Energy") var broad_class
 ##Check for exactly contains or just has contains
 @export var exactly: bool = false
 @export var name_array: Array[String] = []
+@export_enum("LessEq", "GreaterEq") var comparison_type: int = 1
 @export_flags("Grass","Fire","Water",
 "Lightning","Psychic","Fighting",
 "Darkness","Metal","Colorless") var type: int = 0 #0 means search doesn't care about type
 
 @export_group("Pokemon Categories")
+@export_range(-10, 200, 10) var HP: int = -10
 ##Search for a mon that evolves from the using mon
 @export var evolves_from: bool = false
 ##This one is special [NOT IMPLEMENTED]
@@ -106,6 +106,15 @@ func or_poke_bool(card: Base_Card, based_on: Array[PokeSlot]) -> bool:
 	print("/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\")
 	var pokemon: Pokemon = card.pokemon_properties
 	
+	if HP != -10:
+		match comparison_type:
+			0:
+				if HP < pokemon.HP:
+					return false
+			1:
+				if HP > pokemon.HP:
+					return false
+	
 	#Check if the card evolves from th
 	if evolves_from:
 		
@@ -146,6 +155,15 @@ func or_poke_bool(card: Base_Card, based_on: Array[PokeSlot]) -> bool:
 func and_poke_bool(card: Base_Card, based_on: Array[PokeSlot]):
 	print("\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/")
 	var pokemon: Pokemon = card.pokemon_properties
+	
+	if HP != -10:
+		match comparison_type:
+			0:
+				if HP < pokemon.HP:
+					return false
+			1:
+				if HP > pokemon.HP:
+					return false
 	
 	#Check if the card evolves from any card in based_on
 	if evolves_from:

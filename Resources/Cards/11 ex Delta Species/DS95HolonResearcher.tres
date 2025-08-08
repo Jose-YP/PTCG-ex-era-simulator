@@ -1,15 +1,77 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=3 format=3 uid="uid://dhb0cuvhuxs36"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=14 format=3 uid="uid://dhb0cuvhuxs36"]
 
 [ext_resource type="Texture2D" uid="uid://ro2jr4bnwabm" path="res://Art/Cards/11 ex Delta Species/95.jpg" id="1_7hclc"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_g2gcn"]
+[ext_resource type="Resource" uid="uid://mcn7y4o7q2uf" path="res://Resources/Components/Effects/Prompts/PromptEffects/HolonDiscard.tres" id="3_rnqeh"]
+[ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="3_w72rx"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="5_3d5pd"]
+[ext_resource type="Resource" uid="uid://bl4qnrkh3kxdl" path="res://Resources/Components/Effects/Placement/PutIntoHand.tres" id="6_ixyr2"]
+[ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="7_pk1m2"]
+[ext_resource type="Resource" uid="uid://cvl23bjanqo3l" path="res://Resources/Components/EnData/Metal.tres" id="8_nytkq"]
+[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="9_nefo7"]
+
+[sub_resource type="Resource" id="Resource_syo20"]
+script = ExtResource("7_pk1m2")
+description = "δ Pokemon or {Metal} Energy Card"
+must_be_different = false
+broad_class = 5
+exactly = false
+name_array = Array[String]([])
+comparison_type = 1
+type = 0
+HP = -10
+evolves_from = false
+rare_candy = false
+inclusive_class = true
+poke_class = 8
+owner = 0
+stage = 0
+trainer_classes = 0
+energy_class = 3
+energy_provides = ExtResource("8_nytkq")
+metadata/_custom_type_script = "uid://uplawvwcwl8y"
+
+[sub_resource type="Resource" id="Resource_wjm17"]
+script = ExtResource("9_nefo7")
+side = 4
+where = 1
+reordering_only = false
+shuffle_first = false
+based_on_side = 0
+based_on_slots = 0
+based_on_energy = 0
+portion = -1
+identifier_allowed = -1
+how_many = Array[int]([1])
+of_this = Array[ExtResource("7_pk1m2")]([SubResource("Resource_syo20")])
+and_then = ExtResource("6_ixyr2")
+reveal = true
+metadata/_custom_type_script = "uid://cw3yr1k040kw7"
+
+[sub_resource type="Resource" id="Resource_txp7d"]
+script = ExtResource("5_3d5pd")
+either_or = false
+order = Array[int]([])
+search = SubResource("Resource_wjm17")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_vbxo0"]
+script = ExtResource("3_w72rx")
+considered = "Supporter"
+specific_requirement = "Discard a card from your hand. If you can't discard a card from your hand, you can't play this card."
+description = "Search your deck for a {Metal} Energy card or a Basic Pokémon (or Evolution card) that has δ on its card, show it to your opponent, and put it into your hand. Shuffle your deck afterward. "
+prompt = ExtResource("3_rnqeh")
+success_effect = SubResource("Resource_txp7d")
+metadata/_custom_type_script = "uid://crx447i85kshy"
 
 [resource]
 script = ExtResource("1_g2gcn")
 name = "Holon Researcher"
 image = ExtResource("1_7hclc")
-illustrator = "Ken Sugimori"
+illustrator = " Kanako Eo"
 number = 95
 rarity = 1
 expansion = 10
 categories = 2
+trainer_properties = SubResource("Resource_vbxo0")
 fossil = false

@@ -1,15 +1,17 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=3 format=3 uid="uid://cagn7pxm3b4ru"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=4 format=3 uid="uid://cagn7pxm3b4ru"]
 
 [ext_resource type="Texture2D" uid="uid://e80modjkrli4" path="res://Art/Cards/13 ex Holon Phantoms/88.jpg" id="1_h4kt5"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_y3tu0"]
+[ext_resource type="Resource" uid="uid://b21iobw0hdknx" path="res://Resources/Components/Trainers/ReprintSupport/MrStoneProj.tres" id="3_w7jte"]
 
 [resource]
 script = ExtResource("1_y3tu0")
 name = "Mr Stone's Project"
 image = ExtResource("1_h4kt5")
-illustrator = ""
+illustrator = "Ken Sugimori"
 number = 88
 rarity = 1
 expansion = 12
 categories = 2
+trainer_properties = ExtResource("3_w7jte")
 fossil = false

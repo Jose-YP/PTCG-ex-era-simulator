@@ -7,7 +7,6 @@ script = ExtResource("1_8g6r2")
 which = 0
 top_deck = false
 stack = 1
-slot = 4
 use_as = 0
 reorder_type = 0
 shuffle = true

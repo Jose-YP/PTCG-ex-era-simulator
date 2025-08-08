@@ -13,6 +13,9 @@ class_name Search
 ##How many cards in the desired section can you check.
 ##-1 means all cards. For certain cards that look at a bit of the top of the deck.
 @export_range(-1,60, 1) var portion: int = -1
+## -1 mean all. How many identifiers are you allowed to tutor from at a time
+## ex. if this is 1 then you can only tutor from 1 identifier no matter how many there actually are
+@export_range(-1,10,1) var identifier_allowed: int = -1
 #holon Lass uses a varying portion based on prize cards soooo
 @export var variable_portion: Comparator
 ##How many cards can the user pick, if it's -1 allow infinite

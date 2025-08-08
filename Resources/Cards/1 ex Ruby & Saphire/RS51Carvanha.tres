@@ -1,13 +1,12 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=17 format=3 uid="uid://c8xqucy03ngb6"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=15 format=3 uid="uid://c8xqucy03ngb6"]
 
 [ext_resource type="Texture2D" uid="uid://r7j65mcjsuh8" path="res://Art/Cards/1 ex Ruby & Saphire/51.jpg" id="1_g8f6k"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_o8f7p"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_88kre"]
 [ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_u3s1u"]
 [ext_resource type="Resource" uid="uid://8cvarib60ven" path="res://Resources/Components/Pokemon/Attacks/AttackData/10DmgDisabRetr.tres" id="4_f2fxk"]
-[ext_resource type="Resource" uid="uid://bkt6ry7vyha70" path="res://Resources/Components/Effects/Asks/General/Other.tres" id="6_0ul3b"]
+[ext_resource type="Resource" uid="uid://bo7xhfhkteti0" path="res://Resources/Components/Effects/DmgManip/Add/Add1OthSelf.tres" id="5_f2fxk"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="6_ua6fm"]
-[ext_resource type="Script" uid="uid://scca13hg4k1l" path="res://Code/Resource Makers/EffectSpecific/DmgManipMaker.gd" id="7_s5htt"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="8_gbbiv"]
 [ext_resource type="Resource" uid="uid://bessnawi8b2ct" path="res://Resources/Components/Occurances/AttackedByOpponent.tres" id="9_nu7sk"]
 [ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="10_ih051"]
@@ -20,26 +19,11 @@ attack_cost = ExtResource("3_u3s1u")
 attack_data = ExtResource("4_f2fxk")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
-[sub_resource type="Resource" id="Resource_24e0r"]
-script = ExtResource("7_s5htt")
-turn_delay = -1
-prevent_KO = false
-mode = "Add"
-how_many = 1
-choosing = 4
-anyway_u_like = false
-choose_num = -1
-ask = ExtResource("6_0ul3b")
-vary_choose_num = false
-plus = true
-modifier = 1
-metadata/_custom_type_script = "uid://scca13hg4k1l"
-
 [sub_resource type="Resource" id="Resource_wsfqf"]
 script = ExtResource("8_gbbiv")
 either_or = false
 order = Array[int]([])
-dmgManip = SubResource("Resource_24e0r")
+dmgManip = ExtResource("5_f2fxk")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_e8q37"]
