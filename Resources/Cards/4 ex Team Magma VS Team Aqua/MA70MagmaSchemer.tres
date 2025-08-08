@@ -1,13 +1,13 @@
 [gd_resource type="Resource" script_class="Base_Card" load_steps=18 format=3 uid="uid://1bv12iusbfvs"]
 
-[ext_resource type="Texture2D" uid="uid://dxp7t24loe304" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/69.jpg" id="1_lfmbq"]
+[ext_resource type="Texture2D" uid="uid://burkobp2qwmyn" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/70.jpg" id="1_sk7qv"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_sxs4v"]
 [ext_resource type="Resource" uid="uid://dm2i7spst0qpp" path="res://Resources/Components/Effects/Identifiers/AnyCard.tres" id="3_ok60t"]
 [ext_resource type="Script" uid="uid://8sh5p3leflla" path="res://Code/Resource Makers/EffectSpecific/CardDisruptMaker.gd" id="4_xcn8p"]
 [ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="5_sk7qv"]
 [ext_resource type="Script" uid="uid://bgtwlw1edjwyc" path="res://Code/Resource Makers/EffectSpecific/DrawMaker.gd" id="5_wa55w"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="6_sk7qv"]
-[ext_resource type="Resource" uid="uid://bl054ggkgc332" path="res://Resources/Components/Effects/Identifiers/Pokemon/TeamAquaMons.tres" id="6_yyhty"]
+[ext_resource type="Resource" uid="uid://ccj6n5o2yaoev" path="res://Resources/Components/Effects/Identifiers/Pokemon/TeamMagma.tres" id="6_yyhty"]
 [ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="7_6km0p"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="7_yyhty"]
 [ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="8_tnlfn"]
@@ -68,16 +68,16 @@ metadata/_custom_type_script = "uid://dmulm3x3dj842"
 script = ExtResource("7_yyhty")
 considered = "Supporter"
 specific_requirement = ""
-description = "Discard any 1 Pokémon from your hand. Then draw 3 cards. If you discarded a Pokémon with Team Aqua in its name, draw 4 cards instead."
+description = "Discard any 1 Pokémon from your hand. Then draw 3 cards. If you discarded a Pokémon with Team Magma in its name, draw 4 cards instead."
 always_effect = SubResource("Resource_iai1e")
 metadata/_custom_type_script = "uid://crx447i85kshy"
 
 [resource]
 script = ExtResource("1_sxs4v")
-name = "Team Aqua Schemer"
-image = ExtResource("1_lfmbq")
+name = "Team Magma Schemer"
+image = ExtResource("1_sk7qv")
 illustrator = "Ken Sugimori"
-number = 69
+number = 70
 rarity = 1
 expansion = 3
 categories = 2

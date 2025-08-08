@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Pokemon" load_steps=19 format=3 uid="uid://shjh1uruhgm6"]
+[gd_resource type="Resource" script_class="Pokemon" load_steps=26 format=3 uid="uid://shjh1uruhgm6"]
 
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_4ukwe"]
 [ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="2_m0tgu"]
@@ -9,9 +9,12 @@
 [ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="5_ktdfq"]
 [ext_resource type="Resource" uid="uid://dmb635n2d0erk" path="res://Resources/Components/Effects/Draw/Draw3.tres" id="6_wpewd"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="7_hndol"]
-[ext_resource type="Resource" uid="uid://chc757fk4t8pm" path="res://Resources/Components/Effects/Prompts/Discard1EnTo.tres" id="8_qksfq"]
 [ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="9_doupy"]
+[ext_resource type="Resource" uid="uid://dy4k02ewyav5j" path="res://Resources/Components/Counters/Indv/Stacks/AtkHandSize.tres" id="10_7vbis"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="11_hoke0"]
+[ext_resource type="Resource" uid="uid://cd880a7x21jgg" path="res://Resources/Components/Effects/Identifiers/Energy/AnyEnergy.tres" id="11_wpewd"]
+[ext_resource type="Script" uid="uid://8sh5p3leflla" path="res://Code/Resource Makers/EffectSpecific/CardDisruptMaker.gd" id="12_hndol"]
+[ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="13_qksfq"]
 
 [sub_resource type="Resource" id="Resource_7vbis"]
 script = ExtResource("5_ktdfq")
@@ -38,6 +41,7 @@ prompt_reliant = false
 initial_main_DMG = 10
 defender_properties = 0
 condition = 1
+before_damage = false
 replace_num = false
 conditional_self_dmg = false
 self_damage = 0
@@ -63,6 +67,53 @@ order = Array[int]([8])
 draw_ammount = ExtResource("6_wpewd")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
+[sub_resource type="Resource" id="Resource_4gyuw"]
+script = ExtResource("4_ktdfq")
+comparision_type = "Not Equal"
+first_comparison = ExtResource("10_7vbis")
+compare_to = "None"
+second_constant = 0
+operate_w_constant = "None"
+metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
+
+[sub_resource type="Resource" id="Resource_doupy"]
+script = ExtResource("12_hndol")
+send = 0
+from = 0
+send_to = 2
+bottom_of_stack = false
+shuffle = false
+card_ammount = 1
+reveal = false
+side = 1
+card_options = ExtResource("11_wpewd")
+view = true
+from_stack = 0
+pokemon_disrupt = 0
+metadata/_custom_type_script = "uid://8sh5p3leflla"
+
+[sub_resource type="Resource" id="Resource_2fhws"]
+script = ExtResource("7_hndol")
+either_or = false
+order = Array[int]([])
+card_disrupt = SubResource("Resource_doupy")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_xypqx"]
+script = ExtResource("13_qksfq")
+formal_question = false
+question_string = ""
+yes_answer = ""
+no_answer = ""
+comparator = SubResource("Resource_4gyuw")
+can_reverse = true
+effect = SubResource("Resource_2fhws")
+occurance = false
+chooser = 0
+choose_location = "None"
+which_stack = 0
+metadata/_custom_type_script = "uid://b85jmc7067bjc"
+
 [sub_resource type="Resource" id="Resource_fitjy"]
 script = ExtResource("9_doupy")
 category = "Power"
@@ -71,7 +122,7 @@ description = "Once during your turn (before your attack), you may discard 1 Ene
 affected_by_condition = true
 active = false
 how_often = "Once per Mon"
-prompt = ExtResource("8_qksfq")
+prompt = SubResource("Resource_xypqx")
 effect = SubResource("Resource_ffdua")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Pokemon" load_steps=29 format=3 uid="uid://ydrv5i54j3hw"]
+[gd_resource type="Resource" script_class="Pokemon" load_steps=30 format=3 uid="uid://ydrv5i54j3hw"]
 
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_obixo"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="2_83dbl"]
@@ -14,6 +14,7 @@
 [ext_resource type="Resource" uid="uid://d2vm6chtedrum" path="res://Resources/Components/Effects/Identifiers/Energy/BasicEnergy.tres" id="11_cgqai"]
 [ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="12_dj5ks"]
 [ext_resource type="Script" uid="uid://8sh5p3leflla" path="res://Code/Resource Makers/EffectSpecific/CardDisruptMaker.gd" id="13_hnw4t"]
+[ext_resource type="Resource" uid="uid://dm2i7spst0qpp" path="res://Resources/Components/Effects/Identifiers/AnyCard.tres" id="13_pwlnr"]
 [ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="14_1qoqx"]
 [ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="15_uut6h"]
 
@@ -42,6 +43,7 @@ prompt_reliant = false
 initial_main_DMG = 10
 defender_properties = 0
 condition = 1
+before_damage = false
 replace_num = false
 conditional_self_dmg = false
 self_damage = 0
@@ -70,6 +72,7 @@ based_on_side = 0
 based_on_slots = 0
 based_on_energy = 0
 portion = -1
+identifier_allowed = -1
 how_many = Array[int]([2])
 of_this = Array[ExtResource("10_bu8fb")]([ExtResource("11_cgqai")])
 and_then = ExtResource("9_1hwmj")
@@ -88,6 +91,8 @@ script = ExtResource("5_ivwvk")
 which = "Stack"
 ask = ExtResource("3_pwlnr")
 stack_vars = "discard_pile"
+identifier = ExtResource("13_pwlnr")
+stack_portion = -1
 cap = -1
 metadata/_custom_type_script = "uid://vjn146j3ayd6"
 
@@ -110,6 +115,7 @@ shuffle = false
 card_ammount = 0
 reveal = false
 side = 2
+view = true
 from_stack = 0
 pokemon_disrupt = 0
 metadata/_custom_type_script = "uid://8sh5p3leflla"

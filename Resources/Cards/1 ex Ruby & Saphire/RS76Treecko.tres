@@ -1,43 +1,8 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://cb4kum8iw4q3"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=4 format=3 uid="uid://cb4kum8iw4q3"]
 
-[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_cmh7r"]
 [ext_resource type="Texture2D" uid="uid://b2rx2bvdndk0a" path="res://Art/Cards/1 ex Ruby & Saphire/76.jpg" id="1_efrcq"]
-[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="2_efrcq"]
+[ext_resource type="Resource" uid="uid://dbwrn5xqg6wrq" path="res://Resources/Components/Pokemon/ReprintPokemon/Promo/TailSlapTreecko.tres" id="2_cmh7r"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_2e7hi"]
-[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_6sucb"]
-[ext_resource type="Resource" uid="uid://bep36omnenbc8" path="res://Resources/Components/Pokemon/Attacks/AttackData/10Dmg.tres" id="4_mys2x"]
-[ext_resource type="Resource" uid="uid://c2gawfb472bm" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/G1C1.tres" id="5_pyhjy"]
-[ext_resource type="Resource" uid="uid://bnsrs2a5hnvkb" path="res://Resources/Components/Pokemon/Attacks/AttackData/20Dmg.tres" id="6_8j7wu"]
-
-[sub_resource type="Resource" id="Resource_cmh7r"]
-script = ExtResource("1_cmh7r")
-name = "Tail Slap"
-description = ""
-attack_cost = ExtResource("3_6sucb")
-attack_data = ExtResource("4_mys2x")
-metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
-
-[sub_resource type="Resource" id="Resource_efrcq"]
-script = ExtResource("1_cmh7r")
-name = "Razor Leaf"
-description = ""
-attack_cost = ExtResource("5_pyhjy")
-attack_data = ExtResource("6_8j7wu")
-metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
-
-[sub_resource type="Resource" id="Resource_0bypi"]
-script = ExtResource("2_efrcq")
-HP = 40
-retreat = 1
-attacks = Array[ExtResource("1_cmh7r")]([SubResource("Resource_cmh7r"), SubResource("Resource_efrcq")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
-type = 1
-weak = 2
-resist = 4
-metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
 script = ExtResource("3_2e7hi")
@@ -48,6 +13,6 @@ number = 76
 rarity = 0
 expansion = 0
 categories = 1
-pokemon_properties = SubResource("Resource_0bypi")
+pokemon_properties = ExtResource("2_cmh7r")
 fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

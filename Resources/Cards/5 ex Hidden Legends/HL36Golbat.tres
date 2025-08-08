@@ -1,0 +1,53 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://dbn0cmv0wmfnb"]
+
+[ext_resource type="Texture2D" uid="uid://dgo700rqil4hr" path="res://Art/Cards/5 ex Hidden Legends/36.jpg" id="1_ps36e"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_pvvq1"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_1nc1w"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_7b70s"]
+[ext_resource type="Resource" uid="uid://jy5duoic7pkq" path="res://Resources/Components/Pokemon/Attacks/AttackData/Confuse.tres" id="4_dufn1"]
+[ext_resource type="Resource" uid="uid://c2gawfb472bm" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/G1C1.tres" id="5_3qfgl"]
+[ext_resource type="Resource" uid="uid://bnsrs2a5hnvkb" path="res://Resources/Components/Pokemon/Attacks/AttackData/20Dmg.tres" id="6_io88k"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="7_yi3qy"]
+
+[sub_resource type="Resource" id="Resource_mms8t"]
+script = ExtResource("2_1nc1w")
+name = "Supersonic"
+description = "The Defending Pokémon is now Confused."
+attack_cost = ExtResource("3_7b70s")
+attack_data = ExtResource("4_dufn1")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_0xn53"]
+script = ExtResource("2_1nc1w")
+name = "Sharp Fang"
+description = ""
+attack_cost = ExtResource("5_3qfgl")
+attack_data = ExtResource("6_io88k")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_g1wwb"]
+script = ExtResource("7_yi3qy")
+HP = 70
+retreat = 1
+attacks = Array[ExtResource("2_1nc1w")]([SubResource("Resource_mms8t"), SubResource("Resource_0xn53")])
+evo_stage = "Stage 1"
+evolves_from = "Zubat"
+considered = 1
+owner = 0
+type = 1
+weak = 16
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_pvvq1")
+name = "Golbat"
+image = ExtResource("1_ps36e")
+illustrator = "Midori Harada"
+number = 36
+rarity = 1
+expansion = 4
+categories = 1
+pokemon_properties = SubResource("Resource_g1wwb")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

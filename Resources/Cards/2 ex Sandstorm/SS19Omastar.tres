@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=4 format=3 uid="uid://opflwjdmgc8n"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_i2wb3"]
+[ext_resource type="Texture2D" uid="uid://b7nauym5p5xrx" path="res://Art/Cards/2 ex Sandstorm/19.jpg" id="1_yabis"]
+[ext_resource type="Resource" uid="uid://dcihnjlemhw0g" path="res://Resources/Components/Pokemon/ReprintPokemon/PowerKeepers/PullDownOmastar.tres" id="2_85u3r"]
+
+[resource]
+script = ExtResource("1_i2wb3")
+name = "Omastar"
+image = ExtResource("1_yabis")
+illustrator = "Kouki Saitou"
+number = 19
+rarity = 2
+expansion = 1
+categories = 1
+pokemon_properties = ExtResource("2_85u3r")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

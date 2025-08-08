@@ -315,8 +315,8 @@ func before_direct_attack(attacker: PokeSlot, with: Attack):
 	 attack_data.always_effect.has_effect_type(["Condition", "Disable", "CardDisrupt"])):
 		if not attack_data.both_active:
 			await get_choice_candidates("Who do you want to attack?", 
-			func(slot: PokeSlot): return slot.is_in_slot(Consts.SIDES.DEFENDING, Consts.SLOTS.ACTIVE),
-			true)
+			func(slot: PokeSlot): return slot.is_in_slot(Consts.SIDES.DEFENDING, Consts.SLOTS.ACTIVE)\
+			and slot.is_filled(), true)
 			
 			pass_prompt = await check_prompt_reliant(attack_data.prompt)
 			

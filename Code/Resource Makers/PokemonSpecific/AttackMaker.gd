@@ -80,26 +80,17 @@ func pay_cost(slot: PokeSlot):
 	#Maybe sort based on flag size
 	special_energy.sort_custom(func(a: Base_Card,b: Base_Card):\
 	 return a.energy_properties.get_current_type() < b.energy_properties.get_current_type())
-	print("SPECIAL SORT: ", special_energy)
+	print("SPECIAL SORT: ")
 	for card in special_energy:
-		var energy_provide = card.energy_properties.get_current_provide()
-		var energy_num: int = energy_provide.number
-		print("Using ", card.name, " with ", energy_num, " Energy")
-		for i in range(all_costs.size()):
-			if all_costs[i] == 0: continue
-			var type_flag: int = 2 ** i
-			
-			if type_flag & energy_provide.type != 0\
-			 or Consts.energy_types[i] == "Colorless":
-				var difference = all_costs[i] - energy_num
-				all_costs[i] = clamp(difference, 0, all_costs[i])
-				energy_num  = clamp(difference * -1, 0, energy_num)
-				print(card.name, " for ", Consts.energy_types[i])
-				print("Difference: ", difference)
-				if energy_num == 0:
-					print("Used up ", card.name)
-					special_energy.erase(card)
-					break
+		var finished: bool = true
+		all_costs = pay_with(all_costs, card)
+		print(card.get_formal_name())
+		
+		for cost in all_costs:
+			if cost != 0:
+				finished = false
+		if finished:
+			break
 	
 	var final_cost: int = 0
 	#How to consider special energy later
@@ -112,6 +103,25 @@ func pay_cost(slot: PokeSlot):
 		print(basic_energy, special_energy)
 	
 	return final_cost
+
+func pay_with(all_costs: Array[int], card: Base_Card):
+	var energy_provide = card.energy_properties.get_current_provide()
+	var energy_num: int = energy_provide.number
+	print("Using ", card.name, " with ", energy_num, " Energy")
+	for i in range(all_costs.size()):
+		if all_costs[i] == 0: continue
+		var type_flag: int = 2 ** i
+		
+		if type_flag & energy_provide.type != 0\
+		 or Consts.energy_types[i] == "Colorless":
+			var difference = all_costs[i] - energy_num
+			all_costs[i] = clamp(difference, 0, all_costs[i])
+			energy_num  = clamp(difference * -1, 0, energy_num)
+			if energy_num == 0:
+				print("Used up ", card.name)
+			else:
+				print("Remember to save this info somewhere later")
+	return all_costs
 
 ##Checks if the provided energy is enough to cover for the attack cost[br]
 ##This function prioritizes using basic energy first to optimize energy spending[br]

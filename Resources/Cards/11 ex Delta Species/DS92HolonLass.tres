@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=18 format=3 uid="uid://cfps337rtsmpi"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=19 format=3 uid="uid://cfps337rtsmpi"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_c210u"]
 [ext_resource type="Texture2D" uid="uid://cbidbiom6jjhq" path="res://Art/Cards/11 ex Delta Species/92.jpg" id="1_kwip2"]
@@ -9,6 +9,7 @@
 [ext_resource type="Resource" uid="uid://cd880a7x21jgg" path="res://Resources/Components/Effects/Identifiers/Energy/AnyEnergy.tres" id="5_05uh2"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="5_cwdhh"]
 [ext_resource type="Resource" uid="uid://bns8h72u2hxqo" path="res://Resources/Components/Effects/Asks/General/AnyMon.tres" id="8_p2mq1"]
+[ext_resource type="Resource" uid="uid://dm2i7spst0qpp" path="res://Resources/Components/Effects/Identifiers/AnyCard.tres" id="9_25apb"]
 [ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="9_qu4hy"]
 [ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="10_25apb"]
 [ext_resource type="Resource" uid="uid://mcn7y4o7q2uf" path="res://Resources/Components/Effects/Prompts/PromptEffects/HolonDiscard.tres" id="11_ugs01"]
@@ -18,6 +19,8 @@ script = ExtResource("9_qu4hy")
 which = "Stack"
 ask = ExtResource("8_p2mq1")
 stack_vars = "prize_cards"
+identifier = ExtResource("9_25apb")
+stack_portion = -1
 cap = -1
 metadata/_custom_type_script = "uid://vjn146j3ayd6"
 

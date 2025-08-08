@@ -24,6 +24,7 @@ prompt_reliant = false
 initial_main_DMG = 0
 defender_properties = 0
 condition = 1
+before_damage = false
 replace_num = false
 always_effect = SubResource("Resource_36s8a")
 conditional_self_dmg = false

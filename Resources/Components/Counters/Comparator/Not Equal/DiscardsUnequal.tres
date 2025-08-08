@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="Comparator" load_steps=9 format=3 uid="uid://crlxvia0kynq"]
+[gd_resource type="Resource" script_class="Comparator" load_steps=10 format=3 uid="uid://crlxvia0kynq"]
 
 [ext_resource type="Resource" uid="uid://bnv2dkudpcueo" path="res://Resources/Components/Effects/Asks/General/SrcActive.tres" id="1_8xrcl"]
+[ext_resource type="Resource" uid="uid://dm2i7spst0qpp" path="res://Resources/Components/Effects/Identifiers/AnyCard.tres" id="2_emalt"]
 [ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="2_r4o3s"]
 [ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="3_6bh1g"]
 [ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="4_77qmt"]
@@ -11,6 +12,8 @@ script = ExtResource("2_r4o3s")
 which = "Stack"
 ask = ExtResource("1_8xrcl")
 stack_vars = "discard_pile"
+identifier = ExtResource("2_emalt")
+stack_portion = -1
 cap = -1
 metadata/_custom_type_script = "uid://vjn146j3ayd6"
 
@@ -48,6 +51,8 @@ script = ExtResource("2_r4o3s")
 which = "Stack"
 ask = SubResource("Resource_ljd7k")
 stack_vars = "discard_pile"
+identifier = ExtResource("2_emalt")
+stack_portion = -1
 cap = -1
 metadata/_custom_type_script = "uid://vjn146j3ayd6"
 

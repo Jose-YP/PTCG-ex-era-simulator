@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=4 format=3 uid="uid://igeioh85wvkl"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_485q8"]
+[ext_resource type="Texture2D" uid="uid://dxttui28cnjaj" path="res://Art/Cards/2 ex Sandstorm/86.jpg" id="1_dcce3"]
+[ext_resource type="Resource" uid="uid://cdi88p3tmf5qr" path="res://Resources/Components/Trainers/ReprintTrainers/DoubleFullHeal.tres" id="3_c2742"]
+
+[resource]
+script = ExtResource("1_485q8")
+name = "Double Full Heal"
+image = ExtResource("1_dcce3")
+illustrator = "Ryo Ueda"
+number = 86
+rarity = 1
+expansion = 1
+categories = 1
+trainer_properties = ExtResource("3_c2742")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

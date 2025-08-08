@@ -1,0 +1,44 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://ks8jygwxcmk8"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_8pljj"]
+[ext_resource type="Texture2D" uid="uid://dykm18mu5k0ca" path="res://Art/Cards/2 ex Sandstorm/70.jpg" id="1_hbvpm"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_y8lyt"]
+[ext_resource type="Resource" uid="uid://cimoxkuco6ggm" path="res://Resources/Components/Pokemon/Attacks/PureEffectAttacks/TeamAssembly.tres" id="3_r36ux"]
+[ext_resource type="Resource" uid="uid://b1rwmggf7a4do" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless2.tres" id="4_pa602"]
+[ext_resource type="Resource" uid="uid://n2tq4jfo7hw1" path="res://Resources/Components/Pokemon/Attacks/AttackData/20DmgParaIfHeads.tres" id="5_cow21"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="6_dj6d7"]
+
+[sub_resource type="Resource" id="Resource_xv8cy"]
+script = ExtResource("2_y8lyt")
+name = "Bind"
+description = "Flip a coin. If heads, the Defending Pokémon is now Paralyzed."
+attack_cost = ExtResource("4_pa602")
+attack_data = ExtResource("5_cow21")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_g3hpe"]
+script = ExtResource("6_dj6d7")
+HP = 70
+retreat = 1
+attacks = Array[ExtResource("2_y8lyt")]([ExtResource("3_r36ux"), SubResource("Resource_xv8cy")])
+evo_stage = "Stage 1"
+evolves_from = "Mysterious Fossil"
+considered = 1
+owner = 0
+type = 4
+weak = 8
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_8pljj")
+name = "Omanyte"
+image = ExtResource("1_hbvpm")
+illustrator = "Kouki Saitou"
+number = 70
+rarity = 0
+expansion = 1
+categories = 1
+pokemon_properties = SubResource("Resource_g3hpe")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

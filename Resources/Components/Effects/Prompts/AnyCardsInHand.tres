@@ -12,6 +12,7 @@ which = "Stack"
 ask = ExtResource("1_8fjon")
 stack_vars = "hand"
 identifier = ExtResource("2_7qhry")
+stack_portion = -1
 cap = -1
 metadata/_custom_type_script = "uid://vjn146j3ayd6"
 

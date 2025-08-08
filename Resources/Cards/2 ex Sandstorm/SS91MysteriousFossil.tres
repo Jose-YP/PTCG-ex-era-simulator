@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=7 format=3 uid="uid://b0g06je016ees"]
+
+[ext_resource type="Texture2D" uid="uid://ci0gsoeoqah3w" path="res://Art/Cards/2 ex Sandstorm/91.jpg" id="1_5oili"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_jmhy7"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_h6le1"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="3_a2syg"]
+[ext_resource type="Resource" uid="uid://tu3yotq0ogyx" path="res://Resources/Components/Trainers/ReprintTrainers/Fossil.tres" id="5_bqyd5"]
+
+[sub_resource type="Resource" id="Resource_fp66w"]
+script = ExtResource("3_a2syg")
+HP = 10
+retreat = 0
+attacks = Array[ExtResource("2_h6le1")]([])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 1
+owner = 0
+type = 256
+weak = 0
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_jmhy7")
+name = "Mysterious Fossil"
+image = ExtResource("1_5oili")
+illustrator = "Keiji Kinebuchi"
+number = 91
+rarity = 0
+expansion = 1
+categories = 3
+pokemon_properties = SubResource("Resource_fp66w")
+trainer_properties = ExtResource("5_bqyd5")
+fossil = true
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

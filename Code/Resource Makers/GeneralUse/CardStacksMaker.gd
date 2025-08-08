@@ -161,3 +161,26 @@ func move_cards(cards: Array[Base_Card], from: Consts.STACKS, towards: Consts.ST
 	#
 	#
 	#pass
+
+func identifier_search(list: Consts.STACKS, identifier: Identifier,\
+based_on: Array[PokeSlot] = [], portion: int = -1) -> Dictionary[Base_Card,bool]:
+	var valid_dictionary: Dictionary[Base_Card,bool]
+	var using: Array[Base_Card] = get_array(list)
+	
+	if portion != -1:
+		using = using.slice(0, portion)
+	
+	for card in using:
+		if identifier.identifier_bool(card, based_on):
+			valid_dictionary[card] = true
+		else: valid_dictionary[card] = false
+	
+	print("--------------------")
+	print("INVALID CARDS: ")
+	for card in valid_dictionary: if not valid_dictionary[card]: print(card.name)
+	print("--------------------")
+	print("--------------------")
+	print("VALID CARDS: ")
+	for card in valid_dictionary: if valid_dictionary[card]: print(card.name)
+	print("--------------------")
+	return valid_dictionary

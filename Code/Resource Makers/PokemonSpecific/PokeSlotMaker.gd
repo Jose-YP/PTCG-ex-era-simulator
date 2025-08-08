@@ -77,6 +77,10 @@ func pokemon_checkup() -> void:
 	if not is_filled(): return
 	evolved_this_turn = false
 	evolution_ready = true
+	body_exhaust = false
+	power_exhaust = false
+	
+	
 	
 	await checkup_conditions()
 	
@@ -162,8 +166,6 @@ func ability_single_emit(sig: Signal, param: Variant = null):
 	#This feels wrong but it works if multiple abilities connect to the same signal
 	sig.emit(param)
 	await SignalBus.ability_checked
-	
-	Globals.fundies.remove_top_source_target()
 
 func occurance_account_for():
 	for slot in Globals.full_ui.get_occurance_slots():
@@ -367,6 +369,7 @@ func knock_out() -> void:
 	await ability_emit(ko)
 
 func add_damage(attacker: PokeSlot, base_ammount: int) -> void:
+	if not is_filled(): return
 	var final_ammount = base_ammount
 	
 	if attacker.current_card.pokemon_properties.type & current_card.pokemon_properties.weak != 0:
@@ -384,7 +387,9 @@ func add_damage(attacker: PokeSlot, base_ammount: int) -> void:
 	
 	refresh()
 	
-	await ability_emit(take_dmg, attacker)
+	if final_ammount > 0:
+		Globals.fundies.print_src_trg()
+		await ability_emit(take_dmg, attacker)
 
 func bench_add_damage(_ammount) -> int:
 	return 0

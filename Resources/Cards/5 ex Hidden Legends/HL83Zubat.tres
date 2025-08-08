@@ -1,0 +1,53 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://isg15u2khcim"]
+
+[ext_resource type="Texture2D" uid="uid://cq34lufrqgmw1" path="res://Art/Cards/5 ex Hidden Legends/83.jpg" id="1_2cqbr"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_rewjy"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_3t8kn"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_oyfen"]
+[ext_resource type="Resource" uid="uid://cmu10734rt4h5" path="res://Resources/Components/Pokemon/Attacks/AttackData/10x2Flip.tres" id="4_5sm8l"]
+[ext_resource type="Resource" uid="uid://c63wb1xvpkbi8" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Grass1.tres" id="5_1cn7y"]
+[ext_resource type="Resource" uid="uid://idefpk827g22" path="res://Resources/Components/Pokemon/Attacks/AttackData/RandomDiscard.tres" id="6_pu8pe"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="7_0xpq4"]
+
+[sub_resource type="Resource" id="Resource_4elg6"]
+script = ExtResource("2_3t8kn")
+name = "Quick Turn"
+description = "Flip 2 coins. This attack does 10 damage times the number of heads."
+attack_cost = ExtResource("3_oyfen")
+attack_data = ExtResource("4_5sm8l")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_u1jll"]
+script = ExtResource("2_3t8kn")
+name = "Surprise"
+description = "Choose 1 card from your opponent's hand without looking. Look at the card you chose, then have your opponent shuffle that card into his or her deck."
+attack_cost = ExtResource("5_1cn7y")
+attack_data = ExtResource("6_pu8pe")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_lhbri"]
+script = ExtResource("7_0xpq4")
+HP = 50
+retreat = 1
+attacks = Array[ExtResource("2_3t8kn")]([SubResource("Resource_4elg6"), SubResource("Resource_u1jll")])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 1
+owner = 0
+type = 1
+weak = 16
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_rewjy")
+name = "Zubat"
+image = ExtResource("1_2cqbr")
+illustrator = "Midori Harada"
+number = 83
+rarity = 0
+expansion = 4
+categories = 1
+pokemon_properties = SubResource("Resource_lhbri")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

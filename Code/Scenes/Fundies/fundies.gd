@@ -223,6 +223,7 @@ func print_src_trg():
 
 func next_turn():
 	print_rich("[center]--------------------------END TURN-------------------------")
+	used_turn_abilities.clear()
 	home_turn = not home_turn
 	attatched_energy = false
 	turn_number += 1

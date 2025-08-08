@@ -7,6 +7,7 @@ class_name Identifier
 @export_flags("Pokemon", "Trainer", "Energy") var broad_class
 ##Check for exactly contains or just has contains
 @export var exactly: bool = false
+@export_enum("Exact", "Contains", "Or") var name_chec: int = 0
 @export var name_array: Array[String] = []
 @export_enum("LessEq", "GreaterEq") var comparison_type: int = 1
 @export_flags("Grass","Fire","Water",

@@ -4,8 +4,8 @@ class_name DiscardList
 @export var stack_act: Consts.STACK_ACT = Consts.STACK_ACT.DISCARD
 @export var stack: Consts.STACKS = Consts.STACKS.HAND
 @export var destination: Consts.STACKS = Consts.STACKS.DISCARD
-
-@export var discards_left: int = -1
+@export var discard_num: int = -1
+@export var energy_discard: bool = true
 
 @onready var header: HBoxContainer = %Header
 @onready var playing_list: PlayingList = %PlayingList
@@ -20,6 +20,8 @@ var discarding: Array[Base_Card] = []
 var home: bool
 var pokeslot_origin: PokeSlot
 
+signal finished
+
 func _ready():
 	set_info()
 	playing_list.list = list
@@ -30,7 +32,10 @@ func _ready():
 
 func set_info():
 	header.setup(header_txt)
-	footer.setup(str(footer_prefix,get_enegry_discarding(),"/",discards_left))
+	if energy_discard:
+		footer.setup(str(footer_prefix,get_enegry_discarding(),"/",discard_num))
+	else:
+		footer.setup(str(footer_prefix,discarding.size(),"/",discard_num))
 	%Action.text = action_txt
 
 func get_enegry_discarding() -> int:
@@ -43,11 +48,11 @@ func allow_reverse():
 	%Header.closable = true
 
 func manage_pressed(button: PlayingButton):
-	if button.flat:
-		button.flat = false
+	if button.selected:
+		button.selected = false
 		discarding.erase(button.card)
 	else:
-		button.flat = true
+		button.selected = true
 		discarding.append(button.card)
 	
 	button.disabled = discarding.size() == 0
@@ -56,10 +61,15 @@ func manage_pressed(button: PlayingButton):
 func update():
 	set_info()
 	
-	%Action.disabled = discarding.size() == 0
+	var discards_left: int = discard_num - discarding.size()
+	%Action.disabled = discards_left == discard_num
 	
 	for button in playing_list.get_items():
-		button.disabled = get_enegry_discarding() == discards_left and not button.flat
+		if energy_discard:
+			button.disabled = get_enegry_discarding() == discard_num
+		else:
+			button.disabled = discards_left == 0
+		button.disabled = (not list[button.card] or button.disabled) and not button.selected
 
 func _on_discard_pressed() -> void:
 	Globals.fundies.stack_manager.get_stacks(home).\
@@ -67,7 +77,8 @@ func _on_discard_pressed() -> void:
 	
 	if pokeslot_origin: pokeslot_origin.remove_cards(discarding)
 	
-	queue_free()
+	finished.emit()
+	Globals.full_ui.remove_top_ui()
 
 func _on_header_close_button_pressed() -> void:
 	if %Header.closable:

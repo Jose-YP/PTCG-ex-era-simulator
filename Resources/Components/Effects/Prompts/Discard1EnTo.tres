@@ -1,28 +1,14 @@
-[gd_resource type="Resource" script_class="PromptAsk" load_steps=6 format=3 uid="uid://chc757fk4t8pm"]
+[gd_resource type="Resource" script_class="PromptAsk" load_steps=5 format=3 uid="uid://chc757fk4t8pm"]
 
-[ext_resource type="Script" uid="uid://8sh5p3leflla" path="res://Code/Resource Makers/EffectSpecific/CardDisruptMaker.gd" id="1_c62pf"]
+[ext_resource type="Resource" uid="uid://cyxsgc480ravj" path="res://Resources/Components/Effects/CardDisrupt/Stack/SelfDiscACard.tres" id="1_c62pf"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_hqttu"]
 [ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="4_teu5e"]
-
-[sub_resource type="Resource" id="Resource_g16nq"]
-script = ExtResource("1_c62pf")
-send = 0
-from = 0
-send_to = 2
-bottom_of_stack = false
-shuffle = false
-card_ammount = 1
-reveal = false
-side = 2
-from_stack = 0
-pokemon_disrupt = 0
-metadata/_custom_type_script = "uid://8sh5p3leflla"
 
 [sub_resource type="Resource" id="Resource_gm1a6"]
 script = ExtResource("3_hqttu")
 either_or = false
 order = Array[int]([])
-card_disrupt = SubResource("Resource_g16nq")
+card_disrupt = ExtResource("1_c62pf")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [resource]

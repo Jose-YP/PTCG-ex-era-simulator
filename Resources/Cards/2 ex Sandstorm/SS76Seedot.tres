@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=9 format=3 uid="uid://bq2x6twvnhavp"]
+
+[ext_resource type="Texture2D" uid="uid://bhmyh7yime2wi" path="res://Art/Cards/2 ex Sandstorm/76.jpg" id="1_87u82"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_87u82"]
+[ext_resource type="Resource" uid="uid://c63wb1xvpkbi8" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Grass1.tres" id="3_t1tay"]
+[ext_resource type="Resource" uid="uid://v17v6lt451hm" path="res://Resources/Components/Pokemon/Attacks/AttackData/30IfHeads.tres" id="4_mu56h"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="4_oj5h5"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="5_mu56h"]
+
+[sub_resource type="Resource" id="Resource_a5u1g"]
+script = ExtResource("2_87u82")
+name = "Surprise Attack"
+description = "Flip a coin. If tails, this attack does nothing."
+attack_cost = ExtResource("3_t1tay")
+attack_data = ExtResource("4_mu56h")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_3cc7x"]
+script = ExtResource("4_oj5h5")
+HP = 40
+retreat = 1
+attacks = Array[ExtResource("2_87u82")]([SubResource("Resource_a5u1g")])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 1
+owner = 0
+type = 1
+weak = 2
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("5_mu56h")
+name = "Seedot"
+image = ExtResource("1_87u82")
+illustrator = "Atsuko Nishida"
+number = 76
+rarity = 0
+expansion = 1
+categories = 1
+pokemon_properties = SubResource("Resource_3cc7x")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

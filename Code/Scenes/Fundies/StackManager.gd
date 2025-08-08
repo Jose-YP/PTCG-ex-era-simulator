@@ -199,41 +199,20 @@ func show_reveal_stack(reveal_slot):
 #--------------------------------------
 #region TUTORING
 func search_array(search: Search, based_on: Array[PokeSlot]) -> Array[Dictionary]:
+	var stacks: CardStacks = get_stacks(operate_home)
 	var from: Array[Base_Card] = get_stacks(operate_home).get_array(search.where)
 	var search_results: Array[Dictionary]
 	
 	if search.portion != -1:
 		from = from.slice(0, search.portion)
 	
-	if search.and_then.reorder_type != 0:
-		pass
-	
 	for tutor in search.of_this:
 		print("--------------------")
 		print(tutor)
 		print("--------------------")
-		search_results.append(identifier_search(from, based_on, tutor))
+		search_results.append(stacks.identifier_search(search.where, tutor, based_on, search.portion))
 	
 	return search_results
-
-func identifier_search(list: Array[Base_Card], based_on: Array[PokeSlot],\
- identifier: Identifier) -> Dictionary[Base_Card,bool]:
-	var valid_dictionary: Dictionary[Base_Card,bool]
-	
-	for card in list:
-		if identifier.identifier_bool(card, based_on):
-			valid_dictionary[card] = true
-		else: valid_dictionary[card] = false
-	
-	print("--------------------")
-	print("INVALID CARDS: ")
-	for card in valid_dictionary: if not valid_dictionary[card]: print(card.name)
-	print("--------------------")
-	print("--------------------")
-	print("VALID CARDS: ")
-	for card in valid_dictionary: if valid_dictionary[card]: print(card.name)
-	print("--------------------")
-	return valid_dictionary
 
 #Redundant for the most part but if it gets the job done
 func tutor_instantiate_list(specified_list: Array[Dictionary], search: Search):

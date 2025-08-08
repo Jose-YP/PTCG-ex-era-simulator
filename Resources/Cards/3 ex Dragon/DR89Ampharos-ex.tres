@@ -23,6 +23,7 @@ prompt = ExtResource("5_a54e8")
 initial_main_DMG = 40
 defender_properties = 0
 condition = 1
+before_damage = false
 replace_num = false
 fail_effect = ExtResource("4_vi8ig")
 conditional_self_dmg = false

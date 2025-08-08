@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=5 format=3 uid="uid://uaq7je501sbg"]
+
+[ext_resource type="Texture2D" uid="uid://dsrmup80ihxx6" path="res://Art/Cards/2 ex Sandstorm/90.jpg" id="1_3lik5"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_5ghij"]
+[ext_resource type="Resource" uid="uid://cqtaij50lsllf" path="res://Resources/Components/Pokemon/ReprintPokemon/Fossil/Claw Fossil.tres" id="2_klnhy"]
+[ext_resource type="Resource" uid="uid://tu3yotq0ogyx" path="res://Resources/Components/Trainers/ReprintTrainers/Fossil.tres" id="4_u5osy"]
+
+[resource]
+script = ExtResource("1_5ghij")
+name = "Claw Fossil"
+image = ExtResource("1_3lik5")
+illustrator = "Ryo Ueda"
+number = 90
+rarity = 0
+expansion = 1
+categories = 1
+pokemon_properties = ExtResource("2_klnhy")
+trainer_properties = ExtResource("4_u5osy")
+fossil = true
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

@@ -1,0 +1,54 @@
+[gd_resource type="Resource" script_class="Deck" load_steps=25 format=3 uid="uid://yamufr71axhi"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_dsmk7"]
+[ext_resource type="Resource" uid="uid://dnwi6a5kx4bvn" path="res://Resources/Cards/1 ex Ruby & Saphire/RS10Mightyena.tres" id="2_43u3y"]
+[ext_resource type="Resource" uid="uid://d3oqllkeh61wl" path="res://Resources/Cards/1 ex Ruby & Saphire/RS63Poochyena.tres" id="3_m6yeo"]
+[ext_resource type="Resource" uid="uid://jjwoxlsecqtw" path="res://Resources/Cards/1 ex Ruby & Saphire/RS64Poochyena.tres" id="4_jr45e"]
+[ext_resource type="Resource" uid="uid://4i21swlwvmti" path="res://Resources/Cards/1 ex Ruby & Saphire/RS65Poochyena.tres" id="5_0juwh"]
+[ext_resource type="Resource" uid="uid://r4l7b5rugrd4" path="res://Resources/Cards/2 ex Sandstorm/SS47Murkrow.tres" id="6_tix18"]
+[ext_resource type="Resource" uid="uid://cvc7gsumxijg5" path="res://Resources/Cards/3 ex Dragon/DR1Absol.tres" id="7_bf311"]
+[ext_resource type="Resource" uid="uid://b0lfj4blf1nv4" path="res://Resources/Cards/3 ex Dragon/DR87MrBriney'sCompassion.tres" id="8_chmqy"]
+[ext_resource type="Resource" uid="uid://jhipo8gr7d04" path="res://Resources/Cards/3 ex Dragon/DR88TVReporter.tres" id="9_bjvph"]
+[ext_resource type="Resource" uid="uid://dipr5ie1kx7v8" path="res://Resources/Cards/1 ex Ruby & Saphire/RS93DarknessEnergy.tres" id="10_4cdpk"]
+[ext_resource type="Resource" uid="uid://2gbttee2ievi" path="res://Resources/Cards/13 ex Holon Phantoms/HP44Holon'sCastform.tres" id="11_xtsql"]
+[ext_resource type="Resource" uid="uid://cxx0d3lavwyno" path="res://Resources/Cards/6 ex FireRed & LeafGreen/RG87Bill'sMaintenance.tres" id="12_lwb82"]
+[ext_resource type="Resource" uid="uid://cg6tibidqt3qs" path="res://Resources/Cards/5 ex Hidden Legends/HL14Shiftry.tres" id="13_5bkdi"]
+[ext_resource type="Resource" uid="uid://dna4aegpwela5" path="res://Resources/Cards/2 ex Sandstorm/SS48Nuzleaf.tres" id="14_22q0e"]
+[ext_resource type="Resource" uid="uid://bv1lgt5nrjayq" path="res://Resources/Cards/2 ex Sandstorm/SS49Nuzleaf.tres" id="15_7yvcl"]
+[ext_resource type="Resource" uid="uid://bq2x6twvnhavp" path="res://Resources/Cards/2 ex Sandstorm/SS76Seedot.tres" id="16_78dvg"]
+[ext_resource type="Resource" uid="uid://xdvsgjmvkd2y" path="res://Resources/Cards/2 ex Sandstorm/SS77Seedot.tres" id="17_ctgut"]
+[ext_resource type="Resource" uid="uid://cjxwqcnfm20fq" path="res://Resources/Cards/1 ex Ruby & Saphire/RS104GrassEnergy.tres" id="18_lvniu"]
+[ext_resource type="Resource" uid="uid://bsttwo4bheh6" path="res://Resources/Cards/17 Black Star Promo/BSP13Meowth.tres" id="19_2nmss"]
+[ext_resource type="Resource" uid="uid://day2wur81xum5" path="res://Resources/Cards/5 ex Hidden Legends/HL86AncientTechnicalMachine[Rock].tres" id="20_3rodr"]
+[ext_resource type="Resource" uid="uid://dpq83tgsde1lq" path="res://Resources/Cards/11 ex Delta Species/DS93HolonMentor.tres" id="21_kfv6d"]
+[ext_resource type="Resource" uid="uid://cfps337rtsmpi" path="res://Resources/Cards/11 ex Delta Species/DS92HolonLass.tres" id="22_1do12"]
+[ext_resource type="Resource" uid="uid://dyqdhaov0ywxk" path="res://Resources/Cards/1 ex Ruby & Saphire/RS92Switch.tres" id="23_43u3y"]
+[ext_resource type="Script" uid="uid://e660iomt5e76" path="res://Code/Resource Makers/CardResources/DeckMaker.gd" id="23_bg51c"]
+
+[resource]
+script = ExtResource("23_bg51c")
+cards = Dictionary[ExtResource("1_dsmk7"), int]({
+ExtResource("23_43u3y"): 2,
+ExtResource("22_1do12"): 4,
+ExtResource("21_kfv6d"): 4,
+ExtResource("20_3rodr"): 2,
+ExtResource("19_2nmss"): 2,
+ExtResource("18_lvniu"): 3,
+ExtResource("17_ctgut"): 2,
+ExtResource("16_78dvg"): 2,
+ExtResource("15_7yvcl"): 2,
+ExtResource("14_22q0e"): 2,
+ExtResource("13_5bkdi"): 4,
+ExtResource("12_lwb82"): 3,
+ExtResource("11_xtsql"): 4,
+ExtResource("10_4cdpk"): 4,
+ExtResource("9_bjvph"): 3,
+ExtResource("8_chmqy"): 3,
+ExtResource("7_bf311"): 3,
+ExtResource("6_tix18"): 3,
+ExtResource("5_0juwh"): 1,
+ExtResource("4_jr45e"): 2,
+ExtResource("3_m6yeo"): 1,
+ExtResource("2_43u3y"): 4
+})
+metadata/_custom_type_script = "uid://e660iomt5e76"

@@ -28,7 +28,9 @@ func update_stack(which: Consts.STACKS, num: int) -> void:
 	stacks[which].update(num)
 
 func sync_stacks():
+	var stack_arrays: CardStacks = Globals.fundies.stack_manager.get_stacks(home)
 	for stack in stacks:
+		stacks[stack].update(stack_arrays.get_array(stack).size())
 		if stack == Consts.STACKS.DISCARD:
 			continue
 		if stack == Consts.STACKS.HAND:

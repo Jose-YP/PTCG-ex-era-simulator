@@ -15,6 +15,7 @@ shuffle = false
 card_ammount = 1
 reveal = false
 side = 4
+view = true
 from_stack = 0
 pokemon_disrupt = 0
 metadata/_custom_type_script = "uid://8sh5p3leflla"

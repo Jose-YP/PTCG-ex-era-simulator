@@ -1,24 +1,8 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=8 format=3 uid="uid://dqknf3vfxe3hp"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=4 format=3 uid="uid://dqknf3vfxe3hp"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_5tvh1"]
 [ext_resource type="Texture2D" uid="uid://0ka4l556u8wj" path="res://Art/Cards/1 ex Ruby & Saphire/73.jpg" id="1_cxf7q"]
-[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_g0mns"]
-[ext_resource type="Resource" uid="uid://ci4gahbdoaqcu" path="res://Resources/Components/Pokemon/Attacks/EffectlessAttacks/Peck1-10.tres" id="3_5whtx"]
-[ext_resource type="Resource" uid="uid://bfubgj8baciol" path="res://Resources/Components/Pokemon/Attacks/Fireworks30.tres" id="5_2t6bq"]
-[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_cfuqc"]
-
-[sub_resource type="Resource" id="Resource_4e7m3"]
-script = ExtResource("5_cfuqc")
-HP = 40
-retreat = 1
-attacks = Array[ExtResource("2_g0mns")]([ExtResource("3_5whtx"), ExtResource("5_2t6bq")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
-type = 2
-weak = 4
-resist = 0
+[ext_resource type="Resource" uid="uid://deh1asi2btgpj" path="res://Resources/Components/Pokemon/ReprintPokemon/Promo/FireworksTorchic.tres" id="2_h8egn"]
 
 [resource]
 script = ExtResource("1_5tvh1")
@@ -29,5 +13,5 @@ number = 73
 rarity = 0
 expansion = 0
 categories = 1
-pokemon_properties = SubResource("Resource_4e7m3")
+pokemon_properties = ExtResource("2_h8egn")
 fossil = false

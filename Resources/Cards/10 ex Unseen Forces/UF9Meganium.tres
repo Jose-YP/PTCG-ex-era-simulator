@@ -75,6 +75,7 @@ prompt = SubResource("Resource_pb52n")
 initial_main_DMG = 50
 defender_properties = 0
 condition = 1
+before_damage = false
 replace_num = true
 always_effect = SubResource("Resource_xvftv")
 conditional_self_dmg = false

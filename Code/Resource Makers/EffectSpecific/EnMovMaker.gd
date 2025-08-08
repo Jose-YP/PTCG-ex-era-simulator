@@ -68,7 +68,7 @@ func send_effect(reversable: bool = false) -> void:
 		
 		dis_box.pokeslot_origin = candidate
 		dis_box.home = Globals.fundies.get_considered_home(givers.side_target)
-		dis_box.discards_left = energy_ammount
+		dis_box.discard_num = energy_ammount
 		dis_box.header_txt = str(candidate.get_card_name(),"'s Energy")
 		dis_box.footer_prefix = str("Energy Left: ")
 		dis_box.action_txt = str("Send to ",Convert.stack_into_string(to_stack))

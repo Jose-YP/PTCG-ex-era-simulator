@@ -1,0 +1,104 @@
+[gd_resource type="Resource" script_class="Attack" load_steps=19 format=3 uid="uid://cimoxkuco6ggm"]
+
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="1_qqcvy"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_rdupw"]
+[ext_resource type="Resource" uid="uid://dvdnbmg1kbbmb" path="res://Resources/Components/Effects/Placement/PlaceOnBench.tres" id="3_ykgfj"]
+[ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="4_p62sq"]
+[ext_resource type="Resource" uid="uid://c7itelq8jtjc2" path="res://Resources/Components/EnData/Rainbow.tres" id="5_ywahg"]
+[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="6_kkh0c"]
+[ext_resource type="Resource" uid="uid://1yahyklj3y7s" path="res://Resources/Components/Counters/Indv/Slots/AtkBenchCount.tres" id="7_sgdsy"]
+[ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="8_blnxr"]
+[ext_resource type="Resource" uid="uid://bns8h72u2hxqo" path="res://Resources/Components/Effects/Asks/General/AnyMon.tres" id="9_nrkjt"]
+[ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="10_3lm5y"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="11_8n5rc"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="12_ppaol"]
+
+[sub_resource type="Resource" id="Resource_tikdy"]
+script = ExtResource("4_p62sq")
+description = "Omanyte, Kabuto, or Basic Pokémon"
+must_be_different = false
+broad_class = 1
+exactly = false
+name_chec = 0
+name_array = Array[String](["Omanyte", "Kabuto"])
+comparison_type = 1
+type = 0
+HP = -10
+evolves_from = false
+rare_candy = false
+inclusive_class = true
+poke_class = 0
+owner = 0
+stage = 1
+trainer_classes = 0
+energy_class = 3
+energy_provides = ExtResource("5_ywahg")
+metadata/_custom_type_script = "uid://uplawvwcwl8y"
+
+[sub_resource type="Resource" id="Resource_bvuhn"]
+script = ExtResource("10_3lm5y")
+which = "Slot"
+ask = ExtResource("9_nrkjt")
+slot_vars = "current_card"
+cap = -1
+metadata/_custom_type_script = "uid://vjn146j3ayd6"
+
+[sub_resource type="Resource" id="Resource_l2hp4"]
+script = ExtResource("8_blnxr")
+comparision_type = "Difference"
+first_comparison = ExtResource("7_sgdsy")
+compare_to = "None"
+second_constant = 5
+second_counter = SubResource("Resource_bvuhn")
+operate_w_constant = "None"
+metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
+
+[sub_resource type="Resource" id="Resource_4q0ux"]
+script = ExtResource("6_kkh0c")
+side = 4
+where = 1
+reordering_only = false
+shuffle_first = false
+based_on_side = 0
+based_on_slots = 0
+based_on_energy = 0
+portion = -1
+identifier_allowed = -1
+how_many = Array[int]([1])
+variable_ammount = SubResource("Resource_l2hp4")
+of_this = Array[ExtResource("4_p62sq")]([SubResource("Resource_tikdy")])
+and_then = ExtResource("3_ykgfj")
+reveal = true
+metadata/_custom_type_script = "uid://cw3yr1k040kw7"
+
+[sub_resource type="Resource" id="Resource_vbdsh"]
+script = ExtResource("2_rdupw")
+either_or = false
+order = Array[int]([])
+search = SubResource("Resource_4q0ux")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_htdpr"]
+script = ExtResource("11_8n5rc")
+prompt_reliant = false
+initial_main_DMG = 0
+defender_properties = 0
+condition = 1
+before_damage = false
+replace_num = false
+always_effect = SubResource("Resource_vbdsh")
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[resource]
+script = ExtResource("12_ppaol")
+name = "Team Assembly"
+description = "Search your deck for Omanyte, Kabuto, or any Basic Pokémon and put as many of them as you like onto your Bench. Shuffle your deck afterward. Treat the new Benched Pokémon as Basic Pokémon."
+attack_cost = ExtResource("1_qqcvy")
+attack_data = SubResource("Resource_htdpr")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

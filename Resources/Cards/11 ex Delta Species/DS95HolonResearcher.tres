@@ -16,6 +16,7 @@ description = "δ Pokemon or {Metal} Energy Card"
 must_be_different = false
 broad_class = 5
 exactly = false
+name_chec = 0
 name_array = Array[String]([])
 comparison_type = 1
 type = 0

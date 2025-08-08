@@ -9,6 +9,7 @@ description = "Delta Pokemon"
 must_be_different = false
 broad_class = 1
 exactly = false
+name_chec = 0
 name_array = Array[String]([])
 comparison_type = 1
 type = 0

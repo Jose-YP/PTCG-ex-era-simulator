@@ -1,0 +1,53 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://bv1lgt5nrjayq"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_gxofm"]
+[ext_resource type="Texture2D" uid="uid://b8y0opp07mokg" path="res://Art/Cards/2 ex Sandstorm/48.jpg" id="1_lj8tq"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_io60j"]
+[ext_resource type="Resource" uid="uid://b1rwmggf7a4do" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless2.tres" id="3_0k6mw"]
+[ext_resource type="Resource" uid="uid://btwcrdfufmf7u" path="res://Resources/Components/Pokemon/Attacks/AttackData/20Plus10OnHeads.tres" id="4_ie0oy"]
+[ext_resource type="Resource" uid="uid://b1ebpxwo4lry7" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/G1C2.tres" id="5_kk3vh"]
+[ext_resource type="Resource" uid="uid://dnnekosklb3ar" path="res://Resources/Components/Pokemon/Attacks/AttackData/40Dmg.tres" id="6_7e3v8"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="7_5fab5"]
+
+[sub_resource type="Resource" id="Resource_kwnpf"]
+script = ExtResource("2_io60j")
+name = "Steady Punch"
+description = "Flip a coin. If heads, this attack does 20 damage plus 10 more damage."
+attack_cost = ExtResource("3_0k6mw")
+attack_data = ExtResource("4_ie0oy")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_ykwxl"]
+script = ExtResource("2_io60j")
+name = "Razor Wind"
+description = "Flip a coin. If tails, this attack does nothing."
+attack_cost = ExtResource("5_kk3vh")
+attack_data = ExtResource("6_7e3v8")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_yqucm"]
+script = ExtResource("7_5fab5")
+HP = 80
+retreat = 1
+attacks = Array[ExtResource("2_io60j")]([SubResource("Resource_kwnpf"), SubResource("Resource_ykwxl")])
+evo_stage = "Stage 1"
+evolves_from = "Seedot"
+considered = 1
+owner = 0
+type = 1
+weak = 2
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_gxofm")
+name = "Nuzleaf"
+image = ExtResource("1_lj8tq")
+illustrator = "Atsuko Nishida"
+number = 48
+rarity = 1
+expansion = 1
+categories = 1
+pokemon_properties = SubResource("Resource_yqucm")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

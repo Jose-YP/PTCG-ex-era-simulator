@@ -17,6 +17,7 @@ which = "Stack"
 ask = ExtResource("5_881b2")
 stack_vars = "discard_pile"
 identifier = ExtResource("6_ejwqs")
+stack_portion = -1
 cap = -1
 metadata/_custom_type_script = "uid://vjn146j3ayd6"
 

@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="Pokemon" load_steps=9 format=3 uid="uid://yqd8e305sht1"]
+[gd_resource type="Resource" script_class="Pokemon" load_steps=10 format=3 uid="uid://yqd8e305sht1"]
 
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_b7jp4"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="3_ma4te"]
 [ext_resource type="Resource" uid="uid://dllyof1ddnq7w" path="res://Resources/Components/Effects/DmgManip/Remove/SelfHeal10.tres" id="3_qb8f0"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_qop60"]
 [ext_resource type="Resource" uid="uid://tgm35ahd5evj" path="res://Resources/Components/Occurances/SelfBetweenTurns.tres" id="5_m8d88"]
+[ext_resource type="Resource" uid="uid://dxrlmoe1t48bl" path="res://Resources/Components/Effects/Prompts/PromptComparator/PromptSelfDamaged.tres" id="5_qb8f0"]
 [ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="6_gu2v5"]
 
 [sub_resource type="Resource" id="Resource_my7tf"]
@@ -22,6 +23,7 @@ description = "At any time between turns, remove 1 damage counter from [name]."
 affected_by_condition = true
 active = false
 how_often = "Once per Mon"
+prompt = ExtResource("5_qb8f0")
 occurance = ExtResource("5_m8d88")
 effect = SubResource("Resource_my7tf")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"

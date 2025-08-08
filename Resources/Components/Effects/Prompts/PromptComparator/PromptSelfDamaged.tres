@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="PromptAsk" load_steps=5 format=3 uid="uid://dxrlmoe1t48bl"]
+
+[ext_resource type="Resource" uid="uid://cyyhoqt2uqb75" path="res://Resources/Components/Counters/Indv/Slots/SelfDmg.tres" id="1_l1ldg"]
+[ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="2_8rclq"]
+[ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="3_w13ep"]
+
+[sub_resource type="Resource" id="Resource_0sayf"]
+script = ExtResource("2_8rclq")
+comparision_type = "Not Equal"
+first_comparison = ExtResource("1_l1ldg")
+compare_to = "Const"
+second_constant = 0
+operate_w_constant = "None"
+metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
+
+[resource]
+script = ExtResource("3_w13ep")
+formal_question = false
+question_string = ""
+yes_answer = ""
+no_answer = ""
+comparator = SubResource("Resource_0sayf")
+can_reverse = true
+occurance = false
+chooser = 0
+choose_location = "None"
+which_stack = 0
+metadata/_custom_type_script = "uid://b85jmc7067bjc"

@@ -17,6 +17,7 @@ shuffle = false
 card_ammount = 1
 reveal = false
 side = 2
+view = true
 from_stack = 0
 in_play_options = ExtResource("3_s3hhj")
 pokemon_disrupt = 4

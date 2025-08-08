@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="AttackData" load_steps=3 format=3 uid="uid://jy5duoic7pkq"]
+
+[ext_resource type="Resource" uid="uid://nx1kc1vsm4ia" path="res://Resources/Components/Effects/Conditions/BasicConfusion.tres" id="1_62oy4"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="2_0htvx"]
+
+[resource]
+script = ExtResource("2_0htvx")
+prompt_reliant = false
+initial_main_DMG = 0
+defender_properties = 0
+condition = 1
+before_damage = false
+replace_num = false
+always_effect = ExtResource("1_62oy4")
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"

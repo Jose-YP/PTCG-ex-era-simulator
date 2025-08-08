@@ -1,0 +1,71 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=14 format=3 uid="uid://dna4aegpwela5"]
+
+[ext_resource type="Texture2D" uid="uid://bujmeux7mofgw" path="res://Art/Cards/2 ex Sandstorm/49.jpg" id="1_kgifk"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_1idpk"]
+[ext_resource type="Resource" uid="uid://c2gawfb472bm" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/G1C1.tres" id="3_pr2xn"]
+[ext_resource type="Resource" uid="uid://n2tq4jfo7hw1" path="res://Resources/Components/Pokemon/Attacks/AttackData/20DmgParaIfHeads.tres" id="4_du8cf"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="5_ttlxj"]
+[ext_resource type="Resource" uid="uid://ekj1myy642kh" path="res://Resources/Components/Effects/Prompts/PromptHeads.tres" id="6_e8aes"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="7_cmphh"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="8_a6dg5"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="9_rt4dq"]
+
+[sub_resource type="Resource" id="Resource_kwnpf"]
+script = ExtResource("2_1idpk")
+name = "Stun Spore"
+description = "Flip a coin. If heads, the Defending Pokémon is now Paralyzed."
+attack_cost = ExtResource("3_pr2xn")
+attack_data = ExtResource("4_du8cf")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_62iih"]
+script = ExtResource("7_cmphh")
+prompt_reliant = true
+prompt = ExtResource("6_e8aes")
+initial_main_DMG = 60
+defender_properties = 0
+condition = 1
+before_damage = false
+replace_num = false
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_ykwxl"]
+script = ExtResource("2_1idpk")
+name = "Razor Wind"
+description = "Flip a coin. If tails, this attack does nothing."
+attack_cost = ExtResource("5_ttlxj")
+attack_data = SubResource("Resource_62iih")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_yqucm"]
+script = ExtResource("8_a6dg5")
+HP = 80
+retreat = 1
+attacks = Array[ExtResource("2_1idpk")]([SubResource("Resource_kwnpf"), SubResource("Resource_ykwxl")])
+evo_stage = "Stage 1"
+evolves_from = "Seedot"
+considered = 1
+owner = 0
+type = 1
+weak = 2
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("9_rt4dq")
+name = "Nuzleaf"
+image = ExtResource("1_kgifk")
+illustrator = "Ken Sugimori"
+number = 49
+rarity = 1
+expansion = 1
+categories = 1
+pokemon_properties = SubResource("Resource_yqucm")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

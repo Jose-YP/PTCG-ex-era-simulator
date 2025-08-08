@@ -33,10 +33,10 @@ func play_effect(reversable: bool = false, replace_num: int = -1) -> void:
 func switch(aff: Consts.SIDES, reversable: bool):
 	var bench_candidate: Callable = func(slot: PokeSlot):
 		return slot.is_in_slot(aff, Consts.SLOTS.BENCH\
-		 if autofill != "Bench" else Consts.SLOTS.TARGET)
+		 if autofill != "Bench" else Consts.SLOTS.TARGET) and slot.is_filled()
 	var active_candidate: Callable = func(slot: PokeSlot):
 		return slot.is_in_slot(aff, Consts.SLOTS.ACTIVE\
-		if autofill != "Active" else Consts.SLOTS.TARGET)
+		if autofill != "Active" else Consts.SLOTS.TARGET) and slot.is_filled()
 	
 	#Get whichever active pokemon are allowed to switch
 	bench_swap = await Globals.fundies.card_player.get_choice_candidates(\
