@@ -1,0 +1,123 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=22 format=3 uid="uid://cvc7gsumxijg5"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_5qhd1"]
+[ext_resource type="Texture2D" uid="uid://74sjprvku28o" path="res://Art/Cards/3 ex Dragon/1.jpg" id="1_ggekq"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_agpnf"]
+[ext_resource type="Resource" uid="uid://bgqnsjskgne2u" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Darkness1.tres" id="3_lndit"]
+[ext_resource type="Resource" uid="uid://dm2i7spst0qpp" path="res://Resources/Components/Effects/Identifiers/AnyCard.tres" id="4_d8q5l"]
+[ext_resource type="Script" uid="uid://8sh5p3leflla" path="res://Code/Resource Makers/EffectSpecific/CardDisruptMaker.gd" id="5_v0hhm"]
+[ext_resource type="Resource" uid="uid://pqv0rqhifr8r" path="res://Resources/Components/Counters/Indv/Stacks/DefHandSize.tres" id="6_1yhar"]
+[ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="7_yl5ad"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="8_kr4nr"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="9_wlgfn"]
+[ext_resource type="Resource" uid="uid://cif1lb0agms18" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/D1C1.tres" id="10_6kj08"]
+[ext_resource type="Resource" uid="uid://c5upscuj2gay" path="res://Resources/Components/Counters/Comparator/Greater/SrcHasMorePrizes.tres" id="11_tuniv"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="12_c73xn"]
+
+[sub_resource type="Resource" id="Resource_qmmed"]
+script = ExtResource("7_yl5ad")
+comparision_type = "Difference"
+first_comparison = ExtResource("6_1yhar")
+compare_to = "Const"
+second_constant = 5
+operate_w_constant = "None"
+metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
+
+[sub_resource type="Resource" id="Resource_7dm1h"]
+script = ExtResource("5_v0hhm")
+send = 0
+from = 0
+send_to = 2
+bottom_of_stack = false
+shuffle = false
+card_ammount = -1
+variable_ammount = SubResource("Resource_qmmed")
+reveal = false
+side = 2
+card_options = ExtResource("4_d8q5l")
+view = false
+from_stack = 0
+pokemon_disrupt = 0
+metadata/_custom_type_script = "uid://8sh5p3leflla"
+
+[sub_resource type="Resource" id="Resource_xtxka"]
+script = ExtResource("8_kr4nr")
+either_or = false
+order = Array[int]([])
+card_disrupt = SubResource("Resource_7dm1h")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_0caf3"]
+script = ExtResource("9_wlgfn")
+prompt_reliant = false
+initial_main_DMG = 0
+defender_properties = 0
+condition = 1
+replace_num = false
+always_effect = SubResource("Resource_xtxka")
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_3hoo5"]
+script = ExtResource("2_agpnf")
+name = "Bad News"
+description = "If the number of cards in your opponent's hand is at least 6, choose a number of cards there, without looking, until your opponent has 5 cards left. Have your opponent discard the cards you chose."
+attack_cost = ExtResource("3_lndit")
+attack_data = SubResource("Resource_0caf3")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_lmmbr"]
+script = ExtResource("9_wlgfn")
+prompt_reliant = false
+initial_main_DMG = 20
+defender_properties = 0
+condition = 1
+replace_num = false
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 1
+modifier_num = 20
+comparator = ExtResource("11_tuniv")
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_6w0gb"]
+script = ExtResource("2_agpnf")
+name = " Prize Count"
+description = "If you have more Prize cards left than your opponent, this attack does 20 damage plus 20 more damage. "
+attack_cost = ExtResource("10_6kj08")
+attack_data = SubResource("Resource_lmmbr")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_2djvy"]
+script = ExtResource("12_c73xn")
+HP = 70
+retreat = 1
+attacks = Array[ExtResource("2_agpnf")]([SubResource("Resource_3hoo5"), SubResource("Resource_6w0gb")])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 1
+owner = 0
+type = 64
+weak = 32
+resist = 16
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_5qhd1")
+name = "Absol"
+image = ExtResource("1_ggekq")
+illustrator = "Naoyo Kimura"
+number = 1
+rarity = 3
+expansion = 2
+categories = 1
+pokemon_properties = SubResource("Resource_2djvy")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

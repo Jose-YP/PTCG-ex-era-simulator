@@ -1,0 +1,86 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=18 format=3 uid="uid://1bv12iusbfvs"]
+
+[ext_resource type="Texture2D" uid="uid://dxp7t24loe304" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/69.jpg" id="1_lfmbq"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_sxs4v"]
+[ext_resource type="Resource" uid="uid://dm2i7spst0qpp" path="res://Resources/Components/Effects/Identifiers/AnyCard.tres" id="3_ok60t"]
+[ext_resource type="Script" uid="uid://8sh5p3leflla" path="res://Code/Resource Makers/EffectSpecific/CardDisruptMaker.gd" id="4_xcn8p"]
+[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="5_sk7qv"]
+[ext_resource type="Script" uid="uid://bgtwlw1edjwyc" path="res://Code/Resource Makers/EffectSpecific/DrawMaker.gd" id="5_wa55w"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="6_sk7qv"]
+[ext_resource type="Resource" uid="uid://bl054ggkgc332" path="res://Resources/Components/Effects/Identifiers/Pokemon/TeamAquaMons.tres" id="6_yyhty"]
+[ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="7_6km0p"]
+[ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="7_yyhty"]
+[ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="8_tnlfn"]
+
+[sub_resource type="Resource" id="Resource_6km0p"]
+script = ExtResource("4_xcn8p")
+send = 0
+from = 0
+send_to = 2
+bottom_of_stack = false
+shuffle = false
+card_ammount = 1
+reveal = false
+side = 1
+card_options = ExtResource("3_ok60t")
+view = true
+from_stack = 0
+pokemon_disrupt = 0
+metadata/_custom_type_script = "uid://8sh5p3leflla"
+
+[sub_resource type="Resource" id="Resource_7hx63"]
+script = ExtResource("7_6km0p")
+which = "Stack"
+ask = ExtResource("5_sk7qv")
+stack_vars = "discard_pile"
+identifier = ExtResource("6_yyhty")
+stack_portion = 1
+cap = -1
+metadata/_custom_type_script = "uid://vjn146j3ayd6"
+
+[sub_resource type="Resource" id="Resource_tipep"]
+script = ExtResource("8_tnlfn")
+comparision_type = "Difference"
+first_comparison = SubResource("Resource_7hx63")
+compare_to = "None"
+second_constant = -3
+operate_w_constant = "None"
+metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
+
+[sub_resource type="Resource" id="Resource_tnlfn"]
+script = ExtResource("5_wa55w")
+shuffle_back_first = false
+side = 1
+bottom_deck = false
+simple_constant = 0
+comparator = SubResource("Resource_tipep")
+metadata/_custom_type_script = "uid://bgtwlw1edjwyc"
+
+[sub_resource type="Resource" id="Resource_iai1e"]
+script = ExtResource("6_sk7qv")
+either_or = false
+order = Array[int]([2, 8])
+draw_ammount = SubResource("Resource_tnlfn")
+card_disrupt = SubResource("Resource_6km0p")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_8oiib"]
+script = ExtResource("7_yyhty")
+considered = "Supporter"
+specific_requirement = ""
+description = "Discard any 1 Pokémon from your hand. Then draw 3 cards. If you discarded a Pokémon with Team Aqua in its name, draw 4 cards instead."
+always_effect = SubResource("Resource_iai1e")
+metadata/_custom_type_script = "uid://crx447i85kshy"
+
+[resource]
+script = ExtResource("1_sxs4v")
+name = "Team Aqua Schemer"
+image = ExtResource("1_lfmbq")
+illustrator = "Ken Sugimori"
+number = 69
+rarity = 1
+expansion = 3
+categories = 2
+trainer_properties = SubResource("Resource_8oiib")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Attack" load_steps=4 format=3 uid="uid://c0bi1jp5c1pnd"]
+
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="1_a4n1c"]
+[ext_resource type="Resource" uid="uid://idefpk827g22" path="res://Resources/Components/Pokemon/Attacks/AttackData/RandomDiscard.tres" id="2_go157"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="3_3s7m1"]
+
+[resource]
+script = ExtResource("3_3s7m1")
+name = "Surprise"
+description = "Choose 1 card from your opponent's hand without looking. Look at the card you chose, then have your opponent shuffle that card into his or her deck."
+attack_cost = ExtResource("1_a4n1c")
+attack_data = ExtResource("2_go157")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

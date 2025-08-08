@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="IndvCounter" load_steps=4 format=3 uid="uid://fpauup2mkcic"]
+
+[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="1_wc2pg"]
+[ext_resource type="Resource" uid="uid://dm2i7spst0qpp" path="res://Resources/Components/Effects/Identifiers/AnyCard.tres" id="2_uvpcq"]
+[ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="3_ymxmb"]
+
+[resource]
+script = ExtResource("3_ymxmb")
+which = "Stack"
+ask = ExtResource("1_wc2pg")
+stack_vars = "prize_cards"
+identifier = ExtResource("2_uvpcq")
+cap = -1
+metadata/_custom_type_script = "uid://vjn146j3ayd6"

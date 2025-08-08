@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=4 format=3 uid="uid://dxy6sq4dp2ddq"]
+
+[ext_resource type="Texture2D" uid="uid://jfxtxue8otyr" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/42.jpg" id="1_cps5i"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_v6eml"]
+[ext_resource type="Resource" uid="uid://bwokrnhq44bum" path="res://Resources/Components/Pokemon/ReprintPokemon/Promo/PlunderMeowth.tres" id="2_4mkwh"]
+
+[resource]
+script = ExtResource("1_v6eml")
+name = "Meowth"
+image = ExtResource("1_cps5i")
+illustrator = "Ken Sugimori"
+number = 42
+rarity = 0
+expansion = 3
+categories = 1
+pokemon_properties = ExtResource("2_4mkwh")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

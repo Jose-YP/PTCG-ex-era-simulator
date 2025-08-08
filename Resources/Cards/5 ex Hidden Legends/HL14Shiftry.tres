@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=5 format=3 uid="uid://cg6tibidqt3qs"]
+
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_ku5m3"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="2_auklr"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_fctby"]
+
+[sub_resource type="Resource" id="Resource_mwaoa"]
+script = ExtResource("2_auklr")
+HP = 30
+retreat = 0
+attacks = Array[ExtResource("1_ku5m3")]([])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 1
+owner = 0
+type = 1
+weak = 0
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("3_fctby")
+name = ""
+illustrator = ""
+number = 3
+rarity = 3
+expansion = 4
+categories = 1
+pokemon_properties = SubResource("Resource_mwaoa")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

@@ -59,6 +59,7 @@ shuffle = false
 card_ammount = 1
 reveal = false
 side = 5
+random = false
 from_stack = 0
 in_play_options = SubResource("Resource_5kvuk")
 pokemon_disrupt = 0

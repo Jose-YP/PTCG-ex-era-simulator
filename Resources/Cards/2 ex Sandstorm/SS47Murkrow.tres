@@ -1,0 +1,61 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://r4l7b5rugrd4"]
+
+[ext_resource type="Texture2D" uid="uid://ukqmth3hqb45" path="res://Art/Cards/2 ex Sandstorm/47.jpg" id="1_2k6jh"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_mnicd"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_spjdn"]
+[ext_resource type="Resource" uid="uid://c0bi1jp5c1pnd" path="res://Resources/Components/Pokemon/Attacks/PureEffectAttacks/1-0Surprise.tres" id="3_dmbw4"]
+[ext_resource type="Resource" uid="uid://cif1lb0agms18" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/D1C1.tres" id="4_ept4w"]
+[ext_resource type="Resource" uid="uid://r4xgk0bkj0br" path="res://Resources/Components/Pokemon/BenchAttack/10DefBench.tres" id="5_0bgfd"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="6_cnih0"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="7_p7ftu"]
+
+[sub_resource type="Resource" id="Resource_0x72w"]
+script = ExtResource("6_cnih0")
+prompt_reliant = false
+initial_main_DMG = 20
+defender_properties = 0
+condition = 1
+replace_num = false
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+bench_damage = ExtResource("5_0bgfd")
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_q5877"]
+script = ExtResource("2_spjdn")
+name = "Dark Mind"
+description = " Does 10 damage to 1 of your opponent's Benched Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.) "
+attack_cost = ExtResource("4_ept4w")
+attack_data = SubResource("Resource_0x72w")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_d0liy"]
+script = ExtResource("7_p7ftu")
+HP = 60
+retreat = 1
+attacks = Array[ExtResource("2_spjdn")]([ExtResource("3_dmbw4"), SubResource("Resource_q5877")])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 1
+owner = 0
+type = 64
+weak = 32
+resist = 16
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_mnicd")
+name = "Murkrow"
+image = ExtResource("1_2k6jh")
+illustrator = "Mitsuhiro Arita"
+number = 47
+rarity = 1
+expansion = 1
+categories = 1
+pokemon_properties = SubResource("Resource_d0liy")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

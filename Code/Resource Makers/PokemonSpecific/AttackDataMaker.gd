@@ -14,6 +14,7 @@ class_name AttackData
 @export_flags("None", "Paralysis", "Alseep", "Confusion") var condition: int = 1
 
 @export_group("Effects")
+@export var before_damage: bool = false
 ##If this is [code]true[/code], whatever is returned from [member comparator] will be used as
 ## [member EffectCall.replace_num] for all effects, which will replace[br]
 ##[member DamageManip.how_many] for [member EffectCall.dmgManip]

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Comparator" load_steps=4 format=3 uid="uid://c5upscuj2gay"]
+
+[ext_resource type="Resource" uid="uid://fpauup2mkcic" path="res://Resources/Components/Counters/Indv/Stacks/AtkPrizes.tres" id="1_l15ky"]
+[ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="2_qd0bh"]
+[ext_resource type="Resource" uid="uid://f4lsevtytlp8" path="res://Resources/Components/Counters/Indv/Stacks/OthPrizes.tres" id="3_21ca8"]
+
+[resource]
+script = ExtResource("2_qd0bh")
+comparision_type = "Greater"
+first_comparison = ExtResource("1_l15ky")
+compare_to = "Second"
+second_constant = 0
+second_counter = ExtResource("3_21ca8")
+operate_w_constant = "None"
+metadata/_custom_type_script = "uid://b65jx8u5cgcgl"

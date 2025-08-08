@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CardDisrupt" load_steps=3 format=3 uid="uid://ehbam4lgcxeh"]
+
+[ext_resource type="Resource" uid="uid://dm2i7spst0qpp" path="res://Resources/Components/Effects/Identifiers/AnyCard.tres" id="1_hv7tb"]
+[ext_resource type="Script" uid="uid://8sh5p3leflla" path="res://Code/Resource Makers/EffectSpecific/CardDisruptMaker.gd" id="2_3hy60"]
+
+[resource]
+script = ExtResource("2_3hy60")
+send = 0
+from = 0
+send_to = 2
+bottom_of_stack = false
+shuffle = false
+card_ammount = 1
+reveal = false
+side = 2
+random = true
+from_stack = 0
+card_options = ExtResource("1_hv7tb")
+pokemon_disrupt = 0
+metadata/_custom_type_script = "uid://8sh5p3leflla"
