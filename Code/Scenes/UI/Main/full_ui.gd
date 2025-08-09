@@ -126,7 +126,9 @@ func control_disapear(node: Node):
 #endregion
 
 func set_between_turns():
+	player_side.non_mon.clear_supporter()
 	player_side.non_mon.sync_stacks()
+	opponent_side.non_mon.clear_supporter()
 	opponent_side.non_mon.sync_stacks()
 	end_turn.disabled = not Globals.fundies.is_home_side_player()
 	

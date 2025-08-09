@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="PokeSlot" load_steps=5 format=3 uid="uid://cul22q2pxomfh"]
+[gd_resource type="Resource" script_class="PokeSlot" load_steps=6 format=3 uid="uid://cul22q2pxomfh"]
 
 [ext_resource type="Resource" uid="uid://bd3x4rf00qjqr" path="res://Resources/Cards/1 ex Ruby & Saphire/RS22Sharpedo.tres" id="1_3dkws"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_o4bgw"]
 [ext_resource type="Resource" uid="uid://c8xqucy03ngb6" path="res://Resources/Cards/1 ex Ruby & Saphire/RS51Carvanha.tres" id="3_ox1sd"]
 [ext_resource type="Script" uid="uid://cs70ix831b5g4" path="res://Code/Resource Makers/PokemonSpecific/PokeSlotMaker.gd" id="4_c2ags"]
+[ext_resource type="Resource" uid="uid://cikspsque6rym" path="res://Resources/Cards/1 ex Ruby & Saphire/RS85OranBerry.tres" id="5_o4bgw"]
 
 [resource]
 script = ExtResource("4_c2ags")
@@ -15,6 +16,7 @@ evolved_this_turn = false
 evolved_from = Array[ExtResource("2_o4bgw")]([ExtResource("3_ox1sd")])
 energy_cards = Array[ExtResource("2_o4bgw")]([])
 tm_cards = Array[ExtResource("2_o4bgw")]([])
+tool_card = ExtResource("5_o4bgw")
 buffs = Array[Dictionary]([])
 disables = Array[Dictionary]([])
 dealt_damage = 0

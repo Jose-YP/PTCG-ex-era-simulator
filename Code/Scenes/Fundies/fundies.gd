@@ -227,12 +227,19 @@ func next_turn():
 	home_turn = not home_turn
 	attatched_energy = false
 	turn_number += 1
+	
 	await Globals.full_ui.set_between_turns()
 	#When animations and other stuff are added for checkups, remove this
 	await get_tree().create_timer(.1).timeout
+	
 	print_rich("[center]--------------------------TURN ", turn_number, "-------------------------")
 	pass_turn_graphic.turn_change()
 	await pass_turn_graphic.animation_player.animation_finished
+	
+	if stack_manager.get_stacks(home_turn).get_array(Consts.STACKS.DECK).size() == 0:
+		print("You lose")
+	else:
+		stack_manager.draw(1)
 	
 	for player in cpu_players:
 		player.can_operate()

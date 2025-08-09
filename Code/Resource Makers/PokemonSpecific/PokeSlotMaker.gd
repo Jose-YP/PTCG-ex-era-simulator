@@ -593,9 +593,61 @@ func attatch_tm(new_tm: Base_Card) -> void:
 	await ability_emit(attatched_tm, new_tm)
 	Globals.fundies.remove_top_source_target()
 
-func remove_tms() -> void:
-	tm_cards.clear()
+func remove_tm(tm: Base_Card) -> void:
+	tm_cards.erase(tm)
 	refresh()
+
+func remove_all() -> Array[Base_Card]:
+	var moving_cards: Array[Base_Card] = []
+	
+	moving_cards.append(current_card)
+	moving_cards.append(tool_card)
+	moving_cards.append_array(evolved_from)
+	moving_cards.append_array(energy_cards)
+	moving_cards.append_array(tm_cards)
+	
+	current_card = null
+	tool_card = null
+	evolved_from.clear()
+	energy_cards.clear()
+	tm_cards.clear()
+	
+	return moving_cards
+
+func card_disrupteed(identifier: Identifier, rule: int) -> Array[Base_Card]:
+	var moving_cards: Array[Base_Card]
+	#CardDisrupt
+	#remove any cards that are considered
+	if rule == 0:
+		#If you can devolve remove all top evolutions untilidentifier stops it
+		if can_devolve():
+			while can_devolve():
+				if identifier.identifier_bool(current_card):
+					#If this card has no evolved from, return everything else with it
+					moving_cards.append(current_card)
+					devolve_card()
+				else: break
+		#If all evolutions have been removed
+		if not can_devolve():
+			if not is_filled() or identifier.identifier_bool(current_card):
+				return remove_all()
+		
+		for card in energy_cards:
+			if identifier.identifier_bool(card):
+				moving_cards.append(card)
+				energy_cards.erase(card)
+		if identifier.identifier_bool(tool_card):
+			moving_cards.append(tool_card)
+			remove_tool()
+		for tm in tm_cards:
+			if identifier.identifier_bool(tm):
+				moving_cards.append(tm)
+				remove_tm(tm)
+	#Remove the top evolution
+	else:
+		pass
+	
+	return moving_cards
 
 #endregion
 #--------------------------------------
@@ -700,6 +752,7 @@ func refresh_current_card():
 	ui_slot.display_image(current_card)
 	ui_slot.name_section.append_text(current_card.name)
 	ui_slot.max_hp.append_text(str("HP: ",get_max_hp()))
+	ui_slot.display_types(Convert.flags_to_type_array(get_pokedata().type))
 	setup_abilities()
 	occurance_account_for()
 

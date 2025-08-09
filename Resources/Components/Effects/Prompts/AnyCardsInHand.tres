@@ -1,10 +1,12 @@
-[gd_resource type="Resource" script_class="PromptAsk" load_steps=8 format=3 uid="uid://bmsgubnaoyt85"]
+[gd_resource type="Resource" script_class="PromptAsk" load_steps=11 format=3 uid="uid://bmsgubnaoyt85"]
 
 [ext_resource type="Resource" uid="uid://bns8h72u2hxqo" path="res://Resources/Components/Effects/Asks/General/AnyMon.tres" id="1_8fjon"]
 [ext_resource type="Resource" uid="uid://dm2i7spst0qpp" path="res://Resources/Components/Effects/Identifiers/AnyCard.tres" id="2_7qhry"]
 [ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="2_ac7tl"]
 [ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="2_pgl4t"]
 [ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="3_7qhry"]
+[ext_resource type="Resource" uid="uid://cd5cllx4tmb2p" path="res://Resources/Components/Effects/CardDisrupt/SourceShuffleBack1Hand.tres" id="5_1g5gn"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="6_1wjj3"]
 
 [sub_resource type="Resource" id="Resource_1g5gn"]
 script = ExtResource("2_ac7tl")
@@ -25,6 +27,13 @@ second_constant = 0
 operate_w_constant = "None"
 metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
+[sub_resource type="Resource" id="Resource_ia1ww"]
+script = ExtResource("6_1wjj3")
+either_or = false
+order = Array[int]([])
+card_disrupt = ExtResource("5_1g5gn")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
 [resource]
 script = ExtResource("2_pgl4t")
 formal_question = false
@@ -33,6 +42,7 @@ yes_answer = ""
 no_answer = ""
 comparator = SubResource("Resource_1wjj3")
 can_reverse = true
+effect = SubResource("Resource_ia1ww")
 occurance = false
 chooser = 0
 choose_location = "None"

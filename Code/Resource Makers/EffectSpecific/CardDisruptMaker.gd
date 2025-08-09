@@ -21,6 +21,8 @@ class_name CardDisrupt
 @export var view: bool = true
 @export var portion: int = -1
 @export var from_stack: Consts.STACKS = Consts.STACKS.HAND
+##If it's -1, choose every possible choice acoording to [member in_play_options] 
+@export_range(-1,6,1) var slot_choose_num: int = -1
 @export var in_play_options: SlotAsk
 @export var pokemon_disrupt: Consts.SLOTS
 
@@ -72,10 +74,17 @@ func play_effect(reversable: bool = false, replace_num: int = -1) -> void:
 				print(card.get_formal_name())
 			
 			stacks.move_cards(lets_discard, from_stack, send_to)
-			Globals.full_ui.get_home_side(home).non_mon.sync_stacks()
 	
 	#Discard from a slot
 	else:
-		pass
+		var slots: Array[PokeSlot] = Globals.full_ui.get_ask_slots(in_play_options)
+		if slot_choose_num == -1:
+			for slot in slots:
+				var moving_cards: Array[Base_Card] = slot.disrupted_cards(card_options, send)
+				pass
+		else:
+			pass
+		
 	
+	Globals.full_ui.get_home_side(home).non_mon.sync_stacks()
 	finished.emit()

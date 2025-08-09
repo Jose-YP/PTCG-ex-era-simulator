@@ -324,13 +324,17 @@ func before_direct_attack(attacker: PokeSlot, with: Attack):
 				return
 			else:
 				Globals.fundies.record_attack_src_trg(attacker.is_home(), [attacker], [hold_candidate])
+				if attack_data.before_damage:
+					await attack_effect(attacker, with.attack_data, pass_prompt, replace_num)
 				if pass_prompt != false:
 					await direct_attack(attacker, with, [hold_candidate])
 		else:
 			var def_active: Array[PokeSlot] = Globals.full_ui.get_poke_slots(Consts.SIDES.DEFENDING, Consts.SLOTS.ACTIVE)
 			pass_prompt = await check_prompt_reliant(attack_data.prompt)
-			
 			Globals.fundies.record_attack_src_trg(attacker.is_home(), [attacker], def_active)
+			
+			if attack_data.before_damage:
+					await attack_effect(attacker, with.attack_data, pass_prompt, replace_num)
 			if pass_prompt != false:
 				await direct_attack(attacker, with, def_active)
 	
@@ -340,7 +344,8 @@ func before_direct_attack(attacker: PokeSlot, with: Attack):
 	
 	else: Globals.fundies.record_single_src_trg(attacker)
 	
-	await attack_effect(attacker, with.attack_data, pass_prompt, replace_num)
+	if not attack_data.before_damage:
+		await attack_effect(attacker, with.attack_data, pass_prompt, replace_num)
 	
 	attacker.current_attack = null
 	Globals.fundies.remove_top_source_target()

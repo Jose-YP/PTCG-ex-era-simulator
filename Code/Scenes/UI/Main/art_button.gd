@@ -18,7 +18,7 @@ var current_card: Base_Card:
 		var old = current_card
 		current_card = value
 		disabled = value == null
-		if value != old:
+		if value != old and value != null:
 			%Art.texture = value.image
 			var art_tween: Tween = create_tween().set_parallel()
 			art.scale = Vector2.ZERO

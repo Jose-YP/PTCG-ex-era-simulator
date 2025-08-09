@@ -25,5 +25,5 @@ self_damage = 0
 mod_prompt = false
 modifier = 0
 modifier_num = 0
-both_active = false
+both_active = true
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
