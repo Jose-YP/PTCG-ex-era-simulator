@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=7 format=3 uid="uid://c6glj0j6e2e3j"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_nhftg"]
+[ext_resource type="Texture2D" uid="uid://dsvcmi3d6ecc0" path="res://Art/Cards/2 ex Sandstorm/84.jpg" id="1_xdevv"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_vfdno"]
+[ext_resource type="Resource" uid="uid://1e548m1f7d76" path="res://Resources/Components/Pokemon/Attacks/PureEffectAttacks/1-0Supersonic.tres" id="3_pbbfh"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="4_2us5x"]
+
+[sub_resource type="Resource" id="Resource_eurht"]
+script = ExtResource("4_2us5x")
+HP = 40
+retreat = 1
+attacks = Array[ExtResource("2_vfdno")]([ExtResource("3_pbbfh")])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 1
+owner = 0
+type = 4
+weak = 8
+resist = 32
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_nhftg")
+name = "Wingull"
+image = ExtResource("1_xdevv")
+illustrator = "Kagemaru Himeno"
+number = 84
+rarity = 0
+expansion = 1
+categories = 1
+pokemon_properties = SubResource("Resource_eurht")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

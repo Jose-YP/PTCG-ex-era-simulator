@@ -52,28 +52,33 @@ func _on_pressed() -> void:
 #--------------------------------------
 
 func ability_show(slot: PokeSlot):
-	var poke_data: Pokemon = slot.get_pokedata()
-	if poke_data.pokebody:
-		theme_type_variation = "BodyButton"
-		material.set_shader_parameter("base_color", Color(0.119, 0.263, 0.247))
-		
-		if slot.body_activated or poke_data.pokebody.does_press_activate(slot):
-			%AnimationPlayer.play("BodyLoop")
-		else:
-			%AnimationPlayer.play("RESET")
-	
-	elif poke_data.pokepower:
-		theme_type_variation = "PowerButton"
-		material.set_shader_parameter("base_color", Color(0.267, 0.0, 0.024))
-		
-		if slot.is_attacker() and poke_data.pokepower.does_press_activate(slot):
-			%AnimationPlayer.play("PowerLoop")
-		else:
-			%AnimationPlayer.play("RESET")
-	else:
+	if not slot.is_filled():
 		theme_type_variation = ""
 		material.set_shader_parameter("base_color", Color(0.181, 0.121, 0.35))
 		%AnimationPlayer.play("RESET")
+	else:
+		var poke_data: Pokemon = slot.get_pokedata()
+		if poke_data.pokebody:
+			theme_type_variation = "BodyButton"
+			material.set_shader_parameter("base_color", Color(0.119, 0.263, 0.247))
+			
+			if slot.body_activated or poke_data.pokebody.does_press_activate(slot):
+				%AnimationPlayer.play("BodyLoop")
+			else:
+				%AnimationPlayer.play("RESET")
+		
+		elif poke_data.pokepower:
+			theme_type_variation = "PowerButton"
+			material.set_shader_parameter("base_color", Color(0.267, 0.0, 0.024))
+			
+			if slot.is_attacker() and poke_data.pokepower.does_press_activate(slot):
+				%AnimationPlayer.play("PowerLoop")
+			else:
+				%AnimationPlayer.play("RESET")
+		else:
+			theme_type_variation = ""
+			material.set_shader_parameter("base_color", Color(0.181, 0.121, 0.35))
+			%AnimationPlayer.play("RESET")
 
 func ability_occur(body: bool, time: float):
 	%AnimationPlayer.speed_scale = 6.0

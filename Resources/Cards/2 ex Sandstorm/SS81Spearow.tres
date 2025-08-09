@@ -1,0 +1,64 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=13 format=3 uid="uid://df8vjdu3m822g"]
+
+[ext_resource type="Texture2D" uid="uid://cqtvd6vmn5hlk" path="res://Art/Cards/2 ex Sandstorm/81.jpg" id="1_e5dhs"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_wlnsg"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_cisvk"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_c422g"]
+[ext_resource type="Resource" uid="uid://ekj1myy642kh" path="res://Resources/Components/Effects/Prompts/PromptHeads.tres" id="4_dew0p"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="5_dxuyr"]
+[ext_resource type="Resource" uid="uid://dnr7ljin1eclj" path="res://Resources/Components/Effects/Buff/FullImmunity1Turn.tres" id="6_pc2u7"]
+[ext_resource type="Resource" uid="uid://ci4gahbdoaqcu" path="res://Resources/Components/Pokemon/Attacks/EffectlessAttacks/Peck1-10.tres" id="7_t2jsv"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="8_akca5"]
+
+[sub_resource type="Resource" id="Resource_2m73h"]
+script = ExtResource("5_dxuyr")
+prompt_reliant = false
+prompt = ExtResource("4_dew0p")
+initial_main_DMG = 0
+defender_properties = 0
+condition = 1
+before_damage = false
+replace_num = false
+success_effect = ExtResource("6_pc2u7")
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_iu7it"]
+script = ExtResource("2_cisvk")
+name = "Super Speed"
+description = "Flip a coin. If heads, prevent all effects of an attack, including damage, done to Spearow during your opponent's next turn."
+attack_cost = ExtResource("3_c422g")
+attack_data = SubResource("Resource_2m73h")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_ob23t"]
+script = ExtResource("8_akca5")
+HP = 40
+retreat = 1
+attacks = Array[ExtResource("2_cisvk")]([SubResource("Resource_iu7it"), ExtResource("7_t2jsv")])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 1
+owner = 0
+type = 256
+weak = 8
+resist = 32
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_wlnsg")
+name = "Spearow"
+image = ExtResource("1_e5dhs")
+illustrator = "Aya Kusube"
+number = 81
+rarity = 0
+expansion = 1
+categories = 1
+pokemon_properties = SubResource("Resource_ob23t")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

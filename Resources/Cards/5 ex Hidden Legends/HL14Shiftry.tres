@@ -23,6 +23,7 @@ bottom_of_stack = false
 shuffle = false
 card_ammount = 1
 reveal = false
+who_chooses = 4
 side = 2
 card_options = ExtResource("4_fv8lw")
 view = true

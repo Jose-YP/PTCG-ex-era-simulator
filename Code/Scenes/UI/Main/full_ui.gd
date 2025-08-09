@@ -22,6 +22,9 @@ func _ready() -> void:
 #endregion
 
 #region HELPERS
+func get_player_type(side: Consts.SIDES) -> Consts.PLAYER_TYPES:
+	return get_const_side(side).player_type
+
 func get_home_side(home: bool) -> CardSideUI:
 	return player_side if home else opponent_side
 

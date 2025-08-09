@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=8 format=3 uid="uid://e4lyjq5jr22j"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_a7oph"]
+[ext_resource type="Texture2D" uid="uid://f3j84yloxkai" path="res://Art/Cards/2 ex Sandstorm/85.jpg" id="1_jke37"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_e7avq"]
+[ext_resource type="Resource" uid="uid://bsd1vwg1v36ph" path="res://Resources/Components/Pokemon/Attacks/EffectlessAttacks/1-1Collect.tres" id="3_s1h5o"]
+[ext_resource type="Resource" uid="uid://cb42qtiboak6n" path="res://Resources/Components/Pokemon/Attacks/EffectlessAttacks/Headbutt2-20.tres" id="4_rm5mn"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_ti3dd"]
+
+[sub_resource type="Resource" id="Resource_h5h8b"]
+script = ExtResource("5_ti3dd")
+HP = 40
+retreat = 1
+attacks = Array[ExtResource("2_e7avq")]([ExtResource("3_s1h5o"), ExtResource("4_rm5mn")])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 1
+owner = 0
+type = 256
+weak = 32
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_a7oph")
+name = "Zigzagoon"
+image = ExtResource("1_jke37")
+illustrator = "Mitsuhiro Arita"
+number = 85
+rarity = 0
+expansion = 1
+categories = 1
+pokemon_properties = SubResource("Resource_h5h8b")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

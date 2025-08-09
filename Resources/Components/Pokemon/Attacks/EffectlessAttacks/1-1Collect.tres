@@ -1,0 +1,39 @@
+[gd_resource type="Resource" script_class="Attack" load_steps=8 format=3 uid="uid://bsd1vwg1v36ph"]
+
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="1_g5oay"]
+[ext_resource type="Resource" uid="uid://bjo72m2rk7vwl" path="res://Resources/Components/Effects/Draw/Draw1.tres" id="2_ad5jq"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_ndhd0"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="4_a7jrx"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="5_b5bsm"]
+
+[sub_resource type="Resource" id="Resource_d3koa"]
+script = ExtResource("3_ndhd0")
+either_or = false
+order = Array[int]([])
+draw_ammount = ExtResource("2_ad5jq")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_0osyk"]
+script = ExtResource("4_a7jrx")
+prompt_reliant = false
+initial_main_DMG = 0
+defender_properties = 0
+condition = 1
+before_damage = false
+replace_num = false
+always_effect = SubResource("Resource_d3koa")
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[resource]
+script = ExtResource("5_b5bsm")
+name = "Collect"
+description = "Draw a card"
+attack_cost = ExtResource("1_g5oay")
+attack_data = SubResource("Resource_0osyk")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

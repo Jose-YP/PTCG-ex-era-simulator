@@ -6,6 +6,7 @@ signal chosen
 
 var retreat_discard: EnMov = load("res://Resources/Components/Effects/EnergyMovement/RetreatDis.tres")
 var hold_candidate: PokeSlot
+var hold_playing: Base_Card
 var play_functions: Array[Callable] = [play_basic_pokemon, play_evolution, 
 play_place_stadium, play_attatch_tool, play_attatch_tm, play_fossil, 
 play_energy, play_trainer]
@@ -40,7 +41,6 @@ func determine_play(card: Base_Card, placement: Placement = null) -> void:
 		Globals.fundies.print_src_trg()
 		placement.effect_to_mon.play_effect()
 		Globals.fundies.remove_top_source_target()
-	
 
 #--------------------------------------
 #region MANAGING CARD PLAY
@@ -64,7 +64,6 @@ func play_basic_pokemon(card: Base_Card, placement: Placement = null):
 	start_add_choice("Where will pokemon be benched", card, Convert.get_allowed_flags("Basic"),
 	 func(slot: PokeSlot): return not slot.is_filled() and slot.is_attacker(), placement == null)
 	await chosen
-	
 	
 	if placement == null and hold_candidate != null:
 		Globals.fundies.stack_manager.play_card(card, Consts.STACKS.PLAY)
@@ -147,6 +146,7 @@ func play_trainer(card: Base_Card):
 	var trainer: Trainer = card.trainer_properties
 	var allowed: bool = false
 	Globals.fundies.record_source_target(Globals.fundies.home_turn, [], [])
+	hold_playing = card
 	
 	if trainer.prompt:
 		print("This card has a prompt")
@@ -188,6 +188,8 @@ func play_trainer(card: Base_Card):
 	
 	if not card.is_considered("Supporter"):
 		Globals.fundies.stack_manager.play_card(card, Consts.STACKS.DISCARD)
+	
+	hold_playing = null
 	Globals.fundies.remove_top_source_target()
 
 #For tools
@@ -219,7 +221,9 @@ func play_attatch_tm(card: Base_Card):
 
 #For stadiums
 func play_place_stadium(card: Base_Card):
-	pass
+	hold_playing = card
+	
+	hold_playing = null
 #endregion
 
 func manage_tutored(tutored_cards: Array[Base_Card], placement: Placement):
@@ -235,6 +239,7 @@ func start_add_choice(instruction: String, card: Base_Card, play_as: int,
  bool_fun: Callable, reversable: bool):
 	Globals.fundies.ui_actions.set_adding_card(card)
 	set_reversable(reversable)
+	hold_playing = card
 	await generic_choice(instruction, bool_fun)
 	
 	if Globals.fundies.ui_actions.selected_slot:
@@ -252,6 +257,7 @@ func start_add_choice(instruction: String, card: Base_Card, play_as: int,
 		else: print("I changed my mind")
 	else:
 		print("Nevermind")
+	hold_playing = null
 
 func get_choice_candidates(instruction: String, bool_fun: Callable, reversable: bool,
  choosing_player: Consts.PLAYER_TYPES = Consts.PLAYER_TYPES.PLAYER) -> PokeSlot:

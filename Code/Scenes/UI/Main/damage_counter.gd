@@ -1,5 +1,6 @@
 @icon("res://Art/Counters/Spiral.png")
 extends Control
+class_name DamageCounter
 
 @export var slot_item: bool = false
 

@@ -1,9 +1,8 @@
-[gd_resource type="Resource" script_class="SideState" load_steps=26 format=3 uid="uid://drpuudscb04qb"]
+[gd_resource type="Resource" script_class="SideState" load_steps=25 format=3 uid="uid://drpuudscb04qb"]
 
 [ext_resource type="Resource" uid="uid://yamufr71axhi" path="res://Resources/Decks/DarkDisrupt.tres" id="1_40dff"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_f4682"]
 [ext_resource type="Resource" uid="uid://dpq83tgsde1lq" path="res://Resources/Cards/11 ex Delta Species/DS93HolonMentor.tres" id="3_1r5m4"]
-[ext_resource type="Resource" uid="uid://cfps337rtsmpi" path="res://Resources/Cards/11 ex Delta Species/DS92HolonLass.tres" id="4_5dvln"]
 [ext_resource type="Resource" uid="uid://jhipo8gr7d04" path="res://Resources/Cards/3 ex Dragon/DR88TVReporter.tres" id="5_lo1t2"]
 [ext_resource type="Resource" uid="uid://b0lfj4blf1nv4" path="res://Resources/Cards/3 ex Dragon/DR87MrBriney'sCompassion.tres" id="6_b2d7h"]
 [ext_resource type="Resource" uid="uid://day2wur81xum5" path="res://Resources/Cards/5 ex Hidden Legends/HL86AncientTechnicalMachine[Rock].tres" id="7_cyo4y"]
@@ -26,7 +25,7 @@
 script = ExtResource("11_e4l5j")
 deck = ExtResource("1_40dff")
 init_deck = Array[ExtResource("2_f4682")]([])
-init_hand = Array[ExtResource("2_f4682")]([ExtResource("3_1r5m4"), ExtResource("4_5dvln"), ExtResource("5_lo1t2"), ExtResource("6_b2d7h"), ExtResource("7_cyo4y"), ExtResource("8_ifb7x"), ExtResource("9_xvxfa"), ExtResource("9_xvxfa"), ExtResource("10_37im0")])
+init_hand = Array[ExtResource("2_f4682")]([ExtResource("3_1r5m4"), ExtResource("5_lo1t2"), ExtResource("6_b2d7h"), ExtResource("7_cyo4y"), ExtResource("8_ifb7x"), ExtResource("9_xvxfa"), ExtResource("9_xvxfa"), ExtResource("10_37im0"), ExtResource("3_1r5m4")])
 init_discard = Array[ExtResource("2_f4682")]([])
 init_prize = Array[ExtResource("2_f4682")]([])
 metadata/_custom_type_script = "uid://calm3n7va5yjo"

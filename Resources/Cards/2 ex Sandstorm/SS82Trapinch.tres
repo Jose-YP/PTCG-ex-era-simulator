@@ -1,0 +1,79 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=16 format=3 uid="uid://dsqr2vi3y0nrh"]
+
+[ext_resource type="Texture2D" uid="uid://doc4widn0klet" path="res://Art/Cards/2 ex Sandstorm/82.jpg" id="1_7qe1l"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_pgmru"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_b2cgp"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_1xxaq"]
+[ext_resource type="Resource" uid="uid://b5h3buocpx1gn" path="res://Resources/Components/Effects/Disable/DefSelfCantRetreat1.tres" id="4_bkfm4"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="5_vjvrc"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="6_gcspa"]
+[ext_resource type="Resource" uid="uid://b1rwmggf7a4do" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless2.tres" id="7_scqb1"]
+[ext_resource type="Resource" uid="uid://bnsrs2a5hnvkb" path="res://Resources/Components/Pokemon/Attacks/AttackData/20Dmg.tres" id="8_khaxt"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="9_i6ubk"]
+
+[sub_resource type="Resource" id="Resource_8yng3"]
+script = ExtResource("5_vjvrc")
+either_or = false
+order = Array[int]([])
+disable = ExtResource("4_bkfm4")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_5m50d"]
+script = ExtResource("6_gcspa")
+prompt_reliant = false
+initial_main_DMG = 10
+defender_properties = 0
+condition = 1
+before_damage = false
+replace_num = false
+always_effect = SubResource("Resource_8yng3")
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_4evqt"]
+script = ExtResource("2_b2cgp")
+name = "Sand Pit"
+description = "The Defending Pokémon can't retreat until the end of your opponent's next turn."
+attack_cost = ExtResource("3_1xxaq")
+attack_data = SubResource("Resource_5m50d")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_a08xd"]
+script = ExtResource("2_b2cgp")
+name = "Irongrip"
+description = ""
+attack_cost = ExtResource("7_scqb1")
+attack_data = ExtResource("8_khaxt")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_215jg"]
+script = ExtResource("9_i6ubk")
+HP = 40
+retreat = 1
+attacks = Array[ExtResource("2_b2cgp")]([SubResource("Resource_4evqt"), SubResource("Resource_a08xd")])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 1
+owner = 0
+type = 32
+weak = 1
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_pgmru")
+name = "Trapinch"
+image = ExtResource("1_7qe1l")
+illustrator = "Mitsuhiro Arita"
+number = 82
+rarity = 0
+expansion = 1
+categories = 1
+pokemon_properties = SubResource("Resource_215jg")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

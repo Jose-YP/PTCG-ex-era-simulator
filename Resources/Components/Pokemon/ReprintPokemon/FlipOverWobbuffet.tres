@@ -12,6 +12,7 @@ prompt_reliant = false
 initial_main_DMG = 50
 defender_properties = 6
 condition = 1
+before_damage = false
 replace_num = false
 conditional_self_dmg = false
 self_damage = 10

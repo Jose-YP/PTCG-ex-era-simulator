@@ -13,7 +13,7 @@ class_name UI_Slot
 @onready var max_hp: RichTextLabel = %MaxHP
 @onready var tool: TextureRect = %Tool
 @onready var tm: TextureRect = %TM
-@onready var damage_counter: Control = %DamageCounter
+@onready var damage_counter: DamageCounter = %DamageCounter
 @onready var cond_display: ConditionDisplay = %Conditions
 @onready var typeContainer: Array[Node] = %TypeContainer.get_children()
 @onready var energy_container: Array[Node] = %EnergyTypes.get_children()
@@ -111,7 +111,10 @@ func clear():
 	max_hp.clear()
 	display_image(null)
 	display_types([])
+	display_energy([],{})
 	tm.hide()
 	tool.hide()
-	display_condition()
 	cond_display.condition = Condition.new()
+	damage_counter.set_damage(0)
+	display_condition()
+	check_ability_activation()

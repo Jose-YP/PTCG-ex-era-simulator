@@ -47,6 +47,7 @@ func play_effect(reversable: bool = false, replace_num: int = -1) -> void:
 		stack_mana.tutor_instantiate_list(search_for, self)
 		await SignalBus.swap_card_location
 	
+	Globals.full_ui.get_home_side(stack_mana.operate_home).non_mon.sync_stacks()
 	await and_then.finished
 	
 	finished.emit()

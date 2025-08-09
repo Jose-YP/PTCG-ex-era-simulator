@@ -114,9 +114,12 @@ bottom_of_stack = false
 shuffle = false
 card_ammount = 0
 reveal = false
+who_chooses = 4
 side = 2
 view = true
+portion = -1
 from_stack = 0
+slot_choose_num = -1
 pokemon_disrupt = 0
 metadata/_custom_type_script = "uid://8sh5p3leflla"
 

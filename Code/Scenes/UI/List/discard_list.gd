@@ -13,7 +13,7 @@ class_name DiscardList
 @onready var old_size: Vector2 = size
 
 var footer_prefix: String = "[right]DISCARDS LEFT: "
-var header_txt: String = "DISCARD BOX"
+var header_txt: String = "[center]DISCARD BOX"
 var action_txt: String = "Discard"
 var list: Dictionary[Base_Card, bool]
 var discarding: Array[Base_Card] = []
@@ -78,7 +78,6 @@ func _on_discard_pressed() -> void:
 	if pokeslot_origin: pokeslot_origin.remove_cards(discarding)
 	
 	finished.emit()
-	Globals.full_ui.remove_top_ui()
 
 func _on_header_close_button_pressed() -> void:
 	if %Header.closable:

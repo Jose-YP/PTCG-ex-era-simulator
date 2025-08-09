@@ -36,7 +36,7 @@ func setup_tutor(search: Search):
 	#tutor = par.tutor_box.instantiate()
 	tutor_dock.search = search
 	tutor_dock.set_up_tutor()
-	print(allowed_dict)
+	
 	playing_list.set_items()
 
 func list_allowed(card: Base_Card) -> bool:

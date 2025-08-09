@@ -11,6 +11,7 @@ description = "Trainer Card (excluding Supporter Cards)"
 must_be_different = false
 broad_class = 2
 exactly = false
+name_chec = 0
 name_array = Array[String]([])
 comparison_type = 1
 type = 0

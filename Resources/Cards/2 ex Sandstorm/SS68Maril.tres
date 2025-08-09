@@ -31,6 +31,7 @@ prompt = SubResource("Resource_to7ul")
 initial_main_DMG = 10
 defender_properties = 0
 condition = 1
+before_damage = false
 replace_num = false
 success_effect = ExtResource("3_goaxk")
 conditional_self_dmg = false

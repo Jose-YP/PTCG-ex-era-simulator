@@ -1,14 +1,34 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=2 format=3 uid="uid://xdvsgjmvkd2y"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=7 format=3 uid="uid://xdvsgjmvkd2y"]
 
+[ext_resource type="Texture2D" uid="uid://7qmrx22kdyco" path="res://Art/Cards/2 ex Sandstorm/77.jpg" id="1_7nfvt"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_oycat"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_pshso"]
+[ext_resource type="Resource" uid="uid://cugd2g6gy4gda" path="res://Resources/Components/Pokemon/Attacks/EffectlessAttacks/Tackle1-10.tres" id="3_piguw"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="4_pgw1v"]
+
+[sub_resource type="Resource" id="Resource_fpujl"]
+script = ExtResource("4_pgw1v")
+HP = 40
+retreat = 1
+attacks = Array[ExtResource("2_pshso")]([ExtResource("3_piguw")])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 1
+owner = 0
+type = 1
+weak = 2
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
 script = ExtResource("1_oycat")
-name = ""
-illustrator = ""
-number = 0
+name = "Seedot"
+image = ExtResource("1_7nfvt")
+illustrator = "Ken Sugimori"
+number = 77
 rarity = 0
-expansion = 0
-categories = 0
+expansion = 1
+categories = 1
+pokemon_properties = SubResource("Resource_fpujl")
 fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

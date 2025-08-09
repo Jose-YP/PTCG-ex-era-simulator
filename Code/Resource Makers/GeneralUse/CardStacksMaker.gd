@@ -154,14 +154,6 @@ func move_cards(cards: Array[Base_Card], from: Consts.STACKS, towards: Consts.ST
 
 #endregion
 #--------------------------------------
-
-#func mark_as_played(card: Base_Card, from: Consts.STACKS):
-	#var array = get_array(from)
-	#
-	#
-	#
-	#pass
-
 func identifier_search(list: Consts.STACKS, identifier: Identifier,\
 based_on: Array[PokeSlot] = [], portion: int = -1) -> Dictionary[Base_Card,bool]:
 	var valid_dictionary: Dictionary[Base_Card,bool]

@@ -12,6 +12,7 @@ class_name CardDisrupt
 @export var card_ammount: int = 1
 @export var variable_ammount: Comparator
 @export var reveal: bool = false
+@export var who_chooses: Consts.SIDES = Consts.SIDES.SOURCE
 
 @export_group("Choose From")
 @export var side: Consts.SIDES = Consts.SIDES.DEFENDING
@@ -28,10 +29,13 @@ class_name CardDisrupt
 
 signal finished
 
+#Find a way to not discard the card playing the effect
 func play_effect(reversable: bool = false, replace_num: int = -1) -> void:
 	print("PLAY DISRUPT")
 	var home: bool = Globals.fundies.get_considered_home(side)
 	var stacks: CardStacks = Globals.fundies.stack_manager.get_stacks(home)
+	var chooser: Consts.PLAYER_TYPES = Globals.full_ui.get_player_type(who_chooses)
+	var list: Dictionary[Base_Card, bool] = stacks.identifier_search(from_stack, card_options, [], portion)
 	var num: int = card_ammount
 	if variable_ammount:
 		num = variable_ammount.start_comparision()
@@ -39,13 +43,17 @@ func play_effect(reversable: bool = false, replace_num: int = -1) -> void:
 			finished.emit()
 			return
 	
+	#Player shouldn't be able to disrupt the card playing the effect
+	if Globals.fundies.card_player.hold_playing:
+		list[Globals.fundies.card_player.hold_playing] = false
+	
 	#Discard from a stack
 	if from == 0:
 		#Choose
 		if view:
 			var disc_box: DiscardList = Consts.discard_box.instantiate()
 			
-			disc_box.list = stacks.identifier_search(from_stack, card_options, [], portion)
+			disc_box.list = list
 			disc_box.stack = from_stack
 			disc_box.stack_act = Consts.STACK_ACT.DISCARD
 			disc_box.destination = send_to
@@ -56,11 +64,10 @@ func play_effect(reversable: bool = false, replace_num: int = -1) -> void:
 				disc_box.allow_reverse()
 			
 			Globals.full_ui.set_top_ui(disc_box)
-			
 			await disc_box.finished
+			Globals.full_ui.remove_top_ui()
 		#Random
 		else:
-			var list = stacks.identifier_search(from_stack, card_options, [], portion)
 			var disc_from: Array[Base_Card]
 			var lets_discard: Array[Base_Card]
 			
@@ -78,13 +85,22 @@ func play_effect(reversable: bool = false, replace_num: int = -1) -> void:
 	#Discard from a slot
 	else:
 		var slots: Array[PokeSlot] = Globals.full_ui.get_ask_slots(in_play_options)
-		if slot_choose_num == -1:
-			for slot in slots:
-				var moving_cards: Array[Base_Card] = slot.disrupted_cards(card_options, send)
-				pass
-		else:
-			pass
 		
+		if slot_choose_num != -1:
+			var picked: Array[PokeSlot]
+			for i in range(slot_choose_num):
+				var disrupting: PokeSlot = await Globals.fundies.card_player.get_choice_candidates(
+					"Which cards will you disrupt?", func(slot: PokeSlot): return slot.is_filled() and\
+					slot in slots and not slot in picked, reversable, chooser)
+				picked.append(disrupting)
+			
+			slots = picked
+		
+		for slot in slots:
+			var moving_cards: Array[Base_Card] = slot.card_disrupteed(card_options, send)
+			for card in moving_cards:
+				print(card.get_formal_name())
+			stacks.move_cards(moving_cards, Consts.STACKS.PLAY, send_to)
 	
 	Globals.full_ui.get_home_side(home).non_mon.sync_stacks()
 	finished.emit()

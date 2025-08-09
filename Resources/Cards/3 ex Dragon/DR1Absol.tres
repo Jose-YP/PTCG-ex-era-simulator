@@ -33,11 +33,13 @@ shuffle = false
 card_ammount = -1
 variable_ammount = SubResource("Resource_qmmed")
 reveal = false
+who_chooses = 4
 side = 2
 card_options = ExtResource("4_d8q5l")
 view = false
 portion = -1
 from_stack = 0
+slot_choose_num = -1
 pokemon_disrupt = 0
 metadata/_custom_type_script = "uid://8sh5p3leflla"
 

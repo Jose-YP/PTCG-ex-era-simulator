@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Attack" load_steps=4 format=3 uid="uid://1e548m1f7d76"]
+
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="1_y3wir"]
+[ext_resource type="Resource" uid="uid://cdgyabikc6mxv" path="res://Resources/Components/Pokemon/Attacks/AttackData/ConfuseIfHeads.tres" id="2_1orvu"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="3_coch2"]
+
+[resource]
+script = ExtResource("3_coch2")
+name = "Supersonic"
+description = "Flip a coin. If heads, the Defending Pokémon is now Confused."
+attack_cost = ExtResource("1_y3wir")
+attack_data = ExtResource("2_1orvu")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

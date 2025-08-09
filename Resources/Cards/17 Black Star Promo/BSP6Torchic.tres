@@ -1,14 +1,18 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=2 format=3 uid="uid://d0eu2u31fbqxw"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=4 format=3 uid="uid://d0eu2u31fbqxw"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_05ahq"]
+[ext_resource type="Texture2D" uid="uid://c7tu6vsb8ikar" path="res://Art/Cards/Black Star Promo/6.jpg" id="1_iu3gw"]
+[ext_resource type="Resource" uid="uid://deh1asi2btgpj" path="res://Resources/Components/Pokemon/ReprintPokemon/Promo/FireworksTorchic.tres" id="2_5msu2"]
 
 [resource]
 script = ExtResource("1_05ahq")
-name = ""
-illustrator = ""
-number = 0
-rarity = 0
-expansion = 0
-categories = 0
+name = "Torchic"
+image = ExtResource("1_iu3gw")
+illustrator = "Ken Sugimori"
+number = 6
+rarity = 7
+expansion = 16
+categories = 1
+pokemon_properties = ExtResource("2_5msu2")
 fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

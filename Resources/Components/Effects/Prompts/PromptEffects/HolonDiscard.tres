@@ -1,10 +1,9 @@
-[gd_resource type="Resource" script_class="PromptAsk" load_steps=10 format=3 uid="uid://mcn7y4o7q2uf"]
+[gd_resource type="Resource" script_class="PromptAsk" load_steps=8 format=3 uid="uid://mcn7y4o7q2uf"]
 
 [ext_resource type="Resource" uid="uid://dy4k02ewyav5j" path="res://Resources/Components/Counters/Indv/Stacks/AtkHandSize.tres" id="1_5nhbj"]
 [ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="1_de768"]
 [ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="2_0atvy"]
-[ext_resource type="Resource" uid="uid://cd880a7x21jgg" path="res://Resources/Components/Effects/Identifiers/Energy/AnyEnergy.tres" id="3_0atvy"]
-[ext_resource type="Script" uid="uid://8sh5p3leflla" path="res://Code/Resource Makers/EffectSpecific/CardDisruptMaker.gd" id="4_dm8ya"]
+[ext_resource type="Resource" uid="uid://cyxsgc480ravj" path="res://Resources/Components/Effects/CardDisrupt/Stack/SelfDiscACard.tres" id="3_5nhbj"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_n6xh4"]
 
 [sub_resource type="Resource" id="Resource_4gyuw"]
@@ -16,27 +15,11 @@ second_constant = 0
 operate_w_constant = "None"
 metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
-[sub_resource type="Resource" id="Resource_doupy"]
-script = ExtResource("4_dm8ya")
-send = 0
-from = 0
-send_to = 2
-bottom_of_stack = false
-shuffle = false
-card_ammount = 1
-reveal = false
-side = 2
-card_options = ExtResource("3_0atvy")
-view = true
-from_stack = 0
-pokemon_disrupt = 0
-metadata/_custom_type_script = "uid://8sh5p3leflla"
-
 [sub_resource type="Resource" id="Resource_2fhws"]
 script = ExtResource("4_n6xh4")
 either_or = false
 order = Array[int]([])
-card_disrupt = SubResource("Resource_doupy")
+card_disrupt = ExtResource("3_5nhbj")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [resource]

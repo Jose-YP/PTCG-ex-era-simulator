@@ -600,8 +600,10 @@ func remove_tm(tm: Base_Card) -> void:
 func remove_all() -> Array[Base_Card]:
 	var moving_cards: Array[Base_Card] = []
 	
-	moving_cards.append(current_card)
-	moving_cards.append(tool_card)
+	if current_card:
+		moving_cards.append(current_card) 
+	if tool_card:
+		moving_cards.append(tool_card)
 	moving_cards.append_array(evolved_from)
 	moving_cards.append_array(energy_cards)
 	moving_cards.append_array(tm_cards)
@@ -611,6 +613,8 @@ func remove_all() -> Array[Base_Card]:
 	evolved_from.clear()
 	energy_cards.clear()
 	tm_cards.clear()
+	
+	refresh()
 	
 	return moving_cards
 
@@ -647,6 +651,7 @@ func card_disrupteed(identifier: Identifier, rule: int) -> Array[Base_Card]:
 	else:
 		pass
 	
+	refresh()
 	return moving_cards
 
 #endregion
@@ -757,7 +762,9 @@ func refresh_current_card():
 	occurance_account_for()
 
 func refresh() -> void:
-	if not is_filled(): return
+	if not is_filled():
+		clear_dispay()
+		return
 	#Change slot's card display
 	ui_slot.name_section.clear()
 	ui_slot.max_hp.clear()
@@ -792,6 +799,10 @@ func refresh() -> void:
 	else:
 		ui_slot.display_image(null)
 		ui_slot.display_types([])
+
+func clear_dispay():
+	damage_counters = 0
+	ui_slot.clear()
 
 #endregion
 #--------------------------------------

@@ -24,10 +24,13 @@ bottom_of_stack = false
 shuffle = false
 card_ammount = 1
 reveal = false
+who_chooses = 4
 side = 1
 card_options = ExtResource("4_wjv0n")
 view = true
+portion = -1
 from_stack = 1
+slot_choose_num = -1
 pokemon_disrupt = 0
 metadata/_custom_type_script = "uid://8sh5p3leflla"
 
