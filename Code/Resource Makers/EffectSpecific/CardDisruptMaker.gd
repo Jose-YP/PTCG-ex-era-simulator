@@ -95,12 +95,14 @@ func play_effect(reversable: bool = false, replace_num: int = -1) -> void:
 				picked.append(disrupting)
 			
 			slots = picked
-		
+		var moving_cards: Array[Base_Card]
 		for slot in slots:
-			var moving_cards: Array[Base_Card] = slot.card_disrupteed(card_options, send)
+			moving_cards.append_array(slot.card_disrupteed(card_options, send)\
+				if card_options else slot.remove_all())
 			for card in moving_cards:
 				print(card.get_formal_name())
-			stacks.move_cards(moving_cards, Consts.STACKS.PLAY, send_to)
-	
+		
+		stacks.move_cards(moving_cards, Consts.STACKS.PLAY, send_to)
+		
 	Globals.full_ui.get_home_side(home).non_mon.sync_stacks()
 	finished.emit()

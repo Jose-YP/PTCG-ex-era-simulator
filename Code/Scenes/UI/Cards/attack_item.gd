@@ -12,6 +12,9 @@ var slot: PokeSlot
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	set_attack()
+
+func set_attack():
 	%Name.clear()
 	%Name.append_text(str("[center]",attack.name))
 	
@@ -21,8 +24,11 @@ func _ready():
 		%EffectText.append_text(final_text)
 		%EffectText.show()
 	
+	final_cost = attack.get_energy_cost()
 	print("Current final Cost: ", final_cost)
 	
+	for icon in energy_icons:
+		icon.hide()
 	for i in range(final_cost.size()):
 		energy_icons[i].display_type(final_cost[i])
 		energy_icons[i].show()

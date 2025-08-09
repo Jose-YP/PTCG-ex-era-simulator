@@ -49,7 +49,7 @@ class_name SlotAsk
 ##Make -1 to indicate that it shouldn't be checked
 @export var energy_attatched: int = -1
 @export_enum("Basic Energy","Special Energy","Any") var energy_class: String = "Any"
-@export var energy_type: EnData = load("res://Resources/Components/EnData/Rainbow.tres")
+@export var energy_type: EnData
 
 #Checks if one slot is 
 func check_ask(slot: PokeSlot) -> bool:

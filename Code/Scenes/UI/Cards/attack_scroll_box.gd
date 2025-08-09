@@ -53,17 +53,26 @@ func set_items() -> void:
 		set_ability(current_card.pokemon_properties.pokepower)
 	
 	for item in attacks:
-		var making = attackItem.instantiate()
-		making.attack = item
-		making.slot = poke_slot
-		making.card_name = poke_slot.get_card_name() if poke_slot else current_card.name
-		%CardList.add_child(making)
-		if check: making.focus_mode = FocusMode.FOCUS_NONE
-		if poke_slot and poke_slot.is_active(): #only try this when attatched to a pokeslot
-			making.check_usability()
-		else: making.make_unusable()
+		set_attack(item)
+	
+	if poke_slot:
+		for tm in poke_slot.tm_cards:
+			set_attack(tm.trainer_properties.provided_attack, true)
 	
 	items = %CardList.get_children()
+
+func set_attack(attack: Attack, tm: bool = false):
+	var making = attackItem.instantiate()
+	making.attack = attack
+	making.slot = poke_slot
+	making.card_name = poke_slot.get_card_name() if poke_slot else current_card.name
+	%CardList.add_child(making)
+	if check: making.focus_mode = FocusMode.FOCUS_NONE
+	if poke_slot and poke_slot.is_active(): #only try this when attatched to a pokeslot
+		making.check_usability()
+	else: making.make_unusable()
+	if tm:
+		making.attackButton.theme_type_variation = "TrainerButton"
 
 func set_ability(ability: Ability):
 	if ability:

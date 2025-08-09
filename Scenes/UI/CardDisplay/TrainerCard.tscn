@@ -1,14 +1,15 @@
-[gd_scene load_steps=40 format=3 uid="uid://b6b86gpw8bfpk"]
+[gd_scene load_steps=41 format=3 uid="uid://b6b86gpw8bfpk"]
 
 [ext_resource type="Theme" uid="uid://bfw6ylcttychc" path="res://Themes/Themes/AverageButton.tres" id="1_av0ds"]
 [ext_resource type="Script" uid="uid://djgnpgbny56rv" path="res://Code/Scenes/UI/Cards/TrainerCard.gd" id="1_lminl"]
-[ext_resource type="Resource" uid="uid://ybub8qpf0t81" path="res://Resources/Cards/5 ex Hidden Legends/HL87AncientTomb.tres" id="2_oitn0"]
+[ext_resource type="Resource" uid="uid://day2wur81xum5" path="res://Resources/Cards/5 ex Hidden Legends/HL86AncientTechnicalMachine[Rock].tres" id="2_s10ow"]
 [ext_resource type="StyleBox" uid="uid://bvesf3hjv2bsl" path="res://Themes/StyleBoxes/GBADragBox.tres" id="3_7n7u5"]
 [ext_resource type="Texture2D" uid="uid://b4uymubvo04qp" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/37.jpg" id="3_ociyq"]
 [ext_resource type="PackedScene" uid="uid://dmhjt2wuanymf" path="res://Scenes/UI/UIComponents/minimize_button.tscn" id="3_pxlap"]
 [ext_resource type="Texture2D" uid="uid://ciyynt0iw46k5" path="res://Art/Rarities/31px-Rarity_Common.png" id="5_yaayd"]
 [ext_resource type="Texture2D" uid="uid://blfwsqqtrqe8v" path="res://Art/Rarities/31px-Rarity_Uncommon.png" id="6_f4r3p"]
 [ext_resource type="Texture2D" uid="uid://bir0keyl58pst" path="res://Art/Rarities/31px-Rarity_Rare.png" id="7_qik87"]
+[ext_resource type="PackedScene" uid="uid://dvvv8k1g6tgog" path="res://Scenes/UI/Lists/attack_item.tscn" id="8_s10ow"]
 [ext_resource type="Texture2D" uid="uid://be2sag665selj" path="res://Art/Rarities/Rarity_Rare_Holo.png" id="8_u12sb"]
 [ext_resource type="Texture2D" uid="uid://dldh83yhhvvs2" path="res://Art/Rarities/Rarity_Rare_Holo_ex.png" id="9_vn6na"]
 [ext_resource type="Texture2D" uid="uid://dfh4btp104a45" path="res://Art/Rarities/Rarity_Rare_Secret.png" id="10_jpopr"]
@@ -44,14 +45,14 @@
 
 [node name="TrainerCard" type="Control"]
 layout_mode = 3
-anchor_right = 0.386
-anchor_bottom = 0.5
-offset_right = 0.119995
-offset_bottom = -28.0
+anchor_right = 0.37
+anchor_bottom = 0.362
+offset_right = 0.399994
+offset_bottom = 0.359985
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_lminl")
-card = ExtResource("2_oitn0")
+card = ExtResource("2_s10ow")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
@@ -75,10 +76,10 @@ custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
-custom_minimum_size = Vector2(400, 0)
+custom_minimum_size = Vector2(442, 0)
 layout_mode = 2
+size_flags_vertical = 3
 theme_override_styles/panel = ExtResource("3_7n7u5")
-metadata/_edit_group_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/PanelContainer"]
 layout_mode = 2
@@ -131,10 +132,11 @@ theme_override_constants/margin_bottom = 5
 [node name="EffectBox" type="PanelContainer" parent="VBoxContainer/PanelContainer/VBoxContainer/Description"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/PanelContainer/VBoxContainer/Description/EffectBox"]
+[node name="EffectV" type="VBoxContainer" parent="VBoxContainer/PanelContainer/VBoxContainer/Description/EffectBox"]
+unique_name_in_owner = true
 layout_mode = 2
 
-[node name="ClassText" type="RichTextLabel" parent="VBoxContainer/PanelContainer/VBoxContainer/Description/EffectBox/VBoxContainer"]
+[node name="ClassText" type="RichTextLabel" parent="VBoxContainer/PanelContainer/VBoxContainer/Description/EffectBox/EffectV"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 10
@@ -142,12 +144,18 @@ bbcode_enabled = true
 text = "Illustrator:"
 fit_content = true
 
-[node name="Effect" type="RichTextLabel" parent="VBoxContainer/PanelContainer/VBoxContainer/Description/EffectBox/VBoxContainer"]
+[node name="Effect" type="RichTextLabel" parent="VBoxContainer/PanelContainer/VBoxContainer/Description/EffectBox/EffectV"]
 unique_name_in_owner = true
 layout_mode = 2
 bbcode_enabled = true
 text = "Illustrator:"
 fit_content = true
+
+[node name="AttackItem" parent="VBoxContainer/PanelContainer/VBoxContainer/Description/EffectBox/EffectV" instance=ExtResource("8_s10ow")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
 
 [node name="Other" type="MarginContainer" parent="VBoxContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2

@@ -36,8 +36,14 @@ func _ready():
 		make_text(class_text, Consts.class_texts[index])
 	else:
 		make_text(class_text, trainerData.specific_requirement)
-	var final_text: String = Convert.reformat(trainerData.description)
+	var final_text: String = Convert.reformat(trainerData.description, card.name)
 	make_text(effect_text, final_text)
+	
+	if trainerData.provided_attack:
+		%AttackItem.attack = trainerData.provided_attack
+		%AttackItem.attackButton.theme_type_variation = "TrainerButton"
+		%AttackItem.set_attack()
+		%AttackItem.show()
 	
 	make_text(number, str(card.number, "/", Consts.expansion_counts[card.expansion]))
 	rarity.current_tab = card.rarity

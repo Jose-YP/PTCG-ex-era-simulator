@@ -80,8 +80,6 @@ func pokemon_checkup() -> void:
 	body_exhaust = false
 	power_exhaust = false
 	
-	
-	
 	await checkup_conditions()
 	
 	for card in energy_timers.keys():
@@ -97,6 +95,11 @@ func pokemon_checkup() -> void:
 			dmg_manip(dmg_timer["Damage"])
 		else:
 			print(dmg_timer)
+	
+	Globals.fundies.stack_manager.get_stacks(is_home()).\
+		move_cards(tm_cards, Consts.STACKS.PLAY, Consts.STACKS.DISCARD)
+	for tm in tm_cards:
+		remove_tm(tm)
 	
 	refresh()
 	
@@ -546,6 +549,8 @@ func get_energy_excess(enData_filter: EnData = null) -> int:
 
 #--------------------------------------
 #region OTHER ATTATCHMENTS
+#Q. If a Pokémon uses "Baby Evolution", does it trigger Shiftry-EX's "Dark Eyes"?
+#A. No. The Pokémon that used "Baby Evolution" is actually no longer in play. (Nov 16, 2006 PUI Rules Team) 
 func evolve_card(evolution: Base_Card) -> void:
 	Globals.fundies.record_single_src_trg(self)
 	await ability_emit(evolving)
@@ -556,6 +561,8 @@ func evolve_card(evolution: Base_Card) -> void:
 	refresh_current_card()
 	
 	alleviate_all()
+	applied_condition.imprision = false
+	applied_condition.shockwave = false
 	await ability_emit(evolved, self)
 	Globals.fundies.remove_top_source_target()
 
@@ -565,6 +572,9 @@ func devolve_card() -> Base_Card:
 	disconnect_abilities()
 	current_card = evolved_from.pop_back()
 	
+	alleviate_all()
+	applied_condition.imprision = false
+	applied_condition.shockwave = false
 	refresh_current_card()
 	
 	return old_card
@@ -618,38 +628,40 @@ func remove_all() -> Array[Base_Card]:
 	
 	return moving_cards
 
+#https://compendium.pokegym.net/compendium-ex.html#trainers
+#Q. The effect text of "Plunder" says: "Before doing damage,
+#discard all Trainer cards attached to the Defending Pokémon." So what happens to Fossils ..."
+#A. Fossils are not "attached" to themselves, so they are not discarded by Plunder. (Feb 16, 2006 PUI Rules Team) 
 func card_disrupteed(identifier: Identifier, rule: int) -> Array[Base_Card]:
 	var moving_cards: Array[Base_Card]
 	#CardDisrupt
 	#remove any cards that are considered
 	if rule == 0:
 		#If you can devolve remove all top evolutions untilidentifier stops it
-		if can_devolve():
-			while can_devolve():
-				if identifier.identifier_bool(current_card):
-					#If this card has no evolved from, return everything else with it
-					moving_cards.append(current_card)
-					devolve_card()
-				else: break
-		#If all evolutions have been removed
-		if not can_devolve():
-			if not is_filled() or identifier.identifier_bool(current_card):
-				return remove_all()
+		for card in evolved_from:
+			if identifier.identifier_bool(card):
+				moving_cards.append(card)
+				energy_cards.erase(card)
 		
 		for card in energy_cards:
 			if identifier.identifier_bool(card):
 				moving_cards.append(card)
 				energy_cards.erase(card)
+		
 		if identifier.identifier_bool(tool_card):
 			moving_cards.append(tool_card)
 			remove_tool()
+		
 		for tm in tm_cards:
 			if identifier.identifier_bool(tm):
 				moving_cards.append(tm)
 				remove_tm(tm)
 	#Remove the top evolution
 	else:
-		pass
+		if can_devolve():
+			var top_evo: Base_Card = current_card
+			devolve_card()
+			return [top_evo]
 	
 	refresh()
 	return moving_cards

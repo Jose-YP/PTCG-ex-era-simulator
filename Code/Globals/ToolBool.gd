@@ -1,6 +1,11 @@
 @tool
 extends Node
 
+func _ready():
+	#Make two edits and saves on prompt so I don't have to think about it every time I load
+	#Make a branch before trying to make this
+	pass
+
 func is_empty(card: Base_Card) -> bool:
 	if card.pokemon_properties:
 		return false
