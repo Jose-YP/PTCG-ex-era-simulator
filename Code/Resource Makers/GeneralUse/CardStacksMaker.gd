@@ -5,6 +5,9 @@ class_name CardStacks
 #--------------------------------------
 #region VARIABLES
 @export var deck: Deck
+##If this is true then the cards exluded from [member init_deck] get put on the discard
+##[br] otherwise they end up behind [member init_deck]
+@export var excluded_to_discard: bool
 ##This should only be filled in for cases where usable deck starts at less than 60
 @export var init_deck: Array[Base_Card] = []
 ##This should only be filled in for cases where the user always starts with certian cards
@@ -42,9 +45,17 @@ func make_deck():
 	move_cards(init_prize, Consts.STACKS.DECK, Consts.STACKS.PRIZE)
 
 func setup():
-	if init_deck.size() != 0:
+	if init_deck.size() != 0 and excluded_to_discard:
 		move_cards(usable_deck, Consts.STACKS.DECK, Consts.STACKS.DISCARD)
 		move_cards(init_deck, Consts.STACKS.DISCARD, Consts.STACKS.DECK)
+	else:
+		for card in init_deck:
+			if usable_deck.find_custom(card.same_card) == -1:
+				printerr("Can't find ", card.get_formal_name(), " on setup")
+		
+		usable_deck.sort_custom(func(card_a: Base_Card, card_b: Base_Card):\
+			 return init_deck.find_custom(card_a.same_card)\
+			> init_deck.find_custom(card_b.same_card))
 
 func account_for_slot(slot: PokeSlot):
 	init_remove_deck(slot.current_card)

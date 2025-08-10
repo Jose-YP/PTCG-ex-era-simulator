@@ -1,0 +1,144 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=26 format=3 uid="uid://4t2wfb4h2e6u"]
+
+[ext_resource type="Texture2D" uid="uid://dau65kipc724" path="res://Art/Cards/5 ex Hidden Legends/84.jpg" id="1_h0x2t"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_ydfqk"]
+[ext_resource type="Resource" uid="uid://uv2bigiutmvr" path="res://Resources/Components/Effects/Asks/Class&Owner/AtkEvoNoEXorOwner.tres" id="3_3ajyv"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_s8n6m"]
+[ext_resource type="Resource" uid="uid://dk0v7dyi3r43m" path="res://Resources/Components/Effects/Identifiers/Trainers/Trainer.tres" id="4_sb5y8"]
+[ext_resource type="Resource" uid="uid://cw44iqotg3v3f" path="res://Resources/Components/Effects/Asks/General/FromDefending.tres" id="5_g1yuy"]
+[ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/BuffMaker.gd" id="5_maceq"]
+[ext_resource type="Script" uid="uid://8sh5p3leflla" path="res://Code/Resource Makers/EffectSpecific/CardDisruptMaker.gd" id="6_r3gwp"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="7_ys46e"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="8_3ajyv"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="9_maceq"]
+[ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="10_k4ce0"]
+[ext_resource type="Resource" uid="uid://bkt6ry7vyha70" path="res://Resources/Components/Effects/Asks/General/Other.tres" id="10_utej3"]
+[ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="11_2svl2"]
+[ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="12_budek"]
+[ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="13_8eilx"]
+
+[sub_resource type="Resource" id="Resource_kd0t3"]
+script = ExtResource("11_2svl2")
+which = "Stack"
+ask = ExtResource("10_utej3")
+stack_vars = "cards_in_play"
+identifier = ExtResource("4_sb5y8")
+stack_portion = -1
+cap = -1
+metadata/_custom_type_script = "uid://vjn146j3ayd6"
+
+[sub_resource type="Resource" id="Resource_cs4vx"]
+script = ExtResource("12_budek")
+comparision_type = "Not Equal"
+first_comparison = SubResource("Resource_kd0t3")
+compare_to = "Const"
+second_constant = 0
+operate_w_constant = "None"
+metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
+
+[sub_resource type="Resource" id="Resource_dlf6l"]
+script = ExtResource("13_8eilx")
+formal_question = false
+question_string = ""
+yes_answer = ""
+no_answer = ""
+comparator = SubResource("Resource_cs4vx")
+can_reverse = true
+occurance = false
+chooser = 0
+choose_location = "None"
+which_stack = 0
+metadata/_custom_type_script = "uid://b85jmc7067bjc"
+
+[sub_resource type="Resource" id="Resource_e7x82"]
+script = ExtResource("5_maceq")
+side = 1
+slot = 1
+duration = 1
+attack_damage = 0
+defense = 0
+retreat_change = 0
+after_weak_res = true
+ignore_res_other = false
+ignore_weak_self = false
+immunities = 0
+immune_to_special_conditions = false
+immune_to_effects = false
+immune_to_damage = false
+metadata/_custom_type_script = "uid://coojhwe6m20gd"
+
+[sub_resource type="Resource" id="Resource_utej3"]
+script = ExtResource("6_r3gwp")
+send = 0
+from = 1
+send_to = 2
+top_stack = true
+shuffle = false
+card_ammount = 1
+reveal = false
+who_chooses = 4
+side = 2
+card_options = ExtResource("4_sb5y8")
+view = true
+portion = -1
+from_stack = 0
+slot_choose_num = -1
+in_play_options = ExtResource("5_g1yuy")
+pokemon_disrupt = 0
+metadata/_custom_type_script = "uid://8sh5p3leflla"
+
+[sub_resource type="Resource" id="Resource_2svl2"]
+script = ExtResource("7_ys46e")
+either_or = false
+order = Array[int]([])
+buff = SubResource("Resource_e7x82")
+card_disrupt = SubResource("Resource_utej3")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_budek"]
+script = ExtResource("8_3ajyv")
+prompt_reliant = false
+prompt = SubResource("Resource_dlf6l")
+initial_main_DMG = 0
+defender_properties = 0
+condition = 1
+before_damage = false
+replace_num = false
+success_effect = SubResource("Resource_2svl2")
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = true
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_8eilx"]
+script = ExtResource("9_maceq")
+name = "Ice Generator"
+description = "Discard all of your opponent's Trainer cards in play. If you do, prevent all effects, including damage, done to [u]the Pokémon using this attack[/u] during your opponent's next turn."
+attack_cost = ExtResource("3_s8n6m")
+attack_data = SubResource("Resource_budek")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_gle0s"]
+script = ExtResource("10_k4ce0")
+considered = "TM"
+specific_requirement = "Attach this card to 1 of your Evolved Pokémon (excluding Pokémon-ex and Pokémon that has an owner in its name) in play. That Pokémon may use this card's attack instead of its own. At the end of your turn, discard [name]."
+description = "Discard all of your opponent's Trainer cards in play. If you do, prevent all effects, including damage, done to the Pokémon using this attack during your opponent's next turn."
+asks = ExtResource("3_3ajyv")
+provided_attack = SubResource("Resource_8eilx")
+metadata/_custom_type_script = "uid://crx447i85kshy"
+
+[resource]
+script = ExtResource("1_ydfqk")
+name = "Ancient Technical Machine [Ice]"
+image = ExtResource("1_h0x2t")
+illustrator = "Mitsuhiro Arita"
+number = 84
+rarity = 1
+expansion = 4
+categories = 2
+trainer_properties = SubResource("Resource_gle0s")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

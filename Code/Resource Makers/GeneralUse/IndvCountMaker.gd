@@ -317,10 +317,30 @@ func stack_evaluation(stack_data: String, ask_data: SlotAsk) -> int:
 		var atk_stack: CardStacks = fundies.stack_manager.get_stacks(fundies.get_considered_home(Consts.SIDES.ATTACKING))
 		var def_stack: CardStacks = fundies.stack_manager.get_stacks(fundies.get_considered_home(Consts.SIDES.DEFENDING))
 		
-		return atk_stack.get(stack_data).size() + def_stack.get(stack_data).size()
+		var atk_num: int = identifier_count(atk_stack.get(stack_data), _get("identifier"))\
+			if _get("identifier") else atk_stack.get(stack_data).size()
+		var def_num: int = identifier_count(def_stack.get(stack_data), _get("identifier"))\
+			if _get("identifier") else def_stack.get(stack_data).size()
+		
+		return atk_num + def_num
 	else:
 		var stacks: CardStacks = fundies.stack_manager.get_stacks(fundies.get_considered_home(ask_data.side_target))
-		return stacks.get(stack_data).size()
+		
+		return identifier_count(stacks.get(stack_data), _get("identifier"))\
+		 if _get("identifier") else stacks.get(stack_data).size()
+
+func identifier_count(stack: Array[Base_Card], identifier: Identifier) -> int:
+	var num: int = 0
+	var using: Array[Base_Card] = stack
+	if _get("stack_portion") != -1:
+		using = stack.slice(0,_get("portion"))
+	
+	for card in using:
+		if identifier.identifier_bool(card):
+			num += 1
+	
+	print("Found ", num, " for stack identifer count")
+	return num
 
 func coinflip_evaluation(coinflip_data: CoinFlip) -> int:
 	var flip_data: Dictionary = coinflip_data.activate_CF()

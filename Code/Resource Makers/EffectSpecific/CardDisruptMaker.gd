@@ -2,11 +2,14 @@
 extends Resource
 class_name CardDisrupt
 
-##Card sends card and anything else attatched to it, Evolution just sends the evolution card back
-@export_enum("Card", "Evolution") var send: int = 0
+##[enum Card] sends card and anything else attatched to it[br]
+##[enum Evolution] just sends the evolution card back[br]
+##[enum Attatched] sends any cards attatched to a slot but not the card itself
+@export_enum("Card", "Evolution", "Attatched") var send: int = 0
 @export_enum("Stack", "Slot") var from: int = 0
 @export var send_to: Consts.STACKS = Consts.STACKS.DISCARD
-@export var bottom_of_stack: bool = false
+##Should the card be sent to the top of it's stack, usually for discard that's yes
+@export var top_stack: bool = true
 @export var shuffle: bool = false
 ##-1 mean remove all possible. This variable is ignored if [member variable_ammount] is filled
 @export var card_ammount: int = 1
@@ -60,6 +63,8 @@ func play_effect(reversable: bool = false, replace_num: int = -1) -> void:
 			disc_box.discard_num = num
 			disc_box.home = Globals.fundies.get_considered_home(side)
 			disc_box.energy_discard = false
+			disc_box.top_deck = top_stack
+			disc_box.shuffle = shuffle
 			if reversable:
 				disc_box.allow_reverse()
 			
@@ -80,7 +85,7 @@ func play_effect(reversable: bool = false, replace_num: int = -1) -> void:
 			for card in lets_discard:
 				print(card.get_formal_name())
 			
-			stacks.move_cards(lets_discard, from_stack, send_to)
+			stacks.move_cards(lets_discard, from_stack, send_to, shuffle, top_stack)
 	
 	#Discard from a slot
 	else:
@@ -102,7 +107,7 @@ func play_effect(reversable: bool = false, replace_num: int = -1) -> void:
 			for card in moving_cards:
 				print(card.get_formal_name())
 		
-		stacks.move_cards(moving_cards, Consts.STACKS.PLAY, send_to)
-		
+		stacks.move_cards(moving_cards, Consts.STACKS.PLAY, send_to, shuffle, top_stack)
+	
 	Globals.full_ui.get_home_side(home).non_mon.sync_stacks()
 	finished.emit()

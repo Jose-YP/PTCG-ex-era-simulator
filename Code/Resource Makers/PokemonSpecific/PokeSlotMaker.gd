@@ -97,7 +97,7 @@ func pokemon_checkup() -> void:
 			print(dmg_timer)
 	
 	Globals.fundies.stack_manager.get_stacks(is_home()).\
-		move_cards(tm_cards, Consts.STACKS.PLAY, Consts.STACKS.DISCARD)
+		move_cards(tm_cards, Consts.STACKS.PLAY, Consts.STACKS.DISCARD, false, true)
 	for tm in tm_cards:
 		remove_tm(tm)
 	

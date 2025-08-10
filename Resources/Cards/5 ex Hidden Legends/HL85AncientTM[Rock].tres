@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://day2wur81xum5"]
+
+[ext_resource type="Texture2D" uid="uid://c5qq2y8rc8j0l" path="res://Art/Cards/5 ex Hidden Legends/85.jpg" id="1_l401i"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_e8xo1"]
+[ext_resource type="Resource" uid="uid://uv2bigiutmvr" path="res://Resources/Components/Effects/Asks/Class&Owner/AtkEvoNoEXorOwner.tres" id="3_wq45l"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="4_giyot"]
+[ext_resource type="Resource" uid="uid://c35ffmruy2a6c" path="res://Resources/Components/Pokemon/Attacks/AttackData/PullDown.tres" id="5_glgc3"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="6_voc7b"]
+[ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="7_0imlx"]
+
+[sub_resource type="Resource" id="Resource_s63jm"]
+script = ExtResource("6_voc7b")
+name = "Stone Generator"
+description = "If your opponent has any Evolved Pokémon in play, remove the highest Stage Evolution card from each of them and put those cards back into his or her hand."
+attack_cost = ExtResource("4_giyot")
+attack_data = ExtResource("5_glgc3")
+
+[sub_resource type="Resource" id="Resource_ypso2"]
+script = ExtResource("7_0imlx")
+considered = "TM"
+specific_requirement = ""
+description = "Attach this card to 1 of your Evolved Pokémon (excluding Pokémon-ex and Pokémon that has an owner in its name) in play. That Pokémon may use this card's attack instead of its own. At the end of your turn, discard [name]."
+asks = ExtResource("3_wq45l")
+provided_attack = SubResource("Resource_s63jm")
+
+[resource]
+script = ExtResource("2_e8xo1")
+name = "Ancient Technical Machine [Rock]"
+image = ExtResource("1_l401i")
+illustrator = "Mitsuhiro Arita"
+number = 85
+rarity = 1
+expansion = 4
+categories = 2
+trainer_properties = SubResource("Resource_ypso2")
+fossil = false

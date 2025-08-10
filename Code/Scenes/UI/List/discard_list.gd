@@ -18,6 +18,8 @@ var action_txt: String = "Discard"
 var list: Dictionary[Base_Card, bool]
 var discarding: Array[Base_Card] = []
 var home: bool
+var top_deck: bool
+var shuffle: bool
 var pokeslot_origin: PokeSlot
 
 signal finished
@@ -72,8 +74,9 @@ func update():
 		button.disabled = (not list[button.card] or button.disabled) and not button.selected
 
 func _on_discard_pressed() -> void:
+	var top: bool = top_deck or energy_discard and destination == Consts.STACKS.DISCARD
 	Globals.fundies.stack_manager.get_stacks(home).\
-	 move_cards(discarding, stack, destination)
+	 move_cards(discarding, stack, destination, shuffle, top)
 	
 	if pokeslot_origin: pokeslot_origin.remove_cards(discarding)
 	

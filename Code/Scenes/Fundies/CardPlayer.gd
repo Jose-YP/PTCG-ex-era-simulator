@@ -308,6 +308,7 @@ func before_direct_attack(attacker: PokeSlot, with: Attack):
 	print("Now before ", with.name, " from ", attacker.get_card_name())
 	
 	with.print_attack()
+	
 	if await attacker.confusion_check():
 		return
 	
@@ -324,23 +325,23 @@ func before_direct_attack(attacker: PokeSlot, with: Attack):
 			func(slot: PokeSlot): return slot.is_in_slot(Consts.SIDES.DEFENDING, Consts.SLOTS.ACTIVE)\
 			and slot.is_filled(), true)
 			
-			pass_prompt = await check_prompt_reliant(attack_data.prompt)
-			
 			if hold_candidate == null:
 				return
 			else:
 				Globals.fundies.record_attack_src_trg(attacker.is_home(), [attacker], [hold_candidate])
+				pass_prompt = await check_prompt_reliant(attack_data.prompt)
+				
 				if attack_data.before_damage:
 					await attack_effect(attacker, with.attack_data, pass_prompt, replace_num)
 				if pass_prompt != false:
 					await direct_attack(attacker, with, [hold_candidate])
 		else:
 			var def_active: Array[PokeSlot] = Globals.full_ui.get_poke_slots(Consts.SIDES.DEFENDING, Consts.SLOTS.ACTIVE)
-			pass_prompt = await check_prompt_reliant(attack_data.prompt)
 			Globals.fundies.record_attack_src_trg(attacker.is_home(), [attacker], def_active)
+			pass_prompt = await check_prompt_reliant(attack_data.prompt)
 			
 			if attack_data.before_damage:
-					await attack_effect(attacker, with.attack_data, pass_prompt, replace_num)
+				await attack_effect(attacker, with.attack_data, pass_prompt, replace_num)
 			if pass_prompt != false:
 				await direct_attack(attacker, with, def_active)
 	
