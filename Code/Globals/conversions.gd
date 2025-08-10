@@ -113,10 +113,10 @@ func get_card_flags(card: Base_Card) -> int:
 	
 	if card.categories & 1:
 		
-		if card.pokemon_properties.evo_stage == "Basic":
-			card_flags += Convert.get_allowed_flags("Basic")
-		elif card.fossil: 
+		if card.fossil: 
 			card_flags += Convert.get_allowed_flags("Fossil")
+		elif card.pokemon_properties.evo_stage == "Basic":
+			card_flags += Convert.get_allowed_flags("Basic")
 		else:
 			card_flags += Convert.get_allowed_flags("Evolution")
 		

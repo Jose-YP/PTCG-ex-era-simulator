@@ -124,10 +124,10 @@ func play_energy(card: Base_Card, placement: Placement = null):
 			printt(result, slot.get_card_name())
 			return result
 	
-	start_add_choice(str("Attatch ", card.name, " to which Pokemon"), card, 
+	await start_add_choice(str("Attatch ", card.name, " to which Pokemon"), card, 
 	 Convert.get_allowed_flags("Energy"), energy_bool, placement == null)
 	
-	await chosen
+	#await chosen
 	if hold_candidate == null:
 		return
 	

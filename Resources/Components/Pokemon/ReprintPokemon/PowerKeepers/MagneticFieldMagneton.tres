@@ -107,10 +107,9 @@ metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
 [sub_resource type="Resource" id="Resource_e2txt"]
 script = ExtResource("13_hnw4t")
-send = 0
-from = 0
+send = "Stack"
 send_to = 0
-bottom_of_stack = false
+top_stack = true
 shuffle = false
 card_ammount = 0
 reveal = false
@@ -120,7 +119,6 @@ view = true
 portion = -1
 from_stack = 0
 slot_choose_num = -1
-pokemon_disrupt = 0
 metadata/_custom_type_script = "uid://8sh5p3leflla"
 
 [sub_resource type="Resource" id="Resource_866pr"]

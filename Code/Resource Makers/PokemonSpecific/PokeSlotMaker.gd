@@ -769,6 +769,7 @@ func confusion_check() -> bool:
 #region MANAGING DISPLAYS
 func slot_into(destination: UI_Slot):
 	ui_slot = destination
+	debug_check()
 	refresh()
 
 func refresh_current_card():
@@ -828,3 +829,8 @@ func clear_dispay():
 
 #endregion
 #--------------------------------------
+
+func debug_check():
+	for en in energy_cards:
+		print(en.get_formal_name())
+		print(en.energy_properties.get_current_provide())

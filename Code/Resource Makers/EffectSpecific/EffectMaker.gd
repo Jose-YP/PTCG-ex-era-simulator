@@ -3,7 +3,8 @@ extends Resource
 class_name EffectCall
 
 enum effect_types{CONDITION, BUFF, DISRUPT, DISABLE, 
-ENMOV, DMGMANIP, SEARCH, SWAP, DRAW, ALLEVIATE, MIMIC, OTHER}
+ENMOV, DMGMANIP, SEARCH, SWAP, DRAW, ALLEVIATE, MIMIC, 
+OVERRIDE, CHEATPLAY, TYPECHANGE, RULECHANGE, OTHER}
 
 @export var either_or: bool = false
 ##Determine the order in which the effects are called.
@@ -32,13 +33,17 @@ ENMOV, DMGMANIP, SEARCH, SWAP, DRAW, ALLEVIATE, MIMIC, OTHER}
 @export var swap: PokeSwap
 ##Mimic other pokemon's moves
 @export var mimic: Mimic
-##What rules should be changed?
+##What rules should be changed on a slot?
 @export var override: OverRide
+##What rules should be changed across the whole game
+@export var rule_change: RuleChange
+##What cards can you play now?
+@export var cheat_play: CheatPlay
+##How should types change?
+@export var type_change: TypeChange
 
 @export_group("Other")
 @export var prompt_extra: PromptAsk
-##SlotAsk for any extra effects
-@export var ask_extra: SlotAsk
 ##Do extra effect for extra ask
 @export var extra_effect: EffectCall
 
@@ -80,6 +85,7 @@ func handle_component(comp, reversable: bool = false):
 	if (comp == extra_effect and prompt_extra.check_prompt())\
 	 or comp != extra_effect:
 		await comp.play_effect(reversable, replace_num)
+		print("FINISHED")
 
 func just_reversed():
 	went_back = true

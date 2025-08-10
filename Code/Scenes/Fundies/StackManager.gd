@@ -14,7 +14,7 @@ var mulligan_array: Array[Array]
 #region INITALIZATION
 func _ready():
 	SignalBus.connect("show_list", spawn_list)
-	SignalBus.connect("swap_card_location", placement_handling)
+	SignalBus.connect("make_placement", placement_handling)
 	SignalBus.connect("show_energy_attatched", spawn_energy_list)
 	SignalBus.connect("reorder_cards", reorder_handling)
 

@@ -7,7 +7,7 @@ extends Node
 #region STACK SIGNALS
 signal show_list(home: bool, list: Consts.STACKS, act: Consts.STACK_ACT)
 signal show_energy_attatched(origin: PokeSlot)
-signal swap_card_location(card: Array[Base_Card], placement: Placement, from: Consts.STACKS)
+signal make_placement(card: Array[Base_Card], placement: Placement, from: Consts.STACKS)
 signal reorder_cards(card: Array[Base_Card], placement: Placement,)
 signal start_tutor(search: Search)
 signal tutor_card(card: Base_Card)

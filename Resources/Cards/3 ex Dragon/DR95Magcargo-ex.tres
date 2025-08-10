@@ -17,21 +17,19 @@
 
 [sub_resource type="Resource" id="Resource_jlj7s"]
 script = ExtResource("5_26fy7")
-send = 0
-from = 0
+send = "Stack"
 send_to = 2
-bottom_of_stack = false
+top_stack = true
 shuffle = false
 card_ammount = 1
 reveal = false
 who_chooses = 4
 side = 1
 card_options = ExtResource("4_wjv0n")
-view = true
-portion = -1
+view = false
+portion = 1
 from_stack = 1
 slot_choose_num = -1
-pokemon_disrupt = 0
 metadata/_custom_type_script = "uid://8sh5p3leflla"
 
 [sub_resource type="Resource" id="Resource_c0mwq"]

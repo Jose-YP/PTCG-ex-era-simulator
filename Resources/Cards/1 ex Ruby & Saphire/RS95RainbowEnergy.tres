@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_sn5e8"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_kg6gm"]
 [ext_resource type="Resource" uid="uid://vk18jkchsq3v" path="res://Resources/Components/EnData/Colorless.tres" id="3_mfk52"]
-[ext_resource type="Resource" uid="uid://c7itelq8jtjc2" path="res://Resources/Components/EnData/Rainbow.tres" id="5_qxfu1"]
+[ext_resource type="Resource" uid="uid://cv8xofc4ofaom" path="res://Resources/Components/EnData/NeoRainbow.tres" id="6_qxfu1"]
 
 [sub_resource type="Resource" id="Resource_4accq"]
 script = ExtResource("1_w8o02")
@@ -38,7 +38,7 @@ has_fail_prevent = false
 attatch_effect = SubResource("Resource_mysds")
 turns = -1
 fail_provide = ExtResource("3_mfk52")
-success_provide = ExtResource("5_qxfu1")
+success_provide = ExtResource("6_qxfu1")
 
 [resource]
 script = ExtResource("3_kg6gm")

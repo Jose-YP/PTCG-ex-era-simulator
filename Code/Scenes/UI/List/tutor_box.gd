@@ -134,7 +134,7 @@ func _on_confirm_pressed() -> void:
 	print("Moving ", all_tutored, " from ", Convert.stack_into_string(search.and_then.stack),
 	 " to ", Convert.stack_into_string(search.where))
 	#Sends signal over to StackManager.placement_handling()
-	SignalBus.swap_card_location.emit(all_tutored, search.and_then, search.where, rest)
+	SignalBus.make_placement.emit(all_tutored, search.and_then, search.where, rest)
 	disapear.emit()
 
 #endregion

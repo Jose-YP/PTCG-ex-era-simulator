@@ -5,10 +5,9 @@
 
 [resource]
 script = ExtResource("1_r0v22")
-send = 0
-from = 0
+send = "Stack"
 send_to = 2
-bottom_of_stack = false
+top_stack = true
 shuffle = false
 card_ammount = 1
 reveal = false
@@ -19,5 +18,4 @@ view = true
 portion = -1
 from_stack = 0
 slot_choose_num = -1
-pokemon_disrupt = 0
 metadata/_custom_type_script = "uid://8sh5p3leflla"

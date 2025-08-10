@@ -64,10 +64,9 @@ metadata/_custom_type_script = "uid://b85jmc7067bjc"
 
 [sub_resource type="Resource" id="Resource_1yysy"]
 script = ExtResource("12_4h72t")
-send = 1
-from = 1
+send = "Stack"
 send_to = 1
-bottom_of_stack = false
+top_stack = true
 shuffle = true
 card_ammount = 0
 reveal = false
@@ -78,7 +77,6 @@ portion = -1
 from_stack = 0
 slot_choose_num = -1
 in_play_options = ExtResource("11_gu5sk")
-pokemon_disrupt = 4
 metadata/_custom_type_script = "uid://8sh5p3leflla"
 
 [sub_resource type="Resource" id="Resource_gp64k"]

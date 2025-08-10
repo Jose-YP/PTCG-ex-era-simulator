@@ -45,9 +45,10 @@ func play_effect(reversable: bool = false, replace_num: int = -1) -> void:
 		await SignalBus.reorder_cards
 	else:
 		stack_mana.tutor_instantiate_list(search_for, self)
-		await SignalBus.swap_card_location
+		await SignalBus.make_placement
 	
+	#await and_then.finished
 	Globals.full_ui.get_home_side(stack_mana.operate_home).non_mon.sync_stacks()
-	await and_then.finished
+	#stack_mana.placement_handling()
 	
 	finished.emit()

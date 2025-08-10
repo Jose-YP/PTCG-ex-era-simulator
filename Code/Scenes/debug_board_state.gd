@@ -44,13 +44,14 @@ func set_up(home: bool):
 	#Set up pre defined slots
 	for slot in temp_side.slots:
 		var new_arr: Array[Base_Card] = []
-		var new_slot: PokeSlot = slot.duplicate(true)
+		var new_slot: PokeSlot = slot.duplicate()
 		
 		#I don't know if this works, the duplicated resources don't seem to last
 		for en in new_slot.energy_cards:
 			var duplicated: Base_Card = en.duplicate()
 			new_slot.register_energy_timer(duplicated)
 			new_arr.append(duplicated)
+			
 		new_slot.energy_cards = new_arr
 		new_slot.set_max_hp()
 		ui.insert_slot(new_slot, temp_side.slots[slot])

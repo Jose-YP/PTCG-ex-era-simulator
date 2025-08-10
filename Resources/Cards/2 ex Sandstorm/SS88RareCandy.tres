@@ -10,7 +10,6 @@
 script = ExtResource("3_2rx5n")
 rare_candy = false
 can_evolve_into = ""
-new_type = 0
 metadata/_custom_type_script = "uid://cg3m7vpqxf2t6"
 
 [sub_resource type="Resource" id="Resource_ntq2n"]

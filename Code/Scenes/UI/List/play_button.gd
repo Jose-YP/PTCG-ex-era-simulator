@@ -95,8 +95,15 @@ func show_options() -> Node:
 
 func get_option_position(option: ItemOptions) -> Vector2:
 	var set_pos: Vector2 = Vector2.ZERO
+	var adjustment: float
 	
-	set_pos.y = %LeftSpawn.global_position.y - parent.par.global_position.y
+	if parent is PlayingList:
+		adjustment = parent.par.global_position.y
+	#I should adjust tutoring to remove the option popup
+	else:
+		adjustment = parent.global_position.y
+	
+	set_pos.y = %LeftSpawn.global_position.y - adjustment
 	if %RightSpawn.global_position.x > float(get_window().size.x) / 2:
 		set_pos.x = %LeftSpawn.position.x - option_offset.x
 	else:

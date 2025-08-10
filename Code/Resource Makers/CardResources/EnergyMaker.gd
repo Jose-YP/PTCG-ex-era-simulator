@@ -65,6 +65,7 @@ func has_effect(effect_type: Array[String]):
 	return false
 
 func get_current_provide() -> EnData:
+	print(fail_provide, success_provide)
 	if (not prompt or not has_fail_provide)\
 	 or fail_provide == success_provide or attatched_to == null:
 		return success_provide

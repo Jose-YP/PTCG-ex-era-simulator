@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Identifier" load_steps=2 format=3 uid="uid://d2vm6chtedrum"]
+[gd_resource type="Resource" script_class="Identifier" load_steps=3 format=3 uid="uid://d2vm6chtedrum"]
 
+[ext_resource type="Resource" uid="uid://cv8xofc4ofaom" path="res://Resources/Components/EnData/NeoRainbow.tres" id="1_6kl6t"]
 [ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="1_om8ao"]
 
 [resource]
@@ -8,8 +9,11 @@ description = "Basic Energy"
 must_be_different = null
 broad_class = 4
 exactly = null
-contains = null
+name_chec = 0
+name_array = Array[String]([])
+comparison_type = 1
 type = 511
+HP = -10
 evolves_from = null
 rare_candy = null
 inclusive_class = null
@@ -18,3 +22,4 @@ owner = null
 stage = null
 trainer_classes = null
 energy_class = 1
+energy_provides = ExtResource("1_6kl6t")

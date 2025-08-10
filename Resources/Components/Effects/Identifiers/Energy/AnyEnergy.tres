@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="Identifier" load_steps=2 format=3 uid="uid://cd880a7x21jgg"]
+[gd_resource type="Resource" script_class="Identifier" load_steps=3 format=3 uid="uid://cd880a7x21jgg"]
 
 [ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="1_4xpar"]
+[ext_resource type="Resource" uid="uid://c7itelq8jtjc2" path="res://Resources/Components/EnData/Rainbow.tres" id="1_7gqec"]
 
 [resource]
 script = ExtResource("1_4xpar")
@@ -8,8 +9,11 @@ description = null
 must_be_different = null
 broad_class = 4
 exactly = null
-contains = null
+name_chec = 0
+name_array = Array[String]([])
+comparison_type = 1
 type = 511
+HP = -10
 evolves_from = null
 rare_candy = null
 inclusive_class = null
@@ -18,3 +22,4 @@ owner = null
 stage = null
 trainer_classes = null
 energy_class = null
+energy_provides = ExtResource("1_7gqec")
