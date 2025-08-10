@@ -6,10 +6,9 @@
 
 [resource]
 script = ExtResource("1_olnyr")
-send = 1
-from = 1
+send = "Evolution"
 send_to = 0
-bottom_of_stack = false
+top_stack = true
 shuffle = false
 card_ammount = 1
 reveal = false
@@ -21,5 +20,4 @@ portion = -1
 from_stack = 0
 slot_choose_num = -1
 in_play_options = ExtResource("1_ddti0")
-pokemon_disrupt = 4
 metadata/_custom_type_script = "uid://8sh5p3leflla"

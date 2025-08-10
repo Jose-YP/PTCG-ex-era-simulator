@@ -1,36 +1,36 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://b0lfj4blf1nv4"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=11 format=3 uid="uid://b0lfj4blf1nv4"]
 
 [ext_resource type="Texture2D" uid="uid://bt3x0ljk6c3u3" path="res://Art/Cards/3 ex Dragon/87.jpg" id="1_261i5"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_pfo7m"]
+[ext_resource type="Resource" uid="uid://dm2i7spst0qpp" path="res://Resources/Components/Effects/Identifiers/AnyCard.tres" id="3_m4br1"]
 [ext_resource type="Script" uid="uid://8sh5p3leflla" path="res://Code/Resource Makers/EffectSpecific/CardDisruptMaker.gd" id="4_m4br1"]
-[ext_resource type="Resource" uid="uid://b65ksn0e0th78" path="res://Resources/Components/Effects/Asks/Class&Owner/AtkNonex.tres" id="4_s3hhj"]
+[ext_resource type="Resource" uid="uid://dqj6gq7pt3dbk" path="res://Resources/Components/Effects/Asks/General/FromSource.tres" id="4_s3hhj"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="5_k5rc7"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="6_xcsvu"]
 
-[sub_resource type="Resource" id="Resource_pxmwx"]
+[sub_resource type="Resource" id="Resource_m4br1"]
 script = ExtResource("4_m4br1")
-send = 0
-from = 1
+send = "Slot"
 send_to = 0
-bottom_of_stack = false
+top_stack = true
 shuffle = false
 card_ammount = -1
 reveal = false
 who_chooses = 4
 side = 1
+card_options = ExtResource("3_m4br1")
 view = true
 portion = -1
 from_stack = 0
 slot_choose_num = 1
 in_play_options = ExtResource("4_s3hhj")
-pokemon_disrupt = 4
 metadata/_custom_type_script = "uid://8sh5p3leflla"
 
 [sub_resource type="Resource" id="Resource_tccqi"]
 script = ExtResource("5_k5rc7")
 either_or = false
 order = Array[int]([])
-card_disrupt = SubResource("Resource_pxmwx")
+card_disrupt = SubResource("Resource_m4br1")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_76sah"]

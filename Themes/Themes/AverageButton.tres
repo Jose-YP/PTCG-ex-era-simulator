@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=31 format=3 uid="uid://bfw6ylcttychc"]
+[gd_resource type="Theme" load_steps=32 format=3 uid="uid://bfw6ylcttychc"]
 
 [ext_resource type="StyleBox" uid="uid://duhmik1loeema" path="res://Themes/StyleBoxes/GBABox.tres" id="1_j8r7k"]
 [ext_resource type="StyleBox" uid="uid://bvesf3hjv2bsl" path="res://Themes/StyleBoxes/GBADragBox.tres" id="2_0j40x"]
@@ -242,6 +242,11 @@ corner_radius_top_right = 2
 corner_radius_bottom_right = 1
 corner_radius_bottom_left = 2
 
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_dou84"]
+color = Color(0.0923334, 0.035, 0.25, 1)
+thickness = 3
+vertical = true
+
 [resource]
 resource_name = "EnButton"
 BodyButton/base_type = &"Button"
@@ -284,3 +289,4 @@ TrainerButton/styles/disabled = SubResource("StyleBoxFlat_roxb8")
 TrainerButton/styles/hover = SubResource("StyleBoxFlat_hfh41")
 TrainerButton/styles/normal = SubResource("StyleBoxFlat_6k3bf")
 TrainerButton/styles/pressed = SubResource("StyleBoxFlat_liong")
+VSeparator/styles/separator = SubResource("StyleBoxLine_dou84")

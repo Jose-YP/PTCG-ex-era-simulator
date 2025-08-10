@@ -1,13 +1,17 @@
-@icon("res://Art/Rarities/31px-Rarity_Uncommon.png")
+@icon("res://Art/ExpansionIcons/40px-SetSymbolSandstorm.png")
 extends Control
 
 #--------------------------------------
 #region VARIABLES
 @export var card: Base_Card
+@export var checking: bool
 
+@onready var pokeData: Pokemon = card.pokemon_properties
 @onready var trainerData: Trainer = card.trainer_properties
 @onready var display_name: RichTextLabel = %Name
 @onready var extra_identifier: RichTextLabel = %Extra
+@onready var max_hp = %HP
+@onready var default_type = %DefaultType
 @onready var art: TextureRect = %Art
 @onready var class_text: RichTextLabel = %ClassText
 @onready var effect_text: RichTextLabel = %Effect
@@ -17,13 +21,22 @@ extends Control
 @onready var set_type: TabContainer = %Set
 
 @onready var close_button: Close_Button = %CloseButton
+
+var pokeslot: PokeSlot
+var attack_scroll: ScrollContainer
 #endregion
 #--------------------------------------
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if pokeslot: 
+		card = pokeslot.current_card
+		SignalBus.force_disapear.connect(force_disapear)
+	
 	make_text(display_name, card.name)
-	make_text(extra_identifier, trainerData.considered)
+	make_text(extra_identifier, "Fossil")
+	make_text(max_hp, str("HP: ",pokeData.HP))
+	default_type.display_type(Convert.flags_to_type_array(pokeData.type)[0])
 	
 	art.texture = card.image
 	
@@ -38,15 +51,32 @@ func _ready():
 	final_class_txt += Convert.reformat(trainerData.specific_requirement, card.name)
 	make_text(class_text, final_class_txt)
 	
-	if trainerData.provided_attack:
-		%AttackItem.attack = trainerData.provided_attack
-		%AttackItem.attackButton.theme_type_variation = "TrainerButton"
-		%AttackItem.set_attack()
-		%AttackItem.show()
+	var final_text: String = Convert.reformat(trainerData.description, card.name)
+	make_text(effect_text, final_text)
+	
+	#--------------------------------------
+	#region ATTACK NODE
+	var list = Consts.attack_list_comp.instantiate()
+	if pokeslot:
+		list.poke_slot = pokeslot
+	list.current_card = card
+	list.check = checking
+	%Attacks.add_child(list)
+	list.readied.connect(edit_attack_size)
+	list.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	attack_scroll = list
+	
+	#endregion
+	#--------------------------------------
 	
 	make_text(number, str(card.number, "/", Consts.expansion_counts[card.expansion]))
 	rarity.current_tab = card.rarity
 	set_type.current_tab = card.expansion
+	
+	if checking: %Movable.show()
+
+func edit_attack_size(final_size: float) -> void:
+	%Attacks.get_parent().custom_minimum_size.y = final_size
 
 func make_text(node: RichTextLabel, text: String):
 	node.clear()
@@ -54,3 +84,6 @@ func make_text(node: RichTextLabel, text: String):
 
 func _on_tree_exiting() -> void:
 	Globals.checking = false
+
+func force_disapear():
+	Globals.full_ui.remove_top_ui()

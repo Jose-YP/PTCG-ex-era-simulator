@@ -13,7 +13,6 @@ extends Control
 @onready var weakness_nodes: Array[Node] = %Weaknesses.get_children()
 @onready var resistance_nodes: Array[Node] = %Resistances.get_children()
 @onready var ruleboxes: Array[Node] = %Ruleboxes.get_children()
-
 @onready var display_name: RichTextLabel = %Name
 @onready var extra_identifier: RichTextLabel = %Extra
 @onready var max_hp: RichTextLabel = %HP

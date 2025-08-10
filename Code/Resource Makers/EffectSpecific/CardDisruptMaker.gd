@@ -2,11 +2,11 @@
 extends Resource
 class_name CardDisrupt
 
-##[enum Card] sends card and anything else attatched to it[br]
+##[enum Stack] sends cards in a stack that meet [member card_options] requirements
+##[enum Slot] sends card and anything else attatched to it[br]
 ##[enum Evolution] just sends the evolution card back[br]
 ##[enum Attatched] sends any cards attatched to a slot but not the card itself
-@export_enum("Card", "Evolution", "Attatched") var send: int = 0
-@export_enum("Stack", "Slot") var from: int = 0
+@export_enum("Stack", "Slot", "Evolution", "Attatched") var send: String = "Stack"
 @export var send_to: Consts.STACKS = Consts.STACKS.DISCARD
 ##Should the card be sent to the top of it's stack, usually for discard that's yes
 @export var top_stack: bool = true
@@ -28,7 +28,6 @@ class_name CardDisrupt
 ##If it's -1, choose every possible choice acoording to [member in_play_options] 
 @export_range(-1,6,1) var slot_choose_num: int = -1
 @export var in_play_options: SlotAsk
-@export var pokemon_disrupt: Consts.SLOTS
 
 signal finished
 
@@ -51,7 +50,7 @@ func play_effect(reversable: bool = false, replace_num: int = -1) -> void:
 		list[Globals.fundies.card_player.hold_playing] = false
 	
 	#Discard from a stack
-	if from == 0:
+	if send == "Stack":
 		#Choose
 		if view:
 			var disc_box: DiscardList = Consts.discard_box.instantiate()

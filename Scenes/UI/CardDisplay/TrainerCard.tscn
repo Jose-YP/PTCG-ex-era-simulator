@@ -100,6 +100,9 @@ size_flags_vertical = 0
 text = "Team Magma's Mightyena"
 fit_content = true
 
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/PanelContainer/VBoxContainer/MainInfromation/MainInfromation"]
+layout_mode = 2
+
 [node name="Extra" type="RichTextLabel" parent="VBoxContainer/PanelContainer/VBoxContainer/MainInfromation/MainInfromation"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(120, 0)
@@ -139,6 +142,7 @@ layout_mode = 2
 [node name="ClassText" type="RichTextLabel" parent="VBoxContainer/PanelContainer/VBoxContainer/Description/EffectBox/EffectV"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_font_sizes/italics_font_size = 10
 theme_override_font_sizes/normal_font_size = 10
 bbcode_enabled = true
 text = "Illustrator:"

@@ -18,8 +18,7 @@ var internal_data = {"which" : "Slot",
  "slot_vars" : "current_card", "stack_vars" : "None",
  "coin_flip" : load("res://Resources/Components/CoinFlip/FlipOnce.tres") as CoinFlip,
  "ask" : load("res://Resources/Components/Effects/Asks/General/AnyMon.tres") as SlotAsk,
- "identifier": load("res://Resources/Components/Effects/Identifiers/AnyCard.tres") as Identifier,
- "stack_portion" : -1, "en_count_methods" : "Total", "en_categories" : "Any",
+ "identifier": null, "stack_portion" : -1, "en_count_methods" : "Total", "en_categories" : "Any",
  "en_counting" : load("res://Resources/Components/EnData/Rainbow.tres") as EnData 
  ,"input_title" : "Input Number" ,"cap" : -1}
 #endregion

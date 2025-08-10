@@ -6,10 +6,9 @@
 
 [resource]
 script = ExtResource("3_p20t6")
-send = 0
-from = 1
+send = "Attatched"
 send_to = 2
-bottom_of_stack = false
+top_stack = true
 shuffle = false
 card_ammount = -1
 reveal = false
@@ -21,5 +20,4 @@ portion = -1
 from_stack = 0
 slot_choose_num = -1
 in_play_options = ExtResource("2_f5q4h")
-pokemon_disrupt = 0
 metadata/_custom_type_script = "uid://8sh5p3leflla"

@@ -632,23 +632,33 @@ func remove_all() -> Array[Base_Card]:
 #Q. The effect text of "Plunder" says: "Before doing damage,
 #discard all Trainer cards attached to the Defending Pokémon." So what happens to Fossils ..."
 #A. Fossils are not "attached" to themselves, so they are not discarded by Plunder. (Feb 16, 2006 PUI Rules Team) 
-func card_disrupteed(identifier: Identifier, rule: int) -> Array[Base_Card]:
+#Q. If I have a Lileep evolved from a Root Fossil in play and my opponent uses ATM-Ice, what happens?
+#A. ATM-Ice does not remove fossil cards that have already evolved into actual Pokémon. (Apr 14, 2005 PUI Rules Team) 
+#Q. If I use the Ancient Technical Machine [Ice] and my opponent has Claw Fossil, Root Fossil, etc. in play are they discarded?
+#A. Yes, Fossil cards are to be treated as both Trainer Cards and as Pokémon while in play. (Apr 5, 2005 PUI Announcements; Apr 7, 2005 PUI Rules Team)
+func card_disrupteed(identifier: Identifier, rule: String) -> Array[Base_Card]:
 	var moving_cards: Array[Base_Card]
 	#CardDisrupt
-	#remove any cards that are considered
-	if rule == 0:
-		#If you can devolve remove all top evolutions untilidentifier stops it
-		for card in evolved_from:
-			if identifier.identifier_bool(card):
-				moving_cards.append(card)
-				energy_cards.erase(card)
+	#Card and Attatch both remove attatched cards
+	if rule != "Evolution":
+		#Only if card
+		if rule == "Slot":
+			#If you can devolve remove all top evolutions untilidentifier stops it
+			while can_devolve():
+				if identifier.identifier_bool(current_card):
+					moving_cards.append(current_card)
+					current_card = null if evolved_from.size() == 0 else evolved_from.pop_back()
+				else:
+					break
+			if not is_filled() or identifier.identifier_bool(current_card):
+				return remove_all() + moving_cards
 		
 		for card in energy_cards:
 			if identifier.identifier_bool(card):
 				moving_cards.append(card)
 				energy_cards.erase(card)
 		
-		if identifier.identifier_bool(tool_card):
+		if tool_card and identifier.identifier_bool(tool_card):
 			moving_cards.append(tool_card)
 			remove_tool()
 		

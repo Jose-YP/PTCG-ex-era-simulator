@@ -69,8 +69,7 @@ metadata/_custom_type_script = "uid://coojhwe6m20gd"
 
 [sub_resource type="Resource" id="Resource_utej3"]
 script = ExtResource("6_r3gwp")
-send = 0
-from = 1
+send = "Slot"
 send_to = 2
 top_stack = true
 shuffle = false
@@ -84,13 +83,12 @@ portion = -1
 from_stack = 0
 slot_choose_num = -1
 in_play_options = ExtResource("5_g1yuy")
-pokemon_disrupt = 0
 metadata/_custom_type_script = "uid://8sh5p3leflla"
 
 [sub_resource type="Resource" id="Resource_2svl2"]
 script = ExtResource("7_ys46e")
 either_or = false
-order = Array[int]([])
+order = Array[int]([2, 1])
 buff = SubResource("Resource_e7x82")
 card_disrupt = SubResource("Resource_utej3")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"

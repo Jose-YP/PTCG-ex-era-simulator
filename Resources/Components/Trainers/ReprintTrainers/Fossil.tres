@@ -5,6 +5,6 @@
 [resource]
 script = ExtResource("1_s68xk")
 considered = "Item"
-specific_requirement = "Play [name] as if it were a Basic Pokémon. While in play, [name] counts as a Colorless Pokémon (instead of a Trainer card). [name] has no attacks of its own, can't retreat, and can't be affected by any Special Conditions. If [name] is Knocked Out, it doesn't count as a Knocked Out Pokémon. (Discard it anyway.) At any time during your turn before your attack, you may discard [name] from play. "
+specific_requirement = "Play [name] as if it were a Basic Pokémon. While in play, [name] counts as a {Colorless} Pokémon (instead of a Trainer card). [name] has no attacks of its own, can't retreat, and can't be affected by any Special Conditions. If [name] is Knocked Out, it doesn't count as a Knocked Out Pokémon. (Discard it anyway.) At any time during your turn before your attack, you may discard [name] from play. "
 description = ""
 metadata/_custom_type_script = "uid://crx447i85kshy"
