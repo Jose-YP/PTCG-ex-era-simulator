@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://crecmsup0hxcr"]
+[gd_scene load_steps=47 format=3 uid="uid://crecmsup0hxcr"]
 
 [ext_resource type="Script" uid="uid://cvx5cmt78lek7" path="res://Code/Scenes/UI/Cards/Card.gd" id="1_ao8mj"]
 [ext_resource type="PackedScene" uid="uid://bs3ila6cpt8n1" path="res://Scenes/UI/UIComponents/types.tscn" id="2_em05s"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://dx7wnthhhm80w" path="res://Art/Rarities/30px-SetSymbolPromo.png" id="12_ggmab"]
 [ext_resource type="PackedScene" uid="uid://bw7jisy6l5ego" path="res://Scenes/UI/CardDisplay/use_as_energy.tscn" id="13_iodki"]
 [ext_resource type="Texture2D" uid="uid://ddc506ji0ciqq" path="res://Art/ExpansionIcons/40px-SetSymbolRuby_and_Sapphire.png" id="13_s6k81"]
+[ext_resource type="PackedScene" uid="uid://dutm4vrspqfgn" path="res://Scenes/UI/Lists/attack_scroll_box_copy.tscn" id="14_pr3s2"]
 [ext_resource type="Texture2D" uid="uid://db2fvownqtey" path="res://Art/ExpansionIcons/40px-SetSymbolSandstorm.png" id="14_ql1rd"]
 [ext_resource type="Texture2D" uid="uid://c2jvdeequ414n" path="res://Art/ExpansionIcons/40px-SetSymbolDragon.png" id="15_wtm2g"]
 [ext_resource type="Texture2D" uid="uid://bq2t54jnbrdxo" path="res://Art/ExpansionIcons/SetSymbolTeam_Magma_vs_Team_Aqua.png" id="16_b31gw"]
@@ -230,7 +231,10 @@ layout_mode = 2
 alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Attacks/Attacks"]
-visible = false
+layout_mode = 2
+
+[node name="AttackBox" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Attacks/Attacks/MarginContainer" instance=ExtResource("14_pr3s2")]
+unique_name_in_owner = true
 layout_mode = 2
 
 [node name="UseAsEnergy" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("13_iodki")]
@@ -675,3 +679,5 @@ metadata/_tab_index = 21
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/margin_bottom = 58
+
+[connection signal="readied" from="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Attacks/Attacks/MarginContainer/AttackBox" to="." method="edit_attack_size"]

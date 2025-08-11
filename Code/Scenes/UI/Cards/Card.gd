@@ -25,13 +25,12 @@ extends Control
 @onready var retreat_container: HBoxContainer = %RetreatContainer
 @onready var art: TextureRect = %Art
 @onready var use_as_energy: PanelContainer = %UseAsEnergy
-
+@onready var attack_scroll =  %AttackBox
 @onready var movable: Button = %Movable
 @onready var close_button: Close_Button = %CloseButton
 
 var old_pos: Vector2
 var attack_size: int
-var attack_scroll: ScrollContainer
 var on_card: bool = false
 
 #endregion
@@ -74,15 +73,12 @@ func _ready():
 	
 	#--------------------------------------
 	#region ATTACK NODE
-	var list = Consts.attack_list_comp.instantiate()
 	if poke_slot:
-		list.poke_slot = poke_slot
-	list.current_card = card
-	list.check = checking
-	%Attacks.add_child(list)
-	list.readied.connect(edit_attack_size)
-	list.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	attack_scroll = list
+		attack_scroll.poke_slot = poke_slot
+	attack_scroll.current_card = card
+	attack_scroll.check = checking
+	attack_scroll.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	attack_scroll.set_items()
 	
 	#endregion
 	#--------------------------------------

@@ -19,18 +19,17 @@ extends Control
 @onready var number: RichTextLabel = %Number
 @onready var rarity: TabContainer = %Rarity
 @onready var set_type: TabContainer = %Set
-
+@onready var attack_scroll: AttackScrollContainer = %AttackScrollBox
 @onready var close_button: Close_Button = %CloseButton
 
-var pokeslot: PokeSlot
-var attack_scroll: ScrollContainer
+var old_pos: Vector2
+var poke_slot: PokeSlot
 #endregion
 #--------------------------------------
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	if pokeslot: 
-		card = pokeslot.current_card
+	if poke_slot: 
+		card = poke_slot.current_card
 		SignalBus.force_disapear.connect(force_disapear)
 	
 	make_text(display_name, card.name)
@@ -56,15 +55,12 @@ func _ready():
 	
 	#--------------------------------------
 	#region ATTACK NODE
-	var list = Consts.attack_list_comp.instantiate()
-	if pokeslot:
-		list.poke_slot = pokeslot
-	list.current_card = card
-	list.check = checking
-	%Attacks.add_child(list)
-	list.readied.connect(edit_attack_size)
-	list.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	attack_scroll = list
+	if poke_slot:
+		attack_scroll.poke_slot = poke_slot
+	attack_scroll.current_card = card
+	attack_scroll.check = checking
+	attack_scroll.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	attack_scroll.set_items()
 	
 	#endregion
 	#--------------------------------------

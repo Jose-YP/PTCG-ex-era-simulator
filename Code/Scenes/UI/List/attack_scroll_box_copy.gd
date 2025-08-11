@@ -1,5 +1,6 @@
 @icon("res://Art/Energy/48px-Lightning-attack.png")
 extends ScrollContainer
+class_name AttackScrollContainer
 
 @export var check: bool = true
 @export var attackItem: PackedScene
@@ -16,15 +17,6 @@ var resized_container: bool = false
 var items: Array[Node] = []
 var display_text: String = ""
 var final_size: int = 0
-var attacks: Array[Attack] = []
-
-func _ready() -> void:
-	#So it can be sued on a poke slot or not
-	attacks = (poke_slot.get_pokedata().attacks if poke_slot 
-	else current_card.pokemon_properties.attacks)
-	
-	set_items()
-	size_default()
 
 #Once every item is readied, wait before seeking final size
 func _draw():
@@ -44,6 +36,12 @@ func reset_items() -> void:
 		item.queue_free()
 
 func set_items() -> void:
+	var attacks: Array[Attack]
+	if poke_slot:
+		attacks = poke_slot.get_pokedata().attacks
+	else:
+		attacks = current_card.pokemon_properties.attacks
+	
 	#Get PokeBody
 	if poke_slot:
 		set_ability(poke_slot.get_pokedata().pokebody)

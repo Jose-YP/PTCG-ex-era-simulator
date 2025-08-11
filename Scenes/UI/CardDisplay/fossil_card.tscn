@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://cuk0xlukc37h7"]
+[gd_scene load_steps=42 format=3 uid="uid://cuk0xlukc37h7"]
 
 [ext_resource type="Script" uid="uid://ce04lkinsono8" path="res://Code/Scenes/UI/Cards/fossil_card.gd" id="1_0a3ji"]
 [ext_resource type="Resource" uid="uid://uaq7je501sbg" path="res://Resources/Cards/2 ex Sandstorm/SS90ClawFossil.tres" id="2_2hmg5"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bs3ila6cpt8n1" path="res://Scenes/UI/UIComponents/types.tscn" id="7_0a3ji"]
 [ext_resource type="Texture2D" uid="uid://b4uymubvo04qp" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/37.jpg" id="7_lqw0i"]
 [ext_resource type="Texture2D" uid="uid://ciyynt0iw46k5" path="res://Art/Rarities/31px-Rarity_Common.png" id="9_478ut"]
+[ext_resource type="PackedScene" uid="uid://dutm4vrspqfgn" path="res://Scenes/UI/Lists/attack_scroll_box_copy.tscn" id="10_2hmg5"]
 [ext_resource type="Texture2D" uid="uid://blfwsqqtrqe8v" path="res://Art/Rarities/31px-Rarity_Uncommon.png" id="10_flt4n"]
 [ext_resource type="Texture2D" uid="uid://bir0keyl58pst" path="res://Art/Rarities/31px-Rarity_Rare.png" id="11_wn7x8"]
 [ext_resource type="Texture2D" uid="uid://be2sag665selj" path="res://Art/Rarities/Rarity_Rare_Holo.png" id="12_gajpu"]
@@ -195,7 +196,10 @@ layout_mode = 2
 alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PanelContainer/VBoxContainer/Attacks/Attacks"]
-visible = false
+layout_mode = 2
+
+[node name="AttackScrollBox" parent="VBoxContainer/PanelContainer/VBoxContainer/Attacks/Attacks/MarginContainer" instance=ExtResource("10_2hmg5")]
+unique_name_in_owner = true
 layout_mode = 2
 
 [node name="Other" type="MarginContainer" parent="VBoxContainer/PanelContainer/VBoxContainer"]
@@ -543,3 +547,4 @@ stretch_mode = 4
 metadata/_tab_index = 21
 
 [connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
+[connection signal="readied" from="VBoxContainer/PanelContainer/VBoxContainer/Attacks/Attacks/MarginContainer/AttackScrollBox" to="." method="edit_attack_size"]

@@ -20,10 +20,13 @@ func show_card(card: Base_Card, parent: Node):
 	var card_display: Node
 	match considered:
 		"Pokemon":
-			card_display = load("res://Scenes/UI/CardDisplay/PokemonCard.tscn").instantiate()
+			card_display = Consts.poke_card.instantiate()
 			card_display.checking = true
 		"Trainer":
-			card_display = Consts.trainer_card.instantiate()
+			if card.fossil:
+				card_display = Consts.fossil_card.instantiate()
+			else:
+				card_display = Consts.trainer_card.instantiate()
 		"Energy":
 			card_display = Consts.energy_card.instantiate()
 	
@@ -32,7 +35,11 @@ func show_card(card: Base_Card, parent: Node):
 func show_slot_card(slot: PokeSlot):
 	if checked_card:
 		remove_card()
-	var card_display = load("res://Scenes/UI/CardDisplay/PokemonCard.tscn").instantiate()
+	var card_display
+	if slot.current_card.fossil:
+		card_display = Consts.fossil_card.instantiate()
+	else:
+		card_display = Consts.poke_card.instantiate()
 	card_display.checking = true
 	card_display.old_pos = slot.ui_slot.global_position
 	card_display.poke_slot = slot
