@@ -773,7 +773,7 @@ func confusion_check() -> bool:
 #region MANAGING DISPLAYS
 func slot_into(destination: UI_Slot):
 	ui_slot = destination
-	debug_check()
+	#debug_check()
 	refresh()
 
 func refresh_current_card():
@@ -821,12 +821,16 @@ func refresh() -> void:
 			ui_slot.tool.texture = tool_card.image
 		else: ui_slot.tool.hide()
 		
-		check_power_body()
 		ui_slot.check_ability_activation()
 		
 	else:
 		ui_slot.display_image(null)
 		ui_slot.display_types([])
+	
+	for ui in Globals.full_ui.all_slots():
+		if ui.connected_slot.is_filled():
+			ui.connected_slot.check_power_body()
+	
 
 func clear_dispay():
 	damage_counters = 0
@@ -834,8 +838,3 @@ func clear_dispay():
 
 #endregion
 #--------------------------------------
-
-func debug_check():
-	for en in energy_cards:
-		print(en.get_formal_name())
-		print(en.energy_properties.get_current_provide())

@@ -45,9 +45,9 @@ var formal_answer: bool
 func check_prompt():
 	var result: bool = false
 	
-	print("CHECKING COMPARATOR ", comparator.first_comparison)
+	#print("CHECKING COMPARATOR ", comparator.first_comparison)
 	var found = comparator.start_comparision()
-	print(found)
+	#print(found)
 	result = result or found
 	
 	return result

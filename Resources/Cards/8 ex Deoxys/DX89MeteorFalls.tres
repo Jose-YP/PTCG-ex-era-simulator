@@ -1,0 +1,53 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=11 format=3 uid="uid://dh15lk3744ey"]
+
+[ext_resource type="Texture2D" uid="uid://v1y2myegro1b" path="res://Art/Cards/8 ex Deoxys/89.jpg" id="1_1whj1"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_bvaxu"]
+[ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="3_dg801"]
+[ext_resource type="Script" uid="uid://b8kvis7rgg3j4" path="res://Code/Resource Makers/CardResources/StadiumMaker.gd" id="4_8fewt"]
+[ext_resource type="Script" uid="uid://dtv1d2u2kvixy" path="res://Code/Resource Makers/EffectSpecific/MimicMaker.gd" id="5_sqw6y"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="6_2qdli"]
+
+[sub_resource type="Resource" id="Resource_ytnnl"]
+script = ExtResource("5_sqw6y")
+use = "Slot"
+retrigger = true
+evolutions = false
+must_pay_energy = false
+adjustable_type = false
+stack = 0
+metadata/_custom_type_script = "uid://dtv1d2u2kvixy"
+
+[sub_resource type="Resource" id="Resource_bcdvp"]
+script = ExtResource("6_2qdli")
+either_or = false
+order = Array[int]([])
+mimic = SubResource("Resource_ytnnl")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_jgdhv"]
+script = ExtResource("4_8fewt")
+when_to_check = 0
+stadium_effect = SubResource("Resource_bcdvp")
+bench_size = -1
+metadata/_custom_type_script = "uid://b8kvis7rgg3j4"
+
+[sub_resource type="Resource" id="Resource_qr577"]
+script = ExtResource("3_dg801")
+considered = "Stadium"
+specific_requirement = ""
+description = "Each player's Active Evolved Pokémon (excluding Pokémon-ex) can use any attack from its Basic Pokémon or its Stage 1 Evolution card. (You still have to pay for that attack's Energy cost.) "
+stadium_properties = SubResource("Resource_jgdhv")
+metadata/_custom_type_script = "uid://crx447i85kshy"
+
+[resource]
+script = ExtResource("1_bvaxu")
+name = "Meteor Falls"
+image = ExtResource("1_1whj1")
+illustrator = "Ryo Ueda"
+number = 89
+rarity = 1
+expansion = 7
+categories = 2
+trainer_properties = SubResource("Resource_qr577")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

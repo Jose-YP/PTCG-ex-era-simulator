@@ -63,6 +63,7 @@ const until_flip_box: PackedScene = preload("res://Scenes/UI/Coins/until_box.tsc
 const prompt_answer: PackedScene = preload("res://Scenes/UI/ETC/PromptAnswer.tscn")
 const cpu_scene: PackedScene = preload("res://Scenes/Main Game/cpu.tscn")
 const dmg_manip_box: PackedScene = preload("res://Scenes/UI/Lists/dmg_manip_box.tscn")
+const mimic_box: PackedScene = preload("res://Scenes/UI/Lists/mimic_list.tscn")
 const input_number: PackedScene = preload("res://Scenes/UI/ETC/input_number.tscn")
 #endregion
 #--------------------------------------

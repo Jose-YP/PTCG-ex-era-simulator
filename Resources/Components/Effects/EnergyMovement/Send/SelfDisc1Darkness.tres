@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="EnMov" load_steps=5 format=3 uid="uid://cw7gick8j52mr"]
 
-[ext_resource type="Resource" uid="uid://c7itelq8jtjc2" path="res://Resources/Components/EnData/Rainbow.tres" id="1_3sr0n"]
+[ext_resource type="Resource" uid="uid://d2ts8ex3x0duw" path="res://Resources/Components/EnData/Darkness.tres" id="1_vpu5g"]
 [ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="2_vpu5g"]
 [ext_resource type="Script" uid="uid://cimk6l7ytw7xg" path="res://Code/Resource Makers/EffectSpecific/EnMovMaker.gd" id="3_lu0nv"]
 [ext_resource type="Resource" uid="uid://dqj6gq7pt3dbk" path="res://Resources/Components/Effects/Asks/General/FromSource.tres" id="3_vpu5g"]
@@ -17,6 +17,5 @@ energy_carry_over = false
 action_ammount = 1
 energy_ammount = 1
 energy_move_type = 2
-en_type = ExtResource("1_3sr0n")
-react = false
+en_type = ExtResource("1_vpu5g")
 metadata/_custom_type_script = "uid://cimk6l7ytw7xg"

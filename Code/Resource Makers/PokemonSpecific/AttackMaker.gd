@@ -23,7 +23,7 @@ func print_cost(energy: String):
 func get_damage() -> int:
 	var data: AttackData = attack_data
 	var final_damage: int = data.initial_main_DMG
-	var mod_times: Variant
+	var mod_times: int = 1
 	var modifier_result: int = 0
 	
 	if data.comparator:
@@ -32,12 +32,10 @@ func get_damage() -> int:
 		if data.comparator.has_coinflip():
 			await SignalBus.finished_coinflip
 	if data.mod_prompt:
-		mod_times = data.prompt_hold
-	
-	if mod_times is bool:
-		mod_times *= 1 if mod_times else 0
+		mod_times *= 1 if data.prompt_hold else 0
 	
 	if mod_times != null:
+		print(data.modifier_num, mod_times)
 		modifier_result = data.modifier_num * mod_times
 		match data.modifier:
 			1:
@@ -69,10 +67,10 @@ func pay_cost(slot: PokeSlot):
 	
 	#Edit costs depending on whatever factors
 	#Priotitize basic/single type first
-	print("ENERGY SORT ", basic_energy)
+	#print("ENERGY SORT ", basic_energy)
 	for card in basic_energy:
 		var index = int((log(float(card.energy_properties.get_current_type())) / log(2)))
-		print("Used ", card.name, " for ", Consts.energy_types[index] if all_costs[index] > 0 else "Colorless")
+		#print("Used ", card.name, " for ", Consts.energy_types[index] if all_costs[index] > 0 else "Colorless")
 		
 		if all_costs[index] > 0: all_costs[index] = clamp(all_costs[index]-1, 0, all_costs[index])
 		else: all_costs[8] = clamp(all_costs[8]-1, 0, all_costs[8])
@@ -84,7 +82,7 @@ func pay_cost(slot: PokeSlot):
 	for card in special_energy:
 		var finished: bool = true
 		all_costs = pay_with(all_costs, card)
-		print(card.get_formal_name())
+		#print(card.get_formal_name())
 		
 		for cost in all_costs:
 			if cost != 0:
@@ -99,8 +97,8 @@ func pay_cost(slot: PokeSlot):
 	
 	if final_cost > 0:
 		print(" LEFTOVER: ", final_cost)
-	else:
-		print(basic_energy, special_energy)
+	#else:
+		#print(basic_energy, special_energy)
 	
 	return final_cost
 

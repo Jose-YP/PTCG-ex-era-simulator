@@ -1,17 +1,22 @@
 @icon("res://Art/Energy/48px-Darkness-attack.png")
 extends Control
+class_name MimicBox
 
 @export var poke_slot: PokeSlot
-@export var current_card: Base_Card
+@export var attacks: Array[Attack]
 @export var show_speed: float = .1
 
 @onready var current_height: float = %Identifier.size.y + 80
 @onready var panel_container: PanelContainer = $PanelContainer
 @onready var attackScroll: ScrollContainer = %AttackScrollBox
 
+#Gonna use this for mimic
+var pay_costs: bool
+
 func _ready():
-	if poke_slot: current_card = poke_slot.current_card
-	%AttackScrollBox.current_card = current_card
+	%AttackScrollBox.pay_costs = pay_costs
+	%AttackScrollBox.reset_items()
+	%AttackScrollBox.set_specific_items(attacks)
 
 func _draw():
 	await get_tree().process_frame

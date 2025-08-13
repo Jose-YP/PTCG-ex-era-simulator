@@ -1,18 +1,22 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=17 format=3 uid="uid://cbnw3a213i835"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=23 format=3 uid="uid://cbnw3a213i835"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_h4hff"]
 [ext_resource type="Texture2D" uid="uid://d1kfdxncbsbm" path="res://Art/Cards/16 ex Power Keepers/97.jpg" id="1_m0vbm"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_1ja4p"]
 [ext_resource type="Resource" uid="uid://bgqnsjskgne2u" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Darkness1.tres" id="3_4nav6"]
 [ext_resource type="Resource" uid="uid://c2ujs102gu8qn" path="res://Resources/Components/Effects/Asks/General/OthActive.tres" id="4_q7lhk"]
+[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="5_q7lhk"]
 [ext_resource type="Script" uid="uid://dtv1d2u2kvixy" path="res://Code/Resource Makers/EffectSpecific/MimicMaker.gd" id="5_yxknq"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="6_axg2p"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="7_ukyo3"]
-[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="8_hi2fh"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="9_7r15k"]
+[ext_resource type="Resource" uid="uid://kf3pkpvcb8tk" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/D1C2.tres" id="9_yxknq"]
+[ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="10_axg2p"]
+[ext_resource type="Script" uid="uid://br15mnap82upq" path="res://Code/Resource Makers/PokemonSpecific/BenchAttackMaker.gd" id="11_ukyo3"]
 
 [sub_resource type="Resource" id="Resource_uh4rw"]
 script = ExtResource("5_yxknq")
+mimicing = ExtResource("5_q7lhk")
 use = "Stack"
 ask = ExtResource("4_q7lhk")
 retrigger = true
@@ -54,11 +58,68 @@ attack_cost = ExtResource("3_4nav6")
 attack_data = SubResource("Resource_0pypu")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
+[sub_resource type="Resource" id="Resource_hi2fh"]
+script = ExtResource("10_axg2p")
+previous_src_trg = false
+side_target = 2
+slot_target = 3
+specifically = Array[String]([])
+check_ability = false
+contained_abilities = 3
+knocked_out = false
+tool_attatched = false
+comparison_type = 1
+max_hp = -10
+damage_taken = -10
+retreat_cost = -1
+stage = 7
+rare_candy = false
+class_inclusive = true
+pokemon_class = 63
+owner_inclusive = true
+pokemon_owner = 31
+type_inclusive = true
+pokemon_type = 1023
+energy_inclusive = true
+check_cards = true
+energy_attatched = -1
+energy_class = "Any"
+metadata/_custom_type_script = "uid://mkjynqda7q5g"
+
+[sub_resource type="Resource" id="Resource_7r15k"]
+script = ExtResource("11_ukyo3")
+how_many = -1
+candidates = SubResource("Resource_hi2fh")
+active_allowed = false
+apply_weak_res = false
+initial_main_DMG = 60
+modifier = 0
+modifier_num = 0
+metadata/_custom_type_script = "uid://br15mnap82upq"
+
+[sub_resource type="Resource" id="Resource_x14nr"]
+script = ExtResource("7_ukyo3")
+prompt_reliant = false
+initial_main_DMG = 60
+defender_properties = 0
+condition = 1
+before_damage = false
+replace_num = false
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+bench_damage = SubResource("Resource_7r15k")
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
 [sub_resource type="Resource" id="Resource_8dgnp"]
 script = ExtResource("2_1ja4p")
-name = ""
-description = ""
-attack_cost = ExtResource("8_hi2fh")
+name = "Dirge"
+description = "Does 60 damage to each of your opponent's Benched Pokémon that has the same name as the Defending Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
+attack_cost = ExtResource("9_yxknq")
+attack_data = SubResource("Resource_x14nr")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_u3aoq"]

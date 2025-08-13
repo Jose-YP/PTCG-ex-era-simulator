@@ -192,7 +192,6 @@ func play_trainer(card: Base_Card):
 	hold_playing = null
 	Globals.fundies.remove_top_source_target()
 
-#For tools
 func play_attatch_tool(card: Base_Card):
 	var tool_bool: Callable = func (slot: PokeSlot) -> bool:
 		return slot.is_filled() and slot.is_attacker()\
@@ -299,6 +298,12 @@ func set_reversable(reversable: bool):
 
 #--------------------------------------
 #region ATTACKING
+#Q. Let's say I have a Dark Pupitar out and I use "Explosive Evolution" and flip heads,
+#so I get to search my deck for a Dark Tyranitar.
+#However I also KO a Koffing that has the "Knockout Gas" Poké-BODY. Am I now Confused and Poisoned? Or does my evolution remove the special conditions before they effect me in any way?
+#A. You do the damage from an attack first, if that triggers anything (in this case it does)
+#you then do what is triggered, then you continue and do what the attack says besides damage.
+#So the evolution portion of "Explosive Evolution" takes place AFTER Koffing's "Knockout Gas" goes off. (Sep 22, 2005 PUI Rules Team) 
 func before_direct_attack(attacker: PokeSlot, with: Attack):
 	var direct_bool: bool = with.does_direct_damage()
 	var attack_data: AttackData = with.attack_data
@@ -312,10 +317,14 @@ func before_direct_attack(attacker: PokeSlot, with: Attack):
 	if await attacker.confusion_check():
 		return
 	
-	if attack_data.prompt and attack_data.prompt.has_num_input():
-		replace_num = await attack_data.prompt.num_input_prompt()
-		with.attack_data.prompt_hold = replace_num
-	
+	if attack_data.prompt:
+		if attack_data.prompt.has_num_input():
+			replace_num = await attack_data.prompt.num_input_prompt()
+			attack_data.prompt_hold = replace_num
+		if attack_data.prompt.has_before_prompt():
+			Globals.fundies.record_single_src_trg(attacker)
+			attack_data.prompt_hold = not await attack_data.prompt.before_activating()
+			Globals.fundies.remove_top_source_target()
 	attacker.current_attack = with
 	
 	if direct_bool or (attack_data.always_effect and
@@ -372,8 +381,10 @@ func bench_attack(attacker: PokeSlot, with: BenchAttk, defenders: Array[PokeSlot
 func attack_effect(attacker: PokeSlot, with: AttackData,
  predefined: Variant = null, replace_num: int = -1):
 	if with.prompt:
-		var succeed: bool = predefined or \
-		 (predefined != false and with.prompt.check_prompt())
+		var succeed: bool = predefined if predefined else false
+		
+		if predefined != false and with.prompt.has_check_prompt():
+			succeed = with.prompt.check_prompt()
 		
 		if with.prompt.has_prompt_question():
 			succeed = await with.prompt.check_prompt_question()
@@ -391,7 +402,7 @@ func attack_effect(attacker: PokeSlot, with: AttackData,
 		await with.always_effect.play_effect()
 
 func check_prompt_reliant(prompt: PromptAsk):
-	if prompt and not prompt.has_num_input():
+	if prompt and prompt.has_check_prompt() and not prompt.has_num_input():
 		var result = prompt.check_prompt()
 		if prompt.has_coinflip():
 			await SignalBus.finished_coinflip

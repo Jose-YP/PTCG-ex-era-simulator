@@ -5,9 +5,12 @@
 
 [resource]
 script = ExtResource("2_5wwx5")
+mimicing = ExtResource("1_k78qu")
+use = "Slot"
 ask = ExtResource("1_k78qu")
 retrigger = true
 evolutions = true
 must_pay_energy = false
 adjustable_type = false
+stack = 0
 metadata/_custom_type_script = "uid://dtv1d2u2kvixy"

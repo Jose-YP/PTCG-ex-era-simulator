@@ -74,18 +74,6 @@ offset_bottom = 40.0
 layout_mode = 2
 alignment = 2
 
-[node name="MinimizeButton" parent="VBoxContainer/HBoxContainer" node_paths=PackedStringArray("shrinkNodes", "hideNodes") instance=ExtResource("41_ovkpr")]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(30, 0)
-layout_mode = 2
-shrinkNodes = [NodePath("../../PanelContainer")]
-hideNodes = [NodePath("../../PanelContainer/MarginContainer/VBoxContainer/Other"), NodePath("../../PanelContainer/MarginContainer/VBoxContainer/Attacks"), NodePath("../../PanelContainer/MarginContainer/VBoxContainer/DragArea/VBoxContainer/Evo&Illus"), NodePath("../../PanelContainer/MarginContainer/VBoxContainer/DragArea/VBoxContainer/Ruleboxes")]
-
-[node name="CloseButton" parent="VBoxContainer/HBoxContainer" instance=ExtResource("40_r6caj")]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(30, 0)
-layout_mode = 2
-
 [node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
@@ -118,11 +106,11 @@ layout_mode = 2
 
 [node name="Name" type="RichTextLabel" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/DragArea/VBoxContainer/MainInfo/MainInfromation"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(215, 0)
+custom_minimum_size = Vector2(212, 0)
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 0
 size_flags_vertical = 0
-text = "Team Magma's Mightyena"
+text = "Team Magma's Poochyena"
 fit_content = true
 
 [node name="VSeparator2" type="VSeparator" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/DragArea/VBoxContainer/MainInfo/MainInfromation"]
@@ -150,12 +138,23 @@ fit_content = true
 
 [node name="DefaultType" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/DragArea/VBoxContainer/MainInfo/MainInfromation" instance=ExtResource("2_em05s")]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
 
 [node name="DefaultType2" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/DragArea/VBoxContainer/MainInfo/MainInfromation" instance=ExtResource("2_em05s")]
 unique_name_in_owner = true
 visible = false
+layout_mode = 2
+
+[node name="MinimizeButton" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/DragArea/VBoxContainer/MainInfo/MainInfromation" node_paths=PackedStringArray("shrinkNodes", "hideNodes") instance=ExtResource("41_ovkpr")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+shrinkNodes = [NodePath("../../../../../../..")]
+hideNodes = [NodePath("../../../../../Other"), NodePath("../../../../../Attacks"), NodePath("../../../Evo&Illus"), NodePath("../../../Ruleboxes")]
+
+[node name="CloseButton" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/DragArea/VBoxContainer/MainInfo/MainInfromation" instance=ExtResource("40_r6caj")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(16, 0)
 layout_mode = 2
 
 [node name="Art" type="PanelContainer" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/DragArea/VBoxContainer"]

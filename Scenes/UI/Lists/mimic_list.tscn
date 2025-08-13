@@ -1,10 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cvh086w8yapm0"]
+[gd_scene load_steps=3 format=3 uid="uid://cvh086w8yapm0"]
 
-[ext_resource type="Script" uid="uid://0josnrxj11dd" path="res://Code/Scenes/UI/Cards/AttackList.gd" id="1_oywep"]
-[ext_resource type="PackedScene" uid="uid://dutm4vrspqfgn" path="res://Scenes/UI/Lists/attack_scroll_box_copy.tscn" id="3_7fpih"]
-[ext_resource type="Resource" uid="uid://jq2ng1vyif34" path="res://Resources/Cards/1 ex Ruby & Saphire/RS28Combusken.tres" id="5_yee1y"]
+[ext_resource type="Script" uid="uid://0josnrxj11dd" path="res://Code/Scenes/UI/Cards/AttackList.gd" id="1_k3vex"]
+[ext_resource type="PackedScene" uid="uid://dutm4vrspqfgn" path="res://Scenes/UI/Lists/attack_scroll_box_copy.tscn" id="2_vchyu"]
 
-[node name="AttackList" type="Control"]
+[node name="MimicList" type="Control"]
 modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(420, 0)
 layout_mode = 3
@@ -18,8 +17,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-script = ExtResource("1_oywep")
-current_card = ExtResource("5_yee1y")
+script = ExtResource("1_k3vex")
 show_speed = 0.075
 metadata/_edit_group_ = true
 
@@ -48,5 +46,6 @@ bbcode_enabled = true
 text = "[center]ATTACKS"
 fit_content = true
 
-[node name="AttackScrollBox" parent="PanelContainer/VBoxContainer" instance=ExtResource("3_7fpih")]
+[node name="AttackScrollBox" parent="PanelContainer/VBoxContainer" instance=ExtResource("2_vchyu")]
+unique_name_in_owner = true
 layout_mode = 2

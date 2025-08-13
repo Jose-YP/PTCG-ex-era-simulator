@@ -75,7 +75,9 @@ func send_effect(reversable: bool = false) -> void:
 		if reversable: dis_box.allow_reverse()
 		
 		Globals.full_ui.set_top_ui(dis_box)
-		await dis_box.tree_exited
+		await dis_box.finished
+		if dis_box.discarded:
+			Globals.full_ui.remove_top_ui()
 	
 	finished.emit()
 

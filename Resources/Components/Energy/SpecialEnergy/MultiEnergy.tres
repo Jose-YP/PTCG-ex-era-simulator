@@ -3,7 +3,7 @@
 [ext_resource type="Resource" uid="uid://vk18jkchsq3v" path="res://Resources/Components/EnData/Colorless.tres" id="2_71x56"]
 [ext_resource type="Resource" uid="uid://ck80jky0mu4ta" path="res://Resources/Components/Effects/Prompts/PromptSelfMultipleSpEn.tres" id="2_qx1v3"]
 [ext_resource type="Script" uid="uid://caj1pm8erar2a" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="2_yw3tb"]
-[ext_resource type="Resource" uid="uid://c7itelq8jtjc2" path="res://Resources/Components/EnData/Rainbow.tres" id="5_wmapm"]
+[ext_resource type="Resource" uid="uid://cv8xofc4ofaom" path="res://Resources/Components/EnData/NeoRainbow.tres" id="4_qx1v3"]
 
 [resource]
 script = ExtResource("2_yw3tb")
@@ -14,5 +14,5 @@ has_fail_provide = true
 has_fail_prevent = false
 turns = -1
 fail_provide = ExtResource("2_71x56")
-success_provide = ExtResource("5_wmapm")
+success_provide = ExtResource("4_qx1v3")
 metadata/_custom_type_script = "uid://caj1pm8erar2a"

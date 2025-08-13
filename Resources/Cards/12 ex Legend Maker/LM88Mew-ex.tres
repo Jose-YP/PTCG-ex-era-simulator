@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=20 format=3 uid="uid://ch7qqjhkbd26n"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=21 format=3 uid="uid://ch7qqjhkbd26n"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_7067e"]
 [ext_resource type="Texture2D" uid="uid://bafhv636s8u00" path="res://Art/Cards/12 ex Legend Maker/88.jpg" id="1_v3s2v"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="7_pfer2"]
 [ext_resource type="Resource" uid="uid://bns8h72u2hxqo" path="res://Resources/Components/Effects/Asks/General/AnyMon.tres" id="8_pfer2"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="8_twkj3"]
+[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="9_7iwa2"]
 [ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="10_pfer2"]
 
 [sub_resource type="Resource" id="Resource_vdiw8"]
@@ -48,6 +49,7 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_0pt0j"]
 script = ExtResource("6_2fy54")
+mimicing = ExtResource("9_7iwa2")
 use = "Slot"
 ask = ExtResource("8_pfer2")
 retrigger = false

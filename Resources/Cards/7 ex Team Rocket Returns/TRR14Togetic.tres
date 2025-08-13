@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=22 format=3 uid="uid://bsk4yge3w701c"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=23 format=3 uid="uid://bsk4yge3w701c"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_qhfrj"]
 [ext_resource type="Texture2D" uid="uid://ds2iwf8genpse" path="res://Art/Cards/7 ex Team Rocket Returns/14.jpg" id="1_qitxc"]
@@ -10,6 +10,7 @@
 [ext_resource type="Resource" uid="uid://dpovjlfpsypwe" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless3.tres" id="5_nq5u1"]
 [ext_resource type="Resource" uid="uid://1fenqvtwlaji" path="res://Resources/Components/Effects/Asks/General/DefhasBenchMons.tres" id="6_wy6b1"]
 [ext_resource type="Script" uid="uid://dtv1d2u2kvixy" path="res://Code/Resource Makers/EffectSpecific/MimicMaker.gd" id="7_nvprp"]
+[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="7_parpn"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="7_wy6b1"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="9_parpn"]
 [ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="10_kjfcm"]
@@ -24,6 +25,7 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_8q024"]
 script = ExtResource("7_nvprp")
+mimicing = ExtResource("7_parpn")
 use = "Slot"
 ask = ExtResource("6_wy6b1")
 retrigger = true

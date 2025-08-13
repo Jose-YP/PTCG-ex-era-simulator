@@ -17,6 +17,7 @@ var resized_container: bool = false
 var items: Array[Node] = []
 var display_text: String = ""
 var final_size: int = 0
+var pay_costs: bool = true
 
 #Once every item is readied, wait before seeking final size
 func _draw():
@@ -50,27 +51,35 @@ func set_items() -> void:
 		set_ability(current_card.pokemon_properties.pokebody)
 		set_ability(current_card.pokemon_properties.pokepower)
 	
-	for item in attacks:
-		set_attack(item)
+	set_specific_items(attacks)
 	
 	if poke_slot:
 		for tm in poke_slot.tm_cards:
-			set_attack(tm.trainer_properties.provided_attack, true)
-	
+			set_attack(tm.trainer_properties.provided_attack, "TrainerButton")
+		for mimiced in poke_slot.mimic_attacks:
+			set_attack(mimiced, "DragButton")
 	items = %CardList.get_children()
 
-func set_attack(attack: Attack, tm: bool = false):
+func set_specific_items(attacks: Array[Attack]):
+	for item in attacks:
+		set_attack(item)
+
+func set_attack(attack: Attack, theme_variation: String = ""):
 	var making = attackItem.instantiate()
 	making.attack = attack
 	making.slot = poke_slot
 	making.card_name = poke_slot.get_card_name() if poke_slot else current_card.name
 	%CardList.add_child(making)
 	if check: making.focus_mode = FocusMode.FOCUS_NONE
-	if poke_slot and poke_slot.is_active(): #only try this when attatched to a pokeslot
-		making.check_usability()
-	else: making.make_unusable()
-	if tm:
-		making.attackButton.theme_type_variation = "TrainerButton"
+	if theme_variation != "":
+		making.attackButton.theme_type_variation = theme_variation
+	#only try this when attatched to a pokeslot
+	if poke_slot and poke_slot.is_active():
+		if pay_costs:
+			making.check_usability()
+		else:
+			making.make_usable(true)
+	else: making.make_usable(false)
 
 func set_ability(ability: Ability):
 	if ability:

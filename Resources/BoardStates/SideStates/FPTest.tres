@@ -28,6 +28,7 @@
 [sub_resource type="Resource" id="Resource_ai8fb"]
 script = ExtResource("20_rx5tr")
 deck = ExtResource("1_3fosg")
+excluded_to_discard = false
 init_deck = Array[ExtResource("2_67esg")]([ExtResource("3_nsat6"), ExtResource("4_udrok"), ExtResource("5_xxjyd"), ExtResource("6_wvi4a"), ExtResource("7_h4gfa"), ExtResource("7_h4gfa"), ExtResource("8_eib0e"), ExtResource("8_eib0e"), ExtResource("9_nia4n"), ExtResource("10_lwvrn"), ExtResource("12_b66bu"), ExtResource("13_wu0hp"), ExtResource("14_xl8qu"), ExtResource("14_xl8qu"), ExtResource("15_froou"), ExtResource("15_froou"), ExtResource("16_kydxs"), ExtResource("17_4sl3x"), ExtResource("17_4sl3x"), ExtResource("17_4sl3x")])
 init_hand = Array[ExtResource("2_67esg")]([ExtResource("18_sh3up"), ExtResource("8_eib0e"), ExtResource("19_3fosg"), ExtResource("6_wvi4a"), ExtResource("13_wu0hp"), ExtResource("10_lwvrn"), ExtResource("17_4sl3x")])
 init_discard = Array[ExtResource("2_67esg")]([])

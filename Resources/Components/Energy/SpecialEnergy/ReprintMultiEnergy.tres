@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="Energy" load_steps=7 format=3 uid="uid://dkso66ihqiwet"]
+[gd_resource type="Resource" script_class="Energy" load_steps=8 format=3 uid="uid://dkso66ihqiwet"]
 
 [ext_resource type="Resource" uid="uid://c7itelq8jtjc2" path="res://Resources/Components/EnData/Rainbow.tres" id="1_7eema"]
 [ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="1_ndwjy"]
 [ext_resource type="Script" uid="uid://caj1pm8erar2a" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="2_cuf6k"]
 [ext_resource type="Resource" uid="uid://vk18jkchsq3v" path="res://Resources/Components/EnData/Colorless.tres" id="3_amwxe"]
 [ext_resource type="Resource" uid="uid://ck80jky0mu4ta" path="res://Resources/Components/Effects/Prompts/PromptSelfMultipleSpEn.tres" id="4_7eema"]
+[ext_resource type="Resource" uid="uid://cv8xofc4ofaom" path="res://Resources/Components/EnData/NeoRainbow.tres" id="6_amwxe"]
 
 [sub_resource type="Resource" id="Resource_kky8u"]
 script = ExtResource("1_ndwjy")
@@ -45,5 +46,5 @@ has_fail_provide = true
 has_fail_prevent = false
 turns = -1
 fail_provide = ExtResource("3_amwxe")
-success_provide = ExtResource("1_7eema")
+success_provide = ExtResource("6_amwxe")
 metadata/_custom_type_script = "uid://caj1pm8erar2a"

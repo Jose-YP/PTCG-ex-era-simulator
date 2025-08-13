@@ -17,6 +17,7 @@ var header_txt: String = "[center]DISCARD BOX"
 var action_txt: String = "Discard"
 var list: Dictionary[Base_Card, bool]
 var discarding: Array[Base_Card] = []
+var discarded: bool = false
 var home: bool
 var top_deck: bool
 var shuffle: bool
@@ -28,7 +29,8 @@ func _ready():
 	set_info()
 	playing_list.list = list
 	playing_list.set_items()
-	header_txt = str(Convert.stack_into_string(stack)," BOX")
+	playing_list.sort_items()
+	header_txt = str("[center]",Convert.stack_into_string(stack).to_upper()," BOX")
 	action_txt = str("Send to ", Convert.stack_into_string(destination))
 	set_info()
 	
@@ -82,9 +84,11 @@ func _on_discard_pressed() -> void:
 	
 	if pokeslot_origin: pokeslot_origin.remove_cards(discarding)
 	
+	discarded = true
 	finished.emit()
 
 func _on_header_close_button_pressed() -> void:
 	if %Header.closable:
 		SignalBus.went_back.emit()
+		finished.emit()
 	else: push_error("Closed when shouldn't be able to")
