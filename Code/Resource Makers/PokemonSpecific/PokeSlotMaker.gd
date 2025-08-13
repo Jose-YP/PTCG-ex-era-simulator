@@ -16,6 +16,7 @@ var attached_energy: Dictionary = {"Grass": 0, "Fire": 0, "Water": 0,
 	"Holon FF": 0, "Holon GL": 0, "Holon WP": 0, "Rainbow":0}
 var energy_timers: Dictionary = {}
 var damage_timers: Array[Dictionary]
+var mimic_attacks: Array[Attack]
 var body_exhaust: bool
 var power_exhaust: bool
 var body_activated: bool
@@ -62,6 +63,9 @@ signal evolving()
 signal attatch_en_signal(card: EnData)
 signal discard_en_signal(card: EnData)
 signal played(slot: Consts.SLOTS)
+signal first_check
+#played only activates when a pokemon is played from the hand as a basic
+#first check activates whenever a pokemon is set as the current card, which includes devolution
 
 signal condition_applied(condition: Condition)
 
@@ -783,6 +787,7 @@ func refresh_current_card():
 	ui_slot.display_types(Convert.flags_to_type_array(get_pokedata().type))
 	setup_abilities()
 	occurance_account_for()
+	await ability_emit(first_check, self)
 
 func refresh() -> void:
 	if not is_filled():

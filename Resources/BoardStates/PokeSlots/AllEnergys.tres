@@ -23,52 +23,16 @@
 
 [resource]
 script = ExtResource("15_ku0vf")
-player_type = 0
 current_card = ExtResource("1_1q05n")
+max_HP = 0
+damage_counters = 0
 evolution_ready = false
 evolved_this_turn = false
 evolved_from = Array[ExtResource("1_2trac")]([])
 energy_cards = Array[ExtResource("1_2trac")]([ExtResource("2_xpyfr"), ExtResource("3_j1q7d"), ExtResource("4_7ibjm"), ExtResource("5_h1o0t"), ExtResource("6_1q05n"), ExtResource("7_ktxrd"), ExtResource("8_pa7g1"), ExtResource("9_mcq5m"), ExtResource("10_m1ghp"), ExtResource("11_gtcet"), ExtResource("12_iokug"), ExtResource("13_778qs"), ExtResource("14_vnqax"), ExtResource("16_ktxrd"), ExtResource("17_pa7g1"), ExtResource("18_mcq5m"), ExtResource("19_m1ghp")])
-attached_energy = {
-"Aqua": 0,
-"Colorless": 0,
-"Dark Metal": 0,
-"Darkness": 0,
-"Fighting": 0,
-"Fire": 0,
-"Grass": 0,
-"Holon FF": 0,
-"Holon GL": 0,
-"Holon WP": 0,
-"Lightning": 0,
-"Magma": 0,
-"Metal": 0,
-"Psychic": 0,
-"Rainbow": 0,
-"React": 0,
-"Water": 0
-}
 tm_cards = Array[ExtResource("1_2trac")]([])
-use_weakness = true
-use_resistance = true
-type = 0
-weak = 0
-resist = 0
-attack_buff = 0
-defense_buff = 0
-use_body = true
-ex_immune = false
-use_power = false
-use_attack = true
-in_attacking_turn = true
-damage_counters = 0
-benched = false
-poison_condition = 0
-burn_condition = 0
-turn_condition = 0
-imprison = false
-shockwave = false
-readied = false
-knocked_out = false
-is_target = false
+buffs = Array[Dictionary]([])
+disables = Array[Dictionary]([])
+dealt_damage = 0
+energy_discarded = 0
 metadata/_custom_type_script = "uid://cs70ix831b5g4"

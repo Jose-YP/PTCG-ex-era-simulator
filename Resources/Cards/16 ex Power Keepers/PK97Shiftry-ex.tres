@@ -1,0 +1,89 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=17 format=3 uid="uid://cbnw3a213i835"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_h4hff"]
+[ext_resource type="Texture2D" uid="uid://d1kfdxncbsbm" path="res://Art/Cards/16 ex Power Keepers/97.jpg" id="1_m0vbm"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_1ja4p"]
+[ext_resource type="Resource" uid="uid://bgqnsjskgne2u" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Darkness1.tres" id="3_4nav6"]
+[ext_resource type="Resource" uid="uid://c2ujs102gu8qn" path="res://Resources/Components/Effects/Asks/General/OthActive.tres" id="4_q7lhk"]
+[ext_resource type="Script" uid="uid://dtv1d2u2kvixy" path="res://Code/Resource Makers/EffectSpecific/MimicMaker.gd" id="5_yxknq"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="6_axg2p"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="7_ukyo3"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="8_hi2fh"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="9_7r15k"]
+
+[sub_resource type="Resource" id="Resource_uh4rw"]
+script = ExtResource("5_yxknq")
+use = "Stack"
+ask = ExtResource("4_q7lhk")
+retrigger = true
+evolutions = false
+must_pay_energy = false
+adjustable_type = false
+stack = 0
+metadata/_custom_type_script = "uid://dtv1d2u2kvixy"
+
+[sub_resource type="Resource" id="Resource_q7hpq"]
+script = ExtResource("6_axg2p")
+either_or = false
+order = Array[int]([])
+mimic = SubResource("Resource_uh4rw")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_0pypu"]
+script = ExtResource("7_ukyo3")
+prompt_reliant = false
+initial_main_DMG = 0
+defender_properties = 0
+condition = 1
+before_damage = false
+replace_num = false
+always_effect = SubResource("Resource_q7hpq")
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_445p5"]
+script = ExtResource("2_1ja4p")
+name = "Skill Hack"
+description = "Look at your opponent's hand and choose a Basic Pokémon or Evolution card you find there. Choose 1 of that Pokémon's attacks. Skill Hack copies that attack except for its Energy cost. (You must still do anything else required for that attack.) (No matter what type that Pokémon is, [name]'s type is still.) [name] performs that attack."
+attack_cost = ExtResource("3_4nav6")
+attack_data = SubResource("Resource_0pypu")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_8dgnp"]
+script = ExtResource("2_1ja4p")
+name = ""
+description = ""
+attack_cost = ExtResource("8_hi2fh")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_u3aoq"]
+script = ExtResource("9_7r15k")
+HP = 140
+retreat = 1
+attacks = Array[ExtResource("2_1ja4p")]([SubResource("Resource_445p5"), SubResource("Resource_8dgnp")])
+evo_stage = "Stage 2"
+evolves_from = "Nuzleaf"
+considered = 2
+owner = 0
+type = 64
+weak = 33
+resist = 16
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_h4hff")
+name = "Shiftry ex"
+image = ExtResource("1_m0vbm")
+illustrator = "Ryo Ueda"
+number = 97
+rarity = 4
+expansion = 15
+categories = 1
+pokemon_properties = SubResource("Resource_u3aoq")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

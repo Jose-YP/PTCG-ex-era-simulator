@@ -41,7 +41,7 @@ metadata/_custom_type_script = "uid://dmulm3x3dj842"
 [sub_resource type="Resource" id="Resource_f55l8"]
 script = ExtResource("10_n54sb")
 from_ask = ExtResource("9_bxygc")
-signal = "played"
+signal = "first_check"
 metadata/_custom_type_script = "uid://bics3dumv7avj"
 
 [sub_resource type="Resource" id="Resource_vg1px"]

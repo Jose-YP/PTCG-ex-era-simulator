@@ -1,0 +1,118 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=22 format=3 uid="uid://bx4qntvsack8p"]
+
+[ext_resource type="Texture2D" uid="uid://cyqi82o0ahlpc" path="res://Art/Cards/3 ex Dragon/92.jpg" id="1_nifge"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_uubah"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_k7e38"]
+[ext_resource type="Resource" uid="uid://dsslhipk3ix2o" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Water1.tres" id="3_msgfn"]
+[ext_resource type="Resource" uid="uid://dpovjlfpsypwe" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless3.tres" id="4_mybni"]
+[ext_resource type="Resource" uid="uid://b8is5cnt8xjlo" path="res://Resources/Components/Effects/Mimic/MimicSelfEvolutions.tres" id="4_pnumm"]
+[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="5_pnumm"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="5_u2ctw"]
+[ext_resource type="Resource" uid="uid://bufxq7qfe3kv2" path="res://Resources/Components/EnData/Water.tres" id="6_u2ctw"]
+[ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="7_co3x3"]
+[ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="8_bijs0"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="9_lm3bf"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="10_u8jm1"]
+
+[sub_resource type="Resource" id="Resource_co3x3"]
+script = ExtResource("5_u2ctw")
+either_or = false
+order = Array[int]([])
+mimic = ExtResource("4_pnumm")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_bijs0"]
+script = ExtResource("9_lm3bf")
+prompt_reliant = false
+initial_main_DMG = 0
+defender_properties = 0
+condition = 1
+before_damage = false
+replace_num = false
+always_effect = SubResource("Resource_co3x3")
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_vwv28"]
+script = ExtResource("2_k7e38")
+name = "Genetic Memory"
+description = "Use any attack from [name]'s Basic Pokémon card or Stage 1 Evolution card. ([name] doesn't have to pay for that attack's Energy cost.)"
+attack_cost = ExtResource("3_msgfn")
+attack_data = SubResource("Resource_bijs0")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_6lew0"]
+script = ExtResource("7_co3x3")
+which = "Slot"
+ask = ExtResource("5_pnumm")
+slot_vars = "energy_cards"
+en_count_methods = "Excess"
+en_counting = ExtResource("6_u2ctw")
+cap = 2
+metadata/_custom_type_script = "uid://vjn146j3ayd6"
+
+[sub_resource type="Resource" id="Resource_0th24"]
+script = ExtResource("8_bijs0")
+comparision_type = "Return"
+first_comparison = SubResource("Resource_6lew0")
+compare_to = "None"
+second_constant = 0
+operate_w_constant = "None"
+metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
+
+[sub_resource type="Resource" id="Resource_opwid"]
+script = ExtResource("9_lm3bf")
+prompt_reliant = false
+initial_main_DMG = 50
+defender_properties = 0
+condition = 1
+before_damage = false
+replace_num = false
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 1
+modifier_num = 20
+comparator = SubResource("Resource_0th24")
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_2j0fo"]
+script = ExtResource("2_k7e38")
+name = "Hydrocannon"
+description = "Does 50 damage plus 20 more damage for each {Water} Energy attached to Kingdra ex but not used to pay for this attack's Energy cost. You can't add more than 40 damage in this way."
+attack_cost = ExtResource("4_mybni")
+attack_data = SubResource("Resource_opwid")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_s6ift"]
+script = ExtResource("10_u8jm1")
+HP = 150
+retreat = 3
+attacks = Array[ExtResource("2_k7e38")]([SubResource("Resource_vwv28"), SubResource("Resource_2j0fo")])
+evo_stage = "Stage 2"
+evolves_from = "Seadra"
+considered = 2
+owner = 0
+type = 4
+weak = 9
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_uubah")
+name = "Kingdra ex"
+image = ExtResource("1_nifge")
+illustrator = "Hijaru Koike"
+number = 92
+rarity = 4
+expansion = 2
+categories = 1
+pokemon_properties = SubResource("Resource_s6ift")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

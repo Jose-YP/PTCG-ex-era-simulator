@@ -1,0 +1,79 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=16 format=3 uid="uid://daj1y8i36dils"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_02itr"]
+[ext_resource type="Texture2D" uid="uid://le5kta0v5isf" path="res://Art/Cards/6 ex FireRed & LeafGreen/59.jpg" id="1_oral7"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_wnc44"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_qsele"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_g0iid"]
+[ext_resource type="Resource" uid="uid://bi188salan8b3" path="res://Resources/Components/Effects/Swap/SwapDefForce.tres" id="5_tsqqn"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="6_lyklj"]
+[ext_resource type="Resource" uid="uid://b1rwmggf7a4do" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless2.tres" id="7_1y6um"]
+[ext_resource type="Resource" uid="uid://bnsrs2a5hnvkb" path="res://Resources/Components/Pokemon/Attacks/AttackData/20Dmg.tres" id="8_qr258"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="9_7vrio"]
+
+[sub_resource type="Resource" id="Resource_wpp3m"]
+script = ExtResource("4_g0iid")
+either_or = false
+order = Array[int]([])
+swap = ExtResource("5_tsqqn")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_8hwmw"]
+script = ExtResource("6_lyklj")
+prompt_reliant = false
+initial_main_DMG = 0
+defender_properties = 0
+condition = 1
+before_damage = false
+replace_num = false
+always_effect = SubResource("Resource_wpp3m")
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_8nn0l"]
+script = ExtResource("2_wnc44")
+name = "Gesture"
+description = "Choose 1 of your opponent's Benched Pokémon and switch it with the Defending Pokémon. Your opponent chooses the Defending Pokémon to switch."
+attack_cost = ExtResource("3_qsele")
+attack_data = SubResource("Resource_8hwmw")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_nm5gp"]
+script = ExtResource("2_wnc44")
+name = "Moon Kick"
+description = ""
+attack_cost = ExtResource("7_1y6um")
+attack_data = ExtResource("8_qr258")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_hrg1f"]
+script = ExtResource("9_7vrio")
+HP = 50
+retreat = 1
+attacks = Array[ExtResource("2_wnc44")]([SubResource("Resource_8nn0l"), SubResource("Resource_nm5gp")])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 1
+owner = 0
+type = 256
+weak = 32
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_02itr")
+name = "Clefairy"
+image = ExtResource("1_oral7")
+illustrator = "Mitsuhiro Arita"
+number = 59
+rarity = 0
+expansion = 5
+categories = 1
+pokemon_properties = SubResource("Resource_hrg1f")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

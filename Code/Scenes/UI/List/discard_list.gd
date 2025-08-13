@@ -12,7 +12,7 @@ class_name DiscardList
 @onready var footer: PanelContainer = %Footer
 @onready var old_size: Vector2 = size
 
-var footer_prefix: String = "[right]DISCARDS LEFT: "
+var footer_prefix: String = "[right]ACTIONS LEFT: "
 var header_txt: String = "[center]DISCARD BOX"
 var action_txt: String = "Discard"
 var list: Dictionary[Base_Card, bool]
@@ -28,6 +28,9 @@ func _ready():
 	set_info()
 	playing_list.list = list
 	playing_list.set_items()
+	header_txt = str(Convert.stack_into_string(stack)," BOX")
+	action_txt = str("Send to ", Convert.stack_into_string(destination))
+	set_info()
 	
 	for button in playing_list.get_items():
 		button.pressed.connect(manage_pressed.bind(button))
@@ -38,7 +41,6 @@ func set_info():
 		footer.setup(str(footer_prefix,get_enegry_discarding(),"/",discard_num))
 	else:
 		footer.setup(str(footer_prefix,discarding.size(),"/",discard_num))
-	%Action.text = action_txt
 
 func get_enegry_discarding() -> int:
 	var disc_num: int = 0

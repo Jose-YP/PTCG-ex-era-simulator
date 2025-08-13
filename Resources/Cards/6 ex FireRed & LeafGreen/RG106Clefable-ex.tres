@@ -1,0 +1,88 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=17 format=3 uid="uid://dhk7twpkrq56g"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_iwmf7"]
+[ext_resource type="Texture2D" uid="uid://dgvfpgq62ppc" path="res://Art/Cards/6 ex FireRed & LeafGreen/106.jpg" id="1_t8s7t"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_n4vst"]
+[ext_resource type="Resource" uid="uid://b1rwmggf7a4do" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless2.tres" id="3_etgee"]
+[ext_resource type="Resource" uid="uid://1fenqvtwlaji" path="res://Resources/Components/Effects/Asks/General/DefhasBenchMons.tres" id="4_4i3u1"]
+[ext_resource type="Script" uid="uid://dtv1d2u2kvixy" path="res://Code/Resource Makers/EffectSpecific/MimicMaker.gd" id="5_jrvh8"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="6_o5tfp"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="7_jaymn"]
+[ext_resource type="Resource" uid="uid://dnnekosklb3ar" path="res://Resources/Components/Pokemon/Attacks/AttackData/40Dmg.tres" id="8_fw1c0"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="9_il3e6"]
+
+[sub_resource type="Resource" id="Resource_sj5qk"]
+script = ExtResource("5_jrvh8")
+ask = ExtResource("4_4i3u1")
+retrigger = true
+attatched_cards = false
+must_pay_energy = false
+adjustable_type = false
+metadata/_custom_type_script = "uid://dtv1d2u2kvixy"
+
+[sub_resource type="Resource" id="Resource_kjb0j"]
+script = ExtResource("6_o5tfp")
+either_or = false
+order = Array[int]([])
+mimic = SubResource("Resource_sj5qk")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_ofgw2"]
+script = ExtResource("7_jaymn")
+prompt_reliant = false
+initial_main_DMG = 0
+defender_properties = 0
+condition = 1
+before_damage = false
+replace_num = false
+always_effect = SubResource("Resource_kjb0j")
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_rleea"]
+script = ExtResource("2_n4vst")
+name = "Metronome"
+description = "Choose 1 of the Defending Pokémon's attacks. Metronome copies that attack except for its Energy cost. (You must still do anything else in order to use that attack.) (No matter what type that Pokémon is, [name]'s type is still {Colorless}.) [name] performs that attack. "
+attack_cost = ExtResource("3_etgee")
+attack_data = SubResource("Resource_ofgw2")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_0du18"]
+script = ExtResource("2_n4vst")
+name = "Moon Impact"
+description = ""
+attack_cost = ExtResource("3_etgee")
+attack_data = ExtResource("8_fw1c0")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_aeypn"]
+script = ExtResource("9_il3e6")
+HP = 100
+retreat = 2
+attacks = Array[ExtResource("2_n4vst")]([SubResource("Resource_rleea"), SubResource("Resource_0du18")])
+evo_stage = "Stage 1"
+evolves_from = ""
+considered = 2
+owner = 0
+type = 256
+weak = 32
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_iwmf7")
+name = "Clefable ex"
+image = ExtResource("1_t8s7t")
+illustrator = "Mitsuhiro Arita"
+number = 106
+rarity = 4
+expansion = 5
+categories = 1
+pokemon_properties = SubResource("Resource_aeypn")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

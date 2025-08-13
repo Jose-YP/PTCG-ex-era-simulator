@@ -1,15 +1,17 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=17 format=3 uid="uid://bsk4yge3w701c"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=22 format=3 uid="uid://bsk4yge3w701c"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_qhfrj"]
 [ext_resource type="Texture2D" uid="uid://ds2iwf8genpse" path="res://Art/Cards/7 ex Team Rocket Returns/14.jpg" id="1_qitxc"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_5assg"]
-[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_5assg"]
 [ext_resource type="Resource" uid="uid://b1rwmggf7a4do" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless2.tres" id="3_kjfcm"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_n4tqw"]
 [ext_resource type="Resource" uid="uid://ceo3bpqlglf5o" path="res://Resources/Components/Pokemon/Attacks/AttackData/30Dmg.tres" id="4_nq5u1"]
 [ext_resource type="Resource" uid="uid://c2uvm38pnk5uy" path="res://Resources/Components/Effects/Buff/Immune2DarkName.tres" id="5_kjfcm"]
+[ext_resource type="Resource" uid="uid://dpovjlfpsypwe" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless3.tres" id="5_nq5u1"]
+[ext_resource type="Resource" uid="uid://1fenqvtwlaji" path="res://Resources/Components/Effects/Asks/General/DefhasBenchMons.tres" id="6_wy6b1"]
+[ext_resource type="Script" uid="uid://dtv1d2u2kvixy" path="res://Code/Resource Makers/EffectSpecific/MimicMaker.gd" id="7_nvprp"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="7_wy6b1"]
-[ext_resource type="Resource" uid="uid://bep36omnenbc8" path="res://Resources/Components/Pokemon/Attacks/AttackData/10Dmg.tres" id="8_wy6b1"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="9_parpn"]
 [ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="10_kjfcm"]
 
 [sub_resource type="Resource" id="Resource_nvprp"]
@@ -20,12 +22,47 @@ attack_cost = ExtResource("3_kjfcm")
 attack_data = ExtResource("4_nq5u1")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
+[sub_resource type="Resource" id="Resource_8q024"]
+script = ExtResource("7_nvprp")
+use = "Slot"
+ask = ExtResource("6_wy6b1")
+retrigger = true
+evolutions = false
+must_pay_energy = false
+adjustable_type = false
+stack = 0
+metadata/_custom_type_script = "uid://dtv1d2u2kvixy"
+
+[sub_resource type="Resource" id="Resource_t8ry7"]
+script = ExtResource("4_n4tqw")
+either_or = false
+order = Array[int]([])
+mimic = SubResource("Resource_8q024")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_4iocf"]
+script = ExtResource("9_parpn")
+prompt_reliant = false
+initial_main_DMG = 0
+defender_properties = 0
+condition = 1
+before_damage = false
+replace_num = false
+always_effect = SubResource("Resource_t8ry7")
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
 [sub_resource type="Resource" id="Resource_2lbwc"]
 script = ExtResource("2_5assg")
 name = "Rainbow Moves"
 description = "Choose 1 of your opponent's Benched Pokémon's attacks. Rainbow Moves copies that attack except for its Energy cost. (You must still do anything else required for that attack.) (No matter what type that Pokémon is, Togetic's type is still Colorless.) Togetic performs that attack."
-attack_cost = ExtResource("3_5assg")
-attack_data = ExtResource("8_wy6b1")
+attack_cost = ExtResource("5_nq5u1")
+attack_data = SubResource("Resource_4iocf")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_u1d53"]

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Mimic" load_steps=3 format=3 uid="uid://b8is5cnt8xjlo"]
+
+[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="1_k78qu"]
+[ext_resource type="Script" uid="uid://dtv1d2u2kvixy" path="res://Code/Resource Makers/EffectSpecific/MimicMaker.gd" id="2_5wwx5"]
+
+[resource]
+script = ExtResource("2_5wwx5")
+ask = ExtResource("1_k78qu")
+retrigger = true
+evolutions = true
+must_pay_energy = false
+adjustable_type = false
+metadata/_custom_type_script = "uid://dtv1d2u2kvixy"

@@ -155,7 +155,6 @@ func effect_has_effect_type(effect: EffectCall, comps: Array[String]):
 	
 	for current_comp in gathered_comps:
 		if current_comp.get_script().get_global_name() in comps:
-			print("THERE")
 			return true
 	
 	#if effect.prompt_extra:

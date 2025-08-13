@@ -67,6 +67,13 @@ func get_occurance_slots() -> Array[PokeSlot]:
 			pokeslots.append(ui_slot.connected_slot)
 	return pokeslots
 
+func get_self() -> PokeSlot:
+	for ui_slot in all_slots():
+		var slot: PokeSlot = ui_slot.connected_slot
+		if slot.is_filled() and slot.is_in_slot(Consts.SIDES.SOURCE, Consts.SLOTS.TARGET):
+			return slot
+	return null
+
 #endregion
 
 #region CARD MANAGEMENT

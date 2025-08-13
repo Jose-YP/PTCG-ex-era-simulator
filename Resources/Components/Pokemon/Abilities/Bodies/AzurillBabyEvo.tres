@@ -24,7 +24,6 @@ metadata/_custom_type_script = "uid://bics3dumv7avj"
 script = ExtResource("2_v4ty4")
 rare_candy = false
 can_evolve_into = "Marill"
-new_type = 0
 metadata/_custom_type_script = "uid://cg3m7vpqxf2t6"
 
 [sub_resource type="Resource" id="Resource_8alob"]
