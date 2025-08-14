@@ -385,6 +385,8 @@ func attack_effect(attacker: PokeSlot, with: AttackData,
 		
 		if predefined != false and with.prompt.has_check_prompt():
 			succeed = with.prompt.check_prompt()
+			if with.prompt.has_coinflip():
+				await SignalBus.finished_coinflip
 		
 		if with.prompt.has_prompt_question():
 			succeed = await with.prompt.check_prompt_question()

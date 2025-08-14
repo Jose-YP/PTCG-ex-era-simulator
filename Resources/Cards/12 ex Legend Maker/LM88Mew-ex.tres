@@ -52,6 +52,7 @@ script = ExtResource("6_2fy54")
 mimicing = ExtResource("9_7iwa2")
 use = "Slot"
 ask = ExtResource("8_pfer2")
+mimic_self = false
 retrigger = false
 evolutions = false
 must_pay_energy = true

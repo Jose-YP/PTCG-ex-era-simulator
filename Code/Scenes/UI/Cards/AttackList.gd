@@ -6,7 +6,7 @@ class_name MimicBox
 @export var attacks: Array[Attack]
 @export var show_speed: float = .1
 
-@onready var current_height: float = %Identifier.size.y + 80
+@onready var current_height: float = %Footer.size.y + 80
 @onready var panel_container: PanelContainer = $PanelContainer
 @onready var attackScroll: ScrollContainer = %AttackScrollBox
 
@@ -14,7 +14,10 @@ class_name MimicBox
 var pay_costs: bool
 
 func _ready():
+	%Header.setup("[center]MIMIC BOX")
+	%Footer.setup("[center]CHOOSE AN ATTACK")
 	%AttackScrollBox.pay_costs = pay_costs
+	%AttackScrollBox.poke_slot = poke_slot
 	%AttackScrollBox.reset_items()
 	%AttackScrollBox.set_specific_items(attacks)
 

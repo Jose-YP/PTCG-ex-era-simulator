@@ -51,7 +51,7 @@ func check_usability():
 	attackButton.disabled = false if result else true
 
 func make_usable(value: bool):
-	attackButton.disabled = value
+	attackButton.disabled = not value
 
 func make_unusable():
 	attackButton.disabled = true

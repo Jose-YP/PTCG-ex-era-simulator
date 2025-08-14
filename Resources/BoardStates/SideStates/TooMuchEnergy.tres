@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SideState" load_steps=17 format=3 uid="uid://cu2ksi0icg1cg"]
+[gd_resource type="Resource" script_class="SideState" load_steps=18 format=3 uid="uid://cu2ksi0icg1cg"]
 
 [ext_resource type="Resource" uid="uid://bsbo6s5jo87t2" path="res://Resources/Decks/EnergysDeck.tres" id="1_xrlcv"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_w3gu5"]
@@ -9,6 +9,7 @@
 [ext_resource type="Resource" uid="uid://8aluya3mraht" path="res://Resources/Cards/2 ex Sandstorm/SS54Wynaut.tres" id="10_h8qln"]
 [ext_resource type="Resource" uid="uid://cg7qhfrgw5lmh" path="res://Resources/Cards/7 ex Team Rocket Returns/TRR50Togepi.tres" id="12_h8qln"]
 [ext_resource type="Resource" uid="uid://dxq22uwxelttj" path="res://Resources/Cards/1 ex Ruby & Saphire/RS107PsychicEnergy.tres" id="13_gimbx"]
+[ext_resource type="Resource" uid="uid://xvauv8yfopfw" path="res://Resources/Cards/2 ex Sandstorm/SS93MultiEnergy.tres" id="14_gimbx"]
 [ext_resource type="Script" uid="uid://calm3n7va5yjo" path="res://Code/Resource Makers/GeneralUse/CardStacksMaker.gd" id="21_6pic0"]
 [ext_resource type="Script" uid="uid://dgqpurnuh14t1" path="res://Code/Resource Makers/GeneralUse/SideStateMaker.gd" id="22_ema4h"]
 [ext_resource type="Script" uid="uid://cs70ix831b5g4" path="res://Code/Resource Makers/PokemonSpecific/PokeSlotMaker.gd" id="23_gp3on"]
@@ -48,7 +49,7 @@ damage_counters = 0
 evolution_ready = false
 evolved_this_turn = false
 evolved_from = Array[ExtResource("2_w3gu5")]([])
-energy_cards = Array[ExtResource("2_w3gu5")]([ExtResource("4_syeol"), ExtResource("13_gimbx")])
+energy_cards = Array[ExtResource("2_w3gu5")]([ExtResource("13_gimbx"), ExtResource("14_gimbx")])
 tm_cards = Array[ExtResource("2_w3gu5")]([])
 buffs = Array[Dictionary]([])
 disables = Array[Dictionary]([])

@@ -65,7 +65,8 @@ func mimic(target: PokeSlot):
 		var mimic_box: MimicBox = Consts.mimic_box.instantiate()
 		mimic_box.attacks = target.mimic_attacks
 		mimic_box.pay_costs = must_pay_energy
+		mimic_box.poke_slot = target
+		mimic_box.position = Vector2(target.ui_slot.global_position.x,0)
 		Globals.full_ui.set_top_ui(mimic_box)
 		await SignalBus.attack
-		Globals.full_ui.remove_top_ui()
 		pass
