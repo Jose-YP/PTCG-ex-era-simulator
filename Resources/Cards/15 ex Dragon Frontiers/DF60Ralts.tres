@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=4 format=3 uid="uid://ddrelutn8k005"]
+
+[ext_resource type="Texture2D" uid="uid://d2i0acffcug1i" path="res://Art/Cards/15 ex Dragon Frontiers/60.jpg" id="1_d77h7"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_ksahi"]
+[ext_resource type="Resource" uid="uid://bvch8xvj2510f" path="res://Resources/Components/Pokemon/ReprintPokemon/DragonFrontiers/HypnosisRalts.tres" id="2_2frtd"]
+
+[resource]
+script = ExtResource("1_ksahi")
+name = "Ralts"
+image = ExtResource("1_d77h7")
+illustrator = "Hajime Kusajima"
+number = 60
+rarity = 0
+expansion = 14
+categories = 1
+pokemon_properties = ExtResource("2_2frtd")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

@@ -44,6 +44,7 @@ class_name AttackData
 ##[br][enum Add] - use [member initial_main_DMG] then add damage depending from modified damage
 ##[br][enum Multiply] - use modified damage as the result
 ##[br][enum Subtract] - use [member initial_main_DMG] then subtract damage depending from modified damage
+##
 @export_enum("None", "Add", "Multiply", "Subtract") var modifier: int = 0
 ##When the comparator returns, how much will it be multiplied by?
 @export_range(0,200,10) var modifier_num: int = 0

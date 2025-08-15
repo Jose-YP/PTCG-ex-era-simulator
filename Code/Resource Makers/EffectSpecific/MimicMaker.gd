@@ -7,7 +7,6 @@ class_name Mimic
 @export_enum("Slot", "Stack") var use: String = "Slot"
 ##Target for mimicry
 @export var ask: SlotAsk
-@export var mimic_self: bool = false
 ##Make this true for mimic attacks to function, false for passives[br]
 ##If true then the user will be able to attack again with the gathered attacks[br]
 ##If false the attacks will be stored in the user to be used later
@@ -17,6 +16,10 @@ class_name Mimic
 ##You can only use the attack if you meet the energy requirements
 @export var must_pay_energy: bool = false
 @export var adjustable_type: bool = false
+@export_group("Miscellaneous")
+@export var mimic_self: bool = false
+@export var hard_reverse: bool = false
+@export var exclusive_mimic: Array[String]
 @export_group("Stack Exclusive")
 @export var stack: Consts.STACKS
 @export var identifier: Identifier
@@ -47,26 +50,52 @@ func mimic(target: PokeSlot):
 	if use == "Stack":
 		pass
 	
-	var attacks: Array[Attack] = []
+	#Dictionary to prevent repeats
+	var attacks: Dictionary[Attack,Attack]
 	var slots: Array[PokeSlot] = Globals.full_ui.get_ask_slots(ask)
 	var mimiced_from: Array[String]
-
+	
 	for slot in slots:
-		if (slot == target and not mimic_self) or slot.current_card.get_formal_name() in mimiced_from:
+		if slot.current_card.get_formal_name() in mimiced_from:
 			continue
-		attacks.append_array(slot.get_pokedata().attacks)
+		var loc_attacks: Array[Attack] = get_mimic_attacks(target, slot)
+		for atk in loc_attacks:
+			attacks[atk] = atk
 		mimiced_from.append(slot.current_card.get_formal_name())
 		
 		#erase any attacks that mimic if retrigger
 	
-	target.mimic_attacks = attacks
-	
 	if retrigger:
-		var mimic_box: MimicBox = Consts.mimic_box.instantiate()
-		mimic_box.attacks = target.mimic_attacks
-		mimic_box.pay_costs = must_pay_energy
-		mimic_box.poke_slot = target
-		mimic_box.position = Vector2(target.ui_slot.global_position.x,0)
-		Globals.full_ui.set_top_ui(mimic_box)
-		await SignalBus.attack
-		pass
+		if attacks.size() == 0:
+			return
+		elif attacks.size() == 1:
+			var attack: Attack = attacks.keys().pop_front()
+			if must_pay_energy and attack.can_pay(target) or not must_pay_energy:
+				SignalBus.trigger_attack.emit(target, attack)
+			else:
+				pass
+		else:
+			var mimic_box: MimicBox = Consts.mimic_box.instantiate()
+			mimic_box.attacks = attacks.keys() as Array[Attack]
+			mimic_box.pay_costs = must_pay_energy
+			mimic_box.poke_slot = target
+			mimic_box.position = Vector2(target.ui_slot.global_position.x,0)
+			Globals.full_ui.set_top_ui(mimic_box)
+			await SignalBus.trigger_finished
+	else:
+		target.mimic_attacks = attacks.keys() as Array[Attack]
+
+func get_mimic_attacks(target: PokeSlot, slot: PokeSlot) -> Array[Attack]:
+	var mimic_attacks: Array[Attack] = []
+	if evolutions:
+		mimic_attacks.append_array(slot.get_evo_attacks())
+	if (slot == target and not mimic_self):
+		return mimic_attacks
+	for atk in slot.get_pokedata().attacks:
+		if exclusive_mimic.size() != 0:
+			if atk.name in exclusive_mimic:
+				mimic_attacks.append(atk)
+		else:
+			mimic_attacks.append(atk)
+	
+	return mimic_attacks

@@ -6,7 +6,7 @@
 
 [resource]
 script = ExtResource("1_3vv37")
-action = 1
+action = 0
 chooser = 1
 givers = ExtResource("2_j15e7")
 to_stack = 2

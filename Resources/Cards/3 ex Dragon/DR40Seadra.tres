@@ -1,0 +1,44 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://dnsid4ckr15ya"]
+
+[ext_resource type="Texture2D" uid="uid://cw5tdamlcy63b" path="res://Art/Cards/3 ex Dragon/40.jpg" id="1_4j685"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_s4mct"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_7ei6e"]
+[ext_resource type="Resource" uid="uid://chv055qe1r1nb" path="res://Resources/Components/Pokemon/Attacks/CommonAttacks/C2Agility.tres" id="3_2fro5"]
+[ext_resource type="Resource" uid="uid://dkvbrahlcnjmi" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/W1C2.tres" id="4_40pph"]
+[ext_resource type="Resource" uid="uid://dnnekosklb3ar" path="res://Resources/Components/Pokemon/Attacks/AttackData/40Dmg.tres" id="5_olc52"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="6_a2wk7"]
+
+[sub_resource type="Resource" id="Resource_giuwm"]
+script = ExtResource("2_7ei6e")
+name = "Waterfall"
+description = ""
+attack_cost = ExtResource("4_40pph")
+attack_data = ExtResource("5_olc52")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_20ert"]
+script = ExtResource("6_a2wk7")
+HP = 70
+retreat = 1
+attacks = Array[ExtResource("2_7ei6e")]([ExtResource("3_2fro5"), SubResource("Resource_giuwm")])
+evo_stage = "Stage 1"
+evolves_from = "Horsea"
+considered = 1
+owner = 0
+type = 4
+weak = 8
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_s4mct")
+name = "Seadra"
+image = ExtResource("1_4j685")
+illustrator = "Midori Harada"
+number = 40
+rarity = 1
+expansion = 2
+categories = 1
+pokemon_properties = SubResource("Resource_20ert")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

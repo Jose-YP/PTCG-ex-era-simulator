@@ -19,6 +19,7 @@ script = ExtResource("5_yxknq")
 mimicing = ExtResource("5_q7lhk")
 use = "Stack"
 ask = ExtResource("4_q7lhk")
+mimic_self = false
 retrigger = true
 evolutions = false
 must_pay_energy = false

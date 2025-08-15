@@ -15,6 +15,11 @@ class_name Ability
 ##[br][enum Once per Emit] Abilities with this [member name] can only be triggered once per [member occurance] emit
 ##[br][enum Infinite] No limits to how often this ability can be used
 @export_enum("Once per Mon", "Once per turn", "Once per Emit", "Infinite") var how_often: String = "Once per Mon"
+##If true then the ability will activate with a src_trg stack of just the slot activating the ability
+##[br]Otherwise the src stack is the previous one based on the slot activating the ability
+##[br][color=yellow]Useful for DR7&8 Minun and Plusle who activate based on anyone else attacking
+##but it doesn't care about them afterwards
+@export var independent_src_trg: bool = false
 ##Any conditions to pass to activate the effect?
 @export var prompt: PromptAsk
 ##If this ability activates at a certain time, when is that time? Uses signals from [member PokeSlot]
@@ -134,8 +139,14 @@ func activate_ability():
 				SignalBus.ability_checked.emit()
 				return
 	
+	if independent_src_trg:
+		Globals.fundies.record_single_src_trg(attatched_to)
+	
 	await Globals.fundies.ui_actions.play_ability_activate(attatched_to, self)
 	await effect.play_effect()
+	
+	if independent_src_trg:
+		Globals.fundies.remove_top_source_target()
 	
 	match how_often:
 		"Once per Mon":

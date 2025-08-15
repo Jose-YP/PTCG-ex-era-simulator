@@ -10,6 +10,8 @@ extends MarginContainer
 
 var slot: PokeSlot
 
+signal attack_with(attack: Attack)
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	set_attack()
@@ -61,4 +63,4 @@ func _on_focus_entered():
 
 func _on_attack_button_pressed() -> void:
 	Globals.full_ui.remove_top_ui()
-	SignalBus.attack.emit(slot, attack)
+	attack_with.emit(attack)

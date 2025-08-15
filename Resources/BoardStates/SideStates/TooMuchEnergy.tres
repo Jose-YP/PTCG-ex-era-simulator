@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SideState" load_steps=18 format=3 uid="uid://cu2ksi0icg1cg"]
+[gd_resource type="Resource" script_class="SideState" load_steps=19 format=3 uid="uid://cu2ksi0icg1cg"]
 
 [ext_resource type="Resource" uid="uid://bsbo6s5jo87t2" path="res://Resources/Decks/EnergysDeck.tres" id="1_xrlcv"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_w3gu5"]
@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://cvjyyq2lad5k5" path="res://Resources/Cards/1 ex Ruby & Saphire/RS108FireEnergy.tres" id="4_syeol"]
 [ext_resource type="Resource" uid="uid://c2tk6qy8h57lw" path="res://Resources/Cards/1 ex Ruby & Saphire/RS82EnergySwitch.tres" id="5_mbehl"]
 [ext_resource type="Resource" uid="uid://dcgvxv02mymn0" path="res://Resources/Cards/2 ex Sandstorm/SS26Wobbuffet.tres" id="6_syeol"]
+[ext_resource type="Resource" uid="uid://bsk4yge3w701c" path="res://Resources/Cards/7 ex Team Rocket Returns/TRR14Togetic.tres" id="7_o1iel"]
 [ext_resource type="Resource" uid="uid://8aluya3mraht" path="res://Resources/Cards/2 ex Sandstorm/SS54Wynaut.tres" id="10_h8qln"]
 [ext_resource type="Resource" uid="uid://cg7qhfrgw5lmh" path="res://Resources/Cards/7 ex Team Rocket Returns/TRR50Togepi.tres" id="12_h8qln"]
 [ext_resource type="Resource" uid="uid://dxq22uwxelttj" path="res://Resources/Cards/1 ex Ruby & Saphire/RS107PsychicEnergy.tres" id="13_gimbx"]
@@ -20,7 +21,7 @@ script = ExtResource("21_6pic0")
 deck = ExtResource("1_xrlcv")
 excluded_to_discard = false
 init_deck = Array[ExtResource("2_w3gu5")]([])
-init_hand = Array[ExtResource("2_w3gu5")]([ExtResource("3_mbehl"), ExtResource("4_syeol"), ExtResource("5_mbehl"), ExtResource("6_syeol")])
+init_hand = Array[ExtResource("2_w3gu5")]([ExtResource("3_mbehl"), ExtResource("4_syeol"), ExtResource("5_mbehl"), ExtResource("6_syeol"), ExtResource("7_o1iel")])
 init_discard = Array[ExtResource("2_w3gu5")]([])
 init_prize = Array[ExtResource("2_w3gu5")]([])
 metadata/_custom_type_script = "uid://calm3n7va5yjo"

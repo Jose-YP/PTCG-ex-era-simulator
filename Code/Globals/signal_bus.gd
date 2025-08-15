@@ -14,13 +14,16 @@ signal tutor_card(card: Base_Card)
 signal cancel_tutor(button: Button)
 #endregion
 #--------------------------------------
+#region SLOT SIGNALS
 signal chosen_slot(showing: PokeSlot)
-signal attack(slot: PokeSlot, attack: Attack)
+signal main_attack(slot: PokeSlot, attack: Attack)
+signal trigger_attack(slot: PokeSlot, attack: Attack)
 signal retreat(slot: PokeSlot)
 signal ability_activated()
 signal ability_checked()
 signal force_disapear()
 signal end_turn()
+#endregion
 #--------------------------------------
 #region CARD PLAY SIGNALS
 signal play_basic(card: Base_Card)
@@ -33,13 +36,13 @@ signal play_fossil(card: Base_Card)
 signal play_energy(card: Base_Card)
 #endregion
 #--------------------------------------
-#--------------------------------------
 #region EFFECT SIGNALS
 signal get_candidate(pokeSlot: PokeSlot)
 signal went_back
 signal finished_coinflip()
 signal prompt_answered(answer: bool)
 signal begin_swap(giver: PokeSlot, reciever: PokeSlot, energy: Array[Base_Card])
+signal trigger_finished
 #endregion
 #--------------------------------------
 #endregion

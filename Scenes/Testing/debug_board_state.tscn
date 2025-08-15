@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://j57m0tmwtg4n" path="res://Code/Scenes/debug_board_state.gd" id="1_auq40"]
 [ext_resource type="Resource" uid="uid://dge18p0in3cyo" path="res://Resources/BoardStates/SideStates/Doubles/FPDTest.tres" id="2_yhhmj"]
-[ext_resource type="Resource" uid="uid://cu2ksi0icg1cg" path="res://Resources/BoardStates/SideStates/TooMuchEnergy.tres" id="3_yhhmj"]
+[ext_resource type="Resource" uid="uid://ckjug6qobpqdc" path="res://Resources/BoardStates/SideStates/Doubles/MimicTests.tres" id="3_yhhmj"]
 [ext_resource type="PackedScene" uid="uid://bmhba1mua5n81" path="res://Scenes/Testing/debug_button.tscn" id="4_t8we2"]
 [ext_resource type="PackedScene" uid="uid://b2f8g5a5evnv4" path="res://Scenes/Testing/comparator_options.tscn" id="6_43axb"]
 [ext_resource type="PackedScene" uid="uid://cni7lmrv7r06c" path="res://Scenes/Main Game/Fundies.tscn" id="6_iquab"]

@@ -37,6 +37,7 @@ func _ready():
 		final_class_txt = Consts.class_texts[index]
 	final_class_txt += Convert.reformat(trainerData.specific_requirement, card.name)
 	make_text(class_text, final_class_txt)
+	make_text(%Effect, trainerData.description)
 	
 	if trainerData.provided_attack:
 		%AttackItem.attack = trainerData.provided_attack

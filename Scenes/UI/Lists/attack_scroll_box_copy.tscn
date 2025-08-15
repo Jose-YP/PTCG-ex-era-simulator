@@ -12,14 +12,15 @@ corner_radius_bottom_right = 1
 corner_radius_bottom_left = 1
 
 [node name="AttackScrollBox" type="ScrollContainer"]
-custom_minimum_size = Vector2(415, 0)
-size_flags_horizontal = 3
+custom_minimum_size = Vector2(410, 0)
+size_flags_horizontal = 6
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_ud5dv")
 follow_focus = true
 script = ExtResource("1_ygoav")
 attackItem = ExtResource("2_58pm6")
 ability_item = ExtResource("3_cjggd")
+max_size = Vector2(400, 400)
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
 layout_mode = 2

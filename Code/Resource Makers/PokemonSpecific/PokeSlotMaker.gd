@@ -153,8 +153,7 @@ func use_ability(ability: Ability):
 func ability_emit(sig: Signal, param: Variant = null):
 	print("Does ", get_card_name(), " have connections in ", sig, "? ", sig.has_connections())
 	if sig.has_connections():
-		
-		
+		print(sig.get_connections())
 		Globals.fundies.record_prev_src_trg_from_self(self)
 		Globals.fundies.print_src_trg()
 		#This feels wrong but it works if multiple abilities connect to the same signal
@@ -299,6 +298,13 @@ func get_pokedata() -> Pokemon:
 
 func get_max_hp() -> int:
 	return max_HP
+
+func get_evo_attacks() -> Array[Attack]:
+	var evo_attacks: Array[Attack]
+	for card in evolved_from:
+		evo_attacks.append_array(card.pokemon_properties.attacks)
+	
+	return evo_attacks
 
 func has_occurance() -> bool:
 	if get_pokedata().pokebody and get_pokedata().pokebody.occurance:

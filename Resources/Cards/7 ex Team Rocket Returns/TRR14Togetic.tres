@@ -28,6 +28,7 @@ script = ExtResource("7_nvprp")
 mimicing = ExtResource("7_parpn")
 use = "Slot"
 ask = ExtResource("6_wy6b1")
+mimic_self = false
 retrigger = true
 evolutions = false
 must_pay_energy = false

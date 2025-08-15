@@ -1,0 +1,44 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://t7dpl6lbpvgx"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_dk0rc"]
+[ext_resource type="Texture2D" uid="uid://1b743wqj4w3g" path="res://Art/Cards/3 ex Dragon/33.jpg" id="1_qv80v"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_j1ex0"]
+[ext_resource type="Resource" uid="uid://gu6w02ikdx01" path="res://Resources/Components/Pokemon/Attacks/PureEffectAttacks/C1Retaliate.tres" id="3_h41dk"]
+[ext_resource type="Resource" uid="uid://dsslhipk3ix2o" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Water1.tres" id="4_j1ex0"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_0mwof"]
+[ext_resource type="Resource" uid="uid://bgmd6jgphsf0a" path="res://Resources/Components/Pokemon/Attacks/AttackData/10SSmokescreen.tres" id="5_h41dk"]
+
+[sub_resource type="Resource" id="Resource_gpvvb"]
+script = ExtResource("2_j1ex0")
+name = "Smokescreen"
+description = "If the Defending Pokémon tries to attack during your opponent's next turn, your opponent flips a coin. If tails, that attack does nothing."
+attack_cost = ExtResource("4_j1ex0")
+attack_data = ExtResource("5_h41dk")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_ixhi3"]
+script = ExtResource("5_0mwof")
+HP = 40
+retreat = 1
+attacks = Array[ExtResource("2_j1ex0")]([ExtResource("3_h41dk"), SubResource("Resource_gpvvb")])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 1
+owner = 0
+type = 4
+weak = 8
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_dk0rc")
+name = "Horsea"
+image = ExtResource("1_qv80v")
+illustrator = "Hajime Kusajima"
+number = 33
+rarity = 1
+expansion = 2
+categories = 1
+pokemon_properties = SubResource("Resource_ixhi3")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

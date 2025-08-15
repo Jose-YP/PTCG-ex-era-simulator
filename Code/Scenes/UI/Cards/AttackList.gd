@@ -18,6 +18,7 @@ func _ready():
 	%Footer.setup("[center]CHOOSE AN ATTACK")
 	%AttackScrollBox.pay_costs = pay_costs
 	%AttackScrollBox.poke_slot = poke_slot
+	%AttackScrollBox.mimic = true
 	%AttackScrollBox.reset_items()
 	%AttackScrollBox.set_specific_items(attacks)
 

@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="Attack" load_steps=7 format=3 uid="uid://chv055qe1r1nb"]
+
+[ext_resource type="Resource" uid="uid://b1rwmggf7a4do" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless2.tres" id="1_ixeao"]
+[ext_resource type="Resource" uid="uid://ekj1myy642kh" path="res://Resources/Components/Effects/Prompts/PromptHeads.tres" id="2_1tmpb"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="3_xi565"]
+[ext_resource type="Resource" uid="uid://dnr7ljin1eclj" path="res://Resources/Components/Effects/Buff/FullImmunity1Turn.tres" id="4_oh1yq"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="5_wuwsf"]
+
+[sub_resource type="Resource" id="Resource_pkjnj"]
+script = ExtResource("3_xi565")
+prompt_reliant = false
+prompt = ExtResource("2_1tmpb")
+initial_main_DMG = 20
+defender_properties = 0
+condition = 1
+before_damage = false
+replace_num = false
+success_effect = ExtResource("4_oh1yq")
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[resource]
+script = ExtResource("5_wuwsf")
+name = "Agility"
+description = "Flip a coin. If heads, prevent all effects of an attack, including damage, done to [name] during your opponent's next turn."
+attack_cost = ExtResource("1_ixeao")
+attack_data = SubResource("Resource_pkjnj")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

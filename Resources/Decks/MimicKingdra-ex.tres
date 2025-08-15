@@ -1,0 +1,44 @@
+[gd_resource type="Resource" script_class="Deck" load_steps=20 format=3 uid="uid://cp6n77pihb8n4"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_lu1cr"]
+[ext_resource type="Resource" uid="uid://t7dpl6lbpvgx" path="res://Resources/Cards/3 ex Dragon/DR33Horsea.tres" id="2_k8kln"]
+[ext_resource type="Resource" uid="uid://bskgnhr88jgr4" path="res://Resources/Cards/3 ex Dragon/DR58Horsea.tres" id="3_rq4me"]
+[ext_resource type="Resource" uid="uid://c0ilhfwifpbcq" path="res://Resources/Cards/3 ex Dragon/DR39Seadra.tres" id="4_dbhnf"]
+[ext_resource type="Resource" uid="uid://dnsid4ckr15ya" path="res://Resources/Cards/3 ex Dragon/DR40Seadra.tres" id="5_e636a"]
+[ext_resource type="Resource" uid="uid://bx4qntvsack8p" path="res://Resources/Cards/3 ex Dragon/DR92Kingdra-ex.tres" id="6_wcuik"]
+[ext_resource type="Resource" uid="uid://daj1y8i36dils" path="res://Resources/Cards/6 ex FireRed & LeafGreen/RG59Clefairy.tres" id="7_lduxd"]
+[ext_resource type="Resource" uid="uid://dhk7twpkrq56g" path="res://Resources/Cards/6 ex FireRed & LeafGreen/RG106Clefable-ex.tres" id="8_3jjev"]
+[ext_resource type="Resource" uid="uid://d3wqsrtlqtlqm" path="res://Resources/Cards/1 ex Ruby & Saphire/RS106WaterEnergy.tres" id="9_iil4w"]
+[ext_resource type="Resource" uid="uid://c0x1x1jxrmf64" path="res://Resources/Cards/3 ex Dragon/DR8Plusle.tres" id="10_nh255"]
+[ext_resource type="Resource" uid="uid://bjwm1cveh0cpy" path="res://Resources/Cards/3 ex Dragon/DR7Minun.tres" id="11_mvnqf"]
+[ext_resource type="Resource" uid="uid://xvauv8yfopfw" path="res://Resources/Cards/2 ex Sandstorm/SS93MultiEnergy.tres" id="12_ab7w4"]
+[ext_resource type="Resource" uid="uid://dh15lk3744ey" path="res://Resources/Cards/8 ex Deoxys/DX89MeteorFalls.tres" id="13_n522k"]
+[ext_resource type="Resource" uid="uid://dyqdhaov0ywxk" path="res://Resources/Cards/1 ex Ruby & Saphire/RS92Switch.tres" id="14_l471k"]
+[ext_resource type="Resource" uid="uid://d16ibvu8tyuiw" path="res://Resources/Cards/2 ex Sandstorm/SS87Lanette'sNetSearch.tres" id="15_ya5d7"]
+[ext_resource type="Resource" uid="uid://bxksrioa4tn37" path="res://Resources/Cards/7 ex Team Rocket Returns/TRR83CopyCat.tres" id="16_682xk"]
+[ext_resource type="Resource" uid="uid://30ov4tahogne" path="res://Resources/Cards/5 ex Hidden Legends/HL92Steven'sAdvice.tres" id="17_pc823"]
+[ext_resource type="Script" uid="uid://e660iomt5e76" path="res://Code/Resource Makers/CardResources/DeckMaker.gd" id="18_3hvv0"]
+[ext_resource type="Resource" uid="uid://gdaii3n1dch5" path="res://Resources/Cards/3 ex Dragon/DR82BalloonBerry.tres" id="18_k8kln"]
+
+[resource]
+script = ExtResource("18_3hvv0")
+cards = Dictionary[ExtResource("1_lu1cr"), int]({
+ExtResource("18_k8kln"): 3,
+ExtResource("17_pc823"): 3,
+ExtResource("16_682xk"): 3,
+ExtResource("15_ya5d7"): 3,
+ExtResource("14_l471k"): 4,
+ExtResource("13_n522k"): 2,
+ExtResource("12_ab7w4"): 4,
+ExtResource("11_mvnqf"): 3,
+ExtResource("10_nh255"): 3,
+ExtResource("9_iil4w"): 12,
+ExtResource("8_3jjev"): 4,
+ExtResource("7_lduxd"): 4,
+ExtResource("6_wcuik"): 4,
+ExtResource("5_e636a"): 2,
+ExtResource("4_dbhnf"): 2,
+ExtResource("3_rq4me"): 2,
+ExtResource("2_k8kln"): 2
+})
+metadata/_custom_type_script = "uid://e660iomt5e76"

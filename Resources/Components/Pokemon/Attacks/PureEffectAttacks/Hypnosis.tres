@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Attack" load_steps=4 format=3 uid="uid://bj32km7k7t5mw"]
+
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="1_0u7bw"]
+[ext_resource type="Resource" uid="uid://gbxomf46y0lr" path="res://Resources/Components/Pokemon/Attacks/AttackData/Sleep.tres" id="2_5bn00"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="3_hxhlu"]
+
+[resource]
+script = ExtResource("3_hxhlu")
+name = "Hypnosis"
+description = "The Defending Pokémon is now Asleep."
+attack_cost = ExtResource("1_0u7bw")
+attack_data = ExtResource("2_5bn00")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

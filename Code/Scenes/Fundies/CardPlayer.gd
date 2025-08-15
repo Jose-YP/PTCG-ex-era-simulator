@@ -14,7 +14,8 @@ play_energy, play_trainer]
 func _ready() -> void:
 	SignalBus.connect_to(play_functions)
 	SignalBus.get_candidate.connect(record_candidate)
-	SignalBus.attack.connect(before_direct_attack)
+	SignalBus.main_attack.connect(main_attack)
+	SignalBus.trigger_attack.connect(trigger_attack)
 	SignalBus.retreat.connect(retreating)
 
 func determine_play(card: Base_Card, placement: Placement = null) -> void:
@@ -61,9 +62,8 @@ func play_basic_pokemon(card: Base_Card, placement: Placement = null):
 	#Convert.get_allowed_flags("Basic")
 	print("Active slots full")
 	
-	start_add_choice("Where will pokemon be benched", card, Convert.get_allowed_flags("Basic"),
+	await start_add_choice("Where will pokemon be benched", card, Convert.get_allowed_flags("Basic"),
 	 func(slot: PokeSlot): return not slot.is_filled() and slot.is_attacker(), placement == null)
-	await chosen
 	
 	if placement == null and hold_candidate != null:
 		Globals.fundies.stack_manager.play_card(card, Consts.STACKS.PLAY)
@@ -77,9 +77,9 @@ func play_fossil(card: Base_Card):
 			Globals.fundies.stack_manager.play_card(card, Consts.STACKS.PLAY)
 			return
 	
-	start_add_choice("Where will pokemon be benched", card, Convert.get_allowed_flags("Fossil"),
+	await start_add_choice("Where will pokemon be benched", card, Convert.get_allowed_flags("Fossil"),
 	 func(slot: PokeSlot): return not slot.is_filled(), true)
-	await chosen
+	
 	card.print_info()
 
 #For evolutions on pokemon and fossils
@@ -87,7 +87,7 @@ func play_evolution(card: Base_Card, placement: Placement = null):
 	var evo_fun: Callable = Globals.make_can_evo_from(card)
 	
 	if placement == null:
-		start_add_choice(str("Evolve ", card.name, " from which Pokemon"), card,
+		await start_add_choice(str("Evolve ", card.name, " from which Pokemon"), card,
 		 Convert.get_allowed_flags("Evolution"), evo_fun, true)
 	else:
 		var place_func = func placement_evo(slot):
@@ -95,10 +95,9 @@ func play_evolution(card: Base_Card, placement: Placement = null):
 				return evo_fun.call(slot)
 			else: return false
 		
-		start_add_choice(str("Evolve ", card.name, " from which Pokemon"), card,
+		await start_add_choice(str("Evolve ", card.name, " from which Pokemon"), card,
 		 Convert.get_allowed_flags("Evolution"), place_func, false)
 	
-	await chosen
 	Globals.fundies.stack_manager.play_card(card, Consts.STACKS.PLAY)
 	print("Attatch ", card.name)
 	card.print_info()
@@ -131,15 +130,13 @@ func play_energy(card: Base_Card, placement: Placement = null):
 	if hold_candidate == null:
 		return
 	
-	Globals.fundies.record_single_src_trg(hold_candidate)
 	Globals.fundies.stack_manager.play_card(card, Consts.STACKS.PLAY)
 	
 	print("Attatch ", card.name)
 	card.print_info()
 	
-	if not placement:
+	if placement == null:
 		Globals.fundies.attatched_energy = true
-		Globals.fundies.remove_top_source_target()
 
 #region TRAINERS
 func play_trainer(card: Base_Card):
@@ -197,10 +194,9 @@ func play_attatch_tool(card: Base_Card):
 		return slot.is_filled() and slot.is_attacker()\
 		 and card.trainer_properties.asks.check_ask(slot)
 	
-	start_add_choice(str("Attatch ", card.name, " to which Pokemon"), card, 
+	await start_add_choice(str("Attatch ", card.name, " to which Pokemon"), card, 
 	Convert.get_allowed_flags("Tool"), tool_bool, true)
 	
-	await chosen
 	Globals.fundies.stack_manager.play_card(card, Consts.STACKS.PLAY)
 	print("Attatch ", card.name)
 	card.print_info()
@@ -210,10 +206,9 @@ func play_attatch_tm(card: Base_Card):
 		return slot.is_filled() and slot.is_attacker()\
 		 and card.trainer_properties.asks.check_ask(slot)
 	
-	start_add_choice(str("Attatch ", card.name, " to which Pokemon"), card,
+	await start_add_choice(str("Attatch ", card.name, " to which Pokemon"), card,
 	Convert.get_allowed_flags("TM"), tm_bool, true)
 	
-	await chosen
 	Globals.fundies.stack_manager.play_card(card, Consts.STACKS.PLAY)
 	print("Attatch ", card.name)
 	card.print_info()
@@ -239,6 +234,7 @@ func start_add_choice(instruction: String, card: Base_Card, play_as: int,
 	Globals.fundies.ui_actions.set_adding_card(card)
 	set_reversable(reversable)
 	hold_playing = card
+	hold_candidate = null
 	await generic_choice(instruction, bool_fun)
 	
 	if Globals.fundies.ui_actions.selected_slot:
@@ -250,7 +246,6 @@ func start_add_choice(instruction: String, card: Base_Card, play_as: int,
 		
 		if not went_back:
 			hold_candidate.use_card(card, play_as, reversable)
-			hold_candidate = null
 			print("Attatch ", card.name)
 		
 		else: print("I changed my mind")
@@ -304,6 +299,20 @@ func set_reversable(reversable: bool):
 #A. You do the damage from an attack first, if that triggers anything (in this case it does)
 #you then do what is triggered, then you continue and do what the attack says besides damage.
 #So the evolution portion of "Explosive Evolution" takes place AFTER Koffing's "Knockout Gas" goes off. (Sep 22, 2005 PUI Rules Team) 
+
+#Shouldonly trigger when pressing an attack button from a pokemon card
+func main_attack(attacker: PokeSlot, with: Attack):
+	await before_direct_attack(attacker, with)
+	await attacker.ability_emit(attacker.attacks, attacker)
+	Globals.fundies.remove_top_source_target()
+	SignalBus.end_turn.emit()
+
+#Shold only trigger from triggered mimic attacks
+func trigger_attack(attacker: PokeSlot, with: Attack):
+	await before_direct_attack(attacker, with)
+	Globals.fundies.remove_top_source_target()
+	SignalBus.trigger_finished.emit()
+
 func before_direct_attack(attacker: PokeSlot, with: Attack):
 	var direct_bool: bool = with.does_direct_damage()
 	var attack_data: AttackData = with.attack_data
@@ -364,8 +373,6 @@ func before_direct_attack(attacker: PokeSlot, with: Attack):
 		await attack_effect(attacker, with.attack_data, pass_prompt, replace_num)
 	
 	attacker.current_attack = null
-	Globals.fundies.remove_top_source_target()
-	SignalBus.end_turn.emit()
 
 #For attacks that use main dmg + effects
 func direct_attack(attacker: PokeSlot, with: Attack, defenders: Array[PokeSlot]):

@@ -1,0 +1,44 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://bskgnhr88jgr4"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_sxt00"]
+[ext_resource type="Texture2D" uid="uid://cn4pjw6uxsjne" path="res://Art/Cards/3 ex Dragon/58.jpg" id="1_u7nho"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_le73c"]
+[ext_resource type="Resource" uid="uid://bfcboshljrsty" path="res://Resources/Components/Pokemon/Attacks/EffectlessAttacks/C1ParalyzingGaze.tres" id="3_3u8m4"]
+[ext_resource type="Resource" uid="uid://b1rwmggf7a4do" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless2.tres" id="4_tmex7"]
+[ext_resource type="Resource" uid="uid://bnsrs2a5hnvkb" path="res://Resources/Components/Pokemon/Attacks/AttackData/20Dmg.tres" id="5_7ex88"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="6_3jguw"]
+
+[sub_resource type="Resource" id="Resource_c13l0"]
+script = ExtResource("2_le73c")
+name = "Wave Splash"
+description = ""
+attack_cost = ExtResource("4_tmex7")
+attack_data = ExtResource("5_7ex88")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_x6t68"]
+script = ExtResource("6_3jguw")
+HP = 50
+retreat = 1
+attacks = Array[ExtResource("2_le73c")]([ExtResource("3_3u8m4"), SubResource("Resource_c13l0")])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 1
+owner = 0
+type = 4
+weak = 8
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_sxt00")
+name = "Horsea"
+image = ExtResource("1_u7nho")
+illustrator = "Midori Harada"
+number = 58
+rarity = 0
+expansion = 2
+categories = 1
+pokemon_properties = SubResource("Resource_x6t68")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="Pokemon" load_steps=7 format=3 uid="uid://bvch8xvj2510f"]
+
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_0u30t"]
+[ext_resource type="Resource" uid="uid://bj32km7k7t5mw" path="res://Resources/Components/Pokemon/Attacks/PureEffectAttacks/Hypnosis.tres" id="2_ay60e"]
+[ext_resource type="Resource" uid="uid://cu817ymtejglx" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Psychic1.tres" id="3_32i8t"]
+[ext_resource type="Resource" uid="uid://cksovhm8ku7su" path="res://Resources/Components/Pokemon/Attacks/AttackData/10xDefEn.tres" id="4_itod8"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_p57xy"]
+
+[sub_resource type="Resource" id="Resource_giid5"]
+script = ExtResource("1_0u30t")
+name = "Psychic Boom"
+description = "Does 10 damage times the amount of Energy attached to the Defending Pokémon."
+attack_cost = ExtResource("3_32i8t")
+attack_data = ExtResource("4_itod8")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[resource]
+script = ExtResource("5_p57xy")
+HP = 50
+retreat = 1
+attacks = Array[ExtResource("1_0u30t")]([ExtResource("2_ay60e"), SubResource("Resource_giid5")])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 1
+owner = 0
+type = 16
+weak = 16
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"

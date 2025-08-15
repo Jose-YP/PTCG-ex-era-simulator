@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://bfw6ylcttychc" path="res://Themes/Themes/AverageButton.tres" id="1_av0ds"]
 [ext_resource type="Script" uid="uid://djgnpgbny56rv" path="res://Code/Scenes/UI/Cards/TrainerCard.gd" id="1_lminl"]
-[ext_resource type="Resource" uid="uid://day2wur81xum5" path="res://Resources/Cards/5 ex Hidden Legends/HL85AncientTM[Rock].tres" id="2_s10ow"]
+[ext_resource type="Resource" uid="uid://30ov4tahogne" path="res://Resources/Cards/5 ex Hidden Legends/HL92Steven'sAdvice.tres" id="2_s10ow"]
 [ext_resource type="StyleBox" uid="uid://bvesf3hjv2bsl" path="res://Themes/StyleBoxes/GBADragBox.tres" id="3_7n7u5"]
 [ext_resource type="Texture2D" uid="uid://b4uymubvo04qp" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/37.jpg" id="3_ociyq"]
 [ext_resource type="PackedScene" uid="uid://dmhjt2wuanymf" path="res://Scenes/UI/UIComponents/minimize_button.tscn" id="3_pxlap"]

@@ -7,6 +7,7 @@ class_name AttackScrollContainer
 @export var ability_item: PackedScene
 @export var poke_slot: PokeSlot
 @export var current_card: Base_Card
+@export var mimic: bool
 @export var max_size: Vector2 = Vector2(420, 400)
 
 @onready var current_height: float = 55
@@ -69,6 +70,7 @@ func set_attack(attack: Attack, theme_variation: String = ""):
 	making.attack = attack
 	making.slot = poke_slot
 	making.card_name = poke_slot.get_card_name() if poke_slot else current_card.name
+	making.attack_with.connect(determine_attack)
 	%CardList.add_child(making)
 	if check: making.focus_mode = FocusMode.FOCUS_NONE
 	if theme_variation != "":
@@ -80,6 +82,12 @@ func set_attack(attack: Attack, theme_variation: String = ""):
 		else:
 			making.make_usable(true)
 	else: making.make_usable(false)
+
+func determine_attack(attack: Attack):
+	if mimic:
+		SignalBus.trigger_attack.emit(poke_slot, attack)
+	else:
+		SignalBus.main_attack.emit(poke_slot, attack)
 
 func set_ability(ability: Ability):
 	if ability:

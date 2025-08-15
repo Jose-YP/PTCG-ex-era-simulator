@@ -38,12 +38,15 @@ func get_damage() -> int:
 		print(data.modifier_num, mod_times)
 		modifier_result = data.modifier_num * mod_times
 		match data.modifier:
+			0:
+				if mod_times == 0:
+					final_damage = modifier_result
 			1:
 				final_damage += modifier_result
+			2:
+				final_damage = modifier_result
 			3:
 				final_damage -= modifier_result
-			_:
-				final_damage = modifier_result
 	
 	return final_damage
 
