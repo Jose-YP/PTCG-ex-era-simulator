@@ -79,6 +79,7 @@ description = "As long as [name] is in play, whenever your opponent attaches an 
 affected_by_condition = false
 active = false
 how_often = "Once per Emit"
+independent_src_trg = false
 occurance = SubResource("Resource_w8af5")
 effect = SubResource("Resource_jco4e")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"

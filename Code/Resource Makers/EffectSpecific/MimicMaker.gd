@@ -24,6 +24,8 @@ class_name Mimic
 @export var stack: Consts.STACKS
 @export var identifier: Identifier
 
+const is_pokemon: Identifier = preload("res://Resources/Components/Effects/Identifiers/Pokemon/AnyPokemon.tres")
+
 signal finished
 
 #https://compendium.pokegym.net/compendium-ex.html
@@ -47,43 +49,49 @@ func play_effect(reversable: bool = false, replace_num: int = -1) -> void:
 	finished.emit()
 
 func mimic(target: PokeSlot):
-	if use == "Stack":
-		pass
-	
 	#Dictionary to prevent repeats
 	var attacks: Dictionary[Attack,Attack]
 	var slots: Array[PokeSlot] = Globals.full_ui.get_ask_slots(ask)
 	var mimiced_from: Array[String]
 	
-	for slot in slots:
-		if slot.current_card.get_formal_name() in mimiced_from:
-			continue
-		var loc_attacks: Array[Attack] = get_mimic_attacks(target, slot)
-		for atk in loc_attacks:
-			attacks[atk] = atk
-		mimiced_from.append(slot.current_card.get_formal_name())
-		
+	if use == "Slot":
+		for slot in slots:
+			if slot.current_card.get_formal_name() in mimiced_from:
+				continue
+			var loc_attacks: Array[Attack] = get_mimic_attacks(target, slot)
+			for atk in loc_attacks:
+				attacks[atk] = atk
+			mimiced_from.append(slot.current_card.get_formal_name())
 		#erase any attacks that mimic if retrigger
-	
-	if retrigger:
-		if attacks.size() == 0:
-			return
-		elif attacks.size() == 1:
-			var attack: Attack = attacks.keys().pop_front()
-			if must_pay_energy and attack.can_pay(target) or not must_pay_energy:
-				SignalBus.trigger_attack.emit(target, attack)
+		if retrigger:
+			if attacks.size() == 0:
+				return
+			elif attacks.size() == 1:
+				var attack: Attack = attacks.keys().pop_front()
+				if must_pay_energy and attack.can_pay(target) or not must_pay_energy:
+					SignalBus.trigger_attack.emit(target, attack)
+				else:
+					pass
 			else:
-				pass
+				var mimic_box: MimicBox = Consts.mimic_box.instantiate()
+				mimic_box.attacks = attacks.keys() as Array[Attack]
+				mimic_box.pay_costs = must_pay_energy
+				mimic_box.poke_slot = target
+				mimic_box.position = Vector2(target.ui_slot.global_position.x,0)
+				Globals.full_ui.set_top_ui(mimic_box)
 		else:
-			var mimic_box: MimicBox = Consts.mimic_box.instantiate()
-			mimic_box.attacks = attacks.keys() as Array[Attack]
-			mimic_box.pay_costs = must_pay_energy
-			mimic_box.poke_slot = target
-			mimic_box.position = Vector2(target.ui_slot.global_position.x,0)
-			Globals.full_ui.set_top_ui(mimic_box)
-			await SignalBus.trigger_finished
+			target.mimic_attacks = attacks.keys() as Array[Attack]
 	else:
-		target.mimic_attacks = attacks.keys() as Array[Attack]
+		var stacks: CardStacks = Globals.fundies.stack_manager.get_stacks(ask.side_target)
+		var mimic_card_list: MimicCardList = Consts.mimic_card_box.instantiate()
+		mimic_card_list.list = stacks.identifier_search(stack, is_pokemon)
+		mimic_card_list.target = target
+		mimic_card_list.must_pay_energy = must_pay_energy
+		Globals.full_ui.set_top_ui(mimic_card_list)
+		
+		await mimic_card_list.finished
+	await SignalBus.trigger_finished
+	
 
 func get_mimic_attacks(target: PokeSlot, slot: PokeSlot) -> Array[Attack]:
 	var mimic_attacks: Array[Attack] = []

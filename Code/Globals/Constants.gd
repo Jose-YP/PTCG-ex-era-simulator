@@ -64,6 +64,7 @@ const prompt_answer: PackedScene = preload("res://Scenes/UI/ETC/PromptAnswer.tsc
 const cpu_scene: PackedScene = preload("res://Scenes/Main Game/cpu.tscn")
 const dmg_manip_box: PackedScene = preload("res://Scenes/UI/Lists/dmg_manip_box.tscn")
 const mimic_box: PackedScene = preload("res://Scenes/UI/Lists/mimic_list.tscn")
+const mimic_card_box: PackedScene = preload("res://Scenes/UI/Lists/mimic_card_list.tscn")
 const input_number: PackedScene = preload("res://Scenes/UI/ETC/input_number.tscn")
 #endregion
 #--------------------------------------
@@ -102,7 +103,8 @@ enum STACK_ACT{PLAY,##ALLOWED CARDS CAN BE PLAYED ONTO THE BOARD
 	DISCARD, ##ALLOWED CARDS WILL BE SENT TO DISCARD PILE
 	LOOK, ##NOT ALLOWED TO INTERACT WITH CARDS
 	REORDER, ##REARRANGE CARDS AS NECESSARY
-	ENSWAP ##SELECT CARDS TO SWAP IN THE SWAP BOX
+	ENSWAP, ##SELECT CARDS TO SWAP IN THE SWAP BOX
+	MIMIC
 }
 enum COIN_RULES{
 	REG,

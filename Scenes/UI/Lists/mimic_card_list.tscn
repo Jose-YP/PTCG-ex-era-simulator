@@ -1,0 +1,118 @@
+[gd_scene load_steps=7 format=3 uid="uid://dgns62nhwgtvq"]
+
+[ext_resource type="Script" uid="uid://bjts8ujuqi41g" path="res://Code/Scenes/UI/List/mimic_card_list.gd" id="1_f3mf6"]
+[ext_resource type="PackedScene" uid="uid://bttlpdvhmocn3" path="res://Scenes/UI/Lists/header.tscn" id="2_8bkvr"]
+[ext_resource type="PackedScene" uid="uid://dwn2qsmdqyhiw" path="res://Scenes/UI/Lists/playing_list.tscn" id="3_68gmp"]
+[ext_resource type="PackedScene" uid="uid://c28rtuj3kak48" path="res://Scenes/UI/Lists/Footer.tscn" id="4_28gx1"]
+[ext_resource type="PackedScene" uid="uid://dutm4vrspqfgn" path="res://Scenes/UI/Lists/attack_scroll_box_copy.tscn" id="4_68gmp"]
+[ext_resource type="PackedScene" uid="uid://dph43kayde03u" path="res://Scenes/UI/UIComponents/energy_types.tscn" id="5_28gx1"]
+
+[node name="MimicBox" type="Control"]
+layout_mode = 3
+anchor_right = 0.774
+anchor_bottom = 0.831
+offset_right = 0.0799561
+offset_bottom = -0.320007
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_f3mf6")
+
+[node name="EnergyUI" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Header" parent="EnergyUI" node_paths=PackedStringArray("dragging_node", "based_on", "shrinkNodes", "hideNodes") instance=ExtResource("2_8bkvr")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(836, 0)
+layout_mode = 2
+dragging_node = NodePath("../..")
+based_on = NodePath(".")
+shrinkNodes = [NodePath("../PanelContainer/Lists/PlayingList")]
+hideNodes = [NodePath("../Footer"), NodePath("../PanelContainer/Lists/Slots/Actions"), NodePath("../PanelContainer/Lists/Attacks")]
+
+[node name="PanelContainer" type="PanelContainer" parent="EnergyUI"]
+layout_mode = 2
+
+[node name="Lists" type="HBoxContainer" parent="EnergyUI/PanelContainer"]
+layout_mode = 2
+
+[node name="PlayingList" parent="EnergyUI/PanelContainer/Lists" node_paths=PackedStringArray("par") instance=ExtResource("3_68gmp")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+par = NodePath("../../../..")
+allowed_as = 512
+stack_act = 4
+stack = 4
+
+[node name="Attacks" parent="EnergyUI/PanelContainer/Lists" instance=ExtResource("4_68gmp")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(410, 510)
+layout_mode = 2
+mimic = true
+max_size = Vector2(400, 510)
+
+[node name="Slots" type="VBoxContainer" parent="EnergyUI/PanelContainer/Lists"]
+visible = false
+layout_mode = 2
+
+[node name="Actions" type="PanelContainer" parent="EnergyUI/PanelContainer/Lists/Slots"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+theme_type_variation = &"DeepPannel"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="EnergyUI/PanelContainer/Lists/Slots/Actions"]
+layout_mode = 2
+
+[node name="InfoSection" type="VBoxContainer" parent="EnergyUI/PanelContainer/Lists/Slots/Actions/HBoxContainer"]
+layout_mode = 2
+
+[node name="EnergyTypes" parent="EnergyUI/PanelContainer/Lists/Slots/Actions/HBoxContainer/InfoSection" instance=ExtResource("5_28gx1")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(186, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 2
+en_count = 6
+disabled = true
+
+[node name="From" type="RichTextLabel" parent="EnergyUI/PanelContainer/Lists/Slots/Actions/HBoxContainer/InfoSection"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(236, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Card: "
+fit_content = true
+
+[node name="Actions" type="VBoxContainer" parent="EnergyUI/PanelContainer/Lists/Slots/Actions/HBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Attack" type="Button" parent="EnergyUI/PanelContainer/Lists/Slots/Actions/HBoxContainer/Actions"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(166, 25)
+layout_mode = 2
+size_flags_vertical = 3
+disabled = true
+text = "Attack"
+
+[node name="End" type="Button" parent="EnergyUI/PanelContainer/Lists/Slots/Actions/HBoxContainer/Actions"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Finish"
+
+[node name="Footer" parent="EnergyUI" node_paths=PackedStringArray("dragging_node") instance=ExtResource("4_28gx1")]
+unique_name_in_owner = true
+layout_mode = 2
+dragging_node = NodePath("../..")
+
+[connection signal="close_button_pressed" from="EnergyUI/Header" to="." method="_on_header_close_button_pressed"]
+[connection signal="trigger" from="EnergyUI/PanelContainer/Lists/Attacks" to="." method="_on_attack_pressed"]
+[connection signal="pressed" from="EnergyUI/PanelContainer/Lists/Slots/Actions/HBoxContainer/Actions/Attack" to="." method="_on_attack_pressed"]

@@ -69,6 +69,7 @@ description = "Once during your turn (before your attack), you may attach a {Wat
 affected_by_condition = true
 active = false
 how_often = "Once per Mon"
+independent_src_trg = false
 effect = SubResource("Resource_gcqqh")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 

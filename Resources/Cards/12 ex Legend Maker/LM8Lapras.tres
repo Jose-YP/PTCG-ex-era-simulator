@@ -34,6 +34,7 @@ description = "Once during your turn, when you put [name] onto your Bench from y
 affected_by_condition = false
 active = false
 how_often = "Once per Mon"
+independent_src_trg = false
 occurance = ExtResource("7_rm88m")
 effect = SubResource("Resource_uk2x1")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"

@@ -107,6 +107,7 @@ description = "As often as you like during your turn, you may move an Energy car
 affected_by_condition = true
 active = false
 how_often = "Infinite"
+independent_src_trg = false
 effect = SubResource("Resource_n8rdp")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 

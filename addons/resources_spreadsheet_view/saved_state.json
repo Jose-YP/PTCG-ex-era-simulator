@@ -84,7 +84,7 @@
       "return ToolBool.has_ability(res)",
       "return res.pokemon_properties",
       "if ToolBool.has_effect(res, [\"Mimic\"]):\n\treturn true\nreturn false",
-      "if res.pokemon_properties:\n\treturn res.pokemon_properties.attacks.size() > 1\nreturn false"
+      "if ToolBool.has_effect(res, [\"Buff\"]):\n\treturn true\nreturn false"
     ],
     "process": [
       "return value"

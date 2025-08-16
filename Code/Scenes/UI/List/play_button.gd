@@ -114,7 +114,8 @@ func get_option_position(option: ItemOptions) -> Vector2:
 func _gui_input(event):
 	if not disabled:
 		if event.is_action_pressed("A"):
-			if stack_act == Consts.STACK_ACT.DISCARD or stack_act == Consts.STACK_ACT.ENSWAP:
+			if stack_act == Consts.STACK_ACT.DISCARD or stack_act == Consts.STACK_ACT.ENSWAP\
+			or stack_act == Consts.STACK_ACT.MIMIC:
 				select.emit()
 			elif stack_act != Consts.STACK_ACT.LOOK:
 				if Globals.fundies.options:

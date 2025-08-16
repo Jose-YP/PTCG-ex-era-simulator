@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Deck" load_steps=26 format=3 uid="uid://yamufr71axhi"]
+[gd_resource type="Resource" script_class="Deck" load_steps=27 format=3 uid="uid://yamufr71axhi"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_dsmk7"]
 [ext_resource type="Resource" uid="uid://dnwi6a5kx4bvn" path="res://Resources/Cards/1 ex Ruby & Saphire/RS10Mightyena.tres" id="2_43u3y"]
@@ -25,32 +25,34 @@
 [ext_resource type="Resource" uid="uid://dyqdhaov0ywxk" path="res://Resources/Cards/1 ex Ruby & Saphire/RS92Switch.tres" id="23_43u3y"]
 [ext_resource type="Script" uid="uid://e660iomt5e76" path="res://Code/Resource Makers/CardResources/DeckMaker.gd" id="23_bg51c"]
 [ext_resource type="Resource" uid="uid://4t2wfb4h2e6u" path="res://Resources/Cards/5 ex Hidden Legends/HL84AncientTM[Ice].tres" id="24_m6yeo"]
+[ext_resource type="Resource" uid="uid://cbnw3a213i835" path="res://Resources/Cards/16 ex Power Keepers/PK97Shiftry-ex.tres" id="25_jr45e"]
 
 [resource]
 script = ExtResource("23_bg51c")
 cards = Dictionary[ExtResource("1_dsmk7"), int]({
-ExtResource("24_m6yeo"): 2,
-ExtResource("2_43u3y"): 4,
-ExtResource("3_m6yeo"): 1,
-ExtResource("4_jr45e"): 2,
-ExtResource("5_0juwh"): 1,
-ExtResource("6_tix18"): 3,
-ExtResource("7_bf311"): 3,
-ExtResource("8_chmqy"): 3,
-ExtResource("9_bjvph"): 3,
-ExtResource("10_4cdpk"): 4,
-ExtResource("11_xtsql"): 4,
-ExtResource("12_lwb82"): 3,
-ExtResource("13_5bkdi"): 4,
-ExtResource("14_22q0e"): 2,
-ExtResource("15_7yvcl"): 2,
-ExtResource("16_78dvg"): 2,
-ExtResource("17_ctgut"): 2,
-ExtResource("18_lvniu"): 3,
-ExtResource("19_2nmss"): 2,
-ExtResource("20_3rodr"): 2,
-ExtResource("21_kfv6d"): 4,
+ExtResource("25_jr45e"): 2,
+ExtResource("23_43u3y"): 2,
 ExtResource("22_1do12"): 2,
-ExtResource("23_43u3y"): 2
+ExtResource("21_kfv6d"): 4,
+ExtResource("20_3rodr"): 2,
+ExtResource("19_2nmss"): 2,
+ExtResource("18_lvniu"): 3,
+ExtResource("17_ctgut"): 2,
+ExtResource("16_78dvg"): 2,
+ExtResource("15_7yvcl"): 2,
+ExtResource("14_22q0e"): 2,
+ExtResource("13_5bkdi"): 2,
+ExtResource("12_lwb82"): 3,
+ExtResource("11_xtsql"): 4,
+ExtResource("10_4cdpk"): 4,
+ExtResource("9_bjvph"): 3,
+ExtResource("8_chmqy"): 3,
+ExtResource("7_bf311"): 3,
+ExtResource("6_tix18"): 3,
+ExtResource("5_0juwh"): 1,
+ExtResource("4_jr45e"): 2,
+ExtResource("3_m6yeo"): 1,
+ExtResource("2_43u3y"): 4,
+ExtResource("24_m6yeo"): 2
 })
 metadata/_custom_type_script = "uid://e660iomt5e76"

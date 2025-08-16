@@ -68,6 +68,7 @@ description = "If [name] is your Active Pokémon and is damaged by an opponent's
 affected_by_condition = false
 active = false
 how_often = "Infinite"
+independent_src_trg = false
 occurance = ExtResource("9_544qj")
 effect = SubResource("Resource_ikewq")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"

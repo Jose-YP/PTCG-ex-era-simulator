@@ -43,6 +43,7 @@ description = "When you attach a {Water} Energy card from your hand to [name], r
 affected_by_condition = false
 active = false
 how_often = "Once per Mon"
+independent_src_trg = false
 occurance = ExtResource("6_bgt0y")
 effect = ExtResource("3_jkfog")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"

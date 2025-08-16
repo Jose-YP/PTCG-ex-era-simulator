@@ -83,6 +83,7 @@ description = "Once during your turn, when you put [name] from your hand onto yo
 affected_by_condition = false
 active = false
 how_often = "Once per Mon"
+independent_src_trg = false
 prompt = SubResource("Resource_fuowa")
 occurance = ExtResource("9_7nwh2")
 effect = SubResource("Resource_ru1we")

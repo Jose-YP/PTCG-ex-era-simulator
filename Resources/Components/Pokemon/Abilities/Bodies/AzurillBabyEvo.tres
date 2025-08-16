@@ -41,6 +41,7 @@ description = "Once during your turn (before your attack), you may put Marill fr
 affected_by_condition = false
 active = false
 how_often = "Once per Mon"
+independent_src_trg = false
 occurance = SubResource("Resource_rv3ca")
 passive = SubResource("Resource_8alob")
 effect = SubResource("Resource_qhbof")

@@ -43,6 +43,7 @@ description = "Once during your turn (before your attack), if [name] is your Act
 affected_by_condition = true
 active = true
 how_often = "Once per Mon"
+independent_src_trg = false
 effect = SubResource("Resource_n00n6")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 

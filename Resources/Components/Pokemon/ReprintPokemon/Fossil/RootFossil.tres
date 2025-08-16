@@ -23,6 +23,7 @@ description = "At any time between turns, remove 1 damage counter from [name]."
 affected_by_condition = true
 active = false
 how_often = "Once per Mon"
+independent_src_trg = false
 prompt = ExtResource("5_qb8f0")
 occurance = ExtResource("5_m8d88")
 effect = SubResource("Resource_my7tf")

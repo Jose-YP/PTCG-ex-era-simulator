@@ -155,6 +155,7 @@ description = "As long as [name] is your Active Pokémon, remove 1 damage counte
 affected_by_condition = false
 active = true
 how_often = "Once per Mon"
+independent_src_trg = false
 prompt = SubResource("Resource_rpbfj")
 occurance = ExtResource("13_wmae1")
 effect = SubResource("Resource_ai77k")

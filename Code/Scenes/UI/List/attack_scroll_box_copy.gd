@@ -13,6 +13,7 @@ class_name AttackScrollContainer
 @onready var current_height: float = 55
 
 signal readied(current_size)
+signal trigger
 
 var resized_container: bool = false
 var items: Array[Node] = []
@@ -81,10 +82,11 @@ func set_attack(attack: Attack, theme_variation: String = ""):
 			making.check_usability()
 		else:
 			making.make_usable(true)
-	else: making.make_usable(false)
+	else: making.make_usable(mimic)
 
 func determine_attack(attack: Attack):
 	if mimic:
+		trigger.emit()
 		SignalBus.trigger_attack.emit(poke_slot, attack)
 	else:
 		SignalBus.main_attack.emit(poke_slot, attack)

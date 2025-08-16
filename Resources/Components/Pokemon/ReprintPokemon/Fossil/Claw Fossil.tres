@@ -22,6 +22,7 @@ description = "If [name] is your Active Pokémon and is damaged by an opponent's
 affected_by_condition = true
 active = false
 how_often = "Once per Mon"
+independent_src_trg = false
 occurance = ExtResource("4_0dqor")
 effect = SubResource("Resource_eekiw")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"

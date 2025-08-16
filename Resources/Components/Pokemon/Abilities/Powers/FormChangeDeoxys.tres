@@ -60,5 +60,6 @@ description = "Once during your turn (before your attack), you may search your d
 affected_by_condition = false
 active = false
 how_often = "Once per turn"
+independent_src_trg = false
 effect = SubResource("Resource_gaing")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"

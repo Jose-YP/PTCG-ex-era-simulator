@@ -28,11 +28,13 @@ script = ExtResource("7_nvprp")
 mimicing = ExtResource("7_parpn")
 use = "Slot"
 ask = ExtResource("6_wy6b1")
-mimic_self = false
 retrigger = true
 evolutions = false
 must_pay_energy = false
 adjustable_type = false
+mimic_self = false
+hard_reverse = false
+exclusive_mimic = Array[String]([])
 stack = 0
 metadata/_custom_type_script = "uid://dtv1d2u2kvixy"
 
@@ -83,6 +85,7 @@ description = "Prevent all effects of attacks, including damage, done to [name] 
 affected_by_condition = false
 active = false
 how_often = "Infinite"
+independent_src_trg = false
 passive = SubResource("Resource_u1d53")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 

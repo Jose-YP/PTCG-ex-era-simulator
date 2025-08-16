@@ -17,11 +17,13 @@ script = ExtResource("5_jrvh8")
 mimicing = ExtResource("5_n4vst")
 use = "Slot"
 ask = ExtResource("4_n4vst")
-mimic_self = false
 retrigger = true
 evolutions = false
 must_pay_energy = false
 adjustable_type = false
+mimic_self = false
+hard_reverse = false
+exclusive_mimic = Array[String]([])
 stack = 0
 metadata/_custom_type_script = "uid://dtv1d2u2kvixy"
 

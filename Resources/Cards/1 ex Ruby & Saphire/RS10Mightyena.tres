@@ -60,6 +60,7 @@ description = "As long as [name] is your Active Pokémon, any damage done to you
 affected_by_condition = false
 active = true
 how_often = "Once per Mon"
+independent_src_trg = false
 passive = SubResource("Resource_gi0ni")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 

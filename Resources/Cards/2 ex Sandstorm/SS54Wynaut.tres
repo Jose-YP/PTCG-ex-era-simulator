@@ -80,6 +80,7 @@ description = "Once during your turn (before your attack), you may put Wobbuffet
 affected_by_condition = false
 active = false
 how_often = "Once per Mon"
+independent_src_trg = false
 effect = SubResource("Resource_ncww0")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 

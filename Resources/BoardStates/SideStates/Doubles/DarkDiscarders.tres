@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SideState" load_steps=26 format=3 uid="uid://drpuudscb04qb"]
+[gd_resource type="Resource" script_class="SideState" load_steps=30 format=3 uid="uid://drpuudscb04qb"]
 
 [ext_resource type="Resource" uid="uid://yamufr71axhi" path="res://Resources/Decks/DarkDisrupt.tres" id="1_40dff"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_f4682"]
@@ -21,6 +21,9 @@
 [ext_resource type="Resource" uid="uid://dna4aegpwela5" path="res://Resources/Cards/2 ex Sandstorm/SS48Nuzleaf.tres" id="19_n5ock"]
 [ext_resource type="Resource" uid="uid://dnwi6a5kx4bvn" path="res://Resources/Cards/1 ex Ruby & Saphire/RS10Mightyena.tres" id="20_jkutt"]
 [ext_resource type="Resource" uid="uid://d3oqllkeh61wl" path="res://Resources/Cards/1 ex Ruby & Saphire/RS63Poochyena.tres" id="21_ncd8k"]
+[ext_resource type="Resource" uid="uid://cbnw3a213i835" path="res://Resources/Cards/16 ex Power Keepers/PK97Shiftry-ex.tres" id="22_5dvln"]
+[ext_resource type="Resource" uid="uid://xdvsgjmvkd2y" path="res://Resources/Cards/2 ex Sandstorm/SS77Seedot.tres" id="23_lo1t2"]
+[ext_resource type="Resource" uid="uid://bv1lgt5nrjayq" path="res://Resources/Cards/2 ex Sandstorm/SS49Nuzleaf.tres" id="24_b2d7h"]
 
 [sub_resource type="Resource" id="Resource_xl2h2"]
 script = ExtResource("11_e4l5j")
@@ -80,6 +83,22 @@ dealt_damage = 0
 energy_discarded = 0
 metadata/_custom_type_script = "uid://cs70ix831b5g4"
 
+[sub_resource type="Resource" id="Resource_cyo4y"]
+script = ExtResource("13_k8xsa")
+current_card = ExtResource("22_5dvln")
+max_HP = 0
+damage_counters = 0
+evolution_ready = false
+evolved_this_turn = false
+evolved_from = Array[ExtResource("2_f4682")]([ExtResource("23_lo1t2"), ExtResource("24_b2d7h")])
+energy_cards = Array[ExtResource("2_f4682")]([])
+tm_cards = Array[ExtResource("2_f4682")]([])
+buffs = Array[Dictionary]([])
+disables = Array[Dictionary]([])
+dealt_damage = 0
+energy_discarded = 0
+metadata/_custom_type_script = "uid://cs70ix831b5g4"
+
 [resource]
 script = ExtResource("12_csa4c")
 card_stacks = SubResource("Resource_xl2h2")
@@ -88,6 +107,7 @@ bench_size = 5
 slots = Dictionary[ExtResource("13_k8xsa"), bool]({
 SubResource("Resource_t8g77"): true,
 SubResource("Resource_qpaoy"): false,
-SubResource("Resource_0jiev"): true
+SubResource("Resource_0jiev"): false,
+SubResource("Resource_cyo4y"): true
 })
 metadata/_custom_type_script = "uid://dgqpurnuh14t1"

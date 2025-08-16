@@ -113,6 +113,7 @@ description = "As often as you like during your turn (before your attack), you m
 affected_by_condition = true
 active = false
 how_often = "Infinite"
+independent_src_trg = false
 effect = SubResource("Resource_0m8xk")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 

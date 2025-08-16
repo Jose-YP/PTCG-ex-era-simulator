@@ -52,11 +52,13 @@ script = ExtResource("6_2fy54")
 mimicing = ExtResource("9_7iwa2")
 use = "Slot"
 ask = ExtResource("8_pfer2")
-mimic_self = false
 retrigger = false
 evolutions = false
 must_pay_energy = true
 adjustable_type = false
+mimic_self = false
+hard_reverse = false
+exclusive_mimic = Array[String]([])
 stack = 0
 metadata/_custom_type_script = "uid://dtv1d2u2kvixy"
 
@@ -75,6 +77,7 @@ description = "[name] can use the attacks of all Pokémon in play as its own. (Y
 affected_by_condition = false
 active = false
 how_often = "Infinite"
+independent_src_trg = false
 passive = SubResource("Resource_efonp")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 

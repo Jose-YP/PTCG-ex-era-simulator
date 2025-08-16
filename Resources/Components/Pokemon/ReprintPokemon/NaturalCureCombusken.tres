@@ -32,6 +32,7 @@ description = "When you attach a {Fire} Energy card from your hand to [name], re
 affected_by_condition = false
 active = false
 how_often = "Once per Mon"
+independent_src_trg = false
 occurance = SubResource("Resource_xg3gf")
 effect = ExtResource("4_jxjhv")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"

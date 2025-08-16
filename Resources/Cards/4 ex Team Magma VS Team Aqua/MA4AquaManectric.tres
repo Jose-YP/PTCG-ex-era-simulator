@@ -109,6 +109,7 @@ description = "Once during your turn (before your attack), you may move any numb
 affected_by_condition = true
 active = false
 how_often = "Once per Mon"
+independent_src_trg = false
 effect = SubResource("Resource_ys2ao")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 

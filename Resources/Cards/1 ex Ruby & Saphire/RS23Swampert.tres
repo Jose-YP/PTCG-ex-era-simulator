@@ -35,6 +35,7 @@ description = "Once during your turn (before your attack), when you attach a {Wa
 affected_by_condition = true
 active = false
 how_often = "Once per Mon"
+independent_src_trg = false
 occurance = ExtResource("8_f5wi8")
 effect = SubResource("Resource_7l16b")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"

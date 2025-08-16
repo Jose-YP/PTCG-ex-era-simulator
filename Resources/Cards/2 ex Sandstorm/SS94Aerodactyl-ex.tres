@@ -74,6 +74,7 @@ description = "As long as [name] is in play, your opponent can't play Pokémon T
 affected_by_condition = true
 active = false
 how_often = "Infinite"
+independent_src_trg = false
 occurance = SubResource("Resource_f55l8")
 passive = SubResource("Resource_xpjov")
 effect = SubResource("Resource_r4mat")
