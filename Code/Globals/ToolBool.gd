@@ -75,6 +75,10 @@ func has_effect(card: Base_Card, effect_type: Array[String]):
 			pass
 	if card.energy_properties:
 		var en: Energy = card.energy_properties
+		for effect in en.prompt_effects:
+			if effect_collect_contains(effect, effect_type):
+				return true
+		
 		if en.success_effect != null:
 			if effect_has_effect_type(en.success_effect, effect_type):
 				return true
@@ -105,6 +109,20 @@ func attack_has_effect(attack: Attack, comps: Array[String]):
 		if data.prompt.effect != null:
 			if effect_has_effect_type(data.prompt.effect, comps):
 				return true
+	return false
+
+func effect_collect_contains(effect_collect: EffectCollect, comps: Array[String]) -> bool:
+	if effect_collect.success:
+		if effect_has_effect_type(effect_collect.success, comps):
+			return true
+	if effect_collect.fail:
+		if effect_has_effect_type(effect_collect.fail, comps):
+			return true
+	if effect_collect.prompt:
+		if effect_collect.prompt.effect:
+			if effect_has_effect_type(effect_collect.prompt.effect, comps):
+				return true
+	
 	return false
 
 func effect_has_effect_type(effect: EffectCall, comps: Array[String]):
@@ -149,9 +167,6 @@ func effect_has_effect_type(effect: EffectCall, comps: Array[String]):
 			"Mimic":
 				if effect.mimic:
 					gathered_comps.append(effect.mimic)
-			"Extra":
-				if effect.extra_effect:
-					gathered_comps.append(effect.extra_effect)
 	
 	for current_comp in gathered_comps:
 		if current_comp.get_script().get_global_name() in comps:

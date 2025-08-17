@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://caj1pm8erar2a" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="1_05ucl"]
 [ext_resource type="Resource" uid="uid://lop03i25k4pb" path="res://Resources/Components/Effects/Asks/AtkEvoNonEx.tres" id="1_vn2w4"]
-[ext_resource type="Resource" uid="uid://cv3vlfatr1glg" path="res://Resources/Components/Effects/Buff/SrcSelf-10Atk.tres" id="2_vb6yn"]
+[ext_resource type="Resource" uid="uid://cv3vlfatr1glg" path="res://Resources/Components/Effects/Buff/DblRainbow-10Atk.tres" id="2_vb6yn"]
 [ext_resource type="Resource" uid="uid://cfvxvq4wbo1td" path="res://Resources/Components/EnData/DoubleRainbow.tres" id="3_avjee"]
 
 [resource]

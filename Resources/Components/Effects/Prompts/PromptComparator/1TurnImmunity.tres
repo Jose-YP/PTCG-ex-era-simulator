@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Buff" load_steps=3 format=3 uid="uid://b0figrvn4kg1r"]
+
+[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="1_jpkan"]
+[ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/BuffMaker.gd" id="2_asgir"]
+
+[resource]
+script = ExtResource("2_asgir")
+description = "Immune to all attacks and attack effects."
+application = "Slot"
+recieves = ExtResource("1_jpkan")
+duration = 1
+after_weak_res = true
+add_hp = 0
+attack = 0
+defense = 0
+retreat_change = 0
+modify = "HP"
+operation = "Replace"
+condition_immune = 0
+immune_to_effects = true
+immune_to_damage = true
+attack_names = Array[String]([])

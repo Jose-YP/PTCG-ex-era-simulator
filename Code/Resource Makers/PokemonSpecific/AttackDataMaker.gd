@@ -28,6 +28,8 @@ class_name AttackData
 @export var fail_effect: EffectCall
 ##This effect will always occur no matter [member prompt] and [member ask]
 @export var always_effect: EffectCall
+@export var share_prompt: bool
+@export var prompt_effects: Array[EffectCollect]
 
 @export_group("More Damage")
 @export_subgroup("Self Damage")

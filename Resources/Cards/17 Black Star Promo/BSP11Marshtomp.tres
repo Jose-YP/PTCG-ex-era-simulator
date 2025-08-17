@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Base_Card" load_steps=4 format=3 uid="uid://b45wy6r0cpldd"]
 
 [ext_resource type="Texture2D" uid="uid://dwft0k7ram2ti" path="res://Art/Cards/Black Star Promo/11.jpg" id="1_0j7js"]
-[ext_resource type="Resource" uid="uid://bt03lr8uojbaf" path="res://Resources/Components/Pokemon/ReprintPokemon/SlashMarshtomp.tres" id="2_hleal"]
+[ext_resource type="Resource" uid="uid://bt03lr8uojbaf" path="res://Resources/Components/Pokemon/ReprintPokemon/Promo/SlashMarshtomp.tres" id="2_hleal"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="6_ava80"]
 
 [resource]

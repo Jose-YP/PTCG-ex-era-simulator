@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Pokemon" load_steps=7 format=3 uid="uid://bt03lr8uojbaf"]
 
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_ftmnk"]
-[ext_resource type="Resource" uid="uid://bfhbpclxag538" path="res://Resources/Components/Pokemon/Attacks/Bubble.tres" id="2_jcire"]
+[ext_resource type="Resource" uid="uid://bfhbpclxag538" path="res://Resources/Components/Pokemon/Attacks/CommonAttacks/Bubble.tres" id="2_jcire"]
 [ext_resource type="Resource" uid="uid://dpovjlfpsypwe" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless3.tres" id="3_vjvd4"]
 [ext_resource type="Resource" uid="uid://dnnekosklb3ar" path="res://Resources/Components/Pokemon/Attacks/AttackData/40Dmg.tres" id="4_d0j2x"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_k7aqv"]

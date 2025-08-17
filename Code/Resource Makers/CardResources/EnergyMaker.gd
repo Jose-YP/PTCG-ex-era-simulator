@@ -26,6 +26,7 @@ class_name Energy
 @export var success_effect: EffectCall
 ##What should happen on attatch specifically
 @export var attatch_effect: EffectCall 
+@export var prompt_effects: Array[EffectCollect]
 
 @export_group("Provides")
 ##-1 means forever, otherwise it's how many turns it'll last 

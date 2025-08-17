@@ -46,4 +46,6 @@ buffs = Array[Dictionary]([])
 disables = Array[Dictionary]([])
 dealt_damage = 0
 energy_discarded = 0
+body_disabled = false
+power_disabled = false
 metadata/_custom_type_script = "uid://cs70ix831b5g4"

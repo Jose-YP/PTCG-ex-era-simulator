@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_rgg13"]
 [ext_resource type="Texture2D" uid="uid://dm88a7rr1ys2c" path="res://Art/Cards/1 ex Ruby & Saphire/5.jpg" id="1_swy3d"]
-[ext_resource type="Resource" uid="uid://shjh1uruhgm6" path="res://Resources/Components/Pokemon/ReprintPokemon/EnergyDrawDelcatty.tres" id="2_2y5b3"]
+[ext_resource type="Resource" uid="uid://shjh1uruhgm6" path="res://Resources/Components/Pokemon/ReprintPokemon/PowerKeepers/EnergyDrawDelcatty.tres" id="2_2y5b3"]
 
 [resource]
 script = ExtResource("1_rgg13")

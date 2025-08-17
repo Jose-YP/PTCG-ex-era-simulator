@@ -1,16 +1,20 @@
-[gd_resource type="Resource" script_class="Energy" load_steps=8 format=3 uid="uid://dn8da16sjen5f"]
+[gd_resource type="Resource" script_class="Energy" load_steps=10 format=3 uid="uid://dn8da16sjen5f"]
 
 [ext_resource type="Resource" uid="uid://cvl23bjanqo3l" path="res://Resources/Components/EnData/Metal.tres" id="1_ffs31"]
 [ext_resource type="Script" uid="uid://caj1pm8erar2a" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="2_8vyn0"]
 [ext_resource type="Resource" uid="uid://cndwbefva1geb" path="res://Resources/Components/Effects/Prompts/IfSelfMetal.tres" id="2_cvapn"]
 [ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/BuffMaker.gd" id="3_b0id2"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="3_nokdc"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_1lfkp"]
+[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="5_tpgwn"]
 
 [sub_resource type="Resource" id="Resource_w1pwm"]
 script = ExtResource("3_b0id2")
-description = ""
+description = "Reduce damage by 10 after weak/res"
 application = "Slot"
-duration = 1
+recieves = ExtResource("5_tpgwn")
+duration = -1
+upkeep_prompt = ExtResource("2_cvapn")
 after_weak_res = true
 add_hp = 0
 attack = 0
@@ -21,6 +25,9 @@ operation = "Replace"
 condition_immune = 0
 immune_to_effects = false
 immune_to_damage = false
+weakness = false
+resistance = false
+effects = false
 attack_names = Array[String]([])
 
 [sub_resource type="Resource" id="Resource_rtiwi"]
@@ -37,6 +44,7 @@ prompt = ExtResource("2_cvapn")
 has_fail_provide = false
 has_fail_prevent = false
 success_effect = SubResource("Resource_rtiwi")
+prompt_effects = Array[ExtResource("3_nokdc")]([])
 turns = -1
 fail_provide = ExtResource("1_ffs31")
 success_provide = ExtResource("1_ffs31")

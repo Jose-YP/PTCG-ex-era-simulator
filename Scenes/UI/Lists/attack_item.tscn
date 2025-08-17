@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dvvv8k1g6tgog"]
 
 [ext_resource type="Script" uid="uid://b1iip1rqoy2v3" path="res://Code/Scenes/UI/Cards/attack_item.gd" id="1_cuu5a"]
-[ext_resource type="Resource" uid="uid://cydxe57j5nudo" path="res://Resources/Components/Pokemon/Attacks/DoubleLariat.tres" id="2_h1533"]
+[ext_resource type="Resource" uid="uid://cydxe57j5nudo" path="res://Resources/Components/Pokemon/Attacks/EffectlessAttacks/DoubleLariat.tres" id="2_h1533"]
 [ext_resource type="PackedScene" uid="uid://bs3ila6cpt8n1" path="res://Scenes/UI/UIComponents/types.tscn" id="3_tiejp"]
 
 [node name="AttackItem" type="MarginContainer"]

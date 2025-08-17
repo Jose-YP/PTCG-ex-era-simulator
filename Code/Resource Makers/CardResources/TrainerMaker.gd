@@ -16,6 +16,7 @@ class_name Trainer
 @export var fail_effect: EffectCall
 @export var success_effect: EffectCall
 @export var always_effect: EffectCall
+@export var prompt_effects: Array[EffectCollect]
 @export var stadium_properties: Stadium
 @export var tool_properties: ToolCard
 @export var provided_attack: Attack

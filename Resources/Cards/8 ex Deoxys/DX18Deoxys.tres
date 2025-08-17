@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=15 format=3 uid="uid://m4swjbtpd58w"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=17 format=3 uid="uid://m4swjbtpd58w"]
 
 [ext_resource type="Texture2D" uid="uid://cyd63koguem6a" path="res://Art/Cards/8 ex Deoxys/18.jpg" id="1_0bgjh"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_c6rfu"]
@@ -6,25 +6,31 @@
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_lvm7k"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="3_rawb0"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="3_tnm6h"]
+[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="4_fhsxn"]
 [ext_resource type="Resource" uid="uid://cvrbxqvsyxt6t" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/P1C1.tres" id="5_sw4il"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="6_rddwv"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="7_14b08"]
 [ext_resource type="Resource" uid="uid://bwgc3etush7hc" path="res://Resources/Components/Pokemon/Abilities/Powers/FormChangeDeoxys.tres" id="7_rddwv"]
 
 [sub_resource type="Resource" id="Resource_cd2t0"]
 script = ExtResource("2_ousds")
-description = ""
+description = "Reduce damage taken by 30 after weak/res"
 application = "Slot"
+recieves = ExtResource("4_fhsxn")
 duration = 1
 after_weak_res = true
 add_hp = 0
 attack = 0
-defense = 0
+defense = 30
 retreat_change = 0
 modify = "HP"
 operation = "Replace"
 condition_immune = 0
 immune_to_effects = false
 immune_to_damage = false
+weakness = false
+resistance = false
+effects = false
 attack_names = Array[String]([])
 metadata/_custom_type_script = "uid://coojhwe6m20gd"
 
@@ -44,6 +50,8 @@ condition = 1
 before_damage = false
 replace_num = false
 always_effect = SubResource("Resource_lfmb5")
+share_prompt = false
+prompt_effects = Array[ExtResource("7_14b08")]([])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=16 format=3 uid="uid://bfudgig3gvx2v"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=18 format=3 uid="uid://bfudgig3gvx2v"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_adtbe"]
 [ext_resource type="Texture2D" uid="uid://dh1mq4l2oc4x2" path="res://Art/Cards/2 ex Sandstorm/39.jpg" id="1_w6r1x"]
@@ -6,9 +6,11 @@
 [ext_resource type="Resource" uid="uid://cimoxkuco6ggm" path="res://Resources/Components/Pokemon/Attacks/PureEffectAttacks/TeamAssembly.tres" id="3_g3ko3"]
 [ext_resource type="Resource" uid="uid://djhcfglsc14fn" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/F1C1.tres" id="4_x41hb"]
 [ext_resource type="Resource" uid="uid://bnsrs2a5hnvkb" path="res://Resources/Components/Pokemon/Attacks/AttackData/20Dmg.tres" id="5_7daj3"]
+[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="6_g3ko3"]
 [ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/BuffMaker.gd" id="6_jxva6"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="7_h2wqg"]
 [ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="8_vvcfj"]
+[ext_resource type="Resource" uid="uid://dgkb0d4d58byj" path="res://Resources/Components/Effects/Prompts/PromptComparator/IfBodyEnabled.tres" id="8_x41hb"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="9_1r0l5"]
 
 [sub_resource type="Resource" id="Resource_vtqs4"]
@@ -21,26 +23,31 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_okor1"]
 script = ExtResource("6_jxva6")
-description = ""
+description = "Damage reduced by 20 after weak/res"
 application = "Slot"
-duration = 2
+recieves = ExtResource("6_g3ko3")
+duration = -1
+upkeep_prompt = ExtResource("8_x41hb")
 after_weak_res = true
 add_hp = 0
 attack = 0
-defense = 0
+defense = 20
 retreat_change = 0
 modify = "HP"
 operation = "Replace"
 condition_immune = 0
 immune_to_effects = false
 immune_to_damage = false
+weakness = false
+resistance = false
+effects = false
 attack_names = Array[String]([])
 metadata/_custom_type_script = "uid://coojhwe6m20gd"
 
 [sub_resource type="Resource" id="Resource_kkoco"]
 script = ExtResource("7_h2wqg")
-either_or = null
-order = null
+either_or = false
+order = Array[int]([])
 buff = SubResource("Resource_okor1")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 

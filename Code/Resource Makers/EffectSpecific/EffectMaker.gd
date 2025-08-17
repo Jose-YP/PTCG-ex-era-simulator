@@ -42,10 +42,6 @@ OVERRIDE, CHEATPLAY, TYPECHANGE, RULECHANGE, OTHER}
 ##How should types change?
 @export var type_change: TypeChange
 
-@export_group("Other")
-##Do extra effect for extra ask
-@export var extra_effect: EffectCall
-
 signal finished
 
 var went_back: bool = false
@@ -54,7 +50,7 @@ var replace_num: int = -1
 #These are params since the indivdual call knows best which is what
 func play_effect(reversable: bool = false) -> void:
 	var default_order = [condition, buff, card_disrupt, disable, 
-	 energy_movement, dmgManip, search, swap, draw_ammount, alleviate, mimic, extra_effect]
+	 energy_movement, dmgManip, search, swap, draw_ammount, alleviate, mimic]
 	#var enum_dict: Dictionary = {effect_types.CONDITION:condition, effect_types.BUFF:buff,
 	 #effect_types.DISRUPT:card_disrupt, effect_types.DISABLE:disable,
 	 #effect_types.ENMOV:energy_movement, effect_types.DMGMANIP: dmgManip,
@@ -90,7 +86,7 @@ func just_reversed():
 
 func has_effect_type(comps: Array[String]):
 	var default_order: Array[Object] = [condition, buff, card_disrupt, disable, 
-	 energy_movement, dmgManip, search, swap, draw_ammount, alleviate, mimic, extra_effect]
+	 energy_movement, dmgManip, search, swap, draw_ammount, alleviate, mimic]
 	
 	for comp in comps:
 		for current_comps in default_order:

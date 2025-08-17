@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b84payuyyh5di" path="res://Art/Cards/1 ex Ruby & Saphire/40.jpg" id="1_2l816"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_5sy4r"]
-[ext_resource type="Resource" uid="uid://bt03lr8uojbaf" path="res://Resources/Components/Pokemon/ReprintPokemon/SlashMarshtomp.tres" id="2_2w1s8"]
+[ext_resource type="Resource" uid="uid://bt03lr8uojbaf" path="res://Resources/Components/Pokemon/ReprintPokemon/Promo/SlashMarshtomp.tres" id="2_2w1s8"]
 
 [resource]
 script = ExtResource("1_5sy4r")

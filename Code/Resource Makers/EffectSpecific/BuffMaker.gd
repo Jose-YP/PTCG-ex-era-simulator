@@ -8,9 +8,9 @@ class_name Buff
 ##Who recieves the buff?
 @export var recieves: SlotAsk
 ##-1 means forever, otherwise how many turns is this active
-@export var duration: int = 2
-##If this exists and returns true, then remove it
-@export var remove_prompt: PromptAsk
+@export var duration: int = 1
+##If this exists and returns false, then remove it
+@export var upkeep_prompt: PromptAsk
 ##If against this type of slot use these buffs, if null return [code]true
 @export var against: SlotAsk
 ##Is it applied before or after weak/res
@@ -37,6 +37,11 @@ class_name Buff
 @export var immune_to_effects: bool = false
 ##Immune to regular & bench damage [NOT DAMAGE MANIP EFFECT CALLS]
 @export var immune_to_damage: bool = false
+
+@export_group("Pierce")
+@export var weakness: bool
+@export var resistance: bool
+@export var effects: bool
 
 @export_group("Specifiers")
 @export var attack_names: Array[String]

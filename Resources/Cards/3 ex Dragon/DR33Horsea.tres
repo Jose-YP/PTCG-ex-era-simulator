@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_dk0rc"]
 [ext_resource type="Texture2D" uid="uid://1b743wqj4w3g" path="res://Art/Cards/3 ex Dragon/33.jpg" id="1_qv80v"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_j1ex0"]
-[ext_resource type="Resource" uid="uid://gu6w02ikdx01" path="res://Resources/Components/Pokemon/Attacks/PureEffectAttacks/C1Retaliate.tres" id="3_h41dk"]
+[ext_resource type="Resource" uid="uid://gu6w02ikdx01" path="res://Resources/Components/Pokemon/Attacks/EffectlessAttacks/C1Retaliate.tres" id="3_h41dk"]
 [ext_resource type="Resource" uid="uid://dsslhipk3ix2o" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Water1.tres" id="4_j1ex0"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_0mwof"]
 [ext_resource type="Resource" uid="uid://bgmd6jgphsf0a" path="res://Resources/Components/Pokemon/Attacks/AttackData/10SSmokescreen.tres" id="5_h41dk"]

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=25 format=3 uid="uid://cqr3tfc8nry8w"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=24 format=3 uid="uid://cqr3tfc8nry8w"]
 
 [ext_resource type="Script" uid="uid://caj1pm8erar2a" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="1_5i42c"]
 [ext_resource type="Resource" uid="uid://dck0aw0wiqcpw" path="res://Resources/Components/Effects/Asks/Class&Owner/Other'sTrgEXMon.tres" id="1_420ij"]
@@ -6,7 +6,6 @@
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_7lxul"]
 [ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/BuffMaker.gd" id="2_tf38m"]
 [ext_resource type="Texture2D" uid="uid://bcy6v2x6sapi" path="res://Art/Cards/11 ex Delta Species/105.jpg" id="2_yixtv"]
-[ext_resource type="Resource" uid="uid://dyg31r0aqj4ed" path="res://Resources/Components/Effects/Prompts/NonEXHasGrassEn.tres" id="3_tyuxn"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_10hjv"]
 [ext_resource type="Resource" uid="uid://bstttj8kuf5i6" path="res://Resources/Components/EnData/GLHolon.tres" id="4_os01s"]
 [ext_resource type="Resource" uid="uid://cxnlthowpb4r4" path="res://Resources/Components/EnData/Lightning.tres" id="5_3qxn5"]
@@ -26,18 +25,16 @@ metadata/_custom_type_script = "uid://dmulm3x3dj842"
 script = ExtResource("4_10hjv")
 either_or = false
 order = Array[int]([])
-prompt_extra = ExtResource("3_tyuxn")
 extra_effect = SubResource("Resource_tyuxn")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_vnxhx"]
 script = ExtResource("6_5rppq")
+boolean_type = "And"
 previous_src_trg = false
 side_target = 1
 slot_target = 4
 specifically = Array[String]([])
-check_ability = false
-contained_abilities = 3
 knocked_out = false
 tool_attatched = false
 comparison_type = 1
@@ -57,6 +54,9 @@ check_cards = true
 energy_attatched = -1
 energy_class = "Any"
 energy_type = ExtResource("5_3qxn5")
+check_ability = false
+contained_abilities = 3
+specific_abilities = Array[String]([])
 
 [sub_resource type="Resource" id="Resource_4mowb"]
 script = ExtResource("7_kjebj")
@@ -120,7 +120,6 @@ script = ExtResource("4_10hjv")
 either_or = false
 order = Array[int]([])
 buff = SubResource("Resource_3qxn5")
-prompt_extra = ExtResource("3_tyuxn")
 extra_effect = SubResource("Resource_10hjv")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 

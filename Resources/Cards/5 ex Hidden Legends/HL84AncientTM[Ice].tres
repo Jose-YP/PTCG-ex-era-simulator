@@ -4,9 +4,9 @@
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_ydfqk"]
 [ext_resource type="Resource" uid="uid://uv2bigiutmvr" path="res://Resources/Components/Effects/Asks/Class&Owner/AtkEvoNoEXorOwner.tres" id="3_3ajyv"]
 [ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_s8n6m"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="4_maceq"]
 [ext_resource type="Resource" uid="uid://dk0v7dyi3r43m" path="res://Resources/Components/Effects/Identifiers/Trainers/Trainer.tres" id="4_sb5y8"]
 [ext_resource type="Resource" uid="uid://cw44iqotg3v3f" path="res://Resources/Components/Effects/Asks/General/FromDefending.tres" id="5_g1yuy"]
-[ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/BuffMaker.gd" id="5_maceq"]
 [ext_resource type="Script" uid="uid://8sh5p3leflla" path="res://Code/Resource Makers/EffectSpecific/CardDisruptMaker.gd" id="6_r3gwp"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="7_ys46e"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="8_3ajyv"]
@@ -15,6 +15,7 @@
 [ext_resource type="Resource" uid="uid://bkt6ry7vyha70" path="res://Resources/Components/Effects/Asks/General/Other.tres" id="10_utej3"]
 [ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="11_2svl2"]
 [ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="12_budek"]
+[ext_resource type="Resource" uid="uid://b0figrvn4kg1r" path="res://Resources/Components/Effects/Prompts/PromptComparator/1TurnImmunity.tres" id="12_k4ce0"]
 [ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="13_8eilx"]
 
 [sub_resource type="Resource" id="Resource_kd0t3"]
@@ -50,23 +51,6 @@ choose_location = "None"
 which_stack = 0
 metadata/_custom_type_script = "uid://b85jmc7067bjc"
 
-[sub_resource type="Resource" id="Resource_e7x82"]
-script = ExtResource("5_maceq")
-side = 1
-slot = 1
-duration = 1
-attack_damage = 0
-defense = 0
-retreat_change = 0
-after_weak_res = true
-ignore_res_other = false
-ignore_weak_self = false
-immunities = 0
-immune_to_special_conditions = false
-immune_to_effects = false
-immune_to_damage = false
-metadata/_custom_type_script = "uid://coojhwe6m20gd"
-
 [sub_resource type="Resource" id="Resource_utej3"]
 script = ExtResource("6_r3gwp")
 send = "Slot"
@@ -89,7 +73,7 @@ metadata/_custom_type_script = "uid://8sh5p3leflla"
 script = ExtResource("7_ys46e")
 either_or = false
 order = Array[int]([2, 1])
-buff = SubResource("Resource_e7x82")
+buff = ExtResource("12_k4ce0")
 card_disrupt = SubResource("Resource_utej3")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -103,6 +87,8 @@ condition = 1
 before_damage = false
 replace_num = false
 success_effect = SubResource("Resource_2svl2")
+share_prompt = false
+prompt_effects = Array[ExtResource("4_maceq")]([])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false
@@ -125,6 +111,7 @@ considered = "TM"
 specific_requirement = "Attach this card to 1 of your Evolved Pokémon (excluding Pokémon-ex and Pokémon that has an owner in its name) in play. That Pokémon may use this card's attack instead of its own. At the end of your turn, discard [name]."
 description = "Discard all of your opponent's Trainer cards in play. If you do, prevent all effects, including damage, done to the Pokémon using this attack during your opponent's next turn."
 asks = ExtResource("3_3ajyv")
+prompt_effects = Array[ExtResource("4_maceq")]([])
 provided_attack = SubResource("Resource_8eilx")
 metadata/_custom_type_script = "uid://crx447i85kshy"
 

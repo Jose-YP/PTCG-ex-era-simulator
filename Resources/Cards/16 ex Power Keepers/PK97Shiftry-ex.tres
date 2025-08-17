@@ -63,12 +63,11 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_hi2fh"]
 script = ExtResource("10_axg2p")
+boolean_type = "And"
 previous_src_trg = false
 side_target = 2
 slot_target = 3
 specifically = Array[String]([])
-check_ability = false
-contained_abilities = 3
 knocked_out = false
 tool_attatched = false
 comparison_type = 1
@@ -87,6 +86,9 @@ energy_inclusive = true
 check_cards = true
 energy_attatched = -1
 energy_class = "Any"
+check_ability = false
+contained_abilities = 3
+specific_abilities = Array[String]([])
 metadata/_custom_type_script = "uid://mkjynqda7q5g"
 
 [sub_resource type="Resource" id="Resource_7r15k"]

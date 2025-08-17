@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b55mvy488l2pm" path="res://Art/Cards/1 ex Ruby & Saphire/7.jpg" id="1_dljrv"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_x305h"]
-[ext_resource type="Resource" uid="uid://beysggoxxjyps" path="res://Resources/Components/Pokemon/ReprintPokemon/PsyshadowGardevoir.tres" id="2_73h68"]
+[ext_resource type="Resource" uid="uid://beysggoxxjyps" path="res://Resources/Components/Pokemon/ReprintPokemon/PowerKeepers/PsyshadowGardevoir.tres" id="2_73h68"]
 
 [resource]
 script = ExtResource("1_x305h")
