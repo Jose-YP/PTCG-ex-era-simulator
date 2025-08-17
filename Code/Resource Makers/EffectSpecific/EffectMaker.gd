@@ -43,7 +43,6 @@ OVERRIDE, CHEATPLAY, TYPECHANGE, RULECHANGE, OTHER}
 @export var type_change: TypeChange
 
 @export_group("Other")
-@export var prompt_extra: PromptAsk
 ##Do extra effect for extra ask
 @export var extra_effect: EffectCall
 
@@ -82,10 +81,8 @@ func play_effect(reversable: bool = false) -> void:
 	finished.emit()
 
 func handle_component(comp, reversable: bool = false):
-	if (comp == extra_effect and prompt_extra.check_prompt())\
-	 or comp != extra_effect:
-		await comp.play_effect(reversable, replace_num)
-		print("FINISHED")
+	await comp.play_effect(reversable, replace_num)
+	print("FINISHED")
 
 func just_reversed():
 	went_back = true

@@ -1,15 +1,91 @@
-[gd_resource type="Resource" script_class="Buff" load_steps=2 format=3 uid="uid://cmj80wa0ybso5"]
+[gd_resource type="Resource" script_class="Buff" load_steps=12 format=3 uid="uid://cmj80wa0ybso5"]
 
 [ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/BuffMaker.gd" id="1_4asx2"]
+[ext_resource type="Resource" uid="uid://bnv2dkudpcueo" path="res://Resources/Components/Effects/Asks/General/SrcActive.tres" id="1_c8hy2"]
+[ext_resource type="Resource" uid="uid://c7itelq8jtjc2" path="res://Resources/Components/EnData/Rainbow.tres" id="2_5rk14"]
+[ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="3_0ln0i"]
+[ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="4_bqpit"]
+[ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="5_e6axn"]
+[ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="6_wn3hh"]
+
+[sub_resource type="Resource" id="Resource_du54y"]
+script = ExtResource("3_0ln0i")
+boolean_type = null
+previous_src_trg = null
+side_target = 4
+slot_target = 2
+specifically = null
+knocked_out = null
+tool_attatched = null
+comparison_type = null
+max_hp = null
+damage_taken = null
+retreat_cost = null
+stage = null
+rare_candy = null
+class_inclusive = null
+pokemon_class = null
+owner_inclusive = null
+pokemon_owner = null
+type_inclusive = null
+pokemon_type = null
+energy_inclusive = null
+check_cards = null
+energy_attatched = null
+energy_class = null
+energy_type = ExtResource("2_5rk14")
+check_ability = true
+contained_abilities = 1
+specific_abilities = Array[String](["Intimidating Fang"])
+metadata/_custom_type_script = "uid://mkjynqda7q5g"
+
+[sub_resource type="Resource" id="Resource_a7tco"]
+script = ExtResource("4_bqpit")
+which = "Slot"
+ask = SubResource("Resource_du54y")
+slot_vars = "current_card"
+cap = -1
+metadata/_custom_type_script = "uid://vjn146j3ayd6"
+
+[sub_resource type="Resource" id="Resource_mw7ax"]
+script = ExtResource("5_e6axn")
+comparision_type = "Equals"
+first_comparison = SubResource("Resource_a7tco")
+compare_to = "None"
+second_constant = 0
+operate_w_constant = "None"
+metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
+
+[sub_resource type="Resource" id="Resource_upbug"]
+script = ExtResource("6_wn3hh")
+formal_question = false
+question_string = ""
+yes_answer = ""
+no_answer = ""
+comparator = SubResource("Resource_mw7ax")
+can_reverse = true
+occurance = false
+chooser = 0
+choose_location = "None"
+which_stack = 0
+metadata/_custom_type_script = "uid://b85jmc7067bjc"
 
 [resource]
 script = ExtResource("1_4asx2")
-side = 4
-slot = 1
+description = "Reduce damage from to Active Pokemon by 10 before weak/res"
+application = "Side"
+recieves = ExtResource("1_c8hy2")
 duration = -1
-attack_damage = -10
-defense = 0
+remove_prompt = SubResource("Resource_upbug")
 after_weak_res = false
+add_hp = 0
+attack = 0
+defense = 10
+retreat_change = 0
+modify = "HP"
+operation = "Replace"
+condition_immune = 0
 immune_to_effects = false
 immune_to_damage = false
+attack_names = Array[String]([])
 metadata/_custom_type_script = "uid://coojhwe6m20gd"

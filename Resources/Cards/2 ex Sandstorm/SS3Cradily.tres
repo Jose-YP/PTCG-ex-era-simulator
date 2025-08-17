@@ -17,8 +17,8 @@
 
 [sub_resource type="Resource" id="Resource_bqb5e"]
 script = ExtResource("5_5g1fb")
-either_or = false
-order = Array[int]([])
+either_or = null
+order = null
 swap = ExtResource("6_777gh")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -64,8 +64,8 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_t3atv"]
 script = ExtResource("5_5g1fb")
-either_or = false
-order = Array[int]([])
+either_or = null
+order = null
 dmgManip = ExtResource("10_pnj3y")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -111,8 +111,8 @@ metadata/_custom_type_script = "uid://c0ishgbxk63dg"
 
 [sub_resource type="Resource" id="Resource_eaxr4"]
 script = ExtResource("5_5g1fb")
-either_or = false
-order = Array[int]([])
+either_or = null
+order = null
 disable = SubResource("Resource_ikgoj")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 

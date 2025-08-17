@@ -42,7 +42,7 @@ disable_retreat = false
 
 [sub_resource type="Resource" id="Resource_fbclb"]
 script = ExtResource("9_xms5s")
-either_or = false
+either_or = null
 order = Array[int]([3])
 disable = SubResource("Resource_rd3xr")
 

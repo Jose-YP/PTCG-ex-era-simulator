@@ -1,11 +1,60 @@
-[gd_resource type="Resource" script_class="Energy" load_steps=10 format=3 uid="uid://cf28iibs06s23"]
+[gd_resource type="Resource" script_class="Energy" load_steps=16 format=3 uid="uid://cf28iibs06s23"]
 
 [ext_resource type="Resource" uid="uid://d2ts8ex3x0duw" path="res://Resources/Components/EnData/Darkness.tres" id="1_phikd"]
 [ext_resource type="Script" uid="uid://caj1pm8erar2a" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="2_ipvd8"]
-[ext_resource type="Resource" uid="uid://mjfv8j8x80lx" path="res://Resources/Components/Counters/Comparator/Equals/BoolSelfDarkness.tres" id="2_phikd"]
+[ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="2_ya82p"]
+[ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="3_agjcc"]
 [ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/BuffMaker.gd" id="3_v07w8"]
 [ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="4_agjcc"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_rhnr6"]
+[ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="4_xkj3l"]
+
+[sub_resource type="Resource" id="Resource_iejbx"]
+script = ExtResource("2_ya82p")
+boolean_type = "Or"
+previous_src_trg = false
+side_target = 4
+slot_target = 1
+specifically = Array[String]([])
+knocked_out = false
+tool_attatched = false
+comparison_type = 1
+max_hp = -10
+damage_taken = -10
+retreat_cost = -1
+stage = 7
+rare_candy = false
+class_inclusive = true
+pokemon_class = 32
+owner_inclusive = true
+pokemon_owner = 31
+type_inclusive = true
+pokemon_type = 576
+energy_inclusive = true
+check_cards = true
+energy_attatched = -1
+energy_class = "Any"
+check_ability = false
+contained_abilities = 3
+specific_abilities = Array[String]([])
+metadata/_custom_type_script = "uid://mkjynqda7q5g"
+
+[sub_resource type="Resource" id="Resource_7a8tk"]
+script = ExtResource("3_agjcc")
+which = "Slot"
+ask = SubResource("Resource_iejbx")
+slot_vars = "current_card"
+cap = -1
+metadata/_custom_type_script = "uid://vjn146j3ayd6"
+
+[sub_resource type="Resource" id="Resource_ya82p"]
+script = ExtResource("4_xkj3l")
+comparision_type = "Equals"
+first_comparison = SubResource("Resource_7a8tk")
+compare_to = "Const"
+second_constant = 0
+operate_w_constant = "None"
+metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
 [sub_resource type="Resource" id="Resource_81xdd"]
 script = ExtResource("4_agjcc")
@@ -13,7 +62,21 @@ formal_question = false
 question_string = ""
 yes_answer = ""
 no_answer = ""
-comparator = ExtResource("2_phikd")
+comparator = SubResource("Resource_ya82p")
+can_reverse = true
+occurance = false
+chooser = 0
+choose_location = "None"
+which_stack = 0
+metadata/_custom_type_script = "uid://b85jmc7067bjc"
+
+[sub_resource type="Resource" id="Resource_agjcc"]
+script = ExtResource("4_agjcc")
+formal_question = false
+question_string = ""
+yes_answer = ""
+no_answer = ""
+comparator = SubResource("Resource_ya82p")
 can_reverse = true
 occurance = false
 chooser = 0
@@ -23,19 +86,21 @@ metadata/_custom_type_script = "uid://b85jmc7067bjc"
 
 [sub_resource type="Resource" id="Resource_j3iii"]
 script = ExtResource("3_v07w8")
-side = 1
-slot = 1
-duration = 1
-attack_damage = 10
+description = "Deal +10 damage before weak/res"
+application = "Slot"
+duration = -1
+remove_prompt = SubResource("Resource_agjcc")
+after_weak_res = false
+add_hp = 0
+attack = 10
 defense = 0
 retreat_change = 0
-after_weak_res = false
-ignore_res_other = false
-ignore_weak_self = false
-immunities = 0
-immune_to_special_conditions = false
+modify = "HP"
+operation = "Replace"
+condition_immune = 0
 immune_to_effects = false
 immune_to_damage = false
+attack_names = Array[String]([])
 
 [sub_resource type="Resource" id="Resource_gso0c"]
 script = ExtResource("4_rhnr6")
@@ -46,7 +111,7 @@ buff = SubResource("Resource_j3iii")
 [resource]
 script = ExtResource("2_ipvd8")
 considered = "Special Energy"
-description = " If the Pokémon Darkness Energy is attached to attacks, the attack does 10 more damage to the Active Pokémon (before applying Weakness and Resistance). Ignore this effect unless the Attacking Pokémon is {Darkness} or has Dark in its name. Darkness Energy provides {Darkness} Energy. (Doesn't count as a basic Energy card.)"
+description = "If the Pokémon Darkness Energy is attached to attacks, the attack does 10 more damage to the Active Pokémon (before applying Weakness and Resistance). Ignore this effect unless the Attacking Pokémon is {Darkness} or has Dark in its name. Darkness Energy provides {Darkness} Energy. (Doesn't count as a basic Energy card.)"
 prompt = SubResource("Resource_81xdd")
 has_fail_provide = false
 has_fail_prevent = false

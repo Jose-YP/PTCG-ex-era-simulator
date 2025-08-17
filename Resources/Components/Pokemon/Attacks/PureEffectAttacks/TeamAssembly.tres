@@ -73,8 +73,8 @@ metadata/_custom_type_script = "uid://cw3yr1k040kw7"
 
 [sub_resource type="Resource" id="Resource_vbdsh"]
 script = ExtResource("2_rdupw")
-either_or = false
-order = Array[int]([])
+either_or = null
+order = null
 search = SubResource("Resource_4q0ux")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 

@@ -1,16 +1,14 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=17 format=3 uid="uid://bw4sp04ye7jyx"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=13 format=3 uid="uid://bw4sp04ye7jyx"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_wcs6r"]
 [ext_resource type="Texture2D" uid="uid://cs7gj0dy6jykj" path="res://Art/Cards/1 ex Ruby & Saphire/6.jpg" id="1_wqkxb"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_684l4"]
-[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_7qmw3"]
 [ext_resource type="Resource" uid="uid://c2gawfb472bm" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/G1C1.tres" id="4_rwpko"]
 [ext_resource type="Resource" uid="uid://231kwm8x62xw" path="res://Resources/Components/Pokemon/Attacks/AttackData/PoisionFor20.tres" id="5_7qmw3"]
 [ext_resource type="Resource" uid="uid://b1ebpxwo4lry7" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/G1C2.tres" id="6_anyyy"]
-[ext_resource type="Resource" uid="uid://dx17fn4esx8qm" path="res://Resources/Components/Effects/Buff/Immune2Effect.tres" id="6_tg8f0"]
 [ext_resource type="Resource" uid="uid://cj4j56m7hrxpe" path="res://Resources/Components/Pokemon/Attacks/AttackData/50Dmg.tres" id="7_tg8f0"]
+[ext_resource type="Resource" uid="uid://oka7raf3a00o" path="res://Resources/Components/Pokemon/Abilities/Bodies/ProtectiveDust.tres" id="7_wqkxb"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="8_1sw32"]
-[ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="10_7qmw3"]
 
 [sub_resource type="Resource" id="Resource_fuvu7"]
 script = ExtResource("2_684l4")
@@ -28,30 +26,11 @@ attack_cost = ExtResource("6_anyyy")
 attack_data = ExtResource("7_tg8f0")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
-[sub_resource type="Resource" id="Resource_dk53k"]
-script = ExtResource("4_7qmw3")
-either_or = false
-order = Array[int]([])
-buff = ExtResource("6_tg8f0")
-metadata/_custom_type_script = "uid://dmulm3x3dj842"
-
-[sub_resource type="Resource" id="Resource_anyyy"]
-script = ExtResource("10_7qmw3")
-category = "Body"
-name = "Protective Dust"
-description = "Prevent all effects of attacks, except damage, done to [name] by the Attacking Pokémon."
-affected_by_condition = false
-active = false
-how_often = "Once per Mon"
-independent_src_trg = false
-passive = SubResource("Resource_dk53k")
-metadata/_custom_type_script = "uid://bs2y8ocljilv8"
-
 [sub_resource type="Resource" id="Resource_ypaoj"]
 script = ExtResource("8_1sw32")
 HP = 90
 retreat = 0
-pokebody = SubResource("Resource_anyyy")
+pokebody = ExtResource("7_wqkxb")
 attacks = Array[ExtResource("2_684l4")]([SubResource("Resource_fuvu7"), SubResource("Resource_w3yai")])
 evo_stage = "Stage 2"
 evolves_from = "Cascoon"

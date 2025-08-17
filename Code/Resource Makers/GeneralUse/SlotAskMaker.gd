@@ -1,16 +1,14 @@
 extends Resource
 class_name SlotAsk
 
-##If this ask isn't met, look for the next ask
-@export var or_ask: SlotAsk
-##Check thee last source target stack for whatever they have
+##Should it pass every requirement or at least one?
+@export_enum("And", "Or") var boolean_type: String = "And"
+##Check the last source target stack for whatever they have
 @export var previous_src_trg: bool = false
 ##Which side to pay attention to
 @export var side_target: Consts.SIDES = Consts.SIDES.BOTH
 @export var slot_target: Consts.SLOTS = Consts.SLOTS.ALL
 @export var specifically: Array[String] = []
-@export var check_ability: bool = false
-@export_flags("Body", "Power") var contained_abilities: int = 3
 @export var knocked_out: bool = false
 @export var desired_condition: Condition
 ##Self means the attacking/defending pokemon, Active is for doubles
@@ -33,12 +31,14 @@ class_name SlotAsk
 "Dark") var pokemon_class: int = 63
 @export var owner_inclusive: bool = true
 @export_flags("None", "Aqua", "Magma", "Rocket", "Holon") var pokemon_owner: int = 31
+
 @export_subgroup("Type")
 ##Check if the pokemon has this type
 @export var type_inclusive: bool = true
 @export_flags("Grass","Fire","Water",
 "Lightning","Psychic","Fighting",
 "Darkness","Metal","Colorless") var pokemon_type: int = 1023
+
 @export_group("Energy Attatched")
 ##Look for energy that is of the specified type or ones that aren't
 @export var energy_inclusive: bool = true
@@ -50,6 +50,11 @@ class_name SlotAsk
 @export var energy_attatched: int = -1
 @export_enum("Basic Energy","Special Energy","Any") var energy_class: String = "Any"
 @export var energy_type: EnData
+
+@export_group("Ability")
+@export var check_ability: bool = false
+@export_flags("Body", "Power") var contained_abilities: int = 3
+@export var specific_abilities: Array[String]
 
 #Checks if one slot is 
 func check_ask(slot: PokeSlot) -> bool:
@@ -165,5 +170,5 @@ func check_ask(slot: PokeSlot) -> bool:
 	#result = result and slot.knocked_out if knocked_out else result
 	print_verbose("\nFINAL RESULT FOR ", slot.get_card_name(), result,"\n")
 	
-	if not result and or_ask: return or_ask.check_ask(slot)
-	else: return result
+	
+	return result

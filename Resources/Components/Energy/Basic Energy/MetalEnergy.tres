@@ -8,19 +8,20 @@
 
 [sub_resource type="Resource" id="Resource_w1pwm"]
 script = ExtResource("3_b0id2")
-side = 1
-slot = 1
+description = ""
+application = "Slot"
 duration = 1
-attack_damage = 0
+after_weak_res = true
+add_hp = 0
+attack = 0
 defense = 10
 retreat_change = 0
-after_weak_res = true
-ignore_res_other = false
-ignore_weak_self = false
-immunities = 0
-immune_to_special_conditions = false
+modify = "HP"
+operation = "Replace"
+condition_immune = 0
 immune_to_effects = false
 immune_to_damage = false
+attack_names = Array[String]([])
 
 [sub_resource type="Resource" id="Resource_rtiwi"]
 script = ExtResource("4_1lfkp")

@@ -42,6 +42,8 @@ var power_ready: bool
 @export var current_attack: Attack
 @export var dealt_damage: int = 0
 @export var energy_discarded: int = 0
+@export var body_disabled: bool = false
+@export var power_disabled: bool = false
 var current_previous: Base_Card
 #endregion
 #endregion

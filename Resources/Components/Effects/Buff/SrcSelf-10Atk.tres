@@ -5,19 +5,20 @@
 
 [sub_resource type="Resource" id="Resource_w2r5q"]
 script = ExtResource("1_6bmno")
-side = 4
-slot = 1
+description = ""
+application = "Slot"
 duration = 1
-attack_damage = -10
+after_weak_res = true
+add_hp = 0
+attack = 0
 defense = 0
 retreat_change = 0
-after_weak_res = true
-ignore_res_other = false
-ignore_weak_self = false
-immunities = 0
-immune_to_special_conditions = false
+modify = "HP"
+operation = "Replace"
+condition_immune = 0
 immune_to_effects = false
 immune_to_damage = false
+attack_names = Array[String]([])
 metadata/_custom_type_script = "uid://coojhwe6m20gd"
 
 [resource]
