@@ -8,7 +8,6 @@
 
 [sub_resource type="Resource" id="Resource_t0ir0"]
 script = ExtResource("4_rkwyr")
-either_or = false
 order = Array[int]([])
 energy_movement = ExtResource("3_f5iv3")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
@@ -21,6 +20,7 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [resource]
 script = ExtResource("2_6uhhs")
+description = "Flip a coin. If heads, discard 1 Energy card attached to the Defending Pokémon."
 prompt_reliant = false
 initial_main_DMG = 10
 defender_properties = 0

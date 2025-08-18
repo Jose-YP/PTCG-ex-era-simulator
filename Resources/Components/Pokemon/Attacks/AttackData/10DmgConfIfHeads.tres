@@ -13,6 +13,7 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [resource]
 script = ExtResource("2_2av8n")
+description = "Flip a coin. If heads, the Defending Pokémon is now Confused."
 prompt_reliant = false
 initial_main_DMG = 10
 defender_properties = 0

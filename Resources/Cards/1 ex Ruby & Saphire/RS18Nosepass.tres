@@ -15,7 +15,6 @@
 
 [sub_resource type="Resource" id="Resource_xp3sp"]
 script = ExtResource("4_a7nbm")
-either_or = false
 order = Array[int]([])
 search = ExtResource("5_hhkog")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
@@ -28,6 +27,7 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [sub_resource type="Resource" id="Resource_mkraj"]
 script = ExtResource("5_a7nbm")
+description = "If any of your opponent's Active Pokémon are Evolved Pokémon, search your deck for any 1 card and put it into your hand. Shuffle your deck afterward."
 prompt_reliant = false
 initial_main_DMG = 0
 defender_properties = 0
@@ -54,7 +54,6 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_2ayq4"]
 script = ExtResource("4_a7nbm")
-either_or = false
 order = Array[int]([])
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -66,6 +65,7 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [sub_resource type="Resource" id="Resource_vbv8m"]
 script = ExtResource("5_a7nbm")
+description = "Flip a coin. If heads, your opponent returns the Defending Pokémon and all cards attached to it to his or her hand. (If your opponent doesn't have any Benched Pokémon or other Active Pokémon, this attack does nothing.)"
 prompt_reliant = false
 initial_main_DMG = 0
 defender_properties = 0

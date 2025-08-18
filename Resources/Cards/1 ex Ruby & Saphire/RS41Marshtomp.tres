@@ -13,6 +13,7 @@
 
 [sub_resource type="Resource" id="Resource_8f4wk"]
 script = ExtResource("4_jub7c")
+description = "This attack's damage is not affected by Resistance."
 prompt_reliant = false
 initial_main_DMG = 20
 defender_properties = 4

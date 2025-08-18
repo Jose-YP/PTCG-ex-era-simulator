@@ -23,13 +23,14 @@ stackable = true
 recieves = ExtResource("5_f5dxt")
 duration = 2
 after_weak_res = true
+modify = "HP"
+operation = "Add"
 add_hp = 0
 attack = 40
 defense = 0
 retreat_change = 0
 cost_modifier = "Add"
-modify = "HP"
-operation = "Replace"
+plus = false
 condition_immune = 0
 attack_effect_immune = false
 damage_immune = false
@@ -46,7 +47,6 @@ metadata/_custom_type_script = "uid://coojhwe6m20gd"
 
 [sub_resource type="Resource" id="Resource_0rawh"]
 script = ExtResource("12_gfpq3")
-either_or = false
 order = Array[int]([])
 buff = SubResource("Resource_6wn4a")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
@@ -58,6 +58,7 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [sub_resource type="Resource" id="Resource_hmbk8"]
 script = ExtResource("4_f5dxt")
+description = "During your next turn, Spit Up's base damage is 70 instead of 30, and Swallow's base damage is 60 instead of 20."
 prompt_reliant = false
 initial_main_DMG = 0
 defender_properties = 0
@@ -92,7 +93,6 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_veevm"]
 script = ExtResource("12_gfpq3")
-either_or = false
 order = Array[int]([])
 dmgManip = ExtResource("8_xl488")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
@@ -104,6 +104,7 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [sub_resource type="Resource" id="Resource_vclto"]
 script = ExtResource("4_f5dxt")
+description = "After your attack, remove from [name] the number of damage counters equal to the damage you did to the Defending Pokémon. If [name] has fewer damage counters than that, remove all of them."
 prompt_reliant = false
 initial_main_DMG = 20
 defender_properties = 0

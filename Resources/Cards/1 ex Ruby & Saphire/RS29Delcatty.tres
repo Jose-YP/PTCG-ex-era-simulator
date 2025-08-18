@@ -35,7 +35,6 @@ metadata/_custom_type_script = "uid://cw3yr1k040kw7"
 
 [sub_resource type="Resource" id="Resource_pm028"]
 script = ExtResource("4_f6we8")
-either_or = false
 order = Array[int]([])
 search = SubResource("Resource_0nmla")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
@@ -47,6 +46,7 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [sub_resource type="Resource" id="Resource_l0vb6"]
 script = ExtResource("9_kun7m")
+description = "Attach 1 Energy card from your discard pile to your Active Pokémon."
 prompt_reliant = false
 initial_main_DMG = 10
 defender_properties = 0
@@ -82,6 +82,7 @@ metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
 [sub_resource type="Resource" id="Resource_gvje7"]
 script = ExtResource("9_kun7m")
+description = "Does 30 damage plus 10 more damage for each Energy attached to Delcatty but not used to pay for this attack's Energy cost."
 prompt_reliant = false
 initial_main_DMG = 30
 defender_properties = 0

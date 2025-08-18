@@ -6,6 +6,7 @@
 
 [resource]
 script = ExtResource("2_mp0ue")
+description = "Flip 3 coins. This attack does 10 damage times the number of heads."
 prompt_reliant = false
 initial_main_DMG = 10
 defender_properties = 0

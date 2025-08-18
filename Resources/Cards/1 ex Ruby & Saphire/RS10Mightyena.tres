@@ -14,13 +14,13 @@
 
 [sub_resource type="Resource" id="Resource_2q26m"]
 script = ExtResource("5_nryx3")
-either_or = false
 order = Array[int]([])
 card_disrupt = ExtResource("4_04ran")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_nryx3"]
 script = ExtResource("5_04ran")
+description = "Flip a coin. If heads, choose 1 card from your opponent's hand without looking and discard it."
 prompt_reliant = false
 prompt = ExtResource("4_j7mx2")
 initial_main_DMG = 40

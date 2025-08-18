@@ -22,6 +22,7 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [sub_resource type="Resource" id="Resource_pm8uh"]
 script = ExtResource("5_po7pa")
+description = "Flip a coin. If heads, each Defending Pokémon is now Confused."
 prompt_reliant = false
 initial_main_DMG = 0
 defender_properties = 0
@@ -63,7 +64,6 @@ metadata/_custom_type_script = "uid://scca13hg4k1l"
 
 [sub_resource type="Resource" id="Resource_oouox"]
 script = ExtResource("6_po7pa")
-either_or = false
 order = Array[int]([])
 dmgManip = SubResource("Resource_gpint")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
@@ -75,6 +75,7 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [sub_resource type="Resource" id="Resource_nmuih"]
 script = ExtResource("5_po7pa")
+description = "Flip a coin. If heads, put damage counters on the Defending Pokémon until it is 10 HP away from being Knocked Out."
 prompt_reliant = false
 initial_main_DMG = 0
 defender_properties = 0

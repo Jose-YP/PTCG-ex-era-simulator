@@ -32,7 +32,6 @@ metadata/_custom_type_script = "uid://scca13hg4k1l"
 
 [sub_resource type="Resource" id="Resource_5ywka"]
 script = ExtResource("8_jqjp7")
-either_or = false
 order = Array[int]([9, 5, 0])
 condition = ExtResource("5_kaj8s")
 dmgManip = SubResource("Resource_dwx6k")
@@ -46,6 +45,7 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [sub_resource type="Resource" id="Resource_lolcc"]
 script = ExtResource("9_akdno")
+description = "Remove all Special Conditions and 4 damage counters from [name] (all if there are less than 4). [name] is now Asleep."
 prompt_reliant = false
 initial_main_DMG = 0
 defender_properties = 0
@@ -72,6 +72,7 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_ulqrn"]
 script = ExtResource("9_akdno")
+description = "This attack does 20 damage plus 10 more damage for each {Water} Energy attached to [name] but not used to pay for this attack's Energy cost. You can't add more than 20 damage in this way."
 prompt_reliant = false
 initial_main_DMG = 20
 defender_properties = 0

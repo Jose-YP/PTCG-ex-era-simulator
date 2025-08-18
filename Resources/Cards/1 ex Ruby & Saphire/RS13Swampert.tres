@@ -22,6 +22,7 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [sub_resource type="Resource" id="Resource_et187"]
 script = ExtResource("5_wv0a4")
+description = "The Defending Pokémon is now Asleep."
 prompt_reliant = false
 initial_main_DMG = 50
 defender_properties = 0
@@ -63,7 +64,6 @@ metadata/_custom_type_script = "uid://cimk6l7ytw7xg"
 
 [sub_resource type="Resource" id="Resource_gcqqh"]
 script = ExtResource("5_e1px8")
-either_or = false
 order = Array[int]([])
 energy_movement = SubResource("Resource_ifthe")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"

@@ -1,105 +1,8 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=21 format=3 uid="uid://cfjddps750f64"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=4 format=3 uid="uid://cfjddps750f64"]
 
 [ext_resource type="Texture2D" uid="uid://cw52mctmfhy2h" path="res://Art/Cards/1 ex Ruby & Saphire/12.jpg" id="1_6m76f"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_iidg0"]
-[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_0biyp"]
-[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="5_em8ff"]
-[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="5_jk4hl"]
-[ext_resource type="Resource" uid="uid://dm6f2nxeh8yqx" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless4.tres" id="5_muafc"]
-[ext_resource type="Resource" uid="uid://chc757fk4t8pm" path="res://Resources/Components/Effects/Prompts/Discard1EnTo.tres" id="6_jk4hl"]
-[ext_resource type="Script" uid="uid://c0ishgbxk63dg" path="res://Code/Resource Makers/EffectSpecific/DisableMaker.gd" id="6_muafc"]
-[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="7_6gfio"]
-[ext_resource type="Resource" uid="uid://b4eq6v7x2qaxd" path="res://Resources/Components/Effects/Disable/DefNoPowers.tres" id="7_qjm50"]
-[ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="9_0biyp"]
-[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="9_pjbqk"]
-
-[sub_resource type="Resource" id="Resource_jk4hl"]
-script = ExtResource("6_muafc")
-side = 2
-slot = 4
-duration = -1
-no_weakness = false
-no_resistance = false
-instead_of_damage = false
-do_nothing = false
-attack = 2
-power = 0
-retreat_duration = 1
-disable_retreat = false
-metadata/_custom_type_script = "uid://c0ishgbxk63dg"
-
-[sub_resource type="Resource" id="Resource_6gfio"]
-script = ExtResource("5_jk4hl")
-either_or = false
-order = Array[int]([])
-disable = SubResource("Resource_jk4hl")
-metadata/_custom_type_script = "uid://dmulm3x3dj842"
-
-[sub_resource type="Resource" id="Resource_i8crq"]
-script = ExtResource("5_em8ff")
-success = SubResource("Resource_6gfio")
-metadata/_custom_type_script = "uid://k25kag4lnway"
-
-[sub_resource type="Resource" id="Resource_qjm50"]
-script = ExtResource("7_6gfio")
-prompt_reliant = true
-prompt = ExtResource("6_jk4hl")
-initial_main_DMG = 100
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("5_em8ff")]([SubResource("Resource_i8crq")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
-metadata/_custom_type_script = "uid://8nne0t7tvtgl"
-
-[sub_resource type="Resource" id="Resource_xtfpm"]
-script = ExtResource("2_0biyp")
-name = "Critical Move"
-description = "Discard a basic Energy card attached to Slaking or this attack does nothing. Slaking can't attack during your next turn."
-attack_cost = ExtResource("5_muafc")
-attack_data = SubResource("Resource_qjm50")
-metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
-
-[sub_resource type="Resource" id="Resource_wheg7"]
-script = ExtResource("5_jk4hl")
-either_or = null
-order = null
-disable = ExtResource("7_qjm50")
-metadata/_custom_type_script = "uid://dmulm3x3dj842"
-
-[sub_resource type="Resource" id="Resource_em8ff"]
-script = ExtResource("9_0biyp")
-category = "Body"
-name = "Lazy"
-description = "As long as [name] is your Active Pokémon, your opponent's Pokémon can't use any Poké-Powers."
-affected_by_condition = false
-active = true
-how_often = "Infinite"
-independent_src_trg = false
-passive = SubResource("Resource_wheg7")
-metadata/_custom_type_script = "uid://bs2y8ocljilv8"
-
-[sub_resource type="Resource" id="Resource_obdab"]
-script = ExtResource("9_pjbqk")
-HP = 120
-retreat = 3
-pokebody = SubResource("Resource_em8ff")
-attacks = Array[ExtResource("2_0biyp")]([SubResource("Resource_xtfpm")])
-evo_stage = "Stage 2"
-evolves_from = "Vigoroth"
-considered = 1
-owner = 0
-type = 256
-weak = 32
-resist = 0
-metadata/_custom_type_script = "uid://dkximshow1pao"
+[ext_resource type="Resource" uid="uid://bl85rsmhryvoq" path="res://Resources/Components/Pokemon/ReprintPokemon/PowerKeepers/LazySlaking.tres" id="2_3jebn"]
 
 [resource]
 script = ExtResource("1_iidg0")
@@ -110,6 +13,6 @@ number = 12
 rarity = 3
 expansion = 0
 categories = 1
-pokemon_properties = SubResource("Resource_obdab")
+pokemon_properties = ExtResource("2_3jebn")
 fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

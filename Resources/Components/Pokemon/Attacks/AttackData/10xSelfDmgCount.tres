@@ -6,6 +6,7 @@
 
 [resource]
 script = ExtResource("2_buimu")
+description = "Flip a coin. If heads, this attack does 10 damage times the number of damage counters on [name]."
 prompt_reliant = false
 initial_main_DMG = 10
 defender_properties = 0

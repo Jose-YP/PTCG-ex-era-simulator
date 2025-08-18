@@ -6,6 +6,7 @@
 
 [resource]
 script = ExtResource("2_m0ar5")
+description = "Flip a coin. If tails, this attack does nothing."
 prompt_reliant = true
 prompt = ExtResource("1_rmuc3")
 initial_main_DMG = 50

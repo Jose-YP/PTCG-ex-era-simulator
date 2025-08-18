@@ -1,16 +1,23 @@
-[gd_resource type="Resource" script_class="AttackData" load_steps=2 format=3 uid="uid://cyvs4hb5sx6it"]
+[gd_resource type="Resource" script_class="AttackData" load_steps=3 format=3 uid="uid://cyvs4hb5sx6it"]
 
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="1_fts5n"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="1_iuul5"]
 
 [resource]
 script = ExtResource("1_fts5n")
+description = "[name] does 10 damage to itself."
 prompt_reliant = false
 initial_main_DMG = 30
+defender_properties = 0
+condition = 1
+before_damage = false
+replace_num = false
+share_prompt = false
+prompt_effects = Array[ExtResource("1_iuul5")]([])
 conditional_self_dmg = false
 self_damage = 10
+mod_prompt = false
 modifier = 0
 modifier_num = 0
 both_active = false
-defender_properties = 0
-condition = 1
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"

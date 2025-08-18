@@ -19,6 +19,7 @@ attack_data = ExtResource("4_5a8tj")
 
 [sub_resource type="Resource" id="Resource_1nwew"]
 script = ExtResource("6_1xnba")
+description = "Flip a coin. If heads, this attack does 30 damage plus 30 more damage."
 prompt_reliant = false
 initial_main_DMG = 30
 defender_properties = 0

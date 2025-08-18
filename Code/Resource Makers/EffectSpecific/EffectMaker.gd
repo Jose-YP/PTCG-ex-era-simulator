@@ -2,10 +2,6 @@
 extends Resource
 class_name EffectCall
 
-enum effect_types{CONDITION, BUFF, DISRUPT, DISABLE, 
-ENMOV, DMGMANIP, SEARCH, SWAP, DRAW, ALLEVIATE, MIMIC, 
-OVERRIDE, CHEATPLAY, TYPECHANGE, RULECHANGE, OTHER}
-
 ##Determine the order in which the effects are called.
 ##It's best to fill this in, if you don't want the default enum order
 @export var order: Array[Consts.EFFECTS]

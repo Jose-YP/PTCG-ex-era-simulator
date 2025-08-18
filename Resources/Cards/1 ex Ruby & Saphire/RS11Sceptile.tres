@@ -65,7 +65,6 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [sub_resource type="Resource" id="Resource_pi6dd"]
 script = ExtResource("7_pi6dd")
-either_or = false
 order = Array[int]([])
 condition = ExtResource("4_dpoqi")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
@@ -118,6 +117,7 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [sub_resource type="Resource" id="Resource_tnff2"]
 script = ExtResource("7_aqyw1")
+description = "If 1 Energy is attached to [name], the Defending Pokémon is now Asleep. If 2 Energy is attached to [name], the Defending Pokémon is now Poisoned. If 3 Energy is attached to [name], the Defending Pokémon is now Asleep and Poisoned. If 4 or more Energy is attached to [name], the Defending Pokémon is now Asleep, Burned, and Poisoned."
 prompt_reliant = false
 prompt = SubResource("Resource_u0wp7")
 initial_main_DMG = 20

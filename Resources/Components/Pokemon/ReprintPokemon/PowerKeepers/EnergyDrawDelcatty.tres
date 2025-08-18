@@ -38,6 +38,7 @@ metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
 [sub_resource type="Resource" id="Resource_wpewd"]
 script = ExtResource("8_sm0il")
+description = "Does 10 damage times the amount of Energy attached to all of your active Pokemon"
 prompt_reliant = false
 initial_main_DMG = 10
 defender_properties = 0
@@ -65,7 +66,6 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_ffdua"]
 script = ExtResource("10_x3ywj")
-either_or = false
 order = Array[int]([8])
 draw_ammount = ExtResource("9_gl4cb")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
@@ -98,7 +98,6 @@ metadata/_custom_type_script = "uid://8sh5p3leflla"
 
 [sub_resource type="Resource" id="Resource_2fhws"]
 script = ExtResource("10_x3ywj")
-either_or = false
 order = Array[int]([])
 card_disrupt = SubResource("Resource_doupy")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"

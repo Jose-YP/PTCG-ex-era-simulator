@@ -3,7 +3,7 @@ extends HBoxContainer
 
 @onready var node_editor_view_root : Control = $"../../../.."
 
-var rows_per_page := 50
+var rows_per_page := 90
 var current_page := 0
 
 

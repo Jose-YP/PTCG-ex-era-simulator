@@ -1,18 +1,25 @@
-[gd_resource type="Resource" script_class="AttackData" load_steps=3 format=3 uid="uid://dolts51tsxk5a"]
+[gd_resource type="Resource" script_class="AttackData" load_steps=4 format=3 uid="uid://dolts51tsxk5a"]
 
 [ext_resource type="Resource" uid="uid://cqw2kwbgcwgvb" path="res://Resources/Components/Effects/Conditions/BasicSleep.tres" id="1_flu70"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="2_gpqly"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="2_y3aqn"]
 
 [resource]
 script = ExtResource("2_gpqly")
+description = "The Defending Pokémon is now Asleep."
 prompt_reliant = false
 initial_main_DMG = 20
+defender_properties = 0
+condition = 1
+before_damage = false
+replace_num = false
+always_effect = ExtResource("1_flu70")
+share_prompt = false
+prompt_effects = Array[ExtResource("2_y3aqn")]([])
 conditional_self_dmg = false
 self_damage = 0
+mod_prompt = false
 modifier = 0
 modifier_num = 0
 both_active = false
-defender_properties = 0
-condition = 1
-always_effect = ExtResource("1_flu70")
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"

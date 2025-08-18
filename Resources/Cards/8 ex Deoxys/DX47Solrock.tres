@@ -1,0 +1,185 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=30 format=3 uid="uid://dmt55h3bidjid"]
+
+[ext_resource type="Texture2D" uid="uid://bm2o5fxpidtfx" path="res://Art/Cards/8 ex Deoxys/47.jpg" id="1_0oibl"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_aymqq"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_rbfc7"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_a6ewb"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="4_nrtqa"]
+[ext_resource type="Resource" uid="uid://bext0mocufqgp" path="res://Resources/Components/Effects/Conditions/BasicBurn.tres" id="5_rek35"]
+[ext_resource type="Resource" uid="uid://ekj1myy642kh" path="res://Resources/Components/Effects/Prompts/PromptHeads.tres" id="6_6a6x6"]
+[ext_resource type="Resource" uid="uid://6xmw13js5xd3" path="res://Resources/Components/Effects/Conditions/BasicParalyze.tres" id="7_w7ymq"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="8_lnw0i"]
+[ext_resource type="Resource" uid="uid://cyne13e3trqgr" path="res://Resources/Components/Effects/Asks/SrcLunatone.tres" id="9_hxmfa"]
+[ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="10_j52e0"]
+[ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="11_sbb3y"]
+[ext_resource type="Script" uid="uid://br15mnap82upq" path="res://Code/Resource Makers/PokemonSpecific/BenchAttackMaker.gd" id="12_l5til"]
+[ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/BuffMaker.gd" id="13_cqacl"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="14_euo88"]
+[ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="15_qvg0b"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="16_32jtl"]
+
+[sub_resource type="Resource" id="Resource_y322s"]
+script = ExtResource("4_nrtqa")
+prompt = ExtResource("6_6a6x6")
+success = ExtResource("7_w7ymq")
+fail = ExtResource("5_rek35")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
+[sub_resource type="Resource" id="Resource_us84d"]
+script = ExtResource("8_lnw0i")
+description = "Flip a coin. If heads, the Defending Pokémon is now Paralyzed. If tails, the Defending Pokémon is now Burned."
+prompt_reliant = false
+initial_main_DMG = 0
+defender_properties = 0
+condition = 1
+before_damage = false
+replace_num = false
+share_prompt = false
+prompt_effects = Array[ExtResource("4_nrtqa")]([SubResource("Resource_y322s")])
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_vh478"]
+script = ExtResource("2_rbfc7")
+name = "Scorching Light"
+description = "Flip a coin. If heads, the Defending Pokémon is now Paralyzed. If tails, the Defending Pokémon is now Burned."
+attack_cost = ExtResource("3_a6ewb")
+attack_data = SubResource("Resource_us84d")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_rbusp"]
+script = ExtResource("10_j52e0")
+which = "Slot"
+ask = ExtResource("9_hxmfa")
+slot_vars = "current_card"
+cap = -1
+metadata/_custom_type_script = "uid://vjn146j3ayd6"
+
+[sub_resource type="Resource" id="Resource_mimxw"]
+script = ExtResource("11_sbb3y")
+comparision_type = "Return"
+first_comparison = SubResource("Resource_rbusp")
+compare_to = "None"
+second_constant = 0
+operate_w_constant = "None"
+metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
+
+[sub_resource type="Resource" id="Resource_de7np"]
+script = ExtResource("12_l5til")
+how_many = 1
+active_allowed = false
+apply_weak_res = false
+initial_main_DMG = 10
+modifier = 2
+modifier_num = 10
+comparator = SubResource("Resource_mimxw")
+metadata/_custom_type_script = "uid://br15mnap82upq"
+
+[sub_resource type="Resource" id="Resource_34hxj"]
+script = ExtResource("8_lnw0i")
+description = "Choose 1 of your opponent's Benched Pokémon. This attack does 10 damage to that Pokémon for each Lunatone you have in play. (Don't apply Weakness and Resistance for Benched Pokémon.)"
+prompt_reliant = false
+initial_main_DMG = 0
+defender_properties = 0
+condition = 1
+before_damage = false
+replace_num = false
+share_prompt = false
+prompt_effects = Array[ExtResource("4_nrtqa")]([])
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+bench_damage = SubResource("Resource_de7np")
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_m6x7l"]
+script = ExtResource("2_rbfc7")
+name = "Reflected Beam"
+description = "Choose 1 of your opponent's Benched Pokémon. This attack does 10 damage to that Pokémon for each Lunatone you have in play. (Don't apply Weakness and Resistance for Benched Pokémon.)"
+attack_cost = ExtResource("3_a6ewb")
+attack_data = SubResource("Resource_34hxj")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_rjcny"]
+script = ExtResource("13_cqacl")
+description = "Max HP is now 80"
+application = "Slot"
+stackable = true
+recieves = ExtResource("9_hxmfa")
+duration = -1
+after_weak_res = true
+modify = "HP"
+operation = "Replace"
+add_hp = 80
+attack = 0
+defense = 0
+retreat_change = 0
+cost_modifier = "Add"
+plus = false
+condition_immune = 0
+attack_effect_immune = false
+damage_immune = false
+body_immune = false
+power_immune = false
+trainer_immune = false
+odd_immunity = false
+even_immunity = false
+weakness = false
+resistance = false
+effects = false
+attack_names = Array[String]([])
+metadata/_custom_type_script = "uid://coojhwe6m20gd"
+
+[sub_resource type="Resource" id="Resource_mjlhq"]
+script = ExtResource("14_euo88")
+order = Array[int]([])
+buff = SubResource("Resource_rjcny")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_pct7w"]
+script = ExtResource("15_qvg0b")
+category = "Body"
+name = "Sunbeam"
+description = " The maximum HP for each Lunatone you have in play is now 80. "
+affected_by_condition = false
+active = false
+how_often = "Once per Mon"
+independent_src_trg = false
+passive = SubResource("Resource_mjlhq")
+metadata/_custom_type_script = "uid://bs2y8ocljilv8"
+
+[sub_resource type="Resource" id="Resource_4aa2g"]
+script = ExtResource("16_32jtl")
+HP = 70
+retreat = 2
+pokebody = SubResource("Resource_pct7w")
+attacks = Array[ExtResource("2_rbfc7")]([SubResource("Resource_vh478"), SubResource("Resource_m6x7l")])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 1
+owner = 0
+type = 16
+weak = 1
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_aymqq")
+name = "Solrock"
+image = ExtResource("1_0oibl")
+illustrator = "Kyoko Umemoto"
+number = 47
+rarity = 1
+expansion = 7
+categories = 1
+pokemon_properties = SubResource("Resource_4aa2g")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

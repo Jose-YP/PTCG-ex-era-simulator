@@ -15,6 +15,7 @@
 
 [sub_resource type="Resource" id="Resource_jcni4"]
 script = ExtResource("5_aoipg")
+description = "Choose 1 of your opponent's Benched Pokémon. This attack does 10 damage to that Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
 prompt_reliant = false
 initial_main_DMG = 20
 defender_properties = 0
@@ -42,7 +43,6 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_a4xqq"]
 script = ExtResource("5_xcuij")
-either_or = false
 order = Array[int]([])
 energy_movement = ExtResource("4_13v8e")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
@@ -63,6 +63,7 @@ metadata/_custom_type_script = "uid://b85jmc7067bjc"
 
 [sub_resource type="Resource" id="Resource_253vf"]
 script = ExtResource("5_aoipg")
+description = "Discard 2 basic Energy cards attached to [name] or this attack does nothing."
 prompt_reliant = true
 prompt = SubResource("Resource_ra3ir")
 initial_main_DMG = 100

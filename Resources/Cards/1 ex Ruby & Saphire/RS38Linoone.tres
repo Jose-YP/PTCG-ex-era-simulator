@@ -34,7 +34,6 @@ metadata/_custom_type_script = "uid://cw3yr1k040kw7"
 
 [sub_resource type="Resource" id="Resource_f88l4"]
 script = ExtResource("3_hc8gr")
-either_or = false
 order = Array[int]([])
 search = SubResource("Resource_47ysl")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
@@ -46,6 +45,7 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [sub_resource type="Resource" id="Resource_e3j6n"]
 script = ExtResource("9_hc8gr")
+description = "Search your deck for up to 2 cards and put them into your hand. Shuffle your deck afterward."
 prompt_reliant = false
 initial_main_DMG = 0
 defender_properties = 0
@@ -72,6 +72,7 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_pmwlk"]
 script = ExtResource("9_hc8gr")
+description = "Flip a coin until you get tails. This attack does 40 damage times the number of heads."
 prompt_reliant = false
 initial_main_DMG = 40
 defender_properties = 0

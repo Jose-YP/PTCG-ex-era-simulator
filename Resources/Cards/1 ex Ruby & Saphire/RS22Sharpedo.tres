@@ -16,6 +16,7 @@
 
 [sub_resource type="Resource" id="Resource_86nuf"]
 script = ExtResource("4_ifd1e")
+description = "You may discard a {Darkness} Energy card attached to [name]. If you do, this attack does 40 damage plus 30 more damage."
 prompt_reliant = false
 prompt = ExtResource("4_ahb0c")
 initial_main_DMG = 40
@@ -58,7 +59,6 @@ metadata/_custom_type_script = "uid://scca13hg4k1l"
 
 [sub_resource type="Resource" id="Resource_ikewq"]
 script = ExtResource("9_8ns45")
-either_or = false
 order = Array[int]([])
 dmgManip = SubResource("Resource_ivndt")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"

@@ -16,6 +16,8 @@ class_name Buff
 @export var after_weak_res: bool = true
 
 @export_group("Stat Change")
+@export_enum("None","HP", "Attack", "Defense", "Retreat", "Colorless Cost") var modify: String = "HP"
+@export_enum("Add", "Subtract", "Multiply", "Replace") var operation: String = "Add"
 @export_range(-200, 200, 10) var add_hp: int = 0
 ##How much more damage to target?
 @export_range(-120, 120, 10) var attack: int = 0
@@ -27,8 +29,7 @@ class_name Buff
 @export_enum("Add", "Subtract", "Replace") var cost_modifier: String = "Add"
 @export var attack_cost: AttackCost
 @export_subgroup("Comparator")
-@export_enum("HP", "Attack", "Defense", "Retreat", "Colorless Cost") var modify: String = "HP"
-@export_enum("Add", "Subtract", "Multiply", "Replace") var operation: String = "Replace"
+@export var plus: bool
 @export var comparator: Comparator
 
 @export_group("Immunities")

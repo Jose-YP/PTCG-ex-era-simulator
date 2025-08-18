@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="SlotAsk" load_steps=2 format=3 uid="uid://cyne13e3trqgr"]
+
+[ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="1_uv0af"]
+
+[resource]
+script = ExtResource("1_uv0af")
+boolean_type = "And"
+previous_src_trg = false
+side_target = 4
+slot_target = 4
+specifically = Array[String](["Lunatone"])
+knocked_out = false
+tool_attatched = false
+comparison_type = 1
+max_hp = -10
+damage_taken = -10
+retreat_cost = -1
+evo_type = "Don't Check"
+stage = 7
+rare_candy = false
+class_inclusive = true
+pokemon_class = 63
+owner_inclusive = true
+pokemon_owner = 31
+type_inclusive = true
+pokemon_type = 1023
+energy_inclusive = true
+check_cards = true
+energy_attatched = -1
+energy_class = "Any"
+check_ability = false
+contained_abilities = 3
+specific_abilities = Array[String]([])
+metadata/_custom_type_script = "uid://mkjynqda7q5g"

@@ -1,18 +1,25 @@
-[gd_resource type="Resource" script_class="AttackData" load_steps=3 format=3 uid="uid://d3ldw0oh07p2m"]
+[gd_resource type="Resource" script_class="AttackData" load_steps=4 format=3 uid="uid://d3ldw0oh07p2m"]
 
 [ext_resource type="Resource" uid="uid://e706qq8o0hri" path="res://Resources/Components/Counters/Comparator/Return/Return2Flip.tres" id="1_0bp2q"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="2_3snq2"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="2_64lcs"]
 
 [resource]
 script = ExtResource("2_64lcs")
+description = "Flip 2 coins. This attack does 40 damage times the number of heads."
 prompt_reliant = false
 initial_main_DMG = 40
+defender_properties = 0
+condition = 1
+before_damage = false
+replace_num = false
+share_prompt = false
+prompt_effects = Array[ExtResource("2_3snq2")]([])
 conditional_self_dmg = false
 self_damage = 0
+mod_prompt = false
 modifier = 2
 modifier_num = 20
 comparator = ExtResource("1_0bp2q")
 both_active = false
-defender_properties = 0
-condition = 1
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"

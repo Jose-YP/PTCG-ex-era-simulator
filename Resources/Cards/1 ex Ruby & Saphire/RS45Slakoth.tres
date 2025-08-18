@@ -23,7 +23,6 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_71qd2"]
 script = ExtResource("8_fjlid")
-either_or = false
 order = Array[int]([5, 3])
 disable = ExtResource("6_b08mv")
 dmgManip = ExtResource("7_xmydl")
@@ -36,6 +35,7 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [sub_resource type="Resource" id="Resource_i3l0k"]
 script = ExtResource("9_5tlla")
+description = "Remove all damage counters from [name]. [name] can't attack during your next turn."
 prompt_reliant = false
 initial_main_DMG = 0
 defender_properties = 0

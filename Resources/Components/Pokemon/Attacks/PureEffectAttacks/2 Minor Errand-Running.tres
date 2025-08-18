@@ -9,7 +9,6 @@
 
 [sub_resource type="Resource" id="Resource_6a84p"]
 script = ExtResource("1_1rbni")
-either_or = false
 order = Array[int]([])
 search = ExtResource("2_ndssy")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
@@ -21,6 +20,7 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [sub_resource type="Resource" id="Resource_vyuu0"]
 script = ExtResource("4_gcp0h")
+description = "Search your deck for 2 basic Energy cards, show them to your opponent, and put them into your hand. Shuffle your deck afterward."
 prompt_reliant = false
 initial_main_DMG = 0
 defender_properties = 0

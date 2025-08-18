@@ -12,6 +12,7 @@
 
 [sub_resource type="Resource" id="Resource_tuk58"]
 script = ExtResource("6_ari4w")
+description = "If [name] and the Defending Pokémon have a different amount of Energy attached to them, this attack's base damage is 10 instead of 40."
 prompt_reliant = false
 initial_main_DMG = 40
 defender_properties = 0

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=15 format=3 uid="uid://dtr6e6lg8v3no"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=17 format=3 uid="uid://dtr6e6lg8v3no"]
 
 [ext_resource type="Texture2D" uid="uid://bjipycuyyvoma" path="res://Art/Cards/3 ex Dragon/57.jpg" id="1_giss4"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_vgun0"]
@@ -7,12 +7,16 @@
 [ext_resource type="Resource" uid="uid://c63wb1xvpkbi8" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Grass1.tres" id="4_jg7a3"]
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="5_e36c2"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="6_kajiu"]
+[ext_resource type="Resource" uid="uid://dew25qfxkag73" path="res://Resources/Components/Effects/Conditions/DefPoison.tres" id="6_lcswo"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="7_38f87"]
+[ext_resource type="Resource" uid="uid://bjxjcwqb0f007" path="res://Resources/Components/Effects/EnergyMovement/Send/SelfDis1G.tres" id="7_jg7a3"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="8_vkccs"]
 
 [sub_resource type="Resource" id="Resource_jqkfr"]
 script = ExtResource("6_kajiu")
 order = Array[int]([4, 3])
+condition = ExtResource("6_lcswo")
+energy_movement = ExtResource("7_jg7a3")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_05bxh"]

@@ -12,7 +12,6 @@
 
 [sub_resource type="Resource" id="Resource_rxp53"]
 script = ExtResource("5_72gut")
-either_or = false
 order = Array[int]([])
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -23,6 +22,7 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [sub_resource type="Resource" id="Resource_876u4"]
 script = ExtResource("6_xn1xe")
+description = "Move 1 Energy card attached to the Defending Pokémon to the other Defending Pokémon. (Ignore this effect if your opponent has only 1 Defending Pokémon.)"
 prompt_reliant = false
 initial_main_DMG = 30
 defender_properties = 0
