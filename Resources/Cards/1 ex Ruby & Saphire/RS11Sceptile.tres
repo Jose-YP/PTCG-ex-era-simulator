@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=27 format=3 uid="uid://dpvdlrumqivuv"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=34 format=3 uid="uid://dpvdlrumqivuv"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_6qsu5"]
 [ext_resource type="Texture2D" uid="uid://djxbrnlywgq35" path="res://Art/Cards/1 ex Ruby & Saphire/11.jpg" id="1_ry2bs"]
@@ -7,11 +7,13 @@
 [ext_resource type="Resource" uid="uid://dew25qfxkag73" path="res://Resources/Components/Effects/Conditions/DefPoison.tres" id="4_dpoqi"]
 [ext_resource type="Resource" uid="uid://dbvoacgaygcdj" path="res://Resources/Components/Counters/Comparator/Greater/SelfGE2En.tres" id="4_e07y2"]
 [ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="5_dpoqi"]
-[ext_resource type="Resource" uid="uid://hbbi3hqk47gs" path="res://Resources/Components/Effects/Conditions/DefSleep.tres" id="5_u0wp7"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="7_aqyw1"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="7_mqkhh"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="7_pi6dd"]
+[ext_resource type="Resource" uid="uid://co05gpcetkfki" path="res://Resources/Components/Counters/Indv/Slots/SelfEnergyTotal.tres" id="8_77a3r"]
 [ext_resource type="Resource" uid="uid://yitg2k7gl3rq" path="res://Resources/Components/Counters/Comparator/Greater/SelfGE4En.tres" id="9_dpoqi"]
 [ext_resource type="Resource" uid="uid://cqw2kwbgcwgvb" path="res://Resources/Components/Effects/Conditions/BasicSleep.tres" id="9_mqkhh"]
+[ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="9_tnff2"]
 [ext_resource type="Resource" uid="uid://bext0mocufqgp" path="res://Resources/Components/Effects/Conditions/BasicBurn.tres" id="9_u0wp7"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="10_77a3r"]
 [ext_resource type="Resource" uid="uid://bccpcvahw5m4f" path="res://Resources/Components/Counters/Comparator/Greater/SelfGE3En.tres" id="11_u0wp7"]
@@ -32,13 +34,22 @@ choose_location = "None"
 which_stack = 0
 metadata/_custom_type_script = "uid://b85jmc7067bjc"
 
-[sub_resource type="Resource" id="Resource_aqyw1"]
+[sub_resource type="Resource" id="Resource_nxct4"]
+script = ExtResource("9_tnff2")
+comparision_type = "Equals"
+first_comparison = ExtResource("8_77a3r")
+compare_to = "Const"
+second_constant = 1
+operate_w_constant = "None"
+metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
+
+[sub_resource type="Resource" id="Resource_cu7av"]
 script = ExtResource("5_dpoqi")
 formal_question = false
 question_string = ""
 yes_answer = ""
 no_answer = ""
-comparator = ExtResource("9_dpoqi")
+comparator = SubResource("Resource_nxct4")
 can_reverse = true
 occurance = false
 chooser = 0
@@ -46,15 +57,26 @@ choose_location = "None"
 which_stack = 0
 metadata/_custom_type_script = "uid://b85jmc7067bjc"
 
-[sub_resource type="Resource" id="Resource_ubvli"]
+[sub_resource type="Resource" id="Resource_f0ilk"]
+script = ExtResource("7_mqkhh")
+prompt = SubResource("Resource_cu7av")
+success = ExtResource("9_mqkhh")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
+[sub_resource type="Resource" id="Resource_pi6dd"]
 script = ExtResource("7_pi6dd")
 either_or = false
 order = Array[int]([])
-condition = ExtResource("5_u0wp7")
-prompt_extra = SubResource("Resource_aqyw1")
-extra_effect = ExtResource("9_u0wp7")
+condition = ExtResource("4_dpoqi")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
-[sub_resource type="Resource" id="Resource_mqkhh"]
+[sub_resource type="Resource" id="Resource_pruol"]
+script = ExtResource("7_mqkhh")
+prompt = SubResource("Resource_u0wp7")
+success = SubResource("Resource_pi6dd")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
+[sub_resource type="Resource" id="Resource_3g7q5"]
 script = ExtResource("5_dpoqi")
 formal_question = false
 question_string = ""
@@ -68,14 +90,31 @@ choose_location = "None"
 which_stack = 0
 metadata/_custom_type_script = "uid://b85jmc7067bjc"
 
-[sub_resource type="Resource" id="Resource_pi6dd"]
-script = ExtResource("7_pi6dd")
-either_or = false
-order = Array[int]([])
-condition = ExtResource("4_dpoqi")
-prompt_extra = SubResource("Resource_mqkhh")
-extra_effect = SubResource("Resource_ubvli")
-metadata/_custom_type_script = "uid://dmulm3x3dj842"
+[sub_resource type="Resource" id="Resource_lcgnl"]
+script = ExtResource("7_mqkhh")
+prompt = SubResource("Resource_3g7q5")
+success = ExtResource("9_mqkhh")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
+[sub_resource type="Resource" id="Resource_cvmaj"]
+script = ExtResource("5_dpoqi")
+formal_question = false
+question_string = ""
+yes_answer = ""
+no_answer = ""
+comparator = ExtResource("9_dpoqi")
+can_reverse = true
+occurance = false
+chooser = 0
+choose_location = "None"
+which_stack = 0
+metadata/_custom_type_script = "uid://b85jmc7067bjc"
+
+[sub_resource type="Resource" id="Resource_0axk1"]
+script = ExtResource("7_mqkhh")
+prompt = SubResource("Resource_cvmaj")
+success = ExtResource("9_u0wp7")
+metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [sub_resource type="Resource" id="Resource_tnff2"]
 script = ExtResource("7_aqyw1")
@@ -88,6 +127,8 @@ before_damage = false
 replace_num = false
 success_effect = SubResource("Resource_pi6dd")
 fail_effect = ExtResource("9_mqkhh")
+share_prompt = false
+prompt_effects = Array[ExtResource("7_mqkhh")]([SubResource("Resource_f0ilk"), SubResource("Resource_pruol"), SubResource("Resource_lcgnl"), SubResource("Resource_0axk1")])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false

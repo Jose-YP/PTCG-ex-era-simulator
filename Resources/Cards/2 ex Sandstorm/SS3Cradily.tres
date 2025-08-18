@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=26 format=3 uid="uid://bc7e6cec30ccx"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=29 format=3 uid="uid://bc7e6cec30ccx"]
 
 [ext_resource type="Texture2D" uid="uid://cjr07xcqb68a0" path="res://Art/Cards/2 ex Sandstorm/3.jpg" id="1_hyb6k"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_42jkt"]
@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://dr35h5ltr0i6r" path="res://Resources/Components/Effects/Conditions/BasicPoison.tres" id="4_2mrhd"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="5_5g1fb"]
 [ext_resource type="Resource" uid="uid://cw72iu2d81vo5" path="res://Resources/Components/Effects/Swap/Optional/RecordGust.tres" id="6_777gh"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="7_42jkt"]
 [ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="7_gbmow"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="8_tjdgf"]
 [ext_resource type="Resource" uid="uid://b1ebpxwo4lry7" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/G1C2.tres" id="9_oklb8"]
@@ -36,6 +37,11 @@ choose_location = "None"
 which_stack = 0
 metadata/_custom_type_script = "uid://b85jmc7067bjc"
 
+[sub_resource type="Resource" id="Resource_2mrhd"]
+script = ExtResource("7_42jkt")
+success = ExtResource("4_2mrhd")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
 [sub_resource type="Resource" id="Resource_5cgq3"]
 script = ExtResource("8_tjdgf")
 prompt_reliant = false
@@ -45,7 +51,8 @@ defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
-always_effect = ExtResource("4_2mrhd")
+share_prompt = false
+prompt_effects = Array[ExtResource("7_42jkt")]([SubResource("Resource_2mrhd")])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false
@@ -69,6 +76,11 @@ order = null
 dmgManip = ExtResource("10_pnj3y")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
+[sub_resource type="Resource" id="Resource_5g1fb"]
+script = ExtResource("7_42jkt")
+success = SubResource("Resource_t3atv")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
 [sub_resource type="Resource" id="Resource_defyy"]
 script = ExtResource("8_tjdgf")
 prompt_reliant = false
@@ -77,7 +89,8 @@ defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
-always_effect = SubResource("Resource_t3atv")
+share_prompt = false
+prompt_effects = Array[ExtResource("7_42jkt")]([SubResource("Resource_5g1fb")])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false

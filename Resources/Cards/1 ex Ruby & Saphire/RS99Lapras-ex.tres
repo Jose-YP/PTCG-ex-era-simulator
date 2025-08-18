@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=14 format=3 uid="uid://dxrduwpe540go"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=16 format=3 uid="uid://dxrduwpe540go"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_70xxw"]
 [ext_resource type="Texture2D" uid="uid://bf7b3we0s6a0p" path="res://Art/Cards/1 ex Ruby & Saphire/99.jpg" id="1_xkacn"]
@@ -7,6 +7,7 @@
 [ext_resource type="Resource" uid="uid://nx1kc1vsm4ia" path="res://Resources/Components/Effects/Conditions/BasicConfusion.tres" id="4_jwpb3"]
 [ext_resource type="Resource" uid="uid://bep36omnenbc8" path="res://Resources/Components/Pokemon/Attacks/AttackData/10Dmg.tres" id="4_wtncw"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_f5leu"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="6_6ivm0"]
 [ext_resource type="Resource" uid="uid://bmao1r3c5hfr5" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/W2C1.tres" id="6_wtncw"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="7_tupf3"]
 
@@ -17,6 +18,11 @@ description = "Does 10 damage plus 10 more damage for each Energy attached to La
 attack_cost = ExtResource("3_27utq")
 attack_data = ExtResource("4_wtncw")
 
+[sub_resource type="Resource" id="Resource_tupf3"]
+script = ExtResource("6_6ivm0")
+success = ExtResource("4_jwpb3")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
 [sub_resource type="Resource" id="Resource_esapc"]
 script = ExtResource("7_tupf3")
 prompt_reliant = false
@@ -25,7 +31,8 @@ defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
-always_effect = ExtResource("4_jwpb3")
+share_prompt = false
+prompt_effects = Array[ExtResource("6_6ivm0")]([SubResource("Resource_tupf3")])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false

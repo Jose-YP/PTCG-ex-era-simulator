@@ -1,6 +1,7 @@
 extends Resource
 class_name AttackData
 
+@export_multiline var description: String
 ##If this is true, then the [member prompt] must be true before dealing any dmg 
 @export var prompt_reliant: bool = false
 @export var prompt: PromptAsk
@@ -21,7 +22,6 @@ class_name AttackData
 ##[br][i]Future ones will be added when needed
 ##[br]Not recommended for use unless counter needs to be shared between dmg and effects
 @export var replace_num: bool = false
-@export var ask: SlotAsk
 ##If [member prompt] and [member ask] are true then this effect will occur
 @export var success_effect: EffectCall
 ##If [member prompt] and [member ask] are false then this effect will occur

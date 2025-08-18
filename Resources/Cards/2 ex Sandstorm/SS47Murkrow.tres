@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://r4l7b5rugrd4"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=13 format=3 uid="uid://r4l7b5rugrd4"]
 
 [ext_resource type="Texture2D" uid="uid://ukqmth3hqb45" path="res://Art/Cards/2 ex Sandstorm/47.jpg" id="1_2k6jh"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_mnicd"]
@@ -7,6 +7,7 @@
 [ext_resource type="Resource" uid="uid://cif1lb0agms18" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/D1C1.tres" id="4_ept4w"]
 [ext_resource type="Resource" uid="uid://r4xgk0bkj0br" path="res://Resources/Components/Pokemon/BenchAttack/10DefBench.tres" id="5_0bgfd"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="6_cnih0"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="6_spjdn"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="7_p7ftu"]
 
 [sub_resource type="Resource" id="Resource_0x72w"]
@@ -17,6 +18,8 @@ defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
+share_prompt = false
+prompt_effects = Array[ExtResource("6_spjdn")]([])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false

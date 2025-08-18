@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=8 format=3 uid="uid://bktrsptpmigoe"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://bktrsptpmigoe"]
 
 [ext_resource type="Texture2D" uid="uid://bgrly5bo5gjgu" path="res://Art/Cards/1 ex Ruby & Saphire/90.jpg" id="1_e1e14"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_pyu8p"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_f5iid"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="3_qkh7h"]
 [ext_resource type="Resource" uid="uid://bwqb5tsjmyik1" path="res://Resources/Components/Effects/Search/SearchBasicEnergy.tres" id="4_qkh7h"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="5_isay5"]
 
@@ -13,12 +14,17 @@ order = Array[int]([])
 search = ExtResource("4_qkh7h")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
+[sub_resource type="Resource" id="Resource_isay5"]
+script = ExtResource("3_qkh7h")
+success = SubResource("Resource_3hcpp")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
 [sub_resource type="Resource" id="Resource_f1nwp"]
 script = ExtResource("5_isay5")
 considered = "Item"
 specific_requirement = ""
 description = "Search your deck for a basic Energy card, show it to your opponent, and put it into your hand. Shuffle your deck afterward."
-always_effect = SubResource("Resource_3hcpp")
+prompt_effects = Array[ExtResource("3_qkh7h")]([SubResource("Resource_isay5")])
 metadata/_custom_type_script = "uid://crx447i85kshy"
 
 [resource]

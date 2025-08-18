@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=16 format=3 uid="uid://bnrmvsrss0e1q"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=17 format=3 uid="uid://bnrmvsrss0e1q"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_1u7fr"]
 [ext_resource type="Texture2D" uid="uid://dw00bs0lsixrj" path="res://Art/Cards/11 ex Delta Species/98.jpg" id="1_blyid"]
@@ -9,6 +9,7 @@
 [ext_resource type="Resource" uid="uid://c85epaca3amei" path="res://Resources/Components/Effects/Identifiers/Trainers/HolonSupporter.tres" id="6_86y8r"]
 [ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="7_xyg5n"]
 [ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="8_iyc0n"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="9_ce64y"]
 
 [sub_resource type="Resource" id="Resource_2bi6k"]
 script = ExtResource("7_xyg5n")
@@ -79,6 +80,7 @@ description = "Search your deck for a Supporter card that has Holon in its name,
 prompt = SubResource("Resource_bodlt")
 fail_effect = SubResource("Resource_aw4pp")
 success_effect = SubResource("Resource_uq65b")
+prompt_effects = Array[ExtResource("9_ce64y")]([])
 metadata/_custom_type_script = "uid://crx447i85kshy"
 
 [resource]

@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="Attack" load_steps=8 format=3 uid="uid://bsd1vwg1v36ph"]
+[gd_resource type="Resource" script_class="Attack" load_steps=9 format=3 uid="uid://bsd1vwg1v36ph"]
 
 [ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="1_g5oay"]
 [ext_resource type="Resource" uid="uid://bjo72m2rk7vwl" path="res://Resources/Components/Effects/Draw/Draw1.tres" id="2_ad5jq"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_ndhd0"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="4_a7jrx"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="4_ad5jq"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="5_b5bsm"]
 
 [sub_resource type="Resource" id="Resource_d3koa"]
@@ -22,6 +23,8 @@ condition = 1
 before_damage = false
 replace_num = false
 always_effect = SubResource("Resource_d3koa")
+share_prompt = false
+prompt_effects = Array[ExtResource("4_ad5jq")]([])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false

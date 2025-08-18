@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=20 format=3 uid="uid://c0ilhfwifpbcq"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=21 format=3 uid="uid://c0ilhfwifpbcq"]
 
 [ext_resource type="Texture2D" uid="uid://b1iuyks3oh8ex" path="res://Art/Cards/3 ex Dragon/39.jpg" id="1_fc0rl"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_pbhvd"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="6_5fwjy"]
 [ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="7_gd8fe"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="8_7jdpf"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="8_80g2d"]
 [ext_resource type="Resource" uid="uid://dkvbrahlcnjmi" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/W1C2.tres" id="9_susmq"]
 [ext_resource type="Resource" uid="uid://c7thnu1v87uux" path="res://Resources/Components/Pokemon/Attacks/BenchAttacks/30DmgOtherAny.tres" id="10_idxxj"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="11_a1dbm"]
@@ -40,6 +41,8 @@ defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
+share_prompt = false
+prompt_effects = Array[ExtResource("8_80g2d")]([])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false
@@ -65,6 +68,8 @@ defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
+share_prompt = false
+prompt_effects = Array[ExtResource("8_80g2d")]([])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false

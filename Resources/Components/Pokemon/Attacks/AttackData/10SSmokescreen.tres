@@ -1,7 +1,13 @@
-[gd_resource type="Resource" script_class="AttackData" load_steps=3 format=3 uid="uid://bgmd6jgphsf0a"]
+[gd_resource type="Resource" script_class="AttackData" load_steps=5 format=3 uid="uid://bgmd6jgphsf0a"]
 
 [ext_resource type="Resource" uid="uid://crhjbsphfbwr" path="res://Resources/Components/Effects/Disable/DefFlipAtk.tres" id="1_0vncu"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="1_5ubtu"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="2_5ubtu"]
+
+[sub_resource type="Resource" id="Resource_f7rc0"]
+script = ExtResource("1_5ubtu")
+success = ExtResource("1_0vncu")
+metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [resource]
 script = ExtResource("2_5ubtu")
@@ -11,7 +17,8 @@ defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
-always_effect = ExtResource("1_0vncu")
+share_prompt = false
+prompt_effects = Array[ExtResource("1_5ubtu")]([SubResource("Resource_f7rc0")])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false

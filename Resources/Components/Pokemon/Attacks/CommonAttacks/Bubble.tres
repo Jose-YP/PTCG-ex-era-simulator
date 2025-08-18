@@ -1,13 +1,13 @@
 [gd_resource type="Resource" script_class="Attack" load_steps=4 format=3 uid="uid://bfhbpclxag538"]
 
-[ext_resource type="Resource" uid="uid://dsslhipk3ix2o" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Water1.tres" id="1_be23s"]
-[ext_resource type="Resource" uid="uid://dducvbjohbp4x" path="res://Resources/Components/Pokemon/Attacks/AttackData/10DmgParaIfHeads.tres" id="2_p0cvo"]
-[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="3_be23s"]
+[ext_resource type="Resource" uid="uid://dsslhipk3ix2o" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Water1.tres" id="1_7r05g"]
+[ext_resource type="Resource" uid="uid://dducvbjohbp4x" path="res://Resources/Components/Pokemon/Attacks/AttackData/10DmgParaIfHeads.tres" id="2_8gk4q"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="3_5857o"]
 
 [resource]
-script = ExtResource("3_be23s")
+script = ExtResource("3_5857o")
 name = "Bubble"
 description = "Flip a coin. If heads, the Defending Pokémon is now Paralyzed."
-attack_cost = ExtResource("1_be23s")
-attack_data = ExtResource("2_p0cvo")
+attack_cost = ExtResource("1_7r05g")
+attack_data = ExtResource("2_8gk4q")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

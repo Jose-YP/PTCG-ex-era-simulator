@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=16 format=3 uid="uid://u26b4ssyr2mf"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=17 format=3 uid="uid://u26b4ssyr2mf"]
 
 [ext_resource type="Texture2D" uid="uid://dk7bclkq5qqpv" path="res://Art/Cards/1 ex Ruby & Saphire/39.jpg" id="1_6lrpg"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_k78lp"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://br15mnap82upq" path="res://Code/Resource Makers/PokemonSpecific/BenchAttackMaker.gd" id="5_6qxfr"]
 [ext_resource type="Resource" uid="uid://cw44iqotg3v3f" path="res://Resources/Components/Effects/Asks/General/FromDefending.tres" id="6_6qxfr"]
 [ext_resource type="Resource" uid="uid://ch31rb2s75yst" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/L1C2.tres" id="7_3jdj2"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="8_rslko"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="9_kiveb"]
 
 [sub_resource type="Resource" id="Resource_rslko"]
@@ -38,6 +39,8 @@ defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
+share_prompt = false
+prompt_effects = Array[ExtResource("8_rslko")]([])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false

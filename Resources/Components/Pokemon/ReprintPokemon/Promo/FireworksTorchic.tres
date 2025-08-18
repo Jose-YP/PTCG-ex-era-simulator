@@ -2,14 +2,14 @@
 
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_20t48"]
 [ext_resource type="Resource" uid="uid://ci4gahbdoaqcu" path="res://Resources/Components/Pokemon/Attacks/EffectlessAttacks/Peck1-10.tres" id="2_w8sko"]
-[ext_resource type="Resource" uid="uid://bfubgj8baciol" path="res://Resources/Components/Pokemon/Attacks/CommonAttacks/Fireworks30.tres" id="3_cxili"]
+[ext_resource type="Resource" uid="uid://bfubgj8baciol" path="res://Resources/Components/Pokemon/Attacks/CommonAttacks/Fireworks30.tres" id="3_20t48"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="4_bu120"]
 
 [resource]
 script = ExtResource("4_bu120")
 HP = 40
 retreat = 1
-attacks = Array[ExtResource("1_20t48")]([ExtResource("2_w8sko"), ExtResource("3_cxili")])
+attacks = Array[ExtResource("1_20t48")]([ExtResource("2_w8sko"), ExtResource("3_20t48")])
 evo_stage = "Basic"
 evolves_from = ""
 considered = 1

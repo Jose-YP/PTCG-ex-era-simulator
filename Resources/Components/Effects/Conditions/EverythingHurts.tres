@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("2_cjsmm")
 ask = ExtResource("1_vvjsd")
-choose_condition = false
+any = true
 poison = 1
 burn = 1
 turn_cond = 1

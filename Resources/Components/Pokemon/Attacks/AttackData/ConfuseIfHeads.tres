@@ -1,19 +1,26 @@
-[gd_resource type="Resource" script_class="AttackData" load_steps=4 format=3 uid="uid://cdgyabikc6mxv"]
+[gd_resource type="Resource" script_class="AttackData" load_steps=6 format=3 uid="uid://cdgyabikc6mxv"]
 
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="1_a4lvb"]
 [ext_resource type="Resource" uid="uid://nx1kc1vsm4ia" path="res://Resources/Components/Effects/Conditions/BasicConfusion.tres" id="1_r8efs"]
 [ext_resource type="Resource" uid="uid://ekj1myy642kh" path="res://Resources/Components/Effects/Prompts/PromptHeads.tres" id="2_a4lvb"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="3_glxx3"]
 
+[sub_resource type="Resource" id="Resource_glxx3"]
+script = ExtResource("1_a4lvb")
+prompt = ExtResource("2_a4lvb")
+success = ExtResource("1_r8efs")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
 [resource]
 script = ExtResource("3_glxx3")
 prompt_reliant = false
-prompt = ExtResource("2_a4lvb")
 initial_main_DMG = 0
 defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
-always_effect = ExtResource("1_r8efs")
+share_prompt = false
+prompt_effects = Array[ExtResource("1_a4lvb")]([SubResource("Resource_glxx3")])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false

@@ -6,11 +6,9 @@ enum effect_types{CONDITION, BUFF, DISRUPT, DISABLE,
 ENMOV, DMGMANIP, SEARCH, SWAP, DRAW, ALLEVIATE, MIMIC, 
 OVERRIDE, CHEATPLAY, TYPECHANGE, RULECHANGE, OTHER}
 
-@export var either_or: bool = false
 ##Determine the order in which the effects are called.
 ##It's best to fill this in, if you don't want the default enum order
-@export var order: Array[effect_types]
-@export_group("Components")
+@export var order: Array[Consts.EFFECTS]
 ##Add a condition
 @export var condition: Condition
 ##Draw an ammount of cards

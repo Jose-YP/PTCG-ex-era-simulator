@@ -1,0 +1,53 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://w15m5kns5uk6"]
+
+[ext_resource type="Texture2D" uid="uid://dbqgbofburyqw" path="res://Art/Cards/3 ex Dragon/47.jpg" id="1_b8dol"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_os07w"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="2_0sf1h"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_lo0bl"]
+[ext_resource type="Resource" uid="uid://c2gawfb472bm" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/G1C1.tres" id="3_s20qo"]
+[ext_resource type="Resource" uid="uid://bnsrs2a5hnvkb" path="res://Resources/Components/Pokemon/Attacks/AttackData/20Dmg.tres" id="4_7g61m"]
+[ext_resource type="Resource" uid="uid://ch31rb2s75yst" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/L1C2.tres" id="5_qs3pe"]
+[ext_resource type="Resource" uid="uid://d3ldw0oh07p2m" path="res://Resources/Components/Pokemon/Attacks/AttackData/40x2Flips.tres" id="6_mc5nj"]
+
+[sub_resource type="Resource" id="Resource_ru6n3"]
+script = ExtResource("1_os07w")
+name = "Dive"
+description = ""
+attack_cost = ExtResource("3_s20qo")
+attack_data = ExtResource("4_7g61m")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_wjkqt"]
+script = ExtResource("1_os07w")
+name = "Quick Turn"
+description = "Flip 2 coins. This attack does 40 damage times the number of heads."
+attack_cost = ExtResource("5_qs3pe")
+attack_data = ExtResource("6_mc5nj")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_sarjd"]
+script = ExtResource("2_0sf1h")
+HP = 80
+retreat = 1
+attacks = Array[ExtResource("1_os07w")]([SubResource("Resource_ru6n3"), SubResource("Resource_wjkqt")])
+evo_stage = "Stage 1"
+evolves_from = "Trapinch"
+considered = 1
+owner = 0
+type = 256
+weak = 0
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("3_lo0bl")
+name = "Vibrava"
+image = ExtResource("1_b8dol")
+illustrator = "Ken Sugimori"
+number = 47
+rarity = 1
+expansion = 2
+categories = 1
+pokemon_properties = SubResource("Resource_sarjd")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

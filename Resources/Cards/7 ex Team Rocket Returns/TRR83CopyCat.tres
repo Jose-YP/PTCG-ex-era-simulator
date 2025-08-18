@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://bxksrioa4tn37"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=11 format=3 uid="uid://bxksrioa4tn37"]
 
 [ext_resource type="Texture2D" uid="uid://ipyctbbewx1o" path="res://Art/Cards/7 ex Team Rocket Returns/83.jpg" id="1_aa4u0"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_sgvvp"]
 [ext_resource type="Resource" uid="uid://dnjnxdl7x8q06" path="res://Resources/Components/Counters/Comparator/Return/ReturnOthrHnd.tres" id="3_aa4u0"]
 [ext_resource type="Script" uid="uid://bgtwlw1edjwyc" path="res://Code/Resource Makers/EffectSpecific/DrawMaker.gd" id="4_ulta4"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="5_03mcb"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="6_k2f1f"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="6_pwfsp"]
 
 [sub_resource type="Resource" id="Resource_ycbqs"]
@@ -29,6 +30,7 @@ considered = "Supporter"
 specific_requirement = ""
 description = "Shuffle your hand into your deck. Then, count the number of cards in your opponent's hand and draw that many cards. "
 always_effect = SubResource("Resource_l7r55")
+prompt_effects = Array[ExtResource("6_k2f1f")]([])
 metadata/_custom_type_script = "uid://crx447i85kshy"
 
 [resource]

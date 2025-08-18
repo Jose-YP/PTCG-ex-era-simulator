@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=15 format=3 uid="uid://buag2hyfml2wt"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=17 format=3 uid="uid://buag2hyfml2wt"]
 
 [ext_resource type="Texture2D" uid="uid://7l473m7v6e0n" path="res://Art/Cards/1 ex Ruby & Saphire/24.jpg" id="1_d5qqw"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_p5sbf"]
@@ -7,6 +7,7 @@
 [ext_resource type="Resource" uid="uid://dno5ph6s0pw54" path="res://Resources/Components/Pokemon/Attacks/AttackData/10DmgConfuse.tres" id="4_6jk14"]
 [ext_resource type="Resource" uid="uid://c2gawfb472bm" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/G1C1.tres" id="5_nfus7"]
 [ext_resource type="Resource" uid="uid://dr35h5ltr0i6r" path="res://Resources/Components/Effects/Conditions/BasicPoison.tres" id="6_q64pm"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="7_1u2xo"]
 [ext_resource type="Resource" uid="uid://cieejm6j3oh5n" path="res://Resources/Components/Pokemon/BenchAttack/10AllDef.tres" id="7_duhcl"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="8_6gdba"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="9_u2ec6"]
@@ -19,6 +20,11 @@ attack_cost = ExtResource("3_5roqo")
 attack_data = ExtResource("4_6jk14")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
+[sub_resource type="Resource" id="Resource_5roqo"]
+script = ExtResource("7_1u2xo")
+success = ExtResource("6_q64pm")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
 [sub_resource type="Resource" id="Resource_fg5ir"]
 script = ExtResource("8_6gdba")
 prompt_reliant = false
@@ -27,7 +33,8 @@ defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
-always_effect = ExtResource("6_q64pm")
+share_prompt = false
+prompt_effects = Array[ExtResource("7_1u2xo")]([SubResource("Resource_5roqo")])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false

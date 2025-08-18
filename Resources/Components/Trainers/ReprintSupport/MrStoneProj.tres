@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Trainer" load_steps=13 format=3 uid="uid://b21iobw0hdknx"]
+[gd_resource type="Resource" script_class="Trainer" load_steps=14 format=3 uid="uid://b21iobw0hdknx"]
 
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="1_p5owb"]
 [ext_resource type="Resource" uid="uid://bl4qnrkh3kxdl" path="res://Resources/Components/Effects/Placement/PutIntoHand.tres" id="2_exwbn"]
@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://d2vm6chtedrum" path="res://Resources/Components/Effects/Identifiers/Energy/BasicEnergy.tres" id="4_kpjkk"]
 [ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="5_6n5mt"]
 [ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="6_cgk4a"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="7_exwbn"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="7_iq3it"]
 
 [sub_resource type="Resource" id="Resource_ijn54"]
@@ -77,4 +78,5 @@ description = "Search your deck for up to 2 Basic Energy cards, show them to you
 prompt = SubResource("Resource_vwo4h")
 fail_effect = SubResource("Resource_42lnl")
 success_effect = SubResource("Resource_2nldm")
+prompt_effects = Array[ExtResource("7_exwbn")]([])
 metadata/_custom_type_script = "uid://crx447i85kshy"

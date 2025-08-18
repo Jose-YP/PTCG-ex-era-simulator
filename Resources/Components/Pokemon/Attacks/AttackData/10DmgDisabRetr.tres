@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="AttackData" load_steps=5 format=3 uid="uid://8cvarib60ven"]
+[gd_resource type="Resource" script_class="AttackData" load_steps=7 format=3 uid="uid://8cvarib60ven"]
 
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="1_57apo"]
 [ext_resource type="Resource" uid="uid://b5h3buocpx1gn" path="res://Resources/Components/Effects/Disable/DefSelfCantRetreat1.tres" id="1_gnwgx"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_57apo"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="3_ic5lk"]
@@ -11,6 +12,11 @@ order = Array[int]([])
 disable = ExtResource("1_gnwgx")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
+[sub_resource type="Resource" id="Resource_ic5lk"]
+script = ExtResource("1_57apo")
+success = SubResource("Resource_65c7g")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
 [resource]
 script = ExtResource("3_ic5lk")
 prompt_reliant = false
@@ -19,7 +25,8 @@ defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
-always_effect = SubResource("Resource_65c7g")
+share_prompt = false
+prompt_effects = Array[ExtResource("1_57apo")]([SubResource("Resource_ic5lk")])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false

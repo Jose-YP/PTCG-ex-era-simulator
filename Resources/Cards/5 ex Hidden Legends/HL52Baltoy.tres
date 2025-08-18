@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=7 format=3 uid="uid://digdy32cwnpl3"]
+
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_et0kh"]
+[ext_resource type="Texture2D" uid="uid://b7p6km6734pq5" path="res://Art/Cards/5 ex Hidden Legends/52.jpg" id="1_k5s0r"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="2_wliw2"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_k5s0r"]
+[ext_resource type="Resource" uid="uid://bu7xoy1fy00q3" path="res://Resources/Components/Pokemon/Attacks/CommonAttacks/P1Psyshock.tres" id="3_vrwbu"]
+
+[sub_resource type="Resource" id="Resource_vrwbu"]
+script = ExtResource("2_wliw2")
+HP = 50
+retreat = 1
+attacks = Array[ExtResource("1_et0kh")]([ExtResource("3_vrwbu")])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 1
+owner = 0
+type = 16
+weak = 16
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("3_k5s0r")
+name = "Baltoy"
+image = ExtResource("1_k5s0r")
+illustrator = "Kyoko Umemoto"
+number = 52
+rarity = 0
+expansion = 4
+categories = 1
+pokemon_properties = SubResource("Resource_vrwbu")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

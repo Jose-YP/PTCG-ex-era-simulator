@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=23 format=3 uid="uid://cbnw3a213i835"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=24 format=3 uid="uid://cbnw3a213i835"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_h4hff"]
 [ext_resource type="Texture2D" uid="uid://d1kfdxncbsbm" path="res://Art/Cards/16 ex Power Keepers/97.jpg" id="1_m0vbm"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://dtv1d2u2kvixy" path="res://Code/Resource Makers/EffectSpecific/MimicMaker.gd" id="5_yxknq"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="6_axg2p"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="7_ukyo3"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="8_yxknq"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="9_7r15k"]
 [ext_resource type="Resource" uid="uid://kf3pkpvcb8tk" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/D1C2.tres" id="9_yxknq"]
 [ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="10_axg2p"]
@@ -45,6 +46,8 @@ condition = 1
 before_damage = false
 replace_num = false
 always_effect = SubResource("Resource_q7hpq")
+share_prompt = false
+prompt_effects = Array[ExtResource("8_yxknq")]([])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false
@@ -74,6 +77,7 @@ comparison_type = 1
 max_hp = -10
 damage_taken = -10
 retreat_cost = -1
+evo_type = "Don't Check"
 stage = 7
 rare_candy = false
 class_inclusive = true
@@ -110,6 +114,8 @@ defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
+share_prompt = false
+prompt_effects = Array[ExtResource("8_yxknq")]([])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false

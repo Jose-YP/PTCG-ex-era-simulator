@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="AttackData" load_steps=5 format=3 uid="uid://b34qgidgmdwp"]
+[gd_resource type="Resource" script_class="AttackData" load_steps=6 format=3 uid="uid://b34qgidgmdwp"]
 
 [ext_resource type="Resource" uid="uid://cw44iqotg3v3f" path="res://Resources/Components/Effects/Asks/General/FromDefending.tres" id="1_2st2k"]
 [ext_resource type="Script" uid="uid://br15mnap82upq" path="res://Code/Resource Makers/PokemonSpecific/BenchAttackMaker.gd" id="1_vfj3w"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="2_5mrmb"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="3_ggqxc"]
 
 [sub_resource type="Resource" id="Resource_t4i2e"]
 script = ExtResource("1_vfj3w")
@@ -23,6 +24,8 @@ defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
+share_prompt = false
+prompt_effects = Array[ExtResource("3_ggqxc")]([])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false

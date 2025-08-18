@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=21 format=3 uid="uid://8aluya3mraht"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=23 format=3 uid="uid://8aluya3mraht"]
 
 [ext_resource type="Texture2D" uid="uid://d1f55128uj06q" path="res://Art/Cards/2 ex Sandstorm/54.jpg" id="1_fluui"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_htrw8"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_fluui"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_3wq4p"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="4_f7r4u"]
 [ext_resource type="Resource" uid="uid://bl4qnrkh3kxdl" path="res://Resources/Components/Effects/Placement/PutIntoHand.tres" id="4_vjsvb"]
 [ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="5_f7r4u"]
 [ext_resource type="Resource" uid="uid://b3q5vmepfee8k" path="res://Resources/Components/Effects/Identifiers/Pokemon/AnyPokemon.tres" id="6_8at0n"]
@@ -41,6 +42,11 @@ order = Array[int]([])
 search = SubResource("Resource_0tb8t")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
+[sub_resource type="Resource" id="Resource_ceahv"]
+script = ExtResource("4_f7r4u")
+success = SubResource("Resource_crnf0")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
 [sub_resource type="Resource" id="Resource_f7r4u"]
 script = ExtResource("9_vjsvb")
 prompt_reliant = false
@@ -49,7 +55,8 @@ defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
-always_effect = SubResource("Resource_crnf0")
+share_prompt = false
+prompt_effects = Array[ExtResource("4_f7r4u")]([SubResource("Resource_ceahv")])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false

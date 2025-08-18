@@ -1,19 +1,26 @@
-[gd_resource type="Resource" script_class="AttackData" load_steps=4 format=3 uid="uid://b2w54rvxssk13"]
+[gd_resource type="Resource" script_class="AttackData" load_steps=6 format=3 uid="uid://b2w54rvxssk13"]
 
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="1_ohclp"]
 [ext_resource type="Resource" uid="uid://ekj1myy642kh" path="res://Resources/Components/Effects/Prompts/PromptHeads.tres" id="1_oi05b"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="2_ohclp"]
 [ext_resource type="Resource" uid="uid://dr35h5ltr0i6r" path="res://Resources/Components/Effects/Conditions/BasicPoison.tres" id="3_ipsw4"]
 
+[sub_resource type="Resource" id="Resource_ipsw4"]
+script = ExtResource("1_ohclp")
+prompt = ExtResource("1_oi05b")
+success = ExtResource("3_ipsw4")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
 [resource]
 script = ExtResource("2_ohclp")
 prompt_reliant = false
-prompt = ExtResource("1_oi05b")
 initial_main_DMG = 10
 defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
-success_effect = ExtResource("3_ipsw4")
+share_prompt = false
+prompt_effects = Array[ExtResource("1_ohclp")]([SubResource("Resource_ipsw4")])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false

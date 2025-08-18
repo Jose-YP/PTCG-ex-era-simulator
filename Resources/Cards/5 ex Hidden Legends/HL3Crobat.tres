@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=23 format=3 uid="uid://c0go1swy2811a"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=24 format=3 uid="uid://c0go1swy2811a"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_4cmlc"]
 [ext_resource type="Texture2D" uid="uid://b3iqbwwtc15v4" path="res://Art/Cards/5 ex Hidden Legends/3.jpg" id="1_jdj80"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_n6mey"]
 [ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_ycyog"]
 [ext_resource type="Resource" uid="uid://ekj1myy642kh" path="res://Resources/Components/Effects/Prompts/PromptHeads.tres" id="4_mmtik"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="5_n6mey"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="5_t30j4"]
 [ext_resource type="Resource" uid="uid://dm2i7spst0qpp" path="res://Resources/Components/Effects/Identifiers/AnyCard.tres" id="6_0i6di"]
 [ext_resource type="Script" uid="uid://8sh5p3leflla" path="res://Code/Resource Makers/EffectSpecific/CardDisruptMaker.gd" id="7_4sc42"]
@@ -48,6 +49,8 @@ condition = 1
 before_damage = false
 replace_num = false
 success_effect = SubResource("Resource_hqpkl")
+share_prompt = false
+prompt_effects = Array[ExtResource("5_n6mey")]([])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false
@@ -67,13 +70,13 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_cn735"]
 script = ExtResource("11_r4thc")
 ask = ExtResource("10_72hrr")
-choose_condition = false
+any = false
 poison = 3
-burn = 0
-turn_cond = 0
-imprision = false
-shockwave = false
-knockOut = false
+burn = null
+turn_cond = null
+imprision = null
+shockwave = null
+knockOut = null
 metadata/_custom_type_script = "uid://8s3m1dar3r33"
 
 [sub_resource type="Resource" id="Resource_pyyvo"]
@@ -92,6 +95,8 @@ condition = 1
 before_damage = false
 replace_num = false
 always_effect = SubResource("Resource_pyyvo")
+share_prompt = false
+prompt_effects = Array[ExtResource("5_n6mey")]([])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=14 format=3 uid="uid://8fxvfvricqu5"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=15 format=3 uid="uid://8fxvfvricqu5"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_fvdrc"]
 [ext_resource type="Texture2D" uid="uid://doh4x77ub78uv" path="res://Art/Cards/11 ex Delta Species/20.jpg" id="1_oleoq"]
@@ -8,6 +8,7 @@
 [ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="5_stgb7"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="6_6fwf0"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="6_i8q54"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="6_rbr4h"]
 [ext_resource type="Resource" uid="uid://s8mcx8qnuqkw" path="res://Resources/Components/Pokemon/Abilities/Bodies/AzurillBabyEvo.tres" id="7_rbr4h"]
 
 [sub_resource type="Resource" id="Resource_gfqr1"]
@@ -26,6 +27,8 @@ condition = 1
 before_damage = false
 replace_num = false
 always_effect = SubResource("Resource_gfqr1")
+share_prompt = false
+prompt_effects = Array[ExtResource("6_rbr4h")]([])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false

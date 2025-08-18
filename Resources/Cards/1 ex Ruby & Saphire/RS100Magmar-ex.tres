@@ -1,13 +1,19 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://cmng7od1imklg"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=14 format=3 uid="uid://cmng7od1imklg"]
 
 [ext_resource type="Texture2D" uid="uid://cpga03iao7kos" path="res://Art/Cards/1 ex Ruby & Saphire/100.jpg" id="1_461p5"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_g74x1"]
 [ext_resource type="Resource" uid="uid://k3dc0hkkpkaf" path="res://Resources/Components/Pokemon/Attacks/CommonAttacks/1RSmokescreen.tres" id="3_0wjgh"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="3_a8nkb"]
 [ext_resource type="Resource" uid="uid://bext0mocufqgp" path="res://Resources/Components/Effects/Conditions/BasicBurn.tres" id="4_g1df8"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="5_p3u2r"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="5_qhn2r"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_ym6l2"]
 [ext_resource type="Resource" uid="uid://ci64ae1aqhomq" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/R2C1.tres" id="7_3prqa"]
+
+[sub_resource type="Resource" id="Resource_qhn2r"]
+script = ExtResource("5_p3u2r")
+success = ExtResource("4_g1df8")
+metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [sub_resource type="Resource" id="Resource_r1wiw"]
 script = ExtResource("5_qhn2r")
@@ -17,7 +23,8 @@ defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
-always_effect = ExtResource("4_g1df8")
+share_prompt = false
+prompt_effects = Array[ExtResource("5_p3u2r")]([SubResource("Resource_qhn2r")])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=26 format=3 uid="uid://4t2wfb4h2e6u"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=27 format=3 uid="uid://4t2wfb4h2e6u"]
 
 [ext_resource type="Texture2D" uid="uid://dau65kipc724" path="res://Art/Cards/5 ex Hidden Legends/84.jpg" id="1_h0x2t"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_ydfqk"]
@@ -77,18 +77,22 @@ buff = ExtResource("12_k4ce0")
 card_disrupt = SubResource("Resource_utej3")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
+[sub_resource type="Resource" id="Resource_maceq"]
+script = ExtResource("4_maceq")
+prompt = SubResource("Resource_dlf6l")
+success = SubResource("Resource_2svl2")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
 [sub_resource type="Resource" id="Resource_budek"]
 script = ExtResource("8_3ajyv")
 prompt_reliant = false
-prompt = SubResource("Resource_dlf6l")
 initial_main_DMG = 0
 defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
-success_effect = SubResource("Resource_2svl2")
 share_prompt = false
-prompt_effects = Array[ExtResource("4_maceq")]([])
+prompt_effects = Array[ExtResource("4_maceq")]([SubResource("Resource_maceq")])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false

@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="AttackData" load_steps=6 format=3 uid="uid://jvrhw4xiabef"]
+[gd_resource type="Resource" script_class="AttackData" load_steps=8 format=3 uid="uid://jvrhw4xiabef"]
 
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="1_0qc4t"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="1_cghll"]
 [ext_resource type="Script" uid="uid://c0ishgbxk63dg" path="res://Code/Resource Makers/EffectSpecific/DisableMaker.gd" id="1_lss8q"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_0qc4t"]
@@ -26,6 +27,11 @@ order = null
 disable = SubResource("Resource_fqfse")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
+[sub_resource type="Resource" id="Resource_dsv0q"]
+script = ExtResource("1_0qc4t")
+success = SubResource("Resource_necby")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
 [resource]
 script = ExtResource("1_cghll")
 prompt_reliant = false
@@ -34,7 +40,8 @@ defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
-always_effect = SubResource("Resource_necby")
+share_prompt = false
+prompt_effects = Array[ExtResource("1_0qc4t")]([SubResource("Resource_dsv0q")])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false

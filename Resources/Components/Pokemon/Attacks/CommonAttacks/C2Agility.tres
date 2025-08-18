@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Attack" load_steps=8 format=3 uid="uid://chv055qe1r1nb"]
+[gd_resource type="Resource" script_class="Attack" load_steps=9 format=3 uid="uid://chv055qe1r1nb"]
 
 [ext_resource type="Resource" uid="uid://b1rwmggf7a4do" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless2.tres" id="1_ixeao"]
 [ext_resource type="Resource" uid="uid://ekj1myy642kh" path="res://Resources/Components/Effects/Prompts/PromptHeads.tres" id="2_1tmpb"]
@@ -7,18 +7,22 @@
 [ext_resource type="Resource" uid="uid://dnr7ljin1eclj" path="res://Resources/Components/Effects/Buff/FullImmunity1Turn.tres" id="4_oh1yq"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="5_wuwsf"]
 
+[sub_resource type="Resource" id="Resource_1tmpb"]
+script = ExtResource("3_1tmpb")
+prompt = ExtResource("2_1tmpb")
+success = ExtResource("4_oh1yq")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
 [sub_resource type="Resource" id="Resource_pkjnj"]
 script = ExtResource("3_xi565")
 prompt_reliant = false
-prompt = ExtResource("2_1tmpb")
 initial_main_DMG = 20
 defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
-success_effect = ExtResource("4_oh1yq")
 share_prompt = false
-prompt_effects = Array[ExtResource("3_1tmpb")]([])
+prompt_effects = Array[ExtResource("3_1tmpb")]([SubResource("Resource_1tmpb")])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false

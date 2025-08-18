@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://bn3q2mv1e7fqn"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=13 format=3 uid="uid://bn3q2mv1e7fqn"]
 
 [ext_resource type="Texture2D" uid="uid://c0cgwfbscwhft" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/76.jpg" id="1_0ag7c"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_3gxca"]
 [ext_resource type="Resource" uid="uid://b0lo8uly2lldp" path="res://Resources/Components/Effects/Asks/Class&Owner/AtkIsTeamAqua.tres" id="3_sophl"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="4_fglh4"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="4_je6w1"]
 [ext_resource type="Script" uid="uid://dj5isddeswaa4" path="res://Code/Resource Makers/CardResources/ToolMaker.gd" id="5_bowvr"]
 [ext_resource type="Resource" uid="uid://b8xdtjhj0xoye" path="res://Resources/Components/Effects/Prompts/ToolActivation.tres" id="5_qowfh"]
@@ -29,6 +30,7 @@ considered = "Tool"
 specific_requirement = "Attach Team Aqua Belt to 1 of your Pokémon with Team Aqua in its name that doesn't already have a Pokémon Tool attached to it. If that Pokémon is Knocked Out, discard this card. "
 description = "At any time between turns, if the Pokémon Team Aqua Belt is attached to is your Active Pokémon, search your deck for a card that evolves from that Pokémon and put it on that Pokémon. (This counts as evolving that Pokémon.) Shuffle your deck afterward, then discard Team Aqua Belt. "
 asks = ExtResource("3_sophl")
+prompt_effects = Array[ExtResource("4_fglh4")]([])
 tool_properties = SubResource("Resource_jnlar")
 
 [resource]

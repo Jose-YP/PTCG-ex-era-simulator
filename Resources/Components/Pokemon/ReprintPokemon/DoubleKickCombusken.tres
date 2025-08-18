@@ -24,7 +24,7 @@ attack_data = ExtResource("5_u3hni")
 [resource]
 script = ExtResource("6_k6dsx")
 HP = 70
-retreat = 0
+retreat = 1
 attacks = Array[ExtResource("1_snygy")]([SubResource("Resource_60dvo"), SubResource("Resource_hq0qi")])
 evo_stage = "Stage 1"
 evolves_from = "Torchic"

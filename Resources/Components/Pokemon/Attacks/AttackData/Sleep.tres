@@ -1,18 +1,28 @@
-[gd_resource type="Resource" script_class="AttackData" load_steps=3 format=3 uid="uid://gbxomf46y0lr"]
+[gd_resource type="Resource" script_class="AttackData" load_steps=5 format=3 uid="uid://gbxomf46y0lr"]
 
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="1_ru1j4"]
 [ext_resource type="Resource" uid="uid://cqw2kwbgcwgvb" path="res://Resources/Components/Effects/Conditions/BasicSleep.tres" id="1_ypy0e"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="2_ru1j4"]
+
+[sub_resource type="Resource" id="Resource_x7uk7"]
+script = ExtResource("1_ru1j4")
+success = ExtResource("1_ypy0e")
+metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [resource]
 script = ExtResource("2_ru1j4")
 prompt_reliant = false
 initial_main_DMG = 0
+defender_properties = 0
+condition = 1
+before_damage = false
+replace_num = false
+share_prompt = false
+prompt_effects = Array[ExtResource("1_ru1j4")]([SubResource("Resource_x7uk7")])
 conditional_self_dmg = false
 self_damage = 0
+mod_prompt = false
 modifier = 0
 modifier_num = 0
 both_active = false
-defender_properties = 0
-condition = 1
-always_effect = ExtResource("1_ypy0e")
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"

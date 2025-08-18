@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=23 format=3 uid="uid://ov65eileuo4o"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=24 format=3 uid="uid://ov65eileuo4o"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_dwtlt"]
 [ext_resource type="Texture2D" uid="uid://df02g0rwr5yl1" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/29.jpg" id="1_gl86o"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="4_0g86g"]
 [ext_resource type="Resource" uid="uid://d4bi0kdblesdq" path="res://Resources/Components/Effects/Asks/Conditions/DefIsConfused.tres" id="5_1uuvq"]
 [ext_resource type="Resource" uid="uid://cesjkvsi5c6jb" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/L1C1.tres" id="5_los0h"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="5_swo5k"]
 [ext_resource type="Resource" uid="uid://oucf200x3u40" path="res://Resources/Components/Effects/Prompts/PromptComparator/IfDefendingIsMagma.tres" id="6_550tl"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="6_ea6gi"]
 [ext_resource type="Resource" uid="uid://l48hjm27w6e6" path="res://Resources/Components/Effects/EnergyMovement/DefSelfDisAny.tres" id="6_gdiu5"]
@@ -25,6 +26,8 @@ condition = 1
 before_damage = false
 replace_num = false
 success_effect = ExtResource("8_xuidg")
+share_prompt = false
+prompt_effects = Array[ExtResource("5_swo5k")]([])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false
@@ -81,6 +84,8 @@ condition = 1
 before_damage = false
 replace_num = false
 success_effect = ExtResource("6_gdiu5")
+share_prompt = false
+prompt_effects = Array[ExtResource("5_swo5k")]([])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false

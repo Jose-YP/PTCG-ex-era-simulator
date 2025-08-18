@@ -1,0 +1,44 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://2cd0ki22jgkc"]
+
+[ext_resource type="Texture2D" uid="uid://caxjd8yg8pf6a" path="res://Art/Cards/5 ex Hidden Legends/53.jpg" id="1_1ekf6"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_pituo"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_44o8f"]
+[ext_resource type="Resource" uid="uid://cy2rqr8mk2lb7" path="res://Resources/Components/Pokemon/Attacks/EffectlessAttacks/Headbutt10.tres" id="3_1lbjy"]
+[ext_resource type="Resource" uid="uid://b1rwmggf7a4do" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless2.tres" id="4_vsp6y"]
+[ext_resource type="Resource" uid="uid://bnsrs2a5hnvkb" path="res://Resources/Components/Pokemon/Attacks/AttackData/20Dmg.tres" id="5_4w8hj"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="6_c11yv"]
+
+[sub_resource type="Resource" id="Resource_v8bhm"]
+script = ExtResource("2_44o8f")
+name = "Mud Slap"
+description = ""
+attack_cost = ExtResource("4_vsp6y")
+attack_data = ExtResource("5_4w8hj")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_vrwbu"]
+script = ExtResource("6_c11yv")
+HP = 50
+retreat = 1
+attacks = Array[ExtResource("2_44o8f")]([ExtResource("3_1lbjy"), SubResource("Resource_v8bhm")])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 1
+owner = 0
+type = 32
+weak = 4
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_pituo")
+name = "Baltoy"
+image = ExtResource("1_1ekf6")
+illustrator = "Ken Sugimori"
+number = 53
+rarity = 0
+expansion = 4
+categories = 1
+pokemon_properties = SubResource("Resource_vrwbu")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

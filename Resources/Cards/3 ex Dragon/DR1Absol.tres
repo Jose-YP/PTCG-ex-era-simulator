@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=22 format=3 uid="uid://cvc7gsumxijg5"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=24 format=3 uid="uid://cvc7gsumxijg5"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_5qhd1"]
 [ext_resource type="Texture2D" uid="uid://74sjprvku28o" path="res://Art/Cards/3 ex Dragon/1.jpg" id="1_ggekq"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_agpnf"]
 [ext_resource type="Resource" uid="uid://bgqnsjskgne2u" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Darkness1.tres" id="3_lndit"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="4_agpnf"]
 [ext_resource type="Resource" uid="uid://dm2i7spst0qpp" path="res://Resources/Components/Effects/Identifiers/AnyCard.tres" id="4_d8q5l"]
 [ext_resource type="Script" uid="uid://8sh5p3leflla" path="res://Code/Resource Makers/EffectSpecific/CardDisruptMaker.gd" id="5_v0hhm"]
 [ext_resource type="Resource" uid="uid://pqv0rqhifr8r" path="res://Resources/Components/Counters/Indv/Stacks/DefHandSize.tres" id="6_1yhar"]
@@ -48,6 +49,11 @@ order = Array[int]([])
 card_disrupt = SubResource("Resource_7dm1h")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
+[sub_resource type="Resource" id="Resource_lndit"]
+script = ExtResource("4_agpnf")
+success = SubResource("Resource_xtxka")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
 [sub_resource type="Resource" id="Resource_0caf3"]
 script = ExtResource("9_wlgfn")
 prompt_reliant = false
@@ -56,7 +62,8 @@ defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
-always_effect = SubResource("Resource_xtxka")
+share_prompt = false
+prompt_effects = Array[ExtResource("4_agpnf")]([SubResource("Resource_lndit")])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false
@@ -81,6 +88,8 @@ defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
+share_prompt = false
+prompt_effects = Array[ExtResource("4_agpnf")]([])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false
@@ -92,7 +101,7 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_6w0gb"]
 script = ExtResource("2_agpnf")
-name = " Prize Count"
+name = "Prize Count"
 description = "If you have more Prize cards left than your opponent, this attack does 20 damage plus 20 more damage. "
 attack_cost = ExtResource("10_6kj08")
 attack_data = SubResource("Resource_lmmbr")

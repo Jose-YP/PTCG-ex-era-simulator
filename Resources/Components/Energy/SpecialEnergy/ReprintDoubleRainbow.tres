@@ -1,9 +1,15 @@
-[gd_resource type="Resource" script_class="Energy" load_steps=5 format=3 uid="uid://dfecfonjisw7w"]
+[gd_resource type="Resource" script_class="Energy" load_steps=7 format=3 uid="uid://dfecfonjisw7w"]
 
 [ext_resource type="Script" uid="uid://caj1pm8erar2a" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="1_05ucl"]
 [ext_resource type="Resource" uid="uid://lop03i25k4pb" path="res://Resources/Components/Effects/Asks/AtkEvoNonEx.tres" id="1_vn2w4"]
-[ext_resource type="Resource" uid="uid://cv3vlfatr1glg" path="res://Resources/Components/Effects/Buff/DblRainbow-10Atk.tres" id="2_vb6yn"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="2_vb6yn"]
 [ext_resource type="Resource" uid="uid://cfvxvq4wbo1td" path="res://Resources/Components/EnData/DoubleRainbow.tres" id="3_avjee"]
+[ext_resource type="Resource" uid="uid://cv3vlfatr1glg" path="res://Resources/Components/Effects/Buff/DblRainbow-10Atk.tres" id="4_avjee"]
+
+[sub_resource type="Resource" id="Resource_brnvy"]
+script = ExtResource("2_vb6yn")
+success = ExtResource("4_avjee")
+metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [resource]
 script = ExtResource("1_05ucl")
@@ -12,7 +18,8 @@ description = "Double Rainbow Energy can be attached only to an Evolved Pokémon
 asks = ExtResource("1_vn2w4")
 has_fail_provide = false
 has_fail_prevent = false
-attatch_effect = ExtResource("2_vb6yn")
+attatch_effects = Array[ExtResource("2_vb6yn")]([])
+prompt_effects = Array[ExtResource("2_vb6yn")]([SubResource("Resource_brnvy")])
 turns = -1
 fail_provide = ExtResource("3_avjee")
 success_provide = ExtResource("3_avjee")

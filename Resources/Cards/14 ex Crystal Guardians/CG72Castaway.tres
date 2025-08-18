@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=8 format=3 uid="uid://w140efhwynxf"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=9 format=3 uid="uid://w140efhwynxf"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_7flfe"]
 [ext_resource type="Texture2D" uid="uid://qfejvhb2qqta" path="res://Art/Cards/14 ex Crystal Guardians/72.jpg" id="1_wsgdx"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_ejgou"]
 [ext_resource type="Resource" uid="uid://dbbymvfonstmf" path="res://Resources/Components/Effects/Search/CastawaySearch.tres" id="4_yi4v2"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="5_xcosq"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="9_i4gtl"]
 
 [sub_resource type="Resource" id="Resource_wsgdx"]
@@ -19,6 +20,7 @@ considered = "Item"
 specific_requirement = ""
 description = "Search your deck for a Supporter card, a Pokémon Tool card, and a basic Energy card. Show them to your opponent, and put them into your hand. Shuffle your deck afterward. "
 always_effect = SubResource("Resource_wsgdx")
+prompt_effects = Array[ExtResource("5_xcosq")]([])
 metadata/_custom_type_script = "uid://crx447i85kshy"
 
 [resource]

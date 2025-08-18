@@ -1,46 +1,20 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=22 format=3 uid="uid://dge3b12by00m4"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=26 format=3 uid="uid://dge3b12by00m4"]
 
 [ext_resource type="Resource" uid="uid://byem0mc65f4xt" path="res://Resources/Components/Effects/Buff/RetreatCostis0.tres" id="1_30ej2"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="1_38o81"]
 [ext_resource type="Script" uid="uid://caj1pm8erar2a" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="1_wlt10"]
 [ext_resource type="Texture2D" uid="uid://cso0ce1vr8ywy" path="res://Art/Cards/11 ex Delta Species/106.jpg" id="2_ojiq1"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_pxit3"]
-[ext_resource type="Resource" uid="uid://dx17fn4esx8qm" path="res://Resources/Components/Effects/Buff/Immune2Effect.tres" id="2_t3o48"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_kd7ft"]
+[ext_resource type="Resource" uid="uid://bsq014coejys5" path="res://Resources/Components/Effects/Prompts/NonEXHasWaterEn.tres" id="4_gerff"]
 [ext_resource type="Resource" uid="uid://bpn2kuaa687w6" path="res://Resources/Components/EnData/WPHolon.tres" id="5_8orlp"]
 [ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="6_14lbo"]
 [ext_resource type="Resource" uid="uid://b0lup3upo6m4f" path="res://Resources/Components/EnData/Psychic.tres" id="6_38o81"]
 [ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="7_lp23s"]
 [ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="8_fsd37"]
 [ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="9_qfefc"]
-
-[sub_resource type="Resource" id="Resource_38o81"]
-script = ExtResource("3_kd7ft")
-either_or = false
-order = Array[int]([])
-buff = ExtResource("2_t3o48")
-metadata/_custom_type_script = "uid://dmulm3x3dj842"
-
-[sub_resource type="Resource" id="Resource_lp23s"]
-script = ExtResource("3_kd7ft")
-either_or = false
-order = Array[int]([])
-buff = ExtResource("1_30ej2")
-extra_effect = SubResource("Resource_38o81")
-metadata/_custom_type_script = "uid://dmulm3x3dj842"
-
-[sub_resource type="Resource" id="Resource_fsd37"]
-script = ExtResource("3_kd7ft")
-either_or = false
-order = Array[int]([])
-buff = ExtResource("2_t3o48")
-metadata/_custom_type_script = "uid://dmulm3x3dj842"
-
-[sub_resource type="Resource" id="Resource_qfefc"]
-script = ExtResource("3_kd7ft")
-either_or = false
-order = Array[int]([])
-extra_effect = SubResource("Resource_fsd37")
-metadata/_custom_type_script = "uid://dmulm3x3dj842"
+[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="11_lp23s"]
+[ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/BuffMaker.gd" id="12_fsd37"]
 
 [sub_resource type="Resource" id="Resource_hd156"]
 script = ExtResource("7_lp23s")
@@ -55,6 +29,7 @@ comparison_type = 1
 max_hp = -10
 damage_taken = -10
 retreat_cost = -1
+evo_type = "Don't Check"
 stage = 7
 rare_candy = false
 class_inclusive = false
@@ -103,16 +78,71 @@ choose_location = "None"
 which_stack = 0
 metadata/_custom_type_script = "uid://b85jmc7067bjc"
 
+[sub_resource type="Resource" id="Resource_lp23s"]
+script = ExtResource("3_kd7ft")
+either_or = false
+order = Array[int]([])
+buff = ExtResource("1_30ej2")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_qfefc"]
+script = ExtResource("1_38o81")
+prompt = SubResource("Resource_qm18p")
+success = SubResource("Resource_lp23s")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
+[sub_resource type="Resource" id="Resource_qmwrs"]
+script = ExtResource("12_fsd37")
+description = "Immune to effects from attacks"
+application = "Slot"
+stackable = true
+recieves = ExtResource("11_lp23s")
+duration = -1
+after_weak_res = true
+add_hp = 0
+attack = 0
+defense = 0
+retreat_change = 0
+cost_modifier = "Add"
+modify = "HP"
+operation = "Replace"
+condition_immune = 0
+attack_effect_immune = true
+damage_immune = false
+body_immune = false
+power_immune = false
+trainer_immune = false
+odd_immunity = false
+even_immunity = false
+weakness = false
+resistance = false
+effects = false
+attack_names = Array[String]([])
+metadata/_custom_type_script = "uid://coojhwe6m20gd"
+
+[sub_resource type="Resource" id="Resource_xqdal"]
+script = ExtResource("3_kd7ft")
+either_or = false
+order = Array[int]([])
+buff = SubResource("Resource_qmwrs")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_6fbm8"]
+script = ExtResource("1_38o81")
+prompt = ExtResource("4_gerff")
+success = SubResource("Resource_xqdal")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
 [sub_resource type="Resource" id="Resource_yixtv"]
 script = ExtResource("1_wlt10")
 considered = "Special Energy"
 description = "Holon Energy WP provides {Colorless} Energy.
-If the Pokémon that Holon Energy WP is attached to also has a basic {Water} Energy card attached to it, prevent all effects, excluding damage, done to that Pokémon by your opponent's Pokémon. If the Pokémon that Holon Energy WP is attached to also has a basic {Psychic} Energy card attached to it, that Pokémon's Retreat Cost is 0. Ignore these effects if Holon Energy WP is attached to Pokémon-ex."
+If the Pokémon that [name] is attached to also has a basic {Water} Energy card attached to it, prevent all effects, excluding damage, done to that Pokémon by your opponent's Pokémon. If the Pokémon that [name] is attached to also has a basic {Psychic} Energy card attached to it, that Pokémon's Retreat Cost is 0. Ignore these effects if [name] is attached to Pokémon-ex."
 prompt = SubResource("Resource_qm18p")
 has_fail_provide = false
 has_fail_prevent = false
-fail_effect = SubResource("Resource_qfefc")
-attatch_effect = SubResource("Resource_lp23s")
+attatch_effects = Array[ExtResource("1_38o81")]([])
+prompt_effects = Array[ExtResource("1_38o81")]([SubResource("Resource_qfefc"), SubResource("Resource_6fbm8")])
 turns = -1
 fail_provide = ExtResource("5_8orlp")
 success_provide = ExtResource("5_8orlp")

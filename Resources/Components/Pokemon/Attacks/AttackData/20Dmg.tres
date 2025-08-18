@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="AttackData" load_steps=2 format=3 uid="uid://bnsrs2a5hnvkb"]
+[gd_resource type="Resource" script_class="AttackData" load_steps=3 format=3 uid="uid://bnsrs2a5hnvkb"]
 
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="1_etwi2"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="1_g8xmj"]
 
 [resource]
 script = ExtResource("1_etwi2")
@@ -10,6 +11,8 @@ defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
+share_prompt = false
+prompt_effects = Array[ExtResource("1_g8xmj")]([])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false

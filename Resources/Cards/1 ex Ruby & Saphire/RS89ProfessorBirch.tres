@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=16 format=3 uid="uid://baklyfkmvlguj"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=18 format=3 uid="uid://baklyfkmvlguj"]
 
 [ext_resource type="Texture2D" uid="uid://c0lenryrao7ol" path="res://Art/Cards/1 ex Ruby & Saphire/89.jpg" id="1_m8l7g"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_nyl4q"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_qsc0s"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="3_sxuyp"]
 [ext_resource type="Script" uid="uid://bgtwlw1edjwyc" path="res://Code/Resource Makers/EffectSpecific/DrawMaker.gd" id="4_m8l7g"]
 [ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="4_sxuyp"]
 [ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="5_l36f4"]
@@ -60,13 +61,18 @@ order = Array[int]([])
 draw_ammount = SubResource("Resource_uq1k3")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
+[sub_resource type="Resource" id="Resource_l36f4"]
+script = ExtResource("3_sxuyp")
+prompt = SubResource("Resource_csdl0")
+success = SubResource("Resource_6plop")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
 [sub_resource type="Resource" id="Resource_8tpb4"]
 script = ExtResource("6_j8dp4")
 considered = "Supporter"
 specific_requirement = ""
 description = "Draw cards from your deck until you have 6 cards in your hand. "
-prompt = SubResource("Resource_csdl0")
-success_effect = SubResource("Resource_6plop")
+prompt_effects = Array[ExtResource("3_sxuyp")]([SubResource("Resource_l36f4")])
 metadata/_custom_type_script = "uid://crx447i85kshy"
 
 [resource]

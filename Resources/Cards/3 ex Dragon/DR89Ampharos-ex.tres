@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=23 format=3 uid="uid://vpfl1laggt2y"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=24 format=3 uid="uid://vpfl1laggt2y"]
 
 [ext_resource type="Texture2D" uid="uid://ovf43ev0xwgo" path="res://Art/Cards/3 ex Dragon/89.jpg" id="1_pjo6a"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_sxjh8"]
@@ -7,6 +7,7 @@
 [ext_resource type="Resource" uid="uid://6xmw13js5xd3" path="res://Resources/Components/Effects/Conditions/BasicParalyze.tres" id="4_vi8ig"]
 [ext_resource type="Resource" uid="uid://ekj1myy642kh" path="res://Resources/Components/Effects/Prompts/PromptHeads.tres" id="5_a54e8"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="6_56c6k"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="6_tsrw2"]
 [ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="7_50r5l"]
 [ext_resource type="Script" uid="uid://scca13hg4k1l" path="res://Code/Resource Makers/EffectSpecific/DmgManipMaker.gd" id="8_xl4na"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="9_uecfi"]
@@ -26,6 +27,8 @@ condition = 1
 before_damage = false
 replace_num = false
 fail_effect = ExtResource("4_vi8ig")
+share_prompt = false
+prompt_effects = Array[ExtResource("6_tsrw2")]([])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = true

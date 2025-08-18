@@ -1,12 +1,12 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=24 format=3 uid="uid://blgwu6rviyvhh"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=23 format=3 uid="uid://blgwu6rviyvhh"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_6nbak"]
 [ext_resource type="Texture2D" uid="uid://bwy02si5cv6mh" path="res://Art/Cards/3 ex Dragon/90.jpg" id="1_i3arf"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_2hwsj"]
 [ext_resource type="Resource" uid="uid://hbftp7wc0ueo" path="res://Resources/Components/Effects/EnergyMovement/SelfDis1Water.tres" id="3_2hwsj"]
-[ext_resource type="Resource" uid="uid://c67aj5gpaamgd" path="res://Resources/Components/Effects/EnergyMovement/SelfDis1Lightning.tres" id="4_hslfc"]
 [ext_resource type="Script" uid="uid://crscwhvugaoxa" path="res://Code/Resource Makers/PokemonSpecific/AttackCostMaker.gd" id="6_imidg"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="6_mpcq0"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="6_ur7nu"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="7_mpcq0"]
 [ext_resource type="Resource" uid="uid://dmpx0flrt2hxl" path="res://Resources/Components/Effects/EnergyMovement/LendMeYourEnergy.tres" id="7_x717q"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="8_mdixv"]
@@ -27,19 +27,11 @@ metal_cost = 0
 colorless_cost = 0
 metadata/_custom_type_script = "uid://crscwhvugaoxa"
 
-[sub_resource type="Resource" id="Resource_imidg"]
-script = ExtResource("6_mpcq0")
-either_or = false
-order = Array[int]([])
-energy_movement = ExtResource("4_hslfc")
-metadata/_custom_type_script = "uid://dmulm3x3dj842"
-
 [sub_resource type="Resource" id="Resource_mpcq0"]
 script = ExtResource("6_mpcq0")
 either_or = false
 order = Array[int]([])
 energy_movement = ExtResource("3_2hwsj")
-extra_effect = SubResource("Resource_imidg")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_7x50r"]
@@ -51,6 +43,8 @@ condition = 1
 before_damage = false
 replace_num = false
 always_effect = SubResource("Resource_mpcq0")
+share_prompt = false
+prompt_effects = Array[ExtResource("6_ur7nu")]([])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false
@@ -76,6 +70,8 @@ defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
+share_prompt = false
+prompt_effects = Array[ExtResource("6_ur7nu")]([])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false

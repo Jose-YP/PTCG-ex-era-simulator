@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="AttackData" load_steps=4 format=3 uid="uid://by0tdpq7q7doo"]
+
+[ext_resource type="Resource" uid="uid://nco7wk2vhhx6" path="res://Resources/Components/Counters/Comparator/Return/ForSelfDmgCounters.tres" id="1_bsnrp"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="2_2gtfg"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="3_2jufx"]
+
+[resource]
+script = ExtResource("3_2jufx")
+prompt_reliant = false
+initial_main_DMG = 10
+defender_properties = 0
+condition = 1
+before_damage = false
+replace_num = false
+share_prompt = false
+prompt_effects = Array[ExtResource("2_2gtfg")]([])
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 1
+modifier_num = 10
+comparator = ExtResource("1_bsnrp")
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"

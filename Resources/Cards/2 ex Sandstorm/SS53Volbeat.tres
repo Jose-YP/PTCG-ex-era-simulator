@@ -1,0 +1,162 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=24 format=3 uid="uid://clkcnsev5iwh8"]
+
+[ext_resource type="Texture2D" uid="uid://c0u6006wvq1el" path="res://Art/Cards/2 ex Sandstorm/53.jpg" id="1_t0xr1"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_upqu6"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_dcwyt"]
+[ext_resource type="Resource" uid="uid://cp8ldn37fvlbu" path="res://Resources/Components/Pokemon/Attacks/EffectlessAttacks/Pester.tres" id="4_dcwyt"]
+[ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="6_1mcbn"]
+[ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="7_1jjyy"]
+[ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="8_jtqiy"]
+[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="11_1mcbn"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="11_yvtef"]
+[ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/BuffMaker.gd" id="12_1jjyy"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="12_bktaa"]
+[ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="13_jtqiy"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="14_4j5f6"]
+[ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="15_hemo1"]
+
+[sub_resource type="Resource" id="Resource_dklk6"]
+script = ExtResource("2_upqu6")
+name = ""
+description = ""
+attack_cost = ExtResource("3_dcwyt")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_41vtf"]
+script = ExtResource("12_1jjyy")
+description = "Retreat cost is 0"
+application = "Slot"
+stackable = true
+recieves = ExtResource("11_1mcbn")
+duration = -1
+after_weak_res = true
+add_hp = 0
+attack = 0
+defense = 0
+retreat_change = -10
+cost_modifier = "Add"
+modify = "HP"
+operation = "Replace"
+condition_immune = 0
+attack_effect_immune = false
+damage_immune = false
+body_immune = false
+power_immune = false
+trainer_immune = false
+odd_immunity = false
+even_immunity = false
+weakness = false
+resistance = false
+effects = false
+attack_names = Array[String]([])
+metadata/_custom_type_script = "uid://coojhwe6m20gd"
+
+[sub_resource type="Resource" id="Resource_buoga"]
+script = ExtResource("14_4j5f6")
+either_or = false
+order = Array[int]([])
+buff = SubResource("Resource_41vtf")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_yvtef"]
+script = ExtResource("6_1mcbn")
+boolean_type = "And"
+previous_src_trg = false
+side_target = 4
+slot_target = 4
+specifically = Array[String](["Illumise"])
+knocked_out = false
+tool_attatched = false
+comparison_type = 1
+max_hp = -10
+damage_taken = -10
+retreat_cost = -1
+evo_type = "Don't Check"
+stage = 7
+rare_candy = false
+class_inclusive = true
+pokemon_class = 63
+owner_inclusive = true
+pokemon_owner = 31
+type_inclusive = true
+pokemon_type = 1023
+energy_inclusive = true
+check_cards = true
+energy_attatched = -1
+energy_class = "Any"
+check_ability = false
+contained_abilities = 3
+specific_abilities = Array[String]([])
+metadata/_custom_type_script = "uid://mkjynqda7q5g"
+
+[sub_resource type="Resource" id="Resource_bktaa"]
+script = ExtResource("7_1jjyy")
+which = "Slot"
+ask = SubResource("Resource_yvtef")
+slot_vars = "current_card"
+cap = -1
+metadata/_custom_type_script = "uid://vjn146j3ayd6"
+
+[sub_resource type="Resource" id="Resource_vtgh5"]
+script = ExtResource("8_jtqiy")
+comparision_type = "Not Equal"
+first_comparison = SubResource("Resource_bktaa")
+compare_to = "Const"
+second_constant = 0
+operate_w_constant = "None"
+metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
+
+[sub_resource type="Resource" id="Resource_6sxse"]
+script = ExtResource("13_jtqiy")
+formal_question = false
+question_string = ""
+yes_answer = ""
+no_answer = ""
+comparator = SubResource("Resource_vtgh5")
+can_reverse = true
+occurance = false
+chooser = 0
+choose_location = "None"
+which_stack = 0
+metadata/_custom_type_script = "uid://b85jmc7067bjc"
+
+[sub_resource type="Resource" id="Resource_4w224"]
+script = ExtResource("15_hemo1")
+category = "Body"
+name = "Uplifting Glow"
+description = " As long as Illumise is in play, [name]'s Retreat Cost is 0."
+affected_by_condition = true
+active = false
+how_often = "Once per Mon"
+independent_src_trg = false
+prompt = SubResource("Resource_6sxse")
+passive = SubResource("Resource_buoga")
+metadata/_custom_type_script = "uid://bs2y8ocljilv8"
+
+[sub_resource type="Resource" id="Resource_enu4a"]
+script = ExtResource("11_yvtef")
+HP = 60
+retreat = 1
+pokebody = SubResource("Resource_4w224")
+attacks = Array[ExtResource("2_upqu6")]([SubResource("Resource_dklk6"), ExtResource("4_dcwyt")])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 1
+owner = 0
+type = 1
+weak = 2
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("12_bktaa")
+name = "Volbeat"
+image = ExtResource("1_t0xr1")
+illustrator = "Kyoko Umemoto"
+number = 53
+rarity = 1
+expansion = 1
+categories = 1
+pokemon_properties = SubResource("Resource_enu4a")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

@@ -1,13 +1,13 @@
 [gd_resource type="Resource" script_class="Attack" load_steps=4 format=3 uid="uid://gu6w02ikdx01"]
 
-[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="1_bp0cb"]
-[ext_resource type="Resource" uid="uid://v724fytl6d2v" path="res://Resources/Components/Pokemon/Attacks/AttackData/10xSelfDmgCount.tres" id="2_we1a0"]
-[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="3_bywh0"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="1_47w5i"]
+[ext_resource type="Resource" uid="uid://v724fytl6d2v" path="res://Resources/Components/Pokemon/Attacks/AttackData/10xSelfDmgCount.tres" id="2_eod4s"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="3_s1jgj"]
 
 [resource]
-script = ExtResource("3_bywh0")
+script = ExtResource("3_s1jgj")
 name = "Retaliate"
 description = "Flip a coin. If heads, this attack does 10 damage times the number of damage counters on [name]."
-attack_cost = ExtResource("1_bp0cb")
-attack_data = ExtResource("2_we1a0")
+attack_cost = ExtResource("1_47w5i")
+attack_data = ExtResource("2_eod4s")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

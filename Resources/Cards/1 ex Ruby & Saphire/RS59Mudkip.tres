@@ -3,14 +3,14 @@
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_57tpu"]
 [ext_resource type="Texture2D" uid="uid://b848mihi6w84j" path="res://Art/Cards/1 ex Ruby & Saphire/59.jpg" id="1_l00xo"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_lrcto"]
-[ext_resource type="Resource" uid="uid://bfhbpclxag538" path="res://Resources/Components/Pokemon/Attacks/CommonAttacks/Bubble.tres" id="3_vajtw"]
+[ext_resource type="Resource" uid="uid://bfhbpclxag538" path="res://Resources/Components/Pokemon/Attacks/CommonAttacks/Bubble.tres" id="3_l00xo"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="4_1mrm0"]
 
 [sub_resource type="Resource" id="Resource_dnina"]
 script = ExtResource("4_1mrm0")
 HP = 50
 retreat = 1
-attacks = Array[ExtResource("2_lrcto")]([ExtResource("3_vajtw")])
+attacks = Array[ExtResource("2_lrcto")]([ExtResource("3_l00xo")])
 evo_stage = "Basic"
 evolves_from = ""
 considered = 1

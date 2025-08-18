@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="Energy" load_steps=5 format=3 uid="uid://ddhtth12ohjx5"]
+[gd_resource type="Resource" script_class="Energy" load_steps=6 format=3 uid="uid://ddhtth12ohjx5"]
 
 [ext_resource type="Resource" uid="uid://cjcg38vdgxy3y" path="res://Resources/Components/Effects/Asks/Types/AtkEnAttatched.tres" id="1_83v2k"]
 [ext_resource type="Resource" uid="uid://cfvxvq4wbo1td" path="res://Resources/Components/EnData/DoubleRainbow.tres" id="2_4a70j"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="2_qweaf"]
 [ext_resource type="Resource" uid="uid://bdavuduesc606" path="res://Resources/Components/Effects/Prompts/PromptReplaceEn.tres" id="3_qweaf"]
 [ext_resource type="Script" uid="uid://caj1pm8erar2a" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="4_67f24"]
 
@@ -13,6 +14,8 @@ prompt = ExtResource("3_qweaf")
 asks = ExtResource("1_83v2k")
 has_fail_provide = false
 has_fail_prevent = false
+attatch_effects = Array[ExtResource("2_qweaf")]([])
+prompt_effects = Array[ExtResource("2_qweaf")]([])
 turns = -1
 fail_provide = ExtResource("2_4a70j")
 success_provide = ExtResource("2_4a70j")

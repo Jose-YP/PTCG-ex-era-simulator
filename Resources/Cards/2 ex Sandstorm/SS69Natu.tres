@@ -1,0 +1,44 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://ddjxknpa4xumb"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_bnxn3"]
+[ext_resource type="Texture2D" uid="uid://bcg7spoc07c5h" path="res://Art/Cards/2 ex Sandstorm/69.jpg" id="1_grp3v"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_fnhlq"]
+[ext_resource type="Resource" uid="uid://ci4gahbdoaqcu" path="res://Resources/Components/Pokemon/Attacks/EffectlessAttacks/Peck1-10.tres" id="3_bvh3g"]
+[ext_resource type="Resource" uid="uid://cu817ymtejglx" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Psychic1.tres" id="4_3l847"]
+[ext_resource type="Resource" uid="uid://dj7sremetgtb" path="res://Resources/Components/Pokemon/Attacks/AttackData/SleepDefActive.tres" id="5_h07ks"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="6_7qflh"]
+
+[sub_resource type="Resource" id="Resource_wkulu"]
+script = ExtResource("2_fnhlq")
+name = "Soothing Wave"
+description = ""
+attack_cost = ExtResource("4_3l847")
+attack_data = ExtResource("5_h07ks")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_fjmrk"]
+script = ExtResource("6_7qflh")
+HP = 50
+retreat = 1
+attacks = Array[ExtResource("2_fnhlq")]([ExtResource("3_bvh3g"), SubResource("Resource_wkulu")])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 1
+owner = 0
+type = 16
+weak = 16
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_bnxn3")
+name = "Natu"
+image = ExtResource("1_grp3v")
+illustrator = " Kouki Saitou"
+number = 69
+rarity = 0
+expansion = 1
+categories = 1
+pokemon_properties = SubResource("Resource_fjmrk")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

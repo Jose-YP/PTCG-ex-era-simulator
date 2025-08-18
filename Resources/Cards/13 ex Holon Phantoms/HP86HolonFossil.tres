@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=15 format=3 uid="uid://b6rg0l5hxpcd8"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=16 format=3 uid="uid://b6rg0l5hxpcd8"]
 
 [ext_resource type="Texture2D" uid="uid://d2ipluxk0nn6g" path="res://Art/Cards/13 ex Holon Phantoms/86.jpg" id="1_cmoiq"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_dug0u"]
@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://cbil5em5bxs0o" path="res://Resources/Components/Effects/CardDisrupt/Play/PlayS1F.tres" id="3_fgon1"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_0gqx7"]
 [ext_resource type="Resource" uid="uid://ekj1myy642kh" path="res://Resources/Components/Effects/Prompts/PromptHeads.tres" id="5_0a0jp"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="6_0gqx7"]
 [ext_resource type="Resource" uid="uid://dvdnbmg1kbbmb" path="res://Resources/Components/Effects/Placement/PlaceOnBench.tres" id="7_vivdh"]
 [ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="8_6upvr"]
 [ext_resource type="Resource" uid="uid://b1wwaec6lhamv" path="res://Resources/Components/Effects/Identifiers/Pokemon/Stage1Fossil.tres" id="9_io022"]
@@ -50,6 +51,7 @@ description = "Flip a coin. If heads, search your deck for an Omanyte, Kabuto, A
 prompt = ExtResource("5_0a0jp")
 fail_effect = SubResource("Resource_wgyow")
 success_effect = SubResource("Resource_rbomm")
+prompt_effects = Array[ExtResource("6_0gqx7")]([])
 metadata/_custom_type_script = "uid://crx447i85kshy"
 
 [resource]

@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=14 format=3 uid="uid://b4oi01smebmpm"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=15 format=3 uid="uid://b4oi01smebmpm"]
 
 [ext_resource type="Texture2D" uid="uid://ch33trndjjwg4" path="res://Art/Cards/11 ex Delta Species/97.jpg" id="1_2qlro"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_88gah"]
 [ext_resource type="Resource" uid="uid://mcn7y4o7q2uf" path="res://Resources/Components/Effects/Prompts/PromptEffects/HolonDiscard.tres" id="3_70ubg"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="3_h165t"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="4_umy0c"]
 [ext_resource type="Resource" uid="uid://pqv0rqhifr8r" path="res://Resources/Components/Counters/Indv/Stacks/DefHandSize.tres" id="5_umy0c"]
 [ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="6_p17oo"]
 [ext_resource type="Resource" uid="uid://dy4k02ewyav5j" path="res://Resources/Components/Counters/Indv/Stacks/AtkHandSize.tres" id="7_mwdqo"]
@@ -43,6 +44,7 @@ specific_requirement = "Discard a card from your hand. If you can't discard a ca
 description = "If you have less cards in your hand than your opponent, draw cards until you have the same number of cards as your opponent. "
 prompt = ExtResource("3_70ubg")
 success_effect = SubResource("Resource_sniw1")
+prompt_effects = Array[ExtResource("4_umy0c")]([])
 metadata/_custom_type_script = "uid://crx447i85kshy"
 
 [resource]

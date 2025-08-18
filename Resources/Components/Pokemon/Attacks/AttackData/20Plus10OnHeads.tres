@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="AttackData" load_steps=3 format=3 uid="uid://btwcrdfufmf7u"]
+[gd_resource type="Resource" script_class="AttackData" load_steps=4 format=3 uid="uid://btwcrdfufmf7u"]
 
 [ext_resource type="Resource" uid="uid://b45cmbaixh154" path="res://Resources/Components/Counters/Comparator/Equals/OneFlipHead.tres" id="1_3k711"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="2_2jmrh"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="2_dc81i"]
 
 [resource]
@@ -11,6 +12,8 @@ defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
+share_prompt = false
+prompt_effects = Array[ExtResource("2_2jmrh")]([])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false

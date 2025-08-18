@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=7 format=3 uid="uid://nwmfrwp7fuwu"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=8 format=3 uid="uid://nwmfrwp7fuwu"]
 
 [ext_resource type="Resource" uid="uid://3fi6fc6lbj04" path="res://Resources/Components/Effects/Asks/Class&Owner/AtkIsTeamMagma.tres" id="1_6asof"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_prv0g"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="2_c8bas"]
 [ext_resource type="Script" uid="uid://caj1pm8erar2a" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="2_h52sn"]
 [ext_resource type="Resource" uid="uid://8wnl3nwfuhfp" path="res://Resources/Components/EnData/Magma.tres" id="2_qfv06"]
 [ext_resource type="Texture2D" uid="uid://dcivaekw8m47c" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/87.jpg" id="3_b2ufc"]
@@ -13,6 +14,8 @@ description = "Magma Energy can be attached only to a Pokémon with Team Magma i
 asks = ExtResource("1_6asof")
 has_fail_provide = false
 has_fail_prevent = false
+attatch_effects = Array[ExtResource("2_c8bas")]([])
+prompt_effects = Array[ExtResource("2_c8bas")]([])
 turns = 0
 fail_provide = ExtResource("2_qfv06")
 success_provide = ExtResource("2_qfv06")

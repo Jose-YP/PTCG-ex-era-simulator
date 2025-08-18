@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=16 format=3 uid="uid://daj1y8i36dils"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=17 format=3 uid="uid://daj1y8i36dils"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_02itr"]
 [ext_resource type="Texture2D" uid="uid://le5kta0v5isf" path="res://Art/Cards/6 ex FireRed & LeafGreen/59.jpg" id="1_oral7"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_g0iid"]
 [ext_resource type="Resource" uid="uid://bi188salan8b3" path="res://Resources/Components/Effects/Swap/SwapDefForce.tres" id="5_tsqqn"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="6_lyklj"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="6_wnc44"]
 [ext_resource type="Resource" uid="uid://b1rwmggf7a4do" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless2.tres" id="7_1y6um"]
 [ext_resource type="Resource" uid="uid://bnsrs2a5hnvkb" path="res://Resources/Components/Pokemon/Attacks/AttackData/20Dmg.tres" id="8_qr258"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="9_7vrio"]
@@ -27,6 +28,8 @@ condition = 1
 before_damage = false
 replace_num = false
 always_effect = SubResource("Resource_wpp3m")
+share_prompt = false
+prompt_effects = Array[ExtResource("6_wnc44")]([])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false

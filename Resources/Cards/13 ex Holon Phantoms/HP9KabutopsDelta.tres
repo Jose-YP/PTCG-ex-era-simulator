@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=22 format=3 uid="uid://cobaem2b60qjs"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=23 format=3 uid="uid://cobaem2b60qjs"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_8jsve"]
 [ext_resource type="Texture2D" uid="uid://hyfnknm3ildm" path="res://Art/Cards/13 ex Holon Phantoms/9.jpg" id="1_m7kpa"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_qypbc"]
 [ext_resource type="Resource" uid="uid://cesjkvsi5c6jb" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/L1C1.tres" id="3_00v13"]
 [ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="4_h767l"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="5_1ru0a"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="5_e62mj"]
 [ext_resource type="Resource" uid="uid://cxsmsqpp50x7f" path="res://Resources/Components/Effects/ETC/HealCondition.tres" id="6_e62mj"]
 [ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="7_1ru0a"]
@@ -60,6 +61,8 @@ condition = 1
 before_damage = false
 replace_num = false
 success_effect = SubResource("Resource_ylth5")
+share_prompt = false
+prompt_effects = Array[ExtResource("5_1ru0a")]([])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false
@@ -84,6 +87,8 @@ defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
+share_prompt = false
+prompt_effects = Array[ExtResource("5_1ru0a")]([])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false

@@ -1,0 +1,53 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://dfsjl4dabnmty"]
+
+[ext_resource type="Texture2D" uid="uid://81r5wecacnkx" path="res://Art/Cards/3 ex Dragon/54.jpg" id="1_ss4r6"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_ysfe2"]
+[ext_resource type="Resource" uid="uid://dsslhipk3ix2o" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Water1.tres" id="3_jqhkv"]
+[ext_resource type="Resource" uid="uid://b1rwmggf7a4do" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless2.tres" id="5_i84rd"]
+[ext_resource type="Resource" uid="uid://coaq3o573d0mt" path="res://Resources/Components/Pokemon/Attacks/AttackData/10DmgPoision.tres" id="6_1f510"]
+[ext_resource type="Resource" uid="uid://bep36omnenbc8" path="res://Resources/Components/Pokemon/Attacks/AttackData/10Dmg.tres" id="9_wjt3x"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="10_0xoq1"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="11_krfpp"]
+
+[sub_resource type="Resource" id="Resource_fxi4t"]
+script = ExtResource("2_ysfe2")
+name = "Beat"
+description = ""
+attack_cost = ExtResource("3_jqhkv")
+attack_data = ExtResource("9_wjt3x")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_ysfe2"]
+script = ExtResource("2_ysfe2")
+name = "Toxic Grip"
+description = "The Defending Pokemon is now Poisoned"
+attack_cost = ExtResource("5_i84rd")
+attack_data = ExtResource("6_1f510")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_8jwv0"]
+script = ExtResource("10_0xoq1")
+HP = 50
+retreat = 1
+attacks = Array[ExtResource("2_ysfe2")]([SubResource("Resource_fxi4t"), SubResource("Resource_ysfe2")])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 1
+owner = 0
+type = 4
+weak = 8
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("11_krfpp")
+name = "Corphish"
+image = ExtResource("1_ss4r6")
+illustrator = "Hisao Nakamura"
+number = 54
+rarity = 0
+expansion = 2
+categories = 1
+pokemon_properties = SubResource("Resource_8jwv0")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=18 format=3 uid="uid://bidyxkb8ygjhl"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=19 format=3 uid="uid://bidyxkb8ygjhl"]
 
 [ext_resource type="Texture2D" uid="uid://d3nrajtlwbvgh" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/84.jpg" id="1_1h5tq"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_a73xh"]
 [ext_resource type="Resource" uid="uid://3fi6fc6lbj04" path="res://Resources/Components/Effects/Asks/Class&Owner/AtkIsTeamMagma.tres" id="3_572u0"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_1lnrb"]
 [ext_resource type="Resource" uid="uid://c7itelq8jtjc2" path="res://Resources/Components/EnData/Rainbow.tres" id="4_3c8rh"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="4_xr36y"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="5_38xhb"]
 [ext_resource type="Script" uid="uid://cimk6l7ytw7xg" path="res://Code/Resource Makers/EffectSpecific/EnMovMaker.gd" id="5_xchay"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="6_m2fw7"]
@@ -44,6 +45,8 @@ condition = 1
 before_damage = false
 replace_num = false
 always_effect = SubResource("Resource_fgddn")
+share_prompt = false
+prompt_effects = Array[ExtResource("4_xr36y")]([])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false
@@ -65,6 +68,7 @@ considered = "TM"
 specific_requirement = ""
 description = "Attach this card to 1 of your Pokémon that has Team Magma in its name. That Pokémon may use this card's attack instead of its own. At the end of your turn, discard Team Magma Technical Machine 01."
 asks = ExtResource("3_572u0")
+prompt_effects = Array[ExtResource("4_xr36y")]([])
 provided_attack = SubResource("Resource_cnaec")
 
 [resource]

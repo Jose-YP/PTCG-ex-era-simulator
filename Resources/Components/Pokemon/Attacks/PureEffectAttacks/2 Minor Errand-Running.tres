@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="Attack" load_steps=8 format=3 uid="uid://b83e7lbsc70my"]
+[gd_resource type="Resource" script_class="Attack" load_steps=10 format=3 uid="uid://b83e7lbsc70my"]
 
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="1_1rbni"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="2_bk8ng"]
 [ext_resource type="Resource" uid="uid://6u0bocijrq4m" path="res://Resources/Components/Effects/Search/Search2BasicEnergy.tres" id="2_ndssy"]
 [ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_bk8ng"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="4_gcp0h"]
@@ -13,6 +14,11 @@ order = Array[int]([])
 search = ExtResource("2_ndssy")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
+[sub_resource type="Resource" id="Resource_gcp0h"]
+script = ExtResource("2_bk8ng")
+success = SubResource("Resource_6a84p")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
 [sub_resource type="Resource" id="Resource_vyuu0"]
 script = ExtResource("4_gcp0h")
 prompt_reliant = false
@@ -21,7 +27,8 @@ defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
-always_effect = SubResource("Resource_6a84p")
+share_prompt = false
+prompt_effects = Array[ExtResource("2_bk8ng")]([SubResource("Resource_gcp0h")])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false

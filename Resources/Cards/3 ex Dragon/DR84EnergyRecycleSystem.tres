@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=16 format=3 uid="uid://eahd8tk8osi7"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=17 format=3 uid="uid://eahd8tk8osi7"]
 
 [ext_resource type="Texture2D" uid="uid://c3xfuliym4p36" path="res://Art/Cards/3 ex Dragon/84.jpg" id="1_lvakk"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_ssyyn"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="7_utupw"]
 [ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="8_2d35l"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="9_htuvh"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="9_w6pb1"]
 [ext_resource type="Resource" uid="uid://dpga1rw11a4yh" path="res://Resources/Components/Effects/Search/Energy/Srch1DiscBasicEn2Hnd.tres" id="10_xfscs"]
 
 [sub_resource type="Resource" id="Resource_l7xtl"]
@@ -63,6 +64,7 @@ description = "Search your discard pile for basic Energy cards. You may either s
 prompt = SubResource("Resource_blh7f")
 fail_effect = SubResource("Resource_irdt6")
 success_effect = SubResource("Resource_lo4xw")
+prompt_effects = Array[ExtResource("9_w6pb1")]([])
 metadata/_custom_type_script = "uid://crx447i85kshy"
 
 [resource]

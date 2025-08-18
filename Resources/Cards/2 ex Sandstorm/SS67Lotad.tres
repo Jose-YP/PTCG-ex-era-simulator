@@ -1,0 +1,77 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=16 format=3 uid="uid://ms0bb6yxyh5m"]
+
+[ext_resource type="Texture2D" uid="uid://drexv8jq3dmub" path="res://Art/Cards/2 ex Sandstorm/67.jpg" id="1_nlhbm"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_whdkc"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_0ihxs"]
+[ext_resource type="Resource" uid="uid://cugd2g6gy4gda" path="res://Resources/Components/Pokemon/Attacks/EffectlessAttacks/Tackle1-10.tres" id="3_2oua1"]
+[ext_resource type="Resource" uid="uid://b1rwmggf7a4do" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless2.tres" id="4_ctsls"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="5_bigsm"]
+[ext_resource type="Resource" uid="uid://dllyof1ddnq7w" path="res://Resources/Components/Effects/DmgManip/Remove/SelfHeal10.tres" id="6_xiji4"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="7_xccl7"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="8_5elqo"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="9_38q24"]
+
+[sub_resource type="Resource" id="Resource_sgj16"]
+script = ExtResource("7_xccl7")
+either_or = false
+order = Array[int]([])
+dmgManip = ExtResource("6_xiji4")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_6t2pa"]
+script = ExtResource("5_bigsm")
+success = SubResource("Resource_sgj16")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
+[sub_resource type="Resource" id="Resource_xtjwl"]
+script = ExtResource("8_5elqo")
+prompt_reliant = false
+initial_main_DMG = 0
+defender_properties = 0
+condition = 1
+before_damage = false
+replace_num = false
+share_prompt = false
+prompt_effects = Array[ExtResource("5_bigsm")]([SubResource("Resource_6t2pa")])
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_orh3l"]
+script = ExtResource("2_0ihxs")
+name = "Blot"
+description = "Remove 1 damage counter from [name]."
+attack_cost = ExtResource("4_ctsls")
+attack_data = SubResource("Resource_xtjwl")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_676g7"]
+script = ExtResource("9_38q24")
+HP = 50
+retreat = 1
+attacks = Array[ExtResource("2_0ihxs")]([ExtResource("3_2oua1"), SubResource("Resource_orh3l")])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 1
+owner = 0
+type = 4
+weak = 8
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_whdkc")
+name = "Lotad"
+image = ExtResource("1_nlhbm")
+illustrator = "Mitsuhiro Arita"
+number = 67
+rarity = 0
+expansion = 1
+categories = 1
+pokemon_properties = SubResource("Resource_676g7")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

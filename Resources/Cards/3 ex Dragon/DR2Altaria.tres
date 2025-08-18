@@ -1,0 +1,152 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=23 format=3 uid="uid://dokia4dr3ml32"]
+
+[ext_resource type="Texture2D" uid="uid://d0m6fon4ogw1l" path="res://Art/Cards/3 ex Dragon/2.jpg" id="1_sy3ht"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_v6igf"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_5ga2w"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_l8u6u"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="4_fi6u0"]
+[ext_resource type="Resource" uid="uid://bnv2dkudpcueo" path="res://Resources/Components/Effects/Asks/General/SrcActive.tres" id="5_qbxbb"]
+[ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/BuffMaker.gd" id="6_yi5yq"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="7_8lds8"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="8_8ke4b"]
+[ext_resource type="Script" uid="uid://crscwhvugaoxa" path="res://Code/Resource Makers/PokemonSpecific/AttackCostMaker.gd" id="9_k3ea1"]
+[ext_resource type="Resource" uid="uid://cqw2kwbgcwgvb" path="res://Resources/Components/Effects/Conditions/BasicSleep.tres" id="10_10wou"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="11_m8lyd"]
+
+[sub_resource type="Resource" id="Resource_484ee"]
+script = ExtResource("6_yi5yq")
+description = "Attacks deal 40 more damage before weak/res"
+application = "Slot"
+stackable = true
+recieves = ExtResource("5_qbxbb")
+duration = 1
+after_weak_res = false
+add_hp = 0
+attack = 40
+defense = 0
+retreat_change = 0
+cost_modifier = "Add"
+modify = "HP"
+operation = "Replace"
+condition_immune = 0
+attack_effect_immune = false
+damage_immune = false
+body_immune = false
+power_immune = false
+trainer_immune = false
+odd_immunity = false
+even_immunity = false
+weakness = false
+resistance = false
+effects = false
+attack_names = Array[String]([])
+metadata/_custom_type_script = "uid://coojhwe6m20gd"
+
+[sub_resource type="Resource" id="Resource_w2g7s"]
+script = ExtResource("7_8lds8")
+either_or = false
+order = Array[int]([])
+buff = SubResource("Resource_484ee")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_21epr"]
+script = ExtResource("4_fi6u0")
+success = SubResource("Resource_w2g7s")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
+[sub_resource type="Resource" id="Resource_5gtvr"]
+script = ExtResource("8_8ke4b")
+prompt_reliant = false
+initial_main_DMG = 0
+defender_properties = 0
+condition = 1
+before_damage = false
+replace_num = false
+share_prompt = false
+prompt_effects = Array[ExtResource("4_fi6u0")]([SubResource("Resource_21epr")])
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_yeroc"]
+script = ExtResource("2_5ga2w")
+name = " Dragon Dance "
+description = "During your next turn, if any of your current Active Pokémon does damage to any Defending Pokémon, this attack does 40 more damage (before applying Weakness and Resistance)."
+attack_cost = ExtResource("3_l8u6u")
+attack_data = SubResource("Resource_5gtvr")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_41f4a"]
+script = ExtResource("9_k3ea1")
+grass_cost = 0
+fire_cost = 0
+water_cost = 1
+lightning_cost = 1
+psychic_cost = 0
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 0
+metadata/_custom_type_script = "uid://crscwhvugaoxa"
+
+[sub_resource type="Resource" id="Resource_w2226"]
+script = ExtResource("4_fi6u0")
+success = ExtResource("10_10wou")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
+[sub_resource type="Resource" id="Resource_8opdt"]
+script = ExtResource("8_8ke4b")
+prompt_reliant = false
+initial_main_DMG = 30
+defender_properties = 0
+condition = 1
+before_damage = false
+replace_num = false
+share_prompt = false
+prompt_effects = Array[ExtResource("4_fi6u0")]([SubResource("Resource_w2226")])
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = true
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_ble7w"]
+script = ExtResource("2_5ga2w")
+name = "Dragon Song"
+description = "Each Defending Pokémon is now Asleep."
+attack_cost = SubResource("Resource_41f4a")
+attack_data = SubResource("Resource_8opdt")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_01ikg"]
+script = ExtResource("11_m8lyd")
+HP = 80
+retreat = 1
+attacks = Array[ExtResource("2_5ga2w")]([SubResource("Resource_yeroc"), SubResource("Resource_ble7w")])
+evo_stage = "Stage 1"
+evolves_from = "Swablu"
+considered = 1
+owner = 0
+type = 256
+weak = 256
+resist = 33
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_v6igf")
+name = "Altaria"
+image = ExtResource("1_sy3ht")
+illustrator = "Atsuko Nishida"
+number = 2
+rarity = 3
+expansion = 2
+categories = 1
+pokemon_properties = SubResource("Resource_01ikg")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

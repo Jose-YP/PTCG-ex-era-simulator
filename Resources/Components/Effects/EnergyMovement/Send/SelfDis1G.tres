@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="EnMov" load_steps=4 format=3 uid="uid://bjxjcwqb0f007"]
+
+[ext_resource type="Resource" uid="uid://d1b5din1lvjqo" path="res://Resources/Components/EnData/Grass.tres" id="1_0oxps"]
+[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="2_1nwhl"]
+[ext_resource type="Script" uid="uid://cimk6l7ytw7xg" path="res://Code/Resource Makers/EffectSpecific/EnMovMaker.gd" id="3_an0nv"]
+
+[resource]
+script = ExtResource("3_an0nv")
+action = 0
+chooser = 4
+givers = ExtResource("2_1nwhl")
+to_stack = 2
+stack_direction = 2
+energy_carry_over = false
+action_ammount = 1
+energy_ammount = 1
+energy_move_type = 2
+en_type = ExtResource("1_0oxps")
+metadata/_custom_type_script = "uid://cimk6l7ytw7xg"

@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="Attack" load_steps=8 format=3 uid="uid://e2siihge8nvy"]
+[gd_resource type="Resource" script_class="Attack" load_steps=10 format=3 uid="uid://e2siihge8nvy"]
 
 [ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="1_n5j2j"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="2_eijvg"]
 [ext_resource type="Resource" uid="uid://vmk4e17o42c2" path="res://Resources/Components/Effects/DmgManip/Remove/Heal1AllSrc.tres" id="2_t087k"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_eijvg"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="4_tk0xw"]
@@ -13,6 +14,11 @@ order = Array[int]([])
 dmgManip = ExtResource("2_t087k")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
+[sub_resource type="Resource" id="Resource_tk0xw"]
+script = ExtResource("2_eijvg")
+success = SubResource("Resource_cab50")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
 [sub_resource type="Resource" id="Resource_q4a0m"]
 script = ExtResource("4_tk0xw")
 prompt_reliant = false
@@ -21,7 +27,8 @@ defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
-always_effect = SubResource("Resource_cab50")
+share_prompt = false
+prompt_effects = Array[ExtResource("2_eijvg")]([SubResource("Resource_tk0xw")])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false

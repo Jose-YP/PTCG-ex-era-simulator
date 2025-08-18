@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=8 format=3 uid="uid://b8bgctg57in7h"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=9 format=3 uid="uid://b8bgctg57in7h"]
 
 [ext_resource type="Texture2D" uid="uid://ciq4xttc4cws5" path="res://Art/Cards/6 ex FireRed & LeafGreen/88.jpg" id="1_j5low"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_nj43g"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_5sobx"]
 [ext_resource type="Resource" uid="uid://3aws6dg4buk5" path="res://Resources/Components/Effects/Search/Pokemon/SearchNon-ex.tres" id="4_wp86e"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="5_5sobx"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="5_eyvwq"]
 
 [sub_resource type="Resource" id="Resource_oq0xv"]
@@ -19,6 +20,7 @@ considered = "Supporter"
 specific_requirement = ""
 description = "Search your deck for a Basic Pokémon or Evolution card (excluding Pokémon-ex), show it to your opponent, and put it into your hand. Shuffle your deck afterward. "
 always_effect = SubResource("Resource_oq0xv")
+prompt_effects = Array[ExtResource("5_5sobx")]([])
 metadata/_custom_type_script = "uid://crx447i85kshy"
 
 [resource]

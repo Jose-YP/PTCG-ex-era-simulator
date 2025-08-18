@@ -5,18 +5,18 @@
 
 [resource]
 script = ExtResource("2_f5dd6")
+boolean_type = "And"
 previous_src_trg = false
 side_target = 5
 slot_target = 2
 specifically = Array[String]([])
-check_ability = false
-contained_abilities = 3
 knocked_out = false
 tool_attatched = false
 comparison_type = 1
 max_hp = -10
 damage_taken = -10
 retreat_cost = -1
+evo_type = "Don't Check"
 stage = 6
 rare_candy = false
 class_inclusive = true
@@ -30,4 +30,7 @@ check_cards = true
 energy_attatched = -1
 energy_class = "Any"
 energy_type = ExtResource("1_hm3lj")
+check_ability = false
+contained_abilities = 3
+specific_abilities = Array[String]([])
 metadata/_custom_type_script = "uid://mkjynqda7q5g"

@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=30 format=3 uid="uid://5g5ban7l633b"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=32 format=3 uid="uid://5g5ban7l633b"]
 
 [ext_resource type="Texture2D" uid="uid://bvvn5sfttmcip" path="res://Art/Cards/3 ex Dragon/18.jpg" id="1_utp21"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_adtio"]
 [ext_resource type="Resource" uid="uid://b1rwmggf7a4do" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless2.tres" id="3_nbhn7"]
 [ext_resource type="Resource" uid="uid://ssgmwhjsdq4b" path="res://Resources/Components/Effects/Prompts/PromptQuestion/WillSwap.tres" id="4_85c17"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="4_nbhn7"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="5_lptg0"]
 [ext_resource type="Resource" uid="uid://d1b5din1lvjqo" path="res://Resources/Components/EnData/Grass.tres" id="6_gseeo"]
 [ext_resource type="Resource" uid="uid://ba0r8f1bi6iwl" path="res://Resources/Components/Effects/Asks/General/PreviousSelf.tres" id="7_eemmu"]
@@ -53,16 +54,22 @@ energy_movement = SubResource("Resource_hjipc")
 swap = SubResource("Resource_1csst")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
+[sub_resource type="Resource" id="Resource_85c17"]
+script = ExtResource("4_nbhn7")
+prompt = ExtResource("4_85c17")
+success = SubResource("Resource_fo38g")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
 [sub_resource type="Resource" id="Resource_jpmu7"]
 script = ExtResource("5_lptg0")
 prompt_reliant = false
-prompt = ExtResource("4_85c17")
 initial_main_DMG = 30
 defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
-success_effect = SubResource("Resource_fo38g")
+share_prompt = false
+prompt_effects = Array[ExtResource("4_nbhn7")]([SubResource("Resource_85c17")])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false

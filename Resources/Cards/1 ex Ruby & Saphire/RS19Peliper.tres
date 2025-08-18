@@ -1,16 +1,60 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=19 format=3 uid="uid://cmflui8icmsht"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=26 format=3 uid="uid://cmflui8icmsht"]
 
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_pn1bd"]
 [ext_resource type="Texture2D" uid="uid://dm23fojfx7svi" path="res://Art/Cards/1 ex Ruby & Saphire/19.jpg" id="1_pt4v8"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="2_pt4v8"]
 [ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_4qtd1"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_v3oh7"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="4_4qtd1"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="4_f5dxt"]
+[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="5_f5dxt"]
 [ext_resource type="Resource" uid="uid://fcpa5aqhgy0e" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/W1C1.tres" id="5_qarbw"]
 [ext_resource type="Resource" uid="uid://ceo3bpqlglf5o" path="res://Resources/Components/Pokemon/Attacks/AttackData/30Dmg.tres" id="6_6wn4a"]
+[ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/BuffMaker.gd" id="6_qarbw"]
 [ext_resource type="Resource" uid="uid://dkvbrahlcnjmi" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/W1C2.tres" id="7_0rawh"]
 [ext_resource type="Resource" uid="uid://bsuopi541rs72" path="res://Resources/Components/Effects/DmgManip/Remove/SelfDrain.tres" id="8_xl488"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="12_gfpq3"]
+
+[sub_resource type="Resource" id="Resource_6wn4a"]
+script = ExtResource("6_qarbw")
+description = "Stockpile and Spit Up deal +40 Damage"
+application = "Slot"
+stackable = true
+recieves = ExtResource("5_f5dxt")
+duration = 2
+after_weak_res = true
+add_hp = 0
+attack = 40
+defense = 0
+retreat_change = 0
+cost_modifier = "Add"
+modify = "HP"
+operation = "Replace"
+condition_immune = 0
+attack_effect_immune = false
+damage_immune = false
+body_immune = false
+power_immune = false
+trainer_immune = false
+odd_immunity = false
+even_immunity = false
+weakness = false
+resistance = false
+effects = false
+attack_names = Array[String](["Stockpile", "Spit Up"])
+metadata/_custom_type_script = "uid://coojhwe6m20gd"
+
+[sub_resource type="Resource" id="Resource_0rawh"]
+script = ExtResource("12_gfpq3")
+either_or = false
+order = Array[int]([])
+buff = SubResource("Resource_6wn4a")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_5g71i"]
+script = ExtResource("4_4qtd1")
+success = SubResource("Resource_0rawh")
+metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [sub_resource type="Resource" id="Resource_hmbk8"]
 script = ExtResource("4_f5dxt")
@@ -20,6 +64,8 @@ defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
+share_prompt = false
+prompt_effects = Array[ExtResource("4_4qtd1")]([SubResource("Resource_5g71i")])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false
@@ -51,6 +97,11 @@ order = Array[int]([])
 dmgManip = ExtResource("8_xl488")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
+[sub_resource type="Resource" id="Resource_gx5ya"]
+script = ExtResource("4_4qtd1")
+success = SubResource("Resource_veevm")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
 [sub_resource type="Resource" id="Resource_vclto"]
 script = ExtResource("4_f5dxt")
 prompt_reliant = false
@@ -59,7 +110,8 @@ defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
-always_effect = SubResource("Resource_veevm")
+share_prompt = false
+prompt_effects = Array[ExtResource("4_4qtd1")]([SubResource("Resource_gx5ya")])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false

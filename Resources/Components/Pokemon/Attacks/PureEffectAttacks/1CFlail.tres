@@ -1,31 +1,13 @@
 [gd_resource type="Resource" script_class="Attack" load_steps=4 format=3 uid="uid://bqg2b3spdopam"]
 
-[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="1_1xmbc"]
-[ext_resource type="Resource" uid="uid://v724fytl6d2v" path="res://Resources/Components/Pokemon/Attacks/AttackData/10xSelfDmgCount.tres" id="2_w6ctg"]
-[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="3_vkisf"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="1_h2cep"]
+[ext_resource type="Resource" uid="uid://v724fytl6d2v" path="res://Resources/Components/Pokemon/Attacks/AttackData/10xSelfDmgCount.tres" id="2_ky8ka"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="3_5ipcj"]
 
 [resource]
-script = ExtResource("3_vkisf")
+script = ExtResource("3_5ipcj")
 name = "Flail"
 description = "Does 10 damage for each damage counter on {name}."
-attack_cost = ExtResource("1_1xmbc")
-attack_data = ExtResource("2_w6ctg")
-grass_cost = 0
-fire_cost = 0
-water_cost = 0
-lightning_cost = 0
-psychic_cost = 0
-fighting_cost = 0
-darkness_cost = 0
-metal_cost = 0
-colorless_cost = 1
-defender_properties = 0
-condition = 1
-prompt_reliant = false
-initial_main_DMG = 0
-conditional_self_dmg = false
-self_damage = 0
-modifier = 0
-modifier_num = 0
-both_active = false
+attack_cost = ExtResource("1_h2cep")
+attack_data = ExtResource("2_ky8ka")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

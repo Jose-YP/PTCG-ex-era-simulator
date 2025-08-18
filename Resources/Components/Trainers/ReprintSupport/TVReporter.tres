@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="Trainer" load_steps=8 format=3 uid="uid://p247guaw1vls"]
+[gd_resource type="Resource" script_class="Trainer" load_steps=9 format=3 uid="uid://p247guaw1vls"]
 
 [ext_resource type="Resource" uid="uid://dm2i7spst0qpp" path="res://Resources/Components/Effects/Identifiers/AnyCard.tres" id="1_plj8i"]
 [ext_resource type="Script" uid="uid://8sh5p3leflla" path="res://Code/Resource Makers/EffectSpecific/CardDisruptMaker.gd" id="1_w77ia"]
 [ext_resource type="Resource" uid="uid://dmb635n2d0erk" path="res://Resources/Components/Effects/Draw/Draw3.tres" id="2_w77ia"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_ha5d3"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="4_4yomv"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="5_ha5d3"]
 
 [sub_resource type="Resource" id="Resource_0eie6"]
 script = ExtResource("1_w77ia")
@@ -37,4 +38,5 @@ considered = "Supporter"
 specific_requirement = ""
 description = "Draw 3 cards. Then discard any 1 card from your hand. "
 always_effect = SubResource("Resource_21pnk")
+prompt_effects = Array[ExtResource("5_ha5d3")]([])
 metadata/_custom_type_script = "uid://crx447i85kshy"

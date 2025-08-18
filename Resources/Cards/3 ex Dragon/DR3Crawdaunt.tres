@@ -1,0 +1,96 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=16 format=3 uid="uid://brnwwea1eu45w"]
+
+[ext_resource type="Texture2D" uid="uid://c4dv82tx5nkki" path="res://Art/Cards/3 ex Dragon/3.jpg" id="1_0rblx"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_qdq7c"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="2_e76kc"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_57ufb"]
+[ext_resource type="Resource" uid="uid://dkvbrahlcnjmi" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/W1C2.tres" id="3_amwe3"]
+[ext_resource type="Resource" uid="uid://cj4j56m7hrxpe" path="res://Resources/Components/Pokemon/Attacks/AttackData/50Dmg.tres" id="4_wanhc"]
+[ext_resource type="Resource" uid="uid://bnv2dkudpcueo" path="res://Resources/Components/Effects/Asks/General/SrcActive.tres" id="5_8hlgg"]
+[ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/BuffMaker.gd" id="6_hgk10"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="7_b1ad1"]
+[ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="8_drys0"]
+
+[sub_resource type="Resource" id="Resource_lh1vx"]
+script = ExtResource("1_qdq7c")
+name = "Guillotine"
+description = ""
+attack_cost = ExtResource("3_amwe3")
+attack_data = ExtResource("4_wanhc")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_x72f0"]
+script = ExtResource("6_hgk10")
+description = "Deal +10 Damage before weak/res"
+application = "Slot"
+stackable = true
+recieves = ExtResource("5_8hlgg")
+duration = -1
+after_weak_res = true
+add_hp = 0
+attack = 10
+defense = 0
+retreat_change = 0
+cost_modifier = "Add"
+modify = "HP"
+operation = "Replace"
+condition_immune = 0
+attack_effect_immune = false
+damage_immune = false
+body_immune = false
+power_immune = false
+trainer_immune = false
+odd_immunity = false
+even_immunity = false
+weakness = false
+resistance = false
+effects = false
+attack_names = Array[String]([])
+metadata/_custom_type_script = "uid://coojhwe6m20gd"
+
+[sub_resource type="Resource" id="Resource_kpvwx"]
+script = ExtResource("7_b1ad1")
+either_or = false
+order = Array[int]([])
+buff = SubResource("Resource_x72f0")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_fchkc"]
+script = ExtResource("8_drys0")
+category = "Body"
+name = "Power Pinchers"
+description = "As long as [name] is your Active Pokémon, when any of your Active Pokémon does damage to the Defending Pokémon, the attack does 10 more damage (before applying Weakness and Resistance)."
+affected_by_condition = false
+active = true
+how_often = "Once per Mon"
+independent_src_trg = false
+passive = SubResource("Resource_kpvwx")
+metadata/_custom_type_script = "uid://bs2y8ocljilv8"
+
+[sub_resource type="Resource" id="Resource_01ikg"]
+script = ExtResource("2_e76kc")
+HP = 80
+retreat = 2
+pokebody = SubResource("Resource_fchkc")
+attacks = Array[ExtResource("1_qdq7c")]([SubResource("Resource_lh1vx")])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 1
+owner = 0
+type = 4
+weak = 8
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("3_57ufb")
+name = "Crawdaunt"
+image = ExtResource("1_0rblx")
+illustrator = " Hisao Nakamura"
+number = 3
+rarity = 3
+expansion = 2
+categories = 1
+pokemon_properties = SubResource("Resource_01ikg")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

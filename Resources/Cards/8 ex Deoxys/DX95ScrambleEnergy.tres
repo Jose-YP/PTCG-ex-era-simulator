@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=8 format=3 uid="uid://0unl37pqgi3b"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=9 format=3 uid="uid://0unl37pqgi3b"]
 
 [ext_resource type="Resource" uid="uid://lop03i25k4pb" path="res://Resources/Components/Effects/Asks/AtkEvoNonEx.tres" id="1_0mllo"]
 [ext_resource type="Texture2D" uid="uid://c1ooj70gf1266" path="res://Art/Cards/8 ex Deoxys/95.jpg" id="2_8iygo"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="2_031x8"]
 [ext_resource type="Script" uid="uid://caj1pm8erar2a" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="2_171kh"]
 [ext_resource type="Resource" uid="uid://vk18jkchsq3v" path="res://Resources/Components/EnData/Colorless.tres" id="2_uvk6q"]
 [ext_resource type="Resource" uid="uid://boh8cm2ke5dn0" path="res://Resources/Components/EnData/Scramble.tres" id="4_031x8"]
@@ -14,6 +15,8 @@ description = "Scramble Energy can be attached only to an Evolved Pokémon (excl
 asks = ExtResource("1_0mllo")
 has_fail_provide = true
 has_fail_prevent = false
+attatch_effects = Array[ExtResource("2_031x8")]([])
+prompt_effects = Array[ExtResource("2_031x8")]([])
 turns = -1
 fail_provide = ExtResource("2_uvk6q")
 success_provide = ExtResource("4_031x8")

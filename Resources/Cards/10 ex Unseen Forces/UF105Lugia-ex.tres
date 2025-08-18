@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=23 format=3 uid="uid://sb68unlar474"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=24 format=3 uid="uid://sb68unlar474"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_ng34m"]
 [ext_resource type="Texture2D" uid="uid://honvrkf8fkif" path="res://Art/Cards/10 ex Unseen Forces/105.jpg" id="1_r4nup"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://cimk6l7ytw7xg" path="res://Code/Resource Makers/EffectSpecific/EnMovMaker.gd" id="5_nix0d"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="6_r341i"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="7_3pqvf"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="7_diiue"]
 [ext_resource type="Resource" uid="uid://crqyosanwd1v7" path="res://Resources/Components/Effects/EnergyMovement/DefSelfDiscard.tres" id="8_y7fph"]
 [ext_resource type="Resource" uid="uid://bessnawi8b2ct" path="res://Resources/Components/Occurances/AttackedByOpponent.tres" id="9_btshb"]
 [ext_resource type="Resource" uid="uid://ekj1myy642kh" path="res://Resources/Components/Effects/Prompts/PromptHeads.tres" id="10_k2mw1"]
@@ -64,6 +65,8 @@ condition = 1
 before_damage = false
 replace_num = false
 always_effect = SubResource("Resource_7n8d4")
+share_prompt = false
+prompt_effects = Array[ExtResource("7_diiue")]([])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false

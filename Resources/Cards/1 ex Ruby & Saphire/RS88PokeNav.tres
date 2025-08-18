@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=8 format=3 uid="uid://bfeoddhetuot3"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://bfeoddhetuot3"]
 
 [ext_resource type="Texture2D" uid="uid://bhhdsm1dgkbks" path="res://Art/Cards/1 ex Ruby & Saphire/88.jpg" id="1_hecun"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_uq3k5"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_btmpw"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="3_hc7x4"]
 [ext_resource type="Resource" uid="uid://c1r4iob3b4dhu" path="res://Resources/Components/Effects/Search/PokeNavSearch.tres" id="4_1elqm"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="6_oeanx"]
 
@@ -13,12 +14,17 @@ order = Array[int]([])
 search = ExtResource("4_1elqm")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
+[sub_resource type="Resource" id="Resource_hecun"]
+script = ExtResource("3_hc7x4")
+success = SubResource("Resource_6plop")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
 [sub_resource type="Resource" id="Resource_8tpb4"]
 script = ExtResource("6_oeanx")
 considered = "Item"
 specific_requirement = ""
 description = "Look at the top 3 cards of your deck, and choose a Basic Pokémon, Evolution card, or Energy card. Show it to your opponent and put it into your hand. Put the 2 other cards back on top of your deck in any order. "
-always_effect = SubResource("Resource_6plop")
+prompt_effects = Array[ExtResource("3_hc7x4")]([SubResource("Resource_hecun")])
 metadata/_custom_type_script = "uid://crx447i85kshy"
 
 [resource]

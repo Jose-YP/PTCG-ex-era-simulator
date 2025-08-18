@@ -1,0 +1,93 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=17 format=3 uid="uid://db6yj561crjjr"]
+
+[ext_resource type="Texture2D" uid="uid://b0p1xjooqvp63" path="res://Art/Cards/16 ex Power Keepers/94.jpg" id="1_alrqj"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_eqel2"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_0vmog"]
+[ext_resource type="Resource" uid="uid://dpovjlfpsypwe" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless3.tres" id="3_g7jvn"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="4_u4asg"]
+[ext_resource type="Script" uid="uid://c0ishgbxk63dg" path="res://Code/Resource Makers/EffectSpecific/DisableMaker.gd" id="5_5wqg8"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="6_yiueb"]
+[ext_resource type="Resource" uid="uid://ekj1myy642kh" path="res://Resources/Components/Effects/Prompts/PromptHeads.tres" id="7_ccxoo"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="8_d4ra0"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="9_vd8hj"]
+
+[sub_resource type="Resource" id="Resource_bwkib"]
+script = ExtResource("5_5wqg8")
+side = 2
+slot = 4
+duration = -1
+no_weakness = false
+no_resistance = false
+instead_of_damage = false
+do_nothing = false
+attack = 2
+power = 0
+retreat_duration = 1
+disable_retreat = false
+metadata/_custom_type_script = "uid://c0ishgbxk63dg"
+
+[sub_resource type="Resource" id="Resource_1iu0x"]
+script = ExtResource("6_yiueb")
+either_or = false
+order = Array[int]([])
+disable = SubResource("Resource_bwkib")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_53yh8"]
+script = ExtResource("4_u4asg")
+prompt = ExtResource("7_ccxoo")
+fail = SubResource("Resource_1iu0x")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
+[sub_resource type="Resource" id="Resource_7lrvf"]
+script = ExtResource("8_d4ra0")
+prompt_reliant = false
+initial_main_DMG = 70
+defender_properties = 0
+condition = 1
+before_damage = false
+replace_num = false
+share_prompt = false
+prompt_effects = Array[ExtResource("4_u4asg")]([SubResource("Resource_53yh8")])
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_3we6x"]
+script = ExtResource("2_0vmog")
+name = "Slashing Strike"
+description = "Flip a coin. If tails, [name] can't use Slashing Strike during your next turn."
+attack_cost = ExtResource("3_g7jvn")
+attack_data = SubResource("Resource_7lrvf")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_5x4y3"]
+script = ExtResource("9_vd8hj")
+HP = 150
+retreat = 0
+attacks = Array[ExtResource("2_0vmog")]([SubResource("Resource_3we6x")])
+evo_stage = "Stage 2"
+evolves_from = "Flygon"
+considered = 2
+owner = 0
+type = 256
+weak = 256
+resist = 40
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_eqel2")
+name = "Flygon ex"
+image = ExtResource("1_alrqj")
+illustrator = "Mitsuhiro Arita"
+number = 94
+rarity = 4
+expansion = 15
+categories = 1
+pokemon_properties = SubResource("Resource_5x4y3")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

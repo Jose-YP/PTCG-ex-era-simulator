@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("2_l0h5j")
 HP = 50
-retreat = 0
+retreat = 1
 attacks = Array[ExtResource("1_rhcka")]([])
 evo_stage = "Basic"
 evolves_from = ""

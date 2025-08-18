@@ -1,8 +1,14 @@
-[gd_resource type="Resource" script_class="AttackData" load_steps=4 format=3 uid="uid://dsncmneiiyq18"]
+[gd_resource type="Resource" script_class="AttackData" load_steps=6 format=3 uid="uid://dsncmneiiyq18"]
 
 [ext_resource type="Resource" uid="uid://ekj1myy642kh" path="res://Resources/Components/Effects/Prompts/PromptHeads.tres" id="1_3viq0"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="2_aysp4"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="2_ua746"]
 [ext_resource type="Resource" uid="uid://6xmw13js5xd3" path="res://Resources/Components/Effects/Conditions/BasicParalyze.tres" id="3_ua746"]
+
+[sub_resource type="Resource" id="Resource_iapbf"]
+script = ExtResource("2_ua746")
+success = ExtResource("3_ua746")
+metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [resource]
 script = ExtResource("2_aysp4")
@@ -11,7 +17,10 @@ prompt = ExtResource("1_3viq0")
 initial_main_DMG = 30
 defender_properties = 0
 condition = 1
-success_effect = ExtResource("3_ua746")
+before_damage = false
+replace_num = false
+share_prompt = true
+prompt_effects = Array[ExtResource("2_ua746")]([SubResource("Resource_iapbf")])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false

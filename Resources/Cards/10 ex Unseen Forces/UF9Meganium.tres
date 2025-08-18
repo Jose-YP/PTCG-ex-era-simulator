@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=30 format=3 uid="uid://cwm50lliwuxgr"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=31 format=3 uid="uid://cwm50lliwuxgr"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_av14u"]
 [ext_resource type="Texture2D" uid="uid://bkixvvnwbglm2" path="res://Art/Cards/10 ex Unseen Forces/9.jpg" id="1_b8f7a"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="9_6ro4m"]
 [ext_resource type="Resource" uid="uid://c08tcl1tywrqe" path="res://Resources/Components/Effects/Asks/Class&Owner/BothNon-ex.tres" id="9_rpbfj"]
 [ext_resource type="Script" uid="uid://scca13hg4k1l" path="res://Code/Resource Makers/EffectSpecific/DmgManipMaker.gd" id="10_fryll"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="10_wmae1"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="12_iblgg"]
 [ext_resource type="Resource" uid="uid://tgm35ahd5evj" path="res://Resources/Components/Occurances/SelfBetweenTurns.tres" id="13_wmae1"]
 [ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="14_pb52n"]
@@ -78,6 +79,8 @@ condition = 1
 before_damage = false
 replace_num = true
 always_effect = SubResource("Resource_xvftv")
+share_prompt = false
+prompt_effects = Array[ExtResource("10_wmae1")]([])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = true

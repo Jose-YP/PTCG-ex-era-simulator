@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=21 format=3 uid="uid://55w4gcnt7ldd"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=23 format=3 uid="uid://55w4gcnt7ldd"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_j4udd"]
 [ext_resource type="Texture2D" uid="uid://bj0gaak878hpw" path="res://Art/Cards/1 ex Ruby & Saphire/9.jpg" id="1_nd5q3"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_x808d"]
 [ext_resource type="Resource" uid="uid://bvv4lysisk1me" path="res://Resources/Components/Effects/Placement/PutOnAnyMon.tres" id="4_nd5q3"]
 [ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="4_vg802"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="4_vn0b8"]
 [ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="6_it85k"]
 [ext_resource type="Resource" uid="uid://dt0pi71xuk6ih" path="res://Resources/Components/Effects/Identifiers/Energy/LightningEnergy.tres" id="7_0j7pm"]
 [ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="8_nd5q3"]
@@ -38,6 +39,11 @@ order = Array[int]([])
 search = SubResource("Resource_lxccs")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
+[sub_resource type="Resource" id="Resource_it85k"]
+script = ExtResource("4_vn0b8")
+success = SubResource("Resource_x808d")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
 [sub_resource type="Resource" id="Resource_0j7pm"]
 script = ExtResource("9_vg802")
 prompt_reliant = false
@@ -46,7 +52,8 @@ defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
-always_effect = SubResource("Resource_x808d")
+share_prompt = false
+prompt_effects = Array[ExtResource("4_vn0b8")]([SubResource("Resource_it85k")])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false
@@ -72,6 +79,8 @@ defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
+share_prompt = false
+prompt_effects = Array[ExtResource("4_vn0b8")]([])
 conditional_self_dmg = true
 self_damage = 10
 mod_prompt = false

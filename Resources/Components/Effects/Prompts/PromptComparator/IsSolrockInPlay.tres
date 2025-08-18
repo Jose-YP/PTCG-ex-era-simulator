@@ -8,18 +8,18 @@
 
 [sub_resource type="Resource" id="Resource_qafc1"]
 script = ExtResource("2_6gglr")
+boolean_type = "And"
 previous_src_trg = false
 side_target = 4
 slot_target = 4
 specifically = Array[String](["Solrock"])
-check_ability = false
-contained_abilities = 3
 knocked_out = false
 tool_attatched = false
 comparison_type = 1
 max_hp = -10
 damage_taken = -10
 retreat_cost = -1
+evo_type = "Don't Check"
 stage = 7
 rare_candy = false
 class_inclusive = true
@@ -33,6 +33,9 @@ check_cards = true
 energy_attatched = -1
 energy_class = "Any"
 energy_type = ExtResource("1_x1yet")
+check_ability = false
+contained_abilities = 3
+specific_abilities = Array[String]([])
 metadata/_custom_type_script = "uid://mkjynqda7q5g"
 
 [sub_resource type="Resource" id="Resource_belgc"]

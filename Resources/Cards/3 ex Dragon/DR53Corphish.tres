@@ -1,0 +1,53 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://dva5rvxvr81bk"]
+
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_7xw4t"]
+[ext_resource type="Texture2D" uid="uid://utuv0s766dcd" path="res://Art/Cards/3 ex Dragon/53.jpg" id="1_38b0k"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="2_yr1nc"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_0j27p"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_2uriq"]
+[ext_resource type="Resource" uid="uid://bep36omnenbc8" path="res://Resources/Components/Pokemon/Attacks/AttackData/10Dmg.tres" id="4_my6ie"]
+[ext_resource type="Resource" uid="uid://fcpa5aqhgy0e" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/W1C1.tres" id="5_1awvw"]
+[ext_resource type="Resource" uid="uid://bnsrs2a5hnvkb" path="res://Resources/Components/Pokemon/Attacks/AttackData/20Dmg.tres" id="6_i4j4x"]
+
+[sub_resource type="Resource" id="Resource_wfh1i"]
+script = ExtResource("1_7xw4t")
+name = "Irongrip"
+description = ""
+attack_cost = ExtResource("3_0j27p")
+attack_data = ExtResource("4_my6ie")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_6k58h"]
+script = ExtResource("1_7xw4t")
+name = "Slash"
+description = ""
+attack_cost = ExtResource("5_1awvw")
+attack_data = ExtResource("6_i4j4x")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_8jwv0"]
+script = ExtResource("2_yr1nc")
+HP = 50
+retreat = 1
+attacks = Array[ExtResource("1_7xw4t")]([SubResource("Resource_wfh1i"), SubResource("Resource_6k58h")])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 1
+owner = 0
+type = 4
+weak = 8
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("3_2uriq")
+name = "Corphish"
+image = ExtResource("1_38b0k")
+illustrator = " Kagemaru Himeno"
+number = 53
+rarity = 0
+expansion = 2
+categories = 1
+pokemon_properties = SubResource("Resource_8jwv0")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

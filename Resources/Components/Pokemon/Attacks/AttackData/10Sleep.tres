@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="AttackData" load_steps=5 format=3 uid="uid://6ehljyrvtpkp"]
+
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="1_pmpir"]
+[ext_resource type="Resource" uid="uid://cqw2kwbgcwgvb" path="res://Resources/Components/Effects/Conditions/BasicSleep.tres" id="2_brut6"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="3_lp87b"]
+
+[sub_resource type="Resource" id="Resource_j71vr"]
+script = ExtResource("1_pmpir")
+success = ExtResource("2_brut6")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
+[resource]
+script = ExtResource("3_lp87b")
+prompt_reliant = false
+initial_main_DMG = 10
+defender_properties = 0
+condition = 1
+before_damage = false
+replace_num = false
+share_prompt = false
+prompt_effects = Array[ExtResource("1_pmpir")]([SubResource("Resource_j71vr")])
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"

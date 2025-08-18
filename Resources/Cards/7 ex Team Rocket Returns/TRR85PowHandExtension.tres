@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://bn4tw1p2av7gj"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=13 format=3 uid="uid://bn4tw1p2av7gj"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_gsupt"]
 [ext_resource type="Texture2D" uid="uid://cvn72gm0i2ycb" path="res://Art/Cards/7 ex Team Rocket Returns/85.jpg" id="1_tpnca"]
 [ext_resource type="Resource" uid="uid://phih4x21ycfd" path="res://Resources/Components/Effects/EnergyMovement/Swap/Force1DefSwap.tres" id="3_pnkdj"]
 [ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="3_tpnca"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="4_uy43t"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="5_ci705"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="7_dmrxn"]
 [ext_resource type="Script" uid="uid://curklvf1517ml" path="res://Code/Resource Makers/EffectSpecific/SwapMaker.gd" id="8_uw2sm"]
 
@@ -46,6 +47,7 @@ description = "Move 1 Energy card attached to the Defending Pokémon to another 
 prompt = SubResource("Resource_bu8wl")
 fail_effect = ExtResource("3_pnkdj")
 success_effect = SubResource("Resource_slho1")
+prompt_effects = Array[ExtResource("5_ci705")]([])
 metadata/_custom_type_script = "uid://crx447i85kshy"
 
 [resource]

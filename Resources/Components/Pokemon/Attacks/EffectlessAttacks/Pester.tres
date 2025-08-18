@@ -1,0 +1,86 @@
+[gd_resource type="Resource" script_class="Attack" load_steps=13 format=3 uid="uid://cp8ldn37fvlbu"]
+
+[ext_resource type="Resource" uid="uid://c2gawfb472bm" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/G1C1.tres" id="1_uulp0"]
+[ext_resource type="Resource" uid="uid://c5yaixjcg8qwe" path="res://Resources/Components/Effects/Conditions/EverythingHurts.tres" id="2_1230d"]
+[ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="3_j8c0x"]
+[ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="4_0eto1"]
+[ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="5_cwban"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="6_obxg5"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="7_4jm26"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="8_kubfe"]
+
+[sub_resource type="Resource" id="Resource_j44gi"]
+script = ExtResource("3_j8c0x")
+boolean_type = "And"
+previous_src_trg = false
+side_target = 2
+slot_target = 1
+specifically = Array[String]([])
+knocked_out = false
+desired_condition = ExtResource("2_1230d")
+tool_attatched = false
+comparison_type = 1
+max_hp = -10
+damage_taken = -10
+retreat_cost = -1
+evo_type = "Don't Check"
+stage = 7
+rare_candy = false
+class_inclusive = true
+pokemon_class = 63
+owner_inclusive = true
+pokemon_owner = 31
+type_inclusive = true
+pokemon_type = 1023
+energy_inclusive = true
+check_cards = true
+energy_attatched = -1
+energy_class = "Any"
+check_ability = false
+contained_abilities = 3
+specific_abilities = Array[String]([])
+metadata/_custom_type_script = "uid://mkjynqda7q5g"
+
+[sub_resource type="Resource" id="Resource_jj7gw"]
+script = ExtResource("4_0eto1")
+which = "Slot"
+ask = SubResource("Resource_j44gi")
+slot_vars = "current_card"
+cap = -1
+metadata/_custom_type_script = "uid://vjn146j3ayd6"
+
+[sub_resource type="Resource" id="Resource_qy7bg"]
+script = ExtResource("5_cwban")
+comparision_type = "Not Equal"
+first_comparison = SubResource("Resource_jj7gw")
+compare_to = "Const"
+second_constant = 0
+operate_w_constant = "None"
+metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
+
+[sub_resource type="Resource" id="Resource_5ay7w"]
+script = ExtResource("7_4jm26")
+prompt_reliant = false
+initial_main_DMG = 20
+defender_properties = 0
+condition = 1
+before_damage = false
+replace_num = false
+share_prompt = false
+prompt_effects = Array[ExtResource("6_obxg5")]([])
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 1
+modifier_num = 20
+comparator = SubResource("Resource_qy7bg")
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[resource]
+script = ExtResource("8_kubfe")
+name = "Pester"
+description = "If the Defending Pokémon is affected by a Special Condition, this attack does 20 damage plus 20 more damage."
+attack_cost = ExtResource("1_uulp0")
+attack_data = SubResource("Resource_5ay7w")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

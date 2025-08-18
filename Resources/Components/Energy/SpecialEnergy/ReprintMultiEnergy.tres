@@ -1,26 +1,27 @@
-[gd_resource type="Resource" script_class="Energy" load_steps=8 format=3 uid="uid://dkso66ihqiwet"]
+[gd_resource type="Resource" script_class="Energy" load_steps=9 format=3 uid="uid://dkso66ihqiwet"]
 
 [ext_resource type="Resource" uid="uid://c7itelq8jtjc2" path="res://Resources/Components/EnData/Rainbow.tres" id="1_7eema"]
 [ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="1_ndwjy"]
 [ext_resource type="Script" uid="uid://caj1pm8erar2a" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="2_cuf6k"]
 [ext_resource type="Resource" uid="uid://vk18jkchsq3v" path="res://Resources/Components/EnData/Colorless.tres" id="3_amwxe"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="3_vrqwi"]
 [ext_resource type="Resource" uid="uid://ck80jky0mu4ta" path="res://Resources/Components/Effects/Prompts/PromptSelfMultipleSpEn.tres" id="4_7eema"]
 [ext_resource type="Resource" uid="uid://cv8xofc4ofaom" path="res://Resources/Components/EnData/NeoRainbow.tres" id="6_amwxe"]
 
 [sub_resource type="Resource" id="Resource_kky8u"]
 script = ExtResource("1_ndwjy")
+boolean_type = "And"
 previous_src_trg = false
 side_target = 4
 slot_target = 1
 specifically = Array[String]([])
-check_ability = false
-contained_abilities = 3
 knocked_out = false
 tool_attatched = false
 comparison_type = 0
 max_hp = -10
 damage_taken = -10
 retreat_cost = -1
+evo_type = "Don't Check"
 stage = 7
 rare_candy = false
 class_inclusive = true
@@ -34,6 +35,9 @@ check_cards = true
 energy_attatched = 0
 energy_class = "Any"
 energy_type = ExtResource("1_7eema")
+check_ability = false
+contained_abilities = 3
+specific_abilities = Array[String]([])
 metadata/_custom_type_script = "uid://mkjynqda7q5g"
 
 [resource]
@@ -44,6 +48,8 @@ prompt = ExtResource("4_7eema")
 asks = SubResource("Resource_kky8u")
 has_fail_provide = true
 has_fail_prevent = false
+attatch_effects = Array[ExtResource("3_vrqwi")]([])
+prompt_effects = Array[ExtResource("3_vrqwi")]([])
 turns = -1
 fail_provide = ExtResource("3_amwxe")
 success_provide = ExtResource("6_amwxe")

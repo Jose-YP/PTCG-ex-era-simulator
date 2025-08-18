@@ -124,6 +124,11 @@ enum COND_RULES{NONE, ##Condition doesn't clear on it's own
 	FLIP, ##Coinflip heads once in order to clear condition
 	TWOFLIP ##Coinflip heads twice in order to clear condition
 }
+
+enum EFFECTS{CONDITION, BUFF, DISRUPT, DISABLE, 
+ENMOV, DMGMANIP, SEARCH, SWAP, DRAW, ALLEVIATE, MIMIC, 
+OVERRIDE, CHEATPLAY, TYPECHANGE, RULECHANGE, OTHER}
+
 #endregion
 #--------------------------------------
 

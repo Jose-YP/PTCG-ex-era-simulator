@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=20 format=3 uid="uid://cg7qhfrgw5lmh"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=21 format=3 uid="uid://cg7qhfrgw5lmh"]
 
 [ext_resource type="Texture2D" uid="uid://cc6y666c76foi" path="res://Art/Cards/7 ex Team Rocket Returns/50.jpg" id="1_ojje2"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_s6osv"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="7_2b0yu"]
 [ext_resource type="Resource" uid="uid://c2ujs102gu8qn" path="res://Resources/Components/Effects/Asks/General/OthActive.tres" id="7_738mo"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="7_ky0p2"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="7_pj4ld"]
 [ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="8_3seaf"]
 
 [sub_resource type="Resource" id="Resource_ky0p2"]
@@ -54,6 +55,8 @@ condition = 1
 before_damage = false
 replace_num = false
 success_effect = SubResource("Resource_min8w")
+share_prompt = false
+prompt_effects = Array[ExtResource("7_pj4ld")]([])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false

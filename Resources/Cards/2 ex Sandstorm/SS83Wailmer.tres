@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=14 format=3 uid="uid://3itsq4te7ipm"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=16 format=3 uid="uid://3itsq4te7ipm"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_1fvlu"]
 [ext_resource type="Texture2D" uid="uid://duk2t4n0xb1v0" path="res://Art/Cards/2 ex Sandstorm/83.jpg" id="1_ngljn"]
@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://b1rwmggf7a4do" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless2.tres" id="3_58cyx"]
 [ext_resource type="Resource" uid="uid://bnsrs2a5hnvkb" path="res://Resources/Components/Pokemon/Attacks/AttackData/20Dmg.tres" id="4_qaeje"]
 [ext_resource type="Resource" uid="uid://dkvbrahlcnjmi" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/W1C2.tres" id="5_wn1sj"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="6_6vpiu"]
 [ext_resource type="Resource" uid="uid://cqw2kwbgcwgvb" path="res://Resources/Components/Effects/Conditions/BasicSleep.tres" id="6_py1y5"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="7_cligu"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="8_qw0w3"]
@@ -18,6 +19,11 @@ attack_cost = ExtResource("3_58cyx")
 attack_data = ExtResource("4_qaeje")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
+[sub_resource type="Resource" id="Resource_58cyx"]
+script = ExtResource("6_6vpiu")
+success = ExtResource("6_py1y5")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
 [sub_resource type="Resource" id="Resource_3ppn7"]
 script = ExtResource("7_cligu")
 prompt_reliant = false
@@ -26,7 +32,8 @@ defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
-always_effect = ExtResource("6_py1y5")
+share_prompt = false
+prompt_effects = Array[ExtResource("6_6vpiu")]([SubResource("Resource_58cyx")])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false
@@ -38,7 +45,7 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_ua0d7"]
 script = ExtResource("2_6vpiu")
 name = "Super Hypno Wave"
-description = ""
+description = "The Defending Pokémon is now Asleep."
 attack_cost = ExtResource("5_wn1sj")
 attack_data = SubResource("Resource_3ppn7")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

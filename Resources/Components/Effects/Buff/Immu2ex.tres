@@ -1,28 +1,33 @@
-[gd_resource type="Resource" script_class="Buff" load_steps=5 format=3 uid="uid://1siwtrlhj518"]
+[gd_resource type="Resource" script_class="Buff" load_steps=4 format=3 uid="uid://1siwtrlhj518"]
 
 [ext_resource type="Resource" uid="uid://bydi0pyqva0ly" path="res://Resources/Components/Effects/Asks/Class&Owner/DefExMon.tres" id="1_bgea0"]
 [ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/BuffMaker.gd" id="2_akc5w"]
 [ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="2_pyd00"]
-[ext_resource type="Resource" uid="uid://dgkb0d4d58byj" path="res://Resources/Components/Effects/Prompts/PromptComparator/IfBodyEnabled.tres" id="4_rv4gt"]
 
 [resource]
 script = ExtResource("2_akc5w")
-description = "Immune to attacks and effects from Pokemon ex"
+description = "Immune to attacks and attack effects from Pokemon ex"
 application = "Slot"
+stackable = true
 recieves = ExtResource("2_pyd00")
 duration = -1
-upkeep_prompt = ExtResource("4_rv4gt")
 against = ExtResource("1_bgea0")
 after_weak_res = true
 add_hp = 0
 attack = 0
 defense = 0
 retreat_change = 0
+cost_modifier = "Add"
 modify = "HP"
 operation = "Replace"
 condition_immune = 0
-immune_to_effects = true
-immune_to_damage = true
+attack_effect_immune = true
+damage_immune = true
+body_immune = false
+power_immune = false
+trainer_immune = false
+odd_immunity = false
+even_immunity = false
 weakness = false
 resistance = false
 effects = false

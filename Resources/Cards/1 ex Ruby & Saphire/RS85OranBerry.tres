@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=15 format=3 uid="uid://cikspsque6rym"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=16 format=3 uid="uid://cikspsque6rym"]
 
 [ext_resource type="Texture2D" uid="uid://diera1jn3813v" path="res://Art/Cards/1 ex Ruby & Saphire/85.jpg" id="1_2xwq7"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_hcmcm"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="3_5fu5s"]
 [ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="3_05nyp"]
 [ext_resource type="Resource" uid="uid://c7itelq8jtjc2" path="res://Resources/Components/EnData/Rainbow.tres" id="4_57sig"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="4_blq1p"]
@@ -12,18 +13,18 @@
 
 [sub_resource type="Resource" id="Resource_4klen"]
 script = ExtResource("3_05nyp")
+boolean_type = "And"
 previous_src_trg = false
 side_target = 4
 slot_target = 1
 specifically = Array[String]([])
-check_ability = false
-contained_abilities = 3
 knocked_out = false
 tool_attatched = false
 comparison_type = 1
 max_hp = -10
 damage_taken = 20
 retreat_cost = -1
+evo_type = "Don't Check"
 stage = 7
 rare_candy = false
 class_inclusive = true
@@ -37,6 +38,9 @@ check_cards = true
 energy_attatched = -1
 energy_class = "Any"
 energy_type = ExtResource("4_57sig")
+check_ability = false
+contained_abilities = 3
+specific_abilities = Array[String]([])
 
 [sub_resource type="Resource" id="Resource_yweta"]
 script = ExtResource("6_kl0j4")
@@ -69,8 +73,9 @@ duration = -1
 [sub_resource type="Resource" id="Resource_5f3e6"]
 script = ExtResource("4_blq1p")
 considered = "Tool"
-specific_requirement = null
+specific_requirement = ""
 description = "At any time between turns, if the Pokémon this card is attached to has at least 2 damage counters on it, remove 2 damage counters from it. Then, discard Oran Berry. "
+prompt_effects = Array[ExtResource("3_5fu5s")]([])
 tool_properties = SubResource("Resource_jvoai")
 
 [resource]

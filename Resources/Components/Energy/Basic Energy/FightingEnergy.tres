@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Energy" load_steps=3 format=3 uid="uid://b6omjsm8a44qg"]
+[gd_resource type="Resource" script_class="Energy" load_steps=4 format=3 uid="uid://b6omjsm8a44qg"]
 
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="1_4bgwc"]
 [ext_resource type="Resource" uid="uid://cth0exsidfeqb" path="res://Resources/Components/EnData/Fighting.tres" id="1_6u3xj"]
 [ext_resource type="Script" uid="uid://caj1pm8erar2a" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="1_xcprf"]
 
@@ -9,6 +10,8 @@ considered = "Basic Energy"
 description = "Provide 1 {Fighting} Energy"
 has_fail_provide = false
 has_fail_prevent = false
+attatch_effects = Array[ExtResource("1_4bgwc")]([])
+prompt_effects = Array[ExtResource("1_4bgwc")]([])
 turns = -1
 fail_provide = ExtResource("1_6u3xj")
 success_provide = ExtResource("1_6u3xj")

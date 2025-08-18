@@ -1,0 +1,225 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=32 format=3 uid="uid://c513j5tbh8dl3"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_b7r45"]
+[ext_resource type="Texture2D" uid="uid://b7r446l5fg6ww" path="res://Art/Cards/2 ex Sandstorm/38.jpg" id="1_cxsdj"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_s135m"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_u1p2y"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="4_h5hr6"]
+[ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="5_dp64j"]
+[ext_resource type="Resource" uid="uid://cqw2kwbgcwgvb" path="res://Resources/Components/Effects/Conditions/BasicSleep.tres" id="5_dvp6j"]
+[ext_resource type="Resource" uid="uid://ekj1myy642kh" path="res://Resources/Components/Effects/Prompts/PromptHeads.tres" id="6_7pkdl"]
+[ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="6_svi7e"]
+[ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="7_1xvgq"]
+[ext_resource type="Resource" uid="uid://nx1kc1vsm4ia" path="res://Resources/Components/Effects/Conditions/BasicConfusion.tres" id="7_smydr"]
+[ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="8_6po54"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="8_uxe5o"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="9_fqr5m"]
+[ext_resource type="Resource" uid="uid://cp8ldn37fvlbu" path="res://Resources/Components/Pokemon/Attacks/EffectlessAttacks/Pester.tres" id="9_rx1kt"]
+[ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="10_omieh"]
+[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="11_njfcx"]
+[ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/BuffMaker.gd" id="12_rf851"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="16_23wfd"]
+
+[sub_resource type="Resource" id="Resource_bp5xf"]
+script = ExtResource("4_h5hr6")
+prompt = ExtResource("6_7pkdl")
+success = ExtResource("7_smydr")
+fail = ExtResource("5_dvp6j")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
+[sub_resource type="Resource" id="Resource_r33gj"]
+script = ExtResource("8_uxe5o")
+prompt_reliant = false
+initial_main_DMG = 0
+defender_properties = 0
+condition = 1
+before_damage = false
+replace_num = false
+share_prompt = false
+prompt_effects = Array[ExtResource("4_h5hr6")]([SubResource("Resource_bp5xf")])
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_h5hr6"]
+script = ExtResource("2_s135m")
+name = "Chaotic Noise"
+description = "Flip a coin. If heads, the Defending Pokémon is now Confused. If tails, the Defending Pokémon is now Asleep."
+attack_cost = ExtResource("3_u1p2y")
+attack_data = SubResource("Resource_r33gj")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_6k8kd"]
+script = ExtResource("10_omieh")
+boolean_type = "And"
+previous_src_trg = false
+side_target = 3
+slot_target = 4
+specifically = Array[String]([])
+knocked_out = false
+tool_attatched = false
+comparison_type = 1
+max_hp = -10
+damage_taken = -10
+retreat_cost = -1
+evo_type = "Don't Check"
+stage = 7
+rare_candy = false
+class_inclusive = true
+pokemon_class = 63
+owner_inclusive = true
+pokemon_owner = 31
+type_inclusive = true
+pokemon_type = 608
+energy_inclusive = true
+check_cards = true
+energy_attatched = -1
+energy_class = "Any"
+check_ability = false
+contained_abilities = 3
+specific_abilities = Array[String]([])
+metadata/_custom_type_script = "uid://mkjynqda7q5g"
+
+[sub_resource type="Resource" id="Resource_8fs6g"]
+script = ExtResource("12_rf851")
+description = "Take 30 less damage from {Fightning} and {Darkness} Pokemon"
+application = "Slot"
+stackable = true
+recieves = ExtResource("11_njfcx")
+duration = -1
+against = SubResource("Resource_6k8kd")
+after_weak_res = true
+add_hp = 0
+attack = 0
+defense = 30
+retreat_change = 0
+cost_modifier = "Add"
+modify = "HP"
+operation = "Replace"
+condition_immune = 0
+attack_effect_immune = false
+damage_immune = false
+body_immune = false
+power_immune = false
+trainer_immune = false
+odd_immunity = false
+even_immunity = false
+weakness = false
+resistance = false
+effects = false
+attack_names = Array[String]([])
+metadata/_custom_type_script = "uid://coojhwe6m20gd"
+
+[sub_resource type="Resource" id="Resource_kvilp"]
+script = ExtResource("16_23wfd")
+either_or = false
+order = Array[int]([])
+buff = SubResource("Resource_8fs6g")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_3pi3t"]
+script = ExtResource("10_omieh")
+boolean_type = "And"
+previous_src_trg = false
+side_target = 4
+slot_target = 4
+specifically = Array[String](["Volbeat"])
+knocked_out = false
+tool_attatched = false
+comparison_type = 1
+max_hp = -10
+damage_taken = -10
+retreat_cost = -1
+evo_type = "Don't Check"
+stage = 7
+rare_candy = false
+class_inclusive = true
+pokemon_class = 63
+owner_inclusive = true
+pokemon_owner = 31
+type_inclusive = true
+pokemon_type = 1023
+energy_inclusive = true
+check_cards = true
+energy_attatched = -1
+energy_class = "Any"
+check_ability = false
+contained_abilities = 3
+specific_abilities = Array[String]([])
+metadata/_custom_type_script = "uid://mkjynqda7q5g"
+
+[sub_resource type="Resource" id="Resource_7pkdl"]
+script = ExtResource("5_dp64j")
+which = "Slot"
+ask = SubResource("Resource_3pi3t")
+slot_vars = "current_card"
+cap = -1
+metadata/_custom_type_script = "uid://vjn146j3ayd6"
+
+[sub_resource type="Resource" id="Resource_smydr"]
+script = ExtResource("6_svi7e")
+comparision_type = "Not Equal"
+first_comparison = SubResource("Resource_7pkdl")
+compare_to = "None"
+second_constant = 0
+operate_w_constant = "None"
+metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
+
+[sub_resource type="Resource" id="Resource_uxe5o"]
+script = ExtResource("7_1xvgq")
+formal_question = false
+question_string = ""
+yes_answer = ""
+no_answer = ""
+comparator = SubResource("Resource_smydr")
+can_reverse = true
+occurance = false
+chooser = 0
+choose_location = "None"
+which_stack = 0
+metadata/_custom_type_script = "uid://b85jmc7067bjc"
+
+[sub_resource type="Resource" id="Resource_rx1kt"]
+script = ExtResource("8_6po54")
+category = "Body"
+name = "Glowing Screen"
+description = "As long as Volbeat is in play, any damage done to [name] by attacks from {Fighting} Pokémon and {Darkness} Pokémon is reduced by 30. You can't reduce more than 30 damage even if there is more than 1 Volbeat in play."
+affected_by_condition = true
+active = false
+how_often = "Once per Mon"
+independent_src_trg = false
+prompt = SubResource("Resource_uxe5o")
+passive = SubResource("Resource_kvilp")
+metadata/_custom_type_script = "uid://bs2y8ocljilv8"
+
+[sub_resource type="Resource" id="Resource_omieh"]
+script = ExtResource("9_fqr5m")
+HP = 60
+retreat = 1
+pokebody = SubResource("Resource_rx1kt")
+attacks = Array[ExtResource("2_s135m")]([SubResource("Resource_h5hr6"), ExtResource("9_rx1kt")])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 1
+owner = 0
+type = 1
+weak = 2
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_b7r45")
+name = "Illumise"
+image = ExtResource("1_cxsdj")
+illustrator = " Kyoko Umemoto"
+number = 38
+rarity = 1
+expansion = 1
+categories = 1
+pokemon_properties = SubResource("Resource_omieh")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

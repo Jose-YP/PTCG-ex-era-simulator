@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=19 format=3 uid="uid://ssf0yvm562c6"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=20 format=3 uid="uid://ssf0yvm562c6"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_pvu1y"]
 [ext_resource type="Texture2D" uid="uid://cl73mmr3c1bhp" path="res://Art/Cards/13 ex Holon Phantoms/87.jpg" id="1_u4y58"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="3_c4y1i"]
 [ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_kyw37"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="3_ni0es"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_ni0es"]
 [ext_resource type="Resource" uid="uid://bl4qnrkh3kxdl" path="res://Resources/Components/Effects/Placement/PutIntoHand.tres" id="5_lru8w"]
 [ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="6_wkp24"]
@@ -46,6 +47,8 @@ condition = 1
 before_damage = false
 replace_num = false
 always_effect = SubResource("Resource_kvgc7")
+share_prompt = false
+prompt_effects = Array[ExtResource("3_ni0es")]([])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false
@@ -73,6 +76,7 @@ script = ExtResource("3_c4y1i")
 considered = "Stadium"
 specific_requirement = ""
 description = "Each player's Pokémon that has δ on its card can use attacks on this card instead of its own. "
+prompt_effects = Array[ExtResource("3_ni0es")]([])
 stadium_properties = SubResource("Resource_sv32v")
 provided_attack = SubResource("Resource_q7ncl")
 metadata/_custom_type_script = "uid://crx447i85kshy"

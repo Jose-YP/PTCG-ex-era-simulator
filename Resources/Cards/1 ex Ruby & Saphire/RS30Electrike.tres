@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=17 format=3 uid="uid://6xnw5siylvv7"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=19 format=3 uid="uid://6xnw5siylvv7"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_c4a4f"]
 [ext_resource type="Texture2D" uid="uid://bjr2w5kv86n26" path="res://Art/Cards/1 ex Ruby & Saphire/30.jpg" id="1_qdtyb"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_8agjp"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_oqe5b"]
 [ext_resource type="Resource" uid="uid://cbvai25ndykp2" path="res://Resources/Components/Effects/Search/LigENFromDiscard.tres" id="4_c0257"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="4_lrr1f"]
 [ext_resource type="Resource" uid="uid://i3dimt0ebxnk" path="res://Resources/Components/Effects/Prompts/IfFlipTails.tres" id="5_itarg"]
 [ext_resource type="Resource" uid="uid://duyf6uncjts05" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Lightning1.tres" id="5_oqe5b"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="6_c0257"]
@@ -18,6 +19,11 @@ order = Array[int]([])
 search = ExtResource("4_c0257")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
+[sub_resource type="Resource" id="Resource_toiwb"]
+script = ExtResource("4_lrr1f")
+success = SubResource("Resource_yt2pr")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
 [sub_resource type="Resource" id="Resource_o558d"]
 script = ExtResource("6_c0257")
 prompt_reliant = false
@@ -26,7 +32,8 @@ defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
-always_effect = SubResource("Resource_yt2pr")
+share_prompt = false
+prompt_effects = Array[ExtResource("4_lrr1f")]([SubResource("Resource_toiwb")])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false
@@ -52,6 +59,8 @@ defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
+share_prompt = false
+prompt_effects = Array[ExtResource("4_lrr1f")]([])
 conditional_self_dmg = true
 self_damage = 10
 mod_prompt = false

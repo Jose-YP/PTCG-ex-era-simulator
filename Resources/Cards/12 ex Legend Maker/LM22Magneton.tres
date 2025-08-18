@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=31 format=3 uid="uid://bigbvtmdvobb8"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=32 format=3 uid="uid://bigbvtmdvobb8"]
 
 [ext_resource type="Texture2D" uid="uid://pxoft1wbeuxl" path="res://Art/Cards/12 ex Legend Maker/22.jpg" id="1_653qw"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_13wr1"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="7_kpec7"]
 [ext_resource type="Resource" uid="uid://wsbn5mutuaqv" path="res://Resources/Components/Effects/Prompts/PromptComparator/PromptSelfHasReact.tres" id="8_v5ngv"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="9_0chr7"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="9_ckcqc"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="9_w06bv"]
 [ext_resource type="Resource" uid="uid://dln27118sw0f0" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/L1C3.tres" id="10_ckcqc"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="10_feaad"]
@@ -23,18 +24,18 @@
 
 [sub_resource type="Resource" id="Resource_sxcfq"]
 script = ExtResource("5_ad1mx")
+boolean_type = "And"
 previous_src_trg = false
 side_target = 3
 slot_target = 4
 specifically = Array[String](["Magnemite", "Magneton"])
-check_ability = false
-contained_abilities = 3
 knocked_out = false
 tool_attatched = false
 comparison_type = 1
 max_hp = -10
 damage_taken = -10
 retreat_cost = -1
+evo_type = "Don't Check"
 stage = 7
 rare_candy = false
 class_inclusive = true
@@ -48,6 +49,9 @@ check_cards = true
 energy_attatched = -1
 energy_class = "Any"
 energy_type = ExtResource("3_653qw")
+check_ability = false
+contained_abilities = 3
+specific_abilities = Array[String]([])
 metadata/_custom_type_script = "uid://mkjynqda7q5g"
 
 [sub_resource type="Resource" id="Resource_i17pt"]
@@ -76,6 +80,8 @@ defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
+share_prompt = false
+prompt_effects = Array[ExtResource("9_ckcqc")]([])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = true

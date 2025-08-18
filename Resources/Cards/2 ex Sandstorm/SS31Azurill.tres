@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=14 format=3 uid="uid://dcs5eukk81si7"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=16 format=3 uid="uid://dcs5eukk81si7"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_f2otf"]
 [ext_resource type="Texture2D" uid="uid://br8ajn5ib0fb2" path="res://Art/Cards/2 ex Sandstorm/31.jpg" id="1_fg7hy"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_tqd1y"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_0ehm3"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="4_ltygs"]
 [ext_resource type="Resource" uid="uid://d4oev64lrs7x" path="res://Resources/Components/Effects/Search/SearchOneTrainerRev.tres" id="4_my7mo"]
 [ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="5_0ehm3"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="6_gmk3x"]
@@ -17,6 +18,11 @@ order = Array[int]([])
 search = ExtResource("4_my7mo")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
+[sub_resource type="Resource" id="Resource_gmk3x"]
+script = ExtResource("4_ltygs")
+success = SubResource("Resource_ltygs")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
 [sub_resource type="Resource" id="Resource_hy80x"]
 script = ExtResource("6_ltygs")
 prompt_reliant = false
@@ -25,7 +31,8 @@ defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
-always_effect = SubResource("Resource_ltygs")
+share_prompt = false
+prompt_effects = Array[ExtResource("4_ltygs")]([SubResource("Resource_gmk3x")])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false

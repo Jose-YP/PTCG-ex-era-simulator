@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://b1xaqtaovjo0b"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=11 format=3 uid="uid://b1xaqtaovjo0b"]
 
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="1_482qc"]
 [ext_resource type="Resource" uid="uid://vk18jkchsq3v" path="res://Resources/Components/EnData/Colorless.tres" id="1_k24tu"]
 [ext_resource type="Resource" uid="uid://1wsc5djtni2" path="res://Resources/Components/Effects/Prompts/PromptSelfNonex.tres" id="2_27bls"]
 [ext_resource type="Script" uid="uid://caj1pm8erar2a" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="2_gb4dl"]
@@ -22,6 +23,8 @@ prompt = ExtResource("2_27bls")
 has_fail_provide = false
 has_fail_prevent = false
 success_effect = SubResource("Resource_s7duk")
+attatch_effects = Array[ExtResource("1_482qc")]([])
+prompt_effects = Array[ExtResource("1_482qc")]([])
 turns = -1
 fail_provide = ExtResource("1_k24tu")
 success_provide = ExtResource("1_k24tu")

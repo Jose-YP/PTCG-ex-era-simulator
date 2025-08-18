@@ -1,7 +1,8 @@
 extends Resource
 class_name SlotAsk
 
-##Should it pass every requirement or at least one?
+##Should it pass every requirement or at least one?[br]
+##Note. Or only begins with the requirements that are in groups
 @export_enum("And", "Or") var boolean_type: String = "And"
 ##Check the last source target stack for whatever they have
 @export var previous_src_trg: bool = false
@@ -22,6 +23,7 @@ class_name SlotAsk
 @export_range(-1, 6, 1) var retreat_cost: int = -1
 
 @export_subgroup("Class")
+@export_enum("Don't Check", "Non Evolved", "Evolved") var evo_type: String = "Don't Check"
 @export_flags("Basic", "Stage 1", "Stage 2") var stage: int = 7
 ##Will use later when implementing rare candy
 @export var rare_candy: bool = false

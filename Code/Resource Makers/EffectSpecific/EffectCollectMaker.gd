@@ -1,3 +1,4 @@
+@icon("res://Art/Energy/48px-Colorless-attack.png")
 extends Resource
 class_name EffectCollect
 

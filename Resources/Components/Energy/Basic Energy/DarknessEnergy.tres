@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Energy" load_steps=17 format=3 uid="uid://cf28iibs06s23"]
+[gd_resource type="Resource" script_class="Energy" load_steps=18 format=3 uid="uid://cf28iibs06s23"]
 
 [ext_resource type="Resource" uid="uid://d2ts8ex3x0duw" path="res://Resources/Components/EnData/Darkness.tres" id="1_phikd"]
 [ext_resource type="Script" uid="uid://caj1pm8erar2a" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="2_ipvd8"]
@@ -24,6 +24,7 @@ comparison_type = 1
 max_hp = -10
 damage_taken = -10
 retreat_cost = -1
+evo_type = "Don't Check"
 stage = 7
 rare_candy = false
 class_inclusive = true
@@ -76,6 +77,7 @@ metadata/_custom_type_script = "uid://b85jmc7067bjc"
 script = ExtResource("3_v07w8")
 description = "Deal +10 damage before weak/res"
 application = "Slot"
+stackable = true
 recieves = ExtResource("8_7a8tk")
 duration = -1
 upkeep_prompt = SubResource("Resource_81xdd")
@@ -87,8 +89,13 @@ retreat_change = 0
 modify = "HP"
 operation = "Replace"
 condition_immune = 0
-immune_to_effects = false
-immune_to_damage = false
+attack_effect_immune = false
+damage_immune = false
+body_immune = false
+power_immune = false
+trainer_immune = false
+odd_immunity = false
+even_immunity = false
 weakness = false
 resistance = false
 effects = false
@@ -100,15 +107,20 @@ either_or = false
 order = Array[int]([])
 buff = SubResource("Resource_j3iii")
 
+[sub_resource type="Resource" id="Resource_xkj3l"]
+script = ExtResource("6_xkj3l")
+prompt = SubResource("Resource_81xdd")
+success = SubResource("Resource_gso0c")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
 [resource]
 script = ExtResource("2_ipvd8")
 considered = "Special Energy"
 description = "If the Pokémon Darkness Energy is attached to attacks, the attack does 10 more damage to the Active Pokémon (before applying Weakness and Resistance). Ignore this effect unless the Attacking Pokémon is {Darkness} or has Dark in its name. Darkness Energy provides {Darkness} Energy. (Doesn't count as a basic Energy card.)"
-prompt = SubResource("Resource_81xdd")
 has_fail_provide = false
 has_fail_prevent = false
-success_effect = SubResource("Resource_gso0c")
-prompt_effects = Array[ExtResource("6_xkj3l")]([])
+attatch_effects = Array[ExtResource("6_xkj3l")]([])
+prompt_effects = Array[ExtResource("6_xkj3l")]([SubResource("Resource_xkj3l")])
 turns = -1
 fail_provide = ExtResource("1_phikd")
 success_provide = ExtResource("1_phikd")

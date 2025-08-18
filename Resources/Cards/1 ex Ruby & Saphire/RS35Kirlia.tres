@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=20 format=3 uid="uid://gvd588t8jyxg"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=23 format=3 uid="uid://gvd588t8jyxg"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_d5rsf"]
 [ext_resource type="Texture2D" uid="uid://dh7j434ehlpw4" path="res://Art/Cards/1 ex Ruby & Saphire/35.jpg" id="1_t854o"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_xo8sa"]
 [ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_obvev"]
 [ext_resource type="Resource" uid="uid://nx1kc1vsm4ia" path="res://Resources/Components/Effects/Conditions/BasicConfusion.tres" id="4_obvev"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="4_po7pa"]
 [ext_resource type="Script" uid="uid://scca13hg4k1l" path="res://Code/Resource Makers/EffectSpecific/DmgManipMaker.gd" id="5_22ruy"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="5_po7pa"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="6_po7pa"]
@@ -13,16 +14,22 @@
 [ext_resource type="Resource" uid="uid://c2ujs102gu8qn" path="res://Resources/Components/Effects/Asks/General/OthActive.tres" id="8_22ruy"]
 [ext_resource type="Resource" uid="uid://ekj1myy642kh" path="res://Resources/Components/Effects/Prompts/PromptHeads.tres" id="8_gpint"]
 
+[sub_resource type="Resource" id="Resource_12pwx"]
+script = ExtResource("4_po7pa")
+prompt = ExtResource("8_gpint")
+success = ExtResource("4_obvev")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
 [sub_resource type="Resource" id="Resource_pm8uh"]
 script = ExtResource("5_po7pa")
 prompt_reliant = false
-prompt = ExtResource("8_gpint")
 initial_main_DMG = 0
 defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
-success_effect = ExtResource("4_obvev")
+share_prompt = false
+prompt_effects = Array[ExtResource("4_po7pa")]([SubResource("Resource_12pwx")])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false
@@ -61,6 +68,11 @@ order = Array[int]([])
 dmgManip = SubResource("Resource_gpint")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
+[sub_resource type="Resource" id="Resource_dqa6d"]
+script = ExtResource("4_po7pa")
+success = SubResource("Resource_oouox")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
 [sub_resource type="Resource" id="Resource_nmuih"]
 script = ExtResource("5_po7pa")
 prompt_reliant = false
@@ -69,7 +81,8 @@ defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
-always_effect = SubResource("Resource_oouox")
+share_prompt = false
+prompt_effects = Array[ExtResource("4_po7pa")]([SubResource("Resource_dqa6d")])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false

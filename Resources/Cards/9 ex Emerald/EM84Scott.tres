@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=8 format=3 uid="uid://c6i6ebtt7wfoi"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=9 format=3 uid="uid://c6i6ebtt7wfoi"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_8e6gb"]
 [ext_resource type="Texture2D" uid="uid://b470mp5iffa4" path="res://Art/Cards/9 ex Emerald/84.jpg" id="1_s5s5g"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_jr6w3"]
 [ext_resource type="Resource" uid="uid://dyue46fxhp8nk" path="res://Resources/Components/Effects/Search/ScottSearch.tres" id="3_aeut6"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="5_8e6gb"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="6_j8r84"]
 
 [sub_resource type="Resource" id="Resource_3k4dv"]
@@ -19,6 +20,7 @@ considered = "Supporter"
 specific_requirement = ""
 description = "Search your deck for up to 3 cards in any combination of Supporter cards and Stadium cards, show them to your opponent, and put them into your hand. Shuffle your deck afterward. "
 always_effect = SubResource("Resource_3k4dv")
+prompt_effects = Array[ExtResource("5_8e6gb")]([])
 metadata/_custom_type_script = "uid://crx447i85kshy"
 
 [resource]

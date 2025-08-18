@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_oj3kk")
 ask = ExtResource("1_gsos1")
-choose_condition = false
+any = false
 poison = 0
 burn = 0
 turn_cond = 2

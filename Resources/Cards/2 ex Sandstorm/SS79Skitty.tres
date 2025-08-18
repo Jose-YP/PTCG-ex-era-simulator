@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=20 format=3 uid="uid://bp00x6pn81ia8"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=22 format=3 uid="uid://bp00x6pn81ia8"]
 
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_ehtr8"]
 [ext_resource type="Texture2D" uid="uid://btf03r4lpcio1" path="res://Art/Cards/2 ex Sandstorm/79.jpg" id="1_xhhej"]
@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_uk12c"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_xvsx8"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_n524r"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="4_uk12c"]
 [ext_resource type="Resource" uid="uid://bl4qnrkh3kxdl" path="res://Resources/Components/Effects/Placement/PutIntoHand.tres" id="5_vam6p"]
 [ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="6_idj0j"]
 [ext_resource type="Resource" uid="uid://d2vm6chtedrum" path="res://Resources/Components/Effects/Identifiers/Energy/BasicEnergy.tres" id="7_28erc"]
@@ -38,6 +39,11 @@ order = Array[int]([])
 search = SubResource("Resource_mjelp")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
+[sub_resource type="Resource" id="Resource_n524r"]
+script = ExtResource("4_uk12c")
+success = SubResource("Resource_kyucm")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
 [sub_resource type="Resource" id="Resource_p6brh"]
 script = ExtResource("9_j3kx4")
 prompt_reliant = false
@@ -46,7 +52,8 @@ defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
-always_effect = SubResource("Resource_kyucm")
+share_prompt = false
+prompt_effects = Array[ExtResource("4_uk12c")]([SubResource("Resource_n524r")])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false

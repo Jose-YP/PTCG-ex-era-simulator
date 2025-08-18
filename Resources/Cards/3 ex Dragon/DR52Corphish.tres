@@ -1,0 +1,44 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://ba6shgj5fpnjb"]
+
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_mmcw3"]
+[ext_resource type="Texture2D" uid="uid://6fx1tkq1t6wm" path="res://Art/Cards/3 ex Dragon/52.jpg" id="1_qh8x5"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="2_rspha"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_dguuj"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_i28wg"]
+[ext_resource type="Resource" uid="uid://dred0wmkveh7k" path="res://Resources/Components/Pokemon/Attacks/AttackData/PoisionFlipHeads.tres" id="4_yk1hm"]
+[ext_resource type="Resource" uid="uid://bfhbpclxag538" path="res://Resources/Components/Pokemon/Attacks/CommonAttacks/Bubble.tres" id="5_4cq0j"]
+
+[sub_resource type="Resource" id="Resource_mgqbb"]
+script = ExtResource("1_mmcw3")
+name = "Poision Claws"
+description = ""
+attack_cost = ExtResource("3_dguuj")
+attack_data = ExtResource("4_yk1hm")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_8jwv0"]
+script = ExtResource("2_rspha")
+HP = 40
+retreat = 1
+attacks = Array[ExtResource("1_mmcw3")]([SubResource("Resource_mgqbb"), ExtResource("5_4cq0j")])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 1
+owner = 0
+type = 4
+weak = 8
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("3_i28wg")
+name = "Corphish"
+image = ExtResource("1_qh8x5")
+illustrator = "Ken Sugimori"
+number = 52
+rarity = 0
+expansion = 2
+categories = 1
+pokemon_properties = SubResource("Resource_8jwv0")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

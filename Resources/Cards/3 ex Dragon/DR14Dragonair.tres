@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=18 format=3 uid="uid://04jo8v2wih4i"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=20 format=3 uid="uid://04jo8v2wih4i"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_wdvy0"]
 [ext_resource type="Texture2D" uid="uid://bob0xksoj4dmu" path="res://Art/Cards/3 ex Dragon/14.jpg" id="1_xmgka"]
@@ -7,6 +7,7 @@
 [ext_resource type="Resource" uid="uid://n2tq4jfo7hw1" path="res://Resources/Components/Pokemon/Attacks/AttackData/20DmgParaIfHeads.tres" id="4_lfm50"]
 [ext_resource type="Resource" uid="uid://dkvbrahlcnjmi" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/W1C2.tres" id="5_j62rm"]
 [ext_resource type="Resource" uid="uid://bnv2dkudpcueo" path="res://Resources/Components/Effects/Asks/General/SrcActive.tres" id="6_2ivix"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="6_lfm50"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="6_udpcv"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="7_b2nqx"]
 [ext_resource type="Script" uid="uid://scca13hg4k1l" path="res://Code/Resource Makers/EffectSpecific/DmgManipMaker.gd" id="7_lfm50"]
@@ -42,6 +43,11 @@ order = Array[int]([])
 dmgManip = SubResource("Resource_j62rm")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
+[sub_resource type="Resource" id="Resource_udpcv"]
+script = ExtResource("6_lfm50")
+success = SubResource("Resource_calre")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
 [sub_resource type="Resource" id="Resource_iggwp"]
 script = ExtResource("7_b2nqx")
 prompt_reliant = false
@@ -50,7 +56,8 @@ defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
-always_effect = SubResource("Resource_calre")
+share_prompt = false
+prompt_effects = Array[ExtResource("6_lfm50")]([SubResource("Resource_udpcv")])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false
@@ -62,7 +69,7 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_ksdea"]
 script = ExtResource("2_0207o")
 name = "Healing Wave"
-description = ""
+description = "Remove 1 damage counter from each of your Active Pokémon."
 attack_cost = ExtResource("5_j62rm")
 attack_data = SubResource("Resource_iggwp")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

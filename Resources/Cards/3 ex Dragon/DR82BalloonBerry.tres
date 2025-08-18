@@ -1,27 +1,39 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=11 format=3 uid="uid://gdaii3n1dch5"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://gdaii3n1dch5"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_d27ug"]
 [ext_resource type="Texture2D" uid="uid://018qleu70yke" path="res://Art/Cards/3 ex Dragon/82.jpg" id="1_q0wxo"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="3_4k5mn"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="3_l5fs4"]
 [ext_resource type="Script" uid="uid://dj5isddeswaa4" path="res://Code/Resource Makers/CardResources/ToolMaker.gd" id="4_l5fs4"]
 [ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/BuffMaker.gd" id="5_pcsgq"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="6_nhlue"]
 
 [sub_resource type="Resource" id="Resource_p5cug"]
 script = ExtResource("5_pcsgq")
-side = 1
-slot = 1
+description = ""
+application = "Slot"
+stackable = true
 duration = 1
-attack_damage = 0
+after_weak_res = true
+add_hp = 0
+attack = 0
 defense = 0
 retreat_change = 0
-after_weak_res = true
-ignore_res_other = false
-ignore_weak_self = false
-immunities = 0
-immune_to_special_conditions = false
-immune_to_effects = false
-immune_to_damage = false
+cost_modifier = "Add"
+modify = "HP"
+operation = "Replace"
+condition_immune = 0
+attack_effect_immune = false
+damage_immune = false
+body_immune = false
+power_immune = false
+trainer_immune = false
+odd_immunity = false
+even_immunity = false
+weakness = false
+resistance = false
+effects = false
+attack_names = Array[String]([])
 metadata/_custom_type_script = "uid://coojhwe6m20gd"
 
 [sub_resource type="Resource" id="Resource_qh603"]
@@ -44,6 +56,7 @@ script = ExtResource("3_4k5mn")
 considered = "Tool"
 specific_requirement = ""
 description = "When the Pokémon Balloon Berry is attached to retreats, discard Balloon Berry instead of discarding Energy cards. "
+prompt_effects = Array[ExtResource("3_l5fs4")]([])
 tool_properties = SubResource("Resource_g4gay")
 metadata/_custom_type_script = "uid://crx447i85kshy"
 

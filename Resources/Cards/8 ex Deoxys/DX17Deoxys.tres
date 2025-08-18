@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=14 format=3 uid="uid://e6y35wd23gkh"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=15 format=3 uid="uid://e6y35wd23gkh"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_1gsj4"]
 [ext_resource type="Texture2D" uid="uid://cc7b4dc2yji7w" path="res://Art/Cards/8 ex Deoxys/17.jpg" id="1_363i5"]
@@ -7,6 +7,7 @@
 [ext_resource type="Resource" uid="uid://cy8opcq82ffqe" path="res://Resources/Components/Counters/Indv/Slots/OtherAllEnergyNum.tres" id="4_nrbw8"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_mujcc"]
 [ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="5_q1esd"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="6_nrbw8"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="6_tehvb"]
 [ext_resource type="Resource" uid="uid://bwgc3etush7hc" path="res://Resources/Components/Pokemon/Abilities/Powers/FormChangeDeoxys.tres" id="7_nrbw8"]
 
@@ -27,6 +28,8 @@ defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
+share_prompt = false
+prompt_effects = Array[ExtResource("6_nrbw8")]([])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false

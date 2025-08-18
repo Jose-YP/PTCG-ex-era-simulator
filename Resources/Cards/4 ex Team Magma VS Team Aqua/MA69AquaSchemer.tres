@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://63e00l8sktme"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=13 format=3 uid="uid://63e00l8sktme"]
 
 [ext_resource type="Texture2D" uid="uid://dxp7t24loe304" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/69.jpg" id="1_lfmbq"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_sxs4v"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://8sh5p3leflla" path="res://Code/Resource Makers/EffectSpecific/CardDisruptMaker.gd" id="4_xcn8p"]
 [ext_resource type="Script" uid="uid://bgtwlw1edjwyc" path="res://Code/Resource Makers/EffectSpecific/DrawMaker.gd" id="5_wa55w"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="6_sk7qv"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="7_8aumr"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="7_yyhty"]
 
 [sub_resource type="Resource" id="Resource_6km0p"]
@@ -47,6 +48,7 @@ considered = "Supporter"
 specific_requirement = ""
 description = "Discard any 1 Pokémon from your hand. Then draw 3 cards. If you discarded a Pokémon with Team Aqua in its name, draw 4 cards instead."
 always_effect = SubResource("Resource_iai1e")
+prompt_effects = Array[ExtResource("7_8aumr")]([])
 metadata/_custom_type_script = "uid://crx447i85kshy"
 
 [resource]

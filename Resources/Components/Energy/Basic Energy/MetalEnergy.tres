@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Energy" load_steps=10 format=3 uid="uid://dn8da16sjen5f"]
+[gd_resource type="Resource" script_class="Energy" load_steps=11 format=3 uid="uid://dn8da16sjen5f"]
 
 [ext_resource type="Resource" uid="uid://cvl23bjanqo3l" path="res://Resources/Components/EnData/Metal.tres" id="1_ffs31"]
 [ext_resource type="Script" uid="uid://caj1pm8erar2a" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="2_8vyn0"]
@@ -12,19 +12,25 @@
 script = ExtResource("3_b0id2")
 description = "Reduce damage by 10 after weak/res"
 application = "Slot"
+stackable = true
 recieves = ExtResource("5_tpgwn")
 duration = -1
-upkeep_prompt = ExtResource("2_cvapn")
 after_weak_res = true
 add_hp = 0
 attack = 0
 defense = 10
 retreat_change = 0
+cost_modifier = "Add"
 modify = "HP"
 operation = "Replace"
 condition_immune = 0
-immune_to_effects = false
-immune_to_damage = false
+attack_effect_immune = false
+damage_immune = false
+body_immune = false
+power_immune = false
+trainer_immune = false
+odd_immunity = false
+even_immunity = false
 weakness = false
 resistance = false
 effects = false
@@ -36,15 +42,20 @@ either_or = false
 order = Array[int]([])
 buff = SubResource("Resource_w1pwm")
 
+[sub_resource type="Resource" id="Resource_nokdc"]
+script = ExtResource("3_nokdc")
+prompt = ExtResource("2_cvapn")
+success = SubResource("Resource_rtiwi")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
 [resource]
 script = ExtResource("2_8vyn0")
 considered = "Special Energy"
 description = "Damage done by attacks to the Pokémon that Metal Energy is attached to is reduced by 10 (after applying Weakness and Resistance). Ignore this effect if the Pokémon that Metal Energy is attached to isn't {Metal}. Metal Energy provides {Metal} Energy. (Doesn't count as a basic Energy card.)"
-prompt = ExtResource("2_cvapn")
 has_fail_provide = false
 has_fail_prevent = false
-success_effect = SubResource("Resource_rtiwi")
-prompt_effects = Array[ExtResource("3_nokdc")]([])
+attatch_effects = Array[ExtResource("3_nokdc")]([])
+prompt_effects = Array[ExtResource("3_nokdc")]([SubResource("Resource_nokdc")])
 turns = -1
 fail_provide = ExtResource("1_ffs31")
 success_provide = ExtResource("1_ffs31")

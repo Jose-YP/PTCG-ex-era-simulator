@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=21 format=3 uid="uid://bd5udpyw50p8k"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=22 format=3 uid="uid://bd5udpyw50p8k"]
 
 [ext_resource type="Texture2D" uid="uid://ds5ewico7h0ff" path="res://Art/Cards/10 ex Unseen Forces/104.jpg" id="1_f6oj6"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_e84ng"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="6_hite6"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="7_6kdro"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="7_hite6"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="7_iim6h"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="8_6kdro"]
 [ext_resource type="Resource" uid="uid://cq66mwg0r64ga" path="res://Resources/Components/Occurances/OnSelfKO.tres" id="10_hite6"]
 [ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="11_6kdro"]
@@ -41,6 +42,8 @@ defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
+share_prompt = false
+prompt_effects = Array[ExtResource("7_iim6h")]([])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false

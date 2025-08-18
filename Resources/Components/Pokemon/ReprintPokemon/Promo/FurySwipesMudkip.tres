@@ -1,24 +1,24 @@
 [gd_resource type="Resource" script_class="Pokemon" load_steps=7 format=3 uid="uid://dp0cvinqs42ow"]
 
-[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_a6802"]
-[ext_resource type="Resource" uid="uid://dkt5ik78wtijs" path="res://Resources/Components/Pokemon/Attacks/EffectlessAttacks/Pound.tres" id="2_a6802"]
-[ext_resource type="Resource" uid="uid://b1rwmggf7a4do" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless2.tres" id="3_2tt85"]
-[ext_resource type="Resource" uid="uid://v2sk6tm4t31" path="res://Resources/Components/Pokemon/Attacks/AttackData/10x3Flips.tres" id="4_qkuup"]
-[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_g4tgy"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_c7qal"]
+[ext_resource type="Resource" uid="uid://dkt5ik78wtijs" path="res://Resources/Components/Pokemon/Attacks/EffectlessAttacks/Pound.tres" id="2_romvu"]
+[ext_resource type="Resource" uid="uid://b1rwmggf7a4do" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless2.tres" id="3_ln3tb"]
+[ext_resource type="Resource" uid="uid://v2sk6tm4t31" path="res://Resources/Components/Pokemon/Attacks/AttackData/10x3Flips.tres" id="4_axjwc"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_qcrdk"]
 
 [sub_resource type="Resource" id="Resource_hmkxe"]
-script = ExtResource("1_a6802")
+script = ExtResource("1_c7qal")
 name = "Fury Swipes"
 description = "Flip 3 coins. This attack does 10 damage times the number of heads."
-attack_cost = ExtResource("3_2tt85")
-attack_data = ExtResource("4_qkuup")
+attack_cost = ExtResource("3_ln3tb")
+attack_data = ExtResource("4_axjwc")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [resource]
-script = ExtResource("5_g4tgy")
+script = ExtResource("5_qcrdk")
 HP = 50
 retreat = 1
-attacks = Array[ExtResource("1_a6802")]([ExtResource("2_a6802"), SubResource("Resource_hmkxe")])
+attacks = Array[ExtResource("1_c7qal")]([ExtResource("2_romvu"), SubResource("Resource_hmkxe")])
 evo_stage = "Basic"
 evolves_from = ""
 considered = 1

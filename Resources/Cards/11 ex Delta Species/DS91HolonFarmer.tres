@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=14 format=3 uid="uid://das4fogpex6ts"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=15 format=3 uid="uid://das4fogpex6ts"]
 
 [ext_resource type="Texture2D" uid="uid://cbfwwsfi531ow" path="res://Art/Cards/11 ex Delta Species/91.jpg" id="1_8854x"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_pfhw6"]
 [ext_resource type="Resource" uid="uid://mcn7y4o7q2uf" path="res://Resources/Components/Effects/Prompts/PromptEffects/HolonDiscard.tres" id="3_0otrs"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="4_gn0l7"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="4_p21p5"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="5_gn0l7"]
 [ext_resource type="Resource" uid="uid://bbmbuhmwxnnck" path="res://Resources/Components/Effects/Placement/BackIntoDeck.tres" id="6_xfa8n"]
@@ -42,6 +43,7 @@ specific_requirement = "Discard a card from your hand. If you can't discard a ca
 description = "Search your discard pile for 3 basic Energy cards and any combination of 3 Basic Pokémon or Evolution cards, show them to your opponent, and put them on top of your deck. Shuffle your deck afterward. "
 prompt = ExtResource("3_0otrs")
 success_effect = SubResource("Resource_0kpw8")
+prompt_effects = Array[ExtResource("4_gn0l7")]([])
 metadata/_custom_type_script = "uid://crx447i85kshy"
 
 [resource]

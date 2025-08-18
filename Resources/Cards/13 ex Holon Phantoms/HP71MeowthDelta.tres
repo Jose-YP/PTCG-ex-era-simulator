@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=16 format=3 uid="uid://dgm51tdt6tftx"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=17 format=3 uid="uid://dgm51tdt6tftx"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_cy1wl"]
 [ext_resource type="Texture2D" uid="uid://40wgjl8gbsxy" path="res://Art/Cards/13 ex Holon Phantoms/71.jpg" id="1_d8ah1"]
@@ -9,6 +9,7 @@
 [ext_resource type="Resource" uid="uid://b5h5yekm4jaw4" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/M1C1.tres" id="5_wdnsq"]
 [ext_resource type="Resource" uid="uid://bjo72m2rk7vwl" path="res://Resources/Components/Effects/Draw/Draw1.tres" id="6_vaus7"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="7_l4n6x"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="8_aaqyc"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="8_hh0fl"]
 
 [sub_resource type="Resource" id="Resource_n37sd"]
@@ -35,6 +36,8 @@ condition = 1
 before_damage = false
 replace_num = false
 always_effect = SubResource("Resource_gw3u0")
+share_prompt = false
+prompt_effects = Array[ExtResource("8_aaqyc")]([])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false

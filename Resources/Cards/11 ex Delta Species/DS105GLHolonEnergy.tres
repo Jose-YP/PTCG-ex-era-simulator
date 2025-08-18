@@ -1,11 +1,12 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=24 format=3 uid="uid://cqr3tfc8nry8w"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=27 format=3 uid="uid://cqr3tfc8nry8w"]
 
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="1_3qxn5"]
 [ext_resource type="Script" uid="uid://caj1pm8erar2a" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="1_5i42c"]
 [ext_resource type="Resource" uid="uid://dck0aw0wiqcpw" path="res://Resources/Components/Effects/Asks/Class&Owner/Other'sTrgEXMon.tres" id="1_420ij"]
-[ext_resource type="Resource" uid="uid://f6cgam4ldfj8" path="res://Resources/Components/Effects/Buff/Immune2Conditions.tres" id="1_tf38m"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_7lxul"]
 [ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/BuffMaker.gd" id="2_tf38m"]
 [ext_resource type="Texture2D" uid="uid://bcy6v2x6sapi" path="res://Art/Cards/11 ex Delta Species/105.jpg" id="2_yixtv"]
+[ext_resource type="Resource" uid="uid://dyg31r0aqj4ed" path="res://Resources/Components/Effects/Prompts/NonEXHasGrassEn.tres" id="3_tyuxn"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_10hjv"]
 [ext_resource type="Resource" uid="uid://bstttj8kuf5i6" path="res://Resources/Components/EnData/GLHolon.tres" id="4_os01s"]
 [ext_resource type="Resource" uid="uid://cxnlthowpb4r4" path="res://Resources/Components/EnData/Lightning.tres" id="5_3qxn5"]
@@ -13,20 +14,7 @@
 [ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="6_os01s"]
 [ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="7_kjebj"]
 [ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="8_oiiyp"]
-
-[sub_resource type="Resource" id="Resource_tyuxn"]
-script = ExtResource("4_10hjv")
-either_or = false
-order = Array[int]([])
-buff = ExtResource("1_tf38m")
-metadata/_custom_type_script = "uid://dmulm3x3dj842"
-
-[sub_resource type="Resource" id="Resource_5rppq"]
-script = ExtResource("4_10hjv")
-either_or = false
-order = Array[int]([])
-extra_effect = SubResource("Resource_tyuxn")
-metadata/_custom_type_script = "uid://dmulm3x3dj842"
+[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="9_5rppq"]
 
 [sub_resource type="Resource" id="Resource_vnxhx"]
 script = ExtResource("6_5rppq")
@@ -41,6 +29,7 @@ comparison_type = 1
 max_hp = -10
 damage_taken = -10
 retreat_cost = -1
+evo_type = "Don't Check"
 stage = 7
 rare_candy = false
 class_inclusive = false
@@ -91,8 +80,10 @@ metadata/_custom_type_script = "uid://b85jmc7067bjc"
 
 [sub_resource type="Resource" id="Resource_3qxn5"]
 script = ExtResource("2_tf38m")
-description = ""
+description = "Damage from opposing Pokemon-ex reduced by 10 after weak/res"
 application = "Slot"
+stackable = true
+recieves = ExtResource("9_5rppq")
 duration = -1
 against = ExtResource("1_420ij")
 after_weak_res = true
@@ -100,39 +91,89 @@ add_hp = 0
 attack = 0
 defense = 10
 retreat_change = 0
+cost_modifier = "Add"
 modify = "HP"
 operation = "Replace"
 condition_immune = 0
-immune_to_effects = false
-immune_to_damage = false
+attack_effect_immune = false
+damage_immune = false
+body_immune = false
+power_immune = false
+trainer_immune = false
+odd_immunity = false
+even_immunity = false
+weakness = false
+resistance = false
+effects = false
 attack_names = Array[String]([])
 metadata/_custom_type_script = "uid://coojhwe6m20gd"
-
-[sub_resource type="Resource" id="Resource_10hjv"]
-script = ExtResource("4_10hjv")
-either_or = false
-order = Array[int]([])
-buff = ExtResource("1_tf38m")
-metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_oiiyp"]
 script = ExtResource("4_10hjv")
 either_or = false
 order = Array[int]([])
 buff = SubResource("Resource_3qxn5")
-extra_effect = SubResource("Resource_10hjv")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_kjebj"]
+script = ExtResource("1_3qxn5")
+prompt = SubResource("Resource_jbfea")
+success = SubResource("Resource_oiiyp")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
+[sub_resource type="Resource" id="Resource_r81sp"]
+script = ExtResource("2_tf38m")
+description = "Immune to special conditions"
+application = "Slot"
+stackable = true
+recieves = ExtResource("9_5rppq")
+duration = -1
+after_weak_res = true
+add_hp = 0
+attack = 0
+defense = 0
+retreat_change = 0
+cost_modifier = "Add"
+modify = "HP"
+operation = "Replace"
+condition_immune = 31
+attack_effect_immune = false
+damage_immune = false
+body_immune = false
+power_immune = false
+trainer_immune = false
+odd_immunity = false
+even_immunity = false
+weakness = false
+resistance = false
+effects = false
+attack_names = Array[String]([])
+metadata/_custom_type_script = "uid://coojhwe6m20gd"
+
+[sub_resource type="Resource" id="Resource_q8rev"]
+script = ExtResource("4_10hjv")
+either_or = false
+order = Array[int]([])
+buff = SubResource("Resource_r81sp")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_igb0p"]
+script = ExtResource("1_3qxn5")
+prompt = ExtResource("3_tyuxn")
+success = SubResource("Resource_q8rev")
+metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [sub_resource type="Resource" id="Resource_yixtv"]
 script = ExtResource("1_5i42c")
 considered = "Special Energy"
-description = "Holon Energy GL provides {Colorless} Energy.
-If the Pokémon that Holon Energy GL is attached to also has a basic {Grass} Energy card attached to it, that Pokémon can't be affected by any Special Conditions. If the Pokémon that Holon Energy GL is attached to also has a basic {Lightning} Energy card attached to it, damage done by your opponent's Pokémon-ex is reduced by 10. Ignore these effects if Holon Energy GL is attached to Pokémon-ex."
+description = "[name] provides {Colorless} Energy.
+If the Pokémon that [name] is attached to also has a basic {Grass} Energy card attached to it, that Pokémon can't be affected by any Special Conditions. If the Pokémon that [name] is attached to also has a basic {Lightning} Energy card attached to it, damage done by your opponent's Pokémon-ex is reduced by 10 (after applying weakness/resistance). Ignore these effects if [name] is attached to Pokémon-ex."
 prompt = SubResource("Resource_jbfea")
 has_fail_provide = false
 has_fail_prevent = false
-fail_effect = SubResource("Resource_5rppq")
 success_effect = SubResource("Resource_oiiyp")
+attatch_effects = Array[ExtResource("1_3qxn5")]([])
+prompt_effects = Array[ExtResource("1_3qxn5")]([SubResource("Resource_kjebj"), SubResource("Resource_igb0p")])
 turns = -1
 fail_provide = ExtResource("4_os01s")
 success_provide = ExtResource("4_os01s")

@@ -1,48 +1,55 @@
-[gd_resource type="Resource" script_class="Pokemon" load_steps=14 format=3 uid="uid://dvteh4sj66jw4"]
+[gd_resource type="Resource" script_class="Pokemon" load_steps=16 format=3 uid="uid://dvteh4sj66jw4"]
 
-[ext_resource type="Resource" uid="uid://b86uut4qajrgg" path="res://Resources/Components/Effects/EnergyMovement/AtkSelfDisFire.tres" id="2_nrfu7"]
-[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="3_08wec"]
-[ext_resource type="Resource" uid="uid://be6718keco2mu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/R1C2.tres" id="3_nrfu7"]
-[ext_resource type="Resource" uid="uid://chqeva57ci4v1" path="res://Resources/Components/Pokemon/BenchAttack/DefAllBench10.tres" id="4_3mj0j"]
-[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_gr0cy"]
-[ext_resource type="Resource" uid="uid://c4wnoevyvagqq" path="res://Resources/Components/Effects/Search/FirestarterSearch.tres" id="5_bsvf6"]
-[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="5_le3tc"]
-[ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="8_nrfu7"]
-[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="9_8uu16"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_vrvrl"]
+[ext_resource type="Resource" uid="uid://be6718keco2mu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/R1C2.tres" id="2_luf0m"]
+[ext_resource type="Resource" uid="uid://chqeva57ci4v1" path="res://Resources/Components/Pokemon/BenchAttack/DefAllBench10.tres" id="3_apsvt"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="4_hj2au"]
+[ext_resource type="Resource" uid="uid://b86uut4qajrgg" path="res://Resources/Components/Effects/EnergyMovement/AtkSelfDisFire.tres" id="5_7k411"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="6_lc62k"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="7_cmum5"]
+[ext_resource type="Resource" uid="uid://c4wnoevyvagqq" path="res://Resources/Components/Effects/Search/FirestarterSearch.tres" id="8_5jabs"]
+[ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="9_kxwsk"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="10_6jr7y"]
+
+[sub_resource type="Resource" id="Resource_30j5r"]
+script = ExtResource("4_hj2au")
+success = ExtResource("5_7k411")
+metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [sub_resource type="Resource" id="Resource_6620x"]
-script = ExtResource("5_le3tc")
+script = ExtResource("6_lc62k")
 prompt_reliant = false
 initial_main_DMG = 50
 defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
-always_effect = ExtResource("2_nrfu7")
+share_prompt = false
+prompt_effects = Array[ExtResource("4_hj2au")]([SubResource("Resource_30j5r")])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false
 modifier = 0
 modifier_num = 0
 both_active = false
-bench_damage = ExtResource("4_3mj0j")
+bench_damage = ExtResource("3_apsvt")
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_ld6ej"]
-script = ExtResource("3_08wec")
+script = ExtResource("1_vrvrl")
 name = "Fire Stream"
 description = "Discard a {Fire} Energy card attached to [name]. This attack does 10 damage to each of your opponent's Benched Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
-attack_cost = ExtResource("3_nrfu7")
+attack_cost = ExtResource("2_luf0m")
 attack_data = SubResource("Resource_6620x")
 
 [sub_resource type="Resource" id="Resource_4ym1n"]
-script = ExtResource("4_gr0cy")
+script = ExtResource("7_cmum5")
 either_or = false
 order = Array[int]([])
-search = ExtResource("5_bsvf6")
+search = ExtResource("8_5jabs")
 
 [sub_resource type="Resource" id="Resource_3mj0j"]
-script = ExtResource("8_nrfu7")
+script = ExtResource("9_kxwsk")
 category = "Power"
 name = "Firestarter"
 description = "Once during your turn (before your attack), you may attach a {Fire} Energy card from your discard pile to 1 of your Benched Pokémon. This power can't be used if [name] is affected by a Special Condition."
@@ -54,11 +61,11 @@ effect = SubResource("Resource_4ym1n")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 
 [resource]
-script = ExtResource("9_8uu16")
+script = ExtResource("10_6jr7y")
 HP = 100
 retreat = 2
 pokepower = SubResource("Resource_3mj0j")
-attacks = Array[ExtResource("3_08wec")]([SubResource("Resource_ld6ej")])
+attacks = Array[ExtResource("1_vrvrl")]([SubResource("Resource_ld6ej")])
 evo_stage = "Stage 2"
 evolves_from = "Combusken"
 considered = 1

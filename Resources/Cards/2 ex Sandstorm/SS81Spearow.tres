@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=14 format=3 uid="uid://df8vjdu3m822g"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=15 format=3 uid="uid://df8vjdu3m822g"]
 
 [ext_resource type="Texture2D" uid="uid://cqtvd6vmn5hlk" path="res://Art/Cards/2 ex Sandstorm/81.jpg" id="1_e5dhs"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_wlnsg"]
@@ -11,18 +11,22 @@
 [ext_resource type="Resource" uid="uid://ci4gahbdoaqcu" path="res://Resources/Components/Pokemon/Attacks/EffectlessAttacks/Peck1-10.tres" id="7_t2jsv"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="8_akca5"]
 
+[sub_resource type="Resource" id="Resource_cisvk"]
+script = ExtResource("5_cisvk")
+prompt = ExtResource("4_dew0p")
+success = ExtResource("6_pc2u7")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
 [sub_resource type="Resource" id="Resource_2m73h"]
 script = ExtResource("5_dxuyr")
 prompt_reliant = false
-prompt = ExtResource("4_dew0p")
 initial_main_DMG = 0
 defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
-success_effect = ExtResource("6_pc2u7")
 share_prompt = false
-prompt_effects = Array[ExtResource("5_cisvk")]([])
+prompt_effects = Array[ExtResource("5_cisvk")]([SubResource("Resource_cisvk")])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false

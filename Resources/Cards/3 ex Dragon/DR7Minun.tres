@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=16 format=3 uid="uid://bjwm1cveh0cpy"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=17 format=3 uid="uid://bjwm1cveh0cpy"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_enauw"]
 [ext_resource type="Texture2D" uid="uid://c3ca465on2f80" path="res://Art/Cards/3 ex Dragon/7.jpg" id="1_krfcg"]
@@ -8,6 +8,7 @@
 [ext_resource type="Resource" uid="uid://cw44iqotg3v3f" path="res://Resources/Components/Effects/Asks/General/FromDefending.tres" id="5_gbmi8"]
 [ext_resource type="Resource" uid="uid://b653q2whxtyr2" path="res://Resources/Components/Counters/Comparator/Equals/OthTrgHasAbility.tres" id="6_wx8v6"]
 [ext_resource type="Script" uid="uid://br15mnap82upq" path="res://Code/Resource Makers/PokemonSpecific/BenchAttackMaker.gd" id="7_xxmag"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="8_gjx7l"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="8_r5uj8"]
 [ext_resource type="Resource" uid="uid://c0y58oaysjrpt" path="res://Resources/Components/Pokemon/Abilities/Bodies/Chain of Events.tres" id="10_gjx7l"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="10_qcxwa"]
@@ -32,6 +33,8 @@ defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
+share_prompt = false
+prompt_effects = Array[ExtResource("8_gjx7l")]([])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false

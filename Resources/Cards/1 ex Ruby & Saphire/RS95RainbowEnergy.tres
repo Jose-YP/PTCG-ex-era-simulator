@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://bekwoaj06a44c"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=14 format=3 uid="uid://bekwoaj06a44c"]
 
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="1_jhkvo"]
 [ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="1_qxfu1"]
 [ext_resource type="Script" uid="uid://caj1pm8erar2a" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="1_s231q"]
 [ext_resource type="Script" uid="uid://scca13hg4k1l" path="res://Code/Resource Makers/EffectSpecific/DmgManipMaker.gd" id="1_w8o02"]
@@ -29,13 +30,19 @@ either_or = false
 order = Array[int]([])
 dmgManip = SubResource("Resource_4accq")
 
+[sub_resource type="Resource" id="Resource_fxxim"]
+script = ExtResource("1_jhkvo")
+success = SubResource("Resource_mysds")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
 [sub_resource type="Resource" id="Resource_10nfj"]
 script = ExtResource("1_s231q")
 considered = "Special Energy"
 description = " Attach Rainbow Energy to 1 of your Pokémon. While in play, Rainbow Energy provides every type of Energy but provides only 1 Energy at a time. (Doesn't count as a basic Energy card when not in play.) When you attach this card from your hand to 1 of your Pokémon, put 1 damage counter on that Pokémon."
 has_fail_provide = false
 has_fail_prevent = false
-attatch_effect = SubResource("Resource_mysds")
+attatch_effects = Array[ExtResource("1_jhkvo")]([SubResource("Resource_fxxim")])
+prompt_effects = Array[ExtResource("1_jhkvo")]([null])
 turns = -1
 fail_provide = ExtResource("3_mfk52")
 success_provide = ExtResource("6_qxfu1")

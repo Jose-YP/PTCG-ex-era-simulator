@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="Pokemon" load_steps=11 format=3 uid="uid://bwokrnhq44bum"]
+[gd_resource type="Resource" script_class="Pokemon" load_steps=13 format=3 uid="uid://bwokrnhq44bum"]
 
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_hyodl"]
 [ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="2_ixnle"]
 [ext_resource type="Resource" uid="uid://wydx8itouw7w" path="res://Resources/Components/Pokemon/Attacks/EffectlessAttacks/Scratch2-20.tres" id="3_6m008"]
 [ext_resource type="Resource" uid="uid://brwtreun6s845" path="res://Resources/Components/Effects/CardDisrupt/Play/DiscOthrTrainers.tres" id="3_10skr"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="3_nq2cm"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="4_10skr"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_nq2cm"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="5_0ocxq"]
@@ -15,6 +16,11 @@ order = Array[int]([])
 card_disrupt = ExtResource("3_10skr")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
+[sub_resource type="Resource" id="Resource_0ocxq"]
+script = ExtResource("3_nq2cm")
+success = SubResource("Resource_c5prr")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
 [sub_resource type="Resource" id="Resource_cae38"]
 script = ExtResource("5_0ocxq")
 prompt_reliant = false
@@ -23,7 +29,8 @@ defender_properties = 0
 condition = 1
 before_damage = true
 replace_num = false
-always_effect = SubResource("Resource_c5prr")
+share_prompt = false
+prompt_effects = Array[ExtResource("3_nq2cm")]([SubResource("Resource_0ocxq")])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false

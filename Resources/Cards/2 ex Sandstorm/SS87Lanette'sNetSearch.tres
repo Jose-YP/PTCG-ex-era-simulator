@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=13 format=3 uid="uid://d16ibvu8tyuiw"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=15 format=3 uid="uid://d16ibvu8tyuiw"]
 
 [ext_resource type="Texture2D" uid="uid://jaosrycmdoym" path="res://Art/Cards/2 ex Sandstorm/87.jpg" id="1_47thq"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_ci10j"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_df2as"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="3_hbumv"]
 [ext_resource type="Resource" uid="uid://bl4qnrkh3kxdl" path="res://Resources/Components/Effects/Placement/PutIntoHand.tres" id="4_df2as"]
 [ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="4_gmspd"]
 [ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="5_hbumv"]
@@ -55,12 +56,17 @@ order = Array[int]([])
 search = SubResource("Resource_8v658")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
+[sub_resource type="Resource" id="Resource_vlnqk"]
+script = ExtResource("3_hbumv")
+success = SubResource("Resource_8lfl8")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
 [sub_resource type="Resource" id="Resource_pjtk1"]
 script = ExtResource("6_vlnqk")
 considered = "Supporter"
 specific_requirement = ""
 description = "Search your deck for up to 3 different types of Basic Pokémon cards (excluding Baby Pokémon), show them to your opponent, and put them into your hand. Shuffle your deck afterward. "
-always_effect = SubResource("Resource_8lfl8")
+prompt_effects = Array[ExtResource("3_hbumv")]([SubResource("Resource_vlnqk")])
 metadata/_custom_type_script = "uid://crx447i85kshy"
 
 [resource]

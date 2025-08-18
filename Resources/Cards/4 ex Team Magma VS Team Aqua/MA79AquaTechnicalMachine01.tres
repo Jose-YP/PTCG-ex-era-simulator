@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=16 format=3 uid="uid://f51ar25ws7av"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=17 format=3 uid="uid://f51ar25ws7av"]
 
 [ext_resource type="Texture2D" uid="uid://batwggrxck3rc" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/79.jpg" id="1_362yo"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_i2j72"]
 [ext_resource type="Resource" uid="uid://b0lo8uly2lldp" path="res://Resources/Components/Effects/Asks/Class&Owner/AtkIsTeamAqua.tres" id="3_uthag"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_7pouw"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="4_n2qi6"]
 [ext_resource type="Script" uid="uid://8s3m1dar3r33" path="res://Code/Resource Makers/EffectSpecific/ConditionMaker.gd" id="4_rmk35"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="5_exr3x"]
 [ext_resource type="Resource" uid="uid://bkt6ry7vyha70" path="res://Resources/Components/Effects/Asks/General/Other.tres" id="5_ryfr1"]
@@ -14,13 +15,13 @@
 [sub_resource type="Resource" id="Resource_ov5dn"]
 script = ExtResource("4_rmk35")
 ask = ExtResource("5_ryfr1")
-choose_condition = true
-poison = 0
-burn = 0
-turn_cond = 0
-imprision = false
-shockwave = false
-knockOut = false
+any = false
+poison = null
+burn = null
+turn_cond = null
+imprision = null
+shockwave = null
+knockOut = null
 metadata/_custom_type_script = "uid://8s3m1dar3r33"
 
 [sub_resource type="Resource" id="Resource_10jvr"]
@@ -39,6 +40,8 @@ condition = 1
 before_damage = false
 replace_num = false
 always_effect = SubResource("Resource_10jvr")
+share_prompt = false
+prompt_effects = Array[ExtResource("4_n2qi6")]([])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false
@@ -60,6 +63,7 @@ considered = "TM"
 specific_requirement = ""
 description = "Attach this card to 1 of your Pokémon that has Team Aqua in its name. That Pokémon may use this card's attack instead of its own. At the end of your turn, discard Team Aqua Technical Machine 01."
 asks = ExtResource("3_uthag")
+prompt_effects = Array[ExtResource("4_n2qi6")]([])
 provided_attack = SubResource("Resource_3el55")
 
 [resource]

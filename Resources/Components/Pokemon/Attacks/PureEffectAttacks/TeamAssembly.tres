@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="Attack" load_steps=19 format=3 uid="uid://cimoxkuco6ggm"]
+[gd_resource type="Resource" script_class="Attack" load_steps=21 format=3 uid="uid://cimoxkuco6ggm"]
 
 [ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="1_qqcvy"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_rdupw"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="2_ykgfj"]
 [ext_resource type="Resource" uid="uid://dvdnbmg1kbbmb" path="res://Resources/Components/Effects/Placement/PlaceOnBench.tres" id="3_ykgfj"]
 [ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="4_p62sq"]
 [ext_resource type="Resource" uid="uid://c7itelq8jtjc2" path="res://Resources/Components/EnData/Rainbow.tres" id="5_ywahg"]
@@ -73,10 +74,15 @@ metadata/_custom_type_script = "uid://cw3yr1k040kw7"
 
 [sub_resource type="Resource" id="Resource_vbdsh"]
 script = ExtResource("2_rdupw")
-either_or = null
-order = null
+either_or = false
+order = Array[int]([])
 search = SubResource("Resource_4q0ux")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_p62sq"]
+script = ExtResource("2_ykgfj")
+success = SubResource("Resource_vbdsh")
+metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [sub_resource type="Resource" id="Resource_htdpr"]
 script = ExtResource("11_8n5rc")
@@ -86,7 +92,8 @@ defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
-always_effect = SubResource("Resource_vbdsh")
+share_prompt = false
+prompt_effects = Array[ExtResource("2_ykgfj")]([SubResource("Resource_p62sq")])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false

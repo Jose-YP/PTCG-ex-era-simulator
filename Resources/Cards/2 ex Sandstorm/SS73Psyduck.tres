@@ -1,0 +1,89 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=17 format=3 uid="uid://kfeondy2dwe8"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_8st2d"]
+[ext_resource type="Texture2D" uid="uid://bcfeu74l4cado" path="res://Art/Cards/2 ex Sandstorm/73.jpg" id="1_n20uv"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_uwv1d"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_42fa4"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="4_aj3hr"]
+[ext_resource type="Resource" uid="uid://bmo8ndsh2k12h" path="res://Resources/Components/Effects/Asks/General/BothTarget.tres" id="5_h7m04"]
+[ext_resource type="Script" uid="uid://8s3m1dar3r33" path="res://Code/Resource Makers/EffectSpecific/ConditionMaker.gd" id="6_c8fli"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="7_0ta24"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="8_h4n0r"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="9_6vjuw"]
+
+[sub_resource type="Resource" id="Resource_15bvo"]
+script = ExtResource("6_c8fli")
+ask = ExtResource("5_h7m04")
+any = false
+poison = null
+burn = null
+turn_cond = 3
+imprision = null
+shockwave = null
+knockOut = null
+metadata/_custom_type_script = "uid://8s3m1dar3r33"
+
+[sub_resource type="Resource" id="Resource_n0c7c"]
+script = ExtResource("7_0ta24")
+either_or = false
+order = Array[int]([])
+condition = SubResource("Resource_15bvo")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_a80tq"]
+script = ExtResource("4_aj3hr")
+success = SubResource("Resource_n0c7c")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
+[sub_resource type="Resource" id="Resource_dh853"]
+script = ExtResource("8_h4n0r")
+prompt_reliant = false
+initial_main_DMG = 0
+defender_properties = 0
+condition = 1
+before_damage = false
+replace_num = false
+share_prompt = false
+prompt_effects = Array[ExtResource("4_aj3hr")]([SubResource("Resource_a80tq")])
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_gc1sm"]
+script = ExtResource("2_uwv1d")
+name = "Confusion"
+description = "Both [name] and the Defending Pokémon are now Confused. "
+attack_cost = ExtResource("3_42fa4")
+attack_data = SubResource("Resource_dh853")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_mm6y4"]
+script = ExtResource("9_6vjuw")
+HP = 50
+retreat = 1
+attacks = Array[ExtResource("2_uwv1d")]([SubResource("Resource_gc1sm")])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 1
+owner = 0
+type = 4
+weak = 8
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_8st2d")
+name = "Psyduck"
+image = ExtResource("1_n20uv")
+illustrator = " Kouki Saitou"
+number = 73
+rarity = 0
+expansion = 1
+categories = 1
+pokemon_properties = SubResource("Resource_mm6y4")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

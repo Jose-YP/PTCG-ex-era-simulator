@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=25 format=3 uid="uid://cdlsj0xlgu0n"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=24 format=3 uid="uid://cdlsj0xlgu0n"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_c0dsq"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_tp1gn"]
@@ -7,11 +7,11 @@
 [ext_resource type="Resource" uid="uid://7bruqpkp3r4x" path="res://Resources/Components/Effects/Search/TrainerNotSupport.tres" id="3_k8vd7"]
 [ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="4_s35fu"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="5_hxbuf"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="6_le6pv"]
 [ext_resource type="Resource" uid="uid://c7itelq8jtjc2" path="res://Resources/Components/EnData/Rainbow.tres" id="6_lujju"]
-[ext_resource type="Resource" uid="uid://cu817ymtejglx" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Psychic1.tres" id="6_opu8w"]
 [ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="6_tqtg3"]
 [ext_resource type="Script" uid="uid://c0ishgbxk63dg" path="res://Code/Resource Makers/EffectSpecific/DisableMaker.gd" id="7_65xpm"]
-[ext_resource type="Resource" uid="uid://dducvbjohbp4x" path="res://Resources/Components/Pokemon/Attacks/AttackData/10DmgParaIfHeads.tres" id="7_le6pv"]
+[ext_resource type="Resource" uid="uid://bu7xoy1fy00q3" path="res://Resources/Components/Pokemon/Attacks/CommonAttacks/P1Psyshock.tres" id="8_hxbuf"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="9_iq553"]
 [ext_resource type="Resource" uid="uid://cx7v8cyxlierr" path="res://Resources/Components/Effects/Prompts/PromptComparator/IsSolrockInPlay.tres" id="13_opu8w"]
 [ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="14_le6pv"]
@@ -32,6 +32,8 @@ condition = 1
 before_damage = false
 replace_num = false
 always_effect = SubResource("Resource_r8rjj")
+share_prompt = false
+prompt_effects = Array[ExtResource("6_le6pv")]([])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false
@@ -48,28 +50,20 @@ attack_cost = ExtResource("4_s35fu")
 attack_data = SubResource("Resource_yrpea")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
-[sub_resource type="Resource" id="Resource_hjkuo"]
-script = ExtResource("1_tp1gn")
-name = "Psyshock"
-description = " Flip a coin. If heads, the Defending Pokémon is now Paralyzed. "
-attack_cost = ExtResource("6_opu8w")
-attack_data = ExtResource("7_le6pv")
-metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
-
 [sub_resource type="Resource" id="Resource_05a84"]
 script = ExtResource("6_tqtg3")
+boolean_type = "And"
 previous_src_trg = false
 side_target = 3
 slot_target = 4
 specifically = Array[String]([])
-check_ability = false
-contained_abilities = 3
 knocked_out = false
 tool_attatched = false
 comparison_type = 1
 max_hp = -10
 damage_taken = -10
 retreat_cost = -1
+evo_type = "Don't Check"
 stage = 7
 rare_candy = false
 class_inclusive = false
@@ -83,6 +77,9 @@ check_cards = true
 energy_attatched = -1
 energy_class = "Any"
 energy_type = ExtResource("6_lujju")
+check_ability = false
+contained_abilities = 3
+specific_abilities = Array[String]([])
 metadata/_custom_type_script = "uid://mkjynqda7q5g"
 
 [sub_resource type="Resource" id="Resource_5ld0q"]
@@ -126,7 +123,7 @@ script = ExtResource("9_iq553")
 HP = 60
 retreat = 1
 pokebody = SubResource("Resource_18faj")
-attacks = Array[ExtResource("1_tp1gn")]([SubResource("Resource_0l0mh"), SubResource("Resource_hjkuo")])
+attacks = Array[ExtResource("1_tp1gn")]([SubResource("Resource_0l0mh"), ExtResource("8_hxbuf")])
 evo_stage = "Basic"
 evolves_from = ""
 considered = 1

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=16 format=3 uid="uid://defwr5jir45wl"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=17 format=3 uid="uid://defwr5jir45wl"]
 
 [ext_resource type="Texture2D" uid="uid://tj3glvwwcbuk" path="res://Art/Cards/8 ex Deoxys/14.jpg" id="1_lgqle"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_yjpv3"]
@@ -8,6 +8,7 @@
 [ext_resource type="Resource" uid="uid://drqlm28p36dby" path="res://Resources/Components/Counters/Comparator/Equals/OtherTrgisEX.tres" id="5_hsq0l"]
 [ext_resource type="Script" uid="uid://scca13hg4k1l" path="res://Code/Resource Makers/EffectSpecific/DmgManipMaker.gd" id="6_3hx4l"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="7_ittet"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="8_73r8y"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="8_q4urn"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="9_40d4c"]
 
@@ -43,6 +44,8 @@ condition = 1
 before_damage = false
 replace_num = false
 always_effect = SubResource("Resource_bypgf")
+share_prompt = false
+prompt_effects = Array[ExtResource("8_73r8y")]([])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false

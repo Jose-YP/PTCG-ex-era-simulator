@@ -2,8 +2,8 @@ extends Resource
 class_name Pokemon
 
 @export_group("Stats")
-@export_range(10,200,10) var HP: int = 30
-@export_range(0,6) var retreat: int = 0
+@export_range(10,200,10) var HP: int = 50
+@export_range(0,6) var retreat: int = 1
 
 @export_group("Actions")
 ##While a power is allowed to be inserted here, bodies do appear abover powers when both are present

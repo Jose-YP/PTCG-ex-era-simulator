@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=15 format=3 uid="uid://oa7r3igevgqi"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=16 format=3 uid="uid://oa7r3igevgqi"]
 
 [ext_resource type="Texture2D" uid="uid://c2o5amlj16doj" path="res://Art/Cards/1 ex Ruby & Saphire/49.jpg" id="1_ianho"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="3_mit06"]
@@ -18,6 +18,11 @@ order = Array[int]([])
 buff = ExtResource("3_vai4j")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
+[sub_resource type="Resource" id="Resource_2q6mk"]
+script = ExtResource("6_n800m")
+success = SubResource("Resource_hi6hn")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
 [sub_resource type="Resource" id="Resource_7rvt1"]
 script = ExtResource("6_2q6mk")
 prompt_reliant = false
@@ -26,9 +31,8 @@ defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
-always_effect = SubResource("Resource_hi6hn")
 share_prompt = false
-prompt_effects = Array[ExtResource("6_n800m")]([])
+prompt_effects = Array[ExtResource("6_n800m")]([SubResource("Resource_2q6mk")])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false

@@ -1,0 +1,44 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://b3648mpwbfgaf"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_fmbrv"]
+[ext_resource type="Texture2D" uid="uid://p8650e3owih6" path="res://Art/Cards/5 ex Hidden Legends/73.jpg" id="1_mj2dq"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_2n7hf"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_mgdo1"]
+[ext_resource type="Resource" uid="uid://dsretfiieomka" path="res://Resources/Components/Pokemon/Attacks/AttackData/ParaIfHeads.tres" id="4_i61aj"]
+[ext_resource type="Resource" uid="uid://srojhh5idedm" path="res://Resources/Components/Pokemon/Attacks/EffectlessAttacks/Tackle2-20.tres" id="5_ccmvn"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="6_51cqk"]
+
+[sub_resource type="Resource" id="Resource_44hll"]
+script = ExtResource("2_2n7hf")
+name = "Ice Breath"
+description = "Flip a coin. If heads, the Defending Pokémon is now Paralyzed."
+attack_cost = ExtResource("3_mgdo1")
+attack_data = ExtResource("4_i61aj")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_h3fct"]
+script = ExtResource("6_51cqk")
+HP = 50
+retreat = 1
+attacks = Array[ExtResource("2_2n7hf")]([SubResource("Resource_44hll"), ExtResource("5_ccmvn")])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 1
+owner = 0
+type = 4
+weak = 128
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_fmbrv")
+name = "Snorunt"
+image = ExtResource("1_mj2dq")
+illustrator = "Midori Harada"
+number = 73
+rarity = 0
+expansion = 4
+categories = 1
+pokemon_properties = SubResource("Resource_h3fct")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

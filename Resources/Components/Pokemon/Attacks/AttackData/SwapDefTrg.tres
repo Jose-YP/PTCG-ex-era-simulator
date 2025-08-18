@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="AttackData" load_steps=5 format=3 uid="uid://q88qlr12efv1"]
+[gd_resource type="Resource" script_class="AttackData" load_steps=7 format=3 uid="uid://q88qlr12efv1"]
 
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="1_vvu4g"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="1_ykgb4"]
 [ext_resource type="Resource" uid="uid://y5ggbiiapsx7" path="res://Resources/Components/Effects/Swap/DefSwapTarget.tres" id="2_ykgb4"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="3_vqtx0"]
 
@@ -11,6 +12,11 @@ order = Array[int]([])
 swap = ExtResource("2_ykgb4")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
+[sub_resource type="Resource" id="Resource_vqtx0"]
+script = ExtResource("1_ykgb4")
+success = SubResource("Resource_rhym4")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
 [resource]
 script = ExtResource("3_vqtx0")
 prompt_reliant = false
@@ -19,7 +25,8 @@ defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
-always_effect = SubResource("Resource_rhym4")
+share_prompt = false
+prompt_effects = Array[ExtResource("1_ykgb4")]([SubResource("Resource_vqtx0")])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false

@@ -25,7 +25,8 @@ class_name Energy
 ##What should happen if the ask is met
 @export var success_effect: EffectCall
 ##What should happen on attatch specifically
-@export var attatch_effect: EffectCall 
+@export var attatch_effect: EffectCall
+@export var attatch_effects: Array[EffectCollect]
 @export var prompt_effects: Array[EffectCollect]
 
 @export_group("Provides")

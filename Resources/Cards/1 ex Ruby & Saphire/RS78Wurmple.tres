@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=28 format=3 uid="uid://cbrv0ftymjhbj"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=30 format=3 uid="uid://cbrv0ftymjhbj"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_fufby"]
 [ext_resource type="Texture2D" uid="uid://bkcx8mdj0b2ne" path="res://Art/Cards/1 ex Ruby & Saphire/78.jpg" id="1_kcvhr"]
@@ -7,6 +7,7 @@
 [ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_wia63"]
 [ext_resource type="Resource" uid="uid://bl4qnrkh3kxdl" path="res://Resources/Components/Effects/Placement/PutIntoHand.tres" id="4_qb5u4"]
 [ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="4_sfbeu"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="4_x6msc"]
 [ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="5_jctry"]
 [ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="6_wia63"]
 [ext_resource type="Resource" uid="uid://c7itelq8jtjc2" path="res://Resources/Components/EnData/Rainbow.tres" id="7_wia63"]
@@ -164,17 +165,23 @@ order = Array[int]([])
 search = SubResource("Resource_g437b")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
+[sub_resource type="Resource" id="Resource_gknmg"]
+script = ExtResource("4_x6msc")
+prompt = SubResource("Resource_58hgl")
+success = SubResource("Resource_c4vsc")
+fail = SubResource("Resource_wcep4")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
 [sub_resource type="Resource" id="Resource_kcbdi"]
 script = ExtResource("9_x6msc")
 prompt_reliant = false
-prompt = SubResource("Resource_58hgl")
 initial_main_DMG = 0
 defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
-success_effect = SubResource("Resource_c4vsc")
-fail_effect = SubResource("Resource_wcep4")
+share_prompt = false
+prompt_effects = Array[ExtResource("4_x6msc")]([SubResource("Resource_gknmg")])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false

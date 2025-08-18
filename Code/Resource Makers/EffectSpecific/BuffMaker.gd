@@ -5,12 +5,11 @@ class_name Buff
 @export_multiline var description: String
 
 @export_enum("Slot", "Side") var application: String = "Slot"
+@export var stackable: bool = true
 ##Who recieves the buff?
 @export var recieves: SlotAsk
 ##-1 means forever, otherwise how many turns is this active
 @export var duration: int = 1
-##If this exists and returns false, then remove it
-@export var upkeep_prompt: PromptAsk
 ##If against this type of slot use these buffs, if null return [code]true
 @export var against: SlotAsk
 ##Is it applied before or after weak/res
@@ -24,6 +23,8 @@ class_name Buff
 @export_range(-120, 120, 10) var defense: int = 0
 ##How mucht to add/subtract from a pokemon's retreat cost?
 @export_range(-10,6,1) var retreat_change: int = 0
+@export_subgroup("Attack Cost")
+@export_enum("Add", "Subtract", "Replace") var cost_modifier: String = "Add"
 @export var attack_cost: AttackCost
 @export_subgroup("Comparator")
 @export_enum("HP", "Attack", "Defense", "Retreat", "Colorless Cost") var modify: String = "HP"
@@ -33,10 +34,16 @@ class_name Buff
 @export_group("Immunities")
 ##Ignore any conditions if this is true
 @export_flags("Poison","Burn","Paralysis", "Sleep", "Confusion") var condition_immune: int = 0
-##Stop any effects calls if this is true
-@export var immune_to_effects: bool = false
+##Stop any effects calls from attack calls if this is true including dmg manip
+@export var attack_effect_immune: bool = false
 ##Immune to regular & bench damage [NOT DAMAGE MANIP EFFECT CALLS]
-@export var immune_to_damage: bool = false
+@export var damage_immune: bool = false
+@export var body_immune: bool = false
+@export var power_immune: bool = false
+@export var trainer_immune: bool = false
+@export_subgroup("Weird Immunities")
+@export var odd_immunity: bool = false
+@export var even_immunity: bool = false
 
 @export_group("Pierce")
 @export var weakness: bool

@@ -1,0 +1,44 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://3xchf1a58j3h"]
+
+[ext_resource type="Texture2D" uid="uid://ct6im4y80x50c" path="res://Art/Cards/2 ex Sandstorm/72.jpg" id="1_a5w67"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_aeodm"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_tto61"]
+[ext_resource type="Resource" uid="uid://26n17bil6qem" path="res://Resources/Components/Pokemon/Attacks/EffectlessAttacks/Scratch1-10.tres" id="3_vnso5"]
+[ext_resource type="Resource" uid="uid://ch31rb2s75yst" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/L1C2.tres" id="4_ixmf5"]
+[ext_resource type="Resource" uid="uid://dnnekosklb3ar" path="res://Resources/Components/Pokemon/Attacks/AttackData/40Dmg.tres" id="5_4gk6m"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="6_6mim2"]
+
+[sub_resource type="Resource" id="Resource_w0yvy"]
+script = ExtResource("2_tto61")
+name = "Pika Bolt"
+description = ""
+attack_cost = ExtResource("4_ixmf5")
+attack_data = ExtResource("5_4gk6m")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_3paiw"]
+script = ExtResource("6_6mim2")
+HP = 50
+retreat = 1
+attacks = Array[ExtResource("2_tto61")]([ExtResource("3_vnso5"), SubResource("Resource_w0yvy")])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 1
+owner = 0
+type = 8
+weak = 32
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_aeodm")
+name = "Pikachu"
+image = ExtResource("1_a5w67")
+illustrator = "Mitsuhiro Arita"
+number = 72
+rarity = 0
+expansion = 1
+categories = 1
+pokemon_properties = SubResource("Resource_3paiw")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

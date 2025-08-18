@@ -1,24 +1,24 @@
 [gd_resource type="Resource" script_class="Pokemon" load_steps=7 format=3 uid="uid://bt03lr8uojbaf"]
 
-[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_ftmnk"]
-[ext_resource type="Resource" uid="uid://bfhbpclxag538" path="res://Resources/Components/Pokemon/Attacks/CommonAttacks/Bubble.tres" id="2_jcire"]
-[ext_resource type="Resource" uid="uid://dpovjlfpsypwe" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless3.tres" id="3_vjvd4"]
-[ext_resource type="Resource" uid="uid://dnnekosklb3ar" path="res://Resources/Components/Pokemon/Attacks/AttackData/40Dmg.tres" id="4_d0j2x"]
-[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_k7aqv"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_2m67y"]
+[ext_resource type="Resource" uid="uid://bfhbpclxag538" path="res://Resources/Components/Pokemon/Attacks/CommonAttacks/Bubble.tres" id="2_rho75"]
+[ext_resource type="Resource" uid="uid://dpovjlfpsypwe" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless3.tres" id="3_4emqv"]
+[ext_resource type="Resource" uid="uid://dnnekosklb3ar" path="res://Resources/Components/Pokemon/Attacks/AttackData/40Dmg.tres" id="4_yjpy8"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_ubpj8"]
 
 [sub_resource type="Resource" id="Resource_joqya"]
-script = ExtResource("1_ftmnk")
+script = ExtResource("1_2m67y")
 name = "Slash"
 description = ""
-attack_cost = ExtResource("3_vjvd4")
-attack_data = ExtResource("4_d0j2x")
+attack_cost = ExtResource("3_4emqv")
+attack_data = ExtResource("4_yjpy8")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [resource]
-script = ExtResource("5_k7aqv")
+script = ExtResource("5_ubpj8")
 HP = 70
 retreat = 1
-attacks = Array[ExtResource("1_ftmnk")]([ExtResource("2_jcire"), SubResource("Resource_joqya")])
+attacks = Array[ExtResource("1_2m67y")]([ExtResource("2_rho75"), SubResource("Resource_joqya")])
 evo_stage = "Stage 1"
 evolves_from = "Mudkip"
 considered = 1

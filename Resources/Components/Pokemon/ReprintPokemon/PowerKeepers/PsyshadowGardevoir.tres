@@ -1,48 +1,51 @@
-[gd_resource type="Resource" script_class="Pokemon" load_steps=13 format=3 uid="uid://beysggoxxjyps"]
+[gd_resource type="Resource" script_class="Pokemon" load_steps=14 format=3 uid="uid://beysggoxxjyps"]
 
-[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_svcbl"]
-[ext_resource type="Resource" uid="uid://cu817ymtejglx" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Psychic1.tres" id="2_wc4pn"]
-[ext_resource type="Resource" uid="uid://dh4vjjy6e5xbi" path="res://Resources/Components/Counters/Comparator/Equals/TrgEnEqual.tres" id="3_yev6m"]
-[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="4_vnukj"]
-[ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="5_kjilk"]
-[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="6_laaf6"]
-[ext_resource type="Resource" uid="uid://buofx3y8opwf" path="res://Resources/Components/Effects/Search/PsyshadowSearch.tres" id="7_lhy54"]
-[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="9_bl7d2"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_7qhk1"]
+[ext_resource type="Resource" uid="uid://cu817ymtejglx" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Psychic1.tres" id="2_tmk71"]
+[ext_resource type="Resource" uid="uid://dh4vjjy6e5xbi" path="res://Resources/Components/Counters/Comparator/Equals/TrgEnEqual.tres" id="3_kc57r"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="4_a72vu"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="5_cx3u4"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="6_ujcbr"]
+[ext_resource type="Resource" uid="uid://buofx3y8opwf" path="res://Resources/Components/Effects/Search/PsyshadowSearch.tres" id="7_delcp"]
+[ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="8_ssrag"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="9_vxalp"]
 
 [sub_resource type="Resource" id="Resource_mamwr"]
-script = ExtResource("4_vnukj")
+script = ExtResource("5_cx3u4")
 prompt_reliant = false
 initial_main_DMG = 10
 defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
+share_prompt = false
+prompt_effects = Array[ExtResource("4_a72vu")]([])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false
 modifier = 2
 modifier_num = 10
-comparator = ExtResource("3_yev6m")
+comparator = ExtResource("3_kc57r")
 both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_apf0q"]
-script = ExtResource("1_svcbl")
+script = ExtResource("1_7qhk1")
 name = "Energy Burst"
 description = "Does 10 damage times the total amount of Energy attached to [name] and the Defending Pokémon."
-attack_cost = ExtResource("2_wc4pn")
+attack_cost = ExtResource("2_tmk71")
 attack_data = SubResource("Resource_mamwr")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_jt5ow"]
-script = ExtResource("6_laaf6")
+script = ExtResource("6_ujcbr")
 either_or = false
 order = Array[int]([])
-search = ExtResource("7_lhy54")
+search = ExtResource("7_delcp")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_307qu"]
-script = ExtResource("5_kjilk")
+script = ExtResource("8_ssrag")
 category = "Power"
 name = "Psy Shadow"
 description = "Once during your turn (before your attack), you may search your deck for a {Psychic} Energy card and attach it to 1 of your Pokémon. Put 2 damage counters on that Pokémon. Shuffle your deck afterward. This power can't be used if [name] is affected by a Special Condition."
@@ -54,11 +57,11 @@ effect = SubResource("Resource_jt5ow")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 
 [resource]
-script = ExtResource("9_bl7d2")
+script = ExtResource("9_vxalp")
 HP = 100
 retreat = 2
 pokepower = SubResource("Resource_307qu")
-attacks = Array[ExtResource("1_svcbl")]([SubResource("Resource_apf0q")])
+attacks = Array[ExtResource("1_7qhk1")]([SubResource("Resource_apf0q")])
 evo_stage = "Stage 2"
 evolves_from = "Kirlia"
 considered = 1

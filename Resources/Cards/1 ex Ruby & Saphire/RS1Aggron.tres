@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_cfam6"]
 [ext_resource type="Resource" uid="uid://gu6w02ikdx01" path="res://Resources/Components/Pokemon/Attacks/EffectlessAttacks/C1Retaliate.tres" id="3_duxfj"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_q1vs7"]
-[ext_resource type="Resource" uid="uid://cydxe57j5nudo" path="res://Resources/Components/Pokemon/Attacks/EffectlessAttacks/DoubleLariat.tres" id="4_7impx"]
+[ext_resource type="Resource" uid="uid://cydxe57j5nudo" path="res://Resources/Components/Pokemon/Attacks/EffectlessAttacks/DoubleLariat.tres" id="6_is0l4"]
 [ext_resource type="Resource" uid="uid://dpovjlfpsypwe" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless3.tres" id="7_qgyyk"]
 [ext_resource type="Resource" uid="uid://dnnekosklb3ar" path="res://Resources/Components/Pokemon/Attacks/AttackData/40Dmg.tres" id="8_31rwn"]
 
@@ -20,7 +20,7 @@ attack_data = ExtResource("8_31rwn")
 script = ExtResource("2_5623o")
 HP = 110
 retreat = 4
-attacks = Array[ExtResource("2_cfam6")]([ExtResource("3_duxfj"), SubResource("Resource_3cg3j"), ExtResource("4_7impx")])
+attacks = Array[ExtResource("2_cfam6")]([ExtResource("3_duxfj"), SubResource("Resource_3cg3j"), ExtResource("6_is0l4")])
 evo_stage = "Stage 2"
 evolves_from = "Lairon"
 considered = 1

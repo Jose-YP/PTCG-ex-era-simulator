@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="Trainer" load_steps=5 format=3 uid="uid://et8lxplilgin"]
+[gd_resource type="Resource" script_class="Trainer" load_steps=7 format=3 uid="uid://et8lxplilgin"]
 
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="1_2wp7s"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="1_i4fwy"]
 [ext_resource type="Resource" uid="uid://ctasha828kh0t" path="res://Resources/Components/Effects/Search/LadyOutingSearch.tres" id="2_mmmna"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="3_xksjm"]
 
@@ -10,9 +11,14 @@ either_or = false
 order = Array[int]([])
 search = ExtResource("2_mmmna")
 
+[sub_resource type="Resource" id="Resource_fgoph"]
+script = ExtResource("1_i4fwy")
+success = SubResource("Resource_htv53")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
 [resource]
 script = ExtResource("3_xksjm")
 considered = "Supporter"
 specific_requirement = ""
 description = "Search your deck for up to 3 different types of basic Energy cards, show them to your opponent, and put them into your hand. Shuffle your deck afterward. "
-always_effect = SubResource("Resource_htv53")
+prompt_effects = Array[ExtResource("1_i4fwy")]([SubResource("Resource_fgoph")])

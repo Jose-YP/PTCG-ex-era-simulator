@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=13 format=3 uid="uid://b1fwhx6td0u27"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=15 format=3 uid="uid://b1fwhx6td0u27"]
 
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_8igxm"]
 [ext_resource type="Texture2D" uid="uid://cjpx1g0xovmg8" path="res://Art/Cards/1 ex Ruby & Saphire/21.jpg" id="1_wt1li"]
@@ -7,6 +7,7 @@
 [ext_resource type="Resource" uid="uid://2nifekhevrbw" path="res://Resources/Components/Pokemon/Attacks/BenchAttacks/WaterArrow1-20.tres" id="3_fn6o8"]
 [ext_resource type="Resource" uid="uid://b1rwmggf7a4do" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless2.tres" id="4_sv4fu"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="5_72gut"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="5_sv4fu"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="6_xn1xe"]
 
 [sub_resource type="Resource" id="Resource_rxp53"]
@@ -14,6 +15,11 @@ script = ExtResource("5_72gut")
 either_or = false
 order = Array[int]([])
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_72gut"]
+script = ExtResource("5_sv4fu")
+success = SubResource("Resource_rxp53")
+metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [sub_resource type="Resource" id="Resource_876u4"]
 script = ExtResource("6_xn1xe")
@@ -23,7 +29,8 @@ defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
-always_effect = SubResource("Resource_rxp53")
+share_prompt = false
+prompt_effects = Array[ExtResource("5_sv4fu")]([SubResource("Resource_72gut")])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false

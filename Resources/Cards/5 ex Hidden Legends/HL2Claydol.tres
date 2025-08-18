@@ -1,0 +1,141 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=25 format=3 uid="uid://cx32yovx32rmb"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_dag8c"]
+[ext_resource type="Texture2D" uid="uid://dwpisd1gvr8r0" path="res://Art/Cards/5 ex Hidden Legends/2.jpg" id="1_mry2b"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_icqfv"]
+[ext_resource type="Resource" uid="uid://cu817ymtejglx" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Psychic1.tres" id="3_ulhu1"]
+[ext_resource type="Resource" uid="uid://bmo8ndsh2k12h" path="res://Resources/Components/Effects/Asks/General/BothTarget.tres" id="4_mmjaj"]
+[ext_resource type="Resource" uid="uid://cv8xofc4ofaom" path="res://Resources/Components/EnData/NeoRainbow.tres" id="5_2buu8"]
+[ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="6_21qft"]
+[ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="7_xk0lb"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="8_a2x5l"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="9_f0a8c"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="10_yp58i"]
+[ext_resource type="Resource" uid="uid://dts1uql4qdy6x" path="res://Resources/Components/Effects/Asks/Evo/BothEvolved.tres" id="11_pd87r"]
+[ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/BuffMaker.gd" id="12_skm8q"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="13_l8lf2"]
+[ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="14_vxqqi"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="15_5lmy0"]
+
+[sub_resource type="Resource" id="Resource_bdyj6"]
+script = ExtResource("6_21qft")
+which = "Slot"
+ask = ExtResource("4_mmjaj")
+slot_vars = "energy_cards"
+en_count_methods = "Total"
+en_counting = ExtResource("5_2buu8")
+cap = -1
+metadata/_custom_type_script = "uid://vjn146j3ayd6"
+
+[sub_resource type="Resource" id="Resource_ijw2n"]
+script = ExtResource("7_xk0lb")
+comparision_type = "Return"
+first_comparison = SubResource("Resource_bdyj6")
+compare_to = "None"
+second_constant = 0
+operate_w_constant = "None"
+metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
+
+[sub_resource type="Resource" id="Resource_inxi4"]
+script = ExtResource("9_f0a8c")
+prompt_reliant = false
+initial_main_DMG = 10
+defender_properties = 0
+condition = 1
+before_damage = false
+replace_num = false
+share_prompt = false
+prompt_effects = Array[ExtResource("8_a2x5l")]([])
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 2
+modifier_num = 10
+comparator = SubResource("Resource_ijw2n")
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_vlcue"]
+script = ExtResource("2_icqfv")
+name = "Muddy Eye"
+description = "Does 10 damage times the number of basic Energy cards attached to Claydol and the Defending Pokémon."
+attack_cost = ExtResource("3_ulhu1")
+attack_data = SubResource("Resource_inxi4")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_cx83b"]
+script = ExtResource("12_skm8q")
+description = "Attacks cost {Colorless} more to use"
+application = "Slot"
+stackable = true
+recieves = ExtResource("11_pd87r")
+duration = -1
+after_weak_res = true
+add_hp = 0
+attack = 0
+defense = 0
+retreat_change = 0
+cost_modifier = "Add"
+attack_cost = ExtResource("10_yp58i")
+modify = "HP"
+operation = "Replace"
+condition_immune = 0
+attack_effect_immune = false
+damage_immune = false
+body_immune = false
+power_immune = false
+trainer_immune = false
+odd_immunity = false
+even_immunity = false
+weakness = false
+resistance = false
+effects = false
+attack_names = Array[String]([])
+metadata/_custom_type_script = "uid://coojhwe6m20gd"
+
+[sub_resource type="Resource" id="Resource_t2g21"]
+script = ExtResource("13_l8lf2")
+either_or = false
+order = Array[int]([])
+buff = SubResource("Resource_cx83b")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_s6f6r"]
+script = ExtResource("14_vxqqi")
+category = "Body"
+name = "Primal Pull"
+description = " As long as [name] is your Active Pokémon, each player's Evolved Pokémon pays {Colorless} more Energy to use its attacks. "
+affected_by_condition = false
+active = true
+how_often = "Once per Mon"
+independent_src_trg = false
+passive = SubResource("Resource_t2g21")
+metadata/_custom_type_script = "uid://bs2y8ocljilv8"
+
+[sub_resource type="Resource" id="Resource_bwcve"]
+script = ExtResource("15_5lmy0")
+HP = 80
+retreat = 1
+pokebody = SubResource("Resource_s6f6r")
+attacks = Array[ExtResource("2_icqfv")]([SubResource("Resource_vlcue")])
+evo_stage = "Stage 1"
+evolves_from = "Baltoy"
+considered = 1
+owner = 0
+type = 16
+weak = 16
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_dag8c")
+name = "Claydol"
+image = ExtResource("1_mry2b")
+illustrator = "Kyoko Umemoto"
+number = 2
+rarity = 3
+expansion = 4
+categories = 1
+pokemon_properties = SubResource("Resource_bwcve")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

@@ -7,6 +7,7 @@ class_name PokeSlot
 @export var current_card: Base_Card
 @export_range(0,400,10) var max_HP: int = 0
 @export_range(0,400,10) var damage_counters: int = 0
+@export_range(0,10,1) var final_retreat: int = 0
 #--------------------------------------
 #region NON EXPORT
 var ui_slot: UI_Slot
@@ -26,8 +27,6 @@ var power_ready: bool
 #--------------------------------------
 #region ATTATCHED VARIABLES
 @export_group("Attatchments")
-@export var evolution_ready: bool = false
-@export var evolved_this_turn: bool = false
 @export var evolved_from: Array[Base_Card] = [] #
 @export var energy_cards: Array[Base_Card] = []
 @export var tm_cards: Array[Base_Card] = []
@@ -37,18 +36,25 @@ var power_ready: bool
 @export var applied_condition: Condition = Condition.new()
 #endregion
 #--------------------------------------
+#--------------------------------------
+#region TEMP CHANGES
+@export_group("Temp Changes")
+@export var evolution_ready: bool = false
+@export var evolved_this_turn: bool = false
+@export var body_disabled: bool = false
+@export var power_disabled: bool = false
+#endregion
+#--------------------------------------
+#--------------------------------------
 #region HISTORY
 @export_group("History")
 @export var current_attack: Attack
 @export var dealt_damage: int = 0
 @export var energy_discarded: int = 0
-@export var body_disabled: bool = false
-@export var power_disabled: bool = false
 var current_previous: Base_Card
 #endregion
-#endregion
 #--------------------------------------
-
+#endregion
 #--------------------------------------
 #region SIGNALS
 @warning_ignore_start("unused_signal")

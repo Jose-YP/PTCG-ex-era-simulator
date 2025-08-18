@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=16 format=3 uid="uid://idwdorik15vd"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=17 format=3 uid="uid://idwdorik15vd"]
 
 [ext_resource type="Texture2D" uid="uid://dpkus6tgwiwt" path="res://Art/Cards/1 ex Ruby & Saphire/102.jpg" id="1_bpg55"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_vv51n"]
@@ -12,18 +12,22 @@
 [ext_resource type="Resource" uid="uid://bdwp1hpi4q83j" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/G2C1.tres" id="7_3o3ku"]
 [ext_resource type="Resource" uid="uid://cj4j56m7hrxpe" path="res://Resources/Components/Pokemon/Attacks/AttackData/50Dmg.tres" id="8_vgcjx"]
 
+[sub_resource type="Resource" id="Resource_dwsah"]
+script = ExtResource("5_dwsah")
+prompt = ExtResource("4_dwsah")
+fail = ExtResource("3_pja2x")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
 [sub_resource type="Resource" id="Resource_extvf"]
 script = ExtResource("5_xv1i5")
 prompt_reliant = false
-prompt = ExtResource("4_dwsah")
 initial_main_DMG = 10
 defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
-success_effect = ExtResource("3_pja2x")
 share_prompt = false
-prompt_effects = Array[ExtResource("5_dwsah")]([])
+prompt_effects = Array[ExtResource("5_dwsah")]([SubResource("Resource_dwsah")])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false
