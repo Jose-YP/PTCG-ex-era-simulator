@@ -15,28 +15,30 @@
 
 [sub_resource type="Resource" id="Resource_h8prn"]
 script = ExtResource("5_wp6it")
-turn_delay = 2
-prevent_KO = null
+choosing = 4
 mode = "Add"
-how_many = 5
-choosing = null
-anyway_u_like = null
-choose_num = null
 ask = ExtResource("4_r5mel")
-vary_choose_num = null
-plus = null
-modifier = null
+how_many = 5
+choose_num = 1
+turn_delay = 2
+prevent_KO = false
+anyway_u_like = false
+with_leftover = "None"
+leftover_anyway = false
+vary_choose_num = false
+plus = true
+modifier = 1
 metadata/_custom_type_script = "uid://scca13hg4k1l"
 
 [sub_resource type="Resource" id="Resource_4h5qt"]
 script = ExtResource("6_mciaj")
-either_or = false
 order = Array[int]([])
 dmgManip = SubResource("Resource_h8prn")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_wo8fp"]
 script = ExtResource("7_3n3j3")
+description = "Put 5 damage counters on the Defending Pokémon at the end of your opponent's next turn."
 prompt_reliant = false
 initial_main_DMG = 20
 defender_properties = 0
@@ -64,6 +66,7 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_r15t4"]
 script = ExtResource("7_3n3j3")
+description = "The Defending Pokémon is now Poisoned."
 prompt_reliant = false
 initial_main_DMG = 50
 defender_properties = 0

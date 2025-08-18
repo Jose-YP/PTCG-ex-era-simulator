@@ -24,7 +24,6 @@ metadata/_custom_type_script = "uid://curklvf1517ml"
 
 [sub_resource type="Resource" id="Resource_dm3f7"]
 script = ExtResource("6_c4g78")
-either_or = false
 order = Array[int]([7, 0])
 condition = ExtResource("5_o6fok")
 swap = SubResource("Resource_735o8")
@@ -32,6 +31,7 @@ metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_27luv"]
 script = ExtResource("8_2r7b6")
+description = "Switch 1 of your opponent's Benched Pokémon with 1 of the Defending Pokémon. Your opponent chooses the Defending Pokémon to switch. The new Defending Pokémon is now Burned."
 prompt_reliant = false
 initial_main_DMG = 0
 defender_properties = 0

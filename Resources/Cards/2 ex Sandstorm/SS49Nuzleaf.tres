@@ -20,7 +20,7 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_ykwxl"]
 script = ExtResource("2_io60j")
 name = "Razor Wind"
-description = "Flip a coin. If tails, this attack does nothing."
+description = ""
 attack_cost = ExtResource("5_kk3vh")
 attack_data = ExtResource("6_7e3v8")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

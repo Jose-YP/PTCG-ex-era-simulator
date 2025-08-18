@@ -26,7 +26,6 @@ metadata/_custom_type_script = "uid://scca13hg4k1l"
 
 [sub_resource type="Resource" id="Resource_wmad5"]
 script = ExtResource("7_3km8i")
-either_or = false
 order = Array[int]([])
 dmgManip = SubResource("Resource_podxu")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"

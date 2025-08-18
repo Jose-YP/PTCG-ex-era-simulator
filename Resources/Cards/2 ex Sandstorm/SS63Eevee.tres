@@ -1,0 +1,127 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=22 format=3 uid="uid://bf2l47ws486qq"]
+
+[ext_resource type="Texture2D" uid="uid://d2m5yoxt2nmte" path="res://Art/Cards/2 ex Sandstorm/63.jpg" id="1_tt6hs"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_uipf0"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_5up2p"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="4_g0psw"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="5_87hdl"]
+[ext_resource type="Resource" uid="uid://bl4qnrkh3kxdl" path="res://Resources/Components/Effects/Placement/PutIntoHand.tres" id="6_yqb3m"]
+[ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="7_ypx3t"]
+[ext_resource type="Resource" uid="uid://c7itelq8jtjc2" path="res://Resources/Components/EnData/Rainbow.tres" id="8_hrx2p"]
+[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="9_ne41n"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="10_qw1au"]
+[ext_resource type="Resource" uid="uid://dn06iv2d25rtv" path="res://Resources/Components/Pokemon/Attacks/AttackData/10+10IfHeads.tres" id="11_277va"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="12_qd10s"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="13_4a40a"]
+
+[sub_resource type="Resource" id="Resource_70ji6"]
+script = ExtResource("7_ypx3t")
+description = "cards that evolve from Eevee"
+must_be_different = false
+broad_class = 1
+exactly = false
+name_chec = 0
+name_array = Array[String]([])
+comparison_type = 1
+type = 0
+HP = -10
+evolves_from = true
+rare_candy = false
+inclusive_class = true
+poke_class = 0
+owner = 0
+stage = 0
+trainer_classes = 0
+energy_class = 3
+energy_provides = ExtResource("8_hrx2p")
+metadata/_custom_type_script = "uid://uplawvwcwl8y"
+
+[sub_resource type="Resource" id="Resource_qg7e6"]
+script = ExtResource("9_ne41n")
+side = 4
+where = 1
+reordering_only = false
+shuffle_first = false
+based_on_side = 4
+based_on_slots = 1
+based_on_energy = 0
+portion = -1
+identifier_allowed = -1
+how_many = Array[int]([3])
+of_this = Array[ExtResource("7_ypx3t")]([SubResource("Resource_70ji6")])
+and_then = ExtResource("6_yqb3m")
+reveal = true
+metadata/_custom_type_script = "uid://cw3yr1k040kw7"
+
+[sub_resource type="Resource" id="Resource_ifs6r"]
+script = ExtResource("5_87hdl")
+order = Array[int]([])
+search = SubResource("Resource_qg7e6")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_yw8j1"]
+script = ExtResource("4_g0psw")
+success = SubResource("Resource_ifs6r")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
+[sub_resource type="Resource" id="Resource_t2u0d"]
+script = ExtResource("10_qw1au")
+description = "Search your deck for up to 3 cards that evolve from [name], show them to your opponent, and put them into your hand. Shuffle your deck afterward."
+prompt_reliant = false
+initial_main_DMG = 0
+defender_properties = 0
+condition = 1
+before_damage = false
+replace_num = false
+share_prompt = false
+prompt_effects = Array[ExtResource("4_g0psw")]([SubResource("Resource_yw8j1")])
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_s2saa"]
+script = ExtResource("2_uipf0")
+name = "Signs of Evolution"
+description = ""
+attack_cost = ExtResource("3_5up2p")
+attack_data = SubResource("Resource_t2u0d")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_k35ss"]
+script = ExtResource("2_uipf0")
+name = ""
+description = ""
+attack_cost = ExtResource("3_5up2p")
+attack_data = ExtResource("11_277va")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_k6lxq"]
+script = ExtResource("12_qd10s")
+HP = 50
+retreat = 1
+attacks = Array[ExtResource("2_uipf0")]([SubResource("Resource_s2saa"), SubResource("Resource_k35ss")])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 1
+owner = 0
+type = 256
+weak = 32
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("13_4a40a")
+name = "Eevee"
+image = ExtResource("1_tt6hs")
+illustrator = " Kouki Saitou"
+number = 63
+rarity = 0
+expansion = 1
+categories = 1
+pokemon_properties = SubResource("Resource_k6lxq")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

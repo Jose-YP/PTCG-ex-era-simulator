@@ -25,7 +25,6 @@ metadata/_custom_type_script = "uid://scca13hg4k1l"
 
 [sub_resource type="Resource" id="Resource_mql2h"]
 script = ExtResource("5_0eyb0")
-either_or = false
 order = Array[int]([])
 dmgManip = SubResource("Resource_jq8qk")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
@@ -37,6 +36,7 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [resource]
 script = ExtResource("6_23s4l")
+description = "Count the number of cards in your opponent's hand. Put that many damage counters on the Defending Pokémon."
 prompt_reliant = false
 initial_main_DMG = 0
 defender_properties = 0

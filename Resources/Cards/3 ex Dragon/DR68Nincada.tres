@@ -12,13 +12,13 @@
 
 [sub_resource type="Resource" id="Resource_s0168"]
 script = ExtResource("5_1n7bc")
-either_or = false
 order = Array[int]([])
 dmgManip = ExtResource("4_5mm17")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_0b6ve"]
 script = ExtResource("6_cuwhc")
+description = "After your attack, remove from [name] the number of damage counters equal to the damage you did to the Defending Pokémon. If [name] has fewer damage counters than that, remove all of them."
 prompt_reliant = false
 initial_main_DMG = 10
 defender_properties = 0

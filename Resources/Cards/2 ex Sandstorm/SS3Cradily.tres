@@ -18,7 +18,6 @@
 
 [sub_resource type="Resource" id="Resource_bqb5e"]
 script = ExtResource("5_5g1fb")
-either_or = null
 order = null
 swap = ExtResource("6_777gh")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
@@ -44,6 +43,7 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [sub_resource type="Resource" id="Resource_5cgq3"]
 script = ExtResource("8_tjdgf")
+description = "Before using this effect, you may switch the Defending Pokémon with 1 of your opponent's Benched Pokémon, if any. The Defending Pokémon is now Poisoned."
 prompt_reliant = false
 prompt = SubResource("Resource_roksj")
 initial_main_DMG = 0
@@ -71,7 +71,6 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_t3atv"]
 script = ExtResource("5_5g1fb")
-either_or = null
 order = null
 dmgManip = ExtResource("10_pnj3y")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
@@ -83,6 +82,7 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [sub_resource type="Resource" id="Resource_defyy"]
 script = ExtResource("8_tjdgf")
+description = "Remove 2 damage counters from [name] (remove 1 if there is only 1)."
 prompt_reliant = false
 initial_main_DMG = 50
 defender_properties = 0
@@ -124,7 +124,6 @@ metadata/_custom_type_script = "uid://c0ishgbxk63dg"
 
 [sub_resource type="Resource" id="Resource_eaxr4"]
 script = ExtResource("5_5g1fb")
-either_or = null
 order = null
 disable = SubResource("Resource_ikgoj")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"

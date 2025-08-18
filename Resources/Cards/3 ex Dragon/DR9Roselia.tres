@@ -30,7 +30,6 @@ metadata/_custom_type_script = "uid://cimk6l7ytw7xg"
 
 [sub_resource type="Resource" id="Resource_veeg8"]
 script = ExtResource("8_68373")
-either_or = false
 order = Array[int]([])
 energy_movement = SubResource("Resource_ksw77")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
@@ -42,6 +41,7 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [sub_resource type="Resource" id="Resource_i8qx6"]
 script = ExtResource("9_x7t5e")
+description = "Attach up to 2 {Grass} Energy cards from your hand to your Pokémon in any way you like."
 prompt_reliant = false
 initial_main_DMG = 0
 defender_properties = 0

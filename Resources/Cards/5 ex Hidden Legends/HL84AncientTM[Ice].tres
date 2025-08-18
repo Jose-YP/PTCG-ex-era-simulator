@@ -71,7 +71,6 @@ metadata/_custom_type_script = "uid://8sh5p3leflla"
 
 [sub_resource type="Resource" id="Resource_2svl2"]
 script = ExtResource("7_ys46e")
-either_or = false
 order = Array[int]([2, 1])
 buff = ExtResource("12_k4ce0")
 card_disrupt = SubResource("Resource_utej3")
@@ -85,6 +84,7 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [sub_resource type="Resource" id="Resource_budek"]
 script = ExtResource("8_3ajyv")
+description = "Discard all of your opponent's Trainer cards in play. If you do, prevent all effects, including damage, done to [u]the Pokémon using this attack[/u] during your opponent's next turn."
 prompt_reliant = false
 initial_main_DMG = 0
 defender_properties = 0

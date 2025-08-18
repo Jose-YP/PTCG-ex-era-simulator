@@ -24,7 +24,6 @@ metadata/_custom_type_script = "uid://8sh5p3leflla"
 
 [sub_resource type="Resource" id="Resource_gm1a6"]
 script = ExtResource("3_hqttu")
-either_or = null
 order = null
 card_disrupt = SubResource("Resource_hqttu")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"

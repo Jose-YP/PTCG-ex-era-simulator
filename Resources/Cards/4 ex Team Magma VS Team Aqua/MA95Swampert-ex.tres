@@ -37,6 +37,7 @@ metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
 [sub_resource type="Resource" id="Resource_b53wu"]
 script = ExtResource("8_o4s0x")
+description = "Does 20 damage plus 20 more damage for each basic Energy attached to [name] but not used to pay for this attack's Energy cost. You can't add more than 80 damage in this way."
 prompt_reliant = false
 initial_main_DMG = 20
 defender_properties = 0
@@ -78,7 +79,6 @@ metadata/_custom_type_script = "uid://cimk6l7ytw7xg"
 
 [sub_resource type="Resource" id="Resource_dlxon"]
 script = ExtResource("12_e34dj")
-either_or = false
 order = Array[int]([])
 energy_movement = SubResource("Resource_4u7em")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
@@ -97,6 +97,7 @@ metadata/_custom_type_script = "uid://br15mnap82upq"
 
 [sub_resource type="Resource" id="Resource_sc2gf"]
 script = ExtResource("8_o4s0x")
+description = "Choose 1 of your opponent's Pokémon. This attack does 40 damage to that Pokémon. After doing damage, flip a coin. If heads, your opponent discards an Energy card, if any, attached to that Pokémon. (Don't apply Weakness and Resistance to Benched Pokémon.)"
 prompt_reliant = false
 initial_main_DMG = 0
 defender_properties = 0

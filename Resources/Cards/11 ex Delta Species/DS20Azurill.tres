@@ -13,13 +13,13 @@
 
 [sub_resource type="Resource" id="Resource_gfqr1"]
 script = ExtResource("3_6fwf0")
-either_or = false
 order = Array[int]([])
 search = ExtResource("4_rbr4h")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_rbr4h"]
 script = ExtResource("6_6fwf0")
+description = "Choose a basic Energy card in your hand and show it to your opponent. Then, search your deck for a Basic Pokémon or Evolution card of that Energy type, show it to your opponent, and put it into your hand. Shuffle your deck afterward."
 prompt_reliant = false
 initial_main_DMG = 0
 defender_properties = 0

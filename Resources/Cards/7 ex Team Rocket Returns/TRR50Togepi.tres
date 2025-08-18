@@ -40,13 +40,13 @@ metadata/_custom_type_script = "uid://dtv1d2u2kvixy"
 
 [sub_resource type="Resource" id="Resource_min8w"]
 script = ExtResource("6_mw7hy")
-either_or = false
 order = Array[int]([])
 mimic = SubResource("Resource_pj4ld")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_kkp1i"]
 script = ExtResource("7_ky0p2")
+description = "Flip a coin. If heads, choose 1 of the Defending Pokémon's attacks. Mini-Metronome copies that attack except for its Energy cost. (You must still do anything else required for that attack.) (No matter what type that Pokémon is, [name]'s type is still {Colorless}.) [name] performs that attack."
 prompt_reliant = false
 prompt = ExtResource("6_ky0p2")
 initial_main_DMG = 0

@@ -5,6 +5,5 @@
 
 [resource]
 script = ExtResource("2_phux3")
-either_or = false
 order = Array[int]([])
 buff = ExtResource("1_cxlrm")

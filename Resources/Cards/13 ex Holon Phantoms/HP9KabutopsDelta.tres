@@ -30,14 +30,16 @@ metadata/_custom_type_script = "uid://b85jmc7067bjc"
 
 [sub_resource type="Resource" id="Resource_b6u4m"]
 script = ExtResource("8_rbcqn")
+choosing = 4
+mode = "Remove"
+ask = ExtResource("7_1ru0a")
+how_many = 7
+choose_num = 1
 turn_delay = -1
 prevent_KO = false
-mode = "Remove"
-how_many = 7
-choosing = 4
 anyway_u_like = false
-choose_num = 1
-ask = ExtResource("7_1ru0a")
+with_leftover = "None"
+leftover_anyway = false
 vary_choose_num = false
 plus = true
 modifier = 1
@@ -45,7 +47,6 @@ metadata/_custom_type_script = "uid://scca13hg4k1l"
 
 [sub_resource type="Resource" id="Resource_ylth5"]
 script = ExtResource("9_kukq3")
-either_or = false
 order = Array[int]([])
 dmgManip = SubResource("Resource_b6u4m")
 alleviate = ExtResource("6_e62mj")
@@ -53,6 +54,7 @@ metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_5jthm"]
 script = ExtResource("5_e62mj")
+description = "If the Defending Pokémon is Knocked Out by this attack, remove all Special Conditions and 7 damage counters from [name] (all if there are less than 7)."
 prompt_reliant = false
 prompt = SubResource("Resource_s2tul")
 initial_main_DMG = 30
@@ -81,6 +83,7 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_4iss1"]
 script = ExtResource("5_e62mj")
+description = "Does 40 damage plus 10 more damage for each {Lightning} Energy attached to [name]."
 prompt_reliant = false
 initial_main_DMG = 40
 defender_properties = 0

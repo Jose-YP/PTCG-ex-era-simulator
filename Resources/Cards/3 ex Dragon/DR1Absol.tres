@@ -44,7 +44,6 @@ metadata/_custom_type_script = "uid://8sh5p3leflla"
 
 [sub_resource type="Resource" id="Resource_xtxka"]
 script = ExtResource("8_kr4nr")
-either_or = false
 order = Array[int]([])
 card_disrupt = SubResource("Resource_7dm1h")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
@@ -56,6 +55,7 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [sub_resource type="Resource" id="Resource_0caf3"]
 script = ExtResource("9_wlgfn")
+description = "If the number of cards in your opponent's hand is at least 6, choose a number of cards there, without looking, until your opponent has 5 cards left. Have your opponent discard the cards you chose."
 prompt_reliant = false
 initial_main_DMG = 0
 defender_properties = 0
@@ -82,6 +82,7 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_lmmbr"]
 script = ExtResource("9_wlgfn")
+description = "If you have more Prize cards left than your opponent, this attack does 20 damage plus 20 more damage."
 prompt_reliant = false
 initial_main_DMG = 20
 defender_properties = 0
@@ -102,7 +103,7 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_6w0gb"]
 script = ExtResource("2_agpnf")
 name = "Prize Count"
-description = "If you have more Prize cards left than your opponent, this attack does 20 damage plus 20 more damage. "
+description = "If you have more Prize cards left than your opponent, this attack does 20 damage plus 20 more damage."
 attack_cost = ExtResource("10_6kj08")
 attack_data = SubResource("Resource_lmmbr")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

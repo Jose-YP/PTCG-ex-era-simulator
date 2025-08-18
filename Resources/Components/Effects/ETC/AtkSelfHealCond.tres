@@ -5,7 +5,6 @@
 
 [resource]
 script = ExtResource("2_anigp")
-either_or = false
 order = Array[int]([])
 alleviate = ExtResource("1_u1iqc")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"

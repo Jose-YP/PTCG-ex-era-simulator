@@ -10,7 +10,6 @@
 
 [sub_resource type="Resource" id="Resource_vmn7y"]
 script = ExtResource("5_5q1eu")
-either_or = false
 order = Array[int]([8])
 draw_ammount = ExtResource("4_7lxuy")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"

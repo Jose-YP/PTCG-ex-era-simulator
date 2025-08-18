@@ -30,13 +30,13 @@ metadata/_custom_type_script = "uid://dtv1d2u2kvixy"
 
 [sub_resource type="Resource" id="Resource_kjb0j"]
 script = ExtResource("6_o5tfp")
-either_or = false
 order = Array[int]([])
 mimic = SubResource("Resource_sj5qk")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_ofgw2"]
 script = ExtResource("7_jaymn")
+description = "Choose 1 of the Defending Pokémon's attacks. Metronome copies that attack except for its Energy cost. (You must still do anything else in order to use that attack.) (No matter what type that Pokémon is, [name]'s type is still {Colorless}.) [name] performs that attack. "
 prompt_reliant = false
 initial_main_DMG = 0
 defender_properties = 0

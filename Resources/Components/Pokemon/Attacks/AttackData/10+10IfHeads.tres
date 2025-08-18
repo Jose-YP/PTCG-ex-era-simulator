@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="AttackData" load_steps=4 format=3 uid="uid://dn06iv2d25rtv"]
+
+[ext_resource type="Resource" uid="uid://c8ugmpvetg8xj" path="res://Resources/Components/Counters/Comparator/Equals/CoinflipHeads.tres" id="1_4o8mv"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="2_rusp6"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="3_1ek74"]
+
+[resource]
+script = ExtResource("3_1ek74")
+description = "Flip a coin. If heads, this attack does 10 damage plus 10 more damage."
+prompt_reliant = false
+initial_main_DMG = 10
+defender_properties = 0
+condition = 1
+before_damage = false
+replace_num = false
+share_prompt = false
+prompt_effects = Array[ExtResource("2_rusp6")]([])
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 1
+modifier_num = 10
+comparator = ExtResource("1_4o8mv")
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"

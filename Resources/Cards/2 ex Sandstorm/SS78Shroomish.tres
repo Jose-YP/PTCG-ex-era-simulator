@@ -14,7 +14,6 @@
 
 [sub_resource type="Resource" id="Resource_l1mqk"]
 script = ExtResource("5_1eq7j")
-either_or = false
 order = Array[int]([])
 energy_movement = ExtResource("4_xj0dn")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
@@ -26,6 +25,7 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [sub_resource type="Resource" id="Resource_ugo3h"]
 script = ExtResource("6_gyt8m")
+description = "Attach a {Grass} Energy card from your hand to [name]."
 prompt_reliant = false
 initial_main_DMG = 0
 defender_properties = 0

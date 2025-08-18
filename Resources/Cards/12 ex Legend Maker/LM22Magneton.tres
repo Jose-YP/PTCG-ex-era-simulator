@@ -73,6 +73,7 @@ metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
 [sub_resource type="Resource" id="Resource_srd2b"]
 script = ExtResource("9_w06bv")
+description = "If [name] has any React Energy cards attached to it, this attack does 30 damage plus 10 more damage for each Magnemite and Magneton (both yours and your opponent's) in play."
 prompt_reliant = false
 prompt = ExtResource("8_v5ngv")
 initial_main_DMG = 30
@@ -124,7 +125,6 @@ metadata/_custom_type_script = "uid://cimk6l7ytw7xg"
 
 [sub_resource type="Resource" id="Resource_gdo84"]
 script = ExtResource("7_kpec7")
-either_or = false
 order = Array[int]([])
 energy_movement = SubResource("Resource_gmkqs")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"

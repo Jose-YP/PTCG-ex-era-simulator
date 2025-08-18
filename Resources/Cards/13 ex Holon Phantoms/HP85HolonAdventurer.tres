@@ -42,7 +42,6 @@ metadata/_custom_type_script = "uid://bgtwlw1edjwyc"
 
 [sub_resource type="Resource" id="Resource_c4b4y"]
 script = ExtResource("9_jdqjr")
-either_or = false
 order = Array[int]([])
 draw_ammount = SubResource("Resource_i33cy")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"

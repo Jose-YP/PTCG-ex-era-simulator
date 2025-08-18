@@ -48,7 +48,6 @@ metadata/_custom_type_script = "uid://curklvf1517ml"
 
 [sub_resource type="Resource" id="Resource_fo38g"]
 script = ExtResource("10_kmcin")
-either_or = false
 order = Array[int]([7, 4])
 energy_movement = SubResource("Resource_hjipc")
 swap = SubResource("Resource_1csst")
@@ -62,6 +61,7 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [sub_resource type="Resource" id="Resource_jpmu7"]
 script = ExtResource("5_lptg0")
+description = "You may switch [name] with 1 of your Benched Pokémon. If you do, you may move any number of {Grass} Energy cards attached to [name] to the new Active Pokémon. "
 prompt_reliant = false
 initial_main_DMG = 30
 defender_properties = 0
@@ -127,7 +127,6 @@ metadata/_custom_type_script = "uid://cw3yr1k040kw7"
 
 [sub_resource type="Resource" id="Resource_weyjf"]
 script = ExtResource("10_kmcin")
-either_or = false
 order = Array[int]([])
 search = SubResource("Resource_pe6uw")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"

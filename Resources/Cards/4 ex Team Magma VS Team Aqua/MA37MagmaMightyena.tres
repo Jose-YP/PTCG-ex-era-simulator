@@ -18,7 +18,6 @@ attack_data = ExtResource("4_gfga0")
 
 [sub_resource type="Resource" id="Resource_0a22m"]
 script = ExtResource("6_xc0yb")
-either_or = false
 order = Array[int]([])
 
 [sub_resource type="Resource" id="Resource_per72"]

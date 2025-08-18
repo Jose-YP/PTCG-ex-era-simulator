@@ -34,7 +34,6 @@ metadata/_custom_type_script = "uid://cw3yr1k040kw7"
 
 [sub_resource type="Resource" id="Resource_kyucm"]
 script = ExtResource("4_n524r")
-either_or = false
 order = Array[int]([])
 search = SubResource("Resource_mjelp")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
@@ -46,6 +45,7 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [sub_resource type="Resource" id="Resource_p6brh"]
 script = ExtResource("9_j3kx4")
+description = "Search your discard pile for a basic Energy card, show it to your opponent, and put it into your hand."
 prompt_reliant = false
 initial_main_DMG = 0
 defender_properties = 0

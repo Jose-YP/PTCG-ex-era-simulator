@@ -5,7 +5,6 @@
 
 [resource]
 script = ExtResource("2_dukji")
-either_or = false
 order = Array[int]([])
 energy_movement = ExtResource("1_dvc1q")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"

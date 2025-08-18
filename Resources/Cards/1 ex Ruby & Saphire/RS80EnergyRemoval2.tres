@@ -10,7 +10,6 @@
 
 [sub_resource type="Resource" id="Resource_w15ih"]
 script = ExtResource("6_261xj")
-either_or = false
 order = Array[int]([])
 energy_movement = ExtResource("5_ujvyd")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"

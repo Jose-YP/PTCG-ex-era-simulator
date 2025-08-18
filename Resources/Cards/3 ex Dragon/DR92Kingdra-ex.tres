@@ -17,13 +17,13 @@
 
 [sub_resource type="Resource" id="Resource_co3x3"]
 script = ExtResource("5_u2ctw")
-either_or = false
 order = Array[int]([])
 mimic = ExtResource("4_pnumm")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_bijs0"]
 script = ExtResource("9_lm3bf")
+description = "Use any attack from [name]'s Basic Pokémon card or Stage 1 Evolution card. ([name] doesn't have to pay for that attack's Energy cost.)"
 prompt_reliant = false
 initial_main_DMG = 0
 defender_properties = 0
@@ -70,6 +70,7 @@ metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
 [sub_resource type="Resource" id="Resource_opwid"]
 script = ExtResource("9_lm3bf")
+description = "Does 50 damage plus 20 more damage for each {Water} Energy attached to Kingdra ex but not used to pay for this attack's Energy cost. You can't add more than 40 damage in this way."
 prompt_reliant = false
 initial_main_DMG = 50
 defender_properties = 0

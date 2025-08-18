@@ -10,7 +10,6 @@
 
 [sub_resource type="Resource" id="Resource_mamwr"]
 script = ExtResource("2_06bqb")
-either_or = false
 order = Array[int]([])
 dmgManip = ExtResource("1_06bqb")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"

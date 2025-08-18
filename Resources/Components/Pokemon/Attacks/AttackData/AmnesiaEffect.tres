@@ -22,7 +22,6 @@ metadata/_custom_type_script = "uid://c0ishgbxk63dg"
 
 [sub_resource type="Resource" id="Resource_necby"]
 script = ExtResource("2_0qc4t")
-either_or = null
 order = null
 disable = SubResource("Resource_fqfse")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
@@ -34,6 +33,7 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [resource]
 script = ExtResource("1_cghll")
+description = "Choose 1 of the Defending Pokémon's attacks. That Pokémon can't use that attack during your opponent's next turn."
 prompt_reliant = false
 initial_main_DMG = 0
 defender_properties = 0

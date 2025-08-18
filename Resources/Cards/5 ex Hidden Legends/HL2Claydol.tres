@@ -38,6 +38,7 @@ metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
 [sub_resource type="Resource" id="Resource_inxi4"]
 script = ExtResource("9_f0a8c")
+description = "Does 10 damage times the number of basic Energy cards attached to [name] and the Defending Pokémon."
 prompt_reliant = false
 initial_main_DMG = 10
 defender_properties = 0
@@ -71,14 +72,15 @@ stackable = true
 recieves = ExtResource("11_pd87r")
 duration = -1
 after_weak_res = true
+modify = "HP"
+operation = "Replace"
 add_hp = 0
 attack = 0
 defense = 0
 retreat_change = 0
 cost_modifier = "Add"
 attack_cost = ExtResource("10_yp58i")
-modify = "HP"
-operation = "Replace"
+plus = false
 condition_immune = 0
 attack_effect_immune = false
 damage_immune = false
@@ -95,7 +97,6 @@ metadata/_custom_type_script = "uid://coojhwe6m20gd"
 
 [sub_resource type="Resource" id="Resource_t2g21"]
 script = ExtResource("13_l8lf2")
-either_or = false
 order = Array[int]([])
 buff = SubResource("Resource_cx83b")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"

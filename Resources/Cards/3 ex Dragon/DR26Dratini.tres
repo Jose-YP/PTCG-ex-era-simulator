@@ -14,13 +14,13 @@
 
 [sub_resource type="Resource" id="Resource_36s8a"]
 script = ExtResource("5_h2ik1")
-either_or = false
 order = Array[int]([])
 dmgManip = ExtResource("4_l6b2h")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_7ofut"]
 script = ExtResource("6_htvxf")
+description = "Remove 2 damage counters from 1 of your Pokémon (remove 1 if there is only 1)."
 prompt_reliant = false
 initial_main_DMG = 0
 defender_properties = 0

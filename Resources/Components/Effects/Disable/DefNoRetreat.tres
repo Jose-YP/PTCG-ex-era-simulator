@@ -19,6 +19,5 @@ disable_retreat = true
 
 [resource]
 script = ExtResource("2_fdrur")
-either_or = null
 order = null
 disable = SubResource("Resource_e08sc")

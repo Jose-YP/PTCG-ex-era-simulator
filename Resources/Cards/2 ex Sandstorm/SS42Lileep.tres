@@ -18,7 +18,6 @@
 
 [sub_resource type="Resource" id="Resource_ohjxw"]
 script = ExtResource("4_yuuq4")
-either_or = false
 order = Array[int]([])
 search = ExtResource("5_n66i8")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
@@ -30,6 +29,7 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [sub_resource type="Resource" id="Resource_gtrua"]
 script = ExtResource("6_gopoq")
+description = "Search your deck for Omanyte, Kabuto, Aerodactyl, Lileep, or Anorith and put 2 of them onto your Bench. Shuffle your deck afterward. Treat the new Benched Pokémon as Basic Pokémon."
 prompt_reliant = false
 initial_main_DMG = 0
 defender_properties = 0
@@ -88,7 +88,6 @@ metadata/_custom_type_script = "uid://8sh5p3leflla"
 
 [sub_resource type="Resource" id="Resource_gp64k"]
 script = ExtResource("4_yuuq4")
-either_or = false
 order = Array[int]([])
 card_disrupt = SubResource("Resource_1yysy")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
@@ -101,6 +100,7 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [sub_resource type="Resource" id="Resource_s43ci"]
 script = ExtResource("6_gopoq")
+description = "If your opponent has any Evolved Pokémon in play, choose 1 of them and flip a coin. If heads, remove the highest Stage Evolution card on that Pokémon and have your opponent shuffle it into his or her deck."
 prompt_reliant = false
 initial_main_DMG = 0
 defender_properties = 0

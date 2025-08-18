@@ -32,13 +32,13 @@ metadata/_custom_type_script = "uid://scca13hg4k1l"
 
 [sub_resource type="Resource" id="Resource_5gebk"]
 script = ExtResource("7_fundw")
-either_or = false
 order = Array[int]([])
 dmgManip = SubResource("Resource_ii52m")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_n77ks"]
 script = ExtResource("8_kxtxb")
+description = "Flip 2 coins. For each heads, choose 1 of your opponent's Pokémon and put 1 damage counter on that Pokémon."
 prompt_reliant = false
 initial_main_DMG = 0
 defender_properties = 0
@@ -66,13 +66,13 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_o4bs1"]
 script = ExtResource("7_fundw")
-either_or = false
 order = Array[int]([])
 dmgManip = ExtResource("10_88a3h")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_jq5tw"]
 script = ExtResource("8_kxtxb")
+description = "Put 1 damage counter on each of your opponent's Pokémon that already has damage counters on it."
 prompt_reliant = false
 initial_main_DMG = 0
 defender_properties = 0

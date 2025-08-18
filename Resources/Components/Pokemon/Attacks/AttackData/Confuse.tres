@@ -11,6 +11,7 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [resource]
 script = ExtResource("2_0htvx")
+description = "The Defending Pokémon is now Confused."
 prompt_reliant = false
 initial_main_DMG = 0
 defender_properties = 0

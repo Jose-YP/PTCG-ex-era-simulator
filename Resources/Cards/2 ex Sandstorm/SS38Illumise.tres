@@ -29,6 +29,7 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [sub_resource type="Resource" id="Resource_r33gj"]
 script = ExtResource("8_uxe5o")
+description = "Flip a coin. If heads, the Defending Pokémon is now Confused. If tails, the Defending Pokémon is now Asleep."
 prompt_reliant = false
 initial_main_DMG = 0
 defender_properties = 0
@@ -93,13 +94,14 @@ recieves = ExtResource("11_njfcx")
 duration = -1
 against = SubResource("Resource_6k8kd")
 after_weak_res = true
+modify = "HP"
+operation = "Replace"
 add_hp = 0
 attack = 0
 defense = 30
 retreat_change = 0
 cost_modifier = "Add"
-modify = "HP"
-operation = "Replace"
+plus = false
 condition_immune = 0
 attack_effect_immune = false
 damage_immune = false
@@ -116,7 +118,6 @@ metadata/_custom_type_script = "uid://coojhwe6m20gd"
 
 [sub_resource type="Resource" id="Resource_kvilp"]
 script = ExtResource("16_23wfd")
-either_or = false
 order = Array[int]([])
 buff = SubResource("Resource_8fs6g")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"

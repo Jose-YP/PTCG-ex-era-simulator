@@ -22,6 +22,7 @@ metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
 [sub_resource type="Resource" id="Resource_p77gp"]
 script = ExtResource("6_tehvb")
+description = "Does 10 damage plus 10 more damage for each Energy attached to all of your opponent's Pokémon."
 prompt_reliant = false
 initial_main_DMG = 10
 defender_properties = 0

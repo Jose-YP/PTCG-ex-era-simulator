@@ -34,13 +34,13 @@ metadata/_custom_type_script = "uid://8sh5p3leflla"
 
 [sub_resource type="Resource" id="Resource_hqpkl"]
 script = ExtResource("8_6ag0q")
-either_or = false
 order = Array[int]([])
 card_disrupt = SubResource("Resource_8uxj6")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_7hcew"]
 script = ExtResource("5_t30j4")
+description = "Flip a coin. If heads, look at your opponent's hand and choose 1 card. Your opponent discards the card you chose."
 prompt_reliant = false
 prompt = ExtResource("4_mmtik")
 initial_main_DMG = 20
@@ -81,13 +81,13 @@ metadata/_custom_type_script = "uid://8s3m1dar3r33"
 
 [sub_resource type="Resource" id="Resource_pyyvo"]
 script = ExtResource("8_6ag0q")
-either_or = false
 order = Array[int]([])
 condition = SubResource("Resource_cn735")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_qx0es"]
 script = ExtResource("5_t30j4")
+description = "The Defending Pokémon is now Poisoned. Put 3 damage counters instead of 1 on the Defending Pokémon between turns."
 prompt_reliant = false
 initial_main_DMG = 10
 defender_properties = 0

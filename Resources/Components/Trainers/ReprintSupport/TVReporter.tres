@@ -26,7 +26,6 @@ metadata/_custom_type_script = "uid://8sh5p3leflla"
 
 [sub_resource type="Resource" id="Resource_21pnk"]
 script = ExtResource("3_ha5d3")
-either_or = false
 order = Array[int]([8, 2])
 draw_ammount = ExtResource("2_w77ia")
 card_disrupt = SubResource("Resource_0eie6")

@@ -1,14 +1,20 @@
-[gd_resource type="Resource" script_class="AttackData" load_steps=3 format=3 uid="uid://bhs6bq3gobv5j"]
+[gd_resource type="Resource" script_class="AttackData" load_steps=4 format=3 uid="uid://bhs6bq3gobv5j"]
 
 [ext_resource type="Resource" uid="uid://dbwecye8at3u0" path="res://Resources/Components/Pokemon/BenchAttack/10DefAny.tres" id="1_jbc2i"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="2_3ptel"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="2_h205n"]
 
 [resource]
 script = ExtResource("2_3ptel")
+description = "Choose 1 of your opponent's Pokémon. This attack does 10 damage to that Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
 prompt_reliant = false
 initial_main_DMG = 0
 defender_properties = 0
 condition = 1
+before_damage = false
+replace_num = false
+share_prompt = false
+prompt_effects = Array[ExtResource("2_h205n")]([])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false

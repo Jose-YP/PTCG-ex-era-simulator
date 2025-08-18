@@ -26,6 +26,7 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [sub_resource type="Resource" id="Resource_3ppn7"]
 script = ExtResource("7_cligu")
+description = "The Defending Pokémon is now Asleep."
 prompt_reliant = false
 initial_main_DMG = 30
 defender_properties = 0

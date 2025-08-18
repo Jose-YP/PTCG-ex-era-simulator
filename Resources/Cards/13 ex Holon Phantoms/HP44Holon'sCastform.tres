@@ -42,13 +42,13 @@ metadata/_custom_type_script = "uid://bgtwlw1edjwyc"
 
 [sub_resource type="Resource" id="Resource_cfi5g"]
 script = ExtResource("2_kh6h8")
-either_or = false
 order = Array[int]([])
 draw_ammount = SubResource("Resource_scy87")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_uhfbr"]
 script = ExtResource("10_tf4u3")
+description = "Count the number of Pokémon you have in play that has δ on its card. Draw up to that many cards."
 prompt_reliant = false
 initial_main_DMG = 0
 defender_properties = 0

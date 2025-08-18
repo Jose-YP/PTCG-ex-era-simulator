@@ -1,0 +1,44 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://bed2asrcibhhs"]
+
+[ext_resource type="Texture2D" uid="uid://vlpd5i6s7fug" path="res://Art/Cards/2 ex Sandstorm/61.jpg" id="1_1ain3"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_eclju"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="2_6xox6"]
+[ext_resource type="Resource" uid="uid://c0bi1jp5c1pnd" path="res://Resources/Components/Pokemon/Attacks/PureEffectAttacks/1-0Surprise.tres" id="3_i74ml"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_kldq2"]
+[ext_resource type="Resource" uid="uid://cu817ymtejglx" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Psychic1.tres" id="4_seaww"]
+[ext_resource type="Resource" uid="uid://cdgyabikc6mxv" path="res://Resources/Components/Pokemon/Attacks/AttackData/ConfuseIfHeads.tres" id="5_mrcng"]
+
+[sub_resource type="Resource" id="Resource_sx3xi"]
+script = ExtResource("1_eclju")
+name = "Confuse Ray"
+description = ""
+attack_cost = ExtResource("4_seaww")
+attack_data = ExtResource("5_mrcng")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_k6lxq"]
+script = ExtResource("2_6xox6")
+HP = 40
+retreat = 1
+attacks = Array[ExtResource("1_eclju")]([ExtResource("3_i74ml"), SubResource("Resource_sx3xi")])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 1
+owner = 0
+type = 16
+weak = 64
+resist = 32
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("3_kldq2")
+name = "Duskull"
+image = ExtResource("1_1ain3")
+illustrator = "Midori Harada"
+number = 61
+rarity = 0
+expansion = 1
+categories = 1
+pokemon_properties = SubResource("Resource_k6lxq")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

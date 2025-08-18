@@ -1,14 +1,52 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=2 format=3 uid="uid://diypxlkf0m88g"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=11 format=3 uid="uid://diypxlkf0m88g"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_sraj3"]
+[ext_resource type="Texture2D" uid="uid://bcrwdj84ygxrp" path="res://Art/Cards/3 ex Dragon/79.jpg" id="1_uj2gh"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_nqp6a"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_hpnrm"]
+[ext_resource type="Resource" uid="uid://dsretfiieomka" path="res://Resources/Components/Pokemon/Attacks/AttackData/ParaIfHeads.tres" id="4_wy6vv"]
+[ext_resource type="Resource" uid="uid://cg8tvvy7bhi21" path="res://Resources/Components/Pokemon/Attacks/AttackData/10+20IfHeads.tres" id="5_20nmp"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="6_fk0n1"]
+
+[sub_resource type="Resource" id="Resource_ww3tl"]
+script = ExtResource("2_nqp6a")
+name = "Bind"
+description = ""
+attack_cost = ExtResource("3_hpnrm")
+attack_data = ExtResource("4_wy6vv")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_efl1l"]
+script = ExtResource("2_nqp6a")
+name = "Rock Smash"
+description = ""
+attack_cost = ExtResource("3_hpnrm")
+attack_data = ExtResource("5_20nmp")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_jf76x"]
+script = ExtResource("6_fk0n1")
+HP = 50
+retreat = 1
+attacks = Array[ExtResource("2_nqp6a")]([SubResource("Resource_ww3tl"), SubResource("Resource_efl1l")])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 1
+owner = 0
+type = 32
+weak = 1
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
 script = ExtResource("1_sraj3")
-name = ""
-illustrator = ""
-number = 0
+name = "Trapinch"
+image = ExtResource("1_uj2gh")
+illustrator = "Ken Sugimori"
+number = 79
 rarity = 0
 expansion = 0
-categories = 0
+categories = 1
+pokemon_properties = SubResource("Resource_jf76x")
 fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

@@ -6,7 +6,6 @@
 
 [sub_resource type="Resource" id="Resource_dkhdn"]
 script = ExtResource("2_docd0")
-either_or = false
 order = Array[int]([])
 energy_movement = ExtResource("1_yq7xm")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"

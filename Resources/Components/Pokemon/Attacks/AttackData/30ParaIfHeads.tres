@@ -12,6 +12,7 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [resource]
 script = ExtResource("2_aysp4")
+description = "Flip a coin. If heads, the Defending Pokémon is now Paralyzed."
 prompt_reliant = true
 prompt = ExtResource("1_3viq0")
 initial_main_DMG = 30

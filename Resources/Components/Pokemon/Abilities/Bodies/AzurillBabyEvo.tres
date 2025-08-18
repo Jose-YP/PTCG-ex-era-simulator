@@ -9,7 +9,6 @@
 
 [sub_resource type="Resource" id="Resource_qhbof"]
 script = ExtResource("3_wd5vu")
-either_or = false
 order = Array[int]([])
 dmgManip = ExtResource("1_wd5vu")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
@@ -28,7 +27,6 @@ metadata/_custom_type_script = "uid://cg3m7vpqxf2t6"
 
 [sub_resource type="Resource" id="Resource_8alob"]
 script = ExtResource("3_wd5vu")
-either_or = false
 order = Array[int]([])
 override = SubResource("Resource_gmk3x")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"

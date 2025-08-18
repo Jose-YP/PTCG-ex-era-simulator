@@ -21,6 +21,7 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_62iih"]
 script = ExtResource("7_cmphh")
+description = "Flip a coin. If tails, this attack does nothing."
 prompt_reliant = true
 prompt = ExtResource("6_e8aes")
 initial_main_DMG = 60

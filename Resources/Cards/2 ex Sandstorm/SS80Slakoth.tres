@@ -12,7 +12,6 @@
 
 [sub_resource type="Resource" id="Resource_qxv6m"]
 script = ExtResource("5_pmarr")
-either_or = null
 order = null
 disable = ExtResource("4_7qndi")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
@@ -24,6 +23,7 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [sub_resource type="Resource" id="Resource_3seqx"]
 script = ExtResource("6_okn1j")
+description = "[name] can't attack during your next turn."
 prompt_reliant = false
 initial_main_DMG = 10
 defender_properties = 0

@@ -34,13 +34,13 @@ metadata/_custom_type_script = "uid://8sh5p3leflla"
 
 [sub_resource type="Resource" id="Resource_4k152"]
 script = ExtResource("6_ilcaw")
-either_or = false
 order = Array[int]([])
 card_disrupt = SubResource("Resource_3b14e")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_7dwum"]
 script = ExtResource("7_gwuge")
+description = "Look at your opponent's hand and choose 1 Basic Pokémon or Evolution card you find there. Your opponent puts it at the bottom of his or her deck."
 prompt_reliant = false
 initial_main_DMG = 30
 defender_properties = 0
@@ -78,6 +78,7 @@ metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
 [sub_resource type="Resource" id="Resource_ro403"]
 script = ExtResource("7_gwuge")
+description = "If you have the same number of cards in your hand as your opponent, this attack does 40 damage plus 40 more damage."
 prompt_reliant = false
 initial_main_DMG = 40
 defender_properties = 0

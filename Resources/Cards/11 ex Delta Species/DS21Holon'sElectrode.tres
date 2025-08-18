@@ -12,6 +12,7 @@
 
 [sub_resource type="Resource" id="Resource_86uxx"]
 script = ExtResource("6_qvalx")
+description = "The Defending Pokémon is now Confused."
 prompt_reliant = false
 initial_main_DMG = 30
 defender_properties = 0

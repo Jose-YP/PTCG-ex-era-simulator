@@ -15,13 +15,14 @@ application = "Slot"
 stackable = true
 duration = 1
 after_weak_res = true
+modify = "HP"
+operation = "Replace"
 add_hp = 0
 attack = 0
 defense = 0
 retreat_change = 0
 cost_modifier = "Add"
-modify = "HP"
-operation = "Replace"
+plus = false
 condition_immune = 0
 attack_effect_immune = false
 damage_immune = false
@@ -38,7 +39,6 @@ metadata/_custom_type_script = "uid://coojhwe6m20gd"
 
 [sub_resource type="Resource" id="Resource_qh603"]
 script = ExtResource("6_nhlue")
-either_or = false
 order = Array[int]([])
 buff = SubResource("Resource_p5cug")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"

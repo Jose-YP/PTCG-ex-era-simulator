@@ -18,13 +18,13 @@
 
 [sub_resource type="Resource" id="Resource_r8rjj"]
 script = ExtResource("2_ncs6m")
-either_or = null
 order = null
 search = ExtResource("3_k8vd7")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_yrpea"]
 script = ExtResource("5_hxbuf")
+description = "Search your deck for a Trainer card (excluding Supporter cards), show it to your opponent, and put it into your hand. Shuffle your deck afterward. "
 prompt_reliant = false
 initial_main_DMG = 10
 defender_properties = 0
@@ -100,7 +100,6 @@ metadata/_custom_type_script = "uid://c0ishgbxk63dg"
 
 [sub_resource type="Resource" id="Resource_wpc3u"]
 script = ExtResource("2_ncs6m")
-either_or = null
 order = null
 disable = SubResource("Resource_5ld0q")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"

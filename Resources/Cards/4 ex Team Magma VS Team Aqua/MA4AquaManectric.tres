@@ -57,6 +57,7 @@ modifier_num = 0
 
 [sub_resource type="Resource" id="Resource_c52f0"]
 script = ExtResource("7_5jpak")
+description = "Does 10 damage to each Benched Pokémon (both yours and your opponent's) that has Energy cards attached to it. (Don't apply Weakness and Resistance for Benched Pokémon.)"
 prompt_reliant = false
 initial_main_DMG = 50
 defender_properties = 0
@@ -103,7 +104,6 @@ en_type = ExtResource("3_jf1rb")
 
 [sub_resource type="Resource" id="Resource_ys2ao"]
 script = ExtResource("5_5fqb1")
-either_or = false
 order = Array[int]([])
 energy_movement = SubResource("Resource_xmkch")
 

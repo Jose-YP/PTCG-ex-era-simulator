@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=9 format=3 uid="uid://b640cjelsn0p7"]
+
+[ext_resource type="Texture2D" uid="uid://bprfk0j7jnybd" path="res://Art/Cards/2 ex Sandstorm/64.jpg" id="1_k6lxq"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_vurul"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="2_bfxpi"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_e6eoo"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_lx7ow"]
+[ext_resource type="Resource" uid="uid://dducvbjohbp4x" path="res://Resources/Components/Pokemon/Attacks/AttackData/10DmgParaIfHeads.tres" id="4_h17lo"]
+
+[sub_resource type="Resource" id="Resource_6d4ap"]
+script = ExtResource("1_vurul")
+name = "Bind"
+description = ""
+attack_cost = ExtResource("3_lx7ow")
+attack_data = ExtResource("4_h17lo")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_k6lxq"]
+script = ExtResource("2_bfxpi")
+HP = 50
+retreat = 1
+attacks = Array[ExtResource("1_vurul")]([SubResource("Resource_6d4ap")])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 1
+owner = 0
+type = 1
+weak = 16
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("3_e6eoo")
+name = "Ekans"
+image = ExtResource("1_k6lxq")
+illustrator = "Midori Harada"
+number = 64
+rarity = 0
+expansion = 1
+categories = 1
+pokemon_properties = SubResource("Resource_k6lxq")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

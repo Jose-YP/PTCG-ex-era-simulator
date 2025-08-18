@@ -38,7 +38,6 @@ metadata/_custom_type_script = "uid://scca13hg4k1l"
 
 [sub_resource type="Resource" id="Resource_calre"]
 script = ExtResource("6_udpcv")
-either_or = false
 order = Array[int]([])
 dmgManip = SubResource("Resource_j62rm")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
@@ -50,6 +49,7 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [sub_resource type="Resource" id="Resource_iggwp"]
 script = ExtResource("7_b2nqx")
+description = "Remove 1 damage counter from each of your Active Pokémon."
 prompt_reliant = false
 initial_main_DMG = 30
 defender_properties = 0

@@ -33,13 +33,13 @@ metadata/_custom_type_script = "uid://cw3yr1k040kw7"
 
 [sub_resource type="Resource" id="Resource_kvgc7"]
 script = ExtResource("4_ni0es")
-either_or = false
 order = Array[int]([])
 search = SubResource("Resource_gpuif")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_iq0qi"]
 script = ExtResource("9_k81h8")
+description = ""
 prompt_reliant = false
 initial_main_DMG = 0
 defender_properties = 0

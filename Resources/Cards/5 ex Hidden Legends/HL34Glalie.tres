@@ -29,7 +29,6 @@ metadata/_custom_type_script = "uid://scca13hg4k1l"
 
 [sub_resource type="Resource" id="Resource_nicnw"]
 script = ExtResource("8_83yce")
-either_or = false
 order = Array[int]([])
 dmgManip = SubResource("Resource_womou")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
@@ -42,6 +41,7 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [sub_resource type="Resource" id="Resource_7qsaa"]
 script = ExtResource("9_sl83c")
+description = "Flip a coin. If heads, put 1 damage counter on each of your opponent's Benched Pokémon."
 prompt_reliant = false
 initial_main_DMG = 50
 defender_properties = 0

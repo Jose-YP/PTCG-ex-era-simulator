@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("1_etwi2")
+description = ""
 prompt_reliant = false
 initial_main_DMG = 20
 defender_properties = 0

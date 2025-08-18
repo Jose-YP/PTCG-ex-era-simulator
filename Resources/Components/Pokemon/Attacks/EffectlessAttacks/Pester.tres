@@ -60,6 +60,7 @@ metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
 [sub_resource type="Resource" id="Resource_5ay7w"]
 script = ExtResource("7_4jm26")
+description = "If the Defending Pokémon is affected by a Special Condition, this attack does 20 damage plus 20 more damage."
 prompt_reliant = false
 initial_main_DMG = 20
 defender_properties = 0

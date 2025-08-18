@@ -34,7 +34,6 @@ metadata/_custom_type_script = "uid://curklvf1517ml"
 
 [sub_resource type="Resource" id="Resource_slho1"]
 script = ExtResource("7_dmrxn")
-either_or = false
 order = Array[int]([])
 swap = SubResource("Resource_4or8k")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"

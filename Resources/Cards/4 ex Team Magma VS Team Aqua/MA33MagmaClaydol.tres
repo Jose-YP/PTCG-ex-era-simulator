@@ -30,13 +30,13 @@ metadata/_custom_type_script = "uid://scca13hg4k1l"
 
 [sub_resource type="Resource" id="Resource_xuf6v"]
 script = ExtResource("6_cwo05")
-either_or = false
 order = Array[int]([])
 dmgManip = SubResource("Resource_3fdt1")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_22mru"]
 script = ExtResource("7_x780m")
+description = "Put 2 damage counters on your opponent's Pokémon in any way you like."
 prompt_reliant = false
 initial_main_DMG = 0
 defender_properties = 0
@@ -64,6 +64,7 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_matcw"]
 script = ExtResource("7_x780m")
+description = "Does 10 damage to each of your opponent's Benched Pokémon that has any damage counters on it. (Don't apply Weakness and Resistance for Benched Pokémon.)"
 prompt_reliant = false
 initial_main_DMG = 50
 defender_properties = 0

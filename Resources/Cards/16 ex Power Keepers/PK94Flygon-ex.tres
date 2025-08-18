@@ -28,7 +28,6 @@ metadata/_custom_type_script = "uid://c0ishgbxk63dg"
 
 [sub_resource type="Resource" id="Resource_1iu0x"]
 script = ExtResource("6_yiueb")
-either_or = false
 order = Array[int]([])
 disable = SubResource("Resource_bwkib")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
@@ -41,6 +40,7 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [sub_resource type="Resource" id="Resource_7lrvf"]
 script = ExtResource("8_d4ra0")
+description = "Flip a coin. If tails, [name] can't use Slashing Strike during your next turn."
 prompt_reliant = false
 initial_main_DMG = 70
 defender_properties = 0

@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=20 format=3 uid="uid://cwlt6h57fm8jq"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=21 format=3 uid="uid://cwlt6h57fm8jq"]
 
+[ext_resource type="Texture2D" uid="uid://dbqgbofburyqw" path="res://Art/Cards/3 ex Dragon/47.jpg" id="1_ovh3t"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_t3igr"]
 [ext_resource type="Resource" uid="uid://b1rwmggf7a4do" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless2.tres" id="2_beqhk"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="2_gam1e"]
@@ -23,7 +24,6 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_3khkk"]
 script = ExtResource("5_orf2g")
-either_or = false
 order = Array[int]([])
 buff = ExtResource("4_j1038")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
@@ -92,7 +92,8 @@ metadata/_custom_type_script = "uid://dkximshow1pao"
 [resource]
 script = ExtResource("3_qh4dg")
 name = "Vibrava"
-illustrator = ""
+image = ExtResource("1_ovh3t")
+illustrator = "Ken Sugimori"
 number = 47
 rarity = 1
 expansion = 2

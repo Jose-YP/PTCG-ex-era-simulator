@@ -79,7 +79,7 @@
   ],
   "table_functions": {
     "filter": [
-      "if res.pokemon_properties:\n\treturn res.pokemon_properties.retreat < 1\nreturn false",
+      "return true",
       "if ToolBool.has_effect(res, [\"CardDisrupt\"]):\n\treturn true\nreturn false",
       "return ToolBool.has_ability(res)",
       "return res.pokemon_properties",

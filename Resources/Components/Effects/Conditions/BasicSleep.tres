@@ -5,6 +5,5 @@
 
 [resource]
 script = ExtResource("2_rg2sp")
-either_or = false
 order = Array[int]([])
 condition = ExtResource("1_clu2n")

@@ -19,6 +19,7 @@
 
 [sub_resource type="Resource" id="Resource_tvn5v"]
 script = ExtResource("6_56c6k")
+description = "Flip a coin. If heads, this attack does 40 damage plus 30 more damage. If tails, the Defending Pokémon is now Paralyzed."
 prompt_reliant = false
 prompt = ExtResource("5_a54e8")
 initial_main_DMG = 40
@@ -62,7 +63,6 @@ metadata/_custom_type_script = "uid://scca13hg4k1l"
 
 [sub_resource type="Resource" id="Resource_jco4e"]
 script = ExtResource("9_uecfi")
-either_or = false
 order = Array[int]([])
 dmgManip = SubResource("Resource_ps12c")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"

@@ -9,7 +9,6 @@
 
 [sub_resource type="Resource" id="Resource_3k4dv"]
 script = ExtResource("2_jr6w3")
-either_or = false
 order = Array[int]([])
 search = ExtResource("3_aeut6")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"

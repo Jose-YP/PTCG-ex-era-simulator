@@ -36,6 +36,7 @@ metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
 [sub_resource type="Resource" id="Resource_rjiuk"]
 script = ExtResource("7_6kdro")
+description = "Does 10 damage plus 20 more damage for each type of basic Energy card attached to [name]."
 prompt_reliant = false
 initial_main_DMG = 10
 defender_properties = 0
@@ -63,7 +64,6 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_xt3om"]
 script = ExtResource("5_r18xf")
-either_or = false
 order = Array[int]([])
 energy_movement = ExtResource("4_5thtl")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"

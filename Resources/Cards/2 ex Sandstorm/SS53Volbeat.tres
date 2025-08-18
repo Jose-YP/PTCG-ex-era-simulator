@@ -1,11 +1,16 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=24 format=3 uid="uid://clkcnsev5iwh8"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=31 format=3 uid="uid://clkcnsev5iwh8"]
 
 [ext_resource type="Texture2D" uid="uid://c0u6006wvq1el" path="res://Art/Cards/2 ex Sandstorm/53.jpg" id="1_t0xr1"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_upqu6"]
 [ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_dcwyt"]
 [ext_resource type="Resource" uid="uid://cp8ldn37fvlbu" path="res://Resources/Components/Pokemon/Attacks/EffectlessAttacks/Pester.tres" id="4_dcwyt"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="4_jtqiy"]
+[ext_resource type="Resource" uid="uid://cqw2kwbgcwgvb" path="res://Resources/Components/Effects/Conditions/BasicSleep.tres" id="5_4j5f6"]
 [ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="6_1mcbn"]
+[ext_resource type="Resource" uid="uid://ekj1myy642kh" path="res://Resources/Components/Effects/Prompts/PromptHeads.tres" id="6_hemo1"]
 [ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="7_1jjyy"]
+[ext_resource type="Resource" uid="uid://dr35h5ltr0i6r" path="res://Resources/Components/Effects/Conditions/BasicPoison.tres" id="7_yvtef"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="8_bktaa"]
 [ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="8_jtqiy"]
 [ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="11_1mcbn"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="11_yvtef"]
@@ -15,11 +20,38 @@
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="14_4j5f6"]
 [ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="15_hemo1"]
 
+[sub_resource type="Resource" id="Resource_j44gi"]
+script = ExtResource("4_jtqiy")
+prompt = ExtResource("6_hemo1")
+success = ExtResource("7_yvtef")
+fail = ExtResource("5_4j5f6")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
+[sub_resource type="Resource" id="Resource_jj7gw"]
+script = ExtResource("8_bktaa")
+description = "Flip a coin. If heads, the Defending Pokémon is now Poisoned. If tails, the Defending Pokémon is now Asleep."
+prompt_reliant = false
+initial_main_DMG = 0
+defender_properties = 0
+condition = 1
+before_damage = false
+replace_num = false
+share_prompt = false
+prompt_effects = Array[ExtResource("4_jtqiy")]([SubResource("Resource_j44gi")])
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
 [sub_resource type="Resource" id="Resource_dklk6"]
 script = ExtResource("2_upqu6")
-name = ""
-description = ""
+name = "Toxic Vibration"
+description = "Flip a coin. If heads, the Defending Pokémon is now Poisoned. If tails, the Defending Pokémon is now Asleep."
 attack_cost = ExtResource("3_dcwyt")
+attack_data = SubResource("Resource_jj7gw")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_41vtf"]
@@ -30,13 +62,14 @@ stackable = true
 recieves = ExtResource("11_1mcbn")
 duration = -1
 after_weak_res = true
+modify = "HP"
+operation = "Replace"
 add_hp = 0
 attack = 0
 defense = 0
 retreat_change = -10
 cost_modifier = "Add"
-modify = "HP"
-operation = "Replace"
+plus = false
 condition_immune = 0
 attack_effect_immune = false
 damage_immune = false
@@ -53,7 +86,6 @@ metadata/_custom_type_script = "uid://coojhwe6m20gd"
 
 [sub_resource type="Resource" id="Resource_buoga"]
 script = ExtResource("14_4j5f6")
-either_or = false
 order = Array[int]([])
 buff = SubResource("Resource_41vtf")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Attack" load_steps=4 format=3 uid="uid://b5bwtdlby23i1"]
+
+[ext_resource type="Resource" uid="uid://bpgsrqt47evh0" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/R1C1.tres" id="1_o42ou"]
+[ext_resource type="Resource" uid="uid://bnsrs2a5hnvkb" path="res://Resources/Components/Pokemon/Attacks/AttackData/20Dmg.tres" id="2_bdbs1"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="3_4chd2"]
+
+[resource]
+script = ExtResource("3_4chd2")
+name = "Flare"
+description = ""
+attack_cost = ExtResource("1_o42ou")
+attack_data = ExtResource("2_bdbs1")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

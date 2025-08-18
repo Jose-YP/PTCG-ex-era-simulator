@@ -13,7 +13,6 @@
 
 [sub_resource type="Resource" id="Resource_ltygs"]
 script = ExtResource("4_0ehm3")
-either_or = false
 order = Array[int]([])
 search = ExtResource("4_my7mo")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
@@ -25,6 +24,7 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [sub_resource type="Resource" id="Resource_hy80x"]
 script = ExtResource("6_ltygs")
+description = "Search your deck for a Trainer card, show it to your opponent, and put it into your hand. Shuffle your deck afterward."
 prompt_reliant = false
 initial_main_DMG = 0
 defender_properties = 0

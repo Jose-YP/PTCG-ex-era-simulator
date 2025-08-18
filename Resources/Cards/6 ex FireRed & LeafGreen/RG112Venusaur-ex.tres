@@ -27,13 +27,13 @@ metadata/_custom_type_script = "uid://8s3m1dar3r33"
 
 [sub_resource type="Resource" id="Resource_84f6i"]
 script = ExtResource("3_rcsof")
-either_or = false
 order = Array[int]([])
 condition = SubResource("Resource_tbvw2")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_dqwkv"]
 script = ExtResource("6_tbvw2")
+description = "The Defending Pokémon is now Poisoned, Burned, and Confused."
 prompt_reliant = false
 initial_main_DMG = 20
 defender_properties = 0
@@ -74,6 +74,7 @@ metadata/_custom_type_script = "uid://crscwhvugaoxa"
 
 [sub_resource type="Resource" id="Resource_ht35d"]
 script = ExtResource("6_tbvw2")
+description = ""
 prompt_reliant = false
 initial_main_DMG = 90
 defender_properties = 0

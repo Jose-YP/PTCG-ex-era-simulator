@@ -6,7 +6,6 @@
 
 [sub_resource type="Resource" id="Resource_gi0ni"]
 script = ExtResource("2_n8448")
-either_or = false
 order = Array[int]([])
 buff = ExtResource("1_t1vxt")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"

@@ -11,7 +11,6 @@
 
 [sub_resource type="Resource" id="Resource_c5prr"]
 script = ExtResource("4_nq2cm")
-either_or = false
 order = Array[int]([])
 card_disrupt = ExtResource("3_10skr")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
@@ -23,6 +22,7 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [sub_resource type="Resource" id="Resource_cae38"]
 script = ExtResource("5_0ocxq")
+description = "Before doing damage, discard all Trainer cards attached to the Defending Pokémon (before they affect the damage)."
 prompt_reliant = false
 initial_main_DMG = 10
 defender_properties = 0

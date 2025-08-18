@@ -29,13 +29,13 @@ metadata/_custom_type_script = "uid://crscwhvugaoxa"
 
 [sub_resource type="Resource" id="Resource_mpcq0"]
 script = ExtResource("6_mpcq0")
-either_or = false
 order = Array[int]([])
 energy_movement = ExtResource("3_2hwsj")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_7x50r"]
 script = ExtResource("7_mpcq0")
+description = " Discard a {Water} Energy card and a {Lightning} Energy card attached to [name]."
 prompt_reliant = false
 initial_main_DMG = 70
 defender_properties = 0
@@ -63,6 +63,7 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_htnr7"]
 script = ExtResource("7_mpcq0")
+description = " Flip a coin. If tails, this attack does nothing."
 prompt_reliant = true
 prompt = ExtResource("9_mdixv")
 initial_main_DMG = 120
@@ -90,7 +91,6 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_n8rdp"]
 script = ExtResource("6_mpcq0")
-either_or = false
 order = Array[int]([])
 energy_movement = ExtResource("7_x717q")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"

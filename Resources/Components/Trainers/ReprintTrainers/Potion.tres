@@ -8,7 +8,6 @@
 
 [sub_resource type="Resource" id="Resource_uyuan"]
 script = ExtResource("2_jtlhn")
-either_or = false
 order = Array[int]([])
 dmgManip = ExtResource("1_kttju")
 

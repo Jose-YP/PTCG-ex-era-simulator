@@ -32,13 +32,13 @@ metadata/_custom_type_script = "uid://dtv1d2u2kvixy"
 
 [sub_resource type="Resource" id="Resource_q7hpq"]
 script = ExtResource("6_axg2p")
-either_or = false
 order = Array[int]([])
 mimic = SubResource("Resource_uh4rw")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_0pypu"]
 script = ExtResource("7_ukyo3")
+description = "Look at your opponent's hand and choose a Basic Pokémon or Evolution card you find there. Choose 1 of that Pokémon's attacks. Skill Hack copies that attack except for its Energy cost. (You must still do anything else required for that attack.) (No matter what type that Pokémon is, [name]'s type is still {Darkness}.) [name] performs that attack."
 prompt_reliant = false
 initial_main_DMG = 0
 defender_properties = 0
@@ -108,6 +108,7 @@ metadata/_custom_type_script = "uid://br15mnap82upq"
 
 [sub_resource type="Resource" id="Resource_x14nr"]
 script = ExtResource("7_ukyo3")
+description = "Does 60 damage to each of your opponent's Benched Pokémon that has the same name as the Defending Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
 prompt_reliant = false
 initial_main_DMG = 60
 defender_properties = 0

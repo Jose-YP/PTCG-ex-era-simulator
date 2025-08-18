@@ -10,7 +10,6 @@
 
 [sub_resource type="Resource" id="Resource_lnypp"]
 script = ExtResource("3_e0e0d")
-either_or = false
 order = Array[int]([])
 swap = ExtResource("6_ccrwf")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"

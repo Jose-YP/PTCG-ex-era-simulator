@@ -3,23 +3,25 @@ extends Resource
 class_name DamageManip
 
 ##If this is not -1, put this effect in a stack that applies later, in the mean time get it's srctrgt
-@export var turn_delay: int = -1
-@export var prevent_KO: bool = false
-@export_enum("Add", "Remove", "Swap") var mode: String = "Remove"
-##-1 means remove/add max ammount
-@export_range(-1,20) var how_many: int = 1
 @export var choosing: Consts.SIDES = Consts.SIDES.SOURCE
-##If this is true, then the player can divide [member how_many]
-## in any way instead of adding it [member choose_num] times
-@export var anyway_u_like: bool = false
-##The player must choose to add [member how_many] this many times.
-##[br] On -1, ignore and place [member how_many] on every mon that meets [member ask]
-@export var choose_num: int = 1
+@export_enum("Add", "Remove", "Swap") var mode: String = "Remove"
 ##Who will get the counter manipulation[br]
 ##On [enum Swap] this determines who gives dmg counters
 @export var ask: SlotAsk
+##-1 means remove/add max ammount
+@export_range(-1,20) var how_many: int = 1
+##The player must choose to add [member how_many] this many times.
+##[br] On -1, ignore and place [member how_many] on every mon that meets [member ask]
+@export var choose_num: int = 1
+##If this is true, then the player can divide [member how_many]
+## in any way instead of adding it [member choose_num] times
+@export var turn_delay: int = -1
+@export var prevent_KO: bool = false
+@export var anyway_u_like: bool = false
+@export_group("Leftovers")
 ##For DF9 Dragonite ex who uses a second type of DmgManip using leftovers
-@export var with_leftover: DamageManip
+@export_enum("None", "Add", "Remove", "Swap") var with_leftover: String = "None"
+@export var leftover_anyway: bool = false
 ##Determines how many will be added/removed based on the Counter
 @export_group("Counter")
 @export var vary_choose_num: bool = false

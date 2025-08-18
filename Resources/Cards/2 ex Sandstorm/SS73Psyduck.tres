@@ -25,7 +25,6 @@ metadata/_custom_type_script = "uid://8s3m1dar3r33"
 
 [sub_resource type="Resource" id="Resource_n0c7c"]
 script = ExtResource("7_0ta24")
-either_or = false
 order = Array[int]([])
 condition = SubResource("Resource_15bvo")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
@@ -37,6 +36,7 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [sub_resource type="Resource" id="Resource_dh853"]
 script = ExtResource("8_h4n0r")
+description = "Both [name] and the Defending Pokémon are now Confused. "
 prompt_reliant = false
 initial_main_DMG = 0
 defender_properties = 0

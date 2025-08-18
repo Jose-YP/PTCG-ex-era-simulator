@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("1_4iax6")
+description = ""
 prompt_reliant = false
 initial_main_DMG = 10
 defender_properties = 0

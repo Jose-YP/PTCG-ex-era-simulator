@@ -13,6 +13,7 @@
 
 [sub_resource type="Resource" id="Resource_xe22y"]
 script = ExtResource("5_4ifaa")
+description = "The Defending Pokemon is now Confused."
 prompt_reliant = false
 initial_main_DMG = 0
 defender_properties = 0

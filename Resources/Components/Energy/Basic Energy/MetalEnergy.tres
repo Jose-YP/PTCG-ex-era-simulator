@@ -16,13 +16,14 @@ stackable = true
 recieves = ExtResource("5_tpgwn")
 duration = -1
 after_weak_res = true
+modify = "HP"
+operation = "Replace"
 add_hp = 0
 attack = 0
 defense = 10
 retreat_change = 0
 cost_modifier = "Add"
-modify = "HP"
-operation = "Replace"
+plus = false
 condition_immune = 0
 attack_effect_immune = false
 damage_immune = false
@@ -38,7 +39,6 @@ attack_names = Array[String]([])
 
 [sub_resource type="Resource" id="Resource_rtiwi"]
 script = ExtResource("4_1lfkp")
-either_or = false
 order = Array[int]([])
 buff = SubResource("Resource_w1pwm")
 

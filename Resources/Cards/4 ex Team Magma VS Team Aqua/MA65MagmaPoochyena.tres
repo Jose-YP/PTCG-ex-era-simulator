@@ -12,6 +12,7 @@
 
 [sub_resource type="Resource" id="Resource_ahgdl"]
 script = ExtResource("6_iwy5m")
+description = "Flip a coin. If heads, this attack does 10 damage to the Defending Pokémon. If tails, the Defending Pokémon is now Paralyzed."
 prompt_reliant = true
 prompt = ExtResource("5_yacn8")
 initial_main_DMG = 10

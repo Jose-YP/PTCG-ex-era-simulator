@@ -189,7 +189,13 @@ func can_select_cell(cell : Vector2i) -> bool:
 
 func get_cell_node_from_position(cell_pos : Vector2i) -> Control:
 	var cell_index := (cell_pos.y - editor_view.first_row) * editor_view.columns.size() + cell_pos.x
+	if cell_pos.y < editor_view.first_row:
+		print(cell_pos, editor_view.node_table_root.get_child_count())
+		cell_index = editor_view.first_row
+		#cell_index = clamp(cell_index, editor_view.first_row, editor_view.node_table_root.get_child_count() * current_page)
+	
 	if cell_index < 0 or cell_index >= editor_view.node_table_root.get_child_count():
+		print(cell_pos, editor_view.node_table_root.get_child_count())
 		return null
 
 	return editor_view.node_table_root.get_child(cell_index)

@@ -31,13 +31,13 @@ metadata/_custom_type_script = "uid://cimk6l7ytw7xg"
 
 [sub_resource type="Resource" id="Resource_fgddn"]
 script = ExtResource("4_1lnrb")
-either_or = false
 order = Array[int]([])
 energy_movement = SubResource("Resource_sb77a")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_w6ice"]
 script = ExtResource("8_kkfsi")
+description = ""
 prompt_reliant = false
 initial_main_DMG = 10
 defender_properties = 0

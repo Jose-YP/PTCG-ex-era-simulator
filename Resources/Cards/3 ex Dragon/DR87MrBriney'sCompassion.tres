@@ -29,7 +29,6 @@ metadata/_custom_type_script = "uid://8sh5p3leflla"
 
 [sub_resource type="Resource" id="Resource_tccqi"]
 script = ExtResource("5_k5rc7")
-either_or = false
 order = Array[int]([])
 card_disrupt = SubResource("Resource_m4br1")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"

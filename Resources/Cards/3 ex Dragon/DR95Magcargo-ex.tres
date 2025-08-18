@@ -52,7 +52,6 @@ metadata/_custom_type_script = "uid://cw3yr1k040kw7"
 
 [sub_resource type="Resource" id="Resource_85g8j"]
 script = ExtResource("6_55msh")
-either_or = false
 order = Array[int]([])
 card_disrupt = SubResource("Resource_jlj7s")
 search = SubResource("Resource_c0mwq")
@@ -60,6 +59,7 @@ metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_wb2rl"]
 script = ExtResource("11_6wc0f")
+description = "Discard the top card from your deck. If that card is a basic Energy card, attach it to [name]."
 prompt_reliant = false
 initial_main_DMG = 10
 defender_properties = 0
@@ -87,6 +87,7 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_xujwf"]
 script = ExtResource("11_6wc0f")
+description = "You may discard any number of basic Energy cards attached to [name] when you use this attack. If you do, this attack does 40 damage plus 20 more damage for each basic Energy card you discarded."
 prompt_reliant = false
 initial_main_DMG = 40
 defender_properties = 0

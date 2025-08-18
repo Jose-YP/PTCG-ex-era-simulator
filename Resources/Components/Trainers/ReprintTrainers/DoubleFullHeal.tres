@@ -16,7 +16,6 @@ metadata/_custom_type_script = "uid://b4g5of14m3hj5"
 
 [sub_resource type="Resource" id="Resource_uwewy"]
 script = ExtResource("3_crn8a")
-either_or = false
 order = Array[int]([])
 alleviate = SubResource("Resource_fon4l")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"

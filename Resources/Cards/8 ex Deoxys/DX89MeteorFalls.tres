@@ -23,7 +23,6 @@ metadata/_custom_type_script = "uid://dtv1d2u2kvixy"
 
 [sub_resource type="Resource" id="Resource_bcdvp"]
 script = ExtResource("6_2qdli")
-either_or = false
 order = Array[int]([])
 mimic = SubResource("Resource_ytnnl")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"

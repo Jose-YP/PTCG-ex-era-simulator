@@ -14,7 +14,6 @@
 
 [sub_resource type="Resource" id="Resource_8yng3"]
 script = ExtResource("5_vjvrc")
-either_or = null
 order = null
 disable = ExtResource("4_bkfm4")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
@@ -26,6 +25,7 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [sub_resource type="Resource" id="Resource_5m50d"]
 script = ExtResource("6_gcspa")
+description = "The Defending Pokémon can't retreat until the end of your opponent's next turn."
 prompt_reliant = false
 initial_main_DMG = 10
 defender_properties = 0
