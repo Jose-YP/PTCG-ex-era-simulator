@@ -11,6 +11,7 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [resource]
 script = ExtResource("2_5ubtu")
+description = "If the Defending Pokémon tries to attack during your opponent's next turn, your opponent flips a coin. If tails, that attack does nothing."
 prompt_reliant = false
 initial_main_DMG = 10
 defender_properties = 0

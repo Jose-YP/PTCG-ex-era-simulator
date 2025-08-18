@@ -1,14 +1,20 @@
-[gd_resource type="Resource" script_class="AttackData" load_steps=3 format=3 uid="uid://dyn04nofc714f"]
+[gd_resource type="Resource" script_class="AttackData" load_steps=4 format=3 uid="uid://dyn04nofc714f"]
 
 [ext_resource type="Resource" uid="uid://b45cmbaixh154" path="res://Resources/Components/Counters/Comparator/Equals/OneFlipHead.tres" id="1_ou4m8"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="2_78dl6"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="2_hm3u7"]
 
 [resource]
 script = ExtResource("2_78dl6")
+description = "Flip a coin. If heads, this attack does 40 damage plus 20 more damage."
 prompt_reliant = false
 initial_main_DMG = 40
 defender_properties = 0
 condition = 1
+before_damage = false
+replace_num = false
+share_prompt = false
+prompt_effects = Array[ExtResource("2_hm3u7")]([])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false

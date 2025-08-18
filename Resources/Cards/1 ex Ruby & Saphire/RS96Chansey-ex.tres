@@ -29,7 +29,6 @@ metadata/_custom_type_script = "uid://scca13hg4k1l"
 
 [sub_resource type="Resource" id="Resource_g7ndq"]
 script = ExtResource("3_1tajn")
-either_or = false
 order = Array[int]([])
 dmgManip = SubResource("Resource_enm5x")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
@@ -41,6 +40,7 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [sub_resource type="Resource" id="Resource_vckkl"]
 script = ExtResource("7_wuk4a")
+description = "Remove 2 damage counters (1 if there is only 1) from each of your Pokémon. Remove no damage counters from [name]."
 prompt_reliant = false
 initial_main_DMG = 0
 defender_properties = 0
@@ -66,6 +66,7 @@ attack_data = SubResource("Resource_vckkl")
 
 [sub_resource type="Resource" id="Resource_4jmuw"]
 script = ExtResource("7_wuk4a")
+description = "[name]does 60 damage to itself."
 prompt_reliant = false
 initial_main_DMG = 80
 defender_properties = 0

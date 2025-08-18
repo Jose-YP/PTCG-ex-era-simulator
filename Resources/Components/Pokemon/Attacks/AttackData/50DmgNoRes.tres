@@ -1,13 +1,19 @@
-[gd_resource type="Resource" script_class="AttackData" load_steps=2 format=3 uid="uid://1ib15c7peyrj"]
+[gd_resource type="Resource" script_class="AttackData" load_steps=3 format=3 uid="uid://1ib15c7peyrj"]
 
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="1_8b83u"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="1_u1ydc"]
 
 [resource]
 script = ExtResource("1_u1ydc")
+description = "This attack's damage is not affected by Resistance."
 prompt_reliant = false
 initial_main_DMG = 50
 defender_properties = 4
 condition = 1
+before_damage = false
+replace_num = false
+share_prompt = false
+prompt_effects = Array[ExtResource("1_8b83u")]([])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false
