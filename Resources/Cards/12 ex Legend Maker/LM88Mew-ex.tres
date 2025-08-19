@@ -45,7 +45,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_qrale"]
 script = ExtResource("2_gfhju")
 name = "Power Move"
-description = "Search your deck for an Energy card and attach it to [name]. Shuffle your deck afterward. Then, you may switch [name] with 1 of your Benched Pokémon."
 attack_cost = ExtResource("6_gfhju")
 attack_data = SubResource("Resource_7iwa2")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

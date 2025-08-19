@@ -1,0 +1,51 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=11 format=3 uid="uid://b768s3at0bgec"]
+
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_ah0cm"]
+[ext_resource type="Texture2D" uid="uid://ddlcenewb53ni" path="res://Art/Cards/2 ex Sandstorm/57.jpg" id="1_k63f2"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="2_o4l2n"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_eopfc"]
+[ext_resource type="Resource" uid="uid://ji1k32a0vsec" path="res://Resources/Components/Pokemon/Attacks/EffectlessAttacks/1-10LightPunch.tres" id="3_vs34j"]
+[ext_resource type="Resource" uid="uid://dr35h5ltr0i6r" path="res://Resources/Components/Effects/Conditions/BasicPoison.tres" id="4_ie20k"]
+[ext_resource type="Resource" uid="uid://bessnawi8b2ct" path="res://Resources/Components/Occurances/AttackedByOpponent.tres" id="5_m7vqh"]
+[ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="6_6exbt"]
+
+[sub_resource type="Resource" id="Resource_ribq8"]
+script = ExtResource("6_6exbt")
+category = "Body"
+name = "Poison Payback"
+description = "If [name] is your Active Pokémon and is damaged by an opponent's attack (even if [name] is Knocked Out), the Attacking Pokémon is now Poisoned."
+affected_by_condition = false
+active = true
+how_often = "Once per Mon"
+independent_src_trg = false
+occurance = ExtResource("5_m7vqh")
+effect = ExtResource("4_ie20k")
+metadata/_custom_type_script = "uid://bs2y8ocljilv8"
+
+[sub_resource type="Resource" id="Resource_pjmm4"]
+script = ExtResource("2_o4l2n")
+HP = 50
+retreat = 1
+pokebody = SubResource("Resource_ribq8")
+attacks = Array[ExtResource("1_ah0cm")]([ExtResource("3_vs34j")])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 1
+owner = 0
+type = 1
+weak = 2
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("3_eopfc")
+name = "Cacnea"
+image = ExtResource("1_k63f2")
+illustrator = "Atsuko Nishida"
+number = 57
+rarity = 0
+expansion = 1
+categories = 1
+pokemon_properties = SubResource("Resource_pjmm4")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

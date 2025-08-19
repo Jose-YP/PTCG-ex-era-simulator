@@ -174,3 +174,81 @@ func check_ask(slot: PokeSlot) -> bool:
 	
 	
 	return result
+
+func print_ask() -> String:
+	#Checklist:
+	#@export_subgroup("Class")
+	
+	#First remove any cards that aren't included in sides/slots parameters
+	var comparison: String = "at least " if comparison_type == 1 else " at most "
+	var slot_str: String = Convert.slot_into_string(slot_target)
+	var side_str: String = Convert.side_into_string(side_target)
+	var hp_str: String = str(comparison, max_hp) if max_hp != -10 else ""
+	var dmg_str: String = str(comparison, damage_taken, " damage counters") if damage_taken != -10 else ""
+	var retr_str: String = str("retreat cost of ", comparison, retreat_cost) if retreat_cost != -1 else ""
+	var specifc_str: String = Convert.combine_strings(specifically)
+	var ko_str: String = "Knocked out" if knocked_out else ""
+	var tool_str: String = "With tool cards attatched" if tool_attatched else ""
+	var evo_str: String = ""
+	var type_str: String = ""
+	var class_str: String = ""
+	var owner_str: String = ""
+	var en_atch_str: String = ""
+	var cond_str: String = ""
+	var ability_str: String = ""
+	
+	if evo_type == "Non Evolved":
+		evo_str = "Unevolved"
+	elif evo_type == "Evolved":
+		evo_str = "Evolved"
+	if stage != 0 or stage != 7:
+		if stage & 1 != 0:
+			evo_str += " Basic"
+		if stage & 2 != 0:
+			evo_str += " Stage 1"
+		if stage & 4 != 0:
+			evo_str += " Stage 2"
+	
+	#Check if the pokemon is in the defined class
+	print_verbose("[center]-----------------------------------------------------------")
+	print_verbose("[center]Class Flag\nCONSIDERED & OWNER:", "OWNER CHECK: ", pokemon_owner, " CLASS CHECK: ", pokemon_class)
+	if pokemon_type != 0 or pokemon_type == 1023: 
+		var type_checklist: Array[String] = Convert.flags_to_type_array(pokemon_type)
+		var including: String = "" if type_inclusive else "non-"
+		type_str = str(including, Convert.combine_strings(type_checklist))
+	
+	if energy_attatched != -1:
+		en_atch_str += str(comparison, energy_attatched)
+		if not energy_inclusive:
+			en_atch_str += " non "
+		if energy_class == "Basic Energy":
+			en_atch_str += " Basic "
+		if energy_class == "Special Energy":
+			en_atch_str += " Special "
+		
+		if energy_type.type != 0 or energy_type.type != 1023:
+			var type_checklist: Array[String] = Convert.flags_to_type_array(energy_type.type)
+			en_atch_str += Convert.combine_strings(type_checklist, false)
+		
+		en_atch_str += "Energy"
+		if check_cards: en_atch_str += "Cards"
+		en_atch_str += "Attatched"
+	
+	if desired_condition != null:
+		cond_str = desired_condition.print_condition()
+	
+	if check_ability:
+		if specific_abilities:
+			pass
+		else:
+			if contained_abilities & 1 != 0:
+				ability_str += "pokebody"
+			if contained_abilities & 2 != 0:
+				if ability_str != "":
+					ability_str += " or pokepower"
+				else:
+					ability_str += "pokepower"
+	
+	return str(side_str, ko_str, cond_str, evo_str, owner_str, type_str,
+	 specifc_str, class_str, slot_str, hp_str, dmg_str, retr_str, tool_str,
+	 ability_str, en_atch_str)

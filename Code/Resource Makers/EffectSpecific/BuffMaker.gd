@@ -16,8 +16,8 @@ class_name Buff
 @export var after_weak_res: bool = true
 
 @export_group("Stat Change")
-@export_enum("None","HP", "Attack", "Defense", "Retreat", "Colorless Cost") var modify: String = "HP"
-@export_enum("Add", "Subtract", "Multiply", "Replace") var operation: String = "Add"
+@export_flags("HP", "Attack", "Defense", "Retreat") var modify: int = 0
+@export_enum("Add", "Replace") var operation: String = "Add"
 @export_range(-200, 200, 10) var add_hp: int = 0
 ##How much more damage to target?
 @export_range(-120, 120, 10) var attack: int = 0
@@ -60,3 +60,108 @@ func play_effect(reversable: bool = false, replace_num: int = -1) -> void:
 	print("PLAY BUFF")
 	
 	finished.emit()
+
+func how_display() -> Dictionary[String, bool]:
+	var dict: Dictionary[String, bool]
+	#Check Stat changes
+	if modify & 1 != 0:
+		dict["HP"] = operation == "Add" and add_hp < 0
+		return dict
+	if modify & 2 != 0:
+		dict["Atk"] = operation == "Add" and attack < 0
+		return dict
+	if modify & 4 != 0:
+		dict["Def"] = operation == "Add" and defense < 0
+		return dict
+	if modify & 8 != 0:
+		dict["Cost"] = operation == "Add" and retreat_change < 0
+		return dict
+	if attack_cost:
+		dict["Cost"] = cost_modifier == "Subtract"
+		return dict
+	
+	#Check Immunities
+	if not condition_immune == 0 or damage_immune\
+	 or body_immune or power_immune or trainer_immune\
+	 or odd_immunity or even_immunity or attack_effect_immune:
+		dict["Def"] = false
+		return dict
+	
+	if weakness or resistance or effects:
+		dict["Atk"] = false
+		return dict
+	
+	dict["ETC"] = false
+	return dict
+
+func make_description() -> String:
+	var final: String
+	var buffs: Array[String]
+	
+	if modify & 1 != 0:
+		buffs.append(str("HP ", get_stat_change(add_hp), add_hp))
+	if modify & 2 != 0:
+		buffs.append(str("Attack ", get_stat_change(attack), attack))
+	if modify & 4 != 0:
+		buffs.append(str("Defense ", get_stat_change(attack), defense))
+	if modify & 8 != 0:
+		buffs.append(str("Retreat Cost ", get_stat_change(attack), retreat_change))
+	
+	#Check Immunities
+	if not condition_immune == 0:
+		var specific: Array[String]
+		if condition_immune == 31:
+			buffs.append(str("Immune to all conditions"))
+		else:
+			if condition_immune & 1:
+				specific.append("Poision")
+			if condition_immune & 2:
+				specific.append("Burn")
+			if condition_immune & 4:
+				specific.append("Paralysis")
+			if condition_immune & 8:
+				specific.append("Sleep")
+			if condition_immune & 16:
+				specific.append("Confusion")
+			
+			buffs.append(str("Immune to ", Convert.combine_strings(specific)))
+	
+	
+	if not condition_immune == 0 or damage_immune\
+	or body_immune or power_immune or trainer_immune\
+	or odd_immunity or even_immunity or attack_effect_immune:
+		var specific: Array[String]
+		if attack_effect_immune:
+			specific.append("effcts from attacks")
+		if damage_immune:
+			specific.append("direct damage from attacks")
+		if body_immune:
+			specific.append("effcts from pokebodies")
+		if power_immune:
+			specific.append("effcts from pokepowers")
+		if trainer_immune:
+			specific.append("effects from trainers")
+		if odd_immunity:
+			specific.append("odd numbered direct damage from attacks")
+		if even_immunity:
+			specific.append("even numbered direct damage from attacks")
+		buffs.append(str("Immune to ", Convert.combine_strings(specific)))
+	
+	if weakness or resistance or effects:
+		var specific: Array[String]
+		if weakness:
+			specific.append("Weaknesses")
+		if resistance:
+			specific.append("Resistance")
+		if effects:
+			specific.append("Effects")
+		buffs.append(str("Ignore ", Convert.combine_strings(specific), " when attacking"))
+	
+	return final
+
+func get_stat_change(stat: int) -> String:
+	if operation == "Add" and stat < 0:
+		return "lowered by "
+	elif operation == "Add":
+		return "increased by "
+	return "is now "

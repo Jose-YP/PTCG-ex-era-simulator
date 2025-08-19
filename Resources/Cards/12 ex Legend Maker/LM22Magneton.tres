@@ -95,7 +95,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_w06bv"]
 script = ExtResource("2_13wr1")
 name = "Multiple Force"
-description = "If [name] has any React Energy cards attached to it, this attack does 30 damage plus 10 more damage for each Magnemite and Magneton (both yours and your opponent's) in play."
 attack_cost = ExtResource("3_kpec7")
 attack_data = SubResource("Resource_srd2b")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
@@ -103,7 +102,6 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_ckcqc"]
 script = ExtResource("2_13wr1")
 name = "Magnetic Blast"
-description = ""
 attack_cost = ExtResource("10_ckcqc")
 attack_data = ExtResource("11_ano3c")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

@@ -1,0 +1,42 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=9 format=3 uid="uid://djtabcdq0tdjy"]
+
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_fnp3g"]
+[ext_resource type="Texture2D" uid="uid://bulrpq1yms7wh" path="res://Art/Cards/2 ex Sandstorm/56.jpg" id="1_pjmm4"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="2_sdb4b"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_2x5pt"]
+[ext_resource type="Resource" uid="uid://b5h5yekm4jaw4" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/M1C1.tres" id="3_ws5g1"]
+[ext_resource type="Resource" uid="uid://rbaqwrhtyfvp" path="res://Resources/Components/Pokemon/Attacks/AttackData/20+20IfHeads.tres" id="4_8p18q"]
+
+[sub_resource type="Resource" id="Resource_remh0"]
+script = ExtResource("1_fnp3g")
+name = "Steel Headbutt"
+attack_cost = ExtResource("3_ws5g1")
+attack_data = ExtResource("4_8p18q")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_pjmm4"]
+script = ExtResource("2_sdb4b")
+HP = 50
+retreat = 1
+attacks = Array[ExtResource("1_fnp3g")]([SubResource("Resource_remh0")])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 1
+owner = 0
+type = 128
+weak = 2
+resist = 1
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("3_2x5pt")
+name = "Aron"
+image = ExtResource("1_pjmm4")
+illustrator = "Atsuko Nishida"
+number = 56
+rarity = 0
+expansion = 1
+categories = 1
+pokemon_properties = SubResource("Resource_pjmm4")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

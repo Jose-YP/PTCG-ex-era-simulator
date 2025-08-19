@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://drg0sr7jdfiel"]
+[gd_scene load_steps=12 format=3 uid="uid://drg0sr7jdfiel"]
 
 [ext_resource type="Script" uid="uid://wt6o27vmhuas" path="res://Code/Scenes/UI/Main/UISlot.gd" id="1_c5ua0"]
 [ext_resource type="Texture2D" uid="uid://ct7oa74jhqcwq" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/74.jpg" id="2_4mrr5"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://d3nrajtlwbvgh" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/84.jpg" id="3_bcik8"]
 [ext_resource type="PackedScene" uid="uid://dp781vdb5kvc7" path="res://Scenes/UI/UIComponents/art_button.tscn" id="3_nyxqq"]
 [ext_resource type="PackedScene" uid="uid://bs3ila6cpt8n1" path="res://Scenes/UI/UIComponents/types.tscn" id="4_5yd0i"]
+[ext_resource type="PackedScene" uid="uid://ekxwkd3amd1t" path="res://Scenes/UI/UIComponents/BuffDisplay.tscn" id="6_mc7hj"]
 [ext_resource type="PackedScene" uid="uid://dph43kayde03u" path="res://Scenes/UI/UIComponents/energy_types.tscn" id="6_nykcf"]
 [ext_resource type="PackedScene" uid="uid://04qgb8r1r84v" path="res://Scenes/UI/UIComponents/damage_counter.tscn" id="8_0ajf4"]
 [ext_resource type="PackedScene" uid="uid://bcuwyo6u5h2fw" path="res://Scenes/UI/UIComponents/conditions.tscn" id="9_0ajf4"]
@@ -93,6 +94,14 @@ offset_right = 34.0
 offset_bottom = 28.0
 bbcode_enabled = true
 text = "+"
+
+[node name="ChangeDisplay" parent="TrainerAttached" instance=ExtResource("6_mc7hj")]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
 
 [node name="EnergyTypes" parent="." instance=ExtResource("6_nykcf")]
 unique_name_in_owner = true

@@ -40,7 +40,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_x71s5"]
 script = ExtResource("2_n2hqj")
 name = "Deafen"
-description = "Your opponent can't play any Trainer cards (except for Supporter cards) from his or her hand during your opponent's next turn."
 attack_cost = ExtResource("3_x72h8")
 attack_data = SubResource("Resource_gr24l")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
@@ -95,7 +94,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_kuskb"]
 script = ExtResource("2_n2hqj")
 name = "Dragon Roar"
-description = "Put 8 damage counters on the Defending Pokémon. If that Pokémon would be Knocked Out by this attack, put any damage counters not necessary to Knock Out the Defending Pokémon on your opponent's Benched Pokémon in any way you like."
 attack_cost = ExtResource("6_1bi78")
 attack_data = SubResource("Resource_47mjb")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

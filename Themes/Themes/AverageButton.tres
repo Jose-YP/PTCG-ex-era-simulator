@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=32 format=3 uid="uid://bfw6ylcttychc"]
+[gd_resource type="Theme" load_steps=33 format=3 uid="uid://bfw6ylcttychc"]
 
 [ext_resource type="StyleBox" uid="uid://duhmik1loeema" path="res://Themes/StyleBoxes/GBABox.tres" id="1_j8r7k"]
 [ext_resource type="StyleBox" uid="uid://bvesf3hjv2bsl" path="res://Themes/StyleBoxes/GBADragBox.tres" id="2_0j40x"]
@@ -190,6 +190,8 @@ border_width_bottom = 2
 border_color = Color(0.266667, 0, 0.0235294, 1)
 border_blend = true
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nvsbv"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_roxb8"]
 bg_color = Color(0.154876, 0.154876, 0.154876, 1)
 border_width_left = 2
@@ -284,6 +286,7 @@ RichTextLabel/fonts/bold_font = ExtResource("4_dou84")
 RichTextLabel/fonts/bold_italics_font = ExtResource("5_nvsbv")
 RichTextLabel/fonts/italics_font = ExtResource("6_i36k3")
 ScrollContainer/styles/panel = ExtResource("4_amp7u")
+TabContainer/styles/panel = SubResource("StyleBoxEmpty_nvsbv")
 TrainerButton/base_type = &"Button"
 TrainerButton/styles/disabled = SubResource("StyleBoxFlat_roxb8")
 TrainerButton/styles/hover = SubResource("StyleBoxFlat_hfh41")

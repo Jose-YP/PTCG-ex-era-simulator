@@ -2,6 +2,7 @@ extends Node
 
 var all_lists: Array[Dictionary]
 
+#region STRINGS
 func reformat(text: String, user: String = "<null>") -> String:
 	var result: String = text
 	var icon_search = RegEx.new()
@@ -19,7 +20,7 @@ func reformat(text: String, user: String = "<null>") -> String:
 		#Specific mentions of energy types should be replaced by icon
 		var key: String = found.get_string(0).lstrip("{").rstrip("}")
 		var index: int = Consts.energy_types.find(key)
-		var icon_path: String = str("[img={20%}x{20%}]",
+		var icon_path: String = str("[img={13%}}]",
 		Consts.energy_icons[index],"[/img]")
 		
 		if index == -1: push_error(key," isn't found in Consts energy_types")
@@ -45,6 +46,71 @@ func get_type_rich_color(type: String) -> String:
 	var color_string: String = str("[color=",Consts.energy_colors[type_int].to_html(),"]")
 	return color_string
 
+func stack_into_string(stack: Consts.STACKS) -> String:
+	match stack:
+		Consts.STACKS.HAND:
+			return "Hand"
+		Consts.STACKS.DISCARD:
+			return "Discard"
+		Consts.STACKS.DECK:
+			return "Deck"
+		Consts.STACKS.PRIZE:
+			return "Prize"
+		Consts.STACKS.LOST:
+			return "Lost Zone"
+		Consts.STACKS.PLAY:
+			return "In Play"
+		_:
+			printerr(stack, "Isn't recognized as a viable type")
+	return ""
+
+func slot_into_string(slot: Consts.SLOTS) -> String:
+	match slot:
+		Consts.SLOTS.ALL:
+			return ""
+		Consts.SLOTS.ACTIVE:
+			return "active"
+		Consts.SLOTS.BENCH:
+			return "benched"
+		Consts.SLOTS.TARGET:
+			return "targetted"
+		Consts.SLOTS.REST:
+			return "non-targetted"
+	return ""
+ 
+func side_into_string(side: Consts.SIDES) -> String:
+	match side:
+		Consts.SIDES.BOTH:
+			return ""
+		Consts.SIDES.ATTACKING:
+			return "attacking"
+		Consts.SIDES.DEFENDING:
+			return "defening"
+		Consts.SIDES.SOURCE:
+			return "your"
+		Consts.SIDES.OTHER:
+			return "opposing"
+	return ""
+
+func combine_strings(string_array: Array[String], boolean_and: bool = true) -> String:
+	var final: String = ""
+	
+	for i in range(string_array.size()):
+		if final == "":
+			final += string_array[i]
+		elif i == string_array.size() - 1:
+			if boolean_and:
+				final += str(" and ", string_array[i])
+			else:
+				final += str(" or ", string_array[i])
+		else:
+			final += str(", ", string_array[i])
+	
+	return final
+
+#endregion
+
+#region STRING ARRAYS
 func flags_to_type_array(type_flags: int) -> Array[String]:
 	var types: Array[String] = []
 	
@@ -88,7 +154,9 @@ func flags_to_allowed_array(allowed_flags: int) -> Array[String]:
 		pass
 	
 	return allowed_array
- 
+#endregion
+
+#region INTIGERS
 func get_allowed_flags(allowed: String = "All") -> int:
 	match allowed:
 		"Start":
@@ -130,7 +198,9 @@ func get_card_flags(card: Base_Card) -> int:
 		card_flags += Convert.get_allowed_flags("Energy")
 	
 	return card_flags
+#endregion
 
+#region BOOLEEANS
 func playing_as_pokemon(allowed_flag: int) -> bool:
 	return allowed_flag & get_allowed_flags("Pokemon") != 0
 
@@ -153,20 +223,4 @@ func default_card_sort(button1: Button, button2: Button):
 	#If they're both (not) allowed check card priority
 	else:
 		return card1.card_priority(card2)
-
-func stack_into_string(stack: Consts.STACKS):
-	match stack:
-		Consts.STACKS.HAND:
-			return "Hand"
-		Consts.STACKS.DISCARD:
-			return "Discard"
-		Consts.STACKS.DECK:
-			return "Deck"
-		Consts.STACKS.PRIZE:
-			return "Prize"
-		Consts.STACKS.LOST:
-			return "Lost Zone"
-		Consts.STACKS.PLAY:
-			return "In Play"
-		_:
-			printerr(stack, "Isn't recognized as a viable type")
+#endregion

@@ -12,7 +12,6 @@
 [sub_resource type="Resource" id="Resource_q03qg"]
 script = ExtResource("2_kk3wt")
 name = "Collect"
-description = "Draw 3 cards."
 attack_cost = ExtResource("3_rti7i")
 attack_data = ExtResource("4_okcgo")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
@@ -20,7 +19,6 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_5bsuw"]
 script = ExtResource("2_kk3wt")
 name = "Water Arrow"
-description = "Choose 1 of your opponent's Pokémon. This attack does 20 damage to that Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
 attack_cost = ExtResource("5_i4xcj")
 attack_data = ExtResource("6_v6x3u")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

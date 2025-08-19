@@ -13,6 +13,7 @@ class_name UI_Slot
 @onready var max_hp: RichTextLabel = %MaxHP
 @onready var tool: TextureRect = %Tool
 @onready var tm: TextureRect = %TM
+@onready var changes: Control = %ChangeDisplay
 @onready var damage_counter: DamageCounter = %DamageCounter
 @onready var cond_display: ConditionDisplay = %Conditions
 @onready var typeContainer: Array[Node] = %TypeContainer.get_children()

@@ -86,7 +86,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_s2saa"]
 script = ExtResource("2_uipf0")
 name = "Signs of Evolution"
-description = ""
 attack_cost = ExtResource("3_5up2p")
 attack_data = SubResource("Resource_t2u0d")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
@@ -94,7 +93,6 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_k35ss"]
 script = ExtResource("2_uipf0")
 name = ""
-description = ""
 attack_cost = ExtResource("3_5up2p")
 attack_data = ExtResource("11_277va")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

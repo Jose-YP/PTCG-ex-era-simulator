@@ -12,7 +12,6 @@
 [sub_resource type="Resource" id="Resource_h68pq"]
 script = ExtResource("2_dlrvm")
 name = "Metal Claw"
-description = ""
 attack_cost = ExtResource("3_rba8o")
 attack_data = ExtResource("4_tw74j")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
@@ -20,7 +19,6 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_5uyip"]
 script = ExtResource("2_dlrvm")
 name = "Rising Lunge"
-description = "Flip a coin. If heads, this attack does 30 damage plus 20 more damage. "
 attack_cost = ExtResource("5_iljur")
 attack_data = ExtResource("6_o6lfy")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

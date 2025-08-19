@@ -62,7 +62,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_owrr0"]
 script = ExtResource("2_qoqcd")
 name = "Haunt"
-description = "Put 1 damage counter on the Defending Pokémon."
 attack_cost = ExtResource("3_ub2nc")
 attack_data = SubResource("Resource_3icnl")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
@@ -89,7 +88,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_754gl"]
 script = ExtResource("2_qoqcd")
 name = ""
-description = ""
 attack_cost = ExtResource("9_cwr80")
 attack_data = SubResource("Resource_vikxo")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

@@ -45,7 +45,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_0l0mh"]
 script = ExtResource("1_tp1gn")
 name = "Moon Guidance"
-description = "Search your deck for a Trainer card (excluding Supporter cards), show it to your opponent, and put it into your hand. Shuffle your deck afterward. "
 attack_cost = ExtResource("4_s35fu")
 attack_data = SubResource("Resource_yrpea")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

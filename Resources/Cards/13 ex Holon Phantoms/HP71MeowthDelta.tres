@@ -15,7 +15,6 @@
 [sub_resource type="Resource" id="Resource_n37sd"]
 script = ExtResource("2_786ue")
 name = "Slash"
-description = ""
 attack_cost = ExtResource("3_wxgk1")
 attack_data = ExtResource("4_aaqyc")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
@@ -49,7 +48,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_8wuvv"]
 script = ExtResource("2_786ue")
 name = "Pay Day"
-description = "Draw a card."
 attack_cost = ExtResource("5_wdnsq")
 attack_data = SubResource("Resource_sibt6")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

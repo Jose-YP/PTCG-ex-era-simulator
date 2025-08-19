@@ -80,7 +80,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_4jj5i"]
 script = ExtResource("2_vmufy")
 name = "Melting Mountain"
-description = "Discard the top card from your deck. If that card is a basic Energy card, attach it to [name]."
 attack_cost = ExtResource("3_xhq37")
 attack_data = SubResource("Resource_wb2rl")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
@@ -107,7 +106,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_7no7u"]
 script = ExtResource("2_vmufy")
 name = "Lava Flow"
-description = "You may discard any number of basic Energy cards attached to [name] when you use this attack. If you do, this attack does 40 damage plus 20 more damage for each basic Energy card you discarded."
 attack_cost = ExtResource("12_rayro")
 attack_data = SubResource("Resource_xujwf")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
@@ -133,7 +131,7 @@ image = ExtResource("1_hqqw8")
 illustrator = "Hikaru Koike"
 number = 95
 rarity = 4
-expansion = 0
+expansion = 2
 categories = 1
 pokemon_properties = SubResource("Resource_ash6i")
 fossil = false

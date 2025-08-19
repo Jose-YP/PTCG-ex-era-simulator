@@ -49,7 +49,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_xvftv"]
 script = ExtResource("2_he504")
 name = "Freeze Light"
-description = "Flip a coin. If heads, the Defending Pokémon is now Paralyzed. If tails, the Defending Pokémon is now Burned."
 attack_cost = ExtResource("3_jseaf")
 attack_data = SubResource("Resource_sj7iq")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
@@ -69,14 +68,16 @@ metadata/_custom_type_script = "uid://crscwhvugaoxa"
 
 [sub_resource type="Resource" id="Resource_uflnk"]
 script = ExtResource("10_y5xf5")
+choosing = 4
+mode = "Add"
+ask = ExtResource("9_lai6i")
+how_many = 4
+choose_num = 1
 turn_delay = -1
 prevent_KO = false
-mode = "Add"
-how_many = 4
-choosing = 4
 anyway_u_like = true
-choose_num = 1
-ask = ExtResource("9_lai6i")
+with_leftover = "None"
+leftover_anyway = false
 vary_choose_num = false
 plus = true
 modifier = 1
@@ -111,7 +112,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_oqscs"]
 script = ExtResource("2_he504")
 name = "Pure Power"
-description = "Put 4 damage counters on your opponent's Pokémon in any way you like."
 attack_cost = SubResource("Resource_0matq")
 attack_data = SubResource("Resource_j1gr8")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
@@ -124,7 +124,7 @@ stackable = true
 recieves = ExtResource("13_87fu4")
 duration = -1
 after_weak_res = true
-modify = "HP"
+modify = 0
 operation = "Replace"
 add_hp = 0
 attack = 0

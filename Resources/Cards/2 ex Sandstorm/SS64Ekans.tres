@@ -10,7 +10,6 @@
 [sub_resource type="Resource" id="Resource_6d4ap"]
 script = ExtResource("1_vurul")
 name = "Bind"
-description = ""
 attack_cost = ExtResource("3_lx7ow")
 attack_data = ExtResource("4_h17lo")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

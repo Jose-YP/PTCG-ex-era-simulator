@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://bsdohk73tou26"]
+
+[ext_resource type="Texture2D" uid="uid://dt3lgydy2ut5t" path="res://Art/Cards/2 ex Sandstorm/59.jpg" id="1_46b8m"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_qkexa"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_nlc8k"]
+[ext_resource type="Resource" uid="uid://cugd2g6gy4gda" path="res://Resources/Components/Pokemon/Attacks/EffectlessAttacks/Tackle1-10.tres" id="3_kcna8"]
+[ext_resource type="Resource" uid="uid://dytd2agmtnhwi" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Fire1.tres" id="4_rg076"]
+[ext_resource type="Resource" uid="uid://bx4msn26ymyv8" path="res://Resources/Components/Pokemon/Attacks/AttackData/BurnFlipHeads.tres" id="5_nk2ii"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="6_0o13g"]
+
+[sub_resource type="Resource" id="Resource_02ogm"]
+script = ExtResource("2_nlc8k")
+name = "Singe"
+attack_cost = ExtResource("4_rg076")
+attack_data = ExtResource("5_nk2ii")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_pjmm4"]
+script = ExtResource("6_0o13g")
+HP = 50
+retreat = 1
+attacks = Array[ExtResource("2_nlc8k")]([ExtResource("3_kcna8"), SubResource("Resource_02ogm")])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 1
+owner = 0
+type = 1
+weak = 0
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_qkexa")
+name = "Cyndaquil"
+image = ExtResource("1_46b8m")
+illustrator = "Naoyo Kimura"
+number = 59
+rarity = 0
+expansion = 1
+categories = 1
+pokemon_properties = SubResource("Resource_pjmm4")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

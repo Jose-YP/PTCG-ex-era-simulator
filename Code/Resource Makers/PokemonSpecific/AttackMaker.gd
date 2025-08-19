@@ -2,13 +2,12 @@ extends Resource
 class_name Attack
 
 @export var name: String
-@export_multiline var description: String
 @export var attack_cost: AttackCost = preload("res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres")
 @export var attack_data: AttackData
 
 func print_attack() -> void:
 	print_rich("[center]------------------",name,"------------------")
-	print_rich("Description: ", description)
+	print_rich("Description: ", attack_data.description)
 	print_rich("[center]------------------COST------------------")
 	
 	for type in Convert.get_basic_energy():

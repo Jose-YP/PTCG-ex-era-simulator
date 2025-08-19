@@ -27,3 +27,27 @@ func play_effect(reversable: bool = false, replace_num: int = -1) -> void:
 			filtered.add_condition(self)
 	
 	finished.emit()
+
+func print_condition() -> String:
+	if any:
+		return "conditioned"
+	
+	var conditions: Array[String]
+	
+	if poison > 1:
+		conditions.append("poisioned")
+	if burn > 1:
+		conditions.append("burnt")
+	match turn_cond:
+		Consts.TURN_COND.PARALYSIS:
+			conditions.append("paralyzed")
+		Consts.TURN_COND.ASLEEP:
+			conditions.append("asleep")
+		Consts.TURN_COND.CONFUSION:
+			conditions.append("confused")
+	if imprision:
+		conditions.append("imprisioned")
+	if shockwave:
+		conditions.append("shockwaved")
+	
+	return Convert.combine_strings(conditions, false)

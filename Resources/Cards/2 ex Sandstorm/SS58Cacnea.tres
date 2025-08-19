@@ -1,0 +1,42 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=9 format=3 uid="uid://dryrdondj1tam"]
+
+[ext_resource type="Texture2D" uid="uid://bohwf0dfh1ywm" path="res://Art/Cards/2 ex Sandstorm/58.jpg" id="1_ufms1"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_yri7d"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="2_o8uv2"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_2h5ln"]
+[ext_resource type="Resource" uid="uid://c63wb1xvpkbi8" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Grass1.tres" id="3_l7a4e"]
+[ext_resource type="Resource" uid="uid://b2w54rvxssk13" path="res://Resources/Components/Pokemon/Attacks/AttackData/10PoisionIfHeads.tres" id="4_8qbu4"]
+
+[sub_resource type="Resource" id="Resource_rhl4c"]
+script = ExtResource("1_yri7d")
+name = "Poison Sting"
+attack_cost = ExtResource("3_l7a4e")
+attack_data = ExtResource("4_8qbu4")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_pjmm4"]
+script = ExtResource("2_o8uv2")
+HP = 50
+retreat = 1
+attacks = Array[ExtResource("1_yri7d")]([SubResource("Resource_rhl4c")])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 1
+owner = 0
+type = 1
+weak = 2
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("3_2h5ln")
+name = "Cacnea"
+image = ExtResource("1_ufms1")
+illustrator = "Midori Harada"
+number = 58
+rarity = 0
+expansion = 1
+categories = 1
+pokemon_properties = SubResource("Resource_pjmm4")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

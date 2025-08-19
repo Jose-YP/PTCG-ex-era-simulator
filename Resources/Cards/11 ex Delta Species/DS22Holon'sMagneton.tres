@@ -33,7 +33,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_psiqs"]
 script = ExtResource("3_bekoi")
 name = "Extra Ball"
-description = "If the Defending Pokémon is Pokémon-ex, this attack does 30 damage plus 20 more damage."
 attack_cost = ExtResource("4_i8dod")
 attack_data = SubResource("Resource_a7xe4")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
