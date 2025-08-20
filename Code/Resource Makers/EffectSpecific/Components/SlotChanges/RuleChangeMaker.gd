@@ -1,2 +1,2 @@
-extends Resource
+extends SlotChange
 class_name RuleChange

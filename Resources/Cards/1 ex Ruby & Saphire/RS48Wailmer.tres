@@ -8,7 +8,7 @@
 [ext_resource type="Resource" uid="uid://cxsmsqpp50x7f" path="res://Resources/Components/Effects/ETC/HealCondition.tres" id="4_5hsy2"]
 [ext_resource type="Resource" uid="uid://p7v7t2uptmme" path="res://Resources/Components/Effects/Conditions/SleepSelf.tres" id="5_kaj8s"]
 [ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="6_q03r5"]
-[ext_resource type="Script" uid="uid://scca13hg4k1l" path="res://Code/Resource Makers/EffectSpecific/DmgManipMaker.gd" id="7_jab6k"]
+[ext_resource type="Script" uid="uid://scca13hg4k1l" path="res://Code/Resource Makers/EffectSpecific/Components/DmgManipMaker.gd" id="7_jab6k"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="8_jqjp7"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="9_akdno"]
 [ext_resource type="Resource" uid="uid://fcpa5aqhgy0e" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/W1C1.tres" id="10_jq24c"]

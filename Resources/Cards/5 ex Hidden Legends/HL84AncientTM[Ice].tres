@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="4_maceq"]
 [ext_resource type="Resource" uid="uid://dk0v7dyi3r43m" path="res://Resources/Components/Effects/Identifiers/Trainers/Trainer.tres" id="4_sb5y8"]
 [ext_resource type="Resource" uid="uid://cw44iqotg3v3f" path="res://Resources/Components/Effects/Asks/General/FromDefending.tres" id="5_g1yuy"]
-[ext_resource type="Script" uid="uid://8sh5p3leflla" path="res://Code/Resource Makers/EffectSpecific/CardDisruptMaker.gd" id="6_r3gwp"]
+[ext_resource type="Script" uid="uid://8sh5p3leflla" path="res://Code/Resource Makers/EffectSpecific/Components/CardDisruptMaker.gd" id="6_r3gwp"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="7_ys46e"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="8_3ajyv"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="9_maceq"]

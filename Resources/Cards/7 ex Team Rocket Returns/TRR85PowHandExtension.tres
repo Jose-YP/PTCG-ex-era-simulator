@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="4_uy43t"]
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="5_ci705"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="7_dmrxn"]
-[ext_resource type="Script" uid="uid://curklvf1517ml" path="res://Code/Resource Makers/EffectSpecific/SwapMaker.gd" id="8_uw2sm"]
+[ext_resource type="Script" uid="uid://curklvf1517ml" path="res://Code/Resource Makers/EffectSpecific/Components/SwapMaker.gd" id="8_uw2sm"]
 
 [sub_resource type="Resource" id="Resource_bu8wl"]
 script = ExtResource("3_tpnca")

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Buff" load_steps=2 format=3 uid="uid://dx17fn4esx8qm"]
 
-[ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/BuffMaker.gd" id="1_wl1b7"]
+[ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/BuffMaker.gd" id="1_wl1b7"]
 
 [resource]
 script = ExtResource("1_wl1b7")

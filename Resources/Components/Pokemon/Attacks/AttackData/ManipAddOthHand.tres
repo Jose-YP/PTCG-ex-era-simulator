@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="1_f8ovh"]
 [ext_resource type="Resource" uid="uid://bkt6ry7vyha70" path="res://Resources/Components/Effects/Asks/General/Other.tres" id="2_vjmcw"]
 [ext_resource type="Resource" uid="uid://dnjnxdl7x8q06" path="res://Resources/Components/Counters/Comparator/Return/ReturnOthrHnd.tres" id="3_doyh2"]
-[ext_resource type="Script" uid="uid://scca13hg4k1l" path="res://Code/Resource Makers/EffectSpecific/DmgManipMaker.gd" id="4_8nkvr"]
+[ext_resource type="Script" uid="uid://scca13hg4k1l" path="res://Code/Resource Makers/EffectSpecific/Components/DmgManipMaker.gd" id="4_8nkvr"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="5_0eyb0"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="6_23s4l"]
 

@@ -140,7 +140,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_aa30r"]
 script = ExtResource("2_xuiss")
 name = "Lizard Poison"
-description = "If 1 Energy is attached to Sceptile, the Defending Pokémon is now Asleep. If 2 Energy is attached to Sceptile, the Defending Pokémon is now Poisoned. If 3 Energy is attached to Sceptile, the Defending Pokémon is now Asleep and Poisoned. If 4 or more Energy is attached to Sceptile, the Defending Pokémon is now Asleep, Burned, and Poisoned."
 attack_cost = ExtResource("3_dpoqi")
 attack_data = SubResource("Resource_tnff2")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
@@ -148,7 +147,6 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_270w5"]
 script = ExtResource("2_xuiss")
 name = "Solarbeam"
-description = ""
 attack_cost = ExtResource("14_mqkhh")
 attack_data = ExtResource("15_77a3r")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

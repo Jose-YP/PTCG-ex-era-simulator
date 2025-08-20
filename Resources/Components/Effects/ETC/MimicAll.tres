@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Mimic" load_steps=2 format=3 uid="uid://ctay0aw5xxiyi"]
 
-[ext_resource type="Script" uid="uid://dtv1d2u2kvixy" path="res://Code/Resource Makers/EffectSpecific/MimicMaker.gd" id="1_xt67a"]
+[ext_resource type="Script" uid="uid://dtv1d2u2kvixy" path="res://Code/Resource Makers/EffectSpecific/Components/MimicMaker.gd" id="1_xt67a"]
 
 [resource]
 script = ExtResource("1_xt67a")

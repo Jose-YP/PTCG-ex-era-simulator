@@ -2,7 +2,7 @@
 
 [ext_resource type="Resource" uid="uid://crhg4u3yu2cso" path="res://Resources/Components/Effects/Asks/General/FromOther.tres" id="1_xwg80"]
 [ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="2_qihbw"]
-[ext_resource type="Script" uid="uid://bgtwlw1edjwyc" path="res://Code/Resource Makers/EffectSpecific/DrawMaker.gd" id="2_t8f0g"]
+[ext_resource type="Script" uid="uid://bgtwlw1edjwyc" path="res://Code/Resource Makers/EffectSpecific/Components/DrawMaker.gd" id="2_t8f0g"]
 [ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="3_ciqid"]
 
 [sub_resource type="Resource" id="Resource_kfno7"]

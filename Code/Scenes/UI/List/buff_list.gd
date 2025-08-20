@@ -1,9 +1,10 @@
 extends Control
 
-@export var change: Resource
+@export var change: SlotChange
 
-func determinechange():
-	match change.get_class():
+func determine_change():
+	print(change.get_script().get_global_name())
+	match change.get_script().get_global_name():
 		"Buff":
 			pass
 		"Disable":

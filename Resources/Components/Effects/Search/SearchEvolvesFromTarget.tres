@@ -3,7 +3,7 @@
 [ext_resource type="Resource" uid="uid://cygim4rxvdbp8" path="res://Resources/Components/Effects/Placement/AndThenEvolve.tres" id="1_bsksw"]
 [ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="2_qs84h"]
 [ext_resource type="Resource" uid="uid://c7itelq8jtjc2" path="res://Resources/Components/EnData/Rainbow.tres" id="3_qs84h"]
-[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="3_v0jo1"]
+[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/Components/SearchMaker.gd" id="3_v0jo1"]
 
 [sub_resource type="Resource" id="Resource_ia3mn"]
 script = ExtResource("2_qs84h")

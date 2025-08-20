@@ -10,7 +10,7 @@
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="6_le6pv"]
 [ext_resource type="Resource" uid="uid://c7itelq8jtjc2" path="res://Resources/Components/EnData/Rainbow.tres" id="6_lujju"]
 [ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="6_tqtg3"]
-[ext_resource type="Script" uid="uid://c0ishgbxk63dg" path="res://Code/Resource Makers/EffectSpecific/DisableMaker.gd" id="7_65xpm"]
+[ext_resource type="Script" uid="uid://c0ishgbxk63dg" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/DisableMaker.gd" id="7_65xpm"]
 [ext_resource type="Resource" uid="uid://bu7xoy1fy00q3" path="res://Resources/Components/Pokemon/Attacks/CommonAttacks/P1Psyshock.tres" id="8_hxbuf"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="9_iq553"]
 [ext_resource type="Resource" uid="uid://cx7v8cyxlierr" path="res://Resources/Components/Effects/Prompts/PromptComparator/IsSolrockInPlay.tres" id="13_opu8w"]

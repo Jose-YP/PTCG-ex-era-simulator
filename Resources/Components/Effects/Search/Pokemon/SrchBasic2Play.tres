@@ -3,7 +3,7 @@
 [ext_resource type="Resource" uid="uid://ckq0objyn0iok" path="res://Resources/Components/Effects/Placement/PlaceOnSide.tres" id="1_yqj35"]
 [ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="2_q0e7q"]
 [ext_resource type="Resource" uid="uid://bsrtmv3udqjav" path="res://Resources/Components/Effects/Identifiers/Pokemon/BasicPokemon.tres" id="3_annek"]
-[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="4_4tai2"]
+[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/Components/SearchMaker.gd" id="4_4tai2"]
 
 [resource]
 script = ExtResource("4_4tai2")

@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://caj1pm8erar2a" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="1_5i42c"]
 [ext_resource type="Resource" uid="uid://dck0aw0wiqcpw" path="res://Resources/Components/Effects/Asks/Class&Owner/Other'sTrgEXMon.tres" id="1_420ij"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_7lxul"]
-[ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/BuffMaker.gd" id="2_tf38m"]
+[ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/BuffMaker.gd" id="2_tf38m"]
 [ext_resource type="Texture2D" uid="uid://bcy6v2x6sapi" path="res://Art/Cards/11 ex Delta Species/105.jpg" id="2_yixtv"]
 [ext_resource type="Resource" uid="uid://dyg31r0aqj4ed" path="res://Resources/Components/Effects/Prompts/NonEXHasGrassEn.tres" id="3_tyuxn"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_10hjv"]
@@ -83,11 +83,9 @@ script = ExtResource("2_tf38m")
 description = "Damage from opposing Pokemon-ex reduced by 10 after weak/res"
 application = "Slot"
 stackable = true
-recieves = ExtResource("9_5rppq")
-duration = -1
 against = ExtResource("1_420ij")
 after_weak_res = true
-modify = "HP"
+modify = 0
 operation = "Replace"
 add_hp = 0
 attack = 0
@@ -107,6 +105,8 @@ weakness = false
 resistance = false
 effects = false
 attack_names = Array[String]([])
+recieves = ExtResource("9_5rppq")
+duration = -1
 metadata/_custom_type_script = "uid://coojhwe6m20gd"
 
 [sub_resource type="Resource" id="Resource_oiiyp"]
@@ -126,10 +126,8 @@ script = ExtResource("2_tf38m")
 description = "Immune to special conditions"
 application = "Slot"
 stackable = true
-recieves = ExtResource("9_5rppq")
-duration = -1
 after_weak_res = true
-modify = "HP"
+modify = 0
 operation = "Replace"
 add_hp = 0
 attack = 0
@@ -149,6 +147,8 @@ weakness = false
 resistance = false
 effects = false
 attack_names = Array[String]([])
+recieves = ExtResource("9_5rppq")
+duration = -1
 metadata/_custom_type_script = "uid://coojhwe6m20gd"
 
 [sub_resource type="Resource" id="Resource_q8rev"]

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="CardDisrupt" load_steps=4 format=3 uid="uid://c1o42idl5v6xc"]
 
 [ext_resource type="Resource" uid="uid://dsyn2o57xkb0h" path="res://Resources/Components/Effects/Asks/Class&Owner/DefEvolvedMon.tres" id="1_ddti0"]
-[ext_resource type="Script" uid="uid://8sh5p3leflla" path="res://Code/Resource Makers/EffectSpecific/CardDisruptMaker.gd" id="1_olnyr"]
+[ext_resource type="Script" uid="uid://8sh5p3leflla" path="res://Code/Resource Makers/EffectSpecific/Components/CardDisruptMaker.gd" id="1_olnyr"]
 [ext_resource type="Resource" uid="uid://dpo3quamvikcu" path="res://Resources/Components/Effects/Identifiers/Pokemon/IsEvolution.tres" id="1_wsark"]
 
 [resource]

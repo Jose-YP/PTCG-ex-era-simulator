@@ -40,6 +40,5 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [resource]
 script = ExtResource("5_v53xc")
 name = "Minor Errand-Running"
-description = "Search your deck for 2 basic Energy cards, show them to your opponent, and put them into your hand. Shuffle your deck afterward."
 attack_cost = ExtResource("3_bk8ng")
 attack_data = SubResource("Resource_vyuu0")

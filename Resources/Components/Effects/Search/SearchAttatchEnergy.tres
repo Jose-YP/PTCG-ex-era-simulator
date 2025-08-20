@@ -3,7 +3,7 @@
 [ext_resource type="Resource" uid="uid://c8vs2wowmlhne" path="res://Resources/Components/Effects/Placement/PutOnSelf.tres" id="1_tilal"]
 [ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="2_tph32"]
 [ext_resource type="Resource" uid="uid://cd880a7x21jgg" path="res://Resources/Components/Effects/Identifiers/Energy/AnyEnergy.tres" id="3_x6eq3"]
-[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="4_78etc"]
+[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/Components/SearchMaker.gd" id="4_78etc"]
 
 [resource]
 script = ExtResource("4_78etc")

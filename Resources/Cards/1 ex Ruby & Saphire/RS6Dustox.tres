@@ -13,7 +13,6 @@
 [sub_resource type="Resource" id="Resource_fuvu7"]
 script = ExtResource("2_684l4")
 name = "Toxic"
-description = "The Defending Pokémon is now Poisoned. Put 2 damage counters instead of 1 on the Defending Pokémon between turns."
 attack_cost = ExtResource("4_rwpko")
 attack_data = ExtResource("5_7qmw3")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
@@ -21,7 +20,6 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_w3yai"]
 script = ExtResource("2_684l4")
 name = "Gust"
-description = ""
 attack_cost = ExtResource("6_anyyy")
 attack_data = ExtResource("7_tg8f0")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

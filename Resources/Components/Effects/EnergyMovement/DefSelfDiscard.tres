@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="EnMov" load_steps=4 format=3 uid="uid://crqyosanwd1v7"]
 
 [ext_resource type="Resource" uid="uid://c7itelq8jtjc2" path="res://Resources/Components/EnData/Rainbow.tres" id="1_0gcix"]
-[ext_resource type="Script" uid="uid://cimk6l7ytw7xg" path="res://Code/Resource Makers/EffectSpecific/EnMovMaker.gd" id="1_3vv37"]
+[ext_resource type="Script" uid="uid://cimk6l7ytw7xg" path="res://Code/Resource Makers/EffectSpecific/Components/EnMovMaker.gd" id="1_3vv37"]
 [ext_resource type="Resource" uid="uid://bkt6ry7vyha70" path="res://Resources/Components/Effects/Asks/General/Other.tres" id="2_j15e7"]
 
 [resource]

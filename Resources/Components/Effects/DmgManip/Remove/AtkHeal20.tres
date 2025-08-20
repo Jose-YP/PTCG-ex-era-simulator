@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="DamageManip" load_steps=3 format=3 uid="uid://ceckcg8u6qavl"]
 
 [ext_resource type="Resource" uid="uid://bcs15wj2goif7" path="res://Resources/Components/Effects/Asks/Stats/AtkDamaged.tres" id="1_htenr"]
-[ext_resource type="Script" uid="uid://scca13hg4k1l" path="res://Code/Resource Makers/EffectSpecific/DmgManipMaker.gd" id="2_et0be"]
+[ext_resource type="Script" uid="uid://scca13hg4k1l" path="res://Code/Resource Makers/EffectSpecific/Components/DmgManipMaker.gd" id="2_et0be"]
 
 [resource]
 script = ExtResource("2_et0be")

@@ -3,7 +3,7 @@
 [ext_resource type="Resource" uid="uid://cxnlthowpb4r4" path="res://Resources/Components/EnData/Lightning.tres" id="1_3rbjy"]
 [ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="1_w4cvv"]
 [ext_resource type="Resource" uid="uid://dqj6gq7pt3dbk" path="res://Resources/Components/Effects/Asks/General/FromSource.tres" id="2_3rbjy"]
-[ext_resource type="Script" uid="uid://cimk6l7ytw7xg" path="res://Code/Resource Makers/EffectSpecific/EnMovMaker.gd" id="3_evamp"]
+[ext_resource type="Script" uid="uid://cimk6l7ytw7xg" path="res://Code/Resource Makers/EffectSpecific/Components/EnMovMaker.gd" id="3_evamp"]
 
 [resource]
 script = ExtResource("3_evamp")

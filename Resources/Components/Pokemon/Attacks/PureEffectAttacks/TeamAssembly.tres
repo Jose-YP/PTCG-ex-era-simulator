@@ -6,7 +6,7 @@
 [ext_resource type="Resource" uid="uid://dvdnbmg1kbbmb" path="res://Resources/Components/Effects/Placement/PlaceOnBench.tres" id="3_ykgfj"]
 [ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="4_p62sq"]
 [ext_resource type="Resource" uid="uid://c7itelq8jtjc2" path="res://Resources/Components/EnData/Rainbow.tres" id="5_ywahg"]
-[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="6_kkh0c"]
+[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/Components/SearchMaker.gd" id="6_kkh0c"]
 [ext_resource type="Resource" uid="uid://1yahyklj3y7s" path="res://Resources/Components/Counters/Indv/Slots/AtkBenchCount.tres" id="7_sgdsy"]
 [ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="8_blnxr"]
 [ext_resource type="Resource" uid="uid://bns8h72u2hxqo" path="res://Resources/Components/Effects/Asks/General/AnyMon.tres" id="9_nrkjt"]

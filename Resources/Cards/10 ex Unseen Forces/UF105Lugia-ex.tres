@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_diiue"]
 [ext_resource type="Script" uid="uid://crscwhvugaoxa" path="res://Code/Resource Makers/PokemonSpecific/AttackCostMaker.gd" id="3_6yw7r"]
 [ext_resource type="Script" uid="uid://c0cub51v5sn02" path="res://Code/Resource Makers/GeneralUse/EnergyDataMaker.gd" id="4_aoy5x"]
-[ext_resource type="Script" uid="uid://cimk6l7ytw7xg" path="res://Code/Resource Makers/EffectSpecific/EnMovMaker.gd" id="5_nix0d"]
+[ext_resource type="Script" uid="uid://cimk6l7ytw7xg" path="res://Code/Resource Makers/EffectSpecific/Components/EnMovMaker.gd" id="5_nix0d"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="6_r341i"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="7_3pqvf"]
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="7_diiue"]

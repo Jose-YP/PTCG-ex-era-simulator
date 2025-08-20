@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Buff" load_steps=4 format=3 uid="uid://c2uvm38pnk5uy"]
 
 [ext_resource type="Resource" uid="uid://bwa02bbigkkgl" path="res://Resources/Components/Effects/Asks/Class&Owner/DarkNameMons.tres" id="1_c308m"]
-[ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/BuffMaker.gd" id="2_grynf"]
+[ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/BuffMaker.gd" id="2_grynf"]
 [ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="2_ucahs"]
 
 [resource]

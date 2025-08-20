@@ -7,7 +7,7 @@
 [ext_resource type="Resource" uid="uid://dkvbrahlcnjmi" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/W1C2.tres" id="3_amwe3"]
 [ext_resource type="Resource" uid="uid://cj4j56m7hrxpe" path="res://Resources/Components/Pokemon/Attacks/AttackData/50Dmg.tres" id="4_wanhc"]
 [ext_resource type="Resource" uid="uid://bnv2dkudpcueo" path="res://Resources/Components/Effects/Asks/General/SrcActive.tres" id="5_8hlgg"]
-[ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/BuffMaker.gd" id="6_hgk10"]
+[ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/BuffMaker.gd" id="6_hgk10"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="7_b1ad1"]
 [ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="8_drys0"]
 

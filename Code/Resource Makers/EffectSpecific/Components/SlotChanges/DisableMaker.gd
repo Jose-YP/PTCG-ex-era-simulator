@@ -1,5 +1,5 @@
 @icon("res://Art/ProjectSpecific/disabled.png")
-extends Resource
+extends SlotChange
 class_name Disable
 
 #@export_group("Disable")

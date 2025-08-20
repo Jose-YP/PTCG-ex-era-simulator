@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Placement" load_steps=2 format=3 uid="uid://dadiauif5jebg"]
 
-[ext_resource type="Script" uid="uid://cdyba0wadidwb" path="res://Code/Resource Makers/EffectSpecific/PlacementMaker.gd" id="1_oaphn"]
+[ext_resource type="Script" uid="uid://cdyba0wadidwb" path="res://Code/Resource Makers/EffectSpecific/Components/PlacementMaker.gd" id="1_oaphn"]
 
 [resource]
 script = ExtResource("1_oaphn")

@@ -42,7 +42,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_t4kj7"]
 script = ExtResource("2_7n5p1")
 name = "Shakedown"
-description = "Flip a coin. If heads, choose 1 card from your opponent's hand without looking and discard it."
 attack_cost = ExtResource("3_7n5p1")
 attack_data = SubResource("Resource_nryx3")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

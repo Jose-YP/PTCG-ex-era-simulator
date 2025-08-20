@@ -6,7 +6,7 @@
 [ext_resource type="Resource" uid="uid://bgqnsjskgne2u" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Darkness1.tres" id="3_lndit"]
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="4_agpnf"]
 [ext_resource type="Resource" uid="uid://dm2i7spst0qpp" path="res://Resources/Components/Effects/Identifiers/AnyCard.tres" id="4_d8q5l"]
-[ext_resource type="Script" uid="uid://8sh5p3leflla" path="res://Code/Resource Makers/EffectSpecific/CardDisruptMaker.gd" id="5_v0hhm"]
+[ext_resource type="Script" uid="uid://8sh5p3leflla" path="res://Code/Resource Makers/EffectSpecific/Components/CardDisruptMaker.gd" id="5_v0hhm"]
 [ext_resource type="Resource" uid="uid://pqv0rqhifr8r" path="res://Resources/Components/Counters/Indv/Stacks/DefHandSize.tres" id="6_1yhar"]
 [ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="7_yl5ad"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="8_kr4nr"]

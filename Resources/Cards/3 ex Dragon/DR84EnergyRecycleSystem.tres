@@ -6,7 +6,7 @@
 [ext_resource type="Resource" uid="uid://bbmbuhmwxnnck" path="res://Resources/Components/Effects/Placement/BackIntoDeck.tres" id="4_yiqet"]
 [ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="5_u6h4o"]
 [ext_resource type="Resource" uid="uid://d2vm6chtedrum" path="res://Resources/Components/Effects/Identifiers/Energy/BasicEnergy.tres" id="6_dxm1w"]
-[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="7_utupw"]
+[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/Components/SearchMaker.gd" id="7_utupw"]
 [ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="8_2d35l"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="9_htuvh"]
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="9_w6pb1"]

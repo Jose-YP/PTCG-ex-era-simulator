@@ -10,7 +10,7 @@
 [ext_resource type="Resource" uid="uid://cxsmsqpp50x7f" path="res://Resources/Components/Effects/ETC/HealCondition.tres" id="6_e62mj"]
 [ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="7_1ru0a"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="8_kukq3"]
-[ext_resource type="Script" uid="uid://scca13hg4k1l" path="res://Code/Resource Makers/EffectSpecific/DmgManipMaker.gd" id="8_rbcqn"]
+[ext_resource type="Script" uid="uid://scca13hg4k1l" path="res://Code/Resource Makers/EffectSpecific/Components/DmgManipMaker.gd" id="8_rbcqn"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="9_kukq3"]
 [ext_resource type="Resource" uid="uid://dpovjlfpsypwe" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless3.tres" id="10_s2tul"]
 [ext_resource type="Resource" uid="uid://dwijamyxm068h" path="res://Resources/Components/Counters/Comparator/Return/ReturnSelfLightning.tres" id="11_5jthm"]

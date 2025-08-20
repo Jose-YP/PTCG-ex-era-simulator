@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Disable" load_steps=2 format=3 uid="uid://ovi6aaco5q03"]
 
-[ext_resource type="Script" uid="uid://c0ishgbxk63dg" path="res://Code/Resource Makers/EffectSpecific/DisableMaker.gd" id="1_q4vn0"]
+[ext_resource type="Script" uid="uid://c0ishgbxk63dg" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/DisableMaker.gd" id="1_q4vn0"]
 
 [resource]
 script = ExtResource("1_q4vn0")

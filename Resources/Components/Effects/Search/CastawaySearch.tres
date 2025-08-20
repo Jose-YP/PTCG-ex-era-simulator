@@ -5,7 +5,7 @@
 [ext_resource type="Resource" uid="uid://bkuxa81fpcmol" path="res://Resources/Components/Effects/Identifiers/Trainers/Supporter.tres" id="3_t0jka"]
 [ext_resource type="Resource" uid="uid://njjce7akxhr" path="res://Resources/Components/Effects/Identifiers/Trainers/Tool.tres" id="4_8bmva"]
 [ext_resource type="Resource" uid="uid://d2vm6chtedrum" path="res://Resources/Components/Effects/Identifiers/Energy/BasicEnergy.tres" id="4_v0orp"]
-[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="5_8bmva"]
+[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/Components/SearchMaker.gd" id="5_8bmva"]
 
 [resource]
 script = ExtResource("5_8bmva")

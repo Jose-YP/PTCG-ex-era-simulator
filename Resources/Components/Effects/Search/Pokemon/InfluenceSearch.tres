@@ -2,7 +2,7 @@
 
 [ext_resource type="Resource" uid="uid://dvdnbmg1kbbmb" path="res://Resources/Components/Effects/Placement/PlaceOnBench.tres" id="1_bndgx"]
 [ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="2_w51ky"]
-[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="3_h6yxb"]
+[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/Components/SearchMaker.gd" id="3_h6yxb"]
 [ext_resource type="Resource" uid="uid://c7itelq8jtjc2" path="res://Resources/Components/EnData/Rainbow.tres" id="3_w51ky"]
 
 [sub_resource type="Resource" id="Resource_w51ky"]

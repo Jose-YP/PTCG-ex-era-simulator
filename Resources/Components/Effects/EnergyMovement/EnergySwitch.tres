@@ -2,7 +2,7 @@
 
 [ext_resource type="Resource" uid="uid://dqj6gq7pt3dbk" path="res://Resources/Components/Effects/Asks/General/FromSource.tres" id="1_8r0g2"]
 [ext_resource type="Resource" uid="uid://c7itelq8jtjc2" path="res://Resources/Components/EnData/Rainbow.tres" id="1_o2ifh"]
-[ext_resource type="Script" uid="uid://cimk6l7ytw7xg" path="res://Code/Resource Makers/EffectSpecific/EnMovMaker.gd" id="2_o2ifh"]
+[ext_resource type="Script" uid="uid://cimk6l7ytw7xg" path="res://Code/Resource Makers/EffectSpecific/Components/EnMovMaker.gd" id="2_o2ifh"]
 
 [resource]
 script = ExtResource("2_o2ifh")

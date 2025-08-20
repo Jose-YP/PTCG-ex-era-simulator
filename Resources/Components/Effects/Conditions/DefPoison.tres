@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Condition" load_steps=3 format=3 uid="uid://dew25qfxkag73"]
 
 [ext_resource type="Resource" uid="uid://bkt6ry7vyha70" path="res://Resources/Components/Effects/Asks/General/Other.tres" id="1_0b627"]
-[ext_resource type="Script" uid="uid://8s3m1dar3r33" path="res://Code/Resource Makers/EffectSpecific/ConditionMaker.gd" id="1_gml0m"]
+[ext_resource type="Script" uid="uid://8s3m1dar3r33" path="res://Code/Resource Makers/EffectSpecific/Components/ConditionMaker.gd" id="1_gml0m"]
 
 [resource]
 script = ExtResource("1_gml0m")

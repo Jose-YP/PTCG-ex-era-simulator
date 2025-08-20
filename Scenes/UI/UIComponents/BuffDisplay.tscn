@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://ekxwkd3amd1t"]
+[gd_scene load_steps=4 format=3 uid="uid://ekxwkd3amd1t"]
 
 [ext_resource type="Script" uid="uid://8qxyx4oqcr4f" path="res://Code/Scenes/UI/Main/buff_display.gd" id="1_hdxds"]
 [ext_resource type="PackedScene" uid="uid://bip08onr3xayb" path="res://Scenes/UI/UIComponents/buff_tab_container.tscn" id="2_o5lmi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o5lmi"]
 
 [node name="BuffDisplay" type="Control"]
 layout_mode = 3
@@ -9,9 +11,20 @@ anchors_preset = 0
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_hdxds")
 
-[node name="Buffs" parent="." instance=ExtResource("2_o5lmi")]
-layout_mode = 0
-
 [node name="Timer" type="Timer" parent="."]
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_o5lmi")
+
+[node name="Button" type="Button" parent="PanelContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="Buffs" parent="PanelContainer" instance=ExtResource("2_o5lmi")]
+unique_name_in_owner = true
+layout_mode = 2
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

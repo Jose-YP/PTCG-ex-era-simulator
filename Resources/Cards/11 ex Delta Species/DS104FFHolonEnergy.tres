@@ -10,7 +10,7 @@
 [ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="6_spbdi"]
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="7_51ik5"]
 [ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="7_cqf8k"]
-[ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/BuffMaker.gd" id="7_spbdi"]
+[ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/BuffMaker.gd" id="7_spbdi"]
 [ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="8_51ik5"]
 [ext_resource type="Texture2D" uid="uid://bhimhai61wj0a" path="res://Art/Cards/11 ex Delta Species/104.jpg" id="8_cqf8k"]
 [ext_resource type="Resource" uid="uid://bvxwpj62pwpfa" path="res://Resources/Components/Effects/TypeChange/HasNoWeakness.tres" id="9_tq28l"]
@@ -95,10 +95,8 @@ script = ExtResource("7_spbdi")
 description = "Ignores the defender's reistances"
 application = "Slot"
 stackable = true
-recieves = ExtResource("11_ebe5i")
-duration = 1
 after_weak_res = true
-modify = "HP"
+modify = 0
 operation = "Replace"
 add_hp = 0
 attack = 0
@@ -118,6 +116,8 @@ weakness = false
 resistance = true
 effects = false
 attack_names = Array[String]([])
+recieves = ExtResource("11_ebe5i")
+duration = 1
 metadata/_custom_type_script = "uid://coojhwe6m20gd"
 
 [sub_resource type="Resource" id="Resource_1623n"]

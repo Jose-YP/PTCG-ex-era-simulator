@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="PokeSwap" load_steps=2 format=3 uid="uid://elvciehl4doh"]
 
-[ext_resource type="Script" uid="uid://curklvf1517ml" path="res://Code/Resource Makers/EffectSpecific/SwapMaker.gd" id="1_w4tcp"]
+[ext_resource type="Script" uid="uid://curklvf1517ml" path="res://Code/Resource Makers/EffectSpecific/Components/SwapMaker.gd" id="1_w4tcp"]
 
 [resource]
 script = ExtResource("1_w4tcp")

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Draw" load_steps=2 format=3 uid="uid://bjo72m2rk7vwl"]
 
-[ext_resource type="Script" uid="uid://bgtwlw1edjwyc" path="res://Code/Resource Makers/EffectSpecific/DrawMaker.gd" id="1_m1sc4"]
+[ext_resource type="Script" uid="uid://bgtwlw1edjwyc" path="res://Code/Resource Makers/EffectSpecific/Components/DrawMaker.gd" id="1_m1sc4"]
 
 [resource]
 script = ExtResource("1_m1sc4")

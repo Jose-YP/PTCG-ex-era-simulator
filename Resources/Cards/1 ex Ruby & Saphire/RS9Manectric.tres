@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_lxccs"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_x808d"]
 [ext_resource type="Resource" uid="uid://bvv4lysisk1me" path="res://Resources/Components/Effects/Placement/PutOnAnyMon.tres" id="4_nd5q3"]
-[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="4_vg802"]
+[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/Components/SearchMaker.gd" id="4_vg802"]
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="4_vn0b8"]
 [ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="6_it85k"]
 [ext_resource type="Resource" uid="uid://dt0pi71xuk6ih" path="res://Resources/Components/Effects/Identifiers/Energy/LightningEnergy.tres" id="7_0j7pm"]

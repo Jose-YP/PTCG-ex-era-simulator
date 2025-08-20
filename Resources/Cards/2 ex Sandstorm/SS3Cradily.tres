@@ -11,7 +11,7 @@
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="8_tjdgf"]
 [ext_resource type="Resource" uid="uid://b1ebpxwo4lry7" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/G1C2.tres" id="9_oklb8"]
 [ext_resource type="Resource" uid="uid://byyujdycsbwrg" path="res://Resources/Components/Effects/DmgManip/Remove/SelfHeal20.tres" id="10_pnj3y"]
-[ext_resource type="Script" uid="uid://c0ishgbxk63dg" path="res://Code/Resource Makers/EffectSpecific/DisableMaker.gd" id="11_moc4a"]
+[ext_resource type="Script" uid="uid://c0ishgbxk63dg" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/DisableMaker.gd" id="11_moc4a"]
 [ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="13_42jkt"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="13_d6ih4"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="14_p3k15"]

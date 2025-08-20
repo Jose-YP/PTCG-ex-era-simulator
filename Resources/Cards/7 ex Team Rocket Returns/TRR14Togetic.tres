@@ -9,7 +9,7 @@
 [ext_resource type="Resource" uid="uid://c2uvm38pnk5uy" path="res://Resources/Components/Effects/Buff/Immune2DarkName.tres" id="5_kjfcm"]
 [ext_resource type="Resource" uid="uid://dpovjlfpsypwe" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless3.tres" id="5_nq5u1"]
 [ext_resource type="Resource" uid="uid://1fenqvtwlaji" path="res://Resources/Components/Effects/Asks/General/DefhasBenchMons.tres" id="6_wy6b1"]
-[ext_resource type="Script" uid="uid://dtv1d2u2kvixy" path="res://Code/Resource Makers/EffectSpecific/MimicMaker.gd" id="7_nvprp"]
+[ext_resource type="Script" uid="uid://dtv1d2u2kvixy" path="res://Code/Resource Makers/EffectSpecific/Components/MimicMaker.gd" id="7_nvprp"]
 [ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="7_parpn"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="7_wy6b1"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="9_parpn"]

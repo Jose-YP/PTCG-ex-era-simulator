@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://ipyctbbewx1o" path="res://Art/Cards/7 ex Team Rocket Returns/83.jpg" id="1_aa4u0"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_sgvvp"]
 [ext_resource type="Resource" uid="uid://dnjnxdl7x8q06" path="res://Resources/Components/Counters/Comparator/Return/ReturnOthrHnd.tres" id="3_aa4u0"]
-[ext_resource type="Script" uid="uid://bgtwlw1edjwyc" path="res://Code/Resource Makers/EffectSpecific/DrawMaker.gd" id="4_ulta4"]
+[ext_resource type="Script" uid="uid://bgtwlw1edjwyc" path="res://Code/Resource Makers/EffectSpecific/Components/DrawMaker.gd" id="4_ulta4"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="5_03mcb"]
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="6_k2f1f"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="6_pwfsp"]

@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="4_cfyyl"]
 [ext_resource type="Resource" uid="uid://d1b5din1lvjqo" path="res://Resources/Components/EnData/Grass.tres" id="5_odbvm"]
 [ext_resource type="Resource" uid="uid://dqj6gq7pt3dbk" path="res://Resources/Components/Effects/Asks/General/FromSource.tres" id="6_ygp6j"]
-[ext_resource type="Script" uid="uid://cimk6l7ytw7xg" path="res://Code/Resource Makers/EffectSpecific/EnMovMaker.gd" id="7_ph2ci"]
+[ext_resource type="Script" uid="uid://cimk6l7ytw7xg" path="res://Code/Resource Makers/EffectSpecific/Components/EnMovMaker.gd" id="7_ph2ci"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="8_68373"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="9_x7t5e"]
 [ext_resource type="Resource" uid="uid://c63wb1xvpkbi8" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Grass1.tres" id="10_lbtnv"]

@@ -13,7 +13,7 @@
 [ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="9_vuxad"]
 [ext_resource type="Resource" uid="uid://dsyn2o57xkb0h" path="res://Resources/Components/Effects/Asks/Class&Owner/DefEvolvedMon.tres" id="10_m8hh4"]
 [ext_resource type="Resource" uid="uid://crhg4u3yu2cso" path="res://Resources/Components/Effects/Asks/General/FromOther.tres" id="11_gu5sk"]
-[ext_resource type="Script" uid="uid://8sh5p3leflla" path="res://Code/Resource Makers/EffectSpecific/CardDisruptMaker.gd" id="12_4h72t"]
+[ext_resource type="Script" uid="uid://8sh5p3leflla" path="res://Code/Resource Makers/EffectSpecific/Components/CardDisruptMaker.gd" id="12_4h72t"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="13_mdppl"]
 
 [sub_resource type="Resource" id="Resource_ohjxw"]

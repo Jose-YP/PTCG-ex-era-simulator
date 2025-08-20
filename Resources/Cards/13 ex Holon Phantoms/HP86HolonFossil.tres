@@ -10,7 +10,7 @@
 [ext_resource type="Resource" uid="uid://dvdnbmg1kbbmb" path="res://Resources/Components/Effects/Placement/PlaceOnBench.tres" id="7_vivdh"]
 [ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="8_6upvr"]
 [ext_resource type="Resource" uid="uid://b1wwaec6lhamv" path="res://Resources/Components/Effects/Identifiers/Pokemon/Stage1Fossil.tres" id="9_io022"]
-[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="10_ufkdp"]
+[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/Components/SearchMaker.gd" id="10_ufkdp"]
 
 [sub_resource type="Resource" id="Resource_wgyow"]
 script = ExtResource("4_0gqx7")

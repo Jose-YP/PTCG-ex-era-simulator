@@ -15,7 +15,6 @@
 [sub_resource type="Resource" id="Resource_5v3xg"]
 script = ExtResource("1_2o7ai")
 name = "Slash"
-description = ""
 attack_cost = ExtResource("3_nk0ad")
 attack_data = ExtResource("4_5v3xg")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

@@ -1,15 +1,11 @@
 @icon("res://Art/ProjectSpecific/sword(1).png")
-extends Resource
+extends SlotChange
 class_name Buff
 
 @export_multiline var description: String
 
 @export_enum("Slot", "Side") var application: String = "Slot"
 @export var stackable: bool = true
-##Who recieves the buff?
-@export var recieves: SlotAsk
-##-1 means forever, otherwise how many turns is this active
-@export var duration: int = 1
 ##If against this type of slot use these buffs, if null return [code]true
 @export var against: SlotAsk
 ##Is it applied before or after weak/res

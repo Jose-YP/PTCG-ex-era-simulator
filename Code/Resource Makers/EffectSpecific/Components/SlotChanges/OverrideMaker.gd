@@ -1,4 +1,4 @@
-extends Resource
+extends SlotChange
 ##This is just a schmorgesborg of stuff I had no place for otherwise
 class_name OverRide
 

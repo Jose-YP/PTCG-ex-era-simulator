@@ -9,7 +9,7 @@
 [ext_resource type="Resource" uid="uid://bd5tln3evqv7l" path="res://Resources/Components/Effects/Identifiers/Pokemon/DeltaPokemon.tres" id="6_ejwqs"]
 [ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="6_heyef"]
 [ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="7_ejwqs"]
-[ext_resource type="Script" uid="uid://bgtwlw1edjwyc" path="res://Code/Resource Makers/EffectSpecific/DrawMaker.gd" id="8_u1asm"]
+[ext_resource type="Script" uid="uid://bgtwlw1edjwyc" path="res://Code/Resource Makers/EffectSpecific/Components/DrawMaker.gd" id="8_u1asm"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="9_jdqjr"]
 
 [sub_resource type="Resource" id="Resource_u1asm"]

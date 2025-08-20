@@ -1,20 +1,20 @@
 extends Control
 
-var buff_array: Array[Buff]
+var change_array: Array[SlotChange]
 var index: int
 
 func _ready() -> void:
 	hide()
 
-func set_buffs(buffs: Array[Buff]) -> void:
+func set_buffs(buffs: Array[SlotChange]) -> void:
 	show()
-	buff_array = buffs
+	change_array = buffs
 	
-	if buff_array.size() > 1:
+	if change_array.size() > 1:
 		$Timer.start()
-	elif buff_array.size() == 1:
+	elif change_array.size() == 1:
 		$Timer.stop()
-		$Buffs.display_buff(buff_array[0])
+		%Buffs.display_change(change_array[0])
 	else:
 		$Timer.stop()
 		hide()

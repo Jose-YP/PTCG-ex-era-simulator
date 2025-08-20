@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="1_esda5"]
 [ext_resource type="Resource" uid="uid://dadiauif5jebg" path="res://Resources/Components/Effects/Placement/PlaceOnActive.tres" id="2_c2wys"]
 [ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="2_ldbdo"]
-[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="3_gnqp3"]
+[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/Components/SearchMaker.gd" id="3_gnqp3"]
 
 [sub_resource type="Resource" id="Resource_ttdy8"]
 script = ExtResource("2_ldbdo")

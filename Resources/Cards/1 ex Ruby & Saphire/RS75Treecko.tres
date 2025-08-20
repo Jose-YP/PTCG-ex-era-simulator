@@ -10,7 +10,6 @@
 [sub_resource type="Resource" id="Resource_0tgco"]
 script = ExtResource("1_q7p2d")
 name = "Poison Breath"
-description = "Flip a coin. If heads, the Defending Pokémon is now Poisoned."
 attack_cost = ExtResource("3_0owpv")
 attack_data = ExtResource("4_0tgco")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

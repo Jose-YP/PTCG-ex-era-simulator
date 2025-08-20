@@ -4,7 +4,7 @@
 [ext_resource type="Resource" uid="uid://dm6f2nxeh8yqx" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless4.tres" id="2_jvpd5"]
 [ext_resource type="Resource" uid="uid://chc757fk4t8pm" path="res://Resources/Components/Effects/Prompts/Discard1EnTo.tres" id="3_ua8w3"]
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="4_0uuqm"]
-[ext_resource type="Script" uid="uid://c0ishgbxk63dg" path="res://Code/Resource Makers/EffectSpecific/DisableMaker.gd" id="5_kj78y"]
+[ext_resource type="Script" uid="uid://c0ishgbxk63dg" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/DisableMaker.gd" id="5_kj78y"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="6_wsw8u"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="7_0j1c1"]
 [ext_resource type="Resource" uid="uid://b4eq6v7x2qaxd" path="res://Resources/Components/Effects/Disable/DefNoPowers.tres" id="8_a1v05"]

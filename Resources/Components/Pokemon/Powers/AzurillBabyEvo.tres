@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="PokePower" load_steps=6 format=3 uid="uid://dp85todljb68"]
 
-[ext_resource type="Script" uid="uid://cg3m7vpqxf2t6" path="res://Code/Resource Makers/EffectSpecific/OverrideMaker.gd" id="1_gr6hn"]
+[ext_resource type="Script" uid="uid://cg3m7vpqxf2t6" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/OverrideMaker.gd" id="1_gr6hn"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_1d5oj"]
 [ext_resource type="Script" uid="uid://b58015mafcw2v" path="res://Code/Resource Makers/PokemonSpecific/PowerMaker.gd" id="3_np5mi"]
 

@@ -9,7 +9,7 @@
 [ext_resource type="Resource" uid="uid://bl4qnrkh3kxdl" path="res://Resources/Components/Effects/Placement/PutIntoHand.tres" id="5_lru8w"]
 [ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="6_wkp24"]
 [ext_resource type="Resource" uid="uid://bd5tln3evqv7l" path="res://Resources/Components/Effects/Identifiers/Pokemon/DeltaPokemon.tres" id="7_w53cy"]
-[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/SearchMaker.gd" id="8_m6lmd"]
+[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/Components/SearchMaker.gd" id="8_m6lmd"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="9_k81h8"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="10_85o5a"]
 [ext_resource type="Script" uid="uid://b8kvis7rgg3j4" path="res://Code/Resource Makers/CardResources/StadiumMaker.gd" id="12_3q2f7"]

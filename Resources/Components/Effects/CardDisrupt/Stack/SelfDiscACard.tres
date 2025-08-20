@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="CardDisrupt" load_steps=3 format=3 uid="uid://cyxsgc480ravj"]
 
 [ext_resource type="Resource" uid="uid://dm2i7spst0qpp" path="res://Resources/Components/Effects/Identifiers/AnyCard.tres" id="1_gvu8p"]
-[ext_resource type="Script" uid="uid://8sh5p3leflla" path="res://Code/Resource Makers/EffectSpecific/CardDisruptMaker.gd" id="1_r0v22"]
+[ext_resource type="Script" uid="uid://8sh5p3leflla" path="res://Code/Resource Makers/EffectSpecific/Components/CardDisruptMaker.gd" id="1_r0v22"]
 
 [resource]
 script = ExtResource("1_r0v22")

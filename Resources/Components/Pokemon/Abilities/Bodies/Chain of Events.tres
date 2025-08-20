@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Ability" load_steps=12 format=3 uid="uid://c0y58oaysjrpt"]
 
 [ext_resource type="Resource" uid="uid://dv5gbkvk3uxtj" path="res://Resources/Components/Effects/Asks/General/SrcTheRest.tres" id="1_eewr7"]
-[ext_resource type="Script" uid="uid://dtv1d2u2kvixy" path="res://Code/Resource Makers/EffectSpecific/MimicMaker.gd" id="1_kg0np"]
+[ext_resource type="Script" uid="uid://dtv1d2u2kvixy" path="res://Code/Resource Makers/EffectSpecific/Components/MimicMaker.gd" id="1_kg0np"]
 [ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="1_vm34d"]
 [ext_resource type="Script" uid="uid://bics3dumv7avj" path="res://Code/Resource Makers/GeneralUse/OccuranceMaker.gd" id="2_dlkox"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_vm34d"]

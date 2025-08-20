@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cl7o34ormv6eq" path="res://Art/Cards/6 ex FireRed & LeafGreen/112.jpg" id="1_312hq"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_plo0f"]
-[ext_resource type="Script" uid="uid://8s3m1dar3r33" path="res://Code/Resource Makers/EffectSpecific/ConditionMaker.gd" id="3_qf1x1"]
+[ext_resource type="Script" uid="uid://8s3m1dar3r33" path="res://Code/Resource Makers/EffectSpecific/Components/ConditionMaker.gd" id="3_qf1x1"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_rcsof"]
 [ext_resource type="Resource" uid="uid://bkt6ry7vyha70" path="res://Resources/Components/Effects/Asks/General/Other.tres" id="4_eyg63"]
 [ext_resource type="Resource" uid="uid://b1ebpxwo4lry7" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/G1C2.tres" id="5_eyg63"]

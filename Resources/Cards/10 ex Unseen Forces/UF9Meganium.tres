@@ -11,7 +11,7 @@
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="8_7mess"]
 [ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="9_6ro4m"]
 [ext_resource type="Resource" uid="uid://c08tcl1tywrqe" path="res://Resources/Components/Effects/Asks/Class&Owner/BothNon-ex.tres" id="9_rpbfj"]
-[ext_resource type="Script" uid="uid://scca13hg4k1l" path="res://Code/Resource Makers/EffectSpecific/DmgManipMaker.gd" id="10_fryll"]
+[ext_resource type="Script" uid="uid://scca13hg4k1l" path="res://Code/Resource Makers/EffectSpecific/Components/DmgManipMaker.gd" id="10_fryll"]
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="10_wmae1"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="12_iblgg"]
 [ext_resource type="Resource" uid="uid://tgm35ahd5evj" path="res://Resources/Components/Occurances/SelfBetweenTurns.tres" id="13_wmae1"]

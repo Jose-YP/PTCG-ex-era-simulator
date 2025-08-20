@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="3_n8vos"]
 [ext_resource type="Resource" uid="uid://c08tcl1tywrqe" path="res://Resources/Components/Effects/Asks/Class&Owner/BothNon-ex.tres" id="4_n7bfi"]
 [ext_resource type="Script" uid="uid://b8kvis7rgg3j4" path="res://Code/Resource Makers/CardResources/StadiumMaker.gd" id="5_26a27"]
-[ext_resource type="Script" uid="uid://c0ishgbxk63dg" path="res://Code/Resource Makers/EffectSpecific/DisableMaker.gd" id="6_swpl7"]
+[ext_resource type="Script" uid="uid://c0ishgbxk63dg" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/DisableMaker.gd" id="6_swpl7"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="7_0d2ot"]
 
 [sub_resource type="Resource" id="Resource_xs7yy"]

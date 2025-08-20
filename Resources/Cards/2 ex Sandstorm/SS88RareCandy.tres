@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_dn8lb"]
 [ext_resource type="Texture2D" uid="uid://1bn7e7pls0s" path="res://Art/Cards/2 ex Sandstorm/88.jpg" id="1_yj7sd"]
-[ext_resource type="Script" uid="uid://cg3m7vpqxf2t6" path="res://Code/Resource Makers/EffectSpecific/OverrideMaker.gd" id="3_2rx5n"]
+[ext_resource type="Script" uid="uid://cg3m7vpqxf2t6" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/OverrideMaker.gd" id="3_2rx5n"]
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="3_bvq4f"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_bvq4f"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="5_b2roe"]

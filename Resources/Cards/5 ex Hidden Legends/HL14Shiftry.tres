@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_6qbf0"]
 [ext_resource type="Resource" uid="uid://cif1lb0agms18" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/D1C1.tres" id="3_bdgas"]
 [ext_resource type="Resource" uid="uid://b3q5vmepfee8k" path="res://Resources/Components/Effects/Identifiers/Pokemon/AnyPokemon.tres" id="4_fv8lw"]
-[ext_resource type="Script" uid="uid://8sh5p3leflla" path="res://Code/Resource Makers/EffectSpecific/CardDisruptMaker.gd" id="5_c4phv"]
+[ext_resource type="Script" uid="uid://8sh5p3leflla" path="res://Code/Resource Makers/EffectSpecific/Components/CardDisruptMaker.gd" id="5_c4phv"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="6_ilcaw"]
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="7_6qbf0"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="7_gwuge"]

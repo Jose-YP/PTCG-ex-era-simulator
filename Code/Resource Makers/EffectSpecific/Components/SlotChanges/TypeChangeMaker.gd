@@ -1,4 +1,4 @@
-extends Resource
+extends SlotChange
 class_name TypeChange
 
 @export var ask: SlotAsk

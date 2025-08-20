@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="1_d85ji"]
 [ext_resource type="Resource" uid="uid://bnv2dkudpcueo" path="res://Resources/Components/Effects/Asks/General/SrcActive.tres" id="1_p8j65"]
-[ext_resource type="Script" uid="uid://b4g5of14m3hj5" path="res://Code/Resource Makers/EffectSpecific/AlleviateMaker.gd" id="2_d85ji"]
+[ext_resource type="Script" uid="uid://b4g5of14m3hj5" path="res://Code/Resource Makers/EffectSpecific/Components/AlleviateMaker.gd" id="2_d85ji"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_crn8a"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="4_26v6p"]
 

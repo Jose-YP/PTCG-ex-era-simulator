@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="EffectCall" load_steps=4 format=3 uid="uid://tqn8fn4qsn2h"]
 
-[ext_resource type="Script" uid="uid://c0ishgbxk63dg" path="res://Code/Resource Makers/EffectSpecific/DisableMaker.gd" id="1_6menq"]
+[ext_resource type="Script" uid="uid://c0ishgbxk63dg" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/DisableMaker.gd" id="1_6menq"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_pdc7v"]
 
 [sub_resource type="Resource" id="Resource_ebbnp"]

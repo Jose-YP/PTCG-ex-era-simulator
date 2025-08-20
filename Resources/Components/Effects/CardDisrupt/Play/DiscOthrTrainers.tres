@@ -2,7 +2,7 @@
 
 [ext_resource type="Resource" uid="uid://dk0v7dyi3r43m" path="res://Resources/Components/Effects/Identifiers/Trainers/Trainer.tres" id="1_gtrka"]
 [ext_resource type="Resource" uid="uid://bkt6ry7vyha70" path="res://Resources/Components/Effects/Asks/General/Other.tres" id="2_f5q4h"]
-[ext_resource type="Script" uid="uid://8sh5p3leflla" path="res://Code/Resource Makers/EffectSpecific/CardDisruptMaker.gd" id="3_p20t6"]
+[ext_resource type="Script" uid="uid://8sh5p3leflla" path="res://Code/Resource Makers/EffectSpecific/Components/CardDisruptMaker.gd" id="3_p20t6"]
 
 [resource]
 script = ExtResource("3_p20t6")

@@ -1,18 +1,20 @@
 extends TabContainer
 
-func display_buff(buff: Buff):
-	var dict: Dictionary[String, bool] = buff.how_display()
+func display_change(change: SlotChange):
+	var dict: Dictionary[String, bool] = change.how_display()
 	var key: String = dict.keys()[0]
 	
 	match key:
 		"Atk":
-			$Buffs.current_tab = 0
+			current_tab = 0
 		"Def":
-			$Buffs.current_tab = 1
+			current_tab = 1
 		"HP":
-			$Buffs.current_tab = 2
+			current_tab = 2
 		"Cost":
-			$Buffs.current_tab = 3
+			current_tab = 3
+		"Disable":
+			current_tab = 4
 		_:
 			push_error("I don't know what kind of buff this is")
 	

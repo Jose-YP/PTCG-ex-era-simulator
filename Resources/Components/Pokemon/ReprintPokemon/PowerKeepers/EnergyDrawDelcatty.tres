@@ -12,7 +12,7 @@
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="10_x3ywj"]
 [ext_resource type="Resource" uid="uid://dy4k02ewyav5j" path="res://Resources/Components/Counters/Indv/Stacks/AtkHandSize.tres" id="11_omsss"]
 [ext_resource type="Resource" uid="uid://cd880a7x21jgg" path="res://Resources/Components/Effects/Identifiers/Energy/AnyEnergy.tres" id="12_8b8cv"]
-[ext_resource type="Script" uid="uid://8sh5p3leflla" path="res://Code/Resource Makers/EffectSpecific/CardDisruptMaker.gd" id="13_n50yw"]
+[ext_resource type="Script" uid="uid://8sh5p3leflla" path="res://Code/Resource Makers/EffectSpecific/Components/CardDisruptMaker.gd" id="13_n50yw"]
 [ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="14_4qdqs"]
 [ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="15_e8xsj"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="16_5pfal"]
