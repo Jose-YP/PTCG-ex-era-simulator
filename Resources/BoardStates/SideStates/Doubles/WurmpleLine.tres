@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SideState" load_steps=18 format=3 uid="uid://dkngbetpy8wdr"]
+[gd_resource type="Resource" script_class="SideState" load_steps=19 format=3 uid="uid://dkngbetpy8wdr"]
 
 [ext_resource type="Resource" uid="uid://c73v0ww8k8rg2" path="res://Resources/Decks/GrassTransDeck.tres" id="1_kyo58"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_qti4x"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://dgqpurnuh14t1" path="res://Code/Resource Makers/GeneralUse/SideStateMaker.gd" id="7_cpq01"]
 [ext_resource type="Script" uid="uid://cs70ix831b5g4" path="res://Code/Resource Makers/PokemonSpecific/PokeSlotMaker.gd" id="8_13l7u"]
 [ext_resource type="Resource" uid="uid://by8ynv4fc500g" path="res://Resources/Cards/1 ex Ruby & Saphire/RS43Silcoon.tres" id="9_e5ylh"]
+[ext_resource type="Script" uid="uid://b3041relhlcb2" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/SlotChangeMaker.gd" id="9_qti4x"]
 [ext_resource type="Resource" uid="uid://cbrv0ftymjhbj" path="res://Resources/Cards/1 ex Ruby & Saphire/RS78Wurmple.tres" id="10_k8h3t"]
 [ext_resource type="Resource" uid="uid://bw4sp04ye7jyx" path="res://Resources/Cards/1 ex Ruby & Saphire/RS6Dustox.tres" id="11_vmapv"]
 [ext_resource type="Resource" uid="uid://xvauv8yfopfw" path="res://Resources/Cards/2 ex Sandstorm/SS93MultiEnergy.tres" id="12_lkcvc"]
@@ -33,8 +34,7 @@ final_retreat = 0
 evolved_from = Array[ExtResource("2_qti4x")]([ExtResource("10_k8h3t")])
 energy_cards = Array[ExtResource("2_qti4x")]([])
 tm_cards = Array[ExtResource("2_qti4x")]([])
-buffs = Array[Dictionary]([])
-disables = Array[Dictionary]([])
+changes = Dictionary[ExtResource("9_qti4x"), ExtResource("9_qti4x")]({})
 evolution_ready = false
 evolved_this_turn = false
 body_disabled = false
@@ -52,8 +52,7 @@ final_retreat = 0
 evolved_from = Array[ExtResource("2_qti4x")]([ExtResource("10_k8h3t"), ExtResource("13_yxbcp")])
 energy_cards = Array[ExtResource("2_qti4x")]([ExtResource("4_sx42b"), ExtResource("4_sx42b"), ExtResource("12_lkcvc")])
 tm_cards = Array[ExtResource("2_qti4x")]([])
-buffs = Array[Dictionary]([])
-disables = Array[Dictionary]([])
+changes = Dictionary[ExtResource("9_qti4x"), ExtResource("9_qti4x")]({})
 evolution_ready = false
 evolved_this_turn = false
 body_disabled = false
@@ -71,8 +70,7 @@ final_retreat = 0
 evolved_from = Array[ExtResource("2_qti4x")]([ExtResource("10_k8h3t")])
 energy_cards = Array[ExtResource("2_qti4x")]([])
 tm_cards = Array[ExtResource("2_qti4x")]([])
-buffs = Array[Dictionary]([])
-disables = Array[Dictionary]([])
+changes = Dictionary[ExtResource("9_qti4x"), ExtResource("9_qti4x")]({})
 evolution_ready = false
 evolved_this_turn = false
 body_disabled = false

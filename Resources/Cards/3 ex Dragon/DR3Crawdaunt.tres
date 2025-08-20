@@ -7,33 +7,30 @@
 [ext_resource type="Resource" uid="uid://dkvbrahlcnjmi" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/W1C2.tres" id="3_amwe3"]
 [ext_resource type="Resource" uid="uid://cj4j56m7hrxpe" path="res://Resources/Components/Pokemon/Attacks/AttackData/50Dmg.tres" id="4_wanhc"]
 [ext_resource type="Resource" uid="uid://bnv2dkudpcueo" path="res://Resources/Components/Effects/Asks/General/SrcActive.tres" id="5_8hlgg"]
-[ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/BuffMaker.gd" id="6_hgk10"]
+[ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/BuffMaker.gd" id="6_0rblx"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="7_b1ad1"]
 [ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="8_drys0"]
 
 [sub_resource type="Resource" id="Resource_lh1vx"]
 script = ExtResource("1_qdq7c")
 name = "Guillotine"
-description = ""
 attack_cost = ExtResource("3_amwe3")
 attack_data = ExtResource("4_wanhc")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_x72f0"]
-script = ExtResource("6_hgk10")
+script = ExtResource("6_0rblx")
 description = "Deal +10 Damage before weak/res"
 application = "Slot"
 stackable = true
-recieves = ExtResource("5_8hlgg")
-duration = -1
-after_weak_res = true
-modify = "HP"
-operation = "Replace"
+after_weak_res = false
+operation = "Add"
 add_hp = 0
 attack = 10
 defense = 0
 retreat_change = 0
 cost_modifier = "Add"
+modify = 0
 plus = false
 condition_immune = 0
 attack_effect_immune = false
@@ -47,6 +44,8 @@ weakness = false
 resistance = false
 effects = false
 attack_names = Array[String]([])
+recieves = ExtResource("5_8hlgg")
+duration = -1
 metadata/_custom_type_script = "uid://coojhwe6m20gd"
 
 [sub_resource type="Resource" id="Resource_kpvwx"]

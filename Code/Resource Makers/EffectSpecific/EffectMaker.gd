@@ -41,6 +41,13 @@ signal finished
 var went_back: bool = false
 var replace_num: int = -1
 
+func _init() -> void:
+	if buff and buff.stackable:
+		buff = buff.duplicate()
+	if disable: disable = disable.duplicate()
+	if override: override = override.duplicate()
+	if type_change: type_change = type_change.duplicate()
+
 #These are params since the indivdual call knows best which is what
 func play_effect(reversable: bool = false) -> void:
 	var default_order = [condition, buff, card_disrupt, disable, 

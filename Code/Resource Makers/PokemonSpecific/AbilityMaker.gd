@@ -32,6 +32,10 @@ class_name Ability
 var attatched_to: PokeSlot
 
 #region INITALIZATION
+func _init() -> void:
+	if passive:
+		pass
+
 func prep_ability(slot: PokeSlot):
 	attatched_to = slot
 	if occurance:

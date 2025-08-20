@@ -9,9 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://6e7pvtqndyud" path="res://Art/Counters/Up.png" id="6_s0nr1"]
 
 [node name="SlotChange" type="TabContainer"]
-custom_minimum_size = Vector2(32, 32)
-offset_right = 32.0
-offset_bottom = 32.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 current_tab = 0
 tabs_visible = false
 use_hidden_tabs_for_min_size = true
@@ -22,6 +21,7 @@ script = ExtResource("1_r5w7o")
 texture_filter = 1
 layout_mode = 2
 texture = ExtResource("2_mw0f0")
+expand_mode = 3
 metadata/_tab_index = 0
 
 [node name="Defense" type="TextureRect" parent="."]
@@ -29,6 +29,7 @@ visible = false
 texture_filter = 1
 layout_mode = 2
 texture = ExtResource("3_5h7q7")
+expand_mode = 3
 metadata/_tab_index = 1
 
 [node name="HP" type="TextureRect" parent="."]
@@ -36,6 +37,7 @@ visible = false
 texture_filter = 1
 layout_mode = 2
 texture = ExtResource("4_4fo2o")
+expand_mode = 3
 metadata/_tab_index = 2
 
 [node name="Energy" type="TextureRect" parent="."]
@@ -43,6 +45,7 @@ visible = false
 texture_filter = 1
 layout_mode = 2
 texture = ExtResource("5_7v6oo")
+expand_mode = 3
 metadata/_tab_index = 3
 
 [node name="Disable" type="TextureRect" parent="."]
@@ -50,6 +53,7 @@ visible = false
 texture_filter = 1
 layout_mode = 2
 texture = ExtResource("6_mw0f0")
+expand_mode = 3
 metadata/_tab_index = 4
 
 [node name="ETC" type="TextureRect" parent="."]
@@ -57,4 +61,5 @@ visible = false
 texture_filter = 1
 layout_mode = 2
 texture = ExtResource("6_s0nr1")
+expand_mode = 3
 metadata/_tab_index = 5

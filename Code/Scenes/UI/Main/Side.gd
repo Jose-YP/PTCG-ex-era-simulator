@@ -67,12 +67,12 @@ func insert_slot(slot: PokeSlot, predefined: bool = false):
 	if predefined or slot.is_active():
 		for ui_slot in %Active.get_children():
 			if not ui_slot.connected_slot.is_filled():
-				ui_slot.attatch_pokeslot(slot)
+				ui_slot.attatch_pokeslot(slot, true)
 				return
 	else:
 		for ui_slot in %Bench.get_children():
 			if not ui_slot.connected_slot.is_filled():
-				ui_slot.attatch_pokeslot(slot)
+				ui_slot.attatch_pokeslot(slot, true)
 				return
 
 func supporter_played() -> bool:

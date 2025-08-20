@@ -1,23 +1,21 @@
 [gd_resource type="Resource" script_class="Buff" load_steps=3 format=3 uid="uid://cmj80wa0ybso5"]
 
-[ext_resource type="Resource" uid="uid://bnv2dkudpcueo" path="res://Resources/Components/Effects/Asks/General/SrcActive.tres" id="1_c8hy2"]
-[ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/BuffMaker.gd" id="2_e7gke"]
+[ext_resource type="Resource" uid="uid://c2ujs102gu8qn" path="res://Resources/Components/Effects/Asks/General/OthActive.tres" id="1_e7gke"]
+[ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/BuffMaker.gd" id="2_6k01p"]
 
 [resource]
-script = ExtResource("2_e7gke")
+script = ExtResource("2_6k01p")
 description = "Reduce damage from to Active Pokemon by 10 before weak/res"
 application = "Side"
 stackable = true
-recieves = ExtResource("1_c8hy2")
-duration = -1
 after_weak_res = false
-modify = 0
-operation = "Replace"
+operation = "Add"
 add_hp = 0
-attack = 0
-defense = 10
+attack = -10
+defense = 0
 retreat_change = 0
 cost_modifier = "Add"
+modify = 0
 plus = false
 condition_immune = 0
 attack_effect_immune = false
@@ -31,5 +29,6 @@ weakness = false
 resistance = false
 effects = false
 attack_names = Array[String]([])
-duraction = -1
+recieves = ExtResource("1_e7gke")
+duration = -1
 metadata/_custom_type_script = "uid://coojhwe6m20gd"

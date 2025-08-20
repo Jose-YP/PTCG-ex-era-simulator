@@ -17,7 +17,6 @@
 [sub_resource type="Resource" id="Resource_8ejmh"]
 script = ExtResource("1_t3igr")
 name = "Razor Wing"
-description = ""
 attack_cost = ExtResource("2_beqhk")
 attack_data = ExtResource("3_ovh3t")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

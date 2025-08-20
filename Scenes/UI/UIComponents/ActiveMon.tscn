@@ -95,13 +95,18 @@ offset_bottom = 28.0
 bbcode_enabled = true
 text = "+"
 
-[node name="ChangeDisplay" parent="TrainerAttached" instance=ExtResource("6_mc7hj")]
+[node name="HBoxContainer" type="HBoxContainer" parent="TrainerAttached"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="ChangeDisplay" parent="TrainerAttached/HBoxContainer" instance=ExtResource("6_mc7hj")]
 unique_name_in_owner = true
 visible = false
-custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="TrainerAttached/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_right = 17
 
 [node name="EnergyTypes" parent="." instance=ExtResource("6_nykcf")]
 unique_name_in_owner = true

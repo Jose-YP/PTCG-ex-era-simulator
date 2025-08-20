@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Attack" load_steps=4 format=3 uid="uid://b5ec8kdk0rw47"]
+
+[ext_resource type="Resource" uid="uid://b1rwmggf7a4do" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless2.tres" id="1_4xklv"]
+[ext_resource type="Resource" uid="uid://bnsrs2a5hnvkb" path="res://Resources/Components/Pokemon/Attacks/AttackData/20Dmg.tres" id="2_305v5"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="3_p374t"]
+
+[resource]
+script = ExtResource("3_p374t")
+name = "Slash"
+attack_cost = ExtResource("1_4xklv")
+attack_data = ExtResource("2_305v5")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

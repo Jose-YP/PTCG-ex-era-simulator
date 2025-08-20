@@ -31,8 +31,7 @@ var power_ready: bool
 @export var energy_cards: Array[Base_Card] = []
 @export var tm_cards: Array[Base_Card] = []
 @export var tool_card: Base_Card
-@export var buffs: Array[Dictionary]
-@export var disables: Array[Dictionary]
+@export var changes: Dictionary[SlotChange, SlotChange]
 @export var applied_condition: Condition = Condition.new()
 #endregion
 #--------------------------------------
@@ -184,6 +183,7 @@ func ability_single_emit(sig: Signal, param: Variant = null):
 func occurance_account_for():
 	for slot in Globals.full_ui.get_occurance_slots():
 		Globals.fundies.record_single_src_trg(slot)
+		
 		if slot.get_pokedata().pokebody != null:
 			if slot.get_pokedata().pokebody == get_pokedata().pokebody and slot != self:
 				printerr("Uh oh body same. Slot card comparison ", slot.current_card == current_card)
@@ -192,6 +192,7 @@ func occurance_account_for():
 			if slot.get_pokedata().pokepower == get_pokedata().pokepower and slot != self:
 				printerr("Uh oh powers same. Slot card comparison", slot.current_card == current_card)
 			slot.get_pokedata().pokepower.single_prep(self)
+		
 		Globals.fundies.remove_top_source_target()
 
 #endregion
@@ -694,6 +695,12 @@ func card_disrupteed(identifier: Identifier, rule: String) -> Array[Base_Card]:
 	refresh()
 	return moving_cards
 
+func apply_slot_change(apply: SlotChange):
+	changes[apply] = apply
+	#Not putting refresh here
+	#it would cause an infinite recusion with SlotChange abilities
+	ui_slot.changes_display.set_changes(changes.keys())
+
 #endregion
 #--------------------------------------
 
@@ -785,9 +792,11 @@ func confusion_check() -> bool:
 
 #--------------------------------------
 #region MANAGING DISPLAYS
-func slot_into(destination: UI_Slot):
+func slot_into(destination: UI_Slot, initalize: bool = false):
 	ui_slot = destination
 	#debug_check()
+	if initalize:
+		refresh_current_card()
 	refresh()
 
 func refresh_current_card():
@@ -825,6 +834,7 @@ func refresh() -> void:
 		#check for any attatched cards/conditions
 		count_energy()
 		ui_slot.display_energy(get_energy_strings(), attached_energy)
+		ui_slot.changes_display.set_changes(changes.keys())
 		
 		if tm_cards.size():
 			ui_slot.tm.texture = tm_cards[0].image
@@ -836,7 +846,7 @@ func refresh() -> void:
 		else: ui_slot.tool.hide()
 		
 		ui_slot.check_ability_activation()
-		
+	
 	else:
 		ui_slot.display_image(null)
 		ui_slot.display_types([])
@@ -844,7 +854,6 @@ func refresh() -> void:
 	for ui in Globals.full_ui.all_slots():
 		if ui.connected_slot.is_filled():
 			ui.connected_slot.check_power_body()
-	
 
 func clear_dispay():
 	damage_counters = 0

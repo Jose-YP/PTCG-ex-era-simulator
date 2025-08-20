@@ -13,9 +13,9 @@ class_name UI_Slot
 @onready var max_hp: RichTextLabel = %MaxHP
 @onready var tool: TextureRect = %Tool
 @onready var tm: TextureRect = %TM
-@onready var changes: Control = %ChangeDisplay
-@onready var damage_counter: DamageCounter = %DamageCounter
+@onready var changes_display: Control = %ChangeDisplay
 @onready var cond_display: ConditionDisplay = %Conditions
+@onready var damage_counter: DamageCounter = %DamageCounter
 @onready var typeContainer: Array[Node] = %TypeContainer.get_children()
 @onready var energy_container: Array[Node] = %EnergyTypes.get_children()
 @onready var list_offsets: Array[Vector2] = [Vector2(-size.x / 2, 0),
@@ -37,9 +37,9 @@ func _ready():
 
 #--------------------------------------
 #region ATTATCH
-func attatch_pokeslot(slot: PokeSlot):
+func attatch_pokeslot(slot: PokeSlot, initalize: bool):
 	connected_slot = slot
-	slot.slot_into(self)
+	slot.slot_into(self, initalize)
 
 func attatch_tool(tool_card: Base_Card):
 	if tool_card:

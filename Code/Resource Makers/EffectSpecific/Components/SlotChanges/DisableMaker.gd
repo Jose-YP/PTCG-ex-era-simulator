@@ -5,11 +5,6 @@ class_name Disable
 #@export_group("Disable")
 @export var side: Consts.SIDES = Consts.SIDES.DEFENDING
 @export var slot: Consts.SLOTS = Consts.SLOTS.ALL
-@export var ask: SlotAsk
-##-1 means ignore duration, check a prompt/ask to see if the effect should continue
-##[br]-2 means forever, no conditions need to be checked afterwards
-##[br]otherwise the effect lasts for this many turns 
-@export var duration: int = -1
 @export var no_weakness: bool = false
 @export var no_resistance: bool = false
 @export var instead_of_damage: bool = false

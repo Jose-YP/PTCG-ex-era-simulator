@@ -5,26 +5,28 @@ class_name Buff
 @export_multiline var description: String
 
 @export_enum("Slot", "Side") var application: String = "Slot"
-@export var stackable: bool = true
+@export var stackable: bool = false
 ##If against this type of slot use these buffs, if null return [code]true
 @export var against: SlotAsk
 ##Is it applied before or after weak/res
 @export var after_weak_res: bool = true
 
 @export_group("Stat Change")
-@export_flags("HP", "Attack", "Defense", "Retreat") var modify: int = 0
+##Unlike with most resources the ignore value is 0 not -1
 @export_enum("Add", "Replace") var operation: String = "Add"
 @export_range(-200, 200, 10) var add_hp: int = 0
 ##How much more damage to target?
-@export_range(-120, 120, 10) var attack: int = 0
+@export_range(-200, 200, 10) var attack: int = 0
 ##How much less damage should be taken from attacks
-@export_range(-120, 120, 10) var defense: int = 0
+@export_range(-200, 200, 10) var defense: int = 0
 ##How mucht to add/subtract from a pokemon's retreat cost?
-@export_range(-10,6,1) var retreat_change: int = 0
+##If -1 at replace, the new value will be 0
+@export_range(-6,6,1) var retreat_change: int = 0
 @export_subgroup("Attack Cost")
 @export_enum("Add", "Subtract", "Replace") var cost_modifier: String = "Add"
 @export var attack_cost: AttackCost
 @export_subgroup("Comparator")
+@export_flags("HP", "Attack", "Defense", "Retreat") var modify: int = 0
 @export var plus: bool
 @export var comparator: Comparator
 
@@ -52,24 +54,34 @@ class_name Buff
 
 signal finished
 
+func _init() -> void:
+	if attack_effect_immune:
+		pass
+
 func play_effect(reversable: bool = false, replace_num: int = -1) -> void:
-	print("PLAY BUFF")
+	print("PLAY BUFF ", self)
+	print(how_display())
+	#Who should have this effects applied?
+	var apply_to: Array[PokeSlot] = Globals.full_ui.get_ask_slots(recieves)
+	
+	for slot in apply_to:
+		slot.apply_slot_change(self)
 	
 	finished.emit()
 
 func how_display() -> Dictionary[String, bool]:
 	var dict: Dictionary[String, bool]
 	#Check Stat changes
-	if modify & 1 != 0:
+	if add_hp != 0:
 		dict["HP"] = operation == "Add" and add_hp < 0
 		return dict
-	if modify & 2 != 0:
+	if attack != 0:
 		dict["Atk"] = operation == "Add" and attack < 0
 		return dict
-	if modify & 4 != 0:
+	if defense != 0:
 		dict["Def"] = operation == "Add" and defense < 0
 		return dict
-	if modify & 8 != 0:
+	if retreat_change != 0:
 		dict["Cost"] = operation == "Add" and retreat_change < 0
 		return dict
 	if attack_cost:

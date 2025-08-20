@@ -43,6 +43,7 @@ signal finished_coinflip()
 signal prompt_answered(answer: bool)
 signal begin_swap(giver: PokeSlot, reciever: PokeSlot, energy: Array[Base_Card])
 signal trigger_finished
+signal slot_change_failed
 #endregion
 #--------------------------------------
 #endregion

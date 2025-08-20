@@ -105,12 +105,18 @@ texture = ExtResource("3_pjvm0")
 expand_mode = 5
 stretch_mode = 4
 
-[node name="ChangeDisplay" parent="TrainerAttached" instance=ExtResource("6_lcf6b")]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(32, 32)
+[node name="HBoxContainer" type="HBoxContainer" parent="TrainerAttached"]
 layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 4
+size_flags_horizontal = 4
+
+[node name="ChangeDisplay" parent="TrainerAttached/HBoxContainer" instance=ExtResource("6_lcf6b")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TrainerAttached/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_right = 17
 
 [node name="TypeContainer" type="HBoxContainer" parent="."]
 unique_name_in_owner = true
