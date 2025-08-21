@@ -98,7 +98,12 @@ func has_effect_type(comps: Array[String]):
 	return false
 
 func get_slot_changes() -> Array[SlotChange]:
-	return [buff, disable, override, type_change, rule_change]
+	var inital: Array[SlotChange] = [buff, disable, override, type_change, rule_change]
+	var valid: Array[SlotChange]
+	for change in inital:
+		if change != null:
+			valid.append(change)
+	return valid
 
 func get_slot_change() -> SlotChange:
 	if get_slot_changes().size() > 1:

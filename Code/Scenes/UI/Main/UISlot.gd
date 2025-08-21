@@ -34,6 +34,7 @@ func _ready():
 	clear()
 	connected_slot.slot_into(self)
 	%ArtButton.connected_ui = self
+	%Conditions.move_child(%ChangeDisplay, 0)
 
 #--------------------------------------
 #region ATTATCH

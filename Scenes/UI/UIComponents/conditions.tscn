@@ -31,12 +31,14 @@ metadata/_custom_type_script = "uid://8s3m1dar3r33"
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_puvo2"]
 
 [node name="Conditions" type="GridContainer"]
-offset_left = 167.0
-offset_top = 38.0
-offset_right = 235.0
-offset_bottom = 214.0
-scale = Vector2(0.5, 0.5)
+offset_right = 33.0
+offset_bottom = 64.0
+scale = Vector2(0.75, 0.75)
+size_flags_horizontal = 4
+size_flags_vertical = 0
 mouse_filter = 2
+theme_override_constants/h_separation = -64
+theme_override_constants/v_separation = 0
 columns = 2
 script = ExtResource("1_wtp2w")
 poison_gradient = SubResource("Gradient_rnfnf")
@@ -109,17 +111,6 @@ texture = ExtResource("5_a7s5w")
 expand_mode = 4
 metadata/_tab_index = 2
 
-[node name="Imprison" type="TextureRect" parent="."]
-unique_name_in_owner = true
-modulate = Color(0.984314, 0.498039, 0.745098, 1)
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-mouse_filter = 2
-texture = ExtResource("6_cy1lv")
-expand_mode = 4
-
 [node name="Shockwave" type="TextureRect" parent="."]
 unique_name_in_owner = true
 modulate = Color(0.443262, 0.520605, 1, 1)
@@ -131,15 +122,13 @@ mouse_filter = 2
 texture = ExtResource("6_cy1lv")
 expand_mode = 4
 
-[node name="HSlider" type="HSlider" parent="."]
-visible = false
+[node name="Imprison" type="TextureRect" parent="."]
+unique_name_in_owner = true
+modulate = Color(0.984314, 0.498039, 0.745098, 1)
+custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
-max_value = 4.0
-
-[node name="HSlider2" type="HSlider" parent="."]
-visible = false
-layout_mode = 2
-max_value = 4.0
-
-[connection signal="value_changed" from="HSlider" to="." method="_on_h_slider_value_changed"]
-[connection signal="value_changed" from="HSlider2" to="." method="_on_h_slider_2_value_changed"]
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+texture = ExtResource("6_cy1lv")
+expand_mode = 4

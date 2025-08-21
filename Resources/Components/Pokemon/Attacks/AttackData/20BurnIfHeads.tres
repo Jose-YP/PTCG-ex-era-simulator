@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="AttackData" load_steps=6 format=3 uid="uid://bfk7pv03wk6pv"]
+
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="1_okfjg"]
+[ext_resource type="Resource" uid="uid://ekj1myy642kh" path="res://Resources/Components/Effects/Prompts/PromptHeads.tres" id="2_hmybj"]
+[ext_resource type="Resource" uid="uid://bext0mocufqgp" path="res://Resources/Components/Effects/Conditions/BasicBurn.tres" id="3_sigvm"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="4_j1eo5"]
+
+[sub_resource type="Resource" id="Resource_ni446"]
+script = ExtResource("1_okfjg")
+prompt = ExtResource("2_hmybj")
+success = ExtResource("3_sigvm")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
+[resource]
+script = ExtResource("4_j1eo5")
+description = "Flip a coin. If heads, the Defending Pokémon is now Burned."
+prompt_reliant = false
+initial_main_DMG = 20
+defender_properties = 0
+condition = 1
+before_damage = false
+replace_num = false
+share_prompt = false
+prompt_effects = Array[ExtResource("1_okfjg")]([SubResource("Resource_ni446")])
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"

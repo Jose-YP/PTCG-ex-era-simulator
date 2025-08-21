@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Condition" load_steps=2 format=3 uid="uid://c71s58amf4u5l"]
+
+[ext_resource type="Script" uid="uid://8s3m1dar3r33" path="res://Code/Resource Makers/EffectSpecific/Components/ConditionMaker.gd" id="1_objlo"]
+
+[resource]
+script = ExtResource("1_objlo")
+any = false
+poison = 0
+burn = 0
+turn_cond = 0
+imprision = false
+shockwave = false
+knockOut = true
+metadata/_custom_type_script = "uid://8s3m1dar3r33"

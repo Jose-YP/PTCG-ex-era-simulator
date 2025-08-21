@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="PokeSlot" load_steps=6 format=3 uid="uid://dn6wvup406fpp"]
+
+[ext_resource type="Script" uid="uid://b3041relhlcb2" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/SlotChangeMaker.gd" id="1_bho4h"]
+[ext_resource type="Resource" uid="uid://dnwi6a5kx4bvn" path="res://Resources/Cards/1 ex Ruby & Saphire/RS10Mightyena.tres" id="2_frig4"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_5xkvk"]
+[ext_resource type="Resource" uid="uid://jjwoxlsecqtw" path="res://Resources/Cards/1 ex Ruby & Saphire/RS64Poochyena.tres" id="4_bho4h"]
+[ext_resource type="Script" uid="uid://cs70ix831b5g4" path="res://Code/Resource Makers/PokemonSpecific/PokeSlotMaker.gd" id="5_3of2h"]
+
+[resource]
+script = ExtResource("5_3of2h")
+current_card = ExtResource("2_frig4")
+max_HP = 0
+damage_counters = 0
+final_retreat = 0
+evolved_from = Array[ExtResource("3_5xkvk")]([ExtResource("4_bho4h")])
+energy_cards = Array[ExtResource("3_5xkvk")]([])
+tm_cards = Array[ExtResource("3_5xkvk")]([])
+changes = Dictionary[ExtResource("1_bho4h"), int]({})
+evolution_ready = false
+evolved_this_turn = false
+body_disabled = false
+power_disabled = false
+dealt_damage = 0
+energy_discarded = 0
+metadata/_custom_type_script = "uid://cs70ix831b5g4"

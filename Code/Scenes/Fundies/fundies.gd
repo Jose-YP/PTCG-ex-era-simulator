@@ -207,9 +207,19 @@ func get_targets() -> Array:
 func get_source_considered() -> bool:
 	return source_stack[-1]
 
+func get_single_src_trg() -> PokeSlot:
+	var src_stack = home_targets[-1] if source_stack[-1] else away_targets[-1]
+	
+	if src_stack.size() != 1:
+		printerr("Using ", get_single_src_trg, " when the source stack's size is greater than 1")
+	
+	return home_targets[-1][-1] if source_stack[-1] else away_targets[-1][-1]
+
 func print_src_trg():
+	print("----------------------------------------------------------")
 	print_slots(Consts.SIDES.SOURCE, Consts.SLOTS.ALL, "SOURCE SLOTS: ")
 	print_slots(Consts.SIDES.BOTH, Consts.SLOTS.TARGET, "TARGET SLOTS: ")
+	print("----------------------------------------------------------")
 
 #endregion
 #endregion
@@ -229,6 +239,8 @@ func remove_change(removing: SlotChange):
 	for home in side_changes:
 		side_changes[home].erase(removing)
 		Globals.full_ui.display_changes(home, side_changes[home].keys())
+	for slot in Globals.full_ui.get_poke_slots():
+		slot.remove_slot_change(removing)
 
 func full_check_stat_buff(slot: PokeSlot, stat: Consts.STAT_BUFFS, after: bool = true) -> int:
 	var total: int = 0

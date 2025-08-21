@@ -33,13 +33,7 @@ func get_home_side(home: bool) -> CardSideUI:
 	return player_side if home else opponent_side
 
 func get_const_side(side: Consts.SIDES) -> CardSideUI:
-	match side:
-		Consts.SIDES.SOURCE:
-			return get_home_side(true)
-		Consts.SIDES.OTHER:
-			return get_home_side(false)
-		_:
-			return get_home_side(Globals.fundies.get_considered_home(side))
+	return get_home_side(Globals.fundies.get_considered_home(side))
 
 func all_slots() -> Array[UI_Slot]:
 	return player_side.get_slots() + opponent_side.get_slots()
@@ -48,7 +42,7 @@ func get_slots(side: Consts.SIDES, slot: Consts.SLOTS) -> Array[UI_Slot]:
 	return all_slots().filter(func(uislot: UI_Slot):
 		return uislot.connected_slot.is_in_slot(side, slot))
 
-func get_poke_slots(side: Consts.SIDES,
+func get_poke_slots(side: Consts.SIDES = Consts.SIDES.BOTH,
  slot: Consts.SLOTS = Consts.SLOTS.ALL) -> Array[PokeSlot]:
 	var pokeslots: Array[PokeSlot]
 	for ui_slot in all_slots():

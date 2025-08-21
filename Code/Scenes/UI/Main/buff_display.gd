@@ -6,13 +6,19 @@ var change_array: Array[SlotChange]
 var index: int
 
 func _ready() -> void:
-	modulate = Color.TRANSPARENT
+	set_vis(false)
 	if side_version:
 		custom_minimum_size = Vector2(32,32)
 		%Panel.size = Vector2(32,32)
 
+func set_vis(vis: bool):
+	if side_version:
+		modulate = Color.WHITE if vis else Color.TRANSPARENT
+	else:
+		visible = vis
+
 func set_changes(changes: Array[SlotChange]) -> void:
-	modulate = Color.WHITE
+	set_vis(true)
 	change_array = changes
 	
 	if change_array.size() > 1:
@@ -22,7 +28,7 @@ func set_changes(changes: Array[SlotChange]) -> void:
 		%Changes.display_change(change_array[0])
 	else:
 		$Timer.stop()
-		modulate = Color.TRANSPARENT
+		set_vis(false)
 
 func _on_timer_timeout() -> void:
 	index = (index+1) % change_array.size()

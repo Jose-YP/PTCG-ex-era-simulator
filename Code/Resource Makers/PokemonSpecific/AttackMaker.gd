@@ -27,7 +27,7 @@ func get_damage() -> int:
 	
 	if data.comparator:
 		mod_times = data.comparator.start_comparision()
-		print("HAS A MODIFIER WITH THE RESULT OF ", data.mod_times, " * ", data.modifier_num)
+		print("HAS A MODIFIER WITH THE RESULT OF ", mod_times, " * ", data.modifier_num)
 		if data.comparator.has_coinflip():
 			await SignalBus.finished_coinflip
 	if data.mod_prompt:

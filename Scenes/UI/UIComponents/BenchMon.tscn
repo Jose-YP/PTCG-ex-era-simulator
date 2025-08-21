@@ -141,9 +141,10 @@ layout_mode = 2
 unique_name_in_owner = true
 layout_mode = 2
 offset_left = 148.0
-offset_top = 23.0
+offset_top = 28.0
 offset_right = 180.0
-offset_bottom = 69.0
+offset_bottom = 60.0
+scale = Vector2(0.75, 0.75)
 
 [node name="EnergyTypes" parent="." instance=ExtResource("7_lj5ts")]
 unique_name_in_owner = true
@@ -158,12 +159,13 @@ metadata/_edit_lock_ = true
 [node name="Conditions" parent="." instance=ExtResource("8_lj5ts")]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 155.0
-offset_top = 64.0
-offset_right = 223.0
-offset_bottom = 168.0
+offset_left = 163.0
+offset_top = 51.0
+offset_right = 163.0
+offset_bottom = 155.0
 
 [node name="ChangeDisplay" parent="Conditions" instance=ExtResource("6_lcf6b")]
 unique_name_in_owner = true
 layout_mode = 2
-side_version = true
+size_flags_horizontal = 1
+size_flags_vertical = 1

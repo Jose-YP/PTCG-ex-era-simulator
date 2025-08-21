@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="PromptAsk" load_steps=5 format=3 uid="uid://y06djpmpncrq"]
+
+[ext_resource type="Resource" uid="uid://dexnud1ca2b36" path="res://Resources/Components/Counters/Indv/Coinflip/FlipTwiceFor.tres" id="1_3fso8"]
+[ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="2_qmod3"]
+[ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="3_i8bu8"]
+
+[sub_resource type="Resource" id="Resource_5rbmw"]
+script = ExtResource("2_qmod3")
+comparision_type = "Equals"
+first_comparison = ExtResource("1_3fso8")
+compare_to = "None"
+second_constant = 2
+operate_w_constant = "None"
+metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
+
+[resource]
+script = ExtResource("3_i8bu8")
+formal_question = false
+question_string = ""
+yes_answer = ""
+no_answer = ""
+comparator = SubResource("Resource_5rbmw")
+can_reverse = true
+occurance = false
+chooser = 0
+choose_location = "None"
+which_stack = 0
+metadata/_custom_type_script = "uid://b85jmc7067bjc"

@@ -134,7 +134,7 @@ func disconnect_abilities():
 	if get_pokedata().pokepower:
 		get_pokedata().pokepower.disconnect_ability()
 
-func check_power_body():
+func check_passive():
 	var pokedata: Pokemon = get_pokedata()
 	Globals.fundies.record_single_src_trg(self)
 	#Ability
@@ -792,13 +792,14 @@ func confusion_check() -> bool:
 func apply_slot_change(apply: SlotChange):
 	if not apply in changes:
 		changes[apply] = apply.duration
-	#Not putting refresh here
-	#it would cause an infinite recusion with SlotChange abilities
-	ui_slot.changes_display.set_changes(changes.keys())
+		#Not putting refresh here
+		#it would cause an infinite recusion with SlotChange abilities
+		ui_slot.changes_display.set_changes(changes.keys())
 
 func remove_slot_change(removing: SlotChange):
-	changes.erase(removing)
-	ui_slot.changes_display.set_changes(changes.keys())
+	if removing in changes:
+		changes.erase(removing)
+		ui_slot.changes_display.set_changes(changes.keys())
 
 #Make something to look for replacement buffs
 func find_replacement_stats(stat: String, before_weak_res: bool):
@@ -884,7 +885,7 @@ func refresh() -> void:
 	
 	for ui in Globals.full_ui.all_slots():
 		if ui.connected_slot.is_filled():
-			ui.connected_slot.check_power_body()
+			ui.connected_slot.check_passive()
 
 func clear_dispay():
 	damage_counters = 0

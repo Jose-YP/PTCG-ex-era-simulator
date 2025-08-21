@@ -111,10 +111,11 @@ func has_effect(effect_types: Array[String]):
 #region ACTIVATION
 func activate_passive() -> bool:
 	var result: bool = true
-	if active and attatched_to.is_active():
-		result = result and true
-	if affected_by_condition and attatched_to.has_condition():
-		result = result and true
+	var slot: PokeSlot = Globals.fundies.get_single_src_trg()
+	if active:
+		result = result and slot.is_active()
+	if affected_by_condition:
+		result = result and slot.has_condition()
 	
 	if prompt and result:
 		if prompt.check_prompt():
@@ -124,8 +125,12 @@ func activate_passive() -> bool:
 		passive.play_effect()
 		return true
 	
+	if category == "Body":
+		slot.body_activated = false
+	
 	SignalBus.slot_change_failed.emit(passive.get_slot_change())
 	return false
+
 func activate_ability():
 	if not general_allowed(attatched_to):
 		return

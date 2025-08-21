@@ -1,0 +1,78 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=17 format=3 uid="uid://reog1meqwpet"]
+
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_4xrql"]
+[ext_resource type="Texture2D" uid="uid://b71q1ypvtai8m" path="res://Art/Cards/2 ex Sandstorm/5.jpg" id="1_t244o"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="2_gg7vs"]
+[ext_resource type="Resource" uid="uid://bpgsrqt47evh0" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/R1C1.tres" id="3_24r5f"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_i7o31"]
+[ext_resource type="Resource" uid="uid://bfk7pv03wk6pv" path="res://Resources/Components/Pokemon/Attacks/AttackData/20BurnIfHeads.tres" id="4_cuimp"]
+[ext_resource type="Resource" uid="uid://btgpcmwpxnrwy" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/R1C3.tres" id="5_mgtf4"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="6_6vhtc"]
+[ext_resource type="Resource" uid="uid://ekj1myy642kh" path="res://Resources/Components/Effects/Prompts/PromptHeads.tres" id="7_rpuua"]
+[ext_resource type="Resource" uid="uid://b86uut4qajrgg" path="res://Resources/Components/Effects/EnergyMovement/AtkSelfDisFire.tres" id="8_x34bw"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="9_150n2"]
+
+[sub_resource type="Resource" id="Resource_nokv0"]
+script = ExtResource("1_4xrql")
+name = "Super Singe"
+attack_cost = ExtResource("3_24r5f")
+attack_data = ExtResource("4_cuimp")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_yauit"]
+script = ExtResource("6_6vhtc")
+prompt = ExtResource("7_rpuua")
+success = ExtResource("8_x34bw")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
+[sub_resource type="Resource" id="Resource_dlgsb"]
+script = ExtResource("9_150n2")
+description = "Flip a coin. If tails, discard a {Fire} Energy card attached to [name]."
+prompt_reliant = false
+initial_main_DMG = 70
+defender_properties = 0
+condition = 1
+before_damage = false
+replace_num = false
+share_prompt = false
+prompt_effects = Array[ExtResource("6_6vhtc")]([SubResource("Resource_yauit")])
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_mmnue"]
+script = ExtResource("1_4xrql")
+name = "Flamethrower"
+attack_cost = ExtResource("5_mgtf4")
+attack_data = SubResource("Resource_dlgsb")
+
+[sub_resource type="Resource" id="Resource_inh8h"]
+script = ExtResource("2_gg7vs")
+HP = 80
+retreat = 1
+attacks = Array[ExtResource("1_4xrql")]([SubResource("Resource_nokv0"), SubResource("Resource_mmnue")])
+evo_stage = "Stage 1"
+evolves_from = "Eevee"
+considered = 1
+owner = 0
+type = 2
+weak = 4
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("3_i7o31")
+name = "Flareon"
+image = ExtResource("1_t244o")
+illustrator = "Midori Harada"
+number = 5
+rarity = 3
+expansion = 1
+categories = 1
+pokemon_properties = SubResource("Resource_inh8h")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

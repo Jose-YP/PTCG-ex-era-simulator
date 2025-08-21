@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Ability" load_steps=4 format=3 uid="uid://dp3mx16yy5mn4"]
+
+[ext_resource type="Resource" uid="uid://dr35h5ltr0i6r" path="res://Resources/Components/Effects/Conditions/BasicPoison.tres" id="1_k2ywc"]
+[ext_resource type="Resource" uid="uid://bessnawi8b2ct" path="res://Resources/Components/Occurances/AttackedByOpponent.tres" id="2_elpqw"]
+[ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="3_eu6ba"]
+
+[resource]
+script = ExtResource("3_eu6ba")
+category = "Body"
+name = "Poison Payback"
+description = "If [name] is your Active Pokémon and is damaged by an opponent's attack (even if [name] is Knocked Out), the Attacking Pokémon is now Poisoned."
+affected_by_condition = false
+active = true
+how_often = "Once per Mon"
+independent_src_trg = false
+occurance = ExtResource("2_elpqw")
+effect = ExtResource("1_k2ywc")
+metadata/_custom_type_script = "uid://bs2y8ocljilv8"

@@ -274,7 +274,7 @@ func evaluate() -> int:
 
 func slot_evaluation(slot_data: String, ask_data: SlotAsk) -> int:
 	var result: int = 0
-	var poke_slots: Array[PokeSlot] = Globals.full_ui.get_poke_slots(Consts.SIDES.BOTH)
+	var poke_slots: Array[PokeSlot] = Globals.full_ui.get_poke_slots()
 	var filtered_slots: Array[PokeSlot] = []
 	for slot in poke_slots:
 		if ask_data.check_ask(slot):

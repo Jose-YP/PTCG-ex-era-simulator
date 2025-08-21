@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="AttackData" load_steps=6 format=3 uid="uid://dc4ov3hcem7c8"]
+
+[ext_resource type="Resource" uid="uid://bkt6ry7vyha70" path="res://Resources/Components/Effects/Asks/General/Other.tres" id="1_rsjvv"]
+[ext_resource type="Script" uid="uid://br15mnap82upq" path="res://Code/Resource Makers/PokemonSpecific/BenchAttackMaker.gd" id="2_bip5p"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="3_1bti7"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="4_fxpr3"]
+
+[sub_resource type="Resource" id="Resource_hcc5j"]
+script = ExtResource("2_bip5p")
+how_many = 1
+candidates = ExtResource("1_rsjvv")
+active_allowed = true
+apply_weak_res = false
+initial_main_DMG = 40
+modifier = 0
+modifier_num = 0
+metadata/_custom_type_script = "uid://br15mnap82upq"
+
+[resource]
+script = ExtResource("4_fxpr3")
+description = "Choose 1 of your opponent's Pokémon. This attack does 40 damage to that Pokémon. This attack's damage isn't affected by Weakness, Resistance, Poké-Powers, Poké-Bodies or any other effects on that Pokémon."
+prompt_reliant = false
+initial_main_DMG = 0
+defender_properties = 0
+condition = 1
+before_damage = false
+replace_num = false
+share_prompt = false
+prompt_effects = Array[ExtResource("3_1bti7")]([])
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+bench_damage = SubResource("Resource_hcc5j")
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"

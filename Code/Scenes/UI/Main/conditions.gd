@@ -22,14 +22,12 @@ func _ready() -> void:
 func display_condition():
 	if condition.poison != 0:
 		%Poison.show()
-		@warning_ignore("integer_division")
 		color_poison(condition.poison - 1)
 		
 	else: %Poison.hide()
 	
 	if condition.burn != 0:
 		%Burn.show()
-		@warning_ignore("integer_division")
 		color_burn(condition.burn - 1)
 	else: %Burn.hide()
 	
@@ -55,9 +53,3 @@ func color_burn(value: int):
 func check_bench():
 	if bench:
 		printerr("Should not have this condition")
-
-func _on_h_slider_value_changed(value: float) -> void:
-	color_poison(int(value))
-
-func _on_h_slider_2_value_changed(value: float) -> void:
-	color_burn(int(value))

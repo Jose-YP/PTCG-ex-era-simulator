@@ -21,7 +21,7 @@ func set_attack():
 	%Name.append_text(str("[center]",attack.name))
 	
 	%EffectText.clear()
-	if attack.description != "":
+	if attack.attack_data.description != "":
 		var final_text: String = Convert.reformat(attack.attack_data.description, card_name)
 		%EffectText.append_text(final_text)
 		%EffectText.show()
