@@ -68,7 +68,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_rihj7"]
 script = ExtResource("2_fluui")
 name = "Alluring Smile"
-description = "Search your deck for a Basic Pokémon card or Evolution card for each Energy attached to [name], show them to your opponent, and put them into your hand. Shuffle your deck afterward."
 attack_cost = ExtResource("8_3wq4p")
 attack_data = SubResource("Resource_f7r4u")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

@@ -61,7 +61,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_mfkqr"]
 script = ExtResource("2_6qbf0")
 name = "Push Aside"
-description = "Look at your opponent's hand and choose 1 Basic Pokémon or Evolution card you find there. Your opponent puts it at the bottom of his or her deck."
 attack_cost = ExtResource("3_bdgas")
 attack_data = SubResource("Resource_7dwum")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
@@ -99,7 +98,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_qvfqh"]
 script = ExtResource("2_6qbf0")
 name = "Supernatural Power"
-description = "If you have the same number of cards in your hand as your opponent, this attack does 40 damage plus 40 more damage."
 attack_cost = ExtResource("8_ox4jr")
 attack_data = SubResource("Resource_ro403")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

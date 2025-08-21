@@ -10,7 +10,6 @@
 [sub_resource type="Resource" id="Resource_vseso"]
 script = ExtResource("2_32yqy")
 name = "Fury Swipes"
-description = "Flip 3 coins. This attack does 10 damage times the number of heads."
 attack_cost = ExtResource("3_3wal6")
 attack_data = ExtResource("4_vseso")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

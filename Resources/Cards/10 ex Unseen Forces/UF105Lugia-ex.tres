@@ -78,7 +78,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_qcmwh"]
 script = ExtResource("2_diiue")
 name = "Elemental Blast"
-description = "Discard a {Fire} Energy, {Water} Energy, and {Lightning} Energy attached to [name]."
 attack_cost = SubResource("Resource_8kssd")
 attack_data = SubResource("Resource_vnphs")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

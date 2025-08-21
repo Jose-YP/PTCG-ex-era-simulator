@@ -61,7 +61,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_rxdhg"]
 script = ExtResource("2_kyluj")
 name = "Energy Recall"
-description = "Attach up to 2 basic Energy cards from your discard pile to Flaaffy."
 attack_cost = ExtResource("3_uk8ej")
 attack_data = SubResource("Resource_k5rht")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
@@ -69,7 +68,6 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_usena"]
 script = ExtResource("2_kyluj")
 name = "Lightning Ball"
-description = ""
 attack_cost = ExtResource("10_l4wtl")
 attack_data = ExtResource("11_uh85t")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

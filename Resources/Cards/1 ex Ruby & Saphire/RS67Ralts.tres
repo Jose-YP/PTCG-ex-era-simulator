@@ -12,7 +12,6 @@
 [sub_resource type="Resource" id="Resource_007wa"]
 script = ExtResource("2_0260g")
 name = "Headbutt"
-description = ""
 attack_cost = ExtResource("3_007wa")
 attack_data = ExtResource("4_ej5ig")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
@@ -20,7 +19,6 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_ej5ig"]
 script = ExtResource("2_0260g")
 name = "Hypnoblast"
-description = "The Defending Pokémon is now Asleep."
 attack_cost = ExtResource("6_8x71n")
 attack_data = ExtResource("7_fjwji")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

@@ -39,7 +39,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_bwr13"]
 script = ExtResource("2_sjg77")
 name = "Slimy Water"
-description = "Does 10 damage times the number of {Colorless} Energy in the Defending Pokémon's Retreat Cost (after applying effects to the Retreat Cost)."
 attack_cost = ExtResource("3_wgrck")
 attack_data = SubResource("Resource_4k6b7")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
@@ -89,7 +88,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_tp8aj"]
 script = ExtResource("2_sjg77")
 name = "Acidic Poison"
-description = "The Defending Pokémon is now Burned and Poisoned."
 attack_cost = ExtResource("7_sjg77")
 attack_data = SubResource("Resource_xd3s5")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
@@ -97,18 +95,15 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_ivyre"]
 script = ExtResource("11_jvudk")
 description = "It costs {Colorless}{Colorless} to retreat this pokemon"
-application = "Slot"
 stackable = true
-recieves = ExtResource("10_tayn0")
-duration = -1
 after_weak_res = true
-modify = "HP"
 operation = "Replace"
 add_hp = 0
 attack = 0
 defense = 0
 retreat_change = 2
 cost_modifier = "Add"
+modify = 0
 plus = false
 condition_immune = 0
 attack_effect_immune = false
@@ -122,6 +117,9 @@ weakness = false
 resistance = false
 effects = false
 attack_names = Array[String]([])
+application = "Slot"
+recieves = ExtResource("10_tayn0")
+duration = -1
 metadata/_custom_type_script = "uid://coojhwe6m20gd"
 
 [sub_resource type="Resource" id="Resource_dxboj"]

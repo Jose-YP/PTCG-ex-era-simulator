@@ -57,7 +57,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_aw5mk"]
 script = ExtResource("2_e84ng")
 name = "Rainbow Burn"
-description = "Does 10 damage plus 20 more damage for each type of basic Energy card attached to [name]."
 attack_cost = ExtResource("3_f6oj6")
 attack_data = SubResource("Resource_rjiuk")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

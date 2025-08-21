@@ -11,7 +11,6 @@
 [sub_resource type="Resource" id="Resource_aiqev"]
 script = ExtResource("2_3ps86")
 name = ""
-description = ""
 attack_cost = ExtResource("3_mmikr")
 attack_data = ExtResource("4_eamdw")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

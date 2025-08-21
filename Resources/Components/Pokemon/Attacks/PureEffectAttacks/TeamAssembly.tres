@@ -105,7 +105,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [resource]
 script = ExtResource("12_ppaol")
 name = "Team Assembly"
-description = "Search your deck for Omanyte, Kabuto, or any Basic Pokémon and put as many of them as you like onto your Bench. Shuffle your deck afterward. Treat the new Benched Pokémon as Basic Pokémon."
 attack_cost = ExtResource("1_qqcvy")
 attack_data = SubResource("Resource_htdpr")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

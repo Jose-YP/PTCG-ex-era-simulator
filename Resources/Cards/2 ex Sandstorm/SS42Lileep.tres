@@ -49,7 +49,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_m5brw"]
 script = ExtResource("2_7d3xu")
 name = "Influence"
-description = "Search your deck for Omanyte, Kabuto, Aerodactyl, Lileep, or Anorith and put 2 of them onto your Bench. Shuffle your deck afterward. Treat the new Benched Pokémon as Basic Pokémon."
 attack_cost = ExtResource("3_hxnhf")
 attack_data = SubResource("Resource_gtrua")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
@@ -120,7 +119,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_1vqv4"]
 script = ExtResource("2_7d3xu")
 name = "Time Spiral"
-description = "If your opponent has any Evolved Pokémon in play, choose 1 of them and flip a coin. If heads, remove the highest Stage Evolution card on that Pokémon and have your opponent shuffle it into his or her deck."
 attack_cost = ExtResource("7_p7hyh")
 attack_data = SubResource("Resource_s43ci")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

@@ -37,21 +37,22 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_cmt8m"]
 script = ExtResource("2_ahb0c")
 name = "Dark Slash"
-description = "You may discard a {Darkness} Energy card attached to [name]. If you do, this attack does 40 damage plus 30 more damage."
 attack_cost = ExtResource("3_tof2u")
 attack_data = SubResource("Resource_86nuf")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_ivndt"]
 script = ExtResource("8_5ows5")
+choosing = 4
+mode = "Add"
+ask = ExtResource("7_7a6ot")
+how_many = 2
+choose_num = -1
 turn_delay = -1
 prevent_KO = false
-mode = "Add"
-how_many = 2
-choosing = 4
 anyway_u_like = false
-choose_num = -1
-ask = ExtResource("7_7a6ot")
+with_leftover = "None"
+leftover_anyway = false
 vary_choose_num = false
 plus = true
 modifier = 1

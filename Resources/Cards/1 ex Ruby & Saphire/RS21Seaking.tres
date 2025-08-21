@@ -42,7 +42,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_1tsea"]
 script = ExtResource("1_8igxm")
 name = "Fast Stream"
-description = "Move 1 Energy card attached to the Defending Pokémon to the other Defending Pokémon. (Ignore this effect if your opponent has only 1 Defending Pokémon.)"
 attack_cost = ExtResource("4_sv4fu")
 attack_data = SubResource("Resource_876u4")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

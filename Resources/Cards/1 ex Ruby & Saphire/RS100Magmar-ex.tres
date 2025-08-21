@@ -37,7 +37,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_vaxts"]
 script = ExtResource("3_a8nkb")
 name = "Super Singe"
-description = "The Defending Pokémon is now Burned."
 attack_cost = ExtResource("7_3prqa")
 attack_data = SubResource("Resource_r1wiw")
 

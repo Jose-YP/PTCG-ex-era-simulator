@@ -10,7 +10,6 @@
 [sub_resource type="Resource" id="Resource_a5u1g"]
 script = ExtResource("2_87u82")
 name = "Surprise Attack"
-description = "Flip a coin. If tails, this attack does nothing."
 attack_cost = ExtResource("3_t1tay")
 attack_data = ExtResource("4_mu56h")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

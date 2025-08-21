@@ -47,7 +47,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_snxfx"]
 script = ExtResource("2_ce2bh")
 name = "Quick Charge"
-description = ""
 attack_cost = ExtResource("3_cn444")
 attack_data = SubResource("Resource_4m4ly")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
@@ -87,7 +86,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_e81qh"]
 script = ExtResource("2_ce2bh")
 name = "Dragon Spark"
-description = ""
 attack_cost = ExtResource("8_2w3sr")
 attack_data = SubResource("Resource_xge1e")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

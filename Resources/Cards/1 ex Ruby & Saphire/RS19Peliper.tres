@@ -18,18 +18,15 @@
 [sub_resource type="Resource" id="Resource_6wn4a"]
 script = ExtResource("6_qarbw")
 description = "Stockpile and Spit Up deal +40 Damage"
-application = "Slot"
 stackable = true
-recieves = ExtResource("5_f5dxt")
-duration = 2
 after_weak_res = true
-modify = "HP"
 operation = "Add"
 add_hp = 0
 attack = 40
 defense = 0
 retreat_change = 0
 cost_modifier = "Add"
+modify = 0
 plus = false
 condition_immune = 0
 attack_effect_immune = false
@@ -43,6 +40,9 @@ weakness = false
 resistance = false
 effects = false
 attack_names = Array[String](["Stockpile", "Spit Up"])
+application = "Slot"
+recieves = ExtResource("5_f5dxt")
+duration = 2
 metadata/_custom_type_script = "uid://coojhwe6m20gd"
 
 [sub_resource type="Resource" id="Resource_0rawh"]
@@ -78,7 +78,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_h51y2"]
 script = ExtResource("1_pn1bd")
 name = "Stockpile"
-description = "During your next turn, Spit Up's base damage is 70 instead of 30, and Swallow's base damage is 60 instead of 20."
 attack_cost = ExtResource("3_4qtd1")
 attack_data = SubResource("Resource_hmbk8")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
@@ -86,7 +85,6 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_671sk"]
 script = ExtResource("1_pn1bd")
 name = "Spit Up"
-description = ""
 attack_cost = ExtResource("5_qarbw")
 attack_data = ExtResource("6_6wn4a")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
@@ -124,7 +122,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_wgs01"]
 script = ExtResource("1_pn1bd")
 name = "Swallow"
-description = "After your attack, remove from [name] the number of damage counters equal to the damage you did to the Defending Pokémon. If [name] has fewer damage counters than that, remove all of them."
 attack_cost = ExtResource("7_0rawh")
 attack_data = SubResource("Resource_vclto")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

@@ -13,7 +13,6 @@
 [sub_resource type="Resource" id="Resource_12qs1"]
 script = ExtResource("1_5jrob")
 name = "Wing Attack"
-description = ""
 attack_cost = ExtResource("3_2syf6")
 attack_data = ExtResource("4_a6hkx")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

@@ -39,7 +39,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_iu7it"]
 script = ExtResource("2_cisvk")
 name = "Super Speed"
-description = "Flip a coin. If heads, prevent all effects of an attack, including damage, done to Spearow during your opponent's next turn."
 attack_cost = ExtResource("3_c422g")
 attack_data = SubResource("Resource_2m73h")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

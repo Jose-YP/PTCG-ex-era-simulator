@@ -3,6 +3,7 @@ class_name NonMonUI
 
 @export var home: bool = true
 
+@onready var change_display: Control = %ChangeDisplay
 @onready var stacks: Dictionary[Consts.STACKS, StackButton] = {Consts.STACKS.DISCARD:%DiscardButton,
 Consts.STACKS.PRIZE:%PrizeButton, Consts.STACKS.DECK:%DeckButton, Consts.STACKS.HAND:%HandButton}
 
@@ -13,7 +14,7 @@ func _ready() -> void:
 		stacks[button].home = home
 	#So I don't have tow make two Non_Mon scenes for each side
 	if not home:
-		$Stacks.move_to_front()
+		move_child($Stacks, 0)
 	%ArtButton.get_child(0).size = %ArtButton.size
 	clear_supporter()
 

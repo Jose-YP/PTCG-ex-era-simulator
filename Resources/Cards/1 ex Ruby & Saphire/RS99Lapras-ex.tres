@@ -56,7 +56,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_8a8we"]
 script = ExtResource("3_bb8ip")
 name = "Energy Ball"
-description = "Does 10 damage plus 10 more damage for each Energy attached to Lapras ex but not used to pay for this attack's Energy cost. You can't add more than 20 damage in this way."
 attack_cost = ExtResource("3_27utq")
 attack_data = SubResource("Resource_bp0yp")
 
@@ -87,7 +86,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_kpk3t"]
 script = ExtResource("3_bb8ip")
 name = "Confuse Ray"
-description = "The Defending Pokémon is now Confused."
 attack_cost = ExtResource("6_wtncw")
 attack_data = SubResource("Resource_esapc")
 

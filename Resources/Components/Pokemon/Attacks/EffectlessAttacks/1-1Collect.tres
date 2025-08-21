@@ -36,7 +36,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [resource]
 script = ExtResource("5_b5bsm")
 name = "Collect"
-description = "Draw a card"
 attack_cost = ExtResource("1_g5oay")
 attack_data = SubResource("Resource_0osyk")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

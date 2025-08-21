@@ -7,61 +7,81 @@
 
 [node name="PlayerSide" type="Control"]
 layout_mode = 3
-anchor_left = 0.053
+anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -0.240002
+offset_top = 188.0
+offset_bottom = 188.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_gco5a")
 
-[node name="Main" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_left = 6.0
-offset_top = -6.0
-offset_right = 736.0
-offset_bottom = 332.0
-theme_override_constants/separation = 170
-metadata/_edit_group_ = true
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -106.0
+offset_bottom = 106.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
 
-[node name="Active" type="HBoxContainer" parent="Main"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Main" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_constants/separation = 223
+size_flags_horizontal = 0
+theme_override_constants/separation = 64
 
-[node name="ActivePokemon" parent="Main/Active" instance=ExtResource("2_bl05u")]
+[node name="Active" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Main"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="ActivePokemon" parent="MarginContainer/VBoxContainer/Main/Active" instance=ExtResource("2_bl05u")]
 unique_name_in_owner = true
 layout_mode = 2
 list_direction = 1
 
-[node name="ActivePokemon2" parent="Main/Active" instance=ExtResource("2_bl05u")]
+[node name="ActivePokemon2" parent="MarginContainer/VBoxContainer/Main/Active" instance=ExtResource("2_bl05u")]
 unique_name_in_owner = true
 layout_mode = 2
 list_direction = 1
 
-[node name="Bench" type="HBoxContainer" parent="Main"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Main"]
+layout_mode = 2
+
+[node name="NonMonEdit" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Main/HBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/Main/HBoxContainer/NonMonEdit"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 46
+
+[node name="Non_mon" parent="MarginContainer/VBoxContainer/Main/HBoxContainer/NonMonEdit" instance=ExtResource("4_pjrwh")]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_constants/separation = 200
+
+[node name="Bench" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
 alignment = 1
 
-[node name="BenchPokemon2" parent="Main/Bench" instance=ExtResource("3_gvewi")]
+[node name="BenchPokemon2" parent="MarginContainer/VBoxContainer/Bench" instance=ExtResource("3_gvewi")]
 layout_mode = 2
 
-[node name="BenchPokemon3" parent="Main/Bench" instance=ExtResource("3_gvewi")]
+[node name="BenchPokemon3" parent="MarginContainer/VBoxContainer/Bench" instance=ExtResource("3_gvewi")]
 layout_mode = 2
 
-[node name="BenchPokemon4" parent="Main/Bench" instance=ExtResource("3_gvewi")]
+[node name="BenchPokemon4" parent="MarginContainer/VBoxContainer/Bench" instance=ExtResource("3_gvewi")]
 layout_mode = 2
 
-[node name="BenchPokemon5" parent="Main/Bench" instance=ExtResource("3_gvewi")]
+[node name="BenchPokemon5" parent="MarginContainer/VBoxContainer/Bench" instance=ExtResource("3_gvewi")]
 layout_mode = 2
-
-[node name="Non_mon" parent="." instance=ExtResource("4_pjrwh")]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 509.0
-offset_top = 45.0
-offset_right = 956.0
-offset_bottom = 165.0

@@ -7,7 +7,6 @@
 [resource]
 script = ExtResource("3_5857o")
 name = "Bubble"
-description = "Flip a coin. If heads, the Defending Pokémon is now Paralyzed."
 attack_cost = ExtResource("1_7r05g")
 attack_data = ExtResource("2_8gk4q")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

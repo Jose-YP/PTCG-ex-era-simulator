@@ -14,7 +14,6 @@
 [sub_resource type="Resource" id="Resource_y33pb"]
 script = ExtResource("2_w3kic")
 name = "Breakdown"
-description = "Count the number of cards in your opponent's hand. Put that many damage counters on the Defending Pokémon."
 attack_cost = ExtResource("3_omkja")
 attack_data = ExtResource("4_iy2as")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
@@ -22,18 +21,15 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_nbay4"]
 script = ExtResource("6_le7p5")
 description = "Immune to Odd Numbered Damage less than 190"
-application = "Slot"
 stackable = true
-recieves = ExtResource("5_wgsgy")
-duration = -1
 after_weak_res = true
-modify = "HP"
 operation = "Replace"
 add_hp = 0
 attack = 0
 defense = 0
 retreat_change = 0
 cost_modifier = "Add"
+modify = 0
 plus = false
 condition_immune = 0
 attack_effect_immune = false
@@ -47,6 +43,9 @@ weakness = false
 resistance = false
 effects = false
 attack_names = Array[String]([])
+application = "Slot"
+recieves = ExtResource("5_wgsgy")
+duration = -1
 metadata/_custom_type_script = "uid://coojhwe6m20gd"
 
 [sub_resource type="Resource" id="Resource_eculs"]

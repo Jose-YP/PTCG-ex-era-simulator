@@ -42,7 +42,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_nq2cm"]
 script = ExtResource("1_hyodl")
 name = "Plunder"
-description = "Before doing damage, discard all Trainer cards attached to the Defending Pokémon (before they affect the damage)."
 attack_cost = ExtResource("2_ixnle")
 attack_data = SubResource("Resource_cae38")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

@@ -9,7 +9,6 @@
 [sub_resource type="Resource" id="Resource_0xdaf"]
 script = ExtResource("1_8kfbf")
 name = "Tail Rap"
-description = ""
 attack_cost = ExtResource("2_ls2mf")
 attack_data = ExtResource("3_y26s1")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

@@ -10,7 +10,6 @@
 [sub_resource type="Resource" id="Resource_p443m"]
 script = ExtResource("2_8h6o7")
 name = "Confuse Ray"
-description = "Flip a coin. If heads, the Defending Pokémon is now Confused."
 attack_cost = ExtResource("3_iipon")
 attack_data = ExtResource("4_x2j8m")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

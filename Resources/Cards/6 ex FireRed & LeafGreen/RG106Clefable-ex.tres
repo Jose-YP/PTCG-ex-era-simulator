@@ -57,7 +57,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_rleea"]
 script = ExtResource("2_n4vst")
 name = "Metronome"
-description = "Choose 1 of the Defending Pokémon's attacks. Metronome copies that attack except for its Energy cost. (You must still do anything else in order to use that attack.) (No matter what type that Pokémon is, [name]'s type is still {Colorless}.) [name] performs that attack. "
 attack_cost = ExtResource("3_etgee")
 attack_data = SubResource("Resource_ofgw2")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
@@ -65,7 +64,6 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_0du18"]
 script = ExtResource("2_n4vst")
 name = "Moon Impact"
-description = ""
 attack_cost = ExtResource("3_etgee")
 attack_data = ExtResource("8_fw1c0")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

@@ -35,7 +35,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_7241d"]
 script = ExtResource("2_k3tgj")
 name = "Super Thunder Wave"
-description = "Flip a coin. If heads, each Defending Pokémon is now Paralyzed."
 attack_cost = ExtResource("3_k3tgj")
 attack_data = SubResource("Resource_wvyg7")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

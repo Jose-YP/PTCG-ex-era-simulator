@@ -12,7 +12,6 @@
 [sub_resource type="Resource" id="Resource_jjmjt"]
 script = ExtResource("2_wspbw")
 name = "Amnesia"
-description = "Choose 1 of the Defending Pokémon's attacks. That Pokémon can't use that attack during your opponent's next turn. "
 attack_cost = ExtResource("3_gxk4p")
 attack_data = ExtResource("4_wspbw")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
@@ -20,7 +19,6 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_b05hm"]
 script = ExtResource("2_wspbw")
 name = "Tail Strike"
-description = "Flip a coin. If heads, this attack does 10 damage plus 10 more damage. "
 attack_cost = ExtResource("5_gxk4p")
 attack_data = ExtResource("6_wspbw")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

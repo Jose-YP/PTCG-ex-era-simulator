@@ -9,7 +9,6 @@
 [sub_resource type="Resource" id="Resource_giid5"]
 script = ExtResource("1_0u30t")
 name = "Psychic Boom"
-description = "Does 10 damage times the amount of Energy attached to the Defending Pokémon."
 attack_cost = ExtResource("3_32i8t")
 attack_data = ExtResource("4_itod8")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

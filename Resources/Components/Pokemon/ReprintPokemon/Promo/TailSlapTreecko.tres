@@ -10,7 +10,6 @@
 [sub_resource type="Resource" id="Resource_cmh7r"]
 script = ExtResource("1_yxhqn")
 name = "Tail Slap"
-description = ""
 attack_cost = ExtResource("2_4q850")
 attack_data = ExtResource("3_0i3k4")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
@@ -18,7 +17,6 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_efrcq"]
 script = ExtResource("1_yxhqn")
 name = "Razor Leaf"
-description = ""
 attack_cost = ExtResource("4_xgp8u")
 attack_data = ExtResource("5_y12q4")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

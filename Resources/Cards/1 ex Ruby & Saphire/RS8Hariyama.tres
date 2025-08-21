@@ -14,7 +14,6 @@
 [sub_resource type="Resource" id="Resource_xtvra"]
 script = ExtResource("2_ct2ad")
 name = "Super Slap Push"
-description = "Does 20 damage to each Defending Pokémon."
 attack_cost = ExtResource("3_cjih5")
 attack_data = ExtResource("4_etinu")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
@@ -42,7 +41,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_d7prq"]
 script = ExtResource("2_ct2ad")
 name = "Mega Throw"
-description = "If the Defending Pokémon is a Pokémon-ex, this attack does 40 damage plus 40 more damage."
 attack_cost = ExtResource("5_xtvra")
 attack_data = SubResource("Resource_4yhnp")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

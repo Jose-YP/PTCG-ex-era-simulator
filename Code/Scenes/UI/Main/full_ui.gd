@@ -9,18 +9,22 @@ var current_card: Control
 @onready var end_turn: Button = $EndTurn
 @onready var player_side: CardSideUI = $PlayerSide
 @onready var opponent_side: CardSideUI = $OpponentSide
+@onready var sides: Array[CardSideUI] = [player_side, opponent_side]
 @onready var stadium: Button = %ArtButton
 
 var home_side: Consts.PLAYER_TYPES
 var ui_stack: Array[Control] = [self]
 
+#--------------------------------------
 #region INITALIZATION & PROCESSING
 func _ready() -> void:
 	%ArtButton.get_child(0).size = %ArtButton.size
 	%ArtButton.current_card = null
 	Globals.full_ui = self
 #endregion
+#--------------------------------------
 
+#--------------------------------------
 #region HELPERS
 func get_player_type(side: Consts.SIDES) -> Consts.PLAYER_TYPES:
 	return get_const_side(side).player_type
@@ -75,7 +79,9 @@ func get_self() -> PokeSlot:
 	return null
 
 #endregion
+#--------------------------------------
 
+#--------------------------------------
 #region CARD MANAGEMENT
 func remove_card() -> void:
 	print("IHJBEFDI")
@@ -87,7 +93,9 @@ func update_stacks(dict: Dictionary[Consts.STACKS,Array],
 		if stack == Consts.STACKS.PLAY: break
 		temp_side.non_mon.update_stack(stack, dict[stack].size())
 #endregion
+#--------------------------------------
 
+#--------------------------------------
 #region UI MANAGEMENT
 #Send inputs only to the top UI
 func _input(event: InputEvent) -> void:
@@ -133,7 +141,16 @@ func control_disapear(node: Node):
 	
 	node.queue_free()
 
+func display_changes(home: bool, change_array: Array):
+	var temp: Array[SlotChange]
+	
+	for change in change_array:
+		temp.append(change)
+	
+	get_home_side(home).non_mon.change_display.set_changes(temp)
+
 #endregion
+#--------------------------------------
 
 func set_between_turns():
 	player_side.non_mon.clear_supporter()

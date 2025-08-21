@@ -61,7 +61,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_chffm"]
 script = ExtResource("1_76nqh")
 name = "Speed Growth"
-description = "Attach up to 2 {Grass} Energy cards from your hand to your Pokémon in any way you like."
 attack_cost = ExtResource("3_qoeuf")
 attack_data = SubResource("Resource_i8qx6")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
@@ -69,7 +68,6 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_3gkt5"]
 script = ExtResource("1_76nqh")
 name = "Sleep Powder"
-description = "The Defending Pokemon is now Asleep"
 attack_cost = ExtResource("10_lbtnv")
 attack_data = ExtResource("11_vatto")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

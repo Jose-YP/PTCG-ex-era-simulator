@@ -47,6 +47,7 @@ func _init() -> void:
 	if disable: disable = disable.duplicate()
 	if override: override = override.duplicate()
 	if type_change: type_change = type_change.duplicate()
+	if rule_change: rule_change = rule_change.duplicate()
 
 #These are params since the indivdual call knows best which is what
 func play_effect(reversable: bool = false) -> void:
@@ -95,3 +96,13 @@ func has_effect_type(comps: Array[String]):
 				return true
 	
 	return false
+
+func get_slot_changes() -> Array[SlotChange]:
+	return [buff, disable, override, type_change, rule_change]
+
+func get_slot_change() -> SlotChange:
+	if get_slot_changes().size() > 1:
+		printerr("uh oh")
+	for change in get_slot_changes():
+		if change: return change
+	return null

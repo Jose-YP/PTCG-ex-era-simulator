@@ -12,14 +12,12 @@
 [sub_resource type="Resource" id="Resource_b0wo5"]
 script = ExtResource("3_bv4e3")
 name = "Fling"
-description = "Your opponent switches the Defending Pokémon with 1 of his or her Benched Pokémon."
 attack_cost = ExtResource("5_emleq")
 attack_data = ExtResource("6_bewmg")
 
 [sub_resource type="Resource" id="Resource_bhvvb"]
 script = ExtResource("3_bv4e3")
 name = "Low Kick"
-description = ""
 attack_cost = ExtResource("7_csram")
 attack_data = ExtResource("8_fpbkf")
 

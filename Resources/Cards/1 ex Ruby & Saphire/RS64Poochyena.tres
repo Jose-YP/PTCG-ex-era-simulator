@@ -12,14 +12,12 @@
 [sub_resource type="Resource" id="Resource_eomoe"]
 script = ExtResource("4_rvsa4")
 name = "Knock Off"
-description = "Flip a coin. If heads, choose 1 card from your opponent's hand without looking and discard it."
 attack_cost = ExtResource("3_dbibp")
 attack_data = ExtResource("4_86dl8")
 
 [sub_resource type="Resource" id="Resource_kvrxo"]
 script = ExtResource("4_rvsa4")
 name = "Rear Kick"
-description = ""
 attack_cost = ExtResource("8_ghf2o")
 attack_data = ExtResource("9_a5s5l")
 

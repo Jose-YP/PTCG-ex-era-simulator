@@ -15,7 +15,6 @@
 [sub_resource type="Resource" id="Resource_p27p5"]
 script = ExtResource("2_jpmo1")
 name = "Waterfall"
-description = ""
 attack_cost = ExtResource("6_t4i2e")
 attack_data = ExtResource("7_c8si6")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

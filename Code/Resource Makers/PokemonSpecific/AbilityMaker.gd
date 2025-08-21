@@ -110,16 +110,22 @@ func has_effect(effect_types: Array[String]):
 
 #region ACTIVATION
 func activate_passive() -> bool:
-	if prompt:
+	var result: bool = true
+	if active and attatched_to.is_active():
+		result = result and true
+	if affected_by_condition and attatched_to.has_condition():
+		result = result and true
+	
+	if prompt and result:
 		if prompt.check_prompt():
 			passive.play_effect()
 			return true
-	else:
+	elif result:
 		passive.play_effect()
 		return true
 	
+	SignalBus.slot_change_failed.emit(passive.get_slot_change())
 	return false
-
 func activate_ability():
 	if not general_allowed(attatched_to):
 		return

@@ -61,7 +61,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_dy8na"]
 script = ExtResource("1_obixo")
 name = "Magnetic Force"
-description = "Does 10 damage times the amount of Energy attached to all of your Pokémon (including [name])."
 attack_cost = ExtResource("2_pnmal")
 attack_data = SubResource("Resource_mf3jg")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

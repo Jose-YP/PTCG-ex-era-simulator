@@ -54,7 +54,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_hgbw6"]
 script = ExtResource("2_plo0f")
 name = "Pollen Hazard"
-description = "The Defending Pokémon is now Poisoned, Burned, and Confused."
 attack_cost = ExtResource("5_eyg63")
 attack_data = SubResource("Resource_dqwkv")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
@@ -94,7 +93,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_ycijx"]
 script = ExtResource("2_plo0f")
 name = "Solarbeam"
-description = ""
 attack_cost = SubResource("Resource_mqrei")
 attack_data = SubResource("Resource_ht35d")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

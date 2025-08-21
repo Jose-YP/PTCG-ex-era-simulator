@@ -33,7 +33,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_fr1ws"]
 script = ExtResource("2_543m5")
 name = "Link Blast"
-description = "If [name] and the Defending Pokémon have a different amount of Energy attached to them, this attack's base damage is 10 instead of 40."
 attack_cost = ExtResource("4_4y1w6")
 attack_data = SubResource("Resource_tuk58")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

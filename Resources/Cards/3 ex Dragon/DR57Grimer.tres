@@ -46,7 +46,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_0duhc"]
 script = ExtResource("2_rw11r")
 name = "Poision Spurt"
-description = "Discard a {Grass} Energy card attached to Grimer. The Defending Pokémon is now Poisoned. "
 attack_cost = ExtResource("4_jg7a3")
 attack_data = SubResource("Resource_23t13")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

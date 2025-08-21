@@ -19,9 +19,7 @@ colors = PackedColorArray(0.990871, 0.301054, 0.243597, 1, 0.984314, 0.133333, 0
 
 [sub_resource type="Resource" id="Resource_nwnu7"]
 script = ExtResource("2_rnfnf")
-side = 2
-slot = 1
-choose_condition = false
+any = false
 poison = 0
 burn = 0
 turn_cond = 0
@@ -32,13 +30,14 @@ metadata/_custom_type_script = "uid://8s3m1dar3r33"
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_puvo2"]
 
-[node name="Conditions" type="VBoxContainer"]
+[node name="Conditions" type="GridContainer"]
 offset_left = 167.0
 offset_top = 38.0
-offset_right = 271.0
+offset_right = 235.0
 offset_bottom = 214.0
 scale = Vector2(0.5, 0.5)
 mouse_filter = 2
+columns = 2
 script = ExtResource("1_wtp2w")
 poison_gradient = SubResource("Gradient_rnfnf")
 burn_gradient = SubResource("Gradient_nwnu7")

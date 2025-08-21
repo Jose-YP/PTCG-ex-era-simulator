@@ -15,7 +15,6 @@
 [sub_resource type="Resource" id="Resource_3n1u2"]
 script = ExtResource("2_ugk1n")
 name = "Stampede"
-description = ""
 attack_cost = ExtResource("3_jihga")
 attack_data = ExtResource("4_vycv3")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
@@ -48,7 +47,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_gqkf0"]
 script = ExtResource("2_ugk1n")
 name = "Trembler"
-description = "Flip a coin. If heads, this attack does 10 damage to each Defending Pokémon, and each Defending Pokémon is now Paralyzed."
 attack_cost = ExtResource("5_3n1u2")
 attack_data = SubResource("Resource_4qwmm")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

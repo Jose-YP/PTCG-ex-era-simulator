@@ -10,14 +10,12 @@
 [sub_resource type="Resource" id="Resource_60dvo"]
 script = ExtResource("1_snygy")
 name = "Flare"
-description = ""
 attack_cost = ExtResource("2_aqspb")
 attack_data = ExtResource("3_33h4c")
 
 [sub_resource type="Resource" id="Resource_hq0qi"]
 script = ExtResource("1_snygy")
 name = "Double Kick"
-description = "Flip 2 coins. This attack does 40 damage times the number of heads."
 attack_cost = ExtResource("4_0dxvk")
 attack_data = ExtResource("5_u3hni")
 

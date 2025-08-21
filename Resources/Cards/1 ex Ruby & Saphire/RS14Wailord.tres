@@ -32,7 +32,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_l8sw6"]
 script = ExtResource("2_wnx27")
 name = "Take Down"
-description = "[name] does 20 damage to itself."
 attack_cost = ExtResource("3_7fwhs")
 attack_data = SubResource("Resource_pusdj")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
@@ -40,7 +39,6 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_7fwhs"]
 script = ExtResource("2_wnx27")
 name = "Surf"
-description = ""
 attack_cost = ExtResource("5_yftd1")
 attack_data = ExtResource("6_0dtfu")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

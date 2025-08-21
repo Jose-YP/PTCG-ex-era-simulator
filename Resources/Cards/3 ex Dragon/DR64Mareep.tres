@@ -10,7 +10,6 @@
 [sub_resource type="Resource" id="Resource_ut2hx"]
 script = ExtResource("2_uoket")
 name = "Jolt"
-description = "Flip a coin. If heads, the Defending Pokémon is now Paralyzed."
 attack_cost = ExtResource("3_v0416")
 attack_data = ExtResource("4_204uf")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

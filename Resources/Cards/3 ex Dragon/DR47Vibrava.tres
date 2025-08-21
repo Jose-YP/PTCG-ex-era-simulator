@@ -12,7 +12,6 @@
 [sub_resource type="Resource" id="Resource_ru6n3"]
 script = ExtResource("1_os07w")
 name = "Dive"
-description = ""
 attack_cost = ExtResource("3_s20qo")
 attack_data = ExtResource("4_7g61m")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
@@ -20,7 +19,6 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_wjkqt"]
 script = ExtResource("1_os07w")
 name = "Quick Turn"
-description = "Flip 2 coins. This attack does 40 damage times the number of heads."
 attack_cost = ExtResource("5_qs3pe")
 attack_data = ExtResource("6_mc5nj")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

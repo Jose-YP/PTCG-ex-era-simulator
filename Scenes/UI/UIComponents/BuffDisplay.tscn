@@ -8,25 +8,24 @@
 [node name="ChangeDisplay" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-scale = Vector2(0.5, 0.5)
-size_flags_horizontal = 4
-size_flags_vertical = 4
+size_flags_horizontal = 6
+size_flags_vertical = 6
 script = ExtResource("1_hdxds")
 
 [node name="Timer" type="Timer" parent="."]
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
-custom_minimum_size = Vector2(16, 16)
+[node name="Panel" type="PanelContainer" parent="."]
+unique_name_in_owner = true
 layout_mode = 0
-offset_right = 16.0
+offset_right = 32.0
 offset_bottom = 16.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_o5lmi")
 
-[node name="Button" type="Button" parent="PanelContainer"]
+[node name="Button" type="Button" parent="Panel"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 
-[node name="Changes" parent="PanelContainer" instance=ExtResource("2_o5lmi")]
+[node name="Changes" parent="Panel" instance=ExtResource("2_o5lmi")]
 unique_name_in_owner = true
 layout_mode = 2
 

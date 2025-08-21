@@ -69,7 +69,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_gfvgc"]
 script = ExtResource("2_oe5pn")
 name = "Delta Draw"
-description = "Count the number of Pokémon you have in play that has δ on its card. Draw up to that many cards."
 attack_cost = ExtResource("6_4nuec")
 attack_data = SubResource("Resource_uhfbr")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

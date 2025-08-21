@@ -36,7 +36,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_fh4bi"]
 script = ExtResource("2_0lg5k")
 name = "Lava Burn"
-description = "Choose 1 of your opponent's Benched Pokémon. This attack does 10 damage to that Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
 attack_cost = ExtResource("3_xcuij")
 attack_data = SubResource("Resource_jcni4")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
@@ -84,7 +83,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_6mipe"]
 script = ExtResource("2_0lg5k")
 name = "Fire Spin"
-description = "Discard 2 basic Energy cards attached to [name] or this attack does nothing."
 attack_cost = ExtResource("9_3gb0p")
 attack_data = SubResource("Resource_253vf")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

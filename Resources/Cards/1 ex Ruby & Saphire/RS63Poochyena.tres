@@ -10,7 +10,6 @@
 [sub_resource type="Resource" id="Resource_wmo8r"]
 script = ExtResource("2_mq2dl")
 name = "Bite"
-description = ""
 attack_cost = ExtResource("3_wmo8r")
 attack_data = ExtResource("4_wmo8r")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

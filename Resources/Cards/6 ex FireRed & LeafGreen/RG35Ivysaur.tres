@@ -12,7 +12,6 @@
 [sub_resource type="Resource" id="Resource_5u42e"]
 script = ExtResource("2_asv4v")
 name = "Poison Seed"
-description = "The Defending Pokémon is now Poisoned."
 attack_cost = ExtResource("4_asv4v")
 attack_data = ExtResource("5_5u42e")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
@@ -20,7 +19,6 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_m3dhp"]
 script = ExtResource("2_asv4v")
 name = "Razor Leaf"
-description = ""
 attack_cost = ExtResource("6_m3dhp")
 attack_data = ExtResource("7_0qyjd")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

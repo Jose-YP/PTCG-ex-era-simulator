@@ -18,7 +18,6 @@
 [sub_resource type="Resource" id="Resource_ky0p2"]
 script = ExtResource("2_emyr2")
 name = "Yawn"
-description = "The Defending Pokémon is now Asleep."
 attack_cost = ExtResource("4_emyr2")
 attack_data = ExtResource("5_mw7hy")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
@@ -68,7 +67,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_0cf72"]
 script = ExtResource("2_emyr2")
 name = "Mini-Metronome"
-description = "Flip a coin. If heads, choose 1 of the Defending Pokémon's attacks. Mini-Metronome copies that attack except for its Energy cost. (You must still do anything else required for that attack.) (No matter what type that Pokémon is, [name]'s type is still {Colorless}.) [name] performs that attack."
 attack_cost = ExtResource("6_2b0yu")
 attack_data = SubResource("Resource_kkp1i")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

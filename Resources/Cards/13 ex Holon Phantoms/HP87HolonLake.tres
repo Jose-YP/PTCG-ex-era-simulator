@@ -60,7 +60,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_q7ncl"]
 script = ExtResource("10_85o5a")
 name = "Delta Call"
-description = "Search your deck for a Pokémon that has δ on its card, show it to your opponent, and put it into your hand. Shuffle your deck afterward. "
 attack_cost = ExtResource("3_kyw37")
 attack_data = SubResource("Resource_iq0qi")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

@@ -44,7 +44,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_b0l7j"]
 script = ExtResource("2_1wrtr")
 name = "Gooey Thread"
-description = "The Defending Pokémon can't retreat until the end of your opponent's next turn."
 attack_cost = ExtResource("5_1wrtr")
 attack_data = SubResource("Resource_opply")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

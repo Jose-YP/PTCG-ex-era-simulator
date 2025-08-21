@@ -35,7 +35,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [resource]
 script = ExtResource("5_wuwsf")
 name = "Agility"
-description = "Flip a coin. If heads, prevent all effects of an attack, including damage, done to [name] during your opponent's next turn."
 attack_cost = ExtResource("1_ixeao")
 attack_data = SubResource("Resource_pkjnj")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

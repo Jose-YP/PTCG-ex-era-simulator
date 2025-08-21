@@ -12,7 +12,6 @@
 [sub_resource type="Resource" id="Resource_733yk"]
 script = ExtResource("2_n1wjk")
 name = "Removal Beam"
-description = "Flip a coin. If heads, discard 1 Energy card attached to the Defending Pokémon."
 attack_cost = ExtResource("3_cix5o")
 attack_data = ExtResource("4_kte8o")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
@@ -20,7 +19,6 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_61rkf"]
 script = ExtResource("2_n1wjk")
 name = "Super Psy"
-description = ""
 attack_cost = ExtResource("8_t0ir0")
 attack_data = ExtResource("9_733yk")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

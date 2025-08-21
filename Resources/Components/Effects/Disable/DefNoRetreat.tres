@@ -7,7 +7,6 @@
 script = ExtResource("1_b6leg")
 side = 2
 slot = 1
-duration = -1
 no_weakness = false
 no_resistance = false
 instead_of_damage = false
@@ -16,6 +15,8 @@ attack = 0
 power = 0
 retreat_duration = 1
 disable_retreat = true
+application = "Slot"
+duration = -1
 
 [resource]
 script = ExtResource("2_fdrur")

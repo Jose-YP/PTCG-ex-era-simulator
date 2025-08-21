@@ -1,4 +1,4 @@
-extends VBoxContainer
+extends GridContainer
 class_name ConditionDisplay
 
 @export var bench: bool = false

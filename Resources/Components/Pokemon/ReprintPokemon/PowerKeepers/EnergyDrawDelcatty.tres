@@ -59,7 +59,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_jg3lb"]
 script = ExtResource("1_0ak6d")
 name = "Max Energy Source"
-description = "Does 10 damage times the amount of Energy attached to all of your active Pokemon"
 attack_cost = ExtResource("2_fj7yy")
 attack_data = SubResource("Resource_wpewd")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

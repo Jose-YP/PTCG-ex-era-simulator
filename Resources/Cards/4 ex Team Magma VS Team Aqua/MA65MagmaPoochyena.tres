@@ -34,7 +34,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_1qf44"]
 script = ExtResource("2_j8bvu")
 name = "Snarl"
-description = "Flip a coin. If heads, this attack does 10 damage to the Defending Pokémon. If tails, the Defending Pokémon is now Paralyzed."
 attack_cost = ExtResource("3_j8bvu")
 attack_data = SubResource("Resource_ahgdl")
 

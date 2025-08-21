@@ -12,14 +12,12 @@
 [sub_resource type="Resource" id="Resource_3lp3d"]
 script = ExtResource("4_tikk5")
 name = "Steady Punch"
-description = "Flip a coin. If heads, this attack does 10 damage plus 10 more damage."
 attack_cost = ExtResource("3_1reo7")
 attack_data = ExtResource("4_gcr84")
 
 [sub_resource type="Resource" id="Resource_e1f0j"]
 script = ExtResource("4_tikk5")
 name = "Sky Uppercut"
-description = "This attack's damage is not affected by Resistance."
 attack_cost = ExtResource("6_g8niy")
 attack_data = ExtResource("7_10bu1")
 

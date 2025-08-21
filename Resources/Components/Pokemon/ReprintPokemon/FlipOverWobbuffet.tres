@@ -29,7 +29,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_q0c5m"]
 script = ExtResource("1_apedi")
 name = "Flip Over"
-description = "[name] does 10 damage to itself, and don't apply Weakness and Resistance to this damage."
 attack_cost = ExtResource("2_apedi")
 attack_data = SubResource("Resource_3krnc")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

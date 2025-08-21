@@ -41,7 +41,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_bnrpu"]
 script = ExtResource("2_4n1bp")
 name = "Dragon Dew"
-description = "Remove 2 damage counters from 1 of your Pokémon (remove 1 if there is only 1)."
 attack_cost = ExtResource("3_x1478")
 attack_data = SubResource("Resource_7ofut")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
@@ -49,7 +48,6 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_48qu5"]
 script = ExtResource("2_4n1bp")
 name = "Tail Slap"
-description = ""
 attack_cost = ExtResource("7_8e30d")
 attack_data = ExtResource("8_mb3se")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

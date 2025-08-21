@@ -31,7 +31,7 @@ var power_ready: bool
 @export var energy_cards: Array[Base_Card] = []
 @export var tm_cards: Array[Base_Card] = []
 @export var tool_card: Base_Card
-@export var changes: Dictionary[SlotChange, SlotChange]
+@export var changes: Dictionary[SlotChange, int]
 @export var applied_condition: Condition = Condition.new()
 #endregion
 #--------------------------------------
@@ -392,7 +392,9 @@ func knock_out() -> void:
 
 func add_damage(attacker: PokeSlot, base_ammount: int) -> void:
 	if not is_filled(): return
-	var final_ammount = base_ammount
+	var final_ammount = base_ammount + \
+	Globals.fundies.full_check_stat_buff(attacker, Consts.STAT_BUFFS.ATTACK, false)\
+	- Globals.fundies.full_check_stat_buff(self, Consts.STAT_BUFFS.DEFENSE, false)
 	
 	if attacker.current_card.pokemon_properties.type & current_card.pokemon_properties.weak != 0:
 		print(get_card_name(), " is weak to ", attacker.get_card_name())
@@ -401,10 +403,12 @@ func add_damage(attacker: PokeSlot, base_ammount: int) -> void:
 		print(get_card_name(), " is resists to ", attacker.get_card_name())
 		final_ammount -= 30
 	
+	final_ammount += Globals.fundies.full_check_stat_buff(attacker, Consts.STAT_BUFFS.ATTACK, true)\
+	- Globals.fundies.full_check_stat_buff(self, Consts.STAT_BUFFS.DEFENSE, true)
+	
 	final_ammount = clamp(final_ammount, 0, final_ammount)
 	print(get_card_name(), " TAKES: ", final_ammount, " DAMAGE!")
 	damage_counters += final_ammount
-	@warning_ignore("integer_division")
 	attacker.dealt_damage = final_ammount
 	
 	refresh()
@@ -425,7 +429,7 @@ func dmg_manip(dmg_change: int, timer: int = -1) -> void:
 	refresh()
 
 func set_max_hp():
-	max_HP = get_pokedata().HP
+	max_HP = get_pokedata().HP + Globals.fundies.full_check_stat_buff(self, Consts.STAT_BUFFS.HP)
 
 #endregion
 #--------------------------------------
@@ -694,13 +698,6 @@ func card_disrupteed(identifier: Identifier, rule: String) -> Array[Base_Card]:
 	
 	refresh()
 	return moving_cards
-
-func apply_slot_change(apply: SlotChange):
-	changes[apply] = apply
-	#Not putting refresh here
-	#it would cause an infinite recusion with SlotChange abilities
-	ui_slot.changes_display.set_changes(changes.keys())
-
 #endregion
 #--------------------------------------
 
@@ -787,6 +784,40 @@ func confusion_check() -> bool:
 	
 	return confused
 
+#endregion
+#--------------------------------------
+
+#--------------------------------------
+#region SLOT CHANGE HANDLERS
+func apply_slot_change(apply: SlotChange):
+	if not apply in changes:
+		changes[apply] = apply.duration
+	#Not putting refresh here
+	#it would cause an infinite recusion with SlotChange abilities
+	ui_slot.changes_display.set_changes(changes.keys())
+
+func remove_slot_change(removing: SlotChange):
+	changes.erase(removing)
+	ui_slot.changes_display.set_changes(changes.keys())
+
+#Make something to look for replacement buffs
+func find_replacement_stats(stat: String, before_weak_res: bool):
+	pass
+
+func check_immunities():
+	pass
+
+func check_pierce():
+	pass
+
+func check_disable():
+	pass
+
+func check_override():
+	pass
+
+func check_type_change():
+	pass
 #endregion
 #--------------------------------------
 

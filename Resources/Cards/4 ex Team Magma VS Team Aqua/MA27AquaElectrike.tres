@@ -62,7 +62,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_nvcnk"]
 script = ExtResource("3_dfgxb")
 name = "Plasma"
-description = "Fllip a coin. If heads, search your discard pile for a {Lightning} Energy card and attach it to [name]."
 attack_cost = ExtResource("6_hw4dm")
 attack_data = SubResource("Resource_mgt8s")
 

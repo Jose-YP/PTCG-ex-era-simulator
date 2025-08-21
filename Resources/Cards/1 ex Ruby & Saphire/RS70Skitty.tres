@@ -11,7 +11,6 @@
 [sub_resource type="Resource" id="Resource_6a5q7"]
 script = ExtResource("2_de7xk")
 name = "Plus Energy"
-description = "Attach a basic Energy card from your hand to 1 of your Pokémon."
 attack_cost = ExtResource("5_ok6hf")
 attack_data = ExtResource("6_b5ut1")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

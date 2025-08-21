@@ -10,7 +10,6 @@
 [sub_resource type="Resource" id="Resource_t1n52"]
 script = ExtResource("3_ynd82")
 name = "Singe"
-description = "Flip a coin. If heads, the Defending Pokémon is now Burned."
 attack_cost = ExtResource("3_36bho")
 attack_data = ExtResource("4_h27pu")
 

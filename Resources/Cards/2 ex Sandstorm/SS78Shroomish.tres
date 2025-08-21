@@ -45,7 +45,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_a2d2o"]
 script = ExtResource("1_ev8i5")
 name = "Growth Spurt"
-description = "Attach a {Grass} Energy card from your hand to [name]."
 attack_cost = ExtResource("3_ajojo")
 attack_data = SubResource("Resource_ugo3h")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
@@ -53,7 +52,6 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_s0yki"]
 script = ExtResource("1_ev8i5")
 name = "Poisonpowder"
-description = "The Defending Pokémon is now Poisoned."
 attack_cost = ExtResource("7_rq8ni")
 attack_data = ExtResource("8_anucc")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

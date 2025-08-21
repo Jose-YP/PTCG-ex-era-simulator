@@ -52,7 +52,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_ivcbq"]
 script = ExtResource("2_lbmg6")
 name = "Luring Flame"
-description = "Switch 1 of your opponent's Benched Pokémon with 1 of the Defending Pokémon. Your opponent chooses the Defending Pokémon to switch. The new Defending Pokémon is now Burned."
 attack_cost = ExtResource("4_8v4dq")
 attack_data = SubResource("Resource_27luv")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

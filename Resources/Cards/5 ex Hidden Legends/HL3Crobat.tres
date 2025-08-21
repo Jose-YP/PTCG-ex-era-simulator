@@ -62,7 +62,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_7qqj3"]
 script = ExtResource("2_n6mey")
 name = "Flutter Trick"
-description = "Flip a coin. If heads, look at your opponent's hand and choose 1 card. Your opponent discards the card you chose."
 attack_cost = ExtResource("3_ycyog")
 attack_data = SubResource("Resource_7hcew")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
@@ -108,7 +107,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_0jwbt"]
 script = ExtResource("2_n6mey")
 name = "Triple Poison"
-description = "The Defending Pokémon is now Poisoned. Put 3 damage counters instead of 1 on the Defending Pokémon between turns."
 attack_cost = ExtResource("9_clttu")
 attack_data = SubResource("Resource_qx0es")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

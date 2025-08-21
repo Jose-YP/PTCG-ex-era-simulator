@@ -74,7 +74,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_kc0gi"]
 script = ExtResource("2_uiro2")
 name = "Super Deep Dive"
-description = "If you don't have any Benched Pokémon, this attack does nothing. Remove 3 damage counters from [name]. Switch [name] with 1 of your Benched Pokémon."
 attack_cost = ExtResource("3_xdiwn")
 attack_data = SubResource("Resource_ep4q3")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
@@ -102,7 +101,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_4mo7n"]
 script = ExtResource("2_uiro2")
 name = "Dwindling Wave"
-description = "Does 100 damage minus 10 damage for each damage counter on [name]."
 attack_cost = ExtResource("11_q0ohq")
 attack_data = SubResource("Resource_8rjgf")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

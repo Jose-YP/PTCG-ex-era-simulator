@@ -65,7 +65,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_h8f3k"]
 script = ExtResource("2_c7ykk")
 name = "Seek Out"
-description = "Search your deck for up to 2 cards and put them into your hand. Shuffle your deck afterward."
 attack_cost = ExtResource("3_euni5")
 attack_data = SubResource("Resource_e3j6n")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
@@ -93,7 +92,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_wgkdp"]
 script = ExtResource("2_c7ykk")
 name = "Continuous Headbutt"
-description = "Flip a coin until you get tails. This attack does 40 damage times the number of heads."
 attack_cost = ExtResource("10_ojowl")
 attack_data = SubResource("Resource_pmwlk")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

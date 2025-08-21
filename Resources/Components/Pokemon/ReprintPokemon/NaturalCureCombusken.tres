@@ -13,7 +13,6 @@
 [sub_resource type="Resource" id="Resource_60dvo"]
 script = ExtResource("1_23xl6")
 name = "Lunge"
-description = "Flip a coin. If tails, this attack does nothing."
 attack_cost = ExtResource("2_qg207")
 attack_data = ExtResource("3_nn817")
 

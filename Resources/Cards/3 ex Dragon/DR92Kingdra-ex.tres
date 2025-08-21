@@ -44,7 +44,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_vwv28"]
 script = ExtResource("2_k7e38")
 name = "Genetic Memory"
-description = "Use any attack from [name]'s Basic Pokémon card or Stage 1 Evolution card. ([name] doesn't have to pay for that attack's Energy cost.)"
 attack_cost = ExtResource("3_msgfn")
 attack_data = SubResource("Resource_bijs0")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
@@ -91,7 +90,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_2j0fo"]
 script = ExtResource("2_k7e38")
 name = "Hydrocannon"
-description = "Does 50 damage plus 20 more damage for each {Water} Energy attached to Kingdra ex but not used to pay for this attack's Energy cost. You can't add more than 40 damage in this way."
 attack_cost = ExtResource("4_mybni")
 attack_data = SubResource("Resource_opwid")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

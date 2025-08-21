@@ -60,7 +60,6 @@ attack_data = SubResource("Resource_5xn7j")
 script = ExtResource("8_eha0c")
 side = 2
 slot = 5
-duration = -1
 no_weakness = false
 no_resistance = true
 instead_of_damage = false
@@ -69,6 +68,7 @@ attack = 0
 power = 0
 retreat_duration = 1
 disable_retreat = false
+application = "Slot"
 duration = -1
 
 [sub_resource type="Resource" id="Resource_fbclb"]

@@ -15,14 +15,16 @@
 
 [sub_resource type="Resource" id="Resource_3fdt1"]
 script = ExtResource("5_gapec")
+choosing = 4
+mode = "Add"
+ask = ExtResource("4_ocm5a")
+how_many = 2
+choose_num = 1
 turn_delay = -1
 prevent_KO = false
-mode = "Add"
-how_many = 2
-choosing = 4
 anyway_u_like = true
-choose_num = 1
-ask = ExtResource("4_ocm5a")
+with_leftover = "None"
+leftover_anyway = false
 vary_choose_num = false
 plus = true
 modifier = 1
@@ -57,7 +59,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_33sqn"]
 script = ExtResource("2_5wkmv")
 name = "Clay Curse"
-description = "Put 2 damage counters on your opponent's Pokémon in any way you like."
 attack_cost = ExtResource("3_bc0pq")
 attack_data = SubResource("Resource_22mru")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
@@ -85,7 +86,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_pbiwv"]
 script = ExtResource("2_5wkmv")
 name = "Clay Pulse"
-description = "Does 10 damage to each of your opponent's Benched Pokémon that has any damage counters on it. (Don't apply Weakness and Resistance for Benched Pokémon.)"
 attack_cost = ExtResource("8_h8xkt")
 attack_data = SubResource("Resource_matcw")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

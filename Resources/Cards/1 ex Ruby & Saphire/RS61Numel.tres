@@ -39,7 +39,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_0lvqi"]
 script = ExtResource("2_ac0ve")
 name = "Burn Off"
-description = "Flip a coin. If heads, each Defending Pokémon is now Burned."
 attack_cost = ExtResource("4_ufae1")
 attack_data = SubResource("Resource_pb47g")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

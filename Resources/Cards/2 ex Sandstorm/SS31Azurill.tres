@@ -44,7 +44,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_t1x7p"]
 script = ExtResource("2_tqd1y")
 name = "Jump Catch"
-description = "Search your deck for a Trainer card, show it to your opponent, and put it into your hand. Shuffle your deck afterward."
 attack_cost = ExtResource("5_0ehm3")
 attack_data = SubResource("Resource_hy80x")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

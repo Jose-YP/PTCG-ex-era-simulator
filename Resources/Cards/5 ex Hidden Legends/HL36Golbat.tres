@@ -12,7 +12,6 @@
 [sub_resource type="Resource" id="Resource_mms8t"]
 script = ExtResource("2_1nc1w")
 name = "Supersonic"
-description = "The Defending Pokémon is now Confused."
 attack_cost = ExtResource("3_7b70s")
 attack_data = ExtResource("4_dufn1")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
@@ -20,7 +19,6 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_0xn53"]
 script = ExtResource("2_1nc1w")
 name = "Sharp Fang"
-description = ""
 attack_cost = ExtResource("5_3qfgl")
 attack_data = ExtResource("6_io88k")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

@@ -12,7 +12,6 @@
 [sub_resource type="Resource" id="Resource_q546b"]
 script = ExtResource("2_oft0f")
 name = "Bind"
-description = "Flip a coin. If heads, the Defending Pokémon is now Paralyzed."
 attack_cost = ExtResource("3_moq6p")
 attack_data = ExtResource("4_7y0hf")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
@@ -20,7 +19,6 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_ivasd"]
 script = ExtResource("2_oft0f")
 name = "Rage"
-description = "Does 10 damage plus 10 more damage for each damage counter on [name]."
 attack_cost = ExtResource("5_yf1wt")
 attack_data = ExtResource("6_ph1wc")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

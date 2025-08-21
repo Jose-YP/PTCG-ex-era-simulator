@@ -10,7 +10,6 @@
 [sub_resource type="Resource" id="Resource_occc4"]
 script = ExtResource("3_o4ni8")
 name = "Shadow Bind"
-description = "The Defending Pokémon can't retreat until the end of your opponent's next turn."
 attack_cost = ExtResource("5_65c7g")
 attack_data = ExtResource("6_l2djy")
 

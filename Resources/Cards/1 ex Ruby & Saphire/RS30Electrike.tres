@@ -45,7 +45,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_wugrw"]
 script = ExtResource("2_8agjp")
 name = "Charge"
-description = "Attach a {Lightning} Energy card from your discard pile to [name]."
 attack_cost = ExtResource("5_oqe5b")
 attack_data = SubResource("Resource_o558d")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
@@ -73,7 +72,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_41dnb"]
 script = ExtResource("2_8agjp")
 name = "Thunder Jolt"
-description = "Flip a coin. If tails, Electrike does 10 damage to itself."
 attack_cost = ExtResource("7_lrr1f")
 attack_data = SubResource("Resource_uniyw")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

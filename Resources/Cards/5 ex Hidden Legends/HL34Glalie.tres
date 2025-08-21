@@ -14,14 +14,16 @@
 
 [sub_resource type="Resource" id="Resource_womou"]
 script = ExtResource("7_sk1pa")
+choosing = 4
+mode = "Add"
+ask = ExtResource("6_f8edd")
+how_many = 1
+choose_num = -1
 turn_delay = -1
 prevent_KO = false
-mode = "Add"
-how_many = 1
-choosing = 4
 anyway_u_like = false
-choose_num = -1
-ask = ExtResource("6_f8edd")
+with_leftover = "None"
+leftover_anyway = false
 vary_choose_num = false
 plus = true
 modifier = 1
@@ -61,7 +63,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_belp5"]
 script = ExtResource("2_1538r")
 name = "Heavy Blizzard"
-description = "Flip a coin. If heads, put 1 damage counter on each of your opponent's Benched Pokémon."
 attack_cost = ExtResource("3_sxaxw")
 attack_data = SubResource("Resource_7qsaa")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

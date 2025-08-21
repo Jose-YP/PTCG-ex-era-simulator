@@ -7,6 +7,5 @@
 [resource]
 script = ExtResource("5_ipq5w")
 name = "Fireworks"
-description = "Flip a coin. If tails, discard a {Fire} Energy card attached to [name]."
 attack_cost = ExtResource("1_t1l2h")
 attack_data = ExtResource("2_aaaww")

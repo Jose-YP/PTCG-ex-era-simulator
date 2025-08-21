@@ -15,7 +15,6 @@
 [sub_resource type="Resource" id="Resource_5jfgs"]
 script = ExtResource("2_1u2xo")
 name = "Confusion Gas"
-description = ""
 attack_cost = ExtResource("3_5roqo")
 attack_data = ExtResource("4_6jk14")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
@@ -48,7 +47,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_fevx1"]
 script = ExtResource("2_1u2xo")
 name = "Poison Smog"
-description = "Each Defending Pokémon is now Poisoned. Does 10 damage to each of your opponent's Benched Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
 attack_cost = ExtResource("5_nfus7")
 attack_data = SubResource("Resource_fg5ir")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

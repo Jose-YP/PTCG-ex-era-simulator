@@ -19,14 +19,16 @@
 
 [sub_resource type="Resource" id="Resource_wmae1"]
 script = ExtResource("10_fryll")
+choosing = 4
+mode = "Add"
+ask = ExtResource("4_uaib2")
+how_many = 1
+choose_num = -1
 turn_delay = -1
 prevent_KO = false
-mode = "Add"
-how_many = 1
-choosing = 4
 anyway_u_like = false
-choose_num = -1
-ask = ExtResource("4_uaib2")
+with_leftover = "None"
+leftover_anyway = false
 vary_choose_num = false
 plus = true
 modifier = 1
@@ -92,21 +94,22 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_j1gr8"]
 script = ExtResource("2_uaib2")
 name = "Bouncy Move"
-description = "You may put up to 5 damage counters on [name]. If you do, this attack does 50 damage plus 10 more damage for each damage counter you put on [name] in this way."
 attack_cost = ExtResource("3_6ro4m")
 attack_data = SubResource("Resource_0dhaj")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_6lcpf"]
 script = ExtResource("10_fryll")
+choosing = 4
+mode = "Remove"
+ask = ExtResource("9_rpbfj")
+how_many = 1
+choose_num = -1
 turn_delay = -1
 prevent_KO = false
-mode = "Remove"
-how_many = 1
-choosing = 4
 anyway_u_like = false
-choose_num = -1
-ask = ExtResource("9_rpbfj")
+with_leftover = "None"
+leftover_anyway = false
 vary_choose_num = false
 plus = true
 modifier = 1

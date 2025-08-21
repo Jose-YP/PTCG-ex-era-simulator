@@ -58,7 +58,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_x2vyq"]
 script = ExtResource("2_tudmd")
 name = "Hyper Pump"
-description = "Does 20 damage plus 20 more damage for each basic Energy attached to Swampert ex but not used to pay for this attack's Energy cost. You can't add more than 80 damage in this way."
 attack_cost = ExtResource("3_66xai")
 attack_data = SubResource("Resource_b53wu")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
@@ -118,7 +117,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_s6isa"]
 script = ExtResource("2_tudmd")
 name = "Crushing Wave"
-description = "Choose 1 of your opponent's Pokémon. This attack does 40 damage to that Pokémon. After doing damage, flip a coin. If heads, your opponent discards an Energy card, if any, attached to that Pokémon. (Don't apply Weakness and Resistance to Benched Pokémon.)"
 attack_cost = ExtResource("3_66xai")
 attack_data = SubResource("Resource_sc2gf")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

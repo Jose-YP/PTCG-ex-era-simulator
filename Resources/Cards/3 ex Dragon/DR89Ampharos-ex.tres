@@ -41,21 +41,22 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_3i55a"]
 script = ExtResource("2_tsrw2")
 name = "Gigavolt"
-description = "Flip a coin. If heads, this attack does 40 damage plus 30 more damage. If tails, the Defending Pokémon is now Paralyzed."
 attack_cost = ExtResource("3_i1guk")
 attack_data = SubResource("Resource_tvn5v")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_ps12c"]
 script = ExtResource("8_xl4na")
+choosing = 4
+mode = "Add"
+ask = ExtResource("7_50r5l")
+how_many = 1
+choose_num = -1
 turn_delay = -1
 prevent_KO = false
-mode = "Add"
-how_many = 1
-choosing = 4
 anyway_u_like = false
-choose_num = -1
-ask = ExtResource("7_50r5l")
+with_leftover = "None"
+leftover_anyway = false
 vary_choose_num = false
 plus = true
 modifier = 1

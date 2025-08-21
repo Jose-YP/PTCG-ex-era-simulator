@@ -33,7 +33,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_vf4gr"]
 script = ExtResource("2_6c4g7")
 name = "Battle Blast"
-description = "Does 40 damage plus 10 more damage for each {Fighting} Energy attached to [name]."
 attack_cost = ExtResource("4_yvfsv")
 attack_data = SubResource("Resource_7g1qx")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

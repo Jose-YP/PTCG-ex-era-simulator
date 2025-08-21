@@ -14,14 +14,16 @@
 
 [sub_resource type="Resource" id="Resource_enm5x"]
 script = ExtResource("2_3unk6")
+choosing = 4
+mode = "Remove"
+ask = ExtResource("3_jdcdt")
+how_many = 2
+choose_num = -1
 turn_delay = -1
 prevent_KO = false
-mode = "Remove"
-how_many = 2
-choosing = 4
 anyway_u_like = false
-choose_num = -1
-ask = ExtResource("3_jdcdt")
+with_leftover = "None"
+leftover_anyway = false
 vary_choose_num = false
 plus = false
 modifier = 1
@@ -60,7 +62,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_fb5g2"]
 script = ExtResource("4_e8roy")
 name = "Healing Egg"
-description = "Remove 2 damage counters (1 if there is only 1) from each of your Pokémon. Remove no damage counters from [name]."
 attack_cost = ExtResource("6_y6f8k")
 attack_data = SubResource("Resource_vckkl")
 
@@ -86,7 +87,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_u7vp4"]
 script = ExtResource("4_e8roy")
 name = "Double-edge"
-description = "Chansey ex does 60 damage to itself."
 attack_cost = ExtResource("8_xup8b")
 attack_data = SubResource("Resource_4jmuw")
 

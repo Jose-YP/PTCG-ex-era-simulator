@@ -43,7 +43,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_uj1vo"]
 script = ExtResource("2_v238j")
 name = "Lazy Punch"
-description = "[name] can't attack during your next turn."
 attack_cost = ExtResource("3_66svf")
 attack_data = SubResource("Resource_3seqx")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

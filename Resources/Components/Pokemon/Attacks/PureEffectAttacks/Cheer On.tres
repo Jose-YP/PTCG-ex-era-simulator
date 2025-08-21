@@ -40,7 +40,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [resource]
 script = ExtResource("5_cylrm")
 name = "Cheer On"
-description = "Remove 1 damage counter from each of your Pokémon (including [name])."
 attack_cost = ExtResource("1_n5j2j")
 attack_data = SubResource("Resource_q4a0m")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

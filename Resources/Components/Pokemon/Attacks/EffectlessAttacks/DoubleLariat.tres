@@ -29,6 +29,5 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [resource]
 script = ExtResource("5_d0el0")
 name = "Double Lariat"
-description = "Flip 2 coins. This attack does 70 damage times the number of heads."
 attack_cost = ExtResource("1_42ux7")
 attack_data = SubResource("Resource_1stg2")

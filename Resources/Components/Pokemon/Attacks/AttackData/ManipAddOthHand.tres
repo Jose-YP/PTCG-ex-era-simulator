@@ -9,14 +9,16 @@
 
 [sub_resource type="Resource" id="Resource_jq8qk"]
 script = ExtResource("4_8nkvr")
+choosing = 4
+mode = "Add"
+ask = ExtResource("2_vjmcw")
+how_many = 1
+choose_num = -1
 turn_delay = -1
 prevent_KO = false
-mode = "Add"
-how_many = 1
-choosing = 4
 anyway_u_like = false
-choose_num = -1
-ask = ExtResource("2_vjmcw")
+with_leftover = "None"
+leftover_anyway = false
 vary_choose_num = false
 plus = true
 comparator = ExtResource("3_doyh2")

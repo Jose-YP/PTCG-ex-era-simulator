@@ -20,8 +20,8 @@ var away_targets: Array[Array]
 var source_stack: Array[bool]
 var used_turn_abilities: Array[String]
 var used_emit_abilities: Array[String]
+var side_changes: Dictionary[bool, Dictionary] = {true:{}, false:{}}
 var cpu_players: Array[CPU_Player]
-var options: ItemOptions
 
 #endregion
 #--------------------------------------
@@ -29,6 +29,7 @@ var options: ItemOptions
 func _ready() -> void:
 	Globals.fundies = self
 	SignalBus.end_turn.connect(next_turn)
+	SignalBus.slot_change_failed.connect(remove_change)
 
 #--------------------------------------
 #region PRINT
@@ -163,13 +164,6 @@ func get_poke_slots(sides: Consts.SIDES = Consts.SIDES.BOTH,
 		array.append(ui_slot.connected_slot)
 	return array
 
-func check_ask_on_all(ask: SlotAsk) -> bool:
-	for slot in get_poke_slots():
-		if ask.check_ask(slot):
-			return true
-	
-	return false
-
 #region TARGET SOURCE MANAGEMENT
 func record_attack_src_trg(is_home: bool, atk_trg: Array, def_trg: Array):
 	source_stack.append(is_home)
@@ -218,6 +212,46 @@ func print_src_trg():
 	print_slots(Consts.SIDES.BOTH, Consts.SLOTS.TARGET, "TARGET SLOTS: ")
 
 #endregion
+#endregion
+#--------------------------------------
+
+#--------------------------------------
+#region SLOT CHANGE MANAGEMENT
+func apply_change(ask: SlotAsk, applying: SlotChange):
+	for side in Globals.full_ui.sides:
+		if side == Globals.full_ui.get_const_side(ask.side_target) and\
+		not applying in side_changes[side.home]:
+			var which_changes = side_changes[side.home]
+			which_changes[applying] = applying.duration
+			Globals.full_ui.display_changes(side.home, which_changes.keys())
+
+func remove_change(removing: SlotChange):
+	for home in side_changes:
+		side_changes[home].erase(removing)
+		Globals.full_ui.display_changes(home, side_changes[home].keys())
+
+func full_check_stat_buff(slot: PokeSlot, stat: Consts.STAT_BUFFS, after: bool = true) -> int:
+	var total: int = 0
+	
+	print(side_changes[slot.is_home()])
+	
+	total += check_stat_buff(side_changes[slot.is_home()], stat, after)
+	total += check_stat_buff(slot.changes, stat, after)
+	
+	return total
+
+func check_stat_buff(arr: Dictionary, stat: Consts.STAT_BUFFS, after: bool) -> int:
+	var total: int = 0
+	for change in arr:
+		if change is Buff:
+			change = change as Buff
+			var after_allowed: bool = change.after_weak_res == after and \
+			(stat != Consts.STAT_BUFFS.HP or stat != Consts.STAT_BUFFS.RETREAT)
+			
+			if after_allowed and change.has_stat(stat):
+				total += change.get_stat(stat)
+	
+	return total
 #endregion
 #--------------------------------------
 

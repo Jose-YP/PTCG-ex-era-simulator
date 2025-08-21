@@ -81,7 +81,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [resource]
 script = ExtResource("8_kubfe")
 name = "Pester"
-description = "If the Defending Pokémon is affected by a Special Condition, this attack does 20 damage plus 20 more damage."
 attack_cost = ExtResource("1_uulp0")
 attack_data = SubResource("Resource_5ay7w")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

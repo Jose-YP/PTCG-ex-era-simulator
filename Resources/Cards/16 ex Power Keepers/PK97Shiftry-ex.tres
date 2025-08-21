@@ -59,7 +59,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_445p5"]
 script = ExtResource("2_1ja4p")
 name = "Skill Hack"
-description = "Look at your opponent's hand and choose a Basic Pokémon or Evolution card you find there. Choose 1 of that Pokémon's attacks. Skill Hack copies that attack except for its Energy cost. (You must still do anything else required for that attack.) (No matter what type that Pokémon is, [name]'s type is still {Darkness}.) [name] performs that attack."
 attack_cost = ExtResource("3_4nav6")
 attack_data = SubResource("Resource_0pypu")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
@@ -129,7 +128,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_8dgnp"]
 script = ExtResource("2_1ja4p")
 name = "Dirge"
-description = "Does 60 damage to each of your opponent's Benched Pokémon that has the same name as the Defending Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
 attack_cost = ExtResource("9_yxknq")
 attack_data = SubResource("Resource_x14nr")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

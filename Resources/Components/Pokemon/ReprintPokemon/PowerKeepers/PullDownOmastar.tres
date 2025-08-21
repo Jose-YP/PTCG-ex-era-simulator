@@ -14,7 +14,6 @@
 [sub_resource type="Resource" id="Resource_cd5bo"]
 script = ExtResource("1_30u5g")
 name = "Pull Down"
-description = "If your opponent has any Evolved Pokémon in play, remove the highest Stage Evolution card from each of them and put those cards back into his or her hand."
 attack_cost = ExtResource("2_5jtsu")
 attack_data = ExtResource("3_mblh6")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
@@ -61,7 +60,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_67c8f"]
 script = ExtResource("1_30u5g")
 name = ""
-description = "Does 30 damage plus 20 more damage for each {Water} Energy attached to [name] but not used to pay for this attack's Energy cost. You can't add more than 40 damage in this way."
 attack_cost = ExtResource("2_5jtsu")
 attack_data = SubResource("Resource_tb4bi")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

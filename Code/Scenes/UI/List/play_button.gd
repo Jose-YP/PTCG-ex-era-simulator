@@ -118,10 +118,10 @@ func _gui_input(event):
 			or stack_act == Consts.STACK_ACT.MIMIC:
 				select.emit()
 			elif stack_act != Consts.STACK_ACT.LOOK:
-				if Globals.fundies.options:
+				if parent.options:
 					await Globals.full_ui.remove_top_ui()
 				if not Globals.checking:
-					Globals.fundies.options = show_options()
+					parent.options = show_options()
 			elif stack_act == Consts.STACK_ACT.LOOK:
 				Globals.show_card(card, self)
 	if event.is_action_pressed("Check"):

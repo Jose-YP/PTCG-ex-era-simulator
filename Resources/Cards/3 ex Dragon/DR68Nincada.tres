@@ -39,7 +39,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_saaro"]
 script = ExtResource("2_qmke1")
 name = "Leech Life"
-description = "After your attack, remove from [name] the number of damage counters equal to the damage you did to the Defending Pokémon. If [name] has fewer damage counters than that, remove all of them. "
 attack_cost = ExtResource("3_hcg8i")
 attack_data = SubResource("Resource_0b6ve")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

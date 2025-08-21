@@ -7,6 +7,5 @@
 [resource]
 script = ExtResource("4_b727n")
 name = "Thundershock"
-description = "Flip a coin. If heads, the Defending Pokémon is now Paralyzed."
 attack_cost = ExtResource("1_n3jpl")
 attack_data = ExtResource("2_ja1rb")

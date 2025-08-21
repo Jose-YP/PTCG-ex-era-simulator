@@ -21,13 +21,12 @@ shader_parameter/shine_size = 0.12
 shader_parameter/shine_bool = false
 
 [node name="ActivePokemon" type="Control"]
+custom_minimum_size = Vector2(204, 164)
 layout_mode = 3
-anchor_left = -0.029
-anchor_right = 0.208
-anchor_bottom = 0.226
-offset_left = 0.320002
-offset_right = 0.360001
-offset_bottom = 0.279999
+anchor_right = 0.189
+anchor_bottom = 0.228
+offset_right = -0.12001
+offset_bottom = -0.160004
 script = ExtResource("1_c5ua0")
 
 [node name="Main" type="VBoxContainer" parent="."]
@@ -95,19 +94,6 @@ offset_bottom = 28.0
 bbcode_enabled = true
 text = "+"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="TrainerAttached"]
-layout_mode = 2
-size_flags_horizontal = 4
-
-[node name="ChangeDisplay" parent="TrainerAttached/HBoxContainer" instance=ExtResource("6_mc7hj")]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="TrainerAttached/HBoxContainer"]
-layout_mode = 2
-theme_override_constants/margin_right = 17
-
 [node name="EnergyTypes" parent="." instance=ExtResource("6_nykcf")]
 unique_name_in_owner = true
 layout_mode = 0
@@ -161,7 +147,13 @@ offset_bottom = 56.0
 [node name="Conditions" parent="." instance=ExtResource("9_0ajf4")]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 187.0
-offset_top = 40.0
-offset_right = 219.0
-offset_bottom = 216.0
+offset_left = 179.0
+offset_top = 55.0
+offset_right = 247.0
+offset_bottom = 159.0
+
+[node name="ChangeDisplay" parent="Conditions" instance=ExtResource("6_mc7hj")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+side_version = true

@@ -41,7 +41,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_8nn0l"]
 script = ExtResource("2_wnc44")
 name = "Gesture"
-description = "Choose 1 of your opponent's Benched Pokémon and switch it with the Defending Pokémon. Your opponent chooses the Defending Pokémon to switch."
 attack_cost = ExtResource("3_qsele")
 attack_data = SubResource("Resource_8hwmw")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
@@ -49,7 +48,6 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_nm5gp"]
 script = ExtResource("2_wnc44")
 name = "Moon Kick"
-description = ""
 attack_cost = ExtResource("7_1y6um")
 attack_data = ExtResource("8_qr258")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

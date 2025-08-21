@@ -11,7 +11,6 @@
 [sub_resource type="Resource" id="Resource_bw660"]
 script = ExtResource("2_ash2e")
 name = "Metal Claw"
-description = ""
 attack_cost = ExtResource("4_bw660")
 attack_data = ExtResource("5_ytfqf")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

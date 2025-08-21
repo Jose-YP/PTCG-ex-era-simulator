@@ -10,7 +10,6 @@
 [sub_resource type="Resource" id="Resource_wo33v"]
 script = ExtResource("1_dl316")
 name = "Poison Needle"
-description = "Flip a coin. If heads, the Defending Pokémon is now Poisoned."
 attack_cost = ExtResource("3_rosl1")
 attack_data = ExtResource("4_5kbcy")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

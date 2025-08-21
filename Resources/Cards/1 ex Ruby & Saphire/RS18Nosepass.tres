@@ -47,7 +47,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_2rmnp"]
 script = ExtResource("2_dtigs")
 name = "Invisible Hand"
-description = "If any of your opponent's Active Pokémon are Evolved Pokémon, search your deck for any 1 card and put it into your hand. Shuffle your deck afterward."
 attack_cost = ExtResource("3_dtigs")
 attack_data = SubResource("Resource_mkraj")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
@@ -85,7 +84,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_clivt"]
 script = ExtResource("2_dtigs")
 name = "Repulsion"
-description = "Flip a coin. If heads, your opponent returns the Defending Pokémon and all cards attached to it to his or her hand. (If your opponent doesn't have any Benched Pokémon or other Active Pokémon, this attack does nothing.)"
 attack_cost = ExtResource("8_hhkog")
 attack_data = SubResource("Resource_vbv8m")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

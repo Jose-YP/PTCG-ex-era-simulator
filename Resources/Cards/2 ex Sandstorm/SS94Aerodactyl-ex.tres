@@ -18,7 +18,6 @@
 [sub_resource type="Resource" id="Resource_5i7ce"]
 script = ExtResource("2_qw1xc")
 name = "Supersonic"
-description = "The Defending Pokémon is now Confused."
 attack_cost = ExtResource("3_75t4a")
 attack_data = ExtResource("4_clu2s")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
@@ -26,7 +25,6 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_mn71y"]
 script = ExtResource("2_qw1xc")
 name = "Wing Attack"
-description = ""
 attack_cost = ExtResource("5_qao1b")
 attack_data = ExtResource("6_6tm74")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
@@ -47,7 +45,6 @@ metadata/_custom_type_script = "uid://bics3dumv7avj"
 script = ExtResource("11_ga2yi")
 side = 2
 slot = 4
-duration = -1
 no_weakness = false
 no_resistance = false
 instead_of_damage = false
@@ -56,6 +53,8 @@ attack = 0
 power = 0
 retreat_duration = 1
 disable_retreat = false
+application = "Slot"
+duration = -1
 metadata/_custom_type_script = "uid://c0ishgbxk63dg"
 
 [sub_resource type="Resource" id="Resource_xpjov"]

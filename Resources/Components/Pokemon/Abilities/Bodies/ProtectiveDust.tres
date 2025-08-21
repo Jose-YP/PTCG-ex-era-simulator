@@ -1,25 +1,22 @@
 [gd_resource type="Resource" script_class="Ability" load_steps=7 format=3 uid="uid://oka7raf3a00o"]
 
 [ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="1_1c852"]
+[ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/BuffMaker.gd" id="2_1c852"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_7ign2"]
 [ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="3_1c852"]
-[ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/BuffMaker.gd" id="5_eefa7"]
 
 [sub_resource type="Resource" id="Resource_f8x2q"]
-script = ExtResource("5_eefa7")
+script = ExtResource("2_1c852")
 description = "Immune to all effects of attacks, except damage."
-application = "Slot"
-stackable = true
-recieves = ExtResource("1_1c852")
-duration = -1
+stackable = false
 after_weak_res = true
-modify = "HP"
 operation = "Replace"
 add_hp = 0
 attack = 0
 defense = 0
 retreat_change = 0
 cost_modifier = "Add"
+modify = 0
 plus = false
 condition_immune = 0
 attack_effect_immune = true
@@ -33,6 +30,9 @@ weakness = false
 resistance = false
 effects = false
 attack_names = Array[String]([])
+application = "Slot"
+recieves = ExtResource("1_1c852")
+duration = -1
 metadata/_custom_type_script = "uid://coojhwe6m20gd"
 
 [sub_resource type="Resource" id="Resource_dk53k"]

@@ -21,7 +21,8 @@ script = ExtResource("1_r5w7o")
 texture_filter = 1
 layout_mode = 2
 texture = ExtResource("2_mw0f0")
-expand_mode = 3
+expand_mode = 5
+stretch_mode = 4
 metadata/_tab_index = 0
 
 [node name="Defense" type="TextureRect" parent="."]
@@ -29,7 +30,8 @@ visible = false
 texture_filter = 1
 layout_mode = 2
 texture = ExtResource("3_5h7q7")
-expand_mode = 3
+expand_mode = 5
+stretch_mode = 4
 metadata/_tab_index = 1
 
 [node name="HP" type="TextureRect" parent="."]
@@ -37,7 +39,8 @@ visible = false
 texture_filter = 1
 layout_mode = 2
 texture = ExtResource("4_4fo2o")
-expand_mode = 3
+expand_mode = 5
+stretch_mode = 4
 metadata/_tab_index = 2
 
 [node name="Energy" type="TextureRect" parent="."]
@@ -45,7 +48,8 @@ visible = false
 texture_filter = 1
 layout_mode = 2
 texture = ExtResource("5_7v6oo")
-expand_mode = 3
+expand_mode = 5
+stretch_mode = 4
 metadata/_tab_index = 3
 
 [node name="Disable" type="TextureRect" parent="."]
@@ -53,7 +57,8 @@ visible = false
 texture_filter = 1
 layout_mode = 2
 texture = ExtResource("6_mw0f0")
-expand_mode = 3
+expand_mode = 5
+stretch_mode = 4
 metadata/_tab_index = 4
 
 [node name="ETC" type="TextureRect" parent="."]
@@ -61,5 +66,6 @@ visible = false
 texture_filter = 1
 layout_mode = 2
 texture = ExtResource("6_s0nr1")
-expand_mode = 3
+expand_mode = 5
+stretch_mode = 4
 metadata/_tab_index = 5

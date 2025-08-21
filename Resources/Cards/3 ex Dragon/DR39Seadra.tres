@@ -56,7 +56,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_v7ycq"]
 script = ExtResource("2_80g2d")
 name = "Energy Cannon"
-description = "Does 20 damage plus 10 more damage for each Energy attached to [name] but not used to pay for this attack's Energy cost. You can't add more than 20 damage in this way."
 attack_cost = ExtResource("3_nhmic")
 attack_data = SubResource("Resource_f080j")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
@@ -84,7 +83,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_1kd2u"]
 script = ExtResource("2_80g2d")
 name = "Water Arrow"
-description = "Choose 1 of your opponent's Pokémon. This attack does 30 damage to that Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
 attack_cost = ExtResource("9_susmq")
 attack_data = SubResource("Resource_o0xmt")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

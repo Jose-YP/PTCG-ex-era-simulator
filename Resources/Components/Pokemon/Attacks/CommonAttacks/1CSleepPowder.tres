@@ -7,7 +7,6 @@
 [resource]
 script = ExtResource("3_o2x6b")
 name = "Sleep Powder"
-description = "The Defending Pokémon is now Asleep."
 attack_cost = ExtResource("1_tdfue")
 attack_data = ExtResource("2_fv41w")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

@@ -16,7 +16,6 @@
 [sub_resource type="Resource" id="Resource_k58af"]
 script = ExtResource("6_432f8")
 description = "Slash now deals 90 damage."
-application = "Slot"
 stackable = false
 against = ExtResource("5_ha6lf")
 after_weak_res = true
@@ -40,6 +39,7 @@ weakness = false
 resistance = false
 effects = false
 attack_names = Array[String](["Slash"])
+application = "Slot"
 duration = 2
 metadata/_custom_type_script = "uid://coojhwe6m20gd"
 

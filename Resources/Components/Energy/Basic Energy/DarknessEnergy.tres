@@ -76,7 +76,6 @@ metadata/_custom_type_script = "uid://b85jmc7067bjc"
 [sub_resource type="Resource" id="Resource_j3iii"]
 script = ExtResource("8_xkj3l")
 description = "Deal +10 damage before weak/res"
-application = "Slot"
 stackable = true
 after_weak_res = false
 operation = "Replace"
@@ -99,6 +98,7 @@ weakness = false
 resistance = false
 effects = false
 attack_names = Array[String]([])
+application = "Slot"
 recieves = ExtResource("8_7a8tk")
 duration = -1
 

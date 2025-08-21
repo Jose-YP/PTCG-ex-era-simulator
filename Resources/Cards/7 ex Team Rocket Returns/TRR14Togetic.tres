@@ -19,7 +19,6 @@
 [sub_resource type="Resource" id="Resource_nvprp"]
 script = ExtResource("2_5assg")
 name = "Dive"
-description = ""
 attack_cost = ExtResource("3_kjfcm")
 attack_data = ExtResource("4_nq5u1")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
@@ -68,7 +67,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_2lbwc"]
 script = ExtResource("2_5assg")
 name = "Rainbow Moves"
-description = "Choose 1 of your opponent's Benched Pokémon's attacks. Rainbow Moves copies that attack except for its Energy cost. (You must still do anything else required for that attack.) (No matter what type that Pokémon is, Togetic's type is still Colorless.) Togetic performs that attack."
 attack_cost = ExtResource("5_nq5u1")
 attack_data = SubResource("Resource_4iocf")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

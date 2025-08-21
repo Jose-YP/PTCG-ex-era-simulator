@@ -16,21 +16,22 @@
 [sub_resource type="Resource" id="Resource_s4ydi"]
 script = ExtResource("2_0207o")
 name = "Dazzle Blast"
-description = " Flip a coin. If heads, the Defending Pokémon is now Confused."
 attack_cost = ExtResource("3_2ivix")
 attack_data = ExtResource("4_lfm50")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_j62rm"]
 script = ExtResource("7_lfm50")
+choosing = 4
+mode = "Remove"
+ask = ExtResource("6_2ivix")
+how_many = 1
+choose_num = -1
 turn_delay = -1
 prevent_KO = false
-mode = "Remove"
-how_many = 1
-choosing = 4
 anyway_u_like = false
-choose_num = -1
-ask = ExtResource("6_2ivix")
+with_leftover = "None"
+leftover_anyway = false
 vary_choose_num = false
 plus = true
 modifier = 1
@@ -69,7 +70,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_ksdea"]
 script = ExtResource("2_0207o")
 name = "Healing Wave"
-description = "Remove 1 damage counter from each of your Active Pokémon."
 attack_cost = ExtResource("5_j62rm")
 attack_data = SubResource("Resource_iggwp")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

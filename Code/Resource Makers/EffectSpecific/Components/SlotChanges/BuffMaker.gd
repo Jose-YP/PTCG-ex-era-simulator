@@ -4,7 +4,7 @@ class_name Buff
 
 @export_multiline var description: String
 
-@export_enum("Slot", "Side") var application: String = "Slot"
+
 @export var stackable: bool = false
 ##If against this type of slot use these buffs, if null return [code]true
 @export var against: SlotAsk
@@ -54,20 +54,62 @@ class_name Buff
 
 signal finished
 
-func _init() -> void:
-	if attack_effect_immune:
-		pass
-
 func play_effect(reversable: bool = false, replace_num: int = -1) -> void:
 	print("PLAY BUFF ", self)
 	print(how_display())
 	#Who should have this effects applied?
-	var apply_to: Array[PokeSlot] = Globals.full_ui.get_ask_slots(recieves)
-	
-	for slot in apply_to:
-		slot.apply_slot_change(self)
-	
+	if application == "Slot":
+		var apply_to: Array[PokeSlot] = Globals.full_ui.get_ask_slots(recieves)
+		
+		for slot in apply_to:
+			slot.apply_slot_change(self)
+		
+	else:
+		Globals.fundies.apply_change(recieves, self)
 	finished.emit()
+	
+
+func has_stat(stat: Consts.STAT_BUFFS) -> bool:
+	match stat:
+		Consts.STAT_BUFFS.ATTACK:
+			return attack != 0
+		Consts.STAT_BUFFS.DEFENSE:
+			return defense != 0
+		Consts.STAT_BUFFS.HP:
+			return add_hp != 0
+		Consts.STAT_BUFFS.RETREAT:
+			return retreat_change != 0
+	return false
+
+func get_stat(stat: Consts.STAT_BUFFS) -> int:
+	var final: int = 0
+	
+	match stat:
+		Consts.STAT_BUFFS.ATTACK:
+			final = attack
+		Consts.STAT_BUFFS.DEFENSE:
+			final = defense
+		Consts.STAT_BUFFS.HP:
+			final = add_hp
+		Consts.STAT_BUFFS.RETREAT:
+			final = retreat_change
+	
+	if comparator:
+		var result: bool = false
+		match stat:
+			Consts.STAT_BUFFS.ATTACK:
+				result = modify & 1 != 0
+			Consts.STAT_BUFFS.DEFENSE:
+				result = modify & 1 != 0
+			Consts.STAT_BUFFS.HP:
+				result = modify & 1 != 0
+			Consts.STAT_BUFFS.RETREAT:
+				result = modify & 1 != 0
+		
+		if result:
+			final += comparator.start_comparision()
+	
+	return final
 
 func how_display() -> Dictionary[String, bool]:
 	var dict: Dictionary[String, bool]
@@ -107,13 +149,13 @@ func make_description() -> String:
 	var buffs: Array[String]
 	
 	if modify & 1 != 0:
-		buffs.append(str("HP ", get_stat_change(add_hp), add_hp))
+		buffs.append(str("HP ", get_stat_string(add_hp), add_hp))
 	if modify & 2 != 0:
-		buffs.append(str("Attack ", get_stat_change(attack), attack))
+		buffs.append(str("Attack ", get_stat_string(attack), attack))
 	if modify & 4 != 0:
-		buffs.append(str("Defense ", get_stat_change(attack), defense))
+		buffs.append(str("Defense ", get_stat_string(attack), defense))
 	if modify & 8 != 0:
-		buffs.append(str("Retreat Cost ", get_stat_change(attack), retreat_change))
+		buffs.append(str("Retreat Cost ", get_stat_string(attack), retreat_change))
 	
 	#Check Immunities
 	if not condition_immune == 0:
@@ -167,7 +209,7 @@ func make_description() -> String:
 	
 	return final
 
-func get_stat_change(stat: int) -> String:
+func get_stat_string(stat: int) -> String:
 	if operation == "Add" and stat < 0:
 		return "lowered by "
 	elif operation == "Add":

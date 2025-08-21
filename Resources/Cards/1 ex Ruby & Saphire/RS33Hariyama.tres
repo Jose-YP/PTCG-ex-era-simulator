@@ -14,7 +14,6 @@
 [sub_resource type="Resource" id="Resource_o6r1d"]
 script = ExtResource("4_6dlgm")
 name = "Shove"
-description = "Flip a coin. If heads, the Defending Pokémon is now Paralyzed."
 attack_cost = ExtResource("3_gyoku")
 attack_data = ExtResource("4_ou3qf")
 
@@ -41,7 +40,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_ju4ha"]
 script = ExtResource("4_6dlgm")
 name = "Slap Down"
-description = "Flip 2 coins. This attack does 40 damage plus 10 more damage for each heads."
 attack_cost = ExtResource("7_mxuf4")
 attack_data = SubResource("Resource_0wt8d")
 

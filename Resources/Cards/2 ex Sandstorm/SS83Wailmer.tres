@@ -14,7 +14,6 @@
 [sub_resource type="Resource" id="Resource_tdyj8"]
 script = ExtResource("2_6vpiu")
 name = "Rollout"
-description = ""
 attack_cost = ExtResource("3_58cyx")
 attack_data = ExtResource("4_qaeje")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
@@ -46,7 +45,6 @@ metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 [sub_resource type="Resource" id="Resource_ua0d7"]
 script = ExtResource("2_6vpiu")
 name = "Super Hypno Wave"
-description = "The Defending Pokémon is now Asleep."
 attack_cost = ExtResource("5_wn1sj")
 attack_data = SubResource("Resource_3ppn7")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

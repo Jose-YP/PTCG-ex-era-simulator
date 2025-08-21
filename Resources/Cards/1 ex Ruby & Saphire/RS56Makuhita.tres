@@ -12,7 +12,6 @@
 [sub_resource type="Resource" id="Resource_gcdy1"]
 script = ExtResource("2_npjpr")
 name = "Slap Push"
-description = ""
 attack_cost = ExtResource("3_gg827")
 attack_data = ExtResource("4_ui2xk")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
@@ -20,7 +19,6 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_gg827"]
 script = ExtResource("2_npjpr")
 name = "Lunge Out"
-description = ""
 attack_cost = ExtResource("5_4cmrj")
 attack_data = ExtResource("6_3sysq")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
