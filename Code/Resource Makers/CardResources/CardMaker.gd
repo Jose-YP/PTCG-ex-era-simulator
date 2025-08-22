@@ -60,6 +60,31 @@ func card_display() -> String:
 	return "NONE"
 #endregion
 
+func duplicate_deep() -> Base_Card:
+	var copy: Base_Card = duplicate(true)
+	
+	if pokemon_properties:
+		copy.pokemon_properties.attacks = []
+		for attack in pokemon_properties.attacks:
+			#Make duplicate_deep for Attack
+			copy.pokemon_properties.attacks.append(attack.duplicate(true))
+	
+	elif trainer_properties:
+		copy.trainer_properties.prompt_effects = []
+		for effect in trainer_properties.prompt_effects:
+			copy.trainer_properties.prompt_effects.append(effect.duplicate(true))
+		
+	elif energy_properties:
+		copy.energy_properties.prompt_effects = []
+		copy.energy_properties.attatch_effects = []
+		#Make duplicate Deep for EffectCollect arrays
+		for effect in energy_properties.prompt_effects:
+			copy.energy_properties.prompt_effects.append(effect.duplicate(true))
+		for effect in energy_properties.attatch_effects:
+			copy.energy_properties.attatch_effects.append(effect.duplicate(true))
+	
+	return copy
+
 func get_considered() -> String:
 	if pokemon_properties:
 		#Holon's mons will be considered pokemon before looking at energy properties

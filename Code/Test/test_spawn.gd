@@ -13,7 +13,7 @@ func _on_button_pressed() -> void:
 	for path in cards_path:
 		var card: Base_Card = ResourceLoader.load(directory+"/"+path)
 		cards.append(card)
-		if card.name == "Delcatty":
+		if card.name == "Aron":
 			pass
 		
 		if ToolBool.has_effect(card, effect_types):

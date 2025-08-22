@@ -48,11 +48,12 @@ func set_up(home: bool):
 		
 		#I don't know if this works, the duplicated resources don't seem to last
 		for en in new_slot.energy_cards:
-			var duplicated: Base_Card = en.duplicate()
+			var duplicated: Base_Card = en.duplicate_deep()
 			new_slot.register_energy_timer(duplicated)
 			new_arr.append(duplicated)
 			
 		new_slot.energy_cards = new_arr
+		new_slot.current_card = new_slot.current_card.duplicate_deep()
 		ui.insert_slot(new_slot, temp_side.slots[slot])
 		stacks.account_for_slot(new_slot)
 	

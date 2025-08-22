@@ -41,8 +41,17 @@ class_name PromptAsk
 var formal_answer: bool
 
 #region PROMPT CHECKS
+func generic_check() -> bool:
+	if has_before_prompt():
+		return await before_activating()
+	if has_check_prompt():
+		return check_prompt()
+	if has_prompt_question():
+		return await check_prompt_question()
+	return false
+
 #Any prompts that can change in the moment
-func check_prompt():
+func check_prompt() -> bool:
 	var result: bool = false
 	
 	#print("CHECKING COMPARATOR ", comparator.first_comparison)
@@ -52,14 +61,14 @@ func check_prompt():
 	
 	return result
 
-func num_input_prompt():
+func num_input_prompt() -> int:
 	print("CHECKING COMPARATOR ", comparator.first_comparison)
 	var found = await comparator.input_comparison()
 	print(found)
 	
 	return found
 
-func check_prompt_question():
+func check_prompt_question() -> bool:
 	SignalBus.prompt_answered.connect(return_prompt_answered)
 	
 	var prompt_ask: ColorRect = Consts.prompt_answer.instantiate()
@@ -98,7 +107,7 @@ func has_num_input() -> bool:
 		return comparator.has_input()
 	return false
 
-func return_prompt_answered(result: bool):
+func return_prompt_answered(result: bool) -> void:
 	formal_answer = result
 
 func has_check_prompt() -> bool:

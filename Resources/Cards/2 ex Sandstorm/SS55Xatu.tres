@@ -102,7 +102,7 @@ metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
 script = ExtResource("1_rofiv")
-name = ""
+name = "Xatu"
 image = ExtResource("1_i1nil")
 illustrator = "Midori Harada"
 number = 55

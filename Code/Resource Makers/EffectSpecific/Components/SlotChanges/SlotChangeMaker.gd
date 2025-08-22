@@ -17,3 +17,6 @@ class_name SlotChange
 ##[br]-2 means forever, no conditions need to be checked afterwards
 ##[br]otherwise the effect lasts for this many turns 
 @export var duration: int = -1
+
+func _init() -> void:
+	resource_local_to_scene = true

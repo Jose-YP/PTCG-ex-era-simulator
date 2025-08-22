@@ -391,7 +391,8 @@ func knock_out() -> void:
 	await ability_emit(ko)
 
 func add_damage(attacker: PokeSlot, base_ammount: int) -> void:
-	if not is_filled(): return
+	if not is_filled() or base_ammount == 0: return
+	
 	var final_ammount = base_ammount + \
 	Globals.fundies.full_check_stat_buff(attacker, Consts.STAT_BUFFS.ATTACK, false)\
 	- Globals.fundies.full_check_stat_buff(self, Consts.STAT_BUFFS.DEFENSE, false)
@@ -469,6 +470,8 @@ func add_energy(energy_card: Base_Card):
 	signaless_attatch_energy(energy_card)
 	
 	Globals.fundies.record_single_src_trg(self)
+	for effect in energy_card.energy_properties.attatch_effects:
+		effect.effect_collect_play()
 	await ability_emit(attatch_en_signal, energy_card.energy_properties.get_current_provide())
 	Globals.fundies.remove_top_source_target()
 
@@ -484,6 +487,7 @@ func register_energy_timer(card: Base_Card):
 	if card.energy_properties.turns != -1:
 		energy_timers[card] = card.energy_properties.turns
 
+#Get whatever the energy provides both in type, number and effects
 func count_energy() -> void:
 	#Count if energy cars provided give the right energy for each attack
 	#Each attackm will be treated differently
@@ -493,6 +497,7 @@ func count_energy() -> void:
 	 "Lightning": 0, "Psychic":0, "Fighting":0 ,"Darkness":0, "Metal":0,
 	 "Colorless":0, "Magma":0, "Aqua":0, "Dark Metal":0, "React": 0, 
 	 "FF": 0, "GL": 0, "WP": 0, "Rainbow":0}
+	Globals.fundies.record_single_src_trg(self)
 	
 	for energy in energy_cards:
 		if energy.energy_properties.attatched_to != self:
@@ -500,6 +505,12 @@ func count_energy() -> void:
 		var en_provide: EnData = energy.energy_properties.get_current_provide()
 		var en_name: String = en_provide.get_string()
 		attached_energy[en_name] += en_provide.number
+		
+		print("Checking ", energy.name, energy, " in ", get_card_name())
+		for effect in energy.energy_properties.prompt_effects:
+			effect.effect_collect_play()
+	
+	Globals.fundies.remove_top_source_target()
 
 func get_energy_strings() -> Array[String]:
 	var energy_stirngs: Array[String]

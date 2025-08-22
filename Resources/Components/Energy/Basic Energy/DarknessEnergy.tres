@@ -1,9 +1,9 @@
-[gd_resource type="Resource" script_class="Energy" load_steps=18 format=3 uid="uid://cf28iibs06s23"]
+[gd_resource type="Resource" script_class="Energy" load_steps=17 format=3 uid="uid://cf28iibs06s23"]
 
 [ext_resource type="Resource" uid="uid://d2ts8ex3x0duw" path="res://Resources/Components/EnData/Darkness.tres" id="1_phikd"]
 [ext_resource type="Script" uid="uid://caj1pm8erar2a" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="2_ipvd8"]
-[ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="2_ya82p"]
 [ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="3_agjcc"]
+[ext_resource type="Resource" uid="uid://bcbidc3f2g8py" path="res://Resources/Components/Effects/Asks/Types/SelfIsDarkness.tres" id="3_xkj3l"]
 [ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="4_agjcc"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_rhnr6"]
 [ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="4_xkj3l"]
@@ -11,41 +11,11 @@
 [ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="8_7a8tk"]
 [ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/BuffMaker.gd" id="8_xkj3l"]
 
-[sub_resource type="Resource" id="Resource_iejbx"]
-script = ExtResource("2_ya82p")
-boolean_type = "Or"
-previous_src_trg = false
-side_target = 4
-slot_target = 1
-specifically = Array[String]([])
-knocked_out = false
-tool_attatched = false
-comparison_type = 1
-max_hp = -10
-damage_taken = -10
-retreat_cost = -1
-evo_type = "Don't Check"
-stage = 7
-rare_candy = false
-class_inclusive = true
-pokemon_class = 32
-owner_inclusive = true
-pokemon_owner = 31
-type_inclusive = true
-pokemon_type = 576
-energy_inclusive = true
-check_cards = true
-energy_attatched = -1
-energy_class = "Any"
-check_ability = false
-contained_abilities = 3
-specific_abilities = Array[String]([])
-metadata/_custom_type_script = "uid://mkjynqda7q5g"
-
 [sub_resource type="Resource" id="Resource_7a8tk"]
+resource_local_to_scene = true
 script = ExtResource("3_agjcc")
 which = "Slot"
-ask = SubResource("Resource_iejbx")
+ask = ExtResource("3_xkj3l")
 slot_vars = "current_card"
 cap = -1
 metadata/_custom_type_script = "uid://vjn146j3ayd6"
@@ -55,7 +25,7 @@ script = ExtResource("4_xkj3l")
 comparision_type = "Equals"
 first_comparison = SubResource("Resource_7a8tk")
 compare_to = "Const"
-second_constant = 0
+second_constant = 1
 operate_w_constant = "None"
 metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 

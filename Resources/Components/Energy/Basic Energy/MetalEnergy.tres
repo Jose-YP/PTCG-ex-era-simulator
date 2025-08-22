@@ -9,11 +9,12 @@
 [ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="5_tpgwn"]
 
 [sub_resource type="Resource" id="Resource_w1pwm"]
+resource_local_to_scene = true
 script = ExtResource("3_b0id2")
 description = "Reduce damage by 10 after weak/res"
 stackable = true
 after_weak_res = true
-operation = "Replace"
+operation = "Add"
 add_hp = 0
 attack = 0
 defense = 10

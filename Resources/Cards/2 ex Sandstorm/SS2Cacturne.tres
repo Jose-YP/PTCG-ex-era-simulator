@@ -1,27 +1,32 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=5 format=3 uid="uid://ckxeaal04cjj1"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=8 format=3 uid="uid://ckxeaal04cjj1"]
 
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_8oqmv"]
+[ext_resource type="Texture2D" uid="uid://bfj01n1foujn4" path="res://Art/Cards/2 ex Sandstorm/2.jpg" id="1_inh8h"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="2_1kbi3"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_1m2mw"]
+[ext_resource type="Resource" uid="uid://m5bp5mqhbu7s" path="res://Resources/Components/Pokemon/Attacks/EffectlessAttacks/3-40FeintAttack.tres" id="3_gvvav"]
+[ext_resource type="Resource" uid="uid://dp3mx16yy5mn4" path="res://Resources/Components/Pokemon/Abilities/Bodies/PoisionPayback.tres" id="4_b71t5"]
 
 [sub_resource type="Resource" id="Resource_inh8h"]
 script = ExtResource("2_1kbi3")
 HP = 80
 retreat = 1
-attacks = Array[ExtResource("1_8oqmv")]([])
-evo_stage = "Basic"
-evolves_from = ""
+pokebody = ExtResource("4_b71t5")
+attacks = Array[ExtResource("1_8oqmv")]([ExtResource("3_gvvav")])
+evo_stage = "Stage 1"
+evolves_from = "Cacnea"
 considered = 1
 owner = 0
 type = 1
-weak = 0
+weak = 2
 resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
 script = ExtResource("3_1m2mw")
-name = ""
-illustrator = ""
+name = "Cacturne"
+image = ExtResource("1_inh8h")
+illustrator = " Atsuko Nishida"
 number = 2
 rarity = 3
 expansion = 1

@@ -1,9 +1,8 @@
-[gd_resource type="Resource" script_class="Deck" load_steps=26 format=3 uid="uid://bleo7p56u5k1f"]
+[gd_resource type="Resource" script_class="Deck" load_steps=25 format=3 uid="uid://bleo7p56u5k1f"]
 
 [ext_resource type="Script" uid="uid://e660iomt5e76" path="res://Code/Resource Makers/CardResources/DeckMaker.gd" id="1_2be2h"]
 [ext_resource type="Resource" uid="uid://b5ukqf6xmn6vv" path="res://Resources/Cards/1 ex Ruby & Saphire/RS109LightningEnergy.tres" id="1_067j5"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_folnw"]
-[ext_resource type="Resource" uid="uid://b7ayufc1njjxh" path="res://Resources/Cards/1 ex Ruby & Saphire/RS29Delcatty.tres" id="2_75y73"]
 [ext_resource type="Resource" uid="uid://s0xeoyp6jtsa" path="res://Resources/Cards/1 ex Ruby & Saphire/RS84LumBerry.tres" id="3_lumwr"]
 [ext_resource type="Resource" uid="uid://bekwoaj06a44c" path="res://Resources/Cards/1 ex Ruby & Saphire/RS95RainbowEnergy.tres" id="4_0uxdd"]
 [ext_resource type="Resource" uid="uid://cm0tjkff2o52" path="res://Resources/Cards/1 ex Ruby & Saphire/RS83LadyOuting.tres" id="5_h8nfu"]
@@ -19,21 +18,22 @@
 [ext_resource type="Resource" uid="uid://22c17vtu70b3" path="res://Resources/Cards/4 ex Team Magma VS Team Aqua/MA37MagmaMightyena.tres" id="18_dt21v"]
 [ext_resource type="Resource" uid="uid://dipr5ie1kx7v8" path="res://Resources/Cards/1 ex Ruby & Saphire/RS93DarknessEnergy.tres" id="19_ky38v"]
 [ext_resource type="Resource" uid="uid://c2tk6qy8h57lw" path="res://Resources/Cards/1 ex Ruby & Saphire/RS82EnergySwitch.tres" id="20_dt21v"]
-[ext_resource type="Resource" uid="uid://1ktns5k8q1q5" path="res://Resources/Cards/1 ex Ruby & Saphire/RS44Skitty.tres" id="20_ky38v"]
 [ext_resource type="Resource" uid="uid://nwmfrwp7fuwu" path="res://Resources/Cards/4 ex Team Magma VS Team Aqua/MA87MagmaEnergy.tres" id="21_vw31d"]
 [ext_resource type="Resource" uid="uid://dnwi6a5kx4bvn" path="res://Resources/Cards/1 ex Ruby & Saphire/RS10Mightyena.tres" id="22_punqp"]
 [ext_resource type="Resource" uid="uid://ben8fxv5hw5hb" path="res://Resources/Cards/1 ex Ruby & Saphire/RS87PokemonReversal.tres" id="22_vw31d"]
+[ext_resource type="Resource" uid="uid://4i21swlwvmti" path="res://Resources/Cards/1 ex Ruby & Saphire/RS65Poochyena.tres" id="23_a1kwa"]
 [ext_resource type="Resource" uid="uid://d3oqllkeh61wl" path="res://Resources/Cards/1 ex Ruby & Saphire/RS63Poochyena.tres" id="23_iy0xh"]
 [ext_resource type="Resource" uid="uid://jjwoxlsecqtw" path="res://Resources/Cards/1 ex Ruby & Saphire/RS64Poochyena.tres" id="24_edso3"]
 
 [resource]
 script = ExtResource("1_2be2h")
 cards = Dictionary[ExtResource("1_folnw"), int]({
+ExtResource("23_a1kwa"): 2,
 ExtResource("24_edso3"): 1,
 ExtResource("23_iy0xh"): 1,
 ExtResource("22_punqp"): 2,
 ExtResource("22_vw31d"): 2,
-ExtResource("19_ky38v"): 2,
+ExtResource("19_ky38v"): 4,
 ExtResource("18_dt21v"): 3,
 ExtResource("17_73ykl"): 3,
 ExtResource("16_u8opw"): 2,
@@ -47,9 +47,7 @@ ExtResource("6_m1q22"): 2,
 ExtResource("5_h8nfu"): 3,
 ExtResource("4_0uxdd"): 3,
 ExtResource("3_lumwr"): 2,
-ExtResource("2_75y73"): 2,
 ExtResource("1_067j5"): 8,
 ExtResource("20_dt21v"): 2,
-ExtResource("20_ky38v"): 2,
 ExtResource("21_vw31d"): 2
 })

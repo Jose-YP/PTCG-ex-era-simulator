@@ -1,13 +1,15 @@
 [gd_resource type="Resource" script_class="TypeChange" load_steps=3 format=3 uid="uid://bvxwpj62pwpfa"]
 
 [ext_resource type="Script" uid="uid://cswtf00ovs0ss" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/TypeChangeMaker.gd" id="1_31hd7"]
-[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="1_hi1it"]
+[ext_resource type="Resource" uid="uid://bncvrbkaahg2w" path="res://Resources/Components/Effects/Asks/Class&Owner/SelfNon-ex.tres" id="1_hi1it"]
 
 [resource]
 script = ExtResource("1_31hd7")
-ask = ExtResource("1_hi1it")
 which = 1
 inclusive = false
-add_flags = true
+add_flags = false
 new_type = 0
+application = "Slot"
+recieves = ExtResource("1_hi1it")
+duration = -1
 metadata/_custom_type_script = "uid://cswtf00ovs0ss"

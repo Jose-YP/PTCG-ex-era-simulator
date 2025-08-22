@@ -1,25 +1,25 @@
-[gd_resource type="Resource" script_class="SlotAsk" load_steps=2 format=3 uid="uid://74xngvedl2tj"]
+[gd_resource type="Resource" script_class="SlotAsk" load_steps=2 format=3 uid="uid://bncvrbkaahg2w"]
 
-[ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="2_ngmft"]
+[ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="1_7wqc5"]
 
 [resource]
-script = ExtResource("2_ngmft")
+script = ExtResource("1_7wqc5")
 boolean_type = "And"
 previous_src_trg = false
-side_target = 2
-slot_target = 4
+side_target = 4
+slot_target = 1
 specifically = Array[String]([])
 knocked_out = false
 tool_attatched = false
 comparison_type = 1
 max_hp = -10
-damage_taken = 10
+damage_taken = -10
 retreat_cost = -1
 evo_type = "Don't Check"
 stage = 7
 rare_candy = false
-class_inclusive = true
-pokemon_class = 63
+class_inclusive = false
+pokemon_class = 2
 owner_inclusive = true
 pokemon_owner = 31
 type_inclusive = true

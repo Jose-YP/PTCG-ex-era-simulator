@@ -56,7 +56,7 @@ signal finished
 
 func play_effect(reversable: bool = false, replace_num: int = -1) -> void:
 	print("PLAY BUFF ", self)
-	print(how_display())
+	print(how_display(), description)
 	#Who should have this effects applied?
 	if application == "Slot":
 		var apply_to: Array[PokeSlot] = Globals.full_ui.get_ask_slots(recieves)
@@ -67,7 +67,6 @@ func play_effect(reversable: bool = false, replace_num: int = -1) -> void:
 	else:
 		Globals.fundies.apply_change(recieves, self)
 	finished.emit()
-	
 
 func has_stat(stat: Consts.STAT_BUFFS) -> bool:
 	match stat:

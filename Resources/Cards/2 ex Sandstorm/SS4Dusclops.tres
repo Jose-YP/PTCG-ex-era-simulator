@@ -1,15 +1,29 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=13 format=3 uid="uid://cbwiutr3thpfs"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=24 format=3 uid="uid://cbwiutr3thpfs"]
 
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_2wbhi"]
+[ext_resource type="Texture2D" uid="uid://b3ttjtv7pjx6p" path="res://Art/Cards/2 ex Sandstorm/4.jpg" id="1_hcel2"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="2_6xiof"]
 [ext_resource type="Resource" uid="uid://cvrbxqvsyxt6t" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/P1C1.tres" id="2_lpe4e"]
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="3_4p2up"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_djn5x"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="4_ujwgi"]
+[ext_resource type="Resource" uid="uid://y06djpmpncrq" path="res://Resources/Components/Effects/Prompts/PromptComparator/PromptHeadsTwice.tres" id="5_bpsoh"]
 [ext_resource type="Resource" uid="uid://cqnppbwtvby4u" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/P1C2.tres" id="5_vkmxs"]
+[ext_resource type="Resource" uid="uid://c71s58amf4u5l" path="res://Resources/Components/Effects/Conditions/InstaKO.tres" id="6_35pxi"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="7_3tmei"]
+[ext_resource type="Resource" uid="uid://crhg4u3yu2cso" path="res://Resources/Components/Effects/Asks/General/FromOther.tres" id="10_rjfwn"]
+[ext_resource type="Script" uid="uid://scca13hg4k1l" path="res://Code/Resource Makers/EffectSpecific/Components/DmgManipMaker.gd" id="11_07vf5"]
+
+[sub_resource type="Resource" id="Resource_7lf1f"]
+script = ExtResource("7_3tmei")
+order = Array[int]([])
+condition = ExtResource("6_35pxi")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_d4kaa"]
 script = ExtResource("3_4p2up")
+prompt = ExtResource("5_bpsoh")
+success = SubResource("Resource_7lf1f")
 metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [sub_resource type="Resource" id="Resource_4ayh1"]
@@ -38,10 +52,58 @@ attack_cost = ExtResource("2_lpe4e")
 attack_data = SubResource("Resource_4ayh1")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
+[sub_resource type="Resource" id="Resource_bj1kv"]
+script = ExtResource("11_07vf5")
+choosing = 4
+mode = "Add"
+ask = ExtResource("10_rjfwn")
+how_many = 5
+choose_num = -1
+turn_delay = -1
+prevent_KO = false
+anyway_u_like = true
+with_leftover = "None"
+leftover_anyway = false
+vary_choose_num = false
+plus = true
+modifier = 1
+metadata/_custom_type_script = "uid://scca13hg4k1l"
+
+[sub_resource type="Resource" id="Resource_qlt6t"]
+script = ExtResource("7_3tmei")
+order = Array[int]([])
+dmgManip = SubResource("Resource_bj1kv")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_40ki5"]
+script = ExtResource("3_4p2up")
+success = SubResource("Resource_qlt6t")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
+[sub_resource type="Resource" id="Resource_aer8o"]
+script = ExtResource("4_ujwgi")
+description = "Put a total of 5 damage counters on all Defending Pokémon in any way you like."
+prompt_reliant = false
+initial_main_DMG = 0
+defender_properties = 0
+condition = 1
+before_damage = false
+replace_num = false
+share_prompt = false
+prompt_effects = Array[ExtResource("3_4p2up")]([SubResource("Resource_40ki5")])
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
 [sub_resource type="Resource" id="Resource_bpsoh"]
 script = ExtResource("1_2wbhi")
 name = "Random Curse"
 attack_cost = ExtResource("5_vkmxs")
+attack_data = SubResource("Resource_aer8o")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_inh8h"]
@@ -60,8 +122,9 @@ metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
 script = ExtResource("3_djn5x")
-name = ""
-illustrator = ""
+name = "Dusclops"
+image = ExtResource("1_hcel2")
+illustrator = "Midori Harada"
 number = 4
 rarity = 3
 expansion = 1

@@ -7,3 +7,38 @@ class_name EffectCollect
 @export var fail: EffectCall
 
 var prompt_carry_over: bool
+
+func prep_slot_change() -> void:
+	if prompt and prompt.effect:
+		prompt.effect = prompt.effect.duplicate()
+		prompt.effect.prep_slot_chnages()
+	if success:
+		success = success.duplicate()
+		success.prep_slot_chnages()
+	if fail:
+		success = success.duplicate()
+		fail.prep_slot_chnages()
+
+func effect_collect_play() -> void:
+	if prompt:
+		var result: bool = await prompt.generic_check()
+		if prompt.has_coinflip():
+			await SignalBus.finished_coinflip
+		
+		if result and success:
+			success.play_effect()
+			return
+		elif fail:
+			SignalBus.slot_change_failed.emit(success.get_slot_change())
+			fail.play_effect()
+			return
+	
+	elif success:
+		success.play_effect()
+		return
+	
+	elif fail:
+		fail.play_effect()
+		return
+	print(success.get_slot_change())
+	SignalBus.slot_change_failed.emit(success.get_slot_change())

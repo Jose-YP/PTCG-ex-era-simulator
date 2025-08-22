@@ -106,19 +106,20 @@ func check_ask(slot: PokeSlot) -> bool:
 	#If it isn't include it if exclusive class
 	#inclusive class xor~ inside class
 	
-	print_verbose("[center]-----------------------------------------------------------")
-	print_verbose("[center]Type Flag")
-	#Check if the pokemon is type inclusive xor~ type
-	var types: Array[String] = Convert.flags_to_type_array(slot.current_card.pokemon_properties.type)
-	var type_str: String = "[center]Type: "
-	for loc_type in types:
-		type_str +=  Convert.get_type_rich_color(loc_type) + loc_type + "[/color]"
-	print_verbose(type_str, "\n", slot.current_card.pokemon_properties.type && pokemon_type, 
-	 not (slot.current_card.pokemon_properties.type && pokemon_type != 0 and not type_inclusive))
-	
-	var type_bool: bool = not(slot.current_card.pokemon_properties.type && pokemon_type != 0 and not type_inclusive)
-	if not type_bool: return false
-	result = type_bool and result
+	if pokemon_type != 0 and pokemon_type != 1023:
+		print_verbose("[center]-----------------------------------------------------------")
+		print_verbose("[center]Type Flag")
+		#Check if the pokemon is type inclusive xor~ type
+		var types: Array[String] = Convert.flags_to_type_array(slot.current_card.pokemon_properties.type)
+		var type_str: String = "[center]Type: "
+		for loc_type in types:
+			type_str +=  Convert.get_type_rich_color(loc_type) + loc_type + "[/color]"
+		print_verbose(type_str, "\n", slot.current_card.pokemon_properties.type & pokemon_type, 
+		 not (slot.current_card.pokemon_properties.type & pokemon_type != 0 and not type_inclusive))
+		
+		var type_bool: bool = (slot.current_card.pokemon_properties.type & pokemon_type != 0) == type_inclusive
+		if not type_bool: return false
+		result = type_bool and result
 	#To Activate
 	#Who should be checked
 	if max_hp != -10:
@@ -153,7 +154,7 @@ func check_ask(slot: PokeSlot) -> bool:
 		print_verbose("Checking for: ", energy_type.get_string(), " | ", energy_class)
 		
 		var using = slot.energy_cards if energy_class != "Any" else slot.get_total_en_categories(energy_class)
-		var total: int = using.size() if check_cards else slot.get_total_energy(energy_type, using)
+		var total: int = slot.get_total_energy(energy_type, using) if check_cards else using.size()
 		var passes: bool = total >= energy_attatched if comparison_type == 1 else total <= energy_attatched
 		print_verbose("Total: ",total, passes)
 		

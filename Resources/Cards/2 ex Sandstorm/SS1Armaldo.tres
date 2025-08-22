@@ -1,14 +1,82 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=2 format=3 uid="uid://0muu3k83v6pk"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=16 format=3 uid="uid://0muu3k83v6pk"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_08nth"]
+[ext_resource type="Texture2D" uid="uid://dtw4g7hxhj5k" path="res://Art/Cards/2 ex Sandstorm/1.jpg" id="1_royrp"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_43w8c"]
+[ext_resource type="Resource" uid="uid://d3mbrhxvdupx6" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/F2C1.tres" id="3_ardfi"]
+[ext_resource type="Resource" uid="uid://cjlv4ltu2gptf" path="res://Resources/Components/Pokemon/Attacks/AttackData/60Dmg.tres" id="4_oofyp"]
+[ext_resource type="Resource" uid="uid://bns8h72u2hxqo" path="res://Resources/Components/Effects/Asks/General/AnyMon.tres" id="5_sle4i"]
+[ext_resource type="Script" uid="uid://c0ishgbxk63dg" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/DisableMaker.gd" id="6_je25v"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="7_ur34r"]
+[ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="8_i731l"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="9_8op2e"]
+
+[sub_resource type="Resource" id="Resource_vrihm"]
+script = ExtResource("2_43w8c")
+name = "Blade Arms"
+attack_cost = ExtResource("3_ardfi")
+attack_data = ExtResource("4_oofyp")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_oj81j"]
+script = ExtResource("6_je25v")
+side = 2
+slot = 4
+no_weakness = false
+no_resistance = false
+instead_of_damage = false
+do_nothing = false
+attack = 0
+power = 0
+retreat_duration = 1
+disable_retreat = false
+application = "Slot"
+recieves = ExtResource("5_sle4i")
+duration = -1
+metadata/_custom_type_script = "uid://c0ishgbxk63dg"
+
+[sub_resource type="Resource" id="Resource_er8xu"]
+script = ExtResource("7_ur34r")
+order = Array[int]([])
+disable = SubResource("Resource_oj81j")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_l34sc"]
+script = ExtResource("8_i731l")
+category = "Body"
+name = "Primal Veil"
+description = "As long as [name] is your Active Pokémon, each player can't play any Supporter Cards."
+affected_by_condition = false
+active = true
+how_often = "Once per Mon"
+independent_src_trg = false
+passive = SubResource("Resource_er8xu")
+metadata/_custom_type_script = "uid://bs2y8ocljilv8"
+
+[sub_resource type="Resource" id="Resource_inh8h"]
+script = ExtResource("9_8op2e")
+HP = 120
+retreat = 3
+pokebody = SubResource("Resource_l34sc")
+attacks = Array[ExtResource("2_43w8c")]([SubResource("Resource_vrihm")])
+evo_stage = "Stage 2"
+evolves_from = "Anorith"
+considered = 1
+owner = 0
+type = 32
+weak = 1
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
 script = ExtResource("1_08nth")
-name = ""
-illustrator = ""
-number = 0
-rarity = 0
-expansion = 0
-categories = 0
+name = "Armaldo"
+image = ExtResource("1_royrp")
+illustrator = "Mitsuhiro Arita"
+number = 1
+rarity = 3
+expansion = 1
+categories = 1
+pokemon_properties = SubResource("Resource_inh8h")
 fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

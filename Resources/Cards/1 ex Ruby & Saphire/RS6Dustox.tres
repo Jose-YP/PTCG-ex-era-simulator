@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=13 format=3 uid="uid://bw4sp04ye7jyx"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=16 format=3 uid="uid://bw4sp04ye7jyx"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_wcs6r"]
 [ext_resource type="Texture2D" uid="uid://cs7gj0dy6jykj" path="res://Art/Cards/1 ex Ruby & Saphire/6.jpg" id="1_wqkxb"]
@@ -9,6 +9,8 @@
 [ext_resource type="Resource" uid="uid://cj4j56m7hrxpe" path="res://Resources/Components/Pokemon/Attacks/AttackData/50Dmg.tres" id="7_tg8f0"]
 [ext_resource type="Resource" uid="uid://oka7raf3a00o" path="res://Resources/Components/Pokemon/Abilities/Bodies/ProtectiveDust.tres" id="7_wqkxb"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="8_1sw32"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="10_rwpko"]
+[ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="11_7qmw3"]
 
 [sub_resource type="Resource" id="Resource_fuvu7"]
 script = ExtResource("2_684l4")
@@ -39,6 +41,14 @@ weak = 16
 resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
+[sub_resource type="Resource" id="Resource_anyyy"]
+script = ExtResource("11_7qmw3")
+considered = "Item"
+specific_requirement = ""
+description = ""
+prompt_effects = Array[ExtResource("10_rwpko")]([])
+metadata/_custom_type_script = "uid://crx447i85kshy"
+
 [resource]
 script = ExtResource("1_wcs6r")
 name = "Dustox"
@@ -49,5 +59,6 @@ rarity = 3
 expansion = 0
 categories = 1
 pokemon_properties = SubResource("Resource_ypaoj")
+trainer_properties = SubResource("Resource_anyyy")
 fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

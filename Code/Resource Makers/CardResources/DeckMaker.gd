@@ -31,8 +31,10 @@ func make_usable() -> Array[Base_Card]:
 	
 	for card in cards:
 		for i in cards[card]:
+			var new_card = card.duplicate_deep()
 			#These have to be unique to make search function
-			usable.append(card.duplicate(true))
+			usable.append(new_card)
+			
 	
 	if usable.size() != 60:
 		printerr("Warning, this deck has the size of: ", usable.size())
