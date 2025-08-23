@@ -1,11 +1,10 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=15 format=3 uid="uid://dsniqxxtqasj7"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=14 format=3 uid="uid://dsniqxxtqasj7"]
 
 [ext_resource type="Texture2D" uid="uid://dwvdybdgtfpw8" path="res://Art/Cards/13 ex Holon Phantoms/67.jpg" id="1_8b6ya"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_uc2un"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_dse6n"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="3_dndui"]
 [ext_resource type="Resource" uid="uid://duyf6uncjts05" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Lightning1.tres" id="3_pca58"]
-[ext_resource type="Resource" uid="uid://nx1kc1vsm4ia" path="res://Resources/Components/Effects/Conditions/BasicConfusion.tres" id="4_ek1h5"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="5_4ifaa"]
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="5_ek1h5"]
 [ext_resource type="Resource" uid="uid://b1rwmggf7a4do" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless2.tres" id="6_ixs0s"]
@@ -20,7 +19,6 @@ defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
-always_effect = ExtResource("4_ek1h5")
 share_prompt = false
 prompt_effects = Array[ExtResource("5_ek1h5")]([])
 conditional_self_dmg = false

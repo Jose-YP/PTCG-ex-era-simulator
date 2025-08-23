@@ -1,41 +1,13 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=20 format=3 uid="uid://ssf0yvm562c6"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=13 format=3 uid="uid://ssf0yvm562c6"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_pvu1y"]
 [ext_resource type="Texture2D" uid="uid://cl73mmr3c1bhp" path="res://Art/Cards/13 ex Holon Phantoms/87.jpg" id="1_u4y58"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="3_c4y1i"]
 [ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_kyw37"]
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="3_ni0es"]
-[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_ni0es"]
-[ext_resource type="Resource" uid="uid://bl4qnrkh3kxdl" path="res://Resources/Components/Effects/Placement/PutIntoHand.tres" id="5_lru8w"]
-[ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="6_wkp24"]
-[ext_resource type="Resource" uid="uid://bd5tln3evqv7l" path="res://Resources/Components/Effects/Identifiers/Pokemon/DeltaPokemon.tres" id="7_w53cy"]
-[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/Components/SearchMaker.gd" id="8_m6lmd"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="9_k81h8"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="10_85o5a"]
 [ext_resource type="Script" uid="uid://b8kvis7rgg3j4" path="res://Code/Resource Makers/CardResources/StadiumMaker.gd" id="12_3q2f7"]
-
-[sub_resource type="Resource" id="Resource_gpuif"]
-script = ExtResource("8_m6lmd")
-side = 4
-where = 1
-reordering_only = false
-shuffle_first = false
-based_on_side = 0
-based_on_slots = 0
-based_on_energy = 0
-portion = -1
-identifier_allowed = -1
-how_many = Array[int]([1])
-of_this = Array[ExtResource("6_wkp24")]([ExtResource("7_w53cy")])
-and_then = ExtResource("5_lru8w")
-reveal = true
-metadata/_custom_type_script = "uid://cw3yr1k040kw7"
-
-[sub_resource type="Resource" id="Resource_kvgc7"]
-script = ExtResource("4_ni0es")
-order = Array[int]([])
-search = SubResource("Resource_gpuif")
-metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_iq0qi"]
 script = ExtResource("9_k81h8")
@@ -46,7 +18,6 @@ defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
-always_effect = SubResource("Resource_kvgc7")
 share_prompt = false
 prompt_effects = Array[ExtResource("3_ni0es")]([])
 conditional_self_dmg = false

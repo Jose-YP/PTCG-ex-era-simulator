@@ -141,47 +141,46 @@ func play_energy(card: Base_Card, placement: Placement = null):
 #region TRAINERS
 func play_trainer(card: Base_Card):
 	var trainer: Trainer = card.trainer_properties
+	var first: EffectCollect = null
 	var allowed: bool = false
 	Globals.fundies.record_source_target(Globals.fundies.home_turn, [], [])
 	hold_playing = card
 	
-	if trainer.prompt:
-		print("This card has a prompt")
+	if trainer.prompt_effects[0].prompt:
+		first = trainer.prompt_effects[0]
+		var prompt: PromptAsk = trainer.prompt_effects[0].prompt
 		if card.has_before_prompt():
 			var went_back: bool = false
-			went_back = await card.trainer_properties.prompt.before_activating() 
+			went_back = await prompt.before_activating() 
 			if went_back:
 				print("Nevermind")
 				return
 		
-		if trainer.prompt.comparator:
-			allowed = trainer.prompt.check_prompt()
-			if trainer.prompt.has_coinflip():
+		if prompt.comparator:
+			allowed = prompt.check_prompt()
+			if prompt.has_coinflip():
 				await SignalBus.finished_coinflip
 				print("COINFLIP RESULT: ", allowed)
 			else: print("Prompt Result: ", allowed)
 		
-		if trainer.prompt.formal_question:
-			allowed = await trainer.prompt.check_prompt_question()
+		if prompt.formal_question:
+			allowed = await prompt.check_prompt_question()
+		
+		if not allowed and first.fail:
+			await first.fail.play_effect()
+		
+		if allowed and first.success:
+			await first.success.play_effect()
 		
 		print(str(card.name, " played it's ", "success effect" if allowed else "fail effect"))
 	
 	if card.is_considered("Supporter"):
 		Globals.fundies.stack_manager.play_supporter(card, Globals.fundies.home_turn)
 	
-	if trainer.asks:
-		print("This card has an ask")
-	
-	if not allowed and trainer.fail_effect:
-		await trainer.fail_effect.play_effect()
-	
-	if allowed and trainer.success_effect:
-		await trainer.success_effect.play_effect()
-	else:
-		print(trainer.success_effect)
-	
-	if trainer.always_effect:
-		await trainer.always_effect.play_effect()
+	for effect in trainer.prompt_effects:
+		if effect == first:
+			continue
+		effect.effect_collect_play()
 	
 	if not card.is_considered("Supporter"):
 		Globals.fundies.stack_manager.play_card(card, Consts.STACKS.DISCARD)
@@ -213,7 +212,6 @@ func play_attatch_tm(card: Base_Card):
 	print("Attatch ", card.name)
 	card.print_info()
 
-#For stadiums
 func play_place_stadium(card: Base_Card):
 	hold_playing = card
 	
@@ -387,28 +385,13 @@ func bench_attack(attacker: PokeSlot, with: BenchAttk, defenders: Array[PokeSlot
 
 func attack_effect(attacker: PokeSlot, with: AttackData,
  predefined: Variant = null, replace_num: int = -1):
-	if with.prompt:
-		var succeed: bool = predefined if predefined else false
-		
-		if predefined != false and with.prompt.has_check_prompt():
-			succeed = with.prompt.check_prompt()
-			if with.prompt.has_coinflip():
-				await SignalBus.finished_coinflip
-		
-		if with.prompt.has_prompt_question():
-			succeed = await with.prompt.check_prompt_question()
-		
-		if succeed and with.success_effect:
-			with.success_effect.replace_num = replace_num
-			await with.success_effect.play_effect()
-		
-		elif not succeed and with.fail_effect:
-			with.fail_effect.replace_num = replace_num
-			await with.fail_effect.play_effect()
-	
-	if with.always_effect:
-		with.always_effect.replace_num = replace_num
-		await with.always_effect.play_effect()
+	if with.prompt_effects:
+		if predefined != null:
+			for effect in with.prompt_effects:
+				effect.shared_collect_play(predefined)
+		else:
+			for effect in with.prompt_effects:
+				effect.effect_collect_play()
 
 func check_prompt_reliant(prompt: PromptAsk):
 	if prompt and prompt.has_check_prompt() and not prompt.has_num_input():

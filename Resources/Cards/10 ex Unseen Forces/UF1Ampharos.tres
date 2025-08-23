@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=28 format=3 uid="uid://ca4fvk1kp65a5"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=24 format=3 uid="uid://ca4fvk1kp65a5"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_2qfob"]
 [ext_resource type="Texture2D" uid="uid://vl54ey1wgkdd" path="res://Art/Cards/10 ex Unseen Forces/1.jpg" id="1_246m0"]
@@ -7,11 +7,9 @@
 [ext_resource type="Resource" uid="uid://ch31rb2s75yst" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/L1C2.tres" id="3_xck7i"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_x6q3b"]
 [ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="5_kd6vc"]
-[ext_resource type="Script" uid="uid://8s3m1dar3r33" path="res://Code/Resource Makers/EffectSpecific/Components/ConditionMaker.gd" id="6_sl773"]
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="7_sl773"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="7_vx7in"]
 [ext_resource type="Resource" uid="uid://c7itelq8jtjc2" path="res://Resources/Components/EnData/Rainbow.tres" id="7_xck7i"]
-[ext_resource type="Resource" uid="uid://bkt6ry7vyha70" path="res://Resources/Components/Effects/Asks/General/Other.tres" id="8_vx7in"]
 [ext_resource type="Script" uid="uid://cimk6l7ytw7xg" path="res://Code/Resource Makers/EffectSpecific/Components/EnMovMaker.gd" id="9_u7a6q"]
 [ext_resource type="Resource" uid="uid://kfpd4o04y0q" path="res://Resources/Components/Effects/Asks/General/SrcBench.tres" id="11_kd6vc"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="11_veuta"]
@@ -38,24 +36,6 @@ choose_location = "None"
 which_stack = 0
 metadata/_custom_type_script = "uid://b85jmc7067bjc"
 
-[sub_resource type="Resource" id="Resource_1cpy3"]
-script = ExtResource("6_sl773")
-ask = ExtResource("8_vx7in")
-any = false
-poison = null
-burn = 1
-turn_cond = null
-imprision = null
-shockwave = null
-knockOut = null
-metadata/_custom_type_script = "uid://8s3m1dar3r33"
-
-[sub_resource type="Resource" id="Resource_lbqj1"]
-script = ExtResource("4_x6q3b")
-order = Array[int]([])
-condition = SubResource("Resource_1cpy3")
-metadata/_custom_type_script = "uid://dmulm3x3dj842"
-
 [sub_resource type="Resource" id="Resource_x6q3b"]
 script = ExtResource("7_vx7in")
 description = "You may discard all {Lightning} Energy attached to Ampharos. If you do, the Defending Pokémon is now Burned and Confused."
@@ -66,7 +46,6 @@ defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
-success_effect = SubResource("Resource_lbqj1")
 share_prompt = false
 prompt_effects = Array[ExtResource("7_sl773")]([])
 conditional_self_dmg = false

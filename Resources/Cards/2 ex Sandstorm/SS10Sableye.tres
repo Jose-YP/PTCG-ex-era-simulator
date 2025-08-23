@@ -1,27 +1,75 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=5 format=3 uid="uid://b8s5c3bhhpsnh"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=17 format=3 uid="uid://b8s5c3bhhpsnh"]
 
+[ext_resource type="Texture2D" uid="uid://biskrpvpexej" path="res://Art/Cards/2 ex Sandstorm/10.jpg" id="1_0ga3c"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_g0sxx"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="2_qby5g"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_faler"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_ku2c6"]
+[ext_resource type="Resource" uid="uid://cq2le7tw7n5pw" path="res://Resources/Components/Pokemon/Attacks/AttackData/PlayOthHndSupport.tres" id="4_na7pm"]
+[ext_resource type="Resource" uid="uid://cif1lb0agms18" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/D1C1.tres" id="5_6uacr"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="6_o1n7x"]
+[ext_resource type="Resource" uid="uid://den0x238enm5n" path="res://Resources/Components/Effects/Prompts/PromptEffects/PromptDisc1SelfDarkness.tres" id="7_uq0ux"]
+[ext_resource type="Resource" uid="uid://6xmw13js5xd3" path="res://Resources/Components/Effects/Conditions/BasicParalyze.tres" id="8_lduis"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="9_sr5vi"]
+
+[sub_resource type="Resource" id="Resource_2g0uu"]
+script = ExtResource("1_g0sxx")
+name = "Supernatural"
+attack_cost = ExtResource("3_ku2c6")
+attack_data = ExtResource("4_na7pm")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_88et3"]
+script = ExtResource("6_o1n7x")
+prompt = ExtResource("7_uq0ux")
+success = ExtResource("8_lduis")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
+[sub_resource type="Resource" id="Resource_c7uu8"]
+script = ExtResource("9_sr5vi")
+description = "You may discard a {Darkness} Energy card attached to [name]. If you do, the Defending Pokémon is now Paralyzed."
+prompt_reliant = false
+initial_main_DMG = 20
+defender_properties = 0
+condition = 1
+before_damage = false
+replace_num = false
+share_prompt = false
+prompt_effects = Array[ExtResource("6_o1n7x")]([SubResource("Resource_88et3")])
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_phlal"]
+script = ExtResource("1_g0sxx")
+name = "Dark Bind"
+attack_cost = ExtResource("5_6uacr")
+attack_data = SubResource("Resource_c7uu8")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_d1ev5"]
 script = ExtResource("2_qby5g")
 HP = 60
 retreat = 1
-attacks = Array[ExtResource("1_g0sxx")]([null, null])
+attacks = Array[ExtResource("1_g0sxx")]([SubResource("Resource_2g0uu"), SubResource("Resource_phlal")])
 evo_stage = "Basic"
 evolves_from = ""
 considered = 1
 owner = 0
-type = 1
-weak = 0
+type = 64
+weak = 32
 resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
 script = ExtResource("3_faler")
-name = ""
-illustrator = ""
+name = "Sableye"
+image = ExtResource("1_0ga3c")
+illustrator = "Hajime Kusajima"
 number = 10
 rarity = 3
 expansion = 1

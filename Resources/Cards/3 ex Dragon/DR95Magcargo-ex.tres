@@ -1,61 +1,13 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=24 format=3 uid="uid://s0s7u11b5pvm"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=14 format=3 uid="uid://s0s7u11b5pvm"]
 
 [ext_resource type="Texture2D" uid="uid://cbcdcputtq4yw" path="res://Art/Cards/3 ex Dragon/95.jpg" id="1_hqqw8"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_hteku"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_vmufy"]
 [ext_resource type="Resource" uid="uid://dytd2agmtnhwi" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Fire1.tres" id="3_xhq37"]
-[ext_resource type="Resource" uid="uid://dm2i7spst0qpp" path="res://Resources/Components/Effects/Identifiers/AnyCard.tres" id="4_wjv0n"]
-[ext_resource type="Script" uid="uid://8sh5p3leflla" path="res://Code/Resource Makers/EffectSpecific/Components/CardDisruptMaker.gd" id="5_26fy7"]
-[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="6_55msh"]
-[ext_resource type="Resource" uid="uid://c8vs2wowmlhne" path="res://Resources/Components/Effects/Placement/PutOnSelf.tres" id="7_5qxi8"]
-[ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="8_nq205"]
-[ext_resource type="Resource" uid="uid://d2vm6chtedrum" path="res://Resources/Components/Effects/Identifiers/Energy/BasicEnergy.tres" id="9_qjcds"]
-[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/Components/SearchMaker.gd" id="10_xcnih"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="11_6wc0f"]
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="11_vmufy"]
 [ext_resource type="Resource" uid="uid://ci64ae1aqhomq" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/R2C1.tres" id="12_rayro"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="13_4sjxf"]
-
-[sub_resource type="Resource" id="Resource_jlj7s"]
-script = ExtResource("5_26fy7")
-send = "Stack"
-send_to = 2
-top_stack = true
-shuffle = false
-card_ammount = 1
-reveal = false
-who_chooses = 4
-side = 1
-card_options = ExtResource("4_wjv0n")
-view = false
-portion = 1
-from_stack = 1
-slot_choose_num = -1
-metadata/_custom_type_script = "uid://8sh5p3leflla"
-
-[sub_resource type="Resource" id="Resource_c0mwq"]
-script = ExtResource("10_xcnih")
-side = 4
-where = 1
-reordering_only = false
-shuffle_first = false
-based_on_side = 0
-based_on_slots = 0
-based_on_energy = 0
-portion = 1
-identifier_allowed = -1
-how_many = Array[int]([1])
-of_this = Array[ExtResource("8_nq205")]([ExtResource("9_qjcds")])
-and_then = ExtResource("7_5qxi8")
-reveal = true
-metadata/_custom_type_script = "uid://cw3yr1k040kw7"
-
-[sub_resource type="Resource" id="Resource_85g8j"]
-script = ExtResource("6_55msh")
-order = Array[int]([])
-card_disrupt = SubResource("Resource_jlj7s")
-search = SubResource("Resource_c0mwq")
-metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_wb2rl"]
 script = ExtResource("11_6wc0f")
@@ -66,7 +18,6 @@ defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
-always_effect = SubResource("Resource_85g8j")
 share_prompt = false
 prompt_effects = Array[ExtResource("11_vmufy")]([])
 conditional_self_dmg = false

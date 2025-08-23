@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=32 format=3 uid="uid://k4e01k751mpn"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=28 format=3 uid="uid://k4e01k751mpn"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_5sb5e"]
 [ext_resource type="Texture2D" uid="uid://crv3nmkicj6si" path="res://Art/Cards/10 ex Unseen Forces/28.jpg" id="1_lai6i"]
@@ -11,8 +11,6 @@
 [ext_resource type="Resource" uid="uid://6xmw13js5xd3" path="res://Resources/Components/Effects/Conditions/BasicParalyze.tres" id="7_c435i"]
 [ext_resource type="Script" uid="uid://crscwhvugaoxa" path="res://Code/Resource Makers/PokemonSpecific/AttackCostMaker.gd" id="8_0ppqk"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="8_87fu4"]
-[ext_resource type="Resource" uid="uid://crhg4u3yu2cso" path="res://Resources/Components/Effects/Asks/General/FromOther.tres" id="9_lai6i"]
-[ext_resource type="Script" uid="uid://scca13hg4k1l" path="res://Code/Resource Makers/EffectSpecific/Components/DmgManipMaker.gd" id="10_y5xf5"]
 [ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/BuffMaker.gd" id="12_0x2n6"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="12_sj7iq"]
 [ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="13_87fu4"]
@@ -66,29 +64,6 @@ metal_cost = 0
 colorless_cost = 1
 metadata/_custom_type_script = "uid://crscwhvugaoxa"
 
-[sub_resource type="Resource" id="Resource_uflnk"]
-script = ExtResource("10_y5xf5")
-choosing = 4
-mode = "Add"
-ask = ExtResource("9_lai6i")
-how_many = 4
-choose_num = 1
-turn_delay = -1
-prevent_KO = false
-anyway_u_like = true
-with_leftover = "None"
-leftover_anyway = false
-vary_choose_num = false
-plus = true
-modifier = 1
-metadata/_custom_type_script = "uid://scca13hg4k1l"
-
-[sub_resource type="Resource" id="Resource_0dhaj"]
-script = ExtResource("4_jseaf")
-order = Array[int]([])
-dmgManip = SubResource("Resource_uflnk")
-metadata/_custom_type_script = "uid://dmulm3x3dj842"
-
 [sub_resource type="Resource" id="Resource_j1gr8"]
 script = ExtResource("8_87fu4")
 description = "Put 4 damage counters on your opponent's Pokémon in any way you like."
@@ -98,7 +73,6 @@ defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
-always_effect = SubResource("Resource_0dhaj")
 share_prompt = false
 prompt_effects = Array[ExtResource("6_c435i")]([])
 conditional_self_dmg = false

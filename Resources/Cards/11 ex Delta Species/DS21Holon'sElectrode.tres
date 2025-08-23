@@ -1,10 +1,9 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=13 format=3 uid="uid://d4nyotd6k6lrq"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://d4nyotd6k6lrq"]
 
 [ext_resource type="Resource" uid="uid://ddhtth12ohjx5" path="res://Resources/Components/Energy/SpecialEnergy/Holon'sDR.tres" id="1_0h2eg"]
 [ext_resource type="Texture2D" uid="uid://d05hye2peb5vm" path="res://Art/Cards/11 ex Delta Species/21.jpg" id="2_5tfdv"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_17cmj"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="3_tctwf"]
-[ext_resource type="Resource" uid="uid://nx1kc1vsm4ia" path="res://Resources/Components/Effects/Conditions/BasicConfusion.tres" id="4_fby8h"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="4_vw06b"]
 [ext_resource type="Resource" uid="uid://cesjkvsi5c6jb" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/L1C1.tres" id="5_44gyq"]
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="6_86uxx"]
@@ -19,7 +18,6 @@ defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
-always_effect = ExtResource("4_fby8h")
 share_prompt = false
 prompt_effects = Array[ExtResource("6_86uxx")]([])
 conditional_self_dmg = false

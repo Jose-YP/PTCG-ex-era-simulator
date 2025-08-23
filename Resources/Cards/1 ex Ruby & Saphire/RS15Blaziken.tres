@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=17 format=3 uid="uid://bgvaiul2mfsxf"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=16 format=3 uid="uid://bgvaiul2mfsxf"]
 
 [ext_resource type="Texture2D" uid="uid://x2sfdmhe2ojl" path="res://Art/Cards/1 ex Ruby & Saphire/15.jpg" id="1_vwl4b"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_x5maj"]
@@ -9,7 +9,6 @@
 [ext_resource type="Resource" uid="uid://c8sjke0awg8n7" path="res://Resources/Components/Effects/Disable/DefNoRetreat.tres" id="4_xomi4"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="5_fmns8"]
 [ext_resource type="Resource" uid="uid://btgpcmwpxnrwy" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/R1C3.tres" id="6_hb2on"]
-[ext_resource type="Resource" uid="uid://b86uut4qajrgg" path="res://Resources/Components/Effects/EnergyMovement/AtkSelfDisFire.tres" id="7_chjva"]
 
 [sub_resource type="Resource" id="Resource_hb2on"]
 script = ExtResource("4_fmns8")
@@ -50,7 +49,6 @@ defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
-always_effect = ExtResource("7_chjva")
 share_prompt = false
 prompt_effects = Array[ExtResource("4_fmns8")]([])
 conditional_self_dmg = false

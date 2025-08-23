@@ -1,10 +1,9 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=31 format=3 uid="uid://cwm50lliwuxgr"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=28 format=3 uid="uid://cwm50lliwuxgr"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_av14u"]
 [ext_resource type="Texture2D" uid="uid://bkixvvnwbglm2" path="res://Art/Cards/10 ex Unseen Forces/9.jpg" id="1_b8f7a"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_uaib2"]
 [ext_resource type="Resource" uid="uid://bdwp1hpi4q83j" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/G2C1.tres" id="3_6ro4m"]
-[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="4_uaib2"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_wmae1"]
 [ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="6_6lcpf"]
 [ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="7_ai77k"]
@@ -16,29 +15,6 @@
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="12_iblgg"]
 [ext_resource type="Resource" uid="uid://tgm35ahd5evj" path="res://Resources/Components/Occurances/SelfBetweenTurns.tres" id="13_wmae1"]
 [ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="14_pb52n"]
-
-[sub_resource type="Resource" id="Resource_wmae1"]
-script = ExtResource("10_fryll")
-choosing = 4
-mode = "Add"
-ask = ExtResource("4_uaib2")
-how_many = 1
-choose_num = -1
-turn_delay = -1
-prevent_KO = false
-anyway_u_like = false
-with_leftover = "None"
-leftover_anyway = false
-vary_choose_num = false
-plus = true
-modifier = 1
-metadata/_custom_type_script = "uid://scca13hg4k1l"
-
-[sub_resource type="Resource" id="Resource_xvftv"]
-script = ExtResource("4_wmae1")
-order = Array[int]([])
-dmgManip = SubResource("Resource_wmae1")
-metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_uaib2"]
 script = ExtResource("6_6lcpf")
@@ -80,7 +56,6 @@ defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = true
-always_effect = SubResource("Resource_xvftv")
 share_prompt = false
 prompt_effects = Array[ExtResource("10_wmae1")]([])
 conditional_self_dmg = false

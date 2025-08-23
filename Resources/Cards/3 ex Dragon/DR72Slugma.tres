@@ -1,33 +1,13 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=17 format=3 uid="uid://bkb836o4j5m51"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://bkb836o4j5m51"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_vmec1"]
 [ext_resource type="Texture2D" uid="uid://bq0lvo50mfyja" path="res://Art/Cards/3 ex Dragon/72.jpg" id="1_xyahb"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_lbmg6"]
 [ext_resource type="Resource" uid="uid://bs6b2prk06rqj" path="res://Resources/Components/Pokemon/Attacks/EffectlessAttacks/Ram1-10.tres" id="3_w3bpe"]
 [ext_resource type="Resource" uid="uid://bpgsrqt47evh0" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/R1C1.tres" id="4_8v4dq"]
-[ext_resource type="Resource" uid="uid://cri7upmf1q7n0" path="res://Resources/Components/Effects/Conditions/DefBurn.tres" id="5_o6fok"]
-[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="6_c4g78"]
-[ext_resource type="Script" uid="uid://curklvf1517ml" path="res://Code/Resource Makers/EffectSpecific/Components/SwapMaker.gd" id="7_lfcmq"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="8_2r7b6"]
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="8_lbmg6"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="9_yrhye"]
-
-[sub_resource type="Resource" id="Resource_735o8"]
-script = ExtResource("7_lfcmq")
-force_reversable = false
-record_target = true
-choose_active = false
-chosing = 1
-affected = 2
-autofill = "None"
-metadata/_custom_type_script = "uid://curklvf1517ml"
-
-[sub_resource type="Resource" id="Resource_dm3f7"]
-script = ExtResource("6_c4g78")
-order = Array[int]([7, 0])
-condition = ExtResource("5_o6fok")
-swap = SubResource("Resource_735o8")
-metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_27luv"]
 script = ExtResource("8_2r7b6")
@@ -38,7 +18,6 @@ defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
-always_effect = SubResource("Resource_dm3f7")
 share_prompt = false
 prompt_effects = Array[ExtResource("8_lbmg6")]([])
 conditional_self_dmg = false

@@ -1,11 +1,8 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=23 format=3 uid="uid://cg6tibidqt3qs"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=18 format=3 uid="uid://cg6tibidqt3qs"]
 
 [ext_resource type="Texture2D" uid="uid://cw7xif5trflwj" path="res://Art/Cards/5 ex Hidden Legends/14.jpg" id="1_yivro"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_6qbf0"]
 [ext_resource type="Resource" uid="uid://cif1lb0agms18" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/D1C1.tres" id="3_bdgas"]
-[ext_resource type="Resource" uid="uid://b3q5vmepfee8k" path="res://Resources/Components/Effects/Identifiers/Pokemon/AnyPokemon.tres" id="4_fv8lw"]
-[ext_resource type="Script" uid="uid://8sh5p3leflla" path="res://Code/Resource Makers/EffectSpecific/Components/CardDisruptMaker.gd" id="5_c4phv"]
-[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="6_ilcaw"]
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="7_6qbf0"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="7_gwuge"]
 [ext_resource type="Resource" uid="uid://dpovjlfpsypwe" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless3.tres" id="8_ox4jr"]
@@ -14,29 +11,6 @@
 [ext_resource type="Resource" uid="uid://pqv0rqhifr8r" path="res://Resources/Components/Counters/Indv/Stacks/DefHandSize.tres" id="11_p6xg6"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="12_t54tr"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="13_qn2ns"]
-
-[sub_resource type="Resource" id="Resource_3b14e"]
-script = ExtResource("5_c4phv")
-send = "Stack"
-send_to = 2
-top_stack = true
-shuffle = false
-card_ammount = 1
-reveal = false
-who_chooses = 4
-side = 2
-card_options = ExtResource("4_fv8lw")
-view = true
-portion = -1
-from_stack = 0
-slot_choose_num = -1
-metadata/_custom_type_script = "uid://8sh5p3leflla"
-
-[sub_resource type="Resource" id="Resource_4k152"]
-script = ExtResource("6_ilcaw")
-order = Array[int]([])
-card_disrupt = SubResource("Resource_3b14e")
-metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_7dwum"]
 script = ExtResource("7_gwuge")
@@ -47,7 +21,6 @@ defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
-always_effect = SubResource("Resource_4k152")
 share_prompt = false
 prompt_effects = Array[ExtResource("7_6qbf0")]([])
 conditional_self_dmg = false

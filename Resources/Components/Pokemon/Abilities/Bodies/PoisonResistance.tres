@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="Ability" load_steps=5 format=3 uid="uid://cucqwlq7u00cu"]
+
+[ext_resource type="Resource" uid="uid://b7opiwcexr55" path="res://Resources/Components/Effects/Buff/Immunity/Immune2Poision.tres" id="1_gks57"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_2kwgi"]
+[ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="3_3fd2p"]
+
+[sub_resource type="Resource" id="Resource_or7n7"]
+script = ExtResource("2_2kwgi")
+order = Array[int]([])
+buff = ExtResource("1_gks57")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[resource]
+script = ExtResource("3_3fd2p")
+category = "Body"
+name = "Poison Resistance"
+description = "[name] can't be Poisoned."
+affected_by_condition = false
+active = false
+how_often = "Once per Mon"
+independent_src_trg = false
+passive = SubResource("Resource_or7n7")
+metadata/_custom_type_script = "uid://bs2y8ocljilv8"

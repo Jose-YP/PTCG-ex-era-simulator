@@ -1,25 +1,17 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=23 format=3 uid="uid://bx4qntvsack8p"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=20 format=3 uid="uid://bx4qntvsack8p"]
 
 [ext_resource type="Texture2D" uid="uid://cyqi82o0ahlpc" path="res://Art/Cards/3 ex Dragon/92.jpg" id="1_nifge"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_uubah"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_k7e38"]
 [ext_resource type="Resource" uid="uid://dsslhipk3ix2o" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Water1.tres" id="3_msgfn"]
 [ext_resource type="Resource" uid="uid://dpovjlfpsypwe" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless3.tres" id="4_mybni"]
-[ext_resource type="Resource" uid="uid://b8is5cnt8xjlo" path="res://Resources/Components/Effects/Mimic/MimicSelfEvolutions.tres" id="4_pnumm"]
 [ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="5_pnumm"]
-[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="5_u2ctw"]
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="6_mybni"]
 [ext_resource type="Resource" uid="uid://bufxq7qfe3kv2" path="res://Resources/Components/EnData/Water.tres" id="6_u2ctw"]
 [ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="7_co3x3"]
 [ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="8_bijs0"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="9_lm3bf"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="10_u8jm1"]
-
-[sub_resource type="Resource" id="Resource_co3x3"]
-script = ExtResource("5_u2ctw")
-order = Array[int]([])
-mimic = ExtResource("4_pnumm")
-metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_bijs0"]
 script = ExtResource("9_lm3bf")
@@ -30,7 +22,6 @@ defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
-always_effect = SubResource("Resource_co3x3")
 share_prompt = false
 prompt_effects = Array[ExtResource("6_mybni")]([])
 conditional_self_dmg = false

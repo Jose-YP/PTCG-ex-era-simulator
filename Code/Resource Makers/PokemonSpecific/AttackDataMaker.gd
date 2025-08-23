@@ -22,12 +22,6 @@ class_name AttackData
 ##[br][i]Future ones will be added when needed
 ##[br]Not recommended for use unless counter needs to be shared between dmg and effects
 @export var replace_num: bool = false
-##If [member prompt] and [member ask] are true then this effect will occur
-@export var success_effect: EffectCall
-##If [member prompt] and [member ask] are false then this effect will occur
-@export var fail_effect: EffectCall
-##This effect will always occur no matter [member prompt] and [member ask]
-@export var always_effect: EffectCall
 @export var share_prompt: bool
 @export var prompt_effects: Array[EffectCollect]
 
@@ -84,14 +78,3 @@ func print_data():
 	if condition & 2 != 0: print_rich("Can use when Asleep")
 	if condition & 4 != 0: print_rich("Can use when Paralyzed")
 	if condition & 8 != 0: print_rich("Can use when Confused")
-	
-	var contains: String = ""
-	if fail_effect:
-		contains += "A Fail Effect\n"
-	if success_effect:
-		contains += "A Success Effect\n"
-	if always_effect:
-		contains += "An Always Effect\n"
-	if contains != "":
-		print_rich("[center]------------------EFFECTS------------------")
-		print("HAS: ", contains)

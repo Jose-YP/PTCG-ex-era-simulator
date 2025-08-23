@@ -1,0 +1,121 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=26 format=3 uid="uid://bf1kk8opucyo8"]
+
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_3quvk"]
+[ext_resource type="Texture2D" uid="uid://c1sh6shitbgya" path="res://Art/Cards/2 ex Sandstorm/13.jpg" id="1_ff0re"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="2_f2vfr"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_2g5o2"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_tq0ib"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="4_5dsco"]
+[ext_resource type="Resource" uid="uid://c83xi8uwwrb6x" path="res://Resources/Components/Effects/Prompts/DefhasEvoMons.tres" id="5_tpkya"]
+[ext_resource type="Resource" uid="uid://dmb635n2d0erk" path="res://Resources/Components/Effects/Draw/Draw3.tres" id="6_oeoma"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="7_ykb1v"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="8_aemdk"]
+[ext_resource type="Resource" uid="uid://ddar4dlschhmr" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/F1C2.tres" id="9_frgru"]
+[ext_resource type="Resource" uid="uid://dnnekosklb3ar" path="res://Resources/Components/Pokemon/Attacks/AttackData/40Dmg.tres" id="10_4jdt2"]
+[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="11_up6gc"]
+[ext_resource type="Script" uid="uid://cswtf00ovs0ss" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/TypeChangeMaker.gd" id="12_3q3da"]
+[ext_resource type="Resource" uid="uid://sddhm3042c13" path="res://Resources/Components/Effects/Prompts/PromptComparator/IsLunatoneInPlay.tres" id="13_i8fqq"]
+[ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="14_411yi"]
+
+[sub_resource type="Resource" id="Resource_ocm2o"]
+script = ExtResource("7_ykb1v")
+order = Array[int]([])
+draw_ammount = ExtResource("6_oeoma")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_w0klo"]
+script = ExtResource("4_5dsco")
+prompt = ExtResource("5_tpkya")
+success = SubResource("Resource_ocm2o")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
+[sub_resource type="Resource" id="Resource_6hj42"]
+script = ExtResource("8_aemdk")
+description = "If your opponent has any Evolved Pokémon in play, draw 3 cards."
+prompt_reliant = false
+initial_main_DMG = 0
+defender_properties = 0
+condition = 1
+before_damage = false
+replace_num = false
+share_prompt = false
+prompt_effects = Array[ExtResource("4_5dsco")]([SubResource("Resource_w0klo")])
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_56kwh"]
+script = ExtResource("1_3quvk")
+name = "Cosmic Draw"
+attack_cost = ExtResource("3_tq0ib")
+attack_data = SubResource("Resource_6hj42")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_e1uv6"]
+script = ExtResource("1_3quvk")
+name = "Solar Blast"
+attack_cost = ExtResource("9_frgru")
+attack_data = ExtResource("10_4jdt2")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_6rf85"]
+script = ExtResource("12_3q3da")
+ask = ExtResource("11_up6gc")
+which = 0
+inclusive = false
+add_flags = false
+new_type = 2
+application = "Slot"
+duration = -1
+metadata/_custom_type_script = "uid://cswtf00ovs0ss"
+
+[sub_resource type="Resource" id="Resource_pdep4"]
+script = ExtResource("7_ykb1v")
+order = Array[int]([])
+type_change = SubResource("Resource_6rf85")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_1ewrk"]
+script = ExtResource("14_411yi")
+category = "Power"
+name = "Solar Eclipse"
+description = "Once during your turn (before your attack), if Lunatone is in play, you may use this power. Until the end of your turn, Solrock's type is {Fire}."
+affected_by_condition = true
+active = false
+how_often = "Once per Mon"
+independent_src_trg = false
+prompt = ExtResource("13_i8fqq")
+effect = SubResource("Resource_pdep4")
+metadata/_custom_type_script = "uid://bs2y8ocljilv8"
+
+[sub_resource type="Resource" id="Resource_4y00o"]
+script = ExtResource("2_f2vfr")
+HP = 70
+retreat = 1
+pokepower = SubResource("Resource_1ewrk")
+attacks = Array[ExtResource("1_3quvk")]([SubResource("Resource_56kwh"), SubResource("Resource_e1uv6")])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 1
+owner = 0
+type = 32
+weak = 1
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("3_2g5o2")
+name = "Solrock"
+image = ExtResource("1_ff0re")
+illustrator = "Hajime Kusajima"
+number = 13
+rarity = 3
+expansion = 1
+categories = 1
+pokemon_properties = SubResource("Resource_4y00o")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

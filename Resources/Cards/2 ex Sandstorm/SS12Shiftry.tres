@@ -1,0 +1,114 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=23 format=3 uid="uid://dbtmyxjadb4l6"]
+
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_mcg87"]
+[ext_resource type="Texture2D" uid="uid://cqqnsy884j5um" path="res://Art/Cards/2 ex Sandstorm/12.jpg" id="1_xmy6c"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="2_biftu"]
+[ext_resource type="Resource" uid="uid://do6j5trg1lt8m" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/G2C2.tres" id="3_30swr"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_c8wu8"]
+[ext_resource type="Resource" uid="uid://b0kbpn1xj1466" path="res://Resources/Components/Counters/Indv/Slots/OtherEnergyTotal.tres" id="4_5oybd"]
+[ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="5_mao3i"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="6_jiv6j"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="7_wr5et"]
+[ext_resource type="Resource" uid="uid://c7itelq8jtjc2" path="res://Resources/Components/EnData/Rainbow.tres" id="8_hx4tn"]
+[ext_resource type="Resource" uid="uid://crhg4u3yu2cso" path="res://Resources/Components/Effects/Asks/General/FromOther.tres" id="9_7td4j"]
+[ext_resource type="Script" uid="uid://cimk6l7ytw7xg" path="res://Code/Resource Makers/EffectSpecific/Components/EnMovMaker.gd" id="10_8w5rn"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="11_ortyy"]
+[ext_resource type="Resource" uid="uid://ekj1myy642kh" path="res://Resources/Components/Effects/Prompts/PromptHeads.tres" id="12_ayb4x"]
+[ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="13_2py1k"]
+
+[sub_resource type="Resource" id="Resource_1vqvt"]
+script = ExtResource("5_mao3i")
+comparision_type = "Return"
+first_comparison = ExtResource("4_5oybd")
+compare_to = "None"
+second_constant = 0
+operate_w_constant = "None"
+metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
+
+[sub_resource type="Resource" id="Resource_6hhl7"]
+script = ExtResource("7_wr5et")
+description = "Does 80 damage minus 10 damage for each Energy attached to the Defending Pokémon."
+prompt_reliant = false
+initial_main_DMG = 80
+defender_properties = 0
+condition = 1
+before_damage = false
+replace_num = false
+share_prompt = false
+prompt_effects = Array[ExtResource("6_jiv6j")]([])
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 3
+modifier_num = 10
+comparator = SubResource("Resource_1vqvt")
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_7xsg0"]
+script = ExtResource("1_mcg87")
+name = "Light Touch Throw"
+attack_cost = ExtResource("3_30swr")
+attack_data = SubResource("Resource_6hhl7")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_6rif4"]
+script = ExtResource("10_8w5rn")
+action = 0
+chooser = 4
+givers = ExtResource("9_7td4j")
+to_stack = 2
+stack_direction = 2
+energy_carry_over = false
+action_ammount = 1
+energy_ammount = 1
+energy_move_type = 2
+en_type = ExtResource("8_hx4tn")
+metadata/_custom_type_script = "uid://cimk6l7ytw7xg"
+
+[sub_resource type="Resource" id="Resource_07xcp"]
+script = ExtResource("11_ortyy")
+order = Array[int]([])
+energy_movement = SubResource("Resource_6rif4")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_htn7a"]
+script = ExtResource("13_2py1k")
+category = "Power"
+name = "Fan Away"
+description = "Once during your turn (before your attack), you may flip a coin. If heads, return 1 Energy card attached to the Defending Pokémon to your opponent's hand."
+affected_by_condition = true
+active = false
+how_often = "Once per Mon"
+independent_src_trg = false
+prompt = ExtResource("12_ayb4x")
+effect = SubResource("Resource_07xcp")
+metadata/_custom_type_script = "uid://bs2y8ocljilv8"
+
+[sub_resource type="Resource" id="Resource_4y00o"]
+script = ExtResource("2_biftu")
+HP = 120
+retreat = 2
+pokebody = SubResource("Resource_htn7a")
+attacks = Array[ExtResource("1_mcg87")]([SubResource("Resource_7xsg0")])
+evo_stage = "Stage 2"
+evolves_from = "Nuzleaf"
+considered = 1
+owner = 0
+type = 1
+weak = 2
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("3_c8wu8")
+name = "Shiftry"
+image = ExtResource("1_xmy6c")
+illustrator = "Atsuko Nishida"
+number = 12
+rarity = 3
+expansion = 1
+categories = 1
+pokemon_properties = SubResource("Resource_4y00o")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

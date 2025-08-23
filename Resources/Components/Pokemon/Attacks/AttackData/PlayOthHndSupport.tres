@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="AttackData" load_steps=8 format=3 uid="uid://cq2le7tw7n5pw"]
+
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="1_de557"]
+[ext_resource type="Script" uid="uid://bbs6ywsbueb13" path="res://Code/Resource Makers/EffectSpecific/Components/CheatPlayMaker.gd" id="2_bl5pj"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_5k8rj"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="4_ifx0w"]
+
+[sub_resource type="Resource" id="Resource_fgde2"]
+script = ExtResource("2_bl5pj")
+metadata/_custom_type_script = "uid://bbs6ywsbueb13"
+
+[sub_resource type="Resource" id="Resource_s6ouv"]
+script = ExtResource("3_5k8rj")
+order = Array[int]([])
+cheat_play = SubResource("Resource_fgde2")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_jaq4i"]
+script = ExtResource("1_de557")
+success = SubResource("Resource_s6ouv")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
+[resource]
+script = ExtResource("4_ifx0w")
+description = "Look at your opponent's hand. You may use the effect of a Supporter card you find there as the effect of this attack. (The Supporter card remains in your opponent's hand.)"
+prompt_reliant = false
+initial_main_DMG = 0
+defender_properties = 0
+condition = 1
+before_damage = false
+replace_num = false
+share_prompt = false
+prompt_effects = Array[ExtResource("1_de557")]([SubResource("Resource_jaq4i")])
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"

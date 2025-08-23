@@ -17,7 +17,7 @@ func effect_collect_play() -> void:
 		if result and success:
 			success.play_effect()
 			return
-		elif fail:
+		if not result and fail:
 			SignalBus.slot_change_failed.emit(success.get_slot_change())
 			fail.play_effect()
 			return
@@ -31,6 +31,25 @@ func effect_collect_play() -> void:
 		return
 	print(success.get_slot_change())
 	SignalBus.slot_change_failed.emit(success.get_slot_change())
+
+func shared_collect_play(result: bool) -> void:
+	if prompt_carry_over:
+		if result and success:
+			success.play_effect()
+			return
+		if not result and fail:
+			fail.play_effect()
+			return
+	
+	else:
+		if success:
+			success.play_effect()
+			return
+		if fail:
+			fail.play_effect()
+			return
+	
+	emit_slot_change_fail()
 
 func emit_slot_change_fail():
 	SignalBus.slot_change_failed.emit(success.get_slot_change())

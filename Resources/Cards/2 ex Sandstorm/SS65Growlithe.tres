@@ -1,32 +1,17 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=11 format=3 uid="uid://bn8uh0l8j4f6t"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=8 format=3 uid="uid://bn8uh0l8j4f6t"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_ay2n5"]
 [ext_resource type="Texture2D" uid="uid://b2cgq33c1hq4x" path="res://Art/Cards/2 ex Sandstorm/65.jpg" id="1_r4ova"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_al632"]
 [ext_resource type="Resource" uid="uid://b5bwtdlby23i1" path="res://Resources/Components/Pokemon/Attacks/EffectlessAttacks/R1C1-20Flare.tres" id="3_5l4rd"]
-[ext_resource type="Resource" uid="uid://bext0mocufqgp" path="res://Resources/Components/Effects/Conditions/BasicBurn.tres" id="4_6gogi"]
-[ext_resource type="Resource" uid="uid://bessnawi8b2ct" path="res://Resources/Components/Occurances/AttackedByOpponent.tres" id="5_qsykt"]
-[ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="6_r1hdk"]
+[ext_resource type="Resource" uid="uid://cd2auynlr77aw" path="res://Resources/Components/Pokemon/Abilities/Bodies/FireVeill.tres" id="4_7s3qr"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="7_4e2oq"]
-
-[sub_resource type="Resource" id="Resource_hdp10"]
-script = ExtResource("6_r1hdk")
-category = "Body"
-name = "Fire Veil"
-description = "If [name] is your Active Pokémon and is damaged by an opponent's attack (even if [name] is Knocked Out), the Attacking Pokémon is now Burned."
-affected_by_condition = true
-active = false
-how_often = "Once per Mon"
-independent_src_trg = false
-occurance = ExtResource("5_qsykt")
-effect = ExtResource("4_6gogi")
-metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 
 [sub_resource type="Resource" id="Resource_k6lxq"]
 script = ExtResource("7_4e2oq")
 HP = 50
 retreat = 1
-pokebody = SubResource("Resource_hdp10")
+pokebody = ExtResource("4_7s3qr")
 attacks = Array[ExtResource("2_al632")]([ExtResource("3_5l4rd")])
 evo_stage = "Basic"
 evolves_from = ""

@@ -1,0 +1,79 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=17 format=3 uid="uid://bad1j0wh64j7b"]
+
+[ext_resource type="Texture2D" uid="uid://bgguoh3kmlxqd" path="res://Art/Cards/2 ex Sandstorm/15.jpg" id="1_4g5wf"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_we07q"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="2_k3nk8"]
+[ext_resource type="Resource" uid="uid://be6718keco2mu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/R1C2.tres" id="3_3b56x"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_31xaw"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="4_7cb0r"]
+[ext_resource type="Resource" uid="uid://cvl6vwm8rquev" path="res://Resources/Components/Effects/EnergyMovement/Send/SelfDisAllFire.tres" id="5_qp50w"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="6_62afb"]
+[ext_resource type="Resource" uid="uid://ekj1myy642kh" path="res://Resources/Components/Effects/Prompts/PromptHeads.tres" id="7_kr50r"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="8_xmrty"]
+[ext_resource type="Resource" uid="uid://cd2auynlr77aw" path="res://Resources/Components/Pokemon/Abilities/Bodies/FireVeill.tres" id="9_p7yr4"]
+
+[sub_resource type="Resource" id="Resource_jq1qd"]
+script = ExtResource("6_62afb")
+order = Array[int]([])
+energy_movement = ExtResource("5_qp50w")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_72m7y"]
+script = ExtResource("4_7cb0r")
+prompt = ExtResource("7_kr50r")
+fail = SubResource("Resource_jq1qd")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
+[sub_resource type="Resource" id="Resource_h8nqt"]
+script = ExtResource("8_xmrty")
+description = " Flip a coin. If tails, discard all {Fire} Energy cards attached to [name]."
+prompt_reliant = false
+initial_main_DMG = 60
+defender_properties = 0
+condition = 1
+before_damage = false
+replace_num = false
+share_prompt = false
+prompt_effects = Array[ExtResource("4_7cb0r")]([SubResource("Resource_72m7y")])
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_cl81x"]
+script = ExtResource("1_we07q")
+name = "Burn Up"
+attack_cost = ExtResource("3_3b56x")
+attack_data = SubResource("Resource_h8nqt")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_4y00o"]
+script = ExtResource("2_k3nk8")
+HP = 80
+retreat = 1
+pokebody = ExtResource("9_p7yr4")
+attacks = Array[ExtResource("1_we07q")]([SubResource("Resource_cl81x")])
+evo_stage = "Stage 1"
+evolves_from = "Growlithe"
+considered = 1
+owner = 0
+type = 2
+weak = 4
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("3_31xaw")
+name = "Arcanine"
+image = ExtResource("1_4g5wf")
+illustrator = "Hajime Kusajima"
+number = 15
+rarity = 2
+expansion = 1
+categories = 1
+pokemon_properties = SubResource("Resource_4y00o")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

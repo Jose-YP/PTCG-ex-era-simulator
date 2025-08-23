@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=24 format=3 uid="uid://c0go1swy2811a"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=15 format=3 uid="uid://c0go1swy2811a"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_4cmlc"]
 [ext_resource type="Texture2D" uid="uid://b3iqbwwtc15v4" path="res://Art/Cards/5 ex Hidden Legends/3.jpg" id="1_jdj80"]
@@ -7,36 +7,8 @@
 [ext_resource type="Resource" uid="uid://ekj1myy642kh" path="res://Resources/Components/Effects/Prompts/PromptHeads.tres" id="4_mmtik"]
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="5_n6mey"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="5_t30j4"]
-[ext_resource type="Resource" uid="uid://dm2i7spst0qpp" path="res://Resources/Components/Effects/Identifiers/AnyCard.tres" id="6_0i6di"]
-[ext_resource type="Script" uid="uid://8sh5p3leflla" path="res://Code/Resource Makers/EffectSpecific/Components/CardDisruptMaker.gd" id="7_4sc42"]
-[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="8_6ag0q"]
 [ext_resource type="Resource" uid="uid://c2gawfb472bm" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/G1C1.tres" id="9_clttu"]
-[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="10_72hrr"]
-[ext_resource type="Script" uid="uid://8s3m1dar3r33" path="res://Code/Resource Makers/EffectSpecific/Components/ConditionMaker.gd" id="11_r4thc"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="12_rvexc"]
-
-[sub_resource type="Resource" id="Resource_8uxj6"]
-script = ExtResource("7_4sc42")
-send = "Stack"
-send_to = 2
-top_stack = true
-shuffle = false
-card_ammount = 1
-reveal = false
-who_chooses = 4
-side = 2
-card_options = ExtResource("6_0i6di")
-view = true
-portion = -1
-from_stack = 0
-slot_choose_num = -1
-metadata/_custom_type_script = "uid://8sh5p3leflla"
-
-[sub_resource type="Resource" id="Resource_hqpkl"]
-script = ExtResource("8_6ag0q")
-order = Array[int]([])
-card_disrupt = SubResource("Resource_8uxj6")
-metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_7hcew"]
 script = ExtResource("5_t30j4")
@@ -48,7 +20,6 @@ defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
-success_effect = SubResource("Resource_hqpkl")
 share_prompt = false
 prompt_effects = Array[ExtResource("5_n6mey")]([])
 conditional_self_dmg = false
@@ -66,24 +37,6 @@ attack_cost = ExtResource("3_ycyog")
 attack_data = SubResource("Resource_7hcew")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
-[sub_resource type="Resource" id="Resource_cn735"]
-script = ExtResource("11_r4thc")
-ask = ExtResource("10_72hrr")
-any = false
-poison = 3
-burn = null
-turn_cond = null
-imprision = null
-shockwave = null
-knockOut = null
-metadata/_custom_type_script = "uid://8s3m1dar3r33"
-
-[sub_resource type="Resource" id="Resource_pyyvo"]
-script = ExtResource("8_6ag0q")
-order = Array[int]([])
-condition = SubResource("Resource_cn735")
-metadata/_custom_type_script = "uid://dmulm3x3dj842"
-
 [sub_resource type="Resource" id="Resource_qx0es"]
 script = ExtResource("5_t30j4")
 description = "The Defending Pokémon is now Poisoned. Put 3 damage counters instead of 1 on the Defending Pokémon between turns."
@@ -93,7 +46,6 @@ defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
-always_effect = SubResource("Resource_pyyvo")
 share_prompt = false
 prompt_effects = Array[ExtResource("5_n6mey")]([])
 conditional_self_dmg = false

@@ -1,11 +1,8 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=28 format=3 uid="uid://btetlfpnc0pgh"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=21 format=3 uid="uid://btetlfpnc0pgh"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_1d60h"]
 [ext_resource type="Texture2D" uid="uid://b6db2ua3lcrpy" path="res://Art/Cards/2 ex Sandstorm/30.jpg" id="1_op54d"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_7v2tk"]
-[ext_resource type="Resource" uid="uid://c7itelq8jtjc2" path="res://Resources/Components/EnData/Rainbow.tres" id="3_7v2tk"]
-[ext_resource type="Script" uid="uid://cimk6l7ytw7xg" path="res://Code/Resource Makers/EffectSpecific/Components/EnMovMaker.gd" id="3_prlnf"]
-[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_5exig"]
 [ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="6_7v2tk"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="7_p7lid"]
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="7_r2wsf"]
@@ -16,33 +13,6 @@
 [ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="11_qef3v"]
 [ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="12_46hn3"]
 
-[sub_resource type="Resource" id="Resource_kjlrb"]
-metadata/__load_path__ = "res://Resources/Components/Effects/Asks/FromSource.tres"
-
-[sub_resource type="Resource" id="Resource_7v2tk"]
-metadata/__load_path__ = "res://Resources/Components/Effects/Asks/FromSource.tres"
-
-[sub_resource type="Resource" id="Resource_teul3"]
-script = ExtResource("3_prlnf")
-action = 4
-chooser = 1
-givers = SubResource("Resource_kjlrb")
-reciever = SubResource("Resource_7v2tk")
-to_stack = 2
-stack_direction = 2
-energy_carry_over = false
-action_ammount = 0
-energy_ammount = -1
-energy_move_type = 0
-en_type = ExtResource("3_7v2tk")
-metadata/_custom_type_script = "uid://cimk6l7ytw7xg"
-
-[sub_resource type="Resource" id="Resource_r2wsf"]
-script = ExtResource("4_5exig")
-order = Array[int]([])
-energy_movement = SubResource("Resource_teul3")
-metadata/_custom_type_script = "uid://dmulm3x3dj842"
-
 [sub_resource type="Resource" id="Resource_u7b72"]
 script = ExtResource("7_teul3")
 description = "If you have {Water} Energy cards in your hand, attach as many {Water} Energy cards as you like to any of your Active Pokémon."
@@ -52,7 +22,6 @@ defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
-always_effect = SubResource("Resource_r2wsf")
 share_prompt = false
 prompt_effects = Array[ExtResource("7_r2wsf")]([])
 conditional_self_dmg = false

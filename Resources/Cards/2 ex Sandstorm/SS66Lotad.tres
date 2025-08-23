@@ -1,39 +1,17 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=13 format=3 uid="uid://ogq7g7lleihn"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=8 format=3 uid="uid://ogq7g7lleihn"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_d5rf2"]
 [ext_resource type="Texture2D" uid="uid://b0fy0u0d4gjtb" path="res://Art/Cards/2 ex Sandstorm/66.jpg" id="1_flabt"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_p14l2"]
 [ext_resource type="Resource" uid="uid://bs6b2prk06rqj" path="res://Resources/Components/Pokemon/Attacks/EffectlessAttacks/Ram1-10.tres" id="3_dtt1p"]
-[ext_resource type="Resource" uid="uid://vmk4e17o42c2" path="res://Resources/Components/Effects/DmgManip/Remove/Heal1AllSrc.tres" id="4_l7mg4"]
-[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="5_e04bc"]
-[ext_resource type="Resource" uid="uid://tgm35ahd5evj" path="res://Resources/Components/Occurances/SelfBetweenTurns.tres" id="6_k3xn8"]
-[ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="7_cmba7"]
+[ext_resource type="Resource" uid="uid://dasiggcilwwq2" path="res://Resources/Components/Pokemon/Abilities/Bodies/RainDish.tres" id="4_82kvf"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="8_vi2ot"]
-
-[sub_resource type="Resource" id="Resource_1qsgg"]
-script = ExtResource("5_e04bc")
-order = Array[int]([])
-dmgManip = ExtResource("4_l7mg4")
-metadata/_custom_type_script = "uid://dmulm3x3dj842"
-
-[sub_resource type="Resource" id="Resource_nbjsi"]
-script = ExtResource("7_cmba7")
-category = "Body"
-name = "Rain Dish"
-description = "At any time between turns, remove 1 damage counter from [name]."
-affected_by_condition = true
-active = false
-how_often = "Once per Mon"
-independent_src_trg = false
-occurance = ExtResource("6_k3xn8")
-effect = SubResource("Resource_1qsgg")
-metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 
 [sub_resource type="Resource" id="Resource_gfjlf"]
 script = ExtResource("8_vi2ot")
 HP = 40
 retreat = 1
-pokebody = SubResource("Resource_nbjsi")
+pokebody = ExtResource("4_82kvf")
 attacks = Array[ExtResource("2_p14l2")]([ExtResource("3_dtt1p")])
 evo_stage = "Basic"
 evolves_from = ""

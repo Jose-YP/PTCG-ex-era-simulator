@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=21 format=3 uid="uid://nlegu1su4wtj"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=20 format=3 uid="uid://nlegu1su4wtj"]
 
 [ext_resource type="Texture2D" uid="uid://rhkjicwvnt" path="res://Art/Cards/15 ex Dragon Frontiers/91.jpg" id="1_c0rv0"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_ihegg"]
@@ -12,11 +12,6 @@
 [ext_resource type="Resource" uid="uid://bkt6ry7vyha70" path="res://Resources/Components/Effects/Asks/General/Other.tres" id="8_w7mtu"]
 [ext_resource type="Script" uid="uid://scca13hg4k1l" path="res://Code/Resource Makers/EffectSpecific/Components/DmgManipMaker.gd" id="9_btqi0"]
 
-[sub_resource type="Resource" id="Resource_gfg3p"]
-script = ExtResource("4_gci62")
-order = Array[int]([])
-metadata/_custom_type_script = "uid://dmulm3x3dj842"
-
 [sub_resource type="Resource" id="Resource_gr24l"]
 script = ExtResource("5_poekm")
 description = "Your opponent can't play any Trainer cards (except for Supporter cards) from his or her hand during your opponent's next turn."
@@ -26,7 +21,6 @@ defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
-always_effect = SubResource("Resource_gfg3p")
 share_prompt = false
 prompt_effects = Array[ExtResource("5_5nx5n")]([])
 conditional_self_dmg = false

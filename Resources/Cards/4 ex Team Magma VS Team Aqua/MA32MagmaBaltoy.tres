@@ -1,42 +1,13 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=22 format=3 uid="uid://dtt6j0828sxy6"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=14 format=3 uid="uid://dtt6j0828sxy6"]
 
 [ext_resource type="Texture2D" uid="uid://clkdfogvw0n3o" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/32.jpg" id="1_sp5ng"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_hr55n"]
 [ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_88a3h"]
-[ext_resource type="Resource" uid="uid://cw44iqotg3v3f" path="res://Resources/Components/Effects/Asks/General/FromDefending.tres" id="4_o4bs1"]
-[ext_resource type="Resource" uid="uid://e706qq8o0hri" path="res://Resources/Components/Counters/Comparator/Return/Return2Flip.tres" id="5_hr55n"]
-[ext_resource type="Script" uid="uid://scca13hg4k1l" path="res://Code/Resource Makers/EffectSpecific/Components/DmgManipMaker.gd" id="6_yr2hq"]
-[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="7_fundw"]
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="8_88a3h"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="8_kxtxb"]
 [ext_resource type="Resource" uid="uid://cvrbxqvsyxt6t" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/P1C1.tres" id="9_hr55n"]
-[ext_resource type="Resource" uid="uid://xr5e0b13ibwu" path="res://Resources/Components/Effects/DmgManip/Add/Add1DefDamaged.tres" id="10_88a3h"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="10_c8qcg"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="11_ro88b"]
-
-[sub_resource type="Resource" id="Resource_ii52m"]
-script = ExtResource("6_yr2hq")
-choosing = 4
-mode = "Add"
-ask = ExtResource("4_o4bs1")
-how_many = 1
-choose_num = 0
-turn_delay = -1
-prevent_KO = false
-anyway_u_like = false
-with_leftover = "None"
-leftover_anyway = false
-vary_choose_num = true
-plus = true
-comparator = ExtResource("5_hr55n")
-modifier = 1
-metadata/_custom_type_script = "uid://scca13hg4k1l"
-
-[sub_resource type="Resource" id="Resource_5gebk"]
-script = ExtResource("7_fundw")
-order = Array[int]([])
-dmgManip = SubResource("Resource_ii52m")
-metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_n77ks"]
 script = ExtResource("8_kxtxb")
@@ -47,7 +18,6 @@ defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
-always_effect = SubResource("Resource_5gebk")
 share_prompt = false
 prompt_effects = Array[ExtResource("8_88a3h")]([])
 conditional_self_dmg = false
@@ -65,12 +35,6 @@ attack_cost = ExtResource("3_88a3h")
 attack_data = SubResource("Resource_n77ks")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
-[sub_resource type="Resource" id="Resource_o4bs1"]
-script = ExtResource("7_fundw")
-order = Array[int]([])
-dmgManip = ExtResource("10_88a3h")
-metadata/_custom_type_script = "uid://dmulm3x3dj842"
-
 [sub_resource type="Resource" id="Resource_jq5tw"]
 script = ExtResource("8_kxtxb")
 description = "Put 1 damage counter on each of your opponent's Pokémon that already has damage counters on it."
@@ -80,7 +44,6 @@ defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
-always_effect = SubResource("Resource_o4bs1")
 share_prompt = false
 prompt_effects = Array[ExtResource("8_88a3h")]([])
 conditional_self_dmg = false

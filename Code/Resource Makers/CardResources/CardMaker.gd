@@ -221,8 +221,8 @@ func same_card(comparing_to: Base_Card) -> bool:
 func has_before_prompt() -> bool:
 	var result: bool = false
 	
-	if trainer_properties and trainer_properties.prompt:
-		result = trainer_properties.prompt.has_before_prompt()
+	if trainer_properties and trainer_properties.prompt_effects[0].prompt:
+		result = trainer_properties.prompt_effects[0].prompt.has_before_prompt()
 	if energy_properties and energy_properties.prompt:
 		result = energy_properties.prompt.has_before_prompt() or result
 	
@@ -231,7 +231,7 @@ func has_before_prompt() -> bool:
 func play_before_prompt() -> bool:
 	var result: bool = false
 	if trainer_properties:
-		result = await trainer_properties.prompt.before_activating()
+		result = await trainer_properties.prompt_effects[0].before_activating()
 	if energy_properties:
 		result = await energy_properties.prompt.before_activating()
 	

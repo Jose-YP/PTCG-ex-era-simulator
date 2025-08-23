@@ -1,25 +1,14 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=22 format=3 uid="uid://dcem4x6l6a7f7"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=15 format=3 uid="uid://dcem4x6l6a7f7"]
 
 [ext_resource type="Texture2D" uid="uid://bocletpyyw830" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/12.jpg" id="1_dcu3a"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_gemwu"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_3ynhu"]
 [ext_resource type="Resource" uid="uid://dytd2agmtnhwi" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Fire1.tres" id="3_oswsr"]
-[ext_resource type="Resource" uid="uid://du482m5gmqat8" path="res://Resources/Components/Effects/CardDisrupt/Stack/DiscTopCardOppDeck.tres" id="4_oswsr"]
-[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="5_6i6qd"]
-[ext_resource type="Resource" uid="uid://b86uut4qajrgg" path="res://Resources/Components/Effects/EnergyMovement/AtkSelfDisFire.tres" id="6_cs8r4"]
 [ext_resource type="Resource" uid="uid://ekj1myy642kh" path="res://Resources/Components/Effects/Prompts/PromptHeads.tres" id="7_rc86p"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="8_lrq8w"]
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="8_ujo65"]
 [ext_resource type="Resource" uid="uid://bpgsrqt47evh0" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/R1C1.tres" id="9_ujo65"]
-[ext_resource type="Resource" uid="uid://xqsdx183jrto" path="res://Resources/Components/Effects/EnergyMovement/AtkTrgDisFire.tres" id="10_6i6qd"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="10_rxytm"]
-[ext_resource type="Resource" uid="uid://y5ggbiiapsx7" path="res://Resources/Components/Effects/Swap/DefSwapTarget.tres" id="11_cs8r4"]
-
-[sub_resource type="Resource" id="Resource_2130i"]
-script = ExtResource("5_6i6qd")
-order = Array[int]([])
-card_disrupt = ExtResource("4_oswsr")
-metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_daj5y"]
 script = ExtResource("8_lrq8w")
@@ -31,8 +20,6 @@ defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
-fail_effect = ExtResource("6_cs8r4")
-always_effect = SubResource("Resource_2130i")
 share_prompt = false
 prompt_effects = Array[ExtResource("8_ujo65")]([])
 conditional_self_dmg = false
@@ -50,13 +37,6 @@ attack_cost = ExtResource("3_oswsr")
 attack_data = SubResource("Resource_daj5y")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
-[sub_resource type="Resource" id="Resource_rc86p"]
-script = ExtResource("5_6i6qd")
-order = Array[int]([])
-energy_movement = ExtResource("10_6i6qd")
-swap = ExtResource("11_cs8r4")
-metadata/_custom_type_script = "uid://dmulm3x3dj842"
-
 [sub_resource type="Resource" id="Resource_lrq8w"]
 script = ExtResource("8_lrq8w")
 description = "Discard a {Fire} Energy attached to [name] and your opponent switches the Defending Pokémon with 1 of his or her Benched Pokémon, if any."
@@ -66,7 +46,6 @@ defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
-always_effect = SubResource("Resource_rc86p")
 share_prompt = false
 prompt_effects = Array[ExtResource("8_ujo65")]([])
 conditional_self_dmg = false

@@ -1,40 +1,15 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=24 format=3 uid="uid://cbnw3a213i835"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=18 format=3 uid="uid://cbnw3a213i835"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_h4hff"]
 [ext_resource type="Texture2D" uid="uid://d1kfdxncbsbm" path="res://Art/Cards/16 ex Power Keepers/97.jpg" id="1_m0vbm"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_1ja4p"]
 [ext_resource type="Resource" uid="uid://bgqnsjskgne2u" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Darkness1.tres" id="3_4nav6"]
-[ext_resource type="Resource" uid="uid://c2ujs102gu8qn" path="res://Resources/Components/Effects/Asks/General/OthActive.tres" id="4_q7lhk"]
-[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="5_q7lhk"]
-[ext_resource type="Script" uid="uid://dtv1d2u2kvixy" path="res://Code/Resource Makers/EffectSpecific/Components/MimicMaker.gd" id="5_yxknq"]
-[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="6_axg2p"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="7_ukyo3"]
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="8_yxknq"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="9_7r15k"]
 [ext_resource type="Resource" uid="uid://kf3pkpvcb8tk" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/D1C2.tres" id="9_yxknq"]
 [ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="10_axg2p"]
 [ext_resource type="Script" uid="uid://br15mnap82upq" path="res://Code/Resource Makers/PokemonSpecific/BenchAttackMaker.gd" id="11_ukyo3"]
-
-[sub_resource type="Resource" id="Resource_uh4rw"]
-script = ExtResource("5_yxknq")
-mimicing = ExtResource("5_q7lhk")
-use = "Stack"
-ask = ExtResource("4_q7lhk")
-retrigger = true
-evolutions = false
-must_pay_energy = false
-adjustable_type = false
-mimic_self = false
-hard_reverse = false
-exclusive_mimic = Array[String]([])
-stack = 0
-metadata/_custom_type_script = "uid://dtv1d2u2kvixy"
-
-[sub_resource type="Resource" id="Resource_q7hpq"]
-script = ExtResource("6_axg2p")
-order = Array[int]([])
-mimic = SubResource("Resource_uh4rw")
-metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_0pypu"]
 script = ExtResource("7_ukyo3")
@@ -45,7 +20,6 @@ defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
-always_effect = SubResource("Resource_q7hpq")
 share_prompt = false
 prompt_effects = Array[ExtResource("8_yxknq")]([])
 conditional_self_dmg = false
