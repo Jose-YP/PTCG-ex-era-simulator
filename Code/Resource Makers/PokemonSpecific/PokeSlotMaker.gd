@@ -82,6 +82,25 @@ signal checked_up()
 #endregion
 #--------------------------------------
 
+func duplicate_deep() -> PokeSlot:
+	var copy: PokeSlot = self.duplicate(true)
+	
+	copy.current_card = current_card.duplicate_deep()
+	copy.evolved_from = []
+	copy.energy_cards = []
+	copy.tm_cards = []
+	
+	for card in evolved_from:
+		copy.evolved_from.append(card.duplicate_deep())
+	
+	for card in energy_cards:
+		copy.energy_cards.append(card.duplicate_deep())
+	
+	for card in tm_cards:
+		copy.tm_cards.append(card.duplicate_deep())
+	
+	return copy
+
 #--------------------------------------
 #region CHECKUP & POWER/BODY
 func pokemon_checkup() -> void:
@@ -93,6 +112,7 @@ func pokemon_checkup() -> void:
 	
 	await checkup_conditions()
 	
+	#region TIMERS
 	for card in energy_timers.keys():
 		if energy_timers[card] == 0 and not Globals.board_state.debug_unlimit:
 			energy_timers.erase(card)
@@ -106,6 +126,16 @@ func pokemon_checkup() -> void:
 			dmg_manip(dmg_timer["Damage"])
 		else:
 			print(dmg_timer)
+	
+	for change in changes:
+		if changes[change] == -1:
+			continue
+		elif changes[change] == 0:
+			remove_slot_change(change)
+		else:
+			changes[change] -= 1
+	
+#endregion
 	
 	Globals.fundies.stack_manager.get_stacks(is_home()).\
 		move_cards(tm_cards, Consts.STACKS.PLAY, Consts.STACKS.DISCARD, false, true)
@@ -447,6 +477,7 @@ func signaless_attatch_energy(energy_card: Base_Card):
 func signaless_remove_energy(removing: Base_Card):
 	for card in energy_cards:
 		if card.same_card(removing):
+			card.emit_remove_change()  
 			energy_cards.erase(card)
 			refresh()
 			return
@@ -589,7 +620,7 @@ func evolve_card(evolution: Base_Card) -> void:
 	Globals.fundies.record_single_src_trg(self)
 	await ability_emit(evolving)
 	disconnect_abilities()
-	
+	current_card.emit_remove_change()
 	evolved_from.append(current_card)
 	current_card = evolution
 	refresh_current_card()
@@ -605,6 +636,7 @@ func devolve_card() -> Base_Card:
 	
 	disconnect_abilities()
 	current_card = evolved_from.pop_back()
+	old_card.emit_remove_change()
 	
 	alleviate_all()
 	applied_condition.imprision = false
@@ -625,6 +657,7 @@ func attatch_tool(new_tool: Base_Card) -> void:
 	Globals.fundies.remove_top_source_target()
 
 func remove_tool() -> void:
+	tool_card.emit_remove_change()
 	tool_card = null
 	refresh()
 
@@ -651,6 +684,9 @@ func remove_all() -> Array[Base_Card]:
 	moving_cards.append_array(evolved_from)
 	moving_cards.append_array(energy_cards)
 	moving_cards.append_array(tm_cards)
+	
+	for card in moving_cards:
+		card.emit_remove_change()
 	
 	current_card = null
 	tool_card = null
@@ -801,14 +837,14 @@ func confusion_check() -> bool:
 #--------------------------------------
 #region SLOT CHANGE HANDLERS
 func apply_slot_change(apply: SlotChange):
-	if not apply in changes:
+	if is_filled() and not apply in changes:
 		changes[apply] = apply.duration
 		#Not putting refresh here
 		#it would cause an infinite recusion with SlotChange abilities
 		ui_slot.changes_display.set_changes(changes.keys())
 
 func remove_slot_change(removing: SlotChange):
-	if removing in changes:
+	if is_filled() and removing in changes:
 		changes.erase(removing)
 		ui_slot.changes_display.set_changes(changes.keys())
 

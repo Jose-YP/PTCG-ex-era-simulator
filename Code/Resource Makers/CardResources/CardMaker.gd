@@ -70,9 +70,15 @@ func duplicate_deep() -> Base_Card:
 			copy.pokemon_properties.attacks.append(attack.duplicate(true))
 	
 	elif trainer_properties:
-		copy.trainer_properties.prompt_effects = []
+		var train: Trainer = copy.trainer_properties
+		train.prompt_effects = []
 		for effect in trainer_properties.prompt_effects:
-			copy.trainer_properties.prompt_effects.append(effect.duplicate(true))
+			train.prompt_effects.append(effect.duplicate(true))
+			
+		if train.provided_attack:
+			train.provided_attack.attack_data.prompt_effects = []
+			for effect in trainer_properties.provided_attack.attack_data.prompt_effects:
+				train.provided_attack.attack_data.prompt_effects.append(effect.duplicate(true))
 		
 	elif energy_properties:
 		copy.energy_properties.prompt_effects = []
@@ -111,6 +117,39 @@ func is_considered(considered: String) -> bool:
 		return energy_properties.considered == considered
 	
 	return false
+
+func emit_remove_change():
+	if pokemon_properties:
+		var mon: Pokemon = pokemon_properties
+		for atk in mon.attacks:
+			for effect in atk.attack_data.prompt_effects:
+				effect.emit_slot_change_fail()
+		
+		if mon.pokebody:
+			var body: Ability = mon.pokebody
+			if body.passive:
+				SignalBus.slot_change_failed.emit(body.passive.get_slot_change())
+			if body.effect:
+				SignalBus.slot_change_failed.emit(body.effect.get_slot_change())
+		
+		if mon.pokepower:
+			var power: Ability = mon.pokepower
+			if power.passive:
+				SignalBus.slot_change_failed.emit(power.passive.get_slot_change())
+			if power.effect:
+				SignalBus.slot_change_failed.emit(power.effect.get_slot_change())
+	
+	if trainer_properties:
+		var train: Trainer = trainer_properties
+		for effect in train.prompt_effects:
+			effect.emit_slot_change_fail()
+		if train.provided_attack:
+			for effect in train.provided_attack.attack_data.prompt_effects:
+				effect.emit_slot_change_fail()
+	
+	if energy_properties:
+		for effect in energy_properties.attatch_effects + energy_properties.prompt_effects:
+			effect.emit_slot_change_fail()
 
 #region BOOLEANS
 #Lowest number for highest priority

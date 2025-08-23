@@ -1,0 +1,99 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=20 format=3 uid="uid://ct6jilqnffs38"]
+
+[ext_resource type="Texture2D" uid="uid://dfbt8ov52lxpe" path="res://Art/Cards/2 ex Sandstorm/6.jpg" id="1_eegfx"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_q6gej"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_mo62d"]
+[ext_resource type="Resource" uid="uid://b1rwmggf7a4do" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless2.tres" id="3_oof5k"]
+[ext_resource type="Resource" uid="uid://di63v5yvwp4wr" path="res://Resources/Components/Pokemon/Attacks/AttackData/20x2Flips.tres" id="4_u4g6m"]
+[ext_resource type="Resource" uid="uid://8444rgut4s83" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/L2C1.tres" id="5_xcntu"]
+[ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="6_f6ps3"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="7_5hnt7"]
+[ext_resource type="Resource" uid="uid://bgrhgxjnv4xo5" path="res://Resources/Components/Effects/EnergyMovement/DisSelfAllLightning.tres" id="8_lakh8"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="9_gsq6u"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="10_bkmoj"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="11_6ak4i"]
+
+[sub_resource type="Resource" id="Resource_ok447"]
+script = ExtResource("2_mo62d")
+name = "Double Kick"
+attack_cost = ExtResource("3_oof5k")
+attack_data = ExtResource("4_u4g6m")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_kp8fy"]
+script = ExtResource("6_f6ps3")
+formal_question = true
+question_string = "Will you discard all of [name]'s {Lightning} Energy?"
+yes_answer = "Yes"
+no_answer = "No"
+can_reverse = true
+occurance = false
+chooser = 0
+choose_location = "None"
+which_stack = 0
+metadata/_custom_type_script = "uid://b85jmc7067bjc"
+
+[sub_resource type="Resource" id="Resource_ilfgp"]
+script = ExtResource("9_gsq6u")
+order = Array[int]([])
+energy_movement = ExtResource("8_lakh8")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_63g8j"]
+script = ExtResource("7_5hnt7")
+success = SubResource("Resource_ilfgp")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
+[sub_resource type="Resource" id="Resource_n4dv3"]
+script = ExtResource("10_bkmoj")
+description = "You may discard all {Lightning} Energy cards attached to [name]. If you do, this attack's base damage is 70 instead of 40."
+prompt_reliant = false
+prompt = SubResource("Resource_kp8fy")
+initial_main_DMG = 40
+defender_properties = 0
+condition = 1
+before_damage = false
+replace_num = false
+share_prompt = true
+prompt_effects = Array[ExtResource("7_5hnt7")]([SubResource("Resource_63g8j")])
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = true
+modifier = 0
+modifier_num = 70
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_555wi"]
+script = ExtResource("2_mo62d")
+name = "Lightning Strike"
+attack_cost = ExtResource("5_xcntu")
+attack_data = SubResource("Resource_n4dv3")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_d1ev5"]
+script = ExtResource("11_6ak4i")
+HP = 70
+retreat = 1
+attacks = Array[ExtResource("2_mo62d")]([SubResource("Resource_ok447"), SubResource("Resource_555wi")])
+evo_stage = "Stage 1"
+evolves_from = "Eevee"
+considered = 1
+owner = 0
+type = 8
+weak = 32
+resist = 128
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_q6gej")
+name = "Jolteon"
+image = ExtResource("1_eegfx")
+illustrator = "Atsuko Nishida"
+number = 6
+rarity = 3
+expansion = 1
+categories = 1
+pokemon_properties = SubResource("Resource_d1ev5")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

@@ -29,6 +29,25 @@ var lost_zone: Array[Base_Card]
 
 #--------------------------------------
 #region INITALIZATION
+func duplicate_deep() -> CardStacks:
+	var copy: CardStacks = self.duplicate(true)
+	
+	copy.init_deck.clear()
+	copy.init_hand.clear()
+	copy.init_discard.clear()
+	copy.init_prize.clear()
+	
+	for card in init_deck:
+		copy.init_deck.append(card.duplicate_deep())
+	for card in init_hand:
+		copy.init_hand.append(card.duplicate_deep())
+	for card in init_discard:
+		copy.init_discard.append(card.duplicate_deep())
+	for card in init_prize:
+		copy.init_prize.append(card.duplicate_deep())
+	
+	return copy
+
 func make_deck():
 	usable_deck = deck.make_usable()
 	if usable_deck.size() != 60: printerr("Deck isn't thre right size ", usable_deck.size())

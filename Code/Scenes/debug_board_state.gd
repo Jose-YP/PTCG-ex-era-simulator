@@ -18,8 +18,8 @@ func _ready() -> void:
 	add_child(full_ui)
 	full_ui.home_side = board_state.home_side
 	Globals.board_state = board_state
-	set_up(true)
-	set_up(false)
+	new_setup(true)
+	new_setup(false)
 	
 	fundies.current_turn_print()
 
@@ -56,6 +56,35 @@ func set_up(home: bool):
 		new_slot.current_card = new_slot.current_card.duplicate_deep()
 		ui.insert_slot(new_slot, temp_side.slots[slot])
 		stacks.account_for_slot(new_slot)
+	
+	stacks.setup()
+	full_ui.update_stacks(stacks.sendStackDictionary(),player_type)
+
+#Haven't made
+#Refactored version that uses deep_duplicated resources that hopefully solve set_up's old issues
+func new_setup(home: bool):
+	var temp_side: SideState = board_state.get_side(home).duplicate_deep()
+	var ui: CardSideUI = full_ui.get_home_side(home)
+	var player_type: Consts.PLAYER_TYPES = board_state.get_player_type(home)
+	var stacks: CardStacks = temp_side.card_stacks.duplicate_deep()
+	
+	Globals.board_state = board_state
+	
+	ui.player_type = player_type
+	if player_type == Consts.PLAYER_TYPES.CPU:
+		var adding_cpu = Consts.cpu_scene.instantiate()
+		adding_cpu.home_side = home
+		fundies.cpu_players.append(adding_cpu)
+		fundies.add_child(adding_cpu)
+	
+	fundies.stack_manager.assign_card_stacks(stacks, home)
+	stacks.make_deck()
+	
+	#Set up pre defined slots
+	for slot in temp_side.slots:
+		print(slot)
+		ui.insert_slot(slot, temp_side.slots[slot])
+		stacks.account_for_slot(slot)
 	
 	stacks.setup()
 	full_ui.update_stacks(stacks.sendStackDictionary(),player_type)
