@@ -32,10 +32,6 @@ class_name Ability
 var attatched_to: PokeSlot
 
 #region INITALIZATION
-func _init() -> void:
-	if passive:
-		pass
-
 func prep_ability(slot: PokeSlot):
 	attatched_to = slot
 	if occurance:
@@ -124,9 +120,6 @@ func activate_passive() -> bool:
 	elif result:
 		passive.play_effect()
 		return true
-	
-	if category == "Body":
-		slot.body_activated = false
 	
 	SignalBus.slot_change_failed.emit(passive.get_slot_change())
 	return false

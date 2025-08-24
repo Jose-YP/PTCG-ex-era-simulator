@@ -14,6 +14,7 @@ var current_card: Control
 
 var home_side: Consts.PLAYER_TYPES
 var ui_stack: Array[Control] = [self]
+var every_slot: Array[UI_Slot]
 
 #--------------------------------------
 #region INITALIZATION & PROCESSING
@@ -21,6 +22,8 @@ func _ready() -> void:
 	%ArtButton.get_child(0).size = %ArtButton.size
 	%ArtButton.current_card = null
 	Globals.full_ui = self
+	every_slot = player_side.get_slots() + opponent_side.get_slots()
+
 #endregion
 #--------------------------------------
 
@@ -45,7 +48,7 @@ func get_slots(side: Consts.SIDES, slot: Consts.SLOTS) -> Array[UI_Slot]:
 func get_poke_slots(side: Consts.SIDES = Consts.SIDES.BOTH,
  slot: Consts.SLOTS = Consts.SLOTS.ALL) -> Array[PokeSlot]:
 	var pokeslots: Array[PokeSlot]
-	for ui_slot in all_slots():
+	for ui_slot in every_slot:
 		if ui_slot.connected_slot.is_in_slot(side, slot):
 			pokeslots.append(ui_slot.connected_slot)
 	
@@ -53,20 +56,20 @@ func get_poke_slots(side: Consts.SIDES = Consts.SIDES.BOTH,
 
 func get_ask_slots(ask: SlotAsk) -> Array[PokeSlot]:
 	var pokeslots: Array[PokeSlot]
-	for ui_slot in all_slots():
+	for ui_slot in every_slot:
 		if ask.check_ask(ui_slot.connected_slot):
 			pokeslots.append(ui_slot.connected_slot)
 	return pokeslots
 
 func get_occurance_slots() -> Array[PokeSlot]:
 	var pokeslots: Array[PokeSlot]
-	for ui_slot in all_slots():
+	for ui_slot in every_slot:
 		if ui_slot.connected_slot.is_filled() and ui_slot.connected_slot.has_occurance():
 			pokeslots.append(ui_slot.connected_slot)
 	return pokeslots
 
 func get_self() -> PokeSlot:
-	for ui_slot in all_slots():
+	for ui_slot in every_slot:
 		var slot: PokeSlot = ui_slot.connected_slot
 		if slot.is_filled() and slot.is_in_slot(Consts.SIDES.SOURCE, Consts.SLOTS.TARGET):
 			return slot
@@ -117,11 +120,11 @@ func remove_top_ui():
 		enable_sides()
 
 func enable_sides():
-	for slot in Globals.full_ui.all_slots():
+	for slot in Globals.full_ui.every_slot:
 		slot.make_allowed(slot.connected_slot.is_filled())
 
 func disable_sides():
-	for slot in all_slots():
+	for slot in every_slot:
 		slot.make_allowed(false)
 
 func control_disapear(node: Node):
@@ -153,5 +156,5 @@ func set_between_turns():
 	opponent_side.non_mon.sync_stacks()
 	end_turn.disabled = not Globals.fundies.is_home_side_player()
 	
-	for slot in all_slots():
+	for slot in every_slot:
 		await slot.connected_slot.pokemon_checkup()

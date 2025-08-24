@@ -5,16 +5,19 @@ extends Control
 @onready var button: Button = $PanelContainer/Button
 
 var slot: PokeSlot
+var retreat: int 
 
 func set_retreat(new_slot: PokeSlot):
 	slot = new_slot
+	retreat = slot.get_retreat()
+	
 	for i in range(retreat_display.size()):
-		if i < slot.get_pokedata().retreat:
+		if i < retreat:
 			retreat_display[i].show()
 		else: retreat_display[i].hide()
 
 func allow_retreat():
-	var result: bool = (slot.get_total_energy() < slot.get_pokedata().retreat or 
+	var result: bool = (slot.get_total_energy() < retreat or 
 	slot.has_condition([Consts.TURN_COND.PARALYSIS, Consts.TURN_COND.ASLEEP]))
 	
 	button.disabled = result

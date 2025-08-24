@@ -79,7 +79,6 @@ offset_bottom = 120.0
 
 [node name="Art" type="TextureRect" parent="PanelContainer"]
 unique_name_in_owner = true
-modulate = Color(1, 1, 1, 0.992157)
 custom_minimum_size = Vector2(189, 114)
 layout_mode = 2
 texture = ExtResource("2_rt8ma")

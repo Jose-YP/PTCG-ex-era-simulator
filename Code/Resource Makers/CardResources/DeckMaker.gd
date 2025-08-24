@@ -38,6 +38,7 @@ func make_usable() -> Array[Base_Card]:
 	
 	if usable.size() != 60:
 		printerr("Warning, this deck has the size of: ", usable.size())
+		pass
 	
 	for card in usable:
 		var how_often: int = 0

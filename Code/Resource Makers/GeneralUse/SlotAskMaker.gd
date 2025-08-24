@@ -10,8 +10,7 @@ class_name SlotAsk
 @export var side_target: Consts.SIDES = Consts.SIDES.BOTH
 @export var slot_target: Consts.SLOTS = Consts.SLOTS.ALL
 @export var specifically: Array[String] = []
-@export var knocked_out: bool = false
-@export var desired_condition: Condition
+
 ##Self means the attacking/defending pokemon, Active is for doubles
 @export var tool_attatched: bool = false
 @export_enum("LessEq", "GreaterEq") var comparison_type: int = 1
@@ -58,6 +57,12 @@ class_name SlotAsk
 @export_flags("Body", "Power") var contained_abilities: int = 3
 @export var specific_abilities: Array[String]
 
+@export_group("Condition")
+@export var check_condition: bool = false
+@export_flags("Poision", "Burn", "Paralyze",
+"Asleep", "Confusion", "Imprision", "Shockwave") var desired_condition: int = 0
+@export var knocked_out: bool = false
+
 #Checks if one slot is 
 func check_ask(slot: PokeSlot) -> bool:
 	var result: bool
@@ -65,15 +70,13 @@ func check_ask(slot: PokeSlot) -> bool:
 	
 	#Find which pokemon to check
 	print_verbose("[center]",slot.get_card_name())
-	#Check if the slot being seen should even be targetted
-	#Meanwhile count the player and opp bench size
-	print_verbose("[center]-----------------------------------------------------------")
-	print_verbose("[center]Target")
-	print_verbose("[center]IN SLOT & SIDE: ", slot.is_in_slot(side_target, slot_target))
-	
 	#First remove any cards that aren't included in sides/slots parameters
 	if not slot.is_in_slot(side_target, slot_target):
 		return false
+	#Check for any pokemon in the specifically array if it's filled
+	if specifically.size() != 0:
+		if not slot.get_card_name() in specifically:
+			return false
 	
 	#Check if the pokemon matches the desired stage
 	print_verbose("[center]-----------------------------------------------------------")
@@ -161,7 +164,7 @@ func check_ask(slot: PokeSlot) -> bool:
 		result = passes and result
 	
 	#Check if any desired condition exists in the pokemon
-	if desired_condition != null:
+	if check_condition:
 		print_verbose("[center]-----------------------------------------------------------")
 		print_verbose("[center]Conditions")
 		print_verbose(slot.affected_by_condition())
@@ -172,7 +175,6 @@ func check_ask(slot: PokeSlot) -> bool:
 	##Check if any pokemon has been knocked out
 	#result = result and slot.knocked_out if knocked_out else result
 	print_verbose("\nFINAL RESULT FOR ", slot.get_card_name(), result,"\n")
-	
 	
 	return result
 
@@ -235,8 +237,8 @@ func print_ask() -> String:
 		if check_cards: en_atch_str += "Cards"
 		en_atch_str += "Attatched"
 	
-	if desired_condition != null:
-		cond_str = desired_condition.print_condition()
+	if check_condition:
+		pass
 	
 	if check_ability:
 		if specific_abilities:

@@ -334,8 +334,7 @@ func before_direct_attack(attacker: PokeSlot, with: Attack):
 			Globals.fundies.remove_top_source_target()
 	attacker.current_attack = with
 	
-	if direct_bool or (attack_data.always_effect and
-	 attack_data.always_effect.has_effect_type(["Condition", "Disable", "CardDisrupt"])):
+	if direct_bool:
 		if not attack_data.both_active:
 			await get_choice_candidates("Who do you want to attack?", 
 			func(slot: PokeSlot): return slot.is_in_slot(Consts.SIDES.DEFENDING, Consts.SLOTS.ACTIVE)\

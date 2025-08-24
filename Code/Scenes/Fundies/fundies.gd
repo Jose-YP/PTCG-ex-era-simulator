@@ -135,6 +135,11 @@ func can_be_played(card: Base_Card) -> int:
 		allowed_to += 512
 	return allowed_to
 
+func check_all_passives() -> void:
+	for ui in Globals.full_ui.every_slot:
+		if ui.connected_slot.is_filled():
+			ui.connected_slot.check_passive()
+
 func used_ability(ability_name: String) -> bool:
 	return used_turn_ability(ability_name) or used_emit_ability(ability_name)
 
@@ -242,26 +247,32 @@ func remove_change(removing: SlotChange):
 	for slot in Globals.full_ui.get_poke_slots():
 		slot.remove_slot_change(removing)
 
-func full_check_stat_buff(slot: PokeSlot, stat: Consts.STAT_BUFFS, after: bool = true) -> int:
+func full_check_stat_buff(slot: PokeSlot, stat: Consts.STAT_BUFFS,
+ adding: bool = true, after: bool = true) -> int:
 	var total: int = 0
 	
 	print(side_changes[slot.is_home()])
 	
-	total += check_stat_buff(side_changes[slot.is_home()], stat, after)
-	total += check_stat_buff(slot.changes, stat, after)
+	total += check_stat_buff(side_changes[slot.is_home()], stat, adding, after)
+	total += check_stat_buff(slot.changes, stat, adding, after)
 	
 	return total
 
-func check_stat_buff(arr: Dictionary, stat: Consts.STAT_BUFFS, after: bool) -> int:
+func check_stat_buff(arr: Dictionary, stat: Consts.STAT_BUFFS,
+ adding: bool, after: bool) -> int:
 	var total: int = 0
 	for change in arr:
 		if change is Buff:
 			change = change as Buff
-			var after_allowed: bool = change.after_weak_res == after and \
-			(stat != Consts.STAT_BUFFS.HP or stat != Consts.STAT_BUFFS.RETREAT)
+			var after_allowed: bool = (change.operation == "Add") == adding
+			if stat == Consts.STAT_BUFFS.ATTACK or stat == Consts.STAT_BUFFS.DEFENSE:
+				after_allowed = after_allowed and change.after_weak_res == after
 			
 			if after_allowed and change.has_stat(stat):
-				total += change.get_stat(stat)
+				if adding:
+					total += change.get_stat(stat)
+				else:
+					total = change.get_stat(stat)
 	
 	return total
 #endregion

@@ -16,6 +16,9 @@ func set_vis(vis: bool):
 		modulate = Color.WHITE if vis else Color.TRANSPARENT
 	else:
 		visible = vis
+	
+	if vis:
+		get_parent().show()
 
 func set_changes(changes: Array[SlotChange]) -> void:
 	set_vis(true)

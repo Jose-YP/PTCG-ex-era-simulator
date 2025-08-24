@@ -47,15 +47,6 @@ func left_button_actions(target: PokeSlot):
 		
 		target.refresh()
 		reset_ui()
-	#else:
-		#if target.current_card == null: return
-		##Check if there's a display on any of the UI SLots
-		##Despawn any that are present, spawn the current one
-		#for slot in Globals.full_ui.all_slots():
-			#if slot.current_display:
-				#slot.despawn_card()
-			#elif target.ui_slot == slot:
-				#slot.spawn_card()
 
 func _input(event: InputEvent) -> void:
 	if event.is_action("Back") and can_reverse:
@@ -82,7 +73,7 @@ func get_choice(instruction: String):
 func get_allowed_slots(condition: Callable) -> void:
 	allowed_slots = Globals.fundies.find_allowed_slots(condition, Consts.SIDES.BOTH)
 	
-	for slot in Globals.full_ui.all_slots():
+	for slot in Globals.full_ui.every_slot:
 		if slot in allowed_slots:
 			slot.z_index = 1
 			slot.make_allowed(true)
@@ -106,7 +97,7 @@ func reset_ui():
 	
 	#Check every slot to see if they have a pokemon in them
 	#If so, let them be checked again
-	for slot in Globals.full_ui.all_slots():
+	for slot in Globals.full_ui.every_slot:
 		slot.make_allowed(slot.connected_slot.is_filled())
 	
 	choosing = false

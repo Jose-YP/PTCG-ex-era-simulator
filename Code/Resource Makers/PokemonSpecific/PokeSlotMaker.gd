@@ -60,6 +60,7 @@ var current_previous: Base_Card
 signal swap(slot: Consts.SLOTS)
 signal retreat()
 
+signal will_take_dmg(attacker: PokeSlot)
 signal take_dmg(attacker: PokeSlot)
 signal ko()
 
@@ -151,10 +152,8 @@ func pokemon_checkup() -> void:
 func setup_abilities():
 	Globals.fundies.record_single_src_trg(self)
 	if get_pokedata().pokebody:
-		get_pokedata().pokebody = get_pokedata().pokebody.duplicate(true)
 		get_pokedata().pokebody.prep_ability(self)
 	if get_pokedata().pokepower:
-		get_pokedata().pokepower = get_pokedata().pokepower.duplicate(true)
 		get_pokedata().pokepower.prep_ability(self)
 	Globals.fundies.remove_top_source_target()
 
@@ -170,13 +169,18 @@ func check_passive():
 	#Ability
 	if pokedata.pokebody:
 		if pokedata.pokebody.passive:
+			var prev: bool = body_activated
 			body_activated = pokedata.pokebody.activate_passive()
+			if body_activated != prev:
+				ui_slot.check_ability_activation()
 			
 	if pokedata.pokepower:
 		if pokedata.pokepower.passive:
 			pokedata.pokepower.activate_passive()
-		
+		var prev: bool = power_ready
 		power_ready = pokedata.pokepower.does_press_activate(self)
+		if power_ready != prev:
+			ui_slot.check_ability_activation()
 	
 	Globals.fundies.remove_top_source_target()
 
@@ -338,6 +342,19 @@ func get_pokedata() -> Pokemon:
 func get_max_hp() -> int:
 	return max_HP
 
+func get_retreat() -> int:
+	if changes.size() == 0: return get_pokedata().retreat
+	
+	var base: int = Globals.fundies.full_check_stat_buff(
+		self, Consts.STAT_BUFFS.RETREAT, false, true)
+	
+	if clamp(base, 0, 100) == 0: return base
+	
+	base += Globals.fundies.full_check_stat_buff(
+		self, Consts.STAT_BUFFS.RETREAT, true, true)
+	
+	return clamp(base, 0, 100)
+
 func get_evo_attacks() -> Array[Attack]:
 	var evo_attacks: Array[Attack]
 	for card in evolved_from:
@@ -387,6 +404,7 @@ func set_card(card: Base_Card, from_hand: bool) -> void:
 	if from_hand:
 		await ability_emit(played, get_slot_pos())
 	Globals.fundies.remove_top_source_target()
+	Globals.fundies.check_all_passives()
 
 #General use function, use specific ones if possible
 func remove_cards(cards: Array[Base_Card]) -> void:
@@ -415,7 +433,7 @@ func remove_cards(cards: Array[Base_Card]) -> void:
 #--------------------------------------
 #region DAMAGE HANDLERS
 func should_ko() -> bool:
-	return (get_pokedata().HP - damage_counters) < 0
+	return (get_max_hp() - damage_counters) < 0
 
 func knock_out() -> void:
 	await ability_emit(ko)
@@ -423,9 +441,11 @@ func knock_out() -> void:
 func add_damage(attacker: PokeSlot, base_ammount: int) -> void:
 	if not is_filled() or base_ammount == 0: return
 	
+	await ability_emit(will_take_dmg, attacker)
+	
 	var final_ammount = base_ammount + \
-	Globals.fundies.full_check_stat_buff(attacker, Consts.STAT_BUFFS.ATTACK, false)\
-	- Globals.fundies.full_check_stat_buff(self, Consts.STAT_BUFFS.DEFENSE, false)
+	Globals.fundies.full_check_stat_buff(attacker, Consts.STAT_BUFFS.ATTACK, true, false)\
+	- Globals.fundies.full_check_stat_buff(self, Consts.STAT_BUFFS.DEFENSE, true, false)
 	
 	if attacker.current_card.pokemon_properties.type & current_card.pokemon_properties.weak != 0:
 		print(get_card_name(), " is weak to ", attacker.get_card_name())
@@ -434,15 +454,16 @@ func add_damage(attacker: PokeSlot, base_ammount: int) -> void:
 		print(get_card_name(), " is resists to ", attacker.get_card_name())
 		final_ammount -= 30
 	
-	final_ammount += Globals.fundies.full_check_stat_buff(attacker, Consts.STAT_BUFFS.ATTACK, true)\
-	- Globals.fundies.full_check_stat_buff(self, Consts.STAT_BUFFS.DEFENSE, true)
+	final_ammount += Globals.fundies.full_check_stat_buff(attacker, Consts.STAT_BUFFS.ATTACK, true, true)\
+	- Globals.fundies.full_check_stat_buff(self, Consts.STAT_BUFFS.DEFENSE, true, true)
 	
-	final_ammount = clamp(final_ammount, 0, final_ammount)
+	final_ammount = clamp(final_ammount, 0, 990)
 	print(get_card_name(), " TAKES: ", final_ammount, " DAMAGE!")
 	damage_counters += final_ammount
 	attacker.dealt_damage = final_ammount
 	
-	refresh()
+	ui_slot.damage_counter.set_damage(damage_counters)
+	Globals.fundies.check_all_passives()
 	
 	if final_ammount > 0:
 		Globals.fundies.print_src_trg()
@@ -457,10 +478,22 @@ func dmg_manip(dmg_change: int, timer: int = -1) -> void:
 		damage_counters += clamp(dmg_change, 0, dmg_change)
 	else:
 		damage_timers.append({"Damage" : dmg_change, "Timer" : timer})
-	refresh()
+	ui_slot.damage_counter.set_damage(damage_counters)
 
 func set_max_hp():
-	max_HP = get_pokedata().HP + Globals.fundies.full_check_stat_buff(self, Consts.STAT_BUFFS.HP)
+	#First look for replacments
+	var current: int = get_pokedata().HP
+	if changes.size() != 0:
+		var replace: int = Globals.fundies.full_check_stat_buff(
+		self, Consts.STAT_BUFFS.HP, false, true)
+		if replace != 0:
+			current = replace
+	
+	#Then look for additions
+	max_HP = current + Globals.fundies.full_check_stat_buff(
+		self, Consts.STAT_BUFFS.HP, true, true)
+	
+	max_HP = clamp(max_HP, 0, 990)
 
 #endregion
 #--------------------------------------
@@ -537,7 +570,7 @@ func count_energy() -> void:
 		var en_name: String = en_provide.get_string()
 		attached_energy[en_name] += en_provide.number
 		
-		print("Checking ", energy.name, energy, " in ", get_card_name())
+		#print("Checking ", energy.name, energy, " in ", get_card_name())
 		for effect in energy.energy_properties.prompt_effects:
 			effect.effect_collect_play()
 	
@@ -650,6 +683,9 @@ func attatch_tool(new_tool: Base_Card) -> void:
 		tool_card = new_tool
 	else:
 		push_error(current_card.name, " already has tool attatched")
+	ui_slot.tool.show()
+	ui_slot.tool.texture = tool_card.image
+	
 	refresh()
 	
 	Globals.fundies.record_single_src_trg(self)
@@ -659,11 +695,17 @@ func attatch_tool(new_tool: Base_Card) -> void:
 func remove_tool() -> void:
 	tool_card.emit_remove_change()
 	tool_card = null
+	ui_slot.tool.hide()
 	refresh()
 
 func attatch_tm(new_tm: Base_Card) -> void:
 	tm_cards.push_front(new_tm)
 	print("TMS: ",tm_cards)
+	
+	
+	if tm_cards.size():
+		ui_slot.tm.texture = tm_cards[0].image
+		ui_slot.tm.show()
 	refresh()
 	
 	Globals.fundies.record_single_src_trg(self)
@@ -672,6 +714,8 @@ func attatch_tm(new_tm: Base_Card) -> void:
 
 func remove_tm(tm: Base_Card) -> void:
 	tm_cards.erase(tm)
+	if tm_cards.size() == 0:
+		ui_slot.tm.hide()
 	refresh()
 
 func remove_all() -> Array[Base_Card]:
@@ -693,6 +737,8 @@ func remove_all() -> Array[Base_Card]:
 	evolved_from.clear()
 	energy_cards.clear()
 	tm_cards.clear()
+	
+	ui_slot.clear()
 	
 	refresh()
 	
@@ -760,7 +806,7 @@ func add_condition(adding: Condition) -> void:
 	applied_condition.imprision = adding.imprision or applied_condition.imprision
 	applied_condition.shockwave = adding.shockwave or applied_condition.shockwave
 	
-	refresh()
+	ui_slot.display_condition()
 	
 	await ability_emit(condition_applied, applied_condition)
 
@@ -775,7 +821,7 @@ func alleviate_all() -> void:
 	applied_condition.poison = 0
 	applied_condition.burn = 0
 	applied_condition.turn_cond = Consts.TURN_COND.NONE
-	refresh()
+	ui_slot.display_condition()
 
 func checkup_conditions():
 	if applied_condition.poison != 0:
@@ -839,18 +885,18 @@ func confusion_check() -> bool:
 func apply_slot_change(apply: SlotChange):
 	if is_filled() and not apply in changes:
 		changes[apply] = apply.duration
-		#Not putting refresh here
-		#it would cause an infinite recusion with SlotChange abilities
-		ui_slot.changes_display.set_changes(changes.keys())
+		changes_ui_check()
 
 func remove_slot_change(removing: SlotChange):
 	if is_filled() and removing in changes:
 		changes.erase(removing)
-		ui_slot.changes_display.set_changes(changes.keys())
+		changes_ui_check()
 
-#Make something to look for replacement buffs
-func find_replacement_stats(stat: String, before_weak_res: bool):
-	pass
+func changes_ui_check():
+	ui_slot.changes_display.set_changes(changes.keys())
+	ui_slot.max_hp.clear()
+	set_max_hp()
+	ui_slot.max_hp.append_text(str("HP: ",get_max_hp()))
 
 func check_immunities():
 	pass
@@ -876,7 +922,7 @@ func slot_into(destination: UI_Slot, initalize: bool = false):
 	#debug_check()
 	if initalize:
 		refresh_current_card()
-	refresh()
+		Globals.fundies.check_all_passives()
 
 func refresh_current_card():
 	ui_slot.name_section.clear()
@@ -889,9 +935,30 @@ func refresh_current_card():
 	ui_slot.display_types(Convert.flags_to_type_array(get_pokedata().type))
 	setup_abilities()
 	occurance_account_for()
+	ui_slot.check_ability_activation()
 	await ability_emit(first_check, self)
 
+#Work towards removing functions from this
 func refresh() -> void:
+	if not is_filled():
+		clear_dispay()
+		return
+	#recognize position of slot
+	ui_slot.connected_slot = self
+	
+	if current_card: 
+		#check for any attatched cards/conditions
+		count_energy()
+		ui_slot.display_energy(get_energy_strings(), attached_energy)
+		
+		ui_slot.check_ability_activation()
+		Globals.fundies.check_all_passives()
+	
+	else:
+		ui_slot.display_image(null)
+		ui_slot.display_types([])
+
+func refresh_swap() -> void:
 	if not is_filled():
 		clear_dispay()
 		return
@@ -919,22 +986,14 @@ func refresh() -> void:
 			ui_slot.tm.texture = tm_cards[0].image
 			ui_slot.tm.show()
 		else: ui_slot.tm.hide()
-		if tool_card:
-			ui_slot.tool.show()
-			ui_slot.tool.texture = tool_card.image
-		else: ui_slot.tool.hide()
 		
 		ui_slot.check_ability_activation()
 	
 	else:
 		ui_slot.display_image(null)
 		ui_slot.display_types([])
-	
-	for ui in Globals.full_ui.all_slots():
-		if ui.connected_slot.is_filled():
-			ui.connected_slot.check_passive()
 
-func clear_dispay():
+func clear_dispay() -> void:
 	damage_counters = 0
 	ui_slot.clear()
 

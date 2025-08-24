@@ -1,19 +1,34 @@
-[gd_resource type="Resource" script_class="Buff" load_steps=2 format=3 uid="uid://f6cgam4ldfj8"]
+[gd_resource type="Resource" script_class="Buff" load_steps=3 format=3 uid="uid://f6cgam4ldfj8"]
 
 [ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/BuffMaker.gd" id="1_prwt3"]
+[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="1_t7bwn"]
 
 [resource]
 script = ExtResource("1_prwt3")
-side = 1
-slot = 1
-duration = -1
-attack_damage = 0
+description = "Immune to Special Conditions"
+stackable = false
+after_weak_res = true
+operation = "Add"
+add_hp = 0
+attack = 0
 defense = 0
-after_weak_res = false
-ignore_res_other = false
-ignore_weak_self = false
-immunities = 0
-immune_to_special_conditions = true
-immune_to_effects = false
-immune_to_damage = false
+retreat_change = 0
+cost_modifier = "Add"
+modify = 0
+plus = false
+condition_immune = 31
+attack_effect_immune = false
+damage_immune = false
+body_immune = false
+power_immune = false
+trainer_immune = false
+odd_immunity = false
+even_immunity = false
+weakness = false
+resistance = false
+effects = false
+attack_names = Array[String]([])
+application = "Slot"
+recieves = ExtResource("1_t7bwn")
+duration = -1
 metadata/_custom_type_script = "uid://coojhwe6m20gd"

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=21 format=3 uid="uid://c7uekcacelk3t"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=22 format=3 uid="uid://c7uekcacelk3t"]
 
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_76nqh"]
 [ext_resource type="Texture2D" uid="uid://b276v3qk1k726" path="res://Art/Cards/3 ex Dragon/9.jpg" id="1_qgew3"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="9_x7t5e"]
 [ext_resource type="Resource" uid="uid://c63wb1xvpkbi8" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Grass1.tres" id="10_lbtnv"]
 [ext_resource type="Resource" uid="uid://6ehljyrvtpkp" path="res://Resources/Components/Pokemon/Attacks/AttackData/10Sleep.tres" id="11_vatto"]
+[ext_resource type="Resource" uid="uid://b6e0b1hpsm78r" path="res://Resources/Components/Pokemon/Abilities/Bodies/ThickSkin.tres" id="12_qoeuf"]
 
 [sub_resource type="Resource" id="Resource_ksw77"]
 script = ExtResource("7_ph2ci")
@@ -76,6 +77,7 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 script = ExtResource("2_7bi16")
 HP = 60
 retreat = 1
+pokebody = ExtResource("12_qoeuf")
 attacks = Array[ExtResource("1_76nqh")]([SubResource("Resource_chffm"), SubResource("Resource_3gkt5")])
 evo_stage = "Basic"
 evolves_from = ""

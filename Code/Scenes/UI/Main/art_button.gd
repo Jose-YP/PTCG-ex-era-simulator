@@ -62,7 +62,7 @@ func ability_show(slot: PokeSlot):
 			theme_type_variation = "BodyButton"
 			material.set_shader_parameter("base_color", Color(0.119, 0.263, 0.247))
 			
-			if slot.body_activated or poke_data.pokebody.does_press_activate(slot):
+			if slot.body_activated:
 				%AnimationPlayer.play("BodyLoop")
 			else:
 				%AnimationPlayer.play("RESET")

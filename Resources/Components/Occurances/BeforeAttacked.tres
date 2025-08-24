@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Occurance" load_steps=4 format=3 uid="uid://bm1yxuwm2vfg7"]
+
+[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="1_vms00"]
+[ext_resource type="Resource" uid="uid://crhg4u3yu2cso" path="res://Resources/Components/Effects/Asks/General/FromOther.tres" id="2_5twpq"]
+[ext_resource type="Script" uid="uid://bics3dumv7avj" path="res://Code/Resource Makers/GeneralUse/OccuranceMaker.gd" id="3_wrmr3"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("3_wrmr3")
+from_ask = ExtResource("1_vms00")
+signal = "will_take_dmg"
+must_be_ask = ExtResource("2_5twpq")
+metadata/_custom_type_script = "uid://bics3dumv7avj"

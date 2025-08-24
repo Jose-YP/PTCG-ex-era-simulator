@@ -82,7 +82,6 @@ func has_stat(stat: Consts.STAT_BUFFS) -> bool:
 
 func get_stat(stat: Consts.STAT_BUFFS) -> int:
 	var final: int = 0
-	
 	match stat:
 		Consts.STAT_BUFFS.ATTACK:
 			final = attack

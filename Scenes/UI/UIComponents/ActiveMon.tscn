@@ -157,5 +157,4 @@ offset_right = -30.532
 
 [node name="ChangeDisplay" parent="Conditions" instance=ExtResource("6_mc7hj")]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(32, 32)
 layout_mode = 2

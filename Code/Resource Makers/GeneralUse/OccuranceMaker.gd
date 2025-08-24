@@ -58,7 +58,8 @@ func _get_property_list() -> Array[Dictionary]:
 			"usage" : PROPERTY_USAGE_DEFAULT
 		})
 	
-	if _get("signal") == "take_dmg" or _get("signal") == "used_power":
+	if _get("signal") == "take_dmg" or _get("signal") == "will_take_dmg"\
+	 or _get("signal") == "used_power":
 		props.append({
 			"name" : "must_be_ask",
 			"type" : TYPE_OBJECT,
