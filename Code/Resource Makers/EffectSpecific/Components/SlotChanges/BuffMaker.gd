@@ -4,7 +4,10 @@ class_name Buff
 
 @export_multiline var description: String
 
-
+##If this is stackable or it would never matter ignore this
+##This determine what identifies two buffs as the same
+##Probably use the res' uid
+@export var unstackable_id: String
 @export var stackable: bool = false
 ##If against this type of slot use these buffs, if null return [code]true
 @export var against: SlotAsk
@@ -122,7 +125,7 @@ func how_display() -> Dictionary[String, bool]:
 		dict["Def"] = operation == "Add" and defense < 0
 		return dict
 	if retreat_change != 0:
-		dict["Cost"] = operation == "Add" and retreat_change < 0
+		dict["Cost"] = operation == "Add" and retreat_change > 0
 		return dict
 	if attack_cost:
 		dict["Cost"] = cost_modifier == "Subtract"

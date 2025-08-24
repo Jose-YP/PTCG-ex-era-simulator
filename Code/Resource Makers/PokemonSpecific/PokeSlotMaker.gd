@@ -350,8 +350,8 @@ func get_retreat() -> int:
 	
 	if base < 0:
 		return 0
-	elif base == 0:
-		return get_pokedata().retreat
+	else:
+		base = get_pokedata().retreat
 	
 	base += Globals.fundies.full_check_stat_buff(
 		self, Consts.STAT_BUFFS.RETREAT, true, true)
@@ -662,6 +662,7 @@ func evolve_card(evolution: Base_Card) -> void:
 	alleviate_all()
 	applied_condition.imprision = false
 	applied_condition.shockwave = false
+	refresh()
 	await ability_emit(evolved, self)
 	Globals.fundies.remove_top_source_target()
 
@@ -676,7 +677,7 @@ func devolve_card() -> Base_Card:
 	applied_condition.imprision = false
 	applied_condition.shockwave = false
 	refresh_current_card()
-	
+	refresh()
 	return old_card
 
 func attatch_tool(new_tool: Base_Card) -> void:
@@ -836,7 +837,7 @@ func checkup_conditions():
 		if result:
 			applied_condition.burn = 0
 		
-	if applied_condition.turn_cond == Consts.TURN_COND.PARALYSIS:
+	if applied_condition.turn_cond == Consts.TURN_COND.PARALYSIS and not is_attacker():
 		print("Paralysis")
 		applied_condition.turn_cond = Consts.TURN_COND.NONE
 		var result: bool = await condition_rule_utilize(Consts.COND_RULES.TURN_PASS)
@@ -848,6 +849,8 @@ func checkup_conditions():
 		var result: bool = await condition_rule_utilize(Globals.board_state.sleep_rules)
 		if result:
 			applied_condition.turn_cond = Consts.TURN_COND.NONE
+	
+	ui_slot.display_condition()
 
 func condition_rule_utilize(using: Consts.COND_RULES):
 	match using:

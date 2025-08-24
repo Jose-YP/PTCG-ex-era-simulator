@@ -293,10 +293,12 @@ func check_against_stat_buff(from: PokeSlot, against: PokeSlot, arr: Dictionary,
 
 func atk_def_buff(attacker: PokeSlot, defender: PokeSlot, after: bool) -> int:
 	var final: int = check_against_stat_buff(attacker, defender, attacker.changes,
-	 Consts.STAT_BUFFS.ATTACK, after)
+	 Consts.STAT_BUFFS.ATTACK, after) + check_against_stat_buff(attacker,\
+	 defender, side_changes[attacker.is_home()], Consts.STAT_BUFFS.ATTACK, after)
 	
 	final -= check_against_stat_buff(defender, attacker, defender.changes,
-	 Consts.STAT_BUFFS.DEFENSE, after)
+	 Consts.STAT_BUFFS.DEFENSE, after) + check_against_stat_buff(defender, \
+	 attacker, side_changes[defender.is_home()], Consts.STAT_BUFFS.DEFENSE, after)
 	
 	return final
 

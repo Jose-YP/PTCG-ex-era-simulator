@@ -5,10 +5,12 @@
 [ext_resource type="PackedScene" uid="uid://bs3ila6cpt8n1" path="res://Scenes/UI/UIComponents/types.tscn" id="3_tiejp"]
 
 [node name="AttackItem" type="MarginContainer"]
+custom_minimum_size = Vector2(416, 0)
 offset_left = 21.0
 offset_top = 11.0
-offset_right = 421.0
+offset_right = 477.0
 offset_bottom = 71.0
+size_flags_horizontal = 3
 mouse_filter = 2
 script = ExtResource("1_cuu5a")
 attack = ExtResource("2_h1533")
@@ -28,7 +30,7 @@ metadata/_edit_lock_ = true
 [node name="MarginContainer" type="MarginContainer" parent="AllText"]
 layout_mode = 2
 mouse_filter = 2
-theme_override_constants/margin_top = 11
+theme_override_constants/margin_top = 4
 
 [node name="Base Text" type="HBoxContainer" parent="AllText"]
 layout_mode = 2
@@ -92,7 +94,7 @@ fit_content = true
 unique_name_in_owner = true
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 10
 size_flags_vertical = 4
 mouse_filter = 2
 bbcode_enabled = true
@@ -100,7 +102,6 @@ text = "[center]-200"
 fit_content = true
 
 [node name="MarginContainer2" type="MarginContainer" parent="AllText/Base Text"]
-visible = false
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/margin_right = 15
@@ -117,7 +118,7 @@ mouse_filter = 2
 [node name="MarginContainer2" type="MarginContainer" parent="AllText/EffectContainer"]
 layout_mode = 2
 mouse_filter = 2
-theme_override_constants/margin_right = 10
+theme_override_constants/margin_right = 4
 
 [node name="EffectText" type="RichTextLabel" parent="AllText/EffectContainer"]
 unique_name_in_owner = true
@@ -143,6 +144,7 @@ theme_override_constants/margin_left = 10
 [node name="MarginContainer2" type="MarginContainer" parent="AllText"]
 layout_mode = 2
 mouse_filter = 2
+theme_override_constants/margin_top = 4
 
 [connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
 [connection signal="pressed" from="AttackButton" to="." method="_on_attack_button_pressed"]

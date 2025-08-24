@@ -15,19 +15,19 @@ func effect_collect_play() -> void:
 			await SignalBus.finished_coinflip
 		
 		if result and success:
-			success.play_effect()
+			await success.play_effect()
 			return
 		if not result and fail:
 			SignalBus.slot_change_failed.emit(success.get_slot_change())
-			fail.play_effect()
+			await fail.play_effect()
 			return
 	
 	elif success:
-		success.play_effect()
+		await success.play_effect()
 		return
 	
 	elif fail:
-		fail.play_effect()
+		await fail.play_effect()
 		return
 	print(success.get_slot_change())
 	SignalBus.slot_change_failed.emit(success.get_slot_change())
@@ -35,18 +35,18 @@ func effect_collect_play() -> void:
 func shared_collect_play(result: bool) -> void:
 	if prompt_carry_over:
 		if result and success:
-			success.play_effect()
+			await success.play_effect()
 			return
 		if not result and fail:
-			fail.play_effect()
+			await fail.play_effect()
 			return
 	
 	else:
 		if success:
-			success.play_effect()
+			await success.play_effect()
 			return
 		if fail:
-			fail.play_effect()
+			await fail.play_effect()
 			return
 	
 	emit_slot_change_fail()

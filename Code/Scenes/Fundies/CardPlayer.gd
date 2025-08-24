@@ -387,10 +387,10 @@ func attack_effect(attacker: PokeSlot, with: AttackData,
 	if with.prompt_effects:
 		if predefined != null:
 			for effect in with.prompt_effects:
-				effect.shared_collect_play(predefined)
+				await effect.shared_collect_play(predefined)
 		else:
 			for effect in with.prompt_effects:
-				effect.effect_collect_play()
+				await effect.effect_collect_play()
 
 func check_prompt_reliant(prompt: PromptAsk):
 	if prompt and prompt.has_check_prompt() and not prompt.has_num_input():

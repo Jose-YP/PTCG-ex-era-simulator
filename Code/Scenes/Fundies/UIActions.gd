@@ -45,7 +45,7 @@ func left_button_actions(target: PokeSlot):
 		else:
 			SignalBus.get_candidate.emit(target)
 		
-		target.refresh()
+		#target.refresh()
 		reset_ui()
 
 func _input(event: InputEvent) -> void:

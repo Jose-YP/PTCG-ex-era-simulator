@@ -39,7 +39,7 @@ metadata/_edit_lock_ = true
 [node name="MarginContainer" type="MarginContainer" parent="AllText"]
 layout_mode = 2
 mouse_filter = 2
-theme_override_constants/margin_top = 11
+theme_override_constants/margin_top = 4
 
 [node name="Base Text" type="HBoxContainer" parent="AllText"]
 layout_mode = 2
@@ -88,7 +88,7 @@ mouse_filter = 2
 [node name="MarginContainer2" type="MarginContainer" parent="AllText/EffectContainer"]
 layout_mode = 2
 mouse_filter = 2
-theme_override_constants/margin_right = 10
+theme_override_constants/margin_right = 4
 
 [node name="EffectText" type="RichTextLabel" parent="AllText/EffectContainer"]
 unique_name_in_owner = true
@@ -109,11 +109,12 @@ fit_content = true
 visible = false
 layout_mode = 2
 mouse_filter = 2
-theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 4
 
 [node name="MarginContainer2" type="MarginContainer" parent="AllText"]
 layout_mode = 2
 mouse_filter = 2
+theme_override_constants/margin_top = 4
 
 [connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
 [connection signal="minimum_size_changed" from="AbilityButton" to="." method="_on_attack_button_minimum_size_changed"]

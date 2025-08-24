@@ -14,6 +14,7 @@ signal attack_with(attack: Attack)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	%Types.scale = Vector2(.75, .75)
 	set_attack()
 
 func set_attack():

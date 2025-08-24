@@ -15,9 +15,12 @@ func set_retreat(new_slot: PokeSlot):
 		if i < retreat:
 			retreat_display[i].show()
 		else: retreat_display[i].hide()
+	
+	allow_retreat()
 
 func allow_retreat():
-	var result: bool = (slot.get_total_energy() < retreat or 
+	var result: bool = not slot.is_attacker() and not slot.is_active() and \
+	(slot.get_total_energy() < retreat or 
 	slot.has_condition([Consts.TURN_COND.PARALYSIS, Consts.TURN_COND.ASLEEP]))
 	
 	button.disabled = result
