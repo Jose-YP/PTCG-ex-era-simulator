@@ -39,8 +39,7 @@ func get_cost(index: int) -> int:
 #region ENERGY
 ##Returns only the specified required energy for the attack to start 
 func get_energy_cost(slot: PokeSlot) -> Array[String]:
-	print(slot)
-	var all_costs: Array[int] = attack_cost.get_energy_cost_int()
+	var all_costs: Array[int] = get_modified_cost(slot)
 	var final_array: Array[String] = []
 	
 	for i in range(all_costs.size()):
@@ -49,6 +48,51 @@ func get_energy_cost(slot: PokeSlot) -> Array[String]:
 			final_array.append(energy_type)
 	
 	return final_array
+
+func get_modified_cost(slot: PokeSlot) -> Array[int]:
+	if not slot or slot.changes.size() == 0:
+		return attack_cost.get_energy_cost_int()
+	
+	#First find any replacements
+	var replace: Array[int] = get_cost_buffs(slot.changes.keys(), true)
+	
+	#This means that replace overrides any addition or subtraction buffs
+	#Idk if it should be like this
+	if replace.size() != 0:
+		return replace
+	
+	var final: Array[int] = attack_cost.get_energy_cost_int()
+	#Then evaluate any additions and subtractions
+	final = cost_arithmetic(final, get_cost_buffs(slot.changes.keys(), false), true)
+	
+	for i in range(final.size()):
+		final[i] = clamp(final[i], 0, 99)
+	
+	return final
+
+func get_cost_buffs(arr: Array[SlotChange], replace: bool = false) -> Array[int]:
+	var total: Array[int] = []
+	
+	for change in arr:
+		if change is Buff:
+			change = change as Buff
+			if change.attack_cost:
+				var using: Array[int] =  change.get_cost(name)
+				if replace and change.cost_modifier == "Replace":
+					total = using
+				elif not replace and change.cost_modifier != "Replace":
+					total = cost_arithmetic(total, using, change.cost_modifier == "Add")
+	
+	return total
+
+func cost_arithmetic(first: Array[int], second: Array[int], addition: bool = true) -> Array[int]:
+	for i in range(second.size()):
+		#if not first[i]:
+			#first.append(second[i] if addition else -second[i])
+		#else:
+		first[i] += second[i] if addition else -second[i]
+	
+	return first
 
 func pay_cost(slot: PokeSlot):
 	print("CHECK COSTS FOR ", name)

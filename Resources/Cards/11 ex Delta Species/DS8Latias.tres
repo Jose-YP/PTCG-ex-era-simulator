@@ -120,9 +120,9 @@ modifier_num = 0
 both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
-[sub_resource type="Resource" id="Resource_oe741"]
+[sub_resource type="Resource" id="Resource_dinw0"]
 script = ExtResource("2_uad6p")
-name = "Psychic Force"
+name = "Extra Crush"
 attack_cost = SubResource("Resource_rxkpo")
 attack_data = SubResource("Resource_ssn7t")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
@@ -182,7 +182,7 @@ script = ExtResource("17_dgg5v")
 HP = 70
 retreat = 1
 pokebody = SubResource("Resource_fgkgd")
-attacks = Array[ExtResource("2_uad6p")]([SubResource("Resource_y2ads"), SubResource("Resource_oe741")])
+attacks = Array[ExtResource("2_uad6p")]([SubResource("Resource_y2ads"), SubResource("Resource_dinw0")])
 evo_stage = "Basic"
 evolves_from = ""
 considered = 9
