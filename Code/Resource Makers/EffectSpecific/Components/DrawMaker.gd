@@ -10,7 +10,7 @@ class_name Draw
 ##For variable card draws
 @export var comparator: Comparator
 ##If an effect is called with this class use the cards drawn as the subject
-@export var with_drawn_cards: EffectCall
+@export var with_drawn_cards: Placement
 
 signal finished
 

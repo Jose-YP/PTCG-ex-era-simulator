@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SideState" load_steps=26 format=3 uid="uid://ds3gwf2066vgp"]
+[gd_resource type="Resource" script_class="SideState" load_steps=27 format=3 uid="uid://ds3gwf2066vgp"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_u77ud"]
 [ext_resource type="Resource" uid="uid://clkcnsev5iwh8" path="res://Resources/Cards/2 ex Sandstorm/SS53Volbeat.tres" id="6_7tomb"]
@@ -46,7 +46,7 @@ script = ExtResource("19_r7wmv")
 deck = SubResource("Resource_ke6yh")
 excluded_to_discard = false
 init_deck = Array[ExtResource("1_u77ud")]([])
-init_hand = Array[ExtResource("1_u77ud")]([ExtResource("7_w4lht"), ExtResource("13_njpil")])
+init_hand = Array[ExtResource("1_u77ud")]([ExtResource("13_njpil")])
 init_discard = Array[ExtResource("1_u77ud")]([])
 init_prize = Array[ExtResource("1_u77ud")]([])
 metadata/_custom_type_script = "uid://calm3n7va5yjo"
@@ -105,14 +105,33 @@ dealt_damage = 0
 energy_discarded = 0
 metadata/_custom_type_script = "uid://cs70ix831b5g4"
 
+[sub_resource type="Resource" id="Resource_njpil"]
+script = ExtResource("21_w1oqn")
+current_card = ExtResource("7_w4lht")
+max_HP = 0
+damage_counters = 0
+final_retreat = 0
+evolved_from = Array[ExtResource("1_u77ud")]([])
+energy_cards = Array[ExtResource("1_u77ud")]([])
+tm_cards = Array[ExtResource("1_u77ud")]([])
+changes = Dictionary[ExtResource("22_6sgh1"), int]({})
+evolution_ready = false
+evolved_this_turn = false
+body_disabled = false
+power_disabled = false
+dealt_damage = 0
+energy_discarded = 0
+metadata/_custom_type_script = "uid://cs70ix831b5g4"
+
 [resource]
 script = ExtResource("20_b6cy8")
 card_stacks = SubResource("Resource_pfsoo")
 prize_cards = 6
 bench_size = 5
 slots = Dictionary[ExtResource("21_w1oqn"), bool]({
-SubResource("Resource_q6hj7"): true,
+SubResource("Resource_q6hj7"): false,
 SubResource("Resource_82t0g"): true,
-SubResource("Resource_pn62p"): false
+SubResource("Resource_pn62p"): false,
+SubResource("Resource_njpil"): true
 })
 metadata/_custom_type_script = "uid://dgqpurnuh14t1"

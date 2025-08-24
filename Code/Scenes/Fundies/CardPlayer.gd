@@ -38,9 +38,9 @@ func determine_play(card: Base_Card, placement: Placement = null) -> void:
 	else:
 		await play_trainer(card)
 	
-	if placement and placement.effect_to_mon:
+	if placement and placement.mini_effect:
 		Globals.fundies.print_src_trg()
-		placement.effect_to_mon.play_effect()
+		placement.mini_effect.play_effect()
 		Globals.fundies.remove_top_source_target()
 
 #--------------------------------------

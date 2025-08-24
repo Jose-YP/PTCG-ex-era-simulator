@@ -253,20 +253,19 @@ func full_check_stat_buff(slot: PokeSlot, stat: Consts.STAT_BUFFS,
 	
 	print(side_changes[slot.is_home()])
 	
-	total += check_stat_buff(side_changes[slot.is_home()], stat, adding, after)
-	total += check_stat_buff(slot.changes, stat, adding, after)
+	total += check_stat_buff(side_changes[slot.is_home()], stat, adding)
+	total += check_stat_buff(slot.changes, stat, adding)
 	
 	return total
 
+#For HP, RETREAT and ATK replacements
 func check_stat_buff(arr: Dictionary, stat: Consts.STAT_BUFFS,
- adding: bool, after: bool) -> int:
+ adding: bool) -> int:
 	var total: int = 0
 	for change in arr:
 		if change is Buff:
 			change = change as Buff
 			var after_allowed: bool = (change.operation == "Add") == adding
-			if stat == Consts.STAT_BUFFS.ATTACK or stat == Consts.STAT_BUFFS.DEFENSE:
-				after_allowed = after_allowed and change.after_weak_res == after
 			
 			if after_allowed and change.has_stat(stat):
 				if adding:
@@ -275,6 +274,32 @@ func check_stat_buff(arr: Dictionary, stat: Consts.STAT_BUFFS,
 					total = change.get_stat(stat)
 	
 	return total
+
+func check_against_stat_buff(from: PokeSlot, against: PokeSlot, arr: Dictionary,
+ stat: Consts.STAT_BUFFS, after: bool):
+	var total: int = 0
+	for change in arr:
+		if change is Buff:
+			change = change as Buff
+			
+			if after == change.after_weak_res and change.has_stat(stat):
+				if change.against:
+					if change.against.check_ask(against):
+						total += change.get_stat(stat)
+				else:
+					total += change.get_stat(stat)
+	
+	return total
+
+func atk_def_buff(attacker: PokeSlot, defender: PokeSlot, after: bool) -> int:
+	var final: int = check_against_stat_buff(attacker, defender, attacker.changes,
+	 Consts.STAT_BUFFS.ATTACK, after)
+	
+	final -= check_against_stat_buff(defender, attacker, defender.changes,
+	 Consts.STAT_BUFFS.DEFENSE, after)
+	
+	return final
+
 #endregion
 #--------------------------------------
 

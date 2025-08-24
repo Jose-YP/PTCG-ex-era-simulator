@@ -23,7 +23,7 @@ class_name Placement
 ##Apply the effects of evolution on this card,
 ##otherwise it'll just swap current card
 @export var evolve: bool = false
-@export var effect_to_mon: EffectCall
+@export var mini_effect: MiniEffect
 
 @warning_ignore("unused_signal")
 signal finished

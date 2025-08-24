@@ -350,7 +350,7 @@ func get_retreat() -> int:
 	
 	if base < 0:
 		return 0
-	else:
+	elif base == 0:
 		return get_pokedata().retreat
 	
 	base += Globals.fundies.full_check_stat_buff(
@@ -447,8 +447,7 @@ func add_damage(attacker: PokeSlot, base_ammount: int) -> void:
 	await ability_emit(will_take_dmg, attacker)
 	
 	var final_ammount = base_ammount + \
-	Globals.fundies.full_check_stat_buff(attacker, Consts.STAT_BUFFS.ATTACK, true, false)\
-	- Globals.fundies.full_check_stat_buff(self, Consts.STAT_BUFFS.DEFENSE, true, false)
+	Globals.fundies.atk_def_buff(attacker, self, false)
 	
 	if attacker.current_card.pokemon_properties.type & current_card.pokemon_properties.weak != 0:
 		print(get_card_name(), " is weak to ", attacker.get_card_name())
@@ -457,8 +456,7 @@ func add_damage(attacker: PokeSlot, base_ammount: int) -> void:
 		print(get_card_name(), " is resists to ", attacker.get_card_name())
 		final_ammount -= 30
 	
-	final_ammount += Globals.fundies.full_check_stat_buff(attacker, Consts.STAT_BUFFS.ATTACK, true, true)\
-	- Globals.fundies.full_check_stat_buff(self, Consts.STAT_BUFFS.DEFENSE, true, true)
+	final_ammount += Globals.fundies.atk_def_buff(attacker, self, true)
 	
 	final_ammount = clamp(final_ammount, 0, 990)
 	print(get_card_name(), " TAKES: ", final_ammount, " DAMAGE!")
@@ -925,7 +923,7 @@ func slot_into(destination: UI_Slot, initalize: bool = false):
 	#debug_check()
 	if initalize:
 		refresh_current_card()
-		Globals.fundies.check_all_passives()
+		refresh()
 
 func refresh_current_card():
 	ui_slot.name_section.clear()
