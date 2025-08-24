@@ -6,6 +6,7 @@
 [resource]
 script = ExtResource("2_asgir")
 description = "Immune to all attacks and attack effects."
+unstackable_id = ""
 stackable = true
 after_weak_res = true
 operation = "Replace"

@@ -6,6 +6,7 @@
 [resource]
 script = ExtResource("2_6k01p")
 description = "Reduce damage from to Active Pokemon by 10 before weak/res"
+unstackable_id = ""
 stackable = true
 after_weak_res = false
 operation = "Add"

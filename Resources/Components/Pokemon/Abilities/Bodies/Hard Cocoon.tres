@@ -10,6 +10,7 @@
 [sub_resource type="Resource" id="Resource_llrqx"]
 script = ExtResource("1_6807i")
 description = "Reduced damage by 30 after applying weak/res"
+unstackable_id = ""
 stackable = true
 after_weak_res = true
 operation = "Replace"

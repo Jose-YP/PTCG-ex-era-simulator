@@ -130,6 +130,7 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_rboeu"]
 script = ExtResource("14_f83lj")
 description = "Extra Crush now costs {Lightning}{Metal}{Colorless}"
+unstackable_id = ""
 stackable = false
 after_weak_res = true
 operation = "Replace"

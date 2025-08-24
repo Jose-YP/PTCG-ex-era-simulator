@@ -112,6 +112,17 @@ func get_stat(stat: Consts.STAT_BUFFS) -> int:
 	
 	return final
 
+#Comparator not supported until I find a card that needs it
+func get_cost(name: String) -> Array[int]:
+	var final = attack_cost.get_energy_cost_int()
+	if attack_names.size() != 0:
+		if name in attack_names:
+			return final
+		else:
+			return []
+	
+	return attack_cost.get_energy_cost_int()
+
 func how_display() -> Dictionary[String, bool]:
 	var dict: Dictionary[String, bool]
 	#Check Stat changes

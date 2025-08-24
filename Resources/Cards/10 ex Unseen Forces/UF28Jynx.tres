@@ -93,6 +93,7 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_cmuqy"]
 script = ExtResource("12_0x2n6")
 description = "Immune to effects from opposing attacks"
+unstackable_id = ""
 stackable = true
 after_weak_res = true
 operation = "Replace"

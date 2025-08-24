@@ -15,6 +15,7 @@
 [sub_resource type="Resource" id="Resource_cd2t0"]
 script = ExtResource("2_ousds")
 description = "Reduce damage taken by 30 after weak/res"
+unstackable_id = ""
 stackable = true
 after_weak_res = true
 operation = "Replace"

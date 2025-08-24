@@ -7,6 +7,7 @@
 [resource]
 script = ExtResource("2_akc5w")
 description = "Immune to attacks and attack effects from Pokemon ex"
+unstackable_id = ""
 stackable = true
 against = ExtResource("1_bgea0")
 after_weak_res = true
