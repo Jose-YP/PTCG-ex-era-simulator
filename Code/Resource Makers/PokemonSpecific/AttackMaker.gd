@@ -5,6 +5,7 @@ class_name Attack
 @export var attack_cost: AttackCost = preload("res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres")
 @export var attack_data: AttackData
 
+#region DEBUG
 func print_attack() -> void:
 	print_rich("[center]------------------",name,"------------------")
 	print_rich("Description: ", attack_data.description)
@@ -19,38 +20,26 @@ func print_cost(energy: String):
 	if using == 0: return
 	print_rich(str(Convert.get_type_rich_color(energy), energy, ":[/color] ", using))
 
-func get_damage() -> int:
-	var data: AttackData = attack_data
-	var final_damage: int = data.initial_main_DMG
-	var mod_times: int = 1
-	var modifier_result: int = 0
+func get_cost(index: int) -> int:
+	match index:
+		0: return attack_cost.grass_cost
+		1: return attack_cost.fire_cost
+		2: return attack_cost.water_cost
+		3: return attack_cost.lightning_cost
+		4: return attack_cost.psychic_cost
+		5: return attack_cost.fighting_cost
+		6: return attack_cost.darkness_cost
+		7: return attack_cost.metal_cost
+		8: return attack_cost.colorless_cost
 	
-	if data.comparator:
-		mod_times = data.comparator.start_comparision()
-		print("HAS A MODIFIER WITH THE RESULT OF ", mod_times, " * ", data.modifier_num)
-		if data.comparator.has_coinflip():
-			await SignalBus.finished_coinflip
-	if data.mod_prompt:
-		mod_times *= 1 if data.prompt_hold else 0
-	
-	if mod_times != null:
-		print(data.modifier_num, mod_times)
-		modifier_result = data.modifier_num * mod_times
-		match data.modifier:
-			0:
-				if mod_times == 0:
-					final_damage = modifier_result
-			1:
-				final_damage += modifier_result
-			2:
-				final_damage = modifier_result
-			3:
-				final_damage -= modifier_result
-	
-	return final_damage
+	return -1
 
+#endregion
+
+#region ENERGY
 ##Returns only the specified required energy for the attack to start 
-func get_energy_cost() -> Array[String]:
+func get_energy_cost(slot: PokeSlot) -> Array[String]:
+	print(slot)
 	var all_costs: Array[int] = attack_cost.get_energy_cost_int()
 	var final_array: Array[String] = []
 	
@@ -131,20 +120,38 @@ func pay_with(all_costs: Array[int], card: Base_Card):
 ##Special energy is sorted based on how many colors it can fill in Rainbow > Aqua & Magma
 func can_pay(slot: PokeSlot) -> bool:
 	return true if pay_cost(slot) == 0 else false
+#endregion
 
-func get_cost(index: int) -> int:
-	match index:
-		0: return attack_cost.grass_cost
-		1: return attack_cost.fire_cost
-		2: return attack_cost.water_cost
-		3: return attack_cost.lightning_cost
-		4: return attack_cost.psychic_cost
-		5: return attack_cost.fighting_cost
-		6: return attack_cost.darkness_cost
-		7: return attack_cost.metal_cost
-		8: return attack_cost.colorless_cost
+#region DAMAGE
+func get_damage() -> int:
+	var data: AttackData = attack_data
+	var final_damage: int = data.initial_main_DMG
+	var mod_times: int = 1
+	var modifier_result: int = 0
 	
-	return -1
+	if data.comparator:
+		mod_times = data.comparator.start_comparision()
+		print("HAS A MODIFIER WITH THE RESULT OF ", mod_times, " * ", data.modifier_num)
+		if data.comparator.has_coinflip():
+			await SignalBus.finished_coinflip
+	if data.mod_prompt:
+		mod_times *= 1 if data.prompt_hold else 0
+	
+	if mod_times != null:
+		print(data.modifier_num, mod_times)
+		modifier_result = data.modifier_num * mod_times
+		match data.modifier:
+			0:
+				if mod_times == 0:
+					final_damage = modifier_result
+			1:
+				final_damage += modifier_result
+			2:
+				final_damage = modifier_result
+			3:
+				final_damage -= modifier_result
+	
+	return final_damage
 
 func does_direct_damage() -> bool:
 	return attack_data.initial_main_DMG != 0 \
@@ -180,3 +187,4 @@ func has_effect(effect_type: Array[String]) -> bool:
 	if attack_data.bench_damage:
 		print("Make this later")
 	return false
+#endregion

@@ -4,7 +4,6 @@ extends MarginContainer
 @export var attack: Attack
 @export var card_name: String
 
-@onready var final_cost:Array[String] = attack.get_energy_cost()
 @onready var energy_icons: Array[Node] = %Types.get_children()
 @onready var attackButton: Button = $AttackButton
 
@@ -27,7 +26,7 @@ func set_attack():
 		%EffectText.append_text(final_text)
 		%EffectText.show()
 	
-	final_cost = attack.get_energy_cost()
+	var final_cost = attack.get_energy_cost(slot)
 	print("Current final Cost: ", final_cost)
 	
 	for icon in energy_icons:

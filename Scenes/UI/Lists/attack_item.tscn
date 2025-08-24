@@ -14,6 +14,7 @@ size_flags_horizontal = 3
 mouse_filter = 2
 script = ExtResource("1_cuu5a")
 attack = ExtResource("2_h1533")
+card_name = null
 
 [node name="AttackButton" type="Button" parent="."]
 layout_mode = 2
