@@ -1,0 +1,111 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=20 format=3 uid="uid://b8yqcgbbjoj6l"]
+
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_dyhp7"]
+[ext_resource type="Texture2D" uid="uid://p2ke1uxmt7rx" path="res://Art/Cards/2 ex Sandstorm/17.jpg" id="1_l3ly3"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="2_p6tf3"]
+[ext_resource type="Script" uid="uid://crscwhvugaoxa" path="res://Code/Resource Makers/PokemonSpecific/AttackCostMaker.gd" id="3_0803d"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_dkf8v"]
+[ext_resource type="Resource" uid="uid://jjpk3e02egmo" path="res://Resources/Components/Counters/Comparator/Not Equal/OthHasSpecialEn.tres" id="4_l4tvk"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="5_b1hef"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="6_tmmnj"]
+[ext_resource type="Resource" uid="uid://nx1kc1vsm4ia" path="res://Resources/Components/Effects/Conditions/BasicConfusion.tres" id="7_720or"]
+[ext_resource type="Resource" uid="uid://c8ugmpvetg8xj" path="res://Resources/Components/Counters/Comparator/Equals/CoinflipHeads.tres" id="8_n3ulc"]
+[ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="9_nx42b"]
+[ext_resource type="Resource" uid="uid://c2ujs102gu8qn" path="res://Resources/Components/Effects/Asks/General/OthActive.tres" id="10_isniu"]
+[ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="11_0g6sw"]
+
+[sub_resource type="Resource" id="Resource_5ckab"]
+script = ExtResource("3_0803d")
+grass_cost = 0
+fire_cost = 0
+water_cost = 1
+lightning_cost = 0
+psychic_cost = 1
+fighting_cost = 0
+darkness_cost = 0
+metal_cost = 0
+colorless_cost = 0
+metadata/_custom_type_script = "uid://crscwhvugaoxa"
+
+[sub_resource type="Resource" id="Resource_oud34"]
+script = ExtResource("6_tmmnj")
+description = "If the Defending Pokémon has any Special Energy cards attached to it, this attack does 30 damage plus 40 more damage."
+prompt_reliant = false
+initial_main_DMG = 30
+defender_properties = 0
+condition = 1
+before_damage = false
+replace_num = false
+share_prompt = false
+prompt_effects = Array[ExtResource("5_b1hef")]([])
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 1
+modifier_num = 40
+comparator = ExtResource("4_l4tvk")
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_beqer"]
+script = ExtResource("1_dyhp7")
+name = "Special Blow"
+attack_cost = SubResource("Resource_5ckab")
+attack_data = SubResource("Resource_oud34")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_aja76"]
+script = ExtResource("9_nx42b")
+formal_question = false
+question_string = "Which Opposing Active Pokemon will get confused?"
+yes_answer = ""
+no_answer = ""
+comparator = ExtResource("8_n3ulc")
+can_reverse = true
+occurance = false
+chooser = 4
+choose_location = "Slot"
+which_slots = ExtResource("10_isniu")
+which_stack = 0
+metadata/_custom_type_script = "uid://b85jmc7067bjc"
+
+[sub_resource type="Resource" id="Resource_kmsla"]
+script = ExtResource("11_0g6sw")
+category = "Power"
+name = "Chaos Flash"
+description = "Once during your turn (before your attack), if [name] is your Active Pokémon, you may flip a coin. If heads, the Defending Pokémon (choose 1 if there are 2) is now Confused."
+affected_by_condition = true
+active = true
+how_often = "Once per Mon"
+independent_src_trg = false
+prompt = SubResource("Resource_aja76")
+effect = ExtResource("7_720or")
+metadata/_custom_type_script = "uid://bs2y8ocljilv8"
+
+[sub_resource type="Resource" id="Resource_fgpg4"]
+script = ExtResource("2_p6tf3")
+HP = 70
+retreat = 1
+pokepower = SubResource("Resource_kmsla")
+attacks = Array[ExtResource("1_dyhp7")]([SubResource("Resource_beqer")])
+evo_stage = "Stage 1"
+evolves_from = "Psyduck"
+considered = 1
+owner = 0
+type = 4
+weak = 8
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("3_dkf8v")
+name = "Golduck"
+image = ExtResource("1_l3ly3")
+illustrator = "Hajime Kusajima"
+number = 17
+rarity = 2
+expansion = 1
+categories = 1
+pokemon_properties = SubResource("Resource_fgpg4")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

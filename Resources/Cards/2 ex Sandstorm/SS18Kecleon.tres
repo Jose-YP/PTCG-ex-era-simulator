@@ -1,0 +1,74 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=15 format=3 uid="uid://c45xk5b64oi3v"]
+
+[ext_resource type="Texture2D" uid="uid://ndo67yqhpxrm" path="res://Art/Cards/2 ex Sandstorm/18.jpg" id="1_1dvmt"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_4x1r1"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="2_wgjka"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_0asiq"]
+[ext_resource type="Resource" uid="uid://b1rwmggf7a4do" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless2.tres" id="3_nr773"]
+[ext_resource type="Resource" uid="uid://di63v5yvwp4wr" path="res://Resources/Components/Pokemon/Attacks/AttackData/20x2Flips.tres" id="4_ijpsl"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="5_cvu0w"]
+[ext_resource type="Script" uid="uid://cswtf00ovs0ss" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/TypeChangeMaker.gd" id="6_w26pm"]
+[ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="7_7exgi"]
+
+[sub_resource type="Resource" id="Resource_gasrm"]
+script = ExtResource("1_4x1r1")
+name = "Double Scratch"
+attack_cost = ExtResource("3_nr773")
+attack_data = ExtResource("4_ijpsl")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_o4dw1"]
+script = ExtResource("6_w26pm")
+which = 0
+inclusive = false
+add_flags = true
+new_type = 0
+application = "Slot"
+duration = -1
+metadata/_custom_type_script = "uid://cswtf00ovs0ss"
+
+[sub_resource type="Resource" id="Resource_36mwt"]
+script = ExtResource("5_cvu0w")
+order = Array[int]([])
+type_change = SubResource("Resource_o4dw1")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_dea8b"]
+script = ExtResource("7_7exgi")
+category = "Body"
+name = "Energy Variation"
+description = "[name]'s type is the same as every type of basic Energy card attached to [name]."
+affected_by_condition = false
+active = false
+how_often = "Once per Mon"
+independent_src_trg = false
+passive = SubResource("Resource_36mwt")
+metadata/_custom_type_script = "uid://bs2y8ocljilv8"
+
+[sub_resource type="Resource" id="Resource_fgpg4"]
+script = ExtResource("2_wgjka")
+HP = 60
+retreat = 1
+pokebody = SubResource("Resource_dea8b")
+attacks = Array[ExtResource("1_4x1r1")]([SubResource("Resource_gasrm")])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 1
+owner = 0
+type = 256
+weak = 32
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("3_0asiq")
+name = "Kecleon"
+image = ExtResource("1_1dvmt")
+illustrator = "Kagemaru Himeno"
+number = 18
+rarity = 2
+expansion = 1
+categories = 1
+pokemon_properties = SubResource("Resource_fgpg4")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

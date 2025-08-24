@@ -1,15 +1,12 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=32 format=3 uid="uid://c513j5tbh8dl3"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=26 format=3 uid="uid://c513j5tbh8dl3"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_b7r45"]
 [ext_resource type="Texture2D" uid="uid://b7r446l5fg6ww" path="res://Art/Cards/2 ex Sandstorm/38.jpg" id="1_cxsdj"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_s135m"]
 [ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_u1p2y"]
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="4_h5hr6"]
-[ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="5_dp64j"]
 [ext_resource type="Resource" uid="uid://cqw2kwbgcwgvb" path="res://Resources/Components/Effects/Conditions/BasicSleep.tres" id="5_dvp6j"]
 [ext_resource type="Resource" uid="uid://ekj1myy642kh" path="res://Resources/Components/Effects/Prompts/PromptHeads.tres" id="6_7pkdl"]
-[ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="6_svi7e"]
-[ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="7_1xvgq"]
 [ext_resource type="Resource" uid="uid://nx1kc1vsm4ia" path="res://Resources/Components/Effects/Conditions/BasicConfusion.tres" id="7_smydr"]
 [ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="8_6po54"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="8_uxe5o"]
@@ -18,6 +15,7 @@
 [ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="10_omieh"]
 [ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="11_njfcx"]
 [ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/BuffMaker.gd" id="12_rf851"]
+[ext_resource type="Resource" uid="uid://batfiuq768qew" path="res://Resources/Components/Effects/Prompts/PromptComparator/VolbeatInPlay.tres" id="14_6po54"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="16_23wfd"]
 
 [sub_resource type="Resource" id="Resource_bp5xf"]
@@ -60,7 +58,6 @@ previous_src_trg = false
 side_target = 3
 slot_target = 4
 specifically = Array[String]([])
-knocked_out = false
 tool_attatched = false
 comparison_type = 1
 max_hp = -10
@@ -82,15 +79,18 @@ energy_class = "Any"
 check_ability = false
 contained_abilities = 3
 specific_abilities = Array[String]([])
+check_condition = false
+desired_condition = 0
+knocked_out = false
 metadata/_custom_type_script = "uid://mkjynqda7q5g"
 
 [sub_resource type="Resource" id="Resource_8fs6g"]
 script = ExtResource("12_rf851")
 description = "Take 30 less damage from {Fightning} and {Darkness} Pokemon"
-stackable = true
+stackable = false
 against = SubResource("Resource_6k8kd")
 after_weak_res = true
-operation = "Replace"
+operation = "Add"
 add_hp = 0
 attack = 0
 defense = 30
@@ -121,78 +121,16 @@ order = Array[int]([])
 buff = SubResource("Resource_8fs6g")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
-[sub_resource type="Resource" id="Resource_3pi3t"]
-script = ExtResource("10_omieh")
-boolean_type = "And"
-previous_src_trg = false
-side_target = 4
-slot_target = 4
-specifically = Array[String](["Volbeat"])
-knocked_out = false
-tool_attatched = false
-comparison_type = 1
-max_hp = -10
-damage_taken = -10
-retreat_cost = -1
-evo_type = "Don't Check"
-stage = 7
-rare_candy = false
-class_inclusive = true
-pokemon_class = 63
-owner_inclusive = true
-pokemon_owner = 31
-type_inclusive = true
-pokemon_type = 1023
-energy_inclusive = true
-check_cards = true
-energy_attatched = -1
-energy_class = "Any"
-check_ability = false
-contained_abilities = 3
-specific_abilities = Array[String]([])
-metadata/_custom_type_script = "uid://mkjynqda7q5g"
-
-[sub_resource type="Resource" id="Resource_7pkdl"]
-script = ExtResource("5_dp64j")
-which = "Slot"
-ask = SubResource("Resource_3pi3t")
-slot_vars = "current_card"
-cap = -1
-metadata/_custom_type_script = "uid://vjn146j3ayd6"
-
-[sub_resource type="Resource" id="Resource_smydr"]
-script = ExtResource("6_svi7e")
-comparision_type = "Not Equal"
-first_comparison = SubResource("Resource_7pkdl")
-compare_to = "None"
-second_constant = 0
-operate_w_constant = "None"
-metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
-
-[sub_resource type="Resource" id="Resource_uxe5o"]
-script = ExtResource("7_1xvgq")
-formal_question = false
-question_string = ""
-yes_answer = ""
-no_answer = ""
-comparator = SubResource("Resource_smydr")
-can_reverse = true
-occurance = false
-chooser = 0
-choose_location = "None"
-which_stack = 0
-metadata/_custom_type_script = "uid://b85jmc7067bjc"
-
 [sub_resource type="Resource" id="Resource_rx1kt"]
 script = ExtResource("8_6po54")
 category = "Body"
 name = "Glowing Screen"
 description = "As long as Volbeat is in play, any damage done to [name] by attacks from {Fighting} Pokémon and {Darkness} Pokémon is reduced by 30. You can't reduce more than 30 damage even if there is more than 1 Volbeat in play."
-affected_by_condition = true
+affected_by_condition = false
 active = false
 how_often = "Once per Mon"
 independent_src_trg = false
-prompt = SubResource("Resource_uxe5o")
+prompt = ExtResource("14_6po54")
 passive = SubResource("Resource_kvilp")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 

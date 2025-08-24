@@ -1,50 +1,13 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=21 format=3 uid="uid://2gbttee2ievi"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://2gbttee2ievi"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_khsbn"]
 [ext_resource type="Resource" uid="uid://ddhtth12ohjx5" path="res://Resources/Components/Energy/SpecialEnergy/Holon'sDR.tres" id="1_m7xdt"]
 [ext_resource type="Texture2D" uid="uid://dqdxh2ikej4n0" path="res://Art/Cards/13 ex Holon Phantoms/44.jpg" id="2_45r76"]
-[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_kh6h8"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_oe5pn"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="3_45r76"]
-[ext_resource type="Resource" uid="uid://beu3aq6pkdwdp" path="res://Resources/Components/Effects/Asks/Class&Owner/AtkDeltaMons.tres" id="4_kh6h8"]
-[ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="5_ho6l4"]
 [ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="6_4nuec"]
-[ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="6_6g24n"]
-[ext_resource type="Script" uid="uid://bgtwlw1edjwyc" path="res://Code/Resource Makers/EffectSpecific/Components/DrawMaker.gd" id="9_x1qkv"]
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="10_ho6l4"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="10_tf4u3"]
-
-[sub_resource type="Resource" id="Resource_x1qkv"]
-script = ExtResource("5_ho6l4")
-which = "Slot"
-ask = ExtResource("4_kh6h8")
-slot_vars = "current_card"
-cap = -1
-metadata/_custom_type_script = "uid://vjn146j3ayd6"
-
-[sub_resource type="Resource" id="Resource_ud2t6"]
-script = ExtResource("6_6g24n")
-comparision_type = "Return"
-first_comparison = SubResource("Resource_x1qkv")
-compare_to = "None"
-second_constant = 0
-operate_w_constant = "None"
-metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
-
-[sub_resource type="Resource" id="Resource_scy87"]
-script = ExtResource("9_x1qkv")
-shuffle_back_first = false
-side = 1
-bottom_deck = false
-simple_constant = 0
-comparator = SubResource("Resource_ud2t6")
-metadata/_custom_type_script = "uid://bgtwlw1edjwyc"
-
-[sub_resource type="Resource" id="Resource_cfi5g"]
-script = ExtResource("2_kh6h8")
-order = Array[int]([])
-draw_ammount = SubResource("Resource_scy87")
-metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_uhfbr"]
 script = ExtResource("10_tf4u3")
@@ -55,7 +18,6 @@ defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
-always_effect = SubResource("Resource_cfi5g")
 share_prompt = false
 prompt_effects = Array[ExtResource("10_ho6l4")]([])
 conditional_self_dmg = false

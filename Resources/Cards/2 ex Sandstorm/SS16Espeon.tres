@@ -1,0 +1,73 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=15 format=3 uid="uid://dd6oatno7oyvo"]
+
+[ext_resource type="Texture2D" uid="uid://lp4ajmb0r6p0" path="res://Art/Cards/2 ex Sandstorm/16.jpg" id="1_eifgh"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_omqtp"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_yf4tw"]
+[ext_resource type="Resource" uid="uid://cu817ymtejglx" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Psychic1.tres" id="3_xlbdp"]
+[ext_resource type="Resource" uid="uid://crshkwfqjp283" path="res://Resources/Components/Pokemon/Attacks/AttackData/20ConfIfHeads.tres" id="4_61oof"]
+[ext_resource type="Resource" uid="uid://dpovjlfpsypwe" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless3.tres" id="5_2bcn7"]
+[ext_resource type="Resource" uid="uid://dxuaiaq1l48no" path="res://Resources/Components/Counters/Comparator/Return/ReturnOthSidEn.tres" id="6_biifx"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="7_5g52e"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="8_41m78"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="9_s32jr"]
+
+[sub_resource type="Resource" id="Resource_r50oj"]
+script = ExtResource("2_yf4tw")
+name = "Confuse Ray"
+attack_cost = ExtResource("3_xlbdp")
+attack_data = ExtResource("4_61oof")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_lyjmn"]
+script = ExtResource("8_41m78")
+description = "Does 20 more damage plus 10 more damage for each Energy attached to all of your opponent's Pokémon."
+prompt_reliant = false
+initial_main_DMG = 20
+defender_properties = 0
+condition = 1
+before_damage = false
+replace_num = false
+share_prompt = false
+prompt_effects = Array[ExtResource("7_5g52e")]([])
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 1
+modifier_num = 10
+comparator = ExtResource("6_biifx")
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_vbop2"]
+script = ExtResource("2_yf4tw")
+name = "Energy Crush"
+attack_cost = ExtResource("5_2bcn7")
+attack_data = SubResource("Resource_lyjmn")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_fgpg4"]
+script = ExtResource("9_s32jr")
+HP = 80
+retreat = 1
+attacks = Array[ExtResource("2_yf4tw")]([SubResource("Resource_r50oj"), SubResource("Resource_vbop2")])
+evo_stage = "Stage 1"
+evolves_from = "Eevee"
+considered = 1
+owner = 0
+type = 16
+weak = 16
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_omqtp")
+name = "Espeon"
+image = ExtResource("1_eifgh")
+illustrator = "Mitsuhiro Arita"
+number = 16
+rarity = 2
+expansion = 1
+categories = 1
+pokemon_properties = SubResource("Resource_fgpg4")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

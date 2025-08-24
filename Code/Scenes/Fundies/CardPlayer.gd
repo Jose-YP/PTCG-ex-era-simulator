@@ -412,18 +412,19 @@ func prompt_input(prompt: PromptAsk) -> int:
 #--------------------------------------
 #region RETREATING
 func retreating(retreater: PokeSlot):
-	retreat_discard.finished.connect(call_retreat_discard.bind(retreater))
-	retreat_discard.energy_ammount = retreater.get_pokedata().retreat
+	retreat_discard.finished.connect(call_retreat_swap.bind(retreater))
+	retreat_discard.energy_ammount = retreater.get_retreat()
 	Globals.fundies.record_single_src_trg(retreater)
 	
+	print(retreat_discard.energy_ammount)
 	if retreat_discard.energy_ammount == 0:
-		call_retreat_discard(retreater)
+		call_retreat_swap(retreater)
 	else:
 		await retreat_discard.send_effect(true)
 	
-	retreat_discard.finished.disconnect(call_retreat_discard)
+	retreat_discard.finished.disconnect(call_retreat_swap)
 
-func call_retreat_discard(retreater: PokeSlot):
+func call_retreat_swap(retreater: PokeSlot):
 	await Consts.retreat_swap.switch(Consts.SIDES.ATTACKING, false)
 	retreater.retreat.emit()
 	Globals.fundies.remove_top_source_target()

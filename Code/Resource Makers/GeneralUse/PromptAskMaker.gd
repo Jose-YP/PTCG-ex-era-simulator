@@ -37,7 +37,7 @@ class_name PromptAsk
 ##Which cards are allowed in choice
 @export var which_cards: Identifier
 #endregion
-
+ 
 var formal_answer: bool
 
 #region PROMPT CHECKS

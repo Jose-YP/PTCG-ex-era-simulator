@@ -1,9 +1,8 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=13 format=3 uid="uid://c3tip8v6djvro"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://c3tip8v6djvro"]
 
 [ext_resource type="Texture2D" uid="uid://mj8t5qbg754t" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/65.jpg" id="1_g4aa4"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_j8bvu"]
 [ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_j8bvu"]
-[ext_resource type="Resource" uid="uid://6xmw13js5xd3" path="res://Resources/Components/Effects/Conditions/BasicParalyze.tres" id="3_v2ads"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_iwy5m"]
 [ext_resource type="Resource" uid="uid://ekj1myy642kh" path="res://Resources/Components/Effects/Prompts/PromptHeads.tres" id="5_yacn8"]
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="6_8p6eq"]
@@ -20,7 +19,6 @@ defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
-fail_effect = ExtResource("3_v2ads")
 share_prompt = false
 prompt_effects = Array[ExtResource("6_8p6eq")]([])
 conditional_self_dmg = false

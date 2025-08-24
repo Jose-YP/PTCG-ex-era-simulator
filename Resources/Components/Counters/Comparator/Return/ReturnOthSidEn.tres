@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Comparator" load_steps=3 format=3 uid="uid://dxuaiaq1l48no"]
+
+[ext_resource type="Resource" uid="uid://cht4vckv4kgfi" path="res://Resources/Components/Counters/Indv/Slots/OtherSideEnTotal.tres" id="1_mjniv"]
+[ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="2_sk57r"]
+
+[resource]
+script = ExtResource("2_sk57r")
+comparision_type = "Return"
+first_comparison = ExtResource("1_mjniv")
+compare_to = "None"
+second_constant = 0
+operate_w_constant = "None"
+metadata/_custom_type_script = "uid://b65jx8u5cgcgl"

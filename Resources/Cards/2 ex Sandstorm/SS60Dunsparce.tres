@@ -89,7 +89,6 @@ defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
-always_effect = SubResource("Resource_fltea")
 share_prompt = false
 prompt_effects = Array[ExtResource("9_fi1rr")]([SubResource("Resource_q6yow"), SubResource("Resource_wnj50")])
 conditional_self_dmg = false

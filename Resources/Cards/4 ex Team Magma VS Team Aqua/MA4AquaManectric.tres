@@ -21,7 +21,6 @@ previous_src_trg = false
 side_target = 3
 slot_target = 3
 specifically = Array[String]([])
-knocked_out = false
 tool_attatched = false
 comparison_type = 1
 max_hp = -10
@@ -44,6 +43,9 @@ energy_type = ExtResource("3_jf1rb")
 check_ability = false
 contained_abilities = 3
 specific_abilities = Array[String]([])
+check_condition = false
+desired_condition = 0
+knocked_out = false
 
 [sub_resource type="Resource" id="Resource_8qhfr"]
 script = ExtResource("3_bgqi1")

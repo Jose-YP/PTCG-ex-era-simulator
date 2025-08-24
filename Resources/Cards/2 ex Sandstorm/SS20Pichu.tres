@@ -1,0 +1,118 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=24 format=3 uid="uid://bi6qeurrd6rwr"]
+
+[ext_resource type="Texture2D" uid="uid://bs05kbtcrswbt" path="res://Art/Cards/2 ex Sandstorm/20.jpg" id="1_ddc7q"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_f1jhc"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="2_caaha"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_mnsu1"]
+[ext_resource type="Resource" uid="uid://duyf6uncjts05" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Lightning1.tres" id="3_vup74"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="4_efqwj"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="5_otmfi"]
+[ext_resource type="Resource" uid="uid://choi8otbipw57" path="res://Resources/Components/Effects/DmgManip/Add/AtkSelfTake10Dmg.tres" id="6_rwngw"]
+[ext_resource type="Script" uid="uid://cdyba0wadidwb" path="res://Code/Resource Makers/EffectSpecific/Components/PlacementMaker.gd" id="7_ec506"]
+[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="8_uv5j1"]
+[ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="9_3k6dc"]
+[ext_resource type="Resource" uid="uid://d2vm6chtedrum" path="res://Resources/Components/Effects/Identifiers/Energy/BasicEnergy.tres" id="10_qf57m"]
+[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/Components/SearchMaker.gd" id="11_mc5nh"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="12_k5cgy"]
+[ext_resource type="Resource" uid="uid://b2qpa5okonebu" path="res://Resources/Components/Pokemon/Abilities/Powers/BabyEvoPichu.tres" id="13_115tt"]
+
+[sub_resource type="Resource" id="Resource_16w3a"]
+script = ExtResource("5_otmfi")
+order = Array[int]([])
+dmgManip = ExtResource("6_rwngw")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_0n50x"]
+script = ExtResource("7_ec506")
+which = 0
+top_deck = false
+stack = 1
+slot_ask = ExtResource("8_uv5j1")
+use_as = 512
+reorder_type = 0
+shuffle = true
+evolve = false
+effect_to_mon = SubResource("Resource_16w3a")
+metadata/_custom_type_script = "uid://cdyba0wadidwb"
+
+[sub_resource type="Resource" id="Resource_molol"]
+script = ExtResource("11_mc5nh")
+side = 4
+where = 2
+reordering_only = false
+shuffle_first = false
+based_on_side = 0
+based_on_slots = 0
+based_on_energy = 0
+portion = -1
+identifier_allowed = -1
+how_many = Array[int]([2])
+of_this = Array[ExtResource("9_3k6dc")]([ExtResource("10_qf57m")])
+and_then = SubResource("Resource_0n50x")
+reveal = true
+metadata/_custom_type_script = "uid://cw3yr1k040kw7"
+
+[sub_resource type="Resource" id="Resource_s3u13"]
+script = ExtResource("5_otmfi")
+order = Array[int]([])
+search = SubResource("Resource_molol")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_sfutb"]
+script = ExtResource("4_efqwj")
+success = SubResource("Resource_s3u13")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
+[sub_resource type="Resource" id="Resource_u3rtk"]
+script = ExtResource("12_k5cgy")
+description = "Search your discard pile for up to 2 basic Energy cards and attach them to 1 of your Pokémon. Put 1 damage counter on that Pokémon for each Energy card attached in this way."
+prompt_reliant = false
+initial_main_DMG = 0
+defender_properties = 0
+condition = 1
+before_damage = false
+replace_num = false
+share_prompt = false
+prompt_effects = Array[ExtResource("4_efqwj")]([SubResource("Resource_sfutb")])
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_fjifl"]
+script = ExtResource("1_f1jhc")
+name = "Energy Retrieval"
+attack_cost = ExtResource("3_vup74")
+attack_data = SubResource("Resource_u3rtk")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_fgpg4"]
+script = ExtResource("2_caaha")
+HP = 40
+retreat = 1
+pokepower = ExtResource("13_115tt")
+attacks = Array[ExtResource("1_f1jhc")]([SubResource("Resource_fjifl")])
+evo_stage = "Basic"
+evolves_from = ""
+considered = 5
+owner = 0
+type = 8
+weak = 32
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("3_mnsu1")
+name = "Pichu"
+image = ExtResource("1_ddc7q")
+illustrator = "Naoyo Kimura"
+number = 20
+rarity = 2
+expansion = 1
+categories = 1
+pokemon_properties = SubResource("Resource_fgpg4")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

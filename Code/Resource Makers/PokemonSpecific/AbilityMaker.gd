@@ -111,7 +111,7 @@ func activate_passive() -> bool:
 	if active:
 		result = result and slot.is_active()
 	if affected_by_condition:
-		result = result and slot.has_condition()
+		result = result and not slot.has_condition()
 	
 	if prompt and result:
 		if prompt.check_prompt():

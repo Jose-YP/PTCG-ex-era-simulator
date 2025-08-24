@@ -348,7 +348,10 @@ func get_retreat() -> int:
 	var base: int = Globals.fundies.full_check_stat_buff(
 		self, Consts.STAT_BUFFS.RETREAT, false, true)
 	
-	if clamp(base, 0, 100) == 0: return base
+	if base < 0:
+		return 0
+	else:
+		return get_pokedata().retreat
 	
 	base += Globals.fundies.full_check_stat_buff(
 		self, Consts.STAT_BUFFS.RETREAT, true, true)

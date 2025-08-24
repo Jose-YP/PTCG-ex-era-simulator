@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="IndvCounter" load_steps=4 format=3 uid="uid://cht4vckv4kgfi"]
+
+[ext_resource type="Resource" uid="uid://crhg4u3yu2cso" path="res://Resources/Components/Effects/Asks/General/FromOther.tres" id="1_5xm2c"]
+[ext_resource type="Resource" uid="uid://cv8xofc4ofaom" path="res://Resources/Components/EnData/NeoRainbow.tres" id="2_7xum5"]
+[ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="3_jsrtl"]
+
+[resource]
+script = ExtResource("3_jsrtl")
+which = "Slot"
+ask = ExtResource("1_5xm2c")
+slot_vars = "energy_cards"
+en_count_methods = "Total"
+en_counting = ExtResource("2_7xum5")
+cap = -1
+metadata/_custom_type_script = "uid://vjn146j3ayd6"

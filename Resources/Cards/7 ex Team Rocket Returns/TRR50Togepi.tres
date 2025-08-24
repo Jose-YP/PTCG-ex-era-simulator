@@ -1,19 +1,15 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=21 format=3 uid="uid://cg7qhfrgw5lmh"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=15 format=3 uid="uid://cg7qhfrgw5lmh"]
 
 [ext_resource type="Texture2D" uid="uid://cc6y666c76foi" path="res://Art/Cards/7 ex Team Rocket Returns/50.jpg" id="1_ojje2"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_s6osv"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_emyr2"]
 [ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="4_emyr2"]
-[ext_resource type="Script" uid="uid://dtv1d2u2kvixy" path="res://Code/Resource Makers/EffectSpecific/Components/MimicMaker.gd" id="5_3seaf"]
 [ext_resource type="Resource" uid="uid://gbxomf46y0lr" path="res://Resources/Components/Pokemon/Attacks/AttackData/Sleep.tres" id="5_mw7hy"]
 [ext_resource type="Resource" uid="uid://b1rwmggf7a4do" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless2.tres" id="6_2b0yu"]
 [ext_resource type="Resource" uid="uid://ekj1myy642kh" path="res://Resources/Components/Effects/Prompts/PromptHeads.tres" id="6_ky0p2"]
-[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="6_mw7hy"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="7_2b0yu"]
-[ext_resource type="Resource" uid="uid://c2ujs102gu8qn" path="res://Resources/Components/Effects/Asks/General/OthActive.tres" id="7_738mo"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="7_ky0p2"]
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="7_pj4ld"]
-[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="8_3seaf"]
 
 [sub_resource type="Resource" id="Resource_ky0p2"]
 script = ExtResource("2_emyr2")
@@ -21,27 +17,6 @@ name = "Yawn"
 attack_cost = ExtResource("4_emyr2")
 attack_data = ExtResource("5_mw7hy")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
-
-[sub_resource type="Resource" id="Resource_pj4ld"]
-script = ExtResource("5_3seaf")
-mimicing = ExtResource("8_3seaf")
-use = "Slot"
-ask = ExtResource("7_738mo")
-retrigger = true
-evolutions = false
-must_pay_energy = false
-adjustable_type = false
-mimic_self = false
-hard_reverse = false
-exclusive_mimic = Array[String]([])
-stack = 0
-metadata/_custom_type_script = "uid://dtv1d2u2kvixy"
-
-[sub_resource type="Resource" id="Resource_min8w"]
-script = ExtResource("6_mw7hy")
-order = Array[int]([])
-mimic = SubResource("Resource_pj4ld")
-metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_kkp1i"]
 script = ExtResource("7_ky0p2")
@@ -53,7 +28,6 @@ defender_properties = 0
 condition = 1
 before_damage = false
 replace_num = false
-success_effect = SubResource("Resource_min8w")
 share_prompt = false
 prompt_effects = Array[ExtResource("7_pj4ld")]([])
 conditional_self_dmg = false
