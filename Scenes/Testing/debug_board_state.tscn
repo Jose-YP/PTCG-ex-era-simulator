@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://dnij7qm62bibx"]
 
 [ext_resource type="Script" uid="uid://j57m0tmwtg4n" path="res://Code/Scenes/debug_board_state.gd" id="1_auq40"]
-[ext_resource type="Resource" uid="uid://bx3ytpyqp7p5f" path="res://Resources/BoardStates/SideStates/Doubles/Latis.tres" id="2_43axb"]
+[ext_resource type="Resource" uid="uid://dtbyknsdcmhmo" path="res://Resources/BoardStates/SideStates/Doubles/WaterBuffs.tres" id="2_43axb"]
 [ext_resource type="Resource" uid="uid://dd7ngwhigll1n" path="res://Resources/BoardStates/SideStates/Doubles/RockSong.tres" id="2_yhhmj"]
 [ext_resource type="PackedScene" uid="uid://bmhba1mua5n81" path="res://Scenes/Testing/debug_button.tscn" id="4_t8we2"]
 [ext_resource type="PackedScene" uid="uid://b2f8g5a5evnv4" path="res://Scenes/Testing/comparator_options.tscn" id="6_43axb"]

@@ -1,0 +1,151 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=22 format=3 uid="uid://nhq1fs6l8ykw"]
+
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_h41eg"]
+[ext_resource type="Resource" uid="uid://cesjkvsi5c6jb" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/L1C1.tres" id="2_hupsa"]
+[ext_resource type="Script" uid="uid://8sh5p3leflla" path="res://Code/Resource Makers/EffectSpecific/Components/CardDisruptMaker.gd" id="3_bvr67"]
+[ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="3_ww8v3"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_8ytsg"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="4_o6qa5"]
+[ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="5_0phoc"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="5_trk3w"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="6_0biqx"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="7_4bhyy"]
+[ext_resource type="Script" uid="uid://c0ishgbxk63dg" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/DisableMaker.gd" id="8_ut58u"]
+
+[sub_resource type="Resource" id="Resource_fmsk3"]
+script = ExtResource("3_bvr67")
+send = "Stack"
+send_to = 2
+top_stack = true
+shuffle = false
+card_ammount = 1
+reveal = false
+who_chooses = 4
+side = 2
+view = true
+portion = -1
+from_stack = 0
+slot_choose_num = -1
+metadata/_custom_type_script = "uid://8sh5p3leflla"
+
+[sub_resource type="Resource" id="Resource_dfjj5"]
+script = ExtResource("4_8ytsg")
+order = Array[int]([])
+card_disrupt = SubResource("Resource_fmsk3")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_wqdlm"]
+script = ExtResource("5_0phoc")
+formal_question = false
+question_string = ""
+yes_answer = ""
+no_answer = ""
+can_reverse = false
+effect = SubResource("Resource_dfjj5")
+occurance = false
+chooser = 0
+choose_location = "None"
+which_stack = 0
+metadata/_custom_type_script = "uid://b85jmc7067bjc"
+
+[sub_resource type="Resource" id="Resource_ppe01"]
+script = ExtResource("7_4bhyy")
+description = "Choose 1 card from your opponent's hand without looking. Look at the card you chose. If that card is a Trainer card, this attack does 30 damage plus 30 more damage, and discard that card. If that card is not a Trainer card, return it to your opponent's hand."
+prompt_reliant = false
+prompt = SubResource("Resource_wqdlm")
+initial_main_DMG = 30
+defender_properties = 0
+condition = 1
+before_damage = false
+replace_num = false
+share_prompt = false
+prompt_effects = Array[ExtResource("6_0biqx")]([])
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = true
+modifier = 1
+modifier_num = 30
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_itv2y"]
+script = ExtResource("1_h41eg")
+name = "Mind Play"
+attack_cost = ExtResource("2_hupsa")
+attack_data = SubResource("Resource_ppe01")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_l6qmq"]
+script = ExtResource("8_ut58u")
+side = 2
+slot = 4
+no_weakness = false
+no_resistance = false
+instead_of_damage = false
+do_nothing = false
+attack = 0
+power = 0
+retreat_duration = 1
+disable_retreat = false
+application = "Slot"
+duration = -1
+metadata/_custom_type_script = "uid://c0ishgbxk63dg"
+
+[sub_resource type="Resource" id="Resource_r6duo"]
+script = ExtResource("4_8ytsg")
+order = Array[int]([])
+disable = SubResource("Resource_l6qmq")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_xqktl"]
+script = ExtResource("5_0phoc")
+formal_question = false
+question_string = ""
+yes_answer = ""
+no_answer = ""
+can_reverse = true
+occurance = false
+chooser = 0
+choose_location = "None"
+which_stack = 0
+metadata/_custom_type_script = "uid://b85jmc7067bjc"
+
+[sub_resource type="Resource" id="Resource_hupsa"]
+script = ExtResource("3_ww8v3")
+category = "Body"
+name = "Delta Block"
+description = "As long as any Stadium card with Holon in its name is in play, your opponent can't play any Stadium cards from his or her hand."
+affected_by_condition = false
+active = false
+how_often = "Once per Mon"
+independent_src_trg = false
+prompt = SubResource("Resource_xqktl")
+passive = SubResource("Resource_r6duo")
+metadata/_custom_type_script = "uid://bs2y8ocljilv8"
+
+[sub_resource type="Resource" id="Resource_bvr67"]
+script = ExtResource("4_o6qa5")
+HP = 70
+retreat = 1
+pokebody = SubResource("Resource_hupsa")
+attacks = Array[ExtResource("1_h41eg")]([SubResource("Resource_itv2y")])
+evo_stage = "Stage 1"
+evolves_from = "Psyduck"
+considered = 9
+owner = 0
+type = 8
+weak = 8
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("5_trk3w")
+name = "Golduck"
+illustrator = ""
+number = 43
+rarity = 1
+expansion = 12
+categories = 1
+pokemon_properties = SubResource("Resource_bvr67")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"
