@@ -81,7 +81,7 @@ func slot_into_string(slot: Consts.SLOTS) -> String:
 func side_into_string(side: Consts.SIDES) -> String:
 	match side:
 		Consts.SIDES.BOTH:
-			return ""
+			return "both"
 		Consts.SIDES.ATTACKING:
 			return "attacking"
 		Consts.SIDES.DEFENDING:

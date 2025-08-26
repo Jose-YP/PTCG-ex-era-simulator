@@ -50,28 +50,36 @@ func get_energy_cost(slot: PokeSlot) -> Array[String]:
 	return final_array
 
 func get_modified_cost(slot: PokeSlot) -> Array[int]:
-	if not slot or slot.changes.size() == 0:
+	var side_changes = Globals.fundies.get_side_change(slot.is_home()).keys()
+	
+	if not slot or (slot.changes.size() == 0 and side_changes.size() == 0):
 		return attack_cost.get_energy_cost_int()
 	
 	#First find any replacements
 	var replace: Array[int] = get_cost_buffs(slot.changes.keys(), true)
-	
+	var side_replace: Array[int] = get_cost_buffs(side_changes, true)
+	print(replace, side_replace)
+	print(replace.any(func(a: int): return a != 0), side_replace.any(func(a: int): return a != 0))
 	#This means that replace overrides any addition or subtraction buffs
 	#Idk if it should be like this
-	if replace.size() != 0:
+	if replace.any(func(a: int): return a != 0):
 		return replace
+	if side_replace.any(func(a: int): return a != 0):
+		return side_replace
 	
 	var final: Array[int] = attack_cost.get_energy_cost_int()
+	var side_buffs = get_cost_buffs(side_changes, false)
 	#Then evaluate any additions and subtractions
 	final = cost_arithmetic(final, get_cost_buffs(slot.changes.keys(), false), true)
-	
+	final = cost_arithmetic(final, side_buffs, true)
 	for i in range(final.size()):
 		final[i] = clamp(final[i], 0, 99)
 	
 	return final
 
-func get_cost_buffs(arr: Array[SlotChange], replace: bool = false) -> Array[int]:
+func get_cost_buffs(arr: Array, replace: bool = false) -> Array[int]:
 	var total: Array[int] = []
+	total.resize(9)
 	
 	for change in arr:
 		if change is Buff:
@@ -87,9 +95,6 @@ func get_cost_buffs(arr: Array[SlotChange], replace: bool = false) -> Array[int]
 
 func cost_arithmetic(first: Array[int], second: Array[int], addition: bool = true) -> Array[int]:
 	for i in range(second.size()):
-		#if not first[i]:
-			#first.append(second[i] if addition else -second[i])
-		#else:
 		first[i] += second[i] if addition else -second[i]
 	
 	return first

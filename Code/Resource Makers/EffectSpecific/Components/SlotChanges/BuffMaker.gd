@@ -139,7 +139,7 @@ func how_display() -> Dictionary[String, bool]:
 		dict["Cost"] = operation == "Add" and retreat_change > 0
 		return dict
 	if attack_cost:
-		dict["Cost"] = cost_modifier == "Subtract"
+		dict["Cost"] = cost_modifier == "Add"
 		return dict
 	
 	#Check Immunities

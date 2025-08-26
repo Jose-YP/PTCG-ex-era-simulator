@@ -232,9 +232,12 @@ func print_src_trg():
 
 #--------------------------------------
 #region SLOT CHANGE MANAGEMENT
+func get_side_change(home_val: bool) -> Dictionary:
+	return side_changes[home_val] as Dictionary[SlotChange, int]
+
 func apply_change(ask: SlotAsk, applying: SlotChange):
 	for side in Globals.full_ui.sides:
-		if side == Globals.full_ui.get_const_side(ask.side_target) and\
+		if side.is_side(ask.side_target) and\
 		not applying in side_changes[side.home]:
 			var which_changes = side_changes[side.home]
 			which_changes[applying] = applying.duration

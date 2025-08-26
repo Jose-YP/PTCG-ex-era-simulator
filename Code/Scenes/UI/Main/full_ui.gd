@@ -36,6 +36,7 @@ func get_home_side(home: bool) -> CardSideUI:
 	return player_side if home else opponent_side
 
 func get_const_side(side: Consts.SIDES) -> CardSideUI:
+	print(Convert.side_into_string(side))
 	return get_home_side(Globals.fundies.get_considered_home(side))
 
 func all_slots() -> Array[UI_Slot]:

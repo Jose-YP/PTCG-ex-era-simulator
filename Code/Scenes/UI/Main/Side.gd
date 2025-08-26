@@ -63,6 +63,21 @@ func get_slots() -> Array[UI_Slot]:
 		arr.append(slot as UI_Slot)
 	return arr
 
+func is_side(side: Consts.SIDES):
+	match side:
+		Consts.SIDES.BOTH:
+			return true
+		Consts.SIDES.ATTACKING:
+			return home == Globals.fundies.home_turn
+		Consts.SIDES.DEFENDING:
+			return home != Globals.fundies.home_turn
+		Consts.SIDES.SOURCE:
+			return home == Globals.fundies.source_stack[-1]
+		Consts.SIDES.OTHER:
+			return home != Globals.fundies.source_stack[-1]
+	
+	return false
+
 func insert_slot(slot: PokeSlot, predefined: bool = false):
 	if predefined or slot.is_active():
 		for ui_slot in %Active.get_children():
