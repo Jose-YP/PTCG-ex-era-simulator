@@ -76,13 +76,15 @@ enum PLAYER_TYPES{PLAYER, ##HUMAN CONTROLLED
  CPU, ## CPU CONTROLLED
  DUMMY ## SPECIFIC CPU THAT ALWAYS CHOOSES EASIEST OPTION FOR DEBUGGING
 }
+
 enum SIDES {NONE, ##IGNORE FIELD AND TAKE DEFAULT
  ATTACKING,##IS FOR THE PLAYER WHOSE TURN IT IS
  DEFENDING,##IS THE OTHER GUY
  BOTH, ##TAKE IN EVERY SLOT THAT FITS SPECIFIERS
  SOURCE, ##ONLY TAKE IN WHOEVER CALLED EFFECT NO MATTER SIDE
  OTHER ##WHICHEVER SIDE DIDN'T CALL THE EFFECT
-} 
+}
+
 enum SLOTS {NONE,##Ignore and use the default
  TARGET,##Refers to  pokemon involved in attacks and effects
  ACTIVE,##Refers to the pokemon in the Active Slot
@@ -90,6 +92,7 @@ enum SLOTS {NONE,##Ignore and use the default
  ALL,##Refers to any pokemon in the dedicated side
  REST ##Refers to any pokemon not involves with attacks or effects
 }
+
 enum STACKS{HAND, ##CARDS HERE CAN BE PLAYED UNDER THE RIGHT CONDITIONS
   DECK, ##CARDS MUST EITHER BE DRAWN OR TUTORED. ALL CRADS BEGIN HERE
   DISCARD, ##AFTER A CARD IS USED, KO'd OR PAYS FOR ANY DISCARD COSTS
@@ -99,6 +102,7 @@ enum STACKS{HAND, ##CARDS HERE CAN BE PLAYED UNDER THE RIGHT CONDITIONS
   ANY,
   NONE
 }
+
 enum STACK_ACT{PLAY,##ALLOWED CARDS CAN BE PLAYED ONTO THE BOARD
 	TUTOR, ##ALLOWED CARDS WILL BE SENT TO ANOTHER DESTINATION
 	DISCARD, ##ALLOWED CARDS WILL BE SENT TO DISCARD PILE
@@ -107,27 +111,41 @@ enum STACK_ACT{PLAY,##ALLOWED CARDS CAN BE PLAYED ONTO THE BOARD
 	ENSWAP, ##SELECT CARDS TO SWAP IN THE SWAP BOX
 	MIMIC
 }
-enum COIN_RULES{
-	REG,
+
+enum COIN_RULES{REG,
 	HEADS,
 	TAILS,
 	ALTERNATE
 }
-enum TURN_COND{
-	NONE,
+
+enum TURN_COND{NONE,
 	PARALYSIS,
 	ASLEEP,
 	CONFUSION
 }
+
 enum COND_RULES{NONE, ##Condition doesn't clear on it's own
 	TURN_PASS, ##Condition clears at the end of the target side's turn
 	FLIP, ##Coinflip heads once in order to clear condition
 	TWOFLIP ##Coinflip heads twice in order to clear condition
 }
+
 enum EFFECTS{CONDITION, BUFF, DISRUPT, DISABLE, 
  ENMOV, DMGMANIP, SEARCH, SWAP, DRAW, ALLEVIATE, MIMIC, 
  OVERRIDE, CHEATPLAY, TYPECHANGE, RULECHANGE, OTHER}
+
+#Buff
 enum STAT_BUFFS{ATTACK, DEFENSE, HP, RETREAT}
+
+enum IMMUNITIES{ATK_EFCT_OPP,
+	PWR_EFCT_OPP,
+	BDY_EFCT_OPP,
+	TR_EFCT_OPP,
+	DMG_OPP,
+	EVEN,
+	ODD
+}
+
 #endregion
 #--------------------------------------
 
@@ -137,6 +155,7 @@ const rarity: Array[String] = ["Common", "Uncommon", "Rare",
  "Holofoil Rare", "ex Rare", "Ultra Rare", "Star Rare", "Promo Rare"]
 const allowed_list_flags: Array[String] = ["Basic", "Evolution",
  "Item", "Support","Stadium", "Tool", "TM", "RSM", "Fossil", "Energy"]
+
 
 var coinflip_once: Comparator = load("res://Resources/Components/Counters/Comparator/Equals/CoinflipHeads.tres")
 var coinflip_twice: Comparator = load("res://Resources/Components/Counters/Comparator/Equals/CoinflipHeads.tres")

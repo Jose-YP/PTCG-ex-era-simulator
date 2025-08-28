@@ -250,6 +250,14 @@ func remove_change(removing: SlotChange):
 	for slot in Globals.full_ui.get_poke_slots():
 		slot.remove_slot_change(removing)
 
+func allowed_against(change: Buff, against: PokeSlot) -> bool:
+	if change.against:
+		if change.against.check_ask(against):
+			return true
+	else:
+		return true
+	return false
+
 func full_check_stat_buff(slot: PokeSlot, stat: Consts.STAT_BUFFS,
  adding: bool = true, after: bool = true) -> int:
 	var total: int = 0
@@ -262,10 +270,10 @@ func full_check_stat_buff(slot: PokeSlot, stat: Consts.STAT_BUFFS,
 	return total
 
 #For HP, RETREAT and ATK replacements
-func check_stat_buff(arr: Dictionary, stat: Consts.STAT_BUFFS,
+func check_stat_buff(dict: Dictionary, stat: Consts.STAT_BUFFS,
  adding: bool) -> int:
 	var total: int = 0
-	for change in arr:
+	for change in dict:
 		if change is Buff:
 			change = change as Buff
 			var after_allowed: bool = (change.operation == "Add") == adding
@@ -278,19 +286,16 @@ func check_stat_buff(arr: Dictionary, stat: Consts.STAT_BUFFS,
 	
 	return total
 
-func check_against_stat_buff(from: PokeSlot, against: PokeSlot, arr: Dictionary,
+func check_against_stat_buff(from: PokeSlot, against: PokeSlot, dict: Dictionary,
  stat: Consts.STAT_BUFFS, after: bool):
 	var total: int = 0
-	for change in arr:
-		if change is Buff:
-			change = change as Buff
-			
-			if after == change.after_weak_res and change.has_stat(stat):
-				if change.against:
-					if change.against.check_ask(against):
-						total += change.get_stat(stat)
-				else:
-					total += change.get_stat(stat)
+	for change in dict:
+		if not change is Buff: continue
+		change = change as Buff
+		
+		if after == change.after_weak_res and change.has_stat(stat):
+			if allowed_against(change, against):
+				total += change.get_stat(stat)
 	
 	return total
 
@@ -304,6 +309,52 @@ func atk_def_buff(attacker: PokeSlot, defender: PokeSlot, after: bool) -> int:
 	 attacker, side_changes[defender.is_home()], Consts.STAT_BUFFS.DEFENSE, after)
 	
 	return final
+
+func has_immune(immunity: Consts.IMMUNITIES, dict: Dictionary, against: PokeSlot):
+	for change in dict:
+		if not change is Buff: continue
+		
+		change = change as Buff
+		match immunity:
+			Consts.IMMUNITIES.ATK_EFCT_OPP:
+				if change.attack_effect_immune and allowed_against(change, against):
+					return true
+			Consts.IMMUNITIES.PWR_EFCT_OPP:
+				if change.power_immune and allowed_against(change, against):
+					return true
+			Consts.IMMUNITIES.BDY_EFCT_OPP:
+				if change.body_immune and allowed_against(change, against):
+					return true
+			Consts.IMMUNITIES.TR_EFCT_OPP:
+				if change.trainer_immune and allowed_against(change, against):
+					return true
+			Consts.IMMUNITIES.EVEN:
+				if change.even_immunity and allowed_against(change, against):
+					return true
+			Consts.IMMUNITIES.ODD:
+				if change.odd_immunity and allowed_against(change, against):
+					return true
+
+func check_immunity(immunity: Consts.IMMUNITIES, attacker: PokeSlot, defender: PokeSlot):
+	if defender.changes.size() > 0:
+		if has_immune(immunity, defender.changes, attacker):
+			return true
+		elif has_immune(immunity, side_changes[defender.is_home()], attacker):
+			return true
+	return false
+
+func has_cond_immune():
+	pass
+
+func check_condition_immune(cond: int, defender: PokeSlot):
+	for change in defender.changes:
+		if not change is Buff: continue
+		
+		change = change as Buff
+		if change.condition_immune & cond != 0:
+			return true
+	
+	return false
 
 #endregion
 #--------------------------------------
