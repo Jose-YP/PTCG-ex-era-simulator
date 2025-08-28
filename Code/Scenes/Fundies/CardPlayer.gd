@@ -180,7 +180,7 @@ func play_trainer(card: Base_Card):
 	for effect in trainer.prompt_effects:
 		if effect == first:
 			continue
-		effect.effect_collect_play()
+		await effect.effect_collect_play()
 	
 	if not card.is_considered("Supporter"):
 		Globals.fundies.stack_manager.play_card(card, Consts.STACKS.DISCARD)

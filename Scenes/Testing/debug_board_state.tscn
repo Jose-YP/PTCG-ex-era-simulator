@@ -22,9 +22,9 @@ confusion_damage = 10
 default_start = false
 debug_unlimit = false
 home_side = 0
-home = ExtResource("2_yhhmj")
+home = ExtResource("2_43axb")
 away_side = 1
-away = ExtResource("2_43axb")
+away = ExtResource("2_yhhmj")
 metadata/_custom_type_script = "uid://c7ucx36aubnh8"
 
 [node name="DebugBoardState" type="Control" node_paths=PackedStringArray("fundies")]
