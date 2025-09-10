@@ -604,16 +604,6 @@ func count_diff_energy() -> int:
 	
 	return diff
 
-##If true this function return basic energy otherwise, special
-func get_energy_considered(basic: bool = true):
-	var final_array: Array[Base_Card]
-	
-	for card in energy_cards:
-		if (card.energy_properties.considered == "Basic Energy") == basic:
-			final_array.append(card)
-	
-	return final_array
-
 func get_total_energy(enData_filter: EnData = null, filtered_array: Array[Base_Card] = []) -> int:
 	var total: int = 0
 	var using: Array[Base_Card] = filtered_array if filtered_array.size() != 0 else energy_cards

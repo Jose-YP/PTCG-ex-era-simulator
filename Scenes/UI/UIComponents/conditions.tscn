@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dj7jl64ubjq3r" path="res://Art/Counters/Poison.png" id="1_ews76"]
 [ext_resource type="Script" uid="uid://jyexkd2w417g" path="res://Code/Scenes/UI/Main/conditions.gd" id="1_wtp2w"]
 [ext_resource type="Script" uid="uid://8s3m1dar3r33" path="res://Code/Resource Makers/EffectSpecific/Components/ConditionMaker.gd" id="2_rnfnf"]
-[ext_resource type="Texture2D" uid="uid://cd6l3wcjbqj0q" path="res://Art/Counters/Fire.png" id="2_wtp2w"]
+[ext_resource type="Texture2D" uid="uid://cd6l3wcjbqj0q" path="res://Art/Counters/Burn.png" id="2_wtp2w"]
 [ext_resource type="Texture2D" uid="uid://2d5wox7ruhx6" path="res://Art/Counters/Paralysis.png" id="3_rnfnf"]
 [ext_resource type="Texture2D" uid="uid://pgjbr5a5mvw7" path="res://Art/Counters/Sleep.png" id="4_nwnu7"]
 [ext_resource type="Texture2D" uid="uid://drxnepvq60j3v" path="res://Art/Counters/Confusion.png" id="5_a7s5w"]

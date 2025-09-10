@@ -102,8 +102,8 @@ func cost_arithmetic(first: Array[int], second: Array[int], addition: bool = tru
 func pay_cost(slot: PokeSlot):
 	print("CHECK COSTS FOR ", name)
 	var all_costs: Array[int] = attack_cost.get_energy_cost_int()
-	var basic_energy: Array[Base_Card] = slot.get_energy_considered()
-	var special_energy: Array[Base_Card] = slot.get_energy_considered(false)
+	var basic_energy: Array[Base_Card] = slot.get_total_en_categories("Basic Energy")
+	var special_energy: Array[Base_Card] = slot.get_total_en_categories("Special Energy")
 	
 	#Edit costs depending on whatever factors
 	#Priotitize basic/single type first

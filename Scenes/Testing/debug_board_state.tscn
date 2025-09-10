@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://dnij7qm62bibx"]
 
 [ext_resource type="Script" uid="uid://j57m0tmwtg4n" path="res://Code/Scenes/debug_board_state.gd" id="1_auq40"]
-[ext_resource type="Resource" uid="uid://dtbyknsdcmhmo" path="res://Resources/BoardStates/SideStates/Doubles/WaterBuffs.tres" id="2_43axb"]
-[ext_resource type="Resource" uid="uid://dd7ngwhigll1n" path="res://Resources/BoardStates/SideStates/Doubles/RockSong.tres" id="2_yhhmj"]
+[ext_resource type="Resource" uid="uid://ds3gwf2066vgp" path="res://Resources/BoardStates/SideStates/Doubles/Duos.tres" id="2_yhhmj"]
+[ext_resource type="Resource" uid="uid://cbga37453a4ca" path="res://Resources/BoardStates/SideStates/Doubles/ElecAquaTest.tres" id="3_43axb"]
 [ext_resource type="PackedScene" uid="uid://bmhba1mua5n81" path="res://Scenes/Testing/debug_button.tscn" id="4_t8we2"]
 [ext_resource type="PackedScene" uid="uid://b2f8g5a5evnv4" path="res://Scenes/Testing/comparator_options.tscn" id="6_43axb"]
 [ext_resource type="PackedScene" uid="uid://cni7lmrv7r06c" path="res://Scenes/Main Game/Fundies.tscn" id="6_iquab"]
@@ -22,7 +22,7 @@ confusion_damage = 10
 default_start = false
 debug_unlimit = false
 home_side = 0
-home = ExtResource("2_43axb")
+home = ExtResource("3_43axb")
 away_side = 1
 away = ExtResource("2_yhhmj")
 metadata/_custom_type_script = "uid://c7ucx36aubnh8"

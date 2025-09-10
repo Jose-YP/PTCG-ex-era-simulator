@@ -153,11 +153,13 @@ func check_ask(slot: PokeSlot) -> bool:
 	if energy_attatched != -1:
 		print_verbose("[center]-----------------------------------------------------------")
 		print_verbose("[center]Energy Attatched")
-		print_verbose("Check Cards?", energy_class)
-		print_verbose("Checking for: ", energy_type.get_string(), " | ", energy_class)
+		print_verbose("Check Cards?", check_cards, "\t", energy_class)
+		print_verbose(str("Checking for: ", energy_type.get_string()) if energy_type else "")
 		
-		var using = slot.energy_cards if energy_class != "Any" else slot.get_total_en_categories(energy_class)
-		var total: int = slot.get_total_energy(energy_type, using) if check_cards else using.size()
+		var using = slot.energy_cards if energy_class == "Any" else slot.get_total_en_categories(energy_class)
+		
+		#This accountf or energy type but not energy category
+		var total: int = using.size() if check_cards and not energy_type else slot.get_total_energy(energy_type, using)
 		var passes: bool = total >= energy_attatched if comparison_type == 1 else total <= energy_attatched
 		print_verbose("Total: ",total, passes)
 		

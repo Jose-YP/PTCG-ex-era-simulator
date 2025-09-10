@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=18 format=3 uid="uid://4qx3xkp3is8s"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=26 format=3 uid="uid://4qx3xkp3is8s"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_2lpfv"]
 [ext_resource type="Texture2D" uid="uid://2omkclk8fvc5" path="res://Art/Cards/5 ex Hidden Legends/34.jpg" id="1_nxexq"]
@@ -11,6 +11,10 @@
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="8_83yce"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="9_sl83c"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="10_c4ekq"]
+[ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="11_f8edd"]
+[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="12_f8edd"]
+[ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/BuffMaker.gd" id="12_sk1pa"]
+[ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="13_83yce"]
 
 [sub_resource type="Resource" id="Resource_womou"]
 script = ExtResource("7_sk1pa")
@@ -67,10 +71,94 @@ attack_cost = ExtResource("3_sxaxw")
 attack_data = SubResource("Resource_7qsaa")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
+[sub_resource type="Resource" id="Resource_sl83c"]
+script = ExtResource("11_f8edd")
+boolean_type = "And"
+previous_src_trg = false
+side_target = 5
+slot_target = 1
+specifically = Array[String]([])
+tool_attatched = false
+comparison_type = 1
+max_hp = -10
+damage_taken = -10
+retreat_cost = -1
+evo_type = "Don't Check"
+stage = 7
+rare_candy = false
+class_inclusive = true
+pokemon_class = 63
+owner_inclusive = true
+pokemon_owner = 31
+type_inclusive = true
+pokemon_type = 1023
+energy_inclusive = true
+check_cards = true
+energy_attatched = 1
+energy_class = "Special Energy"
+check_ability = false
+contained_abilities = 3
+specific_abilities = Array[String]([])
+check_condition = false
+desired_condition = 0
+knocked_out = false
+metadata/_custom_type_script = "uid://mkjynqda7q5g"
+
+[sub_resource type="Resource" id="Resource_c4ekq"]
+script = ExtResource("12_sk1pa")
+description = "Take -40 dmg from opponents with special energy"
+unstackable_id = ""
+stackable = false
+against = SubResource("Resource_sl83c")
+after_weak_res = true
+operation = "Add"
+add_hp = 0
+attack = 0
+defense = 40
+retreat_change = 0
+cost_modifier = "Add"
+modify = 0
+plus = false
+condition_immune = 0
+attack_effect_immune = false
+damage_immune = false
+body_immune = false
+power_immune = false
+trainer_immune = false
+odd_immunity = false
+even_immunity = false
+weakness = false
+resistance = false
+effects = false
+attack_names = Array[String]([])
+application = "Slot"
+recieves = ExtResource("12_f8edd")
+duration = -1
+metadata/_custom_type_script = "uid://coojhwe6m20gd"
+
+[sub_resource type="Resource" id="Resource_aojvd"]
+script = ExtResource("8_83yce")
+order = Array[int]([])
+buff = SubResource("Resource_c4ekq")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_msiq8"]
+script = ExtResource("13_83yce")
+category = "Body"
+name = "Ice Wall"
+description = "Any damage done to [name] by attacks from your opponent's Pokémon with any Special Energy cards attached to it is reduced by 40 (after applying Weakness and Resistance)."
+affected_by_condition = false
+active = false
+how_often = "Once per Mon"
+independent_src_trg = false
+passive = SubResource("Resource_aojvd")
+metadata/_custom_type_script = "uid://bs2y8ocljilv8"
+
 [sub_resource type="Resource" id="Resource_3dmbf"]
 script = ExtResource("10_c4ekq")
 HP = 80
 retreat = 1
+pokebody = SubResource("Resource_msiq8")
 attacks = Array[ExtResource("2_1538r")]([SubResource("Resource_belp5")])
 evo_stage = "Stage 1"
 evolves_from = "Snorunt"
