@@ -453,7 +453,7 @@ func add_damage(attacker: PokeSlot, base_ammount: int) -> void:
 		print(get_card_name(), " is weak to ", attacker.get_card_name())
 		final_ammount *= 2
 	if attacker.current_card.pokemon_properties.type & current_card.pokemon_properties.resist != 0:
-		print(get_card_name(), " is resists to ", attacker.get_card_name())
+		print(get_card_name(), " resists ", attacker.get_card_name())
 		final_ammount -= 30
 	
 	final_ammount += Globals.fundies.atk_def_buff(attacker, self, true)
@@ -854,10 +854,13 @@ func checkup_conditions():
 	if applied_condition.poison != 0:
 		prints("Poison", applied_condition.poison)
 		damage_counters += applied_condition.poison * 10
+		ui_slot.damage_counter.set_damage(damage_counters)
 		
 	if applied_condition.burn != 0:
 		prints("Burn", applied_condition.burn)
 		damage_counters += applied_condition.burn * 10
+		ui_slot.damage_counter.set_damage(damage_counters)
+		
 		var result: bool = await condition_rule_utilize(Globals.board_state.burn_rules)
 		if result:
 			applied_condition.burn = 0

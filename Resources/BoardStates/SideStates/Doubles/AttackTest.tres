@@ -111,7 +111,7 @@ bench_size = 5
 slots = Dictionary[ExtResource("2_1c1y1"), bool]({
 SubResource("Resource_ihr0i"): true,
 SubResource("Resource_qphm0"): false,
-SubResource("Resource_i22iy"): true,
-SubResource("Resource_rcj6x"): false
+SubResource("Resource_i22iy"): false,
+SubResource("Resource_rcj6x"): true
 })
 metadata/_custom_type_script = "uid://dgqpurnuh14t1"

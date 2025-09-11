@@ -300,21 +300,25 @@ func set_reversable(reversable: bool):
 
 #Shouldonly trigger when pressing an attack button from a pokemon card
 func main_attack(attacker: PokeSlot, with: Attack):
+	Globals.fundies.attacking = true
 	await before_direct_attack(attacker, with)
+	Globals.fundies.attacking = false
 	await attacker.ability_emit(attacker.attacks, attacker)
 	Globals.fundies.remove_top_source_target()
+	
 	SignalBus.end_turn.emit()
 
 #Shold only trigger from triggered mimic attacks
 func trigger_attack(attacker: PokeSlot, with: Attack):
+	Globals.fundies.attacking = true
 	await before_direct_attack(attacker, with)
+	Globals.fundies.attacking = false
 	Globals.fundies.remove_top_source_target()
 	SignalBus.trigger_finished.emit()
 
 func before_direct_attack(attacker: PokeSlot, with: Attack):
 	var direct_bool: bool = with.does_direct_damage()
 	var attack_data: AttackData = with.attack_data
-	var pass_prompt: Variant
 	var replace_num: int = -1
 	
 	print("Now before ", with.name, " from ", attacker.get_card_name())
@@ -344,20 +348,20 @@ func before_direct_attack(attacker: PokeSlot, with: Attack):
 				return
 			else:
 				Globals.fundies.record_attack_src_trg(attacker.is_home(), [attacker], [hold_candidate])
-				pass_prompt = await check_prompt_reliant(attack_data.prompt)
+				attack_data.prompt_hold = await check_prompt_reliant(attack_data.prompt)
 				
 				if attack_data.before_damage:
-					await attack_effect(attacker, with.attack_data, pass_prompt, replace_num)
-				if pass_prompt != false:
+					await attack_effect(attacker, with.attack_data, replace_num)
+				if attack_data.prompt_hold != false:
 					await direct_attack(attacker, with, [hold_candidate])
 		else:
 			var def_active: Array[PokeSlot] = Globals.full_ui.get_poke_slots(Consts.SIDES.DEFENDING, Consts.SLOTS.ACTIVE)
 			Globals.fundies.record_attack_src_trg(attacker.is_home(), [attacker], def_active)
-			pass_prompt = await check_prompt_reliant(attack_data.prompt)
+			attack_data.prompt_hold = await check_prompt_reliant(attack_data.prompt)
 			
 			if attack_data.before_damage:
-				await attack_effect(attacker, with.attack_data, pass_prompt, replace_num)
-			if pass_prompt != false:
+				await attack_effect(attacker, with.attack_data, replace_num)
+			if attack_data.prompt_hold != false:
 				await direct_attack(attacker, with, def_active)
 	
 	elif attack_data.bench_damage:
@@ -367,7 +371,7 @@ func before_direct_attack(attacker: PokeSlot, with: Attack):
 	else: Globals.fundies.record_single_src_trg(attacker)
 	
 	if not attack_data.before_damage:
-		await attack_effect(attacker, with.attack_data, pass_prompt, replace_num)
+		await attack_effect(attacker, with.attack_data, replace_num)
 	
 	attacker.current_attack = null
 
@@ -382,12 +386,11 @@ func direct_attack(attacker: PokeSlot, with: Attack, defenders: Array[PokeSlot])
 func bench_attack(attacker: PokeSlot, with: BenchAttk, defenders: Array[PokeSlot]):
 	pass
 
-func attack_effect(attacker: PokeSlot, with: AttackData,
- predefined: Variant = null, replace_num: int = -1):
+func attack_effect(attacker: PokeSlot, with: AttackData, replace_num: int = -1):
 	if with.prompt_effects:
-		if predefined != null:
+		if with.prompt_hold != null:
 			for effect in with.prompt_effects:
-				await effect.shared_collect_play(predefined)
+				await effect.shared_collect_play(with.prompt_hold)
 		else:
 			for effect in with.prompt_effects:
 				await effect.effect_collect_play()

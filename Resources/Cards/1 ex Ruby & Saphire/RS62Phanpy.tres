@@ -5,8 +5,8 @@
 [ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_jihga"]
 [ext_resource type="Resource" uid="uid://6xmw13js5xd3" path="res://Resources/Components/Effects/Conditions/BasicParalyze.tres" id="4_2dn5u"]
 [ext_resource type="Resource" uid="uid://bep36omnenbc8" path="res://Resources/Components/Pokemon/Attacks/AttackData/10Dmg.tres" id="4_vycv3"]
-[ext_resource type="Resource" uid="uid://d3ibul3ofuenc" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Fighting1.tres" id="5_3n1u2"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_jihga"]
+[ext_resource type="Resource" uid="uid://djhcfglsc14fn" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/F1C1.tres" id="5_vycv3"]
 [ext_resource type="Resource" uid="uid://ekj1myy642kh" path="res://Resources/Components/Effects/Prompts/PromptHeads.tres" id="6_3n1u2"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="6_vycv3"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="7_gqkf0"]
@@ -27,9 +27,9 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_4qwmm"]
 script = ExtResource("7_gqkf0")
 description = "Flip a coin. If heads, this attack does 10 damage to each Defending Pokémon, and each Defending Pokémon is now Paralyzed."
-prompt_reliant = true
+prompt_reliant = false
 prompt = ExtResource("6_3n1u2")
-initial_main_DMG = 10
+initial_main_DMG = 0
 defender_properties = 0
 condition = 1
 before_damage = false
@@ -38,16 +38,16 @@ share_prompt = true
 prompt_effects = Array[ExtResource("7_vycv3")]([SubResource("Resource_cl8bj")])
 conditional_self_dmg = false
 self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
+mod_prompt = true
+modifier = 1
+modifier_num = 10
 both_active = true
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_gqkf0"]
 script = ExtResource("2_ugk1n")
 name = "Trembler"
-attack_cost = ExtResource("5_3n1u2")
+attack_cost = ExtResource("5_vycv3")
 attack_data = SubResource("Resource_4qwmm")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 

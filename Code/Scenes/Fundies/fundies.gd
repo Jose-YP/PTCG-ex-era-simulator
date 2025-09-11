@@ -15,6 +15,7 @@ class_name Fundies
 
 var turn_number: int = 1
 var home_turn: bool = true
+var attacking: bool = false
 var home_targets: Array[Array]
 var away_targets: Array[Array]
 var source_stack: Array[bool]
@@ -206,6 +207,9 @@ func remove_top_source_target():
 	home_targets.pop_back()
 	away_targets.pop_back()
 
+func get_first_target(source: bool) -> PokeSlot:
+	return home_targets[-1][0] if source_stack[-1] == source else away_targets[-1][0]
+
 func get_targets() -> Array:
 	return home_targets[-1] + away_targets[-1]
 
@@ -314,6 +318,12 @@ func atk_def_buff(attacker: PokeSlot, defender: PokeSlot, after: bool) -> int:
 	
 	return final
 
+func filter_immune(immunity: Consts.IMMUNITIES, slots: Array[PokeSlot], against: PokeSlot):
+	pass
+
+#https://compendium.pokegym.net/compendium-ex.html#two_on_two_gameplay
+#Holon Energy WP and Ancient Technical Machine [Ice] only prevent effects
+#that come from attacks, not all effects in play. Trainer cards, Poké-Powers, and Poké-Bodies are not prevented by those cards. (Jul 25, 2006 PUI Announcements) 
 func has_immune(immunity: Consts.IMMUNITIES, dict: Dictionary, against: PokeSlot):
 	for change in dict:
 		if not change is Buff: continue
@@ -346,6 +356,12 @@ func check_immunity(immunity: Consts.IMMUNITIES, attacker: PokeSlot, defender: P
 		elif has_immune(immunity, side_changes[defender.is_home()], attacker):
 			return true
 	return false
+
+func has_pierce():
+	pass
+
+func check_pierce():
+	pass
 
 func has_cond_immune():
 	pass

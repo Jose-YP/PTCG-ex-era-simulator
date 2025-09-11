@@ -20,6 +20,16 @@ func play_effect(reversable: bool = false, replace_num: int = -1) -> void:
 	print("PLAYING CONDITION")
 	var slots: Array[PokeSlot] = Globals.full_ui.get_ask_slots(ask)
 	
+	if Globals.fundies.attacking:
+		print("Before: ", slots)
+		slots = slots.filter( func(slot: PokeSlot): return not\
+			Globals.fundies.check_immunity(Consts.IMMUNITIES.ATK_EFCT_OPP,\
+			Globals.fundies.get_first_target(true), slot))
+		print("After: ", slots)
+		
+		if slots.size() == 0:
+			return
+	
 	if any:
 		var input: InputCondition = Consts.input_condition.instantiate()
 		var cond: String
