@@ -12,8 +12,10 @@ signal finished
 
 func play_effect(reversable: bool = false, replace_num: int = -1) -> void:
 	print("PLAY ALLEVIATE")
+	var slots = Globals.full_ui.get_ask_slots(ask)
+	slots = Globals.fundies.filter_immune(Consts.IMMUNITIES.ATK_EFCT_OPP, slots)
 	
-	for slot in Globals.full_ui.get_ask_slots(ask):
+	for slot in slots:
 		if remove_conditions:
 			slot.alleviate_all()
 		if remove_shockwave:

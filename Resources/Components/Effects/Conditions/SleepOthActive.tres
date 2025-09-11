@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Condition" load_steps=3 format=3 uid="uid://br6p17icffh2v"]
+
+[ext_resource type="Resource" uid="uid://c2ujs102gu8qn" path="res://Resources/Components/Effects/Asks/General/OthActive.tres" id="1_xvrcy"]
+[ext_resource type="Script" uid="uid://8s3m1dar3r33" path="res://Code/Resource Makers/EffectSpecific/Components/ConditionMaker.gd" id="2_cjmsv"]
+
+[resource]
+script = ExtResource("2_cjmsv")
+ask = ExtResource("1_xvrcy")
+any = false
+poison = 0
+burn = 0
+turn_cond = 2
+imprision = false
+shockwave = false
+knockOut = false
+metadata/_custom_type_script = "uid://8s3m1dar3r33"

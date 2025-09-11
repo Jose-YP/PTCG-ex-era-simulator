@@ -318,8 +318,15 @@ func atk_def_buff(attacker: PokeSlot, defender: PokeSlot, after: bool) -> int:
 	
 	return final
 
-func filter_immune(immunity: Consts.IMMUNITIES, slots: Array[PokeSlot], against: PokeSlot):
-	pass
+func filter_immune(immunity: Consts.IMMUNITIES, slots: Array[PokeSlot]) -> Array[PokeSlot]:
+	if attacking:
+		var against: PokeSlot = get_first_target(true)
+		print("Before: ", slots)
+		slots = slots.filter( func(slot: PokeSlot): return not slot.is_attacker() and\
+			not Globals.fundies.check_immunity(Consts.IMMUNITIES.ATK_EFCT_OPP, against, slot))
+		print("After: ", slots)
+		
+	return slots
 
 #https://compendium.pokegym.net/compendium-ex.html#two_on_two_gameplay
 #Holon Energy WP and Ancient Technical Machine [Ice] only prevent effects
