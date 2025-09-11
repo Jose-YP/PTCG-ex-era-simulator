@@ -103,6 +103,7 @@ script = ExtResource("12_upw04")
 force_reversable = false
 record_target = true
 choose_active = true
+both_active = false
 chosing = 1
 affected = 2
 autofill = "None"

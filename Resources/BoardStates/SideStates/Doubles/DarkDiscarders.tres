@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SideState" load_steps=30 format=3 uid="uid://drpuudscb04qb"]
+[gd_resource type="Resource" script_class="SideState" load_steps=31 format=3 uid="uid://drpuudscb04qb"]
 
 [ext_resource type="Resource" uid="uid://yamufr71axhi" path="res://Resources/Decks/DarkDisrupt.tres" id="1_40dff"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_f4682"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://calm3n7va5yjo" path="res://Code/Resource Makers/GeneralUse/CardStacksMaker.gd" id="11_e4l5j"]
 [ext_resource type="Script" uid="uid://dgqpurnuh14t1" path="res://Code/Resource Makers/GeneralUse/SideStateMaker.gd" id="12_csa4c"]
 [ext_resource type="Script" uid="uid://cs70ix831b5g4" path="res://Code/Resource Makers/PokemonSpecific/PokeSlotMaker.gd" id="13_k8xsa"]
+[ext_resource type="Script" uid="uid://b3041relhlcb2" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/SlotChangeMaker.gd" id="14_lo1t2"]
 [ext_resource type="Resource" uid="uid://cvc7gsumxijg5" path="res://Resources/Cards/3 ex Dragon/DR1Absol.tres" id="14_mnnb8"]
 [ext_resource type="Resource" uid="uid://cg6tibidqt3qs" path="res://Resources/Cards/5 ex Hidden Legends/HL14Shiftry.tres" id="15_iauqb"]
 [ext_resource type="Resource" uid="uid://2gbttee2ievi" path="res://Resources/Cards/13 ex Holon Phantoms/HP44Holon'sCastform.tres" id="16_733ci"]
@@ -44,8 +45,7 @@ final_retreat = 0
 evolved_from = Array[ExtResource("2_f4682")]([])
 energy_cards = Array[ExtResource("2_f4682")]([ExtResource("10_37im0")])
 tm_cards = Array[ExtResource("2_f4682")]([])
-buffs = Array[Dictionary]([])
-disables = Array[Dictionary]([])
+changes = Dictionary[ExtResource("14_lo1t2"), int]({})
 evolution_ready = false
 evolved_this_turn = false
 body_disabled = false
@@ -63,8 +63,7 @@ final_retreat = 0
 evolved_from = Array[ExtResource("2_f4682")]([ExtResource("18_n67lq"), ExtResource("19_n5ock")])
 energy_cards = Array[ExtResource("2_f4682")]([ExtResource("16_733ci"), ExtResource("17_stc6r")])
 tm_cards = Array[ExtResource("2_f4682")]([])
-buffs = Array[Dictionary]([])
-disables = Array[Dictionary]([])
+changes = Dictionary[ExtResource("14_lo1t2"), int]({})
 evolution_ready = false
 evolved_this_turn = false
 body_disabled = false
@@ -82,8 +81,7 @@ final_retreat = 0
 evolved_from = Array[ExtResource("2_f4682")]([ExtResource("21_ncd8k")])
 energy_cards = Array[ExtResource("2_f4682")]([ExtResource("10_37im0"), ExtResource("16_733ci"), ExtResource("17_stc6r")])
 tm_cards = Array[ExtResource("2_f4682")]([])
-buffs = Array[Dictionary]([])
-disables = Array[Dictionary]([])
+changes = Dictionary[ExtResource("14_lo1t2"), int]({})
 evolution_ready = false
 evolved_this_turn = false
 body_disabled = false
@@ -101,8 +99,7 @@ final_retreat = 0
 evolved_from = Array[ExtResource("2_f4682")]([ExtResource("23_lo1t2"), ExtResource("24_b2d7h")])
 energy_cards = Array[ExtResource("2_f4682")]([])
 tm_cards = Array[ExtResource("2_f4682")]([])
-buffs = Array[Dictionary]([])
-disables = Array[Dictionary]([])
+changes = Dictionary[ExtResource("14_lo1t2"), int]({})
 evolution_ready = false
 evolved_this_turn = false
 body_disabled = false

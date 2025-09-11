@@ -272,15 +272,16 @@ func generic_choice(instruction: String, bool_fun: Callable,\
 	
 	var allow_slots: Array[UI_Slot] = ui_act.allowed_slots
 	#If there's only one choice and there's no going back, make the choice instantly
-	if allow_slots.size() == 1 and not ui_act.can_reverse:
-		ui_act.choosing = true
-		ui_act.left_button_actions(allow_slots[0].connected_slot)
 	if allow_slots.size() == 0:
 		return
+	elif allow_slots.size() == 1 and not ui_act.can_reverse:
+		ui_act.choosing = true
+		ui_act.left_button_actions(allow_slots[0].connected_slot)
 	#Otherwise wait for player to choose
 	else:
 		await ui_act.get_choice(instruction)
 		await ui_act.chosen
+	
 	chosen.emit()
 
 func record_candidate(slot: PokeSlot):

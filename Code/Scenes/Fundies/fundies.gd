@@ -322,8 +322,8 @@ func filter_immune(immunity: Consts.IMMUNITIES, slots: Array[PokeSlot]) -> Array
 	if attacking:
 		var against: PokeSlot = get_first_target(true)
 		print("Before: ", slots)
-		slots = slots.filter( func(slot: PokeSlot): return not slot.is_attacker() and\
-			not Globals.fundies.check_immunity(Consts.IMMUNITIES.ATK_EFCT_OPP, against, slot))
+		slots = slots.filter(func(slot: PokeSlot): return not slot.is_attacker() and slot.is_filled()\
+			and not check_immunity(Consts.IMMUNITIES.ATK_EFCT_OPP, against, slot))
 		print("After: ", slots)
 		
 	return slots

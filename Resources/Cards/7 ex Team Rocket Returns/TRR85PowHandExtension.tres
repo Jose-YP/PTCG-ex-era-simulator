@@ -27,6 +27,7 @@ script = ExtResource("8_uw2sm")
 force_reversable = false
 record_target = false
 choose_active = false
+both_active = false
 chosing = 1
 affected = 2
 autofill = "None"

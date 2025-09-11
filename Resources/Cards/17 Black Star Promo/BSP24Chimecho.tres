@@ -22,7 +22,7 @@ choose_active = false
 both_active = true
 chosing = 2
 affected = 2
-autofill = "Active"
+autofill = "None"
 metadata/_custom_type_script = "uid://curklvf1517ml"
 
 [sub_resource type="Resource" id="Resource_ru8vm"]
@@ -52,7 +52,7 @@ self_damage = 0
 mod_prompt = false
 modifier = 0
 modifier_num = 0
-both_active = false
+both_active = true
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_rx1bl"]

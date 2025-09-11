@@ -12,6 +12,7 @@ script = ExtResource("4_jgrt0")
 force_reversable = false
 record_target = false
 choose_active = true
+both_active = false
 chosing = 3
 affected = 3
 autofill = "None"

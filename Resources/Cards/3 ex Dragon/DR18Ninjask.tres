@@ -41,6 +41,7 @@ script = ExtResource("11_3oyw5")
 force_reversable = false
 record_target = true
 choose_active = false
+both_active = false
 chosing = 1
 affected = 1
 autofill = "Active"

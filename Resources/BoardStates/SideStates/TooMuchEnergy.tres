@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SideState" load_steps=20 format=3 uid="uid://cu2ksi0icg1cg"]
+[gd_resource type="Resource" script_class="SideState" load_steps=23 format=3 uid="uid://cu2ksi0icg1cg"]
 
 [ext_resource type="Resource" uid="uid://bsbo6s5jo87t2" path="res://Resources/Decks/EnergysDeck.tres" id="1_xrlcv"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_w3gu5"]
@@ -12,6 +12,8 @@
 [ext_resource type="Resource" uid="uid://cg7qhfrgw5lmh" path="res://Resources/Cards/7 ex Team Rocket Returns/TRR50Togepi.tres" id="12_h8qln"]
 [ext_resource type="Resource" uid="uid://dxq22uwxelttj" path="res://Resources/Cards/1 ex Ruby & Saphire/RS107PsychicEnergy.tres" id="13_gimbx"]
 [ext_resource type="Resource" uid="uid://xvauv8yfopfw" path="res://Resources/Cards/2 ex Sandstorm/SS93MultiEnergy.tres" id="14_gimbx"]
+[ext_resource type="Resource" uid="uid://dn8yt1lun2cer" path="res://Resources/Cards/17 Black Star Promo/BSP24Chimecho.tres" id="17_lqnct"]
+[ext_resource type="Resource" uid="uid://b5ukqf6xmn6vv" path="res://Resources/Cards/1 ex Ruby & Saphire/RS109LightningEnergy.tres" id="18_drqda"]
 [ext_resource type="Script" uid="uid://calm3n7va5yjo" path="res://Code/Resource Makers/GeneralUse/CardStacksMaker.gd" id="21_6pic0"]
 [ext_resource type="Script" uid="uid://dgqpurnuh14t1" path="res://Code/Resource Makers/GeneralUse/SideStateMaker.gd" id="22_ema4h"]
 [ext_resource type="Script" uid="uid://cs70ix831b5g4" path="res://Code/Resource Makers/PokemonSpecific/PokeSlotMaker.gd" id="23_gp3on"]
@@ -63,6 +65,24 @@ dealt_damage = 0
 energy_discarded = 0
 metadata/_custom_type_script = "uid://cs70ix831b5g4"
 
+[sub_resource type="Resource" id="Resource_hixy7"]
+script = ExtResource("23_gp3on")
+current_card = ExtResource("17_lqnct")
+max_HP = 0
+damage_counters = 0
+final_retreat = 0
+evolved_from = Array[ExtResource("2_w3gu5")]([])
+energy_cards = Array[ExtResource("2_w3gu5")]([ExtResource("18_drqda")])
+tm_cards = Array[ExtResource("2_w3gu5")]([])
+changes = Dictionary[ExtResource("12_3oqfc"), int]({})
+evolution_ready = false
+evolved_this_turn = false
+body_disabled = false
+power_disabled = false
+dealt_damage = 0
+energy_discarded = 0
+metadata/_custom_type_script = "uid://cs70ix831b5g4"
+
 [resource]
 script = ExtResource("22_ema4h")
 card_stacks = SubResource("Resource_ai8fb")
@@ -71,6 +91,7 @@ bench_size = 5
 slots = Dictionary[ExtResource("23_gp3on"), bool]({
 ExtResource("24_g8kch"): true,
 SubResource("Resource_gimbx"): false,
-SubResource("Resource_o1iel"): true
+SubResource("Resource_o1iel"): false,
+SubResource("Resource_hixy7"): true
 })
 metadata/_custom_type_script = "uid://dgqpurnuh14t1"

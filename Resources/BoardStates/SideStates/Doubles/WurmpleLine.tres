@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SideState" load_steps=19 format=3 uid="uid://dkngbetpy8wdr"]
+[gd_resource type="Resource" script_class="SideState" load_steps=20 format=3 uid="uid://dkngbetpy8wdr"]
 
 [ext_resource type="Resource" uid="uid://c73v0ww8k8rg2" path="res://Resources/Decks/GrassTransDeck.tres" id="1_kyo58"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_qti4x"]
@@ -79,6 +79,24 @@ dealt_damage = 0
 energy_discarded = 0
 metadata/_custom_type_script = "uid://cs70ix831b5g4"
 
+[sub_resource type="Resource" id="Resource_qti4x"]
+script = ExtResource("8_13l7u")
+current_card = ExtResource("10_k8h3t")
+max_HP = 0
+damage_counters = 0
+final_retreat = 0
+evolved_from = Array[ExtResource("2_qti4x")]([])
+energy_cards = Array[ExtResource("2_qti4x")]([])
+tm_cards = Array[ExtResource("2_qti4x")]([])
+changes = Dictionary[ExtResource("9_qti4x"), int]({})
+evolution_ready = false
+evolved_this_turn = false
+body_disabled = false
+power_disabled = false
+dealt_damage = 0
+energy_discarded = 0
+metadata/_custom_type_script = "uid://cs70ix831b5g4"
+
 [resource]
 script = ExtResource("7_cpq01")
 card_stacks = SubResource("Resource_m78d2")
@@ -86,7 +104,8 @@ prize_cards = 6
 bench_size = 5
 slots = Dictionary[ExtResource("8_13l7u"), bool]({
 SubResource("Resource_g0183"): true,
-SubResource("Resource_2xawr"): true,
-SubResource("Resource_xsymn"): false
+SubResource("Resource_2xawr"): false,
+SubResource("Resource_xsymn"): true,
+SubResource("Resource_qti4x"): false
 })
 metadata/_custom_type_script = "uid://dgqpurnuh14t1"
