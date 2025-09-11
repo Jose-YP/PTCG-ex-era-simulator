@@ -9,6 +9,8 @@ class_name PokeSwap
 ##Does the source choose which active mon to switch out?
 ##If not it's the affected side
 @export var choose_active: bool = false
+##Swap both current active members of chosen side?
+@export var both_active: bool = false
 ##Who switches according to who
 @export var chosing: Consts.SIDES = Consts.SIDES.DEFENDING
 ##Which side are they switching
@@ -22,6 +24,8 @@ var bench_swap: PokeSlot
 var active_swap: PokeSlot
 
 func play_effect(reversable: bool = false, replace_num: int = -1) -> void:
+	if both_active:
+		pass
 	if affected == Consts.SIDES.BOTH:
 		await switch(Consts.SIDES.ATTACKING, reversable)
 		await switch(Consts.SIDES.DEFENDING, reversable)
