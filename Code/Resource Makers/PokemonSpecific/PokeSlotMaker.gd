@@ -789,9 +789,9 @@ func card_disrupteed(identifier: Identifier, rule: String) -> Array[Base_Card]:
 #--------------------------------------
 #region CONDITION HANDLERS
 func add_condition(adding: Condition) -> void:
-	if adding.poison != 0 and not not Globals.fundies.check_condition_immune(1, self):
+	if adding.poison != 0 and not Globals.fundies.check_condition_immune(1, self):
 		applied_condition.poison = max(adding.poison, applied_condition.poison)
-	if adding.burn != 0 and not not Globals.fundies.check_condition_immune(2, self):
+	if adding.burn != 0 and not Globals.fundies.check_condition_immune(2, self):
 		applied_condition.burn = max(adding.burn, applied_condition.burn)
 	
 	if adding.turn_cond != Consts.TURN_COND.NONE:
@@ -810,6 +810,28 @@ func add_condition(adding: Condition) -> void:
 	
 	applied_condition.imprision = adding.imprision or applied_condition.imprision
 	applied_condition.shockwave = adding.shockwave or applied_condition.shockwave
+	
+	ui_slot.display_condition()
+	
+	await ability_emit(condition_applied, applied_condition)
+
+func add_specified_condition(adding: Condition, cond: String) -> void:
+	match cond:
+		"Poision":
+			if adding.poison != 0 and not Globals.fundies.check_condition_immune(1, self):
+				applied_condition.poison = max(adding.poison, applied_condition.poison)
+		"Burn":
+			if adding.burn != 0 and not Globals.fundies.check_condition_immune(2, self):
+				applied_condition.burn = max(adding.burn, applied_condition.burn)
+		"Paralyze":
+			if not Globals.fundies.check_condition_immune(4, self):
+				applied_condition.turn_cond = Consts.TURN_COND.PARALYSIS
+		"Sleep":
+			if not Globals.fundies.check_condition_immune(8, self):
+				applied_condition.turn_cond = Consts.TURN_COND.ASLEEP
+		"Confuse":
+			if not Globals.fundies.check_condition_immune(16, self):
+				applied_condition.turn_cond = Consts.TURN_COND.CONFUSION
 	
 	ui_slot.display_condition()
 	
@@ -930,6 +952,11 @@ func slot_into(destination: UI_Slot, initalize: bool = false):
 	if initalize:
 		refresh_current_card()
 		refresh()
+		
+		ui_slot.tool.visible = tool_card != null
+		if tm_cards.size():
+			ui_slot.tm.texture = tm_cards[0].image
+			ui_slot.tm.show()
 
 func refresh_current_card():
 	ui_slot.name_section.clear()

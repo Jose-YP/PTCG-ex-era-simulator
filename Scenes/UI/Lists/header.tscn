@@ -15,7 +15,7 @@ script = ExtResource("1_nss2a")
 based_on = NodePath("IdentifierPanel")
 
 [node name="IdentifierPanel" type="PanelContainer" parent="."]
-custom_minimum_size = Vector2(345, 40)
+custom_minimum_size = Vector2(300, 40)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = ExtResource("1_h08pk")

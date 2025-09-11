@@ -67,6 +67,7 @@ const dmg_manip_box: PackedScene = preload("res://Scenes/UI/Lists/dmg_manip_box.
 const mimic_box: PackedScene = preload("res://Scenes/UI/Lists/mimic_list.tscn")
 const mimic_card_box: PackedScene = preload("res://Scenes/UI/Lists/mimic_card_list.tscn")
 const input_number: PackedScene = preload("res://Scenes/UI/ETC/input_number.tscn")
+var input_condition: PackedScene = load("res://Scenes/UI/ETC/input_condition.tscn")
 #endregion
 #--------------------------------------
 

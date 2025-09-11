@@ -18,15 +18,33 @@ signal finished
 
 func play_effect(reversable: bool = false, replace_num: int = -1) -> void:
 	print("PLAYING CONDITION")
+	var slots: Array[PokeSlot] = Globals.full_ui.get_ask_slots(ask)
+	
 	if any:
-		print()
-	else:
-		var slots: Array[PokeSlot] = Globals.full_ui.get_ask_slots(ask)
+		var input: InputCondition = Consts.input_condition.instantiate()
+		var cond: String
 		
+		Globals.full_ui.set_top_ui(input)
+		
+		await input.finished
+		cond = input.selected.name
+		print(cond)
+		
+		Globals.full_ui.remove_top_ui()
+		
+		for filtered in slots:
+			filtered.add_specified_condition(self, cond)
+	
+	else:
 		for filtered in slots:
 			filtered.add_condition(self)
 	
 	finished.emit()
+
+func huh():
+	var new: InputCondition = Consts.input_condition.instantiate()
+	
+	await new.finished
 
 func print_condition() -> String:
 	if any:

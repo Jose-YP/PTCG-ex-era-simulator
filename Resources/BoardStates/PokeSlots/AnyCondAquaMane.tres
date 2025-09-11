@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="PokeSlot" load_steps=8 format=3 uid="uid://dy1qap20t255n"]
+
+[ext_resource type="Script" uid="uid://b3041relhlcb2" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/SlotChangeMaker.gd" id="1_oh36n"]
+[ext_resource type="Resource" uid="uid://d3y3ggocst4r0" path="res://Resources/Cards/4 ex Team Magma VS Team Aqua/MA4AquaManectric.tres" id="2_vhpav"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_g0nqr"]
+[ext_resource type="Resource" uid="uid://b5ukqf6xmn6vv" path="res://Resources/Cards/1 ex Ruby & Saphire/RS109LightningEnergy.tres" id="4_yxlj7"]
+[ext_resource type="Resource" uid="uid://2ps0sakw53cw" path="res://Resources/Cards/4 ex Team Magma VS Team Aqua/MA27AquaElectrike.tres" id="5_kr0c2"]
+[ext_resource type="Script" uid="uid://cs70ix831b5g4" path="res://Code/Resource Makers/PokemonSpecific/PokeSlotMaker.gd" id="6_2qawv"]
+[ext_resource type="Resource" uid="uid://f51ar25ws7av" path="res://Resources/Cards/4 ex Team Magma VS Team Aqua/MA79AquaTechnicalMachine01.tres" id="7_uxxss"]
+
+[resource]
+script = ExtResource("6_2qawv")
+current_card = ExtResource("2_vhpav")
+max_HP = 0
+damage_counters = 0
+final_retreat = 0
+evolved_from = Array[ExtResource("3_g0nqr")]([ExtResource("5_kr0c2")])
+energy_cards = Array[ExtResource("3_g0nqr")]([ExtResource("4_yxlj7")])
+tm_cards = Array[ExtResource("3_g0nqr")]([ExtResource("7_uxxss")])
+changes = Dictionary[ExtResource("1_oh36n"), int]({})
+evolution_ready = false
+evolved_this_turn = false
+body_disabled = false
+power_disabled = false
+dealt_damage = 0
+energy_discarded = 0
+metadata/_custom_type_script = "uid://cs70ix831b5g4"

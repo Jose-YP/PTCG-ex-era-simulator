@@ -97,8 +97,8 @@ func _input(event: InputEvent) -> void:
 		var new = test.instantiate()
 		
 		#region EDIT WITH WHATEVER
-		new.side = full_ui.get_home_side(true)
-		new.singles = false
+		#new.side = full_ui.get_home_side(true)
+		#new.singles = false
 		#endregion
 		
 		add_child(new)

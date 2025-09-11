@@ -221,7 +221,9 @@ func same_card(comparing_to: Base_Card) -> bool:
 func has_before_prompt() -> bool:
 	var result: bool = false
 	
-	if trainer_properties and trainer_properties.prompt_effects[0].prompt:
+	if trainer_properties\
+	 and trainer_properties.prompt_effects\
+	 and trainer_properties.prompt_effects[0].prompt:
 		result = trainer_properties.prompt_effects[0].prompt.has_before_prompt()
 	if energy_properties and energy_properties.prompt:
 		result = energy_properties.prompt.has_before_prompt() or result
