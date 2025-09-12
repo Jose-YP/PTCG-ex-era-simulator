@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_hr55n"]
 [ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_88a3h"]
 [ext_resource type="Resource" uid="uid://crhg4u3yu2cso" path="res://Resources/Components/Effects/Asks/General/FromOther.tres" id="5_88a3h"]
-[ext_resource type="Resource" uid="uid://e706qq8o0hri" path="res://Resources/Components/Counters/Comparator/Return/Return2Flip.tres" id="6_o4bs1"]
+[ext_resource type="Resource" uid="uid://b1y3h472721ee" path="res://Resources/Components/Counters/Comparator/Return/ReturnFlipTwice.tres" id="6_88a3h"]
 [ext_resource type="Script" uid="uid://scca13hg4k1l" path="res://Code/Resource Makers/EffectSpecific/Components/DmgManipMaker.gd" id="7_jq5tw"]
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="8_88a3h"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="8_kxtxb"]
@@ -28,7 +28,7 @@ with_leftover = "None"
 leftover_anyway = false
 vary_choose_num = true
 plus = true
-comparator = ExtResource("6_o4bs1")
+comparator = ExtResource("6_88a3h")
 modifier = 1
 metadata/_custom_type_script = "uid://scca13hg4k1l"
 

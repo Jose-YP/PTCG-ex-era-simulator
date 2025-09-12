@@ -358,6 +358,9 @@ func has_immune(immunity: Consts.IMMUNITIES, dict: Dictionary, against: PokeSlot
 					return true
 
 func check_immunity(immunity: Consts.IMMUNITIES, attacker: PokeSlot, defender: PokeSlot):
+	if not attacking and immunity == Consts.IMMUNITIES.ATK_EFCT_OPP:
+		return false
+	
 	if defender.changes.size() > 0:
 		if has_immune(immunity, defender.changes, attacker):
 			return true

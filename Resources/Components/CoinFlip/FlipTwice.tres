@@ -5,5 +5,5 @@
 [resource]
 script = ExtResource("1_sea47")
 heads = true
-const_flip_times = 2
 until = false
+const_flip_times = 2

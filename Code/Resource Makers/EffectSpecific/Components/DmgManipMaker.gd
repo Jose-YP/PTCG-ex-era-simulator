@@ -34,10 +34,6 @@ class_name DamageManip
 
 signal finished
 
-func _init():
-	if comparator:
-		print(comparator.first_comparison)
-
 func play_effect(reversable: bool = false, replace_num: int = -1) -> void:
 	print("PLAY DAMAGE MANIPULATION")
 	if anyway_u_like:
@@ -57,6 +53,7 @@ func simple_manip(reversable: bool = false, replace_num: int = -1):
 	#If anything other than max ammount
 	if counters != -1:
 		if comparator:
+			print(ask)
 			print(comparator, comparator.first_comparison)
 			mod_by = await comparator.start_comparision() * modifier
 			mod_by *= 1 if plus else -1
