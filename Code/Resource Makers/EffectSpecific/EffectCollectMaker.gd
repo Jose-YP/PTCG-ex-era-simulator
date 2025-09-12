@@ -18,7 +18,7 @@ func effect_collect_play() -> void:
 			await success.play_effect()
 			return
 		if not result and fail:
-			SignalBus.slot_change_failed.emit(success.get_slot_change())
+			SignalBus.slot_change_failed.emit(success.get_slot_changes())
 			await fail.play_effect()
 			return
 	
@@ -29,8 +29,8 @@ func effect_collect_play() -> void:
 	elif fail:
 		await fail.play_effect()
 		return
-	print(success.get_slot_change())
-	SignalBus.slot_change_failed.emit(success.get_slot_change())
+	print(success.get_slot_changes())
+	SignalBus.slot_change_failed.emit(success.get_slot_changes())
 
 func shared_collect_play(result: bool) -> void:
 	if prompt_carry_over:
@@ -52,4 +52,4 @@ func shared_collect_play(result: bool) -> void:
 	emit_slot_change_fail()
 
 func emit_slot_change_fail():
-	SignalBus.slot_change_failed.emit(success.get_slot_change())
+	SignalBus.slot_change_failed.emit(success.get_slot_changes())

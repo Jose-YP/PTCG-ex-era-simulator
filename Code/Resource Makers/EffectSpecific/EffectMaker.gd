@@ -96,10 +96,3 @@ func get_slot_changes() -> Array[SlotChange]:
 		if change != null:
 			valid.append(change)
 	return valid
-
-func get_slot_change() -> SlotChange:
-	if get_slot_changes().size() > 1:
-		printerr("uh oh")
-	for change in get_slot_changes():
-		if change: return change
-	return null

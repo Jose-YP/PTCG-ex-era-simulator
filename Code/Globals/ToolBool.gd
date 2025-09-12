@@ -17,13 +17,13 @@ func is_empty(card: Base_Card) -> bool:
 
 func has_ability(card: Base_Card) -> bool:
 	var mon: Pokemon = card.pokemon_properties
-	if mon:
+	if card.pokemon_properties:
 		return mon.pokebody or mon.pokepower
-	else:
-		return false
+	
+	return false
 
 #Might never finish, depend on how much I need this
-func has_effect(card: Base_Card, effect_type: Array[String]):
+func has_effect(card: Base_Card, effect_type: Array[String]) -> bool:
 	if card.pokemon_properties:
 		var mon: Pokemon = card.pokemon_properties
 		for attack in mon.attacks:
@@ -74,7 +74,7 @@ func has_effect(card: Base_Card, effect_type: Array[String]):
 				return true
 	return false
 
-func attack_has_effect(attack: Attack, comps: Array[String]):
+func attack_has_effect(attack: Attack, comps: Array[String]) -> bool:
 	var data: AttackData = attack.attack_data
 	if data.prompt != null:
 		if data.prompt.effect != null:
@@ -104,7 +104,7 @@ func effect_collect_contains(effect_collect: EffectCollect, comps: Array[String]
 	
 	return false
 
-func effect_has_effect_type(effect: EffectCall, comps: Array[String]):
+func effect_has_effect_type(effect: EffectCall, comps: Array[String]) -> bool:
 	if effect == null:
 		print("oh")
 		return false

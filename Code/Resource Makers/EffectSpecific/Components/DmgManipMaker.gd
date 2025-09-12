@@ -34,6 +34,10 @@ class_name DamageManip
 
 signal finished
 
+func _init():
+	if comparator:
+		print(comparator.first_comparison)
+
 func play_effect(reversable: bool = false, replace_num: int = -1) -> void:
 	print("PLAY DAMAGE MANIPULATION")
 	if anyway_u_like:
@@ -53,6 +57,7 @@ func simple_manip(reversable: bool = false, replace_num: int = -1):
 	#If anything other than max ammount
 	if counters != -1:
 		if comparator:
+			print(comparator, comparator.first_comparison)
 			mod_by = await comparator.start_comparision() * modifier
 			mod_by *= 1 if plus else -1
 			if comparator.has_coinflip():
@@ -78,22 +83,32 @@ func simple_manip(reversable: bool = false, replace_num: int = -1):
 	
 	#Apply manip on all ask candidates
 	else:
-		for slot in Globals.full_ui.get_ask_slots(ask):
+		for slot in Globals.full_ui.get_aks_minus_immune(ask, Consts.IMMUNITIES.ATK_EFCT_OPP):
 			if slot.damage_counters != 0 or mode == "Add":
 				slot.dmg_manip(get_final_ammount(counters, slot), turn_delay)
 	
 	finished.emit()
 
 func dmg_manip_box(reversable: bool = false, replace_num: int = -1):
+	
+	#If no one can give return
+	if Globals.full_ui.get_aks_minus_immune(ask, Consts.IMMUNITIES.ATK_EFCT_OPP).size() == 0:
+		return
+	
 	var dmg_manip: DmgManipBox = Consts.dmg_manip_box.instantiate()
 	var counters: int = how_many if replace_num == -1 else replace_num
-	
-	if counters == -1:
-		counters = 0
-		for slot in Globals.full_ui.get_ask_slots(takers):
-			printt(counters, slot.get_max_hp(), slot.damage_counters)
-			counters += slot.get_max_hp() - slot.damage_counters - 10
-		counters /= 10
+	if mode == "Swap":
+		var taker_array: Array[PokeSlot] = Globals.full_ui.get_aks_minus_immune(takers, Consts.IMMUNITIES.ATK_EFCT_OPP)
+		
+		#If no one can take return
+		if taker_array.size() == 0: return
+		
+		if counters == -1:
+			counters = 0
+			for slot in taker_array:
+				printt(counters, slot.get_max_hp(), slot.damage_counters)
+				counters += slot.get_max_hp() - slot.damage_counters - 10
+			counters /= 10
 	
 	if comparator:
 		if plus:
@@ -115,25 +130,24 @@ func dmg_manip_box(reversable: bool = false, replace_num: int = -1):
 
 func swap_manip(reversable: bool = false, replace_num: int = -1):
 	var first: PokeSlot = await Globals.fundies.card_player.get_choice_candidates(
-	str("Choose a damaged pokemon [Swap ", how_many," Counter(s)]"), func(slot: PokeSlot):
-		if slot.damage_counters > 0:
-			return ask.check_ask(slot)
-		,reversable)
-	if first == null:
-		return
+		str("Choose a damaged pokemon [Swap ", how_many," Counter(s)]"), 
+		func(slot: PokeSlot):
+			if slot.damage_counters > 0:
+				return ask.check_ask(slot)
+				, reversable)
+	if first == null: return
 	
-	print()
 	#var final_ammount: int = clamp(how_many * 10, 0, first.get_pokedata().HP - first.damage_counters)
 	var final_ammount: int = how_many * 10
 	
 	@warning_ignore("integer_division")
 	var second: PokeSlot = await Globals.fundies.card_player.get_choice_candidates(
-	str("Place ", how_many," Counter(s) onto which pokemon?"), func(slot: PokeSlot):
-		if slot != first:
-			return takers.check_ask(slot)
-		,reversable)
-	if second == null:
-		return
+		str("Place ", how_many," Counter(s) onto which pokemon?"),
+		func(slot: PokeSlot):
+			if slot != first:
+				return takers.check_ask(slot)
+			, reversable)
+	if second == null: return
 	
 	first.dmg_manip(-1 * final_ammount, turn_delay)
 	second.dmg_manip(final_ammount, turn_delay)

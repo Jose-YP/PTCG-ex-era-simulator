@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SideState" load_steps=27 format=3 uid="uid://dk8qu3vrlmajh"]
+[gd_resource type="Resource" script_class="SideState" load_steps=28 format=3 uid="uid://dk8qu3vrlmajh"]
 
 [ext_resource type="Resource" uid="uid://bqmhek5tndw0q" path="res://Resources/Decks/DmgManipTests.tres" id="1_h55op"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_4coo1"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://calm3n7va5yjo" path="res://Code/Resource Makers/GeneralUse/CardStacksMaker.gd" id="11_cvwkj"]
 [ext_resource type="Script" uid="uid://dgqpurnuh14t1" path="res://Code/Resource Makers/GeneralUse/SideStateMaker.gd" id="12_drd15"]
 [ext_resource type="Script" uid="uid://cs70ix831b5g4" path="res://Code/Resource Makers/PokemonSpecific/PokeSlotMaker.gd" id="13_3c362"]
+[ext_resource type="Script" uid="uid://b3041relhlcb2" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/SlotChangeMaker.gd" id="14_cgbji"]
 [ext_resource type="Resource" uid="uid://bn45remvr7fmu" path="res://Resources/Cards/3 ex Dragon/DR68Nincada.tres" id="16_87gsu"]
 [ext_resource type="Resource" uid="uid://dxq22uwxelttj" path="res://Resources/Cards/1 ex Ruby & Saphire/RS107PsychicEnergy.tres" id="17_mj0o3"]
 [ext_resource type="Resource" uid="uid://cmflui8icmsht" path="res://Resources/Cards/1 ex Ruby & Saphire/RS19Peliper.tres" id="18_4wc6g"]
@@ -24,6 +25,7 @@
 [sub_resource type="Resource" id="Resource_wcf1d"]
 script = ExtResource("11_cvwkj")
 deck = ExtResource("1_h55op")
+excluded_to_discard = false
 init_deck = Array[ExtResource("2_4coo1")]([])
 init_hand = Array[ExtResource("2_4coo1")]([ExtResource("3_xbfu6"), ExtResource("4_xubsq"), ExtResource("5_wmo8o"), ExtResource("6_16ot6"), ExtResource("7_f6x85"), ExtResource("8_wq0rc"), ExtResource("9_dpylr"), ExtResource("10_ttjql")])
 init_discard = Array[ExtResource("2_4coo1")]([])
@@ -33,14 +35,17 @@ metadata/_custom_type_script = "uid://calm3n7va5yjo"
 [sub_resource type="Resource" id="Resource_hsx7t"]
 script = ExtResource("13_3c362")
 current_card = ExtResource("16_87gsu")
+max_HP = 0
 damage_counters = 20
-evolution_ready = false
-evolved_this_turn = false
+final_retreat = 0
 evolved_from = Array[ExtResource("2_4coo1")]([])
 energy_cards = Array[ExtResource("2_4coo1")]([ExtResource("17_mj0o3")])
 tm_cards = Array[ExtResource("2_4coo1")]([])
-buffs = Array[Dictionary]([])
-disables = Array[Dictionary]([])
+changes = Dictionary[ExtResource("14_cgbji"), int]({})
+evolution_ready = false
+evolved_this_turn = false
+body_disabled = false
+power_disabled = false
 dealt_damage = 0
 energy_discarded = 0
 metadata/_custom_type_script = "uid://cs70ix831b5g4"
@@ -48,14 +53,17 @@ metadata/_custom_type_script = "uid://cs70ix831b5g4"
 [sub_resource type="Resource" id="Resource_4isvj"]
 script = ExtResource("13_3c362")
 current_card = ExtResource("18_4wc6g")
+max_HP = 0
 damage_counters = 40
-evolution_ready = false
-evolved_this_turn = false
+final_retreat = 0
 evolved_from = Array[ExtResource("2_4coo1")]([ExtResource("19_iqof0")])
 energy_cards = Array[ExtResource("2_4coo1")]([ExtResource("9_dpylr"), ExtResource("9_dpylr"), ExtResource("9_dpylr")])
 tm_cards = Array[ExtResource("2_4coo1")]([])
-buffs = Array[Dictionary]([])
-disables = Array[Dictionary]([])
+changes = Dictionary[ExtResource("14_cgbji"), int]({})
+evolution_ready = false
+evolved_this_turn = false
+body_disabled = false
+power_disabled = false
 dealt_damage = 0
 energy_discarded = 0
 metadata/_custom_type_script = "uid://cs70ix831b5g4"
@@ -63,14 +71,17 @@ metadata/_custom_type_script = "uid://cs70ix831b5g4"
 [sub_resource type="Resource" id="Resource_i6o4c"]
 script = ExtResource("13_3c362")
 current_card = ExtResource("20_xnhxv")
+max_HP = 0
 damage_counters = 0
-evolution_ready = false
-evolved_this_turn = false
+final_retreat = 0
 evolved_from = Array[ExtResource("2_4coo1")]([])
 energy_cards = Array[ExtResource("2_4coo1")]([ExtResource("17_mj0o3"), ExtResource("17_mj0o3")])
 tm_cards = Array[ExtResource("2_4coo1")]([])
-buffs = Array[Dictionary]([])
-disables = Array[Dictionary]([])
+changes = Dictionary[ExtResource("14_cgbji"), int]({})
+evolution_ready = false
+evolved_this_turn = false
+body_disabled = false
+power_disabled = false
 dealt_damage = 0
 energy_discarded = 0
 metadata/_custom_type_script = "uid://cs70ix831b5g4"
@@ -78,14 +89,17 @@ metadata/_custom_type_script = "uid://cs70ix831b5g4"
 [sub_resource type="Resource" id="Resource_c8wg8"]
 script = ExtResource("13_3c362")
 current_card = ExtResource("21_uttlg")
+max_HP = 0
 damage_counters = 0
-evolution_ready = false
-evolved_this_turn = false
+final_retreat = 0
 evolved_from = Array[ExtResource("2_4coo1")]([])
 energy_cards = Array[ExtResource("2_4coo1")]([ExtResource("9_dpylr"), ExtResource("17_mj0o3"), ExtResource("9_dpylr")])
 tm_cards = Array[ExtResource("2_4coo1")]([])
-buffs = Array[Dictionary]([])
-disables = Array[Dictionary]([])
+changes = Dictionary[ExtResource("14_cgbji"), int]({})
+evolution_ready = false
+evolved_this_turn = false
+body_disabled = false
+power_disabled = false
 dealt_damage = 0
 energy_discarded = 0
 metadata/_custom_type_script = "uid://cs70ix831b5g4"
@@ -93,14 +107,17 @@ metadata/_custom_type_script = "uid://cs70ix831b5g4"
 [sub_resource type="Resource" id="Resource_jv8fm"]
 script = ExtResource("13_3c362")
 current_card = ExtResource("22_c4uj1")
+max_HP = 0
 damage_counters = 60
-evolution_ready = true
-evolved_this_turn = false
+final_retreat = 0
 evolved_from = Array[ExtResource("2_4coo1")]([])
 energy_cards = Array[ExtResource("2_4coo1")]([ExtResource("4_xubsq"), ExtResource("9_dpylr"), ExtResource("9_dpylr")])
 tm_cards = Array[ExtResource("2_4coo1")]([])
-buffs = Array[Dictionary]([])
-disables = Array[Dictionary]([])
+changes = Dictionary[ExtResource("14_cgbji"), int]({})
+evolution_ready = true
+evolved_this_turn = false
+body_disabled = false
+power_disabled = false
 dealt_damage = 0
 energy_discarded = 0
 metadata/_custom_type_script = "uid://cs70ix831b5g4"
@@ -111,10 +128,10 @@ card_stacks = SubResource("Resource_wcf1d")
 prize_cards = 6
 bench_size = 5
 slots = Dictionary[ExtResource("13_3c362"), bool]({
-SubResource("Resource_hsx7t"): true,
-SubResource("Resource_4isvj"): true,
-SubResource("Resource_i6o4c"): false,
-SubResource("Resource_c8wg8"): false,
+SubResource("Resource_hsx7t"): false,
+SubResource("Resource_4isvj"): false,
+SubResource("Resource_i6o4c"): true,
+SubResource("Resource_c8wg8"): true,
 SubResource("Resource_jv8fm"): false
 })
 metadata/_custom_type_script = "uid://dgqpurnuh14t1"

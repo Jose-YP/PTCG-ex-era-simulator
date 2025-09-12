@@ -247,12 +247,13 @@ func apply_change(ask: SlotAsk, applying: SlotChange):
 			which_changes[applying] = applying.duration
 			Globals.full_ui.display_changes(side.home, which_changes.keys())
 
-func remove_change(removing: SlotChange):
-	for home in side_changes:
-		side_changes[home].erase(removing)
-		Globals.full_ui.display_changes(home, side_changes[home].keys())
-	for slot in Globals.full_ui.get_poke_slots():
-		slot.remove_slot_change(removing)
+func remove_change(removing: Array[SlotChange]):
+	for change in removing:
+		for home in side_changes:
+			side_changes[home].erase(change)
+			Globals.full_ui.display_changes(home, side_changes[home].keys())
+		for slot in Globals.full_ui.get_poke_slots():
+			slot.remove_slot_change(change)
 
 func allowed_against(change: Buff, against: PokeSlot) -> bool:
 	if change.against:

@@ -44,7 +44,7 @@ func _ready() -> void:
 		swap_candidates = slot_list.find_allowed_either(first_ask, second_ask, "DmgGive")
 		only_givers()
 	else:
-		slot_list.find_allowed_givers(first_ask)
+		slot_list.find_allowed_givers(first_ask, "")
 	update_info()
 
 #If this is closable be ready to reverse changes upon closee

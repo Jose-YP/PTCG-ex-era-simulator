@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://dnij7qm62bibx"]
 
 [ext_resource type="Script" uid="uid://j57m0tmwtg4n" path="res://Code/Scenes/debug_board_state.gd" id="1_auq40"]
-[ext_resource type="Resource" uid="uid://drpuudscb04qb" path="res://Resources/BoardStates/SideStates/Doubles/DarkDiscarders.tres" id="2_43axb"]
-[ext_resource type="Resource" uid="uid://cu2ksi0icg1cg" path="res://Resources/BoardStates/SideStates/TooMuchEnergy.tres" id="3_43axb"]
+[ext_resource type="Resource" uid="uid://dkngbetpy8wdr" path="res://Resources/BoardStates/SideStates/Doubles/WurmpleLine.tres" id="2_43axb"]
+[ext_resource type="Resource" uid="uid://dk8qu3vrlmajh" path="res://Resources/BoardStates/SideStates/Doubles/DmgManips.tres" id="3_43axb"]
 [ext_resource type="PackedScene" uid="uid://bmhba1mua5n81" path="res://Scenes/Testing/debug_button.tscn" id="4_t8we2"]
 [ext_resource type="PackedScene" uid="uid://7cdjjog7dndn" path="res://Scenes/UI/ETC/input_condition.tscn" id="5_43axb"]
 [ext_resource type="PackedScene" uid="uid://b2f8g5a5evnv4" path="res://Scenes/Testing/comparator_options.tscn" id="6_43axb"]

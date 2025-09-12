@@ -121,7 +121,7 @@ func activate_passive() -> bool:
 		passive.play_effect()
 		return true
 	
-	SignalBus.slot_change_failed.emit(passive.get_slot_change())
+	SignalBus.slot_change_failed.emit(passive.get_slot_changes())
 	return false
 
 func activate_ability():

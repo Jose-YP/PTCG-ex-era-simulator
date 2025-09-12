@@ -62,6 +62,16 @@ func get_ask_slots(ask: SlotAsk) -> Array[PokeSlot]:
 			pokeslots.append(ui_slot.connected_slot)
 	return pokeslots
 
+func get_aks_minus_immune(ask: SlotAsk, immune: Consts.IMMUNITIES) -> Array[PokeSlot]:
+	var pokeslots: Array[PokeSlot]
+	for ui_slot in every_slot:
+		if Globals.fundies.check_immunity(immune,\
+		Globals.fundies.get_first_target(true), ui_slot.connected_slot):
+			continue
+		if ask.check_ask(ui_slot.connected_slot):
+			pokeslots.append(ui_slot.connected_slot)
+	return pokeslots
+
 func get_occurance_slots() -> Array[PokeSlot]:
 	var pokeslots: Array[PokeSlot]
 	for ui_slot in every_slot:

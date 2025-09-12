@@ -128,16 +128,16 @@ func emit_remove_change():
 		if mon.pokebody:
 			var body: Ability = mon.pokebody
 			if body.passive:
-				SignalBus.slot_change_failed.emit(body.passive.get_slot_change())
+				SignalBus.slot_change_failed.emit(body.passive.get_slot_changes())
 			if body.effect:
-				SignalBus.slot_change_failed.emit(body.effect.get_slot_change())
+				SignalBus.slot_change_failed.emit(body.effect.get_slot_changes())
 		
 		if mon.pokepower:
 			var power: Ability = mon.pokepower
 			if power.passive:
-				SignalBus.slot_change_failed.emit(power.passive.get_slot_change())
+				SignalBus.slot_change_failed.emit(power.passive.get_slot_changes())
 			if power.effect:
-				SignalBus.slot_change_failed.emit(power.effect.get_slot_change())
+				SignalBus.slot_change_failed.emit(power.effect.get_slot_changes())
 	
 	if trainer_properties:
 		var train: Trainer = trainer_properties

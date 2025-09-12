@@ -45,10 +45,12 @@ func find_allowed(ask: SlotAsk):
 			node.disabled = not ask.check_ask(node.slot)
 
 func find_allowed_givers(ask: SlotAsk, box: String = "Swap"):
+	var givers: Array[PokeSlot] = Globals.full_ui.get_aks_minus_immune(ask, Consts.IMMUNITIES.ATK_EFCT_OPP)
+	
 	for node in %SlotList.get_children():
 		if node.slot:
-			print("Is ", node.slot.get_card_name(), " allowed?", ask.check_ask(node.slot), safeguard)
-			node.disabled = not ask.check_ask(node.slot) or safeguard(node.slot, box)
+			print("Is ", node.slot.get_card_name(), " allowed?", (not node.slot in givers), safeguard(node.slot, box))
+			node.disabled = (not node.slot in givers) or safeguard(node.slot, box)
 
 func find_allowed_either(ask_giv: SlotAsk, ask_take: SlotAsk, box = "DmgGive"):
 	var allowed_as: Dictionary[int, String]
