@@ -73,11 +73,12 @@ func get_choice(instruction: String):
 func get_allowed_slots(condition: Callable) -> void:
 	allowed_slots = Globals.fundies.find_allowed_slots(condition, Consts.SIDES.BOTH)
 	
-	if Globals.fundies.attacking:
+	if Globals.fundies.atk_efect:
 		var poke_slots: Array[PokeSlot]
 		for slot in allowed_slots:
 			poke_slots.append(slot.connected_slot)
-		poke_slots = Globals.fundies.filter_immune(Consts.IMMUNITIES.ATK_EFCT_OPP, poke_slots)
+		if Globals.fundies.atk_efect:
+			poke_slots = Globals.fundies.filter_immune(Consts.IMMUNITIES.ATK_EFCT_OPP, poke_slots)
 		
 		allowed_slots = allowed_slots.filter(func (ui: UI_Slot):
 			return ui.connected_slot in poke_slots)

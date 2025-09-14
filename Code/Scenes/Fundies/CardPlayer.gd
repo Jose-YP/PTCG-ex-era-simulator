@@ -303,9 +303,7 @@ func set_reversable(reversable: bool):
 
 #Shouldonly trigger when pressing an attack button from a pokemon card
 func main_attack(attacker: PokeSlot, with: Attack):
-	Globals.fundies.attacking = true
 	await before_direct_attack(attacker, with)
-	Globals.fundies.attacking = false
 	await attacker.ability_emit(attacker.attacks, attacker)
 	Globals.fundies.remove_top_source_target()
 	
@@ -313,14 +311,13 @@ func main_attack(attacker: PokeSlot, with: Attack):
 
 #Shold only trigger from triggered mimic attacks
 func trigger_attack(attacker: PokeSlot, with: Attack):
-	Globals.fundies.attacking = true
 	await before_direct_attack(attacker, with)
-	Globals.fundies.attacking = false
 	Globals.fundies.remove_top_source_target()
+	
 	SignalBus.trigger_finished.emit()
 
 func before_direct_attack(attacker: PokeSlot, with: Attack):
-	var direct_bool: bool = with.does_direct_damage()
+	var direct_bool: bool = with.needs_target()
 	var attack_data: AttackData = with.attack_data
 	var replace_num: int = -1
 	
@@ -374,8 +371,10 @@ func before_direct_attack(attacker: PokeSlot, with: Attack):
 	else: Globals.fundies.record_single_src_trg(attacker)
 	
 	if not attack_data.before_damage:
+		Globals.fundies.atk_efect = true
 		await attack_effect(attacker, with.attack_data, replace_num)
 	
+	Globals.fundies.atk_efect = false
 	attacker.current_attack = null
 
 #For attacks that use main dmg + effects
@@ -385,6 +384,9 @@ func direct_attack(attacker: PokeSlot, with: Attack, defenders: Array[PokeSlot])
 	
 	for slot in defenders:
 		await slot.add_damage(attacker, base_damage)
+	
+	if with.attack_data.self_damage > 0:
+		await attacker.self_damage(with.attack_data.self_damage)
 
 func bench_attack(attacker: PokeSlot, with: BenchAttk, defenders: Array[PokeSlot]):
 	pass

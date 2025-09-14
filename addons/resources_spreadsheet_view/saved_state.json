@@ -85,7 +85,8 @@
       "return res.pokemon_properties",
       "if ToolBool.has_effect(res, [\"Mimic\"]):\n\treturn true\nreturn false",
       "if ToolBool.has_effect(res, [\"Buff\"]):\n\treturn true\nreturn false",
-      "if ToolBool.has_effect(res, [\"Disable\"]):\n\treturn true\nreturn false"
+      "if ToolBool.has_effect(res, [\"Disable\"]):\n\treturn true\nreturn false",
+      "if ToolBool.has_effect(res, [\"EnMov\"]):\n\treturn true\nreturn false"
     ],
     "process": [
       "return value"

@@ -40,7 +40,7 @@ func _on_grid_updated():
 	var pagelist_line := HSeparator.new()
 	pagelist_line.size_flags_horizontal = SIZE_EXPAND_FILL
 	pagelist_node.add_child(pagelist_line)
-	btns[current_page].button_pressed = true
+	btns[min(current_page,page_count)].button_pressed = true
 
 	var sort_property : StringName = node_editor_view_root.sorting_by
 	if sort_property == "": sort_property = "resource_path"

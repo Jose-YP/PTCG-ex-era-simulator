@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SideState" load_steps=28 format=3 uid="uid://3mi21qf5xxe4"]
+[gd_resource type="Resource" script_class="SideState" load_steps=29 format=3 uid="uid://3mi21qf5xxe4"]
 
 [ext_resource type="Resource" uid="uid://d3qd7r6gwfitd" path="res://Resources/Decks/TestDeckFP.tres" id="1_3fosg"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_67esg"]
@@ -20,6 +20,7 @@
 [ext_resource type="Resource" uid="uid://xvauv8yfopfw" path="res://Resources/Cards/2 ex Sandstorm/SS93MultiEnergy.tres" id="19_3fosg"]
 [ext_resource type="Script" uid="uid://calm3n7va5yjo" path="res://Code/Resource Makers/GeneralUse/CardStacksMaker.gd" id="20_rx5tr"]
 [ext_resource type="Script" uid="uid://dgqpurnuh14t1" path="res://Code/Resource Makers/GeneralUse/SideStateMaker.gd" id="21_wmcmf"]
+[ext_resource type="Script" uid="uid://b3041relhlcb2" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/SlotChangeMaker.gd" id="22_3fosg"]
 [ext_resource type="Script" uid="uid://cs70ix831b5g4" path="res://Code/Resource Makers/PokemonSpecific/PokeSlotMaker.gd" id="22_ti8fa"]
 [ext_resource type="Resource" uid="uid://cpk1v504xejvf" path="res://Resources/Cards/1 ex Ruby & Saphire/RS66Ralts.tres" id="23_j8pkl"]
 [ext_resource type="Resource" uid="uid://dqknf3vfxe3hp" path="res://Resources/Cards/1 ex Ruby & Saphire/RS73Torchic.tres" id="24_ugwbi"]
@@ -40,13 +41,15 @@ script = ExtResource("22_ti8fa")
 current_card = ExtResource("4_udrok")
 max_HP = 0
 damage_counters = 0
-evolution_ready = false
-evolved_this_turn = false
+final_retreat = 0
 evolved_from = Array[ExtResource("2_67esg")]([ExtResource("23_j8pkl")])
 energy_cards = Array[ExtResource("2_67esg")]([])
 tm_cards = Array[ExtResource("2_67esg")]([])
-buffs = Array[Dictionary]([])
-disables = Array[Dictionary]([])
+changes = Dictionary[ExtResource("22_3fosg"), int]({})
+evolution_ready = false
+evolved_this_turn = false
+body_disabled = false
+power_disabled = false
 dealt_damage = 0
 energy_discarded = 0
 metadata/_custom_type_script = "uid://cs70ix831b5g4"
@@ -56,13 +59,15 @@ script = ExtResource("22_ti8fa")
 current_card = ExtResource("14_xl8qu")
 max_HP = 0
 damage_counters = 0
-evolution_ready = false
-evolved_this_turn = false
+final_retreat = 0
 evolved_from = Array[ExtResource("2_67esg")]([ExtResource("24_ugwbi"), ExtResource("25_vaap6")])
 energy_cards = Array[ExtResource("2_67esg")]([ExtResource("8_eib0e"), ExtResource("8_eib0e")])
 tm_cards = Array[ExtResource("2_67esg")]([])
-buffs = Array[Dictionary]([])
-disables = Array[Dictionary]([])
+changes = Dictionary[ExtResource("22_3fosg"), int]({})
+evolution_ready = false
+evolved_this_turn = false
+body_disabled = false
+power_disabled = false
 dealt_damage = 0
 energy_discarded = 0
 metadata/_custom_type_script = "uid://cs70ix831b5g4"

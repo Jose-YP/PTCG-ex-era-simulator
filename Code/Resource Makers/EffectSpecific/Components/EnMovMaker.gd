@@ -44,7 +44,7 @@ func play_effect(reversable: bool = false, replace_num: int = -1) -> void:
 func send_effect(reversable: bool = false) -> void:
 	Globals.fundies.card_player.set_reversable(reversable)
 	var giver_call: Callable = func(slot: PokeSlot):
-		return givers.check_ask(slot) and slot.energy_cards.size() != 0
+		return slot.energy_cards.size() != 0 and givers.check_ask(slot)
 	
 	#Get whichever meant to discard
 	var candidate: PokeSlot = await Globals.fundies.card_player.get_choice_candidates(\

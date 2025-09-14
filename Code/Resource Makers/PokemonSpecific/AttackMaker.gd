@@ -202,8 +202,11 @@ func get_damage() -> int:
 	
 	return final_damage
 
-func does_direct_damage() -> bool:
-	return attack_data.initial_main_DMG != 0 \
+func needs_target() -> bool:
+	var need_target: bool = attack_data.prompt_effects.size() != 0\
+	 and not ToolBool.attack_has_effect(self, ["Mimic", "Search", "Draw"])
+	
+	return attack_data.initial_main_DMG != 0 or need_target\
 	or attack_data.modifier_num != 0 or attack_data.self_damage != 0
 
 #Check if you're allowed to attack while having this condition

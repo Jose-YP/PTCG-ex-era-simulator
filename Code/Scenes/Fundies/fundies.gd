@@ -15,7 +15,7 @@ class_name Fundies
 
 var turn_number: int = 1
 var home_turn: bool = true
-var attacking: bool = false
+var atk_efect: bool = false
 var home_targets: Array[Array]
 var away_targets: Array[Array]
 var source_stack: Array[bool]
@@ -320,7 +320,7 @@ func atk_def_buff(attacker: PokeSlot, defender: PokeSlot, after: bool) -> int:
 	return final
 
 func filter_immune(immunity: Consts.IMMUNITIES, slots: Array[PokeSlot]) -> Array[PokeSlot]:
-	if attacking:
+	if atk_efect:
 		var against: PokeSlot = get_first_target(true)
 		print("Before: ", slots)
 		slots = slots.filter(func(slot: PokeSlot): return not slot.is_attacker() and slot.is_filled()\
@@ -338,6 +338,9 @@ func has_immune(immunity: Consts.IMMUNITIES, dict: Dictionary, against: PokeSlot
 		
 		change = change as Buff
 		match immunity:
+			Consts.IMMUNITIES.DMG_OPP:
+				if change.damage_immune and allowed_against(change, against):
+					return true
 			Consts.IMMUNITIES.ATK_EFCT_OPP:
 				if change.attack_effect_immune and allowed_against(change, against):
 					return true
@@ -358,14 +361,20 @@ func has_immune(immunity: Consts.IMMUNITIES, dict: Dictionary, against: PokeSlot
 					return true
 
 func check_immunity(immunity: Consts.IMMUNITIES, attacker: PokeSlot, defender: PokeSlot):
-	if not attacking and immunity == Consts.IMMUNITIES.ATK_EFCT_OPP:
+	if not atk_efect and immunity == Consts.IMMUNITIES.ATK_EFCT_OPP:
+		return false
+	#There are no affects that provide immunities to source side
+	if attacker.is_attacker() == defender.is_attacker():
 		return false
 	
+	record_prev_src_trg_from_self(defender)
 	if defender.changes.size() > 0:
 		if has_immune(immunity, defender.changes, attacker):
 			return true
 		elif has_immune(immunity, side_changes[defender.is_home()], attacker):
 			return true
+	remove_top_source_target()
+	
 	return false
 
 func has_pierce():

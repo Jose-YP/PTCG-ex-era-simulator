@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="PokeSlot" load_steps=10 format=3 uid="uid://cbbgtypsmc1a2"]
+[gd_resource type="Resource" script_class="PokeSlot" load_steps=11 format=3 uid="uid://cbbgtypsmc1a2"]
 
+[ext_resource type="Script" uid="uid://b3041relhlcb2" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/SlotChangeMaker.gd" id="1_br7xd"]
 [ext_resource type="Resource" uid="uid://b8kt4i4jgosm8" path="res://Resources/Cards/1 ex Ruby & Saphire/RS3Blaziken.tres" id="1_j0klf"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_br7xd"]
 [ext_resource type="Resource" uid="uid://bbpbby31t7cth" path="res://Resources/Components/Energy/Basic Energy/FireEnergy.tres" id="3_jdscm"]
@@ -41,8 +42,7 @@ final_retreat = 0
 evolved_from = Array[ExtResource("2_br7xd")]([ExtResource("5_vh3hf"), ExtResource("6_pttkb")])
 energy_cards = Array[ExtResource("2_br7xd")]([SubResource("Resource_0tjgr"), SubResource("Resource_xbexa")])
 tm_cards = Array[ExtResource("2_br7xd")]([])
-buffs = Array[Dictionary]([])
-disables = Array[Dictionary]([])
+changes = Dictionary[ExtResource("1_br7xd"), int]({})
 evolution_ready = false
 evolved_this_turn = false
 body_disabled = false

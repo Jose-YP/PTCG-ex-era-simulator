@@ -443,6 +443,8 @@ func knock_out() -> void:
 
 func add_damage(attacker: PokeSlot, base_ammount: int) -> void:
 	if not is_filled() or base_ammount == 0: return
+	if Globals.fundies.check_immunity(Consts.IMMUNITIES.DMG_OPP, attacker, self):
+		return
 	
 	await ability_emit(will_take_dmg, attacker)
 	
@@ -459,6 +461,10 @@ func add_damage(attacker: PokeSlot, base_ammount: int) -> void:
 	final_ammount += Globals.fundies.atk_def_buff(attacker, self, true)
 	
 	final_ammount = clamp(final_ammount, 0, 990)
+	
+	if even_or_odd_immune(final_ammount, attacker):
+		return
+	
 	print(get_card_name(), " TAKES: ", final_ammount, " DAMAGE!")
 	damage_counters += final_ammount
 	attacker.dealt_damage = final_ammount
@@ -470,8 +476,36 @@ func add_damage(attacker: PokeSlot, base_ammount: int) -> void:
 		Globals.fundies.print_src_trg()
 		await ability_emit(take_dmg, attacker)
 
-func bench_add_damage(_ammount) -> int:
-	return 0
+func bench_add_damage(_ammount) -> void:
+	return
+
+#Q. Does Strength Charm affect self damage, like Wobbuffet's flip over attack?
+#A. Yes - it affects damage done by the Attacking Pokémon. (Mar 25, 2004 PUI Rules Team) 
+func self_damage(base_ammount: int) -> void:
+	if not is_filled() or base_ammount == 0: return
+	
+	var final_ammount = base_ammount + \
+	Globals.fundies.atk_def_buff(self, self, false)
+	
+	final_ammount = clamp(final_ammount, 0, 990)
+	
+	print(get_card_name(), " TAKES: ", final_ammount, " DAMAGE!")
+	damage_counters += final_ammount
+	dealt_damage = final_ammount
+	
+	ui_slot.damage_counter.set_damage(damage_counters)
+	Globals.fundies.check_all_passives()
+	
+	if final_ammount > 0:
+		Globals.fundies.print_src_trg()
+		await ability_emit(take_dmg, self)
+
+func even_or_odd_immune(dmg: int, attacker: PokeSlot) -> bool:
+	if dmg <= 0 or dmg >= 190: return false
+	
+	if int(floori(dmg / 10.0)) % 2 == 0:
+		return Globals.fundies.check_immunity(Consts.IMMUNITIES.EVEN, attacker, self)
+	return Globals.fundies.check_immunity(Consts.IMMUNITIES.ODD, attacker, self)
 
 #Won't trigger anything that happens on direct damage
 func dmg_manip(dmg_change: int, timer: int = -1) -> void:

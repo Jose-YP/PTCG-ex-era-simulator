@@ -88,17 +88,22 @@ func play_effect(reversable: bool = false, replace_num: int = -1) -> void:
 	
 	#Discard from a slot
 	else:
-		var slots: Array[PokeSlot] = Globals.full_ui.get_ask_slots(in_play_options)
+		var slots: Array[PokeSlot] = Globals.full_ui.get_aks_minus_immune(in_play_options, Consts.IMMUNITIES.ATK_EFCT_OPP)
 		
+		#Specified number of mons to disrupt
 		if slot_choose_num != -1:
 			var picked: Array[PokeSlot]
 			for i in range(slot_choose_num):
 				var disrupting: PokeSlot = await Globals.fundies.card_player.get_choice_candidates(
 					"Which cards will you disrupt?", func(slot: PokeSlot): return slot.is_filled() and\
 					slot in slots and not slot in picked, reversable, chooser)
+				if disrupting == null:
+					return
 				picked.append(disrupting)
-			
+			#Only move what was picked out
 			slots = picked
+		
+		#move all cards in slot accoording to identifier
 		var moving_cards: Array[Base_Card]
 		for slot in slots:
 			moving_cards.append_array(slot.card_disrupteed(card_options, send)\
