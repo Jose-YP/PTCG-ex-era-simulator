@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="SideState" load_steps=25 format=3 uid="uid://bx3ytpyqp7p5f"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_jmn42"]
-[ext_resource type="Resource" uid="uid://cmc8tk45l0b5t" path="res://Resources/Cards/11 ex Delta Species/DS9Latios.tres" id="2_f0kkw"]
-[ext_resource type="Resource" uid="uid://c6ev6ok3w7mil" path="res://Resources/Cards/11 ex Delta Species/DS8Latias.tres" id="3_luo60"]
+[ext_resource type="Resource" uid="uid://cmc8tk45l0b5t" path="res://Resources/Cards/11 ex Delta Species/DS9LatiosDelta.tres" id="2_f0kkw"]
+[ext_resource type="Resource" uid="uid://c6ev6ok3w7mil" path="res://Resources/Cards/11 ex Delta Species/DS8LatiasDelta.tres" id="3_luo60"]
 [ext_resource type="Resource" uid="uid://b4oi01smebmpm" path="res://Resources/Cards/11 ex Delta Species/DS97HolonScientist.tres" id="4_3u0oo"]
 [ext_resource type="Resource" uid="uid://dhb0cuvhuxs36" path="res://Resources/Cards/11 ex Delta Species/DS95HolonResearcher.tres" id="5_w6d32"]
 [ext_resource type="Resource" uid="uid://b1wmepba718r6" path="res://Resources/Cards/11 ex Delta Species/DS94HolonResearchTower.tres" id="6_yvlhn"]

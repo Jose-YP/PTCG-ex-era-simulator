@@ -22,6 +22,7 @@ var source_stack: Array[bool]
 var used_turn_abilities: Array[String]
 var used_emit_abilities: Array[String]
 var side_changes: Dictionary[bool, Dictionary] = {true:{}, false:{}}
+var side_disables: Dictionary[bool, Dictionary] = {true:{}, false:{}}
 var cpu_players: Array[CPU_Player]
 
 #endregion
@@ -162,13 +163,6 @@ func find_allowed_slots(condition: Callable, sides: Consts.SIDES,\
  slots: Consts.SLOTS = Consts.SLOTS.ALL) -> Array[UI_Slot]:
 	return Globals.full_ui.get_slots(sides, slots).filter(func(uislot: UI_Slot):\
 	 return condition.call(uislot.connected_slot))
-
-func get_poke_slots(sides: Consts.SIDES = Consts.SIDES.BOTH, 
- slots: Consts.SLOTS = Consts.SLOTS.ALL) -> Array[PokeSlot]:
-	var array: Array[PokeSlot]
-	for ui_slot in Globals.full_ui.get_slots(sides, slots):
-		array.append(ui_slot.connected_slot)
-	return array
 
 #region TARGET SOURCE MANAGEMENT
 func record_attack_src_trg(is_home: bool, atk_trg: Array, def_trg: Array):

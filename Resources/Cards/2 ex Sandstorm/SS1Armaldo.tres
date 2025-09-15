@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=16 format=3 uid="uid://0muu3k83v6pk"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=17 format=3 uid="uid://0muu3k83v6pk"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_08nth"]
 [ext_resource type="Texture2D" uid="uid://dtw4g7hxhj5k" path="res://Art/Cards/2 ex Sandstorm/1.jpg" id="1_royrp"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_43w8c"]
 [ext_resource type="Resource" uid="uid://d3mbrhxvdupx6" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/F2C1.tres" id="3_ardfi"]
 [ext_resource type="Resource" uid="uid://cjlv4ltu2gptf" path="res://Resources/Components/Pokemon/Attacks/AttackData/60Dmg.tres" id="4_oofyp"]
+[ext_resource type="Resource" uid="uid://bkuxa81fpcmol" path="res://Resources/Components/Effects/Identifiers/Trainers/Supporter.tres" id="5_43w8c"]
 [ext_resource type="Resource" uid="uid://bns8h72u2hxqo" path="res://Resources/Components/Effects/Asks/General/AnyMon.tres" id="5_sle4i"]
 [ext_resource type="Script" uid="uid://c0ishgbxk63dg" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/DisableMaker.gd" id="6_je25v"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="7_ur34r"]
@@ -20,17 +21,15 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_oj81j"]
 script = ExtResource("6_je25v")
-side = 2
-slot = 4
-no_weakness = false
-no_resistance = false
-instead_of_damage = false
-do_nothing = false
-attack = 0
-power = 0
-retreat_duration = 1
+card_type = ExtResource("5_43w8c")
+disable_power = false
+disable_body = false
 disable_retreat = false
-application = "Slot"
+choose_num = -1
+attack = 0
+atk_effect = true
+attack_names = Array[String]([])
+application = "Side"
 recieves = ExtResource("5_sle4i")
 duration = -1
 metadata/_custom_type_script = "uid://c0ishgbxk63dg"

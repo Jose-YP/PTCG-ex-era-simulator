@@ -36,7 +36,7 @@ func play_effect(reversable: bool = false, replace_num: int = -1) -> void:
 	var based_on_cards: Array[PokeSlot]
 	var stack_mana: StackManager = Globals.fundies.stack_manager
 	if based_on_side != 0 and based_on_slots != 0:
-		based_on_cards = Globals.fundies.get_poke_slots(based_on_side, based_on_slots)
+		based_on_cards = Globals.full_ui.get_poke_slots(based_on_side, based_on_slots)
 		print("BASED ON ", based_on_side, based_on_slots, based_on_cards)
 	
 	var search_for: Array[Dictionary] = stack_mana.search_array(self, based_on_cards)

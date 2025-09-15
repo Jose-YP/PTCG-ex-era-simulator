@@ -7,6 +7,5 @@
 [resource]
 script = ExtResource("3_mpxkc")
 name = "Smokescreen"
-description = "If the Defending Pokémon tries to attack during your opponent's next turn, your opponent flips a coin. If tails, that attack does nothing."
 attack_cost = ExtResource("1_w7mcv")
 attack_data = ExtResource("2_pkwc4")

@@ -5,16 +5,14 @@
 
 [resource]
 script = ExtResource("1_ayll1")
-side = 1
-slot = 1
-ask = ExtResource("1_vubcr")
-duration = 1
-no_weakness = false
-no_resistance = false
-instead_of_damage = false
-do_nothing = false
-attack = 2
-power = 0
-retreat_duration = 1
+disable_power = false
+disable_body = false
 disable_retreat = false
+choose_num = -1
+attack = 1
+atk_effect = true
+attack_names = Array[String]([])
+application = "Slot"
+recieves = ExtResource("1_vubcr")
+duration = 2
 metadata/_custom_type_script = "uid://c0ishgbxk63dg"

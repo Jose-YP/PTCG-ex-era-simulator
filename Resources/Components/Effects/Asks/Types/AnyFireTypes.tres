@@ -1,14 +1,13 @@
-[gd_resource type="Resource" script_class="SlotAsk" load_steps=3 format=3 uid="uid://dcdcvab0nu53a"]
+[gd_resource type="Resource" script_class="SlotAsk" load_steps=2 format=3 uid="uid://dctc3xbdmiv4"]
 
-[ext_resource type="Resource" uid="uid://c7itelq8jtjc2" path="res://Resources/Components/EnData/Rainbow.tres" id="1_ysryq"]
-[ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="2_08cy5"]
+[ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="1_pb1re"]
 
 [resource]
-script = ExtResource("2_08cy5")
+script = ExtResource("1_pb1re")
 boolean_type = "And"
 previous_src_trg = false
 side_target = 3
-slot_target = 2
+slot_target = 4
 specifically = Array[String]([])
 tool_attatched = false
 comparison_type = 1
@@ -23,13 +22,12 @@ pokemon_class = 63
 owner_inclusive = true
 pokemon_owner = 31
 type_inclusive = true
-pokemon_type = 1023
+pokemon_type = 514
 en_class = 0
 energy_inclusive = true
 check_cards = true
 energy_attatched = -1
 energy_class = "Any"
-energy_type = ExtResource("1_ysryq")
 inclusive_ability = true
 check_ability = false
 contained_abilities = 3

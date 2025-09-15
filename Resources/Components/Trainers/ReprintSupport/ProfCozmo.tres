@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Trainer" load_steps=10 format=3 uid="uid://djhu8r2p78vg"]
+[gd_resource type="Resource" script_class="Trainer" load_steps=11 format=3 uid="uid://djhu8r2p78vg"]
 
 [ext_resource type="Resource" uid="uid://cygbn16c17nf5" path="res://Resources/Components/Effects/Draw/Draw2.tres" id="1_et7ut"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_wt7p7"]
@@ -7,13 +7,13 @@
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="4_wt7p7"]
 [ext_resource type="Script" uid="uid://bgtwlw1edjwyc" path="res://Code/Resource Makers/EffectSpecific/Components/DrawMaker.gd" id="5_i0uys"]
 
-[sub_resource type="Resource" id="Resource_8ckt6"]
+[sub_resource type="Resource" id="Resource_wt7p7"]
 script = ExtResource("2_wt7p7")
 order = Array[int]([])
 draw_ammount = ExtResource("1_et7ut")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
-[sub_resource type="Resource" id="Resource_hxku8"]
+[sub_resource type="Resource" id="Resource_8h85p"]
 script = ExtResource("5_i0uys")
 shuffle_back_first = false
 side = 1
@@ -21,19 +21,23 @@ bottom_deck = true
 simple_constant = 3
 metadata/_custom_type_script = "uid://bgtwlw1edjwyc"
 
-[sub_resource type="Resource" id="Resource_hbxa6"]
+[sub_resource type="Resource" id="Resource_4xqj1"]
 script = ExtResource("2_wt7p7")
 order = Array[int]([])
-draw_ammount = SubResource("Resource_hxku8")
+draw_ammount = SubResource("Resource_8h85p")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_i0uys"]
+script = ExtResource("4_wt7p7")
+prompt = ExtResource("3_8h85p")
+success = SubResource("Resource_4xqj1")
+fail = SubResource("Resource_wt7p7")
+metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [resource]
 script = ExtResource("4_4xqj1")
 considered = "Supporter"
 specific_requirement = ""
 description = "Flip a coin. If heads, draw the bottom 3 cards of your deck. If tails, draw the top 2 cards of your deck. "
-prompt = ExtResource("3_8h85p")
-fail_effect = SubResource("Resource_8ckt6")
-success_effect = SubResource("Resource_hbxa6")
-prompt_effects = Array[ExtResource("4_wt7p7")]([])
+prompt_effects = Array[ExtResource("4_wt7p7")]([SubResource("Resource_i0uys")])
 metadata/_custom_type_script = "uid://crx447i85kshy"

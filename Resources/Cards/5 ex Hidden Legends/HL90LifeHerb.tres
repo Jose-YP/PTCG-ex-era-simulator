@@ -1,36 +1,10 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://dun1tnvh1beg2"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=7 format=3 uid="uid://dun1tnvh1beg2"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_c2xtn"]
 [ext_resource type="Texture2D" uid="uid://d28x0rsvtdd7l" path="res://Art/Cards/5 ex Hidden Legends/90.jpg" id="1_sxdj7"]
 [ext_resource type="Resource" uid="uid://ekj1myy642kh" path="res://Resources/Components/Effects/Prompts/PromptHeads.tres" id="3_fvwym"]
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="4_bfulg"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="4_xjtbk"]
-[ext_resource type="Resource" uid="uid://bcs15wj2goif7" path="res://Resources/Components/Effects/Asks/Stats/AtkDamaged.tres" id="5_sxdj7"]
-[ext_resource type="Script" uid="uid://scca13hg4k1l" path="res://Code/Resource Makers/EffectSpecific/Components/DmgManipMaker.gd" id="6_7luqp"]
-[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="7_3km8i"]
-
-[sub_resource type="Resource" id="Resource_podxu"]
-script = ExtResource("6_7luqp")
-choosing = 4
-mode = "Remove"
-ask = ExtResource("5_sxdj7")
-how_many = 6
-choose_num = 1
-turn_delay = -1
-prevent_KO = false
-anyway_u_like = false
-with_leftover = "None"
-leftover_anyway = false
-vary_choose_num = false
-plus = true
-modifier = 1
-metadata/_custom_type_script = "uid://scca13hg4k1l"
-
-[sub_resource type="Resource" id="Resource_wmad5"]
-script = ExtResource("7_3km8i")
-order = Array[int]([])
-dmgManip = SubResource("Resource_podxu")
-metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_jxw2x"]
 script = ExtResource("4_xjtbk")
@@ -38,7 +12,6 @@ considered = "Item"
 specific_requirement = ""
 description = "Flip a coin. If heads, choose 1 of your Pokémon (excluding Pokémon-ex). Remove all Special Conditions and 6 damage counters from that Pokémon (all if there are less than 6). "
 prompt = ExtResource("3_fvwym")
-success_effect = SubResource("Resource_wmad5")
 prompt_effects = Array[ExtResource("4_bfulg")]([])
 metadata/_custom_type_script = "uid://crx447i85kshy"
 

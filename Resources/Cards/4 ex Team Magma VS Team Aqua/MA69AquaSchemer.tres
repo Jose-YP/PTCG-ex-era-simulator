@@ -1,52 +1,15 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=13 format=3 uid="uid://63e00l8sktme"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=6 format=3 uid="uid://63e00l8sktme"]
 
 [ext_resource type="Texture2D" uid="uid://dxp7t24loe304" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/69.jpg" id="1_lfmbq"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_sxs4v"]
-[ext_resource type="Resource" uid="uid://dm2i7spst0qpp" path="res://Resources/Components/Effects/Identifiers/AnyCard.tres" id="3_ok60t"]
-[ext_resource type="Script" uid="uid://8sh5p3leflla" path="res://Code/Resource Makers/EffectSpecific/Components/CardDisruptMaker.gd" id="4_xcn8p"]
-[ext_resource type="Script" uid="uid://bgtwlw1edjwyc" path="res://Code/Resource Makers/EffectSpecific/Components/DrawMaker.gd" id="5_wa55w"]
-[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="6_sk7qv"]
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="7_8aumr"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="7_yyhty"]
-
-[sub_resource type="Resource" id="Resource_6km0p"]
-script = ExtResource("4_xcn8p")
-send = "Stack"
-send_to = 2
-top_stack = true
-shuffle = false
-card_ammount = 1
-reveal = false
-who_chooses = 4
-side = 1
-card_options = ExtResource("3_ok60t")
-view = true
-portion = -1
-from_stack = 0
-slot_choose_num = -1
-metadata/_custom_type_script = "uid://8sh5p3leflla"
-
-[sub_resource type="Resource" id="Resource_tnlfn"]
-script = ExtResource("5_wa55w")
-shuffle_back_first = false
-side = 1
-bottom_deck = false
-simple_constant = 0
-metadata/_custom_type_script = "uid://bgtwlw1edjwyc"
-
-[sub_resource type="Resource" id="Resource_iai1e"]
-script = ExtResource("6_sk7qv")
-order = Array[int]([2, 8])
-draw_ammount = SubResource("Resource_tnlfn")
-card_disrupt = SubResource("Resource_6km0p")
-metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_8oiib"]
 script = ExtResource("7_yyhty")
 considered = "Supporter"
 specific_requirement = ""
 description = "Discard any 1 Pokémon from your hand. Then draw 3 cards. If you discarded a Pokémon with Team Aqua in its name, draw 4 cards instead."
-always_effect = SubResource("Resource_iai1e")
 prompt_effects = Array[ExtResource("7_8aumr")]([])
 metadata/_custom_type_script = "uid://crx447i85kshy"
 

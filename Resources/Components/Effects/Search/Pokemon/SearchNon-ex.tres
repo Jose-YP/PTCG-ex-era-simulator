@@ -15,6 +15,7 @@ based_on_side = 0
 based_on_slots = 0
 based_on_energy = 0
 portion = -1
+identifier_allowed = -1
 how_many = Array[int]([1])
 of_this = Array[ExtResource("2_j12ry")]([ExtResource("3_giuqq")])
 and_then = ExtResource("1_58i85")

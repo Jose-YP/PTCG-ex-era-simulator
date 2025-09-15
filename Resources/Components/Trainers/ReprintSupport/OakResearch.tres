@@ -1,11 +1,11 @@
-[gd_resource type="Resource" script_class="Trainer" load_steps=7 format=3 uid="uid://opuo5erocnhi"]
+[gd_resource type="Resource" script_class="Trainer" load_steps=8 format=3 uid="uid://opuo5erocnhi"]
 
 [ext_resource type="Script" uid="uid://bgtwlw1edjwyc" path="res://Code/Resource Makers/EffectSpecific/Components/DrawMaker.gd" id="1_wnwgf"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_0psx1"]
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="3_0psx1"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="3_e55w1"]
 
-[sub_resource type="Resource" id="Resource_njg0n"]
+[sub_resource type="Resource" id="Resource_0psx1"]
 script = ExtResource("1_wnwgf")
 shuffle_back_first = true
 side = 1
@@ -13,17 +13,21 @@ bottom_deck = false
 simple_constant = 5
 metadata/_custom_type_script = "uid://bgtwlw1edjwyc"
 
-[sub_resource type="Resource" id="Resource_50r1a"]
+[sub_resource type="Resource" id="Resource_e55w1"]
 script = ExtResource("2_0psx1")
 order = Array[int]([])
-draw_ammount = SubResource("Resource_njg0n")
+draw_ammount = SubResource("Resource_0psx1")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_njg0n"]
+script = ExtResource("3_0psx1")
+success = SubResource("Resource_e55w1")
+metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [resource]
 script = ExtResource("3_e55w1")
 considered = "Supporter"
 specific_requirement = ""
 description = "Shuffle your hand into your deck, then draw 5 cards. "
-always_effect = SubResource("Resource_50r1a")
-prompt_effects = Array[ExtResource("3_0psx1")]([])
+prompt_effects = Array[ExtResource("3_0psx1")]([SubResource("Resource_njg0n")])
 metadata/_custom_type_script = "uid://crx447i85kshy"

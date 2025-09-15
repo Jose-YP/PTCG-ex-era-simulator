@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=19 format=3 uid="uid://cdlsj0xlgu0n"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=20 format=3 uid="uid://cdlsj0xlgu0n"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_c0dsq"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_tp1gn"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="5_hxbuf"]
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="6_le6pv"]
 [ext_resource type="Script" uid="uid://c0ishgbxk63dg" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/DisableMaker.gd" id="7_65xpm"]
+[ext_resource type="Resource" uid="uid://dctc3xbdmiv4" path="res://Resources/Components/Effects/Asks/Types/AnyFireTypes.tres" id="7_sjmsd"]
 [ext_resource type="Resource" uid="uid://bu7xoy1fy00q3" path="res://Resources/Components/Pokemon/Attacks/CommonAttacks/P1Psyshock.tres" id="8_hxbuf"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="9_iq553"]
 [ext_resource type="Resource" uid="uid://cx7v8cyxlierr" path="res://Resources/Components/Effects/Prompts/PromptComparator/IsSolrockInPlay.tres" id="13_opu8w"]
@@ -41,23 +42,21 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_5ld0q"]
 script = ExtResource("7_65xpm")
-side = 2
-slot = 4
-no_weakness = false
-no_resistance = false
-instead_of_damage = false
-do_nothing = false
-attack = 0
-power = 2
-retreat_duration = 1
+disable_power = true
+disable_body = false
 disable_retreat = false
+choose_num = -1
+attack = 0
+atk_effect = true
+attack_names = Array[String]([])
 application = "Slot"
+recieves = ExtResource("7_sjmsd")
 duration = -1
 metadata/_custom_type_script = "uid://c0ishgbxk63dg"
 
 [sub_resource type="Resource" id="Resource_wpc3u"]
 script = ExtResource("2_ncs6m")
-order = null
+order = Array[int]([])
 disable = SubResource("Resource_5ld0q")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 

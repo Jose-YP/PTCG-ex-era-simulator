@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Disable" load_steps=3 format=3 uid="uid://841s025nf4li"]
+
+[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="1_7mn3g"]
+[ext_resource type="Script" uid="uid://c0ishgbxk63dg" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/DisableMaker.gd" id="2_lf6oo"]
+
+[resource]
+script = ExtResource("2_lf6oo")
+disable_power = false
+disable_body = false
+disable_retreat = false
+choose_num = -1
+attack = 1
+atk_effect = true
+attack_names = Array[String]([])
+application = "Slot"
+recieves = ExtResource("1_7mn3g")
+duration = 2
+metadata/_custom_type_script = "uid://c0ishgbxk63dg"

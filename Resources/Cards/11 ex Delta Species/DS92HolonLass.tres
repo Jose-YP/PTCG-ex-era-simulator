@@ -1,62 +1,10 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=20 format=3 uid="uid://cfps337rtsmpi"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=7 format=3 uid="uid://cfps337rtsmpi"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_c210u"]
 [ext_resource type="Texture2D" uid="uid://cbidbiom6jjhq" path="res://Art/Cards/11 ex Delta Species/92.jpg" id="1_kwip2"]
-[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_sjf0f"]
-[ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="3_jkrwu"]
-[ext_resource type="Resource" uid="uid://bl4qnrkh3kxdl" path="res://Resources/Components/Effects/Placement/PutIntoHand.tres" id="3_utur0"]
-[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/Components/SearchMaker.gd" id="4_4unrw"]
-[ext_resource type="Resource" uid="uid://cd880a7x21jgg" path="res://Resources/Components/Effects/Identifiers/Energy/AnyEnergy.tres" id="5_05uh2"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="5_cwdhh"]
-[ext_resource type="Resource" uid="uid://bns8h72u2hxqo" path="res://Resources/Components/Effects/Asks/General/AnyMon.tres" id="8_p2mq1"]
-[ext_resource type="Resource" uid="uid://dm2i7spst0qpp" path="res://Resources/Components/Effects/Identifiers/AnyCard.tres" id="9_25apb"]
-[ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="9_qu4hy"]
-[ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="10_25apb"]
 [ext_resource type="Resource" uid="uid://mcn7y4o7q2uf" path="res://Resources/Components/Effects/Prompts/PromptEffects/HolonDiscard.tres" id="11_ugs01"]
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="13_25apb"]
-
-[sub_resource type="Resource" id="Resource_jylxg"]
-script = ExtResource("9_qu4hy")
-which = "Stack"
-ask = ExtResource("8_p2mq1")
-stack_vars = "prize_cards"
-identifier = ExtResource("9_25apb")
-stack_portion = -1
-cap = -1
-metadata/_custom_type_script = "uid://vjn146j3ayd6"
-
-[sub_resource type="Resource" id="Resource_4nmt5"]
-script = ExtResource("10_25apb")
-comparision_type = "Return"
-first_comparison = SubResource("Resource_jylxg")
-compare_to = "None"
-second_constant = 0
-operate_w_constant = "None"
-metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
-
-[sub_resource type="Resource" id="Resource_05uh2"]
-script = ExtResource("4_4unrw")
-side = 4
-where = 1
-reordering_only = false
-shuffle_first = false
-based_on_side = 0
-based_on_slots = 0
-based_on_energy = 0
-portion = -1
-identifier_allowed = -1
-variable_portion = SubResource("Resource_4nmt5")
-how_many = Array[int]([-1])
-of_this = Array[ExtResource("3_jkrwu")]([ExtResource("5_05uh2")])
-and_then = ExtResource("3_utur0")
-reveal = true
-metadata/_custom_type_script = "uid://cw3yr1k040kw7"
-
-[sub_resource type="Resource" id="Resource_utur0"]
-script = ExtResource("2_sjf0f")
-order = Array[int]([])
-search = SubResource("Resource_05uh2")
-metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_e4w54"]
 script = ExtResource("5_cwdhh")
@@ -64,7 +12,6 @@ considered = "Supporter"
 specific_requirement = "Discard a card from your hand. If you can't discard a card from your hand, you can't play this card. "
 description = "Count the total number of Prize cards left (both yours and your opponent's). Look at that many cards from the top of your deck, choose as many Energy cards as you like, show them to your opponent, and put them into your hand. Put the other cards back on top of your deck. Shuffle your deck afterward. "
 prompt = ExtResource("11_ugs01")
-always_effect = SubResource("Resource_utur0")
 prompt_effects = Array[ExtResource("13_25apb")]([])
 metadata/_custom_type_script = "uid://crx447i85kshy"
 

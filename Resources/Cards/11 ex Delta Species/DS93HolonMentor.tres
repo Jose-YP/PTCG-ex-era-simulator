@@ -1,60 +1,10 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=15 format=3 uid="uid://dpq83tgsde1lq"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=7 format=3 uid="uid://dpq83tgsde1lq"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_cqdsr"]
 [ext_resource type="Texture2D" uid="uid://ct3nosi7e85x4" path="res://Art/Cards/11 ex Delta Species/93.jpg" id="1_j7n0k"]
 [ext_resource type="Resource" uid="uid://mcn7y4o7q2uf" path="res://Resources/Components/Effects/Prompts/PromptEffects/HolonDiscard.tres" id="3_4jc5v"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="4_3y2q1"]
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="4_s80a6"]
-[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="5_s80a6"]
-[ext_resource type="Resource" uid="uid://bl4qnrkh3kxdl" path="res://Resources/Components/Effects/Placement/PutIntoHand.tres" id="6_rnweu"]
-[ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="7_ehvxn"]
-[ext_resource type="Resource" uid="uid://c7itelq8jtjc2" path="res://Resources/Components/EnData/Rainbow.tres" id="8_ajuky"]
-[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/Components/SearchMaker.gd" id="9_nroyw"]
-
-[sub_resource type="Resource" id="Resource_yylhu"]
-script = ExtResource("7_ehvxn")
-description = "Basic Pokemon with HP <= 100"
-must_be_different = false
-broad_class = 1
-exactly = false
-name_chec = 0
-name_array = Array[String]([])
-comparison_type = 0
-type = 0
-HP = 100
-evolves_from = false
-rare_candy = false
-inclusive_class = true
-poke_class = 0
-owner = 0
-stage = 1
-trainer_classes = 0
-energy_class = 3
-energy_provides = ExtResource("8_ajuky")
-metadata/_custom_type_script = "uid://uplawvwcwl8y"
-
-[sub_resource type="Resource" id="Resource_f8ila"]
-script = ExtResource("9_nroyw")
-side = 4
-where = 1
-reordering_only = false
-shuffle_first = false
-based_on_side = 0
-based_on_slots = 0
-based_on_energy = 0
-portion = -1
-identifier_allowed = -1
-how_many = Array[int]([3])
-of_this = Array[ExtResource("7_ehvxn")]([SubResource("Resource_yylhu")])
-and_then = ExtResource("6_rnweu")
-reveal = true
-metadata/_custom_type_script = "uid://cw3yr1k040kw7"
-
-[sub_resource type="Resource" id="Resource_ihu4s"]
-script = ExtResource("5_s80a6")
-order = Array[int]([])
-search = SubResource("Resource_f8ila")
-metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_rkbw3"]
 script = ExtResource("4_3y2q1")
@@ -62,7 +12,6 @@ considered = "Supporter"
 specific_requirement = "Discard a card from your hand. If you can't discard a card from your hand, you can't play this card."
 description = "Search your deck for up to 3 Basic Pokémon that each has 100 HP or less, show them to your opponent, and put them into your hand. Shuffle your deck afterward. "
 prompt = ExtResource("3_4jc5v")
-success_effect = SubResource("Resource_ihu4s")
 prompt_effects = Array[ExtResource("4_s80a6")]([])
 metadata/_custom_type_script = "uid://crx447i85kshy"
 

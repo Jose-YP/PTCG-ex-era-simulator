@@ -889,16 +889,18 @@ func checkup_conditions():
 		prints("Poison", applied_condition.poison)
 		damage_counters += applied_condition.poison * 10
 		ui_slot.damage_counter.set_damage(damage_counters)
-		
+	
+	#Prior to Sun & Moon, if a Pokémon was Burned, the coin toss to cure it would happen first,
+	#then the damage would only be inflicted if the Burn was not cured. https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_Checkup
 	if applied_condition.burn != 0:
-		prints("Burn", applied_condition.burn)
-		damage_counters += applied_condition.burn * 10
-		ui_slot.damage_counter.set_damage(damage_counters)
-		
 		var result: bool = await condition_rule_utilize(Globals.board_state.burn_rules)
 		if result:
 			applied_condition.burn = 0
-		
+		else:
+			prints("Burn", applied_condition.burn)
+			damage_counters += applied_condition.burn * 10
+			ui_slot.damage_counter.set_damage(damage_counters)
+	
 	if applied_condition.turn_cond == Consts.TURN_COND.PARALYSIS and not is_attacker():
 		print("Paralysis")
 		applied_condition.turn_cond = Consts.TURN_COND.NONE

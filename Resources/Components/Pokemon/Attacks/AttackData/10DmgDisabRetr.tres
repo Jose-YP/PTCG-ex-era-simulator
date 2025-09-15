@@ -1,19 +1,12 @@
-[gd_resource type="Resource" script_class="AttackData" load_steps=7 format=3 uid="uid://8cvarib60ven"]
+[gd_resource type="Resource" script_class="AttackData" load_steps=5 format=3 uid="uid://8cvarib60ven"]
 
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="1_57apo"]
-[ext_resource type="Resource" uid="uid://b5h3buocpx1gn" path="res://Resources/Components/Effects/Disable/DefSelfCantRetreat1.tres" id="1_gnwgx"]
-[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_57apo"]
+[ext_resource type="Resource" uid="uid://c8sjke0awg8n7" path="res://Resources/Components/Effects/Disable/DefNoRetreat.tres" id="2_gnwgx"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="3_ic5lk"]
-
-[sub_resource type="Resource" id="Resource_65c7g"]
-script = ExtResource("2_57apo")
-order = Array[int]([])
-disable = ExtResource("1_gnwgx")
-metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_ic5lk"]
 script = ExtResource("1_57apo")
-success = SubResource("Resource_65c7g")
+success = ExtResource("2_gnwgx")
 metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [resource]

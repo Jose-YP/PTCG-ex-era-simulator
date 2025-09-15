@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="AttackData" load_steps=5 format=3 uid="uid://msdpae7drmpd"]
+
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="1_7v5ml"]
+[ext_resource type="Resource" uid="uid://dr35h5ltr0i6r" path="res://Resources/Components/Effects/Conditions/BasicPoison.tres" id="2_beecm"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="3_c3j7g"]
+
+[sub_resource type="Resource" id="Resource_fq5iy"]
+script = ExtResource("1_7v5ml")
+success = ExtResource("2_beecm")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
+[resource]
+script = ExtResource("3_c3j7g")
+description = "The Defending Pokémon is now Poisoned."
+prompt_reliant = false
+initial_main_DMG = 10
+defender_properties = 0
+condition = 1
+before_damage = false
+replace_num = false
+share_prompt = false
+prompt_effects = Array[ExtResource("1_7v5ml")]([SubResource("Resource_fq5iy")])
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 0
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"

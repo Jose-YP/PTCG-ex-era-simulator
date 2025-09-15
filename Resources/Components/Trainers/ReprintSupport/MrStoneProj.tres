@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Trainer" load_steps=14 format=3 uid="uid://b21iobw0hdknx"]
+[gd_resource type="Resource" script_class="Trainer" load_steps=15 format=3 uid="uid://b21iobw0hdknx"]
 
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="1_p5owb"]
 [ext_resource type="Resource" uid="uid://bl4qnrkh3kxdl" path="res://Resources/Components/Effects/Placement/PutIntoHand.tres" id="2_exwbn"]
@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="7_exwbn"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="7_iq3it"]
 
-[sub_resource type="Resource" id="Resource_ijn54"]
+[sub_resource type="Resource" id="Resource_exwbn"]
 script = ExtResource("5_6n5mt")
 side = 4
 where = 2
@@ -26,10 +26,10 @@ and_then = ExtResource("2_exwbn")
 reveal = true
 metadata/_custom_type_script = "uid://cw3yr1k040kw7"
 
-[sub_resource type="Resource" id="Resource_42lnl"]
+[sub_resource type="Resource" id="Resource_ygacn"]
 script = ExtResource("1_p5owb")
 order = Array[int]([])
-search = SubResource("Resource_ijn54")
+search = SubResource("Resource_exwbn")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_vwo4h"]
@@ -45,7 +45,7 @@ choose_location = "None"
 which_stack = 0
 metadata/_custom_type_script = "uid://b85jmc7067bjc"
 
-[sub_resource type="Resource" id="Resource_teysv"]
+[sub_resource type="Resource" id="Resource_kpjkk"]
 script = ExtResource("5_6n5mt")
 side = 4
 where = 1
@@ -62,19 +62,23 @@ and_then = ExtResource("2_exwbn")
 reveal = true
 metadata/_custom_type_script = "uid://cw3yr1k040kw7"
 
-[sub_resource type="Resource" id="Resource_2nldm"]
+[sub_resource type="Resource" id="Resource_6n5mt"]
 script = ExtResource("1_p5owb")
 order = Array[int]([])
-search = SubResource("Resource_teysv")
+search = SubResource("Resource_kpjkk")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_cgk4a"]
+script = ExtResource("7_exwbn")
+prompt = SubResource("Resource_vwo4h")
+success = SubResource("Resource_6n5mt")
+fail = SubResource("Resource_ygacn")
+metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [resource]
 script = ExtResource("7_iq3it")
 considered = "Supporter"
 specific_requirement = ""
 description = "Search your deck for up to 2 Basic Energy cards, show them to your opponent, and put them into your hand. Shuffle your deck afterward. Or, search your discard pile for up to 2 Basic cards, show them to your opponent, and put them into your hand. "
-prompt = SubResource("Resource_vwo4h")
-fail_effect = SubResource("Resource_42lnl")
-success_effect = SubResource("Resource_2nldm")
-prompt_effects = Array[ExtResource("7_exwbn")]([])
+prompt_effects = Array[ExtResource("7_exwbn")]([SubResource("Resource_cgk4a")])
 metadata/_custom_type_script = "uid://crx447i85kshy"

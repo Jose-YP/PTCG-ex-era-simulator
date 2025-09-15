@@ -14,7 +14,7 @@
 [ext_resource type="Resource" uid="uid://dxgh8i8vloevn" path="res://Resources/Cards/4 ex Team Magma VS Team Aqua/MA88DoubleRainbowEnergy.tres" id="12_ffvgx"]
 [ext_resource type="Resource" uid="uid://kfeondy2dwe8" path="res://Resources/Cards/2 ex Sandstorm/SS73Psyduck.tres" id="13_3i1sd"]
 [ext_resource type="Resource" uid="uid://b8yqcgbbjoj6l" path="res://Resources/Cards/2 ex Sandstorm/SS17Golduck.tres" id="14_tokot"]
-[ext_resource type="Resource" uid="uid://nhq1fs6l8ykw" path="res://Resources/Cards/13 ex Holon Phantoms/HP43Golduck.tres" id="15_c75q8"]
+[ext_resource type="Resource" uid="uid://nhq1fs6l8ykw" path="res://Resources/Cards/13 ex Holon Phantoms/HP43GolduckDelta.tres" id="15_c75q8"]
 [ext_resource type="Resource" uid="uid://wpff32qsa8ol" path="res://Resources/Cards/2 ex Sandstorm/SS80Slakoth.tres" id="16_uklk7"]
 [ext_resource type="Resource" uid="uid://bj4pfyxayrcpy" path="res://Resources/Cards/2 ex Sandstorm/SS52Vigoroth.tres" id="17_c8x4j"]
 [ext_resource type="Resource" uid="uid://cfjddps750f64" path="res://Resources/Cards/1 ex Ruby & Saphire/RS12Slaking.tres" id="18_60wvu"]

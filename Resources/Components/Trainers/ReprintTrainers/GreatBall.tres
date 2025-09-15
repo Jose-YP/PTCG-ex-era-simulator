@@ -1,21 +1,45 @@
-[gd_resource type="Resource" script_class="Trainer" load_steps=6 format=3 uid="uid://c0oeeh1qgr7xx"]
+[gd_resource type="Resource" script_class="Trainer" load_steps=11 format=3 uid="uid://c0oeeh1qgr7xx"]
 
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="1_i80t6"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="1_t7cny"]
-[ext_resource type="Resource" uid="uid://c6f8ha5u6exae" path="res://Resources/Components/Effects/Search/Pokemon/SrchBasic2Play.tres" id="2_2yg52"]
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="3_2yg52"]
+[ext_resource type="Resource" uid="uid://bl4qnrkh3kxdl" path="res://Resources/Components/Effects/Placement/PutIntoHand.tres" id="3_mkjfm"]
+[ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="4_o41hj"]
+[ext_resource type="Resource" uid="uid://c5ivtueeotpq2" path="res://Resources/Components/Effects/Identifiers/Pokemon/Non-ex Basics.tres" id="5_rqarc"]
+[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/Components/SearchMaker.gd" id="6_3gojk"]
 
-[sub_resource type="Resource" id="Resource_46lfi"]
+[sub_resource type="Resource" id="Resource_q8mco"]
+script = ExtResource("6_3gojk")
+side = 4
+where = 1
+reordering_only = false
+shuffle_first = false
+based_on_side = 0
+based_on_slots = 0
+based_on_energy = 0
+portion = -1
+identifier_allowed = -1
+how_many = Array[int]([1])
+of_this = Array[ExtResource("4_o41hj")]([ExtResource("5_rqarc")])
+and_then = ExtResource("3_mkjfm")
+reveal = true
+metadata/_custom_type_script = "uid://cw3yr1k040kw7"
+
+[sub_resource type="Resource" id="Resource_rwku0"]
 script = ExtResource("1_t7cny")
 order = Array[int]([])
-search = ExtResource("2_2yg52")
+search = SubResource("Resource_q8mco")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_6cf63"]
+script = ExtResource("3_2yg52")
+success = SubResource("Resource_rwku0")
+metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [resource]
 script = ExtResource("1_i80t6")
 considered = "Item"
 specific_requirement = ""
 description = "Search your deck for a Basic Pokémon (excluding Pokémon-ex) and put it onto your Bench. Shuffle your deck afterward. "
-always_effect = SubResource("Resource_46lfi")
-prompt_effects = Array[ExtResource("3_2yg52")]([])
+prompt_effects = Array[ExtResource("3_2yg52")]([SubResource("Resource_6cf63")])
 metadata/_custom_type_script = "uid://crx447i85kshy"

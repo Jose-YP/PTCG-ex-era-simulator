@@ -13,18 +13,15 @@
 
 [sub_resource type="Resource" id="Resource_bwkib"]
 script = ExtResource("5_5wqg8")
-side = 2
-slot = 4
-no_weakness = false
-no_resistance = false
-instead_of_damage = false
-do_nothing = false
-attack = 2
-power = 0
-retreat_duration = 1
+disable_power = false
+disable_body = false
 disable_retreat = false
+choose_num = -1
+attack = 1
+atk_effect = true
+attack_names = Array[String](["Slashing Strike"])
 application = "Slot"
-duration = -1
+duration = 2
 metadata/_custom_type_script = "uid://c0ishgbxk63dg"
 
 [sub_resource type="Resource" id="Resource_1iu0x"]

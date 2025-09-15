@@ -1,39 +1,10 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=17 format=3 uid="uid://eahd8tk8osi7"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=8 format=3 uid="uid://eahd8tk8osi7"]
 
 [ext_resource type="Texture2D" uid="uid://c3xfuliym4p36" path="res://Art/Cards/3 ex Dragon/84.jpg" id="1_lvakk"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_ssyyn"]
-[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_w6pb1"]
-[ext_resource type="Resource" uid="uid://bbmbuhmwxnnck" path="res://Resources/Components/Effects/Placement/BackIntoDeck.tres" id="4_yiqet"]
-[ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="5_u6h4o"]
-[ext_resource type="Resource" uid="uid://d2vm6chtedrum" path="res://Resources/Components/Effects/Identifiers/Energy/BasicEnergy.tres" id="6_dxm1w"]
-[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/Components/SearchMaker.gd" id="7_utupw"]
 [ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="8_2d35l"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="9_htuvh"]
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="9_w6pb1"]
-[ext_resource type="Resource" uid="uid://dpga1rw11a4yh" path="res://Resources/Components/Effects/Search/Energy/Srch1DiscBasicEn2Hnd.tres" id="10_xfscs"]
-
-[sub_resource type="Resource" id="Resource_l7xtl"]
-script = ExtResource("7_utupw")
-side = 4
-where = 2
-reordering_only = false
-shuffle_first = false
-based_on_side = 0
-based_on_slots = 0
-based_on_energy = 0
-portion = -1
-identifier_allowed = -1
-how_many = Array[int]([3])
-of_this = Array[ExtResource("5_u6h4o")]([ExtResource("6_dxm1w")])
-and_then = ExtResource("4_yiqet")
-reveal = true
-metadata/_custom_type_script = "uid://cw3yr1k040kw7"
-
-[sub_resource type="Resource" id="Resource_irdt6"]
-script = ExtResource("3_w6pb1")
-order = Array[int]([])
-search = SubResource("Resource_l7xtl")
-metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_blh7f"]
 script = ExtResource("8_2d35l")
@@ -48,20 +19,12 @@ choose_location = "None"
 which_stack = 0
 metadata/_custom_type_script = "uid://b85jmc7067bjc"
 
-[sub_resource type="Resource" id="Resource_lo4xw"]
-script = ExtResource("3_w6pb1")
-order = Array[int]([])
-search = ExtResource("10_xfscs")
-metadata/_custom_type_script = "uid://dmulm3x3dj842"
-
 [sub_resource type="Resource" id="Resource_w5nry"]
 script = ExtResource("9_htuvh")
 considered = "Item"
 specific_requirement = ""
 description = "Search your discard pile for basic Energy cards. You may either show 1 basic Energy card to your opponent and put it into your hand, or show 3 basic Energy cards to your opponent and shuffle them into your deck. "
 prompt = SubResource("Resource_blh7f")
-fail_effect = SubResource("Resource_irdt6")
-success_effect = SubResource("Resource_lo4xw")
 prompt_effects = Array[ExtResource("9_w6pb1")]([])
 metadata/_custom_type_script = "uid://crx447i85kshy"
 

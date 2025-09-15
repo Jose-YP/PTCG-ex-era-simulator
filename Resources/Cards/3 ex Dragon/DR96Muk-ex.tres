@@ -1,0 +1,164 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=27 format=3 uid="uid://cvt6ea18bhvg7"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_gds2e"]
+[ext_resource type="Texture2D" uid="uid://xp306pyloy5t" path="res://Art/Cards/3 ex Dragon/96.jpg" id="1_if0if"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_rugs4"]
+[ext_resource type="Resource" uid="uid://c63wb1xvpkbi8" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Grass1.tres" id="3_4jymv"]
+[ext_resource type="Resource" uid="uid://msdpae7drmpd" path="res://Resources/Components/Pokemon/Attacks/AttackData/10Poision.tres" id="4_hmb32"]
+[ext_resource type="Resource" uid="uid://bdwp1hpi4q83j" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/G2C1.tres" id="5_tdc08"]
+[ext_resource type="Resource" uid="uid://bkt6ry7vyha70" path="res://Resources/Components/Effects/Asks/General/Other.tres" id="6_8iukc"]
+[ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="7_xmc2l"]
+[ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="8_u6obb"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="9_stdpe"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="10_5ww7s"]
+[ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="11_34mkp"]
+[ext_resource type="Script" uid="uid://c0ishgbxk63dg" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/DisableMaker.gd" id="12_qq28v"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="13_lrybg"]
+[ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="14_u0hcv"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="15_xem0b"]
+
+[sub_resource type="Resource" id="Resource_5ome3"]
+script = ExtResource("2_rugs4")
+name = "Poision Breath"
+attack_cost = ExtResource("3_4jymv")
+attack_data = ExtResource("4_hmb32")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_atf0r"]
+script = ExtResource("7_xmc2l")
+which = "Slot"
+ask = ExtResource("6_8iukc")
+slot_vars = "final_retreat"
+cap = -1
+metadata/_custom_type_script = "uid://vjn146j3ayd6"
+
+[sub_resource type="Resource" id="Resource_f14yx"]
+script = ExtResource("8_u6obb")
+comparision_type = "Return"
+first_comparison = SubResource("Resource_atf0r")
+compare_to = "None"
+second_constant = 0
+operate_w_constant = "None"
+metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
+
+[sub_resource type="Resource" id="Resource_6m27o"]
+script = ExtResource("10_5ww7s")
+description = "Does 40 damage plus 10 more damage for each   {Colorless} Energy in the Defending Pokémon's Retreat Cost (after applying effects to the Retreat Cost)."
+prompt_reliant = false
+initial_main_DMG = 40
+defender_properties = 0
+condition = 1
+before_damage = false
+replace_num = false
+share_prompt = false
+prompt_effects = Array[ExtResource("9_stdpe")]([])
+conditional_self_dmg = false
+self_damage = 0
+mod_prompt = false
+modifier = 0
+modifier_num = 10
+comparator = SubResource("Resource_f14yx")
+both_active = false
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_ei1gc"]
+script = ExtResource("2_rugs4")
+name = "Slimy Water"
+attack_cost = ExtResource("5_tdc08")
+attack_data = SubResource("Resource_6m27o")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_t4ery"]
+script = ExtResource("11_34mkp")
+boolean_type = "And"
+previous_src_trg = false
+side_target = 3
+slot_target = 4
+specifically = Array[String]([])
+tool_attatched = false
+comparison_type = 1
+max_hp = -10
+damage_taken = -10
+retreat_cost = -1
+evo_type = "Don't Check"
+stage = 7
+rare_candy = false
+class_inclusive = true
+pokemon_class = 63
+owner_inclusive = true
+pokemon_owner = 31
+type_inclusive = true
+pokemon_type = 1023
+en_class = 0
+energy_inclusive = true
+check_cards = true
+energy_attatched = -1
+energy_class = "Any"
+inclusive_ability = false
+check_ability = true
+contained_abilities = 3
+specific_abilities = Array[String](["Toxic Gas"])
+check_condition = false
+desired_condition = 0
+knocked_out = false
+metadata/_custom_type_script = "uid://mkjynqda7q5g"
+
+[sub_resource type="Resource" id="Resource_8qem1"]
+script = ExtResource("12_qq28v")
+disable_power = true
+disable_body = true
+disable_retreat = false
+choose_num = -1
+attack = 0
+atk_effect = true
+attack_names = Array[String]([])
+application = "Slot"
+recieves = SubResource("Resource_t4ery")
+duration = -1
+metadata/_custom_type_script = "uid://c0ishgbxk63dg"
+
+[sub_resource type="Resource" id="Resource_u74nh"]
+script = ExtResource("13_lrybg")
+order = Array[int]([])
+disable = SubResource("Resource_8qem1")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_3d68m"]
+script = ExtResource("14_u0hcv")
+category = "Body"
+name = "Toxic Gas"
+description = "As long as [name] is your Active Pokémon, ignore all Poké-Powers and Poké-Bodies other than Toxic Gas. "
+affected_by_condition = false
+active = true
+how_often = "Once per Mon"
+independent_src_trg = false
+passive = SubResource("Resource_u74nh")
+metadata/_custom_type_script = "uid://bs2y8ocljilv8"
+
+[sub_resource type="Resource" id="Resource_5yd8b"]
+script = ExtResource("15_xem0b")
+HP = 100
+retreat = 2
+pokebody = SubResource("Resource_3d68m")
+attacks = Array[ExtResource("2_rugs4")]([SubResource("Resource_5ome3"), SubResource("Resource_ei1gc")])
+evo_stage = "Stage 1"
+evolves_from = "Grimer"
+considered = 2
+owner = 0
+type = 1
+weak = 16
+resist = 0
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_gds2e")
+name = "Muk ex"
+image = ExtResource("1_if0if")
+illustrator = "Hikaru Koike"
+number = 96
+rarity = 0
+expansion = 0
+categories = 1
+pokemon_properties = SubResource("Resource_5yd8b")
+fossil = false
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

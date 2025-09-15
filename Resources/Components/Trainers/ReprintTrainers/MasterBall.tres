@@ -1,21 +1,55 @@
-[gd_resource type="Resource" script_class="Trainer" load_steps=6 format=3 uid="uid://d3ojtgvcvli2v"]
+[gd_resource type="Resource" script_class="Trainer" load_steps=12 format=3 uid="uid://d3ojtgvcvli2v"]
 
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="1_r1ka8"]
-[ext_resource type="Resource" uid="uid://b08mssp5wegne" path="res://Resources/Components/Effects/Search/MasterBallSearch.tres" id="2_2xsib"]
+[ext_resource type="Script" uid="uid://cdyba0wadidwb" path="res://Code/Resource Makers/EffectSpecific/Components/PlacementMaker.gd" id="3_dxxq1"]
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="3_r1ka8"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="4_dxxq1"]
+[ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="4_klgj2"]
+[ext_resource type="Resource" uid="uid://b3q5vmepfee8k" path="res://Resources/Components/Effects/Identifiers/Pokemon/AnyPokemon.tres" id="5_ai54o"]
+[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/Components/SearchMaker.gd" id="6_qgmsn"]
 
-[sub_resource type="Resource" id="Resource_ai54o"]
+[sub_resource type="Resource" id="Resource_d0ibc"]
+script = ExtResource("3_dxxq1")
+which = 0
+top_deck = false
+stack = 0
+use_as = 0
+reorder_type = 2
+shuffle = false
+evolve = false
+
+[sub_resource type="Resource" id="Resource_d3e7e"]
+script = ExtResource("6_qgmsn")
+side = 4
+where = 1
+reordering_only = false
+shuffle_first = false
+based_on_side = 0
+based_on_slots = 0
+based_on_energy = 0
+portion = 7
+identifier_allowed = -1
+how_many = Array[int]([1])
+of_this = Array[ExtResource("4_klgj2")]([ExtResource("5_ai54o")])
+and_then = SubResource("Resource_d0ibc")
+reveal = true
+metadata/_custom_type_script = "uid://cw3yr1k040kw7"
+
+[sub_resource type="Resource" id="Resource_ttb62"]
 script = ExtResource("1_r1ka8")
 order = Array[int]([])
-search = ExtResource("2_2xsib")
+search = SubResource("Resource_d3e7e")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_3gk5n"]
+script = ExtResource("3_r1ka8")
+success = SubResource("Resource_ttb62")
+metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [resource]
 script = ExtResource("4_dxxq1")
 considered = "Item"
 specific_requirement = ""
 description = "Look at the top 7 cards from your deck. Choose a Basic Pokémon or Evolution card from those cards, show it to your opponent, and put it into your hand. Put the other 6 cards back on top of your deck. Shuffle your deck afterward. "
-always_effect = SubResource("Resource_ai54o")
-prompt_effects = Array[ExtResource("3_r1ka8")]([])
+prompt_effects = Array[ExtResource("3_r1ka8")]([SubResource("Resource_3gk5n")])
 metadata/_custom_type_script = "uid://crx447i85kshy"

@@ -1,43 +1,15 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://b3y5i8lcqwvu6"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=6 format=3 uid="uid://b3y5i8lcqwvu6"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_iw2ee"]
 [ext_resource type="Texture2D" uid="uid://dyt6qui12djhn" path="res://Art/Cards/6 ex FireRed & LeafGreen/96.jpg" id="1_xs0cg"]
-[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_sch7r"]
-[ext_resource type="Resource" uid="uid://bnd3pbei56xqo" path="res://Resources/Components/Effects/Placement/ReorderSearch.tres" id="4_2nhg1"]
-[ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="5_iv4ld"]
-[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/Components/SearchMaker.gd" id="6_bk1ty"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="7_7762u"]
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="7_sch7r"]
-
-[sub_resource type="Resource" id="Resource_dg0km"]
-script = ExtResource("6_bk1ty")
-side = 4
-where = 1
-reordering_only = true
-shuffle_first = true
-based_on_side = 0
-based_on_slots = 0
-based_on_energy = 0
-portion = 6
-identifier_allowed = -1
-how_many = Array[int]([1])
-of_this = Array[ExtResource("5_iv4ld")]([])
-and_then = ExtResource("4_2nhg1")
-reveal = false
-metadata/_custom_type_script = "uid://cw3yr1k040kw7"
-
-[sub_resource type="Resource" id="Resource_4xvta"]
-script = ExtResource("3_sch7r")
-order = Array[int]([])
-search = SubResource("Resource_dg0km")
-metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_45duw"]
 script = ExtResource("7_7762u")
 considered = "Item"
 specific_requirement = ""
 description = "Shuffle your deck. Look at 6 cards from the top of your deck, then put them back on top of your deck in any order. "
-always_effect = SubResource("Resource_4xvta")
 prompt_effects = Array[ExtResource("7_sch7r")]([])
 metadata/_custom_type_script = "uid://crx447i85kshy"
 

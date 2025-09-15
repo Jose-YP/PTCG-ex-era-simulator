@@ -1,37 +1,37 @@
 [gd_resource type="Resource" script_class="Base_Card" load_steps=33 format=3 uid="uid://c6ev6ok3w7mil"]
 
-[ext_resource type="Texture2D" uid="uid://b8i8xqc4nowe6" path="res://Art/Cards/11 ex Delta Species/8.jpg" id="1_dinw0"]
-[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_kfetw"]
-[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_uad6p"]
-[ext_resource type="Resource" uid="uid://b5h5yekm4jaw4" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/M1C1.tres" id="3_uad6p"]
-[ext_resource type="Script" uid="uid://crscwhvugaoxa" path="res://Code/Resource Makers/PokemonSpecific/AttackCostMaker.gd" id="5_63y04"]
-[ext_resource type="Resource" uid="uid://byyujdycsbwrg" path="res://Resources/Components/Effects/DmgManip/Remove/SelfHeal20.tres" id="5_yqyxp"]
-[ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="7_e40k5"]
-[ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="8_y2ads"]
-[ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="9_fvjo4"]
-[ext_resource type="Resource" uid="uid://bn48qpc8mbr6s" path="res://Resources/Components/Effects/Asks/Class&Owner/OtherEXMons.tres" id="9_y1d2f"]
-[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="10_shqn3"]
-[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="11_h3uyi"]
-[ext_resource type="Resource" uid="uid://df3airxjjdlpx" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/L1M1C1.tres" id="12_ssn7t"]
-[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="13_oe741"]
-[ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/BuffMaker.gd" id="14_f83lj"]
-[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="15_840xe"]
-[ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="16_wvleg"]
-[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="17_dgg5v"]
+[ext_resource type="Texture2D" uid="uid://b8i8xqc4nowe6" path="res://Art/Cards/11 ex Delta Species/8.jpg" id="1_2v8k6"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_niy66"]
+[ext_resource type="Resource" uid="uid://b5h5yekm4jaw4" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/M1C1.tres" id="3_o04tg"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="4_06lf5"]
+[ext_resource type="Resource" uid="uid://byyujdycsbwrg" path="res://Resources/Components/Effects/DmgManip/Remove/SelfHeal20.tres" id="5_b722s"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="6_3lhiu"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="7_tn4p8"]
+[ext_resource type="Script" uid="uid://crscwhvugaoxa" path="res://Code/Resource Makers/PokemonSpecific/AttackCostMaker.gd" id="8_vetta"]
+[ext_resource type="Resource" uid="uid://bn48qpc8mbr6s" path="res://Resources/Components/Effects/Asks/Class&Owner/OtherEXMons.tres" id="9_cjn2s"]
+[ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="10_hs62q"]
+[ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="11_tkj2o"]
+[ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="12_msu5v"]
+[ext_resource type="Resource" uid="uid://df3airxjjdlpx" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/L1M1C1.tres" id="13_lqafl"]
+[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="14_njxy2"]
+[ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/BuffMaker.gd" id="15_f3hu0"]
+[ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="16_wm6nk"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="17_qcylf"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="18_1cspb"]
 
 [sub_resource type="Resource" id="Resource_63y04"]
-script = ExtResource("15_840xe")
+script = ExtResource("6_3lhiu")
 order = Array[int]([])
-dmgManip = ExtResource("5_yqyxp")
+dmgManip = ExtResource("5_b722s")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_lhna5"]
-script = ExtResource("10_shqn3")
+script = ExtResource("4_06lf5")
 success = SubResource("Resource_63y04")
 metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [sub_resource type="Resource" id="Resource_e40k5"]
-script = ExtResource("11_h3uyi")
+script = ExtResource("7_tn4p8")
 description = "Remove 2 damage counters from [name]."
 prompt_reliant = false
 initial_main_DMG = 20
@@ -40,7 +40,7 @@ condition = 1
 before_damage = false
 replace_num = false
 share_prompt = false
-prompt_effects = Array[ExtResource("10_shqn3")]([SubResource("Resource_lhna5")])
+prompt_effects = Array[ExtResource("4_06lf5")]([SubResource("Resource_lhna5")])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false
@@ -50,14 +50,14 @@ both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_y2ads"]
-script = ExtResource("2_uad6p")
+script = ExtResource("2_niy66")
 name = "Spiral Drain"
-attack_cost = ExtResource("3_uad6p")
+attack_cost = ExtResource("3_o04tg")
 attack_data = SubResource("Resource_e40k5")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_rxkpo"]
-script = ExtResource("5_63y04")
+script = ExtResource("8_vetta")
 grass_cost = 0
 fire_cost = 0
 water_cost = 0
@@ -70,15 +70,15 @@ colorless_cost = 3
 metadata/_custom_type_script = "uid://crscwhvugaoxa"
 
 [sub_resource type="Resource" id="Resource_fvjo4"]
-script = ExtResource("7_e40k5")
+script = ExtResource("10_hs62q")
 which = "Slot"
-ask = ExtResource("9_y1d2f")
+ask = ExtResource("9_cjn2s")
 slot_vars = "current_card"
 cap = -1
 metadata/_custom_type_script = "uid://vjn146j3ayd6"
 
 [sub_resource type="Resource" id="Resource_shqn3"]
-script = ExtResource("8_y2ads")
+script = ExtResource("11_tkj2o")
 comparision_type = "Not Equal"
 first_comparison = SubResource("Resource_fvjo4")
 compare_to = "None"
@@ -87,7 +87,7 @@ operate_w_constant = "None"
 metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
 [sub_resource type="Resource" id="Resource_h3uyi"]
-script = ExtResource("9_fvjo4")
+script = ExtResource("12_msu5v")
 formal_question = false
 question_string = ""
 yes_answer = ""
@@ -101,7 +101,7 @@ which_stack = 0
 metadata/_custom_type_script = "uid://b85jmc7067bjc"
 
 [sub_resource type="Resource" id="Resource_ssn7t"]
-script = ExtResource("11_h3uyi")
+script = ExtResource("7_tn4p8")
 description = "If your opponent has no Pokémon-ex in play, this attack does nothing."
 prompt_reliant = true
 prompt = SubResource("Resource_h3uyi")
@@ -111,7 +111,7 @@ condition = 1
 before_damage = false
 replace_num = false
 share_prompt = false
-prompt_effects = Array[ExtResource("10_shqn3")]([])
+prompt_effects = Array[ExtResource("4_06lf5")]([])
 conditional_self_dmg = false
 self_damage = 0
 mod_prompt = false
@@ -121,14 +121,14 @@ both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_dinw0"]
-script = ExtResource("2_uad6p")
+script = ExtResource("2_niy66")
 name = "Extra Crush"
 attack_cost = SubResource("Resource_rxkpo")
 attack_data = SubResource("Resource_ssn7t")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_rboeu"]
-script = ExtResource("14_f83lj")
+script = ExtResource("15_f3hu0")
 description = "Extra Crush now costs {Lightning}{Metal}{Colorless}"
 unstackable_id = ""
 stackable = false
@@ -139,7 +139,7 @@ attack = 0
 defense = 0
 retreat_change = 0
 cost_modifier = "Replace"
-attack_cost = ExtResource("12_ssn7t")
+attack_cost = ExtResource("13_lqafl")
 modify = 0
 plus = false
 condition_immune = 0
@@ -155,18 +155,18 @@ resistance = false
 effects = false
 attack_names = Array[String](["Extra Crush"])
 application = "Slot"
-recieves = ExtResource("13_oe741")
+recieves = ExtResource("14_njxy2")
 duration = -1
 metadata/_custom_type_script = "uid://coojhwe6m20gd"
 
 [sub_resource type="Resource" id="Resource_13es8"]
-script = ExtResource("15_840xe")
+script = ExtResource("6_3lhiu")
 order = Array[int]([])
 buff = SubResource("Resource_rboeu")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_fgkgd"]
-script = ExtResource("16_wvleg")
+script = ExtResource("16_wm6nk")
 category = "Body"
 name = "Delta Aura"
 description = "If you have Latios or Latios ex in play, the attack cost of [name]'s Extra Crush is now {Lightning}{Metal}{Colorless}."
@@ -178,11 +178,11 @@ passive = SubResource("Resource_13es8")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 
 [sub_resource type="Resource" id="Resource_5sm8k"]
-script = ExtResource("17_dgg5v")
+script = ExtResource("17_qcylf")
 HP = 70
 retreat = 1
 pokebody = SubResource("Resource_fgkgd")
-attacks = Array[ExtResource("2_uad6p")]([SubResource("Resource_y2ads"), SubResource("Resource_dinw0")])
+attacks = Array[ExtResource("2_niy66")]([SubResource("Resource_y2ads"), SubResource("Resource_dinw0")])
 evo_stage = "Basic"
 evolves_from = ""
 considered = 9
@@ -193,9 +193,9 @@ resist = 48
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
-script = ExtResource("1_kfetw")
+script = ExtResource("18_1cspb")
 name = "Latias"
-image = ExtResource("1_dinw0")
+image = ExtResource("1_2v8k6")
 illustrator = "Ryo Ueda"
 number = 8
 rarity = 3

@@ -1,10 +1,29 @@
-[gd_resource type="Resource" script_class="Trainer" load_steps=2 format=3 uid="uid://cw0e2wqoptjag"]
+[gd_resource type="Resource" script_class="Trainer" load_steps=8 format=3 uid="uid://cw0e2wqoptjag"]
 
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="1_1owdt"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="1_w6lme"]
+[ext_resource type="Script" uid="uid://bbs6ywsbueb13" path="res://Code/Resource Makers/EffectSpecific/Components/CheatPlayMaker.gd" id="2_d7cfc"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_kst0e"]
+
+[sub_resource type="Resource" id="Resource_o6hwv"]
+script = ExtResource("2_d7cfc")
+metadata/_custom_type_script = "uid://bbs6ywsbueb13"
+
+[sub_resource type="Resource" id="Resource_in4xo"]
+script = ExtResource("3_kst0e")
+order = Array[int]([])
+cheat_play = SubResource("Resource_o6hwv")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_2fowk"]
+script = ExtResource("1_w6lme")
+success = SubResource("Resource_in4xo")
+metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [resource]
 script = ExtResource("1_1owdt")
 considered = "Item"
 specific_requirement = ""
 description = "Choose 1 of your Basic Pokémon in play. If you have a Stage 2 card in your hand that evolves from that Pokémon, put that card on the Basic Pokémon. (This counts as evolving that Pokémon.) You can't use this card during your first turn or on a Basic Pokémon that was put into play this turn."
+prompt_effects = Array[ExtResource("1_w6lme")]([SubResource("Resource_2fowk")])
 metadata/_custom_type_script = "uid://crx447i85kshy"

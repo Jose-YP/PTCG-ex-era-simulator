@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="Identifier" load_steps=3 format=3 uid="uid://c5ivtueeotpq2"]
+
+[ext_resource type="Resource" uid="uid://c7itelq8jtjc2" path="res://Resources/Components/EnData/Rainbow.tres" id="1_asnbd"]
+[ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="2_urwli"]
+
+[resource]
+script = ExtResource("2_urwli")
+description = "Non ex Basic Pokemon"
+must_be_different = false
+broad_class = 1
+exactly = false
+name_chec = 0
+name_array = Array[String]([])
+comparison_type = 1
+type = 0
+HP = -10
+evolves_from = false
+rare_candy = false
+inclusive_class = false
+poke_class = 2
+owner = 0
+stage = 1
+trainer_classes = 0
+energy_class = 3
+energy_provides = ExtResource("1_asnbd")
+metadata/_custom_type_script = "uid://uplawvwcwl8y"

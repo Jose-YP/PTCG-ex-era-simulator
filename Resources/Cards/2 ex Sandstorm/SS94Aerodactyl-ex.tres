@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=23 format=3 uid="uid://cicby0spxjxfm"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=25 format=3 uid="uid://cicby0spxjxfm"]
 
 [ext_resource type="Texture2D" uid="uid://byqdysq34panm" path="res://Art/Cards/2 ex Sandstorm/94.jpg" id="1_0k6if"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_0xs4c"]
@@ -11,8 +11,10 @@
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="8_6hnva"]
 [ext_resource type="Resource" uid="uid://bns8h72u2hxqo" path="res://Resources/Components/Effects/Asks/General/AnyMon.tres" id="9_bxygc"]
 [ext_resource type="Script" uid="uid://bics3dumv7avj" path="res://Code/Resource Makers/GeneralUse/OccuranceMaker.gd" id="10_n54sb"]
+[ext_resource type="Resource" uid="uid://njjce7akxhr" path="res://Resources/Components/Effects/Identifiers/Trainers/Tool.tres" id="11_75t4a"]
 [ext_resource type="Script" uid="uid://c0ishgbxk63dg" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/DisableMaker.gd" id="11_ga2yi"]
 [ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="12_3pmxv"]
+[ext_resource type="Resource" uid="uid://crhg4u3yu2cso" path="res://Resources/Components/Effects/Asks/General/FromOther.tres" id="12_clu2s"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="13_3xxuk"]
 
 [sub_resource type="Resource" id="Resource_5i7ce"]
@@ -43,23 +45,22 @@ metadata/_custom_type_script = "uid://bics3dumv7avj"
 
 [sub_resource type="Resource" id="Resource_vg1px"]
 script = ExtResource("11_ga2yi")
-side = 2
-slot = 4
-no_weakness = false
-no_resistance = false
-instead_of_damage = false
-do_nothing = false
-attack = 0
-power = 0
-retreat_duration = 1
+card_type = ExtResource("11_75t4a")
+disable_power = false
+disable_body = false
 disable_retreat = false
-application = "Slot"
+choose_num = -1
+attack = 0
+atk_effect = true
+attack_names = Array[String]([])
+application = "Side"
+recieves = ExtResource("12_clu2s")
 duration = -1
 metadata/_custom_type_script = "uid://c0ishgbxk63dg"
 
 [sub_resource type="Resource" id="Resource_xpjov"]
 script = ExtResource("8_6hnva")
-order = null
+order = Array[int]([])
 disable = SubResource("Resource_vg1px")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 

@@ -1,38 +1,10 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=17 format=3 uid="uid://bnrmvsrss0e1q"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=8 format=3 uid="uid://bnrmvsrss0e1q"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_1u7fr"]
 [ext_resource type="Texture2D" uid="uid://dw00bs0lsixrj" path="res://Art/Cards/11 ex Delta Species/98.jpg" id="1_blyid"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="3_yg4et"]
-[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_yxh7y"]
-[ext_resource type="Resource" uid="uid://bl4qnrkh3kxdl" path="res://Resources/Components/Effects/Placement/PutIntoHand.tres" id="4_ce64y"]
-[ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="5_qe1rn"]
-[ext_resource type="Resource" uid="uid://c85epaca3amei" path="res://Resources/Components/Effects/Identifiers/Trainers/HolonSupporter.tres" id="6_86y8r"]
-[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/Components/SearchMaker.gd" id="7_xyg5n"]
 [ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="8_iyc0n"]
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="9_ce64y"]
-
-[sub_resource type="Resource" id="Resource_2bi6k"]
-script = ExtResource("7_xyg5n")
-side = 4
-where = 2
-reordering_only = false
-shuffle_first = false
-based_on_side = 0
-based_on_slots = 0
-based_on_energy = 0
-portion = -1
-identifier_allowed = -1
-how_many = Array[int]([1])
-of_this = Array[ExtResource("5_qe1rn")]([ExtResource("6_86y8r")])
-and_then = ExtResource("4_ce64y")
-reveal = true
-metadata/_custom_type_script = "uid://cw3yr1k040kw7"
-
-[sub_resource type="Resource" id="Resource_aw4pp"]
-script = ExtResource("3_yxh7y")
-order = Array[int]([])
-search = SubResource("Resource_2bi6k")
-metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_bodlt"]
 script = ExtResource("8_iyc0n")
@@ -47,37 +19,12 @@ choose_location = "None"
 which_stack = 0
 metadata/_custom_type_script = "uid://b85jmc7067bjc"
 
-[sub_resource type="Resource" id="Resource_qoym3"]
-script = ExtResource("7_xyg5n")
-side = 4
-where = 1
-reordering_only = false
-shuffle_first = false
-based_on_side = 0
-based_on_slots = 0
-based_on_energy = 0
-portion = -1
-identifier_allowed = -1
-how_many = Array[int]([1])
-of_this = Array[ExtResource("5_qe1rn")]([ExtResource("6_86y8r")])
-and_then = ExtResource("4_ce64y")
-reveal = true
-metadata/_custom_type_script = "uid://cw3yr1k040kw7"
-
-[sub_resource type="Resource" id="Resource_uq65b"]
-script = ExtResource("3_yxh7y")
-order = Array[int]([])
-search = SubResource("Resource_qoym3")
-metadata/_custom_type_script = "uid://dmulm3x3dj842"
-
 [sub_resource type="Resource" id="Resource_nv4wp"]
 script = ExtResource("3_yg4et")
 considered = "Item"
 specific_requirement = ""
 description = "Search your deck for a Supporter card that has Holon in its name, show it to your opponent, and put it into your hand. Shuffle your deck afterward. Or, search your discard pile for a Supporter card that has Holon in its name, show it to your opponent, and put it into your hand."
 prompt = SubResource("Resource_bodlt")
-fail_effect = SubResource("Resource_aw4pp")
-success_effect = SubResource("Resource_uq65b")
 prompt_effects = Array[ExtResource("9_ce64y")]([])
 metadata/_custom_type_script = "uid://crx447i85kshy"
 

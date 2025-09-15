@@ -29,7 +29,7 @@ class_name SlotAsk
 ##Only including specified classes or excluding specified
 @export var class_inclusive: bool = true
 @export_flags("non-ex", "ex", "Baby", "Delta", "Star", 
-"Dark") var pokemon_class: int = 63
+ "Dark") var pokemon_class: int = 63
 @export var owner_inclusive: bool = true
 @export_flags("None", "Aqua", "Magma", "Rocket", "Holon") var pokemon_owner: int = 31
 
@@ -37,10 +37,13 @@ class_name SlotAsk
 ##Check if the pokemon has this type
 @export var type_inclusive: bool = true
 @export_flags("Grass","Fire","Water",
-"Lightning","Psychic","Fighting",
-"Darkness","Metal","Colorless") var pokemon_type: int = 1023
+ "Lightning","Psychic","Fighting",
+ "Darkness","Metal","Colorless") var pokemon_type: int = 1023
 
 @export_group("Energy Attatched")
+##Energy classes will mainly be seen through name
+@export_flags("None", "React", "Holon",
+ "Magma", "Aqua", "Rocket") var en_class: int = 0
 ##Look for energy that is of the specified type or ones that aren't
 @export var energy_inclusive: bool = true
 ##If this is true it will count the number of energy cards
@@ -53,6 +56,7 @@ class_name SlotAsk
 @export var energy_type: EnData
 
 @export_group("Ability")
+@export var inclusive_ability: bool = true
 @export var check_ability: bool = false
 @export_flags("Body", "Power") var contained_abilities: int = 3
 @export var specific_abilities: Array[String]
@@ -110,19 +114,9 @@ func check_ask(slot: PokeSlot) -> bool:
 	#inclusive class xor~ inside class
 	
 	if pokemon_type != 0 and pokemon_type != 1023:
-		print_verbose("[center]-----------------------------------------------------------")
-		print_verbose("[center]Type Flag")
-		#Check if the pokemon is type inclusive xor~ type
-		var types: Array[String] = Convert.flags_to_type_array(slot.current_card.pokemon_properties.type)
-		var type_str: String = "[center]Type: "
-		for loc_type in types:
-			type_str +=  Convert.get_type_rich_color(loc_type) + loc_type + "[/color]"
-		print_verbose(type_str, "\n", slot.current_card.pokemon_properties.type & pokemon_type, 
-		 not (slot.current_card.pokemon_properties.type & pokemon_type != 0 and not type_inclusive))
-		
-		var type_bool: bool = (slot.current_card.pokemon_properties.type & pokemon_type != 0) == type_inclusive
-		if not type_bool: return false
-		result = type_bool and result
+		result = ask_type(slot) and result
+		if not result: return false
+	
 	#To Activate
 	#Who should be checked
 	if max_hp != -10:
@@ -151,19 +145,7 @@ func check_ask(slot: PokeSlot) -> bool:
 	
 	#If energy attatched isn't -1 check to see if a pokemon has x ammount attatched
 	if energy_attatched != -1:
-		print_verbose("[center]-----------------------------------------------------------")
-		print_verbose("[center]Energy Attatched")
-		print_verbose("Check Cards?", check_cards, "\t", energy_class)
-		print_verbose(str("Checking for: ", energy_type.get_string()) if energy_type else "")
-		
-		var using = slot.energy_cards if energy_class == "Any" else slot.get_total_en_categories(energy_class)
-		
-		#This accountf or energy type but not energy category
-		var total: int = using.size() if check_cards and not energy_type else slot.get_total_energy(energy_type, using)
-		var passes: bool = total >= energy_attatched if comparison_type == 1 else total <= energy_attatched
-		print_verbose("Total: ",total, passes)
-		
-		result = passes and result
+		result = ask_energy(slot) and result
 	
 	#Check if any desired condition exists in the pokemon
 	if check_condition:
@@ -174,9 +156,69 @@ func check_ask(slot: PokeSlot) -> bool:
 		
 		result = affected and result
 	
+	if check_ability:
+		if contained_abilities & 1 != 0:
+			result = result and ask_ability(slot, true)
+		
+		if contained_abilities & 2 != 0:
+			result = result and ask_ability(slot, false)
+		
+	
 	##Check if any pokemon has been knocked out
 	#result = result and slot.knocked_out if knocked_out else result
 	print_verbose("\nFINAL RESULT FOR ", slot.get_card_name(), result,"\n")
+	
+	return result
+
+func ask_type(slot: PokeSlot):
+	print_verbose("[center]-----------------------------------------------------------")
+	print_verbose("[center]Type Flag")
+	#Check if the pokemon is type inclusive xor~ type
+	var types: Array[String] = Convert.flags_to_type_array(slot.current_card.pokemon_properties.type)
+	var type_str: String = "[center]Type: "
+	for loc_type in types:
+		type_str +=  Convert.get_type_rich_color(loc_type) + loc_type + "[/color]"
+	
+	print_verbose(type_str, "\n", slot.current_card.pokemon_properties.type & pokemon_type, 
+	 not (slot.current_card.pokemon_properties.type & pokemon_type != 0 and not type_inclusive))
+	
+	return (slot.current_card.pokemon_properties.type & pokemon_type != 0) == type_inclusive
+
+func ask_energy(slot: PokeSlot) -> bool:
+	print_verbose("[center]-----------------------------------------------------------")
+	print_verbose("[center]Energy Attatched")
+	print_verbose("Check Cards?", check_cards, "\t", energy_class)
+	print_verbose(str("Checking for: ", energy_type.get_string()) if energy_type else "")
+	
+	var using = slot.energy_cards if energy_class == "Any" else slot.get_total_en_categories(energy_class)
+	
+	if en_class > 0 and en_class < 63:
+		#None
+		if en_class & 1 != 0:
+			pass
+		else:
+			var filter_out: Array[String]
+			if en_class & 2 != 0: filter_out.append("React")
+			if en_class & 4 != 0: filter_out.append("Holon")
+			if en_class & 8 != 0: filter_out.append("Magma")
+			if en_class & 16 != 0: filter_out.append("Aqua")
+			if en_class & 32 != 0: filter_out.append("Rocket")
+			using = using.filter(func (card: Base_Card): 
+				for word in filter_out:
+					if card.name.contains(word): return true
+				return false)
+	
+	#This accountf or energy type but not energy category
+	var total: int = using.size() if check_cards and not energy_type else slot.get_total_energy(energy_type, using)
+	
+	print_verbose("Total: ",total)
+	return total >= energy_attatched if comparison_type == 1 else total <= energy_attatched
+
+func ask_ability(slot: PokeSlot, body: bool) -> bool:
+	var ability: Ability = slot.get_pokedata().pokebody if body else slot.get_pokedata().pokepower
+	var result: bool = (ability != null) == inclusive_ability
+	if specific_abilities.size() != 0:
+		result = (ability in specific_abilities) == inclusive_ability and result
 	
 	return result
 

@@ -1,35 +1,15 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://deq0ap6i1b46v"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=6 format=3 uid="uid://deq0ap6i1b46v"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_d30oc"]
 [ext_resource type="Texture2D" uid="uid://gdocf52xtbf6" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/85.jpg" id="1_w5da3"]
-[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_or31c"]
-[ext_resource type="Script" uid="uid://curklvf1517ml" path="res://Code/Resource Makers/EffectSpecific/Components/SwapMaker.gd" id="4_jgrt0"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="5_e3fdt"]
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="5_or31c"]
-
-[sub_resource type="Resource" id="Resource_084e2"]
-script = ExtResource("4_jgrt0")
-force_reversable = false
-record_target = false
-choose_active = true
-both_active = false
-chosing = 3
-affected = 3
-autofill = "None"
-metadata/_custom_type_script = "uid://curklvf1517ml"
-
-[sub_resource type="Resource" id="Resource_x077e"]
-script = ExtResource("3_or31c")
-order = Array[int]([])
-swap = SubResource("Resource_084e2")
-metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_lgwh5"]
 script = ExtResource("5_e3fdt")
 considered = "Item"
 specific_requirement = ""
 description = "Your opponent switches 1 of his or her Defending Pokémon with 1 of his or her Benched Pokémon, if any. You switch 1 of your Active Pokémon with 1 of your Benched Pokémon, if any. "
-always_effect = SubResource("Resource_x077e")
 prompt_effects = Array[ExtResource("5_or31c")]([])
 metadata/_custom_type_script = "uid://crx447i85kshy"
 
