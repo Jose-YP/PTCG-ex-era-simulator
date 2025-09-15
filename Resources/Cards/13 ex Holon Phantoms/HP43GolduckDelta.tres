@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=25 format=3 uid="uid://nhq1fs6l8ykw"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=31 format=3 uid="uid://nhq1fs6l8ykw"]
 
 [ext_resource type="Texture2D" uid="uid://dqcrwypkplgbr" path="res://Art/Cards/13 ex Holon Phantoms/43.jpg" id="1_dmosp"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_ufi1r"]
@@ -12,8 +12,12 @@
 [ext_resource type="Resource" uid="uid://bkt6ry7vyha70" path="res://Resources/Components/Effects/Asks/General/Other.tres" id="10_fwmng"]
 [ext_resource type="Script" uid="uid://c0ishgbxk63dg" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/DisableMaker.gd" id="11_akypb"]
 [ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="12_hhqbu"]
+[ext_resource type="Resource" uid="uid://bns8h72u2hxqo" path="res://Resources/Components/Effects/Asks/General/AnyMon.tres" id="12_vycfy"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="13_v8mdn"]
+[ext_resource type="Resource" uid="uid://c38e8w0u6uyg5" path="res://Resources/Components/Effects/Identifiers/Trainers/HolonStadium.tres" id="13_vfpol"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="14_ichuk"]
+[ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="14_msykk"]
+[ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="15_5cuvv"]
 
 [sub_resource type="Resource" id="Resource_fmsk3"]
 script = ExtResource("4_o2xrt")
@@ -99,12 +103,32 @@ order = Array[int]([])
 disable = SubResource("Resource_l6qmq")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
+[sub_resource type="Resource" id="Resource_t5xna"]
+script = ExtResource("14_msykk")
+which = "Stack"
+ask = ExtResource("12_vycfy")
+stack_vars = "cards_in_play"
+identifier = ExtResource("13_vfpol")
+stack_portion = -1
+cap = -1
+metadata/_custom_type_script = "uid://vjn146j3ayd6"
+
+[sub_resource type="Resource" id="Resource_fwmng"]
+script = ExtResource("15_5cuvv")
+comparision_type = "Equals"
+first_comparison = SubResource("Resource_t5xna")
+compare_to = "None"
+second_constant = 1
+operate_w_constant = "None"
+metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
+
 [sub_resource type="Resource" id="Resource_xqktl"]
 script = ExtResource("6_vfpol")
 formal_question = false
 question_string = ""
 yes_answer = ""
 no_answer = ""
+comparator = SubResource("Resource_fwmng")
 can_reverse = true
 occurance = false
 chooser = 0

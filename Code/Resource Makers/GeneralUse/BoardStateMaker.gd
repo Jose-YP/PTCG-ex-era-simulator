@@ -21,6 +21,10 @@ class_name BoardState
 @export var away_side: Consts.PLAYER_TYPES = Consts.PLAYER_TYPES.CPU
 @export var away: SideState
 
+func duplicate_sides():
+	home = home.duplicate_deep()
+	away = away.duplicate_deep()
+
 func get_player_type(home_bool: bool) -> Consts.PLAYER_TYPES:
 	return home_side if home_bool else away_side
 

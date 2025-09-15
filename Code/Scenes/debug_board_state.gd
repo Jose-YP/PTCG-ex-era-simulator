@@ -18,16 +18,20 @@ func _ready() -> void:
 	add_child(full_ui)
 	full_ui.home_side = board_state.home_side
 	Globals.board_state = board_state
-	new_setup(true)
-	new_setup(false)
+	
+	board_state.duplicate_sides()
+	set_up_stacks(true)
+	set_up_stacks(false)
+	new_setup_slots(true)
+	new_setup_slots(false)
 	
 	fundies.current_turn_print()
 
-func set_up(home: bool):
-	var temp_side: SideState = board_state.get_side(home).duplicate()
+func set_up_stacks(home: bool):
+	var temp_side: SideState = board_state.get_side(home)
 	var ui: CardSideUI = full_ui.get_home_side(home)
 	var player_type: Consts.PLAYER_TYPES = board_state.get_player_type(home)
-	var stacks: CardStacks = temp_side.card_stacks.duplicate()
+	var stacks: CardStacks = temp_side.card_stacks.duplicate_deep()
 	
 	Globals.board_state = board_state
 	
@@ -40,6 +44,12 @@ func set_up(home: bool):
 	
 	fundies.stack_manager.assign_card_stacks(stacks, home)
 	stacks.make_deck()
+
+func set_up_slots(home: bool):
+	var temp_side: SideState = board_state.get_side(home)
+	var ui: CardSideUI = full_ui.get_home_side(home)
+	var player_type: Consts.PLAYER_TYPES = board_state.get_player_type(home)
+	var stacks: CardStacks = fundies.stack_manager.get_stacks(home)
 	
 	#Set up pre defined slots
 	for slot in temp_side.slots:
@@ -62,11 +72,11 @@ func set_up(home: bool):
 
 #Haven't made
 #Refactored version that uses deep_duplicated resources that hopefully solve set_up's old issues
-func new_setup(home: bool):
-	var temp_side: SideState = board_state.get_side(home).duplicate_deep()
+func new_setup_slots(home: bool):
+	var temp_side: SideState = board_state.get_side(home)
 	var ui: CardSideUI = full_ui.get_home_side(home)
 	var player_type: Consts.PLAYER_TYPES = board_state.get_player_type(home)
-	var stacks: CardStacks = temp_side.card_stacks.duplicate_deep()
+	var stacks: CardStacks = fundies.stack_manager.get_stacks(home)
 	
 	Globals.board_state = board_state
 	

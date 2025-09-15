@@ -29,24 +29,25 @@
 [sub_resource type="Resource" id="Resource_fiq25"]
 script = ExtResource("20_tohjk")
 cards = Dictionary[ExtResource("1_6yy8l"), int]({
-ExtResource("2_vr2hh"): 2,
-ExtResource("3_83fc0"): 2,
-ExtResource("4_385pm"): 4,
-ExtResource("5_ovipe"): 4,
-ExtResource("6_sjhqk"): 4,
-ExtResource("7_83v2a"): 6,
-ExtResource("8_t25he"): 6,
-ExtResource("9_uix2g"): 4,
-ExtResource("10_gyuky"): 3,
-ExtResource("11_7uitr"): 3,
-ExtResource("12_0f83l"): 1,
-ExtResource("13_aef44"): 1,
-ExtResource("14_x4v06"): 1,
-ExtResource("15_s7spi"): 4,
-ExtResource("16_rd50m"): 4,
-ExtResource("4_vr2hh"): 4,
+ExtResource("25_83fc0"): 1,
+ExtResource("19_vvgts"): 3,
 ExtResource("18_wprx8"): 4,
-ExtResource("19_vvgts"): 3
+ExtResource("4_vr2hh"): 4,
+ExtResource("16_rd50m"): 4,
+ExtResource("15_s7spi"): 4,
+ExtResource("14_x4v06"): 1,
+ExtResource("13_aef44"): 1,
+ExtResource("12_0f83l"): 1,
+ExtResource("11_7uitr"): 2,
+ExtResource("10_gyuky"): 3,
+ExtResource("9_uix2g"): 4,
+ExtResource("8_t25he"): 6,
+ExtResource("7_83v2a"): 6,
+ExtResource("6_sjhqk"): 4,
+ExtResource("5_ovipe"): 4,
+ExtResource("4_385pm"): 4,
+ExtResource("3_83fc0"): 2,
+ExtResource("2_vr2hh"): 2
 })
 metadata/_custom_type_script = "uid://e660iomt5e76"
 
@@ -86,24 +87,6 @@ damage_counters = 0
 final_retreat = 0
 evolved_from = Array[ExtResource("1_6yy8l")]([])
 energy_cards = Array[ExtResource("1_6yy8l")]([])
-tm_cards = Array[ExtResource("1_6yy8l")]([])
-changes = Dictionary[ExtResource("24_7qrui"), int]({})
-evolution_ready = false
-evolved_this_turn = false
-body_disabled = false
-power_disabled = false
-dealt_damage = 0
-energy_discarded = 0
-metadata/_custom_type_script = "uid://cs70ix831b5g4"
-
-[sub_resource type="Resource" id="Resource_385pm"]
-script = ExtResource("23_kcubd")
-current_card = ExtResource("10_gyuky")
-max_HP = 0
-damage_counters = 0
-final_retreat = 0
-evolved_from = Array[ExtResource("1_6yy8l")]([ExtResource("13_aef44"), ExtResource("25_83fc0")])
-energy_cards = Array[ExtResource("1_6yy8l")]([ExtResource("8_t25he"), ExtResource("8_t25he"), ExtResource("8_t25he")])
 tm_cards = Array[ExtResource("1_6yy8l")]([])
 changes = Dictionary[ExtResource("24_7qrui"), int]({})
 evolution_ready = false
@@ -168,6 +151,24 @@ dealt_damage = 0
 energy_discarded = 0
 metadata/_custom_type_script = "uid://cs70ix831b5g4"
 
+[sub_resource type="Resource" id="Resource_vr2hh"]
+script = ExtResource("23_kcubd")
+current_card = ExtResource("10_gyuky")
+max_HP = 0
+damage_counters = 0
+final_retreat = 0
+evolved_from = Array[ExtResource("1_6yy8l")]([ExtResource("13_aef44"), ExtResource("11_7uitr")])
+energy_cards = Array[ExtResource("1_6yy8l")]([ExtResource("8_t25he"), ExtResource("8_t25he"), ExtResource("8_t25he")])
+tm_cards = Array[ExtResource("1_6yy8l")]([])
+changes = Dictionary[ExtResource("24_7qrui"), int]({})
+evolution_ready = false
+evolved_this_turn = false
+body_disabled = false
+power_disabled = false
+dealt_damage = 0
+energy_discarded = 0
+metadata/_custom_type_script = "uid://cs70ix831b5g4"
+
 [resource]
 script = ExtResource("22_0vp4n")
 card_stacks = SubResource("Resource_152a3")
@@ -176,9 +177,9 @@ bench_size = 5
 slots = Dictionary[ExtResource("23_kcubd"), bool]({
 SubResource("Resource_vnfgl"): false,
 SubResource("Resource_a6m0u"): false,
-SubResource("Resource_385pm"): true,
 SubResource("Resource_ovipe"): true,
 SubResource("Resource_sjhqk"): false,
-SubResource("Resource_83v2a"): false
+SubResource("Resource_83v2a"): false,
+SubResource("Resource_vr2hh"): true
 })
 metadata/_custom_type_script = "uid://dgqpurnuh14t1"
