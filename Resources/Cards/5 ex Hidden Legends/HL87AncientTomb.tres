@@ -11,34 +11,20 @@
 
 [sub_resource type="Resource" id="Resource_xs7yy"]
 script = ExtResource("6_swpl7")
-disable_power = false
-disable_body = false
-disable_retreat = false
-choose_num = -1
-attack = 0
-atk_effect = true
-attack_names = Array[String]([])
-application = "Slot"
-duration = -1
 
 [sub_resource type="Resource" id="Resource_5oguf"]
 script = ExtResource("7_0d2ot")
-order = Array[int]([])
 disable = SubResource("Resource_xs7yy")
 
 [sub_resource type="Resource" id="Resource_7qsgn"]
 script = ExtResource("5_26a27")
-when_to_check = 0
 determine_ask = ExtResource("4_n7bfi")
 stadium_effect = SubResource("Resource_5oguf")
-bench_size = -1
 
 [sub_resource type="Resource" id="Resource_ypso2"]
 script = ExtResource("3_n8vos")
 considered = "Stadium"
-specific_requirement = ""
 description = "Don't apply Weakness for all Pokémon in play (excluding Pokémon-ex and Pokémon that has an owner in its name). "
-prompt_effects = Array[ExtResource("3_66lj1")]([])
 stadium_properties = SubResource("Resource_7qsgn")
 
 [resource]
@@ -51,4 +37,3 @@ rarity = 1
 expansion = 4
 categories = 2
 trainer_properties = SubResource("Resource_ypso2")
-fossil = false

@@ -9,8 +9,6 @@ script = ExtResource("2_8rclq")
 comparision_type = "Not Equal"
 first_comparison = ExtResource("1_l1ldg")
 compare_to = "Const"
-second_constant = 0
-operate_w_constant = "None"
 metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
 [resource]

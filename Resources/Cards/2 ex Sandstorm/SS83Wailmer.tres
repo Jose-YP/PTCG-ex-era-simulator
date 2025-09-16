@@ -26,20 +26,8 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_3ppn7"]
 script = ExtResource("7_cligu")
 description = "The Defending Pokémon is now Asleep."
-prompt_reliant = false
 initial_main_DMG = 30
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
 prompt_effects = Array[ExtResource("6_6vpiu")]([SubResource("Resource_58cyx")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_ua0d7"]
@@ -54,13 +42,6 @@ script = ExtResource("8_qw0w3")
 HP = 80
 retreat = 3
 attacks = Array[ExtResource("2_6vpiu")]([SubResource("Resource_tdyj8"), SubResource("Resource_ua0d7")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
-type = 1
-weak = 0
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -69,9 +50,7 @@ name = "Wailmer"
 image = ExtResource("1_ngljn")
 illustrator = "Ken Sugimori"
 number = 83
-rarity = 0
 expansion = 1
 categories = 1
 pokemon_properties = SubResource("Resource_mr6ld")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

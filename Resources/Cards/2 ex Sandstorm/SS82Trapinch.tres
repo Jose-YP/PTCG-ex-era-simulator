@@ -12,7 +12,6 @@
 [sub_resource type="Resource" id="Resource_4evqt"]
 script = ExtResource("2_b2cgp")
 name = "Sand Pit"
-attack_cost = ExtResource("3_1xxaq")
 attack_data = ExtResource("4_48vvr")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
@@ -26,15 +25,9 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_215jg"]
 script = ExtResource("9_i6ubk")
 HP = 40
-retreat = 1
 attacks = Array[ExtResource("2_b2cgp")]([SubResource("Resource_4evqt"), SubResource("Resource_a08xd")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
 type = 32
 weak = 1
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -43,9 +36,7 @@ name = "Trapinch"
 image = ExtResource("1_7qe1l")
 illustrator = "Mitsuhiro Arita"
 number = 82
-rarity = 0
 expansion = 1
 categories = 1
 pokemon_properties = SubResource("Resource_215jg")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

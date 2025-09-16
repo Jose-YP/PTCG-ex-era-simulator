@@ -1,31 +1,41 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=14 format=3 uid="uid://d2y3sugoh0afg"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=20 format=3 uid="uid://d2y3sugoh0afg"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_6qq3e"]
 [ext_resource type="Texture2D" uid="uid://bx8ogc7daapja" path="res://Art/Cards/13 ex Holon Phantoms/2.jpg" id="1_18hv8"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_xexyg"]
 [ext_resource type="Resource" uid="uid://cif1lb0agms18" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/D1C1.tres" id="3_xhaw3"]
+[ext_resource type="Resource" uid="uid://bkt6ry7vyha70" path="res://Resources/Components/Effects/Asks/General/Other.tres" id="5_18hv8"]
+[ext_resource type="Script" uid="uid://scca13hg4k1l" path="res://Code/Resource Makers/EffectSpecific/Components/DmgManipMaker.gd" id="6_xexyg"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="7_3n3j3"]
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="7_xexyg"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="7_xhaw3"]
 [ext_resource type="Resource" uid="uid://b4p6bn3ei1onu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/M1C2.tres" id="8_so0l1"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="10_tuilv"]
+
+[sub_resource type="Resource" id="Resource_r5mel"]
+script = ExtResource("6_xexyg")
+mode = "Add"
+ask = ExtResource("5_18hv8")
+how_many = 5
+choose_num = -1
+turn_delay = 1
+metadata/_custom_type_script = "uid://scca13hg4k1l"
+
+[sub_resource type="Resource" id="Resource_wp6it"]
+script = ExtResource("7_xhaw3")
+dmgManip = SubResource("Resource_r5mel")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_mciaj"]
+script = ExtResource("7_xexyg")
+success = SubResource("Resource_wp6it")
+metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [sub_resource type="Resource" id="Resource_wo8fp"]
 script = ExtResource("7_3n3j3")
 description = "Put 5 damage counters on the Defending Pokémon at the end of your opponent's next turn."
-prompt_reliant = false
 initial_main_DMG = 20
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("7_xexyg")]([])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
+prompt_effects = Array[ExtResource("7_xexyg")]([SubResource("Resource_mciaj")])
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_ro2ig"]
@@ -38,20 +48,7 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_r15t4"]
 script = ExtResource("7_3n3j3")
 description = "The Defending Pokémon is now Poisoned."
-prompt_reliant = false
 initial_main_DMG = 50
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("7_xexyg")]([])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_xsvtt"]
@@ -69,10 +66,8 @@ attacks = Array[ExtResource("2_xexyg")]([SubResource("Resource_ro2ig"), SubResou
 evo_stage = "Stage 2"
 evolves_from = "Lileep"
 considered = 9
-owner = 0
 type = 192
 weak = 2
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -85,5 +80,4 @@ rarity = 3
 expansion = 12
 categories = 1
 pokemon_properties = SubResource("Resource_80iua")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

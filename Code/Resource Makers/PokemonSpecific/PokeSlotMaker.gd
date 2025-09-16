@@ -31,8 +31,13 @@ var power_ready: bool
 @export var energy_cards: Array[Base_Card] = []
 @export var tm_cards: Array[Base_Card] = []
 @export var tool_card: Base_Card
-@export var changes: Dictionary[SlotChange, int]
 @export var applied_condition: Condition = Condition.new()
+@export_subgroup("Slot Changes")
+@export var buffs: Dictionary[SlotChange, int]
+@export var disables: Dictionary[SlotChange, int]
+@export var overrides: Dictionary[SlotChange, int]
+@export var type_changes: Dictionary[SlotChange, int]
+@export var rule_changes: Dictionary[SlotChange, int]
 #endregion
 #--------------------------------------
 #--------------------------------------
@@ -83,27 +88,6 @@ signal checked_up()
 #endregion
 #--------------------------------------
 
-func duplicate_deep() -> PokeSlot:
-	var copy: PokeSlot = self.duplicate(true)
-	
-	copy.current_card = current_card.duplicate_deep()
-	copy.evolved_from = []
-	copy.energy_cards = []
-	copy.tm_cards = []
-	
-	for card in evolved_from:
-		copy.evolved_from.append(card.duplicate_deep())
-	
-	for card in energy_cards:
-		copy.energy_cards.append(card.duplicate_deep())
-	
-	for card in tm_cards:
-		copy.tm_cards.append(card.duplicate_deep())
-	
-	return copy
-
-#--------------------------------------
-#region CHECKUP & POWER/BODY
 func pokemon_checkup() -> void:
 	if not is_filled(): return
 	evolved_this_turn = false
@@ -128,13 +112,7 @@ func pokemon_checkup() -> void:
 		else:
 			print(dmg_timer)
 	
-	for change in changes:
-		if changes[change] == -1:
-			continue
-		elif changes[change] == 0:
-			remove_slot_change(change)
-		else:
-			changes[change] -= 1
+	manage_change_timers()
 	
 #endregion
 	
@@ -148,6 +126,9 @@ func pokemon_checkup() -> void:
 	Globals.fundies.record_single_src_trg(self)
 	await ability_emit(checked_up)
 	Globals.fundies.remove_top_source_target()
+
+#--------------------------------------
+#region POWER/BODY
 
 func setup_abilities():
 	Globals.fundies.record_single_src_trg(self)
@@ -343,7 +324,7 @@ func get_max_hp() -> int:
 	return max_HP
 
 func get_retreat() -> int:
-	if changes.size() == 0: return get_pokedata().retreat
+	if buffs.size() == 0: return get_pokedata().retreat
 	
 	var base: int = Globals.fundies.full_check_stat_buff(
 		self, Consts.STAT_BUFFS.RETREAT, false, true)
@@ -518,7 +499,7 @@ func dmg_manip(dmg_change: int, timer: int = -1) -> void:
 func set_max_hp():
 	#First look for replacments
 	var current: int = get_pokedata().HP
-	if changes.size() != 0:
+	if buffs.size() != 0:
 		var replace: int = Globals.fundies.full_check_stat_buff(
 		self, Consts.STAT_BUFFS.HP, false, true)
 		if replace != 0:
@@ -921,11 +902,11 @@ func condition_rule_utilize(using: Consts.COND_RULES):
 		Consts.COND_RULES.NONE:
 			return false
 		Consts.COND_RULES.FLIP:
-			var result: int = Consts.coinflip_once.start_comparision()
+			var result: int = LateConsts.coinflip_once.start_comparision()
 			await SignalBus.finished_coinflip
 			return result != 0
 		Consts.COND_RULES.TWOFLIP:
-			var result = Consts.coinflip_twice.start_comparision()
+			var result = LateConsts.coinflip_twice.start_comparision()
 			await SignalBus.finished_coinflip
 			print(result)
 			return result
@@ -950,36 +931,53 @@ func confusion_check() -> bool:
 
 #--------------------------------------
 #region SLOT CHANGE HANDLERS
+func get_changes(change: String) -> Dictionary[SlotChange, int]:
+	match change:
+		"Buff":
+			return buffs
+		"Disable":
+			return disables
+		"Override":
+			return overrides
+		"TypeChange":
+			return type_changes
+		"RuleChange":
+			return rule_changes
+	
+	return {null: 0}
+
 func apply_slot_change(apply: SlotChange):
-	if is_filled() and not apply in changes:
-		changes[apply] = apply.duration
-		changes_ui_check()
+	if is_filled() and not apply in buffs:
+		var dict: Dictionary = get_changes(apply.get_script().get_global_name())
+		
+		if not apply in dict:
+			dict[apply] = apply.duration
+			changes_ui_check()
 
 func remove_slot_change(removing: SlotChange):
-	if is_filled() and removing in changes:
-		changes.erase(removing)
-		changes_ui_check()
+	if is_filled():
+		var dict: Dictionary = get_changes(removing.get_script().get_global_name())
+		
+		if removing in dict:
+			buffs.erase(removing)
+			changes_ui_check()
 
 func changes_ui_check():
-	ui_slot.changes_display.set_changes(changes.keys())
+	ui_slot.changes_display.set_changes(buffs.keys())
 	ui_slot.max_hp.clear()
 	set_max_hp()
 	ui_slot.max_hp.append_text(str("HP: ",get_max_hp()))
 
-func check_immunities():
-	pass
+func manage_change_timers():
+	for dict in [buffs, disables, overrides, type_changes, rule_changes]:
+		for change in dict:
+			if dict[change] == -1:
+				continue
+			elif dict[change] == 0:
+				remove_slot_change(change)
+			else:
+				dict[change] -= 1
 
-func check_pierce():
-	pass
-
-func check_disable():
-	pass
-
-func check_override():
-	pass
-
-func check_type_change():
-	pass
 #endregion
 #--------------------------------------
 
@@ -1053,7 +1051,7 @@ func refresh_swap() -> void:
 		#check for any attatched cards/conditions
 		count_energy()
 		ui_slot.display_energy(get_energy_strings(), attached_energy)
-		ui_slot.changes_display.set_changes(changes.keys())
+		ui_slot.changes_display.set_changes(buffs.keys())
 		
 		if tm_cards.size():
 			ui_slot.tm.texture = tm_cards[0].image

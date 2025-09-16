@@ -9,13 +9,9 @@
 
 [sub_resource type="Resource" id="Resource_g1o7v"]
 script = ExtResource("2_xsslt")
-considered = "Special Energy"
 description = "Boost Energy can be attached only to an Evolved Pokémon. Discard Boost Energy at the end of the turn it was attached. Boost Energy provides {Colorless}{Colorless}{Colorless} Energy. The Pokémon Boost Energy is attached to can't retreat. If the Pokémon Boost Energy is attached to isn't an Evolved Pokémon, discard Boost Energy."
 asks = ExtResource("1_ucmag")
-has_fail_provide = false
 has_fail_prevent = true
-attatch_effects = Array[ExtResource("2_ucmag")]([])
-prompt_effects = Array[ExtResource("2_ucmag")]([])
 turns = 0
 fail_provide = ExtResource("4_bgt4u")
 success_provide = ExtResource("4_bgt4u")
@@ -31,4 +27,3 @@ rarity = 1
 expansion = 7
 categories = 4
 energy_properties = SubResource("Resource_g1o7v")
-fossil = false

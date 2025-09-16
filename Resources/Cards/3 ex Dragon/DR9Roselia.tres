@@ -18,20 +18,14 @@
 [sub_resource type="Resource" id="Resource_ksw77"]
 script = ExtResource("7_ph2ci")
 action = 2
-chooser = 4
 reciever = ExtResource("6_ygp6j")
-to_stack = 2
-stack_direction = 2
-energy_carry_over = false
 action_ammount = 2
-energy_ammount = 1
 energy_move_type = 2
 en_type = ExtResource("5_odbvm")
 metadata/_custom_type_script = "uid://cimk6l7ytw7xg"
 
 [sub_resource type="Resource" id="Resource_veeg8"]
 script = ExtResource("8_68373")
-order = Array[int]([])
 energy_movement = SubResource("Resource_ksw77")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -43,26 +37,12 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_i8qx6"]
 script = ExtResource("9_x7t5e")
 description = "Attach up to 2 {Grass} Energy cards from your hand to your Pokémon in any way you like."
-prompt_reliant = false
-initial_main_DMG = 0
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
 prompt_effects = Array[ExtResource("4_cfyyl")]([SubResource("Resource_s2syw")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_chffm"]
 script = ExtResource("1_76nqh")
 name = "Speed Growth"
-attack_cost = ExtResource("3_qoeuf")
 attack_data = SubResource("Resource_i8qx6")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
@@ -76,16 +56,9 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_01ikg"]
 script = ExtResource("2_7bi16")
 HP = 60
-retreat = 1
 pokebody = ExtResource("12_qoeuf")
 attacks = Array[ExtResource("1_76nqh")]([SubResource("Resource_chffm"), SubResource("Resource_3gkt5")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
-type = 1
 weak = 2
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -98,5 +71,4 @@ rarity = 3
 expansion = 2
 categories = 1
 pokemon_properties = SubResource("Resource_01ikg")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

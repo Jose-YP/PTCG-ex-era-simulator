@@ -9,15 +9,7 @@
 [sub_resource type="Resource" id="Resource_fp66w"]
 script = ExtResource("3_a2syg")
 HP = 10
-retreat = 1
-attacks = Array[ExtResource("2_h6le1")]([])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
 type = 256
-weak = 0
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -26,7 +18,6 @@ name = "Mysterious Fossil"
 image = ExtResource("1_5oili")
 illustrator = "Keiji Kinebuchi"
 number = 91
-rarity = 0
 expansion = 1
 categories = 3
 pokemon_properties = SubResource("Resource_fp66w")

@@ -6,8 +6,8 @@ class_name IndvCounter
 #--------------------------------------
 #region VARIABLES
 #script constants
-const pokeSlot = preload("res://Code/Resource Makers/PokemonSpecific/PokeSlotMaker.gd")
-const stackRes = preload("res://Code/Resource Makers/GeneralUse/CardStacksMaker.gd")
+const pokeSlot = preload("uid://cs70ix831b5g4")
+const stackRes = preload("uid://calm3n7va5yjo")
 const which_vars: PackedStringArray = ["Slot", "Stack", "Coinflip", "Input"]
 const en_methods: PackedStringArray = ["Total", "Excess", "Diff Types", "Categories"]
 const en_category_enum: PackedStringArray = ["Any", "Basic Energy", "Special Energy"]
@@ -16,10 +16,10 @@ var slot_instance = pokeSlot.new()
 var stack_instance = stackRes.new()
 var internal_data = {"which" : "Slot",
  "slot_vars" : "current_card", "stack_vars" : "None",
- "coin_flip" : load("res://Resources/Components/CoinFlip/FlipOnce.tres") as CoinFlip,
- "ask" : load("res://Resources/Components/Effects/Asks/General/AnyMon.tres") as SlotAsk,
- "identifier": null, "stack_portion" : -1, "en_count_methods" : "Total", "en_categories" : "Any",
- "en_counting" : load("res://Resources/Components/EnData/Rainbow.tres") as EnData 
+ "coin_flip" : load("uid://csc2clyxejdwm") as CoinFlip,
+ "ask" : load("uid://bns8h72u2hxqo") as SlotAsk, "identifier": null,
+ "stack_portion" : -1, "en_count_methods" : "Total", "en_categories" : "Any",
+ "en_counting" : load("uid://cv8xofc4ofaom") as EnData 
  ,"input_title" : "Input Number" ,"cap" : -1}
 #endregion
 #--------------------------------------
@@ -155,9 +155,11 @@ func _get_property_list() -> Array[Dictionary]:
 #--------------------------------------
 #region GET FUNCTIONS
 func _get(property):
-	if not internal_data.has(property):
-		if _property_can_revert(property):
-			internal_data[property] = _property_get_revert(property)
+	if internal_data == null:
+		internal_data = _property_get_revert("internal_data")
+		return null
+	elif not internal_data.has(property) and _property_can_revert(property):
+		internal_data[property] = _property_get_revert(property)
 	
 	match property:
 		"which": return internal_data["which"]
@@ -189,15 +191,22 @@ func _property_get_revert(property: StringName) -> Variant:
 		"which": return "Slot"
 		"slot_vars": return "current_card"
 		"stack_vars": return "None"
-		"coin_flip": return load("res://Resources/Components/CoinFlip/FlipOnce.tres") as CoinFlip
-		"ask": return load("res://Resources/Components/Effects/Asks/General/AnyMon.tres") as SlotAsk
-		"identifier": return load("res://Resources/Components/Effects/Identifiers/AnyCard.tres") as Identifier
+		"coin_flip": return load("uid://csc2clyxejdwm") as CoinFlip
+		"ask": return load("uid://bns8h72u2hxqo") as SlotAsk
+		"identifier": return load("uid://dm2i7spst0qpp") as Identifier
 		"stack_portion": return -1
 		"en_count_methods": return "Total"
 		"en_categories": return "Any"
-		"en_counting": return load("res://Resources/Components/EnData/Rainbow.tres") as EnData
+		"en_counting": return load("uid://cv8xofc4ofaom") as EnData
 		"input_title": return "Input Number"
 		"cap": return -1
+		"internal_data": return {"which" : "Slot",
+		 "slot_vars" : "current_card", "stack_vars" : "None",
+		 "coin_flip" : load("uid://csc2clyxejdwm") as CoinFlip,
+		 "ask" : load("uid://bns8h72u2hxqo") as SlotAsk, "identifier": null,
+		 "stack_portion" : -1, "en_count_methods" : "Total", "en_categories" : "Any",
+		 "en_counting" : load("uid://cv8xofc4ofaom") as EnData 
+		 ,"input_title" : "Input Number" ,"cap" : -1}
 	return null
 #endregion
 #--------------------------------------

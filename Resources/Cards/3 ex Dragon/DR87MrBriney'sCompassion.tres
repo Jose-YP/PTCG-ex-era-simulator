@@ -8,9 +8,7 @@
 [sub_resource type="Resource" id="Resource_76sah"]
 script = ExtResource("6_xcsvu")
 considered = "Supporter"
-specific_requirement = ""
 description = "Choose 1 of your Pokémon in play (excluding Pokémon-ex). Return that Pokémon and all cards attached to it to your hand. "
-prompt_effects = Array[ExtResource("7_m4br1")]([])
 metadata/_custom_type_script = "uid://crx447i85kshy"
 
 [resource]
@@ -23,5 +21,4 @@ rarity = 1
 expansion = 2
 categories = 2
 trainer_properties = SubResource("Resource_76sah")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

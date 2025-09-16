@@ -13,31 +13,16 @@
 
 [sub_resource type="Resource" id="Resource_thcri"]
 script = ExtResource("5_q1esd")
-comparision_type = "Return"
 first_comparison = ExtResource("4_nrbw8")
-compare_to = "None"
-second_constant = 0
-operate_w_constant = "None"
 metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
 [sub_resource type="Resource" id="Resource_p77gp"]
 script = ExtResource("6_tehvb")
 description = "Does 10 damage plus 10 more damage for each Energy attached to all of your opponent's Pokémon."
-prompt_reliant = false
 initial_main_DMG = 10
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("6_nrbw8")]([])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
 modifier = 1
 modifier_num = 10
 comparator = SubResource("Resource_thcri")
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_21b2l"]
@@ -49,15 +34,9 @@ attack_data = SubResource("Resource_p77gp")
 [sub_resource type="Resource" id="Resource_3aqid"]
 script = ExtResource("5_mujcc")
 HP = 70
-retreat = 1
 pokepower = ExtResource("7_nrbw8")
 attacks = Array[ExtResource("3_750iv")]([SubResource("Resource_21b2l")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
 type = 16
-weak = 0
 resist = 16
 
 [resource]
@@ -70,4 +49,3 @@ rarity = 2
 expansion = 7
 categories = 1
 pokemon_properties = SubResource("Resource_3aqid")
-fossil = false

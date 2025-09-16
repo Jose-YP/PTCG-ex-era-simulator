@@ -14,20 +14,6 @@
 [sub_resource type="Resource" id="Resource_0pypu"]
 script = ExtResource("7_ukyo3")
 description = "Look at your opponent's hand and choose a Basic Pokémon or Evolution card you find there. Choose 1 of that Pokémon's attacks. Skill Hack copies that attack except for its Energy cost. (You must still do anything else required for that attack.) (No matter what type that Pokémon is, [name]'s type is still {Darkness}.) [name] performs that attack."
-prompt_reliant = false
-initial_main_DMG = 0
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("8_yxknq")]([])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_445p5"]
@@ -39,67 +25,21 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_hi2fh"]
 script = ExtResource("10_axg2p")
-boolean_type = "And"
-previous_src_trg = false
 side_target = 2
 slot_target = 3
-specifically = Array[String]([])
-tool_attatched = false
-comparison_type = 1
-max_hp = -10
-damage_taken = -10
-retreat_cost = -1
-evo_type = "Don't Check"
-stage = 7
-rare_candy = false
-class_inclusive = true
-pokemon_class = 63
-owner_inclusive = true
-pokemon_owner = 31
-type_inclusive = true
-pokemon_type = 1023
-en_class = 0
-energy_inclusive = true
-check_cards = true
-energy_attatched = -1
-energy_class = "Any"
-inclusive_ability = true
-check_ability = false
-contained_abilities = 3
-specific_abilities = Array[String]([])
-check_condition = false
-desired_condition = 0
-knocked_out = false
 metadata/_custom_type_script = "uid://mkjynqda7q5g"
 
 [sub_resource type="Resource" id="Resource_7r15k"]
 script = ExtResource("11_ukyo3")
 how_many = -1
 candidates = SubResource("Resource_hi2fh")
-active_allowed = false
-apply_weak_res = false
 initial_main_DMG = 60
-modifier = 0
-modifier_num = 0
 metadata/_custom_type_script = "uid://br15mnap82upq"
 
 [sub_resource type="Resource" id="Resource_x14nr"]
 script = ExtResource("7_ukyo3")
 description = "Does 60 damage to each of your opponent's Benched Pokémon that has the same name as the Defending Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
-prompt_reliant = false
 initial_main_DMG = 60
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("8_yxknq")]([])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 bench_damage = SubResource("Resource_7r15k")
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
@@ -113,12 +53,10 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_u3aoq"]
 script = ExtResource("9_7r15k")
 HP = 140
-retreat = 1
 attacks = Array[ExtResource("2_1ja4p")]([SubResource("Resource_445p5"), SubResource("Resource_8dgnp")])
 evo_stage = "Stage 2"
 evolves_from = "Nuzleaf"
 considered = 2
-owner = 0
 type = 64
 weak = 33
 resist = 16
@@ -134,5 +72,4 @@ rarity = 4
 expansion = 15
 categories = 1
 pokemon_properties = SubResource("Resource_u3aoq")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

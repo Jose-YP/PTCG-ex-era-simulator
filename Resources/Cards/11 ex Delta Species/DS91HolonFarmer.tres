@@ -12,7 +12,6 @@ considered = "Supporter"
 specific_requirement = "Discard a card from your hand. If you can't discard a card from your hand, you can't play this card."
 description = "Search your discard pile for 3 basic Energy cards and any combination of 3 Basic Pokémon or Evolution cards, show them to your opponent, and put them on top of your deck. Shuffle your deck afterward. "
 prompt = ExtResource("3_0otrs")
-prompt_effects = Array[ExtResource("4_gn0l7")]([])
 metadata/_custom_type_script = "uid://crx447i85kshy"
 
 [resource]
@@ -25,4 +24,3 @@ rarity = 1
 expansion = 10
 categories = 2
 trainer_properties = SubResource("Resource_tlfds")
-fossil = false

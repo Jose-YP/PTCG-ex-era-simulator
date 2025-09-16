@@ -10,19 +10,13 @@
 
 [sub_resource type="Resource" id="Resource_my7tf"]
 script = ExtResource("4_qop60")
-order = Array[int]([])
 dmgManip = ExtResource("3_qb8f0")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_aqiq7"]
 script = ExtResource("6_gu2v5")
-category = "Body"
 name = "Spongy Stone"
 description = "At any time between turns, remove 1 damage counter from [name]."
-affected_by_condition = true
-active = false
-how_often = "Once per Mon"
-independent_src_trg = false
 prompt = ExtResource("5_qb8f0")
 occurance = ExtResource("5_m8d88")
 effect = SubResource("Resource_my7tf")
@@ -31,14 +25,6 @@ metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 [resource]
 script = ExtResource("3_ma4te")
 HP = 40
-retreat = 1
 pokebody = SubResource("Resource_aqiq7")
-attacks = Array[ExtResource("1_b7jp4")]([])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
 type = 256
-weak = 0
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"

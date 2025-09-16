@@ -28,20 +28,8 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_dlgsb"]
 script = ExtResource("9_150n2")
 description = "Flip a coin. If tails, discard a {Fire} Energy card attached to [name]."
-prompt_reliant = false
 initial_main_DMG = 70
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
 prompt_effects = Array[ExtResource("6_6vhtc")]([SubResource("Resource_yauit")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_mmnue"]
@@ -53,15 +41,11 @@ attack_data = SubResource("Resource_dlgsb")
 [sub_resource type="Resource" id="Resource_inh8h"]
 script = ExtResource("2_gg7vs")
 HP = 80
-retreat = 1
 attacks = Array[ExtResource("1_4xrql")]([SubResource("Resource_nokv0"), SubResource("Resource_mmnue")])
 evo_stage = "Stage 1"
 evolves_from = "Eevee"
-considered = 1
-owner = 0
 type = 2
 weak = 4
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -74,5 +58,4 @@ rarity = 3
 expansion = 1
 categories = 1
 pokemon_properties = SubResource("Resource_inh8h")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

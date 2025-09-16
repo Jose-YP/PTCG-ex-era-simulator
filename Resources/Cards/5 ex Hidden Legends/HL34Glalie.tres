@@ -18,24 +18,13 @@
 
 [sub_resource type="Resource" id="Resource_womou"]
 script = ExtResource("7_sk1pa")
-choosing = 4
 mode = "Add"
 ask = ExtResource("6_f8edd")
-how_many = 1
 choose_num = -1
-turn_delay = -1
-prevent_KO = false
-anyway_u_like = false
-with_leftover = "None"
-leftover_anyway = false
-vary_choose_num = false
-plus = true
-modifier = 1
 metadata/_custom_type_script = "uid://scca13hg4k1l"
 
 [sub_resource type="Resource" id="Resource_nicnw"]
 script = ExtResource("8_83yce")
-order = Array[int]([])
 dmgManip = SubResource("Resource_womou")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -48,20 +37,8 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_7qsaa"]
 script = ExtResource("9_sl83c")
 description = "Flip a coin. If heads, put 1 damage counter on each of your opponent's Benched Pokémon."
-prompt_reliant = false
 initial_main_DMG = 50
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
 prompt_effects = Array[ExtResource("4_qibns")]([SubResource("Resource_87073")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_belp5"]
@@ -73,102 +50,42 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_sl83c"]
 script = ExtResource("11_f8edd")
-boolean_type = "And"
-previous_src_trg = false
 side_target = 5
 slot_target = 1
-specifically = Array[String]([])
-tool_attatched = false
-comparison_type = 1
-max_hp = -10
-damage_taken = -10
-retreat_cost = -1
-evo_type = "Don't Check"
-stage = 7
-rare_candy = false
-class_inclusive = true
-pokemon_class = 63
-owner_inclusive = true
-pokemon_owner = 31
-type_inclusive = true
-pokemon_type = 1023
-en_class = 0
-energy_inclusive = true
-check_cards = true
 energy_attatched = 1
 energy_class = "Special Energy"
-inclusive_ability = true
-check_ability = false
-contained_abilities = 3
-specific_abilities = Array[String]([])
-check_condition = false
-desired_condition = 0
-knocked_out = false
 metadata/_custom_type_script = "uid://mkjynqda7q5g"
 
 [sub_resource type="Resource" id="Resource_c4ekq"]
 script = ExtResource("12_sk1pa")
 description = "Take -40 dmg from opponents with special energy"
-unstackable_id = ""
-stackable = false
 against = SubResource("Resource_sl83c")
-after_weak_res = true
-operation = "Add"
-add_hp = 0
-attack = 0
 defense = 40
-retreat_change = 0
-cost_modifier = "Add"
-modify = 0
-plus = false
-condition_immune = 0
-attack_effect_immune = false
-damage_immune = false
-body_immune = false
-power_immune = false
-trainer_immune = false
-odd_immunity = false
-even_immunity = false
-weakness = false
-resistance = false
-effects = false
-attack_names = Array[String]([])
-application = "Slot"
 recieves = ExtResource("12_f8edd")
-duration = -1
 metadata/_custom_type_script = "uid://coojhwe6m20gd"
 
 [sub_resource type="Resource" id="Resource_aojvd"]
 script = ExtResource("8_83yce")
-order = Array[int]([])
 buff = SubResource("Resource_c4ekq")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_msiq8"]
 script = ExtResource("13_83yce")
-category = "Body"
 name = "Ice Wall"
 description = "Any damage done to [name] by attacks from your opponent's Pokémon with any Special Energy cards attached to it is reduced by 40 (after applying Weakness and Resistance)."
 affected_by_condition = false
-active = false
-how_often = "Once per Mon"
-independent_src_trg = false
 passive = SubResource("Resource_aojvd")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 
 [sub_resource type="Resource" id="Resource_3dmbf"]
 script = ExtResource("10_c4ekq")
 HP = 80
-retreat = 1
 pokebody = SubResource("Resource_msiq8")
 attacks = Array[ExtResource("2_1538r")]([SubResource("Resource_belp5")])
 evo_stage = "Stage 1"
 evolves_from = "Snorunt"
-considered = 1
-owner = 0
 type = 4
 weak = 128
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -181,5 +98,4 @@ rarity = 1
 expansion = 4
 categories = 1
 pokemon_properties = SubResource("Resource_3dmbf")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

@@ -27,20 +27,7 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_23t13"]
 script = ExtResource("7_38f87")
 description = "Discard a {Grass} Energy card attached to Grimer. The Defending Pokémon is now Poisoned. "
-prompt_reliant = false
-initial_main_DMG = 0
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
 prompt_effects = Array[ExtResource("5_e36c2")]([SubResource("Resource_05bxh")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_0duhc"]
@@ -52,16 +39,8 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_73pug"]
 script = ExtResource("8_vkccs")
-HP = 50
-retreat = 1
 attacks = Array[ExtResource("2_rw11r")]([ExtResource("3_lcswo"), SubResource("Resource_0duhc")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
-type = 1
 weak = 16
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -70,9 +49,7 @@ name = "Grimer"
 image = ExtResource("1_giss4")
 illustrator = "Yuka Morii"
 number = 57
-rarity = 0
 expansion = 2
 categories = 1
 pokemon_properties = SubResource("Resource_73pug")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

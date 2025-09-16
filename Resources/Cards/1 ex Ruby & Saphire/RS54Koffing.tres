@@ -17,16 +17,8 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_tuwfl"]
 script = ExtResource("6_u1xol")
-HP = 50
-retreat = 1
 attacks = Array[ExtResource("2_o4eol")]([ExtResource("3_pl1xs"), SubResource("Resource_oq0yy")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
-type = 1
 weak = 16
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -35,9 +27,6 @@ name = "Koffing"
 image = ExtResource("1_dyesa")
 illustrator = "Atsuko Nishida"
 number = 54
-rarity = 0
-expansion = 0
 categories = 1
 pokemon_properties = SubResource("Resource_tuwfl")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

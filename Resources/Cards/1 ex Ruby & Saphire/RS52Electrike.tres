@@ -8,13 +8,7 @@
 
 [sub_resource type="Resource" id="Resource_0s0r4"]
 script = ExtResource("4_2f2de")
-HP = 50
-retreat = 1
 attacks = Array[ExtResource("2_naj4b")]([ExtResource("3_8mybm")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
 type = 8
 weak = 32
 resist = 128
@@ -26,9 +20,6 @@ name = "Electrike"
 image = ExtResource("1_8mybm")
 illustrator = "Ken Sugimori"
 number = 52
-rarity = 0
-expansion = 0
 categories = 1
 pokemon_properties = SubResource("Resource_0s0r4")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

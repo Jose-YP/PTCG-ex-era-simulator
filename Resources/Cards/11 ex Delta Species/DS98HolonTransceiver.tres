@@ -21,11 +21,8 @@ metadata/_custom_type_script = "uid://b85jmc7067bjc"
 
 [sub_resource type="Resource" id="Resource_nv4wp"]
 script = ExtResource("3_yg4et")
-considered = "Item"
-specific_requirement = ""
 description = "Search your deck for a Supporter card that has Holon in its name, show it to your opponent, and put it into your hand. Shuffle your deck afterward. Or, search your discard pile for a Supporter card that has Holon in its name, show it to your opponent, and put it into your hand."
 prompt = SubResource("Resource_bodlt")
-prompt_effects = Array[ExtResource("9_ce64y")]([])
 metadata/_custom_type_script = "uid://crx447i85kshy"
 
 [resource]
@@ -38,4 +35,3 @@ rarity = 1
 expansion = 10
 categories = 2
 trainer_properties = SubResource("Resource_nv4wp")
-fossil = false

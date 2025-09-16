@@ -10,20 +10,9 @@
 [sub_resource type="Resource" id="Resource_3krnc"]
 script = ExtResource("3_l02fh")
 description = "[name] does 10 damage to itself, and don't apply Weakness and Resistance to this damage."
-prompt_reliant = false
 initial_main_DMG = 50
 defender_properties = 6
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("3_fc3t1")]([])
-conditional_self_dmg = false
 self_damage = 10
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_q0c5m"]
@@ -39,11 +28,6 @@ HP = 80
 retreat = 2
 pokebody = ExtResource("7_l02fh")
 attacks = Array[ExtResource("1_apedi")]([SubResource("Resource_q0c5m")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
 type = 16
 weak = 16
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"

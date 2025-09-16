@@ -21,30 +21,18 @@ comparision_type = "Difference"
 first_comparison = ExtResource("6_1yhar")
 compare_to = "Const"
 second_constant = 5
-operate_w_constant = "None"
 metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
 [sub_resource type="Resource" id="Resource_7dm1h"]
 script = ExtResource("5_v0hhm")
-send = "Stack"
-send_to = 2
-top_stack = true
-shuffle = false
 card_ammount = -1
 variable_ammount = SubResource("Resource_qmmed")
-reveal = false
-who_chooses = 4
-side = 2
 card_options = ExtResource("4_d8q5l")
 view = false
-portion = -1
-from_stack = 0
-slot_choose_num = -1
 metadata/_custom_type_script = "uid://8sh5p3leflla"
 
 [sub_resource type="Resource" id="Resource_xtxka"]
 script = ExtResource("8_kr4nr")
-order = Array[int]([])
 card_disrupt = SubResource("Resource_7dm1h")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -56,19 +44,7 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_0caf3"]
 script = ExtResource("9_wlgfn")
 description = "If the number of cards in your opponent's hand is at least 6, choose a number of cards there, without looking, until your opponent has 5 cards left. Have your opponent discard the cards you chose."
-prompt_reliant = false
-initial_main_DMG = 0
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
 prompt_effects = Array[ExtResource("4_agpnf")]([SubResource("Resource_lndit")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
 both_active = true
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
@@ -82,21 +58,10 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_lmmbr"]
 script = ExtResource("9_wlgfn")
 description = "If you have more Prize cards left than your opponent, this attack does 20 damage plus 20 more damage."
-prompt_reliant = false
 initial_main_DMG = 20
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("4_agpnf")]([])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
 modifier = 1
 modifier_num = 20
 comparator = ExtResource("11_tuniv")
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_6w0gb"]
@@ -109,12 +74,7 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_2djvy"]
 script = ExtResource("12_c73xn")
 HP = 70
-retreat = 1
 attacks = Array[ExtResource("2_agpnf")]([SubResource("Resource_3hoo5"), SubResource("Resource_6w0gb")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
 type = 64
 weak = 32
 resist = 16
@@ -130,5 +90,4 @@ rarity = 3
 expansion = 2
 categories = 1
 pokemon_properties = SubResource("Resource_2djvy")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

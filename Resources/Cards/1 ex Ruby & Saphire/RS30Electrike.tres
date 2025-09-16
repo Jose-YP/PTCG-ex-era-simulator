@@ -14,7 +14,6 @@
 
 [sub_resource type="Resource" id="Resource_yt2pr"]
 script = ExtResource("3_oqe5b")
-order = Array[int]([])
 search = ExtResource("4_c0257")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -26,20 +25,7 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_o558d"]
 script = ExtResource("6_c0257")
 description = "Attach a {Lightning} Energy card from your discard pile to [name]."
-prompt_reliant = false
-initial_main_DMG = 0
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
 prompt_effects = Array[ExtResource("4_lrr1f")]([SubResource("Resource_toiwb")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_wugrw"]
@@ -52,21 +38,10 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_uniyw"]
 script = ExtResource("6_c0257")
 description = "Flip a coin. If tails, [name] does 10 damage to itself."
-prompt_reliant = false
 prompt = ExtResource("5_itarg")
 initial_main_DMG = 30
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("4_lrr1f")]([])
 conditional_self_dmg = true
 self_damage = 10
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_41dnb"]
@@ -78,13 +53,7 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_nwmgj"]
 script = ExtResource("7_uniyw")
-HP = 50
-retreat = 1
 attacks = Array[ExtResource("2_8agjp")]([SubResource("Resource_wugrw"), SubResource("Resource_41dnb")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
 type = 8
 weak = 32
 resist = 128
@@ -97,8 +66,6 @@ image = ExtResource("1_qdtyb")
 illustrator = "Hajime Kusajima"
 number = 30
 rarity = 1
-expansion = 0
 categories = 1
 pokemon_properties = SubResource("Resource_nwmgj")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

@@ -1,50 +1,14 @@
-[gd_resource type="Resource" script_class="PromptAsk" load_steps=9 format=3 uid="uid://oucf200x3u40"]
+[gd_resource type="Resource" script_class="PromptAsk" load_steps=7 format=3 uid="uid://oucf200x3u40"]
 
-[ext_resource type="Resource" uid="uid://c7itelq8jtjc2" path="res://Resources/Components/EnData/Rainbow.tres" id="1_veuwl"]
-[ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="2_r3nn3"]
+[ext_resource type="Resource" uid="uid://bns8h72u2hxqo" path="res://Resources/Components/Effects/Asks/General/AnyMon.tres" id="1_s7ehs"]
 [ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="3_smht3"]
 [ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="4_p52ux"]
 [ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="5_y41mm"]
 
-[sub_resource type="Resource" id="Resource_al5dh"]
-script = ExtResource("2_r3nn3")
-boolean_type = "And"
-previous_src_trg = false
-side_target = 2
-slot_target = 1
-specifically = Array[String]([])
-tool_attatched = false
-comparison_type = 1
-max_hp = -10
-damage_taken = -10
-retreat_cost = -1
-evo_type = "Don't Check"
-stage = 7
-rare_candy = false
-class_inclusive = true
-pokemon_class = 63
-owner_inclusive = true
-pokemon_owner = 4
-type_inclusive = true
-pokemon_type = 1023
-en_class = 0
-energy_inclusive = true
-check_cards = true
-energy_attatched = -1
-energy_class = "Any"
-energy_type = ExtResource("1_veuwl")
-inclusive_ability = true
-check_ability = false
-contained_abilities = 3
-specific_abilities = Array[String]([])
-check_condition = false
-desired_condition = 0
-knocked_out = false
-
 [sub_resource type="Resource" id="Resource_sayjc"]
 script = ExtResource("3_smht3")
 which = "Slot"
-ask = SubResource("Resource_al5dh")
+ask = ExtResource("1_s7ehs")
 slot_vars = "current_card"
 cap = -1
 metadata/_custom_type_script = "uid://vjn146j3ayd6"
@@ -55,7 +19,6 @@ comparision_type = "Equals"
 first_comparison = SubResource("Resource_sayjc")
 compare_to = "Const"
 second_constant = 1
-operate_w_constant = "None"
 metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
 [resource]

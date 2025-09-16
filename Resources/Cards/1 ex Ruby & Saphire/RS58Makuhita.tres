@@ -15,16 +15,9 @@ attack_data = ExtResource("4_smm2n")
 
 [sub_resource type="Resource" id="Resource_f2be0"]
 script = ExtResource("3_e0cf7")
-HP = 50
-retreat = 1
 attacks = Array[ExtResource("2_02wef")]([SubResource("Resource_rekr0")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
 type = 32
 weak = 16
-resist = 0
 
 [resource]
 script = ExtResource("1_gdqbo")
@@ -32,8 +25,5 @@ name = "Makuhita"
 image = ExtResource("1_igxt4")
 illustrator = "Naoyo Kimura"
 number = 58
-rarity = 0
-expansion = 0
 categories = 1
 pokemon_properties = SubResource("Resource_f2be0")
-fossil = false

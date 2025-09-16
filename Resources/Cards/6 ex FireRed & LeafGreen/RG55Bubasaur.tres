@@ -17,16 +17,8 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_ofxcy"]
 script = ExtResource("4_gvs0k")
-HP = 50
-retreat = 1
 attacks = Array[ExtResource("2_i2mn5")]([ExtResource("3_25njs"), SubResource("Resource_u8fkt")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
-type = 1
 weak = 16
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -35,9 +27,7 @@ name = "Bulbasaur"
 image = ExtResource("1_27r6r")
 illustrator = "Hajime Kusajima"
 number = 55
-rarity = 0
 expansion = 5
 categories = 1
 pokemon_properties = SubResource("Resource_ofxcy")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

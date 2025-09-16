@@ -22,24 +22,12 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_j62rm"]
 script = ExtResource("7_lfm50")
-choosing = 4
-mode = "Remove"
 ask = ExtResource("6_2ivix")
-how_many = 1
 choose_num = -1
-turn_delay = -1
-prevent_KO = false
-anyway_u_like = false
-with_leftover = "None"
-leftover_anyway = false
-vary_choose_num = false
-plus = true
-modifier = 1
 metadata/_custom_type_script = "uid://scca13hg4k1l"
 
 [sub_resource type="Resource" id="Resource_calre"]
 script = ExtResource("6_udpcv")
-order = Array[int]([])
 dmgManip = SubResource("Resource_j62rm")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -51,20 +39,8 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_iggwp"]
 script = ExtResource("7_b2nqx")
 description = "Remove 1 damage counter from each of your Active Pokémon."
-prompt_reliant = false
 initial_main_DMG = 30
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
 prompt_effects = Array[ExtResource("6_lfm50")]([SubResource("Resource_udpcv")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_ksdea"]
@@ -81,8 +57,6 @@ retreat = 2
 attacks = Array[ExtResource("2_0207o")]([SubResource("Resource_s4ydi"), SubResource("Resource_ksdea")])
 evo_stage = "Stage 1"
 evolves_from = "Dratini"
-considered = 1
-owner = 0
 type = 256
 weak = 256
 resist = 33
@@ -98,5 +72,4 @@ rarity = 2
 expansion = 2
 categories = 1
 pokemon_properties = SubResource("Resource_fr11s")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

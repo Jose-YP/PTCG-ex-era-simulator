@@ -8,14 +8,11 @@
 [sub_resource type="Resource" id="Resource_0psx1"]
 script = ExtResource("1_wnwgf")
 shuffle_back_first = true
-side = 1
-bottom_deck = false
 simple_constant = 5
 metadata/_custom_type_script = "uid://bgtwlw1edjwyc"
 
 [sub_resource type="Resource" id="Resource_e55w1"]
 script = ExtResource("2_0psx1")
-order = Array[int]([])
 draw_ammount = SubResource("Resource_0psx1")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -27,7 +24,6 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [resource]
 script = ExtResource("3_e55w1")
 considered = "Supporter"
-specific_requirement = ""
 description = "Shuffle your hand into your deck, then draw 5 cards. "
 prompt_effects = Array[ExtResource("3_0psx1")]([SubResource("Resource_njg0n")])
 metadata/_custom_type_script = "uid://crx447i85kshy"

@@ -1,38 +1,32 @@
 [gd_resource type="Resource" script_class="Ability" load_steps=12 format=3 uid="uid://c0y58oaysjrpt"]
 
-[ext_resource type="Resource" uid="uid://dv5gbkvk3uxtj" path="res://Resources/Components/Effects/Asks/General/SrcTheRest.tres" id="1_eewr7"]
 [ext_resource type="Script" uid="uid://dtv1d2u2kvixy" path="res://Code/Resource Makers/EffectSpecific/Components/MimicMaker.gd" id="1_kg0np"]
 [ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="1_vm34d"]
 [ext_resource type="Script" uid="uid://bics3dumv7avj" path="res://Code/Resource Makers/GeneralUse/OccuranceMaker.gd" id="2_dlkox"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_vm34d"]
 [ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="3_ck56x"]
+[ext_resource type="Resource" uid="uid://bns8h72u2hxqo" path="res://Resources/Components/Effects/Asks/General/AnyMon.tres" id="4_vm34d"]
 [ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="5_yx24e"]
 
 [sub_resource type="Resource" id="Resource_4w5pv"]
 script = ExtResource("1_kg0np")
 mimicing = ExtResource("1_vm34d")
-use = "Slot"
 ask = ExtResource("1_vm34d")
-retrigger = true
-evolutions = false
 must_pay_energy = true
-adjustable_type = false
 mimic_self = true
 hard_reverse = true
 exclusive_mimic = Array[String](["Cheer On"])
-stack = 0
 metadata/_custom_type_script = "uid://dtv1d2u2kvixy"
 
 [sub_resource type="Resource" id="Resource_33oof"]
 script = ExtResource("2_vm34d")
-order = Array[int]([])
 mimic = SubResource("Resource_4w5pv")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_kg0np"]
 script = ExtResource("2_dlkox")
-from_ask = ExtResource("1_eewr7")
-signal = "attacks"
+from_ask = ExtResource("4_vm34d")
+signal = "checked_up"
 metadata/_custom_type_script = "uid://bics3dumv7avj"
 
 [sub_resource type="Resource" id="Resource_uy14q"]
@@ -50,7 +44,6 @@ metadata/_custom_type_script = "uid://b85jmc7067bjc"
 
 [resource]
 script = ExtResource("3_ck56x")
-category = "Body"
 name = "Chain of Events"
 description = "As long as [name] is your Active Pokémon, whenever your other Active Pokémon, if any, attacks, you may use Cheer On after the first attack (you still need the necessary Energy to use Cheer On). You can't use Cheer On more than once in this way even if your other Active Pokémon has the Chain of Events Poké-Body."
 affected_by_condition = false

@@ -16,16 +16,9 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_ncwsx"]
 script = ExtResource("5_x2j8m")
-HP = 50
-retreat = 1
 attacks = Array[ExtResource("2_8h6o7")]([SubResource("Resource_p443m")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
 type = 16
 weak = 16
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -34,9 +27,6 @@ name = "Ralts"
 image = ExtResource("1_ygfa8")
 illustrator = "Ken Sugimori"
 number = 66
-rarity = 0
-expansion = 0
 categories = 1
 pokemon_properties = SubResource("Resource_ncwsx")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

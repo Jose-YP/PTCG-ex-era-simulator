@@ -7,7 +7,6 @@
 
 [sub_resource type="Resource" id="Resource_sxvt6"]
 script = ExtResource("2_a7m5p")
-order = Array[int]([])
 card_disrupt = ExtResource("1_2jhdm")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -19,18 +18,6 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [resource]
 script = ExtResource("3_y3mra")
 description = "Choose 1 card from your opponent's hand without looking. Look at the card you chose, then have your opponent shuffle that card into his or her deck."
-prompt_reliant = false
-initial_main_DMG = 0
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
 prompt_effects = Array[ExtResource("1_a7m5p")]([SubResource("Resource_y3mra")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
 both_active = true
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"

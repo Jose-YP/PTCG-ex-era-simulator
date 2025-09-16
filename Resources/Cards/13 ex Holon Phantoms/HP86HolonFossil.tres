@@ -8,11 +8,8 @@
 
 [sub_resource type="Resource" id="Resource_o6fe0"]
 script = ExtResource("3_0wf0p")
-considered = "Item"
-specific_requirement = ""
 description = "Flip a coin. If heads, search your deck for an Omanyte, Kabuto, Aerodactyl, Aerodactyl ex, Lileep, or Anorith and put it onto your Bench. Shuffle your deck afterward. If tails, put an Omanyte, Kabuto, Aerodactyl, Aerodactyl ex, Lileep, or Anorith from your hand onto your Bench. Treat the new Benched Pokémon as a Basic Pokémon."
 prompt = ExtResource("5_0a0jp")
-prompt_effects = Array[ExtResource("6_0gqx7")]([])
 metadata/_custom_type_script = "uid://crx447i85kshy"
 
 [resource]
@@ -25,4 +22,3 @@ rarity = 1
 expansion = 12
 categories = 2
 trainer_properties = SubResource("Resource_o6fe0")
-fossil = false

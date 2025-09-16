@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=31 format=3 uid="uid://nhq1fs6l8ykw"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=30 format=3 uid="uid://nhq1fs6l8ykw"]
 
 [ext_resource type="Texture2D" uid="uid://dqcrwypkplgbr" path="res://Art/Cards/13 ex Holon Phantoms/43.jpg" id="1_dmosp"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_ufi1r"]
@@ -12,32 +12,18 @@
 [ext_resource type="Resource" uid="uid://bkt6ry7vyha70" path="res://Resources/Components/Effects/Asks/General/Other.tres" id="10_fwmng"]
 [ext_resource type="Script" uid="uid://c0ishgbxk63dg" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/DisableMaker.gd" id="11_akypb"]
 [ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="12_hhqbu"]
-[ext_resource type="Resource" uid="uid://bns8h72u2hxqo" path="res://Resources/Components/Effects/Asks/General/AnyMon.tres" id="12_vycfy"]
+[ext_resource type="Resource" uid="uid://bns8h72u2hxqo" path="res://Resources/Components/Effects/Asks/General/AnyMon.tres" id="12_o2xrt"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="13_v8mdn"]
-[ext_resource type="Resource" uid="uid://c38e8w0u6uyg5" path="res://Resources/Components/Effects/Identifiers/Trainers/HolonStadium.tres" id="13_vfpol"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="14_ichuk"]
 [ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="14_msykk"]
 [ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="15_5cuvv"]
 
 [sub_resource type="Resource" id="Resource_fmsk3"]
 script = ExtResource("4_o2xrt")
-send = "Stack"
-send_to = 2
-top_stack = true
-shuffle = false
-card_ammount = 1
-reveal = false
-who_chooses = 4
-side = 2
-view = true
-portion = -1
-from_stack = 0
-slot_choose_num = -1
 metadata/_custom_type_script = "uid://8sh5p3leflla"
 
 [sub_resource type="Resource" id="Resource_dfjj5"]
 script = ExtResource("5_vycfy")
-order = Array[int]([])
 card_disrupt = SubResource("Resource_fmsk3")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -58,21 +44,11 @@ metadata/_custom_type_script = "uid://b85jmc7067bjc"
 [sub_resource type="Resource" id="Resource_ppe01"]
 script = ExtResource("8_5cuvv")
 description = "Choose 1 card from your opponent's hand without looking. Look at the card you chose. If that card is a Trainer card, this attack does 30 damage plus 30 more damage, and discard that card. If that card is not a Trainer card, return it to your opponent's hand."
-prompt_reliant = false
 prompt = SubResource("Resource_wqdlm")
 initial_main_DMG = 30
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("7_msykk")]([])
-conditional_self_dmg = false
-self_damage = 0
 mod_prompt = true
 modifier = 1
 modifier_num = 30
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_itv2y"]
@@ -85,31 +61,20 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_l6qmq"]
 script = ExtResource("11_akypb")
 card_type = ExtResource("9_t5xna")
-disable_power = false
-disable_body = false
-disable_retreat = false
-choose_num = -1
-attack = 0
-atk_effect = true
-attack_names = Array[String]([])
 application = "Side"
 recieves = ExtResource("10_fwmng")
-duration = -1
 metadata/_custom_type_script = "uid://c0ishgbxk63dg"
 
 [sub_resource type="Resource" id="Resource_r6duo"]
 script = ExtResource("5_vycfy")
-order = Array[int]([])
 disable = SubResource("Resource_l6qmq")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_t5xna"]
 script = ExtResource("14_msykk")
-which = "Stack"
-ask = ExtResource("12_vycfy")
-stack_vars = "cards_in_play"
-identifier = ExtResource("13_vfpol")
-stack_portion = -1
+which = "Slot"
+ask = ExtResource("12_o2xrt")
+slot_vars = "current_card"
 cap = -1
 metadata/_custom_type_script = "uid://vjn146j3ayd6"
 
@@ -117,9 +82,7 @@ metadata/_custom_type_script = "uid://vjn146j3ayd6"
 script = ExtResource("15_5cuvv")
 comparision_type = "Equals"
 first_comparison = SubResource("Resource_t5xna")
-compare_to = "None"
 second_constant = 1
-operate_w_constant = "None"
 metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
 [sub_resource type="Resource" id="Resource_xqktl"]
@@ -138,13 +101,9 @@ metadata/_custom_type_script = "uid://b85jmc7067bjc"
 
 [sub_resource type="Resource" id="Resource_hupsa"]
 script = ExtResource("12_hhqbu")
-category = "Body"
 name = "Delta Block"
 description = "As long as any Stadium card with Holon in its name is in play, your opponent can't play any Stadium cards from his or her hand."
 affected_by_condition = false
-active = false
-how_often = "Once per Mon"
-independent_src_trg = false
 prompt = SubResource("Resource_xqktl")
 passive = SubResource("Resource_r6duo")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
@@ -152,16 +111,13 @@ metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 [sub_resource type="Resource" id="Resource_bvr67"]
 script = ExtResource("13_v8mdn")
 HP = 70
-retreat = 1
 pokebody = SubResource("Resource_hupsa")
 attacks = Array[ExtResource("2_ufi1r")]([SubResource("Resource_itv2y")])
 evo_stage = "Stage 1"
 evolves_from = "Psyduck"
 considered = 9
-owner = 0
 type = 8
 weak = 8
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -174,5 +130,4 @@ rarity = 1
 expansion = 12
 categories = 1
 pokemon_properties = SubResource("Resource_bvr67")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

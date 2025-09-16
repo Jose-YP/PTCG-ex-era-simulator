@@ -7,10 +7,7 @@
 
 [sub_resource type="Resource" id="Resource_lgwh5"]
 script = ExtResource("5_e3fdt")
-considered = "Item"
-specific_requirement = ""
 description = "Your opponent switches 1 of his or her Defending Pokémon with 1 of his or her Benched Pokémon, if any. You switch 1 of your Active Pokémon with 1 of your Benched Pokémon, if any. "
-prompt_effects = Array[ExtResource("5_or31c")]([])
 metadata/_custom_type_script = "uid://crx447i85kshy"
 
 [resource]
@@ -23,5 +20,4 @@ rarity = 1
 expansion = 3
 categories = 2
 trainer_properties = SubResource("Resource_lgwh5")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

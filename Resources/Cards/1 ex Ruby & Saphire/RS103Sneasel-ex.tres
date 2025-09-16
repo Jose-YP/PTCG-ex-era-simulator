@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=20 format=3 uid="uid://b45smf3ecldmx"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=19 format=3 uid="uid://b45smf3ecldmx"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_awq2c"]
 [ext_resource type="Texture2D" uid="uid://4io7x213u2ui" path="res://Art/Cards/1 ex Ruby & Saphire/103.jpg" id="1_sakby"]
@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="4_p1pt7"]
 [ext_resource type="Resource" uid="uid://ubb6msopnbmq" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/D2C1.tres" id="5_e2yom"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_pr7l4"]
-[ext_resource type="Script" uid="uid://y0v42qaa35wt" path="res://Code/Resource Makers/GeneralUse/CoinFlipNumMaker.gd" id="6_iiwx6"]
+[ext_resource type="Resource" uid="uid://bns8h72u2hxqo" path="res://Resources/Components/Effects/Asks/General/AnyMon.tres" id="6_rx8xo"]
 [ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="8_q2if7"]
 [ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="9_swqy7"]
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="10_asy8n"]
@@ -19,47 +19,26 @@ name = "Double Scratch"
 attack_cost = ExtResource("3_rx8xo")
 attack_data = ExtResource("4_asy8n")
 
-[sub_resource type="Resource" id="Resource_4y4ea"]
-script = ExtResource("6_iiwx6")
-heads = true
-until = false
-const_flip_times = 1
-metadata/_custom_type_script = "uid://y0v42qaa35wt"
-
 [sub_resource type="Resource" id="Resource_o8heo"]
 script = ExtResource("8_q2if7")
-which = "Coinflip"
-coin_flip = SubResource("Resource_4y4ea")
+which = "Slot"
+ask = ExtResource("6_rx8xo")
+slot_vars = "current_card"
 cap = -1
 metadata/_custom_type_script = "uid://vjn146j3ayd6"
 
 [sub_resource type="Resource" id="Resource_ob76w"]
 script = ExtResource("9_swqy7")
-comparision_type = "Return"
 first_comparison = SubResource("Resource_o8heo")
-compare_to = "None"
-second_constant = 0
-operate_w_constant = "None"
 metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
 [sub_resource type="Resource" id="Resource_hx20c"]
 script = ExtResource("10_hc2mc")
 description = "Flip a coin for each of your Pokémon in play (including [name]). This attack does 20 damage times the number of heads."
-prompt_reliant = false
 initial_main_DMG = 20
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("10_asy8n")]([])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
 modifier = 2
 modifier_num = 20
 comparator = SubResource("Resource_ob76w")
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_ju8be"]
@@ -71,12 +50,8 @@ attack_data = SubResource("Resource_hx20c")
 [sub_resource type="Resource" id="Resource_kh1cl"]
 script = ExtResource("5_pr7l4")
 HP = 80
-retreat = 1
 attacks = Array[ExtResource("4_p1pt7")]([SubResource("Resource_xrmox"), SubResource("Resource_ju8be")])
-evo_stage = "Basic"
-evolves_from = ""
 considered = 2
-owner = 0
 type = 64
 weak = 32
 resist = 16
@@ -88,7 +63,5 @@ image = ExtResource("1_sakby")
 illustrator = "Ryo Ueda"
 number = 103
 rarity = 4
-expansion = 0
 categories = 1
 pokemon_properties = SubResource("Resource_kh1cl")
-fossil = false

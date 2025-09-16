@@ -13,21 +13,10 @@
 [sub_resource type="Resource" id="Resource_7g1qx"]
 script = ExtResource("6_vf4gr")
 description = "Does 40 damage plus 10 more damage for each {Fighting} Energy attached to [name]."
-prompt_reliant = false
 initial_main_DMG = 40
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("6_yvfsv")]([])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
 modifier = 1
 modifier_num = 10
 comparator = ExtResource("3_tewxn")
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_vf4gr"]
@@ -40,15 +29,10 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_3cmwm"]
 script = ExtResource("4_tp364")
 HP = 70
-retreat = 1
 attacks = Array[ExtResource("2_6c4g7")]([ExtResource("3_tp364"), SubResource("Resource_vf4gr")])
 evo_stage = "Stage 1"
 evolves_from = "Shroomish"
-considered = 1
-owner = 0
-type = 1
 weak = 2
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -58,8 +42,6 @@ image = ExtResource("1_ulxcj")
 illustrator = "Ken Sugimori"
 number = 16
 rarity = 2
-expansion = 0
 categories = 1
 pokemon_properties = SubResource("Resource_3cmwm")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

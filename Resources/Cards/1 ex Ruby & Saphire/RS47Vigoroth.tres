@@ -13,21 +13,10 @@
 [sub_resource type="Resource" id="Resource_onjvd"]
 script = ExtResource("5_frehc")
 description = "Does 20 damage plus 10 more damage for each damage counter on [name]."
-prompt_reliant = false
 initial_main_DMG = 20
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("6_spdqf")]([])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
 modifier = 1
 modifier_num = 10
 comparator = ExtResource("4_spdqf")
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_rqr6v"]
@@ -40,15 +29,11 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_ph38x"]
 script = ExtResource("2_mn3q5")
 HP = 70
-retreat = 1
 attacks = Array[ExtResource("1_vv164")]([ExtResource("2_3ov5i"), SubResource("Resource_rqr6v")])
 evo_stage = "Stage 1"
 evolves_from = "Slakoth"
-considered = 1
-owner = 0
 type = 256
 weak = 32
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -58,8 +43,6 @@ image = ExtResource("1_yibvf")
 illustrator = "Kagemaru Himeno"
 number = 47
 rarity = 1
-expansion = 0
 categories = 1
 pokemon_properties = SubResource("Resource_ph38x")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

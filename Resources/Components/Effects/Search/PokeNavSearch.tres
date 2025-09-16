@@ -7,49 +7,21 @@
 
 [sub_resource type="Resource" id="Resource_48kux"]
 script = ExtResource("1_oodrf")
-which = 0
-top_deck = false
 stack = 0
-use_as = 0
 reorder_type = 2
 shuffle = false
-evolve = false
 metadata/_custom_type_script = "uid://cdyba0wadidwb"
 
 [sub_resource type="Resource" id="Resource_n7q0i"]
 script = ExtResource("2_och1r")
 description = "Pokemon or Energy card"
-must_be_different = false
 broad_class = 5
-exactly = false
-name_chec = 0
-name_array = Array[String]([])
-comparison_type = 1
 type = 511
-HP = -10
-evolves_from = false
-rare_candy = false
-inclusive_class = true
-poke_class = 0
-owner = 0
 stage = 7
-trainer_classes = 0
-energy_class = 3
-energy_provides = ExtResource("3_och1r")
 
 [resource]
 script = ExtResource("3_4y5sb")
-side = 4
-where = 1
-reordering_only = false
-shuffle_first = false
-based_on_side = 0
-based_on_slots = 0
-based_on_energy = 0
 portion = 3
-identifier_allowed = -1
-how_many = Array[int]([1])
 of_this = Array[ExtResource("2_och1r")]([SubResource("Resource_n7q0i")])
 and_then = SubResource("Resource_48kux")
-reveal = true
 metadata/_custom_type_script = "uid://cw3yr1k040kw7"

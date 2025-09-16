@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=26 format=3 uid="uid://r14xssseba8n"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=27 format=3 uid="uid://r14xssseba8n"]
 
 [ext_resource type="Texture2D" uid="uid://kt5023nwmrf4" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/95.jpg" id="1_4uunb"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_tudmd"]
 [ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_66xai"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="3_vivns"]
+[ext_resource type="Resource" uid="uid://bns8h72u2hxqo" path="res://Resources/Components/Effects/Asks/General/AnyMon.tres" id="4_7hwvp"]
 [ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="4_7s1n8"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="4_xh2h7"]
 [ext_resource type="Resource" uid="uid://c7itelq8jtjc2" path="res://Resources/Components/EnData/Rainbow.tres" id="5_75oic"]
@@ -19,77 +20,46 @@
 [sub_resource type="Resource" id="Resource_vv6e5"]
 script = ExtResource("6_7hwvp")
 which = "Slot"
-ask = ExtResource("4_7s1n8")
-slot_vars = "energy_cards"
-en_count_methods = "Excess"
-en_counting = ExtResource("5_75oic")
-cap = 4
+ask = ExtResource("4_7hwvp")
+slot_vars = "current_card"
+cap = -1
 metadata/_custom_type_script = "uid://vjn146j3ayd6"
 
 [sub_resource type="Resource" id="Resource_gl200"]
 script = ExtResource("7_qtxv2")
-comparision_type = "Return"
 first_comparison = SubResource("Resource_vv6e5")
-compare_to = "None"
-second_constant = 0
-operate_w_constant = "None"
 metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
 [sub_resource type="Resource" id="Resource_b53wu"]
 script = ExtResource("8_o4s0x")
 description = "Does 20 damage plus 20 more damage for each basic Energy attached to [name] but not used to pay for this attack's Energy cost. You can't add more than 80 damage in this way."
-prompt_reliant = false
 initial_main_DMG = 20
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("8_75oic")]([])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
 modifier = 1
 modifier_num = 20
 comparator = SubResource("Resource_gl200")
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_x2vyq"]
 script = ExtResource("2_tudmd")
 name = "Hyper Pump"
-attack_cost = ExtResource("3_66xai")
 attack_data = SubResource("Resource_b53wu")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_4u7em"]
 script = ExtResource("11_edpw3")
-action = 0
 chooser = 2
 givers = ExtResource("4_7s1n8")
-to_stack = 2
-stack_direction = 2
-energy_carry_over = false
-action_ammount = 1
-energy_ammount = 1
 energy_move_type = 2
-en_type = ExtResource("5_75oic")
 metadata/_custom_type_script = "uid://cimk6l7ytw7xg"
 
 [sub_resource type="Resource" id="Resource_dlxon"]
 script = ExtResource("12_e34dj")
-order = Array[int]([])
 energy_movement = SubResource("Resource_4u7em")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_lxcdj"]
 script = ExtResource("10_ku7tn")
-how_many = 1
-active_allowed = false
-apply_weak_res = false
 initial_main_DMG = 40
-modifier = 0
-modifier_num = 0
 prompt = ExtResource("9_kt7po")
 success_effect = SubResource("Resource_dlxon")
 metadata/_custom_type_script = "uid://br15mnap82upq"
@@ -97,27 +67,12 @@ metadata/_custom_type_script = "uid://br15mnap82upq"
 [sub_resource type="Resource" id="Resource_sc2gf"]
 script = ExtResource("8_o4s0x")
 description = "Choose 1 of your opponent's Pokémon. This attack does 40 damage to that Pokémon. After doing damage, flip a coin. If heads, your opponent discards an Energy card, if any, attached to that Pokémon. (Don't apply Weakness and Resistance to Benched Pokémon.)"
-prompt_reliant = false
-initial_main_DMG = 0
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("8_75oic")]([])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 bench_damage = SubResource("Resource_lxcdj")
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_s6isa"]
 script = ExtResource("2_tudmd")
 name = "Crushing Wave"
-attack_cost = ExtResource("3_66xai")
 attack_data = SubResource("Resource_sc2gf")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
@@ -128,11 +83,8 @@ retreat = 3
 attacks = Array[ExtResource("2_tudmd")]([SubResource("Resource_x2vyq"), SubResource("Resource_s6isa")])
 evo_stage = "Stage 2"
 evolves_from = "Marshtomp"
-considered = 1
-owner = 0
 type = 32
 weak = 1
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -145,5 +97,4 @@ rarity = 4
 expansion = 3
 categories = 1
 pokemon_properties = SubResource("Resource_66xai")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

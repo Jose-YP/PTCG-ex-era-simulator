@@ -10,7 +10,6 @@
 [sub_resource type="Resource" id="Resource_cmh7r"]
 script = ExtResource("1_yxhqn")
 name = "Tail Slap"
-attack_cost = ExtResource("2_4q850")
 attack_data = ExtResource("3_0i3k4")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
@@ -24,13 +23,7 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [resource]
 script = ExtResource("6_amcgv")
 HP = 40
-retreat = 1
 attacks = Array[ExtResource("1_yxhqn")]([SubResource("Resource_cmh7r"), SubResource("Resource_efrcq")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
-type = 1
 weak = 2
 resist = 4
 metadata/_custom_type_script = "uid://dkximshow1pao"

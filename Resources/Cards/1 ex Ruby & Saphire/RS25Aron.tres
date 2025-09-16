@@ -17,13 +17,7 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_nkg2b"]
 script = ExtResource("7_qd43f")
-HP = 50
-retreat = 1
 attacks = Array[ExtResource("2_76k8i")]([ExtResource("3_ew83m"), SubResource("Resource_7h57d")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
 type = 128
 weak = 2
 resist = 1
@@ -36,8 +30,6 @@ image = ExtResource("1_4su5e")
 illustrator = "Midori Harada"
 number = 25
 rarity = 1
-expansion = 0
 categories = 1
 pokemon_properties = SubResource("Resource_nkg2b")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

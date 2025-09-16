@@ -16,38 +16,19 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_wvyg7"]
 script = ExtResource("5_lg46j")
 description = "Flip a coin. If heads, each Defending Pokémon is now Paralyzed."
-prompt_reliant = false
-initial_main_DMG = 0
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
 prompt_effects = Array[ExtResource("4_v1nb7")]([SubResource("Resource_pra87")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
 both_active = true
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_7241d"]
 script = ExtResource("2_k3tgj")
 name = "Super Thunder Wave"
-attack_cost = ExtResource("3_k3tgj")
 attack_data = SubResource("Resource_wvyg7")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_u70e5"]
 script = ExtResource("6_pra87")
-HP = 50
-retreat = 1
 attacks = Array[ExtResource("2_k3tgj")]([SubResource("Resource_7241d"), ExtResource("6_gow71")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
 type = 8
 weak = 32
 resist = 128
@@ -59,9 +40,6 @@ name = "Electrike"
 image = ExtResource("1_ewy4q")
 illustrator = "Mitsuhiro Arita"
 number = 53
-rarity = 0
-expansion = 0
 categories = 1
 pokemon_properties = SubResource("Resource_u70e5")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

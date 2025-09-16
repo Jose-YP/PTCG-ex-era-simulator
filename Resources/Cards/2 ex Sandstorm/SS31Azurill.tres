@@ -13,7 +13,6 @@
 
 [sub_resource type="Resource" id="Resource_ltygs"]
 script = ExtResource("4_0ehm3")
-order = Array[int]([])
 search = ExtResource("4_my7mo")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -25,42 +24,22 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_hy80x"]
 script = ExtResource("6_ltygs")
 description = "Search your deck for a Trainer card, show it to your opponent, and put it into your hand. Shuffle your deck afterward."
-prompt_reliant = false
-initial_main_DMG = 0
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
 prompt_effects = Array[ExtResource("4_ltygs")]([SubResource("Resource_gmk3x")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_t1x7p"]
 script = ExtResource("2_tqd1y")
 name = "Jump Catch"
-attack_cost = ExtResource("5_0ehm3")
 attack_data = SubResource("Resource_hy80x")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_kee0h"]
 script = ExtResource("6_gmk3x")
 HP = 40
-retreat = 1
 pokepower = ExtResource("7_gmk3x")
 attacks = Array[ExtResource("2_tqd1y")]([SubResource("Resource_t1x7p")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
 type = 257
 weak = 32
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -73,5 +52,4 @@ rarity = 1
 expansion = 1
 categories = 1
 pokemon_properties = SubResource("Resource_kee0h")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

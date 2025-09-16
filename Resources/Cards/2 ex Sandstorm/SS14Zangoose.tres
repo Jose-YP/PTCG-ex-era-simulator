@@ -1,11 +1,11 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=21 format=3 uid="uid://ckv3xcbg1eb4m"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=20 format=3 uid="uid://ckv3xcbg1eb4m"]
 
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_ia523"]
 [ext_resource type="Texture2D" uid="uid://c38qtwcu88ns5" path="res://Art/Cards/2 ex Sandstorm/14.jpg" id="1_n38xy"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="2_dmwte"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_jjqu4"]
 [ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_xrugn"]
-[ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="4_bpwhs"]
+[ext_resource type="Resource" uid="uid://bns8h72u2hxqo" path="res://Resources/Components/Effects/Asks/General/AnyMon.tres" id="4_n38xy"]
 [ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="5_cabdh"]
 [ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="6_tvi4t"]
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="7_26vnk"]
@@ -13,45 +13,10 @@
 [ext_resource type="Resource" uid="uid://dfuhhhaske2n6" path="res://Resources/Components/Counters/Comparator/Not Equal/OthTrgIsEvo.tres" id="9_uii1w"]
 [ext_resource type="Resource" uid="uid://cucqwlq7u00cu" path="res://Resources/Components/Pokemon/Abilities/Bodies/PoisonResistance.tres" id="10_a60b8"]
 
-[sub_resource type="Resource" id="Resource_odgdy"]
-script = ExtResource("4_bpwhs")
-boolean_type = "And"
-previous_src_trg = false
-side_target = 5
-slot_target = 1
-specifically = Array[String](["Seviper"])
-tool_attatched = false
-comparison_type = 1
-max_hp = -10
-damage_taken = -10
-retreat_cost = -1
-evo_type = "Don't Check"
-stage = 7
-rare_candy = false
-class_inclusive = true
-pokemon_class = 63
-owner_inclusive = true
-pokemon_owner = 31
-type_inclusive = true
-pokemon_type = 1023
-en_class = 0
-energy_inclusive = true
-check_cards = true
-energy_attatched = -1
-energy_class = "Any"
-inclusive_ability = true
-check_ability = false
-contained_abilities = 3
-specific_abilities = Array[String]([])
-check_condition = false
-desired_condition = 0
-knocked_out = false
-metadata/_custom_type_script = "uid://mkjynqda7q5g"
-
 [sub_resource type="Resource" id="Resource_rryrn"]
 script = ExtResource("5_cabdh")
 which = "Slot"
-ask = SubResource("Resource_odgdy")
+ask = ExtResource("4_n38xy")
 slot_vars = "current_card"
 cap = -1
 metadata/_custom_type_script = "uid://vjn146j3ayd6"
@@ -60,78 +25,45 @@ metadata/_custom_type_script = "uid://vjn146j3ayd6"
 script = ExtResource("6_tvi4t")
 comparision_type = "Not Equal"
 first_comparison = SubResource("Resource_rryrn")
-compare_to = "None"
-second_constant = 0
-operate_w_constant = "None"
 metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
 [sub_resource type="Resource" id="Resource_aynwu"]
 script = ExtResource("8_j5ase")
 description = "If the Defending Pokémon is Seviper, this attack does 10 damage plus 30 more damage."
-prompt_reliant = false
 initial_main_DMG = 10
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("7_26vnk")]([])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
 modifier = 1
 modifier_num = 30
 comparator = SubResource("Resource_rmd3l")
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_amr6s"]
 script = ExtResource("1_ia523")
 name = "Target Slash"
-attack_cost = ExtResource("3_xrugn")
 attack_data = SubResource("Resource_aynwu")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_4rbp5"]
 script = ExtResource("8_j5ase")
 description = "If the Defending Pokémon is an Evolved Pokémon, this attack does 30 damage plus 30 more damage."
-prompt_reliant = false
 initial_main_DMG = 30
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("7_26vnk")]([])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
 modifier = 1
 modifier_num = 30
 comparator = ExtResource("9_uii1w")
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_kn14a"]
 script = ExtResource("1_ia523")
 name = "Super Slash"
-attack_cost = ExtResource("3_xrugn")
 attack_data = SubResource("Resource_4rbp5")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_4y00o"]
 script = ExtResource("2_dmwte")
 HP = 70
-retreat = 1
 pokebody = ExtResource("10_a60b8")
 attacks = Array[ExtResource("1_ia523")]([SubResource("Resource_amr6s"), SubResource("Resource_kn14a")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
 type = 256
 weak = 32
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -144,5 +76,4 @@ rarity = 3
 expansion = 1
 categories = 1
 pokemon_properties = SubResource("Resource_4y00o")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

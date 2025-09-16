@@ -24,24 +24,15 @@
 [sub_resource type="Resource" id="Resource_hjipc"]
 script = ExtResource("9_f84oo")
 action = 1
-chooser = 4
 givers = ExtResource("7_eemmu")
 reciever = ExtResource("8_gu4j2")
-to_stack = 2
-stack_direction = 2
-energy_carry_over = false
-action_ammount = 1
 energy_ammount = -1
-energy_move_type = 0
 en_type = ExtResource("6_gseeo")
 metadata/_custom_type_script = "uid://cimk6l7ytw7xg"
 
 [sub_resource type="Resource" id="Resource_1csst"]
 script = ExtResource("11_3oyw5")
-force_reversable = false
 record_target = true
-choose_active = false
-both_active = false
 chosing = 1
 affected = 1
 autofill = "Active"
@@ -63,20 +54,8 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_jpmu7"]
 script = ExtResource("5_lptg0")
 description = "You may switch [name] with 1 of your Benched Pokémon. If you do, you may move any number of {Grass} Energy cards attached to [name] to the new Active Pokémon. "
-prompt_reliant = false
 initial_main_DMG = 30
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
 prompt_effects = Array[ExtResource("4_nbhn7")]([SubResource("Resource_85c17")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_usqn5"]
@@ -89,45 +68,18 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_p3v4m"]
 script = ExtResource("13_e6h7m")
 description = "Shedinja"
-must_be_different = false
 broad_class = 1
-exactly = false
-name_chec = 0
 name_array = Array[String](["Shedinja"])
-comparison_type = 1
-type = 0
-HP = -10
-evolves_from = false
-rare_candy = false
-inclusive_class = true
-poke_class = 0
-owner = 0
-stage = 0
-trainer_classes = 0
-energy_class = 3
-energy_provides = ExtResource("14_adtio")
 metadata/_custom_type_script = "uid://uplawvwcwl8y"
 
 [sub_resource type="Resource" id="Resource_pe6uw"]
 script = ExtResource("14_kepxc")
-side = 4
-where = 1
-reordering_only = false
-shuffle_first = false
-based_on_side = 0
-based_on_slots = 0
-based_on_energy = 0
-portion = -1
-identifier_allowed = -1
-how_many = Array[int]([1])
 of_this = Array[ExtResource("13_e6h7m")]([SubResource("Resource_p3v4m")])
 and_then = ExtResource("12_q53k5")
-reveal = true
 metadata/_custom_type_script = "uid://cw3yr1k040kw7"
 
 [sub_resource type="Resource" id="Resource_weyjf"]
 script = ExtResource("10_kmcin")
-order = Array[int]([])
 search = SubResource("Resource_pe6uw")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -137,9 +89,6 @@ category = "Power"
 name = "Loose Shell"
 description = "Once during your turn, when you play [name] from your hand to evolve 1 of your Pokémon, you may search your deck for Shedinja and put it onto your Bench. Treat the new Benched Pokémon as a Basic Pokémon. Shuffle your deck afterward."
 affected_by_condition = false
-active = false
-how_often = "Once per Mon"
-independent_src_trg = false
 occurance = ExtResource("15_27lis")
 effect = SubResource("Resource_weyjf")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
@@ -152,11 +101,7 @@ pokepower = SubResource("Resource_bbrau")
 attacks = Array[ExtResource("2_adtio")]([SubResource("Resource_usqn5")])
 evo_stage = "Stage 1"
 evolves_from = "Nincada"
-considered = 1
-owner = 0
-type = 1
 weak = 2
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -169,5 +114,4 @@ rarity = 2
 expansion = 2
 categories = 1
 pokemon_properties = SubResource("Resource_buy7s")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

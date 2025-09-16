@@ -7,19 +7,13 @@
 
 [sub_resource type="Resource" id="Resource_1qsgg"]
 script = ExtResource("2_552sh")
-order = Array[int]([])
 dmgManip = ExtResource("1_hael6")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [resource]
 script = ExtResource("4_66xap")
-category = "Body"
 name = "Rain Dish"
 description = "At any time between turns, remove 1 damage counter from [name]."
-affected_by_condition = true
-active = false
-how_often = "Once per Mon"
-independent_src_trg = false
 occurance = ExtResource("3_uljx7")
 effect = SubResource("Resource_1qsgg")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"

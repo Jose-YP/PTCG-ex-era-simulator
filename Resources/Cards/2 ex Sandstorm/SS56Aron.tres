@@ -16,13 +16,7 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_pjmm4"]
 script = ExtResource("2_sdb4b")
-HP = 50
-retreat = 1
 attacks = Array[ExtResource("1_fnp3g")]([SubResource("Resource_remh0")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
 type = 128
 weak = 2
 resist = 1
@@ -34,9 +28,7 @@ name = "Aron"
 image = ExtResource("1_pjmm4")
 illustrator = "Atsuko Nishida"
 number = 56
-rarity = 0
 expansion = 1
 categories = 1
 pokemon_properties = SubResource("Resource_pjmm4")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

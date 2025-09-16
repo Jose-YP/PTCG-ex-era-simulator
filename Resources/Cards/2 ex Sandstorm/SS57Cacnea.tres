@@ -9,17 +9,9 @@
 
 [sub_resource type="Resource" id="Resource_pjmm4"]
 script = ExtResource("2_o4l2n")
-HP = 50
-retreat = 1
 pokebody = ExtResource("4_im6aj")
 attacks = Array[ExtResource("1_ah0cm")]([ExtResource("3_vs34j")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
-type = 1
 weak = 2
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -28,9 +20,7 @@ name = "Cacnea"
 image = ExtResource("1_k63f2")
 illustrator = "Atsuko Nishida"
 number = 57
-rarity = 0
 expansion = 1
 categories = 1
 pokemon_properties = SubResource("Resource_pjmm4")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

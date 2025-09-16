@@ -1,10 +1,9 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=32 format=3 uid="uid://bigbvtmdvobb8"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=30 format=3 uid="uid://bigbvtmdvobb8"]
 
 [ext_resource type="Texture2D" uid="uid://pxoft1wbeuxl" path="res://Art/Cards/12 ex Legend Maker/22.jpg" id="1_653qw"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_13wr1"]
-[ext_resource type="Resource" uid="uid://c7itelq8jtjc2" path="res://Resources/Components/EnData/Rainbow.tres" id="3_653qw"]
 [ext_resource type="Resource" uid="uid://cesjkvsi5c6jb" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/L1C1.tres" id="3_kpec7"]
-[ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="5_ad1mx"]
+[ext_resource type="Resource" uid="uid://bns8h72u2hxqo" path="res://Resources/Components/Effects/Asks/General/AnyMon.tres" id="4_v5ngv"]
 [ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="6_0chr7"]
 [ext_resource type="Script" uid="uid://cimk6l7ytw7xg" path="res://Code/Resource Makers/EffectSpecific/Components/EnMovMaker.gd" id="6_0ya0c"]
 [ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="7_feaad"]
@@ -22,78 +21,28 @@
 [ext_resource type="Resource" uid="uid://cq66mwg0r64ga" path="res://Resources/Components/Occurances/OnSelfKO.tres" id="17_snhq1"]
 [ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="18_ncrm3"]
 
-[sub_resource type="Resource" id="Resource_sxcfq"]
-script = ExtResource("5_ad1mx")
-boolean_type = "And"
-previous_src_trg = false
-side_target = 3
-slot_target = 4
-specifically = Array[String](["Magnemite", "Magneton"])
-tool_attatched = false
-comparison_type = 1
-max_hp = -10
-damage_taken = -10
-retreat_cost = -1
-evo_type = "Don't Check"
-stage = 7
-rare_candy = false
-class_inclusive = true
-pokemon_class = 63
-owner_inclusive = true
-pokemon_owner = 31
-type_inclusive = true
-pokemon_type = 1023
-en_class = 0
-energy_inclusive = true
-check_cards = true
-energy_attatched = -1
-energy_class = "Any"
-energy_type = ExtResource("3_653qw")
-inclusive_ability = true
-check_ability = false
-contained_abilities = 3
-specific_abilities = Array[String]([])
-check_condition = false
-desired_condition = 0
-knocked_out = false
-metadata/_custom_type_script = "uid://mkjynqda7q5g"
-
 [sub_resource type="Resource" id="Resource_i17pt"]
 script = ExtResource("6_0chr7")
 which = "Slot"
-ask = SubResource("Resource_sxcfq")
+ask = ExtResource("4_v5ngv")
 slot_vars = "current_card"
 cap = -1
 metadata/_custom_type_script = "uid://vjn146j3ayd6"
 
 [sub_resource type="Resource" id="Resource_flkvf"]
 script = ExtResource("7_feaad")
-comparision_type = "Return"
 first_comparison = SubResource("Resource_i17pt")
-compare_to = "None"
-second_constant = 0
-operate_w_constant = "None"
 metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
 [sub_resource type="Resource" id="Resource_srd2b"]
 script = ExtResource("9_w06bv")
 description = "If [name] has any React Energy cards attached to it, this attack does 30 damage plus 10 more damage for each Magnemite and Magneton (both yours and your opponent's) in play."
-prompt_reliant = false
 prompt = ExtResource("8_v5ngv")
 initial_main_DMG = 30
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("9_ckcqc")]([])
-conditional_self_dmg = false
-self_damage = 0
 mod_prompt = true
 modifier = 1
 modifier_num = 10
 comparator = SubResource("Resource_flkvf")
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_w06bv"]
@@ -113,12 +62,8 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_gmkqs"]
 script = ExtResource("6_0ya0c")
 action = 1
-chooser = 4
 givers = ExtResource("13_ckcqc")
 reciever = ExtResource("14_ano3c")
-to_stack = 2
-stack_direction = 2
-energy_carry_over = false
 action_ammount = -1
 energy_ammount = -1
 energy_move_type = 2
@@ -127,7 +72,6 @@ metadata/_custom_type_script = "uid://cimk6l7ytw7xg"
 
 [sub_resource type="Resource" id="Resource_gdo84"]
 script = ExtResource("7_kpec7")
-order = Array[int]([])
 energy_movement = SubResource("Resource_gmkqs")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -137,9 +81,7 @@ category = "Power"
 name = "Reactive Recharge"
 description = "If [name] would be Knocked Out by damage from an opponent's attack, you may move any number of React Energy cards from [name] to your Pokémon in any way you like."
 affected_by_condition = false
-active = false
 how_often = "Infinite"
-independent_src_trg = false
 occurance = ExtResource("17_snhq1")
 effect = SubResource("Resource_gdo84")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
@@ -147,13 +89,10 @@ metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 [sub_resource type="Resource" id="Resource_4alir"]
 script = ExtResource("9_0chr7")
 HP = 70
-retreat = 1
 pokepower = SubResource("Resource_7pk77")
 attacks = Array[ExtResource("2_13wr1")]([SubResource("Resource_w06bv"), SubResource("Resource_ckcqc")])
 evo_stage = "Stage 1"
 evolves_from = "Magnemite"
-considered = 1
-owner = 0
 type = 8
 weak = 32
 resist = 128
@@ -169,5 +108,4 @@ rarity = 2
 expansion = 11
 categories = 1
 pokemon_properties = SubResource("Resource_4alir")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

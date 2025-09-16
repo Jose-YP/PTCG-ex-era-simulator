@@ -7,7 +7,6 @@
 
 [sub_resource type="Resource" id="Resource_cb1ok"]
 script = ExtResource("1_5h22j")
-order = Array[int]([])
 swap = ExtResource("2_07iss")
 
 [sub_resource type="Resource" id="Resource_7eiwe"]
@@ -17,7 +16,5 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [resource]
 script = ExtResource("2_gvqqg")
-considered = "Item"
-specific_requirement = ""
 description = "Switch 1 of your Active Pokémon with 1 of your Benched Pokémon. "
 prompt_effects = Array[ExtResource("1_fn3vn")]([SubResource("Resource_7eiwe")])

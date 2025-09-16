@@ -8,13 +8,7 @@
 
 [sub_resource type="Resource" id="Resource_1g36l"]
 script = ExtResource("2_73tqj")
-HP = 50
-retreat = 1
 attacks = Array[ExtResource("1_7f247")]([ExtResource("3_1g36l")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
 type = 8
 weak = 32
 resist = 128
@@ -26,9 +20,7 @@ name = "Magnemite"
 image = ExtResource("1_nipau")
 illustrator = "Midori Harada"
 number = 62
-rarity = 0
 expansion = 2
 categories = 1
 pokemon_properties = SubResource("Resource_1g36l")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

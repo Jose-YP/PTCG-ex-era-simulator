@@ -12,36 +12,12 @@
 resource_local_to_scene = true
 script = ExtResource("3_b0id2")
 description = "Reduce damage by 10 after weak/res"
-unstackable_id = ""
 stackable = true
-after_weak_res = true
-operation = "Add"
-add_hp = 0
-attack = 0
 defense = 10
-retreat_change = 0
-cost_modifier = "Add"
-modify = 0
-plus = false
-condition_immune = 0
-attack_effect_immune = false
-damage_immune = false
-body_immune = false
-power_immune = false
-trainer_immune = false
-odd_immunity = false
-even_immunity = false
-weakness = false
-resistance = false
-effects = false
-attack_names = Array[String]([])
-application = "Slot"
 recieves = ExtResource("5_tpgwn")
-duration = -1
 
 [sub_resource type="Resource" id="Resource_rtiwi"]
 script = ExtResource("4_1lfkp")
-order = Array[int]([])
 buff = SubResource("Resource_w1pwm")
 
 [sub_resource type="Resource" id="Resource_nokdc"]
@@ -52,12 +28,7 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [resource]
 script = ExtResource("2_8vyn0")
-considered = "Special Energy"
 description = "Damage done by attacks to the Pokémon that Metal Energy is attached to is reduced by 10 (after applying Weakness and Resistance). Ignore this effect if the Pokémon that Metal Energy is attached to isn't {Metal}. Metal Energy provides {Metal} Energy. (Doesn't count as a basic Energy card.)"
-has_fail_provide = false
-has_fail_prevent = false
-attatch_effects = Array[ExtResource("3_nokdc")]([])
 prompt_effects = Array[ExtResource("3_nokdc")]([SubResource("Resource_nokdc")])
-turns = -1
 fail_provide = ExtResource("1_ffs31")
 success_provide = ExtResource("1_ffs31")

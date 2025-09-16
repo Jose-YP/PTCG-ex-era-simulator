@@ -12,7 +12,6 @@
 
 [sub_resource type="Resource" id="Resource_rxp53"]
 script = ExtResource("5_72gut")
-order = Array[int]([])
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_72gut"]
@@ -23,20 +22,8 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_876u4"]
 script = ExtResource("6_xn1xe")
 description = "Move 1 Energy card attached to the Defending Pokémon to the other Defending Pokémon. (Ignore this effect if your opponent has only 1 Defending Pokémon.)"
-prompt_reliant = false
 initial_main_DMG = 30
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
 prompt_effects = Array[ExtResource("5_sv4fu")]([SubResource("Resource_72gut")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_1tsea"]
@@ -53,11 +40,8 @@ retreat = 0
 attacks = Array[ExtResource("1_8igxm")]([ExtResource("3_fn6o8"), SubResource("Resource_1tsea")])
 evo_stage = "Stage 1"
 evolves_from = "Goldeen"
-considered = 1
-owner = 0
 type = 4
 weak = 8
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -67,8 +51,6 @@ image = ExtResource("1_wt1li")
 illustrator = "Hajime Kusajima"
 number = 21
 rarity = 2
-expansion = 0
 categories = 1
 pokemon_properties = SubResource("Resource_v0xfh")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

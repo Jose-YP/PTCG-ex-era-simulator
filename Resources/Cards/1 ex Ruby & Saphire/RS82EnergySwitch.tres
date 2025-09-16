@@ -13,8 +13,6 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [sub_resource type="Resource" id="Resource_j6siw"]
 script = ExtResource("5_7j0cj")
-considered = "Item"
-specific_requirement = ""
 description = "Move a basic Energy card attached to 1 of your Pokémon to another of your Pokémon. "
 prompt_effects = Array[ExtResource("3_5an1r")]([SubResource("Resource_h0v0d")])
 
@@ -25,7 +23,5 @@ image = ExtResource("1_lqtpo")
 illustrator = "Hideyuki Nakajima"
 number = 82
 rarity = 1
-expansion = 0
 categories = 2
 trainer_properties = SubResource("Resource_j6siw")
-fossil = false

@@ -9,21 +9,10 @@
 [sub_resource type="Resource" id="Resource_1stg2"]
 script = ExtResource("4_65qah")
 description = "Flip 2 coins. This attack does 70 damage times the number of heads."
-prompt_reliant = false
 initial_main_DMG = 70
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("3_p7eri")]([])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
 modifier = 2
 modifier_num = 60
 comparator = ExtResource("2_w3dl6")
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [resource]

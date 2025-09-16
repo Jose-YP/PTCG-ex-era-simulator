@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="PromptAsk" load_steps=7 format=3 uid="uid://c83xi8uwwrb6x"]
 
-[ext_resource type="Resource" uid="uid://u1tsv1qfedrs" path="res://Resources/Components/Effects/Asks/Evo/OthActEvo.tres" id="1_0acbn"]
+[ext_resource type="Resource" uid="uid://bns8h72u2hxqo" path="res://Resources/Components/Effects/Asks/General/AnyMon.tres" id="1_0acbn"]
 [ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="2_otdv7"]
 [ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="3_mo8p2"]
 [ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="4_i3hbt"]
@@ -17,9 +17,6 @@ metadata/_custom_type_script = "uid://vjn146j3ayd6"
 script = ExtResource("3_mo8p2")
 comparision_type = "Not Equal"
 first_comparison = SubResource("Resource_hi82u")
-compare_to = "None"
-second_constant = 0
-operate_w_constant = "None"
 metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
 [resource]

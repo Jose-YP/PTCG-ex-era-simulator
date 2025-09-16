@@ -21,9 +21,6 @@ class_name Disable
 ##If this is filled with anything the disable will only work on specified attacks
 @export var attack_names: Array[String]
 
-
-signal finished
-
 enum DIS_STATUS {CAN, CANT, FLIP}
 
 func play_effect(reversable: bool = false, replace_num: int = -1) -> void:

@@ -17,58 +17,32 @@
 [sub_resource type="Resource" id="Resource_yrpea"]
 script = ExtResource("5_hxbuf")
 description = "Search your deck for a Trainer card (excluding Supporter cards), show it to your opponent, and put it into your hand. Shuffle your deck afterward. "
-prompt_reliant = false
 initial_main_DMG = 10
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("6_le6pv")]([])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_0l0mh"]
 script = ExtResource("1_tp1gn")
 name = "Moon Guidance"
-attack_cost = ExtResource("4_s35fu")
 attack_data = SubResource("Resource_yrpea")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_5ld0q"]
 script = ExtResource("7_65xpm")
 disable_power = true
-disable_body = false
-disable_retreat = false
-choose_num = -1
-attack = 0
-atk_effect = true
-attack_names = Array[String]([])
-application = "Slot"
 recieves = ExtResource("7_sjmsd")
-duration = -1
 metadata/_custom_type_script = "uid://c0ishgbxk63dg"
 
 [sub_resource type="Resource" id="Resource_wpc3u"]
 script = ExtResource("2_ncs6m")
-order = Array[int]([])
 disable = SubResource("Resource_5ld0q")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_18faj"]
 script = ExtResource("14_le6pv")
-category = "Body"
 name = "Sol Shade"
 description = " As long as you have Solrock in play, each player's {Fire} Pokémon (excluding Pokémon-ex) can't use any Poké-Powers. "
 affected_by_condition = false
-active = false
 how_often = "Infinite"
-independent_src_trg = false
 prompt = ExtResource("13_opu8w")
 passive = SubResource("Resource_wpc3u")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
@@ -76,16 +50,10 @@ metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 [sub_resource type="Resource" id="Resource_15uuj"]
 script = ExtResource("9_iq553")
 HP = 60
-retreat = 1
 pokebody = SubResource("Resource_18faj")
 attacks = Array[ExtResource("1_tp1gn")]([SubResource("Resource_0l0mh"), ExtResource("8_hxbuf")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
 type = 16
 weak = 16
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -99,5 +67,4 @@ rarity = 2
 expansion = 11
 categories = 1
 pokemon_properties = SubResource("Resource_15uuj")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

@@ -12,7 +12,6 @@ considered = "Supporter"
 specific_requirement = "Discard a card from your hand. If you can't discard a card from your hand, you can't play this card."
 description = "Draw 3 cards. If you discarded a Pokémon that has δ on its card, draw 4 cards instead. "
 prompt = ExtResource("3_pwpyl")
-prompt_effects = Array[ExtResource("4_heyef")]([])
 metadata/_custom_type_script = "uid://crx447i85kshy"
 
 [resource]
@@ -25,4 +24,3 @@ rarity = 1
 expansion = 12
 categories = 2
 trainer_properties = SubResource("Resource_ehufq")
-fossil = false

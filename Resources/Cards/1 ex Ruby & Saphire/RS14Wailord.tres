@@ -13,20 +13,8 @@
 [sub_resource type="Resource" id="Resource_pusdj"]
 script = ExtResource("4_chvin")
 description = "[name] does 20 damage to itself."
-prompt_reliant = false
 initial_main_DMG = 50
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("4_yftd1")]([])
-conditional_self_dmg = false
 self_damage = 20
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_l8sw6"]
@@ -50,11 +38,8 @@ retreat = 4
 attacks = Array[ExtResource("2_wnx27")]([SubResource("Resource_l8sw6"), SubResource("Resource_7fwhs")])
 evo_stage = "Stage 1"
 evolves_from = "Wailmer"
-considered = 1
-owner = 0
 type = 4
 weak = 8
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -64,8 +49,6 @@ image = ExtResource("1_o2uv4")
 illustrator = "Ken Sugimori"
 number = 14
 rarity = 3
-expansion = 0
 categories = 1
 pokemon_properties = SubResource("Resource_chvin")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

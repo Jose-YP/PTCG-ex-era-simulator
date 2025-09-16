@@ -7,12 +7,12 @@
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="4_maceq"]
 [ext_resource type="Resource" uid="uid://dk0v7dyi3r43m" path="res://Resources/Components/Effects/Identifiers/Trainers/Trainer.tres" id="4_sb5y8"]
 [ext_resource type="Resource" uid="uid://cw44iqotg3v3f" path="res://Resources/Components/Effects/Asks/General/FromDefending.tres" id="5_g1yuy"]
+[ext_resource type="Resource" uid="uid://bns8h72u2hxqo" path="res://Resources/Components/Effects/Asks/General/AnyMon.tres" id="6_maceq"]
 [ext_resource type="Script" uid="uid://8sh5p3leflla" path="res://Code/Resource Makers/EffectSpecific/Components/CardDisruptMaker.gd" id="6_r3gwp"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="7_ys46e"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="8_3ajyv"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="9_maceq"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="10_k4ce0"]
-[ext_resource type="Resource" uid="uid://bkt6ry7vyha70" path="res://Resources/Components/Effects/Asks/General/Other.tres" id="10_utej3"]
 [ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="11_2svl2"]
 [ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="12_budek"]
 [ext_resource type="Resource" uid="uid://b0figrvn4kg1r" path="res://Resources/Components/Effects/Prompts/PromptComparator/1TurnImmunity.tres" id="12_k4ce0"]
@@ -20,11 +20,9 @@
 
 [sub_resource type="Resource" id="Resource_kd0t3"]
 script = ExtResource("11_2svl2")
-which = "Stack"
-ask = ExtResource("10_utej3")
-stack_vars = "cards_in_play"
-identifier = ExtResource("4_sb5y8")
-stack_portion = -1
+which = "Slot"
+ask = ExtResource("6_maceq")
+slot_vars = "current_card"
 cap = -1
 metadata/_custom_type_script = "uid://vjn146j3ayd6"
 
@@ -33,8 +31,6 @@ script = ExtResource("12_budek")
 comparision_type = "Not Equal"
 first_comparison = SubResource("Resource_kd0t3")
 compare_to = "Const"
-second_constant = 0
-operate_w_constant = "None"
 metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
 [sub_resource type="Resource" id="Resource_dlf6l"]
@@ -54,18 +50,7 @@ metadata/_custom_type_script = "uid://b85jmc7067bjc"
 [sub_resource type="Resource" id="Resource_utej3"]
 script = ExtResource("6_r3gwp")
 send = "Slot"
-send_to = 2
-top_stack = true
-shuffle = false
-card_ammount = 1
-reveal = false
-who_chooses = 4
-side = 2
 card_options = ExtResource("4_sb5y8")
-view = true
-portion = -1
-from_stack = 0
-slot_choose_num = -1
 in_play_options = ExtResource("5_g1yuy")
 metadata/_custom_type_script = "uid://8sh5p3leflla"
 
@@ -85,26 +70,13 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_budek"]
 script = ExtResource("8_3ajyv")
 description = "Discard all of your opponent's Trainer cards in play. If you do, prevent all effects, including damage, done to [u]the Pokémon using this attack[/u] during your opponent's next turn."
-prompt_reliant = false
-initial_main_DMG = 0
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
 prompt_effects = Array[ExtResource("4_maceq")]([SubResource("Resource_maceq")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
 both_active = true
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_8eilx"]
 script = ExtResource("9_maceq")
 name = "Ice Generator"
-attack_cost = ExtResource("3_s8n6m")
 attack_data = SubResource("Resource_budek")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
@@ -114,7 +86,6 @@ considered = "TM"
 specific_requirement = "Attach this card to 1 of your Evolved Pokémon (excluding Pokémon-ex and Pokémon that has an owner in its name) in play. That Pokémon may use this card's attack instead of its own. At the end of your turn, discard [name]."
 description = "Discard all of your opponent's Trainer cards in play. If you do, prevent all effects, including damage, done to the Pokémon using this attack during your opponent's next turn."
 asks = ExtResource("3_3ajyv")
-prompt_effects = Array[ExtResource("4_maceq")]([])
 provided_attack = SubResource("Resource_8eilx")
 metadata/_custom_type_script = "uid://crx447i85kshy"
 
@@ -128,5 +99,4 @@ rarity = 1
 expansion = 4
 categories = 2
 trainer_properties = SubResource("Resource_gle0s")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

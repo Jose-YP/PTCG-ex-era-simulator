@@ -28,13 +28,8 @@ script = ExtResource("7_i2jv3")
 HP = 80
 retreat = 3
 attacks = Array[ExtResource("2_oft0f")]([SubResource("Resource_q546b"), SubResource("Resource_ivasd")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
 type = 32
 weak = 4
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -43,9 +38,7 @@ name = "Onix"
 image = ExtResource("1_b3qyt")
 illustrator = "Midori Harada"
 number = 71
-rarity = 0
 expansion = 1
 categories = 1
 pokemon_properties = SubResource("Resource_rhk45")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

@@ -11,7 +11,6 @@
 
 [sub_resource type="Resource" id="Resource_c5prr"]
 script = ExtResource("4_nq2cm")
-order = Array[int]([])
 card_disrupt = ExtResource("3_10skr")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -23,39 +22,20 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_cae38"]
 script = ExtResource("5_0ocxq")
 description = "Before doing damage, discard all Trainer cards attached to the Defending Pokémon (before they affect the damage)."
-prompt_reliant = false
 initial_main_DMG = 10
-defender_properties = 0
-condition = 1
 before_damage = true
-replace_num = false
-share_prompt = false
 prompt_effects = Array[ExtResource("3_nq2cm")]([SubResource("Resource_0ocxq")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_nq2cm"]
 script = ExtResource("1_hyodl")
 name = "Plunder"
-attack_cost = ExtResource("2_ixnle")
 attack_data = SubResource("Resource_cae38")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [resource]
 script = ExtResource("4_10skr")
-HP = 50
-retreat = 1
 attacks = Array[ExtResource("1_hyodl")]([SubResource("Resource_nq2cm"), ExtResource("3_6m008")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
 type = 256
 weak = 32
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"

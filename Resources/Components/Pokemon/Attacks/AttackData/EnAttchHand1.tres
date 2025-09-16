@@ -7,7 +7,6 @@
 
 [sub_resource type="Resource" id="Resource_ex5cx"]
 script = ExtResource("2_1bo7l")
-order = Array[int]([])
 energy_movement = ExtResource("1_cjdkb")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -19,18 +18,5 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [resource]
 script = ExtResource("3_8ipkk")
 description = "Attach a basic Energy card from your hand to 1 of your Pokémon."
-prompt_reliant = false
-initial_main_DMG = 0
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
 prompt_effects = Array[ExtResource("1_1bo7l")]([SubResource("Resource_8ipkk")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"

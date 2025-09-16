@@ -1,65 +1,22 @@
-[gd_resource type="Resource" script_class="Comparator" load_steps=10 format=3 uid="uid://crlxvia0kynq"]
+[gd_resource type="Resource" script_class="Comparator" load_steps=6 format=3 uid="uid://crlxvia0kynq"]
 
-[ext_resource type="Resource" uid="uid://bnv2dkudpcueo" path="res://Resources/Components/Effects/Asks/General/SrcActive.tres" id="1_8xrcl"]
-[ext_resource type="Resource" uid="uid://dm2i7spst0qpp" path="res://Resources/Components/Effects/Identifiers/AnyCard.tres" id="2_emalt"]
+[ext_resource type="Resource" uid="uid://bns8h72u2hxqo" path="res://Resources/Components/Effects/Asks/General/AnyMon.tres" id="1_44vxm"]
 [ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="2_r4o3s"]
 [ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="3_6bh1g"]
-[ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="4_77qmt"]
-[ext_resource type="Resource" uid="uid://c7itelq8jtjc2" path="res://Resources/Components/EnData/Rainbow.tres" id="4_qiqxc"]
 
 [sub_resource type="Resource" id="Resource_uanf6"]
 script = ExtResource("2_r4o3s")
-which = "Stack"
-ask = ExtResource("1_8xrcl")
-stack_vars = "discard_pile"
-identifier = ExtResource("2_emalt")
-stack_portion = -1
+which = "Slot"
+ask = ExtResource("1_44vxm")
+slot_vars = "current_card"
 cap = -1
 metadata/_custom_type_script = "uid://vjn146j3ayd6"
 
-[sub_resource type="Resource" id="Resource_ljd7k"]
-script = ExtResource("4_77qmt")
-boolean_type = "And"
-previous_src_trg = false
-side_target = 5
-slot_target = 2
-specifically = Array[String]([])
-tool_attatched = false
-comparison_type = 1
-max_hp = -10
-damage_taken = -10
-retreat_cost = -1
-evo_type = "Don't Check"
-stage = 7
-rare_candy = false
-class_inclusive = true
-pokemon_class = 63
-owner_inclusive = true
-pokemon_owner = 15
-type_inclusive = true
-pokemon_type = 1023
-en_class = 0
-energy_inclusive = true
-check_cards = true
-energy_attatched = -1
-energy_class = "Any"
-energy_type = ExtResource("4_qiqxc")
-inclusive_ability = true
-check_ability = false
-contained_abilities = 3
-specific_abilities = Array[String]([])
-check_condition = false
-desired_condition = 0
-knocked_out = false
-metadata/_custom_type_script = "uid://mkjynqda7q5g"
-
 [sub_resource type="Resource" id="Resource_4ejse"]
 script = ExtResource("2_r4o3s")
-which = "Stack"
-ask = SubResource("Resource_ljd7k")
-stack_vars = "discard_pile"
-identifier = ExtResource("2_emalt")
-stack_portion = -1
+which = "Slot"
+ask = ExtResource("1_44vxm")
+slot_vars = "current_card"
 cap = -1
 metadata/_custom_type_script = "uid://vjn146j3ayd6"
 
@@ -68,7 +25,5 @@ script = ExtResource("3_6bh1g")
 comparision_type = "Not Equal"
 first_comparison = SubResource("Resource_uanf6")
 compare_to = "Second"
-second_constant = 0
 second_counter = SubResource("Resource_4ejse")
-operate_w_constant = "None"
 metadata/_custom_type_script = "uid://b65jx8u5cgcgl"

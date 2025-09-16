@@ -19,31 +19,16 @@
 
 [sub_resource type="Resource" id="Resource_8j74n"]
 script = ExtResource("5_88qdh")
-comparision_type = "Return"
 first_comparison = ExtResource("4_y6nmf")
-compare_to = "None"
-second_constant = 0
-operate_w_constant = "None"
 metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
 [sub_resource type="Resource" id="Resource_drm20"]
 script = ExtResource("7_b2581")
 description = "Does 10 damage times the amount of Energy attached to [name]."
-prompt_reliant = false
 initial_main_DMG = 10
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("6_lqn7i")]([])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
 modifier = 2
 modifier_num = 10
 comparator = SubResource("Resource_8j74n")
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_d2h74"]
@@ -55,37 +40,21 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_6bar7"]
 script = ExtResource("8_niwwx")
-grass_cost = 0
-fire_cost = 0
-water_cost = 0
 lightning_cost = 1
-psychic_cost = 0
-fighting_cost = 0
-darkness_cost = 0
 metal_cost = 1
 colorless_cost = 2
 metadata/_custom_type_script = "uid://crscwhvugaoxa"
 
 [sub_resource type="Resource" id="Resource_d4c2v"]
 script = ExtResource("10_oifrx")
-choosing = 4
 mode = "Add"
 ask = ExtResource("9_v5xb8")
 how_many = 7
 choose_num = -1
-turn_delay = -1
-prevent_KO = false
-anyway_u_like = false
-with_leftover = "None"
-leftover_anyway = false
-vary_choose_num = false
-plus = true
-modifier = 1
 metadata/_custom_type_script = "uid://scca13hg4k1l"
 
 [sub_resource type="Resource" id="Resource_ykvuy"]
 script = ExtResource("4_06avp")
-order = Array[int]([])
 dmgManip = SubResource("Resource_d4c2v")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -97,20 +66,8 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_100f4"]
 script = ExtResource("7_b2581")
 description = "Put 7 damage counters on [name]."
-prompt_reliant = false
 initial_main_DMG = 70
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
 prompt_effects = Array[ExtResource("6_lqn7i")]([SubResource("Resource_xwsj3")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_syeh5"]
@@ -122,33 +79,21 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_xiw2b"]
 script = ExtResource("3_cru68")
-disable_power = false
-disable_body = false
-disable_retreat = false
-choose_num = -1
-attack = 0
 atk_effect = false
 attack_names = Array[String](["Lightning Storm"])
-application = "Slot"
 recieves = ExtResource("9_v5xb8")
-duration = -1
 metadata/_custom_type_script = "uid://c0ishgbxk63dg"
 
 [sub_resource type="Resource" id="Resource_y6nmf"]
 script = ExtResource("4_06avp")
-order = Array[int]([])
 disable = SubResource("Resource_xiw2b")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_lqn7i"]
 script = ExtResource("6_wvp4t")
-category = "Body"
 name = "Delta Guard"
 description = "As long as [name] has any Holon Energy cards attached to it, ignore the effect of [name]'s Lightning Storm attack."
 affected_by_condition = false
-active = false
-how_often = "Once per Mon"
-independent_src_trg = false
 prompt = ExtResource("13_c4cok")
 passive = SubResource("Resource_y6nmf")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
@@ -159,10 +104,7 @@ HP = 90
 retreat = 3
 pokebody = SubResource("Resource_lqn7i")
 attacks = Array[ExtResource("2_h3h31")]([SubResource("Resource_d2h74"), SubResource("Resource_syeh5")])
-evo_stage = "Basic"
-evolves_from = ""
 considered = 9
-owner = 0
 type = 136
 weak = 256
 resist = 36
@@ -178,5 +120,4 @@ rarity = 3
 expansion = 10
 categories = 1
 pokemon_properties = SubResource("Resource_b2581")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

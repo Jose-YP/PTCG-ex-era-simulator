@@ -21,19 +21,13 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_7l16b"]
 script = ExtResource("5_f5wi8")
-order = Array[int]([])
 dmgManip = ExtResource("6_f5wi8")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_ebip0"]
 script = ExtResource("13_a2psr")
-category = "Body"
 name = "Natural Remedy"
 description = "Once during your turn (before your attack), when you attach a {Water} Energy card from your hand to [name], remove 1 damage counter from [name]."
-affected_by_condition = true
-active = false
-how_often = "Once per Mon"
-independent_src_trg = false
 occurance = ExtResource("8_f5wi8")
 effect = SubResource("Resource_7l16b")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
@@ -46,11 +40,8 @@ pokebody = SubResource("Resource_ebip0")
 attacks = Array[ExtResource("2_jpmo1")]([ExtResource("3_hfd77"), SubResource("Resource_p27p5")])
 evo_stage = "Stage 2"
 evolves_from = "Marshtomp"
-considered = 1
-owner = 0
 type = 4
 weak = 8
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -60,8 +51,6 @@ image = ExtResource("1_gvnyk")
 illustrator = "Ken Sugimori"
 number = 23
 rarity = 2
-expansion = 0
 categories = 1
 pokemon_properties = SubResource("Resource_a2psr")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

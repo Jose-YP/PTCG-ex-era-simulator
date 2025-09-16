@@ -20,38 +20,19 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_2m73h"]
 script = ExtResource("5_dxuyr")
 description = "Flip a coin. If heads, prevent all effects of an attack, including damage, done to Spearow during your opponent's next turn."
-prompt_reliant = false
-initial_main_DMG = 0
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
 prompt_effects = Array[ExtResource("5_cisvk")]([SubResource("Resource_cisvk")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_iu7it"]
 script = ExtResource("2_cisvk")
 name = "Super Speed"
-attack_cost = ExtResource("3_c422g")
 attack_data = SubResource("Resource_2m73h")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_ob23t"]
 script = ExtResource("8_akca5")
 HP = 40
-retreat = 1
 attacks = Array[ExtResource("2_cisvk")]([SubResource("Resource_iu7it"), ExtResource("7_t2jsv")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
 type = 256
 weak = 8
 resist = 32
@@ -63,9 +44,7 @@ name = "Spearow"
 image = ExtResource("1_e5dhs")
 illustrator = "Aya Kusube"
 number = 81
-rarity = 0
 expansion = 1
 categories = 1
 pokemon_properties = SubResource("Resource_ob23t")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

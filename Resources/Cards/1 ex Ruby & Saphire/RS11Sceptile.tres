@@ -40,7 +40,6 @@ comparision_type = "Equals"
 first_comparison = ExtResource("8_77a3r")
 compare_to = "Const"
 second_constant = 1
-operate_w_constant = "None"
 metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
 [sub_resource type="Resource" id="Resource_cu7av"]
@@ -65,7 +64,6 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [sub_resource type="Resource" id="Resource_pi6dd"]
 script = ExtResource("7_pi6dd")
-order = Array[int]([])
 condition = ExtResource("4_dpoqi")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -118,27 +116,14 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_tnff2"]
 script = ExtResource("7_aqyw1")
 description = "If 1 Energy is attached to [name], the Defending Pokémon is now Asleep. If 2 Energy is attached to [name], the Defending Pokémon is now Poisoned. If 3 Energy is attached to [name], the Defending Pokémon is now Asleep and Poisoned. If 4 or more Energy is attached to [name], the Defending Pokémon is now Asleep, Burned, and Poisoned."
-prompt_reliant = false
 prompt = SubResource("Resource_u0wp7")
 initial_main_DMG = 20
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
 prompt_effects = Array[ExtResource("7_mqkhh")]([SubResource("Resource_f0ilk"), SubResource("Resource_pruol"), SubResource("Resource_lcgnl"), SubResource("Resource_0axk1")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_aa30r"]
 script = ExtResource("2_xuiss")
 name = "Lizard Poison"
-attack_cost = ExtResource("3_dpoqi")
 attack_data = SubResource("Resource_tnff2")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
@@ -156,9 +141,6 @@ retreat = 2
 attacks = Array[ExtResource("2_xuiss")]([SubResource("Resource_aa30r"), SubResource("Resource_270w5")])
 evo_stage = "Stage 2"
 evolves_from = "Grovyle"
-considered = 1
-owner = 0
-type = 1
 weak = 2
 resist = 4
 metadata/_custom_type_script = "uid://dkximshow1pao"
@@ -170,8 +152,6 @@ image = ExtResource("1_ry2bs")
 illustrator = "Midori Harada"
 number = 11
 rarity = 3
-expansion = 0
 categories = 1
 pokemon_properties = SubResource("Resource_2oeaf")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

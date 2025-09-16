@@ -19,22 +19,13 @@
 script = ExtResource("5_2carm")
 side = 1
 where = 0
-reordering_only = false
-shuffle_first = false
-based_on_side = 0
-based_on_slots = 0
-based_on_energy = 0
-portion = -1
-identifier_allowed = -1
 how_many = Array[int]([2])
 of_this = Array[ExtResource("6_p4n6b")]([ExtResource("6_mlmo2")])
 and_then = ExtResource("3_nugvk")
-reveal = true
 metadata/_custom_type_script = "uid://cw3yr1k040kw7"
 
 [sub_resource type="Resource" id="Resource_ve4h8"]
 script = ExtResource("2_ynh6h")
-order = Array[int]([])
 search = SubResource("Resource_bu0nr")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -46,20 +37,7 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_pvhg0"]
 script = ExtResource("9_qp4q4")
 description = "Attach up to 2 Energy cards from your discard pile to [name]."
-prompt_reliant = false
-initial_main_DMG = 0
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
 prompt_effects = Array[ExtResource("4_qp4q4")]([SubResource("Resource_4b61w")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_q8x7g"]
@@ -79,13 +57,9 @@ script = ExtResource("7_pc4o6")
 HP = 100
 retreat = 3
 attacks = Array[ExtResource("6_rgglp")]([SubResource("Resource_q8x7g"), SubResource("Resource_w4v0d")])
-evo_stage = "Basic"
-evolves_from = ""
 considered = 2
-owner = 0
 type = 16
 weak = 16
-resist = 0
 
 [resource]
 script = ExtResource("1_rbc1e")
@@ -94,7 +68,5 @@ image = ExtResource("1_gsob6")
 illustrator = "Katsura Tabata"
 number = 101
 rarity = 4
-expansion = 0
 categories = 1
 pokemon_properties = SubResource("Resource_wahx2")
-fossil = false

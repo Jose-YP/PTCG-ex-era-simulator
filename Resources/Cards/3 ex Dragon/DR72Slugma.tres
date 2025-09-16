@@ -12,20 +12,6 @@
 [sub_resource type="Resource" id="Resource_27luv"]
 script = ExtResource("8_2r7b6")
 description = "Switch 1 of your opponent's Benched Pokémon with 1 of the Defending Pokémon. Your opponent chooses the Defending Pokémon to switch. The new Defending Pokémon is now Burned."
-prompt_reliant = false
-initial_main_DMG = 0
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("8_lbmg6")]([])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_ivcbq"]
@@ -37,16 +23,10 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_ki3e4"]
 script = ExtResource("9_yrhye")
-HP = 50
 retreat = 2
 attacks = Array[ExtResource("2_lbmg6")]([ExtResource("3_w3bpe"), SubResource("Resource_ivcbq")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
 type = 2
 weak = 4
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -55,9 +35,7 @@ name = "Slugma"
 image = ExtResource("1_xyahb")
 illustrator = "Kyoko Umemoto"
 number = 72
-rarity = 0
 expansion = 2
 categories = 1
 pokemon_properties = SubResource("Resource_ki3e4")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

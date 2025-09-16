@@ -11,20 +11,13 @@
 
 [sub_resource type="Resource" id="Resource_s7duk"]
 script = ExtResource("4_j8yei")
-order = Array[int]([])
 dmgManip = ExtResource("4_27bls")
 
 [sub_resource type="Resource" id="Resource_xkhcd"]
 script = ExtResource("2_gb4dl")
-considered = "Special Energy"
 description = "Heal Energy provides {Colorless} Energy. When you attach this card from your hand to 1 of your Pokémon, remove 1 damage counter and all Special Conditions from that Pokémon. If Heal Energy is attached to Pokémon-ex, Heal Energy has no effect other than providing Energy."
 prompt = ExtResource("2_27bls")
-has_fail_provide = false
-has_fail_prevent = false
 success_effect = SubResource("Resource_s7duk")
-attatch_effects = Array[ExtResource("1_482qc")]([])
-prompt_effects = Array[ExtResource("1_482qc")]([])
-turns = -1
 fail_provide = ExtResource("1_k24tu")
 success_provide = ExtResource("1_k24tu")
 
@@ -38,4 +31,3 @@ rarity = 1
 expansion = 7
 categories = 4
 energy_properties = SubResource("Resource_xkhcd")
-fossil = false

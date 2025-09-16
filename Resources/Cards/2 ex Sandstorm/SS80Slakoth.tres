@@ -12,7 +12,6 @@
 
 [sub_resource type="Resource" id="Resource_qxv6m"]
 script = ExtResource("5_pmarr")
-order = Array[int]([])
 disable = ExtResource("4_7qndi")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -24,41 +23,22 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_3seqx"]
 script = ExtResource("6_okn1j")
 description = "[name] can't attack during your next turn."
-prompt_reliant = false
 initial_main_DMG = 10
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
 prompt_effects = Array[ExtResource("4_v238j")]([SubResource("Resource_66svf")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_uj1vo"]
 script = ExtResource("2_v238j")
 name = "Lazy Punch"
-attack_cost = ExtResource("3_66svf")
 attack_data = SubResource("Resource_3seqx")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_6osig"]
 script = ExtResource("7_7rtnk")
 HP = 40
-retreat = 1
 attacks = Array[ExtResource("2_v238j")]([SubResource("Resource_uj1vo")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
 type = 256
 weak = 32
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -67,9 +47,7 @@ name = "Slakoth"
 image = ExtResource("1_2q354")
 illustrator = "Ken Sugimori"
 number = 80
-rarity = 0
 expansion = 1
 categories = 1
 pokemon_properties = SubResource("Resource_6osig")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

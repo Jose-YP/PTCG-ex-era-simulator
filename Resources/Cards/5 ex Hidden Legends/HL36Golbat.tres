@@ -12,7 +12,6 @@
 [sub_resource type="Resource" id="Resource_mms8t"]
 script = ExtResource("2_1nc1w")
 name = "Supersonic"
-attack_cost = ExtResource("3_7b70s")
 attack_data = ExtResource("4_dufn1")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
@@ -26,15 +25,10 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_g1wwb"]
 script = ExtResource("7_yi3qy")
 HP = 70
-retreat = 1
 attacks = Array[ExtResource("2_1nc1w")]([SubResource("Resource_mms8t"), SubResource("Resource_0xn53")])
 evo_stage = "Stage 1"
 evolves_from = "Zubat"
-considered = 1
-owner = 0
-type = 1
 weak = 16
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -47,5 +41,4 @@ rarity = 1
 expansion = 4
 categories = 1
 pokemon_properties = SubResource("Resource_g1wwb")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

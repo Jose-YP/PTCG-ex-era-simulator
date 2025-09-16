@@ -8,7 +8,6 @@
 
 [sub_resource type="Resource" id="Resource_ha5d3"]
 script = ExtResource("3_ha5d3")
-order = Array[int]([])
 draw_ammount = ExtResource("2_w77ia")
 card_disrupt = ExtResource("2_plj8i")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
@@ -21,7 +20,6 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [resource]
 script = ExtResource("4_4yomv")
 considered = "Supporter"
-specific_requirement = ""
 description = "Draw 3 cards. Then discard any 1 card from your hand. "
 prompt_effects = Array[ExtResource("5_ha5d3")]([SubResource("Resource_4yomv")])
 metadata/_custom_type_script = "uid://crx447i85kshy"

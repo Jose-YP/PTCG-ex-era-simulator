@@ -8,16 +8,9 @@
 
 [sub_resource type="Resource" id="Resource_4fxvj"]
 script = ExtResource("3_60hvr")
-HP = 50
-retreat = 1
 attacks = Array[ExtResource("2_c32xr")]([ExtResource("3_c32xr")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
 type = 4
 weak = 8
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -26,9 +19,6 @@ name = "Goldeen"
 image = ExtResource("1_pwfxq")
 illustrator = "Hajime Kusajima"
 number = 55
-rarity = 0
-expansion = 0
 categories = 1
 pokemon_properties = SubResource("Resource_4fxvj")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

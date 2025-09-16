@@ -31,10 +31,8 @@ attacks = Array[ExtResource("2_bw2wq")]([SubResource("Resource_xy3u0"), SubResou
 evo_stage = "Stage 1"
 evolves_from = "Root Fossil"
 considered = 9
-owner = 0
 type = 64
 weak = 2
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -47,4 +45,3 @@ rarity = 1
 expansion = 12
 categories = 1
 pokemon_properties = SubResource("Resource_vlbp8")
-fossil = false

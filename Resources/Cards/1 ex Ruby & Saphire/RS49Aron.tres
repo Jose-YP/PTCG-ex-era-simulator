@@ -13,7 +13,6 @@
 
 [sub_resource type="Resource" id="Resource_hi6hn"]
 script = ExtResource("4_1cqic")
-order = Array[int]([])
 buff = ExtResource("3_vai4j")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -25,37 +24,18 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_7rvt1"]
 script = ExtResource("6_2q6mk")
 description = "During your opponent's next turn, any damage done to [name] by attacks is reduced by 10."
-prompt_reliant = false
-initial_main_DMG = 0
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
 prompt_effects = Array[ExtResource("6_n800m")]([SubResource("Resource_2q6mk")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_iubtr"]
 script = ExtResource("3_mit06")
 name = "Teary Eyes"
-attack_cost = ExtResource("5_a7vst")
 attack_data = SubResource("Resource_7rvt1")
 
 [sub_resource type="Resource" id="Resource_82lgu"]
 script = ExtResource("4_nbcu4")
 HP = 40
-retreat = 1
 attacks = Array[ExtResource("3_mit06")]([SubResource("Resource_iubtr"), ExtResource("7_n800m")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
 type = 128
 weak = 2
 resist = 1
@@ -66,8 +46,5 @@ name = "Aron"
 image = ExtResource("1_ianho")
 illustrator = "Mitsuhiro Arita"
 number = 49
-rarity = 0
-expansion = 0
 categories = 1
 pokemon_properties = SubResource("Resource_82lgu")
-fossil = false

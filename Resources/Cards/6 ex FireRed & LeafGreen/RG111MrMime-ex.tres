@@ -21,65 +21,32 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_xa56f"]
 script = ExtResource("6_y33pb")
 description = "Immune to even numbered damage less than 200"
-unstackable_id = ""
 stackable = true
-after_weak_res = true
 operation = "Replace"
-add_hp = 0
-attack = 0
-defense = 0
-retreat_change = 0
-cost_modifier = "Add"
-modify = 0
-plus = false
-condition_immune = 0
-attack_effect_immune = false
-damage_immune = false
-body_immune = false
-power_immune = false
-trainer_immune = false
-odd_immunity = false
 even_immunity = true
-weakness = false
-resistance = false
-effects = false
-attack_names = Array[String]([])
-application = "Slot"
 recieves = ExtResource("5_mygew")
 duration = 1
 metadata/_custom_type_script = "uid://coojhwe6m20gd"
 
 [sub_resource type="Resource" id="Resource_pds7y"]
 script = ExtResource("7_ge0gm")
-order = Array[int]([])
 buff = SubResource("Resource_xa56f")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_ge0gm"]
 script = ExtResource("4_nqr6p")
-category = "Body"
 name = "Magic Evens"
 description = "If [name] would be damaged by an attack, prevent that attack's damage done to [name] if that damage is 20, 40, 60, 80, 100, 120, 140, 160, or 180."
-affected_by_condition = true
-active = false
-how_often = "Once per Mon"
-independent_src_trg = false
 passive = SubResource("Resource_pds7y")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 
 [sub_resource type="Resource" id="Resource_yu4hq"]
 script = ExtResource("5_aontv")
 HP = 80
-retreat = 1
 pokebody = SubResource("Resource_ge0gm")
 attacks = Array[ExtResource("1_ufnab")]([SubResource("Resource_y33pb")])
-evo_stage = "Basic"
-evolves_from = ""
 considered = 2
-owner = 0
 type = 16
-weak = 0
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -92,5 +59,4 @@ rarity = 4
 expansion = 5
 categories = 1
 pokemon_properties = SubResource("Resource_yu4hq")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

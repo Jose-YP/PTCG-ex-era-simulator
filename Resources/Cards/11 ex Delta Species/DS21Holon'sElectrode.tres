@@ -12,20 +12,7 @@
 [sub_resource type="Resource" id="Resource_86uxx"]
 script = ExtResource("6_qvalx")
 description = "The Defending Pokémon is now Confused."
-prompt_reliant = false
 initial_main_DMG = 30
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("6_86uxx")]([])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_44gyq"]
@@ -42,11 +29,9 @@ retreat = 0
 attacks = Array[ExtResource("2_17cmj")]([SubResource("Resource_44gyq")])
 evo_stage = "Stage 1"
 evolves_from = "Holon's Voltorb"
-considered = 1
 owner = 4
 type = 8
 weak = 32
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -60,4 +45,3 @@ expansion = 10
 categories = 5
 pokemon_properties = SubResource("Resource_oi6pe")
 energy_properties = ExtResource("1_0h2eg")
-fossil = false

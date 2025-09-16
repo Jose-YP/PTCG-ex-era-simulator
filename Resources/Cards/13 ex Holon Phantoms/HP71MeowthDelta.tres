@@ -20,20 +20,6 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_sibt6"]
 script = ExtResource("8_hh0fl")
 description = "Draw a card."
-prompt_reliant = false
-initial_main_DMG = 0
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("8_aaqyc")]([])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_8wuvv"]
@@ -45,16 +31,10 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_yo1v1"]
 script = ExtResource("3_1kioo")
-HP = 50
-retreat = 1
 attacks = Array[ExtResource("2_786ue")]([SubResource("Resource_n37sd"), SubResource("Resource_8wuvv")])
-evo_stage = "Basic"
-evolves_from = ""
 considered = 9
-owner = 0
 type = 192
 weak = 32
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -67,4 +47,3 @@ rarity = 1
 expansion = 12
 categories = 1
 pokemon_properties = SubResource("Resource_yo1v1")
-fossil = false

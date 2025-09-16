@@ -8,13 +8,8 @@
 
 [sub_resource type="Resource" id="Resource_30cf1"]
 script = ExtResource("4_wqvjc")
-HP = 50
 retreat = 2
 attacks = Array[ExtResource("2_p3qtj")]([ExtResource("3_naat2")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
 type = 128
 weak = 2
 resist = 1
@@ -26,9 +21,6 @@ name = "Aron"
 image = ExtResource("1_qyb8l")
 illustrator = "Ken Sugimori"
 number = 50
-rarity = 0
-expansion = 0
 categories = 1
 pokemon_properties = SubResource("Resource_30cf1")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

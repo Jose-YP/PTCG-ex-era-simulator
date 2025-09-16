@@ -10,14 +10,10 @@
 script = ExtResource("2_0atvy")
 comparision_type = "Not Equal"
 first_comparison = ExtResource("1_5nhbj")
-compare_to = "None"
-second_constant = 0
-operate_w_constant = "None"
 metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
 [sub_resource type="Resource" id="Resource_2fhws"]
 script = ExtResource("4_n6xh4")
-order = Array[int]([])
 card_disrupt = ExtResource("3_5nhbj")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 

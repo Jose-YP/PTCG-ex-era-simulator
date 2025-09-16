@@ -15,10 +15,8 @@
 
 [sub_resource type="Resource" id="Resource_uk0sh"]
 script = ExtResource("7_l51ip")
-how_many = 1
 candidates = ExtResource("5_bs661")
 active_allowed = true
-apply_weak_res = false
 initial_main_DMG = 20
 modifier = 1
 modifier_num = 20
@@ -28,20 +26,6 @@ metadata/_custom_type_script = "uid://br15mnap82upq"
 [sub_resource type="Resource" id="Resource_deeph"]
 script = ExtResource("8_403sh")
 description = "Choose 1 of your opponent's Pokémon. This attack does 20 damage to that Pokémon. If you choose Pokémon-ex, this attack does 40 damage instead. (Don't apply Weakness and Resistance for Benched Pokémon.)"
-prompt_reliant = false
-initial_main_DMG = 0
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("8_12kuy")]([])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 bench_damage = SubResource("Resource_uk0sh")
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
@@ -54,14 +38,8 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_6yu30"]
 script = ExtResource("6_12kuy")
-HP = 50
-retreat = 1
 pokebody = ExtResource("10_12kuy")
 attacks = Array[ExtResource("2_8yo28")]([ExtResource("3_fa2ne"), SubResource("Resource_ortis")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
 type = 8
 weak = 32
 resist = 128
@@ -77,5 +55,4 @@ rarity = 3
 expansion = 2
 categories = 1
 pokemon_properties = SubResource("Resource_6yu30")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

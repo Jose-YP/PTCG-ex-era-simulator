@@ -27,21 +27,8 @@ metadata/_custom_type_script = "uid://b85jmc7067bjc"
 [sub_resource type="Resource" id="Resource_5jthm"]
 script = ExtResource("5_e62mj")
 description = "If the Defending Pokémon is Knocked Out by this attack, remove all Special Conditions and 7 damage counters from [name] (all if there are less than 7)."
-prompt_reliant = false
 prompt = SubResource("Resource_s2tul")
 initial_main_DMG = 30
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("5_1ru0a")]([])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_e2x81"]
@@ -54,21 +41,10 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_4iss1"]
 script = ExtResource("5_e62mj")
 description = "Does 40 damage plus 10 more damage for each {Lightning} Energy attached to [name]."
-prompt_reliant = false
 initial_main_DMG = 40
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("5_1ru0a")]([])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
 modifier = 1
 modifier_num = 10
 comparator = ExtResource("11_5jthm")
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_2csc1"]
@@ -81,15 +57,12 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_hjbn3"]
 script = ExtResource("8_kukq3")
 HP = 100
-retreat = 1
 attacks = Array[ExtResource("2_qypbc")]([SubResource("Resource_e2x81"), SubResource("Resource_2csc1")])
 evo_stage = "Stage 2"
 evolves_from = "Kabuto"
 considered = 9
-owner = 0
 type = 8
 weak = 1
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -102,5 +75,4 @@ rarity = 3
 expansion = 12
 categories = 1
 pokemon_properties = SubResource("Resource_hjbn3")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

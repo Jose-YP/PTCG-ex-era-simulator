@@ -18,24 +18,13 @@
 
 [sub_resource type="Resource" id="Resource_0nmla"]
 script = ExtResource("8_cy8n6")
-side = 4
 where = 2
-reordering_only = false
-shuffle_first = false
-based_on_side = 0
-based_on_slots = 0
-based_on_energy = 0
-portion = -1
-identifier_allowed = -1
-how_many = Array[int]([1])
 of_this = Array[ExtResource("6_8g0mx")]([ExtResource("7_kqbxr")])
 and_then = ExtResource("5_4s2lv")
-reveal = true
 metadata/_custom_type_script = "uid://cw3yr1k040kw7"
 
 [sub_resource type="Resource" id="Resource_pm028"]
 script = ExtResource("4_f6we8")
-order = Array[int]([])
 search = SubResource("Resource_0nmla")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -47,56 +36,28 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_l0vb6"]
 script = ExtResource("9_kun7m")
 description = "Attach 1 Energy card from your discard pile to your Active Pokémon."
-prompt_reliant = false
 initial_main_DMG = 10
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
 prompt_effects = Array[ExtResource("4_4s2lv")]([SubResource("Resource_8g0mx")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_qf3u3"]
 script = ExtResource("2_n4213")
 name = "Energy Call"
-attack_cost = ExtResource("3_jw5o4")
 attack_data = SubResource("Resource_l0vb6")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_yrimv"]
 script = ExtResource("12_g0ipc")
-comparision_type = "Return"
 first_comparison = ExtResource("11_85sdh")
-compare_to = "None"
-second_constant = 0
-operate_w_constant = "None"
 metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
 [sub_resource type="Resource" id="Resource_gvje7"]
 script = ExtResource("9_kun7m")
 description = "Does 30 damage plus 10 more damage for each Energy attached to Delcatty but not used to pay for this attack's Energy cost."
-prompt_reliant = false
 initial_main_DMG = 30
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("4_4s2lv")]([])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
 modifier = 1
 modifier_num = 10
 comparator = SubResource("Resource_yrimv")
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_nfveb"]
@@ -109,15 +70,11 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_mln2t"]
 script = ExtResource("3_jworm")
 HP = 80
-retreat = 1
 attacks = Array[ExtResource("2_n4213")]([SubResource("Resource_qf3u3"), SubResource("Resource_nfveb")])
 evo_stage = "Stage 1"
 evolves_from = "Skitty"
-considered = 1
-owner = 0
 type = 256
 weak = 32
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -127,7 +84,5 @@ image = ExtResource("1_ef6w3")
 illustrator = "Ken Sugimori"
 number = 29
 rarity = 1
-expansion = 0
 categories = 1
 pokemon_properties = SubResource("Resource_mln2t")
-fossil = false

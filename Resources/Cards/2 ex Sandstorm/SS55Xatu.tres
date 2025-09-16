@@ -15,24 +15,13 @@
 
 [sub_resource type="Resource" id="Resource_fgxow"]
 script = ExtResource("6_785rx")
-choosing = 4
 mode = "Add"
 ask = ExtResource("5_yhxed")
-how_many = 1
 choose_num = -1
-turn_delay = -1
-prevent_KO = false
-anyway_u_like = false
-with_leftover = "None"
-leftover_anyway = false
-vary_choose_num = false
-plus = true
-modifier = 1
 metadata/_custom_type_script = "uid://scca13hg4k1l"
 
 [sub_resource type="Resource" id="Resource_jl2se"]
 script = ExtResource("7_0w7pq")
-order = Array[int]([])
 dmgManip = SubResource("Resource_fgxow")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -44,20 +33,7 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_2kj2j"]
 script = ExtResource("8_yd7a1")
 description = "Put 1 damage counter on each of your opponent's Pokémon."
-prompt_reliant = false
-initial_main_DMG = 0
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
 prompt_effects = Array[ExtResource("4_ri1dd")]([SubResource("Resource_66llc")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_j2las"]
@@ -69,7 +45,6 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_ejhu6"]
 script = ExtResource("7_0w7pq")
-order = Array[int]([])
 dmgManip = ExtResource("9_2ecud")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -78,10 +53,6 @@ script = ExtResource("10_nv5gt")
 category = "Power"
 name = "Healing Wind"
 description = "Once during your turn (before your attack), you may remove 1 damage counter from each of your Active Pokémon."
-affected_by_condition = true
-active = false
-how_often = "Once per Mon"
-independent_src_trg = false
 effect = SubResource("Resource_ejhu6")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 
@@ -93,8 +64,6 @@ pokepower = SubResource("Resource_npl7c")
 attacks = Array[ExtResource("2_ramsi")]([SubResource("Resource_j2las")])
 evo_stage = "Stage 1"
 evolves_from = "Natu"
-considered = 1
-owner = 0
 type = 16
 weak = 16
 resist = 32
@@ -110,5 +79,4 @@ rarity = 1
 expansion = 1
 categories = 1
 pokemon_properties = SubResource("Resource_um7g8")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

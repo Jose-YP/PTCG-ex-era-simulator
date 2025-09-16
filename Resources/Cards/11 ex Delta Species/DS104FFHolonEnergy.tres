@@ -1,13 +1,12 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=26 format=3 uid="uid://dm1p5cbmn4s77"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=24 format=3 uid="uid://dm1p5cbmn4s77"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_fshtl"]
 [ext_resource type="Resource" uid="uid://bdnsa31pds5n8" path="res://Resources/Components/Effects/Prompts/NonEXHasFightingEn.tres" id="2_qjrqu"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_f62cj"]
+[ext_resource type="Resource" uid="uid://bns8h72u2hxqo" path="res://Resources/Components/Effects/Asks/General/AnyMon.tres" id="3_o6o62"]
 [ext_resource type="Resource" uid="uid://d380rwptluxo6" path="res://Resources/Components/EnData/FFHolon.tres" id="4_wpt5d"]
-[ext_resource type="Resource" uid="uid://mregpmlqoyvy" path="res://Resources/Components/EnData/Fire.tres" id="5_o6o62"]
 [ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="5_wpt5d"]
 [ext_resource type="Script" uid="uid://caj1pm8erar2a" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="6_o6o62"]
-[ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="6_spbdi"]
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="7_51ik5"]
 [ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="7_cqf8k"]
 [ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/BuffMaker.gd" id="7_spbdi"]
@@ -16,45 +15,10 @@
 [ext_resource type="Resource" uid="uid://bvxwpj62pwpfa" path="res://Resources/Components/Effects/TypeChange/HasNoWeakness.tres" id="9_tq28l"]
 [ext_resource type="Resource" uid="uid://bncvrbkaahg2w" path="res://Resources/Components/Effects/Asks/Class&Owner/SelfNon-ex.tres" id="11_spbdi"]
 
-[sub_resource type="Resource" id="Resource_tq28l"]
-script = ExtResource("6_spbdi")
-boolean_type = "And"
-previous_src_trg = false
-side_target = 4
-slot_target = 1
-specifically = Array[String]([])
-tool_attatched = false
-comparison_type = 1
-max_hp = -10
-damage_taken = -10
-retreat_cost = -1
-evo_type = "Don't Check"
-stage = 7
-rare_candy = false
-class_inclusive = false
-pokemon_class = 2
-owner_inclusive = true
-pokemon_owner = 31
-type_inclusive = true
-pokemon_type = 1023
-en_class = 0
-energy_inclusive = true
-check_cards = true
-energy_attatched = 1
-energy_class = "Any"
-energy_type = ExtResource("5_o6o62")
-inclusive_ability = true
-check_ability = false
-contained_abilities = 3
-specific_abilities = Array[String]([])
-check_condition = false
-desired_condition = 0
-knocked_out = false
-
 [sub_resource type="Resource" id="Resource_ebe5i"]
 script = ExtResource("7_cqf8k")
 which = "Slot"
-ask = SubResource("Resource_tq28l")
+ask = ExtResource("3_o6o62")
 slot_vars = "current_card"
 cap = -1
 metadata/_custom_type_script = "uid://vjn146j3ayd6"
@@ -64,8 +28,6 @@ script = ExtResource("8_51ik5")
 comparision_type = "Greater"
 first_comparison = SubResource("Resource_ebe5i")
 compare_to = "Const"
-second_constant = 0
-operate_w_constant = "None"
 metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
 [sub_resource type="Resource" id="Resource_dvqih"]
@@ -84,7 +46,6 @@ metadata/_custom_type_script = "uid://b85jmc7067bjc"
 
 [sub_resource type="Resource" id="Resource_sqyxo"]
 script = ExtResource("3_f62cj")
-order = Array[int]([])
 type_change = ExtResource("9_tq28l")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -97,37 +58,14 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_g85gu"]
 script = ExtResource("7_spbdi")
 description = "Ignore the defender's reistances."
-unstackable_id = ""
 stackable = true
-after_weak_res = true
 operation = "Replace"
-add_hp = 0
-attack = 0
-defense = 0
-retreat_change = 0
-cost_modifier = "Add"
-modify = 0
-plus = false
-condition_immune = 0
-attack_effect_immune = false
-damage_immune = false
-body_immune = false
-power_immune = false
-trainer_immune = false
-odd_immunity = false
-even_immunity = false
-weakness = false
 resistance = true
-effects = false
-attack_names = Array[String]([])
-application = "Slot"
 recieves = ExtResource("11_spbdi")
-duration = -1
 metadata/_custom_type_script = "uid://coojhwe6m20gd"
 
 [sub_resource type="Resource" id="Resource_1623n"]
 script = ExtResource("3_f62cj")
-order = Array[int]([])
 buff = SubResource("Resource_g85gu")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -139,15 +77,10 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [sub_resource type="Resource" id="Resource_yixtv"]
 script = ExtResource("6_o6o62")
-considered = "Special Energy"
 description = "Holon Energy FF provides {Colorless} Energy.
 If the Pokémon that Holon Energy FF is attached to also has a basic {Fire} Energy card attached to it, that Pokémon has no Weakness. If the Pokémon that Holon Energy FF is attached to also has a basic {Fighting} Energy card attached to it, damage done by that Pokémon's attack isn't affected by Resistance. Ignore these effects if Holon Energy FF is attached to Pokémon-ex."
 prompt = SubResource("Resource_dvqih")
-has_fail_provide = false
-has_fail_prevent = false
-attatch_effects = Array[ExtResource("7_51ik5")]([])
 prompt_effects = Array[ExtResource("7_51ik5")]([SubResource("Resource_bahob"), SubResource("Resource_0vehg")])
-turns = -1
 fail_provide = ExtResource("4_wpt5d")
 success_provide = ExtResource("4_wpt5d")
 metadata/_custom_type_script = "uid://caj1pm8erar2a"
@@ -162,5 +95,4 @@ rarity = 2
 expansion = 10
 categories = 4
 energy_properties = SubResource("Resource_yixtv")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

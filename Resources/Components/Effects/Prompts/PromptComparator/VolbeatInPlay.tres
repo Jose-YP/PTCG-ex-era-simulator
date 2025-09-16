@@ -1,49 +1,14 @@
-[gd_resource type="Resource" script_class="PromptAsk" load_steps=8 format=3 uid="uid://batfiuq768qew"]
+[gd_resource type="Resource" script_class="PromptAsk" load_steps=7 format=3 uid="uid://batfiuq768qew"]
 
-[ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="1_dl5mw"]
+[ext_resource type="Resource" uid="uid://bns8h72u2hxqo" path="res://Resources/Components/Effects/Asks/General/AnyMon.tres" id="1_dl5mw"]
 [ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="2_8r5wc"]
 [ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="3_m6gs8"]
 [ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="4_io3u5"]
 
-[sub_resource type="Resource" id="Resource_3pi3t"]
-script = ExtResource("1_dl5mw")
-boolean_type = "And"
-previous_src_trg = false
-side_target = 4
-slot_target = 4
-specifically = Array[String](["Volbeat"])
-tool_attatched = false
-comparison_type = 1
-max_hp = -10
-damage_taken = -10
-retreat_cost = -1
-evo_type = "Don't Check"
-stage = 7
-rare_candy = false
-class_inclusive = true
-pokemon_class = 63
-owner_inclusive = true
-pokemon_owner = 31
-type_inclusive = true
-pokemon_type = 1023
-en_class = 0
-energy_inclusive = true
-check_cards = true
-energy_attatched = -1
-energy_class = "Any"
-inclusive_ability = true
-check_ability = false
-contained_abilities = 3
-specific_abilities = Array[String]([])
-check_condition = false
-desired_condition = 0
-knocked_out = false
-metadata/_custom_type_script = "uid://mkjynqda7q5g"
-
 [sub_resource type="Resource" id="Resource_7pkdl"]
 script = ExtResource("2_8r5wc")
 which = "Slot"
-ask = SubResource("Resource_3pi3t")
+ask = ExtResource("1_dl5mw")
 slot_vars = "current_card"
 cap = -1
 metadata/_custom_type_script = "uid://vjn146j3ayd6"
@@ -52,9 +17,6 @@ metadata/_custom_type_script = "uid://vjn146j3ayd6"
 script = ExtResource("3_m6gs8")
 comparision_type = "Not Equal"
 first_comparison = SubResource("Resource_7pkdl")
-compare_to = "None"
-second_constant = 0
-operate_w_constant = "None"
 metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
 [resource]

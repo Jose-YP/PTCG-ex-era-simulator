@@ -13,20 +13,13 @@
 
 [sub_resource type="Resource" id="Resource_bwkib"]
 script = ExtResource("5_5wqg8")
-disable_power = false
-disable_body = false
-disable_retreat = false
-choose_num = -1
 attack = 1
-atk_effect = true
 attack_names = Array[String](["Slashing Strike"])
-application = "Slot"
 duration = 2
 metadata/_custom_type_script = "uid://c0ishgbxk63dg"
 
 [sub_resource type="Resource" id="Resource_1iu0x"]
 script = ExtResource("6_yiueb")
-order = Array[int]([])
 disable = SubResource("Resource_bwkib")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -39,20 +32,8 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_7lrvf"]
 script = ExtResource("8_d4ra0")
 description = "Flip a coin. If tails, [name] can't use Slashing Strike during your next turn."
-prompt_reliant = false
 initial_main_DMG = 70
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
 prompt_effects = Array[ExtResource("4_u4asg")]([SubResource("Resource_53yh8")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_3we6x"]
@@ -70,7 +51,6 @@ attacks = Array[ExtResource("2_0vmog")]([SubResource("Resource_3we6x")])
 evo_stage = "Stage 2"
 evolves_from = "Flygon"
 considered = 2
-owner = 0
 type = 256
 weak = 256
 resist = 40
@@ -86,5 +66,4 @@ rarity = 4
 expansion = 15
 categories = 1
 pokemon_properties = SubResource("Resource_5x4y3")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

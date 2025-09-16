@@ -19,7 +19,6 @@
 
 [sub_resource type="Resource" id="Resource_ocm2o"]
 script = ExtResource("7_ykb1v")
-order = Array[int]([])
 draw_ammount = ExtResource("6_oeoma")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -32,26 +31,12 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_6hj42"]
 script = ExtResource("8_aemdk")
 description = "If your opponent has any Evolved Pokémon in play, draw 3 cards."
-prompt_reliant = false
-initial_main_DMG = 0
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
 prompt_effects = Array[ExtResource("4_5dsco")]([SubResource("Resource_w0klo")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_56kwh"]
 script = ExtResource("1_3quvk")
 name = "Cosmic Draw"
-attack_cost = ExtResource("3_tq0ib")
 attack_data = SubResource("Resource_6hj42")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
@@ -65,17 +50,12 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_6rf85"]
 script = ExtResource("12_3q3da")
 ask = ExtResource("11_up6gc")
-which = 0
-inclusive = false
 add_flags = false
 new_type = 2
-application = "Slot"
-duration = -1
 metadata/_custom_type_script = "uid://cswtf00ovs0ss"
 
 [sub_resource type="Resource" id="Resource_pdep4"]
 script = ExtResource("7_ykb1v")
-order = Array[int]([])
 type_change = SubResource("Resource_6rf85")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -84,10 +64,6 @@ script = ExtResource("14_411yi")
 category = "Power"
 name = "Solar Eclipse"
 description = "Once during your turn (before your attack), if Lunatone is in play, you may use this power. Until the end of your turn, Solrock's type is {Fire}."
-affected_by_condition = true
-active = false
-how_often = "Once per Mon"
-independent_src_trg = false
 prompt = ExtResource("13_i8fqq")
 effect = SubResource("Resource_pdep4")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
@@ -95,16 +71,10 @@ metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 [sub_resource type="Resource" id="Resource_4y00o"]
 script = ExtResource("2_f2vfr")
 HP = 70
-retreat = 1
 pokepower = SubResource("Resource_1ewrk")
 attacks = Array[ExtResource("1_3quvk")]([SubResource("Resource_56kwh"), SubResource("Resource_e1uv6")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
 type = 32
 weak = 1
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -117,5 +87,4 @@ rarity = 3
 expansion = 1
 categories = 1
 pokemon_properties = SubResource("Resource_4y00o")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

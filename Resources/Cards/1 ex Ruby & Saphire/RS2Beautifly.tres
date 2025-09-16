@@ -23,7 +23,6 @@ attack_data = ExtResource("4_lbrm8")
 
 [sub_resource type="Resource" id="Resource_cldy7"]
 script = ExtResource("9_xms5s")
-order = Array[int]([])
 dmgManip = ExtResource("7_u0sgg")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -35,20 +34,8 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_5xn7j"]
 script = ExtResource("9_82rx7")
 description = "Remove 1 damage counter from each of your Pokémon, including [name]."
-prompt_reliant = false
 initial_main_DMG = 50
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
 prompt_effects = Array[ExtResource("6_lbrm8")]([SubResource("Resource_vxncu")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_gb01l"]
@@ -60,12 +47,9 @@ attack_data = SubResource("Resource_5xn7j")
 [sub_resource type="Resource" id="Resource_6ms6u"]
 script = ExtResource("11_82rx7")
 which = 2
-inclusive = false
 add_flags = false
-new_type = 0
 application = "Side"
 recieves = ExtResource("10_u0sgg")
-duration = -1
 metadata/_custom_type_script = "uid://cswtf00ovs0ss"
 
 [sub_resource type="Resource" id="Resource_fbclb"]
@@ -75,13 +59,9 @@ type_change = SubResource("Resource_6ms6u")
 
 [sub_resource type="Resource" id="Resource_u0sgg"]
 script = ExtResource("10_lbrm8")
-category = "Body"
 name = "Withering Dust"
 description = "As long as [name] is in play, do not apply Resistance for all Active Pokémon."
 affected_by_condition = false
-active = false
-how_often = "Once per Mon"
-independent_src_trg = false
 passive = SubResource("Resource_fbclb")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 
@@ -93,11 +73,7 @@ pokebody = SubResource("Resource_u0sgg")
 attacks = Array[ExtResource("4_dmlyy")]([SubResource("Resource_xtjel"), SubResource("Resource_gb01l")])
 evo_stage = "Stage 2"
 evolves_from = "Silcoon"
-considered = 1
-owner = 0
-type = 1
 weak = 2
-resist = 0
 
 [resource]
 script = ExtResource("9_t2qls")
@@ -106,7 +82,5 @@ image = ExtResource("1_p1ioh")
 illustrator = "Hajime Kusajima"
 number = 2
 rarity = 3
-expansion = 0
 categories = 1
 pokemon_properties = SubResource("Resource_wpldu")
-fossil = false

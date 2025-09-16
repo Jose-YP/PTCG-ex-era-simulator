@@ -9,19 +9,13 @@
 
 [sub_resource type="Resource" id="Resource_eekiw"]
 script = ExtResource("3_o1c5i")
-order = Array[int]([])
 dmgManip = ExtResource("2_ewg4v")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_m8n5h"]
 script = ExtResource("5_tpgty")
-category = "Body"
 name = "Jagged Stone"
 description = "If [name] is your Active Pokémon and is damaged by an opponent's attack (even if [name] is Knocked Out), put 1 damage counter on the Attacking Pokémon."
-affected_by_condition = true
-active = false
-how_often = "Once per Mon"
-independent_src_trg = false
 occurance = ExtResource("4_0dqor")
 effect = SubResource("Resource_eekiw")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
@@ -31,12 +25,5 @@ script = ExtResource("6_027in")
 HP = 40
 retreat = 0
 pokebody = SubResource("Resource_m8n5h")
-attacks = Array[ExtResource("1_gbfqq")]([])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
 type = 256
-weak = 0
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"

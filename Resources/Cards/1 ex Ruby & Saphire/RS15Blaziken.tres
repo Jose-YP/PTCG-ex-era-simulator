@@ -18,20 +18,8 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_2wtcj"]
 script = ExtResource("5_fmns8")
 description = "The Defending Pokémon can't retreat until the end of your opponent's next turn."
-prompt_reliant = false
 initial_main_DMG = 20
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
 prompt_effects = Array[ExtResource("4_fmns8")]([SubResource("Resource_hb2on")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_sfxu2"]
@@ -43,20 +31,7 @@ attack_data = SubResource("Resource_2wtcj")
 [sub_resource type="Resource" id="Resource_135ew"]
 script = ExtResource("5_fmns8")
 description = "Discard a {Fire} Energy card attached to [name]."
-prompt_reliant = false
 initial_main_DMG = 80
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("4_fmns8")]([])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_qq3bc"]
@@ -72,11 +47,8 @@ retreat = 2
 attacks = Array[ExtResource("3_j3xow")]([SubResource("Resource_sfxu2"), SubResource("Resource_qq3bc")])
 evo_stage = "Stage 2"
 evolves_from = "Combusken"
-considered = 1
-owner = 0
 type = 2
 weak = 4
-resist = 0
 
 [resource]
 script = ExtResource("1_x5maj")
@@ -85,7 +57,5 @@ image = ExtResource("1_vwl4b")
 illustrator = "Ken Sugimori"
 number = 15
 rarity = 2
-expansion = 0
 categories = 1
 pokemon_properties = SubResource("Resource_sd3a8")
-fossil = false

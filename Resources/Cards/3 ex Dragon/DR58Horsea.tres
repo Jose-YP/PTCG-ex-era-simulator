@@ -17,16 +17,9 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_x6t68"]
 script = ExtResource("6_3jguw")
-HP = 50
-retreat = 1
 attacks = Array[ExtResource("2_le73c")]([ExtResource("3_3u8m4"), SubResource("Resource_c13l0")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
 type = 4
 weak = 8
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -35,9 +28,7 @@ name = "Horsea"
 image = ExtResource("1_u7nho")
 illustrator = "Midori Harada"
 number = 58
-rarity = 0
 expansion = 2
 categories = 1
 pokemon_properties = SubResource("Resource_x6t68")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

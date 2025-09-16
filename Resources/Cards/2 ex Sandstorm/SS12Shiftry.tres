@@ -18,31 +18,16 @@
 
 [sub_resource type="Resource" id="Resource_1vqvt"]
 script = ExtResource("5_mao3i")
-comparision_type = "Return"
 first_comparison = ExtResource("4_5oybd")
-compare_to = "None"
-second_constant = 0
-operate_w_constant = "None"
 metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
 [sub_resource type="Resource" id="Resource_6hhl7"]
 script = ExtResource("7_wr5et")
 description = "Does 80 damage minus 10 damage for each Energy attached to the Defending Pokémon."
-prompt_reliant = false
 initial_main_DMG = 80
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("6_jiv6j")]([])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
 modifier = 3
 modifier_num = 10
 comparator = SubResource("Resource_1vqvt")
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_7xsg0"]
@@ -54,21 +39,12 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_6rif4"]
 script = ExtResource("10_8w5rn")
-action = 0
-chooser = 4
 givers = ExtResource("9_7td4j")
-to_stack = 2
-stack_direction = 2
-energy_carry_over = false
-action_ammount = 1
-energy_ammount = 1
 energy_move_type = 2
-en_type = ExtResource("8_hx4tn")
 metadata/_custom_type_script = "uid://cimk6l7ytw7xg"
 
 [sub_resource type="Resource" id="Resource_07xcp"]
 script = ExtResource("11_ortyy")
-order = Array[int]([])
 energy_movement = SubResource("Resource_6rif4")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -77,10 +53,6 @@ script = ExtResource("13_2py1k")
 category = "Power"
 name = "Fan Away"
 description = "Once during your turn (before your attack), you may flip a coin. If heads, return 1 Energy card attached to the Defending Pokémon to your opponent's hand."
-affected_by_condition = true
-active = false
-how_often = "Once per Mon"
-independent_src_trg = false
 prompt = ExtResource("12_ayb4x")
 effect = SubResource("Resource_07xcp")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
@@ -93,11 +65,7 @@ pokebody = SubResource("Resource_htn7a")
 attacks = Array[ExtResource("1_mcg87")]([SubResource("Resource_7xsg0")])
 evo_stage = "Stage 2"
 evolves_from = "Nuzleaf"
-considered = 1
-owner = 0
-type = 1
 weak = 2
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -110,5 +78,4 @@ rarity = 3
 expansion = 1
 categories = 1
 pokemon_properties = SubResource("Resource_4y00o")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

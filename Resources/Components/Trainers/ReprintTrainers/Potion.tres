@@ -8,7 +8,6 @@
 
 [sub_resource type="Resource" id="Resource_uyuan"]
 script = ExtResource("2_jtlhn")
-order = Array[int]([])
 dmgManip = ExtResource("1_kttju")
 
 [sub_resource type="Resource" id="Resource_ed2p0"]
@@ -18,8 +17,6 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [resource]
 script = ExtResource("4_hf1ww")
-considered = "Item"
-specific_requirement = ""
 description = "Remove up to 2 damage counters from 1 of your Pokémon (remove 1 damage counter if that Pokémon has only 1)."
 asks = ExtResource("1_281m1")
 prompt_effects = Array[ExtResource("2_ulbwm")]([SubResource("Resource_ed2p0")])

@@ -23,13 +23,7 @@ attack_data = ExtResource("9_a5s5l")
 
 [sub_resource type="Resource" id="Resource_c6c3u"]
 script = ExtResource("5_lb1lg")
-HP = 50
-retreat = 1
 attacks = Array[ExtResource("4_rvsa4")]([SubResource("Resource_eomoe"), SubResource("Resource_kvrxo")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
 type = 64
 weak = 32
 resist = 16
@@ -40,8 +34,5 @@ name = "Poochyena"
 image = ExtResource("1_pmruf")
 illustrator = "Atsuko Nishida"
 number = 64
-rarity = 0
-expansion = 0
 categories = 1
 pokemon_properties = SubResource("Resource_c6c3u")
-fossil = false

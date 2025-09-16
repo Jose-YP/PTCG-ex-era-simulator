@@ -15,7 +15,6 @@
 [sub_resource type="Resource" id="Resource_3n1u2"]
 script = ExtResource("2_ugk1n")
 name = "Stampede"
-attack_cost = ExtResource("3_jihga")
 attack_data = ExtResource("4_vycv3")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
@@ -27,17 +26,9 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_4qwmm"]
 script = ExtResource("7_gqkf0")
 description = "Flip a coin. If heads, this attack does 10 damage to each Defending Pokémon, and each Defending Pokémon is now Paralyzed."
-prompt_reliant = false
 prompt = ExtResource("6_3n1u2")
-initial_main_DMG = 0
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
 share_prompt = true
 prompt_effects = Array[ExtResource("7_vycv3")]([SubResource("Resource_cl8bj")])
-conditional_self_dmg = false
-self_damage = 0
 mod_prompt = true
 modifier = 1
 modifier_num = 10
@@ -53,16 +44,9 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_iws17"]
 script = ExtResource("5_jihga")
-HP = 50
-retreat = 1
 attacks = Array[ExtResource("2_ugk1n")]([SubResource("Resource_3n1u2"), SubResource("Resource_gqkf0")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
 type = 32
 weak = 1
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -71,9 +55,6 @@ name = "Phanpy"
 image = ExtResource("1_qik4e")
 illustrator = "Kagemaru Himeno"
 number = 62
-rarity = 0
-expansion = 0
 categories = 1
 pokemon_properties = SubResource("Resource_iws17")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

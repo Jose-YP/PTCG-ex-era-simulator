@@ -18,20 +18,8 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_r1wiw"]
 script = ExtResource("5_qhn2r")
 description = "The Defending Pokémon is now Burned."
-prompt_reliant = false
 initial_main_DMG = 40
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
 prompt_effects = Array[ExtResource("5_p3u2r")]([SubResource("Resource_qhn2r")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_vaxts"]
@@ -45,13 +33,9 @@ script = ExtResource("5_ym6l2")
 HP = 90
 retreat = 2
 attacks = Array[ExtResource("3_a8nkb")]([ExtResource("3_0wjgh"), SubResource("Resource_vaxts")])
-evo_stage = "Basic"
-evolves_from = ""
 considered = 2
-owner = 0
 type = 2
 weak = 4
-resist = 0
 
 [resource]
 script = ExtResource("1_g74x1")
@@ -60,7 +44,5 @@ image = ExtResource("1_461p5")
 illustrator = "Hikaru Koike"
 number = 100
 rarity = 4
-expansion = 0
 categories = 1
 pokemon_properties = SubResource("Resource_2osfc")
-fossil = false

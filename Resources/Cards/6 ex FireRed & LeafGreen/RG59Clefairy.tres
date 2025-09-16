@@ -13,26 +13,11 @@
 [sub_resource type="Resource" id="Resource_8hwmw"]
 script = ExtResource("6_lyklj")
 description = "Choose 1 of your opponent's Benched Pokémon and switch it with the Defending Pokémon. Your opponent chooses the Defending Pokémon to switch."
-prompt_reliant = false
-initial_main_DMG = 0
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("6_wnc44")]([])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_8nn0l"]
 script = ExtResource("2_wnc44")
 name = "Gesture"
-attack_cost = ExtResource("3_qsele")
 attack_data = SubResource("Resource_8hwmw")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
@@ -45,16 +30,9 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_hrg1f"]
 script = ExtResource("9_7vrio")
-HP = 50
-retreat = 1
 attacks = Array[ExtResource("2_wnc44")]([SubResource("Resource_8nn0l"), SubResource("Resource_nm5gp")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
 type = 256
 weak = 32
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -63,9 +41,7 @@ name = "Clefairy"
 image = ExtResource("1_oral7")
 illustrator = "Mitsuhiro Arita"
 number = 59
-rarity = 0
 expansion = 5
 categories = 1
 pokemon_properties = SubResource("Resource_hrg1f")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

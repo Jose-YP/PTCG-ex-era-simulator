@@ -1,7 +1,6 @@
 @icon("res://Art/Coins/BreloomFirst.png")
 extends Control
 
-@export var coinflip: CoinFlip
 @export var coin_scene: PackedScene
 @export var max_size: Vector2 = Vector2(152, 64)
 

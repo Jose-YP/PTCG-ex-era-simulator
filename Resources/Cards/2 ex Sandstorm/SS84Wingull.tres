@@ -9,12 +9,7 @@
 [sub_resource type="Resource" id="Resource_eurht"]
 script = ExtResource("4_2us5x")
 HP = 40
-retreat = 1
 attacks = Array[ExtResource("2_vfdno")]([ExtResource("3_pbbfh")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
 type = 4
 weak = 8
 resist = 32
@@ -26,9 +21,7 @@ name = "Wingull"
 image = ExtResource("1_xdevv")
 illustrator = "Kagemaru Himeno"
 number = 84
-rarity = 0
 expansion = 1
 categories = 1
 pokemon_properties = SubResource("Resource_eurht")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

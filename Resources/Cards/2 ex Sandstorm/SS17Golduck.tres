@@ -16,35 +16,18 @@
 
 [sub_resource type="Resource" id="Resource_5ckab"]
 script = ExtResource("3_0803d")
-grass_cost = 0
-fire_cost = 0
 water_cost = 1
-lightning_cost = 0
 psychic_cost = 1
-fighting_cost = 0
-darkness_cost = 0
-metal_cost = 0
 colorless_cost = 0
 metadata/_custom_type_script = "uid://crscwhvugaoxa"
 
 [sub_resource type="Resource" id="Resource_oud34"]
 script = ExtResource("6_tmmnj")
 description = "If the Defending Pokémon has any Special Energy cards attached to it, this attack does 30 damage plus 40 more damage."
-prompt_reliant = false
 initial_main_DMG = 30
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("5_b1hef")]([])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
 modifier = 1
 modifier_num = 40
 comparator = ExtResource("4_l4tvk")
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_beqer"]
@@ -74,10 +57,7 @@ script = ExtResource("11_0g6sw")
 category = "Power"
 name = "Chaos Flash"
 description = "Once during your turn (before your attack), if [name] is your Active Pokémon, you may flip a coin. If heads, the Defending Pokémon (choose 1 if there are 2) is now Confused."
-affected_by_condition = true
 active = true
-how_often = "Once per Mon"
-independent_src_trg = false
 prompt = SubResource("Resource_aja76")
 effect = ExtResource("7_720or")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
@@ -85,16 +65,12 @@ metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 [sub_resource type="Resource" id="Resource_fgpg4"]
 script = ExtResource("2_p6tf3")
 HP = 70
-retreat = 1
 pokepower = SubResource("Resource_kmsla")
 attacks = Array[ExtResource("1_dyhp7")]([SubResource("Resource_beqer")])
 evo_stage = "Stage 1"
 evolves_from = "Psyduck"
-considered = 1
-owner = 0
 type = 4
 weak = 8
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -107,5 +83,4 @@ rarity = 2
 expansion = 1
 categories = 1
 pokemon_properties = SubResource("Resource_fgpg4")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

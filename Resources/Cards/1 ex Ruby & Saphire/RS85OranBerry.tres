@@ -13,58 +13,22 @@
 
 [sub_resource type="Resource" id="Resource_4klen"]
 script = ExtResource("3_05nyp")
-boolean_type = "And"
-previous_src_trg = false
 side_target = 4
 slot_target = 1
-specifically = Array[String]([])
-tool_attatched = false
-comparison_type = 1
-max_hp = -10
 damage_taken = 20
-retreat_cost = -1
-evo_type = "Don't Check"
-stage = 7
-rare_candy = false
-class_inclusive = true
 pokemon_class = 0
-owner_inclusive = true
 pokemon_owner = 15
-type_inclusive = true
-pokemon_type = 1023
-en_class = 0
-energy_inclusive = true
-check_cards = true
-energy_attatched = -1
-energy_class = "Any"
 energy_type = ExtResource("4_57sig")
-inclusive_ability = true
-check_ability = false
-contained_abilities = 3
-specific_abilities = Array[String]([])
-check_condition = false
-desired_condition = 0
-knocked_out = false
 
 [sub_resource type="Resource" id="Resource_yweta"]
 script = ExtResource("6_kl0j4")
-choosing = 4
-mode = "Remove"
 ask = ExtResource("7_3i14i")
 how_many = 2
 choose_num = -1
-turn_delay = -1
-prevent_KO = false
-anyway_u_like = false
-with_leftover = "None"
-leftover_anyway = false
-vary_choose_num = false
 plus = false
-modifier = 1
 
 [sub_resource type="Resource" id="Resource_40hbl"]
 script = ExtResource("7_8s2co")
-order = Array[int]([])
 dmgManip = SubResource("Resource_yweta")
 
 [sub_resource type="Resource" id="Resource_jvoai"]
@@ -72,15 +36,11 @@ script = ExtResource("5_85iqr")
 when_to_check = 1
 activate_ask = SubResource("Resource_4klen")
 tool_effect = SubResource("Resource_40hbl")
-remove_after = true
-duration = -1
 
 [sub_resource type="Resource" id="Resource_5f3e6"]
 script = ExtResource("4_blq1p")
 considered = "Tool"
-specific_requirement = ""
 description = "At any time between turns, if the Pokémon this card is attached to has at least 2 damage counters on it, remove 2 damage counters from it. Then, discard Oran Berry. "
-prompt_effects = Array[ExtResource("3_5fu5s")]([])
 tool_properties = SubResource("Resource_jvoai")
 
 [resource]
@@ -90,7 +50,5 @@ image = ExtResource("1_2xwq7")
 illustrator = "Kazuo Yazawa"
 number = 85
 rarity = 1
-expansion = 0
 categories = 2
 trainer_properties = SubResource("Resource_5f3e6")
-fossil = false

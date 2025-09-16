@@ -9,7 +9,7 @@
 [ext_resource type="Resource" uid="uid://cjlv4ltu2gptf" path="res://Resources/Components/Pokemon/Attacks/AttackData/60Dmg.tres" id="6_6tm74"]
 [ext_resource type="Resource" uid="uid://dn23rqq74kmjq" path="res://Resources/Components/Effects/CardDisrupt/Play/RemoveAllOppTools.tres" id="7_vatuy"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="8_6hnva"]
-[ext_resource type="Resource" uid="uid://bns8h72u2hxqo" path="res://Resources/Components/Effects/Asks/General/AnyMon.tres" id="9_bxygc"]
+[ext_resource type="Resource" uid="uid://bns8h72u2hxqo" path="res://Resources/Components/Effects/Asks/General/AnyMon.tres" id="9_75t4a"]
 [ext_resource type="Script" uid="uid://bics3dumv7avj" path="res://Code/Resource Makers/GeneralUse/OccuranceMaker.gd" id="10_n54sb"]
 [ext_resource type="Resource" uid="uid://njjce7akxhr" path="res://Resources/Components/Effects/Identifiers/Trainers/Tool.tres" id="11_75t4a"]
 [ext_resource type="Script" uid="uid://c0ishgbxk63dg" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/DisableMaker.gd" id="11_ga2yi"]
@@ -20,7 +20,6 @@
 [sub_resource type="Resource" id="Resource_5i7ce"]
 script = ExtResource("2_qw1xc")
 name = "Supersonic"
-attack_cost = ExtResource("3_75t4a")
 attack_data = ExtResource("4_clu2s")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
@@ -39,40 +38,27 @@ metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_f55l8"]
 script = ExtResource("10_n54sb")
-from_ask = ExtResource("9_bxygc")
-signal = "first_check"
+from_ask = ExtResource("9_75t4a")
+signal = "checked_up"
 metadata/_custom_type_script = "uid://bics3dumv7avj"
 
 [sub_resource type="Resource" id="Resource_vg1px"]
 script = ExtResource("11_ga2yi")
 card_type = ExtResource("11_75t4a")
-disable_power = false
-disable_body = false
-disable_retreat = false
-choose_num = -1
-attack = 0
-atk_effect = true
-attack_names = Array[String]([])
 application = "Side"
 recieves = ExtResource("12_clu2s")
-duration = -1
 metadata/_custom_type_script = "uid://c0ishgbxk63dg"
 
 [sub_resource type="Resource" id="Resource_xpjov"]
 script = ExtResource("8_6hnva")
-order = Array[int]([])
 disable = SubResource("Resource_vg1px")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_idxkk"]
 script = ExtResource("12_3pmxv")
-category = "Body"
 name = "Primal Lock"
 description = "As long as [name] is in play, your opponent can't play Pokémon Tool cards. Remove any Pokémon Tool cards attached to your opponent's Pokémon and put them into his or her discard pile. "
-affected_by_condition = true
-active = false
 how_often = "Infinite"
-independent_src_trg = false
 occurance = SubResource("Resource_f55l8")
 passive = SubResource("Resource_xpjov")
 effect = SubResource("Resource_r4mat")
@@ -81,13 +67,11 @@ metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 [sub_resource type="Resource" id="Resource_dxicy"]
 script = ExtResource("13_3xxuk")
 HP = 100
-retreat = 1
 pokebody = SubResource("Resource_idxkk")
 attacks = Array[ExtResource("2_qw1xc")]([SubResource("Resource_5i7ce"), SubResource("Resource_mn71y")])
 evo_stage = "Stage 1"
 evolves_from = "Mysterious Fossil"
 considered = 2
-owner = 0
 type = 256
 weak = 8
 resist = 32
@@ -103,5 +87,4 @@ rarity = 4
 expansion = 1
 categories = 1
 pokemon_properties = SubResource("Resource_dxicy")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

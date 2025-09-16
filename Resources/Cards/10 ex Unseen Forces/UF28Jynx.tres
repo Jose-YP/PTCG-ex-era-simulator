@@ -30,62 +30,31 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_sj7iq"]
 script = ExtResource("8_87fu4")
 description = "Flip a coin. If heads, the Defending Pokémon is now Paralyzed. If tails, the Defending Pokémon is now Burned."
-prompt_reliant = false
-initial_main_DMG = 0
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
 prompt_effects = Array[ExtResource("6_c435i")]([SubResource("Resource_87fu4")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_xvftv"]
 script = ExtResource("2_he504")
 name = "Freeze Light"
-attack_cost = ExtResource("3_jseaf")
 attack_data = SubResource("Resource_sj7iq")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_0matq"]
 script = ExtResource("8_0ppqk")
-grass_cost = 0
-fire_cost = 0
 water_cost = 1
-lightning_cost = 0
 psychic_cost = 1
-fighting_cost = 0
-darkness_cost = 0
-metal_cost = 0
-colorless_cost = 1
 metadata/_custom_type_script = "uid://crscwhvugaoxa"
 
 [sub_resource type="Resource" id="Resource_0ppqk"]
 script = ExtResource("11_87fu4")
-choosing = 4
 mode = "Add"
 ask = ExtResource("10_c435i")
 how_many = 4
-choose_num = 1
-turn_delay = -1
-prevent_KO = false
 anyway_u_like = true
-with_leftover = "None"
-leftover_anyway = false
-vary_choose_num = false
-plus = true
-modifier = 1
 metadata/_custom_type_script = "uid://scca13hg4k1l"
 
 [sub_resource type="Resource" id="Resource_y5xf5"]
 script = ExtResource("4_jseaf")
-order = Array[int]([])
 dmgManip = SubResource("Resource_0ppqk")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -97,20 +66,7 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_j1gr8"]
 script = ExtResource("8_87fu4")
 description = "Put 4 damage counters on your opponent's Pokémon in any way you like."
-prompt_reliant = false
-initial_main_DMG = 0
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
 prompt_effects = Array[ExtResource("6_c435i")]([SubResource("Resource_0x2n6")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_oqscs"]
@@ -123,50 +79,24 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_cmuqy"]
 script = ExtResource("12_0x2n6")
 description = "Immune to effects from opposing attacks"
-unstackable_id = ""
 stackable = true
-after_weak_res = true
 operation = "Replace"
-add_hp = 0
-attack = 0
-defense = 0
-retreat_change = 0
-cost_modifier = "Add"
-modify = 0
-plus = false
-condition_immune = 0
 attack_effect_immune = true
-damage_immune = false
-body_immune = false
-power_immune = false
-trainer_immune = false
-odd_immunity = false
-even_immunity = false
-weakness = false
-resistance = false
-effects = false
-attack_names = Array[String]([])
-application = "Slot"
 recieves = ExtResource("13_87fu4")
-duration = -1
 metadata/_custom_type_script = "uid://coojhwe6m20gd"
 
 [sub_resource type="Resource" id="Resource_nbhf5"]
 script = ExtResource("4_jseaf")
-order = Array[int]([])
 buff = SubResource("Resource_cmuqy")
 type_change = ExtResource("16_0ppqk")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_c435i"]
 script = ExtResource("15_0ycnm")
-category = "Body"
 name = "Stages of Evolution"
 description = "As long as [name] is an Evolved Pokémon, prevent all effects of opponent's attacks, except damage, done to [name], and [name] has no Weakness."
 affected_by_condition = false
-active = false
 how_often = "Infinite"
-independent_src_trg = false
 prompt = ExtResource("14_kd3wa")
 passive = SubResource("Resource_nbhf5")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
@@ -174,16 +104,10 @@ metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 [sub_resource type="Resource" id="Resource_prnr0"]
 script = ExtResource("12_sj7iq")
 HP = 70
-retreat = 1
 pokebody = SubResource("Resource_c435i")
 attacks = Array[ExtResource("2_he504")]([SubResource("Resource_xvftv"), SubResource("Resource_oqscs")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
 type = 4
 weak = 128
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -196,5 +120,4 @@ rarity = 2
 expansion = 9
 categories = 1
 pokemon_properties = SubResource("Resource_prnr0")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

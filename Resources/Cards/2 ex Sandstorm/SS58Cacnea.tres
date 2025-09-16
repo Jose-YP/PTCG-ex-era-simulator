@@ -16,16 +16,8 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_pjmm4"]
 script = ExtResource("2_o8uv2")
-HP = 50
-retreat = 1
 attacks = Array[ExtResource("1_yri7d")]([SubResource("Resource_rhl4c")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
-type = 1
 weak = 2
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -34,9 +26,7 @@ name = "Cacnea"
 image = ExtResource("1_ufms1")
 illustrator = "Midori Harada"
 number = 58
-rarity = 0
 expansion = 1
 categories = 1
 pokemon_properties = SubResource("Resource_pjmm4")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

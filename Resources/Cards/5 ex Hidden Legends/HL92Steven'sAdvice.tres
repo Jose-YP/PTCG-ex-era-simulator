@@ -12,9 +12,7 @@
 script = ExtResource("6_u52if")
 comparision_type = "Lesser"
 first_comparison = ExtResource("5_uu0nc")
-compare_to = "None"
 second_constant = 6
-operate_w_constant = "None"
 metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
 [sub_resource type="Resource" id="Resource_mkoc1"]
@@ -37,7 +35,6 @@ considered = "Supporter"
 specific_requirement = "If you have more than 7 cards (including this one) in your hand, you can't play this card."
 description = "Draw a number of cards up to the number of your opponent's Pokémon in play."
 prompt = SubResource("Resource_mkoc1")
-prompt_effects = Array[ExtResource("8_uhgxl")]([])
 metadata/_custom_type_script = "uid://crx447i85kshy"
 
 [resource]
@@ -50,5 +47,4 @@ rarity = 1
 expansion = 4
 categories = 2
 trainer_properties = SubResource("Resource_3nd0w")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

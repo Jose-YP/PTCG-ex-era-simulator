@@ -20,21 +20,10 @@ attack_data = ExtResource("4_ou3qf")
 [sub_resource type="Resource" id="Resource_0wt8d"]
 script = ExtResource("9_l2qun")
 description = "Flip 2 coins. This attack does 40 damage plus 10 more damage for each heads."
-prompt_reliant = false
 initial_main_DMG = 40
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("7_on12m")]([])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
 modifier = 1
 modifier_num = 20
 comparator = ExtResource("6_jwfrn")
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_ju4ha"]
@@ -46,15 +35,11 @@ attack_data = SubResource("Resource_0wt8d")
 [sub_resource type="Resource" id="Resource_guupo"]
 script = ExtResource("7_i2uvt")
 HP = 80
-retreat = 1
 attacks = Array[ExtResource("4_6dlgm")]([SubResource("Resource_o6r1d"), SubResource("Resource_ju4ha")])
 evo_stage = "Stage 1"
 evolves_from = "Makuhita"
-considered = 1
-owner = 0
 type = 32
 weak = 16
-resist = 0
 
 [resource]
 script = ExtResource("8_wcw0t")
@@ -63,7 +48,5 @@ image = ExtResource("1_7j12q")
 illustrator = "Ken Sugimori"
 number = 33
 rarity = 1
-expansion = 0
 categories = 1
 pokemon_properties = SubResource("Resource_guupo")
-fossil = false

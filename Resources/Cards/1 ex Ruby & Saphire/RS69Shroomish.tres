@@ -9,13 +9,7 @@
 [sub_resource type="Resource" id="Resource_rqe74"]
 script = ExtResource("4_61x3k")
 HP = 40
-retreat = 1
 attacks = Array[ExtResource("2_1x3bv")]([ExtResource("3_2dd6m")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
-type = 1
 weak = 2
 resist = 4
 metadata/_custom_type_script = "uid://dkximshow1pao"
@@ -26,9 +20,6 @@ name = "Shroomish"
 image = ExtResource("1_2dd6m")
 illustrator = "Atsuko Nishida"
 number = 69
-rarity = 0
-expansion = 0
 categories = 1
 pokemon_properties = SubResource("Resource_rqe74")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

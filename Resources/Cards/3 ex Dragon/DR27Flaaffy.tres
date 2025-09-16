@@ -13,20 +13,6 @@
 [sub_resource type="Resource" id="Resource_k5rht"]
 script = ExtResource("9_awqk8")
 description = "Attach up to 2 basic Energy cards from your discard pile to Flaaffy."
-prompt_reliant = false
-initial_main_DMG = 0
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("9_kyluj")]([])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_rxdhg"]
@@ -46,12 +32,9 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_htmu2"]
 script = ExtResource("12_aqwew")
 HP = 80
-retreat = 1
 attacks = Array[ExtResource("2_kyluj")]([SubResource("Resource_rxdhg"), SubResource("Resource_usena")])
 evo_stage = "Stage 1"
 evolves_from = "Flaaffy"
-considered = 1
-owner = 0
 type = 8
 weak = 32
 resist = 128
@@ -67,5 +50,4 @@ rarity = 1
 expansion = 2
 categories = 1
 pokemon_properties = SubResource("Resource_htmu2")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

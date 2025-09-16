@@ -6,7 +6,6 @@
 
 [sub_resource type="Resource" id="Resource_dkhdn"]
 script = ExtResource("2_docd0")
-order = Array[int]([])
 energy_movement = ExtResource("1_yq7xm")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -15,9 +14,6 @@ script = ExtResource("3_ttmw1")
 category = "Power"
 name = "Energy Trans"
 description = "As often as you like during your turn (before your attack), move a {Grass} Energy card attached to 1 of your Pokémon to another of your Pokémon. This power can't be used if [name] is affected by a Special Condition."
-affected_by_condition = true
-active = false
 how_often = "Infinite"
-independent_src_trg = false
 effect = SubResource("Resource_dkhdn")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"

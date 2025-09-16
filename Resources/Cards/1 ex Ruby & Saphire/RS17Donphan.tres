@@ -14,21 +14,10 @@
 [sub_resource type="Resource" id="Resource_m8mmj"]
 script = ExtResource("5_ukmff")
 description = "If the Defending Pokémon has any damage counters on it, this attack does 20 damage plus 20 more damage."
-prompt_reliant = false
 initial_main_DMG = 20
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("5_uran7")]([])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
 modifier = 1
 modifier_num = 20
 comparator = ExtResource("4_yfpum")
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_uran7"]
@@ -48,15 +37,11 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_ep4ng"]
 script = ExtResource("5_dvxvh")
 HP = 80
-retreat = 1
 attacks = Array[ExtResource("2_w6dgb")]([SubResource("Resource_uran7"), SubResource("Resource_6ktpq")])
 evo_stage = "Stage 1"
 evolves_from = "Phanpy"
-considered = 1
-owner = 0
 type = 32
 weak = 1
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -66,8 +51,6 @@ image = ExtResource("1_bi41r")
 illustrator = "Kagemaru Himeno"
 number = 17
 rarity = 2
-expansion = 0
 categories = 1
 pokemon_properties = SubResource("Resource_ep4ng")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

@@ -11,36 +11,19 @@
 
 [sub_resource type="Resource" id="Resource_w6ice"]
 script = ExtResource("8_kkfsi")
-description = ""
-prompt_reliant = false
 initial_main_DMG = 10
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("4_xr36y")]([])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_cnaec"]
 script = ExtResource("5_38xhb")
 name = "Crushing Magma"
-attack_cost = ExtResource("7_3c8rh")
 attack_data = SubResource("Resource_w6ice")
 
 [sub_resource type="Resource" id="Resource_etq3y"]
 script = ExtResource("6_m2fw7")
 considered = "TM"
-specific_requirement = ""
 description = "Attach this card to 1 of your Pokémon that has Team Magma in its name. That Pokémon may use this card's attack instead of its own. At the end of your turn, discard Team Magma Technical Machine 01."
 asks = ExtResource("3_572u0")
-prompt_effects = Array[ExtResource("4_xr36y")]([])
 provided_attack = SubResource("Resource_cnaec")
 
 [resource]
@@ -53,4 +36,3 @@ rarity = 1
 expansion = 3
 categories = 2
 trainer_properties = SubResource("Resource_etq3y")
-fossil = false

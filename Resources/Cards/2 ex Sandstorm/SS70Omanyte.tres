@@ -18,15 +18,11 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_g3hpe"]
 script = ExtResource("6_dj6d7")
 HP = 70
-retreat = 1
 attacks = Array[ExtResource("2_y8lyt")]([ExtResource("3_r36ux"), SubResource("Resource_xv8cy")])
 evo_stage = "Stage 1"
 evolves_from = "Mysterious Fossil"
-considered = 1
-owner = 0
 type = 4
 weak = 8
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -35,9 +31,7 @@ name = "Omanyte"
 image = ExtResource("1_hbvpm")
 illustrator = "Kouki Saitou"
 number = 70
-rarity = 0
 expansion = 1
 categories = 1
 pokemon_properties = SubResource("Resource_g3hpe")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

@@ -17,16 +17,9 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_vrwbu"]
 script = ExtResource("6_c11yv")
-HP = 50
-retreat = 1
 attacks = Array[ExtResource("2_44o8f")]([ExtResource("3_1lbjy"), SubResource("Resource_v8bhm")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
 type = 32
 weak = 4
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -35,9 +28,7 @@ name = "Baltoy"
 image = ExtResource("1_1ekf6")
 illustrator = "Ken Sugimori"
 number = 53
-rarity = 0
 expansion = 4
 categories = 1
 pokemon_properties = SubResource("Resource_vrwbu")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

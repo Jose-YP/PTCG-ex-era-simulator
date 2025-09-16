@@ -26,15 +26,11 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_dujg8"]
 script = ExtResource("6_kte8o")
 HP = 70
-retreat = 1
 attacks = Array[ExtResource("2_n1wjk")]([SubResource("Resource_733yk"), SubResource("Resource_61rkf")])
 evo_stage = "Stage 1"
 evolves_from = "Ralts"
-considered = 1
-owner = 0
 type = 16
 weak = 16
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -44,8 +40,6 @@ image = ExtResource("1_hw4cd")
 illustrator = "Ken Sugimori"
 number = 35
 rarity = 1
-expansion = 0
 categories = 1
 pokemon_properties = SubResource("Resource_dujg8")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

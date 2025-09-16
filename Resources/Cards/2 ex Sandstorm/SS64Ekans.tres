@@ -10,22 +10,13 @@
 [sub_resource type="Resource" id="Resource_6d4ap"]
 script = ExtResource("1_vurul")
 name = "Bind"
-attack_cost = ExtResource("3_lx7ow")
 attack_data = ExtResource("4_h17lo")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_k6lxq"]
 script = ExtResource("2_bfxpi")
-HP = 50
-retreat = 1
 attacks = Array[ExtResource("1_vurul")]([SubResource("Resource_6d4ap")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
-type = 1
 weak = 16
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -34,9 +25,7 @@ name = "Ekans"
 image = ExtResource("1_k6lxq")
 illustrator = "Midori Harada"
 number = 64
-rarity = 0
 expansion = 1
 categories = 1
 pokemon_properties = SubResource("Resource_k6lxq")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

@@ -28,111 +28,38 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_r33gj"]
 script = ExtResource("8_uxe5o")
 description = "Flip a coin. If heads, the Defending Pokémon is now Confused. If tails, the Defending Pokémon is now Asleep."
-prompt_reliant = false
-initial_main_DMG = 0
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
 prompt_effects = Array[ExtResource("4_h5hr6")]([SubResource("Resource_bp5xf")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_h5hr6"]
 script = ExtResource("2_s135m")
 name = "Chaotic Noise"
-attack_cost = ExtResource("3_u1p2y")
 attack_data = SubResource("Resource_r33gj")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_6k8kd"]
 script = ExtResource("10_omieh")
-boolean_type = "And"
-previous_src_trg = false
-side_target = 3
-slot_target = 4
-specifically = Array[String]([])
-tool_attatched = false
-comparison_type = 1
-max_hp = -10
-damage_taken = -10
-retreat_cost = -1
-evo_type = "Don't Check"
-stage = 7
-rare_candy = false
-class_inclusive = true
-pokemon_class = 63
-owner_inclusive = true
-pokemon_owner = 31
-type_inclusive = true
 pokemon_type = 608
-en_class = 0
-energy_inclusive = true
-check_cards = true
-energy_attatched = -1
-energy_class = "Any"
-inclusive_ability = true
-check_ability = false
-contained_abilities = 3
-specific_abilities = Array[String]([])
-check_condition = false
-desired_condition = 0
-knocked_out = false
 metadata/_custom_type_script = "uid://mkjynqda7q5g"
 
 [sub_resource type="Resource" id="Resource_8fs6g"]
 script = ExtResource("12_rf851")
 description = "Take 30 less damage from {Fightning} and {Darkness} Pokemon"
-unstackable_id = ""
-stackable = false
 against = SubResource("Resource_6k8kd")
-after_weak_res = true
-operation = "Add"
-add_hp = 0
-attack = 0
 defense = 30
-retreat_change = 0
-cost_modifier = "Add"
-modify = 0
-plus = false
-condition_immune = 0
-attack_effect_immune = false
-damage_immune = false
-body_immune = false
-power_immune = false
-trainer_immune = false
-odd_immunity = false
-even_immunity = false
-weakness = false
-resistance = false
-effects = false
-attack_names = Array[String]([])
-application = "Slot"
 recieves = ExtResource("11_njfcx")
-duration = -1
 metadata/_custom_type_script = "uid://coojhwe6m20gd"
 
 [sub_resource type="Resource" id="Resource_kvilp"]
 script = ExtResource("16_23wfd")
-order = Array[int]([])
 buff = SubResource("Resource_8fs6g")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_rx1kt"]
 script = ExtResource("8_6po54")
-category = "Body"
 name = "Glowing Screen"
 description = "As long as Volbeat is in play, any damage done to [name] by attacks from {Fighting} Pokémon and {Darkness} Pokémon is reduced by 30. You can't reduce more than 30 damage even if there is more than 1 Volbeat in play."
 affected_by_condition = false
-active = false
-how_often = "Once per Mon"
-independent_src_trg = false
 prompt = ExtResource("14_6po54")
 passive = SubResource("Resource_kvilp")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
@@ -140,16 +67,9 @@ metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 [sub_resource type="Resource" id="Resource_omieh"]
 script = ExtResource("9_fqr5m")
 HP = 60
-retreat = 1
 pokebody = SubResource("Resource_rx1kt")
 attacks = Array[ExtResource("2_s135m")]([SubResource("Resource_h5hr6"), ExtResource("9_rx1kt")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
-type = 1
 weak = 2
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -162,5 +82,4 @@ rarity = 1
 expansion = 1
 categories = 1
 pokemon_properties = SubResource("Resource_omieh")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

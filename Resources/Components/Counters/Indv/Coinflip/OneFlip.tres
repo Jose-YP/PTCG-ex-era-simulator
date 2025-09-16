@@ -1,11 +1,7 @@
-[gd_resource type="Resource" script_class="IndvCounter" load_steps=3 format=3 uid="uid://dnugestsmtlk"]
+[gd_resource type="Resource" script_class="IndvCounter" load_steps=2 format=3 uid="uid://dnugestsmtlk"]
 
-[ext_resource type="Resource" uid="uid://csc2clyxejdwm" path="res://Resources/Components/CoinFlip/FlipOnce.tres" id="2_e5xa1"]
 [ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="3_61p3a"]
 
 [resource]
 script = ExtResource("3_61p3a")
-which = "Coinflip"
-coin_flip = ExtResource("2_e5xa1")
-cap = -1
 metadata/_custom_type_script = "uid://vjn146j3ayd6"

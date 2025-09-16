@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_30u5g"]
 [ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="2_5jtsu"]
 [ext_resource type="Resource" uid="uid://c35ffmruy2a6c" path="res://Resources/Components/Pokemon/Attacks/AttackData/PullDown.tres" id="3_mblh6"]
-[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="4_e7jrl"]
-[ext_resource type="Resource" uid="uid://bufxq7qfe3kv2" path="res://Resources/Components/EnData/Water.tres" id="5_fobry"]
+[ext_resource type="Resource" uid="uid://b1rwmggf7a4do" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless2.tres" id="4_5jtsu"]
+[ext_resource type="Resource" uid="uid://bns8h72u2hxqo" path="res://Resources/Components/Effects/Asks/General/AnyMon.tres" id="5_mblh6"]
 [ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="6_x5i4d"]
 [ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="7_7jxef"]
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="8_5jtsu"]
@@ -14,53 +14,34 @@
 [sub_resource type="Resource" id="Resource_cd5bo"]
 script = ExtResource("1_30u5g")
 name = "Pull Down"
-attack_cost = ExtResource("2_5jtsu")
 attack_data = ExtResource("3_mblh6")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_bxjgq"]
 script = ExtResource("6_x5i4d")
 which = "Slot"
-ask = ExtResource("4_e7jrl")
-slot_vars = "energy_cards"
-en_count_methods = "Excess"
-en_counting = ExtResource("5_fobry")
-cap = 2
+ask = ExtResource("5_mblh6")
+slot_vars = "current_card"
+cap = -1
 metadata/_custom_type_script = "uid://vjn146j3ayd6"
 
 [sub_resource type="Resource" id="Resource_icidu"]
 script = ExtResource("7_7jxef")
-comparision_type = "Return"
 first_comparison = SubResource("Resource_bxjgq")
-compare_to = "None"
-second_constant = 0
-operate_w_constant = "None"
 metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
 [sub_resource type="Resource" id="Resource_tb4bi"]
 script = ExtResource("8_q7crh")
 description = "Does 30 damage plus 20 more damage for each {Water} Energy attached to [name] but not used to pay for this attack's Energy cost. You can't add more than 40 damage in this way."
-prompt_reliant = false
 initial_main_DMG = 30
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("8_5jtsu")]([])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
 modifier_num = 20
 comparator = SubResource("Resource_icidu")
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_67c8f"]
 script = ExtResource("1_30u5g")
-name = ""
-attack_cost = ExtResource("2_5jtsu")
+name = " Hydrocannon"
+attack_cost = ExtResource("4_5jtsu")
 attack_data = SubResource("Resource_tb4bi")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
@@ -71,9 +52,6 @@ retreat = 2
 attacks = Array[ExtResource("1_30u5g")]([SubResource("Resource_cd5bo"), SubResource("Resource_67c8f")])
 evo_stage = "Stage 2"
 evolves_from = "Omanyte"
-considered = 1
-owner = 0
 type = 4
 weak = 8
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"

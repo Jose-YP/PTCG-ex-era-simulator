@@ -12,7 +12,6 @@
 [sub_resource type="Resource" id="Resource_b0wo5"]
 script = ExtResource("3_bv4e3")
 name = "Fling"
-attack_cost = ExtResource("5_emleq")
 attack_data = ExtResource("6_bewmg")
 
 [sub_resource type="Resource" id="Resource_bhvvb"]
@@ -23,16 +22,7 @@ attack_data = ExtResource("8_fpbkf")
 
 [sub_resource type="Resource" id="Resource_nhg8b"]
 script = ExtResource("4_sikvg")
-HP = 50
-retreat = 1
 attacks = Array[ExtResource("3_bv4e3")]([SubResource("Resource_b0wo5"), SubResource("Resource_bhvvb")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
-type = 1
-weak = 0
-resist = 0
 
 [resource]
 script = ExtResource("1_5pixv")
@@ -40,8 +30,5 @@ name = "Makuhita"
 image = ExtResource("1_er63v")
 illustrator = "Kagemaru Himeno"
 number = 57
-rarity = 0
-expansion = 0
 categories = 1
 pokemon_properties = SubResource("Resource_nhg8b")
-fossil = false

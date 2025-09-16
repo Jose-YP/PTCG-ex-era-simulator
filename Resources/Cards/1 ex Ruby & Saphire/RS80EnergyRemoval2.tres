@@ -10,7 +10,6 @@
 
 [sub_resource type="Resource" id="Resource_w15ih"]
 script = ExtResource("6_261xj")
-order = Array[int]([])
 energy_movement = ExtResource("5_ujvyd")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -22,8 +21,6 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [sub_resource type="Resource" id="Resource_ldy6r"]
 script = ExtResource("5_lb0wg")
-considered = "Item"
-specific_requirement = ""
 description = "Flip a coin. If heads, choose 1 Energy card attached to 1 of your opponent's Pokémon and discard it. "
 prompt_effects = Array[ExtResource("3_56o1l")]([SubResource("Resource_261xj")])
 
@@ -34,7 +31,5 @@ image = ExtResource("1_hj3wc")
 illustrator = "Keniji Kinebuchi"
 number = 80
 rarity = 1
-expansion = 0
 categories = 2
 trainer_properties = SubResource("Resource_ldy6r")
-fossil = false

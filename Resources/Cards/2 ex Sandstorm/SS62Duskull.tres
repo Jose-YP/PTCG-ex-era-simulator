@@ -14,24 +14,13 @@
 
 [sub_resource type="Resource" id="Resource_rcdw0"]
 script = ExtResource("6_gtvx0")
-choosing = 4
 mode = "Add"
 ask = ExtResource("5_iv4xq")
-how_many = 1
 choose_num = -1
-turn_delay = -1
-prevent_KO = false
-anyway_u_like = false
-with_leftover = "None"
-leftover_anyway = false
-vary_choose_num = false
-plus = true
-modifier = 1
 metadata/_custom_type_script = "uid://scca13hg4k1l"
 
 [sub_resource type="Resource" id="Resource_p2atu"]
 script = ExtResource("7_c6ofv")
-order = Array[int]([])
 dmgManip = SubResource("Resource_rcdw0")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -42,21 +31,7 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [sub_resource type="Resource" id="Resource_3icnl"]
 script = ExtResource("8_t6ruo")
-description = ""
-prompt_reliant = false
-initial_main_DMG = 0
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
 prompt_effects = Array[ExtResource("4_3oghx")]([SubResource("Resource_ampkh")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_owrr0"]
@@ -68,26 +43,10 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_vikxo"]
 script = ExtResource("8_t6ruo")
-description = ""
-prompt_reliant = false
-initial_main_DMG = 0
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("4_3oghx")]([])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_754gl"]
 script = ExtResource("2_qoqcd")
-name = ""
 attack_cost = ExtResource("9_cwr80")
 attack_data = SubResource("Resource_vikxo")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
@@ -95,12 +54,7 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_k6lxq"]
 script = ExtResource("10_dkwuv")
 HP = 40
-retreat = 1
 attacks = Array[ExtResource("2_qoqcd")]([SubResource("Resource_owrr0"), SubResource("Resource_754gl")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
 type = 16
 weak = 64
 resist = 32
@@ -112,9 +66,7 @@ name = "Duskull"
 image = ExtResource("1_0aghf")
 illustrator = "Aya Kusube"
 number = 62
-rarity = 0
 expansion = 1
 categories = 1
 pokemon_properties = SubResource("Resource_k6lxq")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

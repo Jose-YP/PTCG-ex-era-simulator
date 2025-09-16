@@ -7,10 +7,7 @@
 
 [sub_resource type="Resource" id="Resource_e157p"]
 script = ExtResource("9_i4gtl")
-considered = "Item"
-specific_requirement = ""
 description = "Search your deck for a Supporter card, a Pokémon Tool card, and a basic Energy card. Show them to your opponent, and put them into your hand. Shuffle your deck afterward. "
-prompt_effects = Array[ExtResource("5_xcosq")]([])
 metadata/_custom_type_script = "uid://crx447i85kshy"
 
 [resource]
@@ -23,5 +20,4 @@ rarity = 1
 expansion = 13
 categories = 2
 trainer_properties = SubResource("Resource_e157p")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

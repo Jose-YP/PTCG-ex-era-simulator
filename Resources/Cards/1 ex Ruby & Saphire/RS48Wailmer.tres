@@ -17,19 +17,8 @@
 
 [sub_resource type="Resource" id="Resource_dwx6k"]
 script = ExtResource("7_jab6k")
-choosing = 4
-mode = "Remove"
 ask = ExtResource("6_q03r5")
 how_many = 4
-choose_num = 1
-turn_delay = -1
-prevent_KO = false
-anyway_u_like = false
-with_leftover = "None"
-leftover_anyway = false
-vary_choose_num = false
-plus = true
-modifier = 1
 metadata/_custom_type_script = "uid://scca13hg4k1l"
 
 [sub_resource type="Resource" id="Resource_5ywka"]
@@ -48,20 +37,7 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_lolcc"]
 script = ExtResource("9_akdno")
 description = "Remove all Special Conditions and 4 damage counters from [name] (all if there are less than 4). [name] is now Asleep."
-prompt_reliant = false
-initial_main_DMG = 0
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
 prompt_effects = Array[ExtResource("4_2owa8")]([SubResource("Resource_2a6mg")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_cqw6w"]
@@ -74,21 +50,10 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_ulqrn"]
 script = ExtResource("9_akdno")
 description = "This attack does 20 damage plus 10 more damage for each {Water} Energy attached to [name] but not used to pay for this attack's Energy cost. You can't add more than 20 damage in this way."
-prompt_reliant = false
 initial_main_DMG = 20
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("4_2owa8")]([])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
 modifier = 1
 modifier_num = 10
 comparator = ExtResource("11_vwjj8")
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_3y537"]
@@ -103,13 +68,8 @@ script = ExtResource("12_aakui")
 HP = 80
 retreat = 3
 attacks = Array[ExtResource("2_2owa8")]([SubResource("Resource_cqw6w"), SubResource("Resource_3y537")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
 type = 4
 weak = 8
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -119,8 +79,6 @@ image = ExtResource("1_ulqrn")
 illustrator = "Mitsuhiro Arita"
 number = 48
 rarity = 1
-expansion = 0
 categories = 1
 pokemon_properties = SubResource("Resource_ph38x")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

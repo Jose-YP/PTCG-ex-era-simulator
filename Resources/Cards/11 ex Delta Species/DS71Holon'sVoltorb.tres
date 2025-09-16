@@ -18,15 +18,10 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_l8m6a"]
 script = ExtResource("6_3jscl")
 HP = 40
-retreat = 1
 attacks = Array[ExtResource("3_b3vl0")]([SubResource("Resource_c3iqn")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
 owner = 4
 type = 8
 weak = 32
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -35,9 +30,7 @@ name = "Holon's Voltorb"
 image = ExtResource("2_y6qs1")
 illustrator = "Takao Unno"
 number = 71
-rarity = 0
 expansion = 10
 categories = 5
 pokemon_properties = SubResource("Resource_l8m6a")
 energy_properties = ExtResource("1_dkpvg")
-fossil = false

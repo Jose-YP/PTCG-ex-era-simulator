@@ -1,7 +1,6 @@
 @icon("res://Art/Coins/BreloomFirst.png")
 extends Control
 
-@export var coinflip: CoinFlip
 @export var coin_scene: PackedScene
 @export var base_cooldown: float = 1
 @export var growth_rate: float = 20

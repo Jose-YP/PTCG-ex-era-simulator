@@ -3,7 +3,7 @@
 [ext_resource type="Resource" uid="uid://d2ts8ex3x0duw" path="res://Resources/Components/EnData/Darkness.tres" id="1_phikd"]
 [ext_resource type="Script" uid="uid://caj1pm8erar2a" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="2_ipvd8"]
 [ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="3_agjcc"]
-[ext_resource type="Resource" uid="uid://bcbidc3f2g8py" path="res://Resources/Components/Effects/Asks/Types/SelfIsDarkness.tres" id="3_xkj3l"]
+[ext_resource type="Resource" uid="uid://bns8h72u2hxqo" path="res://Resources/Components/Effects/Asks/General/AnyMon.tres" id="3_xkj3l"]
 [ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="4_agjcc"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_rhnr6"]
 [ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="4_xkj3l"]
@@ -26,7 +26,6 @@ comparision_type = "Equals"
 first_comparison = SubResource("Resource_7a8tk")
 compare_to = "Const"
 second_constant = 1
-operate_w_constant = "None"
 metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
 [sub_resource type="Resource" id="Resource_81xdd"]
@@ -46,36 +45,14 @@ metadata/_custom_type_script = "uid://b85jmc7067bjc"
 [sub_resource type="Resource" id="Resource_j3iii"]
 script = ExtResource("8_xkj3l")
 description = "Deal +10 damage before weak/res"
-unstackable_id = ""
 stackable = true
 after_weak_res = false
 operation = "Replace"
-add_hp = 0
 attack = 10
-defense = 0
-retreat_change = 0
-cost_modifier = "Add"
-modify = 0
-plus = false
-condition_immune = 0
-attack_effect_immune = false
-damage_immune = false
-body_immune = false
-power_immune = false
-trainer_immune = false
-odd_immunity = false
-even_immunity = false
-weakness = false
-resistance = false
-effects = false
-attack_names = Array[String]([])
-application = "Slot"
 recieves = ExtResource("8_7a8tk")
-duration = -1
 
 [sub_resource type="Resource" id="Resource_gso0c"]
 script = ExtResource("4_rhnr6")
-order = Array[int]([])
 buff = SubResource("Resource_j3iii")
 
 [sub_resource type="Resource" id="Resource_xkj3l"]
@@ -86,12 +63,7 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [resource]
 script = ExtResource("2_ipvd8")
-considered = "Special Energy"
 description = "If the Pokémon Darkness Energy is attached to attacks, the attack does 10 more damage to the Active Pokémon (before applying Weakness and Resistance). Ignore this effect unless the Attacking Pokémon is {Darkness} or has Dark in its name. Darkness Energy provides {Darkness} Energy. (Doesn't count as a basic Energy card.)"
-has_fail_provide = false
-has_fail_prevent = false
-attatch_effects = Array[ExtResource("6_xkj3l")]([])
 prompt_effects = Array[ExtResource("6_xkj3l")]([SubResource("Resource_xkj3l")])
-turns = -1
 fail_provide = ExtResource("1_phikd")
 success_provide = ExtResource("1_phikd")

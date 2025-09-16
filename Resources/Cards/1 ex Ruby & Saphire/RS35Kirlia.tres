@@ -23,49 +23,26 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_pm8uh"]
 script = ExtResource("5_po7pa")
 description = "Flip a coin. If heads, each Defending Pokémon is now Confused."
-prompt_reliant = false
-initial_main_DMG = 0
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
 prompt_effects = Array[ExtResource("4_po7pa")]([SubResource("Resource_12pwx")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
 both_active = true
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_rxpsm"]
 script = ExtResource("2_xo8sa")
 name = "Dazzle Dance"
-attack_cost = ExtResource("3_obvev")
 attack_data = SubResource("Resource_pm8uh")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_gpint"]
 script = ExtResource("5_22ruy")
-choosing = 4
 mode = "Add"
 ask = ExtResource("9_po7pa")
 how_many = -1
-choose_num = 1
-turn_delay = -1
 prevent_KO = true
-anyway_u_like = false
-with_leftover = "None"
-leftover_anyway = false
-vary_choose_num = false
-plus = true
-modifier = 1
 metadata/_custom_type_script = "uid://scca13hg4k1l"
 
 [sub_resource type="Resource" id="Resource_oouox"]
 script = ExtResource("6_po7pa")
-order = Array[int]([])
 dmgManip = SubResource("Resource_gpint")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -77,20 +54,7 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_nmuih"]
 script = ExtResource("5_po7pa")
 description = "Flip a coin. If heads, put damage counters on the Defending Pokémon until it is 10 HP away from being Knocked Out."
-prompt_reliant = false
-initial_main_DMG = 0
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
 prompt_effects = Array[ExtResource("4_po7pa")]([SubResource("Resource_dqa6d")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_io3te"]
@@ -103,15 +67,9 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_gec3m"]
 script = ExtResource("7_12pwx")
 HP = 70
-retreat = 1
 attacks = Array[ExtResource("2_xo8sa")]([SubResource("Resource_rxpsm"), SubResource("Resource_io3te")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
 type = 16
 weak = 16
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -121,8 +79,6 @@ image = ExtResource("1_t854o")
 illustrator = "Atsuko Nishida"
 number = 35
 rarity = 1
-expansion = 0
 categories = 1
 pokemon_properties = SubResource("Resource_gec3m")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

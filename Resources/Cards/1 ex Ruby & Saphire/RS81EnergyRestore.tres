@@ -9,38 +9,26 @@
 [ext_resource type="Resource" uid="uid://d2vm6chtedrum" path="res://Resources/Components/Effects/Identifiers/Energy/BasicEnergy.tres" id="6_g65qi"]
 [ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="7_kp8hr"]
 [ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/Components/SearchMaker.gd" id="8_0udr8"]
-[ext_resource type="Resource" uid="uid://bns8h72u2hxqo" path="res://Resources/Components/Effects/Asks/General/AnyMon.tres" id="8_fldqg"]
+[ext_resource type="Resource" uid="uid://bns8h72u2hxqo" path="res://Resources/Components/Effects/Asks/General/AnyMon.tres" id="9_d4pk4"]
 [ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="9_g65qi"]
 
 [sub_resource type="Resource" id="Resource_d4pk4"]
 script = ExtResource("9_g65qi")
 which = "Slot"
-ask = ExtResource("8_fldqg")
-slot_vars = "None"
+ask = ExtResource("9_d4pk4")
+slot_vars = "current_card"
 cap = -1
 metadata/_custom_type_script = "uid://vjn146j3ayd6"
 
 [sub_resource type="Resource" id="Resource_c54ce"]
 script = ExtResource("8_0udr8")
-side = 4
 where = 0
-reordering_only = false
-shuffle_first = false
-based_on_side = 0
-based_on_slots = 0
-based_on_energy = 0
-portion = -1
-identifier_allowed = -1
-how_many = Array[int]([1])
 variable_ammount = SubResource("Resource_d4pk4")
 of_this = Array[ExtResource("7_kp8hr")]([ExtResource("6_g65qi")])
-and_then = ExtResource("4_fldqg")
-reveal = true
 metadata/_custom_type_script = "uid://cw3yr1k040kw7"
 
 [sub_resource type="Resource" id="Resource_r3udp"]
 script = ExtResource("5_253us")
-order = Array[int]([])
 search = SubResource("Resource_c54ce")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -51,8 +39,6 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [sub_resource type="Resource" id="Resource_j6siw"]
 script = ExtResource("4_8je75")
-considered = "Item"
-specific_requirement = ""
 description = "Flip 3 coins. For each heads, put a Basic Energy card from your discard pile into your hand. If you don't have that many basic Energy cards in your discard pile, put all of them into your hand. "
 prompt_effects = Array[ExtResource("3_g65qi")]([SubResource("Resource_xendn")])
 
@@ -63,7 +49,5 @@ image = ExtResource("1_imayw")
 illustrator = "Hideyuki Nakajima"
 number = 81
 rarity = 1
-expansion = 0
 categories = 2
 trainer_properties = SubResource("Resource_j6siw")
-fossil = false

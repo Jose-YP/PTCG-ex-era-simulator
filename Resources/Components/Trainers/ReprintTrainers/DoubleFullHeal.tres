@@ -10,13 +10,10 @@
 script = ExtResource("2_d85ji")
 ask = ExtResource("1_p8j65")
 remove_conditions = true
-remove_shockwave = false
-remove_imprison = false
 metadata/_custom_type_script = "uid://b4g5of14m3hj5"
 
 [sub_resource type="Resource" id="Resource_uwewy"]
 script = ExtResource("3_crn8a")
-order = Array[int]([])
 alleviate = SubResource("Resource_fon4l")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -27,8 +24,6 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [resource]
 script = ExtResource("4_26v6p")
-considered = "Item"
-specific_requirement = ""
 description = " Remove all Special Conditions from each of your Active Pokémon."
 prompt_effects = Array[ExtResource("1_d85ji")]([SubResource("Resource_crn8a")])
 metadata/_custom_type_script = "uid://crx447i85kshy"

@@ -22,8 +22,8 @@ class_name BoardState
 @export var away: SideState
 
 func duplicate_sides():
-	home = home.duplicate_deep()
-	away = away.duplicate_deep()
+	home = home.duplicate_deep(DeepDuplicateMode.DEEP_DUPLICATE_ALL)
+	away = away.duplicate_deep(DeepDuplicateMode.DEEP_DUPLICATE_ALL)
 
 func get_player_type(home_bool: bool) -> Consts.PLAYER_TYPES:
 	return home_side if home_bool else away_side

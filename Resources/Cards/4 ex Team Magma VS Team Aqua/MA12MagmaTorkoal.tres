@@ -13,21 +13,8 @@
 [sub_resource type="Resource" id="Resource_daj5y"]
 script = ExtResource("8_lrq8w")
 description = "Discard the top card from your opponent's deck, and flip a coin. If tails, discard a {Fire} Energy attached to [name]."
-prompt_reliant = false
 prompt = ExtResource("7_rc86p")
 initial_main_DMG = 10
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("8_ujo65")]([])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_hmf5g"]
@@ -40,20 +27,7 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_lrq8w"]
 script = ExtResource("8_lrq8w")
 description = "Discard a {Fire} Energy attached to [name] and your opponent switches the Defending Pokémon with 1 of his or her Benched Pokémon, if any."
-prompt_reliant = false
 initial_main_DMG = 30
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("8_ujo65")]([])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_h7teo"]
@@ -68,13 +42,9 @@ script = ExtResource("10_rxytm")
 HP = 80
 retreat = 2
 attacks = Array[ExtResource("2_3ynhu")]([SubResource("Resource_hmf5g"), SubResource("Resource_h7teo")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
 owner = 2
 type = 2
 weak = 4
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -87,5 +57,4 @@ rarity = 2
 expansion = 3
 categories = 1
 pokemon_properties = SubResource("Resource_0ceo4")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

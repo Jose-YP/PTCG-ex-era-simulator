@@ -1,14 +1,15 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=19 format=3 uid="uid://ch7qqjhkbd26n"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=21 format=3 uid="uid://ch7qqjhkbd26n"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_7067e"]
 [ext_resource type="Texture2D" uid="uid://bafhv636s8u00" path="res://Art/Cards/12 ex Legend Maker/88.jpg" id="1_v3s2v"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_gfhju"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_p1awv"]
 [ext_resource type="Script" uid="uid://dtv1d2u2kvixy" path="res://Code/Resource Makers/EffectSpecific/Components/MimicMaker.gd" id="6_2fy54"]
+[ext_resource type="Resource" uid="uid://c7itelq8jtjc2" path="res://Resources/Components/EnData/Rainbow.tres" id="6_7iwa2"]
 [ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="6_gfhju"]
+[ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="7_1u4ny"]
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="7_2fy54"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="7_pfer2"]
-[ext_resource type="Resource" uid="uid://bns8h72u2hxqo" path="res://Resources/Components/Effects/Asks/General/AnyMon.tres" id="8_pfer2"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="8_twkj3"]
 [ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="9_7iwa2"]
 [ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="10_pfer2"]
@@ -16,75 +17,49 @@
 [sub_resource type="Resource" id="Resource_7iwa2"]
 script = ExtResource("7_pfer2")
 description = "Search your deck for an Energy card and attach it to [name]. Shuffle your deck afterward. Then, you may switch [name] with 1 of your Benched Pokémon."
-prompt_reliant = false
-initial_main_DMG = 0
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("7_2fy54")]([])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_qrale"]
 script = ExtResource("2_gfhju")
 name = "Power Move"
-attack_cost = ExtResource("6_gfhju")
 attack_data = SubResource("Resource_7iwa2")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_sle4i"]
+script = ExtResource("7_1u4ny")
+energy_type = ExtResource("6_7iwa2")
+metadata/_custom_type_script = "uid://mkjynqda7q5g"
 
 [sub_resource type="Resource" id="Resource_0pt0j"]
 script = ExtResource("6_2fy54")
 mimicing = ExtResource("9_7iwa2")
-use = "Slot"
-ask = ExtResource("8_pfer2")
+ask = SubResource("Resource_sle4i")
 retrigger = false
-evolutions = false
 must_pay_energy = true
-adjustable_type = false
-mimic_self = false
-hard_reverse = false
-exclusive_mimic = Array[String]([])
-stack = 0
 metadata/_custom_type_script = "uid://dtv1d2u2kvixy"
 
 [sub_resource type="Resource" id="Resource_efonp"]
 script = ExtResource("3_p1awv")
-order = Array[int]([])
 mimic = SubResource("Resource_0pt0j")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_2fy54"]
 script = ExtResource("10_pfer2")
-category = "Body"
 name = "Versatile"
 description = "[name] can use the attacks of all Pokémon in play as its own. (You still need the necessary Energy to use each attack.)"
 affected_by_condition = false
-active = false
 how_often = "Infinite"
-independent_src_trg = false
 passive = SubResource("Resource_efonp")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 
 [sub_resource type="Resource" id="Resource_c0bsp"]
 script = ExtResource("8_twkj3")
 HP = 90
-retreat = 1
 pokebody = SubResource("Resource_2fy54")
 attacks = Array[ExtResource("2_gfhju")]([SubResource("Resource_qrale")])
-evo_stage = "Basic"
-evolves_from = ""
 considered = 2
-owner = 0
 type = 16
 weak = 16
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -97,4 +72,3 @@ rarity = 5
 expansion = 11
 categories = 1
 pokemon_properties = SubResource("Resource_c0bsp")
-fossil = false

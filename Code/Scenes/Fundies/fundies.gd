@@ -21,8 +21,11 @@ var away_targets: Array[Array]
 var source_stack: Array[bool]
 var used_turn_abilities: Array[String]
 var used_emit_abilities: Array[String]
-var side_changes: Dictionary[bool, Dictionary] = {true:{}, false:{}}
+var side_buffs: Dictionary[bool, Dictionary] = {true:{}, false:{}}
 var side_disables: Dictionary[bool, Dictionary] = {true:{}, false:{}}
+var side_overrides: Dictionary[bool, Dictionary] = {true:{}, false:{}}
+var side_typechanges: Dictionary[bool, Dictionary] = {true:{}, false:{}}
+var side_rulechanges: Dictionary[bool, Dictionary] = {true:{}, false:{}}
 var cpu_players: Array[CPU_Player]
 
 #endregion
@@ -32,6 +35,10 @@ func _ready() -> void:
 	Globals.fundies = self
 	SignalBus.end_turn.connect(next_turn)
 	SignalBus.slot_change_failed.connect(remove_change)
+	SignalBus.record_src_trg.connect(record_attack_src_trg)
+	SignalBus.record_src_trg_from_prev.connect(record_prev_src_trg_from_self)
+	SignalBus.record_src_trg_from_self.connect(record_prev_src_trg_from_self)
+	SignalBus.remove_src_trg.connect(remove_top_source_target)
 
 #--------------------------------------
 #region PRINT
@@ -230,22 +237,37 @@ func print_src_trg():
 
 #--------------------------------------
 #region SLOT CHANGE MANAGEMENT
-func get_side_change(home_val: bool) -> Dictionary:
-	return side_changes[home_val] as Dictionary[SlotChange, int]
+func get_side_change(change_class: String, home_val: bool) -> Dictionary:
+	var dict: Dictionary
+	match change_class:
+			"Buff":
+				dict = side_buffs
+			"Disable":
+				dict = side_disables
+			"Override":
+				dict = side_overrides
+			"TypeChange":
+				dict = side_typechanges
+			"RuleChange":
+				dict = side_rulechanges
+	
+	return dict[home_val] as Dictionary[SlotChange, int]
 
 func apply_change(ask: SlotAsk, applying: SlotChange):
 	for side in Globals.full_ui.sides:
+		var dict = get_side_change(applying.get_script().get_global_name(), side.home)
+		
 		if side.is_side(ask.side_target) and\
-		not applying in side_changes[side.home]:
-			var which_changes = side_changes[side.home]
-			which_changes[applying] = applying.duration
-			Globals.full_ui.display_changes(side.home, which_changes.keys())
+		not applying in dict:
+			dict[applying] = applying.duration
+			Globals.full_ui.display_changes(side.home, dict.keys())
 
 func remove_change(removing: Array[SlotChange]):
 	for change in removing:
-		for home in side_changes:
-			side_changes[home].erase(change)
-			Globals.full_ui.display_changes(home, side_changes[home].keys())
+		for home in [true, false]:
+			var dict: Dictionary = get_side_change(change.get_script().get_global_name(), home)
+			get_side_change(change.get_script().get_global_name(), home).erase(change)
+			Globals.full_ui.display_changes(home, dict[home].keys())
 		for slot in Globals.full_ui.get_poke_slots():
 			slot.remove_slot_change(change)
 
@@ -257,14 +279,15 @@ func allowed_against(change: Buff, against: PokeSlot) -> bool:
 		return true
 	return false
 
+#region BUFF CHECKS
 func full_check_stat_buff(slot: PokeSlot, stat: Consts.STAT_BUFFS,
  adding: bool = true, after: bool = true) -> int:
 	var total: int = 0
 	
-	print(side_changes[slot.is_home()])
+	print(side_buffs[slot.is_home()])
 	
-	total += check_stat_buff(side_changes[slot.is_home()], stat, adding)
-	total += check_stat_buff(slot.changes, stat, adding)
+	total += check_stat_buff(side_buffs[slot.is_home()], stat, adding)
+	total += check_stat_buff(slot.buffs, stat, adding)
 	
 	return total
 
@@ -299,15 +322,15 @@ func check_against_stat_buff(from: PokeSlot, against: PokeSlot, dict: Dictionary
 	return total
 
 func atk_def_buff(attacker: PokeSlot, defender: PokeSlot, after: bool) -> int:
-	var final: int = check_against_stat_buff(attacker, defender, attacker.changes,
+	var final: int = check_against_stat_buff(attacker, defender, attacker.buffs,
 	 Consts.STAT_BUFFS.ATTACK, after) + check_against_stat_buff(attacker,\
-	 defender, side_changes[attacker.is_home()], Consts.STAT_BUFFS.ATTACK, after)
+	 defender, side_buffs[attacker.is_home()], Consts.STAT_BUFFS.ATTACK, after)
 	
 	record_prev_src_trg_from_self(defender)
 	
-	final -= check_against_stat_buff(defender, attacker, defender.changes,
+	final -= check_against_stat_buff(defender, attacker, defender.buffs,
 	 Consts.STAT_BUFFS.DEFENSE, after) + check_against_stat_buff(defender, \
-	 attacker, side_changes[defender.is_home()], Consts.STAT_BUFFS.DEFENSE, after)
+	 attacker, side_buffs[defender.is_home()], Consts.STAT_BUFFS.DEFENSE, after)
 	
 	remove_top_source_target()
 	
@@ -362,10 +385,10 @@ func check_immunity(immunity: Consts.IMMUNITIES, attacker: PokeSlot, defender: P
 		return false
 	
 	record_prev_src_trg_from_self(defender)
-	if defender.changes.size() > 0:
-		if has_immune(immunity, defender.changes, attacker):
+	if defender.buffs.size() > 0:
+		if has_immune(immunity, defender.buffs, attacker):
 			return true
-		elif has_immune(immunity, side_changes[defender.is_home()], attacker):
+		elif has_immune(immunity, side_buffs[defender.is_home()], attacker):
 			return true
 	remove_top_source_target()
 	
@@ -381,11 +404,33 @@ func has_cond_immune():
 	pass
 
 func check_condition_immune(cond: int, defender: PokeSlot):
-	for change in defender.changes:
+	for change in defender.buffs:
 		if not change is Buff: continue
 		
 		change = change as Buff
 		if change.condition_immune & cond != 0:
+			return true
+	
+	return false
+#endregion
+
+func check_bool_disable(type: Consts.MON_DISABL ,slot: PokeSlot):
+	var dict = get_side_change("Disable", slot.is_home())
+	
+	for dis in dict:
+		if not dis is Disable: continue
+		dis = dis as Disable
+
+func check_attack_disable():
+	pass
+
+func check_play_disable(home: bool, card: Base_Card):
+	var dict = get_side_change("Disable", home)
+	for dis in dict:
+		if not dis is Disable: continue
+		dis = dis as Disable
+		
+		if dis.card_type and dis.card_type.identifier_bool(card):
 			return true
 	
 	return false

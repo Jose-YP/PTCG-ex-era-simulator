@@ -5,7 +5,7 @@
 [ext_resource type="Resource" uid="uid://b1rwmggf7a4do" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless2.tres" id="3_iop8x"]
 [ext_resource type="Resource" uid="uid://bnsrs2a5hnvkb" path="res://Resources/Components/Pokemon/Attacks/AttackData/20Dmg.tres" id="4_dcm0k"]
 [ext_resource type="Script" uid="uid://crscwhvugaoxa" path="res://Code/Resource Makers/PokemonSpecific/AttackCostMaker.gd" id="5_i3bmc"]
-[ext_resource type="Resource" uid="uid://cvecbgq7ayl45" path="res://Resources/Components/Effects/Asks/Evo/OthStage2Evo.tres" id="6_j51wl"]
+[ext_resource type="Resource" uid="uid://bns8h72u2hxqo" path="res://Resources/Components/Effects/Asks/General/AnyMon.tres" id="6_wn847"]
 [ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="7_02mx4"]
 [ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="8_5vemr"]
 [ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="9_8gmfm"]
@@ -28,13 +28,7 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_rxkpo"]
 script = ExtResource("5_i3bmc")
-grass_cost = 0
-fire_cost = 0
-water_cost = 0
 lightning_cost = 1
-psychic_cost = 0
-fighting_cost = 0
-darkness_cost = 0
 metal_cost = 1
 colorless_cost = 3
 metadata/_custom_type_script = "uid://crscwhvugaoxa"
@@ -42,7 +36,7 @@ metadata/_custom_type_script = "uid://crscwhvugaoxa"
 [sub_resource type="Resource" id="Resource_m32at"]
 script = ExtResource("7_02mx4")
 which = "Slot"
-ask = ExtResource("6_j51wl")
+ask = ExtResource("6_wn847")
 slot_vars = "current_card"
 cap = -1
 metadata/_custom_type_script = "uid://vjn146j3ayd6"
@@ -51,9 +45,6 @@ metadata/_custom_type_script = "uid://vjn146j3ayd6"
 script = ExtResource("8_5vemr")
 comparision_type = "Not Equal"
 first_comparison = SubResource("Resource_m32at")
-compare_to = "None"
-second_constant = 0
-operate_w_constant = "None"
 metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
 [sub_resource type="Resource" id="Resource_ltv0t"]
@@ -76,18 +67,6 @@ description = "If your opponent has no Stage 2 Evolved Pokemon in play, this att
 prompt_reliant = true
 prompt = SubResource("Resource_ltv0t")
 initial_main_DMG = 80
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("10_fnv52")]([])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_tb1ym"]
@@ -100,63 +79,31 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_rboeu"]
 script = ExtResource("14_sskp3")
 description = "Psychic Force now costs {Lightning}{Metal}{Colorless}"
-unstackable_id = ""
-stackable = false
-after_weak_res = true
-operation = "Add"
-add_hp = 0
-attack = 0
-defense = 0
-retreat_change = 0
 cost_modifier = "Replace"
 attack_cost = ExtResource("12_kyv2a")
-modify = 0
-plus = false
-condition_immune = 0
-attack_effect_immune = false
-damage_immune = false
-body_immune = false
-power_immune = false
-trainer_immune = false
-odd_immunity = false
-even_immunity = false
-weakness = false
-resistance = false
-effects = false
 attack_names = Array[String](["Psychic Force"])
-application = "Slot"
 recieves = ExtResource("13_mmil7")
-duration = -1
 metadata/_custom_type_script = "uid://coojhwe6m20gd"
 
 [sub_resource type="Resource" id="Resource_13es8"]
 script = ExtResource("15_gran1")
-order = Array[int]([])
 buff = SubResource("Resource_rboeu")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_fgkgd"]
 script = ExtResource("16_l6vuk")
-category = "Body"
 name = "Delta Aura"
 description = "If you have Latias or Latias ex in play, the attack cost of[name]'s Psychic Force is now {Lightning}{Metal}{Colorless}."
 affected_by_condition = false
-active = false
-how_often = "Once per Mon"
-independent_src_trg = false
 passive = SubResource("Resource_13es8")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 
 [sub_resource type="Resource" id="Resource_5sm8k"]
 script = ExtResource("17_1sh0y")
 HP = 70
-retreat = 1
 pokebody = SubResource("Resource_fgkgd")
 attacks = Array[ExtResource("2_js0es")]([SubResource("Resource_rl3jx"), SubResource("Resource_tb1ym")])
-evo_stage = "Basic"
-evolves_from = ""
 considered = 9
-owner = 0
 type = 136
 weak = 256
 resist = 33
@@ -172,5 +119,4 @@ rarity = 3
 expansion = 10
 categories = 1
 pokemon_properties = SubResource("Resource_5sm8k")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

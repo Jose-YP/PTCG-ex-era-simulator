@@ -26,13 +26,9 @@ script = ExtResource("5_n0j4e")
 HP = 90
 retreat = 2
 attacks = Array[ExtResource("4_tikk5")]([SubResource("Resource_3lp3d"), SubResource("Resource_e1f0j")])
-evo_stage = "Basic"
-evolves_from = ""
 considered = 2
-owner = 0
 type = 32
 weak = 16
-resist = 0
 
 [resource]
 script = ExtResource("1_wduvi")
@@ -41,7 +37,5 @@ image = ExtResource("1_o7tas")
 illustrator = "Hiromichi Sugiyama"
 number = 98
 rarity = 4
-expansion = 0
 categories = 1
 pokemon_properties = SubResource("Resource_kgduy")
-fossil = false

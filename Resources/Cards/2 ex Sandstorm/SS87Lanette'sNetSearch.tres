@@ -15,43 +15,19 @@ script = ExtResource("4_gmspd")
 description = "different types of basic pokemon (excluding Baby Pokémon)"
 must_be_different = true
 broad_class = 1
-exactly = false
-name_chec = 0
-name_array = Array[String]([])
-comparison_type = 1
-type = 0
-HP = -10
-evolves_from = false
-rare_candy = false
 inclusive_class = false
 poke_class = 4
-owner = 0
 stage = 1
-trainer_classes = 0
-energy_class = 3
-energy_provides = ExtResource("6_gmspd")
 metadata/_custom_type_script = "uid://uplawvwcwl8y"
 
 [sub_resource type="Resource" id="Resource_8v658"]
 script = ExtResource("5_hbumv")
-side = 4
-where = 1
-reordering_only = false
-shuffle_first = false
-based_on_side = 0
-based_on_slots = 0
-based_on_energy = 0
-portion = -1
-identifier_allowed = -1
 how_many = Array[int]([3])
 of_this = Array[ExtResource("4_gmspd")]([SubResource("Resource_liyln")])
-and_then = ExtResource("4_df2as")
-reveal = true
 metadata/_custom_type_script = "uid://cw3yr1k040kw7"
 
 [sub_resource type="Resource" id="Resource_8lfl8"]
 script = ExtResource("3_df2as")
-order = Array[int]([])
 search = SubResource("Resource_8v658")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -63,7 +39,6 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_pjtk1"]
 script = ExtResource("6_vlnqk")
 considered = "Supporter"
-specific_requirement = ""
 description = "Search your deck for up to 3 different types of Basic Pokémon cards (excluding Baby Pokémon), show them to your opponent, and put them into your hand. Shuffle your deck afterward. "
 prompt_effects = Array[ExtResource("3_hbumv")]([SubResource("Resource_vlnqk")])
 metadata/_custom_type_script = "uid://crx447i85kshy"
@@ -78,5 +53,4 @@ rarity = 1
 expansion = 1
 categories = 2
 trainer_properties = SubResource("Resource_pjtk1")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

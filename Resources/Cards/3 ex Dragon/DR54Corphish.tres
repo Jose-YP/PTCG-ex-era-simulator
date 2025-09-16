@@ -25,16 +25,9 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_8jwv0"]
 script = ExtResource("10_0xoq1")
-HP = 50
-retreat = 1
 attacks = Array[ExtResource("2_ysfe2")]([SubResource("Resource_fxi4t"), SubResource("Resource_ysfe2")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
 type = 4
 weak = 8
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -43,9 +36,7 @@ name = "Corphish"
 image = ExtResource("1_ss4r6")
 illustrator = "Hisao Nakamura"
 number = 54
-rarity = 0
 expansion = 2
 categories = 1
 pokemon_properties = SubResource("Resource_8jwv0")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

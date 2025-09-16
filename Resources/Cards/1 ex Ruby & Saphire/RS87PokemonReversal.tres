@@ -10,7 +10,6 @@
 
 [sub_resource type="Resource" id="Resource_lnypp"]
 script = ExtResource("3_e0e0d")
-order = Array[int]([])
 swap = ExtResource("6_ccrwf")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -22,8 +21,6 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [sub_resource type="Resource" id="Resource_8tpb4"]
 script = ExtResource("6_gdumi")
-considered = "Item"
-specific_requirement = ""
 description = "Flip a coin. If heads, your opponent switches 1 of his or her Active Pokémon with 1 of his or her Benched Pokémon. "
 prompt_effects = Array[ExtResource("3_x61vg")]([SubResource("Resource_g2a2o")])
 metadata/_custom_type_script = "uid://crx447i85kshy"
@@ -35,8 +32,6 @@ image = ExtResource("1_ccrwf")
 illustrator = "Hiromichi Sugiyama"
 number = 87
 rarity = 1
-expansion = 0
 categories = 2
 trainer_properties = SubResource("Resource_8tpb4")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

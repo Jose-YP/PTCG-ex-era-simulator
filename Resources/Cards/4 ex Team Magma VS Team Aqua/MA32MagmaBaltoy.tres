@@ -16,25 +16,15 @@
 
 [sub_resource type="Resource" id="Resource_kxtxb"]
 script = ExtResource("7_jq5tw")
-choosing = 4
 mode = "Add"
 ask = ExtResource("5_88a3h")
-how_many = 1
 choose_num = 0
-turn_delay = -1
-prevent_KO = false
-anyway_u_like = false
-with_leftover = "None"
-leftover_anyway = false
 vary_choose_num = true
-plus = true
 comparator = ExtResource("6_88a3h")
-modifier = 1
 metadata/_custom_type_script = "uid://scca13hg4k1l"
 
 [sub_resource type="Resource" id="Resource_7l1ov"]
 script = ExtResource("8_yr2hq")
-order = Array[int]([])
 dmgManip = SubResource("Resource_kxtxb")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -46,49 +36,24 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_n77ks"]
 script = ExtResource("8_kxtxb")
 description = "Flip 2 coins. For each heads, choose 1 of your opponent's Pokémon and put 1 damage counter on that Pokémon."
-prompt_reliant = false
-initial_main_DMG = 0
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
 prompt_effects = Array[ExtResource("8_88a3h")]([SubResource("Resource_c8qcg")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_mj05r"]
 script = ExtResource("2_hr55n")
 name = "Psymist"
-attack_cost = ExtResource("3_88a3h")
 attack_data = SubResource("Resource_n77ks")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_ro88b"]
 script = ExtResource("7_jq5tw")
-choosing = 4
 mode = "Add"
 ask = ExtResource("11_fundw")
-how_many = 1
 choose_num = -1
-turn_delay = -1
-prevent_KO = false
-anyway_u_like = false
-with_leftover = "None"
-leftover_anyway = false
-vary_choose_num = false
-plus = true
-modifier = 1
 metadata/_custom_type_script = "uid://scca13hg4k1l"
 
 [sub_resource type="Resource" id="Resource_ii52m"]
 script = ExtResource("8_yr2hq")
-order = Array[int]([])
 dmgManip = SubResource("Resource_ro88b")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -100,20 +65,7 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_jq5tw"]
 script = ExtResource("8_kxtxb")
 description = "Put 1 damage counter on each of your opponent's Pokémon that already has damage counters on it."
-prompt_reliant = false
-initial_main_DMG = 0
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
 prompt_effects = Array[ExtResource("8_88a3h")]([SubResource("Resource_5gebk")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_lsewu"]
@@ -125,16 +77,10 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_b8iye"]
 script = ExtResource("10_c8qcg")
-HP = 50
-retreat = 1
 attacks = Array[ExtResource("2_hr55n")]([SubResource("Resource_mj05r"), SubResource("Resource_lsewu")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
 owner = 2
 type = 16
 weak = 16
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -147,5 +93,4 @@ rarity = 1
 expansion = 3
 categories = 1
 pokemon_properties = SubResource("Resource_b8iye")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

@@ -17,24 +17,19 @@ attack_data = ExtResource("4_gfga0")
 
 [sub_resource type="Resource" id="Resource_0a22m"]
 script = ExtResource("6_xc0yb")
-order = Array[int]([])
 
 [sub_resource type="Resource" id="Resource_per72"]
 script = ExtResource("6_yqt5s")
 category = "Power"
 name = "Call for Help"
 description = "Once during your turn (before your attack), if [name] is your Active Pokémon, you may search your deck for a Pokémon with Team Magma in its name, show it to your opponent, and put it into your hand. Shuffle your deck afterward. This power can't be used if [name] is affected by a Special Condition."
-affected_by_condition = true
 active = true
-how_often = "Once per Mon"
-independent_src_trg = false
 effect = SubResource("Resource_0a22m")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 
 [sub_resource type="Resource" id="Resource_18syr"]
 script = ExtResource("2_jvjdg")
 HP = 80
-retreat = 1
 pokepower = SubResource("Resource_per72")
 attacks = Array[ExtResource("5_wxab5")]([SubResource("Resource_kqy8h")])
 evo_stage = "Stage 1"
@@ -55,4 +50,3 @@ rarity = 1
 expansion = 3
 categories = 1
 pokemon_properties = SubResource("Resource_18syr")
-fossil = false

@@ -10,15 +10,9 @@
 [sub_resource type="Resource" id="Resource_h5h8b"]
 script = ExtResource("5_ti3dd")
 HP = 40
-retreat = 1
 attacks = Array[ExtResource("2_e7avq")]([ExtResource("3_s1h5o"), ExtResource("4_rm5mn")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
 type = 256
 weak = 32
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -27,9 +21,7 @@ name = "Zigzagoon"
 image = ExtResource("1_jke37")
 illustrator = "Mitsuhiro Arita"
 number = 85
-rarity = 0
 expansion = 1
 categories = 1
 pokemon_properties = SubResource("Resource_h5h8b")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

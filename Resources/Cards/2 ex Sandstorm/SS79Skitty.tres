@@ -19,22 +19,12 @@
 script = ExtResource("8_8wjia")
 side = 1
 where = 2
-reordering_only = false
-shuffle_first = false
 based_on_side = 1
-based_on_slots = 0
-based_on_energy = 0
-portion = -1
-identifier_allowed = -1
-how_many = Array[int]([1])
 of_this = Array[ExtResource("6_idj0j")]([ExtResource("7_28erc")])
-and_then = ExtResource("5_vam6p")
-reveal = true
 metadata/_custom_type_script = "uid://cw3yr1k040kw7"
 
 [sub_resource type="Resource" id="Resource_kyucm"]
 script = ExtResource("4_n524r")
-order = Array[int]([])
 search = SubResource("Resource_mjelp")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -46,26 +36,12 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_p6brh"]
 script = ExtResource("9_j3kx4")
 description = "Search your discard pile for a basic Energy card, show it to your opponent, and put it into your hand."
-prompt_reliant = false
-initial_main_DMG = 0
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
 prompt_effects = Array[ExtResource("4_uk12c")]([SubResource("Resource_n524r")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_5fbnp"]
 script = ExtResource("1_ehtr8")
 name = "Energy Catch"
-attack_cost = ExtResource("3_uk12c")
 attack_data = SubResource("Resource_p6brh")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
@@ -78,16 +54,9 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_6osig"]
 script = ExtResource("2_p0a8f")
-HP = 50
-retreat = 1
 attacks = Array[ExtResource("1_ehtr8")]([SubResource("Resource_5fbnp"), SubResource("Resource_av6jo")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
 type = 256
 weak = 32
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -96,9 +65,7 @@ name = "Skitty"
 image = ExtResource("1_xhhej")
 illustrator = "Kagemaru Himeno"
 number = 79
-rarity = 0
 expansion = 1
 categories = 1
 pokemon_properties = SubResource("Resource_6osig")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

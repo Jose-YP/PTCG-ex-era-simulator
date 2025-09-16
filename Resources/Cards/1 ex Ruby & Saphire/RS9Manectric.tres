@@ -18,23 +18,12 @@
 [sub_resource type="Resource" id="Resource_lxccs"]
 script = ExtResource("4_vg802")
 side = 1
-where = 1
-reordering_only = false
-shuffle_first = false
-based_on_side = 0
-based_on_slots = 0
-based_on_energy = 0
-portion = -1
-identifier_allowed = -1
-how_many = Array[int]([1])
 of_this = Array[ExtResource("6_it85k")]([ExtResource("7_0j7pm")])
 and_then = ExtResource("4_nd5q3")
-reveal = true
 metadata/_custom_type_script = "uid://cw3yr1k040kw7"
 
 [sub_resource type="Resource" id="Resource_x808d"]
 script = ExtResource("3_x808d")
-order = Array[int]([])
 search = SubResource("Resource_lxccs")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -46,47 +35,23 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_0j7pm"]
 script = ExtResource("9_vg802")
 description = "Search your deck for a {Lightning} Energy card and attach it to 1 of your Pokémon. Shuffle your deck afterward."
-prompt_reliant = false
 initial_main_DMG = 10
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
 prompt_effects = Array[ExtResource("4_vn0b8")]([SubResource("Resource_it85k")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_766ft"]
 script = ExtResource("2_lxccs")
 name = "Attract Current"
-attack_cost = ExtResource("8_nd5q3")
 attack_data = SubResource("Resource_0j7pm")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_odr78"]
 script = ExtResource("9_vg802")
 description = "Flip a coin. If tails, [name] does 10 damage to itself."
-prompt_reliant = false
 prompt = ExtResource("11_it85k")
 initial_main_DMG = 50
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("4_vn0b8")]([])
 conditional_self_dmg = true
 self_damage = 10
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_dwn3d"]
@@ -99,12 +64,9 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_v6epq"]
 script = ExtResource("10_u1bw3")
 HP = 70
-retreat = 1
 attacks = Array[ExtResource("2_lxccs")]([SubResource("Resource_766ft"), SubResource("Resource_dwn3d")])
 evo_stage = "Stage 1"
 evolves_from = "Electrike"
-considered = 1
-owner = 0
 type = 8
 weak = 32
 resist = 128
@@ -117,8 +79,6 @@ image = ExtResource("1_nd5q3")
 illustrator = "Mitsuhiro Arita"
 number = 9
 rarity = 3
-expansion = 0
 categories = 1
 pokemon_properties = SubResource("Resource_v6epq")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

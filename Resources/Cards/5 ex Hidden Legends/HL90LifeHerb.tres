@@ -8,11 +8,8 @@
 
 [sub_resource type="Resource" id="Resource_jxw2x"]
 script = ExtResource("4_xjtbk")
-considered = "Item"
-specific_requirement = ""
 description = "Flip a coin. If heads, choose 1 of your Pokémon (excluding Pokémon-ex). Remove all Special Conditions and 6 damage counters from that Pokémon (all if there are less than 6). "
 prompt = ExtResource("3_fvwym")
-prompt_effects = Array[ExtResource("4_bfulg")]([])
 metadata/_custom_type_script = "uid://crx447i85kshy"
 
 [resource]
@@ -25,5 +22,4 @@ rarity = 1
 expansion = 4
 categories = 2
 trainer_properties = SubResource("Resource_jxw2x")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

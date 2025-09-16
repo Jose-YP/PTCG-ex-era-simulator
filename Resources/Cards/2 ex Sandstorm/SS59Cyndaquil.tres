@@ -17,16 +17,7 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_pjmm4"]
 script = ExtResource("6_0o13g")
-HP = 50
-retreat = 1
 attacks = Array[ExtResource("2_nlc8k")]([ExtResource("3_kcna8"), SubResource("Resource_02ogm")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
-type = 1
-weak = 0
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -35,9 +26,7 @@ name = "Cyndaquil"
 image = ExtResource("1_46b8m")
 illustrator = "Naoyo Kimura"
 number = 59
-rarity = 0
 expansion = 1
 categories = 1
 pokemon_properties = SubResource("Resource_pjmm4")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

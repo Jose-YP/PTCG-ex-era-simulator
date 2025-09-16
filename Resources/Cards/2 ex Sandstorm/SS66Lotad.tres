@@ -10,16 +10,10 @@
 [sub_resource type="Resource" id="Resource_gfjlf"]
 script = ExtResource("8_vi2ot")
 HP = 40
-retreat = 1
 pokebody = ExtResource("4_82kvf")
 attacks = Array[ExtResource("2_p14l2")]([ExtResource("3_dtt1p")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
 type = 4
 weak = 8
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -28,9 +22,7 @@ name = "Lotad"
 image = ExtResource("1_flabt")
 illustrator = "Tomokazu Komiya"
 number = 66
-rarity = 0
 expansion = 1
 categories = 1
 pokemon_properties = SubResource("Resource_gfjlf")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

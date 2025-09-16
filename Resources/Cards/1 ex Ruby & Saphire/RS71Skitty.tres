@@ -17,16 +17,9 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_yieie"]
 script = ExtResource("4_dend7")
-HP = 50
-retreat = 1
 attacks = Array[ExtResource("2_oqfaj")]([ExtResource("3_dend7"), SubResource("Resource_hwx7w")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
 type = 256
 weak = 32
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -35,9 +28,6 @@ name = "Skitty"
 image = ExtResource("1_v1fx6")
 illustrator = "Atsuko Nishida"
 number = 71
-rarity = 0
-expansion = 0
 categories = 1
 pokemon_properties = SubResource("Resource_yieie")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

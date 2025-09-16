@@ -15,34 +15,15 @@
 
 [sub_resource type="Resource" id="Resource_mv2ox"]
 script = ExtResource("6_imidg")
-grass_cost = 0
-fire_cost = 0
 water_cost = 1
 lightning_cost = 1
-psychic_cost = 0
-fighting_cost = 0
-darkness_cost = 0
-metal_cost = 0
 colorless_cost = 0
 metadata/_custom_type_script = "uid://crscwhvugaoxa"
 
 [sub_resource type="Resource" id="Resource_7x50r"]
 script = ExtResource("7_mpcq0")
 description = " Discard a {Water} Energy card and a {Lightning} Energy card attached to [name]."
-prompt_reliant = false
 initial_main_DMG = 70
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("6_ur7nu")]([])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_bmkne"]
@@ -58,18 +39,6 @@ description = " Flip a coin. If tails, this attack does nothing."
 prompt_reliant = true
 prompt = ExtResource("9_mdixv")
 initial_main_DMG = 120
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("6_ur7nu")]([])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_o5ava"]
@@ -81,7 +50,6 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_n8rdp"]
 script = ExtResource("6_mpcq0")
-order = Array[int]([])
 energy_movement = ExtResource("7_x717q")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -90,10 +58,7 @@ script = ExtResource("11_mpcq0")
 category = "Power"
 name = "Call for Power"
 description = "As often as you like during your turn, you may move an Energy card attached to 1 of your Pokémon to  [name]. This power can't be used if [name] is affected by a Special Condition."
-affected_by_condition = true
-active = false
 how_often = "Infinite"
-independent_src_trg = false
 effect = SubResource("Resource_n8rdp")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 
@@ -106,7 +71,6 @@ attacks = Array[ExtResource("2_2hwsj")]([SubResource("Resource_bmkne"), SubResou
 evo_stage = "Stage 2"
 evolves_from = "Dragonair"
 considered = 2
-owner = 0
 type = 256
 weak = 256
 resist = 33
@@ -122,5 +86,4 @@ rarity = 4
 expansion = 2
 categories = 1
 pokemon_properties = SubResource("Resource_ysok2")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

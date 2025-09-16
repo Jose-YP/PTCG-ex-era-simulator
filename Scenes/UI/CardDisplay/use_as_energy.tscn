@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bw7jisy6l5ego"]
 
-[ext_resource type="Script" uid="uid://ck2da3g375v0j" path="res://Scenes/UI/CardDisplay/use_as_energy.gd" id="1_67coc"]
+[ext_resource type="Script" uid="uid://ck2da3g375v0j" path="res://Code/Scenes/UI/Cards/use_as_energy.gd" id="1_67coc"]
 [ext_resource type="PackedScene" uid="uid://bs3ila6cpt8n1" path="res://Scenes/UI/UIComponents/types.tscn" id="1_wi7fv"]
 
 [node name="UseAsEnergy" type="PanelContainer"]

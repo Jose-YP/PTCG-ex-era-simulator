@@ -8,9 +8,7 @@
 [sub_resource type="Resource" id="Resource_684xe"]
 script = ExtResource("6_j8r84")
 considered = "Supporter"
-specific_requirement = ""
 description = "Search your deck for up to 3 cards in any combination of Supporter cards and Stadium cards, show them to your opponent, and put them into your hand. Shuffle your deck afterward. "
-prompt_effects = Array[ExtResource("5_8e6gb")]([])
 metadata/_custom_type_script = "uid://crx447i85kshy"
 
 [resource]
@@ -23,5 +21,4 @@ rarity = 1
 expansion = 8
 categories = 2
 trainer_properties = SubResource("Resource_684xe")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

@@ -12,7 +12,6 @@
 [sub_resource type="Resource" id="Resource_4elg6"]
 script = ExtResource("2_3t8kn")
 name = "Quick Turn"
-attack_cost = ExtResource("3_oyfen")
 attack_data = ExtResource("4_5sm8l")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
@@ -25,16 +24,8 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_lhbri"]
 script = ExtResource("7_0xpq4")
-HP = 50
-retreat = 1
 attacks = Array[ExtResource("2_3t8kn")]([SubResource("Resource_4elg6"), SubResource("Resource_u1jll")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
-type = 1
 weak = 16
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -43,9 +34,7 @@ name = "Zubat"
 image = ExtResource("1_2cqbr")
 illustrator = "Midori Harada"
 number = 83
-rarity = 0
 expansion = 4
 categories = 1
 pokemon_properties = SubResource("Resource_lhbri")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

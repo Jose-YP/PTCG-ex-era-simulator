@@ -10,22 +10,14 @@
 [sub_resource type="Resource" id="Resource_jx3ng"]
 script = ExtResource("1_knnqq")
 name = "Dig"
-attack_cost = ExtResource("2_q6rm7")
 attack_data = ExtResource("3_v5qxk")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_v5qxk"]
 script = ExtResource("2_ggo6e")
-HP = 50
-retreat = 1
 attacks = Array[ExtResource("1_knnqq")]([SubResource("Resource_jx3ng")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
 type = 32
 weak = 1
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -34,9 +26,7 @@ name = "Trapinch"
 image = ExtResource("1_v5qxk")
 illustrator = "Yuka Morii"
 number = 78
-rarity = 0
 expansion = 2
 categories = 1
 pokemon_properties = SubResource("Resource_v5qxk")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

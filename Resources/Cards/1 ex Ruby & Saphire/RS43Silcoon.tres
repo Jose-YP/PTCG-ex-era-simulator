@@ -18,26 +18,12 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_opply"]
 script = ExtResource("6_iwaip")
 description = "The Defending Pokémon can't retreat until the end of your opponent's next turn."
-prompt_reliant = false
-initial_main_DMG = 0
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
 prompt_effects = Array[ExtResource("4_1wrtr")]([SubResource("Resource_iwaip")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_b0l7j"]
 script = ExtResource("2_1wrtr")
 name = "Gooey Thread"
-attack_cost = ExtResource("5_1wrtr")
 attack_data = SubResource("Resource_opply")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
@@ -49,11 +35,7 @@ pokebody = ExtResource("10_opply")
 attacks = Array[ExtResource("2_1wrtr")]([SubResource("Resource_b0l7j")])
 evo_stage = "Stage 1"
 evolves_from = "Wurmple"
-considered = 1
-owner = 0
-type = 1
 weak = 2
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -63,8 +45,6 @@ image = ExtResource("1_vkyqs")
 illustrator = "Hajime Kusajima"
 number = 43
 rarity = 1
-expansion = 0
 categories = 1
 pokemon_properties = SubResource("Resource_qybx1")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

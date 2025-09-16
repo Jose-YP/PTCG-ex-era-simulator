@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=23 format=3 uid="uid://vpfl1laggt2y"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=22 format=3 uid="uid://vpfl1laggt2y"]
 
 [ext_resource type="Texture2D" uid="uid://ovf43ev0xwgo" path="res://Art/Cards/3 ex Dragon/89.jpg" id="1_pjo6a"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_sxjh8"]
@@ -10,8 +10,7 @@
 [ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="7_50r5l"]
 [ext_resource type="Script" uid="uid://scca13hg4k1l" path="res://Code/Resource Makers/EffectSpecific/Components/DmgManipMaker.gd" id="8_xl4na"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="9_uecfi"]
-[ext_resource type="Resource" uid="uid://c7itelq8jtjc2" path="res://Resources/Components/EnData/Rainbow.tres" id="10_s4el7"]
-[ext_resource type="Resource" uid="uid://crhg4u3yu2cso" path="res://Resources/Components/Effects/Asks/General/FromOther.tres" id="11_8hpoe"]
+[ext_resource type="Resource" uid="uid://bns8h72u2hxqo" path="res://Resources/Components/Effects/Asks/General/AnyMon.tres" id="10_36qdc"]
 [ext_resource type="Script" uid="uid://bics3dumv7avj" path="res://Code/Resource Makers/GeneralUse/OccuranceMaker.gd" id="12_n30uj"]
 [ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="13_guscx"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="14_hjp0i"]
@@ -19,21 +18,11 @@
 [sub_resource type="Resource" id="Resource_tvn5v"]
 script = ExtResource("6_56c6k")
 description = "Flip a coin. If heads, this attack does 40 damage plus 30 more damage. If tails, the Defending Pokémon is now Paralyzed."
-prompt_reliant = false
 prompt = ExtResource("5_a54e8")
 initial_main_DMG = 40
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("6_tsrw2")]([])
-conditional_self_dmg = false
-self_damage = 0
 mod_prompt = true
 modifier = 1
 modifier_num = 30
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_3i55a"]
@@ -45,43 +34,28 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_ps12c"]
 script = ExtResource("8_xl4na")
-choosing = 4
 mode = "Add"
 ask = ExtResource("7_50r5l")
-how_many = 1
 choose_num = -1
-turn_delay = -1
-prevent_KO = false
-anyway_u_like = false
-with_leftover = "None"
-leftover_anyway = false
-vary_choose_num = false
-plus = true
-modifier = 1
 metadata/_custom_type_script = "uid://scca13hg4k1l"
 
 [sub_resource type="Resource" id="Resource_jco4e"]
 script = ExtResource("9_uecfi")
-order = Array[int]([])
 dmgManip = SubResource("Resource_ps12c")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_w8af5"]
 script = ExtResource("12_n30uj")
-from_ask = ExtResource("11_8hpoe")
-signal = "attatch_en_signal"
-energy_type = ExtResource("10_s4el7")
+from_ask = ExtResource("10_36qdc")
+signal = "checked_up"
 metadata/_custom_type_script = "uid://bics3dumv7avj"
 
 [sub_resource type="Resource" id="Resource_r003u"]
 script = ExtResource("13_guscx")
-category = "Body"
 name = "Conductivity"
 description = "As long as [name] is in play, whenever your opponent attaches an Energy card to his or her Pokémon from hand, put 1 damage counter on that Pokémon. You can't put more than 1 damage counter even if there is more than 1 [name] in play. "
 affected_by_condition = false
-active = false
 how_often = "Once per Emit"
-independent_src_trg = false
 occurance = SubResource("Resource_w8af5")
 effect = SubResource("Resource_jco4e")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
@@ -95,7 +69,6 @@ attacks = Array[ExtResource("2_tsrw2")]([SubResource("Resource_3i55a")])
 evo_stage = "Stage 2"
 evolves_from = "Flaaffy"
 considered = 2
-owner = 0
 type = 8
 weak = 32
 resist = 128
@@ -111,5 +84,4 @@ rarity = 4
 expansion = 2
 categories = 1
 pokemon_properties = SubResource("Resource_qj8ai")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

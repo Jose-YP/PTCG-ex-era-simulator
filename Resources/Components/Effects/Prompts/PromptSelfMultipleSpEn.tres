@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="PromptAsk" load_steps=7 format=3 uid="uid://ck80jky0mu4ta"]
 
-[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="1_pklne"]
+[ext_resource type="Resource" uid="uid://bns8h72u2hxqo" path="res://Resources/Components/Effects/Asks/General/AnyMon.tres" id="1_pklne"]
 [ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="2_1n34e"]
 [ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="3_vvkf7"]
 [ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="4_intn5"]
@@ -9,9 +9,7 @@
 script = ExtResource("2_1n34e")
 which = "Slot"
 ask = ExtResource("1_pklne")
-slot_vars = "energy_cards"
-en_count_methods = "Categories"
-en_categories = "Special Energy"
+slot_vars = "current_card"
 cap = -1
 metadata/_custom_type_script = "uid://vjn146j3ayd6"
 
@@ -21,7 +19,6 @@ comparision_type = "Lesser"
 first_comparison = SubResource("Resource_qtcqf")
 compare_to = "Const"
 second_constant = 2
-operate_w_constant = "None"
 metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
 [resource]

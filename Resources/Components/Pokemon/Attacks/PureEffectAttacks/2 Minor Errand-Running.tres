@@ -9,7 +9,6 @@
 
 [sub_resource type="Resource" id="Resource_6a84p"]
 script = ExtResource("1_1rbni")
-order = Array[int]([])
 search = ExtResource("2_ndssy")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -21,24 +20,10 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_vyuu0"]
 script = ExtResource("4_gcp0h")
 description = "Search your deck for 2 basic Energy cards, show them to your opponent, and put them into your hand. Shuffle your deck afterward."
-prompt_reliant = false
-initial_main_DMG = 0
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
 prompt_effects = Array[ExtResource("2_bk8ng")]([SubResource("Resource_gcp0h")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [resource]
 script = ExtResource("5_v53xc")
 name = "Minor Errand-Running"
-attack_cost = ExtResource("3_bk8ng")
 attack_data = SubResource("Resource_vyuu0")

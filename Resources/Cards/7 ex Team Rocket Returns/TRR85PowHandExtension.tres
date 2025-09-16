@@ -25,7 +25,6 @@ considered = "Rocket's Secret Machine"
 specific_requirement = "You may use this card only if you have more Prize cards left than your opponent. "
 description = "Move 1 Energy card attached to the Defending Pokémon to another of your opponent's Pokémon. Or, switch 1 of your opponent's Benched Pokémon with 1 of the Defending Pokémon. Your opponent chooses the Defending Pokémon to switch. "
 prompt = SubResource("Resource_bu8wl")
-prompt_effects = Array[ExtResource("5_ci705")]([])
 metadata/_custom_type_script = "uid://crx447i85kshy"
 
 [resource]
@@ -38,5 +37,4 @@ rarity = 1
 expansion = 6
 categories = 2
 trainer_properties = SubResource("Resource_4ey07")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

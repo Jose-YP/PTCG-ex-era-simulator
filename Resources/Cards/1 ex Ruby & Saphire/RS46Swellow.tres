@@ -19,18 +19,11 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_2syf6"]
 script = ExtResource("6_0s5yi")
-force_reversable = false
-record_target = false
 choose_active = true
-both_active = false
-chosing = 2
-affected = 2
-autofill = "None"
 metadata/_custom_type_script = "uid://curklvf1517ml"
 
 [sub_resource type="Resource" id="Resource_n00n6"]
 script = ExtResource("5_sfkfj")
-order = Array[int]([])
 swap = SubResource("Resource_2syf6")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -39,10 +32,7 @@ script = ExtResource("7_2syf6")
 category = "Power"
 name = "Drive Off"
 description = "Once during your turn (before your attack), if [name] is your Active Pokémon, you may switch 1 of the Defending Pokémon with 1 of your opponent's Benched Pokémon. Your opponent picks the Benched Pokémon to switch. This power can't be used if [name] is affected by a Special Condition."
-affected_by_condition = true
 active = true
-how_often = "Once per Mon"
-independent_src_trg = false
 effect = SubResource("Resource_n00n6")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 
@@ -54,8 +44,6 @@ pokepower = SubResource("Resource_a6hkx")
 attacks = Array[ExtResource("1_5jrob")]([SubResource("Resource_12qs1")])
 evo_stage = "Stage 1"
 evolves_from = "Taillow"
-considered = 1
-owner = 0
 type = 256
 weak = 8
 resist = 32
@@ -68,8 +56,6 @@ image = ExtResource("1_0s5yi")
 illustrator = "Ken Sugimori"
 number = 46
 rarity = 1
-expansion = 0
 categories = 1
 pokemon_properties = SubResource("Resource_ph38x")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

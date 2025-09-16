@@ -9,11 +9,9 @@
 [sub_resource type="Resource" id="Resource_d4hel"]
 script = ExtResource("7_vbmf4")
 considered = "Supporter"
-specific_requirement = ""
 description = "If you have any cards in your hand, shuffle 1 of them into your deck, then draw 3 cards. 
 "
 prompt = ExtResource("6_e8f3r")
-prompt_effects = Array[ExtResource("6_213qm")]([])
 metadata/_custom_type_script = "uid://crx447i85kshy"
 
 [resource]
@@ -26,5 +24,4 @@ rarity = 1
 expansion = 5
 categories = 2
 trainer_properties = SubResource("Resource_d4hel")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

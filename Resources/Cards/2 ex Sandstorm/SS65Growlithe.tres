@@ -9,17 +9,10 @@
 
 [sub_resource type="Resource" id="Resource_k6lxq"]
 script = ExtResource("7_4e2oq")
-HP = 50
-retreat = 1
 pokebody = ExtResource("4_7s3qr")
 attacks = Array[ExtResource("2_al632")]([ExtResource("3_5l4rd")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
 type = 2
 weak = 2
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -28,9 +21,7 @@ name = "Growlithe"
 image = ExtResource("1_r4ova")
 illustrator = "Hajime Kusajima"
 number = 65
-rarity = 0
 expansion = 1
 categories = 1
 pokemon_properties = SubResource("Resource_k6lxq")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

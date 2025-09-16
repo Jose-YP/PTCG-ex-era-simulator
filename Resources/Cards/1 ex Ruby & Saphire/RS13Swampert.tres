@@ -23,20 +23,8 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_et187"]
 script = ExtResource("5_wv0a4")
 description = "The Defending Pokémon is now Asleep."
-prompt_reliant = false
 initial_main_DMG = 50
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
 prompt_effects = Array[ExtResource("4_wv0a4")]([SubResource("Resource_keycm")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_xh15o"]
@@ -49,21 +37,14 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_ifthe"]
 script = ExtResource("4_agkb0")
 action = 2
-chooser = 4
 givers = ExtResource("7_wv0a4")
 reciever = ExtResource("8_et187")
-to_stack = 2
-stack_direction = 2
-energy_carry_over = false
-action_ammount = 1
-energy_ammount = 1
 energy_move_type = 2
 en_type = ExtResource("6_e1px8")
 metadata/_custom_type_script = "uid://cimk6l7ytw7xg"
 
 [sub_resource type="Resource" id="Resource_gcqqh"]
 script = ExtResource("5_e1px8")
-order = Array[int]([])
 energy_movement = SubResource("Resource_ifthe")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -72,10 +53,6 @@ script = ExtResource("9_agkb0")
 category = "Power"
 name = "Water Call"
 description = "Once during your turn (before your attack), you may attach a {Water} Energy card from your hand to your Active Pokémon. This power can't be used if [name] is affected by a Special Condition."
-affected_by_condition = true
-active = false
-how_often = "Once per Mon"
-independent_src_trg = false
 effect = SubResource("Resource_gcqqh")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 
@@ -87,11 +64,8 @@ pokepower = SubResource("Resource_e1px8")
 attacks = Array[ExtResource("2_ypdm2")]([SubResource("Resource_xh15o")])
 evo_stage = "Stage 2"
 evolves_from = "Marshtomp"
-considered = 1
-owner = 0
 type = 4
 weak = 8
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -101,8 +75,6 @@ image = ExtResource("1_02xd6")
 illustrator = "Mitsuhiro Arita"
 number = 13
 rarity = 3
-expansion = 0
 categories = 1
 pokemon_properties = SubResource("Resource_qtkn7")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

@@ -18,20 +18,7 @@
 [sub_resource type="Resource" id="Resource_hx6us"]
 script = ExtResource("5_ppox0")
 description = "Does 10 damage to each of your opponent's Benched Pokémon that has any damage counters on it. (Don't apply Weakness and Resistance for Benched Pokémon.)"
-prompt_reliant = false
 initial_main_DMG = 30
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("5_cryqm")]([])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 bench_damage = ExtResource("4_fuowa")
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
@@ -44,25 +31,14 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_u4tnp"]
 script = ExtResource("7_l86lt")
-choosing = 4
 mode = "Swap"
 ask = ExtResource("6_huhk4")
 how_many = 3
-choose_num = 1
-turn_delay = -1
-prevent_KO = false
-anyway_u_like = false
-with_leftover = "None"
-leftover_anyway = false
-vary_choose_num = false
-plus = true
-modifier = 1
 takers = ExtResource("6_huhk4")
 metadata/_custom_type_script = "uid://scca13hg4k1l"
 
 [sub_resource type="Resource" id="Resource_ru1we"]
 script = ExtResource("8_1qcnk")
-order = Array[int]([])
 dmgManip = SubResource("Resource_u4tnp")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -85,9 +61,6 @@ category = "Power"
 name = "Cursed Eyes"
 description = "Once during your turn, when you put [name] from your hand onto your Bench, you may move 3 damage counters from 1 of your opponent's Pokémon to another of his or her Pokémon. "
 affected_by_condition = false
-active = false
-how_often = "Once per Mon"
-independent_src_trg = false
 prompt = SubResource("Resource_fuowa")
 occurance = ExtResource("9_7nwh2")
 effect = SubResource("Resource_ru1we")
@@ -96,13 +69,9 @@ metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 [sub_resource type="Resource" id="Resource_am8y3"]
 script = ExtResource("10_5crxm")
 HP = 100
-retreat = 1
 pokepower = SubResource("Resource_ppox0")
 attacks = Array[ExtResource("2_hh85g")]([SubResource("Resource_mptms")])
-evo_stage = "Basic"
-evolves_from = ""
 considered = 2
-owner = 0
 type = 64
 weak = 32
 resist = 16
@@ -118,5 +87,4 @@ rarity = 4
 expansion = 15
 categories = 1
 pokemon_properties = SubResource("Resource_am8y3")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

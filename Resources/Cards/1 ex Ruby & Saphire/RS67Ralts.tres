@@ -12,7 +12,6 @@
 [sub_resource type="Resource" id="Resource_007wa"]
 script = ExtResource("2_0260g")
 name = "Headbutt"
-attack_cost = ExtResource("3_007wa")
 attack_data = ExtResource("4_ej5ig")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
@@ -25,16 +24,9 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_ncwsx"]
 script = ExtResource("3_ls80p")
-HP = 50
-retreat = 1
 attacks = Array[ExtResource("2_0260g")]([SubResource("Resource_007wa"), SubResource("Resource_ej5ig")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
 type = 16
 weak = 16
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -43,9 +35,6 @@ name = "Ralts"
 image = ExtResource("1_0260g")
 illustrator = "Atsuko Nishida"
 number = 67
-rarity = 0
-expansion = 0
 categories = 1
 pokemon_properties = SubResource("Resource_ncwsx")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

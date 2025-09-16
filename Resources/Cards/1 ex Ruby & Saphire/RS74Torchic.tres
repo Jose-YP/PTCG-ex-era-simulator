@@ -10,21 +10,13 @@
 [sub_resource type="Resource" id="Resource_t1n52"]
 script = ExtResource("3_ynd82")
 name = "Singe"
-attack_cost = ExtResource("3_36bho")
 attack_data = ExtResource("4_h27pu")
 
 [sub_resource type="Resource" id="Resource_rlsw1"]
 script = ExtResource("4_42as6")
-HP = 50
-retreat = 1
 attacks = Array[ExtResource("3_ynd82")]([SubResource("Resource_t1n52")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
 type = 2
 weak = 4
-resist = 0
 
 [resource]
 script = ExtResource("1_3w1wo")
@@ -32,8 +24,5 @@ name = "Torchic"
 image = ExtResource("1_30iyp")
 illustrator = "Kouki Saitou"
 number = 74
-rarity = 0
-expansion = 0
 categories = 1
 pokemon_properties = SubResource("Resource_rlsw1")
-fossil = false

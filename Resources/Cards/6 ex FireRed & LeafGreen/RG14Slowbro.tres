@@ -23,25 +23,17 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_puw2w"]
 script = ExtResource("6_etfw1")
-choosing = 4
 mode = "Swap"
 ask = ExtResource("5_y67vy")
 how_many = -1
 choose_num = -1
-turn_delay = -1
 prevent_KO = true
 anyway_u_like = true
-with_leftover = "None"
-leftover_anyway = false
-vary_choose_num = false
-plus = true
-modifier = 1
 takers = ExtResource("7_888bh")
 metadata/_custom_type_script = "uid://scca13hg4k1l"
 
 [sub_resource type="Resource" id="Resource_4iif7"]
 script = ExtResource("8_gwxer")
-order = Array[int]([])
 dmgManip = SubResource("Resource_puw2w")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -64,10 +56,7 @@ script = ExtResource("9_w7aot")
 category = "Power"
 name = "Strange Behavior"
 description = "As often as you like during your turn (before your attack), you may move 1 damage counter from 1 of your Pokémon to [name] as long as you don't Knock Out [name]. This power can't be used if [name] is affected by a Special Condition."
-affected_by_condition = true
-active = false
 how_often = "Infinite"
-independent_src_trg = false
 prompt = SubResource("Resource_eewpl")
 effect = SubResource("Resource_4iif7")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
@@ -75,16 +64,12 @@ metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 [sub_resource type="Resource" id="Resource_yeibv"]
 script = ExtResource("10_kwtxr")
 HP = 60
-retreat = 1
 pokepower = SubResource("Resource_y67vy")
 attacks = Array[ExtResource("2_w7aot")]([SubResource("Resource_opqxn")])
 evo_stage = "Stage 1"
 evolves_from = "Slowpoke"
-considered = 1
-owner = 0
 type = 16
 weak = 16
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -97,5 +82,4 @@ rarity = 3
 expansion = 5
 categories = 1
 pokemon_properties = SubResource("Resource_yeibv")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

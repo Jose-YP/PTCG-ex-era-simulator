@@ -9,25 +9,14 @@
 
 [sub_resource type="Resource" id="Resource_jq8qk"]
 script = ExtResource("4_8nkvr")
-choosing = 4
 mode = "Add"
 ask = ExtResource("2_vjmcw")
-how_many = 1
 choose_num = -1
-turn_delay = -1
-prevent_KO = false
-anyway_u_like = false
-with_leftover = "None"
-leftover_anyway = false
-vary_choose_num = false
-plus = true
 comparator = ExtResource("3_doyh2")
-modifier = 1
 metadata/_custom_type_script = "uid://scca13hg4k1l"
 
 [sub_resource type="Resource" id="Resource_mql2h"]
 script = ExtResource("5_0eyb0")
-order = Array[int]([])
 dmgManip = SubResource("Resource_jq8qk")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -39,18 +28,5 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [resource]
 script = ExtResource("6_23s4l")
 description = "Count the number of cards in your opponent's hand. Put that many damage counters on the Defending Pokémon."
-prompt_reliant = false
-initial_main_DMG = 0
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
 prompt_effects = Array[ExtResource("1_f8ovh")]([SubResource("Resource_alue6")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"

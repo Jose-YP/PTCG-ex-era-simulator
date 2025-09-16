@@ -18,7 +18,6 @@
 
 [sub_resource type="Resource" id="Resource_ohjxw"]
 script = ExtResource("4_yuuq4")
-order = Array[int]([])
 search = ExtResource("5_n66i8")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -30,26 +29,12 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_gtrua"]
 script = ExtResource("6_gopoq")
 description = "Search your deck for Omanyte, Kabuto, Aerodactyl, Lileep, or Anorith and put 2 of them onto your Bench. Shuffle your deck afterward. Treat the new Benched Pokémon as Basic Pokémon."
-prompt_reliant = false
-initial_main_DMG = 0
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
 prompt_effects = Array[ExtResource("4_7d3xu")]([SubResource("Resource_hxnhf")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_m5brw"]
 script = ExtResource("2_7d3xu")
 name = "Influence"
-attack_cost = ExtResource("3_hxnhf")
 attack_data = SubResource("Resource_gtrua")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
@@ -70,24 +55,15 @@ metadata/_custom_type_script = "uid://b85jmc7067bjc"
 
 [sub_resource type="Resource" id="Resource_1yysy"]
 script = ExtResource("12_4h72t")
-send = "Stack"
 send_to = 1
-top_stack = true
 shuffle = true
 card_ammount = 0
-reveal = false
-who_chooses = 4
 side = 5
-view = true
-portion = -1
-from_stack = 0
-slot_choose_num = -1
 in_play_options = ExtResource("11_gu5sk")
 metadata/_custom_type_script = "uid://8sh5p3leflla"
 
 [sub_resource type="Resource" id="Resource_gp64k"]
 script = ExtResource("4_yuuq4")
-order = Array[int]([])
 card_disrupt = SubResource("Resource_1yysy")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -100,20 +76,7 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_s43ci"]
 script = ExtResource("6_gopoq")
 description = "If your opponent has any Evolved Pokémon in play, choose 1 of them and flip a coin. If heads, remove the highest Stage Evolution card on that Pokémon and have your opponent shuffle it into his or her deck."
-prompt_reliant = false
-initial_main_DMG = 0
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
 prompt_effects = Array[ExtResource("4_7d3xu")]([SubResource("Resource_yuuq4")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_1vqv4"]
@@ -130,11 +93,7 @@ retreat = 2
 attacks = Array[ExtResource("2_7d3xu")]([SubResource("Resource_m5brw"), SubResource("Resource_1vqv4")])
 evo_stage = "Stage 1"
 evolves_from = "Root Fossil"
-considered = 1
-owner = 0
-type = 1
 weak = 2
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -147,5 +106,4 @@ rarity = 1
 expansion = 1
 categories = 1
 pokemon_properties = SubResource("Resource_q5i0w")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

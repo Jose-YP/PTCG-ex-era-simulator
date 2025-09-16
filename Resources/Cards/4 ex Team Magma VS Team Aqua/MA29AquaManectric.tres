@@ -3,12 +3,12 @@
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_dwtlt"]
 [ext_resource type="Texture2D" uid="uid://df02g0rwr5yl1" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/29.jpg" id="1_gl86o"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="4_0g86g"]
-[ext_resource type="Resource" uid="uid://d4bi0kdblesdq" path="res://Resources/Components/Effects/Asks/Conditions/DefIsConfused.tres" id="5_1uuvq"]
 [ext_resource type="Resource" uid="uid://cesjkvsi5c6jb" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/L1C1.tres" id="5_los0h"]
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="5_swo5k"]
 [ext_resource type="Resource" uid="uid://oucf200x3u40" path="res://Resources/Components/Effects/Prompts/PromptComparator/IfDefendingIsMagma.tres" id="6_550tl"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="6_ea6gi"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="7_3sxtk"]
+[ext_resource type="Resource" uid="uid://bns8h72u2hxqo" path="res://Resources/Components/Effects/Asks/General/AnyMon.tres" id="8_j8bej"]
 [ext_resource type="Resource" uid="uid://ch31rb2s75yst" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/L1C2.tres" id="10_3hv5w"]
 [ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="11_gwsny"]
 [ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="12_rujbu"]
@@ -17,21 +17,8 @@
 [sub_resource type="Resource" id="Resource_rnd1u"]
 script = ExtResource("7_3sxtk")
 description = "If the Defending Pokémon has Team Magma in its name, the Defending Pokémon is now Confused."
-prompt_reliant = false
 prompt = ExtResource("6_550tl")
 initial_main_DMG = 20
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("5_swo5k")]([])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_kg1j7"]
@@ -43,7 +30,7 @@ attack_data = SubResource("Resource_rnd1u")
 [sub_resource type="Resource" id="Resource_2naku"]
 script = ExtResource("11_gwsny")
 which = "Slot"
-ask = ExtResource("5_1uuvq")
+ask = ExtResource("8_j8bej")
 slot_vars = "current_card"
 cap = -1
 metadata/_custom_type_script = "uid://vjn146j3ayd6"
@@ -54,7 +41,6 @@ comparision_type = "Equals"
 first_comparison = SubResource("Resource_2naku")
 compare_to = "Const"
 second_constant = 1
-operate_w_constant = "None"
 metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
 [sub_resource type="Resource" id="Resource_va2mh"]
@@ -74,21 +60,8 @@ metadata/_custom_type_script = "uid://b85jmc7067bjc"
 [sub_resource type="Resource" id="Resource_mo7ko"]
 script = ExtResource("7_3sxtk")
 description = "If the Defending Pokémon is Confused, discard an Energy card attached to the Defending Pokémon."
-prompt_reliant = false
 prompt = SubResource("Resource_va2mh")
 initial_main_DMG = 50
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("5_swo5k")]([])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_je666"]
@@ -100,12 +73,9 @@ attack_data = SubResource("Resource_mo7ko")
 [sub_resource type="Resource" id="Resource_4k40m"]
 script = ExtResource("6_ea6gi")
 HP = 80
-retreat = 1
 attacks = Array[ExtResource("4_0g86g")]([SubResource("Resource_kg1j7"), SubResource("Resource_je666")])
 evo_stage = "Stage 1"
 evolves_from = "Team Aqua's Electrike"
-considered = 1
-owner = 0
 type = 8
 weak = 32
 resist = 128
@@ -120,4 +90,3 @@ rarity = 1
 expansion = 3
 categories = 1
 pokemon_properties = SubResource("Resource_4k40m")
-fossil = false

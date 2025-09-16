@@ -16,66 +16,19 @@
 
 [sub_resource type="Resource" id="Resource_favp4"]
 script = ExtResource("2_aml44")
-boolean_type = "And"
-previous_src_trg = false
-side_target = 3
 slot_target = 3
-specifically = Array[String]([])
-tool_attatched = false
-comparison_type = 1
-max_hp = -10
-damage_taken = -10
-retreat_cost = -1
-evo_type = "Don't Check"
-stage = 7
-rare_candy = false
-class_inclusive = true
-pokemon_class = 63
-owner_inclusive = true
-pokemon_owner = 31
-type_inclusive = true
-pokemon_type = 1023
-en_class = 0
-energy_inclusive = true
-check_cards = true
 energy_attatched = 1
-energy_class = "Any"
 energy_type = ExtResource("3_jf1rb")
-inclusive_ability = true
-check_ability = false
-contained_abilities = 3
-specific_abilities = Array[String]([])
-check_condition = false
-desired_condition = 0
-knocked_out = false
 
 [sub_resource type="Resource" id="Resource_8qhfr"]
 script = ExtResource("3_bgqi1")
 how_many = -1
 candidates = SubResource("Resource_favp4")
-active_allowed = false
-apply_weak_res = false
-initial_main_DMG = 10
-modifier = 0
-modifier_num = 0
 
 [sub_resource type="Resource" id="Resource_c52f0"]
 script = ExtResource("7_5jpak")
 description = "Does 10 damage to each Benched Pokémon (both yours and your opponent's) that has Energy cards attached to it. (Don't apply Weakness and Resistance for Benched Pokémon.)"
-prompt_reliant = false
 initial_main_DMG = 50
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("7_bkafw")]([])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 bench_damage = SubResource("Resource_8qhfr")
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
@@ -93,21 +46,14 @@ metadata/__load_path__ = "res://Resources/Components/Effects/Asks/FromSource.tre
 
 [sub_resource type="Resource" id="Resource_xmkch"]
 script = ExtResource("5_no1xd")
-action = 0
 chooser = 0
 givers = SubResource("Resource_akpii")
 reciever = SubResource("Resource_jf1rb")
-to_stack = 2
-stack_direction = 2
-energy_carry_over = false
 action_ammount = 0
 energy_ammount = -1
-energy_move_type = 0
-en_type = ExtResource("3_jf1rb")
 
 [sub_resource type="Resource" id="Resource_ys2ao"]
 script = ExtResource("5_5fqb1")
-order = Array[int]([])
 energy_movement = SubResource("Resource_xmkch")
 
 [sub_resource type="Resource" id="Resource_nwboy"]
@@ -115,22 +61,16 @@ script = ExtResource("10_bkafw")
 category = "Power"
 name = "Power Shift"
 description = "Once during your turn (before your attack), you may move any number of basic Energy cards attached to 1 of your Pokémon with Team Aqua in its name to another of your Pokémon. This power can't be used if [name] is affected by a Special Condition."
-affected_by_condition = true
-active = false
-how_often = "Once per Mon"
-independent_src_trg = false
 effect = SubResource("Resource_ys2ao")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 
 [sub_resource type="Resource" id="Resource_c4oj5"]
 script = ExtResource("7_ur4yg")
 HP = 70
-retreat = 1
 pokepower = SubResource("Resource_nwboy")
 attacks = Array[ExtResource("4_5ptpl")]([SubResource("Resource_11udr")])
 evo_stage = "Stage 1"
 evolves_from = "Team Aqua's Electrike"
-considered = 1
 owner = 1
 type = 72
 weak = 32
@@ -146,4 +86,3 @@ rarity = 3
 expansion = 3
 categories = 1
 pokemon_properties = SubResource("Resource_c4oj5")
-fossil = false

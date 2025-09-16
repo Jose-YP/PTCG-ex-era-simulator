@@ -8,16 +8,8 @@
 
 [sub_resource type="Resource" id="Resource_dnina"]
 script = ExtResource("4_1mrm0")
-HP = 50
-retreat = 1
 attacks = Array[ExtResource("2_lrcto")]([ExtResource("3_l00xo")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
 type = 4
-weak = 0
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -26,9 +18,6 @@ name = "Mudkip"
 image = ExtResource("1_l00xo")
 illustrator = "Mitsuhiro Arita"
 number = 59
-rarity = 0
-expansion = 0
 categories = 1
 pokemon_properties = SubResource("Resource_dnina")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

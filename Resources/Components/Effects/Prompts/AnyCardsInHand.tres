@@ -1,7 +1,6 @@
-[gd_resource type="Resource" script_class="PromptAsk" load_steps=11 format=3 uid="uid://bmsgubnaoyt85"]
+[gd_resource type="Resource" script_class="PromptAsk" load_steps=10 format=3 uid="uid://bmsgubnaoyt85"]
 
-[ext_resource type="Resource" uid="uid://bns8h72u2hxqo" path="res://Resources/Components/Effects/Asks/General/AnyMon.tres" id="1_8fjon"]
-[ext_resource type="Resource" uid="uid://dm2i7spst0qpp" path="res://Resources/Components/Effects/Identifiers/AnyCard.tres" id="2_7qhry"]
+[ext_resource type="Resource" uid="uid://bns8h72u2hxqo" path="res://Resources/Components/Effects/Asks/General/AnyMon.tres" id="1_7qhry"]
 [ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="2_ac7tl"]
 [ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="2_pgl4t"]
 [ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="3_7qhry"]
@@ -10,11 +9,9 @@
 
 [sub_resource type="Resource" id="Resource_1g5gn"]
 script = ExtResource("2_ac7tl")
-which = "Stack"
-ask = ExtResource("1_8fjon")
-stack_vars = "hand"
-identifier = ExtResource("2_7qhry")
-stack_portion = -1
+which = "Slot"
+ask = ExtResource("1_7qhry")
+slot_vars = "current_card"
 cap = -1
 metadata/_custom_type_script = "uid://vjn146j3ayd6"
 
@@ -23,13 +20,10 @@ script = ExtResource("3_7qhry")
 comparision_type = "Greater"
 first_comparison = SubResource("Resource_1g5gn")
 compare_to = "Const"
-second_constant = 0
-operate_w_constant = "None"
 metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
 [sub_resource type="Resource" id="Resource_ia1ww"]
 script = ExtResource("6_1wjj3")
-order = Array[int]([])
 card_disrupt = ExtResource("5_1g5gn")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 

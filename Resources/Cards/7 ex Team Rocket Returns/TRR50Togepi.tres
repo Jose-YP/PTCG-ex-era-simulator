@@ -14,28 +14,13 @@
 [sub_resource type="Resource" id="Resource_ky0p2"]
 script = ExtResource("2_emyr2")
 name = "Yawn"
-attack_cost = ExtResource("4_emyr2")
 attack_data = ExtResource("5_mw7hy")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_kkp1i"]
 script = ExtResource("7_ky0p2")
 description = "Flip a coin. If heads, choose 1 of the Defending Pokémon's attacks. Mini-Metronome copies that attack except for its Energy cost. (You must still do anything else required for that attack.) (No matter what type that Pokémon is, [name]'s type is still {Colorless}.) [name] performs that attack."
-prompt_reliant = false
 prompt = ExtResource("6_ky0p2")
-initial_main_DMG = 0
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("7_pj4ld")]([])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_0cf72"]
@@ -48,15 +33,9 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_ngia4"]
 script = ExtResource("7_2b0yu")
 HP = 40
-retreat = 1
 attacks = Array[ExtResource("2_emyr2")]([SubResource("Resource_ky0p2"), SubResource("Resource_0cf72")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
 type = 256
 weak = 32
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -65,8 +44,6 @@ name = "Togepi"
 image = ExtResource("1_ojje2")
 illustrator = "Sumiyoshi Kizuki"
 number = 50
-rarity = 0
 expansion = 6
 categories = 1
 pokemon_properties = SubResource("Resource_ngia4")
-fossil = false

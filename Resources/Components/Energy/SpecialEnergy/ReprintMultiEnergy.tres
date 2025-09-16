@@ -10,51 +10,20 @@
 
 [sub_resource type="Resource" id="Resource_kky8u"]
 script = ExtResource("1_ndwjy")
-boolean_type = "And"
-previous_src_trg = false
 side_target = 4
 slot_target = 1
-specifically = Array[String]([])
-tool_attatched = false
 comparison_type = 0
-max_hp = -10
-damage_taken = -10
-retreat_cost = -1
-evo_type = "Don't Check"
-stage = 7
-rare_candy = false
-class_inclusive = true
-pokemon_class = 63
-owner_inclusive = true
 pokemon_owner = 15
-type_inclusive = true
-pokemon_type = 1023
-en_class = 0
-energy_inclusive = true
-check_cards = true
 energy_attatched = 0
-energy_class = "Any"
 energy_type = ExtResource("1_7eema")
-inclusive_ability = true
-check_ability = false
-contained_abilities = 3
-specific_abilities = Array[String]([])
-check_condition = false
-desired_condition = 0
-knocked_out = false
 metadata/_custom_type_script = "uid://mkjynqda7q5g"
 
 [resource]
 script = ExtResource("2_cuf6k")
-considered = "Special Energy"
 description = "Attach Multi Energy to 1 of your Pokémon. While in play, Multi Energy provides every type of Energy but provides only 1 Energy at a time. (Has no effect other than providing Energy.) Multi Energy provides Colorless Energy when attached to a Pokémon that already has Special Energy cards attached to it."
 prompt = ExtResource("4_7eema")
 asks = SubResource("Resource_kky8u")
 has_fail_provide = true
-has_fail_prevent = false
-attatch_effects = Array[ExtResource("3_vrqwi")]([])
-prompt_effects = Array[ExtResource("3_vrqwi")]([])
-turns = -1
 fail_provide = ExtResource("3_amwxe")
 success_provide = ExtResource("6_amwxe")
 metadata/_custom_type_script = "uid://caj1pm8erar2a"

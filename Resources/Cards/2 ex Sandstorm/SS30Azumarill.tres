@@ -1,80 +1,45 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=20 format=3 uid="uid://btetlfpnc0pgh"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=19 format=3 uid="uid://btetlfpnc0pgh"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_1d60h"]
 [ext_resource type="Texture2D" uid="uid://b6db2ua3lcrpy" path="res://Art/Cards/2 ex Sandstorm/30.jpg" id="1_op54d"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_7v2tk"]
 [ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="6_7v2tk"]
+[ext_resource type="Resource" uid="uid://bns8h72u2hxqo" path="res://Resources/Components/Effects/Asks/General/AnyMon.tres" id="7_hm0ul"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="7_p7lid"]
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="7_r2wsf"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="7_teul3"]
 [ext_resource type="Resource" uid="uid://fcpa5aqhgy0e" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/W1C1.tres" id="8_r2wsf"]
-[ext_resource type="Script" uid="uid://y0v42qaa35wt" path="res://Code/Resource Makers/GeneralUse/CoinFlipNumMaker.gd" id="9_pifp0"]
 [ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="11_qef3v"]
 [ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="12_46hn3"]
 
 [sub_resource type="Resource" id="Resource_u7b72"]
 script = ExtResource("7_teul3")
 description = "If you have {Water} Energy cards in your hand, attach as many {Water} Energy cards as you like to any of your Active Pokémon."
-prompt_reliant = false
-initial_main_DMG = 0
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("7_r2wsf")]([])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_pifp0"]
 script = ExtResource("2_7v2tk")
 name = "Drizzle"
-attack_cost = ExtResource("6_7v2tk")
 attack_data = SubResource("Resource_u7b72")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
-[sub_resource type="Resource" id="Resource_rf5yn"]
-script = ExtResource("9_pifp0")
-heads = true
-until = false
-const_flip_times = 1
-metadata/_custom_type_script = "uid://y0v42qaa35wt"
-
 [sub_resource type="Resource" id="Resource_txxdc"]
 script = ExtResource("11_qef3v")
-which = "Coinflip"
-coin_flip = SubResource("Resource_rf5yn")
+which = "Slot"
+ask = ExtResource("7_hm0ul")
+slot_vars = "current_card"
 cap = -1
 metadata/_custom_type_script = "uid://vjn146j3ayd6"
 
 [sub_resource type="Resource" id="Resource_um026"]
 script = ExtResource("12_46hn3")
-comparision_type = "Return"
 first_comparison = SubResource("Resource_txxdc")
-compare_to = "None"
-second_constant = 0
-operate_w_constant = "None"
 metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
 [sub_resource type="Resource" id="Resource_euo5v"]
 script = ExtResource("7_teul3")
 description = "Flip a coin for each Energy attached to all of your Active Pokémon. This attack does 30 damage times the number of heads."
-prompt_reliant = false
 initial_main_DMG = 30
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("7_r2wsf")]([])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
 modifier = 2
 modifier_num = 30
 comparator = SubResource("Resource_um026")
@@ -91,15 +56,11 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_br177"]
 script = ExtResource("7_p7lid")
 HP = 70
-retreat = 1
 attacks = Array[ExtResource("2_7v2tk")]([SubResource("Resource_pifp0"), SubResource("Resource_snn6m")])
 evo_stage = "Stage 1"
 evolves_from = "Marill"
-considered = 1
-owner = 0
 type = 4
 weak = 8
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -112,5 +73,4 @@ rarity = 1
 expansion = 1
 categories = 1
 pokemon_properties = SubResource("Resource_br177")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

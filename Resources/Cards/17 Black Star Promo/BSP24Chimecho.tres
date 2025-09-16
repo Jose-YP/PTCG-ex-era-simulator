@@ -16,18 +16,11 @@
 
 [sub_resource type="Resource" id="Resource_ta3aq"]
 script = ExtResource("6_ou7di")
-force_reversable = false
-record_target = false
-choose_active = false
 both_active = true
-chosing = 2
-affected = 2
-autofill = "None"
 metadata/_custom_type_script = "uid://curklvf1517ml"
 
 [sub_resource type="Resource" id="Resource_ru8vm"]
 script = ExtResource("5_fkael")
-order = Array[int]([])
 swap = SubResource("Resource_ta3aq")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -39,44 +32,21 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_bs4g1"]
 script = ExtResource("7_8l3ir")
 description = "Your opponent switches each Defending Pokémon with his or her Benched Pokémon. If your opponent has only 1 Benched Pokémon, you choose the Defending Pokémon to switch."
-prompt_reliant = false
-initial_main_DMG = 0
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
 prompt_effects = Array[ExtResource("4_8ih4e")]([SubResource("Resource_5n1to")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
 both_active = true
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_rx1bl"]
 script = ExtResource("2_4028h")
 name = "Resonate"
-attack_cost = ExtResource("3_rqgfm")
 attack_data = SubResource("Resource_bs4g1")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_h84jb"]
 script = ExtResource("10_mj4ji")
-choosing = 4
-mode = "Remove"
 ask = ExtResource("9_4rccs")
 how_many = 3
 choose_num = -1
-turn_delay = -1
-prevent_KO = false
-anyway_u_like = false
-with_leftover = "None"
-leftover_anyway = false
-vary_choose_num = false
-plus = true
-modifier = 1
 metadata/_custom_type_script = "uid://scca13hg4k1l"
 
 [sub_resource type="Resource" id="Resource_qngms"]
@@ -94,20 +64,7 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_ehnf7"]
 script = ExtResource("7_8l3ir")
 description = "Remove 3 damage counters from each of your Active Pokémon. Each Defending Pokémon is now Asleep."
-prompt_reliant = false
-initial_main_DMG = 0
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
 prompt_effects = Array[ExtResource("4_8ih4e")]([SubResource("Resource_bcl67")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_xxoy2"]
@@ -120,15 +77,9 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_vu7mx"]
 script = ExtResource("11_46k7l")
 HP = 70
-retreat = 1
 attacks = Array[ExtResource("2_4028h")]([SubResource("Resource_rx1bl"), SubResource("Resource_xxoy2")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
 type = 16
 weak = 16
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -141,5 +92,4 @@ rarity = 7
 expansion = 16
 categories = 1
 pokemon_properties = SubResource("Resource_vu7mx")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

@@ -22,49 +22,23 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_okor1"]
 script = ExtResource("6_jxva6")
 description = "Damage taken reduced by 20 after weak/res"
-unstackable_id = ""
 stackable = true
-after_weak_res = true
 operation = "Replace"
-add_hp = 0
-attack = 0
 defense = 20
-retreat_change = 0
-cost_modifier = "Add"
-modify = 0
-plus = false
-condition_immune = 0
-attack_effect_immune = false
-damage_immune = false
-body_immune = false
-power_immune = false
-trainer_immune = false
-odd_immunity = false
-even_immunity = false
-weakness = false
-resistance = false
-effects = false
-attack_names = Array[String]([])
-application = "Slot"
 recieves = ExtResource("6_g3ko3")
-duration = -1
 metadata/_custom_type_script = "uid://coojhwe6m20gd"
 
 [sub_resource type="Resource" id="Resource_kkoco"]
 script = ExtResource("7_h2wqg")
-order = Array[int]([])
 buff = SubResource("Resource_okor1")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_xl854"]
 script = ExtResource("8_vvcfj")
-category = "Body"
 name = "Exoskeleton"
 description = "Any damage done to Kabuto by attacks is reduced by 20 (after applying Weakness and Resistance)."
 affected_by_condition = false
-active = false
 how_often = "Infinite"
-independent_src_trg = false
 passive = SubResource("Resource_kkoco")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 
@@ -76,11 +50,8 @@ pokebody = SubResource("Resource_xl854")
 attacks = Array[ExtResource("2_pb36g")]([ExtResource("3_g3ko3"), SubResource("Resource_vtqs4")])
 evo_stage = "Stage 1"
 evolves_from = "Mysterious Fossil"
-considered = 1
-owner = 0
 type = 4
 weak = 1
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -93,5 +64,4 @@ rarity = 1
 expansion = 1
 categories = 1
 pokemon_properties = SubResource("Resource_rxwtm")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

@@ -9,28 +9,15 @@
 [sub_resource type="Resource" id="Resource_nrfu7"]
 script = ExtResource("1_e3eol")
 which = 1
-top_deck = false
 stack = 4
 slot_ask = ExtResource("2_4vakx")
 use_as = 512
-reorder_type = 0
 shuffle = false
-evolve = false
 metadata/_custom_type_script = "uid://cdyba0wadidwb"
 
 [resource]
 script = ExtResource("4_ijwaf")
-side = 4
 where = 2
-reordering_only = false
-shuffle_first = false
-based_on_side = 0
-based_on_slots = 0
-based_on_energy = 0
-portion = -1
-identifier_allowed = -1
-how_many = Array[int]([1])
 of_this = Array[ExtResource("2_riac7")]([ExtResource("3_4vakx")])
 and_then = SubResource("Resource_nrfu7")
-reveal = true
 metadata/_custom_type_script = "uid://cw3yr1k040kw7"

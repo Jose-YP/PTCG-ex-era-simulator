@@ -11,41 +11,21 @@
 [sub_resource type="Resource" id="Resource_a61qb"]
 script = ExtResource("8_q4urn")
 description = "Put 2 damage counters on the Defending Pokémon. If the Defending Pokémon is Pokémon-ex, put 4 damage counters instead."
-prompt_reliant = false
-initial_main_DMG = 0
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("8_73r8y")]([])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_cjhgp"]
 script = ExtResource("2_imefh")
 name = "Extra Curse"
-attack_cost = ExtResource("3_t13pb")
 attack_data = SubResource("Resource_a61qb")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_aqitb"]
 script = ExtResource("9_40d4c")
-HP = 50
 retreat = 0
 attacks = Array[ExtResource("2_imefh")]([SubResource("Resource_cjhgp")])
 evo_stage = "Stage 1"
 evolves_from = "Nincada"
-considered = 1
-owner = 0
 type = 16
-weak = 0
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -58,5 +38,4 @@ rarity = 3
 expansion = 7
 categories = 1
 pokemon_properties = SubResource("Resource_aqitb")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

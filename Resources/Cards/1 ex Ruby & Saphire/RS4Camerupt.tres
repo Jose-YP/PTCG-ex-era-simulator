@@ -16,20 +16,7 @@
 [sub_resource type="Resource" id="Resource_jcni4"]
 script = ExtResource("5_aoipg")
 description = "Choose 1 of your opponent's Benched Pokémon. This attack does 10 damage to that Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
-prompt_reliant = false
 initial_main_DMG = 20
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("5_t8nao")]([])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 bench_damage = ExtResource("4_t8nao")
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
@@ -42,7 +29,6 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_a4xqq"]
 script = ExtResource("5_xcuij")
-order = Array[int]([])
 energy_movement = ExtResource("4_13v8e")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -66,18 +52,6 @@ description = "Discard 2 basic Energy cards attached to [name] or this attack do
 prompt_reliant = true
 prompt = SubResource("Resource_ra3ir")
 initial_main_DMG = 100
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("5_t8nao")]([])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_6mipe"]
@@ -94,11 +68,8 @@ retreat = 2
 attacks = Array[ExtResource("2_0lg5k")]([SubResource("Resource_fh4bi"), SubResource("Resource_6mipe")])
 evo_stage = "Stage 1"
 evolves_from = "Numel"
-considered = 1
-owner = 0
 type = 2
 weak = 4
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -108,8 +79,6 @@ image = ExtResource("1_a4xqq")
 illustrator = "Ken Sugimori"
 number = 4
 rarity = 3
-expansion = 0
 categories = 1
 pokemon_properties = SubResource("Resource_eh264")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

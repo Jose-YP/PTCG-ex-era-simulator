@@ -16,16 +16,9 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_6osig"]
 script = ExtResource("2_34ps4")
-HP = 50
-retreat = 1
 attacks = Array[ExtResource("1_dl316")]([SubResource("Resource_wo33v")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
 type = 32
 weak = 1
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -34,9 +27,7 @@ name = "Sandshrew"
 image = ExtResource("1_7e73b")
 illustrator = "Kouki Saitou"
 number = 80
-rarity = 0
 expansion = 1
 categories = 1
 pokemon_properties = SubResource("Resource_6osig")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

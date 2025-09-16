@@ -21,20 +21,8 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_extvf"]
 script = ExtResource("5_xv1i5")
 description = "Flip a coin. If heads, prevent all effects of an attack, including damage, done to [name] during your opponent's next turn."
-prompt_reliant = false
 initial_main_DMG = 10
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
 prompt_effects = Array[ExtResource("5_dwsah")]([SubResource("Resource_dwsah")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_5dn7d"]
@@ -52,15 +40,8 @@ attack_data = ExtResource("8_vgcjx")
 [sub_resource type="Resource" id="Resource_yjm86"]
 script = ExtResource("5_58n71")
 HP = 80
-retreat = 1
 attacks = Array[ExtResource("4_h2ci7")]([SubResource("Resource_5dn7d"), SubResource("Resource_4yjhr")])
-evo_stage = "Basic"
-evolves_from = ""
 considered = 2
-owner = 0
-type = 1
-weak = 0
-resist = 0
 
 [resource]
 script = ExtResource("1_vv51n")
@@ -69,7 +50,5 @@ image = ExtResource("1_bpg55")
 illustrator = "Ryo Ueda"
 number = 102
 rarity = 4
-expansion = 0
 categories = 1
 pokemon_properties = SubResource("Resource_yjm86")
-fossil = false

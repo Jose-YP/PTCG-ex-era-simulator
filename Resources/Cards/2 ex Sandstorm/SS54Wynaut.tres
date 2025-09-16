@@ -19,25 +19,12 @@ metadata/__load_path__ = "res://Resources/Components/Counters/ForAtchEnergy.tres
 
 [sub_resource type="Resource" id="Resource_0tb8t"]
 script = ExtResource("7_ceahv")
-side = 4
-where = 1
-reordering_only = false
-shuffle_first = false
-based_on_side = 0
-based_on_slots = 0
-based_on_energy = 0
-portion = -1
-identifier_allowed = -1
-how_many = Array[int]([1])
 variable_ammount = SubResource("Resource_tuxjm")
 of_this = Array[ExtResource("5_f7r4u")]([ExtResource("6_8at0n")])
-and_then = ExtResource("4_vjsvb")
-reveal = true
 metadata/_custom_type_script = "uid://cw3yr1k040kw7"
 
 [sub_resource type="Resource" id="Resource_crnf0"]
 script = ExtResource("3_3wq4p")
-order = Array[int]([])
 search = SubResource("Resource_0tb8t")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -49,20 +36,7 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_f7r4u"]
 script = ExtResource("9_vjsvb")
 description = "Search your deck for a Basic Pokémon card or Evolution card for each Energy attached to [name], show them to your opponent, and put them into your hand. Shuffle your deck afterward."
-prompt_reliant = false
-initial_main_DMG = 0
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
 prompt_effects = Array[ExtResource("4_f7r4u")]([SubResource("Resource_ceahv")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_rihj7"]
@@ -74,7 +48,6 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_ncww0"]
 script = ExtResource("3_3wq4p")
-order = Array[int]([])
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_8at0n"]
@@ -83,25 +56,16 @@ category = "Power"
 name = "Baby Evolution"
 description = "Once during your turn (before your attack), you may put Wobbuffet from your hand onto [name] (this counts as evolving [name]), and remove all damage counters from [name]."
 affected_by_condition = false
-active = false
-how_often = "Once per Mon"
-independent_src_trg = false
 effect = SubResource("Resource_ncww0")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 
 [sub_resource type="Resource" id="Resource_xlsej"]
 script = ExtResource("10_k6hc2")
-HP = 50
-retreat = 1
 pokepower = SubResource("Resource_8at0n")
 attacks = Array[ExtResource("2_fluui")]([SubResource("Resource_rihj7")])
-evo_stage = "Basic"
-evolves_from = ""
 considered = 4
-owner = 0
 type = 16
 weak = 16
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -114,5 +78,4 @@ rarity = 1
 expansion = 1
 categories = 1
 pokemon_properties = SubResource("Resource_xlsej")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

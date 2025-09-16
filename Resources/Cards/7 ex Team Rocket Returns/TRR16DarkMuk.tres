@@ -19,21 +19,10 @@
 [sub_resource type="Resource" id="Resource_4k6b7"]
 script = ExtResource("8_73j6f")
 description = "Does 10 damage times the number of {Colorless} Energy in the Defending Pokémon's Retreat Cost (after applying effects to the Retreat Cost)."
-prompt_reliant = false
 initial_main_DMG = 10
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("7_xd3s5")]([])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
 modifier = 2
 modifier_num = 10
 comparator = ExtResource("4_pmpgt")
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_bwr13"]
@@ -46,18 +35,12 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_5uepn"]
 script = ExtResource("9_wgrck")
 ask = ExtResource("4_5uepn")
-any = false
 poison = 1
 burn = 2
-turn_cond = 0
-imprision = false
-shockwave = false
-knockOut = false
 metadata/_custom_type_script = "uid://8s3m1dar3r33"
 
 [sub_resource type="Resource" id="Resource_fi8yp"]
 script = ExtResource("12_lxa3d")
-order = Array[int]([])
 condition = SubResource("Resource_5uepn")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -69,20 +52,8 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_xd3s5"]
 script = ExtResource("8_73j6f")
 description = "The Defending Pokémon is now Burned and Poisoned."
-prompt_reliant = false
 initial_main_DMG = 10
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
 prompt_effects = Array[ExtResource("7_xd3s5")]([SubResource("Resource_vdj47")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_tp8aj"]
@@ -95,65 +66,35 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_ivyre"]
 script = ExtResource("11_jvudk")
 description = "It costs {Colorless}{Colorless} to retreat this pokemon"
-unstackable_id = ""
 stackable = true
-after_weak_res = true
-operation = "Add"
-add_hp = 0
-attack = 0
-defense = 0
 retreat_change = 2
-cost_modifier = "Add"
-modify = 0
-plus = false
-condition_immune = 0
-attack_effect_immune = false
-damage_immune = false
-body_immune = false
-power_immune = false
-trainer_immune = false
-odd_immunity = false
-even_immunity = false
-weakness = false
-resistance = false
-effects = false
-attack_names = Array[String]([])
-application = "Slot"
 recieves = ExtResource("10_tayn0")
-duration = -1
 metadata/_custom_type_script = "uid://coojhwe6m20gd"
 
 [sub_resource type="Resource" id="Resource_dxboj"]
 script = ExtResource("12_lxa3d")
-order = Array[int]([])
 buff = SubResource("Resource_ivyre")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_auhdv"]
 script = ExtResource("13_ykxvt")
-category = "Body"
 name = "Sticky Goo"
 description = "As long as [name] is your Active Pokémon, your opponent pays {Colorless}{Colorless} more to retreat his or her Active Pokémon."
 affected_by_condition = false
 active = true
-how_often = "Once per Mon"
-independent_src_trg = false
 passive = SubResource("Resource_dxboj")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 
 [sub_resource type="Resource" id="Resource_arwkx"]
 script = ExtResource("14_plofe")
 HP = 70
-retreat = 1
 pokebody = SubResource("Resource_auhdv")
 attacks = Array[ExtResource("2_sjg77")]([SubResource("Resource_bwr13"), SubResource("Resource_tp8aj")])
 evo_stage = "Stage 1"
 evolves_from = "Grimer"
 considered = 33
-owner = 0
 type = 65
 weak = 16
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -166,5 +107,4 @@ rarity = 2
 expansion = 6
 categories = 1
 pokemon_properties = SubResource("Resource_arwkx")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

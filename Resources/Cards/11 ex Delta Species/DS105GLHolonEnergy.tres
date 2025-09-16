@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=27 format=3 uid="uid://cqr3tfc8nry8w"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=25 format=3 uid="uid://cqr3tfc8nry8w"]
 
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="1_3qxn5"]
 [ext_resource type="Script" uid="uid://caj1pm8erar2a" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="1_5i42c"]
@@ -6,55 +6,19 @@
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_7lxul"]
 [ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/BuffMaker.gd" id="2_tf38m"]
 [ext_resource type="Texture2D" uid="uid://bcy6v2x6sapi" path="res://Art/Cards/11 ex Delta Species/105.jpg" id="2_yixtv"]
+[ext_resource type="Resource" uid="uid://bns8h72u2hxqo" path="res://Resources/Components/Effects/Asks/General/AnyMon.tres" id="3_os01s"]
 [ext_resource type="Resource" uid="uid://dyg31r0aqj4ed" path="res://Resources/Components/Effects/Prompts/NonEXHasGrassEn.tres" id="3_tyuxn"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_10hjv"]
 [ext_resource type="Resource" uid="uid://bstttj8kuf5i6" path="res://Resources/Components/EnData/GLHolon.tres" id="4_os01s"]
-[ext_resource type="Resource" uid="uid://cxnlthowpb4r4" path="res://Resources/Components/EnData/Lightning.tres" id="5_3qxn5"]
-[ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="6_5rppq"]
 [ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="6_os01s"]
 [ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="7_kjebj"]
 [ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="8_oiiyp"]
 [ext_resource type="Resource" uid="uid://bncvrbkaahg2w" path="res://Resources/Components/Effects/Asks/Class&Owner/SelfNon-ex.tres" id="9_3qxn5"]
 
-[sub_resource type="Resource" id="Resource_vnxhx"]
-script = ExtResource("6_5rppq")
-boolean_type = "And"
-previous_src_trg = false
-side_target = 4
-slot_target = 1
-specifically = Array[String]([])
-tool_attatched = false
-comparison_type = 1
-max_hp = -10
-damage_taken = -10
-retreat_cost = -1
-evo_type = "Don't Check"
-stage = 7
-rare_candy = false
-class_inclusive = false
-pokemon_class = 2
-owner_inclusive = true
-pokemon_owner = 31
-type_inclusive = true
-pokemon_type = 1023
-en_class = 0
-energy_inclusive = true
-check_cards = true
-energy_attatched = 1
-energy_class = "Any"
-energy_type = ExtResource("5_3qxn5")
-inclusive_ability = true
-check_ability = false
-contained_abilities = 3
-specific_abilities = Array[String]([])
-check_condition = false
-desired_condition = 0
-knocked_out = false
-
 [sub_resource type="Resource" id="Resource_4mowb"]
 script = ExtResource("7_kjebj")
 which = "Slot"
-ask = SubResource("Resource_vnxhx")
+ask = ExtResource("3_os01s")
 slot_vars = "current_card"
 cap = -1
 metadata/_custom_type_script = "uid://vjn146j3ayd6"
@@ -64,8 +28,6 @@ script = ExtResource("8_oiiyp")
 comparision_type = "Greater"
 first_comparison = SubResource("Resource_4mowb")
 compare_to = "Const"
-second_constant = 0
-operate_w_constant = "None"
 metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
 [sub_resource type="Resource" id="Resource_jbfea"]
@@ -85,38 +47,14 @@ metadata/_custom_type_script = "uid://b85jmc7067bjc"
 [sub_resource type="Resource" id="Resource_3qxn5"]
 script = ExtResource("2_tf38m")
 description = "Damage from opposing Pokemon-ex reduced by 10 after weak/res."
-unstackable_id = ""
 stackable = true
 against = ExtResource("1_420ij")
-after_weak_res = true
-operation = "Add"
-add_hp = 0
-attack = 0
 defense = 10
-retreat_change = 0
-cost_modifier = "Add"
-modify = 0
-plus = false
-condition_immune = 0
-attack_effect_immune = false
-damage_immune = false
-body_immune = false
-power_immune = false
-trainer_immune = false
-odd_immunity = false
-even_immunity = false
-weakness = false
-resistance = false
-effects = false
-attack_names = Array[String]([])
-application = "Slot"
 recieves = ExtResource("9_3qxn5")
-duration = -1
 metadata/_custom_type_script = "uid://coojhwe6m20gd"
 
 [sub_resource type="Resource" id="Resource_oiiyp"]
 script = ExtResource("4_10hjv")
-order = Array[int]([])
 buff = SubResource("Resource_3qxn5")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -129,37 +67,12 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_r81sp"]
 script = ExtResource("2_tf38m")
 description = "Immune to special conditions."
-unstackable_id = ""
-stackable = false
-after_weak_res = true
-operation = "Add"
-add_hp = 0
-attack = 0
-defense = 0
-retreat_change = 0
-cost_modifier = "Add"
-modify = 0
-plus = false
 condition_immune = 31
-attack_effect_immune = false
-damage_immune = false
-body_immune = false
-power_immune = false
-trainer_immune = false
-odd_immunity = false
-even_immunity = false
-weakness = false
-resistance = false
-effects = false
-attack_names = Array[String]([])
-application = "Slot"
 recieves = ExtResource("9_3qxn5")
-duration = -1
 metadata/_custom_type_script = "uid://coojhwe6m20gd"
 
 [sub_resource type="Resource" id="Resource_q8rev"]
 script = ExtResource("4_10hjv")
-order = Array[int]([])
 buff = SubResource("Resource_r81sp")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -171,15 +84,10 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [sub_resource type="Resource" id="Resource_yixtv"]
 script = ExtResource("1_5i42c")
-considered = "Special Energy"
 description = "[name] provides {Colorless} Energy.
 If the Pokémon that [name] is attached to also has a basic {Grass} Energy card attached to it, that Pokémon can't be affected by any Special Conditions. If the Pokémon that [name] is attached to also has a basic {Lightning} Energy card attached to it, damage done by your opponent's Pokémon-ex is reduced by 10 (after applying weakness/resistance). Ignore these effects if [name] is attached to Pokémon-ex."
 prompt = SubResource("Resource_jbfea")
-has_fail_provide = false
-has_fail_prevent = false
-attatch_effects = Array[ExtResource("1_3qxn5")]([])
 prompt_effects = Array[ExtResource("1_3qxn5")]([SubResource("Resource_kjebj"), SubResource("Resource_igb0p")])
-turns = -1
 fail_provide = ExtResource("4_os01s")
 success_provide = ExtResource("4_os01s")
 metadata/_custom_type_script = "uid://caj1pm8erar2a"
@@ -194,5 +102,4 @@ rarity = 2
 expansion = 10
 categories = 4
 energy_properties = SubResource("Resource_yixtv")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

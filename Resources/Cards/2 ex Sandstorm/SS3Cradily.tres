@@ -45,27 +45,13 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_5cgq3"]
 script = ExtResource("8_tjdgf")
 description = "Before using this effect, you may switch the Defending Pokémon with 1 of your opponent's Benched Pokémon, if any. The Defending Pokémon is now Poisoned."
-prompt_reliant = false
 prompt = SubResource("Resource_roksj")
-initial_main_DMG = 0
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
 prompt_effects = Array[ExtResource("7_42jkt")]([SubResource("Resource_2mrhd")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_kyci5"]
 script = ExtResource("2_42jkt")
 name = "Lure Poison"
-attack_cost = ExtResource("3_ya3fu")
 attack_data = SubResource("Resource_5cgq3")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
@@ -83,20 +69,8 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_defyy"]
 script = ExtResource("8_tjdgf")
 description = "Remove 2 damage counters from [name] (remove 1 if there is only 1)."
-prompt_reliant = false
 initial_main_DMG = 50
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
 prompt_effects = Array[ExtResource("7_42jkt")]([SubResource("Resource_5g1fb")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_r5hek"]
@@ -108,33 +82,23 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_ikgoj"]
 script = ExtResource("11_moc4a")
-disable_power = false
-disable_body = false
 disable_retreat = true
-choose_num = -1
-attack = 0
-atk_effect = true
-attack_names = Array[String]([])
 application = "Side"
 recieves = ExtResource("12_ya3fu")
-duration = -1
 metadata/_custom_type_script = "uid://c0ishgbxk63dg"
 
 [sub_resource type="Resource" id="Resource_eaxr4"]
 script = ExtResource("5_5g1fb")
-order = Array[int]([])
 disable = SubResource("Resource_ikgoj")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_ya3fu"]
 script = ExtResource("13_42jkt")
-category = "Body"
 name = "Super Suction Cups"
 description = "As long as [name] is your Active Pokémon, your opponent's Pokémon can't retreat."
 affected_by_condition = false
 active = true
 how_often = "Infinite"
-independent_src_trg = false
 passive = SubResource("Resource_eaxr4")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 
@@ -146,11 +110,7 @@ pokebody = SubResource("Resource_ya3fu")
 attacks = Array[ExtResource("2_42jkt")]([SubResource("Resource_kyci5"), SubResource("Resource_r5hek")])
 evo_stage = "Stage 2"
 evolves_from = "Lileep"
-considered = 1
-owner = 0
-type = 1
 weak = 2
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -163,5 +123,4 @@ rarity = 3
 expansion = 1
 categories = 1
 pokemon_properties = SubResource("Resource_0de7v")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

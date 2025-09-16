@@ -18,7 +18,6 @@
 
 [sub_resource type="Resource" id="Resource_6utft"]
 script = ExtResource("6_8115j")
-order = Array[int]([])
 energy_movement = ExtResource("5_ru05w")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -45,26 +44,13 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_73bjm"]
 script = ExtResource("5_ar175")
 description = "You may discard a {Grass} Energy card attached to [name]. If you do, the Defending Pokémon is now Poisoned."
-prompt_reliant = false
 initial_main_DMG = 10
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
 prompt_effects = Array[ExtResource("4_x52wy")]([SubResource("Resource_cgfto")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_mdv7i"]
 script = ExtResource("1_g7v6g")
 name = "Deadly Poison"
-attack_cost = ExtResource("2_yjlit")
 attack_data = SubResource("Resource_73bjm")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
@@ -85,18 +71,12 @@ metadata/_custom_type_script = "uid://b85jmc7067bjc"
 [sub_resource type="Resource" id="Resource_0v5ns"]
 script = ExtResource("13_heak1")
 ask = ExtResource("12_pngxh")
-any = false
 poison = 1
-burn = 0
 turn_cond = 2
-imprision = false
-shockwave = false
-knockOut = false
 metadata/_custom_type_script = "uid://8s3m1dar3r33"
 
 [sub_resource type="Resource" id="Resource_okr16"]
 script = ExtResource("6_8115j")
-order = Array[int]([])
 condition = SubResource("Resource_0v5ns")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -109,20 +89,8 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_7yai1"]
 script = ExtResource("5_ar175")
 description = "If the Defending Pokémon is Pokémon-ex, the Defending Pokémon is now Asleep and Poisoned."
-prompt_reliant = false
 initial_main_DMG = 20
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
 prompt_effects = Array[ExtResource("4_x52wy")]([SubResource("Resource_is51f")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_ru05w"]
@@ -137,13 +105,7 @@ script = ExtResource("6_7tphh")
 HP = 80
 retreat = 2
 attacks = Array[ExtResource("1_g7v6g")]([SubResource("Resource_mdv7i"), SubResource("Resource_ru05w")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
-type = 1
 weak = 16
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -156,5 +118,4 @@ rarity = 3
 expansion = 1
 categories = 1
 pokemon_properties = SubResource("Resource_4y00o")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

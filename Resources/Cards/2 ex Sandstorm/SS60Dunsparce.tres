@@ -19,34 +19,18 @@
 [sub_resource type="Resource" id="Resource_i2ut4"]
 script = ExtResource("4_13no0")
 which = 1
-top_deck = false
-stack = 1
 use_as = 1
-reorder_type = 0
-shuffle = true
-evolve = false
 metadata/_custom_type_script = "uid://cdyba0wadidwb"
 
 [sub_resource type="Resource" id="Resource_gl41l"]
 script = ExtResource("7_myqy4")
-side = 4
-where = 1
-reordering_only = false
-shuffle_first = false
-based_on_side = 0
-based_on_slots = 0
-based_on_energy = 0
-portion = -1
-identifier_allowed = -1
 how_many = Array[int]([3])
 of_this = Array[ExtResource("5_fi1rr")]([ExtResource("6_4o8g3")])
 and_then = SubResource("Resource_i2ut4")
-reveal = true
 metadata/_custom_type_script = "uid://cw3yr1k040kw7"
 
 [sub_resource type="Resource" id="Resource_fltea"]
 script = ExtResource("3_ubkor")
-order = Array[int]([])
 search = SubResource("Resource_gl41l")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -70,7 +54,6 @@ metadata/_custom_type_script = "uid://b85jmc7067bjc"
 
 [sub_resource type="Resource" id="Resource_334gx"]
 script = ExtResource("3_ubkor")
-order = Array[int]([])
 swap = ExtResource("5_13no0")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -83,48 +66,26 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_myqy4"]
 script = ExtResource("9_13no0")
 description = "Search your deck for up to 3 Basic Pokémon and put them onto your Bench. Shuffle your deck afterward. You may switch [name] with 1 of your Benched Pokémon."
-prompt_reliant = false
-initial_main_DMG = 0
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
 prompt_effects = Array[ExtResource("9_fi1rr")]([SubResource("Resource_q6yow"), SubResource("Resource_wnj50")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_nxntw"]
 script = ExtResource("2_fbbjl")
 name = "Strike and Run"
-attack_cost = ExtResource("8_fbbjl")
 attack_data = SubResource("Resource_myqy4")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_fem0p"]
 script = ExtResource("2_fbbjl")
 name = "Sudden Flash"
-attack_cost = ExtResource("8_fbbjl")
 attack_data = ExtResource("10_fi1rr")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_46tow"]
 script = ExtResource("10_334gx")
-HP = 50
-retreat = 1
 attacks = Array[ExtResource("2_fbbjl")]([SubResource("Resource_nxntw"), SubResource("Resource_fem0p")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
 type = 256
 weak = 32
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -133,9 +94,7 @@ name = "Dunsparce"
 image = ExtResource("1_jogs8")
 illustrator = "Mitsuhiro Arita"
 number = 60
-rarity = 0
 expansion = 1
 categories = 1
 pokemon_properties = SubResource("Resource_46tow")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

@@ -11,24 +11,13 @@
 
 [sub_resource type="Resource" id="Resource_exwbn"]
 script = ExtResource("5_6n5mt")
-side = 4
 where = 2
-reordering_only = false
-shuffle_first = false
-based_on_side = 0
-based_on_slots = 0
-based_on_energy = 0
-portion = -1
-identifier_allowed = -1
 how_many = Array[int]([2])
 of_this = Array[ExtResource("3_ygacn")]([ExtResource("4_kpjkk")])
-and_then = ExtResource("2_exwbn")
-reveal = true
 metadata/_custom_type_script = "uid://cw3yr1k040kw7"
 
 [sub_resource type="Resource" id="Resource_ygacn"]
 script = ExtResource("1_p5owb")
-order = Array[int]([])
 search = SubResource("Resource_exwbn")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -47,24 +36,12 @@ metadata/_custom_type_script = "uid://b85jmc7067bjc"
 
 [sub_resource type="Resource" id="Resource_kpjkk"]
 script = ExtResource("5_6n5mt")
-side = 4
-where = 1
-reordering_only = false
-shuffle_first = false
-based_on_side = 0
-based_on_slots = 0
-based_on_energy = 0
-portion = -1
-identifier_allowed = -1
 how_many = Array[int]([2])
 of_this = Array[ExtResource("3_ygacn")]([ExtResource("4_kpjkk")])
-and_then = ExtResource("2_exwbn")
-reveal = true
 metadata/_custom_type_script = "uid://cw3yr1k040kw7"
 
 [sub_resource type="Resource" id="Resource_6n5mt"]
 script = ExtResource("1_p5owb")
-order = Array[int]([])
 search = SubResource("Resource_kpjkk")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -78,7 +55,6 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [resource]
 script = ExtResource("7_iq3it")
 considered = "Supporter"
-specific_requirement = ""
 description = "Search your deck for up to 2 Basic Energy cards, show them to your opponent, and put them into your hand. Shuffle your deck afterward. Or, search your discard pile for up to 2 Basic cards, show them to your opponent, and put them into your hand. "
 prompt_effects = Array[ExtResource("7_exwbn")]([SubResource("Resource_cgk4a")])
 metadata/_custom_type_script = "uid://crx447i85kshy"

@@ -14,7 +14,6 @@
 
 [sub_resource type="Resource" id="Resource_jq1qd"]
 script = ExtResource("6_62afb")
-order = Array[int]([])
 energy_movement = ExtResource("5_qp50w")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -27,20 +26,8 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_h8nqt"]
 script = ExtResource("8_xmrty")
 description = " Flip a coin. If tails, discard all {Fire} Energy cards attached to [name]."
-prompt_reliant = false
 initial_main_DMG = 60
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
 prompt_effects = Array[ExtResource("4_7cb0r")]([SubResource("Resource_72m7y")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_cl81x"]
@@ -53,16 +40,12 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_4y00o"]
 script = ExtResource("2_k3nk8")
 HP = 80
-retreat = 1
 pokebody = ExtResource("9_p7yr4")
 attacks = Array[ExtResource("1_we07q")]([SubResource("Resource_cl81x")])
 evo_stage = "Stage 1"
 evolves_from = "Growlithe"
-considered = 1
-owner = 0
 type = 2
 weak = 4
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -75,5 +58,4 @@ rarity = 2
 expansion = 1
 categories = 1
 pokemon_properties = SubResource("Resource_4y00o")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

@@ -18,7 +18,6 @@
 
 [sub_resource type="Resource" id="Resource_ujupi"]
 script = ExtResource("4_x6q3b")
-order = Array[int]([])
 energy_movement = ExtResource("3_vx7in")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -39,21 +38,8 @@ metadata/_custom_type_script = "uid://b85jmc7067bjc"
 [sub_resource type="Resource" id="Resource_x6q3b"]
 script = ExtResource("7_vx7in")
 description = "You may discard all {Lightning} Energy attached to Ampharos. If you do, the Defending Pokémon is now Burned and Confused."
-prompt_reliant = false
 prompt = SubResource("Resource_1e1le")
 initial_main_DMG = 50
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("7_sl773")]([])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_1gwnj"]
@@ -66,21 +52,14 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_ws3ge"]
 script = ExtResource("9_u7a6q")
 action = 1
-chooser = 4
 givers = ExtResource("11_kd6vc")
 reciever = ExtResource("12_sl773")
-to_stack = 2
-stack_direction = 2
-energy_carry_over = false
 action_ammount = -1
 energy_ammount = -1
-energy_move_type = 0
-en_type = ExtResource("7_xck7i")
 metadata/_custom_type_script = "uid://cimk6l7ytw7xg"
 
 [sub_resource type="Resource" id="Resource_0m8xk"]
 script = ExtResource("4_x6q3b")
-order = Array[int]([])
 energy_movement = SubResource("Resource_ws3ge")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -89,10 +68,7 @@ script = ExtResource("12_x6q3b")
 category = "Power"
 name = "Energy Connect"
 description = "As often as you like during your turn (before your attack), you may move a basic Energy card attached to 1 of your Benched Pokémon to your Active Pokémon. This power can't be used if Ampharos is affected by a Special Condition."
-affected_by_condition = true
-active = false
 how_often = "Infinite"
-independent_src_trg = false
 effect = SubResource("Resource_0m8xk")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 
@@ -104,8 +80,6 @@ pokepower = SubResource("Resource_kd6vc")
 attacks = Array[ExtResource("2_xck7i")]([SubResource("Resource_1gwnj")])
 evo_stage = "Stage 2"
 evolves_from = "Flaaffy"
-considered = 1
-owner = 0
 type = 8
 weak = 32
 resist = 128
@@ -121,5 +95,4 @@ rarity = 3
 expansion = 9
 categories = 1
 pokemon_properties = SubResource("Resource_5syx3")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

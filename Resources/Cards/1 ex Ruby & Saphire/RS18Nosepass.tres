@@ -15,7 +15,6 @@
 
 [sub_resource type="Resource" id="Resource_xp3sp"]
 script = ExtResource("4_a7nbm")
-order = Array[int]([])
 search = ExtResource("5_hhkog")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -28,32 +27,17 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_mkraj"]
 script = ExtResource("5_a7nbm")
 description = "If any of your opponent's Active Pokémon are Evolved Pokémon, search your deck for any 1 card and put it into your hand. Shuffle your deck afterward."
-prompt_reliant = false
-initial_main_DMG = 0
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
 prompt_effects = Array[ExtResource("4_eomtv")]([SubResource("Resource_a7nbm")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_2rmnp"]
 script = ExtResource("2_dtigs")
 name = "Invisible Hand"
-attack_cost = ExtResource("3_dtigs")
 attack_data = SubResource("Resource_mkraj")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_2ayq4"]
 script = ExtResource("4_a7nbm")
-order = Array[int]([])
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_hhkog"]
@@ -65,19 +49,7 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_vbv8m"]
 script = ExtResource("5_a7nbm")
 description = "Flip a coin. If heads, your opponent returns the Defending Pokémon and all cards attached to it to his or her hand. (If your opponent doesn't have any Benched Pokémon or other Active Pokémon, this attack does nothing.)"
-prompt_reliant = false
-initial_main_DMG = 0
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
 prompt_effects = Array[ExtResource("4_eomtv")]([SubResource("Resource_hhkog")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
 both_active = true
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
@@ -91,15 +63,9 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_3c7vi"]
 script = ExtResource("9_5e01i")
 HP = 60
-retreat = 1
 attacks = Array[ExtResource("2_dtigs")]([SubResource("Resource_2rmnp"), SubResource("Resource_clivt")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
 type = 32
 weak = 4
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -109,8 +75,6 @@ image = ExtResource("1_5kvuk")
 illustrator = "Mitsuhiro Arita"
 number = 18
 rarity = 2
-expansion = 0
 categories = 1
 pokemon_properties = SubResource("Resource_3c7vi")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

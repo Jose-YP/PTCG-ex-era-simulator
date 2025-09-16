@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="6_3lhiu"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="7_tn4p8"]
 [ext_resource type="Script" uid="uid://crscwhvugaoxa" path="res://Code/Resource Makers/PokemonSpecific/AttackCostMaker.gd" id="8_vetta"]
-[ext_resource type="Resource" uid="uid://bn48qpc8mbr6s" path="res://Resources/Components/Effects/Asks/Class&Owner/OtherEXMons.tres" id="9_cjn2s"]
+[ext_resource type="Resource" uid="uid://bns8h72u2hxqo" path="res://Resources/Components/Effects/Asks/General/AnyMon.tres" id="9_2v8k6"]
 [ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="10_hs62q"]
 [ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="11_tkj2o"]
 [ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="12_msu5v"]
@@ -21,7 +21,6 @@
 
 [sub_resource type="Resource" id="Resource_63y04"]
 script = ExtResource("6_3lhiu")
-order = Array[int]([])
 dmgManip = ExtResource("5_b722s")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -33,20 +32,8 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_e40k5"]
 script = ExtResource("7_tn4p8")
 description = "Remove 2 damage counters from [name]."
-prompt_reliant = false
 initial_main_DMG = 20
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
 prompt_effects = Array[ExtResource("4_06lf5")]([SubResource("Resource_lhna5")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_y2ads"]
@@ -58,13 +45,7 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_rxkpo"]
 script = ExtResource("8_vetta")
-grass_cost = 0
-fire_cost = 0
-water_cost = 0
 lightning_cost = 1
-psychic_cost = 0
-fighting_cost = 0
-darkness_cost = 0
 metal_cost = 1
 colorless_cost = 3
 metadata/_custom_type_script = "uid://crscwhvugaoxa"
@@ -72,7 +53,7 @@ metadata/_custom_type_script = "uid://crscwhvugaoxa"
 [sub_resource type="Resource" id="Resource_fvjo4"]
 script = ExtResource("10_hs62q")
 which = "Slot"
-ask = ExtResource("9_cjn2s")
+ask = ExtResource("9_2v8k6")
 slot_vars = "current_card"
 cap = -1
 metadata/_custom_type_script = "uid://vjn146j3ayd6"
@@ -81,9 +62,6 @@ metadata/_custom_type_script = "uid://vjn146j3ayd6"
 script = ExtResource("11_tkj2o")
 comparision_type = "Not Equal"
 first_comparison = SubResource("Resource_fvjo4")
-compare_to = "None"
-second_constant = 0
-operate_w_constant = "None"
 metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
 [sub_resource type="Resource" id="Resource_h3uyi"]
@@ -106,18 +84,6 @@ description = "If your opponent has no Pokémon-ex in play, this attack does not
 prompt_reliant = true
 prompt = SubResource("Resource_h3uyi")
 initial_main_DMG = 80
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("4_06lf5")]([])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_dinw0"]
@@ -130,63 +96,32 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_rboeu"]
 script = ExtResource("15_f3hu0")
 description = "Extra Crush now costs {Lightning}{Metal}{Colorless}"
-unstackable_id = ""
-stackable = false
-after_weak_res = true
 operation = "Replace"
-add_hp = 0
-attack = 0
-defense = 0
-retreat_change = 0
 cost_modifier = "Replace"
 attack_cost = ExtResource("13_lqafl")
-modify = 0
-plus = false
-condition_immune = 0
-attack_effect_immune = false
-damage_immune = false
-body_immune = false
-power_immune = false
-trainer_immune = false
-odd_immunity = false
-even_immunity = false
-weakness = false
-resistance = false
-effects = false
 attack_names = Array[String](["Extra Crush"])
-application = "Slot"
 recieves = ExtResource("14_njxy2")
-duration = -1
 metadata/_custom_type_script = "uid://coojhwe6m20gd"
 
 [sub_resource type="Resource" id="Resource_13es8"]
 script = ExtResource("6_3lhiu")
-order = Array[int]([])
 buff = SubResource("Resource_rboeu")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_fgkgd"]
 script = ExtResource("16_wm6nk")
-category = "Body"
 name = "Delta Aura"
 description = "If you have Latios or Latios ex in play, the attack cost of [name]'s Extra Crush is now {Lightning}{Metal}{Colorless}."
 affected_by_condition = false
-active = false
-how_often = "Once per Mon"
-independent_src_trg = false
 passive = SubResource("Resource_13es8")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 
 [sub_resource type="Resource" id="Resource_5sm8k"]
 script = ExtResource("17_qcylf")
 HP = 70
-retreat = 1
 pokebody = SubResource("Resource_fgkgd")
 attacks = Array[ExtResource("2_niy66")]([SubResource("Resource_y2ads"), SubResource("Resource_dinw0")])
-evo_stage = "Basic"
-evolves_from = ""
 considered = 9
-owner = 0
 type = 136
 weak = 256
 resist = 48
@@ -202,5 +137,4 @@ rarity = 3
 expansion = 10
 categories = 1
 pokemon_properties = SubResource("Resource_5sm8k")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

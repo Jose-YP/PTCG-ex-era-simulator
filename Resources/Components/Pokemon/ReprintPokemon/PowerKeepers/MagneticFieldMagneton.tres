@@ -1,10 +1,9 @@
-[gd_resource type="Resource" script_class="Pokemon" load_steps=31 format=3 uid="uid://ydrv5i54j3hw"]
+[gd_resource type="Resource" script_class="Pokemon" load_steps=29 format=3 uid="uid://ydrv5i54j3hw"]
 
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_obixo"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="2_83dbl"]
 [ext_resource type="Resource" uid="uid://cesjkvsi5c6jb" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/L1C1.tres" id="2_pnmal"]
-[ext_resource type="Resource" uid="uid://dqj6gq7pt3dbk" path="res://Resources/Components/Effects/Asks/General/FromSource.tres" id="3_pwlnr"]
-[ext_resource type="Resource" uid="uid://c7itelq8jtjc2" path="res://Resources/Components/EnData/Rainbow.tres" id="4_i0rgy"]
+[ext_resource type="Resource" uid="uid://bns8h72u2hxqo" path="res://Resources/Components/Effects/Asks/General/AnyMon.tres" id="3_pnmal"]
 [ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="5_ivwvk"]
 [ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="6_bt8td"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="7_bkyx5"]
@@ -15,47 +14,29 @@
 [ext_resource type="Resource" uid="uid://d2vm6chtedrum" path="res://Resources/Components/Effects/Identifiers/Energy/BasicEnergy.tres" id="11_cgqai"]
 [ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/Components/SearchMaker.gd" id="12_dj5ks"]
 [ext_resource type="Script" uid="uid://8sh5p3leflla" path="res://Code/Resource Makers/EffectSpecific/Components/CardDisruptMaker.gd" id="13_hnw4t"]
-[ext_resource type="Resource" uid="uid://dm2i7spst0qpp" path="res://Resources/Components/Effects/Identifiers/AnyCard.tres" id="13_pwlnr"]
 [ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="14_1qoqx"]
 [ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="15_uut6h"]
 
 [sub_resource type="Resource" id="Resource_7wyle"]
 script = ExtResource("5_ivwvk")
 which = "Slot"
-ask = ExtResource("3_pwlnr")
-slot_vars = "energy_cards"
-en_count_methods = "Total"
-en_counting = ExtResource("4_i0rgy")
+ask = ExtResource("3_pnmal")
+slot_vars = "current_card"
 cap = -1
 metadata/_custom_type_script = "uid://vjn146j3ayd6"
 
 [sub_resource type="Resource" id="Resource_76occ"]
 script = ExtResource("6_bt8td")
-comparision_type = "Return"
 first_comparison = SubResource("Resource_7wyle")
-compare_to = "None"
-second_constant = 0
-operate_w_constant = "None"
 metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
 [sub_resource type="Resource" id="Resource_mf3jg"]
 script = ExtResource("7_bkyx5")
 description = "Does 10 damage times the amount of Energy attached to all of your Pokémon (including [name])."
-prompt_reliant = false
 initial_main_DMG = 10
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("7_i0rgy")]([])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
 modifier = 2
 modifier_num = 10
 comparator = SubResource("Resource_76occ")
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_dy8na"]
@@ -67,34 +48,21 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_foqwo"]
 script = ExtResource("12_dj5ks")
-side = 4
 where = 2
-reordering_only = false
-shuffle_first = false
-based_on_side = 0
-based_on_slots = 0
-based_on_energy = 0
-portion = -1
-identifier_allowed = -1
 how_many = Array[int]([2])
 of_this = Array[ExtResource("10_bu8fb")]([ExtResource("11_cgqai")])
-and_then = ExtResource("9_1hwmj")
-reveal = true
 metadata/_custom_type_script = "uid://cw3yr1k040kw7"
 
 [sub_resource type="Resource" id="Resource_tjcgn"]
 script = ExtResource("8_qsndi")
-order = Array[int]([])
 search = SubResource("Resource_foqwo")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_g1hyd"]
 script = ExtResource("5_ivwvk")
-which = "Stack"
-ask = ExtResource("3_pwlnr")
-stack_vars = "discard_pile"
-identifier = ExtResource("13_pwlnr")
-stack_portion = -1
+which = "Slot"
+ask = ExtResource("3_pnmal")
+slot_vars = "current_card"
 cap = -1
 metadata/_custom_type_script = "uid://vjn146j3ayd6"
 
@@ -103,29 +71,16 @@ script = ExtResource("6_bt8td")
 comparision_type = "Not Equal"
 first_comparison = SubResource("Resource_g1hyd")
 compare_to = "Const"
-second_constant = 0
-operate_w_constant = "None"
 metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
 [sub_resource type="Resource" id="Resource_e2txt"]
 script = ExtResource("13_hnw4t")
-send = "Stack"
 send_to = 0
-top_stack = true
-shuffle = false
 card_ammount = 0
-reveal = false
-who_chooses = 4
-side = 2
-view = true
-portion = -1
-from_stack = 0
-slot_choose_num = -1
 metadata/_custom_type_script = "uid://8sh5p3leflla"
 
 [sub_resource type="Resource" id="Resource_866pr"]
 script = ExtResource("8_qsndi")
-order = Array[int]([])
 card_disrupt = SubResource("Resource_e2txt")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -149,10 +104,6 @@ script = ExtResource("15_uut6h")
 category = "Power"
 name = "Magnetic Field"
 description = "Once during your turn (before your attack), if you have basic Energy cards in your discard pile, you may discard any 1 card from your hand. Then search for up to 2 basic Energy cards from your discard pile, show them to your opponent, and put them into your hand. You can't return the card you first discarded to your hand in this way. This power can't be used if [name] is affected by a Special Condition."
-affected_by_condition = true
-active = false
-how_often = "Once per Mon"
-independent_src_trg = false
 prompt = SubResource("Resource_xy2t8")
 effect = SubResource("Resource_tjcgn")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
@@ -160,13 +111,10 @@ metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 [resource]
 script = ExtResource("2_83dbl")
 HP = 70
-retreat = 1
 pokepower = SubResource("Resource_pedka")
 attacks = Array[ExtResource("1_obixo")]([SubResource("Resource_dy8na")])
 evo_stage = "Stage 1"
 evolves_from = "Magnemite"
-considered = 1
-owner = 0
 type = 8
 weak = 32
 resist = 128

@@ -33,21 +33,13 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_goaxk"]
 script = ExtResource("5_8p0sp")
 description = "Flip 2 coins. This attack does 10 damage times the number of heads. If either of the coins is heads, the Defending Pokémon is now Paralyzed."
-prompt_reliant = false
 prompt = SubResource("Resource_to7ul")
 initial_main_DMG = 10
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
 share_prompt = true
 prompt_effects = Array[ExtResource("6_goaxk")]([SubResource("Resource_3lkbc")])
-conditional_self_dmg = false
-self_damage = 0
 mod_prompt = true
 modifier = 2
 modifier_num = 10
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_p6nwg"]
@@ -59,16 +51,9 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_vbdkb"]
 script = ExtResource("7_j5xge")
-HP = 50
-retreat = 1
 attacks = Array[ExtResource("2_8p0sp")]([SubResource("Resource_p6nwg")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
 type = 4
 weak = 8
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -77,9 +62,7 @@ name = "Marill"
 image = ExtResource("1_mh6c5")
 illustrator = "Mitsuhiro Arita"
 number = 68
-rarity = 0
 expansion = 1
 categories = 1
 pokemon_properties = SubResource("Resource_vbdkb")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

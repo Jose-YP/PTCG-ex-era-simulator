@@ -15,34 +15,16 @@
 
 [sub_resource type="Resource" id="Resource_8kssd"]
 script = ExtResource("3_6yw7r")
-grass_cost = 0
 fire_cost = 1
 water_cost = 1
 lightning_cost = 1
-psychic_cost = 0
-fighting_cost = 0
-darkness_cost = 0
-metal_cost = 0
 colorless_cost = 0
 metadata/_custom_type_script = "uid://crscwhvugaoxa"
 
 [sub_resource type="Resource" id="Resource_vnphs"]
 script = ExtResource("7_3pqvf")
 description = "Discard a {Fire} Energy, {Water} Energy, and {Lightning} Energy attached to [name]."
-prompt_reliant = false
 initial_main_DMG = 200
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("7_diiue")]([])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_qcmwh"]
@@ -54,19 +36,15 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_80py0"]
 script = ExtResource("6_r341i")
-order = Array[int]([])
 energy_movement = ExtResource("8_y7fph")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_y355c"]
 script = ExtResource("11_onvok")
-category = "Body"
 name = "Silver Sparkle"
 description = "If [name] is your Active Pokémon and is damaged by an opponent's attack (even if [name] is Knocked Out), flip a coin. If heads, choose an Energy card attached to the Attacking Pokémon and return it to your opponent's hand."
 affected_by_condition = false
 active = true
-how_often = "Once per Mon"
-independent_src_trg = false
 prompt = ExtResource("10_k2mw1")
 occurance = ExtResource("9_btshb")
 effect = SubResource("Resource_80py0")
@@ -75,13 +53,9 @@ metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 [sub_resource type="Resource" id="Resource_ka2py"]
 script = ExtResource("12_wbp7u")
 HP = 100
-retreat = 1
 pokebody = SubResource("Resource_y355c")
 attacks = Array[ExtResource("2_diiue")]([SubResource("Resource_qcmwh")])
-evo_stage = "Basic"
-evolves_from = ""
 considered = 2
-owner = 0
 type = 256
 weak = 16
 resist = 32
@@ -97,5 +71,4 @@ rarity = 4
 expansion = 9
 categories = 1
 pokemon_properties = SubResource("Resource_ka2py")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

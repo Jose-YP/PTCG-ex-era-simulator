@@ -1,11 +1,10 @@
-[gd_resource type="Resource" script_class="Pokemon" load_steps=13 format=3 uid="uid://dcxpyr6d3omf7"]
+[gd_resource type="Resource" script_class="Pokemon" load_steps=12 format=3 uid="uid://dcxpyr6d3omf7"]
 
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_23xl6"]
 [ext_resource type="Resource" uid="uid://b1rwmggf7a4do" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless2.tres" id="2_qg207"]
 [ext_resource type="Resource" uid="uid://lnqxjpwlc83l" path="res://Resources/Components/Pokemon/Attacks/AttackData/50IfHeads.tres" id="3_nn817"]
 [ext_resource type="Resource" uid="uid://d0in7vtooxjm1" path="res://Resources/Components/Effects/ETC/AtkSelfHealCond.tres" id="4_jxjhv"]
-[ext_resource type="Resource" uid="uid://mregpmlqoyvy" path="res://Resources/Components/EnData/Fire.tres" id="6_euf6j"]
-[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="8_k64wy"]
+[ext_resource type="Resource" uid="uid://bns8h72u2hxqo" path="res://Resources/Components/Effects/Asks/General/AnyMon.tres" id="5_xnoff"]
 [ext_resource type="Script" uid="uid://bics3dumv7avj" path="res://Code/Resource Makers/GeneralUse/OccuranceMaker.gd" id="9_2yvqv"]
 [ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="10_4whhc"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="11_pjamb"]
@@ -18,20 +17,15 @@ attack_data = ExtResource("3_nn817")
 
 [sub_resource type="Resource" id="Resource_xg3gf"]
 script = ExtResource("9_2yvqv")
-from_ask = ExtResource("8_k64wy")
-signal = "attatch_en_signal"
-energy_type = ExtResource("6_euf6j")
+from_ask = ExtResource("5_xnoff")
+signal = "checked_up"
 metadata/_custom_type_script = "uid://bics3dumv7avj"
 
 [sub_resource type="Resource" id="Resource_h6v5j"]
 script = ExtResource("10_4whhc")
-category = "Body"
 name = "Natural Cure"
 description = "When you attach a {Fire} Energy card from your hand to [name], remove all Special Conditions from [name]."
 affected_by_condition = false
-active = false
-how_often = "Once per Mon"
-independent_src_trg = false
 occurance = SubResource("Resource_xg3gf")
 effect = ExtResource("4_jxjhv")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
@@ -39,13 +33,9 @@ metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 [resource]
 script = ExtResource("11_pjamb")
 HP = 80
-retreat = 1
 pokebody = SubResource("Resource_h6v5j")
 attacks = Array[ExtResource("1_23xl6")]([SubResource("Resource_60dvo")])
 evo_stage = "Stage 1"
 evolves_from = "Torchic"
-considered = 1
-owner = 0
 type = 2
 weak = 4
-resist = 0

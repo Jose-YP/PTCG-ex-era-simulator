@@ -16,37 +16,15 @@
 [sub_resource type="Resource" id="Resource_k58af"]
 script = ExtResource("6_432f8")
 description = "Slash now deals 90 damage."
-unstackable_id = ""
-stackable = false
 against = ExtResource("5_ha6lf")
-after_weak_res = true
 operation = "Replace"
-add_hp = 0
 attack = 90
-defense = 0
-retreat_change = 0
-cost_modifier = "Add"
-modify = 0
-plus = false
-condition_immune = 0
-attack_effect_immune = false
-damage_immune = false
-body_immune = false
-power_immune = false
-trainer_immune = false
-odd_immunity = false
-even_immunity = false
-weakness = false
-resistance = false
-effects = false
 attack_names = Array[String](["Slash"])
-application = "Slot"
 duration = 2
 metadata/_custom_type_script = "uid://coojhwe6m20gd"
 
 [sub_resource type="Resource" id="Resource_m86c8"]
 script = ExtResource("7_kvqx1")
-order = Array[int]([])
 buff = SubResource("Resource_k58af")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -58,26 +36,12 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_qhaeb"]
 script = ExtResource("8_o1y6v")
 description = " During your next turn, base damage of [name]'s Slash is attack is 90 instead of 40."
-prompt_reliant = false
-initial_main_DMG = 0
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
 prompt_effects = Array[ExtResource("4_srvd0")]([SubResource("Resource_fsk0c")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_u0ljs"]
 script = ExtResource("1_o53ws")
 name = "Focus Energy"
-attack_cost = ExtResource("3_f4bch")
 attack_data = SubResource("Resource_qhaeb")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
@@ -91,15 +55,11 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_um7g8"]
 script = ExtResource("2_6db5i")
 HP = 70
-retreat = 1
 attacks = Array[ExtResource("1_o53ws")]([SubResource("Resource_u0ljs"), SubResource("Resource_3o0g7")])
 evo_stage = "Stage 1"
 evolves_from = "Slokoth"
-considered = 1
-owner = 0
 type = 256
 weak = 32
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -112,5 +72,4 @@ rarity = 1
 expansion = 1
 categories = 1
 pokemon_properties = SubResource("Resource_um7g8")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

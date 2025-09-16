@@ -9,14 +9,7 @@
 
 [sub_resource type="Resource" id="Resource_b0kyd"]
 script = ExtResource("5_qerbh")
-HP = 50
-retreat = 1
 attacks = Array[ExtResource("2_vy62p")]([ExtResource("3_h1ibd"), ExtResource("4_vy62p")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
-type = 1
 weak = 2
 resist = 4
 metadata/_custom_type_script = "uid://dkximshow1pao"
@@ -27,9 +20,7 @@ name = "CHikorita"
 image = ExtResource("1_h1ibd")
 illustrator = "Atsuko Nishida"
 number = 51
-rarity = 0
 expansion = 9
 categories = 1
 pokemon_properties = SubResource("Resource_b0kyd")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

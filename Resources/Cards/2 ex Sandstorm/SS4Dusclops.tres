@@ -16,7 +16,6 @@
 
 [sub_resource type="Resource" id="Resource_7lf1f"]
 script = ExtResource("7_3tmei")
-order = Array[int]([])
 condition = ExtResource("6_35pxi")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -29,20 +28,7 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_4ayh1"]
 script = ExtResource("4_ujwgi")
 description = "Flip 2 coins. If both of them are heads, the Defending Pokémon is Knocked Out."
-prompt_reliant = false
-initial_main_DMG = 0
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
 prompt_effects = Array[ExtResource("3_4p2up")]([SubResource("Resource_d4kaa")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_hcel2"]
@@ -54,24 +40,15 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_bj1kv"]
 script = ExtResource("11_07vf5")
-choosing = 4
 mode = "Add"
 ask = ExtResource("10_rjfwn")
 how_many = 5
 choose_num = -1
-turn_delay = -1
-prevent_KO = false
 anyway_u_like = true
-with_leftover = "None"
-leftover_anyway = false
-vary_choose_num = false
-plus = true
-modifier = 1
 metadata/_custom_type_script = "uid://scca13hg4k1l"
 
 [sub_resource type="Resource" id="Resource_qlt6t"]
 script = ExtResource("7_3tmei")
-order = Array[int]([])
 dmgManip = SubResource("Resource_bj1kv")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -83,20 +60,7 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_aer8o"]
 script = ExtResource("4_ujwgi")
 description = "Put a total of 5 damage counters on all Defending Pokémon in any way you like."
-prompt_reliant = false
-initial_main_DMG = 0
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
 prompt_effects = Array[ExtResource("3_4p2up")]([SubResource("Resource_40ki5")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_bpsoh"]
@@ -109,12 +73,9 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_inh8h"]
 script = ExtResource("2_6xiof")
 HP = 70
-retreat = 1
 attacks = Array[ExtResource("1_2wbhi")]([SubResource("Resource_hcel2"), SubResource("Resource_bpsoh")])
 evo_stage = "Stage 1"
 evolves_from = "Duskull"
-considered = 1
-owner = 0
 type = 16
 weak = 64
 resist = 32
@@ -130,5 +91,4 @@ rarity = 3
 expansion = 1
 categories = 1
 pokemon_properties = SubResource("Resource_inh8h")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

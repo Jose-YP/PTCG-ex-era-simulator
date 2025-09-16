@@ -16,13 +16,9 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [resource]
 script = ExtResource("5_ubpj8")
 HP = 70
-retreat = 1
 attacks = Array[ExtResource("1_2m67y")]([ExtResource("2_rho75"), SubResource("Resource_joqya")])
 evo_stage = "Stage 1"
 evolves_from = "Mudkip"
-considered = 1
-owner = 0
 type = 4
 weak = 8
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"

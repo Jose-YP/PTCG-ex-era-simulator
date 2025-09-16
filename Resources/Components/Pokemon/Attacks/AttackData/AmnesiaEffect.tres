@@ -8,21 +8,14 @@
 
 [sub_resource type="Resource" id="Resource_fqfse"]
 script = ExtResource("1_lss8q")
-disable_power = false
-disable_body = false
-disable_retreat = false
 choose_num = 1
 attack = 1
-atk_effect = true
-attack_names = Array[String]([])
-application = "Slot"
 recieves = ExtResource("2_fqfse")
 duration = 1
 metadata/_custom_type_script = "uid://c0ishgbxk63dg"
 
 [sub_resource type="Resource" id="Resource_necby"]
 script = ExtResource("2_0qc4t")
-order = Array[int]([])
 disable = SubResource("Resource_fqfse")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -34,18 +27,5 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [resource]
 script = ExtResource("1_cghll")
 description = "Choose 1 of the Defending Pokémon's attacks. That Pokémon can't use that attack during your opponent's next turn."
-prompt_reliant = false
-initial_main_DMG = 0
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
 prompt_effects = Array[ExtResource("1_0qc4t")]([SubResource("Resource_dsv0q")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"

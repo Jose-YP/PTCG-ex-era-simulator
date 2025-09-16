@@ -17,9 +17,7 @@ metadata/__load_path__ = "res://Resources/Components/Counters/INdv/AtkHandSize.t
 script = ExtResource("4_sxuyp")
 comparision_type = "Lesser"
 first_comparison = SubResource("Resource_lbeju")
-compare_to = "None"
 second_constant = 6
-operate_w_constant = "None"
 metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
 [sub_resource type="Resource" id="Resource_csdl0"]
@@ -42,21 +40,15 @@ comparision_type = "Difference"
 first_comparison = ExtResource("6_uq1k3")
 compare_to = "Const"
 second_constant = 6
-operate_w_constant = "None"
 metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
 [sub_resource type="Resource" id="Resource_uq1k3"]
 script = ExtResource("4_m8l7g")
-shuffle_back_first = false
-side = 1
-bottom_deck = false
-simple_constant = 0
 comparator = SubResource("Resource_2h8s7")
 metadata/_custom_type_script = "uid://bgtwlw1edjwyc"
 
 [sub_resource type="Resource" id="Resource_6plop"]
 script = ExtResource("3_qsc0s")
-order = Array[int]([])
 draw_ammount = SubResource("Resource_uq1k3")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -69,7 +61,6 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_8tpb4"]
 script = ExtResource("6_j8dp4")
 considered = "Supporter"
-specific_requirement = ""
 description = "Draw cards from your deck until you have 6 cards in your hand. "
 prompt_effects = Array[ExtResource("3_sxuyp")]([SubResource("Resource_l36f4")])
 metadata/_custom_type_script = "uid://crx447i85kshy"
@@ -81,8 +72,6 @@ image = ExtResource("1_m8l7g")
 illustrator = "Ken Sugimori"
 number = 89
 rarity = 1
-expansion = 0
 categories = 2
 trainer_properties = SubResource("Resource_8tpb4")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

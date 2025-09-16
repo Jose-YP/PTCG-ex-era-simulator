@@ -55,22 +55,6 @@ class_name Buff
 @export_group("Specifiers")
 @export var attack_names: Array[String]
 
-signal finished
-
-func play_effect(reversable: bool = false, replace_num: int = -1) -> void:
-	print("PLAY BUFF ", self)
-	print(how_display(), description)
-	#Who should have this effects applied?
-	if application == "Slot":
-		var apply_to: Array[PokeSlot] = Globals.full_ui.get_aks_minus_immune(recieves, Consts.IMMUNITIES.ATK_EFCT_OPP)
-		
-		for slot in apply_to:
-			slot.apply_slot_change(self)
-		
-	else:
-		Globals.fundies.apply_change(recieves, self)
-	finished.emit()
-
 func has_stat(stat: Consts.STAT_BUFFS) -> bool:
 	match stat:
 		Consts.STAT_BUFFS.ATTACK:

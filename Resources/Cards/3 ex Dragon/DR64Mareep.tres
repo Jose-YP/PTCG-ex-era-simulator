@@ -10,19 +10,12 @@
 [sub_resource type="Resource" id="Resource_ut2hx"]
 script = ExtResource("2_uoket")
 name = "Jolt"
-attack_cost = ExtResource("3_v0416")
 attack_data = ExtResource("4_204uf")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_tlo3k"]
 script = ExtResource("5_ut45d")
-HP = 50
-retreat = 1
 attacks = Array[ExtResource("2_uoket")]([SubResource("Resource_ut2hx")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
 type = 8
 weak = 32
 resist = 128
@@ -34,9 +27,7 @@ name = "Mareep"
 image = ExtResource("1_c0nmx")
 illustrator = "Miki Tanaka"
 number = 64
-rarity = 0
 expansion = 2
 categories = 1
 pokemon_properties = SubResource("Resource_tlo3k")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

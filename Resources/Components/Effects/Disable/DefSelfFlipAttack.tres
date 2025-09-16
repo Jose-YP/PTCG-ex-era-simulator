@@ -4,13 +4,6 @@
 
 [resource]
 script = ExtResource("1_q4vn0")
-disable_power = false
-disable_body = false
-disable_retreat = false
-choose_num = -1
 attack = 2
-atk_effect = true
-attack_names = Array[String]([])
-application = "Slot"
 duration = 1
 metadata/_custom_type_script = "uid://c0ishgbxk63dg"

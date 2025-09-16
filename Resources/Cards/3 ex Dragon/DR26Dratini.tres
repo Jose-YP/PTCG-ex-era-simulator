@@ -13,20 +13,6 @@
 [sub_resource type="Resource" id="Resource_7ofut"]
 script = ExtResource("6_htvxf")
 description = "Remove 2 damage counters from 1 of your Pokémon (remove 1 if there is only 1)."
-prompt_reliant = false
-initial_main_DMG = 0
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("6_4n1bp")]([])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_bnrpu"]
@@ -45,13 +31,7 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_hqkbi"]
 script = ExtResource("9_84oo7")
-HP = 50
-retreat = 1
 attacks = Array[ExtResource("2_4n1bp")]([SubResource("Resource_bnrpu"), SubResource("Resource_48qu5")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
 type = 256
 weak = 256
 resist = 33
@@ -67,5 +47,4 @@ rarity = 1
 expansion = 2
 categories = 1
 pokemon_properties = SubResource("Resource_hqkbi")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

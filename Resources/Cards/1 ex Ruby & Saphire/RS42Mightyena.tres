@@ -13,44 +13,28 @@
 [sub_resource type="Resource" id="Resource_0cyaq"]
 script = ExtResource("5_c47ie")
 name = "Bite"
-attack_cost = ExtResource("4_8tlbr")
 attack_data = ExtResource("4_5a8tj")
 
 [sub_resource type="Resource" id="Resource_1nwew"]
 script = ExtResource("6_1xnba")
 description = "Flip a coin. If heads, this attack does 30 damage plus 30 more damage."
-prompt_reliant = false
 initial_main_DMG = 30
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("6_0cyaq")]([])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
 modifier = 1
 modifier_num = 30
 comparator = ExtResource("5_5a8tj")
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_l301p"]
 script = ExtResource("5_c47ie")
 name = "Ambush"
-attack_cost = ExtResource("4_8tlbr")
 attack_data = SubResource("Resource_1nwew")
 
 [sub_resource type="Resource" id="Resource_6j5fp"]
 script = ExtResource("6_fq3rn")
 HP = 70
-retreat = 1
 attacks = Array[ExtResource("5_c47ie")]([SubResource("Resource_0cyaq"), SubResource("Resource_l301p")])
 evo_stage = "Stage 1"
 evolves_from = "Poochyena"
-considered = 1
-owner = 0
 type = 64
 weak = 32
 resist = 16
@@ -62,7 +46,5 @@ image = ExtResource("1_82iwa")
 illustrator = "Ken Sugimori"
 number = 42
 rarity = 1
-expansion = 0
 categories = 1
 pokemon_properties = SubResource("Resource_6j5fp")
-fossil = false

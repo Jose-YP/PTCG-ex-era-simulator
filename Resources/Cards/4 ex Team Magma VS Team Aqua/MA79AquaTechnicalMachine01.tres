@@ -18,15 +18,10 @@ ask = ExtResource("6_n2qi6")
 any = true
 poison = 1
 burn = 2
-turn_cond = 0
-imprision = false
-shockwave = false
-knockOut = false
 metadata/_custom_type_script = "uid://8s3m1dar3r33"
 
 [sub_resource type="Resource" id="Resource_7wv50"]
 script = ExtResource("8_jjagp")
-order = Array[int]([])
 condition = SubResource("Resource_jvwri")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -38,35 +33,20 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_dagok"]
 script = ExtResource("7_0ulgf")
 description = "Choose 1 Special Condition. The Defending Pokémon is now affected by that Special Condition."
-prompt_reliant = false
 initial_main_DMG = 10
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
 prompt_effects = Array[ExtResource("4_n2qi6")]([SubResource("Resource_if5gu")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_3el55"]
 script = ExtResource("5_exr3x")
 name = "Miracle"
-attack_cost = ExtResource("6_10jvr")
 attack_data = SubResource("Resource_dagok")
 
 [sub_resource type="Resource" id="Resource_dojqq"]
 script = ExtResource("6_6xmn3")
 considered = "TM"
-specific_requirement = ""
 description = "Attach this card to 1 of your Pokémon that has Team Aqua in its name. That Pokémon may use this card's attack instead of its own. At the end of your turn, discard Team Aqua Technical Machine 01."
 asks = ExtResource("3_uthag")
-prompt_effects = Array[ExtResource("4_n2qi6")]([])
 provided_attack = SubResource("Resource_3el55")
 
 [resource]
@@ -79,4 +59,3 @@ rarity = 1
 expansion = 3
 categories = 2
 trainer_properties = SubResource("Resource_dojqq")
-fossil = false

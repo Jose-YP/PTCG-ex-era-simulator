@@ -18,5 +18,18 @@ class_name SlotChange
 ##[br]otherwise the effect lasts for this many turns 
 @export var duration: int = -1
 
-func _init() -> void:
-	resource_local_to_scene = true
+signal finished
+
+func play_effect(reversable: bool = false, replace_num: int = -1) -> void:
+	print("PLAY ", self.get_script().get_global_name())
+	
+	#Who should have this effects applied?
+	if application == "Slot":
+		var apply_to: Array[PokeSlot] = Globals.full_ui.get_aks_minus_immune(recieves, Consts.IMMUNITIES.ATK_EFCT_OPP)
+		
+		for slot in apply_to:
+			slot.apply_slot_change(self)
+		
+	else:
+		Globals.fundies.apply_change(recieves, self)
+	finished.emit()

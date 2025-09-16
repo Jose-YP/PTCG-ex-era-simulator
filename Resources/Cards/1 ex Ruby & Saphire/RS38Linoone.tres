@@ -17,24 +17,13 @@
 
 [sub_resource type="Resource" id="Resource_47ysl"]
 script = ExtResource("7_pmwlk")
-side = 4
-where = 1
-reordering_only = false
-shuffle_first = false
-based_on_side = 0
-based_on_slots = 0
-based_on_energy = 0
-portion = -1
-identifier_allowed = -1
 how_many = Array[int]([2])
 of_this = Array[ExtResource("5_43h4u")]([ExtResource("6_e3j6n")])
-and_then = ExtResource("4_ojowl")
 reveal = false
 metadata/_custom_type_script = "uid://cw3yr1k040kw7"
 
 [sub_resource type="Resource" id="Resource_f88l4"]
 script = ExtResource("3_hc8gr")
-order = Array[int]([])
 search = SubResource("Resource_47ysl")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -46,47 +35,22 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_e3j6n"]
 script = ExtResource("9_hc8gr")
 description = "Search your deck for up to 2 cards and put them into your hand. Shuffle your deck afterward."
-prompt_reliant = false
-initial_main_DMG = 0
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
 prompt_effects = Array[ExtResource("4_43h4u")]([SubResource("Resource_r5n37")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_h8f3k"]
 script = ExtResource("2_c7ykk")
 name = "Seek Out"
-attack_cost = ExtResource("3_euni5")
 attack_data = SubResource("Resource_e3j6n")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_pmwlk"]
 script = ExtResource("9_hc8gr")
 description = "Flip a coin until you get tails. This attack does 40 damage times the number of heads."
-prompt_reliant = false
 initial_main_DMG = 40
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("4_43h4u")]([])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
 modifier = 2
 modifier_num = 40
 comparator = ExtResource("11_43h4u")
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_wgkdp"]
@@ -99,15 +63,11 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_u05fs"]
 script = ExtResource("10_wenki")
 HP = 70
-retreat = 1
 attacks = Array[ExtResource("2_c7ykk")]([SubResource("Resource_h8f3k"), SubResource("Resource_wgkdp")])
 evo_stage = "Stage 1"
 evolves_from = "Zigzagoon"
-considered = 1
-owner = 0
 type = 256
 weak = 32
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -117,8 +77,6 @@ image = ExtResource("1_hkjvh")
 illustrator = "Ken Sugimori"
 number = 38
 rarity = 1
-expansion = 0
 categories = 1
 pokemon_properties = SubResource("Resource_u05fs")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

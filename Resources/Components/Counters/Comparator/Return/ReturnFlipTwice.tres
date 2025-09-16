@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Comparator" load_steps=5 format=3 uid="uid://b1y3h472721ee"]
 
-[ext_resource type="Resource" uid="uid://33sh63tgilvo" path="res://Resources/Components/CoinFlip/DupFlipTwice.tres" id="1_2xf47"]
+[ext_resource type="Resource" uid="uid://u3yx47w8rn83" path="res://Resources/Components/CoinFlip/FlipTwice.tres" id="1_2xf47"]
 [ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="2_mffbk"]
 [ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="3_3svor"]
 
@@ -13,9 +13,5 @@ metadata/_custom_type_script = "uid://vjn146j3ayd6"
 
 [resource]
 script = ExtResource("3_3svor")
-comparision_type = "Return"
 first_comparison = SubResource("Resource_rj4yc")
-compare_to = "None"
-second_constant = 0
-operate_w_constant = "None"
 metadata/_custom_type_script = "uid://b65jx8u5cgcgl"

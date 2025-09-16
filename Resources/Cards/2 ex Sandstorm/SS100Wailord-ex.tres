@@ -20,9 +20,7 @@
 script = ExtResource("5_juimu")
 comparision_type = "Equals"
 first_comparison = ExtResource("4_otrcm")
-compare_to = "None"
 second_constant = 1
-operate_w_constant = "None"
 metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
 [sub_resource type="Resource" id="Resource_tpqxm"]
@@ -55,47 +53,22 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_ep4q3"]
 script = ExtResource("7_oruyu")
 description = "If you don't have any Benched Pokémon, this attack does nothing. Remove 3 damage counters from [name]. Switch [name] with 1 of your Benched Pokémon."
-prompt_reliant = false
-initial_main_DMG = 0
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
 prompt_effects = Array[ExtResource("4_vorvy")]([SubResource("Resource_smqnk")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_kc0gi"]
 script = ExtResource("2_uiro2")
 name = "Super Deep Dive"
-attack_cost = ExtResource("3_xdiwn")
 attack_data = SubResource("Resource_ep4q3")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_8rjgf"]
 script = ExtResource("7_oruyu")
 description = "Does 100 damage minus 10 damage for each damage counter on [name]."
-prompt_reliant = false
 initial_main_DMG = 100
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("4_vorvy")]([])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
 modifier = 3
 modifier_num = 10
 comparator = ExtResource("12_0mp32")
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_4mo7n"]
@@ -113,10 +86,8 @@ attacks = Array[ExtResource("2_uiro2")]([SubResource("Resource_kc0gi"), SubResou
 evo_stage = "Stage 1"
 evolves_from = "Wailmer"
 considered = 2
-owner = 0
 type = 4
 weak = 9
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -129,5 +100,4 @@ rarity = 4
 expansion = 1
 categories = 1
 pokemon_properties = SubResource("Resource_ie1rs")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

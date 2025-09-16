@@ -16,37 +16,16 @@
 [sub_resource type="Resource" id="Resource_484ee"]
 script = ExtResource("6_yi5yq")
 description = "Attacks deal 40 more damage before weak/res"
-unstackable_id = ""
 stackable = true
 after_weak_res = false
 operation = "Replace"
-add_hp = 0
 attack = 40
-defense = 0
-retreat_change = 0
-cost_modifier = "Add"
-modify = 0
-plus = false
-condition_immune = 0
-attack_effect_immune = false
-damage_immune = false
-body_immune = false
-power_immune = false
-trainer_immune = false
-odd_immunity = false
-even_immunity = false
-weakness = false
-resistance = false
-effects = false
-attack_names = Array[String]([])
-application = "Slot"
 recieves = ExtResource("5_qbxbb")
 duration = 2
 metadata/_custom_type_script = "uid://coojhwe6m20gd"
 
 [sub_resource type="Resource" id="Resource_w2g7s"]
 script = ExtResource("7_8lds8")
-order = Array[int]([])
 buff = SubResource("Resource_484ee")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -58,39 +37,19 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_5gtvr"]
 script = ExtResource("8_8ke4b")
 description = "During your next turn, if any of your current Active Pokémon does damage to any Defending Pokémon, this attack does 40 more damage (before applying Weakness and Resistance)."
-prompt_reliant = false
-initial_main_DMG = 0
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
 prompt_effects = Array[ExtResource("4_fi6u0")]([SubResource("Resource_21epr")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_yeroc"]
 script = ExtResource("2_5ga2w")
 name = " Dragon Dance "
-attack_cost = ExtResource("3_l8u6u")
 attack_data = SubResource("Resource_5gtvr")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_41f4a"]
 script = ExtResource("9_k3ea1")
-grass_cost = 0
-fire_cost = 0
 water_cost = 1
 lightning_cost = 1
-psychic_cost = 0
-fighting_cost = 0
-darkness_cost = 0
-metal_cost = 0
 colorless_cost = 0
 metadata/_custom_type_script = "uid://crscwhvugaoxa"
 
@@ -102,19 +61,8 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_8opdt"]
 script = ExtResource("8_8ke4b")
 description = "Each Defending Pokémon is now Asleep."
-prompt_reliant = false
 initial_main_DMG = 30
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
 prompt_effects = Array[ExtResource("4_fi6u0")]([SubResource("Resource_w2226")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
 both_active = true
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
@@ -128,12 +76,9 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 [sub_resource type="Resource" id="Resource_01ikg"]
 script = ExtResource("11_m8lyd")
 HP = 80
-retreat = 1
 attacks = Array[ExtResource("2_5ga2w")]([SubResource("Resource_yeroc"), SubResource("Resource_ble7w")])
 evo_stage = "Stage 1"
 evolves_from = "Swablu"
-considered = 1
-owner = 0
 type = 256
 weak = 256
 resist = 33
@@ -149,5 +94,4 @@ rarity = 3
 expansion = 2
 categories = 1
 pokemon_properties = SubResource("Resource_01ikg")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

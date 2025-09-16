@@ -11,42 +11,22 @@
 
 [sub_resource type="Resource" id="Resource_iq0qi"]
 script = ExtResource("9_k81h8")
-description = ""
-prompt_reliant = false
-initial_main_DMG = 0
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("3_ni0es")]([])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_q7ncl"]
 script = ExtResource("10_85o5a")
 name = "Delta Call"
-attack_cost = ExtResource("3_kyw37")
 attack_data = SubResource("Resource_iq0qi")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_sv32v"]
 script = ExtResource("12_3q2f7")
-when_to_check = 0
-bench_size = -1
 metadata/_custom_type_script = "uid://b8kvis7rgg3j4"
 
 [sub_resource type="Resource" id="Resource_ha8jt"]
 script = ExtResource("3_c4y1i")
 considered = "Stadium"
-specific_requirement = ""
 description = "Each player's Pokémon that has δ on its card can use attacks on this card instead of its own. "
-prompt_effects = Array[ExtResource("3_ni0es")]([])
 stadium_properties = SubResource("Resource_sv32v")
 provided_attack = SubResource("Resource_q7ncl")
 metadata/_custom_type_script = "uid://crx447i85kshy"
@@ -61,4 +41,3 @@ rarity = 1
 expansion = 12
 categories = 2
 trainer_properties = SubResource("Resource_ha8jt")
-fossil = false

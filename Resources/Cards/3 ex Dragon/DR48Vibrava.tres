@@ -8,8 +8,8 @@
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_qh4dg"]
 [ext_resource type="Resource" uid="uid://c37rmy4v63lj4" path="res://Resources/Components/Effects/Buff/Stat/Retreat/RetreatIsNow0.tres" id="4_j1038"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="5_orf2g"]
-[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="6_205af"]
 [ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="7_brw45"]
+[ext_resource type="Resource" uid="uid://bns8h72u2hxqo" path="res://Resources/Components/Effects/Asks/General/AnyMon.tres" id="7_ovh3t"]
 [ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="8_pd3rr"]
 [ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="9_up5ci"]
 [ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="10_eowwr"]
@@ -23,17 +23,14 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_3khkk"]
 script = ExtResource("5_orf2g")
-order = Array[int]([])
 buff = ExtResource("4_j1038")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_i15gx"]
 script = ExtResource("7_brw45")
 which = "Slot"
-ask = ExtResource("6_205af")
-slot_vars = "energy_cards"
-en_count_methods = "Categories"
-en_categories = "Basic Energy"
+ask = ExtResource("7_ovh3t")
+slot_vars = "current_card"
 cap = -1
 metadata/_custom_type_script = "uid://vjn146j3ayd6"
 
@@ -41,9 +38,6 @@ metadata/_custom_type_script = "uid://vjn146j3ayd6"
 script = ExtResource("8_pd3rr")
 comparision_type = "Not Equal"
 first_comparison = SubResource("Resource_i15gx")
-compare_to = "None"
-second_constant = 0
-operate_w_constant = "None"
 metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
 [sub_resource type="Resource" id="Resource_2ml0b"]
@@ -62,13 +56,9 @@ metadata/_custom_type_script = "uid://b85jmc7067bjc"
 
 [sub_resource type="Resource" id="Resource_2es3s"]
 script = ExtResource("10_eowwr")
-category = "Body"
 name = " Levitate"
 description = "If Vibrava has any basic Energy cards attached to it, Vibrava's Retreat Cost is 0."
 affected_by_condition = false
-active = false
-how_often = "Once per Mon"
-independent_src_trg = false
 prompt = SubResource("Resource_2ml0b")
 passive = SubResource("Resource_3khkk")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
@@ -76,16 +66,11 @@ metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 [sub_resource type="Resource" id="Resource_sarjd"]
 script = ExtResource("2_gam1e")
 HP = 80
-retreat = 1
 pokebody = SubResource("Resource_2es3s")
 attacks = Array[ExtResource("1_t3igr")]([SubResource("Resource_8ejmh")])
 evo_stage = "Stage 1"
 evolves_from = "Trapinch"
-considered = 1
-owner = 0
 type = 256
-weak = 0
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -98,5 +83,4 @@ rarity = 1
 expansion = 2
 categories = 1
 pokemon_properties = SubResource("Resource_sarjd")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

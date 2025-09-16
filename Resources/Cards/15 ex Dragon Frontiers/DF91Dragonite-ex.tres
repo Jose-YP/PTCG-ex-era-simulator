@@ -15,20 +15,7 @@
 [sub_resource type="Resource" id="Resource_gr24l"]
 script = ExtResource("5_poekm")
 description = "Your opponent can't play any Trainer cards (except for Supporter cards) from his or her hand during your opponent's next turn."
-prompt_reliant = false
 initial_main_DMG = 40
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("5_5nx5n")]([])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_x71s5"]
@@ -40,24 +27,15 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_ih2pj"]
 script = ExtResource("9_btqi0")
-choosing = 4
 mode = "Add"
 ask = ExtResource("8_w7mtu")
 how_many = 8
-choose_num = 1
-turn_delay = -1
-prevent_KO = false
-anyway_u_like = false
 with_leftover = "Add"
 leftover_anyway = true
-vary_choose_num = false
-plus = true
-modifier = 1
 metadata/_custom_type_script = "uid://scca13hg4k1l"
 
 [sub_resource type="Resource" id="Resource_6v3oj"]
 script = ExtResource("4_gci62")
-order = Array[int]([])
 dmgManip = SubResource("Resource_ih2pj")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
@@ -69,26 +47,12 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 [sub_resource type="Resource" id="Resource_47mjb"]
 script = ExtResource("5_poekm")
 description = "Put 8 damage counters on the Defending Pokémon. If that Pokémon would be Knocked Out by this attack, put any damage counters not necessary to Knock Out the Defending Pokémon on your opponent's Benched Pokémon in any way you like."
-prompt_reliant = false
-initial_main_DMG = 0
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
 prompt_effects = Array[ExtResource("5_5nx5n")]([SubResource("Resource_dlj2o")])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_kuskb"]
 script = ExtResource("2_n2hqj")
 name = "Dragon Roar"
-attack_cost = ExtResource("6_1bi78")
 attack_data = SubResource("Resource_47mjb")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
@@ -100,10 +64,6 @@ attacks = Array[ExtResource("2_n2hqj")]([SubResource("Resource_x71s5"), SubResou
 evo_stage = "Stage 2"
 evolves_from = "Dragonair"
 considered = 10
-owner = 0
-type = 1
-weak = 0
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -116,5 +76,4 @@ rarity = 4
 expansion = 14
 categories = 1
 pokemon_properties = SubResource("Resource_8342s")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

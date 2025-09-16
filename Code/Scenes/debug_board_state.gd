@@ -22,8 +22,8 @@ func _ready() -> void:
 	board_state.duplicate_sides()
 	set_up_stacks(true)
 	set_up_stacks(false)
-	new_setup_slots(true)
-	new_setup_slots(false)
+	set_up_slots(true)
+	set_up_slots(false)
 	
 	fundies.current_turn_print()
 
@@ -31,7 +31,7 @@ func set_up_stacks(home: bool):
 	var temp_side: SideState = board_state.get_side(home)
 	var ui: CardSideUI = full_ui.get_home_side(home)
 	var player_type: Consts.PLAYER_TYPES = board_state.get_player_type(home)
-	var stacks: CardStacks = temp_side.card_stacks.duplicate_deep()
+	var stacks: CardStacks = temp_side.card_stacks
 	
 	Globals.board_state = board_state
 	
@@ -53,46 +53,11 @@ func set_up_slots(home: bool):
 	
 	#Set up pre defined slots
 	for slot in temp_side.slots:
-		var new_arr: Array[Base_Card] = []
-		var new_slot: PokeSlot = slot.duplicate()
 		
 		#I don't know if this works, the duplicated resources don't seem to last
-		for en in new_slot.energy_cards:
-			var duplicated: Base_Card = en.duplicate_deep()
-			new_slot.register_energy_timer(duplicated)
-			new_arr.append(duplicated)
-			
-		new_slot.energy_cards = new_arr
-		new_slot.current_card = new_slot.current_card.duplicate_deep()
-		ui.insert_slot(new_slot, temp_side.slots[slot])
-		stacks.account_for_slot(new_slot)
-	
-	stacks.setup()
-	full_ui.update_stacks(stacks.sendStackDictionary(),player_type)
-
-#Haven't made
-#Refactored version that uses deep_duplicated resources that hopefully solve set_up's old issues
-func new_setup_slots(home: bool):
-	var temp_side: SideState = board_state.get_side(home)
-	var ui: CardSideUI = full_ui.get_home_side(home)
-	var player_type: Consts.PLAYER_TYPES = board_state.get_player_type(home)
-	var stacks: CardStacks = fundies.stack_manager.get_stacks(home)
-	
-	Globals.board_state = board_state
-	
-	ui.player_type = player_type
-	if player_type == Consts.PLAYER_TYPES.CPU:
-		var adding_cpu = Consts.cpu_scene.instantiate()
-		adding_cpu.home_side = home
-		fundies.cpu_players.append(adding_cpu)
-		fundies.add_child(adding_cpu)
-	
-	fundies.stack_manager.assign_card_stacks(stacks, home)
-	stacks.make_deck()
-	
-	#Set up pre defined slots
-	for slot in temp_side.slots:
-		print(slot)
+		for en in slot.energy_cards:
+			slot.register_energy_timer(en)
+		
 		ui.insert_slot(slot, temp_side.slots[slot])
 		stacks.account_for_slot(slot)
 	

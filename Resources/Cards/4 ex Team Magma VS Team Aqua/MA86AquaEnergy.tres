@@ -9,13 +9,8 @@
 
 [sub_resource type="Resource" id="Resource_glvqs"]
 script = ExtResource("2_cgfc1")
-considered = "Special Energy"
 description = "Aqua Energy can be attached only to a Pokémon with Team Aqua in its name. Aqua Energy provides {Water} and {Darkness} Energy but provides 2 Energy at a time. (Doesn't count as a basic Energy card when not in play and has no effect other than providing Energy.) At the end of your turn, discard Aqua Energy."
 asks = ExtResource("1_sgv4c")
-has_fail_provide = false
-has_fail_prevent = false
-attatch_effects = Array[ExtResource("2_dcguf")]([])
-prompt_effects = Array[ExtResource("2_dcguf")]([])
 turns = 0
 fail_provide = ExtResource("2_k37ex")
 success_provide = ExtResource("2_k37ex")
@@ -30,4 +25,3 @@ rarity = 2
 expansion = 3
 categories = 4
 energy_properties = SubResource("Resource_glvqs")
-fossil = false

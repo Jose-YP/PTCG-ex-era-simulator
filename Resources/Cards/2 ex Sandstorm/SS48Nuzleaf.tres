@@ -24,39 +24,21 @@ description = "Flip a coin. If tails, this attack does nothing."
 prompt_reliant = true
 prompt = ExtResource("6_e8aes")
 initial_main_DMG = 60
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("7_1idpk")]([])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_ykwxl"]
 script = ExtResource("2_1idpk")
 name = "Razor Wind"
-attack_cost = ExtResource("5_ttlxj")
 attack_data = SubResource("Resource_62iih")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_yqucm"]
 script = ExtResource("8_a6dg5")
 HP = 80
-retreat = 1
 attacks = Array[ExtResource("2_1idpk")]([SubResource("Resource_kwnpf"), SubResource("Resource_ykwxl")])
 evo_stage = "Stage 1"
 evolves_from = "Seedot"
-considered = 1
-owner = 0
-type = 1
 weak = 2
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -69,5 +51,4 @@ rarity = 1
 expansion = 1
 categories = 1
 pokemon_properties = SubResource("Resource_yqucm")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

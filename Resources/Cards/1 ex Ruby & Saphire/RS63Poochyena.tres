@@ -10,19 +10,13 @@
 [sub_resource type="Resource" id="Resource_wmo8r"]
 script = ExtResource("2_mq2dl")
 name = "Bite"
-attack_cost = ExtResource("3_wmo8r")
 attack_data = ExtResource("4_wmo8r")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_bwlnc"]
 script = ExtResource("3_qauc4")
 HP = 40
-retreat = 1
 attacks = Array[ExtResource("2_mq2dl")]([SubResource("Resource_wmo8r")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
 type = 64
 weak = 32
 resist = 16
@@ -33,8 +27,5 @@ name = "Poochyena"
 image = ExtResource("1_iihip")
 illustrator = "Ken Sugimori"
 number = 63
-rarity = 0
-expansion = 0
 categories = 1
 pokemon_properties = SubResource("Resource_bwlnc")
-fossil = false

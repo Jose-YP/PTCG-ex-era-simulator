@@ -12,7 +12,6 @@ considered = "Supporter"
 specific_requirement = "Discard a card from your hand. If you can't discard a card from your hand, you can't play this card."
 description = "If you have less cards in your hand than your opponent, draw cards until you have the same number of cards as your opponent. "
 prompt = ExtResource("3_70ubg")
-prompt_effects = Array[ExtResource("4_umy0c")]([])
 metadata/_custom_type_script = "uid://crx447i85kshy"
 
 [resource]
@@ -25,4 +24,3 @@ rarity = 1
 expansion = 10
 categories = 2
 trainer_properties = SubResource("Resource_y3j7i")
-fossil = false

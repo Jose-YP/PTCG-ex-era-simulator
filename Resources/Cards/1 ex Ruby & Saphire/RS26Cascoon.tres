@@ -23,11 +23,7 @@ pokebody = ExtResource("8_eaot2")
 attacks = Array[ExtResource("2_gptfo")]([SubResource("Resource_k6wpo")])
 evo_stage = "Stage 1"
 evolves_from = "Wurmple"
-considered = 1
-owner = 0
-type = 1
 weak = 2
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -37,8 +33,6 @@ image = ExtResource("1_q58k4")
 illustrator = "Midori Harada"
 number = 26
 rarity = 1
-expansion = 0
 categories = 1
 pokemon_properties = SubResource("Resource_bmtkk")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

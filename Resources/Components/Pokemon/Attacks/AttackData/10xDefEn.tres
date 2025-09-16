@@ -1,7 +1,6 @@
-[gd_resource type="Resource" script_class="AttackData" load_steps=9 format=3 uid="uid://cksovhm8ku7su"]
+[gd_resource type="Resource" script_class="AttackData" load_steps=8 format=3 uid="uid://cksovhm8ku7su"]
 
-[ext_resource type="Resource" uid="uid://bkt6ry7vyha70" path="res://Resources/Components/Effects/Asks/General/Other.tres" id="1_7pgqx"]
-[ext_resource type="Resource" uid="uid://cv8xofc4ofaom" path="res://Resources/Components/EnData/NeoRainbow.tres" id="2_6003p"]
+[ext_resource type="Resource" uid="uid://bns8h72u2hxqo" path="res://Resources/Components/Effects/Asks/General/AnyMon.tres" id="1_7pgqx"]
 [ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="3_03efw"]
 [ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="4_l6ii2"]
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="5_6003p"]
@@ -11,37 +10,20 @@
 script = ExtResource("3_03efw")
 which = "Slot"
 ask = ExtResource("1_7pgqx")
-slot_vars = "energy_cards"
-en_count_methods = "Total"
-en_counting = ExtResource("2_6003p")
+slot_vars = "current_card"
 cap = -1
 metadata/_custom_type_script = "uid://vjn146j3ayd6"
 
 [sub_resource type="Resource" id="Resource_h0ye5"]
 script = ExtResource("4_l6ii2")
-comparision_type = "Return"
 first_comparison = SubResource("Resource_68ned")
-compare_to = "None"
-second_constant = 0
-operate_w_constant = "None"
 metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
 [resource]
 script = ExtResource("5_o6ks3")
 description = "Does 10 damage times the amount of Energy attached to the Defending Pokémon."
-prompt_reliant = false
 initial_main_DMG = 10
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("5_6003p")]([])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
 modifier = 2
 modifier_num = 10
 comparator = SubResource("Resource_h0ye5")
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"

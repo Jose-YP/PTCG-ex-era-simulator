@@ -12,23 +12,12 @@
 
 [sub_resource type="Resource" id="Resource_4accq"]
 script = ExtResource("1_w8o02")
-choosing = 4
-mode = "Remove"
 ask = ExtResource("1_qxfu1")
-how_many = 1
 choose_num = -1
-turn_delay = -1
-prevent_KO = false
-anyway_u_like = false
-with_leftover = "None"
-leftover_anyway = false
-vary_choose_num = false
 plus = false
-modifier = 1
 
 [sub_resource type="Resource" id="Resource_mysds"]
 script = ExtResource("2_sn5e8")
-order = Array[int]([])
 dmgManip = SubResource("Resource_4accq")
 
 [sub_resource type="Resource" id="Resource_fxxim"]
@@ -38,13 +27,8 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [sub_resource type="Resource" id="Resource_10nfj"]
 script = ExtResource("1_s231q")
-considered = "Special Energy"
 description = " Attach Rainbow Energy to 1 of your Pokémon. While in play, Rainbow Energy provides every type of Energy but provides only 1 Energy at a time. (Doesn't count as a basic Energy card when not in play.) When you attach this card from your hand to 1 of your Pokémon, put 1 damage counter on that Pokémon."
-has_fail_provide = false
-has_fail_prevent = false
 attatch_effects = Array[ExtResource("1_jhkvo")]([SubResource("Resource_fxxim")])
-prompt_effects = Array[ExtResource("1_jhkvo")]([])
-turns = -1
 fail_provide = ExtResource("3_mfk52")
 success_provide = ExtResource("6_qxfu1")
 
@@ -55,7 +39,5 @@ image = ExtResource("2_4kkrd")
 illustrator = "Takumi Akabane"
 number = 95
 rarity = 2
-expansion = 0
 categories = 4
 energy_properties = SubResource("Resource_10nfj")
-fossil = false

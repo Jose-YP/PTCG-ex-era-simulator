@@ -11,29 +11,20 @@
 [sub_resource type="Resource" id="Resource_ww3tl"]
 script = ExtResource("2_nqp6a")
 name = "Bind"
-attack_cost = ExtResource("3_hpnrm")
 attack_data = ExtResource("4_wy6vv")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_efl1l"]
 script = ExtResource("2_nqp6a")
 name = "Rock Smash"
-attack_cost = ExtResource("3_hpnrm")
 attack_data = ExtResource("5_20nmp")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_jf76x"]
 script = ExtResource("6_fk0n1")
-HP = 50
-retreat = 1
 attacks = Array[ExtResource("2_nqp6a")]([SubResource("Resource_ww3tl"), SubResource("Resource_efl1l")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
 type = 32
 weak = 1
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -42,9 +33,7 @@ name = "Trapinch"
 image = ExtResource("1_uj2gh")
 illustrator = "Ken Sugimori"
 number = 79
-rarity = 0
 expansion = 2
 categories = 1
 pokemon_properties = SubResource("Resource_jf76x")
-fossil = false
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

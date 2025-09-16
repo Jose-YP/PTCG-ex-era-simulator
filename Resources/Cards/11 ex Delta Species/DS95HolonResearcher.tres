@@ -12,7 +12,6 @@ considered = "Supporter"
 specific_requirement = "Discard a card from your hand. If you can't discard a card from your hand, you can't play this card."
 description = "Search your deck for a {Metal} Energy card or a Basic Pokémon (or Evolution card) that has δ on its card, show it to your opponent, and put it into your hand. Shuffle your deck afterward. "
 prompt = ExtResource("3_rnqeh")
-prompt_effects = Array[ExtResource("4_3d5pd")]([])
 metadata/_custom_type_script = "uid://crx447i85kshy"
 
 [resource]
@@ -25,4 +24,3 @@ rarity = 1
 expansion = 10
 categories = 2
 trainer_properties = SubResource("Resource_vbxo0")
-fossil = false

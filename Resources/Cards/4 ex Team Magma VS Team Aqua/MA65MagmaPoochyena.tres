@@ -15,34 +15,17 @@ description = "Flip a coin. If heads, this attack does 10 damage to the Defendin
 prompt_reliant = true
 prompt = ExtResource("5_yacn8")
 initial_main_DMG = 10
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("6_8p6eq")]([])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"
 
 [sub_resource type="Resource" id="Resource_1qf44"]
 script = ExtResource("2_j8bvu")
 name = "Snarl"
-attack_cost = ExtResource("3_j8bvu")
 attack_data = SubResource("Resource_ahgdl")
 
 [sub_resource type="Resource" id="Resource_vy1eo"]
 script = ExtResource("5_iwy5m")
 HP = 40
-retreat = 1
 attacks = Array[ExtResource("2_j8bvu")]([SubResource("Resource_1qf44")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
 owner = 2
 type = 64
 weak = 32
@@ -54,8 +37,6 @@ name = "Team Magma's Poochyena"
 image = ExtResource("1_g4aa4")
 illustrator = "Shin-ichi Yoshikawa"
 number = 65
-rarity = 0
 expansion = 3
 categories = 1
 pokemon_properties = SubResource("Resource_vy1eo")
-fossil = false

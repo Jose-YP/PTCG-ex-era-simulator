@@ -12,7 +12,6 @@ considered = "Supporter"
 specific_requirement = "Discard a card from your hand. If you can't discard a card from your hand, you can't play this card. "
 description = "Count the total number of Prize cards left (both yours and your opponent's). Look at that many cards from the top of your deck, choose as many Energy cards as you like, show them to your opponent, and put them into your hand. Put the other cards back on top of your deck. Shuffle your deck afterward. "
 prompt = ExtResource("11_ugs01")
-prompt_effects = Array[ExtResource("13_25apb")]([])
 metadata/_custom_type_script = "uid://crx447i85kshy"
 
 [resource]
@@ -25,4 +24,3 @@ rarity = 1
 expansion = 10
 categories = 2
 trainer_properties = SubResource("Resource_e4w54")
-fossil = false

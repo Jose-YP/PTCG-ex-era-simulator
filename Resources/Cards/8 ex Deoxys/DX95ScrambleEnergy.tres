@@ -10,14 +10,9 @@
 
 [sub_resource type="Resource" id="Resource_01org"]
 script = ExtResource("2_171kh")
-considered = "Special Energy"
 description = "Scramble Energy can be attached only to an Evolved Pokémon (excluding Pokémon-ex). Scramble Energy provides {Colorless} Energy. While in play, if you have more Prize cards left than your opponent, Scramble Energy provides every type of Energy but provides only 3 in any combination at a time. If the Pokémon Scramble Energy is attached to isn't an Evolved Pokémon (or evolves into Pokémon-ex), discard Scramble Energy."
 asks = ExtResource("1_0mllo")
 has_fail_provide = true
-has_fail_prevent = false
-attatch_effects = Array[ExtResource("2_031x8")]([])
-prompt_effects = Array[ExtResource("2_031x8")]([])
-turns = -1
 fail_provide = ExtResource("2_uvk6q")
 success_provide = ExtResource("4_031x8")
 metadata/_custom_type_script = "uid://caj1pm8erar2a"
@@ -32,4 +27,3 @@ rarity = 1
 expansion = 7
 categories = 4
 energy_properties = SubResource("Resource_01org")
-fossil = false

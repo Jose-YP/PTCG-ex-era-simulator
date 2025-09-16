@@ -15,14 +15,6 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [resource]
 script = ExtResource("5_qcrdk")
-HP = 50
-retreat = 1
 attacks = Array[ExtResource("1_c7qal")]([ExtResource("2_romvu"), SubResource("Resource_hmkxe")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
-owner = 0
 type = 4
-weak = 0
-resist = 0
 metadata/_custom_type_script = "uid://dkximshow1pao"

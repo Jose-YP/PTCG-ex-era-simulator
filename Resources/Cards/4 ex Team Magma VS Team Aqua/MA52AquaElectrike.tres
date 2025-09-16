@@ -16,12 +16,7 @@ attack_data = ExtResource("5_hwm7y")
 
 [sub_resource type="Resource" id="Resource_hchw7"]
 script = ExtResource("5_6r61j")
-HP = 50
-retreat = 1
 attacks = Array[ExtResource("2_p4xuc")]([ExtResource("3_fewex"), SubResource("Resource_fubfp")])
-evo_stage = "Basic"
-evolves_from = ""
-considered = 1
 owner = 1
 type = 8
 weak = 32
@@ -33,8 +28,6 @@ name = "Team Aqua's Electrike"
 image = ExtResource("1_eo51e")
 illustrator = "M. Akiyama"
 number = 57
-rarity = 0
 expansion = 3
 categories = 1
 pokemon_properties = SubResource("Resource_hchw7")
-fossil = false
