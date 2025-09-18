@@ -6,13 +6,4 @@
 
 [resource]
 script = ExtResource("1_dx43y")
-action = 0
-chooser = 4
 givers = ExtResource("2_vquxd")
-to_stack = 2
-stack_direction = 2
-energy_carry_over = false
-action_ammount = 1
-energy_ammount = 1
-energy_move_type = 0
-en_type = ExtResource("1_4yj4u")

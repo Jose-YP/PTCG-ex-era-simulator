@@ -149,6 +149,8 @@ enum MON_DISABL{
 	ATTACK,
 	ATK_EFCT
 }
+enum DIS_ATK {CAN, CANT, FLIP}
+
 #endregion
 #--------------------------------------
 

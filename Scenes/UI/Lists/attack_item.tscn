@@ -14,7 +14,6 @@ size_flags_horizontal = 3
 mouse_filter = 2
 script = ExtResource("1_cuu5a")
 attack = ExtResource("2_h1533")
-card_name = null
 
 [node name="AttackButton" type="Button" parent="."]
 layout_mode = 2
@@ -128,11 +127,11 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 2
 mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 12
+theme_override_font_sizes/bold_font_size = 12
 theme_override_font_sizes/bold_italics_font_size = 12
 theme_override_font_sizes/italics_font_size = 12
 theme_override_font_sizes/mono_font_size = 12
-theme_override_font_sizes/normal_font_size = 12
-theme_override_font_sizes/bold_font_size = 12
 text = "HUGE EFFECT TEX LIKE SUPER HUGE, JUST SAY EVERYTHING YOU EVER WANTED TO SAY, YOUR WILL YOUR DECLARATION. MAYBE THROW IN THAT 10 HOUR VIDEO ESSAY YOU LIKED SO MUCH. MAYBE NOT... SORRY"
 fit_content = true
 

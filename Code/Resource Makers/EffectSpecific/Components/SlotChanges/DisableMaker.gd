@@ -15,13 +15,11 @@ class_name Disable
 ##[enum]Can[/enum] - Change nothing on the target's attacking ability
 ##[br][enum]Flip[/enum] - Target must now win a coinflip to attack
 ##[br][enum]Cant[/enum] - Target cannot attack
-@export var attack: DIS_STATUS = DIS_STATUS.CAN
+@export var attack: Consts.DIS_ATK = Consts.DIS_ATK.CAN
 ##If this is disabled it should be false
 @export var atk_effect: bool = true
 ##If this is filled with anything the disable will only work on specified attacks
 @export var attack_names: Array[String]
-
-enum DIS_STATUS {CAN, CANT, FLIP}
 
 func choose_atk_disable() -> void:
 	pass
@@ -35,11 +33,20 @@ func check_bool(which: Consts.MON_DISABL) -> bool:
 		Consts.MON_DISABL.RETREAT:
 			return disable_retreat
 		Consts.MON_DISABL.ATTACK:
-			return attack == DIS_STATUS.CANT
+			return attack == Consts.DIS_ATK.CANT
 		Consts.MON_DISABL.ATK_EFCT:
 			return atk_effect
 	
 	return false
+
+func check_attack(which: Consts.DIS_ATK, atk_name: String) -> bool:
+	if attack == Consts.DIS_ATK.CAN: return which == attack
+	
+	if attack_names.size() != 0:
+		if atk_name in attack_names:
+			return which == attack
+		return false
+	return which == attack
 
 func how_display() -> Dictionary[String, bool]:
 	return {"Disable" : false}

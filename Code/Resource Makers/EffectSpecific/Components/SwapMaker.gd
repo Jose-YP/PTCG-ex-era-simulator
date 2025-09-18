@@ -87,13 +87,14 @@ func switch(aff: Consts.SIDES, reversable: bool, pre_active: PokeSlot = null):
 	#Swap the data between eachother
 	var temp_slot: UI_Slot = active_swap.ui_slot
 	active_swap.alleviate_all()
+	active_swap.switch_clear()
 	active_swap.slot_into(bench_swap.ui_slot)
 	active_swap.refresh_swap()
 	bench_swap.slot_into(temp_slot)
 	bench_swap.refresh_swap()
 	
 	active_swap.swap.emit(active_swap.get_slot_pos())
-	bench_swap.swap.emit(active_swap.get_slot_pos())
+	bench_swap.swap.emit(bench_swap.get_slot_pos())
 	
 	Globals.fundies.check_all_passives()
 	

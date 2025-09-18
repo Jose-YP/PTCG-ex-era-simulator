@@ -47,10 +47,11 @@ func set_attack():
 				%Damage.append_text(str("-",attack.attack_data.initial_main_DMG))
 
 func check_usability():
-	var result: bool = attack.condition_allows(slot.applied_condition.turn_cond)\
-	and slot.is_attacker() and attack.can_pay(slot)
+	var result: bool = attack.condition_prevents(slot.applied_condition.turn_cond)\
+	or not slot.is_attacker() or not attack.can_pay(slot) or \
+	slot.check_attack_disable(Consts.DIS_ATK.CANT, attack.name)
 	
-	attackButton.disabled = false if result else true
+	attackButton.disabled = result
 
 func make_usable(value: bool):
 	attackButton.disabled = not value

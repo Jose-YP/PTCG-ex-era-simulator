@@ -5,5 +5,4 @@
 
 [resource]
 script = ExtResource("2_fdrur")
-order = Array[int]([])
 disable = ExtResource("1_b6leg")

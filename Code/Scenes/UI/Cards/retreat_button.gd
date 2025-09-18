@@ -21,11 +21,12 @@ func set_retreat(new_slot: PokeSlot):
 func allow_retreat():
 	Globals.fundies.record_single_src_trg(slot)
 	
-	var result: bool = not slot.is_attacker() and not slot.is_active() and \
-	(slot.get_total_energy() < retreat or 
-	slot.has_condition([Consts.TURN_COND.PARALYSIS, Consts.TURN_COND.ASLEEP]))
+	var result: bool = not slot.is_attacker() or not slot.is_active() or \
+	slot.get_total_energy() < retreat or \
+	slot.has_condition([Consts.TURN_COND.PARALYSIS, Consts.TURN_COND.ASLEEP])\
+	or slot.check_bool_disable(Consts.MON_DISABL.RETREAT)
 	
-	button.disabled = result or slot.check_bool_disable(Consts.MON_DISABL.RETREAT)
+	button.disabled = result 
 	Globals.fundies.remove_top_source_target()
 
 func _on_button_pressed() -> void:

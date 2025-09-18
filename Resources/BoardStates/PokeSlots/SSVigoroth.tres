@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="PokeSlot" load_steps=6 format=3 uid="uid://dx6xnvfqlfxpl"]
+
+[ext_resource type="Resource" uid="uid://bj4pfyxayrcpy" path="res://Resources/Cards/2 ex Sandstorm/SS52Vigoroth.tres" id="1_r1g03"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_j8qlp"]
+[ext_resource type="Resource" uid="uid://d3wqsrtlqtlqm" path="res://Resources/Cards/1 ex Ruby & Saphire/RS106WaterEnergy.tres" id="3_bvk06"]
+[ext_resource type="Resource" uid="uid://dxgh8i8vloevn" path="res://Resources/Cards/4 ex Team Magma VS Team Aqua/MA88DoubleRainbowEnergy.tres" id="4_yj3xb"]
+[ext_resource type="Script" uid="uid://cs70ix831b5g4" path="res://Code/Resource Makers/PokemonSpecific/PokeSlotMaker.gd" id="5_m7ncf"]
+
+[resource]
+script = ExtResource("5_m7ncf")
+current_card = ExtResource("1_r1g03")
+energy_cards = Array[ExtResource("2_j8qlp")]([ExtResource("3_bvk06"), ExtResource("4_yj3xb")])
+metadata/_custom_type_script = "uid://cs70ix831b5g4"

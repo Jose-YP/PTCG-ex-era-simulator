@@ -927,8 +927,12 @@ func get_changes(change: String) -> Dictionary:
 	return all_changes[change]
 
 func get_every_change(change: String) -> Dictionary:
-	var dict: Dictionary = all_changes[change]
+	#To prevent all changes from retaining merge changes duplicate it
+	var dict: Dictionary = all_changes[change].duplicate()
 	dict.merge(Globals.fundies.get_side_change(change, is_home()))
+	
+	if dict.size() != all_changes[change].size():
+		pass
 	
 	return dict
 
@@ -939,8 +943,6 @@ func apply_slot_change(apply: SlotChange):
 		if not apply in dict:
 			dict[apply] = apply.duration
 			changes_ui_check()
-			if apply is Disable:
-				pass
 			check_passive()
 
 func remove_slot_change(removing: SlotChange):
@@ -964,19 +966,34 @@ func changes_ui_check():
 	set_max_hp()
 	ui_slot.max_hp.append_text(str("HP: ",get_max_hp()))
 
-func check_bool_disable(type: Consts.MON_DISABL) -> bool:
+func check_bool_disable(which: Consts.MON_DISABL) -> bool:
 	var dict = get_every_change("Disable")
 	
 	for dis in dict:
 		if not dis is Disable: continue
 		dis = dis as Disable
 		
-		if dis.check_bool(type) and dis.recieves.check_ask(self, false):
+		if dis.check_bool(which) and dis.recieves.check_ask(self, false):
 			return true
 	
 	return false
 
+func check_attack_disable(which: Consts.DIS_ATK, atk_name: String):
+	for dis in get_every_change("Disable"):
+		if not dis is Disable: continue
+		dis = dis as Disable
+		
+		if dis.check_attack(which, atk_name):
+			return true
+	return false
+
+func switch_clear():
+	for dict in all_changes.values():
+		for change in dict:
+			remove_slot_change(change)
+
 func manage_change_timers():
+	printt(all_changes, get_card_name())
 	for dict in all_changes.values():
 		for change in dict:
 			if dict[change] == -1:
@@ -1007,6 +1024,7 @@ func refresh_current_card():
 	ui_slot.name_section.clear()
 	ui_slot.max_hp.clear()
 	set_max_hp()
+	ui_slot.damage_counter.set_damage(damage_counters)
 	
 	ui_slot.display_image(current_card)
 	ui_slot.name_section.append_text(current_card.name)
@@ -1025,6 +1043,7 @@ func refresh() -> void:
 	ui_slot.connected_slot = self
 	
 	if current_card: 
+		ui_slot.damage_counter.set_damage(damage_counters)
 		#check for any attatched cards/conditions
 		count_energy()
 		ui_slot.display_energy(get_energy_strings(), attached_energy)

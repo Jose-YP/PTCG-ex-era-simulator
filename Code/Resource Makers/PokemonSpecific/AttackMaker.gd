@@ -51,12 +51,13 @@ func get_energy_cost(slot: PokeSlot) -> Array[String]:
 
 func get_modified_cost(slot: PokeSlot) -> Array[int]:
 	var side_changes = Globals.fundies.get_side_change("Buff", slot.is_home()).keys()
+	var slot_changes = slot.get_changes("Buff")
 	
-	if not slot or (slot.get_changes("Buff").size() == 0 and side_changes.size() == 0):
+	if not slot or (slot_changes.size() == 0 and side_changes.size() == 0):
 		return attack_cost.get_energy_cost_int()
 	
 	#First find any replacements
-	var replace: Array[int] = get_cost_buffs(slot.get_changes("Buff").keys(), true)
+	var replace: Array[int] = get_cost_buffs(slot_changes.keys(), true)
 	var side_replace: Array[int] = get_cost_buffs(side_changes, true)
 	print(replace, side_replace)
 	print(replace.any(func(a: int): return a != 0), side_replace.any(func(a: int): return a != 0))
@@ -70,7 +71,7 @@ func get_modified_cost(slot: PokeSlot) -> Array[int]:
 	var final: Array[int] = attack_cost.get_energy_cost_int()
 	var side_buffs = get_cost_buffs(side_changes, false)
 	#Then evaluate any additions and subtractions
-	final = cost_arithmetic(final, get_cost_buffs(slot.changes.keys(), false), true)
+	final = cost_arithmetic(final, get_cost_buffs(slot_changes.keys(), false), true)
 	final = cost_arithmetic(final, side_buffs, true)
 	for i in range(final.size()):
 		final[i] = clamp(final[i], 0, 99)
@@ -210,18 +211,18 @@ func needs_target() -> bool:
 	or attack_data.modifier_num != 0 or attack_data.self_damage != 0
 
 #Check if you're allowed to attack while having this condition
-func condition_allows(turn_cond: Consts.TURN_COND) -> bool:
+func condition_prevents(turn_cond: Consts.TURN_COND) -> bool:
 	match turn_cond:
 		Consts.TURN_COND.PARALYSIS:
 			print(attack_data.condition && 2, attack_data.condition & 2)
-			return attack_data.condition & 2 != 0
+			return attack_data.condition & 2 == 0
 		Consts.TURN_COND.ASLEEP:
-			return attack_data.condition & 4 != 0
+			return attack_data.condition & 4 == 0
 		_:
 		#For now confusion doesn't block anything,
 		#just check if they can attack without condition
 			print(attack_data.condition && 1, attack_data.condition & 1, attack_data.condition)
-			return attack_data.condition & 1 != 0
+			return attack_data.condition & 1 == 0
 
 func has_effect(effect_type: Array[String]) -> bool:
 	if attack_data.prompt and attack_data.prompt.effect:

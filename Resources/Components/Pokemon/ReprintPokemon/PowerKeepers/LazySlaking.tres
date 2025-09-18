@@ -1,15 +1,26 @@
-[gd_resource type="Resource" script_class="Pokemon" load_steps=17 format=3 uid="uid://bl85rsmhryvoq"]
+[gd_resource type="Resource" script_class="Pokemon" load_steps=20 format=3 uid="uid://bl85rsmhryvoq"]
 
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_0s20w"]
 [ext_resource type="Resource" uid="uid://dm6f2nxeh8yqx" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless4.tres" id="2_jvpd5"]
-[ext_resource type="Resource" uid="uid://chc757fk4t8pm" path="res://Resources/Components/Effects/Prompts/Discard1EnTo.tres" id="3_ua8w3"]
+[ext_resource type="Resource" uid="uid://ctxwoioa8hgif" path="res://Resources/Components/Effects/EnergyMovement/AtkSelfDisBasic.tres" id="3_jvpd5"]
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="4_0uuqm"]
 [ext_resource type="Resource" uid="uid://841s025nf4li" path="res://Resources/Components/Effects/Disable/SelfCantAtk1Turn.tres" id="5_0s20w"]
+[ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="5_ua8w3"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="6_wsw8u"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="7_0j1c1"]
 [ext_resource type="Resource" uid="uid://b4eq6v7x2qaxd" path="res://Resources/Components/Effects/Disable/DefNoPowers.tres" id="8_a1v05"]
 [ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="9_0nrm0"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="10_40p6u"]
+
+[sub_resource type="Resource" id="Resource_gm1a6"]
+script = ExtResource("6_wsw8u")
+energy_movement = ExtResource("3_jvpd5")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_0uuqm"]
+script = ExtResource("5_ua8w3")
+effect = SubResource("Resource_gm1a6")
+metadata/_custom_type_script = "uid://b85jmc7067bjc"
 
 [sub_resource type="Resource" id="Resource_6gfio"]
 script = ExtResource("6_wsw8u")
@@ -25,7 +36,7 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 script = ExtResource("7_0j1c1")
 description = "Discard a basic Energy card attached to [name] or this attack does nothing. [name] can't attack during your next turn."
 prompt_reliant = true
-prompt = ExtResource("3_ua8w3")
+prompt = SubResource("Resource_0uuqm")
 initial_main_DMG = 100
 prompt_effects = Array[ExtResource("4_0uuqm")]([SubResource("Resource_i8crq")])
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"

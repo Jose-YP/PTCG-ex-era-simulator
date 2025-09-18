@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SideState" load_steps=32 format=3 uid="uid://dtbyknsdcmhmo"]
+[gd_resource type="Resource" script_class="SideState" load_steps=31 format=3 uid="uid://dtbyknsdcmhmo"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_8l0do"]
 [ext_resource type="Resource" uid="uid://brnwwea1eu45w" path="res://Resources/Cards/3 ex Dragon/DR3Crawdaunt.tres" id="2_l1tbo"]
@@ -23,6 +23,7 @@
 [ext_resource type="Script" uid="uid://calm3n7va5yjo" path="res://Code/Resource Makers/GeneralUse/CardStacksMaker.gd" id="21_ivm5x"]
 [ext_resource type="Script" uid="uid://dgqpurnuh14t1" path="res://Code/Resource Makers/GeneralUse/SideStateMaker.gd" id="22_y6j1i"]
 [ext_resource type="Script" uid="uid://cs70ix831b5g4" path="res://Code/Resource Makers/PokemonSpecific/PokeSlotMaker.gd" id="23_w112c"]
+[ext_resource type="Resource" uid="uid://cictibiuaw7r6" path="res://Resources/BoardStates/PokeSlots/LazySlaking.tres" id="24_8l0do"]
 
 [sub_resource type="Resource" id="Resource_eyw3d"]
 script = ExtResource("20_0bgqj")
@@ -51,7 +52,7 @@ metadata/_custom_type_script = "uid://e660iomt5e76"
 [sub_resource type="Resource" id="Resource_7d1mi"]
 script = ExtResource("21_ivm5x")
 deck = SubResource("Resource_eyw3d")
-init_hand = Array[ExtResource("1_8l0do")]([ExtResource("2_l1tbo"), ExtResource("19_dqths"), ExtResource("18_60wvu")])
+init_hand = Array[ExtResource("1_8l0do")]([ExtResource("2_l1tbo"), ExtResource("19_dqths"), ExtResource("18_60wvu"), ExtResource("8_mobrs")])
 metadata/_custom_type_script = "uid://calm3n7va5yjo"
 
 [sub_resource type="Resource" id="Resource_s6wwd"]
@@ -80,19 +81,6 @@ evolved_from = Array[ExtResource("1_8l0do")]([ExtResource("7_47nsw")])
 energy_cards = Array[ExtResource("1_8l0do")]([ExtResource("8_mobrs"), ExtResource("8_mobrs"), ExtResource("8_mobrs")])
 metadata/_custom_type_script = "uid://cs70ix831b5g4"
 
-[sub_resource type="Resource" id="Resource_dhwmr"]
-script = ExtResource("23_w112c")
-current_card = ExtResource("17_c8x4j")
-energy_cards = Array[ExtResource("1_8l0do")]([ExtResource("8_mobrs"), ExtResource("12_ffvgx")])
-metadata/_custom_type_script = "uid://cs70ix831b5g4"
-
-[sub_resource type="Resource" id="Resource_rsdex"]
-script = ExtResource("23_w112c")
-current_card = ExtResource("18_60wvu")
-evolved_from = Array[ExtResource("1_8l0do")]([ExtResource("16_uklk7"), ExtResource("17_c8x4j")])
-energy_cards = Array[ExtResource("1_8l0do")]([ExtResource("8_mobrs"), ExtResource("12_ffvgx")])
-metadata/_custom_type_script = "uid://cs70ix831b5g4"
-
 [resource]
 script = ExtResource("22_y6j1i")
 card_stacks = SubResource("Resource_7d1mi")
@@ -101,7 +89,6 @@ SubResource("Resource_s6wwd"): true,
 SubResource("Resource_a8od0"): false,
 SubResource("Resource_qadmj"): false,
 SubResource("Resource_olmqo"): false,
-SubResource("Resource_dhwmr"): false,
-SubResource("Resource_rsdex"): true
+ExtResource("24_8l0do"): true
 })
 metadata/_custom_type_script = "uid://dgqpurnuh14t1"

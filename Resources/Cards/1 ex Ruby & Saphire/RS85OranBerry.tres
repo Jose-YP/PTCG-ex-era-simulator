@@ -1,41 +1,53 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=16 format=3 uid="uid://cikspsque6rym"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=19 format=3 uid="uid://cikspsque6rym"]
 
 [ext_resource type="Texture2D" uid="uid://diera1jn3813v" path="res://Art/Cards/1 ex Ruby & Saphire/85.jpg" id="1_2xwq7"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_hcmcm"]
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="3_5fu5s"]
-[ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="3_05nyp"]
-[ext_resource type="Resource" uid="uid://c7itelq8jtjc2" path="res://Resources/Components/EnData/Rainbow.tres" id="4_57sig"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="4_blq1p"]
 [ext_resource type="Script" uid="uid://dj5isddeswaa4" path="res://Code/Resource Makers/CardResources/ToolMaker.gd" id="5_85iqr"]
-[ext_resource type="Script" uid="uid://scca13hg4k1l" path="res://Code/Resource Makers/EffectSpecific/Components/DmgManipMaker.gd" id="6_kl0j4"]
+[ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="6_8pke4"]
 [ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="7_3i14i"]
+[ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="7_5mh4u"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="7_8s2co"]
+[ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="8_4vu3s"]
+[ext_resource type="Resource" uid="uid://byyujdycsbwrg" path="res://Resources/Components/Effects/DmgManip/Remove/SelfHeal20.tres" id="10_t5iaa"]
 
-[sub_resource type="Resource" id="Resource_4klen"]
-script = ExtResource("3_05nyp")
-side_target = 4
-slot_target = 1
-damage_taken = 20
-pokemon_class = 0
-pokemon_owner = 15
-energy_type = ExtResource("4_57sig")
-
-[sub_resource type="Resource" id="Resource_yweta"]
-script = ExtResource("6_kl0j4")
+[sub_resource type="Resource" id="Resource_ggkt6"]
+script = ExtResource("6_8pke4")
+which = "Slot"
 ask = ExtResource("7_3i14i")
-how_many = 2
-choose_num = -1
-plus = false
+slot_vars = "damage_counters"
+cap = -1
+metadata/_custom_type_script = "uid://vjn146j3ayd6"
 
-[sub_resource type="Resource" id="Resource_40hbl"]
+[sub_resource type="Resource" id="Resource_o1hm3"]
+script = ExtResource("7_5mh4u")
+comparision_type = "Greater"
+first_comparison = SubResource("Resource_ggkt6")
+compare_to = "Const"
+second_constant = 1
+metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
+
+[sub_resource type="Resource" id="Resource_pfmb2"]
+script = ExtResource("8_4vu3s")
+comparator = SubResource("Resource_o1hm3")
+metadata/_custom_type_script = "uid://b85jmc7067bjc"
+
+[sub_resource type="Resource" id="Resource_nitq3"]
 script = ExtResource("7_8s2co")
-dmgManip = SubResource("Resource_yweta")
+dmgManip = ExtResource("10_t5iaa")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_3mfq8"]
+script = ExtResource("3_5fu5s")
+success = SubResource("Resource_nitq3")
+metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [sub_resource type="Resource" id="Resource_jvoai"]
 script = ExtResource("5_85iqr")
 when_to_check = 1
-activate_ask = SubResource("Resource_4klen")
-tool_effect = SubResource("Resource_40hbl")
+prompt_ask = SubResource("Resource_pfmb2")
+tool_effect = Array[ExtResource("3_5fu5s")]([SubResource("Resource_3mfq8")])
 
 [sub_resource type="Resource" id="Resource_5f3e6"]
 script = ExtResource("4_blq1p")
