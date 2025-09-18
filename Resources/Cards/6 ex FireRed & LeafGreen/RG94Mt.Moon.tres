@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=8 format=3 uid="uid://5rgyb36yljj7"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_bsbdc"]
+[ext_resource type="Texture2D" uid="uid://71ro5nqcv2xb" path="res://Art/Cards/6 ex FireRed & LeafGreen/94.jpg" id="1_ivasd"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="3_sn13a"]
+[ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="4_0c6io"]
+[ext_resource type="Script" uid="uid://b8kvis7rgg3j4" path="res://Code/Resource Makers/CardResources/StadiumMaker.gd" id="5_w8pbh"]
+
+[sub_resource type="Resource" id="Resource_l4jtm"]
+script = ExtResource("5_w8pbh")
+metadata/_custom_type_script = "uid://b8kvis7rgg3j4"
+
+[sub_resource type="Resource" id="Resource_5ejji"]
+script = ExtResource("4_0c6io")
+considered = "Stadium"
+description = "Any Pokémon (both yours and your opponent's) with maximum HP less than 70 can't use any Poké-Powers."
+stadium_properties = SubResource("Resource_l4jtm")
+metadata/_custom_type_script = "uid://crx447i85kshy"
+
+[resource]
+script = ExtResource("1_bsbdc")
+name = "Mt. Moon"
+image = ExtResource("1_ivasd")
+illustrator = "Nakaoka"
+number = 94
+rarity = 1
+expansion = 5
+categories = 2
+trainer_properties = SubResource("Resource_5ejji")
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

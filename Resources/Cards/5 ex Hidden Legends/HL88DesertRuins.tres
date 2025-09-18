@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=8 format=3 uid="uid://bm5j8epfpsnc5"]
+
+[ext_resource type="Texture2D" uid="uid://coiih22b8nm52" path="res://Art/Cards/5 ex Hidden Legends/88.jpg" id="1_14jra"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_304ga"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="3_21mhl"]
+[ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="4_o6jl6"]
+[ext_resource type="Script" uid="uid://b8kvis7rgg3j4" path="res://Code/Resource Makers/CardResources/StadiumMaker.gd" id="5_683r1"]
+
+[sub_resource type="Resource" id="Resource_vnmgh"]
+script = ExtResource("5_683r1")
+metadata/_custom_type_script = "uid://b8kvis7rgg3j4"
+
+[sub_resource type="Resource" id="Resource_g8uyo"]
+script = ExtResource("4_o6jl6")
+considered = "Stadium"
+description = "At any time between turns, each player puts 1 damage counter on his or her Pokémon-ex with maximum HP of at least 100."
+stadium_properties = SubResource("Resource_vnmgh")
+metadata/_custom_type_script = "uid://crx447i85kshy"
+
+[resource]
+script = ExtResource("2_304ga")
+name = "Desert Ruins"
+image = ExtResource("1_14jra")
+illustrator = "Shin-ichi Yoshikawa"
+number = 88
+rarity = 1
+expansion = 4
+categories = 2
+trainer_properties = SubResource("Resource_g8uyo")
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

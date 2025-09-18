@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Search" load_steps=5 format=3 uid="uid://dc21ivsxaeoex"]
+
+[ext_resource type="Resource" uid="uid://bl4qnrkh3kxdl" path="res://Resources/Components/Effects/Placement/PutIntoHand.tres" id="1_jvk2y"]
+[ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="2_ta4fv"]
+[ext_resource type="Resource" uid="uid://dpo3quamvikcu" path="res://Resources/Components/Effects/Identifiers/Pokemon/IsEvolution.tres" id="3_oe6gn"]
+[ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/Components/SearchMaker.gd" id="4_85ov7"]
+
+[resource]
+script = ExtResource("4_85ov7")
+of_this = Array[ExtResource("2_ta4fv")]([ExtResource("3_oe6gn")])
+metadata/_custom_type_script = "uid://cw3yr1k040kw7"

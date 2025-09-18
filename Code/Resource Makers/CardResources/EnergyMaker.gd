@@ -20,10 +20,6 @@ class_name Energy
 ##Failed asks mean the user can't attatch the energy
 @export var has_fail_prevent: bool = false
 @export_group("Effect")
-##What should happen if the ask isn't met
-@export var fail_effect: EffectCall 
-##What should happen if the ask is met
-@export var success_effect: EffectCall
 ##What should happen on attatch specifically
 @export var attatch_effect: EffectCall
 @export var attatch_effects: Array[EffectCollect]
@@ -52,12 +48,6 @@ func print_energy() -> void:
 	print("-------------------------------------------------------------")
 
 func has_effect(effect_type: Array[String]):
-	if success_effect:
-		if success_effect.has_effect_type(effect_type):
-			return true
-	if fail_effect:
-		if fail_effect.has_effect_type(effect_type):
-			return true
 	if attatch_effect:
 		if attatch_effect.has_effect_type(effect_type):
 			return true

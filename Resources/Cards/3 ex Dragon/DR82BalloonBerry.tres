@@ -1,28 +1,13 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://gdaii3n1dch5"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=8 format=3 uid="uid://gdaii3n1dch5"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_d27ug"]
 [ext_resource type="Texture2D" uid="uid://018qleu70yke" path="res://Art/Cards/3 ex Dragon/82.jpg" id="1_q0wxo"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="3_4k5mn"]
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="3_l5fs4"]
 [ext_resource type="Script" uid="uid://dj5isddeswaa4" path="res://Code/Resource Makers/CardResources/ToolMaker.gd" id="4_l5fs4"]
-[ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/BuffMaker.gd" id="5_pcsgq"]
-[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="6_nhlue"]
-
-[sub_resource type="Resource" id="Resource_p5cug"]
-script = ExtResource("5_pcsgq")
-stackable = true
-operation = "Replace"
-duration = 1
-metadata/_custom_type_script = "uid://coojhwe6m20gd"
-
-[sub_resource type="Resource" id="Resource_qh603"]
-script = ExtResource("6_nhlue")
-buff = SubResource("Resource_p5cug")
-metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_g4gay"]
 script = ExtResource("4_l5fs4")
-tool_effect = SubResource("Resource_qh603")
 metadata/_custom_type_script = "uid://dj5isddeswaa4"
 
 [sub_resource type="Resource" id="Resource_leklq"]

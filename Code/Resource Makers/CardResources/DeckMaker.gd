@@ -1,17 +1,24 @@
+@tool
 extends Resource
 class_name Deck
 
 @export var cards: Dictionary[Base_Card, int]
+@export_tool_button("Check Legallity") var button: Callable = is_legal
+
 enum DECK_STATUS {READY, INCOMPLETE, ILLEGAL, TOOBIG}
 var status: DECK_STATUS = DECK_STATUS.READY
 
 func is_legal() -> bool:
 	var count: int = 0
 	for card in cards:
-		var basic_energy: bool = card.is_considered("Basic")
+		var en = card.energy_properties
+		var basic_energy: bool = en and en.considered == "Basic Energy"
+		
 		if not basic_energy and cards[card] > 4:
 			status = DECK_STATUS.ILLEGAL
+			printerr("This deck isn't legal as ", card.name, " has too many cards")
 			return false
+		
 		count += cards[card]
 	
 	if count > 60:
@@ -24,6 +31,7 @@ func is_legal() -> bool:
 		return false
 	
 	status = DECK_STATUS.READY
+	print("READY!")
 	return true
 
 func make_usable() -> Array[Base_Card]:

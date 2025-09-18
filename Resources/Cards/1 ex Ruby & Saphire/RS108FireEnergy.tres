@@ -5,14 +5,9 @@
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_6vttk"]
 
 [resource]
-resource_local_to_scene = true
 script = ExtResource("3_6vttk")
 name = "Fire Energy"
 image = ExtResource("2_7at06")
-illustrator = ""
 number = 108
-rarity = 0
-expansion = 0
 categories = 4
 energy_properties = ExtResource("1_tmc7g")
-fossil = false

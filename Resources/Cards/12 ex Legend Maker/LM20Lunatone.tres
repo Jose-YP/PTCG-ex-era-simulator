@@ -57,7 +57,6 @@ weak = 16
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
-resource_name = "LM20Lunatone"
 script = ExtResource("1_c0dsq")
 name = "Lunatone"
 image = ExtResource("1_uevmg")

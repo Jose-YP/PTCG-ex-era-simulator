@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="Trainer" load_steps=7 format=3 uid="uid://d1p2m68vgf6dp"]
+
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="1_y2rt6"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_4hhkn"]
+[ext_resource type="Resource" uid="uid://dc21ivsxaeoex" path="res://Resources/Components/Effects/Search/Pokemon/SearchEvo.tres" id="3_ipkh5"]
+[ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="4_aw4fx"]
+
+[sub_resource type="Resource" id="Resource_cf63q"]
+script = ExtResource("2_4hhkn")
+search = ExtResource("3_ipkh5")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_jjjnt"]
+script = ExtResource("1_y2rt6")
+success = SubResource("Resource_cf63q")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
+[resource]
+script = ExtResource("4_aw4fx")
+considered = "Supporter"
+description = "Search your deck for an Evolution card, show it to your opponent, and put it into your hand. Shuffle your deck afterward."
+prompt_effects = Array[ExtResource("1_y2rt6")]([SubResource("Resource_jjjnt")])
+metadata/_custom_type_script = "uid://crx447i85kshy"

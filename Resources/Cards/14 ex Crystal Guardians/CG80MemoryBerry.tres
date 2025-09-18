@@ -1,12 +1,35 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=6 format=3 uid="uid://c72opknpplx87"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://c72opknpplx87"]
 
 [ext_resource type="Texture2D" uid="uid://bu2fi03raes4v" path="res://Art/Cards/14 ex Crystal Guardians/80.jpg" id="1_poxm7"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_wc1ms"]
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="3_rmhyx"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="3_s10yg"]
+[ext_resource type="Script" uid="uid://dj5isddeswaa4" path="res://Code/Resource Makers/CardResources/ToolMaker.gd" id="5_hlhyc"]
+[ext_resource type="Resource" uid="uid://b8is5cnt8xjlo" path="res://Resources/Components/Effects/Mimic/MimicSelfEvolutions.tres" id="6_apxue"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="7_40pso"]
+
+[sub_resource type="Resource" id="Resource_jrtuc"]
+script = ExtResource("7_40pso")
+mimic = ExtResource("6_apxue")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_pyjlt"]
+script = ExtResource("3_rmhyx")
+success = SubResource("Resource_jrtuc")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
+[sub_resource type="Resource" id="Resource_5latu"]
+script = ExtResource("5_hlhyc")
+tool_effect = Array[ExtResource("3_rmhyx")]([SubResource("Resource_pyjlt")])
+remove_after = false
+duration = 0
+metadata/_custom_type_script = "uid://dj5isddeswaa4"
 
 [sub_resource type="Resource" id="Resource_rmhyx"]
 script = ExtResource("3_s10yg")
+considered = "Tool"
+description = "The Pokémon this card is attached to can use any attack from its Basic Pokémon card or any Evolution card from which the Pokémon evolved. (You still have to pay for that attack's Energy cost.) Discard this card at the end of any turn the Pokémon attacks. "
+tool_properties = SubResource("Resource_5latu")
 metadata/_custom_type_script = "uid://crx447i85kshy"
 
 [resource]

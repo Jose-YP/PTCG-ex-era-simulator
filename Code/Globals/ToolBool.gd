@@ -15,6 +15,19 @@ func is_empty(card: Base_Card) -> bool:
 		return false
 	return true
 
+func is_considered(card: Base_Card, considered: String) -> bool:
+	if card.pokemon_properties and card.pokemon_properties.evo_stage == considered:
+		#Tool bool differs from the original function here,
+		#holon mons are both for filters
+		return true
+	if card.trainer_properties and card.trainer_properties.considered == considered:
+		return true
+	if card.energy_properties and card.energy_properties.considered == considered:
+		#Energy might need a function for this
+		return true
+	
+	return false
+
 func has_ability(card: Base_Card) -> bool:
 	var mon: Pokemon = card.pokemon_properties
 	if card.pokemon_properties:

@@ -5,14 +5,9 @@
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_l8l8j"]
 
 [resource]
-resource_local_to_scene = true
 script = ExtResource("3_l8l8j")
 name = "Psychic Energy"
 image = ExtResource("2_qrgex")
-illustrator = ""
 number = 107
-rarity = 0
-expansion = 0
 categories = 4
 energy_properties = ExtResource("1_vy2ut")
-fossil = false

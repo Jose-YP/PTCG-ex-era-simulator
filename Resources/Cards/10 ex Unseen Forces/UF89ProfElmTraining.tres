@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=4 format=3 uid="uid://btdu2wttb7ydt"]
+
+[ext_resource type="Texture2D" uid="uid://5p1kg3x3icae" path="res://Art/Cards/10 ex Unseen Forces/89.jpg" id="1_1sk77"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_m8y3u"]
+[ext_resource type="Resource" uid="uid://d1p2m68vgf6dp" path="res://Resources/Components/Trainers/ReprintSupport/ElmTrainingMethod.tres" id="3_b5ebx"]
+
+[resource]
+script = ExtResource("2_m8y3u")
+name = "Professor Elm's Training Method"
+image = ExtResource("1_1sk77")
+illustrator = "Ken Sugimori"
+number = 89
+rarity = 1
+expansion = 9
+categories = 2
+trainer_properties = ExtResource("3_b5ebx")
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

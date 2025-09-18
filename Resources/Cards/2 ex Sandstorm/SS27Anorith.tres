@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://cyd8uapig56s4"]
+
+[ext_resource type="Texture2D" uid="uid://l6gni1tawmb7" path="res://Art/Cards/2 ex Sandstorm/28.jpg" id="1_6v30s"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_ec4o1"]
+[ext_resource type="Resource" uid="uid://d3ibul3ofuenc" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Fighting1.tres" id="3_giqg5"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="3_ro3g1"]
+[ext_resource type="Resource" uid="uid://bnsrs2a5hnvkb" path="res://Resources/Components/Pokemon/Attacks/AttackData/20Dmg.tres" id="4_ar6lu"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="4_qsn3h"]
+[ext_resource type="Resource" uid="uid://dpovjlfpsypwe" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless3.tres" id="5_oc0mf"]
+[ext_resource type="Resource" uid="uid://d3ldw0oh07p2m" path="res://Resources/Components/Pokemon/Attacks/AttackData/40x2Flips.tres" id="6_w78f1"]
+
+[sub_resource type="Resource" id="Resource_21akb"]
+script = ExtResource("2_ec4o1")
+name = "Slash"
+attack_cost = ExtResource("3_giqg5")
+attack_data = ExtResource("4_ar6lu")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_4i166"]
+script = ExtResource("2_ec4o1")
+name = "Double Slash"
+attack_cost = ExtResource("5_oc0mf")
+attack_data = ExtResource("6_w78f1")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_giqg5"]
+script = ExtResource("3_ro3g1")
+HP = 80
+retreat = 2
+attacks = Array[ExtResource("2_ec4o1")]([SubResource("Resource_21akb"), SubResource("Resource_4i166")])
+evo_stage = "Stage 1"
+evolves_from = "Claw Fossil"
+type = 32
+weak = 1
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("4_qsn3h")
+name = "Anorith"
+image = ExtResource("1_6v30s")
+illustrator = "Ken Sugimori"
+number = 28
+rarity = 1
+expansion = 1
+categories = 1
+pokemon_properties = SubResource("Resource_giqg5")
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

@@ -1,0 +1,45 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://yk4vjh7edk6m"]
+
+[ext_resource type="Texture2D" uid="uid://c70qop2wasdl3" path="res://Art/Cards/2 ex Sandstorm/27.jpg" id="1_lo81v"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_w8qb0"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_tylml"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_aaqg7"]
+[ext_resource type="Resource" uid="uid://vuw4ey03rha3" path="res://Resources/Components/Pokemon/Attacks/AttackData/FastEvolution.tres" id="4_7xj08"]
+[ext_resource type="Resource" uid="uid://djhcfglsc14fn" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/F1C1.tres" id="5_q66fi"]
+[ext_resource type="Resource" uid="uid://ceo3bpqlglf5o" path="res://Resources/Components/Pokemon/Attacks/AttackData/30Dmg.tres" id="6_sildn"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="7_fkdyi"]
+
+[sub_resource type="Resource" id="Resource_qnfim"]
+script = ExtResource("2_tylml")
+name = "Fast Evolution"
+attack_data = ExtResource("4_7xj08")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_j1wlt"]
+script = ExtResource("2_tylml")
+name = "Pierce"
+attack_cost = ExtResource("5_q66fi")
+attack_data = ExtResource("6_sildn")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_giqg5"]
+script = ExtResource("7_fkdyi")
+HP = 80
+attacks = Array[ExtResource("2_tylml")]([SubResource("Resource_qnfim"), SubResource("Resource_j1wlt")])
+evo_stage = "Stage 1"
+evolves_from = "Claw Fossil"
+type = 32
+weak = 1
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_w8qb0")
+name = "Anorith"
+image = ExtResource("1_lo81v")
+illustrator = "Mitsuhiro Arita"
+number = 27
+rarity = 1
+expansion = 1
+categories = 1
+pokemon_properties = SubResource("Resource_giqg5")
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

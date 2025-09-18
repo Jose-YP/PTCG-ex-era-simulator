@@ -224,15 +224,6 @@ func condition_allows(turn_cond: Consts.TURN_COND) -> bool:
 			return attack_data.condition & 1 != 0
 
 func has_effect(effect_type: Array[String]) -> bool:
-	if attack_data.fail_effect:
-		if attack_data.fail_effect.has_effect_type(effect_type):
-			return true
-	if attack_data.success_effect:
-		if attack_data.success_effect.has_effect_type(effect_type):
-			return true
-	if attack_data.always_effect:
-		if attack_data.always_effect.has_effect_type(effect_type):
-			return true
 	if attack_data.prompt and attack_data.prompt.effect:
 		if attack_data.prompt.effect.has_effect_type(effect_type):
 			return true

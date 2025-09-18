@@ -98,6 +98,9 @@ func is_home_side_player() -> bool:
 func get_current_player():pass
 
 func can_be_played(card: Base_Card) -> int:
+	if check_play_disable(card):
+		return false
+	
 	var considered: int = Convert.get_card_flags(card)
 	var allowed_to: int = 0
 	#Basic
@@ -431,8 +434,8 @@ func check_bool_disable(type: Consts.MON_DISABL ,slot: PokeSlot):
 func check_attack_disable():
 	pass
 
-func check_play_disable(home: bool, card: Base_Card):
-	var dict = get_side_change("Disable", home)
+func check_play_disable(card: Base_Card):
+	var dict = get_side_change("Disable", home_turn)
 	for dis in dict:
 		if not dis is Disable: continue
 		dis = dis as Disable

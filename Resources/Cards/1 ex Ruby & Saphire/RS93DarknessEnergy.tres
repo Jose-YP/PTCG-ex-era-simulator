@@ -5,14 +5,11 @@
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="5_iyc3r"]
 
 [resource]
-resource_local_to_scene = true
 script = ExtResource("5_iyc3r")
 name = "Darkness Energy"
 image = ExtResource("4_7n6vd")
 illustrator = "Milky Isobe"
 number = 93
 rarity = 2
-expansion = 0
 categories = 4
 energy_properties = ExtResource("1_w83og")
-fossil = false
