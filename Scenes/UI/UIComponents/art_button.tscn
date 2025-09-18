@@ -73,7 +73,7 @@ pokemon = false
 benched = true
 
 [node name="PanelContainer" type="CenterContainer" parent="."]
-layout_mode = 2
+layout_mode = 0
 offset_right = 195.0
 offset_bottom = 120.0
 

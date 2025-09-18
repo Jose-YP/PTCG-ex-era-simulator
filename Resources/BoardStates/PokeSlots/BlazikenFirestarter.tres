@@ -1,6 +1,5 @@
-[gd_resource type="Resource" script_class="PokeSlot" load_steps=11 format=3 uid="uid://cbbgtypsmc1a2"]
+[gd_resource type="Resource" script_class="PokeSlot" load_steps=10 format=3 uid="uid://cbbgtypsmc1a2"]
 
-[ext_resource type="Script" uid="uid://b3041relhlcb2" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/SlotChangeMaker.gd" id="1_br7xd"]
 [ext_resource type="Resource" uid="uid://b8kt4i4jgosm8" path="res://Resources/Cards/1 ex Ruby & Saphire/RS3Blaziken.tres" id="1_j0klf"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_br7xd"]
 [ext_resource type="Resource" uid="uid://bbpbby31t7cth" path="res://Resources/Components/Energy/Basic Energy/FireEnergy.tres" id="3_jdscm"]
@@ -13,40 +12,21 @@
 script = ExtResource("2_br7xd")
 name = "Fire Energy"
 image = ExtResource("4_1ppjs")
-illustrator = ""
 number = 108
-rarity = 0
-expansion = 0
 categories = 4
 energy_properties = ExtResource("3_jdscm")
-fossil = false
 
 [sub_resource type="Resource" id="Resource_xbexa"]
 script = ExtResource("2_br7xd")
 name = "Fire Energy"
 image = ExtResource("4_1ppjs")
-illustrator = ""
 number = 108
-rarity = 0
-expansion = 0
 categories = 4
 energy_properties = ExtResource("3_jdscm")
-fossil = false
 
 [resource]
 script = ExtResource("7_o332v")
 current_card = ExtResource("1_j0klf")
-max_HP = 0
-damage_counters = 0
-final_retreat = 0
 evolved_from = Array[ExtResource("2_br7xd")]([ExtResource("5_vh3hf"), ExtResource("6_pttkb")])
 energy_cards = Array[ExtResource("2_br7xd")]([SubResource("Resource_0tjgr"), SubResource("Resource_xbexa")])
-tm_cards = Array[ExtResource("2_br7xd")]([])
-changes = Dictionary[ExtResource("1_br7xd"), int]({})
-evolution_ready = false
-evolved_this_turn = false
-body_disabled = false
-power_disabled = false
-dealt_damage = 0
-energy_discarded = 0
 metadata/_custom_type_script = "uid://cs70ix831b5g4"

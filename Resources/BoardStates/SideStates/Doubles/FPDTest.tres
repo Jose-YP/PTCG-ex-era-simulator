@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SideState" load_steps=26 format=3 uid="uid://dge18p0in3cyo"]
+[gd_resource type="Resource" script_class="SideState" load_steps=25 format=3 uid="uid://dge18p0in3cyo"]
 
 [ext_resource type="Resource" uid="uid://d3qd7r6gwfitd" path="res://Resources/Decks/TestDeckFP.tres" id="1_6pulm"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_6yda8"]
@@ -8,7 +8,6 @@
 [ext_resource type="Resource" uid="uid://dxq22uwxelttj" path="res://Resources/Cards/1 ex Ruby & Saphire/RS107PsychicEnergy.tres" id="7_ymgto"]
 [ext_resource type="Resource" uid="uid://cvjyyq2lad5k5" path="res://Resources/Cards/1 ex Ruby & Saphire/RS108FireEnergy.tres" id="8_7rmjj"]
 [ext_resource type="Resource" uid="uid://ben8fxv5hw5hb" path="res://Resources/Cards/1 ex Ruby & Saphire/RS87PokemonReversal.tres" id="13_t157j"]
-[ext_resource type="Script" uid="uid://b3041relhlcb2" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/SlotChangeMaker.gd" id="14_sd0h8"]
 [ext_resource type="Resource" uid="uid://b6mgd7a47n0iv" path="res://Resources/Cards/1 ex Ruby & Saphire/RS7Gardevoir.tres" id="15_fx773"]
 [ext_resource type="Resource" uid="uid://dyqdhaov0ywxk" path="res://Resources/Cards/1 ex Ruby & Saphire/RS92Switch.tres" id="16_hyhr3"]
 [ext_resource type="Resource" uid="uid://2gbttee2ievi" path="res://Resources/Cards/13 ex Holon Phantoms/HP44Holon'sCastform.tres" id="17_47ikc"]
@@ -25,72 +24,33 @@
 [sub_resource type="Resource" id="Resource_ai8fb"]
 script = ExtResource("20_th0o3")
 deck = ExtResource("1_6pulm")
-excluded_to_discard = false
-init_deck = Array[ExtResource("2_6yda8")]([])
 init_hand = Array[ExtResource("2_6yda8")]([ExtResource("7_ymgto"), ExtResource("8_7rmjj"), ExtResource("6_jiqsc"), ExtResource("13_t157j"), ExtResource("19_s1i7m"), ExtResource("20_s1i7m"), ExtResource("17_47ikc"), ExtResource("16_hyhr3")])
 init_discard = Array[ExtResource("2_6yda8")]([ExtResource("8_7rmjj"), ExtResource("8_7rmjj"), ExtResource("8_7rmjj")])
-init_prize = Array[ExtResource("2_6yda8")]([])
 metadata/_custom_type_script = "uid://calm3n7va5yjo"
 
 [sub_resource type="Resource" id="Resource_wudh5"]
 script = ExtResource("22_koj16")
 current_card = ExtResource("4_nxave")
-max_HP = 0
-damage_counters = 0
-final_retreat = 0
 evolved_from = Array[ExtResource("2_6yda8")]([ExtResource("23_mn8ds")])
-energy_cards = Array[ExtResource("2_6yda8")]([])
-tm_cards = Array[ExtResource("2_6yda8")]([])
-changes = Dictionary[ExtResource("14_sd0h8"), int]({})
-evolution_ready = false
-evolved_this_turn = false
-body_disabled = false
-power_disabled = false
-dealt_damage = 0
-energy_discarded = 0
 metadata/_custom_type_script = "uid://cs70ix831b5g4"
 
 [sub_resource type="Resource" id="Resource_nxave"]
 script = ExtResource("22_koj16")
 current_card = ExtResource("15_fx773")
-max_HP = 0
-damage_counters = 0
-final_retreat = 0
 evolved_from = Array[ExtResource("2_6yda8")]([ExtResource("26_6yda8"), ExtResource("3_s1i7m")])
 energy_cards = Array[ExtResource("2_6yda8")]([ExtResource("19_s1i7m")])
-tm_cards = Array[ExtResource("2_6yda8")]([])
-changes = Dictionary[ExtResource("14_sd0h8"), int]({})
-evolution_ready = false
-evolved_this_turn = false
-body_disabled = false
-power_disabled = false
-dealt_damage = 0
-energy_discarded = 0
 metadata/_custom_type_script = "uid://cs70ix831b5g4"
 
 [sub_resource type="Resource" id="Resource_rif2t"]
 script = ExtResource("22_koj16")
 current_card = ExtResource("3_s1i7m")
-max_HP = 0
-damage_counters = 0
-final_retreat = 0
 evolved_from = Array[ExtResource("2_6yda8")]([ExtResource("18_iehmd")])
 energy_cards = Array[ExtResource("2_6yda8")]([ExtResource("19_s1i7m")])
-tm_cards = Array[ExtResource("2_6yda8")]([])
-changes = Dictionary[ExtResource("14_sd0h8"), int]({})
-evolution_ready = false
-evolved_this_turn = false
-body_disabled = false
-power_disabled = false
-dealt_damage = 0
-energy_discarded = 0
 metadata/_custom_type_script = "uid://cs70ix831b5g4"
 
 [resource]
 script = ExtResource("21_pcl6i")
 card_stacks = SubResource("Resource_ai8fb")
-prize_cards = 6
-bench_size = 5
 slots = Dictionary[ExtResource("22_koj16"), bool]({
 SubResource("Resource_wudh5"): true,
 SubResource("Resource_nxave"): false,

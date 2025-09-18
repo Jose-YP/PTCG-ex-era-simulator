@@ -35,7 +35,7 @@ metadata/_custom_type_script = "uid://dmulm3x3dj842"
 script = ExtResource("8_ssrag")
 category = "Power"
 name = "Psy Shadow"
-description = "Once during your turn (before your attack), you may search your deck for a {Psychic} Energy card and attach it to 1 of your Pokémon. Put 2 damage counters on that Pokémon. Shuffle your deck afterward. This power can't be used if [name] is affected by a Special Condition."
+description = "Once during your turn (before your attack), you may search your deck for a {Psychic} Energy card and attach it to 1 of your Pokémon. Put 2 damage counters on that Pokémon. Shuffle your deck afterward."
 effect = SubResource("Resource_jt5ow")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 

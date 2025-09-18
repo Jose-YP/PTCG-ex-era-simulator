@@ -95,6 +95,8 @@ func switch(aff: Consts.SIDES, reversable: bool, pre_active: PokeSlot = null):
 	active_swap.swap.emit(active_swap.get_slot_pos())
 	bench_swap.swap.emit(active_swap.get_slot_pos())
 	
+	Globals.fundies.check_all_passives()
+	
 	finished.emit()
 
 func specific_switch(aff: Consts.SIDES, reversable: bool):

@@ -1,24 +1,15 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=13 format=3 uid="uid://bmvatu4cfwe4n"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=9 format=3 uid="uid://bmvatu4cfwe4n"]
 
 [ext_resource type="Texture2D" uid="uid://cxtgnqcw82jma" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/81.jpg" id="1_gqtrm"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_t17au"]
 [ext_resource type="Resource" uid="uid://3fi6fc6lbj04" path="res://Resources/Components/Effects/Asks/Class&Owner/AtkIsTeamMagma.tres" id="3_h2887"]
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="4_bjjv5"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="4_j6xlk"]
-[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="5_enkfx"]
-[ext_resource type="Resource" uid="uid://b8xdtjhj0xoye" path="res://Resources/Components/Effects/Prompts/ToolActivation.tres" id="5_ue38x"]
 [ext_resource type="Script" uid="uid://dj5isddeswaa4" path="res://Code/Resource Makers/CardResources/ToolMaker.gd" id="5_uxx6v"]
-[ext_resource type="Resource" uid="uid://d17ayma7fo2kc" path="res://Resources/Components/Effects/Search/SearchEvolvesFromTarget.tres" id="7_aej4q"]
-
-[sub_resource type="Resource" id="Resource_qa4uk"]
-script = ExtResource("5_enkfx")
-search = ExtResource("7_aej4q")
 
 [sub_resource type="Resource" id="Resource_i4xjs"]
 script = ExtResource("5_uxx6v")
 when_to_check = 1
-prompt_ask = ExtResource("5_ue38x")
-tool_effect = SubResource("Resource_qa4uk")
 
 [sub_resource type="Resource" id="Resource_8lcjx"]
 script = ExtResource("4_j6xlk")

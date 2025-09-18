@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SideState" load_steps=36 format=3 uid="uid://b6rde2dt868tx"]
+[gd_resource type="Resource" script_class="SideState" load_steps=35 format=3 uid="uid://b6rde2dt868tx"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_6yy8l"]
 [ext_resource type="Resource" uid="uid://ja633wactb5t" path="res://Resources/Cards/6 ex FireRed & LeafGreen/RG110MrMime-ex.tres" id="2_vr2hh"]
@@ -25,33 +25,32 @@
 [ext_resource type="Script" uid="uid://dgqpurnuh14t1" path="res://Code/Resource Makers/GeneralUse/SideStateMaker.gd" id="22_0vp4n"]
 [ext_resource type="Resource" uid="uid://c72opknpplx87" path="res://Resources/Cards/14 ex Crystal Guardians/CG80MemoryBerry.tres" id="22_ovipe"]
 [ext_resource type="Script" uid="uid://cs70ix831b5g4" path="res://Code/Resource Makers/PokemonSpecific/PokeSlotMaker.gd" id="23_kcubd"]
-[ext_resource type="Script" uid="uid://b3041relhlcb2" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/SlotChangeMaker.gd" id="24_7qrui"]
 [ext_resource type="Resource" uid="uid://dq5yc7aoltpwf" path="res://Resources/Cards/1 ex Ruby & Saphire/RS27Combusken.tres" id="25_83fc0"]
 
 [sub_resource type="Resource" id="Resource_fiq25"]
 script = ExtResource("20_tohjk")
 cards = Dictionary[ExtResource("1_6yy8l"), int]({
-ExtResource("2_vr2hh"): 2,
-ExtResource("3_83fc0"): 2,
-ExtResource("4_385pm"): 4,
-ExtResource("5_ovipe"): 3,
-ExtResource("6_sjhqk"): 3,
-ExtResource("7_83v2a"): 6,
-ExtResource("8_t25he"): 6,
-ExtResource("9_uix2g"): 4,
-ExtResource("10_gyuky"): 3,
-ExtResource("11_7uitr"): 2,
-ExtResource("12_0f83l"): 1,
-ExtResource("13_aef44"): 1,
-ExtResource("14_x4v06"): 1,
-ExtResource("15_s7spi"): 4,
-ExtResource("16_rd50m"): 3,
-ExtResource("4_vr2hh"): 3,
-ExtResource("18_wprx8"): 3,
-ExtResource("19_vvgts"): 3,
-ExtResource("25_83fc0"): 1,
+ExtResource("22_ovipe"): 2,
 ExtResource("21_385pm"): 3,
-ExtResource("22_ovipe"): 2
+ExtResource("25_83fc0"): 1,
+ExtResource("19_vvgts"): 3,
+ExtResource("18_wprx8"): 3,
+ExtResource("4_vr2hh"): 3,
+ExtResource("16_rd50m"): 3,
+ExtResource("15_s7spi"): 4,
+ExtResource("14_x4v06"): 1,
+ExtResource("13_aef44"): 1,
+ExtResource("12_0f83l"): 1,
+ExtResource("11_7uitr"): 2,
+ExtResource("10_gyuky"): 3,
+ExtResource("9_uix2g"): 4,
+ExtResource("8_t25he"): 6,
+ExtResource("7_83v2a"): 6,
+ExtResource("6_sjhqk"): 3,
+ExtResource("5_ovipe"): 3,
+ExtResource("4_385pm"): 4,
+ExtResource("3_83fc0"): 2,
+ExtResource("2_vr2hh"): 2
 })
 metadata/_custom_type_script = "uid://e660iomt5e76"
 

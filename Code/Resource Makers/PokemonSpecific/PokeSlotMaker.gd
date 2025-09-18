@@ -146,19 +146,15 @@ func check_passive():
 	#Ability
 	if pokedata.pokebody:
 		if pokedata.pokebody.passive:
-			var prev: bool = body_activated
 			body_activated = pokedata.pokebody.activate_passive()
-			if body_activated != prev:
-				ui_slot.check_ability_activation()
 			
 	if pokedata.pokepower:
 		if pokedata.pokepower.passive:
 			pokedata.pokepower.activate_passive()
-		var prev: bool = power_ready
+		
 		power_ready = pokedata.pokepower.does_press_activate(self)
-		if power_ready != prev:
-			ui_slot.check_ability_activation()
 	
+	ui_slot.check_ability_activation()
 	Globals.fundies.remove_top_source_target()
 
 func use_ability(ability: Ability):
@@ -945,6 +941,13 @@ func remove_slot_change(removing: SlotChange):
 		
 		if removing in dict:
 			dict.erase(removing)
+			if removing is Disable:
+				var dis = removing as Disable
+				#this is here for redundancy
+				#If a slot get's it's ability reenabled after thier passive check
+				if dis.disable_body or dis.disable_power:
+					check_passive()
+			
 			changes_ui_check()
 
 func changes_ui_check():
@@ -1003,7 +1006,6 @@ func refresh_current_card():
 	ui_slot.display_types(Convert.flags_to_type_array(get_pokedata().type))
 	setup_abilities()
 	occurance_account_for()
-	ui_slot.check_ability_activation()
 	await ability_emit(first_check, self)
 
 #Work towards removing functions from this
@@ -1018,8 +1020,6 @@ func refresh() -> void:
 		#check for any attatched cards/conditions
 		count_energy()
 		ui_slot.display_energy(get_energy_strings(), attached_energy)
-		
-		ui_slot.check_ability_activation()
 		Globals.fundies.check_all_passives()
 	
 	else:
@@ -1054,8 +1054,6 @@ func refresh_swap() -> void:
 			ui_slot.tm.texture = tm_cards[0].image
 			ui_slot.tm.show()
 		else: ui_slot.tm.hide()
-		
-		ui_slot.check_ability_activation()
 	
 	else:
 		ui_slot.display_image(null)

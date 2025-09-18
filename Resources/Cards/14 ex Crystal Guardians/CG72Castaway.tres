@@ -7,6 +7,7 @@
 
 [sub_resource type="Resource" id="Resource_e157p"]
 script = ExtResource("9_i4gtl")
+considered = "Supporter"
 description = "Search your deck for a Supporter card, a Pokémon Tool card, and a basic Energy card. Show them to your opponent, and put them into your hand. Shuffle your deck afterward. "
 metadata/_custom_type_script = "uid://crx447i85kshy"
 

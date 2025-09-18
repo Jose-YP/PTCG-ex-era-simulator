@@ -18,38 +18,39 @@
 [ext_resource type="Resource" uid="uid://w140efhwynxf" path="res://Resources/Cards/14 ex Crystal Guardians/CG72Castaway.tres" id="16_swdfa"]
 [ext_resource type="Resource" uid="uid://jhipo8gr7d04" path="res://Resources/Cards/3 ex Dragon/DR88TVReporter.tres" id="17_fs3kw"]
 [ext_resource type="Script" uid="uid://e660iomt5e76" path="res://Code/Resource Makers/CardResources/DeckMaker.gd" id="18_21sog"]
+[ext_resource type="Resource" uid="uid://dyqdhaov0ywxk" path="res://Resources/Cards/1 ex Ruby & Saphire/RS92Switch.tres" id="18_hs22m"]
 [ext_resource type="Script" uid="uid://calm3n7va5yjo" path="res://Code/Resource Makers/GeneralUse/CardStacksMaker.gd" id="19_jg5c6"]
 [ext_resource type="Script" uid="uid://dgqpurnuh14t1" path="res://Code/Resource Makers/GeneralUse/SideStateMaker.gd" id="20_x6fjm"]
 [ext_resource type="Script" uid="uid://cs70ix831b5g4" path="res://Code/Resource Makers/PokemonSpecific/PokeSlotMaker.gd" id="21_iihag"]
-[ext_resource type="Script" uid="uid://b3041relhlcb2" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/SlotChangeMaker.gd" id="22_snkgj"]
 [ext_resource type="Resource" uid="uid://uaq7je501sbg" path="res://Resources/Cards/2 ex Sandstorm/SS90ClawFossil.tres" id="23_bq325"]
 
 [sub_resource type="Resource" id="Resource_kb452"]
 script = ExtResource("18_21sog")
 cards = Dictionary[ExtResource("1_hs22m"), int]({
-ExtResource("2_og777"): 4,
-ExtResource("3_twwjv"): 4,
-ExtResource("4_w8cyq"): 2,
-ExtResource("5_mnfyo"): 2,
-ExtResource("6_n1vsw"): 3,
-ExtResource("7_p23vc"): 3,
-ExtResource("8_f7ayr"): 8,
-ExtResource("9_hwd3g"): 8,
-ExtResource("10_j6d27"): 4,
-ExtResource("11_f0jny"): 4,
-ExtResource("12_3t0nm"): 4,
-ExtResource("13_l6pam"): 2,
-ExtResource("14_icwcf"): 2,
-ExtResource("15_ulmt6"): 2,
+ExtResource("18_hs22m"): 3,
+ExtResource("17_fs3kw"): 4,
 ExtResource("16_swdfa"): 4,
-ExtResource("17_fs3kw"): 4
+ExtResource("15_ulmt6"): 2,
+ExtResource("14_icwcf"): 2,
+ExtResource("13_l6pam"): 2,
+ExtResource("12_3t0nm"): 3,
+ExtResource("11_f0jny"): 3,
+ExtResource("10_j6d27"): 3,
+ExtResource("9_hwd3g"): 8,
+ExtResource("8_f7ayr"): 8,
+ExtResource("7_p23vc"): 3,
+ExtResource("6_n1vsw"): 3,
+ExtResource("5_mnfyo"): 2,
+ExtResource("4_w8cyq"): 2,
+ExtResource("3_twwjv"): 4,
+ExtResource("2_og777"): 4
 })
 metadata/_custom_type_script = "uid://e660iomt5e76"
 
 [sub_resource type="Resource" id="Resource_w05tw"]
 script = ExtResource("19_jg5c6")
 deck = SubResource("Resource_kb452")
-init_hand = Array[ExtResource("1_hs22m")]([ExtResource("15_ulmt6"), ExtResource("14_icwcf"), ExtResource("17_fs3kw"), ExtResource("16_swdfa"), ExtResource("12_3t0nm"), ExtResource("11_f0jny"), ExtResource("2_og777")])
+init_hand = Array[ExtResource("1_hs22m")]([ExtResource("15_ulmt6"), ExtResource("14_icwcf"), ExtResource("17_fs3kw"), ExtResource("16_swdfa"), ExtResource("12_3t0nm"), ExtResource("11_f0jny"), ExtResource("2_og777"), ExtResource("18_hs22m"), ExtResource("18_hs22m")])
 metadata/_custom_type_script = "uid://calm3n7va5yjo"
 
 [sub_resource type="Resource" id="Resource_00yc1"]
@@ -69,6 +70,6 @@ script = ExtResource("20_x6fjm")
 card_stacks = SubResource("Resource_w05tw")
 slots = Dictionary[ExtResource("21_iihag"), bool]({
 SubResource("Resource_00yc1"): true,
-SubResource("Resource_xgtwg"): true
+SubResource("Resource_xgtwg"): false
 })
 metadata/_custom_type_script = "uid://dgqpurnuh14t1"
