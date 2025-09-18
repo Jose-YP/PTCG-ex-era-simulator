@@ -376,7 +376,7 @@ func before_direct_attack(attacker: PokeSlot, with: Attack):
 	
 	else: Globals.fundies.record_single_src_trg(attacker)
 	
-	if not attack_data.before_damage and not attacker.check_atk_efct_dis(with.name):
+	if not (attack_data.before_damage or attacker.check_atk_efct_dis(with.name)):
 		Globals.fundies.atk_efect = true
 		await attack_effect(attacker, with.attack_data, replace_num)
 	

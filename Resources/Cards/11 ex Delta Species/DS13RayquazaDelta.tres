@@ -79,7 +79,7 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_xiw2b"]
 script = ExtResource("3_cru68")
-atk_effect = false
+disable_atk_effect = true
 attack_names = Array[String](["Lightning Storm"])
 recieves = ExtResource("9_v5xb8")
 metadata/_custom_type_script = "uid://c0ishgbxk63dg"

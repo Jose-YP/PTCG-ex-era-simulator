@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SideState" load_steps=27 format=3 uid="uid://bx3ytpyqp7p5f"]
+[gd_resource type="Resource" script_class="SideState" load_steps=26 format=3 uid="uid://bx3ytpyqp7p5f"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_jmn42"]
 [ext_resource type="Resource" uid="uid://cmc8tk45l0b5t" path="res://Resources/Cards/11 ex Delta Species/DS9LatiosDelta.tres" id="2_f0kkw"]
@@ -19,7 +19,6 @@
 [ext_resource type="Script" uid="uid://e660iomt5e76" path="res://Code/Resource Makers/CardResources/DeckMaker.gd" id="16_if5cl"]
 [ext_resource type="Script" uid="uid://calm3n7va5yjo" path="res://Code/Resource Makers/GeneralUse/CardStacksMaker.gd" id="17_agqa3"]
 [ext_resource type="Script" uid="uid://dgqpurnuh14t1" path="res://Code/Resource Makers/GeneralUse/SideStateMaker.gd" id="18_lo2mm"]
-[ext_resource type="Resource" uid="uid://b1aj67torhhal" path="res://Resources/Cards/3 ex Dragon/DR61Magnemite.tres" id="18_luo60"]
 [ext_resource type="Script" uid="uid://cs70ix831b5g4" path="res://Code/Resource Makers/PokemonSpecific/PokeSlotMaker.gd" id="19_rf22a"]
 
 [sub_resource type="Resource" id="Resource_56gaq"]
@@ -46,7 +45,7 @@ metadata/_custom_type_script = "uid://e660iomt5e76"
 [sub_resource type="Resource" id="Resource_ujo15"]
 script = ExtResource("17_agqa3")
 deck = SubResource("Resource_56gaq")
-init_hand = Array[ExtResource("1_jmn42")]([ExtResource("15_qr8sw"), ExtResource("8_qd1mf"), ExtResource("9_466sy"), ExtResource("18_luo60")])
+init_hand = Array[ExtResource("1_jmn42")]([ExtResource("15_qr8sw"), ExtResource("8_qd1mf"), ExtResource("9_466sy"), ExtResource("10_6pvqk")])
 metadata/_custom_type_script = "uid://calm3n7va5yjo"
 
 [sub_resource type="Resource" id="Resource_n6m0e"]
@@ -64,6 +63,7 @@ metadata/_custom_type_script = "uid://cs70ix831b5g4"
 [sub_resource type="Resource" id="Resource_3u0oo"]
 script = ExtResource("19_rf22a")
 current_card = ExtResource("16_f0kkw")
+energy_cards = Array[ExtResource("1_jmn42")]([ExtResource("8_qd1mf"), ExtResource("7_pshq6"), ExtResource("8_qd1mf")])
 metadata/_custom_type_script = "uid://cs70ix831b5g4"
 
 [resource]

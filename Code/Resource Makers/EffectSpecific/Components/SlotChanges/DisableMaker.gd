@@ -17,7 +17,7 @@ class_name Disable
 ##[br][enum]Cant[/enum] - Target cannot attack
 @export var attack: Consts.DIS_ATK = Consts.DIS_ATK.CAN
 ##If this is disabled it should be false
-@export var atk_effect: bool = true
+@export var disable_atk_effect: bool = false
 ##If this is filled with anything the disable will only work on specified attacks
 @export var attack_names: Array[String]
 
@@ -35,7 +35,7 @@ func check_bool(which: Consts.MON_DISABL) -> bool:
 		Consts.MON_DISABL.ATTACK:
 			return attack == Consts.DIS_ATK.CANT
 		Consts.MON_DISABL.ATK_EFCT:
-			return atk_effect
+			return disable_atk_effect
 	
 	return false
 
@@ -51,9 +51,9 @@ func check_attack(which: Consts.DIS_ATK, atk_name: String) -> bool:
 func check_atk_efct(atk_name: String):
 	if attack_names.size() != 0:
 		if atk_name in attack_names:
-			return atk_effect
+			return disable_atk_effect
 		return false
-	return atk_effect
+	return disable_atk_effect
 
 func how_display() -> Dictionary[String, bool]:
 	return {"Disable" : false}
