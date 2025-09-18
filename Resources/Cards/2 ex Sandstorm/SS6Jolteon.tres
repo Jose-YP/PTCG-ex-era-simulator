@@ -26,11 +26,6 @@ formal_question = true
 question_string = "Will you discard all of [name]'s {Lightning} Energy?"
 yes_answer = "Yes"
 no_answer = "No"
-can_reverse = true
-occurance = false
-chooser = 0
-choose_location = "None"
-which_stack = 0
 metadata/_custom_type_script = "uid://b85jmc7067bjc"
 
 [sub_resource type="Resource" id="Resource_ilfgp"]

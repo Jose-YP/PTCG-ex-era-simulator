@@ -12,11 +12,6 @@ formal_question = true
 question_string = "Search the Deck or Discard?"
 yes_answer = "Deck"
 no_answer = "Discard"
-can_reverse = true
-occurance = false
-chooser = 0
-choose_location = "None"
-which_stack = 0
 metadata/_custom_type_script = "uid://b85jmc7067bjc"
 
 [sub_resource type="Resource" id="Resource_nv4wp"]

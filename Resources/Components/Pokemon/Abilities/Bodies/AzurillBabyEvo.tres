@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="Ability" load_steps=10 format=3 uid="uid://s8mcx8qnuqkw"]
+[gd_resource type="Resource" script_class="Ability" load_steps=11 format=3 uid="uid://s8mcx8qnuqkw"]
 
 [ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="1_2pey4"]
 [ext_resource type="Resource" uid="uid://c5l2nrpmptwuh" path="res://Resources/Components/Effects/DmgManip/Remove/SelfHealALL.tres" id="1_wd5vu"]
 [ext_resource type="Script" uid="uid://cg3m7vpqxf2t6" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/OverrideMaker.gd" id="2_v4ty4"]
+[ext_resource type="Resource" uid="uid://bns8h72u2hxqo" path="res://Resources/Components/Effects/Asks/General/AnyMon.tres" id="3_cftuc"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_wd5vu"]
 [ext_resource type="Script" uid="uid://bics3dumv7avj" path="res://Code/Resource Makers/GeneralUse/OccuranceMaker.gd" id="4_0xe0k"]
 
@@ -13,6 +14,8 @@ metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [sub_resource type="Resource" id="Resource_rv3ca"]
 script = ExtResource("4_0xe0k")
+from_ask = ExtResource("3_cftuc")
+signal = "checked_up"
 metadata/_custom_type_script = "uid://bics3dumv7avj"
 
 [sub_resource type="Resource" id="Resource_gmk3x"]

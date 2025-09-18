@@ -253,21 +253,28 @@ func get_side_change(change_class: String, home_val: bool) -> Dictionary:
 	
 	return dict[home_val] as Dictionary[SlotChange, int]
 
+func get_all_side_changes(home_val: bool) -> Dictionary[String, Dictionary]:
+	return {"Buff" : side_buffs[home_val], "Disable" : side_disables[home_val],
+	 "OverRide" : side_overrides[home_val], "TypeChange" : side_typechanges[home_val],
+	 "RuleChange" : side_rulechanges[home_val]}
+
 func apply_change(ask: SlotAsk, applying: SlotChange):
 	for side in Globals.full_ui.sides:
 		var dict = get_side_change(applying.get_script().get_global_name(), side.home)
 		
+		printt(side.is_side(ask.side_target), not applying in dict, dict, applying)
 		if side.is_side(ask.side_target) and\
 		not applying in dict:
 			dict[applying] = applying.duration
-			Globals.full_ui.display_changes(side.home, dict.keys())
+			Globals.full_ui.display_changes(side.home, get_all_side_changes(side.home).values())
 
 func remove_change(removing: Array[SlotChange]):
 	for change in removing:
 		for home in [true, false]:
 			var dict: Dictionary = get_side_change(change.get_script().get_global_name(), home)
-			get_side_change(change.get_script().get_global_name(), home).erase(change)
-			Globals.full_ui.display_changes(home, dict[home].keys())
+			if change in dict:
+				dict.erase(change)
+				Globals.full_ui.display_changes(home, get_all_side_changes(home).values())
 		for slot in Globals.full_ui.get_poke_slots():
 			slot.remove_slot_change(change)
 

@@ -8,15 +8,9 @@
 
 [sub_resource type="Resource" id="Resource_blh7f"]
 script = ExtResource("8_2d35l")
-formal_question = false
 question_string = "Choose one"
 yes_answer = "1 Basic Energy from Discard to Hand"
 no_answer = "3 Basic Energy from Discard to Deck"
-can_reverse = true
-occurance = false
-chooser = 0
-choose_location = "None"
-which_stack = 0
 metadata/_custom_type_script = "uid://b85jmc7067bjc"
 
 [sub_resource type="Resource" id="Resource_w5nry"]

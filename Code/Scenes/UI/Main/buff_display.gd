@@ -20,9 +20,14 @@ func set_vis(vis: bool):
 	if vis:
 		get_parent().show()
 
-func set_changes(changes: Array[SlotChange]) -> void:
+func set_changes(changes: Array[Dictionary]) -> void:
 	set_vis(true)
-	change_array = changes
+	var all_changes: Array[SlotChange]
+	
+	for dict in changes:
+		all_changes.append_array(dict.keys())
+	
+	change_array = all_changes
 	
 	if change_array.size() > 1:
 		$Timer.start()

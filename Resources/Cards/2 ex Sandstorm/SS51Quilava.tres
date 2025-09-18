@@ -14,16 +14,7 @@
 
 [sub_resource type="Resource" id="Resource_wq6gn"]
 script = ExtResource("7_rdcq8")
-formal_question = false
-question_string = ""
-yes_answer = ""
-no_answer = ""
-can_reverse = true
 effect = ExtResource("6_v7xvw")
-occurance = false
-chooser = 0
-choose_location = "None"
-which_stack = 0
 metadata/_custom_type_script = "uid://b85jmc7067bjc"
 
 [sub_resource type="Resource" id="Resource_ik1y4"]

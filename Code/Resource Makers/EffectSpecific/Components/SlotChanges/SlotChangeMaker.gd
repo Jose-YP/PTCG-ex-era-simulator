@@ -1,7 +1,7 @@
 extends Resource
 class_name SlotChange
 
-#Shared by: Buff, Disable, OverRide, TypeChange
+#Shared by: Buff, Disable, OverRide, TypeChange, RuleChange
 
 ##How will this change be applied?[br]
 ##[enum Slot] Apply change to slots that meet [member recieves].[br]
@@ -33,3 +33,15 @@ func play_effect(reversable: bool = false, replace_num: int = -1) -> void:
 	else:
 		Globals.fundies.apply_change(recieves, self)
 	finished.emit()
+
+func how_display() -> Dictionary[String, bool]:
+	match get_script().get_global_name():
+		"Disable":
+			return {"Disable" : true}
+		"OverRide":
+			return {"OverRide" : false}
+		"TypeChange":
+			return {"TypeeChange" : false}
+	
+	return {"RuleChange" : true}
+	

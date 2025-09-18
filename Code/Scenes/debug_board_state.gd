@@ -9,8 +9,8 @@ class_name BoardNode
 @export var test: PackedScene
 
 var full_ui: FullBoardUI
-var singles_ui: PackedScene = load("res://Scenes/UI/UICollections/full_ui.tscn")
-var doubles_ui: PackedScene = load("res://Scenes/UI/UICollections/full_ui_doubles.tscn")
+var singles_ui: PackedScene = load("uid://bsad85ywgca3d")
+var doubles_ui: PackedScene = load("uid://bwtrs2phbtohv")
 var test_out: bool = false
 
 func _ready() -> void:

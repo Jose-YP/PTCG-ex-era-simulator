@@ -29,15 +29,7 @@ metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [resource]
 script = ExtResource("2_pgl4t")
-formal_question = false
-question_string = ""
-yes_answer = ""
-no_answer = ""
 comparator = SubResource("Resource_1wjj3")
 can_reverse = false
 effect = SubResource("Resource_ia1ww")
-occurance = false
-chooser = 0
-choose_location = "None"
-which_stack = 0
 metadata/_custom_type_script = "uid://b85jmc7067bjc"

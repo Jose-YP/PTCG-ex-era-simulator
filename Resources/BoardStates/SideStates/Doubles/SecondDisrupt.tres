@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SideState" load_steps=25 format=3 uid="uid://ce7dsgypq4ath"]
+[gd_resource type="Resource" script_class="SideState" load_steps=26 format=3 uid="uid://ce7dsgypq4ath"]
 
 [ext_resource type="Resource" uid="uid://d4mns7h0u0o7l" path="res://Resources/Decks/FossilDisruptish.tres" id="1_yx0ke"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_v2fs2"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://dgqpurnuh14t1" path="res://Code/Resource Makers/GeneralUse/SideStateMaker.gd" id="10_5gwiu"]
 [ext_resource type="Script" uid="uid://cs70ix831b5g4" path="res://Code/Resource Makers/PokemonSpecific/PokeSlotMaker.gd" id="11_ow3nn"]
 [ext_resource type="Resource" uid="uid://s0s7u11b5pvm" path="res://Resources/Cards/3 ex Dragon/DR95Magcargo-ex.tres" id="12_2u6al"]
+[ext_resource type="Script" uid="uid://b3041relhlcb2" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/SlotChangeMaker.gd" id="13_3ayiw"]
 [ext_resource type="Resource" uid="uid://bkb836o4j5m51" path="res://Resources/Cards/3 ex Dragon/DR72Slugma.tres" id="13_mtvh4"]
 [ext_resource type="Resource" uid="uid://c0go1swy2811a" path="res://Resources/Cards/5 ex Hidden Legends/HL3Crobat.tres" id="14_gmcev"]
 [ext_resource type="Resource" uid="uid://isg15u2khcim" path="res://Resources/Cards/5 ex Hidden Legends/HL83Zubat.tres" id="15_eeq2m"]
@@ -23,86 +24,42 @@
 [sub_resource type="Resource" id="Resource_4bxnw"]
 script = ExtResource("9_tkfjb")
 deck = ExtResource("1_yx0ke")
-excluded_to_discard = false
 init_deck = Array[ExtResource("2_v2fs2")]([ExtResource("3_4ilcf"), ExtResource("3_4ilcf"), ExtResource("3_4ilcf"), ExtResource("3_4ilcf")])
 init_hand = Array[ExtResource("2_v2fs2")]([ExtResource("4_3ayiw"), ExtResource("5_tlfmn"), ExtResource("6_3amvr"), ExtResource("7_iyrr3"), ExtResource("8_utovj"), ExtResource("9_4ilcf")])
-init_discard = Array[ExtResource("2_v2fs2")]([])
-init_prize = Array[ExtResource("2_v2fs2")]([])
 metadata/_custom_type_script = "uid://calm3n7va5yjo"
 
 [sub_resource type="Resource" id="Resource_ig8ub"]
 script = ExtResource("11_ow3nn")
 current_card = ExtResource("12_2u6al")
-max_HP = 0
-damage_counters = 0
-evolution_ready = false
-evolved_this_turn = false
 evolved_from = Array[ExtResource("2_v2fs2")]([ExtResource("13_mtvh4")])
 energy_cards = Array[ExtResource("2_v2fs2")]([ExtResource("3_4ilcf")])
-tm_cards = Array[ExtResource("2_v2fs2")]([])
-buffs = Array[Dictionary]([])
-disables = Array[Dictionary]([])
-dealt_damage = 0
-energy_discarded = 0
 metadata/_custom_type_script = "uid://cs70ix831b5g4"
 
 [sub_resource type="Resource" id="Resource_6rk10"]
 script = ExtResource("11_ow3nn")
 current_card = ExtResource("14_gmcev")
-max_HP = 0
-damage_counters = 0
-evolution_ready = false
-evolved_this_turn = false
 evolved_from = Array[ExtResource("2_v2fs2")]([ExtResource("15_eeq2m"), ExtResource("16_8oep5")])
 energy_cards = Array[ExtResource("2_v2fs2")]([ExtResource("3_4ilcf"), ExtResource("7_iyrr3")])
-tm_cards = Array[ExtResource("2_v2fs2")]([])
-buffs = Array[Dictionary]([])
-disables = Array[Dictionary]([])
-dealt_damage = 0
-energy_discarded = 0
 metadata/_custom_type_script = "uid://cs70ix831b5g4"
 
 [sub_resource type="Resource" id="Resource_bpwmo"]
 script = ExtResource("11_ow3nn")
 current_card = ExtResource("17_4ckew")
-max_HP = 0
-damage_counters = 0
-evolution_ready = false
-evolved_this_turn = false
-evolved_from = Array[ExtResource("2_v2fs2")]([])
-energy_cards = Array[ExtResource("2_v2fs2")]([])
-tm_cards = Array[ExtResource("2_v2fs2")]([])
-buffs = Array[Dictionary]([])
-disables = Array[Dictionary]([])
-dealt_damage = 0
-energy_discarded = 0
 metadata/_custom_type_script = "uid://cs70ix831b5g4"
 
 [sub_resource type="Resource" id="Resource_tlfmn"]
 script = ExtResource("11_ow3nn")
-current_card = ExtResource("19_3ayiw")
-max_HP = 0
-damage_counters = 0
-evolution_ready = false
-evolved_this_turn = false
-evolved_from = Array[ExtResource("2_v2fs2")]([])
-energy_cards = Array[ExtResource("2_v2fs2")]([])
-tm_cards = Array[ExtResource("2_v2fs2")]([])
-buffs = Array[Dictionary]([])
-disables = Array[Dictionary]([])
-dealt_damage = 0
-energy_discarded = 0
+current_card = ExtResource("9_4ilcf")
+evolved_from = Array[ExtResource("2_v2fs2")]([ExtResource("19_3ayiw")])
 metadata/_custom_type_script = "uid://cs70ix831b5g4"
 
 [resource]
 script = ExtResource("10_5gwiu")
 card_stacks = SubResource("Resource_4bxnw")
-prize_cards = 6
-bench_size = 5
 slots = Dictionary[ExtResource("11_ow3nn"), bool]({
-SubResource("Resource_ig8ub"): true,
+SubResource("Resource_ig8ub"): false,
 SubResource("Resource_6rk10"): true,
 SubResource("Resource_bpwmo"): false,
-SubResource("Resource_tlfmn"): false
+SubResource("Resource_tlfmn"): true
 })
 metadata/_custom_type_script = "uid://dgqpurnuh14t1"

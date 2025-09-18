@@ -39,17 +39,11 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_aja76"]
 script = ExtResource("9_nx42b")
-formal_question = false
 question_string = "Which Opposing Active Pokemon will get confused?"
-yes_answer = ""
-no_answer = ""
 comparator = ExtResource("8_n3ulc")
-can_reverse = true
-occurance = false
 chooser = 4
 choose_location = "Slot"
 which_slots = ExtResource("10_isniu")
-which_stack = 0
 metadata/_custom_type_script = "uid://b85jmc7067bjc"
 
 [sub_resource type="Resource" id="Resource_kmsla"]

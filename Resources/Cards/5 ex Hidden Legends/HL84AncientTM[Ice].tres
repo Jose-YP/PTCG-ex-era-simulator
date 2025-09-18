@@ -35,16 +35,7 @@ metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
 [sub_resource type="Resource" id="Resource_dlf6l"]
 script = ExtResource("13_8eilx")
-formal_question = false
-question_string = ""
-yes_answer = ""
-no_answer = ""
 comparator = SubResource("Resource_cs4vx")
-can_reverse = true
-occurance = false
-chooser = 0
-choose_location = "None"
-which_stack = 0
 metadata/_custom_type_script = "uid://b85jmc7067bjc"
 
 [sub_resource type="Resource" id="Resource_utej3"]

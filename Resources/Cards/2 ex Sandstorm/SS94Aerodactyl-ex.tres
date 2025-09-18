@@ -58,6 +58,7 @@ metadata/_custom_type_script = "uid://dmulm3x3dj842"
 script = ExtResource("12_3pmxv")
 name = "Primal Lock"
 description = "As long as [name] is in play, your opponent can't play Pokémon Tool cards. Remove any Pokémon Tool cards attached to your opponent's Pokémon and put them into his or her discard pile. "
+affected_by_condition = false
 how_often = "Infinite"
 occurance = SubResource("Resource_f55l8")
 passive = SubResource("Resource_xpjov")

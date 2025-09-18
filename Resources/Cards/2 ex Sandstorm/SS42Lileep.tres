@@ -40,17 +40,11 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_nypme"]
 script = ExtResource("9_vuxad")
-formal_question = false
-question_string = ""
-yes_answer = ""
-no_answer = ""
 comparator = ExtResource("8_xhd16")
 can_reverse = false
-occurance = false
 chooser = 1
 choose_location = "Slot"
 which_slots = ExtResource("10_m8hh4")
-which_stack = 0
 metadata/_custom_type_script = "uid://b85jmc7067bjc"
 
 [sub_resource type="Resource" id="Resource_1yysy"]

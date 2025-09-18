@@ -25,7 +25,7 @@ func _ready():
 	if ability.description != "":
 		var using: String = ability.description
 		if ability.affected_by_condition:
-			using += Convert.reformat(Consts.condition_power_text, card_name)
+			using += Convert.reformat(Consts.condition_power_txt, card_name)
 		
 		var final_text: String = Convert.reformat(using, card_name)
 		%EffectText.append_text(final_text)

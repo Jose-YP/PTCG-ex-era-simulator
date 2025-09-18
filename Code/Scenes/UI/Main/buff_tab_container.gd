@@ -15,7 +15,13 @@ func display_change(change: SlotChange):
 			current_tab = 3
 		"Disable":
 			current_tab = 4
+		"Override":
+			current_tab = 5
+		"TypeChange":
+			current_tab = 3
+		"RuleChange":
+			current_tab = 5
 		_:
-			push_error("I don't know what kind of buff this is")
+			push_error("I don't know what kind of change this is")
 	
 	modulate = Color.AQUA if dict[key] else Color.ORANGE

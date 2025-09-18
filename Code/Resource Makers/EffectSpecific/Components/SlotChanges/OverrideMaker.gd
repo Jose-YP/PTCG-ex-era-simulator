@@ -5,8 +5,5 @@ class_name OverRide
 @export var rare_candy: bool = false
 @export var can_evolve_into: String
 
-
-func play_effect(reversable: bool = false, replace_num: int = -1) -> void:
-	print("PLAY OVERIDE")
-	
-	finished.emit()
+func how_display() -> Dictionary[String, bool]:
+	return {"OverRide" : true}

@@ -149,13 +149,8 @@ func control_disapear(node: Node):
 	
 	node.queue_free()
 
-func display_changes(home: bool, change_array: Array):
-	var temp: Array[SlotChange]
-	
-	for change in change_array:
-		temp.append(change)
-	
-	get_home_side(home).non_mon.change_display.set_changes(temp)
+func display_changes(home: bool, change_array: Array[Dictionary]):
+	get_home_side(home).non_mon.change_display.set_changes(change_array)
 
 #endregion
 #--------------------------------------

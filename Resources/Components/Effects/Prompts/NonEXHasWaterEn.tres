@@ -22,14 +22,5 @@ metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
 
 [resource]
 script = ExtResource("2_thmnf")
-formal_question = false
-question_string = ""
-yes_answer = ""
-no_answer = ""
 comparator = SubResource("Resource_2l8n7")
-can_reverse = true
-occurance = false
-chooser = 0
-choose_location = "None"
-which_stack = 0
 metadata/_custom_type_script = "uid://b85jmc7067bjc"

@@ -11,14 +11,5 @@ metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [resource]
 script = ExtResource("3_oxjlb")
-formal_question = false
-question_string = ""
-yes_answer = ""
-no_answer = ""
-can_reverse = true
 effect = SubResource("Resource_gm1a6")
-occurance = false
-chooser = 0
-choose_location = "None"
-which_stack = 0
 metadata/_custom_type_script = "uid://b85jmc7067bjc"

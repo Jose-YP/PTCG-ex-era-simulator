@@ -38,6 +38,9 @@ var power_ready: bool
 @export var overrides: Dictionary[SlotChange, int]
 @export var type_changes: Dictionary[SlotChange, int]
 @export var rule_changes: Dictionary[SlotChange, int]
+var all_changes: Dictionary[String, Dictionary] = {"Buff" : buffs,
+ "Disable" : disables, "OverRide" : overrides, "TypeChange" : type_changes,
+ "RuleChange" : rule_changes}
 #endregion
 #--------------------------------------
 #--------------------------------------
@@ -932,19 +935,7 @@ func confusion_check() -> bool:
 #--------------------------------------
 #region SLOT CHANGE HANDLERS
 func get_changes(change: String) -> Dictionary[SlotChange, int]:
-	match change:
-		"Buff":
-			return buffs
-		"Disable":
-			return disables
-		"Override":
-			return overrides
-		"TypeChange":
-			return type_changes
-		"RuleChange":
-			return rule_changes
-	
-	return {null: 0}
+	return all_changes[change]
 
 func apply_slot_change(apply: SlotChange):
 	if is_filled() and not apply in buffs:
@@ -963,7 +954,7 @@ func remove_slot_change(removing: SlotChange):
 			changes_ui_check()
 
 func changes_ui_check():
-	ui_slot.changes_display.set_changes(buffs.keys())
+	ui_slot.changes_display.set_changes(all_changes.values())
 	ui_slot.max_hp.clear()
 	set_max_hp()
 	ui_slot.max_hp.append_text(str("HP: ",get_max_hp()))
@@ -1051,7 +1042,7 @@ func refresh_swap() -> void:
 		#check for any attatched cards/conditions
 		count_energy()
 		ui_slot.display_energy(get_energy_strings(), attached_energy)
-		ui_slot.changes_display.set_changes(buffs.keys())
+		ui_slot.changes_display.set_changes(all_changes.values())
 		
 		if tm_cards.size():
 			ui_slot.tm.texture = tm_cards[0].image

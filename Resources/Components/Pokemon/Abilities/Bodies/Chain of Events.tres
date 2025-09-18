@@ -31,15 +31,9 @@ metadata/_custom_type_script = "uid://bics3dumv7avj"
 
 [sub_resource type="Resource" id="Resource_uy14q"]
 script = ExtResource("5_yx24e")
-formal_question = false
 question_string = "Use Cheer On?"
 yes_answer = "Yes"
 no_answer = "No"
-can_reverse = true
-occurance = false
-chooser = 0
-choose_location = "None"
-which_stack = 0
 metadata/_custom_type_script = "uid://b85jmc7067bjc"
 
 [resource]

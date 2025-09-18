@@ -23,7 +23,5 @@ class_name Disable
 
 enum DIS_STATUS {CAN, CANT, FLIP}
 
-func play_effect(reversable: bool = false, replace_num: int = -1) -> void:
-	print("PLAY DISABLE")
-	
-	finished.emit()
+func how_display() -> Dictionary[String, bool]:
+	return {"Disable" : false}
