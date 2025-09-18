@@ -32,6 +32,7 @@ func play_effect(reversable: bool = false, replace_num: int = -1) -> void:
 		
 	else:
 		Globals.fundies.apply_change(recieves, self)
+	
 	finished.emit()
 
 func how_display() -> Dictionary[String, bool]:

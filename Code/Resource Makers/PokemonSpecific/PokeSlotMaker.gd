@@ -33,14 +33,8 @@ var power_ready: bool
 @export var tool_card: Base_Card
 @export var applied_condition: Condition = Condition.new()
 @export_subgroup("Slot Changes")
-@export var buffs: Dictionary[SlotChange, int]
-@export var disables: Dictionary[SlotChange, int]
-@export var overrides: Dictionary[SlotChange, int]
-@export var type_changes: Dictionary[SlotChange, int]
-@export var rule_changes: Dictionary[SlotChange, int]
-var all_changes: Dictionary[String, Dictionary] = {"Buff" : buffs,
- "Disable" : disables, "OverRide" : overrides, "TypeChange" : type_changes,
- "RuleChange" : rule_changes}
+@export var all_changes: Dictionary[String, Dictionary] = {"Buff" : {},
+ "Disable" : {}, "OverRide" : {}, "TypeChange" : {}, "RuleChange" : {}}
 #endregion
 #--------------------------------------
 #--------------------------------------
@@ -132,7 +126,6 @@ func pokemon_checkup() -> void:
 
 #--------------------------------------
 #region POWER/BODY
-
 func setup_abilities():
 	Globals.fundies.record_single_src_trg(self)
 	if get_pokedata().pokebody:
@@ -327,7 +320,7 @@ func get_max_hp() -> int:
 	return max_HP
 
 func get_retreat() -> int:
-	if buffs.size() == 0: return get_pokedata().retreat
+	if get_changes("Buff").size() == 0: return get_pokedata().retreat
 	
 	var base: int = Globals.fundies.full_check_stat_buff(
 		self, Consts.STAT_BUFFS.RETREAT, false, true)
@@ -502,7 +495,7 @@ func dmg_manip(dmg_change: int, timer: int = -1) -> void:
 func set_max_hp():
 	#First look for replacments
 	var current: int = get_pokedata().HP
-	if buffs.size() != 0:
+	if get_changes("Buff").size() != 0:
 		var replace: int = Globals.fundies.full_check_stat_buff(
 		self, Consts.STAT_BUFFS.HP, false, true)
 		if replace != 0:
@@ -934,23 +927,24 @@ func confusion_check() -> bool:
 
 #--------------------------------------
 #region SLOT CHANGE HANDLERS
-func get_changes(change: String) -> Dictionary[SlotChange, int]:
+func get_changes(change: String) -> Dictionary:
 	return all_changes[change]
 
 func apply_slot_change(apply: SlotChange):
-	if is_filled() and not apply in buffs:
+	if is_filled() and not apply in get_changes("Buff"):
 		var dict: Dictionary = get_changes(apply.get_script().get_global_name())
 		
 		if not apply in dict:
 			dict[apply] = apply.duration
 			changes_ui_check()
+			check_passive()
 
 func remove_slot_change(removing: SlotChange):
 	if is_filled():
 		var dict: Dictionary = get_changes(removing.get_script().get_global_name())
 		
 		if removing in dict:
-			buffs.erase(removing)
+			dict.erase(removing)
 			changes_ui_check()
 
 func changes_ui_check():
@@ -959,8 +953,20 @@ func changes_ui_check():
 	set_max_hp()
 	ui_slot.max_hp.append_text(str("HP: ",get_max_hp()))
 
+func check_bool_disable(type: Consts.MON_DISABL) -> bool:
+	var dict = Globals.fundies.get_side_change("Disable", is_home()).keys() + get_changes("Disable").keys()
+	
+	for dis in dict:
+		if not dis is Disable: continue
+		dis = dis as Disable
+		
+		if dis.check_bool(type):
+			return true
+	
+	return false
+
 func manage_change_timers():
-	for dict in [buffs, disables, overrides, type_changes, rule_changes]:
+	for dict in all_changes.values():
 		for change in dict:
 			if dict[change] == -1:
 				continue

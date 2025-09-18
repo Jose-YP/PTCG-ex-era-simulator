@@ -66,11 +66,7 @@ func does_press_activate(slot: PokeSlot) -> bool:
 	return general_allowed(slot)
 
 func general_allowed(slot: PokeSlot) -> bool:
-	var quick_result: bool = true
-	if active:
-		quick_result = slot.is_active()
-	if affected_by_condition:
-		quick_result = quick_result and not slot.has_condition()
+	var quick_result: bool = quick_checks(slot)
 	
 	match how_often:
 		"Once per Mon":
@@ -84,6 +80,18 @@ func general_allowed(slot: PokeSlot) -> bool:
 			return check_allowed(slot) and quick_result
 	
 	return false
+
+func quick_checks(slot: PokeSlot):
+	var quick_result: bool = true
+	if active:
+		quick_result = slot.is_active()
+	if affected_by_condition:
+		quick_result = quick_result and not slot.has_condition()
+	if slot.get_changes("Disable").size() != 0 and slot.check_bool_disable(\
+		Consts.MON_DISABL.BODY if category == "Body" else Consts.MON_DISABL.POWER):
+		quick_result = false
+	
+	return quick_result
 
 func check_allowed(slot: PokeSlot) -> bool:
 	if prompt and prompt.has_check_prompt():
@@ -106,12 +114,8 @@ func has_effect(effect_types: Array[String]):
 
 #region ACTIVATION
 func activate_passive() -> bool:
-	var result: bool = true
 	var slot: PokeSlot = Globals.fundies.get_single_src_trg()
-	if active:
-		result = result and slot.is_active()
-	if affected_by_condition:
-		result = result and not slot.has_condition()
+	var result: bool = quick_checks(slot)
 	
 	if prompt and result:
 		if prompt.check_prompt():

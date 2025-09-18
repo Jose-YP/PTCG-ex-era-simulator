@@ -215,10 +215,16 @@ func ask_energy(slot: PokeSlot) -> bool:
 	return total >= energy_attatched if comparison_type == 1 else total <= energy_attatched
 
 func ask_ability(slot: PokeSlot, body: bool) -> bool:
-	var ability: Ability = slot.get_pokedata().pokebody if body else slot.get_pokedata().pokepower
-	var result: bool = (ability != null) == inclusive_ability
-	if specific_abilities.size() != 0:
-		result = (ability in specific_abilities) == inclusive_ability and result
+	var ability: Ability = null
+	if contained_abilities & 1 != 0:
+		ability = slot.get_pokedata().pokebody
+	if ability == null and contained_abilities & 2 != 0:
+		ability = slot.get_pokedata().pokepower
+	
+	
+	var result: bool = ability != null
+	if specific_abilities.size() != 0 and result:
+		result = (ability.name in specific_abilities) == inclusive_ability
 	
 	return result
 

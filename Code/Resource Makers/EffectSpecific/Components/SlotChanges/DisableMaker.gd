@@ -23,5 +23,23 @@ class_name Disable
 
 enum DIS_STATUS {CAN, CANT, FLIP}
 
+func choose_atk_disable() -> void:
+	pass
+
+func check_bool(which: Consts.MON_DISABL) -> bool:
+	match which:
+		Consts.MON_DISABL.POWER:
+			return disable_body
+		Consts.MON_DISABL.BODY:
+			return disable_power
+		Consts.MON_DISABL.RETREAT:
+			return disable_retreat
+		Consts.MON_DISABL.ATTACK:
+			return attack == DIS_STATUS.CANT
+		Consts.MON_DISABL.ATK_EFCT:
+			return atk_effect
+	
+	return false
+
 func how_display() -> Dictionary[String, bool]:
 	return {"Disable" : false}

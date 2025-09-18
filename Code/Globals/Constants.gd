@@ -146,7 +146,8 @@ enum MON_DISABL{
 	POWER,
 	BODY,
 	RETREAT,
-	ATTACK
+	ATTACK,
+	ATK_EFCT
 }
 #endregion
 #--------------------------------------

@@ -52,11 +52,11 @@ func get_energy_cost(slot: PokeSlot) -> Array[String]:
 func get_modified_cost(slot: PokeSlot) -> Array[int]:
 	var side_changes = Globals.fundies.get_side_change("Buff", slot.is_home()).keys()
 	
-	if not slot or (slot.buffs.size() == 0 and side_changes.size() == 0):
+	if not slot or (slot.get_changes("Buff").size() == 0 and side_changes.size() == 0):
 		return attack_cost.get_energy_cost_int()
 	
 	#First find any replacements
-	var replace: Array[int] = get_cost_buffs(slot.buffs.keys(), true)
+	var replace: Array[int] = get_cost_buffs(slot.get_changes("Buff").keys(), true)
 	var side_replace: Array[int] = get_cost_buffs(side_changes, true)
 	print(replace, side_replace)
 	print(replace.any(func(a: int): return a != 0), side_replace.any(func(a: int): return a != 0))
