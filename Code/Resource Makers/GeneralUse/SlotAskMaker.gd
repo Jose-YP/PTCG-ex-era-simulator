@@ -68,14 +68,14 @@ class_name SlotAsk
 @export var knocked_out: bool = false
 
 #Checks if one slot is 
-func check_ask(slot: PokeSlot) -> bool:
-	var result: bool
+func check_ask(slot: PokeSlot, check_slot_side: bool = true) -> bool:
+	var result: bool = true
 	if not slot.is_filled(): return false
 	
 	#Find which pokemon to check
 	print_verbose("[center]",slot.get_card_name())
 	#First remove any cards that aren't included in sides/slots parameters
-	if not slot.is_in_slot(side_target, slot_target):
+	if check_slot_side and not slot.is_in_slot(side_target, slot_target):
 		return false
 	#Check for any pokemon in the specifically array if it's filled
 	if specifically.size() != 0:

@@ -87,7 +87,8 @@ func quick_checks(slot: PokeSlot):
 		quick_result = slot.is_active()
 	if affected_by_condition:
 		quick_result = quick_result and not slot.has_condition()
-	if slot.get_changes("Disable").size() != 0 and slot.check_bool_disable(\
+	
+	if slot.get_every_change("Disable").size() != 0 and slot.check_bool_disable(\
 		Consts.MON_DISABL.BODY if category == "Body" else Consts.MON_DISABL.POWER):
 		quick_result = false
 	

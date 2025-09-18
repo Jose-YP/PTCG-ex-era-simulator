@@ -94,9 +94,8 @@ func get_self() -> PokeSlot:
 func remove_card() -> void:
 	print("IHJBEFDI")
 
-func update_stacks(dict: Dictionary[Consts.STACKS,Array],
- side: Consts.PLAYER_TYPES):
-	var temp_side: CardSideUI = get_home_side(home_side == side)
+func update_stacks(dict: Dictionary[Consts.STACKS,Array], side: bool):
+	var temp_side: CardSideUI = get_home_side(side)
 	for stack in dict:
 		if stack == Consts.STACKS.PLAY: break
 		temp_side.non_mon.update_stack(stack, dict[stack].size())

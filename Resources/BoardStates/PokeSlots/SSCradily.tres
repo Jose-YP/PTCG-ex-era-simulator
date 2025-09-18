@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="PokeSlot" load_steps=7 format=3 uid="uid://pbh2evnl2f8l"]
+
+[ext_resource type="Resource" uid="uid://bc7e6cec30ccx" path="res://Resources/Cards/2 ex Sandstorm/SS3Cradily.tres" id="1_oxg6t"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_ph1e1"]
+[ext_resource type="Resource" uid="uid://cjxwqcnfm20fq" path="res://Resources/Cards/1 ex Ruby & Saphire/RS104GrassEnergy.tres" id="3_ixjuy"]
+[ext_resource type="Resource" uid="uid://c0h3lvn0v74y" path="res://Resources/Cards/2 ex Sandstorm/SS92RootFossil.tres" id="4_6si3i"]
+[ext_resource type="Resource" uid="uid://dw80ljc0ni3p7" path="res://Resources/Cards/2 ex Sandstorm/SS42Lileep.tres" id="5_fust6"]
+[ext_resource type="Script" uid="uid://cs70ix831b5g4" path="res://Code/Resource Makers/PokemonSpecific/PokeSlotMaker.gd" id="6_tu5dk"]
+
+[resource]
+script = ExtResource("6_tu5dk")
+current_card = ExtResource("1_oxg6t")
+damage_counters = 30
+evolved_from = Array[ExtResource("2_ph1e1")]([ExtResource("4_6si3i"), ExtResource("5_fust6")])
+energy_cards = Array[ExtResource("2_ph1e1")]([ExtResource("3_ixjuy"), ExtResource("3_ixjuy")])
+metadata/_custom_type_script = "uid://cs70ix831b5g4"

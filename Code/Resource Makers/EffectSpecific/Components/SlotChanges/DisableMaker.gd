@@ -29,9 +29,9 @@ func choose_atk_disable() -> void:
 func check_bool(which: Consts.MON_DISABL) -> bool:
 	match which:
 		Consts.MON_DISABL.POWER:
-			return disable_body
-		Consts.MON_DISABL.BODY:
 			return disable_power
+		Consts.MON_DISABL.BODY:
+			return disable_body
 		Consts.MON_DISABL.RETREAT:
 			return disable_retreat
 		Consts.MON_DISABL.ATTACK:

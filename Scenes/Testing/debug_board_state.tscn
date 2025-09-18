@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://dnij7qm62bibx"]
 
 [ext_resource type="Script" uid="uid://j57m0tmwtg4n" path="res://Code/Scenes/debug_board_state.gd" id="1_auq40"]
-[ext_resource type="Resource" uid="uid://4uj0c5j8o6qa" path="res://Resources/BoardStates/SideStates/Doubles/EvilDisables.tres" id="2_43axb"]
+[ext_resource type="Resource" uid="uid://cwuydo8vg3ei2" path="res://Resources/BoardStates/SideStates/Doubles/MeganiumFossilD.tres" id="2_43axb"]
 [ext_resource type="Resource" uid="uid://dge18p0in3cyo" path="res://Resources/BoardStates/SideStates/Doubles/FPDTest.tres" id="3_43axb"]
 [ext_resource type="PackedScene" uid="uid://bmhba1mua5n81" path="res://Scenes/Testing/debug_button.tscn" id="4_t8we2"]
 [ext_resource type="PackedScene" uid="uid://7cdjjog7dndn" path="res://Scenes/UI/ETC/input_condition.tscn" id="5_43axb"]

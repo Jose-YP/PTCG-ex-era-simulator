@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SideState" load_steps=31 format=3 uid="uid://ds3gwf2066vgp"]
+[gd_resource type="Resource" script_class="SideState" load_steps=30 format=3 uid="uid://ds3gwf2066vgp"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_u77ud"]
 [ext_resource type="Resource" uid="uid://clkcnsev5iwh8" path="res://Resources/Cards/2 ex Sandstorm/SS53Volbeat.tres" id="6_7tomb"]
@@ -20,7 +20,6 @@
 [ext_resource type="Script" uid="uid://dgqpurnuh14t1" path="res://Code/Resource Makers/GeneralUse/SideStateMaker.gd" id="20_b6cy8"]
 [ext_resource type="Resource" uid="uid://cdlsj0xlgu0n" path="res://Resources/Cards/12 ex Legend Maker/LM20Lunatone.tres" id="21_u77ud"]
 [ext_resource type="Script" uid="uid://cs70ix831b5g4" path="res://Code/Resource Makers/PokemonSpecific/PokeSlotMaker.gd" id="21_w1oqn"]
-[ext_resource type="Script" uid="uid://b3041relhlcb2" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/SlotChangeMaker.gd" id="22_6sgh1"]
 [ext_resource type="Resource" uid="uid://bf1kk8opucyo8" path="res://Resources/Cards/2 ex Sandstorm/SS13Solrock.tres" id="22_pn62p"]
 
 [sub_resource type="Resource" id="Resource_ke6yh"]

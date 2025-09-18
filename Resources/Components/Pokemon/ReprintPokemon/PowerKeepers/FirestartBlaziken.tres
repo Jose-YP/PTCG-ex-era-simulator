@@ -38,7 +38,7 @@ search = ExtResource("8_5jabs")
 script = ExtResource("9_kxwsk")
 category = "Power"
 name = "Firestarter"
-description = "Once during your turn (before your attack), you may attach a {Fire} Energy card from your discard pile to 1 of your Benched Pokémon. This power can't be used if [name] is affected by a Special Condition."
+description = "Once during your turn (before your attack), you may attach a {Fire} Energy card from your discard pile to 1 of your Benched Pokémon."
 effect = SubResource("Resource_4ym1n")
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 

@@ -926,6 +926,12 @@ func confusion_check() -> bool:
 func get_changes(change: String) -> Dictionary:
 	return all_changes[change]
 
+func get_every_change(change: String) -> Dictionary:
+	var dict: Dictionary = all_changes[change]
+	dict.merge(Globals.fundies.get_side_change(change, is_home()))
+	
+	return dict
+
 func apply_slot_change(apply: SlotChange):
 	if is_filled() and not apply in get_changes("Buff"):
 		var dict: Dictionary = get_changes(apply.get_script().get_global_name())
@@ -933,6 +939,8 @@ func apply_slot_change(apply: SlotChange):
 		if not apply in dict:
 			dict[apply] = apply.duration
 			changes_ui_check()
+			if apply is Disable:
+				pass
 			check_passive()
 
 func remove_slot_change(removing: SlotChange):
@@ -957,13 +965,13 @@ func changes_ui_check():
 	ui_slot.max_hp.append_text(str("HP: ",get_max_hp()))
 
 func check_bool_disable(type: Consts.MON_DISABL) -> bool:
-	var dict = Globals.fundies.get_side_change("Disable", is_home()).keys() + get_changes("Disable").keys()
+	var dict = get_every_change("Disable")
 	
 	for dis in dict:
 		if not dis is Disable: continue
 		dis = dis as Disable
 		
-		if dis.check_bool(type):
+		if dis.check_bool(type) and dis.recieves.check_ask(self, false):
 			return true
 	
 	return false

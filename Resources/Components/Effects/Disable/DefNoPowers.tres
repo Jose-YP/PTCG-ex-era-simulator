@@ -6,13 +6,6 @@
 [resource]
 script = ExtResource("1_iaswf")
 disable_power = true
-disable_body = false
-disable_retreat = false
-choose_num = -1
-attack = 0
-atk_effect = true
-attack_names = Array[String]([])
 application = "Side"
 recieves = ExtResource("1_7uotq")
-duration = -1
 metadata/_custom_type_script = "uid://c0ishgbxk63dg"

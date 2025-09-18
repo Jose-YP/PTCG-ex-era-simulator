@@ -48,7 +48,6 @@ func set_up_stacks(home: bool):
 func set_up_slots(home: bool):
 	var temp_side: SideState = board_state.get_side(home)
 	var ui: CardSideUI = full_ui.get_home_side(home)
-	var player_type: Consts.PLAYER_TYPES = board_state.get_player_type(home)
 	var stacks: CardStacks = fundies.stack_manager.get_stacks(home)
 	
 	#Set up pre defined slots
@@ -62,7 +61,7 @@ func set_up_slots(home: bool):
 		stacks.account_for_slot(slot)
 	
 	stacks.setup()
-	full_ui.update_stacks(stacks.sendStackDictionary(),player_type)
+	full_ui.update_stacks(stacks.sendStackDictionary(), home)
 
 func _input(event: InputEvent) -> void:
 	if event.is_action("TEST") and not test_out and test:
