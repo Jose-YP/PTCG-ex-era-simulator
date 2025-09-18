@@ -327,6 +327,12 @@ func before_direct_attack(attacker: PokeSlot, with: Attack):
 	
 	if await attacker.confusion_check():
 		return
+	if attacker.check_attack_disable(Consts.DIS_ATK.FLIP, with.name):
+		var result = LateConsts.coinflip_once.start_comparision()
+		await SignalBus.finished_coinflip
+		
+		if not result:
+			return
 	
 	if attack_data.prompt:
 		if attack_data.prompt.has_num_input():
@@ -370,7 +376,7 @@ func before_direct_attack(attacker: PokeSlot, with: Attack):
 	
 	else: Globals.fundies.record_single_src_trg(attacker)
 	
-	if not attack_data.before_damage:
+	if not attack_data.before_damage and not attacker.check_atk_efct_dis(with.name):
 		Globals.fundies.atk_efect = true
 		await attack_effect(attacker, with.attack_data, replace_num)
 	

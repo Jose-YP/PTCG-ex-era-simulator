@@ -5,6 +5,5 @@
 
 [resource]
 script = ExtResource("2_1w8m2")
-order = Array[int]([])
 disable = ExtResource("1_msrmc")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"

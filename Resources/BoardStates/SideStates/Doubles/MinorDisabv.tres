@@ -102,8 +102,8 @@ card_stacks = SubResource("Resource_152a3")
 slots = Dictionary[ExtResource("23_kcubd"), bool]({
 SubResource("Resource_vnfgl"): false,
 SubResource("Resource_a6m0u"): false,
-SubResource("Resource_ovipe"): true,
-SubResource("Resource_sjhqk"): false,
+SubResource("Resource_ovipe"): false,
+SubResource("Resource_sjhqk"): true,
 SubResource("Resource_83v2a"): false,
 SubResource("Resource_vr2hh"): true
 })

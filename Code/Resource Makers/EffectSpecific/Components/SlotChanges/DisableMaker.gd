@@ -48,5 +48,12 @@ func check_attack(which: Consts.DIS_ATK, atk_name: String) -> bool:
 		return false
 	return which == attack
 
+func check_atk_efct(atk_name: String):
+	if attack_names.size() != 0:
+		if atk_name in attack_names:
+			return atk_effect
+		return false
+	return atk_effect
+
 func how_display() -> Dictionary[String, bool]:
 	return {"Disable" : false}

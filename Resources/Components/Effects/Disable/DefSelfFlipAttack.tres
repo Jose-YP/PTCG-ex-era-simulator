@@ -1,9 +1,11 @@
-[gd_resource type="Resource" script_class="Disable" load_steps=2 format=3 uid="uid://ovi6aaco5q03"]
+[gd_resource type="Resource" script_class="Disable" load_steps=3 format=3 uid="uid://ovi6aaco5q03"]
 
+[ext_resource type="Resource" uid="uid://bkt6ry7vyha70" path="res://Resources/Components/Effects/Asks/General/Other.tres" id="1_lgbj1"]
 [ext_resource type="Script" uid="uid://c0ishgbxk63dg" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/DisableMaker.gd" id="1_q4vn0"]
 
 [resource]
 script = ExtResource("1_q4vn0")
 attack = 2
+recieves = ExtResource("1_lgbj1")
 duration = 1
 metadata/_custom_type_script = "uid://c0ishgbxk63dg"

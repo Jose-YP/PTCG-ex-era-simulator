@@ -987,6 +987,15 @@ func check_attack_disable(which: Consts.DIS_ATK, atk_name: String):
 			return true
 	return false
 
+func check_atk_efct_dis(atk_name: String):
+	for dis in get_every_change("Disable"):
+		if not dis is Disable: continue
+		dis = dis as Disable
+		
+		if dis.check_atk_efct(atk_name):
+			return true
+	return false
+
 func switch_clear():
 	for dict in all_changes.values():
 		for change in dict:

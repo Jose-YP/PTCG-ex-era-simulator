@@ -7,7 +7,5 @@
 script = ExtResource("2_3q6nw")
 comparision_type = "Equals"
 first_comparison = ExtResource("1_6tmvo")
-compare_to = "None"
 second_constant = 2
-operate_w_constant = "None"
 metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
