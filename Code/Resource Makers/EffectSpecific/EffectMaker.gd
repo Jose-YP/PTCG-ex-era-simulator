@@ -28,7 +28,7 @@ class_name EffectCall
 ##Mimic other pokemon's moves
 @export var mimic: Mimic
 ##What rules should be changed on a slot?
-@export var override: OverRide
+@export var override: Override
 ##What rules should be changed across the whole game
 @export var rule_change: RuleChange
 ##What cards can you play now?

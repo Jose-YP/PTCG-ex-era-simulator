@@ -1,0 +1,93 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=25 format=3 uid="uid://20al8twlj4u4"]
+
+[ext_resource type="Texture2D" uid="uid://u0n0sq0bambd" path="res://Art/Cards/7 ex Team Rocket Returns/101.jpg" id="1_pteqy"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_emwfw"]
+[ext_resource type="Resource" uid="uid://dpovjlfpsypwe" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless3.tres" id="3_s8yb3"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="4_sddag"]
+[ext_resource type="Resource" uid="uid://chc757fk4t8pm" path="res://Resources/Components/Effects/Prompts/Discard1EnTo.tres" id="5_or0lu"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="6_gjuqb"]
+[ext_resource type="Resource" uid="uid://5cxvxqqg0ncq" path="res://Resources/Components/Effects/Search/SearchAttatchEnergy.tres" id="7_rkgj2"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="8_s7m3e"]
+[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="9_cxxec"]
+[ext_resource type="Script" uid="uid://cswtf00ovs0ss" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/TypeChangeMaker.gd" id="10_pmjvj"]
+[ext_resource type="Resource" uid="uid://k2gkfeluuugx" path="res://Resources/Components/Counters/Comparator/Not Equal/HasAnyMetalEn.tres" id="11_62fw2"]
+[ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="12_xdkmx"]
+[ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="13_rjr4x"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="14_g0g55"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="15_bdbu1"]
+
+[sub_resource type="Resource" id="Resource_p7x8u"]
+script = ExtResource("6_gjuqb")
+search = ExtResource("7_rkgj2")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_nfwvr"]
+script = ExtResource("4_sddag")
+prompt = ExtResource("5_or0lu")
+success = SubResource("Resource_p7x8u")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
+[sub_resource type="Resource" id="Resource_l3am3"]
+script = ExtResource("8_s7m3e")
+description = "You may discard an Energy card attached to [name]. If you do, search your discard pile for an Energy card (excluding the one you discarded) and attach it to [name]."
+initial_main_DMG = 50
+prompt_effects = Array[ExtResource("4_sddag")]([SubResource("Resource_nfwvr")])
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_2pfky"]
+script = ExtResource("2_emwfw")
+name = "Rotating Claws"
+attack_cost = ExtResource("3_s8yb3")
+attack_data = SubResource("Resource_l3am3")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_i6xq6"]
+script = ExtResource("10_pmjvj")
+new_type = 192
+recieves = ExtResource("9_cxxec")
+metadata/_custom_type_script = "uid://cswtf00ovs0ss"
+
+[sub_resource type="Resource" id="Resource_owqqf"]
+script = ExtResource("6_gjuqb")
+type_change = SubResource("Resource_i6xq6")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_mpec5"]
+script = ExtResource("12_xdkmx")
+comparator = ExtResource("11_62fw2")
+metadata/_custom_type_script = "uid://b85jmc7067bjc"
+
+[sub_resource type="Resource" id="Resource_jneyl"]
+script = ExtResource("13_rjr4x")
+name = "Dual Armor"
+description = " As long as Rocket's Scizor ex has any {Metal} Energy attached to it, Rocket's Scizor ex is both {Darkness} and {Metal} type. "
+affected_by_condition = false
+prompt = SubResource("Resource_mpec5")
+passive = SubResource("Resource_owqqf")
+metadata/_custom_type_script = "uid://bs2y8ocljilv8"
+
+[sub_resource type="Resource" id="Resource_38lif"]
+script = ExtResource("14_g0g55")
+HP = 80
+pokebody = SubResource("Resource_jneyl")
+attacks = Array[ExtResource("2_emwfw")]([SubResource("Resource_2pfky")])
+evo_stage = "Stage 1"
+evolves_from = "Rocket's Scyther ex"
+considered = 2
+owner = 3
+type = 64
+weak = 2
+resist = 1
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("15_bdbu1")
+name = "Rocket's Scizor ex"
+image = ExtResource("1_pteqy")
+illustrator = "Hikaru Koike"
+number = 101
+rarity = 4
+expansion = 6
+categories = 1
+pokemon_properties = SubResource("Resource_38lif")
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

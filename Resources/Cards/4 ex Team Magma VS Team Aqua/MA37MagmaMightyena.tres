@@ -37,7 +37,6 @@ evolves_from = "Team Magma's Poochyena"
 considered = 0
 owner = 2
 type = 64
-weak = 32
 resist = 16
 
 [resource]

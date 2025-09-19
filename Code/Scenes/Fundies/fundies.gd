@@ -258,7 +258,7 @@ func get_side_change(change_class: String, home_val: bool) -> Dictionary:
 
 func get_all_side_changes(home_val: bool) -> Dictionary[String, Dictionary]:
 	return {"Buff" : side_buffs[home_val], "Disable" : side_disables[home_val],
-	 "OverRide" : side_overrides[home_val], "TypeChange" : side_typechanges[home_val],
+	 "Override" : side_overrides[home_val], "TypeChange" : side_typechanges[home_val],
 	 "RuleChange" : side_rulechanges[home_val]}
 
 func apply_change(ask: SlotAsk, applying: SlotChange):

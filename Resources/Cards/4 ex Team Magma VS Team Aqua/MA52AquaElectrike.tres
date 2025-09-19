@@ -19,7 +19,6 @@ script = ExtResource("5_6r61j")
 attacks = Array[ExtResource("2_p4xuc")]([ExtResource("3_fewex"), SubResource("Resource_fubfp")])
 owner = 1
 type = 8
-weak = 32
 resist = 128
 
 [resource]

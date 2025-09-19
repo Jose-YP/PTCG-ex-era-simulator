@@ -74,7 +74,6 @@ attacks = Array[ExtResource("2_n4213")]([SubResource("Resource_qf3u3"), SubResou
 evo_stage = "Stage 1"
 evolves_from = "Skitty"
 type = 256
-weak = 32
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]

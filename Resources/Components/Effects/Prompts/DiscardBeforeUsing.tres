@@ -6,35 +6,15 @@
 
 [sub_resource type="Resource" id="Resource_05uh2"]
 script = ExtResource("1_5gloe")
-send = 0
-from = 0
-send_to = 2
-bottom_of_stack = false
-shuffle = false
-card_ammount = 1
-reveal = false
 side = 4
-from_stack = 0
-pokemon_disrupt = 0
 metadata/_custom_type_script = "uid://8sh5p3leflla"
 
 [sub_resource type="Resource" id="Resource_xteki"]
 script = ExtResource("2_p7rfr")
-either_or = false
-order = Array[int]([])
 card_disrupt = SubResource("Resource_05uh2")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
 [resource]
 script = ExtResource("3_hjnbi")
-formal_question = false
-question_string = ""
-yes_answer = ""
-no_answer = ""
-can_reverse = true
 effect = SubResource("Resource_xteki")
-occurance = false
-chooser = 0
-choose_location = "None"
-which_stack = 0
 metadata/_custom_type_script = "uid://b85jmc7067bjc"

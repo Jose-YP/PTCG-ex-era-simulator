@@ -34,7 +34,7 @@ var power_ready: bool
 @export var applied_condition: Condition = Condition.new()
 @export_subgroup("Slot Changes")
 @export var all_changes: Dictionary[String, Dictionary] = {"Buff" : {},
- "Disable" : {}, "OverRide" : {}, "TypeChange" : {}, "RuleChange" : {}}
+ "Disable" : {}, "Override" : {}, "TypeChange" : {}, "RuleChange" : {}}
 #endregion
 #--------------------------------------
 #--------------------------------------

@@ -41,7 +41,6 @@ script = ExtResource("10_qcxwa")
 pokebody = ExtResource("10_gjx7l")
 attacks = Array[ExtResource("2_gjx7l")]([ExtResource("3_7aspk"), SubResource("Resource_8k4ea")])
 type = 8
-weak = 32
 resist = 32
 metadata/_custom_type_script = "uid://dkximshow1pao"
 

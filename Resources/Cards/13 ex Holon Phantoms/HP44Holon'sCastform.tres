@@ -25,7 +25,6 @@ script = ExtResource("3_45r76")
 attacks = Array[ExtResource("2_oe5pn")]([SubResource("Resource_gfvgc")])
 owner = 4
 type = 256
-weak = 32
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -34,7 +33,7 @@ name = "Holon's Castform"
 image = ExtResource("2_45r76")
 illustrator = "Mitsuhiro Arita"
 number = 44
-rarity = 2
+rarity = 1
 expansion = 12
 categories = 5
 pokemon_properties = SubResource("Resource_4nuec")

@@ -36,7 +36,6 @@ attacks = Array[ExtResource("2_kyluj")]([SubResource("Resource_rxdhg"), SubResou
 evo_stage = "Stage 1"
 evolves_from = "Flaaffy"
 type = 8
-weak = 32
 resist = 128
 metadata/_custom_type_script = "uid://dkximshow1pao"
 

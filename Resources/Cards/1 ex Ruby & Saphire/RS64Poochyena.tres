@@ -25,7 +25,6 @@ attack_data = ExtResource("9_a5s5l")
 script = ExtResource("5_lb1lg")
 attacks = Array[ExtResource("4_rvsa4")]([SubResource("Resource_eomoe"), SubResource("Resource_kvrxo")])
 type = 64
-weak = 32
 resist = 16
 
 [resource]

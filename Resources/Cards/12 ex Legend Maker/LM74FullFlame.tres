@@ -1,0 +1,54 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=15 format=3 uid="uid://dvr1ux33w68yh"]
+
+[ext_resource type="Texture2D" uid="uid://bwreejfacekky" path="res://Art/Cards/12 ex Legend Maker/74.jpg" id="1_lg0am"]
+[ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="3_77qu7"]
+[ext_resource type="Script" uid="uid://b8kvis7rgg3j4" path="res://Code/Resource Makers/CardResources/StadiumMaker.gd" id="4_gbhv3"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="4_i8jkc"]
+[ext_resource type="Script" uid="uid://cyxu7ymi4nofx" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/RuleChangeMaker.gd" id="4_ulmnc"]
+[ext_resource type="Script" uid="uid://mcfyh6penu34" path="res://Code/Resource Makers/GeneralUse/CondRulesMaker.gd" id="5_myma1"]
+[ext_resource type="Resource" uid="uid://bns8h72u2hxqo" path="res://Resources/Components/Effects/Asks/General/AnyMon.tres" id="6_8nbs0"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="9_1jlab"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="13_ifyle"]
+
+[sub_resource type="Resource" id="Resource_l5k1b"]
+script = ExtResource("5_myma1")
+damage = 40
+evo_removal = false
+metadata/_custom_type_script = "uid://mcfyh6penu34"
+
+[sub_resource type="Resource" id="Resource_02rvq"]
+script = ExtResource("4_ulmnc")
+condition_rules = Dictionary[int, ExtResource("5_myma1")]({
+1: SubResource("Resource_l5k1b")
+})
+application = "Side"
+recieves = ExtResource("6_8nbs0")
+metadata/_custom_type_script = "uid://cyxu7ymi4nofx"
+
+[sub_resource type="Resource" id="Resource_bb1jk"]
+script = ExtResource("9_1jlab")
+rule_change = SubResource("Resource_02rvq")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_lg0am"]
+script = ExtResource("4_gbhv3")
+activate_effect = SubResource("Resource_bb1jk")
+metadata/_custom_type_script = "uid://b8kvis7rgg3j4"
+
+[sub_resource type="Resource" id="Resource_myma1"]
+script = ExtResource("3_77qu7")
+description = "Put 4 damage counters instead of 2 on each Burned Pokémon between turns. The Special Condition Burned can't be removed by evolving or devolving the Burned Pokémon."
+stadium_properties = SubResource("Resource_lg0am")
+metadata/_custom_type_script = "uid://crx447i85kshy"
+
+[resource]
+script = ExtResource("13_ifyle")
+name = "Full Flame"
+image = ExtResource("1_lg0am")
+illustrator = "Ryo Ueda"
+number = 74
+rarity = 1
+expansion = 11
+categories = 2
+trainer_properties = SubResource("Resource_myma1")
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

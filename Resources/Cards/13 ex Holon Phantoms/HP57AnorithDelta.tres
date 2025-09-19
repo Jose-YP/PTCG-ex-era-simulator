@@ -40,7 +40,6 @@ name = "Anorith"
 image = ExtResource("1_n8iux")
 illustrator = "Hajime Kusajima"
 number = 57
-rarity = 1
 expansion = 12
 categories = 1
 pokemon_properties = SubResource("Resource_g4gij")

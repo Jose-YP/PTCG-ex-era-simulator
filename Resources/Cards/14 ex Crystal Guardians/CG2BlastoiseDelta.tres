@@ -1,0 +1,92 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=25 format=3 uid="uid://dsmr1qfr4uxr1"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_i4g84"]
+[ext_resource type="Texture2D" uid="uid://boel4dhckhync" path="res://Art/Cards/14 ex Crystal Guardians/2.jpg" id="1_mtvp5"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_j8oih"]
+[ext_resource type="Resource" uid="uid://djhcfglsc14fn" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/F1C1.tres" id="3_qqjvp"]
+[ext_resource type="Resource" uid="uid://crhg4u3yu2cso" path="res://Resources/Components/Effects/Asks/General/FromOther.tres" id="4_1vc2j"]
+[ext_resource type="Resource" uid="uid://nco7wk2vhhx6" path="res://Resources/Components/Counters/Comparator/Return/ForSelfDmgCounters.tres" id="5_iql44"]
+[ext_resource type="Script" uid="uid://br15mnap82upq" path="res://Code/Resource Makers/PokemonSpecific/BenchAttackMaker.gd" id="6_hq73q"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="7_g7oxe"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="8_h4yv5"]
+[ext_resource type="Resource" uid="uid://b4p6bn3ei1onu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/M1C2.tres" id="9_e214k"]
+[ext_resource type="Resource" uid="uid://cjlv4ltu2gptf" path="res://Resources/Components/Pokemon/Attacks/AttackData/60Dmg.tres" id="10_dweeu"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="11_45sff"]
+[ext_resource type="Resource" uid="uid://bnv2dkudpcueo" path="res://Resources/Components/Effects/Asks/General/SrcActive.tres" id="12_h6iu1"]
+[ext_resource type="Script" uid="uid://cswtf00ovs0ss" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/TypeChangeMaker.gd" id="13_gkbmi"]
+[ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="14_6dr8t"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="15_80j2y"]
+
+[sub_resource type="Resource" id="Resource_finvv"]
+script = ExtResource("6_hq73q")
+candidates = ExtResource("4_1vc2j")
+initial_main_DMG = 0
+modifier = 2
+modifier_num = 10
+comparator = ExtResource("5_iql44")
+metadata/_custom_type_script = "uid://br15mnap82upq"
+
+[sub_resource type="Resource" id="Resource_hnj0a"]
+script = ExtResource("8_h4yv5")
+description = "Choose 1 of your opponent's Pokémon. This attack does 10 damage for each damage counter on Blastoise to that Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
+bench_damage = SubResource("Resource_finvv")
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_ywpw1"]
+script = ExtResource("2_j8oih")
+name = "Enraged Linear Attack"
+attack_cost = ExtResource("3_qqjvp")
+attack_data = SubResource("Resource_hnj0a")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_rfen2"]
+script = ExtResource("2_j8oih")
+name = "Skull Bash"
+attack_cost = ExtResource("9_e214k")
+attack_data = ExtResource("10_dweeu")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_pmjaa"]
+script = ExtResource("13_gkbmi")
+which = 1
+application = "Side"
+recieves = ExtResource("12_h6iu1")
+metadata/_custom_type_script = "uid://cswtf00ovs0ss"
+
+[sub_resource type="Resource" id="Resource_xvr4a"]
+script = ExtResource("11_45sff")
+type_change = SubResource("Resource_pmjaa")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_2tb08"]
+script = ExtResource("14_6dr8t")
+name = "Shield Veil"
+description = "Each of your Active Pokémon has no Weakness."
+affected_by_condition = false
+passive = SubResource("Resource_xvr4a")
+metadata/_custom_type_script = "uid://bs2y8ocljilv8"
+
+[sub_resource type="Resource" id="Resource_h0k6y"]
+script = ExtResource("15_80j2y")
+HP = 110
+retreat = 3
+pokebody = SubResource("Resource_2tb08")
+attacks = Array[ExtResource("2_j8oih")]([SubResource("Resource_ywpw1"), SubResource("Resource_rfen2")])
+evo_stage = "Stage 2"
+evolves_from = "Wartortle"
+considered = 9
+type = 160
+weak = 8
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_i4g84")
+name = "Blastoise"
+image = ExtResource("1_mtvp5")
+illustrator = "Masakazu Fukuda"
+number = 2
+rarity = 3
+expansion = 13
+categories = 1
+pokemon_properties = SubResource("Resource_h0k6y")
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

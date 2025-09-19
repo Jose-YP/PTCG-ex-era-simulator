@@ -17,7 +17,6 @@ attack_data = ExtResource("6_l2djy")
 script = ExtResource("4_rj823")
 attacks = Array[ExtResource("3_o4ni8")]([SubResource("Resource_occc4")])
 type = 64
-weak = 32
 resist = 16
 
 [resource]

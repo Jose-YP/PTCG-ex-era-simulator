@@ -47,7 +47,6 @@ name = "Kabuto"
 image = ExtResource("1_8b6ya")
 illustrator = "Hajime Kusajima"
 number = 67
-rarity = 1
 expansion = 12
 categories = 1
 pokemon_properties = SubResource("Resource_cu646")

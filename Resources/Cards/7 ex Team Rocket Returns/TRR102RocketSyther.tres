@@ -1,0 +1,116 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=30 format=3 uid="uid://ca78a611kvnv7"]
+
+[ext_resource type="Texture2D" uid="uid://cwa7u3q74h272" path="res://Art/Cards/7 ex Team Rocket Returns/102.jpg" id="1_3itd6"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_e50id"]
+[ext_resource type="Resource" uid="uid://lhvxyhb6vc1n" path="res://Resources/Components/Pokemon/Attacks/CommonAttacks/Bounce.tres" id="3_6u1sr"]
+[ext_resource type="Resource" uid="uid://dpovjlfpsypwe" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless3.tres" id="4_t6fyk"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="5_1muae"]
+[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="6_j50np"]
+[ext_resource type="Script" uid="uid://c0ishgbxk63dg" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/DisableMaker.gd" id="7_dr007"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="8_34l6h"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="9_ytq71"]
+[ext_resource type="Script" uid="uid://cswtf00ovs0ss" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/TypeChangeMaker.gd" id="10_oua66"]
+[ext_resource type="Resource" uid="uid://d1b5din1lvjqo" path="res://Resources/Components/EnData/Grass.tres" id="11_67y0p"]
+[ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="12_hmt6p"]
+[ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="13_dhivb"]
+[ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="14_wpd4d"]
+[ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="15_bjpr8"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="16_im5c8"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="17_gxnfw"]
+
+[sub_resource type="Resource" id="Resource_sala5"]
+script = ExtResource("7_dr007")
+attack = 1
+attack_names = Array[String](["Slashing Strike"])
+recieves = ExtResource("6_j50np")
+duration = 2
+metadata/_custom_type_script = "uid://c0ishgbxk63dg"
+
+[sub_resource type="Resource" id="Resource_86xgg"]
+script = ExtResource("8_34l6h")
+disable = SubResource("Resource_sala5")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_njxh6"]
+script = ExtResource("5_1muae")
+success = SubResource("Resource_86xgg")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
+[sub_resource type="Resource" id="Resource_poi1p"]
+script = ExtResource("9_ytq71")
+description = "[name] can't use Slashing Strike during your next turn. "
+initial_main_DMG = 40
+prompt_effects = Array[ExtResource("5_1muae")]([SubResource("Resource_njxh6")])
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_3vsn1"]
+script = ExtResource("2_e50id")
+name = "Slashing Strike"
+attack_cost = ExtResource("4_t6fyk")
+attack_data = SubResource("Resource_poi1p")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_ndeq2"]
+script = ExtResource("10_oua66")
+new_type = 65
+recieves = ExtResource("6_j50np")
+metadata/_custom_type_script = "uid://cswtf00ovs0ss"
+
+[sub_resource type="Resource" id="Resource_t62tm"]
+script = ExtResource("8_34l6h")
+type_change = SubResource("Resource_ndeq2")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_cuedh"]
+script = ExtResource("12_hmt6p")
+which = "Slot"
+ask = ExtResource("6_j50np")
+slot_vars = "energy_cards"
+en_count_methods = "Total"
+en_counting = ExtResource("11_67y0p")
+cap = -1
+metadata/_custom_type_script = "uid://vjn146j3ayd6"
+
+[sub_resource type="Resource" id="Resource_0fgis"]
+script = ExtResource("13_dhivb")
+comparision_type = "Not Equal"
+first_comparison = SubResource("Resource_cuedh")
+compare_to = "Const"
+metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
+
+[sub_resource type="Resource" id="Resource_kqd3g"]
+script = ExtResource("14_wpd4d")
+comparator = SubResource("Resource_0fgis")
+metadata/_custom_type_script = "uid://b85jmc7067bjc"
+
+[sub_resource type="Resource" id="Resource_jneyl"]
+script = ExtResource("15_bjpr8")
+name = "Dual Armor"
+description = " As long as [name] has any {Grass} Energy attached to it, [name] is both {Grass} and {Darkness} type. "
+affected_by_condition = false
+prompt = SubResource("Resource_kqd3g")
+passive = SubResource("Resource_t62tm")
+metadata/_custom_type_script = "uid://bs2y8ocljilv8"
+
+[sub_resource type="Resource" id="Resource_38lif"]
+script = ExtResource("16_im5c8")
+HP = 80
+pokebody = SubResource("Resource_jneyl")
+attacks = Array[ExtResource("2_e50id")]([ExtResource("3_6u1sr"), SubResource("Resource_3vsn1")])
+considered = 2
+owner = 3
+type = 65
+weak = 2
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("17_gxnfw")
+name = "Rocket's Scyther ex"
+image = ExtResource("1_3itd6")
+illustrator = "Hikaru Koike"
+number = 102
+rarity = 4
+expansion = 6
+categories = 1
+pokemon_properties = SubResource("Resource_38lif")
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

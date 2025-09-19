@@ -35,7 +35,6 @@ script = ExtResource("7_2b0yu")
 HP = 40
 attacks = Array[ExtResource("2_emyr2")]([SubResource("Resource_ky0p2"), SubResource("Resource_0cf72")])
 type = 256
-weak = 32
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]

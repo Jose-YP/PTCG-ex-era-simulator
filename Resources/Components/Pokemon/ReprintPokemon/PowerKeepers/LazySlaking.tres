@@ -72,5 +72,4 @@ attacks = Array[ExtResource("1_0s20w")]([SubResource("Resource_xtfpm")])
 evo_stage = "Stage 2"
 evolves_from = "Vigoroth"
 type = 256
-weak = 32
 metadata/_custom_type_script = "uid://dkximshow1pao"

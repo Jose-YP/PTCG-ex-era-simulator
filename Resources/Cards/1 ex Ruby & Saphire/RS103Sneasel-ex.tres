@@ -53,7 +53,6 @@ HP = 80
 attacks = Array[ExtResource("4_p1pt7")]([SubResource("Resource_xrmox"), SubResource("Resource_ju8be")])
 considered = 2
 type = 64
-weak = 32
 resist = 16
 
 [resource]

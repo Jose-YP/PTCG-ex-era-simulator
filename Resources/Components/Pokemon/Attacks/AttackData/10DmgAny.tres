@@ -7,19 +7,5 @@
 [resource]
 script = ExtResource("2_3ptel")
 description = "Choose 1 of your opponent's Pokémon. This attack does 10 damage to that Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
-prompt_reliant = false
-initial_main_DMG = 0
-defender_properties = 0
-condition = 1
-before_damage = false
-replace_num = false
-share_prompt = false
-prompt_effects = Array[ExtResource("2_h205n")]([])
-conditional_self_dmg = false
-self_damage = 0
-mod_prompt = false
-modifier = 0
-modifier_num = 0
-both_active = false
 bench_damage = ExtResource("1_jbc2i")
 metadata/_custom_type_script = "uid://8nne0t7tvtgl"

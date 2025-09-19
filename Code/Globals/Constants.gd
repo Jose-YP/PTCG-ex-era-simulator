@@ -151,6 +151,16 @@ enum MON_DISABL{
 }
 enum DIS_ATK {CAN, CANT, FLIP}
 
+enum CONDITIONS{
+	POISION,
+	BURN,
+	PARALYZE,
+	SLEEP,
+	CONFUSION,
+	IMPRISION,
+	SHOCKWAVE
+}
+
 #endregion
 #--------------------------------------
 

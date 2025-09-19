@@ -59,7 +59,6 @@ attacks = Array[ExtResource("1_o53ws")]([SubResource("Resource_u0ljs"), SubResou
 evo_stage = "Stage 1"
 evolves_from = "Slokoth"
 type = 256
-weak = 32
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]

@@ -107,6 +107,5 @@ attacks = Array[ExtResource("1_obixo")]([SubResource("Resource_dy8na")])
 evo_stage = "Stage 1"
 evolves_from = "Magnemite"
 type = 8
-weak = 32
 resist = 128
 metadata/_custom_type_script = "uid://dkximshow1pao"

@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://c8y6ac1wacylr"]
+
+[ext_resource type="Texture2D" uid="uid://djhq871x04lk8" path="res://Art/Cards/12 ex Legend Maker/77.jpg" id="1_rtxoy"]
+[ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="3_t0st4"]
+[ext_resource type="Script" uid="uid://b8kvis7rgg3j4" path="res://Code/Resource Makers/CardResources/StadiumMaker.gd" id="4_18a6e"]
+[ext_resource type="Script" uid="uid://bbs6ywsbueb13" path="res://Code/Resource Makers/EffectSpecific/Components/CheatPlayMaker.gd" id="4_n53ui"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="4_qrewc"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="9_kdnye"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="13_ugtwv"]
+
+[sub_resource type="Resource" id="Resource_bb1jk"]
+script = ExtResource("4_n53ui")
+metadata/_custom_type_script = "uid://bbs6ywsbueb13"
+
+[sub_resource type="Resource" id="Resource_lg0am"]
+script = ExtResource("9_kdnye")
+cheat_play = SubResource("Resource_bb1jk")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_ulmnc"]
+script = ExtResource("4_18a6e")
+when_to_check = "Once Per Turn"
+activate_effect = SubResource("Resource_lg0am")
+metadata/_custom_type_script = "uid://b8kvis7rgg3j4"
+
+[sub_resource type="Resource" id="Resource_rtxoy"]
+script = ExtResource("3_t0st4")
+considered = "Stadium"
+description = "Once during each player's turn, that player may put an Omanyte, Kabuto, Aerodactyl, Aerodactyl ex, Lileep, or Anorith onto his or her Bench from his or her hand. Treat the new Benched Pokémon as Basic Pokémon."
+stadium_properties = SubResource("Resource_ulmnc")
+metadata/_custom_type_script = "uid://crx447i85kshy"
+
+[resource]
+script = ExtResource("13_ugtwv")
+name = "Strange Cave"
+image = ExtResource("1_rtxoy")
+illustrator = "Ryo Ueda"
+number = 77
+rarity = 1
+expansion = 11
+categories = 2
+trainer_properties = SubResource("Resource_rtxoy")
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

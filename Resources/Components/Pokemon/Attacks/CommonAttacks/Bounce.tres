@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Attack" load_steps=4 format=3 uid="uid://lhvxyhb6vc1n"]
+
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="1_6abcg"]
+[ext_resource type="Resource" uid="uid://bdt34aosqlppe" path="res://Resources/Components/Pokemon/Attacks/AttackData/10SwitchSelf.tres" id="2_t6jof"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="6_tnv4b"]
+
+[resource]
+script = ExtResource("6_tnv4b")
+name = "Bounce"
+attack_data = ExtResource("2_t6jof")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"

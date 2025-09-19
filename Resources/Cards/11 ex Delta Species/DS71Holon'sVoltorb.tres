@@ -21,7 +21,6 @@ HP = 40
 attacks = Array[ExtResource("3_b3vl0")]([SubResource("Resource_c3iqn")])
 owner = 4
 type = 8
-weak = 32
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]

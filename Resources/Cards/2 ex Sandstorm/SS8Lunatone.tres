@@ -49,8 +49,6 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_r33dn"]
 script = ExtResource("12_pwgit")
-inclusive = true
-add_flags = false
 new_type = 64
 recieves = ExtResource("11_hvbjv")
 duration = 1

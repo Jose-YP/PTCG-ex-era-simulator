@@ -1,0 +1,90 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=24 format=3 uid="uid://ca5yhqom7fs31"]
+
+[ext_resource type="Texture2D" uid="uid://bv7npjriutvft" path="res://Art/Cards/15 ex Dragon Frontiers/1.jpg" id="1_i5bj1"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_apq1n"]
+[ext_resource type="Resource" uid="uid://dpovjlfpsypwe" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless3.tres" id="3_1yunv"]
+[ext_resource type="Resource" uid="uid://beu3aq6pkdwdp" path="res://Resources/Components/Effects/Asks/Class&Owner/AtkDeltaMons.tres" id="4_1mbgy"]
+[ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="5_htdbt"]
+[ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="6_ahuru"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="7_2cq8d"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="8_6g63u"]
+[ext_resource type="Resource" uid="uid://b3q5vmepfee8k" path="res://Resources/Components/Effects/Identifiers/Pokemon/AnyPokemon.tres" id="9_wy70h"]
+[ext_resource type="Resource" uid="uid://dqj6gq7pt3dbk" path="res://Resources/Components/Effects/Asks/General/FromSource.tres" id="10_ctjay"]
+[ext_resource type="Script" uid="uid://cg3m7vpqxf2t6" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/OverrideMaker.gd" id="11_8a7ln"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="12_q7ypm"]
+[ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="13_17oju"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="14_mem8e"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="15_foyad"]
+
+[sub_resource type="Resource" id="Resource_rvr7h"]
+script = ExtResource("5_htdbt")
+which = "Slot"
+ask = ExtResource("4_1mbgy")
+slot_vars = "current_card"
+cap = -1
+metadata/_custom_type_script = "uid://vjn146j3ayd6"
+
+[sub_resource type="Resource" id="Resource_j8knl"]
+script = ExtResource("6_ahuru")
+first_comparison = SubResource("Resource_rvr7h")
+metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
+
+[sub_resource type="Resource" id="Resource_wfyeu"]
+script = ExtResource("8_6g63u")
+description = "Does 20 damage plus 10 more damage for each Pokémon you have in play that has δ on its card."
+initial_main_DMG = 20
+modifier = 1
+modifier_num = 10
+comparator = SubResource("Resource_j8knl")
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_tiu1x"]
+script = ExtResource("2_apq1n")
+name = "Delta Circle"
+attack_cost = ExtResource("3_1yunv")
+attack_data = SubResource("Resource_wfyeu")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_b2lxr"]
+script = ExtResource("11_8a7ln")
+identifier = ExtResource("9_wy70h")
+considered = 8
+application = "Side"
+recieves = ExtResource("10_ctjay")
+metadata/_custom_type_script = "uid://cg3m7vpqxf2t6"
+
+[sub_resource type="Resource" id="Resource_th8xf"]
+script = ExtResource("12_q7ypm")
+override = SubResource("Resource_b2lxr")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_lg0k2"]
+script = ExtResource("13_17oju")
+name = "Holon Veil"
+description = "Treat each Basic Pokémon and Evolution card in your deck, in your discard pile, in your hand, and in play as a Pokémon that has δ on its card."
+affected_by_condition = false
+passive = SubResource("Resource_th8xf")
+metadata/_custom_type_script = "uid://bs2y8ocljilv8"
+
+[sub_resource type="Resource" id="Resource_76uy7"]
+script = ExtResource("14_mem8e")
+HP = 120
+retreat = 2
+pokebody = SubResource("Resource_lg0k2")
+attacks = Array[ExtResource("2_apq1n")]([SubResource("Resource_tiu1x")])
+evo_stage = "Stage 2"
+evolves_from = "Flaaffy"
+considered = 9
+type = 256
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("15_foyad")
+name = "Ampharos"
+image = ExtResource("1_i5bj1")
+illustrator = "Kagemaru Himeno"
+rarity = 3
+expansion = 14
+categories = 1
+pokemon_properties = SubResource("Resource_76uy7")
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

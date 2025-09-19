@@ -1,0 +1,101 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=28 format=3 uid="uid://kxuqb8d34mh4"]
+
+[ext_resource type="Texture2D" uid="uid://cxfqljywlmku2" path="res://Art/Cards/14 ex Crystal Guardians/25.jpg" id="1_ap5nn"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_galkf"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_bxoq5"]
+[ext_resource type="Resource" uid="uid://b1rwmggf7a4do" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless2.tres" id="3_od8ah"]
+[ext_resource type="Resource" uid="uid://n2tq4jfo7hw1" path="res://Resources/Components/Pokemon/Attacks/AttackData/20DmgParaIfHeads.tres" id="4_nh5hr"]
+[ext_resource type="Resource" uid="uid://ddar4dlschhmr" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/F1C2.tres" id="5_7udgu"]
+[ext_resource type="Resource" uid="uid://1ib15c7peyrj" path="res://Resources/Components/Pokemon/Attacks/AttackData/50DmgNoRes.tres" id="6_w47vd"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="7_31vjx"]
+[ext_resource type="Script" uid="uid://cg3m7vpqxf2t6" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/OverrideMaker.gd" id="7_bxoq5"]
+[ext_resource type="Script" uid="uid://cswtf00ovs0ss" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/TypeChangeMaker.gd" id="8_mwnyo"]
+[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="9_gox5v"]
+[ext_resource type="Resource" uid="uid://b0lup3upo6m4f" path="res://Resources/Components/EnData/Psychic.tres" id="10_gpxn3"]
+[ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="11_iq7ma"]
+[ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="12_a5sf3"]
+[ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="13_etuff"]
+[ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="14_s0krp"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="15_sua42"]
+
+[sub_resource type="Resource" id="Resource_7gvmp"]
+script = ExtResource("2_bxoq5")
+name = "Psyshock"
+attack_cost = ExtResource("3_od8ah")
+attack_data = ExtResource("4_nh5hr")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_dluid"]
+script = ExtResource("2_bxoq5")
+name = "Sky Uppercut"
+attack_cost = ExtResource("5_7udgu")
+attack_data = ExtResource("6_w47vd")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_od8ah"]
+script = ExtResource("7_bxoq5")
+metadata/_custom_type_script = "uid://cg3m7vpqxf2t6"
+
+[sub_resource type="Resource" id="Resource_5forg"]
+script = ExtResource("8_mwnyo")
+new_type = 48
+metadata/_custom_type_script = "uid://cswtf00ovs0ss"
+
+[sub_resource type="Resource" id="Resource_udvq7"]
+script = ExtResource("7_31vjx")
+override = SubResource("Resource_od8ah")
+type_change = SubResource("Resource_5forg")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_m2mtk"]
+script = ExtResource("11_iq7ma")
+which = "Slot"
+ask = ExtResource("9_gox5v")
+slot_vars = "energy_cards"
+en_count_methods = "Total"
+en_counting = ExtResource("10_gpxn3")
+cap = -1
+metadata/_custom_type_script = "uid://vjn146j3ayd6"
+
+[sub_resource type="Resource" id="Resource_dpr08"]
+script = ExtResource("12_a5sf3")
+comparision_type = "Not Equal"
+first_comparison = SubResource("Resource_m2mtk")
+metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
+
+[sub_resource type="Resource" id="Resource_i2fio"]
+script = ExtResource("13_etuff")
+comparator = SubResource("Resource_dpr08")
+metadata/_custom_type_script = "uid://b85jmc7067bjc"
+
+[sub_resource type="Resource" id="Resource_a6fa6"]
+script = ExtResource("14_s0krp")
+name = "Dual Armor"
+description = "As long as Medicham has any {Psychic} Energy cards attached to it, Medicham is both {Psychic} and {Fighting} type."
+affected_by_condition = false
+prompt = SubResource("Resource_i2fio")
+passive = SubResource("Resource_udvq7")
+metadata/_custom_type_script = "uid://bs2y8ocljilv8"
+
+[sub_resource type="Resource" id="Resource_cdmhd"]
+script = ExtResource("15_sua42")
+HP = 80
+pokebody = SubResource("Resource_a6fa6")
+attacks = Array[ExtResource("2_bxoq5")]([SubResource("Resource_7gvmp"), SubResource("Resource_dluid")])
+evo_stage = "Stage 1"
+evolves_from = "Meditite"
+type = 32
+weak = 16
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_galkf")
+name = "Medicham"
+image = ExtResource("1_ap5nn")
+illustrator = "Midori Harada"
+number = 25
+rarity = 2
+expansion = 13
+categories = 1
+pokemon_properties = SubResource("Resource_cdmhd")
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

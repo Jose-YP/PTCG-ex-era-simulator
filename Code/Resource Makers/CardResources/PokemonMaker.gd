@@ -27,7 +27,7 @@ class_name Pokemon
 
 @export_flags("Grass","Fire","Water",
 "Lightning","Psychic","Fighting",
-"Darkness","Metal","Colorless") var weak: int = 0
+"Darkness","Metal","Colorless") var weak: int = 32
 
 @export_flags("Grass","Fire","Water",
 "Lightning","Psychic","Fighting",

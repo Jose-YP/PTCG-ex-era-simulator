@@ -70,7 +70,6 @@ evo_stage = "Stage 2"
 evolves_from = "Flaaffy"
 considered = 2
 type = 8
-weak = 32
 resist = 128
 metadata/_custom_type_script = "uid://dkximshow1pao"
 

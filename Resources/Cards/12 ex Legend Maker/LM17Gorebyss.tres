@@ -1,0 +1,72 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=18 format=3 uid="uid://b86cvexm3qqyb"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_k456i"]
+[ext_resource type="Texture2D" uid="uid://bjc8rqepejmf2" path="res://Art/Cards/12 ex Legend Maker/17.jpg" id="1_kkspp"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_df2fx"]
+[ext_resource type="Resource" uid="uid://fcpa5aqhgy0e" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/W1C1.tres" id="3_bw5mv"]
+[ext_resource type="Resource" uid="uid://cfvxvq4wbo1td" path="res://Resources/Components/EnData/DoubleRainbow.tres" id="4_h7sk4"]
+[ext_resource type="Resource" uid="uid://b7fdar1wf5suh" path="res://Resources/Components/EnData/React.tres" id="5_g52l4"]
+[ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="6_i8rji"]
+[ext_resource type="Script" uid="uid://cg3m7vpqxf2t6" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/OverrideMaker.gd" id="7_a44lf"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="8_bllap"]
+[ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="9_m7y78"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="10_736rf"]
+
+[sub_resource type="Resource" id="Resource_wts2i"]
+script = ExtResource("2_df2fx")
+name = "Hydro Pump"
+attack_cost = ExtResource("3_bw5mv")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_behlo"]
+script = ExtResource("6_i8rji")
+side_target = 4
+specifically = Array[String](["Huntail", "Gorebyss"])
+metadata/_custom_type_script = "uid://mkjynqda7q5g"
+
+[sub_resource type="Resource" id="Resource_bschb"]
+script = ExtResource("7_a44lf")
+provides_only = false
+converting = ExtResource("5_g52l4")
+no_effects = true
+replace_num = true
+becomes = ExtResource("4_h7sk4")
+application = "Side"
+recieves = SubResource("Resource_behlo")
+metadata/_custom_type_script = "uid://cg3m7vpqxf2t6"
+
+[sub_resource type="Resource" id="Resource_vevuw"]
+script = ExtResource("8_bllap")
+override = SubResource("Resource_bschb")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_nbesc"]
+script = ExtResource("9_m7y78")
+name = "Reactive Booster"
+description = "Each React Energy card attached to all of your Huntail and Gorebyss provides 2 Energy of every type but has no effect other than providing Energy."
+passive = SubResource("Resource_vevuw")
+metadata/_custom_type_script = "uid://bs2y8ocljilv8"
+
+[sub_resource type="Resource" id="Resource_3r0to"]
+script = ExtResource("10_736rf")
+HP = 70
+retreat = 0
+pokebody = SubResource("Resource_nbesc")
+attacks = Array[ExtResource("2_df2fx")]([SubResource("Resource_wts2i")])
+evo_stage = "Stage 1"
+evolves_from = "Clamperl"
+type = 4
+weak = 8
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_k456i")
+name = "Gorebyss"
+image = ExtResource("1_kkspp")
+illustrator = "Atsuko Nishida"
+number = 17
+rarity = 2
+expansion = 11
+categories = 1
+pokemon_properties = SubResource("Resource_3r0to")
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

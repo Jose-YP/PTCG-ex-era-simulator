@@ -1,0 +1,45 @@
+[gd_resource type="Resource" script_class="Trainer" load_steps=13 format=3 uid="uid://bdkijljvinehj"]
+
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="1_8jsd6"]
+[ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="2_o7p5i"]
+[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="3_bck16"]
+[ext_resource type="Script" uid="uid://bics3dumv7avj" path="res://Code/Resource Makers/GeneralUse/OccuranceMaker.gd" id="4_31ylo"]
+[ext_resource type="Script" uid="uid://dj5isddeswaa4" path="res://Code/Resource Makers/CardResources/ToolMaker.gd" id="5_wpj16"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="6_3naaw"]
+[ext_resource type="Script" uid="uid://cswtf00ovs0ss" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/TypeChangeMaker.gd" id="7_qa7be"]
+
+[sub_resource type="Resource" id="Resource_01qgn"]
+script = ExtResource("4_31ylo")
+from_ask = ExtResource("3_bck16")
+signal = "attacks"
+metadata/_custom_type_script = "uid://bics3dumv7avj"
+
+[sub_resource type="Resource" id="Resource_uxtn3"]
+script = ExtResource("7_qa7be")
+new_type = 256
+recieves = ExtResource("3_bck16")
+metadata/_custom_type_script = "uid://cswtf00ovs0ss"
+
+[sub_resource type="Resource" id="Resource_r3wuo"]
+script = ExtResource("6_3naaw")
+type_change = SubResource("Resource_uxtn3")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_q67wg"]
+script = ExtResource("1_8jsd6")
+success = SubResource("Resource_r3wuo")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
+[sub_resource type="Resource" id="Resource_t1ns2"]
+script = ExtResource("5_wpj16")
+occurance = SubResource("Resource_01qgn")
+seperate_effect = true
+tool_effect = Array[ExtResource("1_8jsd6")]([SubResource("Resource_q67wg")])
+metadata/_custom_type_script = "uid://dj5isddeswaa4"
+
+[resource]
+script = ExtResource("2_o7p5i")
+considered = "Tool"
+description = "As long as this card is attached to a Pokémon, that Pokémon's type is {Colorless}. If that Pokémon attacks, discard this card at the end of the turn."
+tool_properties = SubResource("Resource_t1ns2")
+metadata/_custom_type_script = "uid://crx447i85kshy"

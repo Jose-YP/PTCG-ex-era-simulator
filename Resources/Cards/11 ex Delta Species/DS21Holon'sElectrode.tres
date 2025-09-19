@@ -31,7 +31,6 @@ evo_stage = "Stage 1"
 evolves_from = "Holon's Voltorb"
 owner = 4
 type = 8
-weak = 32
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]

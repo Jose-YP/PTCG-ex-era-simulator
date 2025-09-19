@@ -1,0 +1,45 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=13 format=3 uid="uid://bsh1y8g2wng0m"]
+
+[ext_resource type="Texture2D" uid="uid://0eqge16our4r" path="res://Art/Cards/12 ex Legend Maker/75.jpg" id="1_4bgih"]
+[ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="3_os7dn"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="4_2sdgo"]
+[ext_resource type="Script" uid="uid://b8kvis7rgg3j4" path="res://Code/Resource Makers/CardResources/StadiumMaker.gd" id="4_6apj2"]
+[ext_resource type="Script" uid="uid://cyxu7ymi4nofx" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/RuleChangeMaker.gd" id="5_4bgih"]
+[ext_resource type="Script" uid="uid://mcfyh6penu34" path="res://Code/Resource Makers/GeneralUse/CondRulesMaker.gd" id="5_rbu14"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="9_mlkux"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="13_x4tk8"]
+
+[sub_resource type="Resource" id="Resource_7ewcd"]
+script = ExtResource("5_4bgih")
+bench_cap = 3
+metadata/_custom_type_script = "uid://cyxu7ymi4nofx"
+
+[sub_resource type="Resource" id="Resource_bfmbq"]
+script = ExtResource("9_mlkux")
+rule_change = SubResource("Resource_7ewcd")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_ulmnc"]
+script = ExtResource("4_6apj2")
+activate_effect = SubResource("Resource_bfmbq")
+metadata/_custom_type_script = "uid://b8kvis7rgg3j4"
+
+[sub_resource type="Resource" id="Resource_02rvq"]
+script = ExtResource("3_os7dn")
+considered = "Stadium"
+specific_requirement = "When Giant Stump comes into play, each player discards Benched Pokémon and any cards attached to them until he or she has 3 Benched Pokémon. (You discard your Pokémon first.) "
+description = "Each player can't have more than 3 Benched Pokémon."
+stadium_properties = SubResource("Resource_ulmnc")
+metadata/_custom_type_script = "uid://crx447i85kshy"
+
+[resource]
+script = ExtResource("13_x4tk8")
+name = "Giant Stump"
+image = ExtResource("1_4bgih")
+illustrator = "Ryo Ueda"
+number = 75
+rarity = 1
+expansion = 11
+categories = 2
+trainer_properties = SubResource("Resource_02rvq")
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

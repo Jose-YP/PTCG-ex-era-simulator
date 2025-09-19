@@ -56,7 +56,6 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 script = ExtResource("2_p0a8f")
 attacks = Array[ExtResource("1_ehtr8")]([SubResource("Resource_5fbnp"), SubResource("Resource_av6jo")])
 type = 256
-weak = 32
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]

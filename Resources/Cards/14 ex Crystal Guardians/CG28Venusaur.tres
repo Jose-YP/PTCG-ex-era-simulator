@@ -1,0 +1,122 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=31 format=3 uid="uid://7ciprb1m2fnh"]
+
+[ext_resource type="Texture2D" uid="uid://bckutmwbo8j2" path="res://Art/Cards/14 ex Crystal Guardians/28.jpg" id="1_kq02y"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_ljyap"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_3umuy"]
+[ext_resource type="Resource" uid="uid://b1rwmggf7a4do" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless2.tres" id="3_ibkcw"]
+[ext_resource type="Resource" uid="uid://dqj6gq7pt3dbk" path="res://Resources/Components/Effects/Asks/General/FromSource.tres" id="4_rjh14"]
+[ext_resource type="Resource" uid="uid://d1b5din1lvjqo" path="res://Resources/Components/EnData/Grass.tres" id="5_b58ij"]
+[ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="6_26cri"]
+[ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="7_0p1po"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="8_a1nci"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="9_6r0t8"]
+[ext_resource type="Resource" uid="uid://bdwp1hpi4q83j" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/G2C1.tres" id="10_ek5m6"]
+[ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="11_063hk"]
+[ext_resource type="Script" uid="uid://8s3m1dar3r33" path="res://Code/Resource Makers/EffectSpecific/Components/ConditionMaker.gd" id="11_b58ij"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="12_26cri"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="12_ssemg"]
+[ext_resource type="Resource" uid="uid://vk18jkchsq3v" path="res://Resources/Components/EnData/Colorless.tres" id="13_0p1po"]
+[ext_resource type="Script" uid="uid://cg3m7vpqxf2t6" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/OverrideMaker.gd" id="14_a1nci"]
+
+[sub_resource type="Resource" id="Resource_02vtv"]
+script = ExtResource("6_26cri")
+which = "Slot"
+ask = ExtResource("4_rjh14")
+slot_vars = "energy_cards"
+en_count_methods = "Total"
+en_counting = ExtResource("5_b58ij")
+cap = -1
+metadata/_custom_type_script = "uid://vjn146j3ayd6"
+
+[sub_resource type="Resource" id="Resource_x7c0n"]
+script = ExtResource("7_0p1po")
+first_comparison = SubResource("Resource_02vtv")
+metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
+
+[sub_resource type="Resource" id="Resource_1wkat"]
+script = ExtResource("9_6r0t8")
+description = "Does 20 damage plus 10 more damage for each {Grass} Energy attached to all of your Pokémon."
+initial_main_DMG = 20
+modifier = 1
+modifier_num = 10
+comparator = SubResource("Resource_x7c0n")
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_yjg32"]
+script = ExtResource("2_3umuy")
+name = "Green Blast"
+attack_cost = ExtResource("3_ibkcw")
+attack_data = SubResource("Resource_1wkat")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_6r0t8"]
+script = ExtResource("11_b58ij")
+poison = 2
+turn_cond = 2
+metadata/_custom_type_script = "uid://8s3m1dar3r33"
+
+[sub_resource type="Resource" id="Resource_ek5m6"]
+script = ExtResource("12_26cri")
+condition = SubResource("Resource_6r0t8")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_707sr"]
+script = ExtResource("8_a1nci")
+success = SubResource("Resource_ek5m6")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
+[sub_resource type="Resource" id="Resource_dre0d"]
+script = ExtResource("9_6r0t8")
+description = "The Defending Pokémon is now Asleep and Poisoned. Put 2 damage counters instead of 1 on the Defending Pokémon between turns."
+prompt_effects = Array[ExtResource("8_a1nci")]([SubResource("Resource_707sr")])
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_db2u1"]
+script = ExtResource("2_3umuy")
+name = "Toxic Sleep"
+attack_cost = ExtResource("10_ek5m6")
+attack_data = SubResource("Resource_dre0d")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_063hk"]
+script = ExtResource("14_a1nci")
+converting = ExtResource("13_0p1po")
+becomes = ExtResource("5_b58ij")
+application = "Side"
+recieves = ExtResource("4_rjh14")
+metadata/_custom_type_script = "uid://cg3m7vpqxf2t6"
+
+[sub_resource type="Resource" id="Resource_ssemg"]
+script = ExtResource("12_26cri")
+override = SubResource("Resource_063hk")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_mj80n"]
+script = ExtResource("11_063hk")
+description = "All Energy cards that provide only {Colorless} Energy attached to your {Grass} Pokémon provide {Grass} Energy instead."
+affected_by_condition = false
+passive = SubResource("Resource_ssemg")
+metadata/_custom_type_script = "uid://bs2y8ocljilv8"
+
+[sub_resource type="Resource" id="Resource_7g80e"]
+script = ExtResource("12_ssemg")
+HP = 110
+retreat = 3
+pokebody = SubResource("Resource_mj80n")
+attacks = Array[ExtResource("2_3umuy")]([SubResource("Resource_yjg32"), SubResource("Resource_db2u1")])
+evo_stage = "Stage 2"
+evolves_from = "Ivysaur"
+weak = 2
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_ljyap")
+name = "Venusaur"
+image = ExtResource("1_kq02y")
+illustrator = "Hajime Kusajima"
+number = 28
+rarity = 2
+expansion = 13
+categories = 1
+pokemon_properties = SubResource("Resource_7g80e")
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

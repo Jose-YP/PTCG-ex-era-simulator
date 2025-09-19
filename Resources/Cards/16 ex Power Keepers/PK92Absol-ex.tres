@@ -68,7 +68,6 @@ pokepower = SubResource("Resource_ppox0")
 attacks = Array[ExtResource("2_hh85g")]([SubResource("Resource_mptms")])
 considered = 2
 type = 64
-weak = 32
 resist = 16
 metadata/_custom_type_script = "uid://dkximshow1pao"
 

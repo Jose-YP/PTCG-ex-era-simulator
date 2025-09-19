@@ -5,11 +5,5 @@
 
 [resource]
 script = ExtResource("1_2ybd6")
-how_many = 1
 candidates = ExtResource("1_dhv2n")
-active_allowed = false
-apply_weak_res = false
-initial_main_DMG = 10
-modifier = 0
-modifier_num = 0
 metadata/_custom_type_script = "uid://br15mnap82upq"

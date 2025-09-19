@@ -68,7 +68,6 @@ attacks = Array[ExtResource("4_0g86g")]([SubResource("Resource_kg1j7"), SubResou
 evo_stage = "Stage 1"
 evolves_from = "Team Aqua's Electrike"
 type = 8
-weak = 32
 resist = 128
 
 [resource]

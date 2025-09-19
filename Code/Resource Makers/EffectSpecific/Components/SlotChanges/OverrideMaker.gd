@@ -1,9 +1,26 @@
 extends SlotChange
 ##This is just a schmorgesborg of stuff I had no place for otherwise
-class_name OverRide
+class_name Override
 
-@export var rare_candy: bool = false
+@export_group("Card Override")
+@export var identifier: Identifier
+@export_flags("non-ex","ex", "Baby", "Delta", "Star", "Dark") var considered: int = 0
+
+@export_group("Pokemon Override")
+@export_enum("Add", "Subtract", "Replace") var mode: String = "Replace"
+@export var prize_count: int = -1
 @export var can_evolve_into: String
+@export var can_retreat_when: Array[Consts.TURN_COND]
+
+@export_group("Energy Override")
+@export_enum("Any", "Basic Energy", "Special Energy") var en_category: String = "Any"
+##If this is true look for energy that fits the exact flags of [member converting][br]
+##This prevents rainbow energy and such from counting
+@export var provides_only: bool = true
+@export var converting: EnData
+@export var no_effects: bool = false
+@export var replace_num: bool = false
+@export var becomes: EnData
 
 func how_display() -> Dictionary[String, bool]:
-	return {"OverRide" : true}
+	return {"Override" : true}

@@ -21,7 +21,6 @@ retreat = 2
 attacks = Array[ExtResource("4_4dib8")]([ExtResource("3_y6j54"), SubResource("Resource_u11vq")])
 considered = 2
 type = 8
-weak = 32
 resist = 128
 
 [resource]

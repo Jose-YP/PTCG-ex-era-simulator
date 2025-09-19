@@ -39,7 +39,6 @@ HP = 40
 pokepower = ExtResource("7_gmk3x")
 attacks = Array[ExtResource("2_tqd1y")]([SubResource("Resource_t1x7p")])
 type = 257
-weak = 32
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]

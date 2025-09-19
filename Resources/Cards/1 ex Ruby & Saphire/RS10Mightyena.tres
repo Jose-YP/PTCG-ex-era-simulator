@@ -32,7 +32,6 @@ attacks = Array[ExtResource("2_7n5p1")]([SubResource("Resource_t4kj7")])
 evo_stage = "Stage 1"
 evolves_from = "Poochyena"
 type = 64
-weak = 32
 resist = 16
 metadata/_custom_type_script = "uid://dkximshow1pao"
 

@@ -28,7 +28,6 @@ HP = 40
 attacks = Array[ExtResource("2_j8bvu")]([SubResource("Resource_1qf44")])
 owner = 2
 type = 64
-weak = 32
 resist = 16
 
 [resource]

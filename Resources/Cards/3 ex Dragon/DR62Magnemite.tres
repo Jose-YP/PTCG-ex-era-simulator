@@ -10,7 +10,6 @@
 script = ExtResource("2_73tqj")
 attacks = Array[ExtResource("1_7f247")]([ExtResource("3_1g36l")])
 type = 8
-weak = 32
 resist = 128
 metadata/_custom_type_script = "uid://dkximshow1pao"
 

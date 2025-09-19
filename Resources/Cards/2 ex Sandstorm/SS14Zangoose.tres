@@ -63,7 +63,6 @@ HP = 70
 pokebody = ExtResource("10_a60b8")
 attacks = Array[ExtResource("1_ia523")]([SubResource("Resource_amr6s"), SubResource("Resource_kn14a")])
 type = 256
-weak = 32
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]

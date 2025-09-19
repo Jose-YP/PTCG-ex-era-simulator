@@ -67,7 +67,6 @@ attacks = Array[ExtResource("2_c7ykk")]([SubResource("Resource_h8f3k"), SubResou
 evo_stage = "Stage 1"
 evolves_from = "Zigzagoon"
 type = 256
-weak = 32
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]

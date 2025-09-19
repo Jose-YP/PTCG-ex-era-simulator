@@ -17,7 +17,6 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 script = ExtResource("5_ut45d")
 attacks = Array[ExtResource("2_uoket")]([SubResource("Resource_ut2hx")])
 type = 8
-weak = 32
 resist = 128
 metadata/_custom_type_script = "uid://dkximshow1pao"
 

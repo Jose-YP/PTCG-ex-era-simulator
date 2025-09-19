@@ -40,7 +40,6 @@ name = "Omanyte"
 image = ExtResource("1_ve7f1")
 illustrator = "Kagemaru Himeno"
 number = 74
-rarity = 1
 expansion = 12
 categories = 1
 pokemon_properties = SubResource("Resource_iqkey")

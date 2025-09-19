@@ -34,7 +34,6 @@ script = ExtResource("3_1kioo")
 attacks = Array[ExtResource("2_786ue")]([SubResource("Resource_n37sd"), SubResource("Resource_8wuvv")])
 considered = 9
 type = 192
-weak = 32
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
@@ -43,7 +42,6 @@ name = "Meowth"
 image = ExtResource("1_d8ah1")
 illustrator = "Kagemaru Himeno"
 number = 71
-rarity = 1
 expansion = 12
 categories = 1
 pokemon_properties = SubResource("Resource_yo1v1")

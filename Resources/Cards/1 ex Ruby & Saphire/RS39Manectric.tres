@@ -46,7 +46,6 @@ attacks = Array[ExtResource("1_k78lp")]([SubResource("Resource_rslko"), SubResou
 evo_stage = "Stage 1"
 evolves_from = "Electrike"
 type = 8
-weak = 32
 resist = 128
 metadata/_custom_type_script = "uid://dkximshow1pao"
 

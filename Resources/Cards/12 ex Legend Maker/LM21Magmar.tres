@@ -1,0 +1,110 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=32 format=3 uid="uid://b3pfb181wmq6p"]
+
+[ext_resource type="Texture2D" uid="uid://caut14pt3n74q" path="res://Art/Cards/12 ex Legend Maker/21.jpg" id="1_w2w4w"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_k8r50"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_gur5u"]
+[ext_resource type="Resource" uid="uid://bhs6bq3gobv5j" path="res://Resources/Components/Pokemon/Attacks/AttackData/10DmgAny.tres" id="4_4yf0d"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="4_7odq7"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="5_2gy3r"]
+[ext_resource type="Script" uid="uid://crscwhvugaoxa" path="res://Code/Resource Makers/PokemonSpecific/AttackCostMaker.gd" id="5_tpynf"]
+[ext_resource type="Resource" uid="uid://cu2c1wsp5lrdr" path="res://Resources/Components/Counters/Indv/Slots/OtherTrgDmg.tres" id="7_540rt"]
+[ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="8_r0a23"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="9_4yf0d"]
+[ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="9_qxhgx"]
+[ext_resource type="Resource" uid="uid://bext0mocufqgp" path="res://Resources/Components/Effects/Conditions/BasicBurn.tres" id="10_bvxk4"]
+[ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="11_540rt"]
+[ext_resource type="Resource" uid="uid://mregpmlqoyvy" path="res://Resources/Components/EnData/Fire.tres" id="12_kn52d"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="12_r0a23"]
+[ext_resource type="Resource" uid="uid://cv8xofc4ofaom" path="res://Resources/Components/EnData/NeoRainbow.tres" id="13_1v1bt"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="13_qxhgx"]
+[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="14_ix2aj"]
+[ext_resource type="Script" uid="uid://cg3m7vpqxf2t6" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/OverrideMaker.gd" id="15_tirib"]
+[ext_resource type="Resource" uid="uid://bmtmv17focn2u" path="res://Resources/Components/Effects/Prompts/PromptComparator/PromptSelfEvolved.tres" id="17_f0t17"]
+
+[sub_resource type="Resource" id="Resource_483tn"]
+script = ExtResource("2_k8r50")
+name = "Linear Attack"
+attack_data = ExtResource("4_4yf0d")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_aq0o0"]
+script = ExtResource("5_tpynf")
+fire_cost = 3
+colorless_cost = 0
+metadata/_custom_type_script = "uid://crscwhvugaoxa"
+
+[sub_resource type="Resource" id="Resource_31fna"]
+script = ExtResource("8_r0a23")
+comparision_type = "Not Equal"
+first_comparison = ExtResource("7_540rt")
+compare_to = "Const"
+metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
+
+[sub_resource type="Resource" id="Resource_pkxe6"]
+script = ExtResource("9_qxhgx")
+comparator = SubResource("Resource_31fna")
+metadata/_custom_type_script = "uid://b85jmc7067bjc"
+
+[sub_resource type="Resource" id="Resource_xoyrq"]
+script = ExtResource("4_7odq7")
+prompt = SubResource("Resource_pkxe6")
+success = ExtResource("10_bvxk4")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
+[sub_resource type="Resource" id="Resource_j8e63"]
+script = ExtResource("5_2gy3r")
+description = "If the Defending Pokémon already has any damage counters on it, the Defending Pokémon is now Burned."
+initial_main_DMG = 40
+before_damage = true
+prompt_effects = Array[ExtResource("4_7odq7")]([SubResource("Resource_xoyrq")])
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_s0xnu"]
+script = ExtResource("2_k8r50")
+name = "Burning Sensation"
+attack_cost = SubResource("Resource_aq0o0")
+attack_data = SubResource("Resource_j8e63")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_w4081"]
+script = ExtResource("15_tirib")
+provides_only = false
+converting = ExtResource("13_1v1bt")
+becomes = ExtResource("12_kn52d")
+recieves = ExtResource("14_ix2aj")
+metadata/_custom_type_script = "uid://cg3m7vpqxf2t6"
+
+[sub_resource type="Resource" id="Resource_kerho"]
+script = ExtResource("9_4yf0d")
+override = SubResource("Resource_w4081")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_x3abt"]
+script = ExtResource("11_540rt")
+name = "Stages of Evolution"
+description = "As long as Magmar is an Evolved Pokémon, all Energy attached to Magmar are {Fire} Energy instead of their usual types."
+affected_by_condition = false
+prompt = ExtResource("17_f0t17")
+passive = SubResource("Resource_kerho")
+metadata/_custom_type_script = "uid://bs2y8ocljilv8"
+
+[sub_resource type="Resource" id="Resource_svoiv"]
+script = ExtResource("12_r0a23")
+HP = 70
+pokebody = SubResource("Resource_x3abt")
+attacks = Array[ExtResource("2_k8r50")]([SubResource("Resource_483tn"), SubResource("Resource_s0xnu")])
+type = 2
+weak = 4
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("13_qxhgx")
+name = "Magmar"
+image = ExtResource("1_w2w4w")
+illustrator = "Sumiyoshi Kizuki"
+number = 21
+rarity = 2
+expansion = 11
+categories = 1
+pokemon_properties = SubResource("Resource_svoiv")
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

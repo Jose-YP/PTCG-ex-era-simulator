@@ -62,7 +62,6 @@ retreat = 3
 attacks = Array[ExtResource("4_e8roy")]([SubResource("Resource_fb5g2"), SubResource("Resource_u7vp4")])
 considered = 2
 type = 256
-weak = 32
 
 [resource]
 script = ExtResource("1_uuq4o")

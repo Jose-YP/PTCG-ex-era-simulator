@@ -5,6 +5,9 @@ class_name ToolCard
 @export var prompt_ask: PromptAsk
 ##Is there anything that needs to happen for the tool to activate?
 @export var occurance: Occurance
+##If this is [code]true[/code] then [member tool_effect] will not trigger remove after
+##[member occurance] Prompt ask and occurance will remove the tool
+@export var seperate_effect: bool
 @export var tool_effect: Array[EffectCollect]
 ##remove tool after it's effect is used
 @export var remove_after: bool = true

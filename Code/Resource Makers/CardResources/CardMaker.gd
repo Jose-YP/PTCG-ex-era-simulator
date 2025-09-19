@@ -6,7 +6,7 @@ class_name Base_Card
 @export var name: String
 @export var image: CompressedTexture2D
 @export var illustrator: String
-@export var number: int = 0
+@export var number: int = 1
 @export_enum("Common", "Uncommon", "Rare", "Holofoil Rare", "ex Rare",
  "Ultra Rare", "Star Rare", "Promo Rare") var rarity: int = 0
 @export_enum("EX Ruby & Sapphire", "EX Sandstorm", "EX Dragon",

@@ -1,0 +1,109 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=28 format=3 uid="uid://c8kif7u1hcxwv"]
+
+[ext_resource type="Texture2D" uid="uid://cnujvps1e6af" path="res://Art/Cards/6 ex FireRed & LeafGreen/105.jpg" id="1_6ced5"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_d078n"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_gfqx6"]
+[ext_resource type="Resource" uid="uid://dpovjlfpsypwe" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless3.tres" id="3_03tit"]
+[ext_resource type="Resource" uid="uid://cj4j56m7hrxpe" path="res://Resources/Components/Pokemon/Attacks/AttackData/50Dmg.tres" id="4_cko73"]
+[ext_resource type="Script" uid="uid://crscwhvugaoxa" path="res://Code/Resource Makers/PokemonSpecific/AttackCostMaker.gd" id="5_3sukh"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="6_expck"]
+[ext_resource type="Resource" uid="uid://mregpmlqoyvy" path="res://Resources/Components/EnData/Fire.tres" id="7_pv4g2"]
+[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="8_8jlqf"]
+[ext_resource type="Script" uid="uid://cimk6l7ytw7xg" path="res://Code/Resource Makers/EffectSpecific/Components/EnMovMaker.gd" id="9_giny3"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="10_oabpa"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="11_arb3o"]
+[ext_resource type="Resource" uid="uid://cv8xofc4ofaom" path="res://Resources/Components/EnData/NeoRainbow.tres" id="12_cg58q"]
+[ext_resource type="Script" uid="uid://cg3m7vpqxf2t6" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/OverrideMaker.gd" id="13_45c3u"]
+[ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="14_k4g3y"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="15_4gvve"]
+
+[sub_resource type="Resource" id="Resource_8a1fr"]
+script = ExtResource("2_gfqx6")
+name = "Slash"
+attack_cost = ExtResource("3_03tit")
+attack_data = ExtResource("4_cko73")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_sfquh"]
+script = ExtResource("5_3sukh")
+fire_cost = 5
+colorless_cost = 0
+metadata/_custom_type_script = "uid://crscwhvugaoxa"
+
+[sub_resource type="Resource" id="Resource_j0o5h"]
+script = ExtResource("9_giny3")
+givers = ExtResource("8_8jlqf")
+energy_ammount = 5
+energy_move_type = 2
+en_type = ExtResource("7_pv4g2")
+metadata/_custom_type_script = "uid://cimk6l7ytw7xg"
+
+[sub_resource type="Resource" id="Resource_ee1j2"]
+script = ExtResource("10_oabpa")
+energy_movement = SubResource("Resource_j0o5h")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_7ylup"]
+script = ExtResource("6_expck")
+success = SubResource("Resource_ee1j2")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
+[sub_resource type="Resource" id="Resource_6cj01"]
+script = ExtResource("11_arb3o")
+description = " Discard 5 {Fire} Energy attached to [name]. This attack's damage isn't affected by Weakness, Resistance, Poké-Powers, Poké-Bodies, and any other effects on the Defending Pokémon. "
+initial_main_DMG = 200
+defender_properties = 15
+prompt_effects = Array[ExtResource("6_expck")]([SubResource("Resource_7ylup")])
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_jfiwf"]
+script = ExtResource("2_gfqx6")
+name = "Burn Down"
+attack_cost = SubResource("Resource_sfquh")
+attack_data = SubResource("Resource_6cj01")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_beacg"]
+script = ExtResource("13_45c3u")
+provides_only = false
+converting = ExtResource("12_cg58q")
+becomes = ExtResource("7_pv4g2")
+recieves = ExtResource("8_8jlqf")
+metadata/_custom_type_script = "uid://cg3m7vpqxf2t6"
+
+[sub_resource type="Resource" id="Resource_bkn8l"]
+script = ExtResource("10_oabpa")
+override = SubResource("Resource_beacg")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_bh8af"]
+script = ExtResource("14_k4g3y")
+name = "Burn Down"
+description = "All Energy attached to [name] are {Fire} Energy instead of its usual type."
+passive = SubResource("Resource_bkn8l")
+metadata/_custom_type_script = "uid://bs2y8ocljilv8"
+
+[sub_resource type="Resource" id="Resource_qr5om"]
+script = ExtResource("15_4gvve")
+HP = 160
+retreat = 2
+pokebody = SubResource("Resource_bh8af")
+attacks = Array[ExtResource("2_gfqx6")]([SubResource("Resource_8a1fr"), SubResource("Resource_jfiwf")])
+evo_stage = "Stage 2"
+evolves_from = "Charmeleon"
+considered = 2
+type = 2
+weak = 12
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_d078n")
+name = "Charizard ex"
+image = ExtResource("1_6ced5")
+illustrator = "Hiromichi Sugiyama"
+number = 105
+rarity = 4
+expansion = 5
+categories = 1
+pokemon_properties = SubResource("Resource_qr5om")
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

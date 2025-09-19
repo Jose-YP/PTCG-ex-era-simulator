@@ -36,7 +36,6 @@ attacks = Array[ExtResource("5_c47ie")]([SubResource("Resource_0cyaq"), SubResou
 evo_stage = "Stage 1"
 evolves_from = "Poochyena"
 type = 64
-weak = 32
 resist = 16
 
 [resource]

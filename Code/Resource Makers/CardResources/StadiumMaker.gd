@@ -1,7 +1,7 @@
 extends Resource
 class_name Stadium
 
-@export_enum("Anytime", "Between Turns") var when_to_check: int = 0
+@export_enum("Anytime", "Between Turns", "Once Per Turn") var when_to_check: String = "Anytime"
 ##Who should the stadium activate on
 @export var determine_ask: SlotAsk
 ##This effect is a passive that applies depending on ask

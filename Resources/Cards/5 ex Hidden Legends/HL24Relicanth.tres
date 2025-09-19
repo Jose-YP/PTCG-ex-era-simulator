@@ -1,0 +1,68 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=18 format=3 uid="uid://bj1fw8bmuhxl8"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_4c6cw"]
+[ext_resource type="Texture2D" uid="uid://ua4ds6opqg3p" path="res://Art/Cards/5 ex Hidden Legends/24.jpg" id="1_p484p"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_6l60t"]
+[ext_resource type="Resource" uid="uid://dsslhipk3ix2o" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Water1.tres" id="3_35658"]
+[ext_resource type="Resource" uid="uid://b6fs2x4iffemg" path="res://Resources/Components/Pokemon/Attacks/AttackData/10SleepIfHeads.tres" id="4_l6tfx"]
+[ext_resource type="Script" uid="uid://mcfyh6penu34" path="res://Code/Resource Makers/GeneralUse/CondRulesMaker.gd" id="5_4csmj"]
+[ext_resource type="Resource" uid="uid://bns8h72u2hxqo" path="res://Resources/Components/Effects/Asks/General/AnyMon.tres" id="6_ljski"]
+[ext_resource type="Script" uid="uid://cyxu7ymi4nofx" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/RuleChangeMaker.gd" id="7_op8p7"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="8_cj5ym"]
+[ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="9_rcylq"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="10_h3oi5"]
+
+[sub_resource type="Resource" id="Resource_yxy86"]
+script = ExtResource("2_6l60t")
+name = "Yawn"
+attack_cost = ExtResource("3_35658")
+attack_data = ExtResource("4_l6tfx")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_ggffn"]
+script = ExtResource("5_4csmj")
+removal = 3
+metadata/_custom_type_script = "uid://mcfyh6penu34"
+
+[sub_resource type="Resource" id="Resource_hq80s"]
+script = ExtResource("7_op8p7")
+condition_rules = Dictionary[int, ExtResource("5_4csmj")]({
+3: SubResource("Resource_ggffn")
+})
+application = "Side"
+recieves = ExtResource("6_ljski")
+metadata/_custom_type_script = "uid://cyxu7ymi4nofx"
+
+[sub_resource type="Resource" id="Resource_5u0cn"]
+script = ExtResource("8_cj5ym")
+rule_change = SubResource("Resource_hq80s")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_7ihrm"]
+script = ExtResource("9_rcylq")
+name = "Deep Sleep"
+description = "As long as [name] is your Active Pokémon, a player flips 2 coins for each of his or her Pokémon that is Asleep between turns. If either coin is tails, that Pokémon is still Asleep."
+affected_by_condition = false
+active = true
+passive = SubResource("Resource_5u0cn")
+metadata/_custom_type_script = "uid://bs2y8ocljilv8"
+
+[sub_resource type="Resource" id="Resource_e8hhk"]
+script = ExtResource("10_h3oi5")
+HP = 60
+pokebody = SubResource("Resource_7ihrm")
+attacks = Array[ExtResource("2_6l60t")]([SubResource("Resource_yxy86")])
+type = 4
+weak = 8
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_4c6cw")
+name = "Relicanth"
+image = ExtResource("1_p484p")
+illustrator = "Kagemaru Himeno"
+number = 24
+rarity = 2
+categories = 1
+pokemon_properties = SubResource("Resource_e8hhk")
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

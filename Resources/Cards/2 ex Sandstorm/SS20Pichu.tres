@@ -59,7 +59,6 @@ pokepower = ExtResource("13_115tt")
 attacks = Array[ExtResource("1_f1jhc")]([SubResource("Resource_fjifl")])
 considered = 5
 type = 8
-weak = 32
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]

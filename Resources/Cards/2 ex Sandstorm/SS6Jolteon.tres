@@ -63,7 +63,6 @@ attacks = Array[ExtResource("2_mo62d")]([SubResource("Resource_ok447"), SubResou
 evo_stage = "Stage 1"
 evolves_from = "Eevee"
 type = 8
-weak = 32
 resist = 128
 metadata/_custom_type_script = "uid://dkximshow1pao"
 

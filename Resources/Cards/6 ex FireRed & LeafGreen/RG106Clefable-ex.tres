@@ -36,7 +36,6 @@ attacks = Array[ExtResource("2_n4vst")]([SubResource("Resource_rleea"), SubResou
 evo_stage = "Stage 1"
 considered = 2
 type = 256
-weak = 32
 metadata/_custom_type_script = "uid://dkximshow1pao"
 
 [resource]
