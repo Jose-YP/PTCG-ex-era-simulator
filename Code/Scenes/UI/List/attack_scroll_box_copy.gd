@@ -2,12 +2,12 @@
 extends ScrollContainer
 class_name AttackScrollContainer
 
+@export_enum("Basic", "Mimic", "Disable") var mode: String = "Basic"
 @export var check: bool = true
 @export var attackItem: PackedScene
 @export var ability_item: PackedScene
 @export var poke_slot: PokeSlot
 @export var current_card: Base_Card
-@export var mimic: bool
 @export var max_size: Vector2 = Vector2(420, 400)
 
 @onready var current_height: float = 55
@@ -82,14 +82,16 @@ func set_attack(attack: Attack, theme_variation: String = ""):
 			making.check_usability()
 		else:
 			making.make_usable(true)
-	else: making.make_usable(mimic)
+	else: making.make_usable(mode)
 
 func determine_attack(attack: Attack):
-	if mimic:
+	if mode == "Mimic":
 		trigger.emit()
 		SignalBus.trigger_attack.emit(poke_slot, attack)
-	else:
+	elif mode == "Basic":
 		SignalBus.main_attack.emit(poke_slot, attack)
+	else:
+		SignalBus.disable_attack.emit(poke_slot, attack)
 
 func set_ability(ability: Ability):
 	if ability:

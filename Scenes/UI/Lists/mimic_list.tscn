@@ -16,14 +16,14 @@ offset_right = -420.12
 offset_bottom = -360.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 6
 size_flags_vertical = 6
 script = ExtResource("1_k3vex")
 show_speed = 0.075
 metadata/_edit_group_ = true
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
-custom_minimum_size = Vector2(400, 464)
+custom_minimum_size = Vector2(440, 464)
 layout_mode = 0
 offset_right = 420.0
 offset_bottom = 520.0
@@ -41,9 +41,10 @@ hideNodes = [NodePath("../Footer")]
 
 [node name="AttackScrollBox" parent="PanelContainer/VBoxContainer" instance=ExtResource("2_vchyu")]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(400, 350)
+custom_minimum_size = Vector2(432, 350)
 layout_mode = 2
 size_flags_horizontal = 4
+mode = "Mimic"
 
 [node name="Footer" parent="PanelContainer/VBoxContainer" node_paths=PackedStringArray("dragging_node") instance=ExtResource("4_frtw2")]
 unique_name_in_owner = true

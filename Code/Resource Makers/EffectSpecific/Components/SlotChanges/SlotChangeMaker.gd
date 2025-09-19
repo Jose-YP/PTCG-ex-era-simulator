@@ -27,8 +27,13 @@ func play_effect(reversable: bool = false, replace_num: int = -1) -> void:
 	if application == "Slot":
 		var apply_to: Array[PokeSlot] = Globals.full_ui.get_aks_minus_immune(recieves, Consts.IMMUNITIES.ATK_EFCT_OPP)
 		
-		for slot in apply_to:
-			slot.apply_slot_change(self)
+		if self is Disable and self.choose_num != -1:
+			var dis = self as Disable
+			for slot in apply_to:
+				await dis.choose_atk_disable(slot)
+		else:
+			for slot in apply_to:
+				slot.apply_slot_change(self)
 		
 	else:
 		Globals.fundies.apply_change(recieves, self)

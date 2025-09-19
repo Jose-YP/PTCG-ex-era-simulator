@@ -21,8 +21,22 @@ class_name Disable
 ##If this is filled with anything the disable will only work on specified attacks
 @export var attack_names: Array[String]
 
-func choose_atk_disable() -> void:
-	pass
+func choose_atk_disable(slot: PokeSlot) -> void:
+	var disable_box = Consts.mimic_box.instantiate()
+	SignalBus.disable_attack.connect(create_attack_disable)
+	disable_box.mimic = false
+	disable_box.attacks = slot.get_pokedata().attacks
+	disable_box.poke_slot = slot
+	disable_box.position = Vector2(slot.ui_slot.global_position.x,0)
+	Globals.full_ui.set_top_ui(disable_box)
+	
+	await SignalBus.disable_attack
+
+func create_attack_disable(slot: PokeSlot, atk: Attack) -> void:
+	var dis: Disable = self.duplicate()
+	dis.attack_names.append(atk.name)
+	
+	slot.apply_slot_change(dis)
 
 func check_bool(which: Consts.MON_DISABL) -> bool:
 	match which:
