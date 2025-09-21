@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="Ability" load_steps=7 format=3 uid="uid://c5br6a7i2sbkb"]
+
+[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="1_2emsj"]
+[ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/BuffMaker.gd" id="2_crkom"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_pywl2"]
+[ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="4_8hktl"]
+
+[sub_resource type="Resource" id="Resource_ikdw4"]
+script = ExtResource("2_crkom")
+description = "Damage taken reduced by 10 after weak/res"
+stackable = true
+defense = 10
+recieves = ExtResource("1_2emsj")
+metadata/_custom_type_script = "uid://coojhwe6m20gd"
+
+[sub_resource type="Resource" id="Resource_kkoco"]
+script = ExtResource("3_pywl2")
+buff = SubResource("Resource_ikdw4")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[resource]
+script = ExtResource("4_8hktl")
+name = "Exoskeleton"
+description = "Any damage done to [name] by attacks is reduced by 10 (after applying Weakness and Resistance)."
+affected_by_condition = false
+how_often = "Infinite"
+passive = SubResource("Resource_kkoco")
+metadata/_custom_type_script = "uid://bs2y8ocljilv8"

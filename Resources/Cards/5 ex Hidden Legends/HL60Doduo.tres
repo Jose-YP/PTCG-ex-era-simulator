@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=9 format=3 uid="uid://dbq8cl880y302"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_g5x84"]
+[ext_resource type="Texture2D" uid="uid://b627kv4duuj88" path="res://Art/Cards/5 ex Hidden Legends/60.jpg" id="1_q5k11"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_8j1wj"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_xdsqe"]
+[ext_resource type="Resource" uid="uid://bep36omnenbc8" path="res://Resources/Components/Pokemon/Attacks/AttackData/10Dmg.tres" id="4_lkics"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_y2ju1"]
+
+[sub_resource type="Resource" id="Resource_bv4bm"]
+script = ExtResource("2_8j1wj")
+name = "Drill Peck"
+attack_data = ExtResource("4_lkics")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_1u74o"]
+script = ExtResource("5_y2ju1")
+HP = 40
+attacks = Array[ExtResource("2_8j1wj")]([SubResource("Resource_bv4bm")])
+type = 256
+weak = 8
+resist = 32
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_g5x84")
+name = "Doduo"
+image = ExtResource("1_q5k11")
+illustrator = "Miki Tanaka"
+number = 60
+expansion = 4
+categories = 1
+pokemon_properties = SubResource("Resource_1u74o")
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

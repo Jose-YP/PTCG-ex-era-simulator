@@ -1,12 +1,41 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=6 format=3 uid="uid://b1wmepba718r6"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=15 format=3 uid="uid://b1wmepba718r6"]
 
 [ext_resource type="Texture2D" uid="uid://dmqcou4ym5a1x" path="res://Art/Cards/11 ex Delta Species/94.jpg" id="1_dqrln"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_j4c1c"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="3_alab5"]
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="3_usjp2"]
+[ext_resource type="Script" uid="uid://b8kvis7rgg3j4" path="res://Code/Resource Makers/CardResources/StadiumMaker.gd" id="5_gidr1"]
+[ext_resource type="Resource" uid="uid://cvl23bjanqo3l" path="res://Resources/Components/EnData/Metal.tres" id="6_hh00v"]
+[ext_resource type="Resource" uid="uid://cv8xofc4ofaom" path="res://Resources/Components/EnData/NeoRainbow.tres" id="7_kt2p3"]
+[ext_resource type="Resource" uid="uid://c6ydfl8wqi0hs" path="res://Resources/Components/Effects/Asks/Class&Owner/DeltaPokemon.tres" id="8_8cx2u"]
+[ext_resource type="Script" uid="uid://cg3m7vpqxf2t6" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/OverrideMaker.gd" id="9_y77bg"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="10_eelso"]
+
+[sub_resource type="Resource" id="Resource_u5pue"]
+script = ExtResource("9_y77bg")
+en_category = "Basic Energy"
+provides_only = false
+converting = ExtResource("7_kt2p3")
+becomes = ExtResource("6_hh00v")
+application = "Side"
+recieves = ExtResource("8_8cx2u")
+metadata/_custom_type_script = "uid://cg3m7vpqxf2t6"
+
+[sub_resource type="Resource" id="Resource_ejihl"]
+script = ExtResource("10_eelso")
+override = SubResource("Resource_u5pue")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_8nejp"]
+script = ExtResource("5_gidr1")
+stadium_effect = SubResource("Resource_ejihl")
+metadata/_custom_type_script = "uid://b8kvis7rgg3j4"
 
 [sub_resource type="Resource" id="Resource_usjp2"]
 script = ExtResource("3_alab5")
+considered = "Stadium"
+description = "Each player's basic Energy cards attached to Pokémon that has δ on its card are both their usual Energy type and {Metal} type but provide only 1 Energy at a time. (Has no effect other than providing Energy.)"
+stadium_properties = SubResource("Resource_8nejp")
 metadata/_custom_type_script = "uid://crx447i85kshy"
 
 [resource]

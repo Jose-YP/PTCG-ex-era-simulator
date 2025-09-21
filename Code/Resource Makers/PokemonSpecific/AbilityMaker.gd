@@ -28,6 +28,8 @@ class_name Ability
 @export var passive: EffectCall
 ##This will call an ability activation
 @export var effect: EffectCall
+@export var shared_prompt: bool = true
+@export var effects: Array[EffectCollect]
 
 var attatched_to: PokeSlot
 

@@ -1,0 +1,52 @@
+[gd_resource type="Resource" script_class="Deck" load_steps=24 format=3 uid="uid://dnmrxm40jnrfl"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_h4cbm"]
+[ext_resource type="Script" uid="uid://e660iomt5e76" path="res://Code/Resource Makers/CardResources/DeckMaker.gd" id="2_bwjyl"]
+[ext_resource type="Resource" uid="uid://c8kif7u1hcxwv" path="res://Resources/Cards/6 ex FireRed & LeafGreen/RG105Charizard-ex.tres" id="2_nabkc"]
+[ext_resource type="Resource" uid="uid://b3pfb181wmq6p" path="res://Resources/Cards/12 ex Legend Maker/LM21Magmar.tres" id="3_hlcnt"]
+[ext_resource type="Resource" uid="uid://cdr4amrpwso8k" path="res://Resources/Cards/12 ex Legend Maker/LM58Magby.tres" id="4_gf601"]
+[ext_resource type="Resource" uid="uid://dvr1ux33w68yh" path="res://Resources/Cards/12 ex Legend Maker/LM74FullFlame.tres" id="5_4bqam"]
+[ext_resource type="Resource" uid="uid://cvjyyq2lad5k5" path="res://Resources/Cards/1 ex Ruby & Saphire/RS108FireEnergy.tres" id="6_nlcpf"]
+[ext_resource type="Resource" uid="uid://y724htokdlrt" path="res://Resources/Cards/1 ex Ruby & Saphire/RS105FightingEnergy.tres" id="7_nsixq"]
+[ext_resource type="Resource" uid="uid://cjxwqcnfm20fq" path="res://Resources/Cards/1 ex Ruby & Saphire/RS104GrassEnergy.tres" id="8_0om0c"]
+[ext_resource type="Resource" uid="uid://dipr5ie1kx7v8" path="res://Resources/Cards/1 ex Ruby & Saphire/RS93DarknessEnergy.tres" id="9_ogt8t"]
+[ext_resource type="Resource" uid="uid://d3wqsrtlqtlqm" path="res://Resources/Cards/1 ex Ruby & Saphire/RS106WaterEnergy.tres" id="10_aktm7"]
+[ext_resource type="Resource" uid="uid://bunwn5h3b4qr7" path="res://Resources/Cards/6 ex FireRed & LeafGreen/RG31Charmeleon.tres" id="11_0ecbk"]
+[ext_resource type="Resource" uid="uid://c2xn6bmkk61cy" path="res://Resources/Cards/6 ex FireRed & LeafGreen/RG57Charmander.tres" id="12_rxycp"]
+[ext_resource type="Resource" uid="uid://ctg32y7qi5si5" path="res://Resources/Cards/6 ex FireRed & LeafGreen/RG58Charmander.tres" id="13_k60q2"]
+[ext_resource type="Resource" uid="uid://c45xk5b64oi3v" path="res://Resources/Cards/2 ex Sandstorm/SS18Kecleon.tres" id="14_tvdk4"]
+[ext_resource type="Resource" uid="uid://b73tnsrwu0g41" path="res://Resources/Cards/12 ex Legend Maker/LM37Kecleon.tres" id="15_iycl2"]
+[ext_resource type="Resource" uid="uid://lr2xc1enn7v8" path="res://Resources/Cards/8 ex Deoxys/DX85CrystalShard.tres" id="16_ajnnv"]
+[ext_resource type="Resource" uid="uid://bhe83148fdiet" path="res://Resources/Cards/2 ex Sandstorm/SS88RareCandy.tres" id="17_kbt83"]
+[ext_resource type="Resource" uid="uid://bd5udpyw50p8k" path="res://Resources/Cards/10 ex Unseen Forces/UF104Ho-Oh-ex.tres" id="18_8bh13"]
+[ext_resource type="Resource" uid="uid://dxq22uwxelttj" path="res://Resources/Cards/1 ex Ruby & Saphire/RS107PsychicEnergy.tres" id="19_0fl05"]
+[ext_resource type="Resource" uid="uid://b5ukqf6xmn6vv" path="res://Resources/Cards/1 ex Ruby & Saphire/RS109LightningEnergy.tres" id="20_4he30"]
+[ext_resource type="Resource" uid="uid://bekwoaj06a44c" path="res://Resources/Cards/1 ex Ruby & Saphire/RS95RainbowEnergy.tres" id="21_ua5va"]
+[ext_resource type="Resource" uid="uid://dyqdhaov0ywxk" path="res://Resources/Cards/1 ex Ruby & Saphire/RS92Switch.tres" id="22_dvdh5"]
+
+[resource]
+script = ExtResource("2_bwjyl")
+cards = Dictionary[ExtResource("1_h4cbm"), int]({
+ExtResource("22_dvdh5"): 3,
+ExtResource("21_ua5va"): 2,
+ExtResource("20_4he30"): 3,
+ExtResource("19_0fl05"): 3,
+ExtResource("18_8bh13"): 3,
+ExtResource("17_kbt83"): 4,
+ExtResource("16_ajnnv"): 4,
+ExtResource("15_iycl2"): 2,
+ExtResource("14_tvdk4"): 2,
+ExtResource("13_k60q2"): 2,
+ExtResource("12_rxycp"): 2,
+ExtResource("11_0ecbk"): 4,
+ExtResource("10_aktm7"): 3,
+ExtResource("9_ogt8t"): 2,
+ExtResource("8_0om0c"): 3,
+ExtResource("7_nsixq"): 3,
+ExtResource("6_nlcpf"): 3,
+ExtResource("5_4bqam"): 2,
+ExtResource("4_gf601"): 3,
+ExtResource("3_hlcnt"): 3,
+ExtResource("2_nabkc"): 4
+})
+metadata/_custom_type_script = "uid://e660iomt5e76"

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="AttackData" load_steps=6 format=3 uid="uid://0i58o1obksh6"]
+
+[ext_resource type="Resource" uid="uid://cy8opcq82ffqe" path="res://Resources/Components/Counters/Indv/Slots/OtherAllEnergyNum.tres" id="1_0sgjo"]
+[ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="2_05c7g"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="3_a7xj2"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="4_f3ml6"]
+
+[sub_resource type="Resource" id="Resource_thcri"]
+script = ExtResource("2_05c7g")
+first_comparison = ExtResource("1_0sgjo")
+metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
+
+[resource]
+script = ExtResource("4_f3ml6")
+description = "Does 10 damage plus 10 more damage for each Energy attached to all of your opponent's Pokémon."
+initial_main_DMG = 10
+modifier = 1
+modifier_num = 10
+comparator = SubResource("Resource_thcri")
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"

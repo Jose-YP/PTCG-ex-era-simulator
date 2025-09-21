@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=28 format=3 uid="uid://kxuqb8d34mh4"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=29 format=3 uid="uid://kxuqb8d34mh4"]
 
 [ext_resource type="Texture2D" uid="uid://cxfqljywlmku2" path="res://Art/Cards/14 ex Crystal Guardians/25.jpg" id="1_ap5nn"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_galkf"]
@@ -9,6 +9,7 @@
 [ext_resource type="Resource" uid="uid://1ib15c7peyrj" path="res://Resources/Components/Pokemon/Attacks/AttackData/50DmgNoRes.tres" id="6_w47vd"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="7_31vjx"]
 [ext_resource type="Script" uid="uid://cg3m7vpqxf2t6" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/OverrideMaker.gd" id="7_bxoq5"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="7_od8ah"]
 [ext_resource type="Script" uid="uid://cswtf00ovs0ss" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/TypeChangeMaker.gd" id="8_mwnyo"]
 [ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="9_gox5v"]
 [ext_resource type="Resource" uid="uid://b0lup3upo6m4f" path="res://Resources/Components/EnData/Psychic.tres" id="10_gpxn3"]

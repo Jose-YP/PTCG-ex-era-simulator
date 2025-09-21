@@ -19,7 +19,12 @@ class_name Override
 @export var provides_only: bool = true
 @export var converting: EnData
 @export var no_effects: bool = false
+##If this is true, then the EnData's number will become whatever is
+##in [member becomes] otherwise it retains it's own number
 @export var replace_num: bool = false
+##If this is true then EnData will be replaced with [member becomes]
+##otherwise the two type flags are added together
+@export var replace_provide: bool = false
 @export var becomes: EnData
 
 func how_display() -> Dictionary[String, bool]:

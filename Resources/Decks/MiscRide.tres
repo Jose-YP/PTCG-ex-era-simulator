@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="Deck" load_steps=18 format=3 uid="uid://bqohu1w7axdwo"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_7oyjg"]
+[ext_resource type="Resource" uid="uid://20al8twlj4u4" path="res://Resources/Cards/7 ex Team Rocket Returns/TRR101RocketScizor.tres" id="2_jr0cn"]
+[ext_resource type="Script" uid="uid://e660iomt5e76" path="res://Code/Resource Makers/CardResources/DeckMaker.gd" id="2_ye8e8"]
+[ext_resource type="Resource" uid="uid://ca78a611kvnv7" path="res://Resources/Cards/7 ex Team Rocket Returns/TRR102RocketScyther.tres" id="3_6vfwe"]
+[ext_resource type="Resource" uid="uid://bpyb5rd3indje" path="res://Resources/Cards/1 ex Ruby & Saphire/RS94MetalEnergy.tres" id="4_kwb7o"]
+[ext_resource type="Resource" uid="uid://dipr5ie1kx7v8" path="res://Resources/Cards/1 ex Ruby & Saphire/RS93DarknessEnergy.tres" id="5_l8ywl"]
+[ext_resource type="Resource" uid="uid://ch5vg8k6ed63k" path="res://Resources/Cards/13 ex Holon Phantoms/HP97DarkMetalEnergy.tres" id="6_6rdc1"]
+[ext_resource type="Resource" uid="uid://cjxwqcnfm20fq" path="res://Resources/Cards/1 ex Ruby & Saphire/RS104GrassEnergy.tres" id="7_jmfn6"]
+[ext_resource type="Resource" uid="uid://7ciprb1m2fnh" path="res://Resources/Cards/14 ex Crystal Guardians/CG28Venusaur.tres" id="8_o2abe"]
+[ext_resource type="Resource" uid="uid://ct34kdqkmfsuu" path="res://Resources/Cards/6 ex FireRed & LeafGreen/RG35Ivysaur.tres" id="9_cyty0"]
+[ext_resource type="Resource" uid="uid://c0kbwsboq8b5x" path="res://Resources/Cards/6 ex FireRed & LeafGreen/RG55Bulbasaur.tres" id="10_lvjas"]
+[ext_resource type="Resource" uid="uid://dyqdhaov0ywxk" path="res://Resources/Cards/1 ex Ruby & Saphire/RS92Switch.tres" id="11_ypq0k"]
+[ext_resource type="Resource" uid="uid://bhe83148fdiet" path="res://Resources/Cards/2 ex Sandstorm/SS88RareCandy.tres" id="12_ixfnt"]
+[ext_resource type="Resource" uid="uid://fstl3j1ffxog" path="res://Resources/Cards/7 ex Team Rocket Returns/TRR57Hoppip.tres" id="13_aftix"]
+[ext_resource type="Resource" uid="uid://bkf8kphola8h8" path="res://Resources/Cards/7 ex Team Rocket Returns/TRR11Jumpluff.tres" id="14_qvnda"]
+[ext_resource type="Resource" uid="uid://brysqjdyydq3h" path="res://Resources/Cards/7 ex Team Rocket Returns/TRR49Skiploom.tres" id="15_m0fdk"]
+[ext_resource type="Resource" uid="uid://cxst80dau6yjl" path="res://Resources/Cards/14 ex Crystal Guardians/CG100CelebiStar.tres" id="16_um4cc"]
+
+[resource]
+script = ExtResource("2_ye8e8")
+cards = Dictionary[ExtResource("1_7oyjg"), int]({
+ExtResource("2_jr0cn"): 4,
+ExtResource("3_6vfwe"): 4,
+ExtResource("4_kwb7o"): 3,
+ExtResource("5_l8ywl"): 3,
+ExtResource("6_6rdc1"): 3,
+ExtResource("7_jmfn6"): 9,
+ExtResource("8_o2abe"): 4,
+ExtResource("9_cyty0"): 4,
+ExtResource("10_lvjas"): 4,
+ExtResource("11_ypq0k"): 4,
+ExtResource("12_ixfnt"): 4,
+ExtResource("13_aftix"): 4,
+ExtResource("14_qvnda"): 4,
+ExtResource("15_m0fdk"): 4,
+ExtResource("16_um4cc"): 2
+})
+metadata/_custom_type_script = "uid://e660iomt5e76"

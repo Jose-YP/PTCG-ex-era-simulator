@@ -1,0 +1,57 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=15 format=3 uid="uid://bunwn5h3b4qr7"]
+
+[ext_resource type="Texture2D" uid="uid://b2urm25p7lcom" path="res://Art/Cards/6 ex FireRed & LeafGreen/31.jpg" id="1_3rekr"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_jtbsx"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_t5gvg"]
+[ext_resource type="Resource" uid="uid://bpgsrqt47evh0" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/R1C1.tres" id="3_rihcg"]
+[ext_resource type="Resource" uid="uid://ceo3bpqlglf5o" path="res://Resources/Components/Pokemon/Attacks/AttackData/30Dmg.tres" id="4_5fodp"]
+[ext_resource type="Resource" uid="uid://be6718keco2mu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/R1C2.tres" id="5_lw1y7"]
+[ext_resource type="Resource" uid="uid://cujau35uwuskq" path="res://Resources/Components/Counters/Comparator/Not Equal/OtherTookDmg.tres" id="6_dlq5k"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="7_ghqaq"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="8_pwvtt"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="9_bkjpd"]
+
+[sub_resource type="Resource" id="Resource_snc3e"]
+script = ExtResource("2_t5gvg")
+name = "Flare"
+attack_cost = ExtResource("3_rihcg")
+attack_data = ExtResource("4_5fodp")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_v68tl"]
+script = ExtResource("8_pwvtt")
+description = "If the Defending Pokémon already has any damage counters on it, this attack does 40 damage plus 20 more damage."
+initial_main_DMG = 40
+modifier = 1
+modifier_num = 20
+comparator = ExtResource("6_dlq5k")
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_gf6sv"]
+script = ExtResource("2_t5gvg")
+name = "Damage Burn"
+attack_cost = ExtResource("5_lw1y7")
+attack_data = SubResource("Resource_v68tl")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_ub8tc"]
+script = ExtResource("9_bkjpd")
+HP = 70
+attacks = Array[ExtResource("2_t5gvg")]([SubResource("Resource_snc3e"), SubResource("Resource_gf6sv")])
+evo_stage = "Stage 1"
+evolves_from = "Charmander"
+type = 2
+weak = 4
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_jtbsx")
+name = "Charmeleon"
+image = ExtResource("1_3rekr")
+illustrator = "Kouki Saitou"
+number = 31
+rarity = 1
+expansion = 5
+categories = 1
+pokemon_properties = SubResource("Resource_ub8tc")
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

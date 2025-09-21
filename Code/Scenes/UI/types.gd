@@ -4,27 +4,29 @@ class_name TypeContainer
 
 @export var retreat: bool = false
 @export var energy: bool = false
-@onready var bg: TextureRect = $PanelContainer/BG
+@onready var bg: TextureRect = %BG
+@onready var tabs: TabContainer = %Tabs
+@onready var num_label: RichTextLabel = %Number
 
 var number: int = 0
 
-func _ready(): if retreat: $Tabs.current_tab = 8
+func _ready(): if retreat: tabs.current_tab = 8
 
 func add_type(type: String, ammount: int = 1):
 	number = ammount
 	display_type(type)
 	
-	$Number.clear()
-	$Number.append_text(str(number))
+	num_label.clear()
+	num_label.append_text(str(number))
 	
 	if number >= 1: show()
-	if number > 1: $Number.show()
+	if number > 1: num_label.show()
 	else:
-		$Number.hide()
+		num_label.hide()
 
 func display_type(type: String):
 	var type_id: int = Consts.energy_types.find(type)
-	$Tabs.current_tab = type_id
+	tabs.current_tab = type_id
 	#Special types
 	#const energy_types: Array[String] = [8+ "Rainbow", "Magma",
 	#"Aqua", "Dark Metal","FF", "GL", "WP", "React"]
@@ -35,21 +37,21 @@ func display_type(type: String):
 
 func remove_type():
 	number -= 1
-	$Number.clear()
-	$Number.append_text(str(number))
+	num_label.clear()
+	num_label.append_text(str(number))
 	
-	if number <= 1: $Number.hide()
+	if number <= 1: num_label.hide()
 	if number < 1: hide()
 
 func make_misc(ammount: int) -> void:
 	number = ammount
-	$Tabs.current_tab = $Tabs.get_tab_count() - 1
+	tabs.current_tab = tabs.get_tab_count() - 1
 	
-	$Number.clear()
-	$Number.append_text(str(number))
+	num_label.clear()
+	num_label.append_text(str(number))
 	
-	if number <= 1: $Number.hide()
+	if number <= 1: num_label.hide()
 	if number < 1: hide()
 
 func get_type_index() -> int:
-	return $Tabs.current_tab
+	return tabs.current_tab

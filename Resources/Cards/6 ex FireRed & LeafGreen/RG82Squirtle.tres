@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=9 format=3 uid="uid://5gsp2oi7nkjp"]
+
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_gg14d"]
+[ext_resource type="Texture2D" uid="uid://b2cpyuuj1rb36" path="res://Art/Cards/6 ex FireRed & LeafGreen/82.jpg" id="1_k37he"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_wwpd8"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="2_qacwt"]
+[ext_resource type="Resource" uid="uid://dsslhipk3ix2o" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Water1.tres" id="3_kvpc4"]
+[ext_resource type="Resource" uid="uid://b6fs2x4iffemg" path="res://Resources/Components/Pokemon/Attacks/AttackData/10SleepIfHeads.tres" id="4_wm8wi"]
+
+[sub_resource type="Resource" id="Resource_6bpy8"]
+script = ExtResource("1_gg14d")
+name = "Sleepy Ball"
+attack_cost = ExtResource("3_kvpc4")
+attack_data = ExtResource("4_wm8wi")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_t58gu"]
+script = ExtResource("2_qacwt")
+attacks = Array[ExtResource("1_gg14d")]([SubResource("Resource_6bpy8")])
+type = 4
+weak = 8
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_wwpd8")
+name = "Squirtle"
+image = ExtResource("1_k37he")
+illustrator = "Toshinao Aoki"
+number = 82
+expansion = 5
+categories = 1
+pokemon_properties = SubResource("Resource_t58gu")
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=13 format=3 uid="uid://ssf0yvm562c6"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=14 format=3 uid="uid://ssf0yvm562c6"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_pvu1y"]
 [ext_resource type="Texture2D" uid="uid://cl73mmr3c1bhp" path="res://Art/Cards/13 ex Holon Phantoms/87.jpg" id="1_u4y58"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="3_c4y1i"]
 [ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_kyw37"]
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="3_ni0es"]
+[ext_resource type="Resource" uid="uid://c6ydfl8wqi0hs" path="res://Resources/Components/Effects/Asks/Class&Owner/DeltaPokemon.tres" id="8_l55sb"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="9_k81h8"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="10_85o5a"]
 [ext_resource type="Script" uid="uid://b8kvis7rgg3j4" path="res://Code/Resource Makers/CardResources/StadiumMaker.gd" id="12_3q2f7"]
@@ -21,6 +22,7 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_sv32v"]
 script = ExtResource("12_3q2f7")
+determine_ask = ExtResource("8_l55sb")
 metadata/_custom_type_script = "uid://b8kvis7rgg3j4"
 
 [sub_resource type="Resource" id="Resource_ha8jt"]

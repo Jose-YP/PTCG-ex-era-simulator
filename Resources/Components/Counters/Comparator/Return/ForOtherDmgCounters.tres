@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Comparator" load_steps=3 format=3 uid="uid://cv5x34r3wurp1"]
+
+[ext_resource type="Resource" uid="uid://cu2c1wsp5lrdr" path="res://Resources/Components/Counters/Indv/Slots/OtherTrgDmg.tres" id="1_dmdsu"]
+[ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="2_vxpwd"]
+
+[resource]
+script = ExtResource("2_vxpwd")
+first_comparison = ExtResource("1_dmdsu")
+metadata/_custom_type_script = "uid://b65jx8u5cgcgl"

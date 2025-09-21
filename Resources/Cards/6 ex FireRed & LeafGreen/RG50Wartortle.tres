@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=12 format=3 uid="uid://bk04kqlmtj4nr"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_7bqe6"]
+[ext_resource type="Texture2D" uid="uid://b60dls6po8nxt" path="res://Art/Cards/6 ex FireRed & LeafGreen/50.jpg" id="1_q4iqv"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_vlwvn"]
+[ext_resource type="Resource" uid="uid://dsslhipk3ix2o" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Water1.tres" id="3_4hvx7"]
+[ext_resource type="Resource" uid="uid://bep36omnenbc8" path="res://Resources/Components/Pokemon/Attacks/AttackData/10Dmg.tres" id="4_fsoqe"]
+[ext_resource type="Resource" uid="uid://dkvbrahlcnjmi" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/W1C2.tres" id="5_h47hr"]
+[ext_resource type="Resource" uid="uid://c24txrsqfslmm" path="res://Resources/Components/Pokemon/Attacks/AttackData/40SelfOptSwitch.tres" id="6_fsvrc"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="7_qft8n"]
+
+[sub_resource type="Resource" id="Resource_7yjlh"]
+script = ExtResource("2_vlwvn")
+name = "Water Gun"
+attack_cost = ExtResource("3_4hvx7")
+attack_data = ExtResource("4_fsoqe")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_2qqs6"]
+script = ExtResource("2_vlwvn")
+name = "Smash Turn"
+attack_cost = ExtResource("5_h47hr")
+attack_data = ExtResource("6_fsvrc")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_hb68g"]
+script = ExtResource("7_qft8n")
+HP = 80
+retreat = 2
+attacks = Array[ExtResource("2_vlwvn")]([SubResource("Resource_7yjlh"), SubResource("Resource_2qqs6")])
+evo_stage = "Stage 1"
+evolves_from = "Squirtle"
+type = 4
+weak = 8
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_7bqe6")
+name = "Wartortle"
+image = ExtResource("1_q4iqv")
+illustrator = "Mitsuhiro Arita"
+number = 50
+rarity = 1
+expansion = 5
+categories = 1
+pokemon_properties = SubResource("Resource_hb68g")
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

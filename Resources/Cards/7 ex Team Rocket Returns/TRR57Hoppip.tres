@@ -1,0 +1,57 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=17 format=3 uid="uid://fstl3j1ffxog"]
+
+[ext_resource type="Texture2D" uid="uid://sypfavdjlhig" path="res://Art/Cards/7 ex Team Rocket Returns/57.jpg" id="1_amm46"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_ux6yj"]
+[ext_resource type="Resource" uid="uid://blnmclkk45gb3" path="res://Resources/Components/Pokemon/Abilities/Bodies/Buffer.tres" id="2_tnv28"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_i4x6l"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="3_osav8"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="4_bwlb3"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="4_wqa1d"]
+[ext_resource type="Resource" uid="uid://ekj1myy642kh" path="res://Resources/Components/Effects/Prompts/PromptHeads.tres" id="5_1c3ya"]
+[ext_resource type="Resource" uid="uid://bk733ypyh05xk" path="res://Resources/Components/Effects/Conditions/ChooseCond.tres" id="6_cl02r"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="7_p4kif"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="8_jikth"]
+
+[sub_resource type="Resource" id="Resource_s74mf"]
+script = ExtResource("7_p4kif")
+condition = ExtResource("6_cl02r")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_erdj7"]
+script = ExtResource("4_wqa1d")
+prompt = ExtResource("5_1c3ya")
+success = SubResource("Resource_s74mf")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
+[sub_resource type="Resource" id="Resource_rss22"]
+script = ExtResource("8_jikth")
+description = "Flip a coin. If heads, choose 1 Special Condition. The Defending Pokémon is now affected by that Special Condition."
+initial_main_DMG = 10
+prompt_effects = Array[ExtResource("4_wqa1d")]([SubResource("Resource_erdj7")])
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_6fw4v"]
+script = ExtResource("1_ux6yj")
+name = "Miracle Powder"
+attack_data = SubResource("Resource_rss22")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_xevcv"]
+script = ExtResource("3_osav8")
+HP = 30
+pokebody = ExtResource("2_tnv28")
+attacks = Array[ExtResource("1_ux6yj")]([SubResource("Resource_6fw4v")])
+weak = 2
+resist = 4
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("4_bwlb3")
+name = "Hoppip"
+image = ExtResource("1_amm46")
+illustrator = "Kyoko Umemoto"
+number = 57
+expansion = 6
+categories = 1
+pokemon_properties = SubResource("Resource_xevcv")
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

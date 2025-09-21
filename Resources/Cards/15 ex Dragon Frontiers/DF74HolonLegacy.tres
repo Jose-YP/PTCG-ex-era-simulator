@@ -1,0 +1,53 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=15 format=3 uid="uid://che6uh6cmbwtx"]
+
+[ext_resource type="Texture2D" uid="uid://bmc58v8rfo5fx" path="res://Art/Cards/15 ex Dragon Frontiers/74.jpg" id="1_7kb1h"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_u52rd"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="3_q4ej8"]
+[ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="4_sdvr5"]
+[ext_resource type="Script" uid="uid://b8kvis7rgg3j4" path="res://Code/Resource Makers/CardResources/StadiumMaker.gd" id="5_s1g08"]
+[ext_resource type="Resource" uid="uid://c6ydfl8wqi0hs" path="res://Resources/Components/Effects/Asks/Class&Owner/DeltaPokemon.tres" id="6_onyug"]
+[ext_resource type="Script" uid="uid://c0ishgbxk63dg" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/DisableMaker.gd" id="7_m8k66"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="8_tyakn"]
+[ext_resource type="Script" uid="uid://cswtf00ovs0ss" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/TypeChangeMaker.gd" id="9_wjgfx"]
+
+[sub_resource type="Resource" id="Resource_3bw5v"]
+script = ExtResource("7_m8k66")
+disable_power = true
+application = "Side"
+recieves = ExtResource("6_onyug")
+metadata/_custom_type_script = "uid://c0ishgbxk63dg"
+
+[sub_resource type="Resource" id="Resource_o8tad"]
+script = ExtResource("9_wjgfx")
+which = 1
+application = "Side"
+recieves = ExtResource("6_onyug")
+metadata/_custom_type_script = "uid://cswtf00ovs0ss"
+
+[sub_resource type="Resource" id="Resource_cmkj6"]
+script = ExtResource("8_tyakn")
+disable = SubResource("Resource_3bw5v")
+type_change = SubResource("Resource_o8tad")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_co1xp"]
+script = ExtResource("5_s1g08")
+stadium_effect = SubResource("Resource_cmkj6")
+metadata/_custom_type_script = "uid://b8kvis7rgg3j4"
+
+[sub_resource type="Resource" id="Resource_kca56"]
+script = ExtResource("4_sdvr5")
+considered = "Stadium"
+description = "Each Pokémon in play that has δ on its card (both yours and your opponent's) has no Weakness and can't use any Poké-Powers."
+stadium_properties = SubResource("Resource_co1xp")
+metadata/_custom_type_script = "uid://crx447i85kshy"
+
+[resource]
+script = ExtResource("1_u52rd")
+name = "Dragon Frontiers"
+image = ExtResource("1_7kb1h")
+illustrator = "Shizurow"
+number = 74
+categories = 2
+trainer_properties = SubResource("Resource_kca56")
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

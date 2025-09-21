@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://c7qjdlm2vg1ho"]
+
+[ext_resource type="Texture2D" uid="uid://bju7sw2i8jpox" path="res://Art/Cards/5 ex Hidden Legends/58.jpg" id="1_edflq"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_hvgbj"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_b6sos"]
+[ext_resource type="Resource" uid="uid://fcpa5aqhgy0e" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/W1C1.tres" id="3_pbgy7"]
+[ext_resource type="Resource" uid="uid://n2tq4jfo7hw1" path="res://Resources/Components/Pokemon/Attacks/AttackData/20DmgParaIfHeads.tres" id="4_7ovtv"]
+[ext_resource type="Resource" uid="uid://c5br6a7i2sbkb" path="res://Resources/Components/Pokemon/Abilities/Bodies/Exoskeleton10.tres" id="5_3471g"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="6_fyvmw"]
+
+[sub_resource type="Resource" id="Resource_ej4yy"]
+script = ExtResource("2_b6sos")
+name = "Bubble"
+attack_cost = ExtResource("3_pbgy7")
+attack_data = ExtResource("4_7ovtv")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_53j5v"]
+script = ExtResource("6_fyvmw")
+HP = 40
+pokebody = ExtResource("5_3471g")
+attacks = Array[ExtResource("2_b6sos")]([SubResource("Resource_ej4yy")])
+type = 4
+weak = 8
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_hvgbj")
+name = "Clamperl"
+image = ExtResource("1_edflq")
+illustrator = "Kagemaru Himeno"
+number = 58
+categories = 1
+pokemon_properties = SubResource("Resource_53j5v")
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

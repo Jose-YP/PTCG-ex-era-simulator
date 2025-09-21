@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="Deck" load_steps=18 format=3 uid="uid://cmjw2mmvpiupp"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_e3jvg"]
+[ext_resource type="Script" uid="uid://e660iomt5e76" path="res://Code/Resource Makers/CardResources/DeckMaker.gd" id="2_6kr7g"]
+[ext_resource type="Resource" uid="uid://dsmr1qfr4uxr1" path="res://Resources/Cards/14 ex Crystal Guardians/CG2BlastoiseDelta.tres" id="2_p47wl"]
+[ext_resource type="Resource" uid="uid://kxuqb8d34mh4" path="res://Resources/Cards/14 ex Crystal Guardians/CG25Medicham.tres" id="3_f07v7"]
+[ext_resource type="Resource" uid="uid://y724htokdlrt" path="res://Resources/Cards/1 ex Ruby & Saphire/RS105FightingEnergy.tres" id="4_3lj0q"]
+[ext_resource type="Resource" uid="uid://bpyb5rd3indje" path="res://Resources/Cards/1 ex Ruby & Saphire/RS94MetalEnergy.tres" id="5_exaaw"]
+[ext_resource type="Resource" uid="uid://gdaii3n1dch5" path="res://Resources/Cards/3 ex Dragon/DR82BalloonBerry.tres" id="6_yph0f"]
+[ext_resource type="Resource" uid="uid://c72opknpplx87" path="res://Resources/Cards/14 ex Crystal Guardians/CG80MemoryBerry.tres" id="7_m7t4p"]
+[ext_resource type="Resource" uid="uid://dyqdhaov0ywxk" path="res://Resources/Cards/1 ex Ruby & Saphire/RS92Switch.tres" id="8_4qg7x"]
+[ext_resource type="Resource" uid="uid://dte1e7ycn0mb5" path="res://Resources/Cards/3 ex Dragon/DR37Meditite.tres" id="9_2rhue"]
+[ext_resource type="Resource" uid="uid://5gsp2oi7nkjp" path="res://Resources/Cards/6 ex FireRed & LeafGreen/RG82Squirtle.tres" id="10_u7xjg"]
+[ext_resource type="Resource" uid="uid://bk04kqlmtj4nr" path="res://Resources/Cards/6 ex FireRed & LeafGreen/RG50Wartortle.tres" id="11_hcb7w"]
+[ext_resource type="Resource" uid="uid://d3wqsrtlqtlqm" path="res://Resources/Cards/1 ex Ruby & Saphire/RS106WaterEnergy.tres" id="12_iqjdw"]
+[ext_resource type="Resource" uid="uid://bekwoaj06a44c" path="res://Resources/Cards/1 ex Ruby & Saphire/RS95RainbowEnergy.tres" id="13_hu7bo"]
+[ext_resource type="Resource" uid="uid://dxq22uwxelttj" path="res://Resources/Cards/1 ex Ruby & Saphire/RS107PsychicEnergy.tres" id="14_5xdkh"]
+[ext_resource type="Resource" uid="uid://s0xeoyp6jtsa" path="res://Resources/Cards/1 ex Ruby & Saphire/RS84LumBerry.tres" id="15_0gsu5"]
+[ext_resource type="Resource" uid="uid://cikspsque6rym" path="res://Resources/Cards/1 ex Ruby & Saphire/RS85OranBerry.tres" id="16_wb3p5"]
+
+[resource]
+script = ExtResource("2_6kr7g")
+cards = Dictionary[ExtResource("1_e3jvg"), int]({
+ExtResource("2_p47wl"): 4,
+ExtResource("3_f07v7"): 4,
+ExtResource("4_3lj0q"): 7,
+ExtResource("5_exaaw"): 3,
+ExtResource("6_yph0f"): 4,
+ExtResource("7_m7t4p"): 4,
+ExtResource("8_4qg7x"): 4,
+ExtResource("9_2rhue"): 4,
+ExtResource("10_u7xjg"): 4,
+ExtResource("11_hcb7w"): 4,
+ExtResource("12_iqjdw"): 3,
+ExtResource("13_hu7bo"): 4,
+ExtResource("14_5xdkh"): 3,
+ExtResource("15_0gsu5"): 4,
+ExtResource("16_wb3p5"): 4
+})
+metadata/_custom_type_script = "uid://e660iomt5e76"

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Comparator" load_steps=3 format=3 uid="uid://ddu734gmpyl17"]
+
+[ext_resource type="Resource" uid="uid://2akjc8w7fe7q" path="res://Resources/Components/Counters/Indv/Slots/SelfEnNum.tres" id="1_1m7n2"]
+[ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="2_3hw01"]
+
+[resource]
+script = ExtResource("2_3hw01")
+first_comparison = ExtResource("1_1m7n2")
+metadata/_custom_type_script = "uid://b65jx8u5cgcgl"

@@ -40,11 +40,13 @@ scale = Vector2(0.5, 0.5)
 theme_override_styles/panel = SubResource("StyleBoxEmpty_la0dl")
 
 [node name="BG" type="TextureRect" parent="PanelContainer"]
+unique_name_in_owner = true
 modulate = Color(0.406415, 0.858788, 0, 1)
 layout_mode = 2
 texture = ExtResource("2_72mgm")
 
 [node name="Tabs" type="TabContainer" parent="PanelContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_nsmgk")
@@ -210,6 +212,7 @@ expand_mode = 2
 metadata/_tab_index = 17
 
 [node name="Number" type="RichTextLabel" parent="PanelContainer"]
+unique_name_in_owner = true
 visible = false
 layout_mode = 2
 mouse_filter = 2

@@ -1,0 +1,85 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=24 format=3 uid="uid://cdr4amrpwso8k"]
+
+[ext_resource type="Texture2D" uid="uid://b3jsjo0sgukem" path="res://Art/Cards/12 ex Legend Maker/58.jpg" id="1_6n7r6"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_4oi1v"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_2omth"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="4_yu0va"]
+[ext_resource type="Resource" uid="uid://bns8h72u2hxqo" path="res://Resources/Components/Effects/Asks/General/AnyMon.tres" id="5_ylogx"]
+[ext_resource type="Resource" uid="uid://c7itelq8jtjc2" path="res://Resources/Components/EnData/Rainbow.tres" id="6_hdfjl"]
+[ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="7_r2x4q"]
+[ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="8_2mpy0"]
+[ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="9_72gky"]
+[ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="10_3m37g"]
+[ext_resource type="Resource" uid="uid://bext0mocufqgp" path="res://Resources/Components/Effects/Conditions/BasicBurn.tres" id="11_vdwof"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="12_lbqcg"]
+[ext_resource type="Resource" uid="uid://bgl3ubmav7lsi" path="res://Resources/Components/Pokemon/Abilities/Powers/BabyEvoMagby.tres" id="13_ykcno"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="14_464it"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="15_dtm3r"]
+
+[sub_resource type="Resource" id="Resource_8ru1p"]
+script = ExtResource("7_r2x4q")
+description = "Full Flame"
+broad_class = 2
+name_array = Array[String](["Full Flame"])
+trainer_classes = 8
+metadata/_custom_type_script = "uid://uplawvwcwl8y"
+
+[sub_resource type="Resource" id="Resource_jobac"]
+script = ExtResource("8_2mpy0")
+which = "Stack"
+ask = ExtResource("5_ylogx")
+stack_vars = "cards_in_play"
+identifier = SubResource("Resource_8ru1p")
+stack_portion = -1
+cap = -1
+metadata/_custom_type_script = "uid://vjn146j3ayd6"
+
+[sub_resource type="Resource" id="Resource_cvhy8"]
+script = ExtResource("9_72gky")
+first_comparison = SubResource("Resource_jobac")
+metadata/_custom_type_script = "uid://b65jx8u5cgcgl"
+
+[sub_resource type="Resource" id="Resource_oj1oc"]
+script = ExtResource("10_3m37g")
+comparator = SubResource("Resource_cvhy8")
+metadata/_custom_type_script = "uid://b85jmc7067bjc"
+
+[sub_resource type="Resource" id="Resource_r648f"]
+script = ExtResource("4_yu0va")
+prompt = SubResource("Resource_oj1oc")
+success = ExtResource("11_vdwof")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
+[sub_resource type="Resource" id="Resource_taski"]
+script = ExtResource("12_lbqcg")
+description = "If Full Flame is in play, the Defending Pokémon is now Burned."
+initial_main_DMG = 10
+prompt_effects = Array[ExtResource("4_yu0va")]([SubResource("Resource_r648f")])
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_p04tf"]
+script = ExtResource("2_4oi1v")
+name = "Ignite"
+attack_data = SubResource("Resource_taski")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_yw17u"]
+script = ExtResource("14_464it")
+HP = 40
+pokepower = ExtResource("13_ykcno")
+attacks = Array[ExtResource("2_4oi1v")]([SubResource("Resource_p04tf")])
+considered = 5
+type = 2
+weak = 4
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("15_dtm3r")
+name = "Magby"
+image = ExtResource("1_6n7r6")
+illustrator = "Yuka Morii"
+number = 58
+expansion = 11
+categories = 1
+pokemon_properties = SubResource("Resource_yw17u")
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

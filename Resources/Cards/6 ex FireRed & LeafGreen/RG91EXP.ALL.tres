@@ -1,0 +1,62 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=19 format=3 uid="uid://bo3ea5f4njjut"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_ljo0x"]
+[ext_resource type="Texture2D" uid="uid://cltto6wjwy3y" path="res://Art/Cards/6 ex FireRed & LeafGreen/91.jpg" id="1_rauqr"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="3_kil0k"]
+[ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="4_wu3p7"]
+[ext_resource type="Resource" uid="uid://bnv2dkudpcueo" path="res://Resources/Components/Effects/Asks/General/SrcActive.tres" id="5_abv5c"]
+[ext_resource type="Script" uid="uid://bics3dumv7avj" path="res://Code/Resource Makers/GeneralUse/OccuranceMaker.gd" id="6_v8108"]
+[ext_resource type="Script" uid="uid://dj5isddeswaa4" path="res://Code/Resource Makers/CardResources/ToolMaker.gd" id="7_ptbvl"]
+[ext_resource type="Resource" uid="uid://c7itelq8jtjc2" path="res://Resources/Components/EnData/Rainbow.tres" id="8_jgvym"]
+[ext_resource type="Resource" uid="uid://bi2l64844m3lc" path="res://Resources/Components/Effects/Asks/Conditions/SrcActivKO.tres" id="9_cllja"]
+[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="10_iuf3e"]
+[ext_resource type="Script" uid="uid://cimk6l7ytw7xg" path="res://Code/Resource Makers/EffectSpecific/Components/EnMovMaker.gd" id="11_53t1y"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="12_mofk8"]
+
+[sub_resource type="Resource" id="Resource_1jagg"]
+resource_local_to_scene = true
+script = ExtResource("6_v8108")
+from_ask = ExtResource("5_abv5c")
+signal = "ko"
+metadata/_custom_type_script = "uid://bics3dumv7avj"
+
+[sub_resource type="Resource" id="Resource_gmxqp"]
+script = ExtResource("11_53t1y")
+action = 1
+givers = ExtResource("9_cllja")
+reciever = ExtResource("10_iuf3e")
+metadata/_custom_type_script = "uid://cimk6l7ytw7xg"
+
+[sub_resource type="Resource" id="Resource_h3nby"]
+script = ExtResource("12_mofk8")
+energy_movement = SubResource("Resource_gmxqp")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_6lhgw"]
+script = ExtResource("3_kil0k")
+success = SubResource("Resource_h3nby")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
+[sub_resource type="Resource" id="Resource_5fu7c"]
+script = ExtResource("7_ptbvl")
+occurance = SubResource("Resource_1jagg")
+tool_effect = Array[ExtResource("3_kil0k")]([SubResource("Resource_6lhgw")])
+metadata/_custom_type_script = "uid://dj5isddeswaa4"
+
+[sub_resource type="Resource" id="Resource_sciue"]
+script = ExtResource("4_wu3p7")
+description = "During your opponent's turn, if your Active Pokémon would be Knocked Out by your opponent's attack, you may take 1 of the basic Energy cards attached to your Active Pokémon and attach it to the Pokémon with EXP.ALL attached to it. If you do, discard EXP.ALL."
+tool_properties = SubResource("Resource_5fu7c")
+metadata/_custom_type_script = "uid://crx447i85kshy"
+
+[resource]
+script = ExtResource("1_ljo0x")
+name = "EXP.ALL"
+image = ExtResource("1_rauqr")
+illustrator = "Keiji Kinebuchi"
+number = 91
+rarity = 1
+expansion = 5
+categories = 2
+trainer_properties = SubResource("Resource_sciue")
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

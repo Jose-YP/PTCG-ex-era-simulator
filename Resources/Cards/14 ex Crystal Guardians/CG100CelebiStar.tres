@@ -1,0 +1,112 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=30 format=3 uid="uid://cxst80dau6yjl"]
+
+[ext_resource type="Texture2D" uid="uid://dqx2rs8wk11vq" path="res://Art/Cards/14 ex Crystal Guardians/100.jpg" id="1_fcsyf"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_jmres"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_a424t"]
+[ext_resource type="Resource" uid="uid://c63wb1xvpkbi8" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Grass1.tres" id="3_8bxbu"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="4_dm7es"]
+[ext_resource type="Resource" uid="uid://crhg4u3yu2cso" path="res://Resources/Components/Effects/Asks/General/FromOther.tres" id="5_xupy0"]
+[ext_resource type="Resource" uid="uid://ddu734gmpyl17" path="res://Resources/Components/Counters/Comparator/Return/ReturnSelfEn.tres" id="6_54t8n"]
+[ext_resource type="Script" uid="uid://scca13hg4k1l" path="res://Code/Resource Makers/EffectSpecific/Components/DmgManipMaker.gd" id="7_73h2t"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="8_7phdw"]
+[ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="9_e5jwo"]
+[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="10_p7vhv"]
+[ext_resource type="Script" uid="uid://8sh5p3leflla" path="res://Code/Resource Makers/EffectSpecific/Components/CardDisruptMaker.gd" id="11_4bgat"]
+[ext_resource type="Resource" uid="uid://cq66mwg0r64ga" path="res://Resources/Components/Occurances/OnSelfKO.tres" id="12_g8753"]
+[ext_resource type="Resource" uid="uid://b45cmbaixh154" path="res://Resources/Components/Counters/Comparator/Equals/OneFlipHead.tres" id="13_11dy0"]
+[ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="14_5p4ep"]
+[ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="15_07j2w"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="16_3hgo1"]
+
+[sub_resource type="Resource" id="Resource_4f7nn"]
+script = ExtResource("7_73h2t")
+mode = "Add"
+ask = ExtResource("5_xupy0")
+how_many = 0
+comparator = ExtResource("6_54t8n")
+metadata/_custom_type_script = "uid://scca13hg4k1l"
+
+[sub_resource type="Resource" id="Resource_c6el6"]
+script = ExtResource("8_7phdw")
+dmgManip = SubResource("Resource_4f7nn")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_l37c3"]
+script = ExtResource("4_dm7es")
+success = SubResource("Resource_c6el6")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
+[sub_resource type="Resource" id="Resource_6mkyf"]
+script = ExtResource("9_e5jwo")
+description = "Count the amount of Energy attached to [name]. Put that many damage counters on 1 of your opponent's Pokémon."
+prompt_effects = Array[ExtResource("4_dm7es")]([SubResource("Resource_l37c3")])
+metadata/_custom_type_script = "uid://8nne0t7tvtgl"
+
+[sub_resource type="Resource" id="Resource_icyhr"]
+script = ExtResource("2_a424t")
+attack_cost = ExtResource("3_8bxbu")
+attack_data = SubResource("Resource_6mkyf")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_4ekgc"]
+script = ExtResource("11_4bgat")
+send = "Slot"
+card_ammount = -1
+side = 4
+in_play_options = ExtResource("10_p7vhv")
+metadata/_custom_type_script = "uid://8sh5p3leflla"
+
+[sub_resource type="Resource" id="Resource_cessd"]
+script = ExtResource("8_7phdw")
+card_disrupt = SubResource("Resource_4ekgc")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_nupj6"]
+script = ExtResource("4_dm7es")
+success = SubResource("Resource_cessd")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
+[sub_resource type="Resource" id="Resource_c14va"]
+script = ExtResource("4_dm7es")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
+[sub_resource type="Resource" id="Resource_kawpo"]
+script = ExtResource("14_5p4ep")
+formal_question = true
+question_string = "Will you flip a coin for [name]'s [ability]"
+yes_answer = "Yes"
+no_answer = "No"
+comparator = ExtResource("13_11dy0")
+metadata/_custom_type_script = "uid://b85jmc7067bjc"
+
+[sub_resource type="Resource" id="Resource_q5vco"]
+script = ExtResource("15_07j2w")
+category = "Power"
+name = "Time Travel"
+description = "If [name] would be Knocked Out by damage from an opponent's attack, you may flip a coin. If heads, [name] is not Knocked Out, discard all cards attached to [name], and put [name] on the bottom of your deck."
+prompt = SubResource("Resource_kawpo")
+occurance = ExtResource("12_g8753")
+effect = SubResource("Resource_cessd")
+effects = Array[ExtResource("4_dm7es")]([SubResource("Resource_nupj6"), SubResource("Resource_c14va")])
+metadata/_custom_type_script = "uid://bs2y8ocljilv8"
+
+[sub_resource type="Resource" id="Resource_un42h"]
+script = ExtResource("16_3hgo1")
+HP = 60
+pokepower = SubResource("Resource_q5vco")
+attacks = Array[ExtResource("2_a424t")]([SubResource("Resource_icyhr")])
+considered = 17
+weak = 2
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_jmres")
+name = "Celebi Star"
+image = ExtResource("1_fcsyf")
+illustrator = "Masakazu Fukuda"
+number = 100
+rarity = 6
+expansion = 13
+categories = 1
+pokemon_properties = SubResource("Resource_un42h")
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

@@ -1,0 +1,39 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=10 format=3 uid="uid://bkf8kphola8h8"]
+
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_jk0dt"]
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_s6hlv"]
+[ext_resource type="Texture2D" uid="uid://gi42j8bjlh0p" path="res://Art/Cards/7 ex Team Rocket Returns/11.jpg" id="1_xevcv"]
+[ext_resource type="Resource" uid="uid://blnmclkk45gb3" path="res://Resources/Components/Pokemon/Abilities/Bodies/Buffer.tres" id="2_2iorj"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="3_7cot5"]
+[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_g25qa"]
+[ext_resource type="Resource" uid="uid://0i58o1obksh6" path="res://Resources/Components/Pokemon/Attacks/AttackData/10Plus10OthEn.tres" id="4_jp0c6"]
+
+[sub_resource type="Resource" id="Resource_fx4y4"]
+script = ExtResource("1_jk0dt")
+name = "Energy Crush"
+attack_data = ExtResource("4_jp0c6")
+metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_xevcv"]
+script = ExtResource("3_7cot5")
+HP = 90
+retreat = 0
+pokebody = ExtResource("2_2iorj")
+attacks = Array[ExtResource("1_jk0dt")]([SubResource("Resource_fx4y4")])
+evo_stage = "Stage 2"
+evolves_from = "Skiploom"
+weak = 2
+resist = 4
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_s6hlv")
+name = "Jumpluff"
+image = ExtResource("1_xevcv")
+illustrator = "Kyoko Umemoto"
+number = 11
+rarity = 3
+expansion = 6
+categories = 1
+pokemon_properties = SubResource("Resource_xevcv")
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"

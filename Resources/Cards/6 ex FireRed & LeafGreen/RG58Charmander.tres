@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="Base_Card" load_steps=8 format=3 uid="uid://ctg32y7qi5si5"]
+
+[ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_1idwn"]
+[ext_resource type="Texture2D" uid="uid://b3gd42f5v7t3u" path="res://Art/Cards/6 ex FireRed & LeafGreen/58.jpg" id="1_l172y"]
+[ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_7lpic"]
+[ext_resource type="Resource" uid="uid://cy2rqr8mk2lb7" path="res://Resources/Components/Pokemon/Attacks/EffectlessAttacks/Headbutt10.tres" id="3_sxu5d"]
+[ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="3_yxswc"]
+[ext_resource type="Resource" uid="uid://b5ec8kdk0rw47" path="res://Resources/Components/Pokemon/Attacks/EffectlessAttacks/2-20Slash.tres" id="4_24d2d"]
+
+[sub_resource type="Resource" id="Resource_sxu5d"]
+script = ExtResource("3_yxswc")
+attacks = Array[ExtResource("2_7lpic")]([ExtResource("3_sxu5d"), ExtResource("4_24d2d")])
+type = 2
+weak = 36
+metadata/_custom_type_script = "uid://dkximshow1pao"
+
+[resource]
+script = ExtResource("1_1idwn")
+name = "Charmander"
+image = ExtResource("1_l172y")
+illustrator = "Midori Harada"
+number = 58
+categories = 1
+pokemon_properties = SubResource("Resource_sxu5d")
+metadata/_custom_type_script = "uid://byaq4ongqnwl7"
