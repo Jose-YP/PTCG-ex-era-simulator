@@ -89,6 +89,17 @@ func display_condition():
 #endregion
 #--------------------------------------
 
+func display_hp(current_max: int) -> void:
+	var typical_max: int = connected_slot.get_pokedata().HP
+	var hp_color: String
+	
+	if current_max != typical_max:
+		hp_color = str("[color=",Color.AQUA.to_html() if current_max > typical_max else Color.RED.to_html(),"]")
+	
+	max_hp.clear()
+	max_hp.append_text(str(hp_color, "HP: ", current_max,
+	 "[/color]" if hp_color != null else ""))
+
 #--------------------------------------
 #region ART BUTTON FUNCTIONS
 func check_ability_activation():

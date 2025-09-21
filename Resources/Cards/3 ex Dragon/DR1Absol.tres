@@ -84,7 +84,6 @@ script = ExtResource("1_5qhd1")
 name = "Absol"
 image = ExtResource("1_ggekq")
 illustrator = "Naoyo Kimura"
-number = 1
 rarity = 3
 expansion = 2
 categories = 1

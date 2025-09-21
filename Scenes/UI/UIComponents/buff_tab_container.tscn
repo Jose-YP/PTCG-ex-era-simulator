@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bip08onr3xayb"]
+[gd_scene load_steps=9 format=3 uid="uid://bip08onr3xayb"]
 
 [ext_resource type="Script" uid="uid://c204dcm8jvuwq" path="res://Code/Scenes/UI/Main/buff_tab_container.gd" id="1_r5w7o"]
 [ext_resource type="Texture2D" uid="uid://cyt703ad2g0h6" path="res://Art/Counters/Attack.png" id="2_mw0f0"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dfcfk14k3kljk" path="res://Art/Counters/Energy.png" id="5_7v6oo"]
 [ext_resource type="Texture2D" uid="uid://cvsinf4w0rfq2" path="res://Art/Counters/Disable.png" id="6_mw0f0"]
 [ext_resource type="Texture2D" uid="uid://6e7pvtqndyud" path="res://Art/Counters/Up.png" id="6_s0nr1"]
+[ext_resource type="Texture2D" uid="uid://bfnxpo3hqsr3y" path="res://Art/Counters/Overwrite.png" id="7_5h7q7"]
 
 [node name="SlotChange" type="TabContainer"]
 size_flags_horizontal = 3
@@ -61,6 +62,15 @@ expand_mode = 5
 stretch_mode = 4
 metadata/_tab_index = 4
 
+[node name="Overwrite" type="TextureRect" parent="."]
+visible = false
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("7_5h7q7")
+expand_mode = 5
+stretch_mode = 4
+metadata/_tab_index = 5
+
 [node name="ETC" type="TextureRect" parent="."]
 visible = false
 texture_filter = 1
@@ -68,4 +78,4 @@ layout_mode = 2
 texture = ExtResource("6_s0nr1")
 expand_mode = 5
 stretch_mode = 4
-metadata/_tab_index = 5
+metadata/_tab_index = 6

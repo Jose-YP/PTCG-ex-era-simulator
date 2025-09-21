@@ -16,6 +16,7 @@ resource_local_to_scene = true
 shader = ExtResource("3_46l8x")
 shader_parameter/shine_color = Color(0.980392, 0.92549, 0.231373, 0.709804)
 shader_parameter/base_color = Color(0.180736, 0.120593, 0.350483, 1)
+shader_parameter/pixel_size = 32
 shader_parameter/shine_speed = 6.2
 shader_parameter/shine_size = 0.12
 shader_parameter/shine_bool = false
@@ -25,34 +26,41 @@ custom_minimum_size = Vector2(204, 164)
 layout_mode = 3
 anchor_right = 0.189
 anchor_bottom = 0.228
-offset_right = -0.12001
-offset_bottom = -0.160004
+offset_right = -0.11999512
+offset_bottom = -0.16000366
 script = ExtResource("1_c5ua0")
 
-[node name="Main" type="VBoxContainer" parent="."]
+[node name="Main" type="PanelContainer" parent="."]
 layout_mode = 0
-offset_right = 198.0
+offset_right = 196.0
 offset_bottom = 164.0
+theme_type_variation = &"ListPanel"
+
+[node name="Main" type="VBoxContainer" parent="Main"]
+layout_mode = 2
+size_flags_horizontal = 0
 theme_override_constants/separation = -2
 
-[node name="Header" type="HBoxContainer" parent="Main"]
+[node name="Header" type="HBoxContainer" parent="Main/Main"]
 layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
 
-[node name="Name" type="RichTextLabel" parent="Main/Header"]
+[node name="Name" type="RichTextLabel" parent="Main/Main/Header"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(130, 46)
 layout_mode = 2
 text = "Team Magma's
 Mightyena"
 
-[node name="MaxHP" type="RichTextLabel" parent="Main/Header"]
+[node name="MaxHP" type="RichTextLabel" parent="Main/Main/Header"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(64, 46)
+custom_minimum_size = Vector2(62, 46)
 layout_mode = 2
 bbcode_enabled = true
 text = "[u]HP[/u] 200"
 
-[node name="ArtButton" parent="Main" instance=ExtResource("3_nyxqq")]
+[node name="ArtButton" parent="Main/Main" instance=ExtResource("3_nyxqq")]
 unique_name_in_owner = true
 material = SubResource("ShaderMaterial_nykcf")
 layout_mode = 2
@@ -138,7 +146,7 @@ layout_mode = 2
 
 [node name="DamageCounter" parent="." instance=ExtResource("8_0ajf4")]
 unique_name_in_owner = true
-layout_mode = 2
+layout_mode = 0
 offset_left = 152.0
 offset_top = 24.0
 offset_right = 184.0

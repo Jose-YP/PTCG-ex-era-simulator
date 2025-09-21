@@ -1,125 +1,137 @@
-[gd_scene load_steps=14 format=3 uid="uid://bs3ila6cpt8n1"]
+[gd_scene load_steps=15 format=3 uid="uid://bs3ila6cpt8n1"]
 
 [ext_resource type="Script" uid="uid://yp1ave4we0i2" path="res://Code/Scenes/UI/types.gd" id="1_476s5"]
-[ext_resource type="Texture2D" uid="uid://cujjluirx6yyu" path="res://Art/Energy/48px-Grass-attack.png" id="2_ibm8e"]
-[ext_resource type="Texture2D" uid="uid://dd1ywu5fsfsq1" path="res://Art/Energy/48px-Fire-attack.png" id="3_4qb2s"]
-[ext_resource type="Texture2D" uid="uid://dj2lgcygk1ups" path="res://Art/Energy/48px-Water-attack.png" id="4_mlhov"]
-[ext_resource type="Texture2D" uid="uid://bqqg7qjfq0wqb" path="res://Art/Energy/48px-Lightning-attack.png" id="5_ikuoy"]
-[ext_resource type="Texture2D" uid="uid://bnpgukh0in14j" path="res://Art/Energy/48px-Psychic-attack.png" id="6_mym1n"]
-[ext_resource type="Texture2D" uid="uid://chqgfpirjsldj" path="res://Art/Energy/48px-Fighting-attack.png" id="7_sm1eo"]
-[ext_resource type="Texture2D" uid="uid://bkb5vi5elppq1" path="res://Art/Energy/48px-Darkness-attack.png" id="8_kto7x"]
-[ext_resource type="Texture2D" uid="uid://gom7mkykamch" path="res://Art/Energy/48px-Metal-attack.png" id="9_r1y5g"]
-[ext_resource type="Texture2D" uid="uid://dht4h5jns71o5" path="res://Art/Energy/48px-Colorless-attack.png" id="10_6wlln"]
+[ext_resource type="Texture2D" uid="uid://dune7dbujhbft" path="res://Art/Energy/Symbols/Layer 1.png" id="2_72mgm"]
+[ext_resource type="Texture2D" uid="uid://c20k4b4y15w3x" path="res://Art/Energy/Symbols/Grass.png" id="3_1rgbk"]
+[ext_resource type="Texture2D" uid="uid://dtnnvkljeid2t" path="res://Art/Energy/Symbols/Fire.png" id="4_8l5bq"]
+[ext_resource type="Texture2D" uid="uid://wpjiv54hdt5b" path="res://Art/Energy/Symbols/Water.png" id="5_5ipgu"]
+[ext_resource type="Texture2D" uid="uid://ci2r25wupuafk" path="res://Art/Energy/Symbols/Lightning.png" id="6_h5isl"]
+[ext_resource type="Texture2D" uid="uid://bffmv3e0yprej" path="res://Art/Energy/Symbols/Psychic.png" id="7_wglsc"]
+[ext_resource type="Texture2D" uid="uid://okr70los20g3" path="res://Art/Energy/Symbols/Fightning.png" id="8_0iulx"]
+[ext_resource type="Texture2D" uid="uid://b8n2mui1fj4ii" path="res://Art/Energy/Symbols/Dark.png" id="9_52sdt"]
+[ext_resource type="Texture2D" uid="uid://bscav8ynwl2g3" path="res://Art/Energy/Symbols/Metal.png" id="10_0fxu7"]
 [ext_resource type="Texture2D" uid="uid://l6f5mmmcjnyq" path="res://Art/Energy/35px-Rainbow-attack.png" id="11_x7hf6"]
-[ext_resource type="Texture2D" uid="uid://jjb4hkrwn216" path="res://Art/UI/more.png" id="12_72mgm"]
+[ext_resource type="Texture2D" uid="uid://dprdtmqbaot04" path="res://Art/Energy/Symbols/Colorless.png" id="11_y2ceq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_la0dl"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nsmgk"]
 
 [node name="Types" type="Control"]
 custom_minimum_size = Vector2(24, 24)
 layout_mode = 3
-anchor_right = 0.037
-anchor_bottom = 0.056
-offset_right = 0.0400009
-offset_bottom = -0.32
-size_flags_horizontal = 4
-size_flags_vertical = 4
-mouse_filter = 2
-script = ExtResource("1_476s5")
-metadata/_edit_lock_ = true
-
-[node name="Tabs" type="TabContainer" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -12.0
-offset_top = -12.0
-offset_right = 12.0
-offset_bottom = 12.0
+anchor_right = 0.044000003
+anchor_bottom = 0.067
+offset_right = 0.47999573
+offset_bottom = -0.24000168
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_nsmgk")
-current_tab = 8
-tabs_visible = false
+script = ExtResource("1_476s5")
 
-[node name="Grass" type="TextureRect" parent="Tabs"]
-visible = false
+[node name="PanelContainer" type="PanelContainer" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.5, 0.5)
+theme_override_styles/panel = SubResource("StyleBoxEmpty_la0dl")
+
+[node name="BG" type="TextureRect" parent="PanelContainer"]
+modulate = Color(0.406415, 0.858788, 0, 1)
+layout_mode = 2
+texture = ExtResource("2_72mgm")
+
+[node name="Tabs" type="TabContainer" parent="PanelContainer"]
 layout_mode = 2
 mouse_filter = 2
-texture = ExtResource("2_ibm8e")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_nsmgk")
+current_tab = 0
+tabs_visible = false
+
+[node name="Grass" type="TextureRect" parent="PanelContainer/Tabs"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("3_1rgbk")
 expand_mode = 2
 metadata/_tab_index = 0
 
-[node name="Fire" type="TextureRect" parent="Tabs"]
+[node name="Fire" type="TextureRect" parent="PanelContainer/Tabs"]
 visible = false
+modulate = Color(0, 0, 0, 1)
 layout_mode = 2
 mouse_filter = 2
-texture = ExtResource("3_4qb2s")
+texture = ExtResource("4_8l5bq")
 expand_mode = 2
 metadata/_tab_index = 1
 
-[node name="Water" type="TextureRect" parent="Tabs"]
+[node name="Water" type="TextureRect" parent="PanelContainer/Tabs"]
 visible = false
+modulate = Color(0, 0, 0, 1)
 layout_mode = 2
 mouse_filter = 2
-texture = ExtResource("4_mlhov")
+texture = ExtResource("5_5ipgu")
 expand_mode = 2
 metadata/_tab_index = 2
 
-[node name="Lightning" type="TextureRect" parent="Tabs"]
+[node name="Lightning" type="TextureRect" parent="PanelContainer/Tabs"]
 visible = false
+modulate = Color(0, 0, 0, 1)
 layout_mode = 2
 mouse_filter = 2
-texture = ExtResource("5_ikuoy")
+texture = ExtResource("6_h5isl")
 expand_mode = 2
 metadata/_tab_index = 3
 
-[node name="Psychic" type="TextureRect" parent="Tabs"]
+[node name="Psychic" type="TextureRect" parent="PanelContainer/Tabs"]
 visible = false
+modulate = Color(0, 0, 0, 1)
 layout_mode = 2
 mouse_filter = 2
-texture = ExtResource("6_mym1n")
+texture = ExtResource("7_wglsc")
 expand_mode = 2
 metadata/_tab_index = 4
 
-[node name="Fighting" type="TextureRect" parent="Tabs"]
+[node name="Fighting" type="TextureRect" parent="PanelContainer/Tabs"]
 visible = false
+modulate = Color(0, 0, 0, 1)
 layout_mode = 2
 mouse_filter = 2
-texture = ExtResource("7_sm1eo")
+texture = ExtResource("8_0iulx")
 expand_mode = 2
 metadata/_tab_index = 5
 
-[node name="Darkness" type="TextureRect" parent="Tabs"]
+[node name="Darkness" type="TextureRect" parent="PanelContainer/Tabs"]
 visible = false
+modulate = Color(0, 0, 0, 1)
 layout_mode = 2
 mouse_filter = 2
-texture = ExtResource("8_kto7x")
+texture = ExtResource("9_52sdt")
 expand_mode = 2
 metadata/_tab_index = 6
 
-[node name="Metal" type="TextureRect" parent="Tabs"]
+[node name="Metal" type="TextureRect" parent="PanelContainer/Tabs"]
 visible = false
+modulate = Color(0, 0, 0, 1)
 layout_mode = 2
 mouse_filter = 2
-texture = ExtResource("9_r1y5g")
+texture = ExtResource("10_0fxu7")
 expand_mode = 2
 metadata/_tab_index = 7
 
-[node name="Colorless" type="TextureRect" parent="Tabs"]
+[node name="Colorless" type="TextureRect" parent="PanelContainer/Tabs"]
+visible = false
+modulate = Color(0, 0, 0, 1)
 layout_mode = 2
 mouse_filter = 2
-texture = ExtResource("10_6wlln")
+texture = ExtResource("11_y2ceq")
 expand_mode = 2
 metadata/_tab_index = 8
 
-[node name="Rainbow" type="TextureRect" parent="Tabs"]
+[node name="Rainbow" type="TextureRect" parent="PanelContainer/Tabs"]
 visible = false
 layout_mode = 2
 mouse_filter = 2
@@ -127,83 +139,79 @@ texture = ExtResource("11_x7hf6")
 expand_mode = 3
 metadata/_tab_index = 9
 
-[node name="Magma" type="TextureRect" parent="Tabs"]
+[node name="Magma" type="TextureRect" parent="PanelContainer/Tabs"]
 visible = false
-modulate = Color(0.278431, 0.180392, 0.027451, 1)
+modulate = Color(0.8039216, 0.35686275, 0.19607843, 1)
 layout_mode = 2
 mouse_filter = 2
-texture = ExtResource("7_sm1eo")
+texture = ExtResource("8_0iulx")
 expand_mode = 2
 metadata/_tab_index = 10
 
-[node name="Aqua" type="TextureRect" parent="Tabs"]
+[node name="Aqua" type="TextureRect" parent="PanelContainer/Tabs"]
 visible = false
 modulate = Color(0.356863, 0.0862745, 0.619608, 1)
 layout_mode = 2
 mouse_filter = 2
-texture = ExtResource("4_mlhov")
+texture = ExtResource("5_5ipgu")
 expand_mode = 2
 metadata/_tab_index = 11
 
-[node name="DarkMetal" type="TextureRect" parent="Tabs"]
+[node name="DarkMetal" type="TextureRect" parent="PanelContainer/Tabs"]
 visible = false
-modulate = Color(0.305882, 0.27451, 0.266667, 1)
+modulate = Color(0.7376669, 0.46055818, 0.14736557, 1)
 layout_mode = 2
 mouse_filter = 2
-texture = ExtResource("9_r1y5g")
+texture = ExtResource("10_0fxu7")
 expand_mode = 3
 metadata/_tab_index = 12
 
-[node name="FF" type="TextureRect" parent="Tabs"]
+[node name="FF" type="TextureRect" parent="PanelContainer/Tabs"]
 visible = false
 modulate = Color(0.896539, 0.34515, 0.205209, 1)
 layout_mode = 2
 mouse_filter = 2
-texture = ExtResource("10_6wlln")
+texture = ExtResource("11_y2ceq")
 expand_mode = 3
 metadata/_tab_index = 13
 
-[node name="GL" type="TextureRect" parent="Tabs"]
+[node name="GL" type="TextureRect" parent="PanelContainer/Tabs"]
 visible = false
 modulate = Color(0.781345, 0.918655, 0.213073, 1)
 layout_mode = 2
 mouse_filter = 2
-texture = ExtResource("10_6wlln")
+texture = ExtResource("11_y2ceq")
 expand_mode = 2
 metadata/_tab_index = 14
 
-[node name="WP" type="TextureRect" parent="Tabs"]
+[node name="WP" type="TextureRect" parent="PanelContainer/Tabs"]
 visible = false
 modulate = Color(0.54902, 0.376471, 0.988235, 1)
 layout_mode = 2
 mouse_filter = 2
-texture = ExtResource("10_6wlln")
+texture = ExtResource("11_y2ceq")
 expand_mode = 2
 metadata/_tab_index = 15
 
-[node name="React" type="TextureRect" parent="Tabs"]
+[node name="React" type="TextureRect" parent="PanelContainer/Tabs"]
 visible = false
 modulate = Color(0.301961, 1, 1, 1)
 layout_mode = 2
 mouse_filter = 2
-texture = ExtResource("10_6wlln")
+texture = ExtResource("11_y2ceq")
 expand_mode = 2
 metadata/_tab_index = 16
 
-[node name="Misc" type="TextureRect" parent="Tabs"]
+[node name="Misc" type="TextureRect" parent="PanelContainer/Tabs"]
 visible = false
 layout_mode = 2
-texture = ExtResource("12_72mgm")
+texture = ExtResource("11_y2ceq")
 expand_mode = 2
 metadata/_tab_index = 17
 
-[node name="Number" type="RichTextLabel" parent="."]
+[node name="Number" type="RichTextLabel" parent="PanelContainer"]
 visible = false
-layout_mode = 1
-offset_left = 20.0
-offset_top = -4.0
-offset_right = 38.0
-offset_bottom = 17.0
+layout_mode = 2
 mouse_filter = 2
 bbcode_enabled = true
 text = "99"

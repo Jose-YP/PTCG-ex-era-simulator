@@ -4,6 +4,7 @@ class_name TypeContainer
 
 @export var retreat: bool = false
 @export var energy: bool = false
+@onready var bg: TextureRect = $PanelContainer/BG
 
 var number: int = 0
 
@@ -22,7 +23,15 @@ func add_type(type: String, ammount: int = 1):
 		$Number.hide()
 
 func display_type(type: String):
-	$Tabs.current_tab = Consts.energy_types.find(type)
+	var type_id: int = Consts.energy_types.find(type)
+	$Tabs.current_tab = type_id
+	#Special types
+	#const energy_types: Array[String] = [8+ "Rainbow", "Magma",
+	#"Aqua", "Dark Metal","FF", "GL", "WP", "React"]
+	if type_id < 10 or type_id > 12:
+		bg.modulate = Consts.energy_colors[type_id]
+	elif type_id < 14:
+		bg.modulate = Consts.energy_colors[6]
 
 func remove_type():
 	number -= 1

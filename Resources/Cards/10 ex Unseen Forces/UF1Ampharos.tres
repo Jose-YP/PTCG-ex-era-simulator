@@ -80,7 +80,6 @@ script = ExtResource("1_2qfob")
 name = "Ampharos"
 image = ExtResource("1_246m0")
 illustrator = "Kyoko Umemoto"
-number = 1
 rarity = 3
 expansion = 9
 categories = 1

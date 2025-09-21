@@ -16,6 +16,7 @@ resource_local_to_scene = true
 shader = ExtResource("3_dkwm5")
 shader_parameter/shine_color = Color(0.98, 0.925, 0.231, 1)
 shader_parameter/base_color = Color(0.180736, 0.120593, 0.350483, 1)
+shader_parameter/pixel_size = 32
 shader_parameter/shine_speed = 7.0
 shader_parameter/shine_size = 0.07
 shader_parameter/shine_bool = false
@@ -30,21 +31,25 @@ script = ExtResource("1_ktjfi")
 active = false
 metadata/_edit_lock_ = true
 
-[node name="Main" type="VBoxContainer" parent="."]
+[node name="Main" type="PanelContainer" parent="."]
 layout_mode = 0
-offset_right = 195.0
-offset_bottom = 154.0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_type_variation = &"ListPanel"
+
+[node name="Main" type="VBoxContainer" parent="Main"]
+layout_mode = 2
 theme_override_constants/separation = -12
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Main"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Main/Main"]
 layout_mode = 2
 alignment = 1
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
-[node name="Name" type="RichTextLabel" parent="Main/HBoxContainer"]
+[node name="Name" type="RichTextLabel" parent="Main/Main/HBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(96, 46)
 layout_mode = 2
@@ -55,7 +60,7 @@ text = "Team Magma's
 Mightyena"
 fit_content = true
 
-[node name="MaxHP" type="RichTextLabel" parent="Main/HBoxContainer"]
+[node name="MaxHP" type="RichTextLabel" parent="Main/Main/HBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(47, 46)
 layout_mode = 2
@@ -65,13 +70,13 @@ text = "[u]HP[/u] 200/200"
 fit_content = true
 horizontal_alignment = 2
 
-[node name="ArtButton" type="CenterContainer" parent="Main"]
+[node name="ArtButton" type="CenterContainer" parent="Main/Main"]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="Main/ArtButton"]
+[node name="MarginContainer" type="MarginContainer" parent="Main/Main/ArtButton"]
 layout_mode = 2
 
-[node name="ArtButton" parent="Main/ArtButton/MarginContainer" instance=ExtResource("3_1osh3")]
+[node name="ArtButton" parent="Main/Main/ArtButton/MarginContainer" instance=ExtResource("3_1osh3")]
 unique_name_in_owner = true
 material = SubResource("ShaderMaterial_lj5ts")
 layout_mode = 2
@@ -139,7 +144,7 @@ layout_mode = 2
 
 [node name="DamageCounter" parent="." instance=ExtResource("8_e8fxk")]
 unique_name_in_owner = true
-layout_mode = 2
+layout_mode = 0
 offset_left = 148.0
 offset_top = 28.0
 offset_right = 180.0
