@@ -20,6 +20,7 @@ name = "Charmander"
 image = ExtResource("1_l172y")
 illustrator = "Midori Harada"
 number = 58
+expansion = 5
 categories = 1
 pokemon_properties = SubResource("Resource_sxu5d")
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

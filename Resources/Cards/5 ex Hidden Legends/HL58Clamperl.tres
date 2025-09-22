@@ -30,6 +30,7 @@ name = "Clamperl"
 image = ExtResource("1_edflq")
 illustrator = "Kagemaru Himeno"
 number = 58
+expansion = 4
 categories = 1
 pokemon_properties = SubResource("Resource_53j5v")
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"

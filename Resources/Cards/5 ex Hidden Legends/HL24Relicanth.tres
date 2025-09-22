@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=18 format=3 uid="uid://bj1fw8bmuhxl8"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=19 format=3 uid="uid://bj1fw8bmuhxl8"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_4c6cw"]
 [ext_resource type="Texture2D" uid="uid://ua4ds6opqg3p" path="res://Art/Cards/5 ex Hidden Legends/24.jpg" id="1_p484p"]
@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://dsslhipk3ix2o" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Water1.tres" id="3_35658"]
 [ext_resource type="Resource" uid="uid://b6fs2x4iffemg" path="res://Resources/Components/Pokemon/Attacks/AttackData/10SleepIfHeads.tres" id="4_l6tfx"]
 [ext_resource type="Script" uid="uid://mcfyh6penu34" path="res://Code/Resource Makers/GeneralUse/CondRulesMaker.gd" id="5_4csmj"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="5_6l60t"]
 [ext_resource type="Resource" uid="uid://bns8h72u2hxqo" path="res://Resources/Components/Effects/Asks/General/AnyMon.tres" id="6_ljski"]
 [ext_resource type="Script" uid="uid://cyxu7ymi4nofx" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/RuleChangeMaker.gd" id="7_op8p7"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="8_cj5ym"]
@@ -63,6 +64,7 @@ image = ExtResource("1_p484p")
 illustrator = "Kagemaru Himeno"
 number = 24
 rarity = 2
+expansion = 4
 categories = 1
 pokemon_properties = SubResource("Resource_e8hhk")
 metadata/_custom_type_script = "uid://byaq4ongqnwl7"
