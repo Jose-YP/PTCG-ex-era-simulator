@@ -6,25 +6,6 @@
 [resource]
 script = ExtResource("2_fgcgr")
 side_target = 1
-slot_target = 4
-specifically = Array[String]([])
-comparison_type = 1
-max_hp = -10
-damage_taken = -10
-retreat_cost = -1
-knocked_out = false
-condition = 0
-tool_attatched = false
-stage = 7
-rare_candy = false
-class_inclusive = true
-pokemon_class = 63
-owner_inclusive = true
-pokemon_owner = 31
-type_inclusive = true
-pokemon_type = 1023
-energy_inclusive = true
 energy_attatched = 1
-energy_class = 2
 energy_type = ExtResource("1_wy1h5")
 metadata/_custom_type_script = "uid://mkjynqda7q5g"

@@ -6,5 +6,6 @@
 script = ExtResource("1_xi3yh")
 side_target = 4
 slot_target = 2
+en_group = null
 knocked_out = true
 metadata/_custom_type_script = "uid://mkjynqda7q5g"

@@ -4,32 +4,8 @@
 
 [resource]
 script = ExtResource("1_t81il")
-boolean_type = "And"
-previous_src_trg = false
 side_target = 2
 slot_target = 1
-specifically = Array[String]([])
-tool_attatched = false
-comparison_type = 1
-max_hp = -10
-damage_taken = -10
-retreat_cost = -1
-evo_type = "Don't Check"
-stage = 7
-rare_candy = false
-class_inclusive = true
 pokemon_class = 0
-owner_inclusive = true
-pokemon_owner = 31
-type_inclusive = true
-pokemon_type = 1023
-energy_inclusive = true
-check_cards = true
-energy_attatched = -1
-energy_class = "Any"
-check_ability = false
-contained_abilities = 3
-specific_abilities = Array[String]([])
-check_condition = false
-desired_condition = 0
-knocked_out = false
+check_condition = true
+desired_condition = 16

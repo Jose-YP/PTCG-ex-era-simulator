@@ -1,3 +1,4 @@
+@tool
 extends Resource
 class_name SlotAsk
 
@@ -14,7 +15,9 @@ class_name SlotAsk
 ##Self means the attacking/defending pokemon, Active is for doubles
 @export var tool_attatched: bool = false
 @export_enum("LessEq", "GreaterEq") var comparison_type: int = 1
+@export_tool_button("Check string") var button: Callable = print_ask
 
+#region GROUPED VARS
 @export_subgroup("Stats")
 @export_range(-10,200,10) var max_hp: int = -10
 @export_range(-10,200,10) var damage_taken: int = -10
@@ -43,7 +46,7 @@ class_name SlotAsk
 @export_group("Energy Attatched")
 ##Energy classes will mainly be seen through name
 @export_flags("None", "React", "Holon",
- "Magma", "Aqua", "Rocket") var en_class: int = 0
+ "Magma", "Aqua", "Rocket") var en_group: int = 0
 ##Look for energy that is of the specified type or ones that aren't
 @export var energy_inclusive: bool = true
 ##If this is true it will count the number of energy cards
@@ -66,7 +69,9 @@ class_name SlotAsk
 @export_flags("Poision", "Burn", "Paralyze",
 "Asleep", "Confusion", "Imprision", "Shockwave") var desired_condition: int = 0
 @export var knocked_out: bool = false
+#endregion
 
+#region ASK BOOLEANS
 #Checks if one slot is 
 func check_ask(slot: PokeSlot, check_slot_side: bool = true) -> bool:
 	var result: bool = true
@@ -192,17 +197,17 @@ func ask_energy(slot: PokeSlot) -> bool:
 	
 	var using = slot.energy_cards if energy_class == "Any" else slot.get_total_en_categories(energy_class)
 	
-	if en_class > 0 and en_class < 63:
+	if en_group > 0 and en_group < 63:
 		#None
-		if en_class & 1 != 0:
+		if en_group & 1 != 0:
 			pass
 		else:
 			var filter_out: Array[String]
-			if en_class & 2 != 0: filter_out.append("React")
-			if en_class & 4 != 0: filter_out.append("Holon")
-			if en_class & 8 != 0: filter_out.append("Magma")
-			if en_class & 16 != 0: filter_out.append("Aqua")
-			if en_class & 32 != 0: filter_out.append("Rocket")
+			if en_group & 2 != 0: filter_out.append("React")
+			if en_group & 4 != 0: filter_out.append("Holon")
+			if en_group & 8 != 0: filter_out.append("Magma")
+			if en_group & 16 != 0: filter_out.append("Aqua")
+			if en_group & 32 != 0: filter_out.append("Rocket")
 			using = using.filter(func (card: Base_Card): 
 				for word in filter_out:
 					if card.name.contains(word): return true
@@ -221,12 +226,12 @@ func ask_ability(slot: PokeSlot, body: bool) -> bool:
 	if ability == null and contained_abilities & 2 != 0:
 		ability = slot.get_pokedata().pokepower
 	
-	
 	var result: bool = ability != null
 	if specific_abilities.size() != 0 and result:
 		result = (ability.name in specific_abilities) == inclusive_ability
 	
 	return result
+#endregion
 
 func print_ask() -> String:
 	#Checklist:
@@ -235,13 +240,13 @@ func print_ask() -> String:
 	#First remove any cards that aren't included in sides/slots parameters
 	var comparison: String = "at least " if comparison_type == 1 else " at most "
 	var slot_str: String = Convert.slot_into_string(slot_target)
-	var side_str: String = Convert.side_into_string(side_target)
-	var hp_str: String = str(comparison, max_hp) if max_hp != -10 else ""
+	var side_str: String = str(Convert.side_into_string(side_target).capitalize(), " ")
+	var hp_str: String = str(comparison, max_hp, " HP") if max_hp != -10 else ""
 	var dmg_str: String = str(comparison, damage_taken, " damage counters") if damage_taken != -10 else ""
-	var retr_str: String = str("retreat cost of ", comparison, retreat_cost) if retreat_cost != -1 else ""
+	var retr_str: String = str("retreat cost of", comparison, retreat_cost) if retreat_cost != -1 else ""
 	var specifc_str: String = Convert.combine_strings(specifically)
-	var ko_str: String = "Knocked out" if knocked_out else ""
-	var tool_str: String = "With tool cards attatched" if tool_attatched else ""
+	var ko_str: String = "knocked out " if knocked_out else ""
+	var tool_str: String = "tool cards attatched" if tool_attatched else ""
 	var evo_str: String = ""
 	var type_str: String = ""
 	var class_str: String = ""
@@ -250,58 +255,127 @@ func print_ask() -> String:
 	var cond_str: String = ""
 	var ability_str: String = ""
 	
-	if evo_type == "Non Evolved":
-		evo_str = "Unevolved"
-	elif evo_type == "Evolved":
-		evo_str = "Evolved"
-	if stage != 0 or stage != 7:
-		if stage & 1 != 0:
-			evo_str += " Basic"
-		if stage & 2 != 0:
-			evo_str += " Stage 1"
-		if stage & 4 != 0:
-			evo_str += " Stage 2"
+	if evo_type != "Don't Check":
+		evo_str = str(evo_type.to_lower(), " ")
+		
+		if stage != 0 and stage != 7:
+			print(stage)
+			if stage & 1 != 0:
+				evo_str += "basic "
+			if stage & 2 != 0:
+				evo_str += "stage 1 "
+			if stage & 4 != 0:
+				evo_str += "stage 2 "
 	
 	#Check if the pokemon is in the defined class
-	print_verbose("[center]-----------------------------------------------------------")
-	print_verbose("[center]Class Flag\nCONSIDERED & OWNER:", "OWNER CHECK: ", pokemon_owner, " CLASS CHECK: ", pokemon_class)
-	if pokemon_type != 0 or pokemon_type == 1023: 
+	if pokemon_class != 0 and pokemon_class != 63:
+		print(pokemon_class)
+		var class_arr: Array[String]
+		if pokemon_class & 2: class_arr.append("ex")
+		if pokemon_class & 4: class_arr.append("baby")
+		if pokemon_class & 8: class_arr.append("δ")
+		if pokemon_class & 16: class_arr.append("star")
+		if pokemon_class & 32: class_arr.append("dark")
+		
+		class_str += str("" if class_inclusive else "non-", Convert.combine_strings(class_arr, false), " ")
+	
+	if pokemon_owner != 0 and pokemon_owner != 31:
+		owner_str += "" if owner_inclusive else "non-"
+		
+		if pokemon_owner == 30:
+			owner_str += "owner's "
+		else:
+			var owner_arr: Array[String]
+			if pokemon_owner & 2: owner_arr.append("Aqua")
+			if pokemon_owner & 4: owner_arr.append("Magma")
+			if pokemon_owner & 8: owner_arr.append("Rocket")
+			if pokemon_owner & 16: owner_arr.append("Holon")
+			
+			owner_str += str(Convert.combine_strings(owner_arr, false), " ")
+		
+	
+	if pokemon_type != 0 and pokemon_type != 1023:
 		var type_checklist: Array[String] = Convert.flags_to_type_array(pokemon_type)
 		var including: String = "" if type_inclusive else "non-"
-		type_str = str(including, Convert.combine_strings(type_checklist))
+		type_str = str(including, Convert.combine_strings(type_checklist), " ")
+	
+	if class_str and owner_str:
+		owner_str += "and "
 	
 	if energy_attatched != -1:
-		en_atch_str += str(comparison, energy_attatched)
+		en_atch_str += str(comparison, energy_attatched, " ")
+		
+		if en_group != 0 and en_group != 63:
+			if en_group & 1 != 0:
+				pass
+			else:
+				var looking_for: Array[String]
+				if en_group & 2 != 0: looking_for.append("React")
+				if en_group & 4 != 0: looking_for.append("Holon")
+				if en_group & 8 != 0: looking_for.append("Magma")
+				if en_group & 16 != 0: looking_for.append("Aqua")
+				if en_group & 32 != 0: looking_for.append("Rocket")
+				en_atch_str += str(Convert.combine_strings(looking_for, false), " ")
+		
 		if not energy_inclusive:
-			en_atch_str += " non "
+			en_atch_str += "non "
 		if energy_class == "Basic Energy":
-			en_atch_str += " Basic "
+			en_atch_str += "Basic "
 		if energy_class == "Special Energy":
-			en_atch_str += " Special "
+			en_atch_str += "Special "
 		
-		if energy_type.type != 0 or energy_type.type != 1023:
+		if energy_type.type != 0 and energy_type.type != 511:
+			print(energy_type.type)
 			var type_checklist: Array[String] = Convert.flags_to_type_array(energy_type.type)
-			en_atch_str += Convert.combine_strings(type_checklist, false)
+			en_atch_str += str(Convert.combine_strings(type_checklist, false), " ")
 		
-		en_atch_str += "Energy"
-		if check_cards: en_atch_str += "Cards"
-		en_atch_str += "Attatched"
+		en_atch_str += "Energy "
+		if check_cards: en_atch_str += "Card"
+		if energy_attatched > 1:
+			en_atch_str += "s"
+		en_atch_str += " "
+		en_atch_str += "Attatched "
 	
 	if check_condition:
-		pass
+		if desired_condition == 31:
+			cond_str += "Conditioned "
+		else:
+			var cond_arr: Array[String]
+			if desired_condition & 1 != 0: cond_arr.append("Poisioned")
+			if desired_condition & 2 != 0: cond_arr.append("Burned")
+			if desired_condition & 4 != 0: cond_arr.append("Paralyzed")
+			if desired_condition & 8 != 0: cond_arr.append("Sleeping")
+			if desired_condition & 16 != 0: cond_arr.append("Confused")
+			if desired_condition & 32 != 0: cond_arr.append("Imprisioned")
+			if desired_condition & 64 != 0: cond_arr.append("Shockwaved")
+			cond_str += str(Convert.combine_strings(cond_arr, false), " ").to_lower()
 	
 	if check_ability:
 		if specific_abilities:
 			pass
 		else:
 			if contained_abilities & 1 != 0:
-				ability_str += "pokebody"
+				ability_str += "pokebodies"
 			if contained_abilities & 2 != 0:
 				if ability_str != "":
-					ability_str += " or pokepower"
+					ability_str += " or pokepowers"
 				else:
-					ability_str += "pokepower"
+					ability_str += "pokepowers"
 	
-	return str(side_str, ko_str, cond_str, evo_str, owner_str, type_str,
-	 specifc_str, class_str, slot_str, hp_str, dmg_str, retr_str, tool_str,
+	if side_target == Consts.SIDES.BOTH and slot_target == Consts.SLOTS.ALL:
+		side_str = "Every "
+	
+	var with_str: String
+	if hp_str or dmg_str or retr_str or tool_str or ability_str or en_atch_str:
+		with_str = str(" with ",hp_str, dmg_str, retr_str, tool_str,
 	 ability_str, en_atch_str)
+	
+	if specifc_str == "":
+		specifc_str = "Pokemon"
+	
+	var final_string: String = str(side_str, ko_str, evo_str, owner_str, type_str,
+	  class_str, slot_str, cond_str, specifc_str, with_str)
+	
+	print(final_string)
+	
+	return final_string

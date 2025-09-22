@@ -1,3 +1,4 @@
+@tool
 extends Node
 
 var all_lists: Array[Dictionary]
@@ -69,27 +70,27 @@ func slot_into_string(slot: Consts.SLOTS) -> String:
 		Consts.SLOTS.ALL:
 			return ""
 		Consts.SLOTS.ACTIVE:
-			return "active"
+			return "active "
 		Consts.SLOTS.BENCH:
-			return "benched"
+			return "benched "
 		Consts.SLOTS.TARGET:
-			return "targetted"
+			return "targetted "
 		Consts.SLOTS.REST:
-			return "non-targetted"
+			return "non-targetted "
 	return ""
  
 func side_into_string(side: Consts.SIDES) -> String:
 	match side:
 		Consts.SIDES.BOTH:
-			return "both"
+			return "both "
 		Consts.SIDES.ATTACKING:
-			return "attacking"
+			return "attacking "
 		Consts.SIDES.DEFENDING:
-			return "defening"
+			return "defending "
 		Consts.SIDES.SOURCE:
-			return "your"
+			return "your "
 		Consts.SIDES.OTHER:
-			return "opposing"
+			return "opposing "
 	return ""
 
 func combine_strings(string_array: Array[String], boolean_and: bool = true) -> String:
