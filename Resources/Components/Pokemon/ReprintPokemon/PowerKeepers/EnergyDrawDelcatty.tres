@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Pokemon" load_steps=26 format=3 uid="uid://shjh1uruhgm6"]
+[gd_resource type="Resource" script_class="Pokemon" load_steps=27 format=3 uid="uid://shjh1uruhgm6"]
 
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_0ak6d"]
 [ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="2_fj7yy"]
@@ -50,6 +50,11 @@ order = Array[int]([8])
 draw_ammount = ExtResource("9_gl4cb")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
+[sub_resource type="Resource" id="Resource_uko56"]
+script = ExtResource("7_thk0p")
+success = SubResource("Resource_ffdua")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
 [sub_resource type="Resource" id="Resource_4gyuw"]
 script = ExtResource("6_4yjhi")
 comparision_type = "Not Equal"
@@ -79,7 +84,7 @@ category = "Power"
 name = "Energy Draw"
 description = "Once during your turn (before your attack), you may discard 1 Energy card from your hand. Then draw up to 3 cards from your deck. This power can't be used if [name] is affected by a Special Condition."
 prompt = SubResource("Resource_xypqx")
-effect = SubResource("Resource_ffdua")
+effects = Array[ExtResource("7_thk0p")]([SubResource("Resource_uko56")])
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 
 [resource]

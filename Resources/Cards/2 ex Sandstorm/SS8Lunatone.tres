@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=26 format=3 uid="uid://hjll002o3bfj"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=27 format=3 uid="uid://hjll002o3bfj"]
 
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_3wau4"]
 [ext_resource type="Texture2D" uid="uid://buovaecqs5wj5" path="res://Art/Cards/2 ex Sandstorm/8.jpg" id="1_vrti1"]
@@ -59,13 +59,18 @@ script = ExtResource("7_pwgit")
 type_change = SubResource("Resource_r33dn")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
+[sub_resource type="Resource" id="Resource_hvbjv"]
+script = ExtResource("4_7e1x6")
+success = SubResource("Resource_doqp8")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
 [sub_resource type="Resource" id="Resource_q3c3e"]
 script = ExtResource("14_72j6n")
 category = "Power"
 name = "Lunar Eclipse"
 description = "Once during your turn (before your attack), if Solrock is in play, you may use this power. Until the end of your turn, [name]'s type is {Darkness}."
 prompt = ExtResource("13_ehemc")
-effect = SubResource("Resource_doqp8")
+effects = Array[ExtResource("4_7e1x6")]([SubResource("Resource_hvbjv")])
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 
 [sub_resource type="Resource" id="Resource_d1ev5"]

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Ability" load_steps=13 format=3 uid="uid://blnmclkk45gb3"]
+[gd_resource type="Resource" script_class="Ability" load_steps=15 format=3 uid="uid://blnmclkk45gb3"]
 
 [ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="1_0aqmg"]
 [ext_resource type="Resource" uid="uid://cyyhoqt2uqb75" path="res://Resources/Components/Counters/Indv/Slots/SelfDmg.tres" id="2_03y6b"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="4_el2ly"]
 [ext_resource type="Script" uid="uid://scca13hg4k1l" path="res://Code/Resource Makers/EffectSpecific/Components/DmgManipMaker.gd" id="5_gqn4e"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="6_aibvp"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="7_03y6b"]
 [ext_resource type="Resource" uid="uid://cq66mwg0r64ga" path="res://Resources/Components/Occurances/OnSelfKO.tres" id="7_kdadh"]
 [ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="8_6q4cf"]
 
@@ -39,10 +40,15 @@ script = ExtResource("6_aibvp")
 dmgManip = SubResource("Resource_ibofy")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
+[sub_resource type="Resource" id="Resource_03y6b"]
+script = ExtResource("7_03y6b")
+success = SubResource("Resource_873ls")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
 [resource]
 script = ExtResource("8_6q4cf")
 name = "Buffer"
 description = "If [name] would be Knocked Out by an opponent's attack, flip a coin. If heads, [name] is not Knocked Out and its remaining HP becomes 10 instead."
 occurance = ExtResource("7_kdadh")
-effect = SubResource("Resource_873ls")
+effects = Array[ExtResource("7_03y6b")]([SubResource("Resource_03y6b")])
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"

@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=13 format=3 uid="uid://b3ya0jos3vnq4"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=14 format=3 uid="uid://b3ya0jos3vnq4"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_bxtj7"]
 [ext_resource type="Texture2D" uid="uid://ss67ohy0rb7h" path="res://Art/Cards/5 ex Hidden Legends/33.jpg" id="1_rdcmp"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_egxd8"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="3_egxd8"]
 [ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="3_shc5c"]
 [ext_resource type="Script" uid="uid://cg3m7vpqxf2t6" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/OverrideMaker.gd" id="4_ckk4b"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="5_4mo60"]

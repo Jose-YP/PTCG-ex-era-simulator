@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=16 format=3 uid="uid://cppmiu7in05y6"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=18 format=3 uid="uid://cppmiu7in05y6"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_ecphi"]
 [ext_resource type="Texture2D" uid="uid://cnw6bdjck41qb" path="res://Art/Cards/1 ex Ruby & Saphire/23.jpg" id="1_gvnyk"]
@@ -9,6 +9,7 @@
 [ext_resource type="Resource" uid="uid://dkvbrahlcnjmi" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/W1C2.tres" id="6_t4i2e"]
 [ext_resource type="Resource" uid="uid://cj4j56m7hrxpe" path="res://Resources/Components/Pokemon/Attacks/AttackData/50Dmg.tres" id="7_c8si6"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="7_gq5fo"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="8_3gr5r"]
 [ext_resource type="Resource" uid="uid://uv5l54w5bpfr" path="res://Resources/Components/Occurances/AttatchWater.tres" id="8_f5wi8"]
 [ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="13_a2psr"]
 
@@ -24,12 +25,17 @@ script = ExtResource("5_f5wi8")
 dmgManip = ExtResource("6_f5wi8")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
+[sub_resource type="Resource" id="Resource_3gr5r"]
+script = ExtResource("8_3gr5r")
+success = SubResource("Resource_7l16b")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
 [sub_resource type="Resource" id="Resource_ebip0"]
 script = ExtResource("13_a2psr")
 name = "Natural Remedy"
 description = "Once during your turn (before your attack), when you attach a {Water} Energy card from your hand to [name], remove 1 damage counter from [name]."
 occurance = ExtResource("8_f5wi8")
-effect = SubResource("Resource_7l16b")
+effects = Array[ExtResource("8_3gr5r")]([SubResource("Resource_3gr5r")])
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 
 [sub_resource type="Resource" id="Resource_a2psr"]

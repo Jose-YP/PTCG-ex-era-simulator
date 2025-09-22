@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=21 format=3 uid="uid://c3ijsmjkofdx7"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=22 format=3 uid="uid://c3ijsmjkofdx7"]
 
 [ext_resource type="Texture2D" uid="uid://1sv28bvhxfs4" path="res://Art/Cards/2 ex Sandstorm/55.jpg" id="1_i1nil"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_rofiv"]
@@ -48,12 +48,17 @@ script = ExtResource("7_0w7pq")
 dmgManip = ExtResource("9_2ecud")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
+[sub_resource type="Resource" id="Resource_i1nil"]
+script = ExtResource("4_ri1dd")
+success = SubResource("Resource_ejhu6")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
 [sub_resource type="Resource" id="Resource_npl7c"]
 script = ExtResource("10_nv5gt")
 category = "Power"
 name = "Healing Wind"
 description = "Once during your turn (before your attack), you may remove 1 damage counter from each of your Active Pokémon."
-effect = SubResource("Resource_ejhu6")
+effects = Array[ExtResource("4_ri1dd")]([SubResource("Resource_i1nil")])
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 
 [sub_resource type="Resource" id="Resource_um7g8"]

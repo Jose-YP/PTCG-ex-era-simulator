@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=22 format=3 uid="uid://vpfl1laggt2y"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=23 format=3 uid="uid://vpfl1laggt2y"]
 
 [ext_resource type="Texture2D" uid="uid://ovf43ev0xwgo" path="res://Art/Cards/3 ex Dragon/89.jpg" id="1_pjo6a"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_sxjh8"]
@@ -44,6 +44,11 @@ script = ExtResource("9_uecfi")
 dmgManip = SubResource("Resource_ps12c")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
+[sub_resource type="Resource" id="Resource_36qdc"]
+script = ExtResource("6_tsrw2")
+success = SubResource("Resource_jco4e")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
 [sub_resource type="Resource" id="Resource_w8af5"]
 script = ExtResource("12_n30uj")
 from_ask = ExtResource("10_36qdc")
@@ -57,7 +62,7 @@ description = "As long as [name] is in play, whenever your opponent attaches an 
 affected_by_condition = false
 how_often = "Once per Emit"
 occurance = SubResource("Resource_w8af5")
-effect = SubResource("Resource_jco4e")
+effects = Array[ExtResource("6_tsrw2")]([SubResource("Resource_36qdc")])
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 
 [sub_resource type="Resource" id="Resource_qj8ai"]

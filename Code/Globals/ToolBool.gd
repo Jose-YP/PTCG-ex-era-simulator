@@ -46,9 +46,6 @@ func has_effect(card: Base_Card, effect_type: Array[String]) -> bool:
 			if mon.pokebody.passive != null:
 				if effect_has_effect_type(mon.pokebody.passive, effect_type):
 					return true
-			if mon.pokebody.effect != null:
-				if effect_has_effect_type(mon.pokebody.effect, effect_type):
-					return true
 			if mon.pokebody.prompt != null:
 				if mon.pokebody.prompt.effect != null:
 					if effect_has_effect_type(mon.pokebody.prompt.effect, effect_type):
@@ -56,9 +53,6 @@ func has_effect(card: Base_Card, effect_type: Array[String]) -> bool:
 		if mon.pokepower != null:
 			if mon.pokepower.passive:
 				if effect_has_effect_type(mon.pokepower.passive, effect_type):
-					return true
-			if mon.pokepower.effect:
-				if effect_has_effect_type(mon.pokepower.effect, effect_type):
 					return true
 			if mon.pokepower.prompt != null:
 				if mon.pokepower.prompt.effect != null:

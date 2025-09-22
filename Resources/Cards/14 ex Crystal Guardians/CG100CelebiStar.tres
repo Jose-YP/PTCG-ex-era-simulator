@@ -86,7 +86,6 @@ name = "Time Travel"
 description = "If [name] would be Knocked Out by damage from an opponent's attack, you may flip a coin. If heads, [name] is not Knocked Out, discard all cards attached to [name], and put [name] on the bottom of your deck."
 prompt = SubResource("Resource_kawpo")
 occurance = ExtResource("12_g8753")
-effect = SubResource("Resource_cessd")
 effects = Array[ExtResource("4_dm7es")]([SubResource("Resource_nupj6"), SubResource("Resource_c14va")])
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 

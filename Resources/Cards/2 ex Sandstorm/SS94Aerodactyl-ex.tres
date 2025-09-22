@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=25 format=3 uid="uid://cicby0spxjxfm"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=27 format=3 uid="uid://cicby0spxjxfm"]
 
 [ext_resource type="Texture2D" uid="uid://byqdysq34panm" path="res://Art/Cards/2 ex Sandstorm/94.jpg" id="1_0k6if"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_0xs4c"]
@@ -10,6 +10,7 @@
 [ext_resource type="Resource" uid="uid://dn23rqq74kmjq" path="res://Resources/Components/Effects/CardDisrupt/Play/RemoveAllOppTools.tres" id="7_vatuy"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="8_6hnva"]
 [ext_resource type="Resource" uid="uid://bns8h72u2hxqo" path="res://Resources/Components/Effects/Asks/General/AnyMon.tres" id="9_75t4a"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="9_clu2s"]
 [ext_resource type="Script" uid="uid://bics3dumv7avj" path="res://Code/Resource Makers/GeneralUse/OccuranceMaker.gd" id="10_n54sb"]
 [ext_resource type="Resource" uid="uid://njjce7akxhr" path="res://Resources/Components/Effects/Identifiers/Trainers/Tool.tres" id="11_75t4a"]
 [ext_resource type="Script" uid="uid://c0ishgbxk63dg" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/DisableMaker.gd" id="11_ga2yi"]
@@ -35,6 +36,11 @@ script = ExtResource("8_6hnva")
 order = null
 card_disrupt = ExtResource("7_vatuy")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_clu2s"]
+script = ExtResource("9_clu2s")
+success = SubResource("Resource_r4mat")
+metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [sub_resource type="Resource" id="Resource_f55l8"]
 script = ExtResource("10_n54sb")
@@ -62,7 +68,7 @@ affected_by_condition = false
 how_often = "Infinite"
 occurance = SubResource("Resource_f55l8")
 passive = SubResource("Resource_xpjov")
-effect = SubResource("Resource_r4mat")
+effects = Array[ExtResource("9_clu2s")]([SubResource("Resource_clu2s")])
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 
 [sub_resource type="Resource" id="Resource_dxicy"]

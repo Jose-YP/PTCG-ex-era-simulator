@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=13 format=3 uid="uid://22c17vtu70b3"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=15 format=3 uid="uid://22c17vtu70b3"]
 
 [ext_resource type="Texture2D" uid="uid://b4uymubvo04qp" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/37.jpg" id="1_s2ru1"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="2_jvjdg"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_i0jr0"]
 [ext_resource type="Resource" uid="uid://lnqxjpwlc83l" path="res://Resources/Components/Pokemon/Attacks/AttackData/50IfHeads.tres" id="4_gfga0"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="5_wxab5"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="6_per72"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="6_xc0yb"]
 [ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="6_yqt5s"]
 
@@ -18,13 +19,18 @@ attack_data = ExtResource("4_gfga0")
 [sub_resource type="Resource" id="Resource_0a22m"]
 script = ExtResource("6_xc0yb")
 
+[sub_resource type="Resource" id="Resource_yqt5s"]
+script = ExtResource("6_per72")
+success = SubResource("Resource_0a22m")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
 [sub_resource type="Resource" id="Resource_per72"]
 script = ExtResource("6_yqt5s")
 category = "Power"
 name = "Call for Help"
 description = "Once during your turn (before your attack), if [name] is your Active Pokémon, you may search your deck for a Pokémon with Team Magma in its name, show it to your opponent, and put it into your hand. Shuffle your deck afterward. This power can't be used if [name] is affected by a Special Condition."
 active = true
-effect = SubResource("Resource_0a22m")
+effects = Array[ExtResource("6_per72")]([SubResource("Resource_yqt5s")])
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 
 [sub_resource type="Resource" id="Resource_18syr"]

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=20 format=3 uid="uid://dp2qu3pkoldmi"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=22 format=3 uid="uid://dp2qu3pkoldmi"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_et5jw"]
 [ext_resource type="Texture2D" uid="uid://dsvtf86uyq2o3" path="res://Art/Cards/6 ex FireRed & LeafGreen/14.jpg" id="1_so5g5"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://scca13hg4k1l" path="res://Code/Resource Makers/EffectSpecific/Components/DmgManipMaker.gd" id="6_etfw1"]
 [ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="7_888bh"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="8_gwxer"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="9_d2ug4"]
 [ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="9_w7aot"]
 [ext_resource type="Resource" uid="uid://dsmhd8uuk28ga" path="res://Resources/Components/Counters/Comparator/Lesser/SelfDmgLTHP-10.tres" id="9_y67vy"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="10_kwtxr"]
@@ -37,6 +38,11 @@ script = ExtResource("8_gwxer")
 dmgManip = SubResource("Resource_puw2w")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
+[sub_resource type="Resource" id="Resource_d2ug4"]
+script = ExtResource("9_d2ug4")
+success = SubResource("Resource_4iif7")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
 [sub_resource type="Resource" id="Resource_eewpl"]
 script = ExtResource("12_o204e")
 comparator = ExtResource("9_y67vy")
@@ -49,7 +55,7 @@ name = "Strange Behavior"
 description = "As often as you like during your turn (before your attack), you may move 1 damage counter from 1 of your Pokémon to [name] as long as you don't Knock Out [name]. This power can't be used if [name] is affected by a Special Condition."
 how_often = "Infinite"
 prompt = SubResource("Resource_eewpl")
-effect = SubResource("Resource_4iif7")
+effects = Array[ExtResource("9_d2ug4")]([SubResource("Resource_d2ug4")])
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 
 [sub_resource type="Resource" id="Resource_yeibv"]

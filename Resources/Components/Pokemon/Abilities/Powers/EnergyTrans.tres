@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="Ability" load_steps=5 format=3 uid="uid://cmyfqgbgoq0lj"]
+[gd_resource type="Resource" script_class="Ability" load_steps=7 format=3 uid="uid://cmyfqgbgoq0lj"]
 
 [ext_resource type="Resource" uid="uid://ddxy8mght077d" path="res://Resources/Components/Effects/EnergyMovement/EnergyTrans.tres" id="1_yq7xm"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_docd0"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="3_docd0"]
 [ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="3_ttmw1"]
 
 [sub_resource type="Resource" id="Resource_dkhdn"]
@@ -9,11 +10,16 @@ script = ExtResource("2_docd0")
 energy_movement = ExtResource("1_yq7xm")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
+[sub_resource type="Resource" id="Resource_docd0"]
+script = ExtResource("3_docd0")
+success = SubResource("Resource_dkhdn")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
 [resource]
 script = ExtResource("3_ttmw1")
 category = "Power"
 name = "Energy Trans"
 description = "As often as you like during your turn (before your attack), move a {Grass} Energy card attached to 1 of your Pokémon to another of your Pokémon. This power can't be used if [name] is affected by a Special Condition."
 how_often = "Infinite"
-effect = SubResource("Resource_dkhdn")
+effects = Array[ExtResource("3_docd0")]([SubResource("Resource_docd0")])
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"

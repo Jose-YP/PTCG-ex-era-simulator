@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="Pokemon" load_steps=12 format=3 uid="uid://dcxpyr6d3omf7"]
+[gd_resource type="Resource" script_class="Pokemon" load_steps=14 format=3 uid="uid://dcxpyr6d3omf7"]
 
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_23xl6"]
 [ext_resource type="Resource" uid="uid://b1rwmggf7a4do" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless2.tres" id="2_qg207"]
 [ext_resource type="Resource" uid="uid://lnqxjpwlc83l" path="res://Resources/Components/Pokemon/Attacks/AttackData/50IfHeads.tres" id="3_nn817"]
 [ext_resource type="Resource" uid="uid://d0in7vtooxjm1" path="res://Resources/Components/Effects/ETC/AtkSelfHealCond.tres" id="4_jxjhv"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="5_npple"]
 [ext_resource type="Resource" uid="uid://bns8h72u2hxqo" path="res://Resources/Components/Effects/Asks/General/AnyMon.tres" id="5_xnoff"]
 [ext_resource type="Script" uid="uid://bics3dumv7avj" path="res://Code/Resource Makers/GeneralUse/OccuranceMaker.gd" id="9_2yvqv"]
 [ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="10_4whhc"]
@@ -14,6 +15,11 @@ script = ExtResource("1_23xl6")
 name = "Lunge"
 attack_cost = ExtResource("2_qg207")
 attack_data = ExtResource("3_nn817")
+
+[sub_resource type="Resource" id="Resource_npple"]
+script = ExtResource("5_npple")
+success = ExtResource("4_jxjhv")
+metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [sub_resource type="Resource" id="Resource_xg3gf"]
 script = ExtResource("9_2yvqv")
@@ -27,7 +33,7 @@ name = "Natural Cure"
 description = "When you attach a {Fire} Energy card from your hand to [name], remove all Special Conditions from [name]."
 affected_by_condition = false
 occurance = SubResource("Resource_xg3gf")
-effect = ExtResource("4_jxjhv")
+effects = Array[ExtResource("5_npple")]([SubResource("Resource_npple")])
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 
 [resource]

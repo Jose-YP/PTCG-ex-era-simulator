@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=24 format=3 uid="uid://ca4fvk1kp65a5"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=25 format=3 uid="uid://ca4fvk1kp65a5"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_2qfob"]
 [ext_resource type="Texture2D" uid="uid://vl54ey1wgkdd" path="res://Art/Cards/10 ex Unseen Forces/1.jpg" id="1_246m0"]
@@ -54,13 +54,18 @@ script = ExtResource("4_x6q3b")
 energy_movement = SubResource("Resource_ws3ge")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
+[sub_resource type="Resource" id="Resource_sl773"]
+script = ExtResource("7_sl773")
+success = SubResource("Resource_0m8xk")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
 [sub_resource type="Resource" id="Resource_kd6vc"]
 script = ExtResource("12_x6q3b")
 category = "Power"
 name = "Energy Connect"
 description = "As often as you like during your turn (before your attack), you may move a basic Energy card attached to 1 of your Benched Pokémon to your Active Pokémon. This power can't be used if Ampharos is affected by a Special Condition."
 how_often = "Infinite"
-effect = SubResource("Resource_0m8xk")
+effects = Array[ExtResource("7_sl773")]([SubResource("Resource_sl773")])
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 
 [sub_resource type="Resource" id="Resource_5syx3"]

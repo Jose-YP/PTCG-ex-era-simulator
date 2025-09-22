@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=24 format=3 uid="uid://d3y3ggocst4r0"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=25 format=3 uid="uid://d3y3ggocst4r0"]
 
 [ext_resource type="Texture2D" uid="uid://kon0844bkmke" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/4.jpg" id="1_4ox76"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_gh7dm"]
@@ -56,12 +56,17 @@ energy_ammount = -1
 script = ExtResource("5_5fqb1")
 energy_movement = SubResource("Resource_xmkch")
 
+[sub_resource type="Resource" id="Resource_bkafw"]
+script = ExtResource("7_bkafw")
+success = SubResource("Resource_ys2ao")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
 [sub_resource type="Resource" id="Resource_nwboy"]
 script = ExtResource("10_bkafw")
 category = "Power"
 name = "Power Shift"
 description = "Once during your turn (before your attack), you may move any number of basic Energy cards attached to 1 of your Pokémon with Team Aqua in its name to another of your Pokémon. This power can't be used if [name] is affected by a Special Condition."
-effect = SubResource("Resource_ys2ao")
+effects = Array[ExtResource("7_bkafw")]([SubResource("Resource_bkafw")])
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 
 [sub_resource type="Resource" id="Resource_c4oj5"]

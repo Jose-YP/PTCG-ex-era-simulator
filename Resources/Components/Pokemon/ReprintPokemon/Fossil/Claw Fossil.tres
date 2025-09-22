@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="Pokemon" load_steps=9 format=3 uid="uid://cqtaij50lsllf"]
+[gd_resource type="Resource" script_class="Pokemon" load_steps=11 format=3 uid="uid://cqtaij50lsllf"]
 
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_gbfqq"]
 [ext_resource type="Resource" uid="uid://bo7xhfhkteti0" path="res://Resources/Components/Effects/DmgManip/Add/Add1OthSelf.tres" id="2_ewg4v"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_o1c5i"]
 [ext_resource type="Resource" uid="uid://bessnawi8b2ct" path="res://Resources/Components/Occurances/AttackedByOpponent.tres" id="4_0dqor"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="4_ewg4v"]
 [ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="5_tpgty"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="6_027in"]
 
@@ -12,12 +13,17 @@ script = ExtResource("3_o1c5i")
 dmgManip = ExtResource("2_ewg4v")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
+[sub_resource type="Resource" id="Resource_ewg4v"]
+script = ExtResource("4_ewg4v")
+success = SubResource("Resource_eekiw")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
 [sub_resource type="Resource" id="Resource_m8n5h"]
 script = ExtResource("5_tpgty")
 name = "Jagged Stone"
 description = "If [name] is your Active Pokémon and is damaged by an opponent's attack (even if [name] is Knocked Out), put 1 damage counter on the Attacking Pokémon."
 occurance = ExtResource("4_0dqor")
-effect = SubResource("Resource_eekiw")
+effects = Array[ExtResource("4_ewg4v")]([SubResource("Resource_ewg4v")])
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 
 [resource]

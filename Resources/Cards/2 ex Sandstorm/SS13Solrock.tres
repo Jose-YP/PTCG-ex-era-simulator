@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=25 format=3 uid="uid://bf1kk8opucyo8"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=26 format=3 uid="uid://bf1kk8opucyo8"]
 
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_3quvk"]
 [ext_resource type="Texture2D" uid="uid://c1sh6shitbgya" path="res://Art/Cards/2 ex Sandstorm/13.jpg" id="1_ff0re"]
@@ -56,13 +56,18 @@ script = ExtResource("7_ykb1v")
 type_change = SubResource("Resource_6rf85")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
+[sub_resource type="Resource" id="Resource_kxxnt"]
+script = ExtResource("4_5dsco")
+success = SubResource("Resource_pdep4")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
 [sub_resource type="Resource" id="Resource_1ewrk"]
 script = ExtResource("14_411yi")
 category = "Power"
 name = "Solar Eclipse"
-description = "Once during your turn (before your attack), if Lunatone is in play, you may use this power. Until the end of your turn, Solrock's type is {Fire}."
+description = "Once during your turn (before your attack), if Lunatone is in play, you may use this power. Until the end of your turn, [name]'s type is {Fire}."
 prompt = ExtResource("13_i8fqq")
-effect = SubResource("Resource_pdep4")
+effects = Array[ExtResource("4_5dsco")]([SubResource("Resource_kxxnt")])
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 
 [sub_resource type="Resource" id="Resource_4y00o"]

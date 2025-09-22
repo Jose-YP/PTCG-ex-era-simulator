@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=21 format=3 uid="uid://blgwu6rviyvhh"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=22 format=3 uid="uid://blgwu6rviyvhh"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_6nbak"]
 [ext_resource type="Texture2D" uid="uid://bwy02si5cv6mh" path="res://Art/Cards/3 ex Dragon/90.jpg" id="1_i3arf"]
@@ -53,13 +53,18 @@ script = ExtResource("6_mpcq0")
 energy_movement = ExtResource("7_x717q")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
+[sub_resource type="Resource" id="Resource_x717q"]
+script = ExtResource("6_ur7nu")
+success = SubResource("Resource_n8rdp")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
 [sub_resource type="Resource" id="Resource_ur7nu"]
 script = ExtResource("11_mpcq0")
 category = "Power"
 name = "Call for Power"
 description = "As often as you like during your turn, you may move an Energy card attached to 1 of your Pokémon to  [name]. This power can't be used if [name] is affected by a Special Condition."
 how_often = "Infinite"
-effect = SubResource("Resource_n8rdp")
+effects = Array[ExtResource("6_ur7nu")]([SubResource("Resource_x717q")])
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 
 [sub_resource type="Resource" id="Resource_ysok2"]

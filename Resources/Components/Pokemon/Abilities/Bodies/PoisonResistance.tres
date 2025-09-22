@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Ability" load_steps=5 format=3 uid="uid://cucqwlq7u00cu"]
+[gd_resource type="Resource" script_class="Ability" load_steps=6 format=3 uid="uid://cucqwlq7u00cu"]
 
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="1_2kwgi"]
 [ext_resource type="Resource" uid="uid://b7opiwcexr55" path="res://Resources/Components/Effects/Buff/Immunity/Immune2Poision.tres" id="1_gks57"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_2kwgi"]
 [ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="3_3fd2p"]

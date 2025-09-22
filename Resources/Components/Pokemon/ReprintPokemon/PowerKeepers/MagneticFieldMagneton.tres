@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Pokemon" load_steps=29 format=3 uid="uid://ydrv5i54j3hw"]
+[gd_resource type="Resource" script_class="Pokemon" load_steps=30 format=3 uid="uid://ydrv5i54j3hw"]
 
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_obixo"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="2_83dbl"]
@@ -58,6 +58,11 @@ script = ExtResource("8_qsndi")
 search = SubResource("Resource_foqwo")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
+[sub_resource type="Resource" id="Resource_pnmal"]
+script = ExtResource("7_i0rgy")
+success = SubResource("Resource_tjcgn")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
 [sub_resource type="Resource" id="Resource_g1hyd"]
 script = ExtResource("5_ivwvk")
 which = "Slot"
@@ -96,7 +101,7 @@ category = "Power"
 name = "Magnetic Field"
 description = "Once during your turn (before your attack), if you have basic Energy cards in your discard pile, you may discard any 1 card from your hand. Then search for up to 2 basic Energy cards from your discard pile, show them to your opponent, and put them into your hand. You can't return the card you first discarded to your hand in this way. This power can't be used if [name] is affected by a Special Condition."
 prompt = SubResource("Resource_xy2t8")
-effect = SubResource("Resource_tjcgn")
+effects = Array[ExtResource("7_i0rgy")]([SubResource("Resource_pnmal")])
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 
 [resource]

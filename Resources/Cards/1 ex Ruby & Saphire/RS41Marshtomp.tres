@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=15 format=3 uid="uid://xe7261xpp7ne"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=16 format=3 uid="uid://xe7261xpp7ne"]
 
 [ext_resource type="Texture2D" uid="uid://crlqxi6rgaygu" path="res://Art/Cards/1 ex Ruby & Saphire/41.jpg" id="1_q03ri"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_7tnrc"]
@@ -25,6 +25,11 @@ attack_cost = ExtResource("3_bgt0y")
 attack_data = SubResource("Resource_8f4wk")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
+[sub_resource type="Resource" id="Resource_jub7c"]
+script = ExtResource("4_8f4wk")
+success = ExtResource("3_jkfog")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
 [sub_resource type="Resource" id="Resource_xrbpf"]
 script = ExtResource("11_o7hfo")
 name = "Natural Cure"
@@ -32,7 +37,7 @@ description = "When you attach a {Water} Energy card from your hand to [name], r
 "
 affected_by_condition = false
 occurance = ExtResource("6_bgt0y")
-effect = ExtResource("3_jkfog")
+effects = Array[ExtResource("4_8f4wk")]([SubResource("Resource_jub7c")])
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 
 [sub_resource type="Resource" id="Resource_u87it"]

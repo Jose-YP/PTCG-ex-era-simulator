@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=30 format=3 uid="uid://bigbvtmdvobb8"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=31 format=3 uid="uid://bigbvtmdvobb8"]
 
 [ext_resource type="Texture2D" uid="uid://pxoft1wbeuxl" path="res://Art/Cards/12 ex Legend Maker/22.jpg" id="1_653qw"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_13wr1"]
@@ -75,6 +75,11 @@ script = ExtResource("7_kpec7")
 energy_movement = SubResource("Resource_gmkqs")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
+[sub_resource type="Resource" id="Resource_v5ngv"]
+script = ExtResource("9_ckcqc")
+success = SubResource("Resource_gdo84")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
 [sub_resource type="Resource" id="Resource_7pk77"]
 script = ExtResource("18_ncrm3")
 category = "Power"
@@ -83,7 +88,7 @@ description = "If [name] would be Knocked Out by damage from an opponent's attac
 affected_by_condition = false
 how_often = "Infinite"
 occurance = ExtResource("17_snhq1")
-effect = SubResource("Resource_gdo84")
+effects = Array[ExtResource("9_ckcqc")]([SubResource("Resource_v5ngv")])
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 
 [sub_resource type="Resource" id="Resource_4alir"]

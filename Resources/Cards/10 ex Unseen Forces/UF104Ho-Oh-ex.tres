@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=22 format=3 uid="uid://bd5udpyw50p8k"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=23 format=3 uid="uid://bd5udpyw50p8k"]
 
 [ext_resource type="Texture2D" uid="uid://ds5ewico7h0ff" path="res://Art/Cards/10 ex Unseen Forces/104.jpg" id="1_f6oj6"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_e84ng"]
@@ -48,6 +48,11 @@ script = ExtResource("5_r18xf")
 energy_movement = ExtResource("4_5thtl")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
+[sub_resource type="Resource" id="Resource_gd1pm"]
+script = ExtResource("7_iim6h")
+success = SubResource("Resource_xt3om")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
 [sub_resource type="Resource" id="Resource_uuksg"]
 script = ExtResource("11_6kdro")
 category = "Power"
@@ -55,7 +60,7 @@ name = "Golden Wing"
 description = "If [name] would be Knocked Out by damage from an opponent's attack, you may move up to 2 Energy attached to [name] to your Pokémon in any way you like."
 affected_by_condition = false
 occurance = ExtResource("10_hite6")
-effect = SubResource("Resource_xt3om")
+effects = Array[ExtResource("7_iim6h")]([SubResource("Resource_gd1pm")])
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 
 [sub_resource type="Resource" id="Resource_bff64"]

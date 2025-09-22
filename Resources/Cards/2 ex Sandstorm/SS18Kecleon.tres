@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=15 format=3 uid="uid://c45xk5b64oi3v"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=16 format=3 uid="uid://c45xk5b64oi3v"]
 
 [ext_resource type="Texture2D" uid="uid://ndo67yqhpxrm" path="res://Art/Cards/2 ex Sandstorm/18.jpg" id="1_1dvmt"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_4x1r1"]
@@ -7,6 +7,7 @@
 [ext_resource type="Resource" uid="uid://b1rwmggf7a4do" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless2.tres" id="3_nr773"]
 [ext_resource type="Resource" uid="uid://di63v5yvwp4wr" path="res://Resources/Components/Pokemon/Attacks/AttackData/20x2Flips.tres" id="4_ijpsl"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="5_cvu0w"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="5_nr773"]
 [ext_resource type="Script" uid="uid://cswtf00ovs0ss" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/TypeChangeMaker.gd" id="6_w26pm"]
 [ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="7_7exgi"]
 

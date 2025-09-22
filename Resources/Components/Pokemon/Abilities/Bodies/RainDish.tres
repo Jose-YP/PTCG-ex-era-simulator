@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="Ability" load_steps=6 format=3 uid="uid://dasiggcilwwq2"]
+[gd_resource type="Resource" script_class="Ability" load_steps=8 format=3 uid="uid://dasiggcilwwq2"]
 
 [ext_resource type="Resource" uid="uid://vmk4e17o42c2" path="res://Resources/Components/Effects/DmgManip/Remove/Heal1AllSrc.tres" id="1_hael6"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_552sh"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="3_552sh"]
 [ext_resource type="Resource" uid="uid://tgm35ahd5evj" path="res://Resources/Components/Occurances/SelfBetweenTurns.tres" id="3_uljx7"]
 [ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="4_66xap"]
 
@@ -10,10 +11,15 @@ script = ExtResource("2_552sh")
 dmgManip = ExtResource("1_hael6")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
+[sub_resource type="Resource" id="Resource_552sh"]
+script = ExtResource("3_552sh")
+success = SubResource("Resource_1qsgg")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
 [resource]
 script = ExtResource("4_66xap")
 name = "Rain Dish"
 description = "At any time between turns, remove 1 damage counter from [name]."
 occurance = ExtResource("3_uljx7")
-effect = SubResource("Resource_1qsgg")
+effects = Array[ExtResource("3_552sh")]([SubResource("Resource_552sh")])
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"

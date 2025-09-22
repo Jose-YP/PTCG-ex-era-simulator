@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=22 format=3 uid="uid://b7vajyscyemon"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=23 format=3 uid="uid://b7vajyscyemon"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_7put2"]
 [ext_resource type="Texture2D" uid="uid://wg7lemxlwju4" path="res://Art/Cards/16 ex Power Keepers/92.jpg" id="1_xh32m"]
@@ -42,6 +42,11 @@ script = ExtResource("8_1qcnk")
 dmgManip = SubResource("Resource_u4tnp")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
+[sub_resource type="Resource" id="Resource_cryqm"]
+script = ExtResource("5_cryqm")
+success = SubResource("Resource_ru1we")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
 [sub_resource type="Resource" id="Resource_fuowa"]
 script = ExtResource("10_7nwh2")
 formal_question = true
@@ -58,7 +63,7 @@ description = "Once during your turn, when you put [name] from your hand onto yo
 affected_by_condition = false
 prompt = SubResource("Resource_fuowa")
 occurance = ExtResource("9_7nwh2")
-effect = SubResource("Resource_ru1we")
+effects = Array[ExtResource("5_cryqm")]([SubResource("Resource_cryqm")])
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 
 [sub_resource type="Resource" id="Resource_am8y3"]

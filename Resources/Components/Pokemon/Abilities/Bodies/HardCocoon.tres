@@ -1,0 +1,41 @@
+[gd_resource type="Resource" script_class="Ability" load_steps=11 format=3 uid="uid://vjh7yrpr7ien"]
+
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="1_632di"]
+[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="2_lst4v"]
+[ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/BuffMaker.gd" id="3_3d1vd"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_over0"]
+[ext_resource type="Resource" uid="uid://bm1yxuwm2vfg7" path="res://Resources/Components/Occurances/BeforeAttacked.tres" id="5_q3jfp"]
+[ext_resource type="Resource" uid="uid://ekj1myy642kh" path="res://Resources/Components/Effects/Prompts/PromptHeads.tres" id="6_x4pv2"]
+[ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="7_j6e42"]
+
+[sub_resource type="Resource" id="Resource_llrqx"]
+script = ExtResource("3_3d1vd")
+description = "Reduced damage by 30 after applying weak/res"
+stackable = true
+operation = "Replace"
+defense = 30
+recieves = ExtResource("2_lst4v")
+duration = 0
+metadata/_custom_type_script = "uid://coojhwe6m20gd"
+
+[sub_resource type="Resource" id="Resource_fytfx"]
+script = ExtResource("4_over0")
+buff = SubResource("Resource_llrqx")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_5cbtc"]
+script = ExtResource("1_632di")
+success = SubResource("Resource_fytfx")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
+[resource]
+script = ExtResource("7_j6e42")
+name = "Hard Cocoon"
+description = "During your opponent's turn, if [name] would be damaged by an opponent's attack (after applying Weakness and Resistance), flip a coin. If heads, reduce that damage by 30."
+affected_by_condition = false
+how_often = "Infinite"
+independent_src_trg = true
+prompt = ExtResource("6_x4pv2")
+occurance = ExtResource("5_q3jfp")
+effects = Array[ExtResource("1_632di")]([SubResource("Resource_5cbtc")])
+metadata/_custom_type_script = "uid://bs2y8ocljilv8"

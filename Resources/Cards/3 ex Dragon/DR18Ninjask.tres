@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=32 format=3 uid="uid://5g5ban7l633b"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=33 format=3 uid="uid://5g5ban7l633b"]
 
 [ext_resource type="Texture2D" uid="uid://bvvn5sfttmcip" path="res://Art/Cards/3 ex Dragon/18.jpg" id="1_utp21"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_adtio"]
@@ -83,6 +83,11 @@ script = ExtResource("10_kmcin")
 search = SubResource("Resource_pe6uw")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
+[sub_resource type="Resource" id="Resource_nbhn7"]
+script = ExtResource("4_nbhn7")
+success = SubResource("Resource_weyjf")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
 [sub_resource type="Resource" id="Resource_bbrau"]
 script = ExtResource("16_4fcbq")
 category = "Power"
@@ -90,7 +95,7 @@ name = "Loose Shell"
 description = "Once during your turn, when you play [name] from your hand to evolve 1 of your Pokémon, you may search your deck for Shedinja and put it onto your Bench. Treat the new Benched Pokémon as a Basic Pokémon. Shuffle your deck afterward."
 affected_by_condition = false
 occurance = ExtResource("15_27lis")
-effect = SubResource("Resource_weyjf")
+effects = Array[ExtResource("4_nbhn7")]([SubResource("Resource_nbhn7")])
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 
 [sub_resource type="Resource" id="Resource_buy7s"]

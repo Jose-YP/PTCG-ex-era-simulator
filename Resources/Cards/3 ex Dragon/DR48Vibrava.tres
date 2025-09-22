@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=21 format=3 uid="uid://cwlt6h57fm8jq"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=22 format=3 uid="uid://cwlt6h57fm8jq"]
 
 [ext_resource type="Texture2D" uid="uid://dbqgbofburyqw" path="res://Art/Cards/3 ex Dragon/47.jpg" id="1_ovh3t"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_t3igr"]
@@ -7,6 +7,7 @@
 [ext_resource type="Resource" uid="uid://bnsrs2a5hnvkb" path="res://Resources/Components/Pokemon/Attacks/AttackData/20Dmg.tres" id="3_ovh3t"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_qh4dg"]
 [ext_resource type="Resource" uid="uid://c37rmy4v63lj4" path="res://Resources/Components/Effects/Buff/Stat/Retreat/RetreatIsNow0.tres" id="4_j1038"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="5_j1038"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="5_orf2g"]
 [ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="7_brw45"]
 [ext_resource type="Resource" uid="uid://bns8h72u2hxqo" path="res://Resources/Components/Effects/Asks/General/AnyMon.tres" id="7_ovh3t"]

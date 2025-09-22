@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=19 format=3 uid="uid://0muu3k83v6pk"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=20 format=3 uid="uid://0muu3k83v6pk"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_08nth"]
 [ext_resource type="Texture2D" uid="uid://dtw4g7hxhj5k" path="res://Art/Cards/2 ex Sandstorm/1.jpg" id="1_royrp"]
@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://d3mbrhxvdupx6" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/F2C1.tres" id="3_ardfi"]
 [ext_resource type="Resource" uid="uid://cjlv4ltu2gptf" path="res://Resources/Components/Pokemon/Attacks/AttackData/60Dmg.tres" id="4_oofyp"]
 [ext_resource type="Resource" uid="uid://bkuxa81fpcmol" path="res://Resources/Components/Effects/Identifiers/Trainers/Supporter.tres" id="5_43w8c"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="5_oofyp"]
 [ext_resource type="Resource" uid="uid://c7itelq8jtjc2" path="res://Resources/Components/EnData/Rainbow.tres" id="6_ardfi"]
 [ext_resource type="Script" uid="uid://c0ishgbxk63dg" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/DisableMaker.gd" id="6_je25v"]
 [ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="7_oofyp"]

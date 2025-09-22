@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="Ability" load_steps=10 format=3 uid="uid://bgl3ubmav7lsi"]
+[gd_resource type="Resource" script_class="Ability" load_steps=12 format=3 uid="uid://bgl3ubmav7lsi"]
 
 [ext_resource type="Resource" uid="uid://c5l2nrpmptwuh" path="res://Resources/Components/Effects/DmgManip/Remove/SelfHealALL.tres" id="1_76xdc"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_484sa"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="3_484sa"]
 [ext_resource type="Resource" uid="uid://b5venyeeni54e" path="res://Resources/Components/Occurances/SelfEvolved.tres" id="3_kst25"]
 [ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="4_3vrv1"]
 [ext_resource type="Script" uid="uid://cg3m7vpqxf2t6" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/OverrideMaker.gd" id="5_i1hcu"]
@@ -11,6 +12,11 @@
 script = ExtResource("2_484sa")
 dmgManip = ExtResource("1_76xdc")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
+
+[sub_resource type="Resource" id="Resource_484sa"]
+script = ExtResource("3_484sa")
+success = SubResource("Resource_dytb8")
+metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [sub_resource type="Resource" id="Resource_k54l7"]
 script = ExtResource("5_i1hcu")
@@ -31,5 +37,5 @@ description = "Once during your turn (before your attack), you may put Magmar fr
 affected_by_condition = false
 occurance = ExtResource("3_kst25")
 passive = SubResource("Resource_0r3t3")
-effect = SubResource("Resource_dytb8")
+effects = Array[ExtResource("3_484sa")]([SubResource("Resource_484sa")])
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"

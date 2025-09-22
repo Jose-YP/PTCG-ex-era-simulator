@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=18 format=3 uid="uid://b73tnsrwu0g41"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=19 format=3 uid="uid://b73tnsrwu0g41"]
 
 [ext_resource type="Texture2D" uid="uid://t23egjmshjui" path="res://Art/Cards/12 ex Legend Maker/37.jpg" id="1_kyihk"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_atu6l"]
 [ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_87ujo"]
 [ext_resource type="Resource" uid="uid://bhs6bq3gobv5j" path="res://Resources/Components/Pokemon/Attacks/AttackData/10DmgAny.tres" id="4_05cot"]
 [ext_resource type="Resource" uid="uid://c70dc0ghe83kr" path="res://Resources/Components/Pokemon/Attacks/EffectlessAttacks/2QuickAttack10+20.tres" id="5_atu6l"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="6_05cot"]
 [ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="7_87ujo"]
 [ext_resource type="Script" uid="uid://cswtf00ovs0ss" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/TypeChangeMaker.gd" id="8_nh0vj"]
 [ext_resource type="Resource" uid="uid://wsbn5mutuaqv" path="res://Resources/Components/Effects/Prompts/PromptComparator/PromptSelfHasReact.tres" id="9_5osg6"]

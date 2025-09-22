@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=15 format=3 uid="uid://dvpjo4nwfa1xi"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=17 format=3 uid="uid://dvpjo4nwfa1xi"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_6ptis"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_6u46t"]
@@ -8,6 +8,7 @@
 [ext_resource type="Resource" uid="uid://knu14juippx8" path="res://Resources/Components/Effects/Search/SupporterSearch.tres" id="3_8d8s2"]
 [ext_resource type="Resource" uid="uid://ceo3bpqlglf5o" path="res://Resources/Components/Pokemon/Attacks/AttackData/30Dmg.tres" id="3_ithq0"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_3nwq3"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="7_84ug8"]
 [ext_resource type="Resource" uid="uid://chfsi6o3xwpee" path="res://Resources/Components/Occurances/PlayedOnBench.tres" id="7_rm88m"]
 [ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="8_84ug8"]
 
@@ -23,6 +24,11 @@ script = ExtResource("2_wukec")
 search = ExtResource("3_8d8s2")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
+[sub_resource type="Resource" id="Resource_rm88m"]
+script = ExtResource("7_84ug8")
+success = SubResource("Resource_uk2x1")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
 [sub_resource type="Resource" id="Resource_phtj3"]
 script = ExtResource("8_84ug8")
 category = "Power"
@@ -30,7 +36,7 @@ name = "Support Navigation"
 description = "Once during your turn, when you put [name] onto your Bench from your hand, you may search your deck for a Supporter card, show it to your opponent, and put it into your hand. Shuffle your deck afterward."
 affected_by_condition = false
 occurance = ExtResource("7_rm88m")
-effect = SubResource("Resource_uk2x1")
+effects = Array[ExtResource("7_84ug8")]([SubResource("Resource_rm88m")])
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 
 [sub_resource type="Resource" id="Resource_daekk"]

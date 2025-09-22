@@ -1,36 +1,10 @@
 [gd_resource type="Resource" script_class="SlotAsk" load_steps=2 format=3 uid="uid://bydi0pyqva0ly"]
 
-[ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="1_7qbj0"]
+[ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="1_1iam7"]
 
 [resource]
-script = ExtResource("1_7qbj0")
-boolean_type = "And"
-previous_src_trg = false
+script = ExtResource("1_1iam7")
 side_target = 5
 slot_target = 1
-specifically = Array[String]([])
-tool_attatched = false
-comparison_type = 1
-max_hp = -10
-damage_taken = -10
-retreat_cost = -1
-evo_type = "Don't Check"
-stage = 7
-rare_candy = false
-class_inclusive = true
 pokemon_class = 2
-owner_inclusive = true
-pokemon_owner = 31
-type_inclusive = true
-pokemon_type = 1023
-energy_inclusive = true
-check_cards = true
-energy_attatched = -1
-energy_class = "Any"
-check_ability = false
-contained_abilities = 3
-specific_abilities = Array[String]([])
-check_condition = false
-desired_condition = 0
-knocked_out = false
 metadata/_custom_type_script = "uid://mkjynqda7q5g"

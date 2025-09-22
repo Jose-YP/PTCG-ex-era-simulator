@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=15 format=3 uid="uid://dno2q4q3waycq"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=17 format=3 uid="uid://dno2q4q3waycq"]
 
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_2o7ai"]
 [ext_resource type="Texture2D" uid="uid://5lw8ud8rj6f4" path="res://Art/Cards/1 ex Ruby & Saphire/32.jpg" id="1_djxdv"]
@@ -7,6 +7,7 @@
 [ext_resource type="Resource" uid="uid://d0in7vtooxjm1" path="res://Resources/Components/Effects/ETC/AtkSelfHealCond.tres" id="3_htg7f"]
 [ext_resource type="Resource" uid="uid://b1rwmggf7a4do" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless2.tres" id="3_nk0ad"]
 [ext_resource type="Resource" uid="uid://bnsrs2a5hnvkb" path="res://Resources/Components/Pokemon/Attacks/AttackData/20Dmg.tres" id="4_5v3xg"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="6_64fp7"]
 [ext_resource type="Resource" uid="uid://bns8h72u2hxqo" path="res://Resources/Components/Effects/Asks/General/AnyMon.tres" id="6_ek8v6"]
 [ext_resource type="Script" uid="uid://bics3dumv7avj" path="res://Code/Resource Makers/GeneralUse/OccuranceMaker.gd" id="10_leihw"]
 [ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="11_d8ts4"]
@@ -17,6 +18,11 @@ name = "Slash"
 attack_cost = ExtResource("3_nk0ad")
 attack_data = ExtResource("4_5v3xg")
 metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
+
+[sub_resource type="Resource" id="Resource_64fp7"]
+script = ExtResource("6_64fp7")
+success = ExtResource("3_htg7f")
+metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [sub_resource type="Resource" id="Resource_c0fdy"]
 script = ExtResource("10_leihw")
@@ -30,7 +36,7 @@ name = "Natural Cure"
 description = "When you attach a {Grass} Energy card from your hand to [name], remove all Special Conditions from [name]."
 affected_by_condition = false
 occurance = SubResource("Resource_c0fdy")
-effect = ExtResource("3_htg7f")
+effects = Array[ExtResource("6_64fp7")]([SubResource("Resource_64fp7")])
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 
 [sub_resource type="Resource" id="Resource_0bypi"]

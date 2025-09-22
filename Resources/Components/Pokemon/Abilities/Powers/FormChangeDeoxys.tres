@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Ability" load_steps=10 format=3 uid="uid://bwgc3etush7hc"]
+[gd_resource type="Resource" script_class="Ability" load_steps=12 format=3 uid="uid://bwgc3etush7hc"]
 
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="1_8jgfj"]
 [ext_resource type="Resource" uid="uid://dadiauif5jebg" path="res://Resources/Components/Effects/Placement/PlaceOnActive.tres" id="2_s23nc"]
@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://c7itelq8jtjc2" path="res://Resources/Components/EnData/Rainbow.tres" id="4_s23nc"]
 [ext_resource type="Script" uid="uid://cw3yr1k040kw7" path="res://Code/Resource Makers/EffectSpecific/Components/SearchMaker.gd" id="4_uxacq"]
 [ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="5_r7mq7"]
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="6_0r2uy"]
 
 [sub_resource type="Resource" id="Resource_ttdy8"]
 script = ExtResource("3_0r2uy")
@@ -23,6 +24,11 @@ metadata/_custom_type_script = "uid://cw3yr1k040kw7"
 script = ExtResource("1_8jgfj")
 search = SubResource("Resource_0ykxt")
 
+[sub_resource type="Resource" id="Resource_0r2uy"]
+script = ExtResource("6_0r2uy")
+success = SubResource("Resource_gaing")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
 [resource]
 script = ExtResource("5_r7mq7")
 category = "Power"
@@ -30,5 +36,5 @@ name = "Form Change"
 description = "Once during your turn (before your attack), you may search your deck for another Deoxys and switch it with [name]. (Any cards attached to [name], damage counters, Special Conditions, and effects on it are now on the new Pokémon.) If you do, put [name] on top of your deck. Shuffle your deck afterward. You can't use more than 1 Form Change Poké-Power each turn."
 affected_by_condition = false
 how_often = "Once per turn"
-effect = SubResource("Resource_gaing")
+effects = Array[ExtResource("6_0r2uy")]([SubResource("Resource_0r2uy")])
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"

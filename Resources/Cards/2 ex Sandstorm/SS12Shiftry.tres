@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=23 format=3 uid="uid://dbtmyxjadb4l6"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=24 format=3 uid="uid://dbtmyxjadb4l6"]
 
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_mcg87"]
 [ext_resource type="Texture2D" uid="uid://cqqnsy884j5um" path="res://Art/Cards/2 ex Sandstorm/12.jpg" id="1_xmy6c"]
@@ -48,13 +48,18 @@ script = ExtResource("11_ortyy")
 energy_movement = SubResource("Resource_6rif4")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
+[sub_resource type="Resource" id="Resource_xmy6c"]
+script = ExtResource("6_jiv6j")
+success = SubResource("Resource_07xcp")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
 [sub_resource type="Resource" id="Resource_htn7a"]
 script = ExtResource("13_2py1k")
 category = "Power"
 name = "Fan Away"
 description = "Once during your turn (before your attack), you may flip a coin. If heads, return 1 Energy card attached to the Defending Pokémon to your opponent's hand."
 prompt = ExtResource("12_ayb4x")
-effect = SubResource("Resource_07xcp")
+effects = Array[ExtResource("6_jiv6j")]([SubResource("Resource_xmy6c")])
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 
 [sub_resource type="Resource" id="Resource_4y00o"]

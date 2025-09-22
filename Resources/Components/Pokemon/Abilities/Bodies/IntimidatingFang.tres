@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Ability" load_steps=5 format=3 uid="uid://crsvjx8rq731x"]
+[gd_resource type="Resource" script_class="Ability" load_steps=6 format=3 uid="uid://crsvjx8rq731x"]
 
+[ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="1_n8448"]
 [ext_resource type="Resource" uid="uid://cmj80wa0ybso5" path="res://Resources/Components/Effects/Buff/Intimidate.tres" id="1_t1vxt"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_n8448"]
 [ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="3_hgo70"]

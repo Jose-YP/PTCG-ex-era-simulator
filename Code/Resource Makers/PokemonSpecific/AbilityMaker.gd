@@ -27,7 +27,6 @@ class_name Ability
 ##As long as the prompt is passed this effect will activate without calling for any occurances from other slots
 @export var passive: EffectCall
 ##This will call an ability activation
-@export var effect: EffectCall
 @export var shared_prompt: bool = true
 @export var effects: Array[EffectCollect]
 
@@ -109,9 +108,10 @@ func has_effect(effect_types: Array[String]):
 	if passive:
 		if passive.has_effect_type(effect_types):
 			return true
-	if effect:
-		if effect.has_effect_type(effect_types):
-			return true
+	if effects.size() != 0:
+		for effect in effects:
+			if ToolBool.effect_collect_contains(effect, effect_types):
+				return true
 	return false
 #endregion
 
@@ -131,9 +131,11 @@ func activate_passive() -> bool:
 	SignalBus.slot_change_failed.emit(passive.get_slot_changes())
 	return false
 
+#So far prompt seems to evaluate as expected so no prompts in effect collects seems necessary yet
 func activate_ability():
 	if not general_allowed(attatched_to):
 		return
+	
 	if prompt:
 		if prompt.has_check_prompt():
 			var result: bool = prompt.check_prompt()
@@ -158,7 +160,9 @@ func activate_ability():
 		Globals.fundies.record_single_src_trg(attatched_to)
 	
 	await Globals.fundies.ui_actions.play_ability_activate(attatched_to, self)
-	await effect.play_effect()
+	
+	for effect in effects:
+		await effect.effect_collect_play()
 	
 	if independent_src_trg:
 		Globals.fundies.remove_top_source_target()

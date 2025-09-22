@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Pokemon" load_steps=16 format=3 uid="uid://dvteh4sj66jw4"]
+[gd_resource type="Resource" script_class="Pokemon" load_steps=17 format=3 uid="uid://dvteh4sj66jw4"]
 
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_vrvrl"]
 [ext_resource type="Resource" uid="uid://be6718keco2mu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/R1C2.tres" id="2_luf0m"]
@@ -34,12 +34,17 @@ attack_data = SubResource("Resource_6620x")
 script = ExtResource("7_cmum5")
 search = ExtResource("8_5jabs")
 
+[sub_resource type="Resource" id="Resource_vrvrl"]
+script = ExtResource("4_hj2au")
+success = SubResource("Resource_4ym1n")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
 [sub_resource type="Resource" id="Resource_3mj0j"]
 script = ExtResource("9_kxwsk")
 category = "Power"
 name = "Firestarter"
 description = "Once during your turn (before your attack), you may attach a {Fire} Energy card from your discard pile to 1 of your Benched Pokémon."
-effect = SubResource("Resource_4ym1n")
+effects = Array[ExtResource("4_hj2au")]([SubResource("Resource_vrvrl")])
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 
 [resource]

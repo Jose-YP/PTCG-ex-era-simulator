@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=20 format=3 uid="uid://bd3x4rf00qjqr"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=21 format=3 uid="uid://bd3x4rf00qjqr"]
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_jkipr"]
 [ext_resource type="Texture2D" uid="uid://ceq4w3dpfkpjf" path="res://Art/Cards/1 ex Ruby & Saphire/22.jpg" id="1_pxig1"]
@@ -44,6 +44,11 @@ script = ExtResource("9_8ns45")
 dmgManip = SubResource("Resource_ivndt")
 metadata/_custom_type_script = "uid://dmulm3x3dj842"
 
+[sub_resource type="Resource" id="Resource_7a6ot"]
+script = ExtResource("5_86nuf")
+success = SubResource("Resource_ikewq")
+metadata/_custom_type_script = "uid://k25kag4lnway"
+
 [sub_resource type="Resource" id="Resource_6ppf6"]
 script = ExtResource("13_051yb")
 name = "Rough Skin"
@@ -51,7 +56,7 @@ description = "If [name] is your Active Pokémon and is damaged by an opponent's
 affected_by_condition = false
 how_often = "Infinite"
 occurance = ExtResource("9_544qj")
-effect = SubResource("Resource_ikewq")
+effects = Array[ExtResource("5_86nuf")]([SubResource("Resource_7a6ot")])
 metadata/_custom_type_script = "uid://bs2y8ocljilv8"
 
 [sub_resource type="Resource" id="Resource_v0xfh"]
