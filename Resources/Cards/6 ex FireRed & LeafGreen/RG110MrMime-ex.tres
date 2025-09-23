@@ -21,7 +21,6 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_nbay4"]
 script = ExtResource("6_le7p5")
-description = "Immune to Odd Numbered Damage less than 190"
 stackable = true
 operation = "Replace"
 odd_immunity = true

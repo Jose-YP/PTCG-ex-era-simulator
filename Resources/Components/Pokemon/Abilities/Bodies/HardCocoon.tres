@@ -10,7 +10,6 @@
 
 [sub_resource type="Resource" id="Resource_llrqx"]
 script = ExtResource("3_3d1vd")
-description = "Reduced damage by 30 after applying weak/res"
 stackable = true
 operation = "Replace"
 defense = 30

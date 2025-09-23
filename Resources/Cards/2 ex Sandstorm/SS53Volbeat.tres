@@ -41,7 +41,6 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_41vtf"]
 script = ExtResource("12_1jjyy")
-description = "Retreat cost is 0"
 stackable = true
 operation = "Replace"
 retreat_change = -10

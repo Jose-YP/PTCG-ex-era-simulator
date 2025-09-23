@@ -37,7 +37,6 @@ metadata/_custom_type_script = "uid://b85jmc7067bjc"
 
 [sub_resource type="Resource" id="Resource_3qxn5"]
 script = ExtResource("2_tf38m")
-description = "Damage from opposing Pokemon-ex reduced by 10 after weak/res."
 stackable = true
 against = ExtResource("1_420ij")
 defense = 10
@@ -57,7 +56,6 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [sub_resource type="Resource" id="Resource_r81sp"]
 script = ExtResource("2_tf38m")
-description = "Immune to special conditions."
 condition_immune = 31
 recieves = ExtResource("9_3qxn5")
 metadata/_custom_type_script = "uid://coojhwe6m20gd"

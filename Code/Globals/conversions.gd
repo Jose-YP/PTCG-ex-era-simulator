@@ -93,21 +93,28 @@ func side_into_string(side: Consts.SIDES) -> String:
 			return "opposing "
 	return ""
 
-func combine_strings(string_array: Array[String], boolean_and: bool = true) -> String:
+func combine_strings(string_array: Array[String], conjuction: String = "and") -> String:
 	var final: String = ""
 	
 	for i in range(string_array.size()):
 		if final == "":
 			final += string_array[i]
-		elif i == string_array.size() - 1:
-			if boolean_and:
-				final += str(" and ", string_array[i])
-			else:
-				final += str(" or ", string_array[i])
+		elif i == string_array.size() - 1 and conjuction:
+			final += str(" ", conjuction, " ", string_array[i])
 		else:
-			final += str(", ", string_array[i])
-	
+			if conjuction:
+				final += str(", ", string_array[i])
+			else:
+				final += str(" ", string_array[i])
 	return final
+
+#SlotAsk, Identifier
+func combine_flags_to_string(flags_strings: Array[String], flag_int: int):
+	var looking_for: Array[String]
+	for flag in range(flags_strings.size()):
+		if flag_int & 2 ** flag: looking_for.append(flags_strings[flag])
+	
+	return Convert.combine_strings(looking_for, "or")
 
 #endregion
 

@@ -91,12 +91,12 @@ func describe() -> String:
 		if disable_retreat:
 			specific.append("retreat")
 		
-		disables.append(Convert.combine_strings(specific, false))
+		disables.append(Convert.combine_strings(specific, "or"))
 	
 	if attack != Consts.DIS_ATK.CAN:
 		var attack_str: String
 		
-		attack_str = str("use", Convert.combine_strings(attack_names, false)
+		attack_str = str("use", Convert.combine_strings(attack_names, "or")
 			if attack_names.size() != 0 else " attacks")
 		if attack == Consts.DIS_ATK.FLIP:
 			attack_str += " unless you flip heads"
@@ -108,7 +108,7 @@ func describe() -> String:
 			disables.append("use attack effects")
 		else:
 			disables.append(str("use the effect of ",
-				Convert.combine_strings(attack_names, false)))
+				Convert.combine_strings(attack_names, "or")))
 	
 	print(disables)
 	final = str("Cannot ", Convert.combine_strings(disables))

@@ -6,20 +6,8 @@
 [resource]
 script = ExtResource("2_qvqwn")
 description = "\"Holon\" Supporter"
-must_be_different = false
 broad_class = 2
-exactly = false
+name_chec = 1
 name_array = Array[String](["Holon"])
-comparison_type = 1
-type = 0
-HP = -10
-evolves_from = false
-rare_candy = false
-inclusive_class = true
-poke_class = 0
-owner = 0
-stage = 0
 trainer_classes = 2
-energy_class = 3
-energy_provides = ExtResource("1_bmxo8")
 metadata/_custom_type_script = "uid://uplawvwcwl8y"

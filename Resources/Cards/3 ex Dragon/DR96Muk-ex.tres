@@ -61,8 +61,8 @@ metadata/_custom_type_script = "uid://mkjynqda7q5g"
 
 [sub_resource type="Resource" id="Resource_8qem1"]
 script = ExtResource("12_qq28v")
-disable_power = true
 disable_body = true
+disable_power = true
 recieves = SubResource("Resource_t4ery")
 metadata/_custom_type_script = "uid://c0ishgbxk63dg"
 

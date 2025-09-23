@@ -5,21 +5,6 @@
 
 [resource]
 script = ExtResource("1_4xpar")
-description = null
-must_be_different = null
 broad_class = 4
-exactly = null
-name_chec = 0
-name_array = Array[String]([])
-comparison_type = 1
 type = 511
-HP = -10
-evolves_from = null
-rare_candy = null
-inclusive_class = null
-poke_class = null
-owner = null
-stage = null
-trainer_classes = null
-energy_class = null
 energy_provides = ExtResource("1_7gqec")

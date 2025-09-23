@@ -1,3 +1,4 @@
+@tool
 @icon("uid://de16psjd7mfa")
 extends Resource
 class_name Identifier
@@ -11,9 +12,7 @@ class_name Identifier
 @export_enum("Exact", "Contains", "Or") var name_chec: int = 0
 @export var name_array: Array[String] = []
 @export_enum("LessEq", "GreaterEq") var comparison_type: int = 1
-@export_flags("Grass","Fire","Water",
-"Lightning","Psychic","Fighting",
-"Darkness","Metal","Colorless") var type: int = 0 #0 means search doesn't care about type
+@export_tool_button("Describe") var button: Callable = describe
 
 @export_group("Pokemon Categories")
 @export_range(-10, 200, 10) var HP: int = -10
@@ -25,6 +24,8 @@ class_name Identifier
 @export_flags("non-ex", "ex", "baby", "delta", "star") var poke_class: int = 0
 @export_flags("Aqua", "Magma", "Rocket", "Holon") var owner: int = 0
 @export_flags("Basic", "Stage 1", "Stage 2") var stage: int = 0
+@export_flags("Grass","Fire","Water","Lightning","Psychic",
+"Fighting", "Darkness","Metal","Colorless") var type: int = 0 #0 means search doesn't care about type
 
 @export_group("Trainer Categories")
 @export_flags("Item", "Supporter",
@@ -198,5 +199,87 @@ func edit_in_type(type_flags: int):
 	type = 0
 	type |= type_flags
 
-func describe():
-	pass
+func describe() -> String:
+	var final: String = ""
+	
+	var to_add: Array[String]
+	
+	if broad_class & 1 != 0:
+		var mon_string: String = ""
+		var specifically: String = ""
+		var bef_hold: Array[String]
+		var after_hold: Array[String]
+		
+		if HP != -10:
+			after_hold.append(str("have ", "at least " if comparison_type else\
+				" at most", HP, " HP" ))
+		if evolves_from:
+			if Engine.is_editor_hint():
+				after_hold.append("Evolves from target")
+			else:
+				pass
+		if stage != 0 and stage != 7 and stage != 6:
+			bef_hold.append(Convert.combine_flags_to_string(\
+				["basic", "stage 1", "stage 2"], stage))
+		if poke_class != 0 and poke_class != 31:
+			bef_hold.append(str("" if inclusive_class else "non-",
+				Convert.combine_flags_to_string(\
+				["non-ex", "ex", "baby", "delta", "star"], poke_class)))
+		if owner != 0 and owner != 15:
+			bef_hold.append(Convert.combine_flags_to_string(\
+				["Aqua", "Magma", "Rocket", "Holon"], owner))
+		if stage == 6: bef_hold.append("Evolution")
+		
+		if name_array.size() != 0 and name_chec == 0:
+			specifically += Convert.combine_strings(name_array)
+		else:
+			specifically += "Pokemon"
+		mon_string = str(Convert.combine_strings(bef_hold, ""), "" if bef_hold.size() == 0\
+		else " ", specifically, "" if after_hold.size() == 0 else\
+		 " that " ,Convert.combine_strings(after_hold))
+		
+		if mon_string != "":
+			to_add.append(mon_string)
+	
+	if broad_class & 2 != 0:
+		var train_string: String = ""
+		
+		if trainer_classes != 0 and trainer_classes != 63:
+			train_string = Convert.combine_flags_to_string(["Unlabled", "Supporter",
+				"Tool", "Stadium", "TM", "RSM"], trainer_classes)
+			train_string += " "
+		
+		train_string += "Trainer "
+		
+		if train_string != "":
+			to_add.append(train_string)
+	
+	if broad_class & 4 != 0:
+		var en_string: String = ""
+		
+		match energy_class:
+			1:
+				en_string = "Basic Energy"
+			2:
+				en_string = "Special Energy"
+			_:
+				en_string = "Energy"
+		
+		if en_string != "":
+			to_add.append(en_string)
+	
+	final = Convert.combine_strings(to_add, "or")
+	
+	if must_be_different:
+		final = str("different types of ", final)
+	
+	if name_chec != 0:
+		final += str("that contains ", Convert.combine_strings(name_array, "or"), " in the name")
+	
+	if final == "":
+		final = "any"
+	
+	#final += " cards"
+	
+	print(final)
+	return final

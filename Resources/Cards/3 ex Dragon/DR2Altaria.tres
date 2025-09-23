@@ -15,7 +15,6 @@
 
 [sub_resource type="Resource" id="Resource_484ee"]
 script = ExtResource("6_yi5yq")
-description = "Attacks deal 40 more damage before weak/res"
 stackable = true
 after_weak_res = false
 operation = "Replace"

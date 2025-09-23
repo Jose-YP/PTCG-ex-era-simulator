@@ -36,7 +36,6 @@ metadata/_custom_type_script = "uid://b85jmc7067bjc"
 
 [sub_resource type="Resource" id="Resource_38o81"]
 script = ExtResource("12_fsd37")
-description = "Retreat cost is 0"
 operation = "Replace"
 retreat_change = -1
 recieves = ExtResource("8_14lbo")
@@ -55,7 +54,6 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [sub_resource type="Resource" id="Resource_qmwrs"]
 script = ExtResource("12_fsd37")
-description = "Immune to effects from attacks."
 attack_effect_immune = true
 recieves = ExtResource("8_14lbo")
 metadata/_custom_type_script = "uid://coojhwe6m20gd"

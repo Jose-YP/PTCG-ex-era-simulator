@@ -58,7 +58,6 @@ metadata/_custom_type_script = "uid://mkjynqda7q5g"
 
 [sub_resource type="Resource" id="Resource_c4ekq"]
 script = ExtResource("12_sk1pa")
-description = "Take -40 dmg from opponents with special energy"
 against = SubResource("Resource_sl83c")
 defense = 40
 recieves = ExtResource("12_f8edd")

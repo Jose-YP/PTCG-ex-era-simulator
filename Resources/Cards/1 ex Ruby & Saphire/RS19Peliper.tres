@@ -17,7 +17,6 @@
 
 [sub_resource type="Resource" id="Resource_6wn4a"]
 script = ExtResource("6_qarbw")
-description = "Stockpile and Spit Up deal +40 Damage"
 stackable = true
 attack = 40
 attack_names = Array[String](["Stockpile", "Spit Up"])

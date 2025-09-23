@@ -65,7 +65,6 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_ivyre"]
 script = ExtResource("11_jvudk")
-description = "It costs {Colorless}{Colorless} to retreat this pokemon"
 stackable = true
 retreat_change = 2
 recieves = ExtResource("10_tayn0")

@@ -169,7 +169,7 @@ func describe() -> String:
 				specific.append("Sleep")
 			if condition_immune & 16:
 				specific.append("Confusion")
-		buffs.append(str("Immune to ", Convert.combine_strings(specific)))
+		buffs.append(str("Immune to ", Convert.combine_strings(specific, "and")))
 	
 	if damage_immune or body_immune or power_immune or trainer_immune\
 	 or odd_immunity or even_immunity or attack_effect_immune:
@@ -191,7 +191,7 @@ func describe() -> String:
 		if even_immunity:
 			specific.append("even numbered direct damage from attacks")
 		print("HUH?")
-		buffs.append(str("Immune to ", Convert.combine_strings(specific)))
+		buffs.append(str("Immune to ", Convert.combine_strings(specific, "and")))
 	
 	if weakness or resistance or effects:
 		var specific: Array[String]
@@ -201,9 +201,9 @@ func describe() -> String:
 			specific.append("Resistance")
 		if effects:
 			specific.append("Effects")
-		buffs.append(str("Ignore ", Convert.combine_strings(specific), " when attacking"))
+		buffs.append(str("Ignore ", Convert.combine_strings(specific, "and"), " when attacking"))
 	
-	final = str(Convert.combine_strings(buffs))
+	final = str(Convert.combine_strings(buffs, "and"))
 	
 	if against:
 		final += str(" against ", against.print_ask().to_lower())

@@ -6,7 +6,6 @@
 
 [sub_resource type="Resource" id="Resource_w2r5q"]
 script = ExtResource("2_yoosd")
-description = "Deal 10 less damage to the opponent after weak/res"
 stackable = true
 attack = -10
 recieves = ExtResource("1_3bqsv")

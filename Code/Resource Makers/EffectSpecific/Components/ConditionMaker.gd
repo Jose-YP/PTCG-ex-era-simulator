@@ -70,4 +70,4 @@ func print_condition() -> String:
 	if shockwave:
 		conditions.append("shockwaved")
 	
-	return Convert.combine_strings(conditions, false)
+	return Convert.combine_strings(conditions, "or")

@@ -44,7 +44,6 @@ metadata/_custom_type_script = "uid://mkjynqda7q5g"
 
 [sub_resource type="Resource" id="Resource_8fs6g"]
 script = ExtResource("12_rf851")
-description = "Take 30 less damage from {Fightning} and {Darkness} Pokemon"
 against = SubResource("Resource_6k8kd")
 defense = 30
 recieves = ExtResource("11_njfcx")

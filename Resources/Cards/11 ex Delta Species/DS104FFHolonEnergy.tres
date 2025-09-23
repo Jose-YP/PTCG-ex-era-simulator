@@ -48,7 +48,6 @@ metadata/_custom_type_script = "uid://k25kag4lnway"
 
 [sub_resource type="Resource" id="Resource_g85gu"]
 script = ExtResource("7_spbdi")
-description = "Ignore the defender's reistances."
 stackable = true
 operation = "Replace"
 resistance = true

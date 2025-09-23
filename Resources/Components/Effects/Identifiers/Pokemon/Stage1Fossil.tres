@@ -6,20 +6,7 @@
 [resource]
 script = ExtResource("2_7gthr")
 description = "Omanyte, Kabuto, Aerodactyl, Aerodactyl ex, Lileep, or Anorith"
-must_be_different = false
 broad_class = 1
 exactly = true
 name_array = Array[String](["Omanyte", "Kabuto", "Aerodactyl", "Aerodactyl ex", "Lileep", "Anorith"])
-comparison_type = 1
-type = 0
-HP = -10
-evolves_from = false
-rare_candy = false
-inclusive_class = true
-poke_class = 0
-owner = 0
-stage = 0
-trainer_classes = 0
-energy_class = 3
-energy_provides = ExtResource("1_y1ur7")
 metadata/_custom_type_script = "uid://uplawvwcwl8y"

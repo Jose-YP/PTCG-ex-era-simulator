@@ -69,7 +69,6 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_rboeu"]
 script = ExtResource("14_sskp3")
-description = "Psychic Force now costs {Lightning}{Metal}{Colorless}"
 cost_modifier = "Replace"
 attack_cost = ExtResource("12_kyv2a")
 attack_names = Array[String](["Psychic Force"])

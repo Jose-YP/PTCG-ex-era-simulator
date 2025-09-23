@@ -6,20 +6,6 @@
 [resource]
 script = ExtResource("1_rm54d")
 description = "Team Magma Pokemon"
-must_be_different = false
 broad_class = 1
-exactly = false
-name_array = Array[String]([])
-comparison_type = 1
-type = 0
-HP = -10
-evolves_from = false
-rare_candy = false
-inclusive_class = true
-poke_class = 0
 owner = 2
-stage = 0
-trainer_classes = 0
-energy_class = 3
-energy_provides = ExtResource("1_poqsm")
 metadata/_custom_type_script = "uid://uplawvwcwl8y"

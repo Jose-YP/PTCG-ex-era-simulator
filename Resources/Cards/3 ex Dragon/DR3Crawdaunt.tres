@@ -21,7 +21,6 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_x72f0"]
 script = ExtResource("6_0rblx")
-description = "Deal +10 Damage before weak/res"
 stackable = true
 after_weak_res = false
 attack = 10

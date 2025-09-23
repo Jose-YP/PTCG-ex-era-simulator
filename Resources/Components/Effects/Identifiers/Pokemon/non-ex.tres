@@ -1,21 +1,12 @@
-[gd_resource type="Resource" script_class="Identifier" load_steps=2 format=3 uid="uid://ccyylno0d5ync"]
+[gd_resource type="Resource" script_class="Identifier" load_steps=3 format=3 uid="uid://ccyylno0d5ync"]
 
+[ext_resource type="Resource" uid="uid://c7itelq8jtjc2" path="res://Resources/Components/EnData/Rainbow.tres" id="1_gwt68"]
 [ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="1_vtieb"]
 
 [resource]
 script = ExtResource("1_vtieb")
 description = "Pokemon (excluding Pokemon-ex)"
-must_be_different = false
 broad_class = 1
-exactly = false
-contains = ""
-type = 0
-evolves_from = false
-rare_candy = false
 inclusive_class = false
 poke_class = 2
-owner = 0
-stage = 0
-trainer_classes = 0
-energy_class = 3
 metadata/_custom_type_script = "uid://uplawvwcwl8y"

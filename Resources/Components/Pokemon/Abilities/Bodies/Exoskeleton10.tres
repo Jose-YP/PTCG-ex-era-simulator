@@ -8,7 +8,6 @@
 
 [sub_resource type="Resource" id="Resource_ikdw4"]
 script = ExtResource("2_crkom")
-description = "Damage taken reduced by 10 after weak/res"
 stackable = true
 defense = 10
 recieves = ExtResource("1_2emsj")

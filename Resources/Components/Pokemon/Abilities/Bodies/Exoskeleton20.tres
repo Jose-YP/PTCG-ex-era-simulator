@@ -8,7 +8,6 @@
 
 [sub_resource type="Resource" id="Resource_okor1"]
 script = ExtResource("2_66nos")
-description = "Damage taken reduced by 20 after weak/res"
 stackable = true
 operation = "Replace"
 defense = 20

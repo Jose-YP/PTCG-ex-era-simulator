@@ -47,7 +47,6 @@ metadata/_custom_type_script = "uid://b0fgi2nbb5lf3"
 
 [sub_resource type="Resource" id="Resource_cx83b"]
 script = ExtResource("12_skm8q")
-description = "Attacks cost {Colorless} more to use"
 stackable = true
 operation = "Replace"
 attack_cost = ExtResource("10_yp58i")

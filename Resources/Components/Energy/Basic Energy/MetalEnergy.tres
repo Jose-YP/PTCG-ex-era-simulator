@@ -11,7 +11,6 @@
 [sub_resource type="Resource" id="Resource_w1pwm"]
 resource_local_to_scene = true
 script = ExtResource("3_b0id2")
-description = "Reduce damage by 10 after weak/res"
 stackable = true
 defense = 10
 recieves = ExtResource("5_tpgwn")
