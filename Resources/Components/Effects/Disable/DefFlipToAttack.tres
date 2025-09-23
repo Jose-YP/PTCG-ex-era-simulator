@@ -1,23 +1,8 @@
-[gd_resource type="Resource" script_class="EffectCall" load_steps=4 format=3 uid="uid://tqn8fn4qsn2h"]
+[gd_resource type="Resource" script_class="EffectCall" load_steps=3 format=3 uid="uid://tqn8fn4qsn2h"]
 
-[ext_resource type="Script" uid="uid://c0ishgbxk63dg" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/DisableMaker.gd" id="1_6menq"]
+[ext_resource type="Resource" uid="uid://ovi6aaco5q03" path="res://Resources/Components/Effects/Disable/DefSelfFlipAttack.tres" id="1_6menq"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_pdc7v"]
-
-[sub_resource type="Resource" id="Resource_ebbnp"]
-script = ExtResource("1_6menq")
-side = 2
-slot = 5
-duration = -1
-no_weakness = false
-no_resistance = false
-instead_of_damage = false
-do_nothing = false
-attack = 1
-power = 0
-retreat_duration = 1
-disable_retreat = false
 
 [resource]
 script = ExtResource("2_pdc7v")
-order = Array[int]([])
-disable = SubResource("Resource_ebbnp")
+disable = ExtResource("1_6menq")

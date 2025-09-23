@@ -6,7 +6,7 @@
 [ext_resource type="Resource" uid="uid://b1rwmggf7a4do" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless2.tres" id="3_kjfcm"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="4_n4tqw"]
 [ext_resource type="Resource" uid="uid://ceo3bpqlglf5o" path="res://Resources/Components/Pokemon/Attacks/AttackData/30Dmg.tres" id="4_nq5u1"]
-[ext_resource type="Resource" uid="uid://c2uvm38pnk5uy" path="res://Resources/Components/Effects/Buff/Immune2DarkName.tres" id="5_kjfcm"]
+[ext_resource type="Resource" uid="uid://c2uvm38pnk5uy" path="res://Resources/Components/Effects/Buff/Immunity/Immune2DarkName.tres" id="5_kjfcm"]
 [ext_resource type="Resource" uid="uid://dpovjlfpsypwe" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless3.tres" id="5_nq5u1"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="7_wy6b1"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="9_parpn"]

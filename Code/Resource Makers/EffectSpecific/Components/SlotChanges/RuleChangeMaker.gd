@@ -1,3 +1,4 @@
+@tool
 extends SlotChange
 class_name RuleChange
 

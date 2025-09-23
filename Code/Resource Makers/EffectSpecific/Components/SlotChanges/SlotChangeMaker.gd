@@ -1,3 +1,4 @@
+@tool
 extends Resource
 class_name SlotChange
 
@@ -17,6 +18,7 @@ class_name SlotChange
 ##[br]-2 means forever, no conditions need to be checked afterwards
 ##[br]otherwise the effect lasts for this many turns 
 @export var duration: int = -1
+@export_tool_button("Describe") var button: Callable = describe
 
 signal finished
 
@@ -50,4 +52,16 @@ func how_display() -> Dictionary[String, bool]:
 			return {"TypeeChange" : false}
 	
 	return {"RuleChange" : true}
-	
+
+func describe():
+	match get_script().get_global_name():
+		"Buff":
+			pass
+		"Disable":
+			pass
+		"Override":
+			pass
+		"TypeChange":
+			pass
+		"RuleChange":
+			pass

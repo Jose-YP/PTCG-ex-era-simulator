@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Buff" load_steps=4 format=3 uid="uid://1siwtrlhj518"]
+
+[ext_resource type="Resource" uid="uid://bydi0pyqva0ly" path="res://Resources/Components/Effects/Asks/Class&Owner/OthExMon.tres" id="1_s58x4"]
+[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="2_7dub8"]
+[ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/BuffMaker.gd" id="3_7omjl"]
+
+[resource]
+script = ExtResource("3_7omjl")
+description = "Immune to attacks and attack effects from Pokemon ex"
+stackable = true
+against = ExtResource("1_s58x4")
+attack_effect_immune = true
+damage_immune = true
+recieves = ExtResource("2_7dub8")
+metadata/_custom_type_script = "uid://coojhwe6m20gd"

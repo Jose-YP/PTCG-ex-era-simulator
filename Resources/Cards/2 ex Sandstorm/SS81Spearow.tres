@@ -7,7 +7,7 @@
 [ext_resource type="Resource" uid="uid://ekj1myy642kh" path="res://Resources/Components/Effects/Prompts/PromptHeads.tres" id="4_dew0p"]
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="5_cisvk"]
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="5_dxuyr"]
-[ext_resource type="Resource" uid="uid://dnr7ljin1eclj" path="res://Resources/Components/Effects/Buff/FullImmunity1Turn.tres" id="6_pc2u7"]
+[ext_resource type="Resource" uid="uid://dnr7ljin1eclj" path="res://Resources/Components/Effects/Buff/Immunity/FullImmunity1Turn.tres" id="6_pc2u7"]
 [ext_resource type="Resource" uid="uid://ci4gahbdoaqcu" path="res://Resources/Components/Pokemon/Attacks/EffectlessAttacks/Peck1-10.tres" id="7_t2jsv"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="8_akca5"]
 

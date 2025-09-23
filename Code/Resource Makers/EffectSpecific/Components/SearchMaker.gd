@@ -1,3 +1,4 @@
+@icon("uid://c7d5m5u2x8ter")
 extends Resource
 class_name Search
 

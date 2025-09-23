@@ -2,7 +2,7 @@
 
 [ext_resource type="Resource" uid="uid://cyaqpq76mby4m" path="res://Resources/Components/Effects/Asks/Class&Owner/AtkEvolvedMon.tres" id="1_qq2ix"]
 [ext_resource type="Script" uid="uid://caj1pm8erar2a" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="2_50l8q"]
-[ext_resource type="Resource" uid="uid://cv3vlfatr1glg" path="res://Resources/Components/Effects/Buff/DblRainbow-10Atk.tres" id="2_717jw"]
+[ext_resource type="Resource" uid="uid://cv3vlfatr1glg" path="res://Resources/Components/Effects/Buff/Stat/DblRainbow-10Atk.tres" id="2_717jw"]
 [ext_resource type="Resource" uid="uid://vk18jkchsq3v" path="res://Resources/Components/EnData/Colorless.tres" id="2_ykgg5"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="4_7o04u"]
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="4_573ab"]

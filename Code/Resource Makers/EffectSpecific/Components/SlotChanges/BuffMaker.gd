@@ -1,8 +1,7 @@
 @icon("res://Art/ProjectSpecific/sword(1).png")
+@tool
 extends SlotChange
 class_name Buff
-
-@export_multiline var description: String
 
 ##If this is stackable or it would never matter ignore this
 ##This determine what identifies two buffs as the same
@@ -140,24 +139,25 @@ func how_display() -> Dictionary[String, bool]:
 	dict["ETC"] = false
 	return dict
 
-func make_description() -> String:
+func describe() -> String:
 	var final: String
 	var buffs: Array[String]
 	
-	if modify & 1 != 0:
+	if add_hp != 0:
 		buffs.append(str("HP ", get_stat_string(add_hp), add_hp))
-	if modify & 2 != 0:
+	if attack != 0:
 		buffs.append(str("Attack ", get_stat_string(attack), attack))
-	if modify & 4 != 0:
+	if defense != 0:
 		buffs.append(str("Defense ", get_stat_string(attack), defense))
-	if modify & 8 != 0:
-		buffs.append(str("Retreat Cost ", get_stat_string(attack), retreat_change))
+	if retreat_change != 0:
+		print(modify, retreat_change)
+		buffs.append(str("Retreat Cost ", get_stat_string(attack), 0 if -10 else retreat_change))
 	
 	#Check Immunities
 	if not condition_immune == 0:
 		var specific: Array[String]
 		if condition_immune == 31:
-			buffs.append(str("Immune to all conditions"))
+			specific.append(str("all conditions"))
 		else:
 			if condition_immune & 1:
 				specific.append("Poision")
@@ -169,17 +169,16 @@ func make_description() -> String:
 				specific.append("Sleep")
 			if condition_immune & 16:
 				specific.append("Confusion")
-			
-			buffs.append(str("Immune to ", Convert.combine_strings(specific)))
+		buffs.append(str("Immune to ", Convert.combine_strings(specific)))
 	
-	
-	if not condition_immune == 0 or damage_immune\
-	or body_immune or power_immune or trainer_immune\
-	or odd_immunity or even_immunity or attack_effect_immune:
+	if damage_immune or body_immune or power_immune or trainer_immune\
+	 or odd_immunity or even_immunity or attack_effect_immune:
 		var specific: Array[String]
-		if attack_effect_immune:
+		if attack_effect_immune and damage_immune:
+			specific.append("direct damage and effcts from attacks")
+		elif attack_effect_immune:
 			specific.append("effcts from attacks")
-		if damage_immune:
+		elif damage_immune:
 			specific.append("direct damage from attacks")
 		if body_immune:
 			specific.append("effcts from pokebodies")
@@ -191,6 +190,7 @@ func make_description() -> String:
 			specific.append("odd numbered direct damage from attacks")
 		if even_immunity:
 			specific.append("even numbered direct damage from attacks")
+		print("HUH?")
 		buffs.append(str("Immune to ", Convert.combine_strings(specific)))
 	
 	if weakness or resistance or effects:
@@ -203,6 +203,13 @@ func make_description() -> String:
 			specific.append("Effects")
 		buffs.append(str("Ignore ", Convert.combine_strings(specific), " when attacking"))
 	
+	final = str(Convert.combine_strings(buffs))
+	
+	if against:
+		final += str(" against ", against.print_ask().to_lower())
+	
+	print(buffs)
+	print(final)
 	return final
 
 func get_stat_string(stat: int) -> String:

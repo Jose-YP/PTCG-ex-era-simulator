@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dpkus6tgwiwt" path="res://Art/Cards/1 ex Ruby & Saphire/102.jpg" id="1_bpg55"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_vv51n"]
-[ext_resource type="Resource" uid="uid://dnr7ljin1eclj" path="res://Resources/Components/Effects/Buff/FullImmunity1Turn.tres" id="3_pja2x"]
+[ext_resource type="Resource" uid="uid://dnr7ljin1eclj" path="res://Resources/Components/Effects/Buff/Immunity/FullImmunity1Turn.tres" id="3_pja2x"]
 [ext_resource type="Resource" uid="uid://c63wb1xvpkbi8" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Grass1.tres" id="3_y1gw1"]
 [ext_resource type="Resource" uid="uid://ekj1myy642kh" path="res://Resources/Components/Effects/Prompts/PromptHeads.tres" id="4_dwsah"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="4_h2ci7"]

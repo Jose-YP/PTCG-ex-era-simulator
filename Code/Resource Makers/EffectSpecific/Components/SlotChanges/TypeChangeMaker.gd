@@ -1,3 +1,5 @@
+@icon("res://Art/Energy/Symbols/Metal.png")
+@tool
 extends SlotChange
 class_name TypeChange
 

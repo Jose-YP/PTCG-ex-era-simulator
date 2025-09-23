@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="EffectCall" load_steps=3 format=3 uid="uid://dnr7ljin1eclj"]
-
-[ext_resource type="Resource" uid="uid://b0figrvn4kg1r" path="res://Resources/Components/Effects/Prompts/PromptComparator/1TurnImmunity.tres" id="1_cxlrm"]
-[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="2_phux3"]
-
-[resource]
-script = ExtResource("2_phux3")
-order = Array[int]([])
-buff = ExtResource("1_cxlrm")

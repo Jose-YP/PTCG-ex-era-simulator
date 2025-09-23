@@ -1,12 +1,13 @@
 @icon("res://Art/ProjectSpecific/disabled.png")
+@tool
 extends SlotChange
 class_name Disable
 
 @export_group("Side Functions")
 @export var card_type: Identifier
 @export_group("Mon Functions")
-@export var disable_power: bool = false
 @export var disable_body: bool  = false
+@export var disable_power: bool = false
 @export var disable_retreat: bool = false
 @export_group("Attack")
 ##If this isn't -1, then the user must choose x ammount of attacks to disable,
@@ -71,3 +72,45 @@ func check_atk_efct(atk_name: String):
 
 func how_display() -> Dictionary[String, bool]:
 	return {"Disable" : false}
+
+func describe() -> String:
+	var final: String
+	var disables: Array[String]
+	
+	if card_type:
+		disables.append(str("play ", card_type.description, "s"))
+	
+	if disable_power or disable_body or disable_retreat:
+		var specific: Array[String]
+		if disable_power and disable_body:
+			specific.append("use poke-powers or poke-bodies")
+		elif disable_power:
+			specific.append("use poke-powers")
+		elif disable_body:
+			specific.append("use poke-bodies")
+		if disable_retreat:
+			specific.append("retreat")
+		
+		disables.append(Convert.combine_strings(specific, false))
+	
+	if attack != Consts.DIS_ATK.CAN:
+		var attack_str: String
+		
+		attack_str = str("use", Convert.combine_strings(attack_names, false)
+			if attack_names.size() != 0 else " attacks")
+		if attack == Consts.DIS_ATK.FLIP:
+			attack_str += " unless you flip heads"
+		
+		disables.append(attack_str)
+	
+	if disable_atk_effect:
+		if attack_names.size() == 0:
+			disables.append("use attack effects")
+		else:
+			disables.append(str("use the effect of ",
+				Convert.combine_strings(attack_names, false)))
+	
+	print(disables)
+	final = str("Cannot ", Convert.combine_strings(disables))
+	print(final)
+	return final

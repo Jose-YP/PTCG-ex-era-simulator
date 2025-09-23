@@ -39,10 +39,14 @@ const unknown_number: int = 28
 const energy_types: Array[String] = ["Grass", "Fire", "Water", "Lightning",
  "Psychic", "Fighting", "Darkness", "Metal", "Colorless", "Rainbow", "Magma",
  "Aqua", "Dark Metal","FF", "GL", "WP", "React"]
-const energy_icons = ["uid://cujjluirx6yyu", "uid://dd1ywu5fsfsq1",
- "uid://dj2lgcygk1ups","uid://bqqg7qjfq0wqb", "uid://bnpgukh0in14j",
- "uid://chqgfpirjsldj", "uid://bkb5vi5elppq1","uid://gom7mkykamch",
- "uid://dht4h5jns71o5"]
+#const energy_icons = ["uid://cujjluirx6yyu", "uid://dd1ywu5fsfsq1",
+ #"uid://dj2lgcygk1ups","uid://bqqg7qjfq0wqb", "uid://bnpgukh0in14j",
+ #"uid://chqgfpirjsldj", "uid://bkb5vi5elppq1","uid://gom7mkykamch",
+ #"uid://dht4h5jns71o5"]
+const energy_icons: Array[String] = ["uid://c20k4b4y15w3x","uid://dtnnvkljeid2t",
+"uid://wpjiv54hdt5b","uid://ci2r25wupuafk","uid://bffmv3e0yprej","uid://okr70los20g3",
+"uid://b8n2mui1fj4ii", "uid://bscav8ynwl2g3", "uid://dprdtmqbaot04"]
+
 const energy_colors: Array[Color] = [Color.GREEN, Color.RED, Color.AQUA,
  Color.YELLOW, Color.PURPLE, Color.ORANGE_RED, Color.DARK_SLATE_GRAY,
  Color.GRAY, Color.WHITE_SMOKE, Color.VIOLET, Color.WEB_MAROON,

@@ -1,3 +1,4 @@
+@icon("uid://de16psjd7mfa")
 @tool
 extends Resource
 class_name SlotAsk
@@ -275,7 +276,7 @@ func print_ask() -> String:
 		if pokemon_class & 4: class_arr.append("baby")
 		if pokemon_class & 8: class_arr.append("δ")
 		if pokemon_class & 16: class_arr.append("star")
-		if pokemon_class & 32: class_arr.append("dark")
+		if pokemon_class & 32: class_arr.append("\'dark\'")
 		
 		class_str += str("" if class_inclusive else "non-", Convert.combine_strings(class_arr, false), " ")
 	
@@ -292,12 +293,11 @@ func print_ask() -> String:
 			if pokemon_owner & 16: owner_arr.append("Holon")
 			
 			owner_str += str(Convert.combine_strings(owner_arr, false), " ")
-		
 	
 	if pokemon_type != 0 and pokemon_type != 1023:
 		var type_checklist: Array[String] = Convert.flags_to_type_array(pokemon_type)
 		var including: String = "" if type_inclusive else "non-"
-		type_str = str(including, Convert.combine_strings(type_checklist), " ")
+		type_str = str(including, Convert.combine_strings(type_checklist), " type ")
 	
 	if class_str and owner_str:
 		owner_str += "and "

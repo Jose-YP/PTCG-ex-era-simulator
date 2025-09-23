@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="EffectCall" load_steps=5 format=3 uid="uid://cv3vlfatr1glg"]
+
+[ext_resource type="Resource" uid="uid://drcbww84yrlx" path="res://Resources/Components/Effects/Asks/General/Self.tres" id="1_3bqsv"]
+[ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/BuffMaker.gd" id="2_yoosd"]
+[ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_14mud"]
+
+[sub_resource type="Resource" id="Resource_w2r5q"]
+script = ExtResource("2_yoosd")
+description = "Deal 10 less damage to the opponent after weak/res"
+stackable = true
+attack = -10
+recieves = ExtResource("1_3bqsv")
+metadata/_custom_type_script = "uid://coojhwe6m20gd"
+
+[resource]
+script = ExtResource("3_14mud")
+buff = SubResource("Resource_w2r5q")
+metadata/_custom_type_script = "uid://dmulm3x3dj842"

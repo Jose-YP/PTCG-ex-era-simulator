@@ -1,3 +1,4 @@
+@icon("uid://de16psjd7mfa")
 extends Resource
 class_name Identifier
 
@@ -196,3 +197,6 @@ func and_poke_bool(card: Base_Card, based_on: Array[PokeSlot]):
 func edit_in_type(type_flags: int):
 	type = 0
 	type |= type_flags
+
+func describe():
+	pass

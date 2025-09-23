@@ -83,6 +83,7 @@ func has_effect(card: Base_Card, effect_type: Array[String]) -> bool:
 
 func attack_has_effect(attack: Attack, comps: Array[String]) -> bool:
 	var data: AttackData = attack.attack_data
+	print(attack.name)
 	if data.prompt != null:
 		if data.prompt.effect != null:
 			if effect_has_effect_type(data.prompt.effect, comps):

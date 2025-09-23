@@ -1,4 +1,4 @@
-@icon("res://Art/Energy/48px-Fire-attack.png")
+@icon("uid://dtnnvkljeid2t")
 extends MarginContainer
 
 @export var attack: Attack
