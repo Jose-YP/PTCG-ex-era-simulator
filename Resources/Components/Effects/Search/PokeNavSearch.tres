@@ -16,8 +16,8 @@ metadata/_custom_type_script = "uid://cdyba0wadidwb"
 script = ExtResource("2_och1r")
 description = "Pokemon or Energy card"
 broad_class = 5
-type = 511
 stage = 7
+type = 511
 
 [resource]
 script = ExtResource("3_4y5sb")

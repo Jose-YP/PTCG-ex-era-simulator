@@ -109,12 +109,12 @@ func combine_strings(string_array: Array[String], conjuction: String = "and") ->
 	return final
 
 #SlotAsk, Identifier
-func combine_flags_to_string(flags_strings: Array[String], flag_int: int):
+func combine_flags_to_string(flags_strings: Array[String], flag_int: int, conjuction: String = "or"):
 	var looking_for: Array[String]
 	for flag in range(flags_strings.size()):
 		if flag_int & 2 ** flag: looking_for.append(flags_strings[flag])
 	
-	return Convert.combine_strings(looking_for, "or")
+	return Convert.combine_strings(looking_for, conjuction)
 
 #endregion
 

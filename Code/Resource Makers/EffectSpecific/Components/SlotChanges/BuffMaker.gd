@@ -153,6 +153,20 @@ func describe() -> String:
 		print(modify, retreat_change)
 		buffs.append(str("Retreat Cost ", get_stat_string(attack), 0 if -10 else retreat_change))
 	
+	if attack_cost:
+		var new_cost: String = attack_cost.describe()
+		var attack_str: String = "attacks"
+		
+		if attack_names.size() != 0:
+			attack_str = Convert.combine_strings(attack_names, "or")
+		
+		if cost_modifier == "Replace":
+			buffs.append(str("Cost of ", attack_str, " is now ", new_cost))
+		elif cost_modifier == "Add":
+			buffs.append(str("Cost of ", attack_str, " increased by ", new_cost))
+		else:
+			buffs.append(str("Cost of ", attack_str, " lowered by ", new_cost))
+	
 	#Check Immunities
 	if not condition_immune == 0:
 		var specific: Array[String]
@@ -208,8 +222,8 @@ func describe() -> String:
 	if against:
 		final += str(" against ", against.print_ask().to_lower())
 	
-	print(buffs)
-	print(final)
+	print_rich(buffs)
+	print_rich(final)
 	return final
 
 func get_stat_string(stat: int) -> String:

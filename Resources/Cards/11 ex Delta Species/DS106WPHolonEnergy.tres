@@ -1,11 +1,12 @@
-[gd_resource type="Resource" script_class="Base_Card" load_steps=24 format=3 uid="uid://dge3b12by00m4"]
+[gd_resource type="Resource" script_class="Base_Card" load_steps=26 format=3 uid="uid://dge3b12by00m4"]
 
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="1_38o81"]
 [ext_resource type="Script" uid="uid://caj1pm8erar2a" path="res://Code/Resource Makers/CardResources/EnergyMaker.gd" id="1_wlt10"]
 [ext_resource type="Texture2D" uid="uid://cso0ce1vr8ywy" path="res://Art/Cards/11 ex Delta Species/106.jpg" id="2_ojiq1"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_pxit3"]
-[ext_resource type="Resource" uid="uid://bns8h72u2hxqo" path="res://Resources/Components/Effects/Asks/General/AnyMon.tres" id="3_8orlp"]
+[ext_resource type="Resource" uid="uid://b0lup3upo6m4f" path="res://Resources/Components/EnData/Psychic.tres" id="3_14lbo"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="3_kd7ft"]
+[ext_resource type="Script" uid="uid://mkjynqda7q5g" path="res://Code/Resource Makers/GeneralUse/SlotAskMaker.gd" id="4_38o81"]
 [ext_resource type="Resource" uid="uid://bsq014coejys5" path="res://Resources/Components/Effects/Prompts/NonEXHasWaterEn.tres" id="4_gerff"]
 [ext_resource type="Resource" uid="uid://bpn2kuaa687w6" path="res://Resources/Components/EnData/WPHolon.tres" id="5_8orlp"]
 [ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="6_14lbo"]
@@ -14,10 +15,19 @@
 [ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="9_qfefc"]
 [ext_resource type="Script" uid="uid://coojhwe6m20gd" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/BuffMaker.gd" id="12_fsd37"]
 
+[sub_resource type="Resource" id="Resource_fsd37"]
+script = ExtResource("4_38o81")
+side_target = 4
+slot_target = 1
+energy_attatched = 1
+energy_class = "Basic Energy"
+energy_type = ExtResource("3_14lbo")
+metadata/_custom_type_script = "uid://mkjynqda7q5g"
+
 [sub_resource type="Resource" id="Resource_bvyln"]
 script = ExtResource("8_fsd37")
 which = "Slot"
-ask = ExtResource("3_8orlp")
+ask = SubResource("Resource_fsd37")
 slot_vars = "current_card"
 cap = -1
 metadata/_custom_type_script = "uid://vjn146j3ayd6"

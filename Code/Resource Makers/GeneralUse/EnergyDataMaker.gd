@@ -1,4 +1,5 @@
 @icon("res://Art/Energy/48px-Psychic-attack.png")
+@tool
 extends Resource
 class_name EnData
 
@@ -14,6 +15,7 @@ class_name EnData
 @export_flags("Grass","Fire","Water",
 "Lightning","Psychic","Fighting",
 "Darkness","Metal","Colorless") var type: int = 511
+@export_tool_button("Describe") var button: Callable = describe
 
 ##Funciton that tells the game how the energy should be displayed visually
 ##[br]Not every combination of type needs to be accounted for
@@ -42,3 +44,16 @@ func same_type(compared_to: EnData):
 	# 2 & 1023  2 && 1023
 	#printt(compared_to.type, type, compared_to.type & type, compared_to.type && type)
 	return compared_to.type & type != 0
+
+func describe():
+	var final: String
+	
+	if type != 511 and type != 0:
+		final = Convert.combine_flags_to_string(["{Grass}","{Fire}","{Water}",
+		"{Lightning}","{Psychic}","{Fighting}","{Darkness}",
+		"{Metal}","{Colorless}"], type)
+		final = Convert.reformat(final)
+	
+	print_rich(final)
+	
+	return final

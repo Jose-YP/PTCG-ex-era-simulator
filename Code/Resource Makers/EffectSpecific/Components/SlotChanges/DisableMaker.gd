@@ -110,7 +110,7 @@ func describe() -> String:
 			disables.append(str("use the effect of ",
 				Convert.combine_strings(attack_names, "or")))
 	
-	print(disables)
+	print_rich(disables)
 	final = str("Cannot ", Convert.combine_strings(disables))
-	print(final)
+	print_rich(final)
 	return final

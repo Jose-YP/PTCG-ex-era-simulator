@@ -271,33 +271,27 @@ func print_ask() -> String:
 	#Check if the pokemon is in the defined class
 	if pokemon_class != 0 and pokemon_class != 63:
 		print(pokemon_class)
-		var class_arr: Array[String]
-		if pokemon_class & 2: class_arr.append("ex")
-		if pokemon_class & 4: class_arr.append("baby")
-		if pokemon_class & 8: class_arr.append("δ")
-		if pokemon_class & 16: class_arr.append("star")
-		if pokemon_class & 32: class_arr.append("\'dark\'")
+		var class_arr: String = Convert.combine_flags_to_string(["","ex",
+			"baby","δ", "star", "\'dark\'"], pokemon_class)
 		
-		class_str += str("" if class_inclusive else "non-", Convert.combine_strings(class_arr, "or"), " ")
+		class_str += str("" if class_inclusive else "non-", class_arr, " ")
 	
 	if pokemon_owner != 0 and pokemon_owner != 31:
 		owner_str += "" if owner_inclusive else "non-"
-		
 		if pokemon_owner == 30:
 			owner_str += "owner's "
 		else:
-			var owner_arr: Array[String]
-			if pokemon_owner & 2: owner_arr.append("Aqua")
-			if pokemon_owner & 4: owner_arr.append("Magma")
-			if pokemon_owner & 8: owner_arr.append("Rocket")
-			if pokemon_owner & 16: owner_arr.append("Holon")
-			
-			owner_str += str(Convert.combine_strings(owner_arr, "or"), " ")
+			owner_str += str(Convert.combine_flags_to_string(["",
+				"Aqua","Magma","Rocket","Holon"],pokemon_owner), " ")
 	
 	if pokemon_type != 0 and pokemon_type != 1023:
-		var type_checklist: Array[String] = Convert.flags_to_type_array(pokemon_type)
 		var including: String = "" if type_inclusive else "non-"
-		type_str = str(including, Convert.combine_strings(type_checklist, "and"), " type ")
+		type_str = Convert.combine_flags_to_string(["{Grass}","{Fire}","{Water}",
+			"{Lightning}","{Psychic}","{Fighting}","{Darkness}",
+			"{Metal}","{Colorless}"], pokemon_type, "and")
+		type_str = Convert.reformat(type_str)
+		
+		type_str = str(including, type_str, " type ")
 	
 	if class_str and owner_str:
 		owner_str += "and "
@@ -305,17 +299,9 @@ func print_ask() -> String:
 	if energy_attatched != -1:
 		en_atch_str += str(comparison, energy_attatched, " ")
 		
-		if en_group != 0 and en_group != 63:
-			if en_group & 1 != 0:
-				pass
-			else:
-				var looking_for: Array[String]
-				if en_group & 2 != 0: looking_for.append("React")
-				if en_group & 4 != 0: looking_for.append("Holon")
-				if en_group & 8 != 0: looking_for.append("Magma")
-				if en_group & 16 != 0: looking_for.append("Aqua")
-				if en_group & 32 != 0: looking_for.append("Rocket")
-				en_atch_str += str(Convert.combine_strings(looking_for, "or"), " ")
+		if en_group != 0 and en_group != 63 and en_group & 1 == 0:
+			en_atch_str += str(Convert.combine_flags_to_string(["","React",
+				"Magma", "Aqua", "Rocket"], en_group), " ")
 		
 		if not energy_inclusive:
 			en_atch_str += "non "
@@ -326,8 +312,7 @@ func print_ask() -> String:
 		
 		if energy_type.type != 0 and energy_type.type != 511:
 			print(energy_type.type)
-			var type_checklist: Array[String] = Convert.flags_to_type_array(energy_type.type)
-			en_atch_str += str(Convert.combine_strings(type_checklist, "or"), " ")
+			en_atch_str += str(energy_type.describe(), " ")
 		
 		en_atch_str += "Energy "
 		if check_cards: en_atch_str += "Card"
@@ -340,15 +325,9 @@ func print_ask() -> String:
 		if desired_condition == 31:
 			cond_str += "Conditioned "
 		else:
-			var cond_arr: Array[String]
-			if desired_condition & 1 != 0: cond_arr.append("Poisioned")
-			if desired_condition & 2 != 0: cond_arr.append("Burned")
-			if desired_condition & 4 != 0: cond_arr.append("Paralyzed")
-			if desired_condition & 8 != 0: cond_arr.append("Sleeping")
-			if desired_condition & 16 != 0: cond_arr.append("Confused")
-			if desired_condition & 32 != 0: cond_arr.append("Imprisioned")
-			if desired_condition & 64 != 0: cond_arr.append("Shockwaved")
-			cond_str += str(Convert.combine_strings(cond_arr, "or"), " ").to_lower()
+			var cond_arr: Array[String] = ["Poisioned", "Burnt", "Paralyzed",
+				"Sleeping", "Confused", "Imprisioned", "Shockwaved"]
+			cond_str += str(Convert.combine_flags_to_string(cond_arr, desired_condition), " ").to_lower()
 	
 	if check_ability:
 		if specific_abilities:
@@ -376,6 +355,6 @@ func print_ask() -> String:
 	var final_string: String = str(side_str, ko_str, evo_str, owner_str, type_str,
 	  class_str, slot_str, cond_str, specifc_str, with_str)
 	
-	print(final_string)
+	print_rich(final_string)
 	
 	return final_string
