@@ -3,10 +3,11 @@
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="1_mmcw3"]
 [ext_resource type="Texture2D" uid="uid://6fx1tkq1t6wm" path="res://Art/Cards/3 ex Dragon/52.jpg" id="1_qh8x5"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="2_rspha"]
-[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_dguuj"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_i28wg"]
 [ext_resource type="Resource" uid="uid://dred0wmkveh7k" path="res://Resources/Components/Pokemon/Attacks/AttackData/PoisionFlipHeads.tres" id="4_yk1hm"]
 [ext_resource type="Resource" uid="uid://bfhbpclxag538" path="res://Resources/Components/Pokemon/Attacks/CommonAttacks/Bubble.tres" id="5_4cq0j"]
+
+[sub_resource type="Resource" id="Resource_m7xdt"]
 
 [sub_resource type="Resource" id="Resource_mgqbb"]
 script = ExtResource("1_mmcw3")

@@ -3,11 +3,12 @@
 [ext_resource type="Texture2D" uid="uid://dgo700rqil4hr" path="res://Art/Cards/5 ex Hidden Legends/36.jpg" id="1_ps36e"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_pvvq1"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_1nc1w"]
-[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_7b70s"]
 [ext_resource type="Resource" uid="uid://jy5duoic7pkq" path="res://Resources/Components/Pokemon/Attacks/AttackData/Confuse.tres" id="4_dufn1"]
 [ext_resource type="Resource" uid="uid://c2gawfb472bm" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/G1C1.tres" id="5_3qfgl"]
 [ext_resource type="Resource" uid="uid://bnsrs2a5hnvkb" path="res://Resources/Components/Pokemon/Attacks/AttackData/20Dmg.tres" id="6_io88k"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="7_yi3qy"]
+
+[sub_resource type="Resource" id="Resource_m7xdt"]
 
 [sub_resource type="Resource" id="Resource_mms8t"]
 script = ExtResource("2_1nc1w")

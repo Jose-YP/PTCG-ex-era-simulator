@@ -2,10 +2,11 @@
 
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_3w1wo"]
 [ext_resource type="Texture2D" uid="uid://c54ccmgr8sg0" path="res://Art/Cards/1 ex Ruby & Saphire/74.jpg" id="1_30iyp"]
-[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_36bho"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="3_ynd82"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="4_42as6"]
 [ext_resource type="Resource" uid="uid://bx4msn26ymyv8" path="res://Resources/Components/Pokemon/Attacks/AttackData/BurnFlipHeads.tres" id="4_h27pu"]
+
+[sub_resource type="Resource" id="Resource_m7xdt"]
 
 [sub_resource type="Resource" id="Resource_t1n52"]
 script = ExtResource("3_ynd82")

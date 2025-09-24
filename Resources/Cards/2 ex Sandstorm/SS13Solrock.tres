@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://c1sh6shitbgya" path="res://Art/Cards/2 ex Sandstorm/13.jpg" id="1_ff0re"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="2_f2vfr"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_2g5o2"]
-[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_tq0ib"]
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="4_5dsco"]
 [ext_resource type="Resource" uid="uid://c83xi8uwwrb6x" path="res://Resources/Components/Effects/Prompts/DefhasEvoMons.tres" id="5_tpkya"]
 [ext_resource type="Resource" uid="uid://dmb635n2d0erk" path="res://Resources/Components/Effects/Draw/Draw3.tres" id="6_oeoma"]
@@ -15,6 +14,8 @@
 [ext_resource type="Script" uid="uid://cswtf00ovs0ss" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/TypeChangeMaker.gd" id="12_3q3da"]
 [ext_resource type="Resource" uid="uid://sddhm3042c13" path="res://Resources/Components/Effects/Prompts/PromptComparator/IsLunatoneInPlay.tres" id="13_i8fqq"]
 [ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="14_411yi"]
+
+[sub_resource type="Resource" id="Resource_m7xdt"]
 
 [sub_resource type="Resource" id="Resource_ocm2o"]
 script = ExtResource("7_ykb1v")

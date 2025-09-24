@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://b276v3qk1k726" path="res://Art/Cards/3 ex Dragon/9.jpg" id="1_qgew3"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="2_7bi16"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_kbcrk"]
-[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_qoeuf"]
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="4_cfyyl"]
 [ext_resource type="Resource" uid="uid://d1b5din1lvjqo" path="res://Resources/Components/EnData/Grass.tres" id="5_odbvm"]
 [ext_resource type="Resource" uid="uid://dqj6gq7pt3dbk" path="res://Resources/Components/Effects/Asks/General/FromSource.tres" id="6_ygp6j"]
@@ -14,6 +13,8 @@
 [ext_resource type="Resource" uid="uid://c63wb1xvpkbi8" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Grass1.tres" id="10_lbtnv"]
 [ext_resource type="Resource" uid="uid://6ehljyrvtpkp" path="res://Resources/Components/Pokemon/Attacks/AttackData/10Sleep.tres" id="11_vatto"]
 [ext_resource type="Resource" uid="uid://b6e0b1hpsm78r" path="res://Resources/Components/Pokemon/Abilities/Bodies/ThickSkin.tres" id="12_qoeuf"]
+
+[sub_resource type="Resource" id="Resource_m7xdt"]
 
 [sub_resource type="Resource" id="Resource_ksw77"]
 script = ExtResource("7_ph2ci")

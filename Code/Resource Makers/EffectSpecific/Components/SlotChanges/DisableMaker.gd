@@ -74,7 +74,8 @@ func how_display() -> Dictionary[String, bool]:
 	return {"Disable" : false}
 
 func describe() -> String:
-	var final: String
+	var final: String = str(recieves.print_ask(false)," get ")\
+		if self.application == "Side" else ""
 	var disables: Array[String]
 	
 	if card_type:

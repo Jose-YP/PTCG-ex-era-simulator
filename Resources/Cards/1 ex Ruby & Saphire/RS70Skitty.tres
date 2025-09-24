@@ -4,9 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://dq6ctyisaa3jy" path="res://Art/Cards/1 ex Ruby & Saphire/70.jpg" id="1_jrsmu"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_de7xk"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="5_b5ut1"]
-[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="5_ok6hf"]
 [ext_resource type="Resource" uid="uid://tf51jsvkdale" path="res://Resources/Components/Pokemon/Attacks/AttackData/EnAttchHand1.tres" id="6_b5ut1"]
 [ext_resource type="Resource" uid="uid://26n17bil6qem" path="res://Resources/Components/Pokemon/Attacks/EffectlessAttacks/Scratch1-10.tres" id="7_ok6hf"]
+
+[sub_resource type="Resource" id="Resource_m7xdt"]
 
 [sub_resource type="Resource" id="Resource_6a5q7"]
 script = ExtResource("2_de7xk")

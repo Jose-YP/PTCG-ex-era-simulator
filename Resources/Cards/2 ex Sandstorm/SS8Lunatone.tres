@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://buovaecqs5wj5" path="res://Art/Cards/2 ex Sandstorm/8.jpg" id="1_vrti1"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="2_gm03l"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_k5bqu"]
-[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_umo0s"]
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="4_7e1x6"]
 [ext_resource type="Resource" uid="uid://c83xi8uwwrb6x" path="res://Resources/Components/Effects/Prompts/DefhasEvoMons.tres" id="5_1vavy"]
 [ext_resource type="Resource" uid="uid://dmb635n2d0erk" path="res://Resources/Components/Effects/Draw/Draw3.tres" id="6_hvbjv"]
@@ -16,6 +15,8 @@
 [ext_resource type="Script" uid="uid://cswtf00ovs0ss" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/TypeChangeMaker.gd" id="12_pwgit"]
 [ext_resource type="Resource" uid="uid://cx7v8cyxlierr" path="res://Resources/Components/Effects/Prompts/PromptComparator/IsSolrockInPlay.tres" id="13_ehemc"]
 [ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="14_72j6n"]
+
+[sub_resource type="Resource" id="Resource_m7xdt"]
 
 [sub_resource type="Resource" id="Resource_ocm2o"]
 script = ExtResource("7_pwgit")

@@ -3,10 +3,11 @@
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_sraj3"]
 [ext_resource type="Texture2D" uid="uid://bcrwdj84ygxrp" path="res://Art/Cards/3 ex Dragon/79.jpg" id="1_uj2gh"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_nqp6a"]
-[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_hpnrm"]
 [ext_resource type="Resource" uid="uid://dsretfiieomka" path="res://Resources/Components/Pokemon/Attacks/AttackData/ParaIfHeads.tres" id="4_wy6vv"]
 [ext_resource type="Resource" uid="uid://cg8tvvy7bhi21" path="res://Resources/Components/Pokemon/Attacks/AttackData/10+20IfHeads.tres" id="5_20nmp"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="6_fk0n1"]
+
+[sub_resource type="Resource" id="Resource_m7xdt"]
 
 [sub_resource type="Resource" id="Resource_ww3tl"]
 script = ExtResource("2_nqp6a")

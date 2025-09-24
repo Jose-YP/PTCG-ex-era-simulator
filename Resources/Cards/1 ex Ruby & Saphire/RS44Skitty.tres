@@ -5,8 +5,9 @@
 [ext_resource type="Resource" uid="uid://b83e7lbsc70my" path="res://Resources/Components/Pokemon/Attacks/PureEffectAttacks/2 Minor Errand-Running.tres" id="3_6a84p"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_m28c6"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="4_156aa"]
-[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="5_6a84p"]
 [ext_resource type="Resource" uid="uid://gbxomf46y0lr" path="res://Resources/Components/Pokemon/Attacks/AttackData/Sleep.tres" id="6_oe7s5"]
+
+[sub_resource type="Resource" id="Resource_m7xdt"]
 
 [sub_resource type="Resource" id="Resource_04bbs"]
 script = ExtResource("2_0ikc4")

@@ -4,10 +4,11 @@
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="2_e8xo1"]
 [ext_resource type="Resource" uid="uid://uv2bigiutmvr" path="res://Resources/Components/Effects/Asks/Class&Owner/AtkEvoNoEXorOwner.tres" id="3_wq45l"]
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="4_e8xo1"]
-[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="4_giyot"]
 [ext_resource type="Resource" uid="uid://c35ffmruy2a6c" path="res://Resources/Components/Pokemon/Attacks/AttackData/PullDown.tres" id="5_glgc3"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="6_voc7b"]
 [ext_resource type="Script" uid="uid://crx447i85kshy" path="res://Code/Resource Makers/CardResources/TrainerMaker.gd" id="7_0imlx"]
+
+[sub_resource type="Resource" id="Resource_m7xdt"]
 
 [sub_resource type="Resource" id="Resource_s63jm"]
 script = ExtResource("6_voc7b")

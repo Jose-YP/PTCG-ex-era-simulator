@@ -2,7 +2,7 @@ extends Resource
 class_name Attack
 
 @export var name: String
-@export var attack_cost: AttackCost = preload("res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres")
+@export var attack_cost: AttackCost = preload("uid://cuyrj2oe73rvu")
 @export var attack_data: AttackData
 
 #region DEBUG

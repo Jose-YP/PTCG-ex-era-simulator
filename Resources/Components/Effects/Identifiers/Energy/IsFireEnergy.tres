@@ -1,21 +1,11 @@
-[gd_resource type="Resource" script_class="Identifier" load_steps=2 format=3 uid="uid://dies0ymvth17j"]
+[gd_resource type="Resource" script_class="Identifier" load_steps=3 format=3 uid="uid://dies0ymvth17j"]
 
+[ext_resource type="Resource" uid="uid://mregpmlqoyvy" path="res://Resources/Components/EnData/Fire.tres" id="1_l03iw"]
 [ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="1_lwlji"]
 
 [resource]
 script = ExtResource("1_lwlji")
 description = "Fire Energy"
-must_be_different = false
 broad_class = 4
-exactly = false
-contains = ""
-type = 2
-evolves_from = false
-rare_candy = false
-inclusive_class = true
-poke_class = 0
-owner = 0
-stage = 0
-trainer_classes = 0
-energy_class = 3
+energy_provides = ExtResource("1_l03iw")
 metadata/_custom_type_script = "uid://uplawvwcwl8y"

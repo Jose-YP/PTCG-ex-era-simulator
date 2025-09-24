@@ -1,16 +1,9 @@
-[gd_resource type="Resource" script_class="Identifier" load_steps=2 format=3 uid="uid://dt0pi71xuk6ih"]
+[gd_resource type="Resource" script_class="Identifier" load_steps=3 format=3 uid="uid://dt0pi71xuk6ih"]
 
-[ext_resource type="Script" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="1_6hyqo"]
+[ext_resource type="Script" uid="uid://uplawvwcwl8y" path="res://Code/Resource Makers/GeneralUse/IdentifierMaker.gd" id="1_6hyqo"]
+[ext_resource type="Resource" uid="uid://cxnlthowpb4r4" path="res://Resources/Components/EnData/Lightning.tres" id="1_vyyyt"]
 
 [resource]
 script = ExtResource("1_6hyqo")
-must_be_different = false
 broad_class = 4
-contains = ""
-type = 8
-evolves_from = false
-poke_class = null
-owner = 0
-stage = null
-trainer_classes = null
-energy_class = null
+energy_provides = ExtResource("1_vyyyt")

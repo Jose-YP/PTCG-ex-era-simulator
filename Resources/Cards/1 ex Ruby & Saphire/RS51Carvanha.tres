@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://r7j65mcjsuh8" path="res://Art/Cards/1 ex Ruby & Saphire/51.jpg" id="1_g8f6k"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_o8f7p"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_88kre"]
-[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_u3s1u"]
 [ext_resource type="Resource" uid="uid://8cvarib60ven" path="res://Resources/Components/Pokemon/Attacks/AttackData/10DmgDisabRetr.tres" id="4_f2fxk"]
 [ext_resource type="Resource" uid="uid://bo7xhfhkteti0" path="res://Resources/Components/Effects/DmgManip/Add/Add1OthSelf.tres" id="5_f2fxk"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="6_ua6fm"]
@@ -11,6 +10,8 @@
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="8_gbbiv"]
 [ext_resource type="Resource" uid="uid://bessnawi8b2ct" path="res://Resources/Components/Occurances/AttackedByOpponent.tres" id="9_nu7sk"]
 [ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="10_ih051"]
+
+[sub_resource type="Resource" id="Resource_m7xdt"]
 
 [sub_resource type="Resource" id="Resource_0ul3b"]
 script = ExtResource("2_88kre")

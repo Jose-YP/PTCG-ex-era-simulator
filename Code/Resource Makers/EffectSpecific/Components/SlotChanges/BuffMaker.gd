@@ -140,7 +140,8 @@ func how_display() -> Dictionary[String, bool]:
 	return dict
 
 func describe() -> String:
-	var final: String
+	var final: String = str(recieves.print_ask(false)," get ")\
+		if self.application == "Side" else ""
 	var buffs: Array[String]
 	
 	if add_hp != 0:
@@ -217,7 +218,7 @@ func describe() -> String:
 			specific.append("Effects")
 		buffs.append(str("Ignore ", Convert.combine_strings(specific, "and"), " when attacking"))
 	
-	final = str(Convert.combine_strings(buffs, "and"))
+	final += str(Convert.combine_strings(buffs, "and"))
 	
 	if against:
 		final += str(" against ", against.print_ask().to_lower())

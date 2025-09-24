@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://t23egjmshjui" path="res://Art/Cards/12 ex Legend Maker/37.jpg" id="1_kyihk"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_atu6l"]
-[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_87ujo"]
 [ext_resource type="Resource" uid="uid://bhs6bq3gobv5j" path="res://Resources/Components/Pokemon/Attacks/AttackData/10DmgAny.tres" id="4_05cot"]
 [ext_resource type="Resource" uid="uid://c70dc0ghe83kr" path="res://Resources/Components/Pokemon/Attacks/EffectlessAttacks/2QuickAttack10+20.tres" id="5_atu6l"]
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="6_05cot"]
@@ -13,6 +12,8 @@
 [ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="11_6777b"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="12_hh5ni"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="13_buobd"]
+
+[sub_resource type="Resource" id="Resource_m7xdt"]
 
 [sub_resource type="Resource" id="Resource_gykgx"]
 script = ExtResource("2_atu6l")

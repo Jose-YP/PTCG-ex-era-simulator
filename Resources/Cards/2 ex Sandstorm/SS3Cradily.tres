@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://cjr07xcqb68a0" path="res://Art/Cards/2 ex Sandstorm/3.jpg" id="1_hyb6k"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_42jkt"]
-[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_ya3fu"]
 [ext_resource type="Resource" uid="uid://dr35h5ltr0i6r" path="res://Resources/Components/Effects/Conditions/BasicPoison.tres" id="4_2mrhd"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="5_5g1fb"]
 [ext_resource type="Resource" uid="uid://cw72iu2d81vo5" path="res://Resources/Components/Effects/Swap/Optional/RecordGust.tres" id="6_777gh"]
@@ -16,6 +15,8 @@
 [ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="13_42jkt"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="13_d6ih4"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="14_p3k15"]
+
+[sub_resource type="Resource" id="Resource_m7xdt"]
 
 [sub_resource type="Resource" id="Resource_bqb5e"]
 script = ExtResource("5_5g1fb")

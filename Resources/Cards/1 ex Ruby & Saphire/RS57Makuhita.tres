@@ -4,10 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://c8v5n4y43gf3p" path="res://Art/Cards/1 ex Ruby & Saphire/57.jpg" id="1_er63v"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="3_bv4e3"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="4_sikvg"]
-[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="5_emleq"]
 [ext_resource type="Resource" uid="uid://q88qlr12efv1" path="res://Resources/Components/Pokemon/Attacks/AttackData/SwapDefTrg.tres" id="6_bewmg"]
 [ext_resource type="Resource" uid="uid://djhcfglsc14fn" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/F1C1.tres" id="7_csram"]
 [ext_resource type="Resource" uid="uid://ceo3bpqlglf5o" path="res://Resources/Components/Pokemon/Attacks/AttackData/30Dmg.tres" id="8_fpbkf"]
+
+[sub_resource type="Resource" id="Resource_m7xdt"]
 
 [sub_resource type="Resource" id="Resource_b0wo5"]
 script = ExtResource("3_bv4e3")

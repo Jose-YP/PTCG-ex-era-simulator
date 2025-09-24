@@ -21,9 +21,11 @@ func get_energy_cost_int() -> Array[int]:
 func describe() -> String:
 	var cost_str: String = ""
 	var cost_arr: Array[int] = get_energy_cost_int()
+	const en_arr: Array[String] = ["Grass", "Fire", "Water", "Lightning",
+		"Psychic", "Fighting", "Darkness", "Metal", "Colorless"]
 	for i in range(cost_arr.size()):
 		for j in range(cost_arr[i]):
-			cost_str += str("{",Consts.energy_types[i],"}")
+			cost_str += str("{",en_arr[i],"}")
 	
 	cost_str = Convert.reformat(cost_str)
 	print_rich(cost_str)

@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://c38qtwcu88ns5" path="res://Art/Cards/2 ex Sandstorm/14.jpg" id="1_n38xy"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="2_dmwte"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="3_jjqu4"]
-[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_xrugn"]
 [ext_resource type="Resource" uid="uid://bns8h72u2hxqo" path="res://Resources/Components/Effects/Asks/General/AnyMon.tres" id="4_n38xy"]
 [ext_resource type="Script" uid="uid://vjn146j3ayd6" path="res://Code/Resource Makers/GeneralUse/IndvCountMaker.gd" id="5_cabdh"]
 [ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="6_tvi4t"]
@@ -12,6 +11,8 @@
 [ext_resource type="Script" uid="uid://8nne0t7tvtgl" path="res://Code/Resource Makers/PokemonSpecific/AttackDataMaker.gd" id="8_j5ase"]
 [ext_resource type="Resource" uid="uid://dfuhhhaske2n6" path="res://Resources/Components/Counters/Comparator/Not Equal/OthTrgIsEvo.tres" id="9_uii1w"]
 [ext_resource type="Resource" uid="uid://cucqwlq7u00cu" path="res://Resources/Components/Pokemon/Abilities/Bodies/PoisonResistance.tres" id="10_a60b8"]
+
+[sub_resource type="Resource" id="Resource_m7xdt"]
 
 [sub_resource type="Resource" id="Resource_rryrn"]
 script = ExtResource("5_cabdh")

@@ -234,14 +234,14 @@ func ask_ability(slot: PokeSlot, body: bool) -> bool:
 	return result
 #endregion
 
-func print_ask() -> String:
+func print_ask(include_side: bool = true) -> String:
 	#Checklist:
 	#@export_subgroup("Class")
 	
 	#First remove any cards that aren't included in sides/slots parameters
 	var comparison: String = "at least " if comparison_type == 1 else " at most "
 	var slot_str: String = Convert.slot_into_string(slot_target)
-	var side_str: String = str(Convert.side_into_string(side_target).capitalize(), " ")
+	var side_str: String = str(Convert.side_into_string(side_target).capitalize() if include_side else "", " ")
 	var hp_str: String = str(comparison, max_hp, " HP") if max_hp != -10 else ""
 	var dmg_str: String = str(comparison, damage_taken, " damage counters") if damage_taken != -10 else ""
 	var retr_str: String = str("retreat cost of", comparison, retreat_cost) if retreat_cost != -1 else ""
@@ -353,7 +353,7 @@ func print_ask() -> String:
 		specifc_str = "Pokemon"
 	
 	var final_string: String = str(side_str, ko_str, evo_str, owner_str, type_str,
-	  class_str, slot_str, cond_str, specifc_str, with_str)
+	  class_str, slot_str, cond_str, specifc_str, with_str).strip_edges()
 	
 	print_rich(final_string)
 	

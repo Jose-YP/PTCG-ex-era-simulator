@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://c0u6006wvq1el" path="res://Art/Cards/2 ex Sandstorm/53.jpg" id="1_t0xr1"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_upqu6"]
-[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_dcwyt"]
 [ext_resource type="Resource" uid="uid://cp8ldn37fvlbu" path="res://Resources/Components/Pokemon/Attacks/EffectlessAttacks/Pester.tres" id="4_dcwyt"]
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="4_jtqiy"]
 [ext_resource type="Resource" uid="uid://cqw2kwbgcwgvb" path="res://Resources/Components/Effects/Conditions/BasicSleep.tres" id="5_4j5f6"]
@@ -19,6 +18,8 @@
 [ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="13_jtqiy"]
 [ext_resource type="Script" uid="uid://dmulm3x3dj842" path="res://Code/Resource Makers/EffectSpecific/EffectMaker.gd" id="14_4j5f6"]
 [ext_resource type="Script" uid="uid://bs2y8ocljilv8" path="res://Code/Resource Makers/PokemonSpecific/AbilityMaker.gd" id="15_hemo1"]
+
+[sub_resource type="Resource" id="Resource_m7xdt"]
 
 [sub_resource type="Resource" id="Resource_j44gi"]
 script = ExtResource("4_jtqiy")

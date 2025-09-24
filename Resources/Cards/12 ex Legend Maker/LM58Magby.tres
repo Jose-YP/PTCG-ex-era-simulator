@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://b3jsjo0sgukem" path="res://Art/Cards/12 ex Legend Maker/58.jpg" id="1_6n7r6"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_4oi1v"]
-[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_2omth"]
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="4_yu0va"]
 [ext_resource type="Resource" uid="uid://bns8h72u2hxqo" path="res://Resources/Components/Effects/Asks/General/AnyMon.tres" id="5_ylogx"]
 [ext_resource type="Resource" uid="uid://c7itelq8jtjc2" path="res://Resources/Components/EnData/Rainbow.tres" id="6_hdfjl"]
@@ -15,6 +14,8 @@
 [ext_resource type="Resource" uid="uid://bgl3ubmav7lsi" path="res://Resources/Components/Pokemon/Abilities/Powers/BabyEvoMagby.tres" id="13_ykcno"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="14_464it"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="15_dtm3r"]
+
+[sub_resource type="Resource" id="Resource_m7xdt"]
 
 [sub_resource type="Resource" id="Resource_8ru1p"]
 script = ExtResource("7_r2x4q")

@@ -225,6 +225,12 @@ func describe() -> String:
 			bef_hold.append(str("" if inclusive_class else "non-",
 				Convert.combine_flags_to_string(\
 				["non-ex", "ex", "baby", "delta", "star"], poke_class)))
+		if type != 0 and type != 511:
+			print(type)
+			var en_str = Convert.combine_flags_to_string(["{Grass}","{Fire}","{Water}",
+				"{Lightning}","{Psychic}","{Fighting}","{Darkness}",
+				"{Metal}","{Colorless}"], type)
+			bef_hold.append(str(Convert.reformat(en_str), "type"))
 		if owner != 0 and owner != 15:
 			bef_hold.append(Convert.combine_flags_to_string(\
 				["Aqua", "Magma", "Rocket", "Holon"], owner))
@@ -257,13 +263,16 @@ func describe() -> String:
 	if broad_class & 4 != 0:
 		var en_string: String = ""
 		
+		if energy_provides:
+			en_string += str(energy_provides.describe(), " ")
+		
 		match energy_class:
 			1:
-				en_string = "Basic Energy"
+				en_string += "Basic Energy"
 			2:
-				en_string = "Special Energy"
+				en_string += "Special Energy"
 			_:
-				en_string = "Energy"
+				en_string += "Energy"
 		
 		if en_string != "":
 			to_add.append(en_string)
@@ -281,5 +290,5 @@ func describe() -> String:
 	
 	#final += " cards"
 	
-	print(final)
+	print_rich(final)
 	return final

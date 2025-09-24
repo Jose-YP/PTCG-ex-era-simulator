@@ -5,8 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://gi42j8bjlh0p" path="res://Art/Cards/7 ex Team Rocket Returns/11.jpg" id="1_xevcv"]
 [ext_resource type="Resource" uid="uid://blnmclkk45gb3" path="res://Resources/Components/Pokemon/Abilities/Bodies/Buffer.tres" id="2_2iorj"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="3_7cot5"]
-[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_g25qa"]
 [ext_resource type="Resource" uid="uid://0i58o1obksh6" path="res://Resources/Components/Pokemon/Attacks/AttackData/10Plus10OthEn.tres" id="4_jp0c6"]
+
+[sub_resource type="Resource" id="Resource_m7xdt"]
 
 [sub_resource type="Resource" id="Resource_fx4y4"]
 script = ExtResource("1_jk0dt")

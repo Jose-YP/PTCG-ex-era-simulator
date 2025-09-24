@@ -3,10 +3,11 @@
 [ext_resource type="Texture2D" uid="uid://wt0ilnjelwgf" path="res://Art/Cards/10 ex Unseen Forces/35.jpg" id="1_lrait"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_ouqp6"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_3ps86"]
-[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_mmikr"]
 [ext_resource type="Resource" uid="uid://bep36omnenbc8" path="res://Resources/Components/Pokemon/Attacks/AttackData/10Dmg.tres" id="4_eamdw"]
 [ext_resource type="Resource" uid="uid://baxet3revq7v8" path="res://Resources/Components/Pokemon/Attacks/EffectlessAttacks/Razor Leaf 3-50.tres" id="5_khw65"]
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="6_p2vxg"]
+
+[sub_resource type="Resource" id="Resource_m7xdt"]
 
 [sub_resource type="Resource" id="Resource_aiqev"]
 script = ExtResource("2_3ps86")

@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://clkdfogvw0n3o" path="res://Art/Cards/4 ex Team Magma vs Team Aqua/32.jpg" id="1_sp5ng"]
 [ext_resource type="Script" uid="uid://b0fgi2nbb5lf3" path="res://Code/Resource Makers/PokemonSpecific/AttackMaker.gd" id="2_hr55n"]
-[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_88a3h"]
 [ext_resource type="Resource" uid="uid://crhg4u3yu2cso" path="res://Resources/Components/Effects/Asks/General/FromOther.tres" id="5_88a3h"]
 [ext_resource type="Resource" uid="uid://b1y3h472721ee" path="res://Resources/Components/Counters/Comparator/Return/ReturnFlipTwice.tres" id="6_88a3h"]
 [ext_resource type="Script" uid="uid://scca13hg4k1l" path="res://Code/Resource Makers/EffectSpecific/Components/DmgManipMaker.gd" id="7_jq5tw"]
@@ -13,6 +12,8 @@
 [ext_resource type="Script" uid="uid://dkximshow1pao" path="res://Code/Resource Makers/CardResources/PokemonMaker.gd" id="10_c8qcg"]
 [ext_resource type="Resource" uid="uid://74xngvedl2tj" path="res://Resources/Components/Effects/Asks/Stats/DefDamaged.tres" id="11_fundw"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="11_ro88b"]
+
+[sub_resource type="Resource" id="Resource_m7xdt"]
 
 [sub_resource type="Resource" id="Resource_kxtxb"]
 script = ExtResource("7_jq5tw")

@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://dau65kipc724" path="res://Art/Cards/5 ex Hidden Legends/84.jpg" id="1_h0x2t"]
 [ext_resource type="Script" uid="uid://byaq4ongqnwl7" path="res://Code/Resource Makers/CardResources/CardMaker.gd" id="1_ydfqk"]
 [ext_resource type="Resource" uid="uid://uv2bigiutmvr" path="res://Resources/Components/Effects/Asks/Class&Owner/AtkEvoNoEXorOwner.tres" id="3_3ajyv"]
-[ext_resource type="Resource" uid="uid://cuyrj2oe73rvu" path="res://Resources/Components/Pokemon/Attacks/AttackCosts/Colorless1.tres" id="3_s8n6m"]
 [ext_resource type="Script" uid="uid://k25kag4lnway" path="res://Code/Resource Makers/EffectSpecific/EffectCollectMaker.gd" id="4_maceq"]
 [ext_resource type="Resource" uid="uid://dk0v7dyi3r43m" path="res://Resources/Components/Effects/Identifiers/Trainers/Trainer.tres" id="4_sb5y8"]
 [ext_resource type="Resource" uid="uid://cw44iqotg3v3f" path="res://Resources/Components/Effects/Asks/General/FromDefending.tres" id="5_g1yuy"]
@@ -17,6 +16,8 @@
 [ext_resource type="Script" uid="uid://b65jx8u5cgcgl" path="res://Code/Resource Makers/GeneralUse/ComparatorMaker.gd" id="12_budek"]
 [ext_resource type="Resource" uid="uid://b0figrvn4kg1r" path="res://Resources/Components/Effects/Prompts/PromptComparator/1TurnImmunity.tres" id="12_k4ce0"]
 [ext_resource type="Script" uid="uid://b85jmc7067bjc" path="res://Code/Resource Makers/GeneralUse/PromptAskMaker.gd" id="13_8eilx"]
+
+[sub_resource type="Resource" id="Resource_m7xdt"]
 
 [sub_resource type="Resource" id="Resource_kd0t3"]
 script = ExtResource("11_2svl2")

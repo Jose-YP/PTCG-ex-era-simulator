@@ -6,17 +6,5 @@
 [resource]
 script = ExtResource("1_3s1ue")
 description = "Psychic Energy"
-must_be_different = false
 broad_class = 4
-exactly = false
-name_array = Array[String]([])
-type = 16
-evolves_from = false
-rare_candy = false
-inclusive_class = true
-poke_class = null
-owner = 0
-stage = null
-trainer_classes = null
-energy_class = 3
 energy_provides = ExtResource("1_pn688")

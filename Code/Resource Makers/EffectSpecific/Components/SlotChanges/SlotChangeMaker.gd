@@ -54,14 +54,4 @@ func how_display() -> Dictionary[String, bool]:
 	return {"RuleChange" : true}
 
 func describe():
-	match get_script().get_global_name():
-		"Buff":
-			pass
-		"Disable":
-			pass
-		"Override":
-			pass
-		"TypeChange":
-			pass
-		"RuleChange":
-			pass
+	pass
