@@ -16,7 +16,7 @@ class_name UIHeader
 
 signal close_button_pressed
 
-func setup(txt: String):
+func setup(txt: String = ""):
 	movable.dragging_node = dragging_node
 	movable.based_on = based_on
 	movable.offset = offset

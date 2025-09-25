@@ -14,7 +14,7 @@ func _ready() -> void:
 	movable.based_on = based_on
 	movable.offset = offset
 
-func setup(txt: String):
+func setup(txt: String = ""):
 	instructions.clear()
 	instructions.append_text(txt)
 	

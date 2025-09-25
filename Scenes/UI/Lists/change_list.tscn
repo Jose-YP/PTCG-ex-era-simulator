@@ -1,0 +1,61 @@
+[gd_scene load_steps=9 format=3 uid="uid://2v45f2c7hb86"]
+
+[ext_resource type="Script" uid="uid://daviad7wpljwk" path="res://Scenes/UI/Lists/change_list.gd" id="1_d6xy0"]
+[ext_resource type="PackedScene" uid="uid://bttlpdvhmocn3" path="res://Scenes/UI/Lists/header.tscn" id="1_sr32y"]
+[ext_resource type="PackedScene" uid="uid://cykbamn4lwa0i" path="res://Scenes/UI/Lists/change_item.tscn" id="2_n1hxv"]
+[ext_resource type="PackedScene" uid="uid://c28rtuj3kak48" path="res://Scenes/UI/Lists/Footer.tscn" id="2_qx2ll"]
+[ext_resource type="Script" uid="uid://b3041relhlcb2" path="res://Code/Resource Makers/EffectSpecific/Components/SlotChanges/SlotChangeMaker.gd" id="3_laqyx"]
+[ext_resource type="Resource" uid="uid://b4eq6v7x2qaxd" path="res://Resources/Components/Effects/Disable/DefNoPowers.tres" id="4_pb113"]
+[ext_resource type="Resource" uid="uid://ovi6aaco5q03" path="res://Resources/Components/Effects/Disable/DefSelfFlipAttack.tres" id="5_k6ig6"]
+[ext_resource type="Resource" uid="uid://enpsumkpfugn" path="res://Resources/Components/Effects/Buff/Stat/DefSelf-10Atk.tres" id="6_o48j5"]
+
+[node name="ChangeList" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d6xy0")
+item_scene = ExtResource("2_n1hxv")
+changes = Array[ExtResource("3_laqyx")]([ExtResource("4_pb113"), ExtResource("5_k6ig6"), ExtResource("6_o48j5")])
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 401.0
+offset_bottom = 411.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="Header" parent="PanelContainer/VBoxContainer" node_paths=PackedStringArray("dragging_node", "shrinkNodes", "hideNodes") instance=ExtResource("1_sr32y")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 0)
+layout_mode = 2
+closable = true
+dragging_node = NodePath("../../..")
+shrinkNodes = [NodePath("../ScrollContainer")]
+hideNodes = [NodePath("../Footer")]
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+
+[node name="ChangeList" type="VBoxContainer" parent="PanelContainer/VBoxContainer/ScrollContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 62
+alignment = 2
+
+[node name="Footer" parent="PanelContainer/VBoxContainer" node_paths=PackedStringArray("dragging_node") instance=ExtResource("2_qx2ll")]
+unique_name_in_owner = true
+layout_mode = 2
+dragging_node = NodePath("../../..")

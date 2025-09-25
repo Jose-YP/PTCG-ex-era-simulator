@@ -1,7 +1,7 @@
 @icon("uid://dtnnvkljeid2t")
 extends MarginContainer
 
-@export var attack: Attack
+@export var attack: Attack = preload("res://Resources/Components/Pokemon/Attacks/EffectlessAttacks/DoubleLariat.tres")
 @export var card_name: String
 
 @onready var energy_icons: Array[Node] = %Types.get_children()
